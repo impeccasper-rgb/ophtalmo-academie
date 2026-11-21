@@ -529,7 +529,7 @@ def run_flows(browser):
         @flow('deep-links', combo)
         def f_deep(page, st):
             bad = []
-            for h, exp in [('cas/b1', 'cas-b1'), ('case-b1', 'cas-b1'), ('fiche/c-keratocone', 'c-keratocone'), ('learn', 'apprendre'), ('review', 'reviser'), ('mcq', 'quiz')]:
+            for h, exp in [('cas/b1', 'cas-b1'), ('case-b1', 'cas-b1'), ('fiche/c-keratocone', 'c-keratocone/voir'), ('learn', 'apprendre'), ('review', 'reviser'), ('mcq', 'quiz')]:
                 go(page, h, 250)
                 cur = page.evaluate("() => Router.cur")
                 if cur != exp: bad.append('%s->%s' % (h, cur))
