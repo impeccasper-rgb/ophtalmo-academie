@@ -1,0 +1,222 @@
+# iOS app (Capacitor) — build + simulator self-test on a GitHub macOS runner, optional TestFlight upload.
+# Docs: docs/IOS.md. No Mac needed: everything runs here; results are in the run's artifacts.
+name: iOS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'data/**'
+      - 'data-en/**'
+      - 'brand/**'
+      - 'imgsrc/**'
+      - 'imgsrc2/**'
+      - 'tools/build_web.py'
+      - 'ios/**'
+      - 'capacitor.config.json'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/ios.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'data/**'
+      - 'data-en/**'
+      - 'tools/build_web.py'
+      - 'ios/**'
+      - 'capacitor.config.json'
+      - 'package*.json'
+      - '.github/workflows/ios.yml'
+  workflow_dispatch:
+    inputs:
+      ipad:
+        description: 'Also run the self-test on an iPad simulator'
+        type: boolean
+        default: true
+      testflight:
+        description: 'Archive + upload to TestFlight (needs the secrets and IOS_RELEASE_ENABLED=true, see docs/IOS.md)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  simulator:
+    name: Build + simulator self-test
+    # Override without editing: repository variables IOS_RUNNER (e.g. macos-26) and IOS_XCODE (e.g. 26.1).
+    runs-on: ${{ vars.IOS_RUNNER || 'macos-latest' }}
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ${{ vars.IOS_XCODE || 'latest-stable' }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Tool versions
+        run: |
+          sw_vers; uname -m
+          xcodebuild -version
+          node -v; npm -v; python3 -V
+          xcrun simctl list runtimes available
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          python3 -m pip install --quiet pillow
+          if [ -f requirements.txt ]; then python3 -m pip install --quiet -r requirements.txt; fi
+
+      - name: Build the web app (site/)
+        run: |
+          if [ ! -f tools/build_web.py ]; then echo "::error::tools/build_web.py is missing (web build owned by the web role)"; exit 1; fi
+          python3 tools/build_web.py
+          test -s site/index.html || { echo "::error::site/index.html was not produced"; exit 1; }
+
+      - name: App icon + splash (brand/icon-1024.png or placeholder)
+        run: python3 ios/scripts/make_assets.py
+
+      - name: Static checks (plists, privacy manifest, config)
+        run: python3 ios/scripts/check_ios.py
+
+      - name: Capacitor sync + self-test overlay
+        run: |
+          npx cap sync ios
+          node ios/scripts/overlay.mjs ios/App/App/public --selftest
+
+      - name: Build for the simulator (Debug, unsigned)
+        id: build
+        run: |
+          set -o pipefail
+          ARGS=(-project ios/App/App.xcodeproj -scheme App -configuration Debug -sdk iphonesimulator
+                -destination 'generic/platform=iOS Simulator' -derivedDataPath build
+                ARCHS="$(uname -m)" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO build)
+          if command -v xcbeautify >/dev/null; then
+            xcodebuild "${ARGS[@]}" 2>&1 | tee xcodebuild.log | xcbeautify --renderer github-actions
+          else
+            xcodebuild "${ARGS[@]}" 2>&1 | tee xcodebuild.log
+          fi
+          test -d build/Build/Products/Debug-iphonesimulator/App.app
+
+      - name: Self-test on iPhone simulator
+        id: iphone
+        run: python3 ios/scripts/run_selftest.py --app build/Build/Products/Debug-iphonesimulator/App.app --family iphone --out artifacts/iphone
+
+      - name: Self-test on iPad simulator
+        id: ipad
+        if: ${{ always() && steps.build.outcome == 'success' && (github.event_name != 'workflow_dispatch' || inputs.ipad) }}
+        run: python3 ios/scripts/run_selftest.py --app build/Build/Products/Debug-iphonesimulator/App.app --family ipad --out artifacts/ipad
+
+      - name: Upload screenshots, video and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-selftest-${{ github.run_number }}
+          path: |
+            artifacts/
+            xcodebuild.log
+          if-no-files-found: warn
+          retention-days: 14
+
+  testflight:
+    name: Archive + upload to TestFlight (manual)
+    needs: simulator
+    # Stays off until the Apple account exists: set repository variable IOS_RELEASE_ENABLED=true and the secrets below,
+    # then run the workflow manually with "testflight" checked.
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.testflight && vars.IOS_RELEASE_ENABLED == 'true' }}
+    runs-on: ${{ vars.IOS_RUNNER || 'macos-latest' }}
+    timeout-minutes: 45
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ${{ vars.IOS_XCODE || 'latest-stable' }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check secrets
+        run: |
+          for v in ASC_KEY_ID ASC_ISSUER_ID APPLE_TEAM_ID; do
+            if [ -z "${!v}" ]; then echo "::error::secret $v is not set (docs/IOS.md > TestFlight)"; exit 1; fi
+          done
+
+      - name: Build web + sync (release variant, no self-test)
+        run: |
+          npm ci
+          python3 -m pip install --quiet pillow
+          if [ -f requirements.txt ]; then python3 -m pip install --quiet -r requirements.txt; fi
+          python3 tools/build_web.py
+          python3 ios/scripts/make_assets.py
+          python3 ios/scripts/check_ios.py --release
+          npx cap sync ios
+          node ios/scripts/overlay.mjs ios/App/App/public
+          if grep -q selftest ios/App/App/public/index.html; then echo "::error::self-test leaked into release"; exit 1; fi
+
+      - name: Install App Store Connect API key
+        env:
+          ASC_KEY_P8_BASE64: ${{ secrets.ASC_KEY_P8_BASE64 }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/keys"
+          echo "$ASC_KEY_P8_BASE64" | base64 --decode > "$RUNNER_TEMP/keys/AuthKey_${ASC_KEY_ID}.p8"
+          echo "ASC_KEY_PATH=$RUNNER_TEMP/keys/AuthKey_${ASC_KEY_ID}.p8" >> "$GITHUB_ENV"
+
+      - name: Archive (Release, automatic signing via API key)
+        run: |
+          set -o pipefail
+          xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Release \
+            -destination 'generic/platform=iOS' -archivePath build/App.xcarchive \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$ASC_KEY_PATH" -authenticationKeyID "$ASC_KEY_ID" -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            DEVELOPMENT_TEAM="$APPLE_TEAM_ID" CODE_SIGN_STYLE=Automatic \
+            CURRENT_PROJECT_VERSION="${{ github.run_number }}" \
+            archive 2>&1 | tee archive.log | (command -v xcbeautify >/dev/null && xcbeautify --renderer github-actions || cat)
+
+      - name: Export + upload to App Store Connect (TestFlight)
+        run: |
+          set -o pipefail
+          sed "s/__TEAM_ID__/$APPLE_TEAM_ID/" ios/ExportOptions.plist > "$RUNNER_TEMP/ExportOptions.plist"
+          xcodebuild -exportArchive -archivePath build/App.xcarchive \
+            -exportOptionsPlist "$RUNNER_TEMP/ExportOptions.plist" -exportPath build/export \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$ASC_KEY_PATH" -authenticationKeyID "$ASC_KEY_ID" -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            2>&1 | tee export.log
+
+      - name: Remove API key
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/keys"
+
+      - name: Upload archive logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-release-${{ github.run_number }}
+          path: |
+            archive.log
+            export.log
+            build/export/*.log
+            build/App.xcarchive/dSYMs/
+          if-no-files-found: ignore
+          retention-days: 30

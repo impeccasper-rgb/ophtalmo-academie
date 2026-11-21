@@ -1,0 +1,25 @@
+{
+  "name": "academie-ophtalmo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bilingual (FR/EN) ophthalmology learning app: static web site (site/) wrapped as a native iOS app with Capacitor.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build:web": "python3 tools/build_web.py",
+    "ios:sync": "cap sync ios && node ios/scripts/overlay.mjs ios/App/App/public",
+    "ios:sync:selftest": "cap sync ios && node ios/scripts/overlay.mjs ios/App/App/public --selftest",
+    "ios:check": "python3 ios/scripts/check_ios.py"
+  },
+  "dependencies": {
+    "@capacitor/core": "8.6.2",
+    "@capacitor/haptics": "8.0.2",
+    "@capacitor/ios": "8.6.2",
+    "@capacitor/splash-screen": "8.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.2"
+  }
+}

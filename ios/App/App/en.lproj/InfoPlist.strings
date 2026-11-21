@@ -1,0 +1,3 @@
+/* Name shown under the icon (docs/IOS.md, set_brand.py) */
+"CFBundleDisplayName" = "Ocelle";
+"CFBundleName" = "Ocelle";

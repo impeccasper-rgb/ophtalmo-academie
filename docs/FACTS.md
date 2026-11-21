@@ -1,0 +1,245 @@
+# Faits vérifiés et repères — à utiliser tels quels (octobre 2026)
+
+Priorité des sources : canadiennes/québécoises → AAO Preferred Practice Patterns → autres
+références reconnues. Ne rien affirmer sur la disponibilité canadienne d’un produit sauf ce qui
+est listé ici ; sinon écrire « disponibilité canadienne à vérifier ».
+
+## A. Mises à jour récentes vérifiées (citer ainsi)
+
+- **AAO PPP Glaucome primaire à angle ouvert** — Gedde SJ et al., *Ophthalmology*, publié en
+  ligne le 9 févr. 2026 (mise à jour de la version 2021). Points nouveaux : appui plus fort à la
+  **SLT en première intention** (LiGHT 6 ans + Cochrane 2022) ; OCT **RNFL péripapillaire ET
+  cellules ganglionnaires maculaires** au départ et au suivi ; OCT + champ visuel combinés >
+  chacun seul ; **champs visuels groupés (clustered)** pour repérer les progresseurs rapides ;
+  nouveaux facteurs de risque : **tension artérielle systolique/diastolique basse, hémorragie
+  papillaire, C/D plus grand, PSD plus élevé, hystérésis cornéenne basse** (l’hystérésis
+  devient un facteur clé, utile en appoint pour la progression) ; plus de place aux MIGS et
+  implants à libération prolongée, avec mise en garde sur la **perte endothéliale lors de doses
+  répétées d’implants** ; **occlusion ponctuelle** recommandée chez la femme enceinte ou qui
+  allaite sous gouttes.
+- **AAO PPP Fermeture primaire de l’angle (PACD)** — Gedde SJ, Chopra V, Vinod K et al.,
+  *Ophthalmology*, publié en ligne le 9 févr. 2026. Facteurs de risque biométriques mis de
+  l’avant : longueur axiale courte, petit diamètre cornéen, angle étroit, chambre antérieure peu
+  profonde, cristallin épais (la courbure cornéenne et la position antérieure du cristallin sont
+  moins mises en avant) ; antécédents familiaux plus importants. **Gonioscopie dynamique en
+  pièce sombre, petit faisceau** (pour ne pas faire myosis) = base du diagnostic et du suivi.
+  AS-OCT/UBM complémentaires ; **UBM supérieure pour l’iris plateau** ; un contact
+  iridotrabéculaire à l’AS-OCT même si la gonioscopie est « ouverte » peut prédire une fermeture.
+  Microscopie spéculaire recommandée (crise et PACG réduisent la densité endothéliale).
+  **Iridotomie prophylactique (PACS) : réduit le risque mais le risque absolu est faible →
+  décision partagée individualisée.** Complication ajoutée : **atteinte zonulaire** ; les
+  dysphotopsies récentes sont surtout transitoires (< 6 mois). Après LPI : confirmer la perméabilité
+  (flux/pigment visibles) et **mesurer la PIO 30 min à 2 h après**. EAGLE : extraction précoce du
+  cristallin meilleure que LPI (contrôle PIO, qualité de vie) ; à 3 ans, 10 fois plus de chances
+  d’être contrôlé sans médicament. Crise aiguë : baisse médicale de la PIO puis LPI/iridectomie ;
+  **évaluer l’œil adelphe : environ la moitié des yeux adelphes font une crise en 5 ans sans
+  LPI**. Tendance : goniosynéchialyse et phaco-goniotomie pour PACG avancé.
+- **TFOS DEWS III (2025)** — Wolffsohn JS et al., *Am J Ophthalmol* 2025;279:387-450
+  (doi:10.1016/j.ajo.2025.05.033). Définition : « La sécheresse oculaire est une maladie
+  multifactorielle, **symptomatique**, caractérisée par une perte d’homéostasie du film lacrymal
+  et/ou de la surface oculaire, dans laquelle l’instabilité et l’hyperosmolarité du film,
+  l’inflammation et les lésions de la surface, et les anomalies neurosensorielles sont des
+  facteurs étiologiques. » Dépistage : **OSDI-6 ≥ 4**, puis **un** des signes : **NIBUT < 10 s**,
+  ou **osmolarité ≥ 308 mOsm/L** dans un œil ou **écart interoculaire > 8 mOsm/L**, ou
+  **> 5 points de fluorescéine cornéens** et/ou **> 9 points de vert de lissamine
+  conjonctivaux** et/ou coloration du bord palpébral au lissamine **≥ 2 mm de long et ≥ 25 % de
+  large**. Sous-classification par moteurs étiologiques : déficits du film (lipide, aqueux,
+  mucine/glycocalyx), anomalies palpébrales (clignement/fermeture, bord libre), anomalies de la
+  surface (malposition anatomique, dysfonction neurale, lésions cellulaires, inflammation
+  primaire/stress oxydatif). La dichotomie « aqueux vs évaporatif » est donc raffinée.
+- **2e consensus mondial sur le kératocône et les ectasies** (présenté par Hafezi, ESCRS
+  sept. 2025 ; >120 experts, Delphi ~2/3) : **CXL chez l’enfant dès le diagnostic, sans attendre
+  la progression documentée** ; CXL indiquée si progression topographique ou tomographique ;
+  **élévation postérieure et amincissement au point le plus mince** reconnus comme marqueurs ;
+  cesser de se frotter les yeux mais **ne jamais retarder la CXL** ; inflammation de surface seule
+  ≠ indication ; pas d’epi-on prophylactique sans progression ; CXL répétable (passer d’epi-on à
+  epi-off au retraitement) ; protocoles courants : **Dresde** (3 mW/cm² × 30 min) et
+  **accéléré 9 mW/cm² × 10 min** ; riboflavine 0,1 % en epi-off ; suppléments (vit. D, etc.) =
+  appoint seulement. Premier consensus : Gomes JAP et al., *Cornea* 2015 (progression = ≥ 2 de :
+  bombement de la face antérieure, bombement de la face postérieure, amincissement/augmentation
+  du taux de variation pachymétrique).
+- **Epioxa (CXL epithelium-on, Glaukos)** : approuvé par la FDA le 20 oct. 2025 (É.-U.).
+  Disponibilité canadienne à vérifier.
+- **LiGHT 6 ans** (Gazzard G et al., *Ophthalmology* 2023) : SLT première intention vs gouttes —
+  **69,8 %** des yeux SLT à la cible sans autre traitement à 6 ans ; **progression 19,6 % vs
+  26,8 %** ; trabéculectomies ~3 fois moins fréquentes ; moins de chirurgies de cataracte.
+- **SCUT II** (Prajna NV et al., *JAMA Ophthalmol*, en ligne 8 oct. 2026) : moxifloxacine 0,5 %
+  + placebo vs + difluprednate 0,05 % vs + difluprednate + CXL : **aucun bénéfice** sur l’AV ni
+  la taille de cicatrice à 6 et 12 mois (analyse possiblement sous-puissante à 12 mois).
+- **SCUT** (Srinivasan M et al., *Arch Ophthalmol* 2012) : pas de bénéfice global du stéroïde
+  topique adjuvant ; bénéfice possible si ulcère central sévère et début précoce ; à éviter si
+  *Nocardia*.
+- **ZEDS** (Cohen EJ et al., *JAMA Ophthalmol* 2025) : valacyclovir **1 g par jour pendant 1 an**
+  après zona ophtalmique : critère principal à 12 mois **non significatif** (HR 0,77 ; p = 0,09) ;
+  à 18 mois, **27 % moins** de maladie oculaire nouvelle ou aggravée (HR 0,73 ; p = 0,03), moins
+  de poussées multiples et moins de médicaments contre la douleur neuropathique. Les auteurs
+  recommandent l’ajout ; individualiser (fonction rénale, observance).
+- **Polihexanide 0,08 % (Akantior)** : approuvé par la Commission européenne en 2024 pour la
+  kératite à *Acanthamoeba* (monothérapie). Au Canada : préparations magistrales (PHMB 0,02 %,
+  chlorhexidine 0,02 %, ± propamidine) ; disponibilité à vérifier.
+- **Oxervate (cénégermine 0,002 %)** : approuvé par Santé Canada pour la kératite neurotrophique
+  **modérée (défaut épithélial persistant) ou sévère (ulcère) chez l’adulte** ; 1 goutte
+  **6 fois/jour aux 2 h pendant 8 semaines**.
+- **Vyzulta (latanoprostène bunod 0,024 %)** : approuvé par Santé Canada (janv. 2019).
+- Netarsudil (inhibiteur de la Rho kinase), implants intracamérulaires (bimatoprost, travoprost),
+  lotilaner, perfluorohexyloctane, varénicline nasale : **approuvés aux É.-U. ; disponibilité
+  canadienne à vérifier** (ne pas affirmer qu’ils sont offerts au Québec).
+
+## B. Québec / Canada
+
+- **Normes SAAQ** (guide de l’Ordre des optométristes du Québec, 2026) — classe 5 :
+  **AV binoculaire ≥ 6/15 (20/50)** ; champ visuel binoculaire continu **10° au-dessus et 20°
+  au-dessous** de la fixation, **≥ 100° sur le méridien horizontal** dont **≥ 30° de chaque côté**
+  du méridien vertical. Véhicules lourds : **6/9** et **150°**. Toute anomalie du champ → la SAAQ
+  exige un champ **binoculaire** (Esterman ou Goldmann III/4e) signé. Glaucome : pas de suspension
+  automatique ; restriction de conduite de nuit possible ; le médecin peut recommander l’arrêt.
+- **Optométristes (Règlement O-7, r. 11.1, 2018)** : peuvent administrer/prescrire des
+  antiglaucomateux pour **glaucome suspect, glaucome débutant ou glaucome cortisonique** s’ils ont
+  les instruments requis, puis **doivent diriger vers un ophtalmologiste pour le suivi médical** ;
+  si un ophtalmologiste suit le patient, se conformer à son plan ; autres glaucomes : seulement avec
+  le consentement d’un médecin ; diriger si réponse inadéquate.
+- **COS 2009** : *Canadian Ophthalmological Society evidence-based clinical practice guidelines for
+  the management of glaucoma in the adult eye*, Can J Ophthalmol 2009;44 Suppl 1:S7-S93
+  (doi:10.3129/cjo44s1). Guide canadien de référence ; ne pas lui attribuer de chiffres précis de
+  PIO cible (non vérifiés) — dire « cible individualisée ; point de départ ≈ 20–30 % sous la PIO
+  de base, plus bas si atteinte avancée ».
+- **Guide optométrique canadien GPAO** (MacIver S, MacDonald M, Prokopich CL, *Can J Optom* 2017;
+  79 Suppl 1) : champ 24-2 **et 10-2 au départ** ; SITA Standard au suivi (ne pas mélanger les
+  stratégies pour la GPA) ; **faux positifs > 15 % = test non fiable** ; pertes de fixation > 20 %
+  avec suivi du regard instable = fiabilité douteuse ; OCT RNFL + maculaire chez tous les suspects ;
+  crise aiguë : bêtabloquant + IAC + alpha-agoniste topiques + acétazolamide oral, stéroïde
+  topique, pilocarpine seulement une fois la PIO abaissée (sphincter ischémique), puis **LPI
+  bilatérale**.
+- Gouttes fortifiées (vancomycine, tobramycine, céfazoline) : préparées par les pharmacies
+  hospitalières → la kératite sévère est souvent dirigée vers l’urgence ophtalmologique d’un centre
+  (CHUM, HMR, CUSM, Hôpital général juif, CHU de Québec…).
+- Accident de travail (ex. brûlure chimique) : documents **CNESST** à remplir.
+- CXL au Québec : offert dans les centres spécialisés ; **couverture publique variable — à vérifier
+  localement** (ne pas affirmer qu’elle est couverte ou non par la RAMQ).
+- Épidémiologie : populations **inuites** (ex. Nunavik) parmi les plus forts taux de fermeture
+  primaire de l’angle ; Asie de l’Est aussi.
+- Vaccin recombinant contre le zona (Shingrix) : recommandé par le CCNI dès **50 ans**.
+
+## C. Repères chiffrés standards (utilisables)
+
+Physiologie / examen
+- PIO normale 10–21 mmHg (moyenne ≈ 15–16) ; variation nycthémérale 2–6 mmHg (plus en glaucome).
+- Équation de Goldmann : **PIO = (F − U) / C + Pv** ; F ≈ 2–3 µL/min (≈ 2,5 le jour, ↓ la nuit) ;
+  C ≈ 0,2–0,3 µL/min/mmHg ; Pv (épisclérale) ≈ 8–10 mmHg ; voie uvéosclérale 5–30 % du débit
+  (↓ avec l’âge). La PIO ne peut descendre sous la Pv par les voies trabéculaires ; une chirurgie
+  filtrante contourne la Pv.
+- Cornée : épaisseur centrale ≈ 540–550 µm (périphérie ≈ 650–700) ; épithélium ≈ 50 µm (5–7
+  assises, renouvellement ≈ 7 j) ; Bowman 8–12 µm, ne se régénère pas (cicatrice) ; stroma ≈ 90 %
+  de l’épaisseur (collagène I, 78 % d’eau) ; couche de Dua (pré-Descemet) ≈ 10–15 µm (décrite en
+  2013) ; Descemet ≈ 3 µm à la naissance → 10–15 µm à l’âge adulte (s’enroule, d’où le
+  « rouleau » du DMEK) ; endothélium monocouche hexagonale **non régénérative** : densité ≈
+  3000–3500 cell/mm² chez le jeune adulte, ≈ 2500 vers 60–70 ans, perte ≈ 0,6 %/an ; décompensation
+  en général **< 400–500 cell/mm²** ; pompe Na⁺/K⁺-ATPase + fonction barrière (déturgescence).
+  Puissance : cornée ≈ 43 D (≈ 2/3), cristallin ≈ 20 D. Innervation : V1 (nasociliaire → nerfs
+  ciliaires longs) ; tissu le plus innervé du corps.
+- Film lacrymal : lipides (glandes de Meibomius) ; phase muco-aqueuse (glande lacrymale principale
+  et accessoires de Krause/Wolfring ; mucines MUC5AC des cellules caliciformes ; glycocalyx
+  MUC1/4/16). TBUT normal > 10 s ; Schirmer I sans anesthésie < 5 mm/5 min = déficit aqueux sévère.
+- AV : 6/6 = 20/20 = logMAR 0,0 ; 6/12 = 20/40 = 0,3 ; 6/60 = 20/200 = 1,0 ; puis CD (compte les
+  doigts), MM (mouvements de la main), PL, NPL.
+- Van Herick : grade 4 ≥ 1 épaisseur cornéenne (EC) ; 3 = 1/4–1/2 EC ; 2 = 1/4 EC ; 1 < 1/4 EC ;
+  0 = fermé. Grade ≤ 2 → gonioscopie.
+- Gonioscopie, de postérieur à antérieur : racine de l’iris, bande ciliaire, éperon scléral,
+  trabéculum (pigmenté = postérieur, fonctionnel), ligne de Schwalbe — « **I Can’t See Til
+  Schwalbe** ». Shaffer 4 (35–45°, bande ciliaire visible), 3 (20–35°, éperon), 2 (≈ 20°,
+  trabéculum), 1 (≤ 10°, Schwalbe seulement), 0 (fermé). Indentation (verre à 4 miroirs) :
+  apposition qui s’ouvre vs synéchies (PAS) qui restent. Ligne de Sampaolesi = pigment en avant
+  de Schwalbe (PXF). Récession : bande ciliaire élargie, procès iriens déchirés. NVA : vaisseaux
+  qui franchissent l’éperon.
+- ISGEO : **PACS** = contact iridotrabéculaire ≥ 180°, PIO normale, sans PAS ni neuropathie ;
+  **PAC** = contact + PAS et/ou PIO ↑, sans neuropathie ; **PACG** = PAC + neuropathie optique
+  glaucomateuse.
+- Pachymétrie : OHTS — EC ≤ 555 µm ≈ 3 fois plus de risque de conversion que > 588 µm. Cornée mince
+  → Goldmann sous-estime ; épaisse → surestime ; ne pas appliquer mécaniquement de formule de
+  correction. Hystérésis cornéenne basse = risque de progression.
+- Tonomètre de Goldmann : aplanit 3,06 mm ; lire quand les bords internes des mires se touchent
+  (cadran × 10 = mmHg) ; mires trop épaisses → surestimation, trop minces → sous-estimation ;
+  astigmatisme > 3 D : tourner le prisme (axe du cylindre négatif à 43° sur la marque rouge) ;
+  pression sur les paupières, apnée, cravate serrée → surestimation ; œdème cornéen, post-LASIK →
+  sous-estimation.
+- Champ visuel Humphrey : 24-2 (54 points, maille de 6°), 10-2 (central), 24-2C. Indices : MD
+  (déficit global), PSD (déficit localisé), VFI (%), GHT. Cataracte : déviation totale (TD) abaissée,
+  déviation corrigée (PD) normale. Glaucome : respecte le **méridien horizontal** (ressaut nasal) ;
+  atteinte chiasmatique/rétrochiasmatique : respecte le **méridien vertical**. Stades
+  Hodapp-Parrish-Anderson : débutant MD > −6 dB ; modéré −6 à −12 ; avancé < −12 dB.
+  Progression rapide ≥ −2 dB/an ; Chauhan BC et al. (*Br J Ophthalmol* 2008, équipe canadienne) :
+  ≈ **3 champs/an pendant 2 ans** pour détecter un progresseur rapide.
+- OCT RNFL : amincissement le plus souvent **inférotemporal** puis supérotemporal ; règle ISNT
+  (bord neurorétinien I ≥ S ≥ N ≥ T) imparfaite ; effet plancher ≈ 50–60 µm (stade avancé : suivre
+  le champ et le GCIPL maculaire) ; « red disease » = faux positif (myopie forte, papille
+  inclinée/petite, erreur de segmentation) ; « green disease » = faux négatif (atteinte débutante,
+  œdème, membrane épirétinienne). Zone de vulnérabilité maculaire = macula inférieure ↔ pôle
+  inférotemporal de la papille.
+- Papille : C/D vertical > 0,6 ou asymétrie ≥ 0,2 = suspect (dépend de la taille du disque) ;
+  encoche, hémorragie papillaire (Drance), APP zone bêta, vaisseaux en baïonnette, nasalisation.
+  **Pâleur > excavation** → penser à une cause non glaucomateuse.
+- Topographie (courbure axiale) : chaud = cambré ; astigmatisme direct (*with-the-rule*) = nœud
+  papillon vertical ; inverse = horizontal ; kératocône : cambrure inférieure, nœud papillon
+  asymétrique à axes déviés ; dégénérescence marginale pellucide : aspect « pince de crabe »
+  (*crab claw*) avec astigmatisme inverse et amincissement inférieur en bande à 1–2 mm du limbe.
+  Tomographie (Scheimpflug) : élévations antérieure/postérieure, carte pachymétrique (point le plus
+  mince déplacé), indice BAD-D.
+- Microscopie spéculaire : densité (cell/mm²), polymégathisme (CV), pléomorphisme (% hexagones) ;
+  guttae = zones noires.
+
+Essais classiques (chiffres utilisables)
+- **OHTS** : PIO 24–32 mmHg ; traitement (−20 %) → conversion en GPAO à 5 ans **4,4 % vs 9,5 %**.
+  Prédicteurs : âge, PIO, EC mince, C/D vertical, PSD.
+- **EMGT** : traitement → progression 45 % vs 62 % ; chaque mmHg de baisse ≈ 10 % moins de risque.
+- **CNTGS** : baisse de 30 % de la PIO → progression ≈ 12 % vs 35 % (analyse per protocole) ; bien
+  des non-traités ne progressent pas → observation possible si stable.
+- **EAGLE** (Azuara-Blanco, *Lancet* 2016) : extraction du cristallin clair > LPI chez PAC avec
+  PIO ≥ 30 ou PACG (≥ 50 ans).
+- **ZAP** (He M, *Lancet* 2019) : LPI prophylactique chez PACS ≈ réduit de moitié le risque, mais
+  incidence très faible → pas de LPI systématique.
+- **HEDS** : acyclovir 400 mg BID × 12 mois → ≈ 45 % moins de récidives d’herpès oculaire ; stéroïde
+  topique + antiviral accélère la résolution de la kératite stromale.
+- **MUTT I** : natamycine 5 % > voriconazole 1 % pour kératite filamenteuse, surtout *Fusarium* ;
+  **MUTT II** : voriconazole oral adjuvant sans bénéfice.
+- **DREAM** (Asbell, *NEJM* 2018) : oméga-3 = placebo (huile d’olive) pour la sécheresse.
+- **Siddiqui 2003** : syndrome de dispersion pigmentaire → glaucome ≈ 10 % à 5 ans, 15 % à 15 ans.
+- **LoGTS** : brimonidine < timolol pour la progression du champ dans le GPN (beaucoup d’abandons
+  par allergie).
+
+Doses adultes usuelles (à utiliser telles quelles si besoin)
+- Kératite bactérienne : fluoroquinolone de 4e génération (moxifloxacine 0,5 %) aux heures (dose de
+  charge q5–15 min la 1re heure) ; fortifiés : **vancomycine 25 mg/mL** (ou céfazoline 50 mg/mL) +
+  **tobramycine 14 mg/mL**, en alternance aux heures jour et nuit 24–48 h.
+- HSV épithéliale : **acyclovir 400 mg PO 5×/j** ou **valacyclovir 500 mg PO TID**, 7–10 jours ;
+  ou trifluridine 1 % 9×/j (toxicité épithéliale ; ≤ 14–21 jours) ; débridement. Prophylaxie :
+  acyclovir 400 mg BID ou valacyclovir 500 mg DIE. Kératite stromale immune : acétate de
+  prednisolone 1 % (diminution lente) **sous couverture antivirale orale**.
+- Zona ophtalmique (dans les 72 h) : **valacyclovir 1 g TID × 7 j** (ou famciclovir 500 mg TID ×
+  7 j, ou acyclovir 800 mg 5×/j × 7–10 j). Ajuster à la fonction rénale.
+- Crise aiguë : timolol 0,5 %, brimonidine ou apraclonidine, dorzolamide ; **acétazolamide 500 mg**
+  PO/IV (vérifier allergie sulfa, fonction rénale, potassium, drépanocytose) ; mannitol IV 1–2 g/kg
+  si réfractaire ; acétate de prednisolone 1 % ; **pilocarpine 1–2 %** une fois la PIO abaissée
+  (pas si cause cristallinienne, effusion ciliochoroïdienne au topiramate ou mal-direction).
+- Brûlure chimique : irrigation ≥ 30 min / plusieurs litres jusqu’à **pH 7,0–7,5** (recontrôler
+  5–10 min après) ; stéroïde topique intensif ≤ 10–14 j puis sevrage rapide (risque de fonte) ;
+  ascorbate oral (1–2 g/j), doxycycline 100 mg BID, cycloplégique, antibiotique topique sans agent de
+  conservation, membrane amniotique précoce si grade II–IV.
+- Endophtalmite liée à la bulle : ponction vitréenne + **vancomycine 1 mg/0,1 mL et ceftazidime
+  2,25 mg/0,1 mL** intravitréennes (± vitrectomie) — urgence.
+
+Règles mnémotechniques couramment enseignées
+- « **1-2-3** » (kératite) : réaction CA ≥ 1+, infiltrat ≥ 2 mm, à ≤ 3 mm du centre → cultures +
+  fortifiés.
+- « **RSVP** » après greffe : Rougeur, Sensibilité à la lumière, Vision ↓, Pain (douleur) →
+  consultation le jour même.
+- « **I Can’t See Til Schwalbe** » : ordre des structures de l’angle.
+- Dystrophies stromales : « **Marilyn Monroe Always Gets Her Men in LA City** » (Macular –
+  Mucopolysaccharides – Alcian blue ; Granular – Hyaline – Masson ; Lattice – Amyloïde – Congo red).
+- Kératocône : signes de **Munson** (paupière inférieure en V au regard en bas), **Rizzuti**
+  (reflet conique nasal), **anneau de Fleischer** (fer), **stries de Vogt** (disparaissent à la
+  pression), reflet en ciseaux, goutte d’huile.
+
+## D. À ne pas affirmer (non vérifié)
+- Couverture RAMQ de la CXL, du netarsudil, des implants ou des MIGS.
+- Chiffres de PIO cible attribués à la COS.
+- Pourcentages de rejet précis par type de greffe (utiliser l’ordre qualitatif PK > DSAEK > DMEK).

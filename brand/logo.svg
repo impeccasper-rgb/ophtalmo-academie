@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 96" width="432" height="96">
+  <title>Ocelle</title>
+  <!-- mark: ocellus (iris + pupil), slit-lamp optical section, fluorescein sign -->
+  <g transform="scale(.09375)"><rect width="1024" height="1024" rx="236" fill="#0A2547"/><circle cx="512" cy="512" r="282" fill="#2F4EE6"/><circle cx="512" cy="512" r="116" fill="#050E1D"/><path d="M336 236A330 330 0 0 0 336 788" fill="none" stroke="#EAF3FF" stroke-opacity=".85" stroke-width="40" stroke-linecap="round"/><circle cx="660" cy="364" r="66" fill="#B6F04E"/></g>
+  <!-- wordmark: geometric strokes, x-height 60, stroke 13 (no font needed) -->
+  <g transform="translate(124 34) scale(.98)" stroke="#0B1A30" fill="none" stroke-width="13" stroke-linecap="round">
+    <circle cx="30" cy="30" r="23.5"/>
+    <path d="M115.6 13.4A23.5 23.5 0 1 0 115.6 46.6"/>
+    <path d="M137.5 30H184.5A23.5 23.5 0 1 0 179 45.1"/>
+    <path d="M206.5 -23.5V53.5"/>
+    <path d="M231.5 -23.5V53.5"/>
+    <path d="M253.5 30H300.5A23.5 23.5 0 1 0 295 45.1"/>
+    <circle cx="38.5" cy="21.5" r="5.5" fill="#4F9A12" stroke="none"/>
+  </g>
+</svg>

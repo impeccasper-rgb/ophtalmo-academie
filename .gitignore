@@ -1,0 +1,13 @@
+node_modules/
+dist/
+site/
+imgsrc/raw/
+imgsrc2/raw/
+*.log
+ios/App/Pods/
+ios/App/App/public/
+ios/build/
+imgsrc/sheets/
+imgsrc2/sheets/
+imgsrc/thumb/
+imgsrc2/complement.pdf

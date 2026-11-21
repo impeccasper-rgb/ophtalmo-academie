@@ -1,0 +1,9 @@
+/* ===== Web shell additions (static site / Capacitor). Visual design lives in styles.css. ===== */
+.langsw { flex: none; }
+.langsw button { min-width: 40px; min-height: 32px; font-weight: 600; letter-spacing: .03em; }
+.topbar .langsw button { min-height: 36px; }
+.lang-row { display: flex; align-items: center; gap: 8px; }
+.fr-badge { margin-left: 8px; font-size: .68rem; letter-spacing: .05em; vertical-align: middle; }
+h1 .fr-badge { position: relative; top: -.2em; }
+@media (max-width: 380px) { .topbar .brand > span > span { display: none; } }
+noscript p { max-width: 40rem; margin: 40px auto; padding: 0 16px; font-family: system-ui, sans-serif; }

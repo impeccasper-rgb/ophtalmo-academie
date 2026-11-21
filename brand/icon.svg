@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Ocelle</title>
+  <defs>
+    <radialGradient id="oc-bg" cx="68%" cy="28%" r="90%">
+      <stop offset="0" stop-color="#16478A"/>
+      <stop offset=".5" stop-color="#0A2547"/>
+      <stop offset="1" stop-color="#05101F"/>
+    </radialGradient>
+    <radialGradient id="oc-iris" cx="50%" cy="50%" r="50%">
+      <stop offset=".38" stop-color="#5C7BFF"/>
+      <stop offset=".8" stop-color="#2340D0"/>
+      <stop offset="1" stop-color="#16289A"/>
+    </radialGradient>
+    <linearGradient id="oc-beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EAF3FF" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#EAF3FF" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#EAF3FF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="oc-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#B6F04E" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#B6F04E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#oc-bg)"/>
+  <!-- limbus ring -->
+  <circle cx="512" cy="512" r="318" fill="none" stroke="#5C7BFF" stroke-opacity=".28" stroke-width="12"/>
+  <!-- iris -->
+  <circle cx="512" cy="512" r="282" fill="url(#oc-iris)"/>
+  <!-- pupil -->
+  <circle cx="512" cy="512" r="116" fill="#050E1D"/>
+  <!-- slit-lamp optical section: a bright crescent on the left -->
+  <path d="M 336 236 A 330 330 0 0 0 336 788" fill="none" stroke="url(#oc-beam)" stroke-width="30" stroke-linecap="round"/>
+  <!-- decisive sign: fluorescein-green spot -->
+  <circle cx="660" cy="364" r="120" fill="url(#oc-glow)"/>
+  <circle cx="660" cy="364" r="58" fill="#B6F04E"/>
+</svg>

@@ -1,0 +1,3910 @@
+Banque d’images • Ophtalmologie R1
+
+
+
+
+191 images et planches sources
+Généralités → Cornée → Glaucome
+
+
+Préparation des observations : cornée le 4 novembre 2026; glaucome le 9 novembre 2026. Cette
+banque accompagne ton prompt destiné à Claude. Elle ne constitue ni le cours ni une application.
+
+
+Contenu : photographies à la lampe à fente, fluorescéine et colorants, fonds d’œil et papilles,
+gonioscopie, topographie / tomographie, OCT antérieur et RNFL, champs visuels et microscopie
+confocale. Les rares schémas et grilles sont explicitement distingués des images cliniques.
+
+
+Chaque fichier a un identifiant OPH, un lien vers la page clinique, un lien vers l’image originale et une
+mention de droits. Les originaux sont conservés dans l’archive avec index CSV et manifeste JSON. Une
+planche multipanneaux compte pour une seule image, pas pour autant de patients.
+
+
+Source principale : EyeRounds.org, Department of Ophthalmology and Visual Sciences, University of
+Iowa. Les images de l’atlas portent CC BY-NC-ND 3.0. Pour les tutoriels, usage personnel / pédagogique
+selon les conditions EyeRounds; les droits de tiers restent applicables.
+
+
+Les originaux et les filigranes restent intacts. Pour une publication d’images modifiées, des cercles
+superposés ou une utilisation commerciale, obtenir les permissions nécessaires. Des explications
+placées à côté des images permettent de travailler avec les originaux.
+
+
+Portée : banque de références R1, non exhaustive. Les sujets rares sont inclus pour leurs signes
+classiques ou leur urgence, sans prétendre correspondre aux 10 diagnostics les plus fréquents au
+Québec. Aucun cliché clinique n’est généré par IA.
+
+
+
+
+Conditions sources : eyerounds.org/TOS.htm
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                         1
+Mode d’emploi pour l’autre IA
+
+
+
+
+1. Lire manifest.json ou index.csv pour sélectionner les images par thème. Associer chaque
+image à son ID OPH; utiliser le fichier local de l’archive si l’environnement le permet, sinon
+l’URL originale.
+
+
+2. Ne pas deviner une normalité, une latéralité, un stade, un type de glaucome ou une mesure
+à partir du nom de fichier. Vérifier la page clinique liée et les inscriptions du cliché. Les libellés
+anglais sont conservés pour faciliter cette vérification.
+
+
+3. Créer les comparaisons normal / pathologique seulement quand les deux examens sont
+réellement comparables. Le fond d’œil normal fourni est pédiatrique : ne pas le présenter
+comme une référence adulte appariée.
+
+
+4. Pour les QCM, choisir une image dont la légende ou le filigrane ne divulgue pas la réponse.
+Ne pas masquer les crédits. Ne pas présenter plusieurs vues d’un même cas comme plusieurs
+patients.
+
+
+5. Les couleurs d’un rapport OCT ou d’une topographie ne suffisent pas au diagnostic. Garder
+les cartes, échelles, indices de fiabilité et légendes visibles. Les rapports détaillés disposent
+d’une page entière pour rester lisibles.
+
+
+6. Respecter les limites : cette sélection n’offre pas toutes les variantes d’OCT GCC, tous les
+artefacts OCT, ni toutes les séquences de champs normaux et de progression. L’hypertonie
+isolée et le glaucome cortisonique n’ont pas de photographie pathognomonique. Ne pas
+inventer un cliché manquant.
+
+
+7. Les schémas d’anatomie 3D, les simulations et les illustrations mécaniques des traitements
+doivent être créés séparément et étiquetés comme schémas. La banque fournit des
+observations authentiques, pas tous les éléments graphiques de l’application.
+
+
+8. Aucune recommandation thérapeutique actuelle n’est déduite de ces anciennes images.
+Vérifier séparément les recommandations canadiennes / québécoises pour le contenu du
+cours.
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                      2
+Index des thèmes et identifiants
+
+
+
+A · Cornée normale | OPH-001, OPH-002
+
+A · Fond d’œil normal pédiatrique | OPH-003
+
+A · Empreinte épithéliale après tonométrie | OPH-004
+
+A · Hémorragie sous-conjonctivale | OPH-005, OPH-006, OPH-007
+
+A · Fibres myélinisées et déficit du champ | OPH-008, OPH-009
+
+A · Traction vitréorétinienne et œdème maculaire | OPH-010, OPH-011
+
+A · Champs visuels | OPH-012, OPH-013, OPH-014, OPH-015
+
+B · Blépharite | OPH-016
+
+B · Dysfonction des glandes de Meibomius | OPH-017, OPH-018, OPH-019
+
+B · Temps de rupture du film lacrymal | OPH-020, OPH-021, OPH-022
+
+B · Sécheresse : coloration au vert de lissamine | OPH-023, OPH-024, OPH-025
+
+B · Sjögren : coloration au rose Bengale | OPH-026, OPH-027
+
+B · Kératopathie d’exposition | OPH-028
+
+B · Érosions épithéliales ponctuées | OPH-029
+
+B · Abrasion cornéenne | OPH-030, OPH-031
+
+B · Corps étranger métallique | OPH-032, OPH-033
+
+B · Kératocône | OPH-034, OPH-035, OPH-036
+
+B · Astigmatisme inverse | OPH-037
+
+B · Astigmatisme direct | OPH-038
+
+B · Anneau de Fleischer | OPH-039
+
+B · Stries de Vogt | OPH-040, OPH-041, OPH-042
+
+B · Hydrops cornéen | OPH-043, OPH-044, OPH-045
+
+B · Dégénérescence marginale pellucide | OPH-046, OPH-047, OPH-048
+
+B · Guttata dans la dystrophie de Fuchs | OPH-049
+
+B · Dystrophie endothéliale de Fuchs | OPH-050, OPH-051, OPH-052
+
+B · Kératopathie bulleuse pseudophaque | OPH-053
+
+B · Dystrophie de la membrane basale épithéliale | OPH-054, OPH-055, OPH-056
+
+B · HSV : dendrite épithéliale | OPH-057
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            3
+Index des thèmes et identifiants
+
+
+
+B · HSV : ulcère géographique | OPH-058, OPH-059, OPH-060
+
+B · HSV : kératite disciforme | OPH-061, OPH-062, OPH-063
+
+B · Zona : pseudodendrites | OPH-064
+
+B · Kératite fongique : microscopie confocale | OPH-065, OPH-066
+
+B · Kératite à Acanthamoeba | OPH-067, OPH-068, OPH-069
+
+B · Kératite à Pseudomonas | OPH-070, OPH-071
+
+B · Kératite bactérienne | OPH-072
+
+B · Ptérygion | OPH-073, OPH-074
+
+B · Kératoconjonctivite adénovirale | OPH-075, OPH-076
+
+B · Kératite ponctuée de Thygeson | OPH-077, OPH-078, OPH-079
+
+B · Ulcère neurotrophique | OPH-080, OPH-081, OPH-082
+
+B · Kératite ulcérative périphérique | OPH-083, OPH-084, OPH-085
+
+B · Brûlure chimique alcaline | OPH-086, OPH-087
+
+B · Descémétocèle | OPH-088, OPH-089
+
+B · Colle cyanoacrylate : perforation cornéenne | OPH-090, OPH-091, OPH-092
+
+B · Greffe endothéliale DMEK | OPH-093, OPH-094, OPH-095
+
+B · Décollement périphérique de DMEK | OPH-096, OPH-097
+
+B · Greffe lamellaire antérieure profonde DALK | OPH-098, OPH-099, OPH-100
+
+B · Kératoplastie transfixiante | OPH-101, OPH-102, OPH-103
+
+B · Rejet endothélial : ligne de Khodadoust | OPH-104, OPH-105, OPH-106
+
+B · Liquide d’interface après rejet de DSAEK | OPH-107, OPH-108
+
+B · Invasion épithéliale après LASIK | OPH-109, OPH-110, OPH-111
+
+B · Déficit en cellules souches limbiques | OPH-112, OPH-113
+
+B · Imagerie corneenne | OPH-114, OPH-115, OPH-116, OPH-117, OPH-118, OPH-119, OPH-120, OPH-121, OPH-122,
+OPH-123, OPH-124, OPH-125, OPH-126, OPH-127, OPH-128, OPH-129, OPH-130
+
+C · Excavation glaucomateuse avancée | OPH-131, OPH-132
+
+C · Encoche papillaire et déficit des fibres | OPH-133, OPH-134
+
+C · Lame criblée dans le glaucome | OPH-135, OPH-136
+
+C · Hémorragie papillaire : glaucome à pression normale | OPH-137, OPH-138
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                         4
+Index des thèmes et identifiants
+
+
+
+C · Croissant gris papillaire : piège diagnostique | OPH-139
+
+C · Fermeture aiguë de l’angle | OPH-140, OPH-141, OPH-142
+
+C · Glaukomflecken et atrophie irienne | OPH-143, OPH-144, OPH-145
+
+C · Iridotomie périphérique au laser | OPH-146
+
+C · Fermeture de l’angle après DMEK | OPH-147
+
+C · Iris bombé | OPH-148, OPH-149, OPH-150
+
+C · Syndrome pseudoexfoliatif | OPH-151, OPH-152, OPH-153
+
+C · Glaucome pseudoexfoliatif | OPH-154, OPH-155, OPH-156
+
+C · Dispersion pigmentaire | OPH-157, OPH-158, OPH-159
+
+C · Ligne de Scheie : dispersion pigmentaire | OPH-160, OPH-161
+
+C · Rubéose irienne diabétique | OPH-162, OPH-163, OPH-164
+
+C · Rubéose irienne | OPH-165, OPH-166
+
+C · Glaucome congénital | OPH-167, OPH-168, OPH-169
+
+C · Stries de Haab | OPH-170, OPH-171
+
+C · Récession angulaire et cyclodialyse | OPH-172, OPH-173, OPH-174
+
+C · Hypertonie et sang dans le canal de Schlemm | OPH-175, OPH-176
+
+C · Précipités trabéculaires : syndrome de Grant | OPH-177
+
+C · Synéchies antérieures périphériques : syndrome ICE | OPH-178, OPH-179, OPH-180
+
+C · iStent : micro-pontage trabéculaire | OPH-181
+
+C · Décollements choroïdiens appositionnels | OPH-182
+
+C · Atrophie de graisse orbitaire sous prostaglandine | OPH-183, OPH-184
+
+C · Hémorragie après phaco-GATT | OPH-185, OPH-186
+
+C · Glaucome : structure et fonction | OPH-187, OPH-188, OPH-189, OPH-190, OPH-191
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                  5
+A - General
+
+
+
+OPH-001 | Cornée normale
+
+
+
+
+Légende source : slit lamp of normal cornea
+
+
+Imagerie / photographie clinique · 2352 × 1568 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                        IMAGE ORIGINALE
+
+
+
+
+OPH-002 | Cornée normale
+
+
+
+
+Légende source : slit lamp of normal cornea, alternative view
+
+
+Imagerie / photographie clinique · 2160 × 1568 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                        IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026               6
+A - General
+
+
+
+OPH-003 | Fond d’œil normal pédiatrique
+
+
+
+
+Légende source : normal fundus of a child
+
+
+Imagerie / photographie clinique · 2048 × 1753 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-004 | Empreinte épithéliale après tonométrie
+
+
+
+
+Légende source : Applanation tonometry
+
+
+Imagerie / photographie clinique · 2152 × 1568 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            7
+A - General
+
+
+
+OPH-005 | Hémorragie sous-conjonctivale
+
+
+
+
+Légende source : subconjunctival hemorrhage
+
+
+Imagerie / photographie clinique · 1500 × 1200 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-006 | Hémorragie sous-conjonctivale
+
+
+
+
+Légende source : hyposphagma,
+
+
+Imagerie / photographie clinique · 1500 × 1200 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            8
+A - General
+
+
+
+OPH-007 | Hémorragie sous-conjonctivale
+
+
+
+
+Légende source : subconjunctival hemorrhage
+
+
+Imagerie / photographie clinique · 1024 × 719 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPH-008 | Fibres myélinisées et déficit du champ
+
+
+
+
+Légende source : fundus prominent myelinated nerve fiber layer
+
+
+Imagerie / photographie clinique · 1800 × 1492 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                9
+A - General
+
+
+
+OPH-009 | Fibres myélinisées et déficit du champ
+
+
+
+
+Légende source : goldmann prominent myelinated nerve fiber layer
+
+
+Imagerie / photographie clinique · 1627 × 1220 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                  10
+A - General
+
+
+
+OPH-010 | Traction vitréorétinienne et œdème maculaire
+
+
+
+
+Légende source : 3 fundus photos and an OCT showing Vitreoretinal traction with associated macular edema
+
+
+Imagerie / photographie clinique · 800 × 640 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                          IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                        11
+A - General
+
+
+
+OPH-011 | Traction vitréorétinienne et œdème maculaire
+
+
+
+
+Légende source : OCT showing Vitreomacular tractionwith associated macular edema
+
+
+Imagerie / photographie clinique · 1500 × 589 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                        IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                12
+A - General
+
+
+
+OPH-012 | Champs visuels
+
+
+
+
+Légende source : Amsler grid
+
+
+Schéma pédagogique / grille, non photographie clinique · 960 × 720 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          13
+A - General
+
+
+
+OPH-013 | Champs visuels
+
+
+
+
+Légende source : HVF 24-2. Courtesy Michael Wall, M.D.
+
+
+Imagerie / photographie clinique · 600 × 753 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          14
+A - General
+
+
+
+OPH-014 | Champs visuels
+
+
+
+
+Légende source : Goldmann Visual Field
+
+
+Imagerie / photographie clinique · 600 × 429 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          15
+A - General
+
+
+
+OPH-015 | Champs visuels
+
+
+
+
+Légende source : Common visual field defects
+
+
+Schéma pédagogique / grille, non photographie clinique · 600 × 747 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          16
+B - Cornee
+
+
+
+OPH-016 | Blépharite
+
+
+
+
+Légende source : Blepharitis, cloed eye lid
+
+
+Imagerie / photographie clinique · 600 × 454 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-017 | Dysfonction des glandes de Meibomius
+
+
+
+
+Légende source : inlammed lid margin
+
+
+Imagerie / photographie clinique · 500 × 173 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            17
+B - Cornee
+
+
+
+OPH-018 | Dysfonction des glandes de Meibomius
+
+
+
+
+Légende source : thick purulent material is expressed from the orifice
+
+
+Imagerie / photographie clinique · 400 × 303 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPH-019 | Dysfonction des glandes de Meibomius
+
+
+
+
+Légende source : top lid regular and enhanced meibomian gland disease
+
+
+Imagerie / photographie clinique · 1800 × 555 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                    18
+B - Cornee
+
+
+
+OPH-020 | Temps de rupture du film lacrymal
+
+
+
+
+Légende source : Tear breakup time (TBUT), patient has punctate epithelial erosions (PEE) that stain positively with fluorescein
+
+
+Imagerie / photographie clinique · 2352 × 1568 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPH-021 | Temps de rupture du film lacrymal
+
+
+
+
+Légende source : Tear breakup time (TBUT), patient has punctate epithelial erosions (PEE) that stain positively with fluorescein - 2
+
+
+Imagerie / photographie clinique · 2048 × 1367 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                                19
+B - Cornee
+
+
+
+OPH-022 | Temps de rupture du film lacrymal
+
+
+
+
+Légende source : Tear breakup time (TBUT), patient has punctate epithelial erosions (PEE) that stain positively with fluorescein -3
+
+
+Imagerie / photographie clinique · 2176 × 1508 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPH-023 | Sécheresse : coloration au vert de lissamine
+
+
+
+
+Légende source : Diffuse lissamine green staining looking nasally
+
+
+Imagerie / photographie clinique · 2048 × 1365 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                               20
+B - Cornee
+
+
+
+OPH-024 | Sécheresse : coloration au vert de lissamine
+
+
+
+
+Légende source : Diffuse lissamine green staining looking down
+
+
+Imagerie / photographie clinique · 2048 × 1129 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                          IMAGE ORIGINALE
+
+
+
+
+OPH-025 | Sécheresse : coloration au vert de lissamine
+
+
+
+
+Légende source : Diffuse lissamine green staining straight head
+
+
+Imagerie / photographie clinique · 2048 × 1373 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                          IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                 21
+B - Cornee
+
+
+
+OPH-026 | Sjögren : coloration au rose Bengale
+
+
+
+
+Légende source : Diffuse Rose Bengal staining in a patient with Sjögren's syndrome looking upwards
+
+
+Imagerie / photographie clinique · 2048 × 1365 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPH-027 | Sjögren : coloration au rose Bengale
+
+
+
+
+Légende source : Diffuse Rose Bengal staining in a patient with Sjögren's syndrome
+
+
+Imagerie / photographie clinique · 2048 × 1365 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                  22
+B - Cornee
+
+
+
+OPH-028 | Kératopathie d’exposition
+
+
+
+
+Légende source : exposure Punctate epithelial erosions
+
+
+Imagerie / photographie clinique · 2048 × 1651 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-029 | Érosions épithéliales ponctuées
+
+
+
+
+Légende source : punctate epithelial erosions (PEE)
+
+
+Imagerie / photographie clinique · 2048 × 1365 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            23
+B - Cornee
+
+
+
+OPH-030 | Abrasion cornéenne
+
+
+
+
+Légende source : corneal abrasion
+
+
+Imagerie / photographie clinique · 2048 × 1650 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-031 | Abrasion cornéenne
+
+
+
+
+Légende source : fluorescein dye corneal abrasion
+
+
+Imagerie / photographie clinique · 2048 × 1572 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            24
+B - Cornee
+
+
+
+OPH-032 | Corps étranger métallique
+
+
+
+
+Légende source : metallic forgien body in eye
+
+
+Imagerie / photographie clinique · 2048 × 1366 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-033 | Corps étranger métallique
+
+
+
+
+Légende source : Slit lamp of metal foreign body in eye
+
+
+Imagerie / photographie clinique · 1800 × 1275 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            25
+B - Cornee
+
+
+
+OPH-034 | Kératocône
+
+
+
+
+Légende source : Slit lamp with keratoconus shows the cone-shaped cornea
+
+
+Imagerie / photographie clinique · 2000 × 1333 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPH-035 | Kératocône
+
+
+
+
+Légende source : Slit lamp patient with keratoconus
+
+
+Imagerie / photographie clinique · 2000 × 1333 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                26
+B - Cornee
+
+
+
+OPH-036 | Kératocône
+
+
+
+
+Légende source : Scheimpflug imaging demonstrates the cone-shaped cornea of keratoconus
+
+
+Imagerie / photographie clinique · 2000 × 1075 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                        IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                       27
+B - Cornee
+
+
+
+OPH-037 | Astigmatisme inverse
+
+
+
+
+Légende source : corneal topography
+
+
+Imagerie / photographie clinique · 2048 × 1190 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            28
+B - Cornee
+
+
+
+OPH-038 | Astigmatisme direct
+
+
+
+
+Légende source : corneal topograph
+
+
+Imagerie / photographie clinique · 2343 × 1332 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            29
+B - Cornee
+
+
+
+OPH-039 | Anneau de Fleischer
+
+
+
+
+Légende source : keratoconus demonstrating a prominent Fleischer ring around the base of the cone
+
+
+Imagerie / photographie clinique · 800 × 548 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                              IMAGE ORIGINALE
+
+
+
+
+OPH-040 | Stries de Vogt
+
+
+
+
+Légende source : external photo showing Vogt's striae are vertical (rarely horizontal) fine, whitish lines in the deep/posterior stroma
+and Descemet's membrane commonly found in patients with keratoconus slit lamp
+
+Imagerie / photographie clinique · 1200 × 1032 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                              IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                                 30
+B - Cornee
+
+
+
+OPH-041 | Stries de Vogt
+
+
+
+
+Légende source : external photo showing Vogt's striae are vertical (rarely horizontal) fine, whitish lines in the deep/posterior stroma
+and Descemet's membrane commonly found in patients with keratoconus slit lamp ...
+
+Imagerie / photographie clinique · 1200 × 1001 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                              IMAGE ORIGINALE
+
+
+
+
+OPH-042 | Stries de Vogt
+
+
+
+
+Légende source : external photo showing Vogt's striae are vertical (rarely horizontal) fine, whitish lines in the deep/posterior stroma
+and Descemet's membrane commonly found in patients with keratoconus slit lamp ...
+
+Imagerie / photographie clinique · 1200 × 1090 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                              IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                                 31
+B - Cornee
+
+
+
+OPH-043 | Hydrops cornéen
+
+
+
+
+Légende source : Oblique slit-lamp view of acute corneal hydrops highlighting significant apical corneal edema
+
+
+Imagerie / photographie clinique · 3575 × 2325 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPH-044 | Hydrops cornéen
+
+
+
+
+Légende source : Anterior slit-lamp view of acute corneal hydrops highlighting significant apical corneal edema
+
+
+Imagerie / photographie clinique · 3135 × 1999 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                               32
+B - Cornee
+
+
+
+OPH-045 | Hydrops cornéen
+
+
+
+
+Légende source : Corneal tomography of acute corneal hydrops highlighting significant apical corneal edema
+
+
+Imagerie / photographie clinique · 3789 × 2345 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPH-046 | Dégénérescence marginale pellucide
+
+
+
+
+Légende source : slit lamp corenal protrusion OD
+
+
+Imagerie / photographie clinique · 2352 × 1568 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                          33
+B - Cornee
+
+
+
+OPH-047 | Dégénérescence marginale pellucide
+
+
+
+
+Légende source : slit lamp corenal protrusion OS
+
+
+Imagerie / photographie clinique · 2352 × 1568 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            34
+B - Cornee
+
+
+
+OPH-048 | Dégénérescence marginale pellucide
+
+
+
+
+Légende source : Pentacam Scheimpflug cross-sectional image
+
+
+Imagerie / photographie clinique · 218 × 478 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                      IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026             35
+B - Cornee
+
+
+
+OPH-049 | Guttata dans la dystrophie de Fuchs
+
+
+
+
+Légende source : Guttae are excrescences of collagen produced by stressed corneal endothelial cells
+
+
+Imagerie / photographie clinique · 2352 × 1568 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPH-050 | Dystrophie endothéliale de Fuchs
+
+
+
+
+Légende source : Slit lamp of cornea patient with Fuch corneal dystrophy
+
+
+Imagerie / photographie clinique · 500 × 540 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                   36
+B - Cornee
+
+
+
+OPH-051 | Dystrophie endothéliale de Fuchs
+
+
+
+
+Légende source : corneal endothelial guttata
+
+
+Imagerie / photographie clinique · 300 × 499 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPH-052 | Dystrophie endothéliale de Fuchs
+
+
+
+
+Légende source : Microscopic look at loss of endothelial cells
+
+
+Imagerie / photographie clinique · 200 × 245 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                37
+B - Cornee
+
+
+
+OPH-053 | Kératopathie bulleuse pseudophaque
+
+
+
+
+Légende source : edema resulted as a sequellae of cataract surgery, thus is it called pseudophakic bullous keratopathy
+
+
+Imagerie / photographie clinique · 1800 × 1200 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPH-054 | Dystrophie de la membrane basale épithéliale
+
+
+
+
+Légende source : slit lamp
+
+
+Imagerie / photographie clinique · 2000 × 1333 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                      38
+B - Cornee
+
+
+
+OPH-055 | Dystrophie de la membrane basale épithéliale
+
+
+
+
+Légende source : epithelial basement membrane dystrophy 2
+
+
+Imagerie / photographie clinique · 2000 × 1333 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-056 | Dystrophie de la membrane basale épithéliale
+
+
+
+
+Légende source : epithelial basement membrane dystrophy 3
+
+
+Imagerie / photographie clinique · 2000 × 1333 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            39
+B - Cornee
+
+
+
+OPH-057 | HSV : dendrite épithéliale
+
+
+
+
+Légende source : HSV dendrite
+
+
+Imagerie / photographie clinique · 1602 × 1430 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-058 | HSV : ulcère géographique
+
+
+
+
+Légende source : HSV
+
+
+Imagerie / photographie clinique · 1024 × 769 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            40
+B - Cornee
+
+
+
+OPH-059 | HSV : ulcère géographique
+
+
+
+
+Légende source : HSV - fluorescein
+
+
+Imagerie / photographie clinique · 1024 × 751 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-060 | HSV : ulcère géographique
+
+
+
+
+Légende source : HSV - Ghost> </figure> <div class=
+
+
+Imagerie / photographie clinique · 1024 × 814 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            41
+B - Cornee
+
+
+
+OPH-061 | HSV : kératite disciforme
+
+
+
+
+Légende source : disciform keratitis
+
+
+Imagerie / photographie clinique · 1900 × 1266 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-062 | HSV : kératite disciforme
+
+
+
+
+Légende source : disciform keratitis - enlarged
+
+
+Imagerie / photographie clinique · 2048 × 1365 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            42
+B - Cornee
+
+
+
+OPH-063 | HSV : kératite disciforme
+
+
+
+
+Légende source : disciform keratitis - slit lamp
+
+
+Imagerie / photographie clinique · 2048 × 1365 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-064 | Zona : pseudodendrites
+
+
+
+
+Légende source : VZV keratitis
+
+
+Imagerie / photographie clinique · 2048 × 1607 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            43
+B - Cornee
+
+
+
+OPH-065 | Kératite fongique : microscopie confocale
+
+
+
+
+Légende source : fungal keratitis secondary to contact lens wear
+
+
+Imagerie / photographie clinique · 2048 × 1242 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                               IMAGE ORIGINALE
+
+
+
+
+OPH-066 | Kératite fongique : microscopie confocale
+
+
+
+
+Légende source : confocal microscopy of fungal structures in the eye
+
+
+Imagerie / photographie clinique · 600 × 450 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                               IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                      44
+B - Cornee
+
+
+
+OPH-067 | Kératite à Acanthamoeba
+
+
+
+
+Légende source : Acanthamoeba keratitis
+
+
+Imagerie / photographie clinique · 2048 × 1349 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-068 | Kératite à Acanthamoeba
+
+
+
+
+Légende source : Acanthamoeba keratitis, Slit Lamp
+
+
+Imagerie / photographie clinique · 2048 × 1365 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            45
+B - Cornee
+
+
+
+OPH-069 | Kératite à Acanthamoeba
+
+
+
+
+Légende source : Concentric ring infiltrate in a contact lens wearer with early Acanthamoeba keratitis
+
+
+Imagerie / photographie clinique · 1800 × 1209 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPH-070 | Kératite à Pseudomonas
+
+
+
+
+Légende source : Pseudomonas aeruginosa is the most common cause of bacterial keratitis in contact lens wearers
+
+
+Imagerie / photographie clinique · 750 × 475 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                               46
+B - Cornee
+
+
+
+OPH-071 | Kératite à Pseudomonas
+
+
+
+
+Légende source : Pseudomonas aeruginosa slit lamp image
+
+
+Imagerie / photographie clinique · 1800 × 1373 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-072 | Kératite bactérienne
+
+
+
+
+Légende source : bacterial keratitis
+
+
+Imagerie / photographie clinique · 400 × 309 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            47
+B - Cornee
+
+
+
+OPH-073 | Ptérygion
+
+
+
+
+Légende source : pterygium patient 1
+
+
+Imagerie / photographie clinique · 2048 × 1365 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-074 | Ptérygion
+
+
+
+
+Légende source : pterygium patient 2
+
+
+Imagerie / photographie clinique · 2048 × 1363 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            48
+B - Cornee
+
+
+
+OPH-075 | Kératoconjonctivite adénovirale
+
+
+
+
+Légende source : scattered subepithelial infiltrates involving the visual axis
+
+
+Imagerie / photographie clinique · 800 × 555 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                               IMAGE ORIGINALE
+
+
+
+
+OPH-076 | Kératoconjonctivite adénovirale
+
+
+
+
+Légende source : slit lamp showing scattered subepithelial infiltrates involving the visual axis
+
+
+Imagerie / photographie clinique · 800 × 555 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                               IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                49
+B - Cornee
+
+
+
+OPH-077 | Kératite ponctuée de Thygeson
+
+
+
+
+Légende source : Thygeson's superficial punctate keratitis
+
+
+Imagerie / photographie clinique · 1024 × 753 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                                IMAGE ORIGINALE
+
+
+
+
+OPH-078 | Kératite ponctuée de Thygeson
+
+
+
+
+Légende source : Thygeson's superficial punctate keratitis dark field
+
+
+Imagerie / photographie clinique · 1024 × 767 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                                IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                       50
+B - Cornee
+
+
+
+OPH-079 | Kératite ponctuée de Thygeson
+
+
+
+
+Légende source : Thygeson's superficial punctate keratitis slit lamp
+
+
+Imagerie / photographie clinique · 1024 × 753 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                               IMAGE ORIGINALE
+
+
+
+
+OPH-080 | Ulcère neurotrophique
+
+
+
+
+Légende source : Slit lamp of Neurotrophic Ulcer
+
+
+Imagerie / photographie clinique · 1513 × 1009 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                               IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                      51
+B - Cornee
+
+
+
+OPH-081 | Ulcère neurotrophique
+
+
+
+
+Légende source : Slit lamp of Neurotrophic Ulcer alternative view
+
+
+Imagerie / photographie clinique · 1511 × 1010 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPH-082 | Ulcère neurotrophique
+
+
+
+
+Légende source : Neurotrophic Ulcer diffuse illumination
+
+
+Imagerie / photographie clinique · 2352 × 1568 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                   52
+B - Cornee
+
+
+
+OPH-083 | Kératite ulcérative périphérique
+
+
+
+
+Légende source : PUK external
+
+
+Imagerie / photographie clinique · 2048 × 1544 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-084 | Kératite ulcérative périphérique
+
+
+
+
+Légende source : PUK external, slit lamp
+
+
+Imagerie / photographie clinique · 2048 × 1495 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            53
+B - Cornee
+
+
+
+OPH-085 | Kératite ulcérative périphérique
+
+
+
+
+Légende source : PUK fluorescein
+
+
+Imagerie / photographie clinique · 2048 × 1438 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-086 | Brûlure chimique alcaline
+
+
+
+
+Légende source : Example of Alkali Chemical Burns
+
+
+Imagerie / photographie clinique · 2048 × 1115 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            54
+B - Cornee
+
+
+
+OPH-087 | Brûlure chimique alcaline
+
+
+
+
+Légende source : Example of Alkali Chemical Burns
+
+
+Imagerie / photographie clinique · 2048 × 1174 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-088 | Descémétocèle
+
+
+
+
+Légende source : descemetocele zoomed
+
+
+Imagerie / photographie clinique · 1900 × 1486 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            55
+B - Cornee
+
+
+
+OPH-089 | Descémétocèle
+
+
+
+
+Légende source : descemetocele slit lamp
+
+
+Imagerie / photographie clinique · 3245 × 2644 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-090 | Colle cyanoacrylate : perforation cornéenne
+
+
+
+
+Légende source : PUK slit lamp
+
+
+Imagerie / photographie clinique · 2352 × 1568 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            56
+B - Cornee
+
+
+
+OPH-091 | Colle cyanoacrylate : perforation cornéenne
+
+
+
+
+Légende source : PUK
+
+
+Imagerie / photographie clinique · 1750 × 1181 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-092 | Colle cyanoacrylate : perforation cornéenne
+
+
+
+
+Légende source : PUK with glue
+
+
+Imagerie / photographie clinique · 2088 × 1384 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            57
+B - Cornee
+
+
+
+OPH-093 | Greffe endothéliale DMEK
+
+
+
+
+Légende source : post-operative appearance of patientd who underwent DMEK for Fuchs endothelial corneal dystrophy at 1 week
+post-operatively with residual anterior chamber gas bubbles
+
+Imagerie / photographie clinique · 2048 × 1365 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPH-094 | Greffe endothéliale DMEK
+
+
+
+
+Légende source : post-operative appearance of patientd who underwent DMEK for Fuchs endothelial corneal dystrophy at 1 week
+post-operatively with residual anterior chamber gas bubbles
+
+Imagerie / photographie clinique · 2048 × 1365 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                           58
+B - Cornee
+
+
+
+OPH-095 | Greffe endothéliale DMEK
+
+
+
+
+Légende source : 2 weeks post-operatively with complete resorption of the gas
+
+
+Imagerie / photographie clinique · 2048 × 1364 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPH-096 | Décollement périphérique de DMEK
+
+
+
+
+Légende source : graft edge lift
+
+
+Imagerie / photographie clinique · 1024 × 870 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                  59
+B - Cornee
+
+
+
+OPH-097 | Décollement périphérique de DMEK
+
+
+
+
+Légende source : graft edge lift OCT
+
+
+Imagerie / photographie clinique · 1024 × 198 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            60
+B - Cornee
+
+
+
+OPH-098 | Greffe lamellaire antérieure profonde DALK
+
+
+
+
+Légende source : post-op eye after DALK for keratoconus.
+
+
+Imagerie / photographie clinique · 2048 × 1497 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                          IMAGE ORIGINALE
+
+
+
+
+OPH-099 | Greffe lamellaire antérieure profonde DALK
+
+
+
+
+Légende source : 3 year post-op eye after DALK for keratoconus with sutures removed.
+
+
+Imagerie / photographie clinique · 2048 × 1424 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                          IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                    61
+B - Cornee
+
+
+
+OPH-100 | Greffe lamellaire antérieure profonde DALK
+
+
+
+
+Légende source : 3 year post-op eye after DALK for keratoconus with sutures removed.
+
+
+Imagerie / photographie clinique · 400 × 150 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                          IMAGE ORIGINALE
+
+
+
+
+OPH-101 | Kératoplastie transfixiante
+
+
+
+
+Légende source : PK graft secured using interrupted sutures
+
+
+Imagerie / photographie clinique · 2048 × 1247 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                          IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                    62
+B - Cornee
+
+
+
+OPH-102 | Kératoplastie transfixiante
+
+
+
+
+Légende source : PK graft secured using interrupted sutures for ulcer scar
+
+
+Imagerie / photographie clinique · 2048 × 1381 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPH-103 | Kératoplastie transfixiante
+
+
+
+
+Légende source : PK graft secured using running sutures for ulcer scar
+
+
+Imagerie / photographie clinique · 2048 × 1427 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                    63
+B - Cornee
+
+
+
+OPH-104 | Rejet endothélial : ligne de Khodadoust
+
+
+
+
+Légende source : slitlamp photograph using sclerotic scatter technique demonstrates inferior to superior progression of endothelial
+rejection with keratitic precipitates at the leading edge
+
+Imagerie / photographie clinique · 2000 × 1333 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPH-105 | Rejet endothélial : ligne de Khodadoust
+
+
+
+
+Légende source : overlying stroma is hazy and edematous with evident Descemet's folds due to acute endothelial dysfunction
+
+
+Imagerie / photographie clinique · 2000 × 1333 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                              64
+B - Cornee
+
+
+
+OPH-106 | Rejet endothélial : ligne de Khodadoust
+
+
+
+
+Légende source : horizontal endothelial linear opacitiy which is more distinct with sclerotic scatter lighting
+
+
+Imagerie / photographie clinique · 2048 × 1513 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                               IMAGE ORIGINALE
+
+
+
+
+OPH-107 | Liquide d’interface après rejet de DSAEK
+
+
+
+
+Légende source : Acquired Interface Fluid
+
+
+Imagerie / photographie clinique · 1800 × 1398 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                               IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                              65
+B - Cornee
+
+
+
+OPH-108 | Liquide d’interface après rejet de DSAEK
+
+
+
+
+Légende source : Acquired Interface Fluid with Slit-lamp
+
+
+Imagerie / photographie clinique · 1800 × 1352 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-109 | Invasion épithéliale après LASIK
+
+
+
+
+Légende source : Nests of epithelium
+
+
+Imagerie / photographie clinique · 1882 × 1255 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            66
+B - Cornee
+
+
+
+OPH-110 | Invasion épithéliale après LASIK
+
+
+
+
+Légende source : Epithelial ingrowth under LASIK flap
+
+
+Imagerie / photographie clinique · 2000 × 1409 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                          IMAGE ORIGINALE
+
+
+
+
+OPH-111 | Invasion épithéliale après LASIK
+
+
+
+
+Légende source : Epithelial ingrowth under LASIK flap Slit lamp
+
+
+Imagerie / photographie clinique · 1824 × 1568 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                          IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                 67
+B - Cornee
+
+
+
+OPH-112 | Déficit en cellules souches limbiques
+
+
+
+
+Légende source : Slit Lamp - disruption of the normal physiologic regenerative process and repopulation of corneal epithelium
+
+
+Imagerie / photographie clinique · 2000 × 1333 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPH-113 | Déficit en cellules souches limbiques
+
+
+
+
+Légende source : Disruption of the normal physiologic regenerative process and repopulation of corneal epithelium
+
+
+Imagerie / photographie clinique · 2000 × 1333 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                             68
+B - Cornee
+
+
+
+OPH-114 | Imagerie corneenne
+
+
+
+
+Légende source : Zeiss Atlas Report
+
+
+Imagerie / photographie clinique · 1500 × 1066 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          69
+B - Cornee
+
+
+
+OPH-115 | Imagerie corneenne
+
+
+
+
+Légende source : NIDEK Report
+
+
+Imagerie / photographie clinique · 1500 × 1156 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          70
+B - Cornee
+
+
+
+OPH-116 | Imagerie corneenne
+
+
+
+
+Légende source : Pentacam Overview Report
+
+
+Imagerie / photographie clinique · 1500 × 1271 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          71
+B - Cornee
+
+
+
+OPH-117 | Imagerie corneenne
+
+
+
+
+Légende source : Pentacam 4 Map Report
+
+
+Imagerie / photographie clinique · 1500 × 1244 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          72
+B - Cornee
+
+
+
+OPH-118 | Imagerie corneenne
+
+
+
+
+Légende source : Pellucid marginal corneal degeneration
+
+
+Imagerie / photographie clinique · 1500 × 725 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          73
+B - Cornee
+
+
+
+OPH-119 | Imagerie corneenne
+
+
+
+
+Légende source : Progression of keratoconus
+
+
+Schéma pédagogique / grille, non photographie clinique · 2000 × 631 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          74
+B - Cornee
+
+
+
+OPH-120 | Imagerie corneenne
+
+
+
+
+Légende source : Keratoconus on Pentacam (caption Figure 8; source alt text inaccurate)
+
+
+Imagerie / photographie clinique · 1500 × 1453 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          75
+B - Cornee
+
+
+
+OPH-121 | Imagerie corneenne
+
+
+
+
+Légende source : Visante AS-OCT showing normal anterior chamber anatomy
+
+
+Imagerie / photographie clinique · 1500 × 800 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          76
+B - Cornee
+
+
+
+OPH-122 | Imagerie corneenne
+
+
+
+
+Légende source : Visante report showing a poorly-adherent Descemets Membrane Endothelial Keratoplasty (DMEK) graft
+
+
+Imagerie / photographie clinique · 1500 × 1358 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                  77
+B - Cornee
+
+
+
+OPH-123 | Imagerie corneenne
+
+
+
+
+Légende source : Measurement of the residual stromal bed beneath a LASIK flap on AS-OCT
+
+
+Imagerie / photographie clinique · 1500 × 601 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          78
+B - Cornee
+
+
+
+OPH-124 | Imagerie corneenne
+
+
+
+
+Légende source : Confocal microscopy imaging of the various corneal layers using laser-scanning in vivo confocal technology
+
+
+Imagerie / photographie clinique · 1500 × 606 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                           79
+B - Cornee
+
+
+
+OPH-125 | Imagerie corneenne
+
+
+
+
+Légende source : Confocal microscopy showing normal corneal endothelium
+
+
+Imagerie / photographie clinique · 1500 × 1268 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          80
+B - Cornee
+
+
+
+OPH-126 | Imagerie corneenne
+
+
+
+
+Légende source : Fuchs endothelial dystrophy showing characteristic guttae
+
+
+Imagerie / photographie clinique · 1500 × 1672 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          81
+B - Cornee
+
+
+
+OPH-127 | Imagerie corneenne
+
+
+
+
+Légende source : Endothelial decompensation within a penetrating keratoplasty graft
+
+
+Imagerie / photographie clinique · 1500 × 2256 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          82
+B - Cornee
+
+
+
+OPH-128 | Imagerie corneenne
+
+
+
+
+Légende source : Acanthamoeba keratitis as seen on confocal microscopy
+
+
+Imagerie / photographie clinique · 1500 × 1117 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          83
+B - Cornee
+
+
+
+OPH-129 | Imagerie corneenne
+
+
+
+
+Légende source : Confocal microscopy detection of Acanthamoeba and fungal keratitis in a contact lens user
+
+
+Imagerie / photographie clinique · 1500 × 811 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                          84
+B - Cornee
+
+
+
+OPH-130 | Imagerie corneenne
+
+
+
+
+Légende source : FFungal keratitis seen on confocal microscopy.
+
+
+Imagerie / photographie clinique · 1500 × 1123 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          85
+C - Glaucome
+
+
+
+OPH-131 | Excavation glaucomateuse avancée
+
+
+
+
+Légende source : Color Fundus Image
+
+
+Imagerie / photographie clinique · 1500 × 644 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            86
+C - Glaucome
+
+
+
+OPH-132 | Excavation glaucomateuse avancée
+
+
+
+
+Légende source : OCT Results
+
+
+Imagerie / photographie clinique · 1500 × 858 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            87
+C - Glaucome
+
+
+
+OPH-133 | Encoche papillaire et déficit des fibres
+
+
+
+
+Légende source : Fundus photos
+
+
+Imagerie / photographie clinique · 1200 × 1027 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-134 | Encoche papillaire et déficit des fibres
+
+
+
+
+Légende source : humphrey examine
+
+
+Imagerie / photographie clinique · 2088 × 1275 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            88
+C - Glaucome
+
+
+
+OPH-135 | Lame criblée dans le glaucome
+
+
+
+
+Légende source : whole fundus shwoing deep optic nerve head cup and prominent inferotemporal notch secondary to optic nerve
+damage from primary open angle glaucoma
+
+Imagerie / photographie clinique · 400 × 315 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPH-136 | Lame criblée dans le glaucome
+
+
+
+
+Légende source : zoomed in fundus shwoing deep optic nerve head cup and prominent inferotemporal notch secondary to optic
+nerve damage from primary open angle glaucoma
+
+Imagerie / photographie clinique · 581 × 410 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                         89
+C - Glaucome
+
+
+
+OPH-137 | Hémorragie papillaire : glaucome à pression normale
+
+
+
+
+Légende source : Optic disc hemorrhage indicating inadequate intraocular pressure control in a patient with normal tension
+glaucoma
+
+Imagerie / photographie clinique · 1200 × 901 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPH-138 | Hémorragie papillaire : glaucome à pression normale
+
+
+
+
+Légende source : Closeup Optic disc hemorrhage indicating inadequate intraocular pressure control in a patient with normal tension
+glaucoma
+
+Imagerie / photographie clinique · 750 × 546 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                            90
+C - Glaucome
+
+
+
+OPH-139 | Croissant gris papillaire : piège diagnostique
+
+
+
+
+Légende source : severe thinning of the temporal neuroretinal rim
+
+
+Imagerie / photographie clinique · 1200 × 1013 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPH-140 | Fermeture aiguë de l’angle
+
+
+
+
+Légende source : acute angle closure
+
+
+Imagerie / photographie clinique · 500 × 160 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                            IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                   91
+C - Glaucome
+
+
+
+OPH-141 | Fermeture aiguë de l’angle
+
+
+
+
+Légende source : acute angle closure
+
+
+Imagerie / photographie clinique · 500 × 462 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-142 | Fermeture aiguë de l’angle
+
+
+
+
+Légende source : acute angle closure
+
+
+Imagerie / photographie clinique · 500 × 510 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            92
+C - Glaucome
+
+
+
+OPH-143 | Glaukomflecken et atrophie irienne
+
+
+
+
+Légende source : Glaukomflecken slit lamp
+
+
+Imagerie / photographie clinique · 800 × 533 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-144 | Glaukomflecken et atrophie irienne
+
+
+
+
+Légende source : Glaukomflecken atrophy
+
+
+Imagerie / photographie clinique · 1024 × 858 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            93
+C - Glaucome
+
+
+
+OPH-145 | Glaukomflecken et atrophie irienne
+
+
+
+
+Légende source : Glaukomflecken enlarge
+
+
+Imagerie / photographie clinique · 1024 × 767 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-146 | Iridotomie périphérique au laser
+
+
+
+
+Légende source : Temporal-LPI, Laser peripheral iridotomy
+
+
+Imagerie / photographie clinique · 2352 × 1568 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            94
+C - Glaucome
+
+
+
+OPH-147 | Fermeture de l’angle après DMEK
+
+
+
+
+Légende source : angle closure glaucoma, OCT, optical coherence tomography
+
+
+Imagerie / photographie clinique · 800 × 198 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                        IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026               95
+C - Glaucome
+
+
+
+OPH-148 | Iris bombé
+
+
+
+
+Légende source : iris bombe
+
+
+Imagerie / photographie clinique · 2000 × 1333 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-149 | Iris bombé
+
+
+
+
+Légende source : slit lamp of iris bombe
+
+
+Imagerie / photographie clinique · 650 × 437 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            96
+C - Glaucome
+
+
+
+OPH-150 | Iris bombé
+
+
+
+
+Légende source : iris bombe developed in this patient with chronic iridocyclitis and central posterior synechiae.
+
+
+Imagerie / photographie clinique · 800 × 533 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                              IMAGE ORIGINALE
+
+
+
+
+OPH-151 | Syndrome pseudoexfoliatif
+
+
+
+
+Légende source : alt text
+
+
+Imagerie / photographie clinique · 800 × 533 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                              IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                 97
+C - Glaucome
+
+
+
+OPH-152 | Syndrome pseudoexfoliatif
+
+
+
+
+Légende source : alt text
+
+
+Imagerie / photographie clinique · 2000 × 1333 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPH-153 | Syndrome pseudoexfoliatif
+
+
+
+
+Légende source : Deposition of exfoliative material on the anterior lens capsule
+
+
+Imagerie / photographie clinique · 1558 × 1052 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                    98
+C - Glaucome
+
+
+
+OPH-154 | Glaucome pseudoexfoliatif
+
+
+
+
+Légende source : pseudoexfoliation material on pupil margin
+
+
+Imagerie / photographie clinique · 500 × 451 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                      IMAGE ORIGINALE
+
+
+
+
+OPH-155 | Glaucome pseudoexfoliatif
+
+
+
+
+Légende source : bullseye lesion on lens capsule
+
+
+Imagerie / photographie clinique · 500 × 573 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                      IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026             99
+C - Glaucome
+
+
+
+OPH-156 | Glaucome pseudoexfoliatif
+
+
+
+
+Légende source : Sampaolesi's line on gonioscopy
+
+
+Imagerie / photographie clinique · 400 × 295 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                              IMAGE ORIGINALE
+
+
+
+
+OPH-157 | Dispersion pigmentaire
+
+
+
+
+Légende source : Iris transillumination defects in a radial pattern
+
+
+Imagerie / photographie clinique · 500 × 450 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                              IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                     100
+C - Glaucome
+
+
+
+OPH-158 | Dispersion pigmentaire
+
+
+
+
+Légende source : Krukenberg Spindle (pigment) dispersed on the corneal endothelium
+
+
+Imagerie / photographie clinique · 500 × 440 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPH-159 | Dispersion pigmentaire
+
+
+
+
+Légende source : Scheie's stripe: pigment on the lens capsule
+
+
+Imagerie / photographie clinique · 400 × 400 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                  101
+C - Glaucome
+
+
+
+OPH-160 | Ligne de Scheie : dispersion pigmentaire
+
+
+
+
+Légende source : Scheie stripe
+
+
+Imagerie / photographie clinique · 1024 × 683 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-161 | Ligne de Scheie : dispersion pigmentaire
+
+
+
+
+Légende source : Scheie stripe high magnification
+
+
+Imagerie / photographie clinique · 1024 × 744 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            102
+C - Glaucome
+
+
+
+OPH-162 | Rubéose irienne diabétique
+
+
+
+
+Légende source : Neovascularization of the iris os
+
+
+Imagerie / photographie clinique · 2016 × 1340 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-163 | Rubéose irienne diabétique
+
+
+
+
+Légende source : Neovascularization of the iris od
+
+
+Imagerie / photographie clinique · 2048 × 1358 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            103
+C - Glaucome
+
+
+
+OPH-164 | Rubéose irienne diabétique
+
+
+
+
+Légende source : Neovascularization of the iris od
+
+
+Imagerie / photographie clinique · 2048 × 1408 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-165 | Rubéose irienne
+
+
+
+
+Légende source : Rubeosis iridis
+
+
+Imagerie / photographie clinique · 527 × 480 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            104
+C - Glaucome
+
+
+
+OPH-166 | Rubéose irienne
+
+
+
+
+Légende source : Rubeosis iridis close-up
+
+
+Imagerie / photographie clinique · 554 × 480 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-167 | Glaucome congénital
+
+
+
+
+Légende source : bilateral buphthalmos
+
+
+Imagerie / photographie clinique · 400 × 410 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            105
+C - Glaucome
+
+
+
+OPH-168 | Glaucome congénital
+
+
+
+
+Légende source : slit lamp view of the cornea
+
+
+Imagerie / photographie clinique · 400 × 348 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPH-169 | Glaucome congénital
+
+
+
+
+Légende source : circumferential breaks in Descemet's membrane
+
+
+Imagerie / photographie clinique · 600 × 539 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                         IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                106
+C - Glaucome
+
+
+
+OPH-170 | Stries de Haab
+
+
+
+
+Légende source : Haab Striae OD
+
+
+Imagerie / photographie clinique · 2048 × 1436 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-171 | Stries de Haab
+
+
+
+
+Légende source : Haab Striae OS
+
+
+Imagerie / photographie clinique · 1928 × 1352 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            107
+C - Glaucome
+
+
+
+OPH-172 | Récession angulaire et cyclodialyse
+
+
+
+
+Légende source : Gonioscopy image of raquetball injury to eye
+
+
+Imagerie / photographie clinique · 1200 × 800 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPH-173 | Récession angulaire et cyclodialyse
+
+
+
+
+Légende source : Traumatic cyclodialysis cleft on high frequency ultrasound biomicroscopy
+
+
+Imagerie / photographie clinique · 1200 × 657 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                         108
+C - Glaucome
+
+
+
+OPH-174 | Récession angulaire et cyclodialyse
+
+
+
+
+Légende source : A 65-year-old woman presented for evaluation of hypotony after cataract surgery in her left eye. On examination,
+the patient’s intraocular pressure was 1-2 mmHg and on gonioscopy there was a large,...
+
+Imagerie / photographie clinique · 4000 × 1779 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPH-175 | Hypertonie et sang dans le canal de Schlemm
+
+
+
+
+Légende source : full dilated eye showing hypertension
+
+
+Imagerie / photographie clinique · 800 × 600 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                          109
+C - Glaucome
+
+
+
+OPH-176 | Hypertonie et sang dans le canal de Schlemm
+
+
+
+
+Légende source : canal eye showing hypertension
+
+
+Imagerie / photographie clinique · 800 × 600 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPH-177 | Précipités trabéculaires : syndrome de Grant
+
+
+
+
+Légende source : alt text
+
+
+Imagerie / photographie clinique · 750 × 419 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                     IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026            110
+C - Glaucome
+
+
+
+OPH-178 | Synéchies antérieures périphériques : syndrome ICE
+
+
+
+
+Légende source : gonioscopic photo demonstrates a high PAS which extends to Schwalbe's line and is characteristic of ICE
+syndrome
+
+Imagerie / photographie clinique · 2000 × 1715 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPH-179 | Synéchies antérieures périphériques : syndrome ICE
+
+
+
+
+Légende source : anterior segment of the right eye shows corectopia with the pupil drawn inferotemporally.
+
+
+Imagerie / photographie clinique · 1500 × 994 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                        111
+C - Glaucome
+
+
+
+OPH-180 | Synéchies antérieures périphériques : syndrome ICE
+
+
+
+
+Légende source : Gonioscopic photography of the right eye shows high peripheral anterior synechiae (PAS)
+
+
+Imagerie / photographie clinique · 1500 × 1142 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPH-181 | iStent : micro-pontage trabéculaire
+
+
+
+
+Légende source : example iStent trabecular micro-bypass stent
+
+
+Imagerie / photographie clinique · 2048 × 1365 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                           IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                        112
+C - Glaucome
+
+
+
+OPH-182 | Décollements choroïdiens appositionnels
+
+
+
+
+Légende source : Slit lamp exam revealed kissing choroidal effusions
+
+
+Imagerie / photographie clinique · 1280 × 854 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                               IMAGE ORIGINALE
+
+
+
+
+OPH-183 | Atrophie de graisse orbitaire sous prostaglandine
+
+
+
+
+Légende source : angle recession glaucoma of the left eye treated with a prostaglandin analogue
+
+
+Imagerie / photographie clinique · 900 × 340 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                               IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                               113
+C - Glaucome
+
+
+
+OPH-184 | Atrophie de graisse orbitaire sous prostaglandine
+
+
+
+
+Légende source : discontinuing the prostaglandin analogue and her orbital fat atrophy had markedly improved
+
+
+Imagerie / photographie clinique · 900 × 340 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                              IMAGE ORIGINALE
+
+
+
+
+OPH-185 | Hémorragie après phaco-GATT
+
+
+
+
+Légende source : Retroillumation of calcium deposits on a 3-piece silicone intraocular lens.
+
+
+Imagerie / photographie clinique · 1474 × 1236 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                              IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                           114
+C - Glaucome
+
+
+
+OPH-186 | Hémorragie après phaco-GATT
+
+
+
+
+Légende source : Broad beam illumination of calcium deposits on the posterior surface of a 3-piece silicone intraocular lens.
+
+
+Imagerie / photographie clinique · 1474 × 1236 px
+Crédit : EyeRounds / University of Iowa. CC BY-NC-ND 3.0
+
+PAGE CLINIQUE ET AUTEURS                                             IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                                                             115
+C - Glaucome
+
+
+
+OPH-187 | Glaucome : structure et fonction
+
+
+
+
+Légende source : fundus photographs cup to disc ratios
+
+
+Imagerie / photographie clinique · 600 × 193 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          116
+C - Glaucome
+
+
+
+OPH-188 | Glaucome : structure et fonction
+
+
+
+
+Légende source : Fundus photograph demonstrating an inferotemporal hemorrhage
+
+
+Imagerie / photographie clinique · 600 × 886 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          117
+C - Glaucome
+
+
+
+OPH-189 | Glaucome : structure et fonction
+
+
+
+
+Légende source : Fundus photograph demonstrating an inferior notch of the neuroretinal rim
+
+
+Imagerie / photographie clinique · 600 × 882 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          118
+C - Glaucome
+
+
+
+OPH-190 | Glaucome : structure et fonction
+
+
+
+
+Légende source : Humphrey Visual Field
+
+
+Imagerie / photographie clinique · 600 × 366 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          119
+C - Glaucome
+
+
+
+OPH-191 | Glaucome : structure et fonction
+
+
+
+
+Légende source : OCT demonstrating superior and inferior thinning of the RNFL
+
+
+Imagerie / photographie clinique · 600 × 735 px
+Crédit : EyeRounds / University of Iowa. Usage pédagogique; voir source.
+
+PAGE CLINIQUE ET AUTEURS                                                   IMAGE ORIGINALE
+
+
+
+
+OPHTALMOLOGIE R1 • Banque de références visuelles • 31 octobre 2026                          120
+
