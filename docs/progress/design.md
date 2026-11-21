@@ -17,4 +17,14 @@
 
 ## Blockers / notes
 - Web searches are logged in brand/BRAND.md, not in market/SOURCES.md, because that file belongs to the market role. Market may copy them.
-- videos/: nothing produced in this pass.
+- videos/: done in cycle 3 (see below).
+
+## Cycle 3: preview videos (2026-11-21)
+- Done: 16 MP4s recorded from the real interface (site/ served locally, Playwright with CDP screencast at 2×, brand fonts served locally, external requests blocked), with FR/EN captions burned in through libass and end cards carrying the logo, tagline and link.
+  - Scenes: featured case (CRAO), A-scan simulator, image of the day + streak, and a social variant on the OCT schematic p-oct-9.
+  - Formats: 9:16 1080×1920 and 16:9 1920×1080.
+  - Plus a 6-second reveal loop (MP4 + GIF, FR/EN) and half-resolution poster PNGs.
+  - Every file is between 0.4 and 1.8 MB (folder about 24 MB). Durations run 19–25 s.
+- Rights: `ocelle-cas-vedette-*` and `ocelle-image-du-jour-*` show EyeRounds photos, so site and App Store only. `ocelle-examens-ascan-*`, `ocelle-social-*` and the loop are original schematics, OK on social networks. The table is in videos/README.md.
+- Demo data: a 6-day streak is pre-loaded, and the image of the day is pinned to OPH-059 for the recording (stated in the README).
+- Remaining: App Store 6.9"/6.5" preview sizes (use the iOS simulator videos or re-run the recorder at those sizes). No audio track.
