@@ -17,6 +17,22 @@ var U = {
   hash: function (str) { var h = 2166136261; for (var i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; },
   reduced: function () { if (document.documentElement.classList.contains('no-motion')) return true; try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } },
   words: function (s) { return String(s || '').split(/\s+/).filter(Boolean).length; },
+  /* words a learner actually sees in a region: skips closed <details> bodies, hidden nodes, SVG labels and decision trees (STYLE-PEDAGO budgets) */
+  wordsVisible: function (root) {
+    root = root || document.querySelector('[data-step-body]') || document.getElementById('view'); if (!root) return 0;
+    var n = 0, w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), node;
+    while ((node = w.nextNode())) {
+      var el = node.parentElement, skip = false;
+      for (var e = el; e && e !== root.parentElement; e = e.parentElement) {
+        if (e.hidden || e.getAttribute('aria-hidden') === 'true' || e.namespaceURI === 'http://www.w3.org/2000/svg' || e.hasAttribute('data-tree') || e.classList.contains('tree')) { skip = true; break; }
+        if (e.tagName === 'DETAILS' && !e.open && !(el.closest('summary') && el.closest('summary').parentElement === e)) { skip = true; break; }
+      }
+      if (skip || !el || (el.offsetParent === null && getComputedStyle(el).position !== 'fixed')) continue;
+      n += U.words(node.textContent);
+    }
+    return n;
+  },
+  wordsDev: function () { try { return /^(localhost|127\.0\.0\.1)$/.test(location.hostname) || /[?&]dev=1/.test(location.search); } catch (e) { return false; } },
   plural: function (n, one, many) { return n + ' ' + (n > 1 ? many : one); },
   debounce: function (fn, ms) { var t; return function () { var a = arguments, self = this; clearTimeout(t); t = setTimeout(function () { fn.apply(self, a); }, ms); }; },
   toast: function (msg) { var el = document.createElement('div'); el.className = 'toast'; el.setAttribute('role', 'status'); el.textContent = msg; document.body.appendChild(el); setTimeout(function () { el.remove(); }, 2600); }
@@ -82,7 +98,7 @@ var Store = {
   },
   merge: function (a, b) {
     var out = JSON.parse(JSON.stringify(a));
-    ['answers', 'visited', 'read', 'cases', 'srs', 'cloze', 'games', 'inv'].forEach(function (k) {
+    ['answers', 'visited', 'read', 'cases', 'srs', 'cloze', 'games', 'inv', 'fstep'].forEach(function (k) {
       var src = b[k] || {}; out[k] = out[k] || {};
       Object.keys(src).forEach(function (id) {
         var x = out[k][id], y = src[id];
@@ -325,6 +341,8 @@ var Router = {
   refresh: function (soft) {
     var name = Router.parse();
     var view = Views.resolve(name);
+    name = Router.parse(); // the resolver may canonicalise the route (bare fiche → #<fiche>/voir)
+    Router.base = view.trackId || name;
     var host = U.$('#view');
     if (soft && name === Router.cur && host.getAttribute('data-keep') === '1') { Shell.render(); return; }
     Gloss.hide();
@@ -339,7 +357,7 @@ var Router = {
     Shell.close();
     try { Figures.hydrate(host); Sims.hydrate(host); if (view.after) view.after(host); } catch (e) { console.error(e); }
     Router.tables(host);
-    if (view.track !== false && name !== 'accueil') Store.visit(name);
+    if (view.track !== false && name !== 'accueil') Store.visit(view.trackId || name);
     document.title = (view.title ? view.title + ' · ' : '') + t('app.title');
   }
 };
@@ -363,7 +381,7 @@ var Shell = {
     return '<svg class="logo" viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" rx="236" fill="#1F2CFF"/><path d="M302.4 302.8C314.8 296.5 351.2 274.4 377.2 264.8C403.2 255.3 431.3 248.9 458.3 245.5C485.4 242.2 513.4 242.1 539.7 244.8C566.0 247.6 592.3 253.6 616.1 262.0C639.9 270.4 662.7 282.0 682.7 295.3C702.7 308.6 720.6 324.7 735.9 341.7C751.1 358.7 763.8 377.8 774.2 397.3C784.6 416.8 792.5 437.6 798.2 458.8C803.8 480.0 807.4 502.1 808.0 524.5C808.6 546.9 807.2 570.3 801.9 593.1C796.5 615.9 788.3 639.8 775.9 661.2C763.5 682.6 746.9 704.3 727.5 721.8C708.0 739.3 683.9 755.1 659.2 766.0C634.6 776.9 606.2 784.1 579.6 787.2C553.0 790.2 524.9 788.5 499.7 784.4C474.5 780.4 450.2 772.0 428.2 762.9C406.3 753.8 386.5 741.9 368.0 729.8C349.5 717.6 332.8 704.3 317.2 690.0C301.5 675.7 286.7 660.7 273.9 644.1C261.0 627.5 248.8 609.6 240.1 590.2C231.3 570.8 224.2 549.4 221.6 527.9C219.1 506.3 219.8 482.8 224.9 460.8C230.0 438.9 239.7 416.1 252.4 396.2C265.1 376.4 282.5 357.3 301.3 341.5C320.1 325.8 342.6 312.2 365.1 301.7C387.7 291.2 424.8 282.5 436.7 278.7" fill="none" stroke="#D8FF3A" stroke-width="76" stroke-linecap="round" stroke-linejoin="round"/><circle cx="530" cy="500" r="96" fill="#D8FF3A"/></svg>';
   },
   navHtml: function () {
-    var cur = Router.cur;
+    var cur = Router.base || Router.cur;
     function a(id, label, extra, n) {
       var dot = Prog.ficheDone(id) ? 'done' : (Prog.ficheSeen(id) ? 'seen' : '');
       return '<a href="#' + id + '" class="' + (cur === id ? 'on' : '') + '"' + (cur === id ? ' aria-current="page"' : '') + '>' + (n ? '<span class="n">' + n + '</span>' : '') + '<span>' + label + '</span>' + (extra || Prog.dot(dot)) + '</a>';
@@ -394,7 +412,7 @@ var Shell = {
     return h;
   },
   tabHtml: function () {
-    var cur = Router.cur, games = ['cartes', 'cartes-vocab', 'mots-troues', 'jeu-images', 'triage', 'associe', 'quiz', 'quiz-run'];
+    var cur = Router.base || Router.cur, games = ['cartes', 'cartes-vocab', 'mots-troues', 'jeu-images', 'triage', 'associe', 'quiz', 'quiz-run'];
     var tb = function (id, ic, label, also) { var on = cur === id || (also || []).indexOf(cur) >= 0 || (id === 'apprendre' && (D.fiche(cur) || /^(a-|b-bases|c-bases|module-)/.test(cur))); return '<a href="#' + id + '" class="' + (on ? 'on' : '') + '"' + (on ? ' aria-current="page"' : '') + '><span class="ic" aria-hidden="true">' + ic + '</span><span>' + label + '</span></a>'; };
     return tb('apprendre', ICO.book, t('nav.learn')) + tb('cas', ICO.cas, t('nav.cases')) + (Views.investigations ? tb('investigations', ICO.scan, t('nav.inv.short'), Shell.invRoutes()) : '') + tb('reviser', ICO.cards, t('nav.review'), games) + tb('progression', ICO.bars, t('nav.progress'));
   },

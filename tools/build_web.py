@@ -38,8 +38,8 @@ RIGHTS_FILTER_JS = r"""(function () {
     (O.inv || []).forEach(function (e) { if (e.practice) e.practice = e.practice.filter(function (id) { return ok[id]; }); }); }
 })();
 """
-SRC_ORDER = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'motion', 'views', 'web']
-CSS_ORDER = ['styles', 'investigations', 'web']
+SRC_ORDER = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'motion', 'tree', 'views', 'web']
+CSS_ORDER = ['styles', 'investigations', 'tree', 'web']
 THEME_LIGHT, THEME_DARK, COBALT, BRAND_BG = '#1f2cff', '#1a23d9', '#1f2cff', '#1F2CFF'
 TITLE = {'fr': 'Ocelle · ophtalmologie pour externes et R1', 'en': 'Ocelle · ophthalmology for clerks and R1s'}
 DESC = {'fr': 'Apprends à voir le signe qui compte : cornée, glaucome et examens, en images, cas et jeux. Gratuit, sans pub.',

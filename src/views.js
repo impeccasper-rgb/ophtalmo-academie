@@ -113,7 +113,7 @@ Views.accueil = {
     var dc = Dates.get('cornee'), dg = Dates.get('glaucome'), d = Settings.get().depth;
     var cd = '<div class="hero-cd"><span><b>' + L.modules.B + '</b> ' + U.esc(Dates.rel(dc)) + '</span><span><b>' + L.modules.C + '</b> ' + U.esc(Dates.rel(dg)) + '</span></div>';
     if (!Dates.custom()) cd = '';
-    var last = Store.p.last && Store.p.last !== 'accueil' && D.title(Store.p.last) ? '<a class="btn hero-btn" href="#' + Store.p.last + '">' + U.esc(t('home.resume', { t: D.title(Store.p.last) })) + '</a>' : '<a class="btn hero-btn" href="#a-anatomie">' + t('home.start') + '</a>';
+    var last = Store.p.last && Store.p.last !== 'accueil' && D.title(Store.p.last) ? '<a class="btn hero-btn" href="#' + Store.p.last + (D.fiche(Store.p.last) ? '/' + ficheStep(Store.p.last) : '') + '">' + U.esc(t('home.resume', { t: D.title(Store.p.last) })) + '</a>' : '<a class="btn hero-btn" href="#a-anatomie">' + t('home.start') + '</a>';
     var q = SRS.queue(DAILY, '', 15), nx = Plan.next();
     var nxt = nx ? (function () { var id = nx.ids.filter(function (x) { return !Prog.ficheDone(x); })[0] || (nx.quiz ? 'quiz' : nx.cases ? 'cas' : 'reviser'); return '<a class="next-step" href="#' + id + '"><span class="eyebrow">' + t('home.next') + '</span><b>' + U.esc(nx.t) + '</b><span class="small">' + U.esc(t('home.open', { t: D.title(id) || t('nav.review') })) + '</span></a>'; })() : '<div class="next-step"><span class="eyebrow">' + t('home.plan') + '</span><b>' + t('home.plandone') + '</b></div>';
     var levels = [1, 2, 3].map(function (k) { return '<button type="button" class="level-card' + (d === k ? ' on' : '') + '" data-act="depth" data-v="' + k + '" aria-pressed="' + (d === k) + '"><span class="lvl-n">' + k + '</span><b>' + DEPTHS[k].t + '</b><span class="xs muted">' + DEPTHS[k].en + '</span><span class="small">' + U.esc(DEPTHS[k].d) + '</span></button>'; }).join('');
@@ -346,79 +346,119 @@ Views['b-bases'] = capsuleView('b-bases');
 Views['c-bases'] = capsuleView('c-bases');
 
 /* ---------- fiche ---------- */
-function ficheView(f) {
+/* ---------- fiche: 4 screens (Voir → Comprendre → Décider → S'entraîner), one per route #<id>/<step> ---------- */
+var FSTEPS = ['voir', 'comprendre', 'decider', 'entrainer'];
+var FSTEP_KEY = { voir: 'f.see', comprendre: 'f.understand', decider: 'f.decide', entrainer: 'f.train' };
+function ficheStep(id) { var s = (Store.p.fstep || {})[id]; return s && FSTEPS.indexOf(s.s) >= 0 ? s.s : 'voir'; }
+/* collapsed overflow block (open by default from level 2) */
+function moreBlock(html) { return html ? '<details class="acc more"' + (Settings.get().depth >= 2 ? ' open' : '') + '><summary>' + t('f.more') + '</summary><div class="acc-b stack">' + html + '</div></details>' : ''; }
+function hyList(items, title) { return items && items.length ? '<div class="hy-box"><div class="hy-h"><span class="hy-badge">High yield</span><b>' + U.esc(title) + '</b></div><ul class="hy-list">' + items.map(function (s) { return '<li>' + U.md(s) + '</li>'; }).join('') + '</ul></div>' : ''; }
+function txBlock(f, scope) {
+  // compact card group when the content provides it (first line / when to refer / pitfall / Quebec); otherwise the treatment list
+  var c = f.treatment || f.txCard || null;
+  if (c && (c.first || c.refer || c.pitfall || c.trap)) {
+    var card = function (k, cls, v) { return v ? '<div class="tx-card ' + cls + '"><span class="eyebrow">' + t(k) + '</span><div>' + (Array.isArray(v) ? '<ul class="blist">' + v.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' : T(v, scope)) + '</div></div>' : ''; };
+    return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><div class="tx-grid">' + card('tx.first', 'first', c.first) + card('tx.refer', 'refer', c.refer) + card('tx.trap', 'trap', c.pitfall || c.trap) + card('tx.qc', 'qc', c.qc || c.quebec) + '</div></div>';
+  }
+  return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><p class="xs muted">' + t('f.tx.d') + '</p>' + (f.treatments || []).map(function (tr) {
+    return '<details class="acc"><summary>' + U.md(tr.name) + '</summary><div class="acc-b"><div class="kv"><span class="k">' + t('f.how') + '</span><span>' + T(tr.how, scope) + '</span></div><div class="kv"><span class="k">' + t('f.why') + '</span><span>' + T(tr.why, scope) + '</span></div><div class="kv" data-dz="3"><span class="k">' + t('f.pros') + '</span><span>' + T(tr.pros, scope) + '</span></div><div class="kv" data-dz="3"><span class="k">' + t('f.cons') + '</span><span>' + T(tr.cons, scope) + '</span></div><div class="kv" data-dz="2"><span class="k">' + t('f.cx') + '</span><span>' + T(tr.cx, scope) + '</span></div></div></details>';
+  }).join('') + '</div>';
+}
+function algoHtml(f, scope) {
+  if (window.Tree && typeof Tree.render === 'function') { try { return '<div class="stack"><h2 class="h3">' + t('f.algo') + '</h2><div data-tree>' + Tree.render(f.cat.algo, { fiche: f.id, scope: scope }) + '</div></div>'; } catch (e) { console.error('Tree.render', e); } }
+  return '<div class="stack"><div class="row"><h2 class="h3" style="margin:0">' + t('f.algo') + '</h2><button class="btn sm" data-walk>' + t('f.walk') + '</button></div><div class="algo" data-algo>' +
+    f.cat.algo.map(function (a, i) { return '<div class="anode" data-node="' + i + '"><div class="q">' + T(a.q, scope) + '</div><div class="yn"><div class="yes" data-yn="yes"><span class="lab">' + t('f.yes') + '</span><span>' + T(a.yes, scope) + '</span></div><div class="no" data-yn="no"><span class="lab">' + t('f.no') + '</span><span>' + T(a.no, scope) + '</span></div></div></div>'; }).join('') + '</div></div>';
+}
+function ficheView(f, step) {
+  step = FSTEPS.indexOf(step) >= 0 ? step : 'voir';
+  var si = FSTEPS.indexOf(step);
   return {
-    title: f.title, render: function () {
+    title: I18N.title(f) + ' · ' + t(FSTEP_KEY[step]), trackId: f.id, render: function () {
       var m = f.module, list = D.ordered(m), idx = list.map(function (x) { return x.id; }).indexOf(f.id), prev = list[idx - 1], next = list[idx + 1];
       var scope = Gloss.scope([f.title, f.en]);
-      var mins = readMin(f);
-      var pre = (PREREQ[f.id] || []).map(function (p) { return '<a href="#' + p + '">' + U.esc(D.title(p)) + (Prog.ficheDone(p) ? ' ✓' : '') + '</a>'; }).join('');
       var dpt = Settings.get().depth, hy = HY.get(f.id);
       var ph = photosFor(f.id), pairs = pairsFor(f.id);
-      var mvNav = '<nav class="mv-nav" aria-label="' + t('f.steps.aria') + '">' + [['mv-voir', '1', t('f.see')], ['mv-comp', '2', t('f.understand')], ['mv-dec', '3', t('f.decide')], ['mv-train', '4', t('f.train')]].map(function (n) { return '<a href="#' + f.id + '" data-act="goto" data-target="' + n[0] + '" onclick="return false"><span class="k">' + n[1] + '</span>' + n[2] + '</a>'; }).join('') + '</nav>';
+      var pre = (PREREQ[f.id] || []).map(function (p) { return '<a href="#' + p + '">' + U.esc(D.title(p)) + (Prog.ficheDone(p) ? ' ✓' : '') + '</a>'; }).join('');
       var h = [];
       h.push(crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m + ' · ' + L.modules[m], 'module-' + m.toLowerCase()], [m + (idx + 1), null]]));
-      if (!Prog.unlocked(m)) h.push(lockHtml(m));
-      h.push('<div class="phead fiche-head"><div class="eyebrow">' + m + (idx + 1) + ' · ' + L.modules[m] + ' · ' + t('f.min', { n: readMinAt(f, dpt) }) + '</div><h1>' + U.esc(I18N.title(f)) + (window.I18N ? I18N.badge(f) : '') + '</h1>' + enSub(f.en) + '<div class="row tight">' + (f.tags || []).map(L.tag).join('') + '</div>' +
-        '<p class="oneliner">' + T(f.oneLiner, scope) + '</p>' + (pre ? '<div class="prereq"><span class="small muted">' + t('f.prereq') + '</span>' + pre + '</div>' : '') +
+      h.push('<div class="phead fiche-head"><div class="eyebrow">' + m + (idx + 1) + ' · ' + L.modules[m] + ' · ' + t('f.min', { n: readMinAt(f, dpt) }) + '</div><h1>' + U.esc(I18N.title(f)) + (window.I18N ? I18N.badge(f) : '') + '</h1>' + enSub(f.en) +
+        (si === 0 ? '<div class="row tight">' + (f.tags || []).map(L.tag).join('') + '</div>' : '') +
         '<div class="row depth-row"><span class="xs muted">' + t('f.level') + '</span>' + depthSeg(true) + '</div></div>');
-      h.push(mvNav);
-      // 1 VOIR
-      var cmp = f.compare ? '<div class="stack"><h3 class="h4">' + U.esc(f.compare.title) + '</h3><div class="pair"><div><div class="lab n">' + t('f.normal') + '</div>' + Figures.render(f.compare.normal.figure, { caption: f.compare.normal.caption }) + '</div><div><div class="lab p">' + t('f.patho') + '</div><div data-cmp>' + Figures.render(f.compare.patho.figure, { caption: f.compare.patho.caption }) + '</div></div></div>' +
-        '<div><button class="btn sm" data-cmpreveal aria-expanded="false">' + t('f.revealanom') + '</button><ul class="reveal-list" data-cmplist hidden>' + f.compare.patho.reveal.map(function (r) { return '<li>' + T(r, scope) + '</li>'; }).join('') + '</ul></div></div>' : '';
-      var voir = (ph.length ? '<div class="voir-grid"><div class="stack">' + Photo.carousel(ph) + '</div><div class="stack voir-side"><div class="callout"><span class="eyebrow">' + t('f.twosent') + '</span><span>' + T(f.definition, scope) + '</span></div><p class="small muted">' + t('f.observe') + '</p></div></div>' : '') +
-        cmp + dz(2, pairs.length ? '<div class="stack"><h3 class="h4">' + t('f.pairs') + '</h3>' + pairs.map(pairHtml).join('') + '</div>' : '') +
-        dz(2, '<div class="stack"><h3 class="h4">' + t('f.anat') + '</h3><p class="read">' + T(f.anatomy.text, scope) + '</p>' + (f.anatomy.figure ? '<div style="max-width:680px">' + Figures.render(f.anatomy.figure) + '</div>' : '') + '</div>');
-      h.push('<section class="mv" id="mv-voir">' + secH('1', t('f.see')) + voir + mvMore(2, t('f.more.see')) + '</section>');
-      // 2 COMPRENDRE
-      var comp = (ph.length ? '' : '<div class="callout"><span class="eyebrow">' + t('f.twosent') + '</span><span style="font-size:var(--fs-md)">' + T(f.definition, scope) + '</span></div>') +
-        HY.essentials(f.id, t('f.hy')) +
-        '<div class="stack"><h3 class="h4">' + U.esc(t('f.mech', { t: f.causal.title })) + '</h3><div class="row"><button class="btn primary sm" data-causal="play">' + t('f.play') + '</button><span class="small muted">' + t('f.levers') + '</span></div>' +
-        '<div class="chips">' + f.causal.levers.map(function (l, i) { return '<button class="chip" data-lever="' + i + '" aria-pressed="false">' + U.esc(l.label) + '</button>'; }).join('') + '</div>' +
-        '<div class="chain" data-chain>' + f.causal.steps.map(function (s, i) { return '<div class="cstep k-' + s.kind + '" data-step="' + i + '"><div class="node">' + (i + 1) + '</div><div class="body"><span class="k">' + (L.kinds[s.kind] || s.kind) + '</span><b>' + U.md(s.label) + '</b><span class="small" data-dz="2">' + T(s.detail, scope) + '</span><div class="cutslot"></div></div></div>'; }).join('') + '</div></div>' +
-        (f.mnemonic ? '<div class="callout green"><span class="eyebrow">' + U.esc(t('f.mnemo', { t: f.mnemonic.title })) + '</span><span>' + T(f.mnemonic.text, scope) + '</span></div>' : '') +
-        dz(2, '<div class="twocol"><div class="stack"><h3 class="h4">' + t('f.risk') + '</h3><ul class="blist">' + f.risk.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="stack"><h3 class="h4">' + t('f.pres') + '</h3><ul class="blist">' + f.presentation.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>');
-      h.push('<section class="mv" id="mv-comp">' + secH('2', t('f.understand')) + comp + mvMore(2, t('f.more.comp')) + '</section>');
-      // 3 DÉCIDER
-      var dec = '<div class="callout red"><span class="eyebrow">' + t('f.redflags') + '</span><ul class="blist red">' + f.redFlags.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>' +
-        dz(2, '<div class="stack"><h3 class="h4">' + t('f.signs') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.sign') + '</th><th>' + t('f.signwhy') + '</th></tr></thead><tbody>' + f.exam.signs.map(function (x) { return '<tr><td>' + T(x.sign, scope) + '</td><td>' + T(x.why, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>') +
-        dz(2, '<div class="stack"><h3 class="h4">' + t('f.tests') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.test') + '</th><th>' + t('f.when') + '</th><th>' + t('f.read') + '</th></tr></thead><tbody>' + f.exam.tests.map(function (x) { return '<tr><td>' + T(x.test, scope) + '</td><td>' + T(x.when, scope) + '</td><td>' + T(x.read, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>') +
-        dz(2, '<div class="stack"><h3 class="h4">' + t('f.ddx') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.dx') + '</th><th>' + t('f.clue') + '</th></tr></thead><tbody>' + f.ddx.map(function (d) { return '<tr><td>' + T(d.dx, scope) + '</td><td>' + T(d.clue, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>') +
-        '<div class="stack"><div class="row"><h3 class="h4" style="margin:0">' + t('f.algo') + '</h3><button class="btn sm" data-walk>' + t('f.walk') + '</button></div><div class="algo" data-algo>' +
-        f.cat.algo.map(function (a, i) { return '<div class="anode" data-node="' + i + '"><div class="q">' + T(a.q, scope) + '</div><div class="yn"><div class="yes" data-yn="yes"><span class="lab">' + t('f.yes') + '</span><span>' + T(a.yes, scope) + '</span></div><div class="no" data-yn="no"><span class="lab">' + t('f.no') + '</span><span>' + T(a.no, scope) + '</span></div></div></div>'; }).join('') + '</div></div>' +
-        '<div class="stack"><h3 class="h4">' + t('f.tx') + '</h3><p class="xs muted">' + t('f.tx.d') + '</p>' + f.treatments.map(function (tr) {
-          return '<details class="acc"><summary>' + U.md(tr.name) + '</summary><div class="acc-b"><div class="kv"><span class="k">' + t('f.how') + '</span><span>' + T(tr.how, scope) + '</span></div><div class="kv"><span class="k">' + t('f.why') + '</span><span>' + T(tr.why, scope) + '</span></div><div class="kv" data-dz="3"><span class="k">' + t('f.pros') + '</span><span>' + T(tr.pros, scope) + '</span></div><div class="kv" data-dz="3"><span class="k">' + t('f.cons') + '</span><span>' + T(tr.cons, scope) + '</span></div><div class="kv" data-dz="2"><span class="k">' + t('f.cx') + '</span><span>' + T(tr.cx, scope) + '</span></div></div></details>';
-        }).join('') + '</div>' +
-        dz(2, '<div class="stack"><h3 class="h4">' + t('f.phases') + '</h3><div class="phases">' + f.cat.phases.map(function (p) { return '<div class="phase p-' + p.phase + '"><div class="ph"><i></i>' + (L.phases[p.phase] || p.phase) + '</div><ul class="blist">' + p.items.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div></div>') +
-        dz(3, '<div class="callout violet"><span class="eyebrow">' + t('f.local') + '</span><span>' + T(f.cat.local, scope) + '</span></div>');
-      h.push('<section class="mv" id="mv-dec">' + secH('3', t('f.decide')) + dec + mvMore(3, t('f.more.dec')) + '</section>');
-      // 4 S'ENTRAÎNER
-      var qids = quizIds(function (q) { return q.topic === f.id; });
-      var train = '<div class="stack"><h3 class="h4">' + t('f.pearls') + '</h3><div class="pearls">' + f.pearls.map(function (p, i) { return '<div class="pearl-card" role="button" tabindex="0" data-pearl="' + i + '" aria-expanded="false"><span class="who">' + t('f.asks') + '</span><span class="q">' + U.md(p.q) + '</span><span class="hint">' + t('f.think') + '</span><span class="a" hidden>' + T(p.a, scope) + '</span></div>'; }).join('') + '</div></div>' +
-        trainBlock(f.id) + (qids.length ? miniQuiz(f.id, qids, t('mini.fiche')) : '');
-      h.push('<section class="mv" id="mv-train">' + secH('4', t('f.train')) + train + '</section>');
-      // sources & review
-      var links = (OPH.images && OPH.images[f.id]) || [];
-      h.push('<details class="acc src-acc"><summary>' + t('f.sources') + '</summary><div style="padding:0 14px 14px">' + (links.length ? '<ul class="src-list">' + links.map(function (l) { return '<li><a href="' + U.esc(l.url) + '" target="_blank" rel="noopener">' + U.esc(l.title) + '</a> <span class="muted">· ' + U.esc(l.site) + '</span><div class="small muted">' + U.md(l.look) + '</div></li>'; }).join('') + '</ul>' : '') +
-        '<ul class="src-list">' + f.sources.map(function (x) { return '<li class="small">' + U.md(x) + '</li>'; }).join('') + '</ul>' + reviewMeta(f.id) + '</div></details>');
-      h.push('<div class="row" style="justify-content:space-between">' + (prev ? '<a class="btn ghost" href="#' + prev.id + '">← ' + U.esc(prev.title) + '</a>' : '<a class="btn ghost" href="#' + (m === 'B' ? 'b-bases' : 'c-bases') + '">← ' + t('nav.foundations') + '</a>') + readBtn(f.id) + (next ? '<a class="btn" href="#' + next.id + '">' + U.esc(next.title) + ' →</a>' : '<a class="btn" href="#module-' + m.toLowerCase() + '">' + t('f.endmod', { m: m }) + '</a>') + '</div>');
-      return '<div class="page">' + h.join('') + '</div>';
+      // 4-pip progress
+      h.push('<nav class="fsteps" aria-label="' + t('f.steps.aria') + '"><ol>' + FSTEPS.map(function (s, k) { return '<li class="' + (k === si ? 'on' : k < si ? 'done' : '') + '"><a href="#' + f.id + '/' + s + '"' + (k === si ? ' aria-current="step"' : '') + '><span class="pip" aria-hidden="true">' + (k + 1) + '</span><span class="lab">' + t(FSTEP_KEY[s]) + '</span></a></li>'; }).join('') + '</ol></nav>');
+      var body = '';
+      if (step === 'voir') {
+        var cmp = f.compare ? '<div class="stack"><h2 class="h3">' + U.esc(f.compare.title) + '</h2><div class="pair"><div><div class="lab n">' + t('f.normal') + '</div>' + Figures.render(f.compare.normal.figure, { caption: f.compare.normal.caption }) + '</div><div><div class="lab p">' + t('f.patho') + '</div><div data-cmp>' + Figures.render(f.compare.patho.figure, { caption: f.compare.patho.caption }) + '</div></div></div>' +
+          '<div><button class="btn sm" data-cmpreveal aria-expanded="false">' + t('f.revealanom') + '</button><ul class="reveal-list" data-cmplist hidden>' + f.compare.patho.reveal.map(function (r) { return '<li>' + T(r, scope) + '</li>'; }).join('') + '</ul></div></div>' : '';
+        var two = '<div class="callout"><span class="eyebrow">' + t('f.twosent') + '</span><span>' + T(f.definition, scope) + '</span></div>';
+        body = (ph.length ? '<div class="voir-grid"><div class="stack">' + Photo.carousel(ph) + '</div><div class="stack voir-side">' + two + '</div></div>' : (cmp || (f.anatomy.figure ? '<div style="max-width:680px">' + Figures.render(f.anatomy.figure) + '</div>' : '')) + two) +
+          moreBlock((f.oneLiner ? '<p class="oneliner">' + T(f.oneLiner, scope) + '</p>' : '') + (ph.length ? '<p class="small muted">' + t('f.observe') + '</p>' + cmp : '') +
+            (pairs.length ? '<div class="stack"><h3 class="h4">' + t('f.pairs') + '</h3>' + pairs.map(pairHtml).join('') + '</div>' : '') +
+            '<div class="stack"><h3 class="h4">' + t('f.anat') + '</h3><p class="read">' + T(f.anatomy.text, scope) + '</p>' + (f.anatomy.figure && (ph.length || cmp) ? '<div style="max-width:680px">' + Figures.render(f.anatomy.figure) + '</div>' : '') + '</div>' +
+            (pre ? '<div class="prereq"><span class="small muted">' + t('f.prereq') + '</span>' + pre + '</div>' : ''));
+      } else if (step === 'comprendre') {
+        var ess = (hy && hy.essentials) || [];
+        var steps = f.causal.steps;
+        body = hyList(ess.slice(0, 5), t('f.hy')) +
+          '<div class="stack"><h2 class="h3">' + U.esc(t('f.mech', { t: f.causal.title })) + '</h2>' +
+          '<div class="chain paced" data-chain data-shown="1">' + steps.map(function (s, i) { return '<div class="cstep k-' + s.kind + (i > 0 ? ' pending' : '') + '" data-step="' + i + '"><div class="node">' + (i + 1) + '</div><div class="body"><span class="k">' + (L.kinds[s.kind] || s.kind) + '</span><b>' + U.md(s.label) + '</b><span class="small" data-dz="2">' + T(s.detail, scope) + '</span><div class="cutslot"></div></div></div>'; }).join('') + '</div>' +
+          '<div class="row"><button type="button" class="btn primary sm" data-causal="next">' + t('f.next.link', { i: 2, n: steps.length }) + '</button><button type="button" class="btn ghost sm" data-causal="all">' + t('f.all.links') + '</button></div>' +
+          '<div class="stack" data-levers hidden><span class="small muted">' + t('f.levers') + '</span><div class="chips">' + f.causal.levers.map(function (l, i) { return '<button class="chip" data-lever="' + i + '" aria-pressed="false">' + U.esc(l.label) + '</button>'; }).join('') + '</div></div></div>' +
+          moreBlock(hyList(ess.slice(5), t('f.hy.more')) +
+            (f.mnemonic ? '<div class="callout green"><span class="eyebrow">' + U.esc(t('f.mnemo', { t: f.mnemonic.title })) + '</span><span>' + T(f.mnemonic.text, scope) + '</span></div>' : '') +
+            '<div class="twocol"><div class="stack"><h3 class="h4">' + t('f.risk') + '</h3><ul class="blist">' + f.risk.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="stack"><h3 class="h4">' + t('f.pres') + '</h3><ul class="blist">' + f.presentation.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>');
+      } else if (step === 'decider') {
+        var rf = f.redFlags || [];
+        body = '<div class="callout red"><span class="eyebrow">' + t('f.redflags') + '</span><ul class="blist red">' + rf.slice(0, 3).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>' +
+          algoHtml(f, scope) + txBlock(f, scope) +
+          moreBlock((rf.length > 3 ? '<div class="stack"><h3 class="h4">' + t('f.redflags.more') + '</h3><ul class="blist red">' + rf.slice(3).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>' : '') +
+            '<div class="stack"><h3 class="h4">' + t('f.signs') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.sign') + '</th><th>' + t('f.signwhy') + '</th></tr></thead><tbody>' + f.exam.signs.map(function (x) { return '<tr><td>' + T(x.sign, scope) + '</td><td>' + T(x.why, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>' +
+            '<div class="stack"><h3 class="h4">' + t('f.tests') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.test') + '</th><th>' + t('f.when') + '</th><th>' + t('f.read') + '</th></tr></thead><tbody>' + f.exam.tests.map(function (x) { return '<tr><td>' + T(x.test, scope) + '</td><td>' + T(x.when, scope) + '</td><td>' + T(x.read, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>' +
+            '<div class="stack"><h3 class="h4">' + t('f.ddx') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.dx') + '</th><th>' + t('f.clue') + '</th></tr></thead><tbody>' + f.ddx.map(function (d) { return '<tr><td>' + T(d.dx, scope) + '</td><td>' + T(d.clue, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>' +
+            '<div class="stack"><h3 class="h4">' + t('f.phases') + '</h3><div class="phases">' + f.cat.phases.map(function (p) { return '<div class="phase p-' + p.phase + '"><div class="ph"><i></i>' + (L.phases[p.phase] || p.phase) + '</div><ul class="blist">' + p.items.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div></div>' +
+            (f.cat.local ? '<div class="callout violet"><span class="eyebrow">' + t('f.local') + '</span><span>' + T(f.cat.local, scope) + '</span></div>' : ''));
+      } else {
+        var qids = quizIds(function (q) { return q.topic === f.id; }), pearls = f.pearls || [];
+        var pcard = function (p, i) { return '<div class="pearl-card" role="button" tabindex="0" data-pearl="' + i + '" aria-expanded="false"><span class="who">' + t('f.asks') + '</span><span class="q">' + U.md(p.q) + '</span><span class="hint">' + t('f.think') + '</span><span class="a" hidden>' + T(p.a, scope) + '</span></div>'; };
+        var game = qids.length ? miniQuiz(f.id, qids, t('mini.fiche')) : trainBlock(f.id);
+        var links = (OPH.images && OPH.images[f.id]) || [];
+        body = '<div class="stack"><h2 class="h3">' + t('f.pearls') + '</h2><div class="pearls">' + pearls.slice(0, 3).map(pcard).join('') + '</div></div>' + game +
+          moreBlock((pearls.length > 3 ? '<div class="pearls">' + pearls.slice(3).map(function (p, i) { return pcard(p, i + 3); }).join('') + '</div>' : '') + (qids.length ? trainBlock(f.id) : '')) +
+          '<details class="acc src-acc"><summary>' + t('f.sources') + '</summary><div style="padding:0 14px 14px">' + (links.length ? '<ul class="src-list">' + links.map(function (l) { return '<li><a href="' + U.esc(l.url) + '" target="_blank" rel="noopener">' + U.esc(l.title) + '</a> <span class="muted">· ' + U.esc(l.site) + '</span><div class="small muted">' + U.md(l.look) + '</div></li>'; }).join('') + '</ul>' : '') +
+          '<ul class="src-list">' + f.sources.map(function (x) { return '<li class="small">' + U.md(x) + '</li>'; }).join('') + '</ul>' + reviewMeta(f.id) + '</div></details>' +
+          '<div class="row">' + readBtn(f.id) + '</div>';
+      }
+      var ids = { voir: 'mv-voir', comprendre: 'mv-comp', decider: 'mv-dec', entrainer: 'mv-train' };
+      h.push('<section class="mv fstep-body" id="' + ids[step] + '" data-step-body="' + step + '">' + body + '</section>');
+      // previous / next
+      var prevHref = si > 0 ? '#' + f.id + '/' + FSTEPS[si - 1] : (prev ? '#' + prev.id + '/' + 'entrainer' : '#' + (m === 'B' ? 'b-bases' : 'c-bases'));
+      var prevLab = si > 0 ? t(FSTEP_KEY[FSTEPS[si - 1]]) : (prev ? I18N.title(prev) : t('nav.foundations'));
+      var nextHref = si < 3 ? '#' + f.id + '/' + FSTEPS[si + 1] : (next ? '#' + next.id + '/voir' : '#module-' + m.toLowerCase());
+      var nextLab = si < 3 ? t(FSTEP_KEY[FSTEPS[si + 1]]) : (next ? I18N.title(next) : t('f.backmod'));
+      h.push('<nav class="row fstep-nav" aria-label="' + t('f.steps.aria') + '"><a class="btn ghost" data-fprev href="' + prevHref + '">← ' + U.esc(prevLab) + '</a><a class="btn primary" data-fnext href="' + nextHref + '">' + U.esc(nextLab) + ' →</a></nav>');
+      return '<div class="page fiche-page">' + h.join('') + '</div>';
     },
     after: function (host) {
+      var fs = Store.p.fstep = Store.p.fstep || {}; fs[f.id] = { s: step, t: Date.now() }; Store.saveLocal();
       mountMinis(host); mountTrainers(host);
-      var timer = null;
-      host.addEventListener('click', function (ev) {
-        var t = ev.target;
-        if (t.closest('[data-causal="play"]')) {
-          var steps = U.$$('[data-step]', host); clearInterval(timer);
-          steps.forEach(function (s) { s.classList.remove('on', 'after'); });
-          var i = 0, run = function () { steps.forEach(function (s, k) { s.classList.toggle('on', k === i); }); i++; if (i > steps.length) { clearInterval(timer); steps.forEach(function (s) { s.classList.remove('on'); }); } };
-          if (U.reduced()) { steps.forEach(function (s) { s.classList.add('on'); }); return; }
-          run(); timer = setInterval(run, 1300); return;
+      var tr = U.$('[data-tree]', host); if (tr && window.Tree && typeof Tree.mount === 'function') { try { Tree.mount(tr); } catch (e) { console.error('Tree.mount', e); } }
+      var onClick = function (ev) {
+        var tg = ev.target;
+        var cz = tg.closest('[data-causal]');
+        if (cz) {
+          var chain = U.$('[data-chain]', host), steps = U.$$('[data-step]', chain), shown = +chain.getAttribute('data-shown') || 1;
+          if (cz.getAttribute('data-causal') === 'all') shown = steps.length; else if (shown >= steps.length) shown = 1; else shown++;
+          steps.forEach(function (s, k) { s.classList.toggle('pending', k >= shown); s.classList.toggle('on', k === shown - 1 && shown < steps.length); });
+          chain.setAttribute('data-shown', String(shown));
+          var nb = U.$('[data-causal="next"]', host);
+          if (nb) nb.textContent = shown >= steps.length ? I18N.t('f.restart.links') : I18N.t('f.next.link', { i: shown + 1, n: steps.length });
+          var lv0 = U.$('[data-levers]', host); if (lv0) lv0.hidden = shown < steps.length;
+          var cur = steps[shown - 1]; if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: 'nearest', behavior: U.reduced() ? 'auto' : 'smooth' });
+          return;
         }
-        var lv = t.closest('[data-lever]');
+        var lv = tg.closest('[data-lever]');
         if (lv) {
-          var f = D.fiche(Router.cur), li = +lv.getAttribute('data-lever'), L2 = f.causal.levers[li], on = lv.getAttribute('aria-pressed') !== 'true';
+          var li = +lv.getAttribute('data-lever'), L2 = f.causal.levers[li], on = lv.getAttribute('aria-pressed') !== 'true';
           U.$$('[data-lever]', host).forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
           U.$$('[data-step]', host).forEach(function (s) { s.classList.remove('cut', 'after', 'on'); U.$('.cutslot', s).innerHTML = ''; });
           if (on) {
@@ -427,26 +467,39 @@ function ficheView(f) {
           }
           return;
         }
-        var pc = !t.closest('.gt, #gt-pop') && t.closest('[data-pearl]');
+        var pc = !tg.closest('.gt, #gt-pop') && tg.closest('[data-pearl]');
         if (pc) { var a = U.$('.a', pc), hint = U.$('.hint', pc); a.hidden = !a.hidden; hint.hidden = !a.hidden ? true : false; pc.setAttribute('aria-expanded', String(!a.hidden)); return; }
-        if (t.closest('[data-cmpreveal]')) {
-          var b = t.closest('[data-cmpreveal]'), lst = U.$('[data-cmplist]', host), f2 = D.fiche(Router.cur), on2 = lst.hidden;
+        if (tg.closest('[data-cmpreveal]')) {
+          var b = tg.closest('[data-cmpreveal]'), lst = U.$('[data-cmplist]', host), on2 = lst.hidden;
           lst.hidden = !on2; b.setAttribute('aria-expanded', String(on2)); b.textContent = on2 ? I18N.t('f.hideanom') : I18N.t('f.revealanom');
-          U.$('[data-cmp]', host).innerHTML = Figures.render(f2.compare.patho.figure, { caption: f2.compare.patho.caption, reveal: on2 }); Figures.hydrate(host); return;
+          U.$('[data-cmp]', host).innerHTML = Figures.render(f.compare.patho.figure, { caption: f.compare.patho.caption, reveal: on2 }); Figures.hydrate(host); return;
         }
-        if (t.closest('[data-walk]')) {
+        if (tg.closest('[data-walk]')) {
           var nodes = U.$$('[data-node]', host); nodes.forEach(function (n, k) { n.classList.add('walk'); n.classList.remove('chosen-yes', 'chosen-no'); n.classList.toggle('dim', k > 0); }); return;
         }
-        var yn = t.closest('[data-yn]');
+        var yn = tg.closest('[data-yn]');
         if (yn) {
           var node = yn.closest('[data-node]'); if (!node.classList.contains('walk')) return;
           node.classList.remove('chosen-yes', 'chosen-no', 'dim'); node.classList.add('chosen-' + yn.getAttribute('data-yn'));
           var nx = node.nextElementSibling; if (nx) nx.classList.remove('dim');
         }
-      });
-      var kd = function (ev) { var pc = ev.target.closest && ev.target.closest('[data-pearl]'); if (pc && (ev.key === 'Enter' || ev.key === ' ') && ev.target === pc) { ev.preventDefault(); pc.click(); } };
-      host.addEventListener('keydown', kd);
-      return function () { clearInterval(timer); host.removeEventListener('keydown', kd); };
+      };
+      var go = function (sel) { var a = U.$(sel, host); if (a) location.hash = a.getAttribute('href').slice(1); };
+      var kd = function (ev) {
+        var pc = ev.target.closest && ev.target.closest('[data-pearl]'); if (pc && (ev.key === 'Enter' || ev.key === ' ') && ev.target === pc) { ev.preventDefault(); pc.click(); return; }
+      };
+      var arrows = function (ev) {
+        if (ev.defaultPrevented || ev.altKey || ev.ctrlKey || ev.metaKey || /input|select|textarea/i.test(ev.target.tagName || '') || ev.target.isContentEditable) return;
+        if (U.$('#lightbox:not([hidden])') || U.$('#drawer:not([hidden])')) return;
+        if (ev.key === 'ArrowRight') go('[data-fnext]'); else if (ev.key === 'ArrowLeft') go('[data-fprev]');
+      };
+      var x0 = null, y0 = 0;
+      var ts = function (ev) { if (ev.touches.length !== 1 || ev.target.closest('.carousel, .zoomwrap, input, .tbl-wrap, svg')) { x0 = null; return; } x0 = ev.touches[0].clientX; y0 = ev.touches[0].clientY; };
+      var te = function (ev) { if (x0 == null) return; var dx = ev.changedTouches[0].clientX - x0, dy = ev.changedTouches[0].clientY - y0; x0 = null; if (Math.abs(dx) > 70 && Math.abs(dy) < 45) go(dx < 0 ? '[data-fnext]' : '[data-fprev]'); };
+      host.addEventListener('click', onClick); host.addEventListener('keydown', kd); document.addEventListener('keydown', arrows);
+      host.addEventListener('touchstart', ts, { passive: true }); host.addEventListener('touchend', te, { passive: true });
+      if (U.wordsDev()) console.info('[words] ' + f.id + '/' + step + ': ' + U.wordsVisible(U.$('[data-step-body]', host)) + ' visible words');
+      return function () { host.removeEventListener('click', onClick); host.removeEventListener('keydown', kd); document.removeEventListener('keydown', arrows); host.removeEventListener('touchstart', ts); host.removeEventListener('touchend', te); };
     }
   };
 }
@@ -638,7 +691,13 @@ Views.recherche = {
 /* ---------- resolver ---------- */
 Views.resolve = function (name) {
   if (Views[name] && typeof Views[name] === 'object' && Views[name].render) return Views[name];
-  var f = D.fiche(name); if (f) { if (!Views._f) Views._f = {}; return (Views._f[name] = Views._f[name] || ficheView(f)); }
+  var fm = /^([^/]+)\/(voir|comprendre|decider|entrainer)$/.exec(name), f = D.fiche(fm ? fm[1] : name);
+  if (f) {
+    var stp = fm ? fm[2] : 'voir', key = f.id + '/' + stp;
+    if (!fm) { try { history.replaceState(null, '', '#' + key); } catch (e) { } } // bare #<fiche> opens the first screen
+    if (!Views._f) Views._f = {};
+    return (Views._f[key] = Views._f[key] || ficheView(f, stp));
+  }
   var c = D.caseById(name); if (c) return caseView(c);
   return { title: t('view.notfound.t'), track: false, render: function () { return '<div class="page"><div class="empty">' + t('view.notfound') + '</div><a class="btn primary" href="#accueil">' + t('view.backhome') + '</a></div>'; } };
 };

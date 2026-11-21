@@ -59,7 +59,7 @@ with open(os.path.join(DATA, 'catalog.js'), 'w', encoding='utf-8') as f:
 
 data_order = ['catalog', 'module-a', 'capsules', 'fiches-cornee', 'fiches-cornee-2', 'fiches-glaucome', 'quiz-a', 'quiz-b', 'quiz-c', 'quiz-c2', 'quiz-photos', 'cases', 'photos', 'images',
               'ext-a5-a', 'ext-a5-b', 'ext-cornee-a', 'ext-cornee-b', 'ext-glaucome-a', 'ext-glaucome-b', 'ext-photos', 'ext-links', 'hy-module-a', 'hy-cornee', 'hy-glaucome', 'investigations', 'inv-media', 'cases-images', 'cases-open']
-src_order = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'motion', 'views']
+src_order = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'motion', 'tree', 'views']
 
 def js(path):
     s = open(path, encoding='utf-8').read()
@@ -71,7 +71,7 @@ parts.append('<meta name="claude:viewport-fit-sides" content="cover">')
 parts.append('<meta name="description" content="Apprends à voir le signe qui compte : cornée, glaucome et examens, en images, cas et jeux. Gratuit, sans pub.">')
 parts.append('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>')
 parts.append('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">')
-parts.append('<style>\n' + '\n'.join(open(os.path.join(SRC, c), encoding='utf-8').read() for c in ('styles.css', 'investigations.css', 'web.css') if os.path.exists(os.path.join(SRC, c))) + '\n</style>')
+parts.append('<style>\n' + '\n'.join(open(os.path.join(SRC, c), encoding='utf-8').read() for c in ('styles.css', 'investigations.css', 'tree.css', 'web.css') if os.path.exists(os.path.join(SRC, c))) + '\n</style>')
 parts.append('''<a class="skip-link" href="#view" data-act="skip">Aller au contenu</a>
 <div class="shell">
 <aside class="rail" id="rail" aria-label="Navigation"></aside>
