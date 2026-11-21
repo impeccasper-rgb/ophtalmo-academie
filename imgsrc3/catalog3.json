@@ -1,14 +1,510 @@
 [
  {
+  "id": "IMG3-004",
+  "file": "imgsrc3/web/IMG3-004.jpg",
+  "title": {
+   "fr": "Glaucome avancé : papille, gonioscopie (angle ouvert, trabéculum hyperpigmenté), CV 30-2, OCT",
+   "en": "Advanced glaucoma: disc, gonioscopy (open angle, hyperpigmented meshwork), 30-2 field, OCT"
+  },
+  "caption": {
+   "fr": "A : photo du fond d’œil d’une papille glaucomateuse. B : gonioscopie montrant un angle ouvert et un trabéculum hyperpigmenté. C : périmétrie automatisée Humphrey 30-2 avec constriction sévère du champ (MD −30,81 dB). D, E : OCT de la tête du nerf optique avec perte diffuse de la couche des fibres nerveuses (glaucome secondaire à une uvéite).",
+   "en": "A: fundus photograph of the glaucomatous optic disc. B: gonioscopy showing an open angle and a hyperpigmented trabecular meshwork. C: Humphrey 30-2 automated perimetry with severe field constriction (MD −30.81 dB). D, E: optic nerve head OCT with diffuse retinal nerve fibre layer loss (glaucoma secondary to uveitis)."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10276512/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10276512.1/12886_2023_3033_Fig1_HTML.jpg",
+  "source": "pmc",
+  "doi": "10.1186/s12886-023-03033-w",
+  "article": "Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report",
+  "module": "I",
+  "exam": "gonio",
+  "topics": [
+   "ex-gonioscopie",
+   "ex-champs-visuels",
+   "ex-oct",
+   "g-secondaires"
+  ],
+  "w": 777,
+  "h": 419,
+  "bytes": 46137,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "A Fundus photograph of the glaucomatous optic disc. B Gonioscopic findings, showing an open angle and a hyperpigmented trabecular meshwork. C Automated perimetry (Humphrey 30–2) demonstrating severe constriction of the visual field (mean deviation: -30.81 decibel). D, E Optical coherence tomography of the optic nerve head showing diffuse retinal nerve fiber layer loss",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-005",
+  "file": "imgsrc3/web/IMG3-005.jpg",
+  "title": {
+   "fr": "Échographie B : décollement de rétine attaché à la papille et à l’ora serrata",
+   "en": "B-scan: retinal detachment tethered at the disc and ora serrata"
+  },
+  "caption": {
+   "fr": "Œil droit, coupe transversale : séparation de la rétine attachée au niveau de la papille (*) et de l’ora serrata (flèches). Échographie au lit du malade après traumatisme crânien.",
+   "en": "Right eye, transverse view: retinal separation with attachment at the level of the optic disc (*) and the ora serrata (arrows). Point-of-care ultrasound after blunt head trauma."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Shirke — Clin Pract Cases Emerg Med 2021;5(4)",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8610488/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8610488.1/cpcem-5-485-g001.jpg",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.2021.7.52725",
+  "article": "Traumatic Anterior Dislocation of Ocular Cataract Lens",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-decollement-retine"
+  ],
+  "w": 546,
+  "h": 481,
+  "bytes": 20378,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "Right eye transverse view showing retinal separation with attachment at the level of the optic disc (*) and ora serrata (arrows).",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-006",
+  "file": "imgsrc3/web/IMG3-006.jpg",
+  "title": {
+   "fr": "Échographie : cristallin cataracté luxé dans la chambre antérieure",
+   "en": "Ultrasound: cataractous lens dislocated into the anterior chamber"
+  },
+  "caption": {
+   "fr": "Œil droit, coupe sagittale : cristallin échogène évoquant une cataracte (étoile) et subluxation du cristallin dans la chambre antérieure (point blanc), signant une luxation antérieure.",
+   "en": "Right eye, sagittal view: echogenic lens indicating cataract (star) and subluxation of the lens into the anterior chamber (white dot), indicating anterior lens dislocation."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Shirke — Clin Pract Cases Emerg Med 2021;5(4)",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8610488/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8610488.1/cpcem-5-485-g002.jpg",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.2021.7.52725",
+  "article": "Traumatic Anterior Dislocation of Ocular Cataract Lens",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-tumeurs-toxicite-trauma",
+   "g-cristallin"
+  ],
+  "w": 554,
+  "h": 494,
+  "bytes": 21518,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "Right eye sagittal view depicting echogenic lens indicative of cataract (star), as well as subluxation of lens into anterior chamber (white dot) indicative of anterior dislocation of lens.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-007",
+  "file": "imgsrc3/web/IMG3-007.jpg",
+  "title": {
+   "fr": "Échographie : hémorragie du vitré déposée en membrane déclive (traumatisme)",
+   "en": "Ultrasound: vitreous haemorrhage settled as a dependent membrane (trauma)"
+  },
+  "caption": {
+   "fr": "Cas 4 (garçon de 12 ans, coup de batte) : suspicion d’hémorragie du vitré et de rupture du globe. A : technique du « bain d’eau modifié » (flèche rouge) ; B : méthode conventionnelle avec beaucoup de gel (flèche jaune) ; C : scanner évoquant une atteinte du globe gauche. Selon le tableau de l’article : globe diminué de taille, hémorragie du vitré déposée en membrane dans la partie déclive.",
+   "en": "Case 4 (12-year-old boy hit by a bat): suspected vitreous haemorrhage and globe rupture. A: modified water bath technique (red arrow); B: conventional method with copious gel (yellow arrow); C: CT suggestive of left globe injury. Per the article’s table: decreased globe size with vitreous haemorrhage settled as a membrane at the bottom."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Chawang et al. — Clin Pract Cases Emerg Med 2026",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13518040/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13518040.1/cpcem-10-232-g006.webp",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.48653",
+  "article": "Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-peripherie-vitre",
+   "a5-tumeurs-toxicite-trauma"
+  ],
+  "w": 373,
+  "h": 435,
+  "bytes": 26031,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "Case 4. A patient with suspected vitreous haemorrhage and globe rupture: A) using modified water bath technique (red arrow); B) using conventional method on the same eye using copious amount of gel (yellow arrow); and C) computed tomography suggestive of left globe injury.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-008",
+  "file": "imgsrc3/web/IMG3-008.jpg",
+  "title": {
+   "fr": "Échographie : rupture du globe avec corps étrangers intraoculaires (ombre acoustique)",
+   "en": "Ultrasound: globe rupture with intraocular foreign bodies (acoustic shadowing)"
+  },
+  "caption": {
+   "fr": "Cas 3 (blessure par feu d’artifice) : A, œil droit normal ; B, rupture du globe gauche avec corps étrangers intraoculaires visibles comme des structures échogènes avec ombre acoustique postérieure (astérisques) ; C, scanner évoquant une rupture du globe gauche.",
+   "en": "Case 3 (fireworks injury): A, normal right eye; B, left globe rupture with intraocular foreign bodies seen as echogenic structures with posterior acoustic shadowing (asterisks); C, CT suggestive of left globe rupture."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Chawang et al. — Clin Pract Cases Emerg Med 2026",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13518040/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13518040.1/cpcem-10-232-g005.webp",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.48653",
+  "article": "Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-tumeurs-toxicite-trauma"
+  ],
+  "w": 390,
+  "h": 475,
+  "bytes": 29413,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "Case 3. Ocular ultrasound modified water bath technique performed: A) right normal eye; B) left globe rupture with intraocular foreign body seen as echogenic structures with posterior acoustic shadowing (marked with asterisks); and C) computed tomography suggestive of left globe rupture.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-009",
+  "file": "imgsrc3/web/IMG3-009.jpg",
+  "title": {
+   "fr": "Échographie : décollement choroïdien après traumatisme",
+   "en": "Ultrasound: choroidal detachment after trauma"
+  },
+  "caption": {
+   "fr": "Cas 5 : décollement choroïdien de l’œil droit. A : échographie conventionnelle (flèche rouge) ; B : technique du bain d’eau modifié (flèche jaune) ; C : scanner de l’atteinte du globe.",
+   "en": "Case 5: right eye choroidal detachment. A: conventional ocular ultrasound (red arrow); B: modified water bath technique (yellow arrow); C: CT image of the globe injury."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Chawang et al. — Clin Pract Cases Emerg Med 2026",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13518040/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13518040.1/cpcem-10-232-g007.webp",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.48653",
+  "article": "Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-decollement-choroidien"
+  ],
+  "w": 427,
+  "h": 423,
+  "bytes": 27134,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "Case 5. A patient with right eye choroidal detachment: A) conventional method of ocular ultrasound (red arrow); B) modified water bath technique (yellow arrow); and C) computed tomography image of the globe injury.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-010",
+  "file": "imgsrc3/web/IMG3-010.jpg",
+  "title": {
+   "fr": "Décollement choroïdien après trabéculoplastie : fond d’œil, B-scan, OCT, puis résolution",
+   "en": "Choroidal detachment after SLT: fundus, B-scan, OCT, then resolution"
+  },
+  "caption": {
+   "fr": "A–C : décollement choroïdien 21 jours après trabéculoplastie sélective (PIO 4 mmHg) — A, photo grand champ ; B, échographie B ; C, OCT montrant un pli choriorétinien (maculopathie d’hypotonie). D–F : amélioration à 2 mois — D, photo grand champ et F, OCT avec rétine à plat ; E, échographie B avec résolution complète des effusions choroïdiennes.",
+   "en": "A–C: choroidal detachment 21 days after selective laser trabeculoplasty (IOP 4 mmHg) — A, wide-field fundus photograph; B, B-scan ultrasonography; C, OCT showing a chorioretinal fold due to hypotony maculopathy. D–F: improvement 2 months after SLT — D, wide-field photograph and F, OCT showing a flat retina; E, B-scan showing complete resolution of the choroidal effusions."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10276512/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10276512.1/12886_2023_3033_Fig2_HTML.jpg",
+  "source": "pmc",
+  "doi": "10.1186/s12886-023-03033-w",
+  "article": "Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-decollement-choroidien",
+   "g-postop"
+  ],
+  "w": 708,
+  "h": 356,
+  "bytes": 51721,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "A-C Choroidal detachment 21 days after selective laser trabeculoplasty (SLT). A Wide-field fundus photography and (B) B-scan ultrasonography showing choroidal detachment, accompanied by an intraocular pressure of 4 mmHg. C Optical coherence tomography (OCT) demonstrating a chorioretinal fold due to hypotonic maculopathy. D-F Improvement of choroidal detachment 2 months after SLT. D Wide-fundus photography and (F) OCT showing a flat retina without folding. E B-scan ultrasonography showing complete resolution of choroidal effusions",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-011",
+  "file": "imgsrc3/web/IMG3-011.jpg",
+  "title": {
+   "fr": "Échographie : bande hyperéchogène d’hémorragie prérétinienne (piège : simule un DR)",
+   "en": "Ultrasound: hyperechoic band of preretinal haemorrhage (pitfall: mimics RD)"
+  },
+  "caption": {
+   "fr": "Échographie mode B de l’œil droit : bande hyperéchogène (flèche) dans le segment postérieur avec échos dispersés en arrière. Diagnostic final : rétinopathie de Valsalva (hémorragie prérétinienne), rétine à plat ; la bande croisait la papille.",
+   "en": "B-mode ultrasound of the right eye: hyperechoic band (arrow) in the posterior segment with underlying scattered echoes. Final diagnosis: Valsalva retinopathy (preretinal haemorrhage) with an attached retina; the band crossed the optic nerve."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Johnson — Clin Pract Cases Emerg Med 2022;6(2)",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9197736/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC9197736.1/cpcem-6-125-g001.jpg",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.2022.1.55173",
+  "article": "Valsalva Retinopathy Masking as a Retinal Detachment on Point-of-care Ocular Ultrasound: A Case Report",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-decollement-retine",
+   "a5-peripherie-vitre"
+  ],
+  "w": 781,
+  "h": 588,
+  "bytes": 43241,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "B-mode ultrasound of the right eye showing hyperechoic band (arrow) in the posterior segment with underlying scattered echoes.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-012",
+  "file": "imgsrc3/web/IMG3-012.jpg",
+  "title": {
+   "fr": "Échographie : la même bande prérétinienne traverse tout le globe",
+   "en": "Ultrasound: the same preretinal band spans the whole globe"
+  },
+  "caption": {
+   "fr": "Échographie mode B de l’œil droit : bande hyperéchogène (flèche) dans le segment postérieur, s’étendant sur tout le globe (rétinopathie de Valsalva).",
+   "en": "B-mode ultrasound of the right eye: hyperechoic band (arrow) in the posterior segment spanning the entire globe (Valsalva retinopathy)."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Johnson — Clin Pract Cases Emerg Med 2022;6(2)",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9197736/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC9197736.1/cpcem-6-125-g002.jpg",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.2022.1.55173",
+  "article": "Valsalva Retinopathy Masking as a Retinal Detachment on Point-of-care Ocular Ultrasound: A Case Report",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-peripherie-vitre"
+  ],
+  "w": 767,
+  "h": 575,
+  "bytes": 52848,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "B-mode ultrasound of the right eye showing hyperechoic band (arrow) in the posterior segment spanning the entire globe.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-013",
+  "file": "imgsrc3/web/IMG3-013.jpg",
+  "title": {
+   "fr": "Échographie : hyalite astéroïde (piège : simule une hémorragie du vitré)",
+   "en": "Ultrasound: asteroid hyalosis (pitfall: mimics vitreous haemorrhage)"
+  },
+  "caption": {
+   "fr": "Échographie mode B : plusieurs particules échogènes distinctes, flottant librement (^), compatibles avec une hyalite astéroïde.",
+   "en": "B-mode sonogram demonstrating several discrete, free-floating echogenic particles (^) consistent with asteroid hyalosis."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "http://creativecommons.org/licenses/by/4.0/",
+  "author": "Arthurs et al. — Clin Pract Cases Emerg Med 2019;3(3)",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6682246/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6682246.1/cpcem-3-318-g002.jpg",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.2019.6.42935",
+  "article": "Asteroid Hyalosis Seen on Ocular Point-of-Care Ultrasound",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-peripherie-vitre"
+  ],
+  "w": 353,
+  "h": 338,
+  "bytes": 20423,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "B-mode sonogram demonstrating several discrete, free-floating, echogenic particles (^) consistent with asteroid hyalosis.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-014",
+  "file": "imgsrc3/web/IMG3-014.jpg",
+  "title": {
+   "fr": "Échographie B : liquide sous-rétinien et masse choroïdienne (mélanome)",
+   "en": "B-scan: subretinal fluid and choroidal mass (melanoma)"
+  },
+  "caption": {
+   "fr": "Échographie B de l’œil gauche : liquide sous-rétinien séreux et masse choroïdienne (flèche). Diagnostic confirmé : mélanome choroïdien amélanotique.",
+   "en": "B-scan ultrasound of the left eye demonstrating serous subretinal fluid and a choroidal mass (arrow). Confirmed diagnosis: amelanotic choroidal melanoma."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Matin et al. — Clin Pract Cases Emerg Med 2025",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12594224/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12594224.1/cpcem-9-471-g001.jpg",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.25339",
+  "article": "Primary Choroidal Melanoma in a 30-year-old Woman with Monocular Flashers",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-tumeurs-toxicite-trauma"
+  ],
+  "w": 401,
+  "h": 292,
+  "bytes": 16658,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "B-scan ultrasound of the left eye demonstrating serous sub-retinal fluid and choroidal mass (arrow).",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-015",
+  "file": "imgsrc3/web/IMG3-015.jpg",
+  "title": {
+   "fr": "Échographie : masse pédiculée hyperéchogène (mélanome uvéal)",
+   "en": "Ultrasound: pedunculated hyperechoic mass (uveal melanoma)"
+  },
+  "caption": {
+   "fr": "Échographie au lit du malade : masse hyperéchogène pédiculée (flèche blanche) dans la cavité postérieure de l’œil droit ; mélanome uvéal confirmé à l’histologie.",
+   "en": "Point-of-care ultrasound demonstrating a hyperechoic, pedunculated mass (white arrow) in the posterior segment of the right eye; uveal melanoma confirmed on histopathology."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Spungen et al. — Clin Pract Cases Emerg Med 2021;5(3)",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8373173/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8373173.1/cpcem-5-367-g001.jpg",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.2021.4.52115",
+  "article": "Uveal Melanoma Identified as Ocular Mass on Point-of-care Ultrasound",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-tumeurs-toxicite-trauma"
+  ],
+  "w": 173,
+  "h": 193,
+  "bytes": 5677,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "Point-of-care ultrasound demonstrating a hyperechoic, pedunculated mass (white arrow) in the posterior chamber of the patient’s right eye, consistent with a diagnosis of uveal melanoma.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-016",
+  "file": "imgsrc3/web/IMG3-016.jpg",
+  "title": {
+   "fr": "Échographie : implant intraoculaire luxé dans la cavité vitréenne",
+   "en": "Ultrasound: intraocular lens dislocated into the vitreous cavity"
+  },
+  "caption": {
+   "fr": "Échographie montrant la luxation de l’implant intraoculaire (flèche) en arrière ; l’implant apparaît comme une structure curviligne hyperéchogène.",
+   "en": "Ultrasound image showing intraocular lens dislocation (arrow) posteriorly; the prosthetic lens appears as a hyperechoic curvilinear structure."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Pizarro et al. — Clin Pract Cases Emerg Med 2021;5(3)",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8373180/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8373180.1/cpcem-5-332-g001.jpg",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.2021.3.52208",
+  "article": "Case Report: Diagnosis of Late Spontaneous Intraocular Lens Dislocation on Point-of-care Ultrasound",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-opacification-capsulaire"
+  ],
+  "w": 327,
+  "h": 252,
+  "bytes": 10080,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "Ultrasound image showing intraocular lens dislocation (arrow) into the posterior chamber.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
+  "id": "IMG3-018",
+  "file": "imgsrc3/web/IMG3-018.jpg",
+  "title": {
+   "fr": "OCT : traction vitréomaculaire → trou maculaire transfixiant → fermeture",
+   "en": "OCT: vitreomacular traction → full-thickness macular hole → closure"
+  },
+  "caption": {
+   "fr": "SD-OCT avant et après vitrectomie. a : traction vitréomaculaire avec trou lamellaire externe et contour fovéolaire anormal (AV 0,04). b : J7 après vitrectomie avec pelage de la limitante interne : trou maculaire transfixiant avec espaces cystoïdes sur les deux berges (AV 0,08). c : 1 mois, trou fermé avec soulèvement de la couche des photorécepteurs et de la limitante externe dans la fovéa, microkystes intrarétiniens (AV 0,2). d : 5 mois, contour fovéolaire normal sans liquide (AV 0,5).",
+   "en": "SD-OCT before and after vitrectomy. a: vitreomacular traction with an outer lamellar macular hole and abnormal foveal contour (VA 0.04). b: day 7 after vitrectomy with ILM peeling: full-thickness macular hole with intraretinal cystoid spaces on both edges (VA 0.08). c: 1 month, closed hole with elevation of the photoreceptor layer and external limiting membrane in the fovea and intraretinal microcystoid spaces (VA 0.2). d: 5 months, normal foveal contour without subretinal fluid (VA 0.5)."
+  },
+  "license": "CC BY 2.0",
+  "license_url": "http://creativecommons.org/licenses/by/2.0",
+  "author": "Dominik Odrobina, Iwona Laudańska-Olszewska, Piotr Gozdek et al. — BMC Ophthalmology 2014",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3931271/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC3931271.1/1471-2415-14-17-1.jpg",
+  "source": "pmc",
+  "doi": "10.1186/1471-2415-14-17",
+  "article": "Macular hole formation and spontaneous closure after vitrectomy for vitreomacular traction documented in spectral-domain optical coherence tomography",
+  "module": "I",
+  "exam": "oct",
+  "topics": [
+   "ex-oct",
+   "a5-macula-chirurgicale"
+  ],
+  "w": 600,
+  "h": 718,
+  "bytes": 103488,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "Spectral-optical coherence tomography before and after vitrectomy for vitreomacular traction. a: A 78-year-old female presented with visual acuity 0.04 and metamorphopsia. SD-OCT examination showed the vitreomacular traction (VMT) with an outer lamellar macular hole and an abnormal foveal contour. b: Seven days after the vitrectomy with ILM peeling visual acuity increased to 0.08. SD-OCT showed the full-thickness macular hole (FTMH) with intraretinal cystoid spaces on the both edges of the hole. c: One month later the patient presented with increased of visual acuity to 0.2. SD-OCT clearly documented closed macular hole with an elevation of the photoreceptor layer and of the external limiting membrane (ELM) in the fovea region and intraretinal microcystoid spaces. d: 5 months later visual acuity improved to 0.5. SD-OCT examination showed normal fovea contour without subretinal fluid with no evidence of space in the outer layers of the retina.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
   "id": "IMG3-019",
   "file": "imgsrc3/web/IMG3-019.jpg",
   "title": {
-   "fr": "OCT d’une macula saine",
-   "en": "OCT of a healthy macula"
+   "fr": "OCT d’une rétine centrale saine",
+   "en": "OCT of a healthy central retina"
   },
   "caption": {
-   "fr": "Coupe OCT d’une macula saine (d’après le nom du fichier ; description source ajoutée au build).",
-   "en": "OCT cross-section of a healthy macula (per file name; source description added at build)."
+   "fr": "Coupe OCT de la partie centrale de la rétine d’un œil sain ; la macula est au centre (description source, en polonais).",
+   "en": "OCT cross-section through the central retina of a healthy eye; the macula is in the centre (source description, in Polish)."
   },
   "license": "CC BY-SA 3.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
@@ -28,7 +524,7 @@
   "bytes": 195524,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Przekrój przez centralną część siatkówki zdrowego oka, wykonany przy pomocy Optycznej Koherentnej Tomografii (OCT). W centrum widać plamkę żółtą.",
   "credit": "Own work"
  },
@@ -36,12 +532,12 @@
   "id": "IMG3-020",
   "file": "imgsrc3/web/IMG3-020.jpg",
   "title": {
-   "fr": "OCT spectral : coupes maculaires",
-   "en": "Spectral-domain OCT: macular cross-sections"
+   "fr": "OCT spectral d’une macula saine (homme de 24 ans)",
+   "en": "Spectral-domain OCT of a healthy macula (24-year-old man)"
   },
   "caption": {
-   "fr": "Coupes maculaires en OCT spectral (d’après le nom du fichier).",
-   "en": "Spectral-domain OCT macular cross-sections (per file name)."
+   "fr": "Macula saine d’un homme de 24 ans, coupes OCT spectral (Optovue iVue), publiée avec le consentement du patient.",
+   "en": "Healthy macula of a 24-year-old man, cross-section views, Optovue iVue spectral-domain OCT, released with patient consent."
   },
   "license": "CC BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
@@ -61,7 +557,7 @@
   "bytes": 163577,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "The healthy macula of a 24 year old male (cross-section views). This image is released to Wikimedia with patient consent. Imaged in-vivo with an Optovue iVue Spectral Domain Optical Coherence Tomographer (SD-OCT) at the office of Drs. Harry Wiessner, Steven Davis, Daniel Wiessner, and Eric Wiessner in Walla Walla, WA, USA.",
   "credit": "Own work"
  },
@@ -69,12 +565,12 @@
   "id": "IMG3-021",
   "file": "imgsrc3/web/IMG3-021.jpg",
   "title": {
-   "fr": "Choriorétinopathie séreuse centrale",
-   "en": "Central serous retinopathy"
+   "fr": "OCT : choriorétinopathie séreuse centrale (photo d’écran)",
+   "en": "OCT: central serous retinopathy (photo of the screen)"
   },
   "caption": {
-   "fr": "Choriorétinopathie séreuse centrale (d’après le nom du fichier ; modalité d’imagerie à confirmer par la description source).",
-   "en": "Central serous retinopathy (per file name; imaging modality to be confirmed from the source description)."
+   "fr": "Choriorétinopathie séreuse centrale imagée en OCT (Zeiss Visante) ; photo de l’écran prise au téléphone par le patient-auteur.",
+   "en": "Central serous retinopathy imaged with OCT (Zeiss Visante); a phone photo of the display taken by the author-patient."
   },
   "license": "CC BY-SA 3.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
@@ -95,7 +591,7 @@
   "bytes": 244967,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "This an occurance of central serous retinopathy in my retina, imaged using optical coherence tomography with a Zeiss Visante OCT machine. Unfortunately, the software does not allow easy export of the data, so this is a cameraphone picture of the display.",
   "credit": "Own work"
  },
@@ -103,12 +599,12 @@
   "id": "IMG3-023",
   "file": "imgsrc3/web/IMG3-023.jpg",
   "title": {
-   "fr": "Champ visuel Humphrey",
-   "en": "Humphrey visual field"
+   "fr": "Périmètre automatisé Humphrey (appareil)",
+   "en": "Humphrey automated perimeter (device)"
   },
   "caption": {
-   "fr": "Champ visuel Humphrey (d’après le nom du fichier ; type de programme et fiabilité à lire sur l’image source).",
-   "en": "Humphrey visual field (per file name; test pattern and reliability to be read from the source image)."
+   "fr": "Photo de l’appareil de champ visuel Humphrey (coupole, écran, imprimante) ; ce n’est pas un rapport de champ visuel.",
+   "en": "Photo of the Humphrey visual field analyser (bowl, screen, printer); not a visual field report."
   },
   "license": "CC BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
@@ -128,7 +624,7 @@
   "bytes": 32368,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Humphrey VF",
   "credit": "Own work"
  },
@@ -140,12 +636,12 @@
    "en": "Normal fundus (left eye)"
   },
   "caption": {
-   "fr": "Photographie du fond d’œil normal d’un œil gauche (d’après le nom du fichier).",
-   "en": "Fundus photograph of a normal left eye (per file name)."
+   "fr": "Fond d’œil gauche sans signe de maladie : macula au centre, papille du côté nasal (à gauche sur l’image) avec un peu de pigment au bord temporal, non pathologique ; veines plus sombres et un peu plus larges que les artères.",
+   "en": "Left fundus with no sign of disease: macula in the centre, optic disc on the nasal side (left of the image) with some non-pathological pigment at its temporal edge; veins darker and slightly wider than the arteries."
   },
   "license": "CC0",
   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "author": "Mikael Häggström . When using this image in external works, it may be cited as: Häggström, Mikael (2014). \" Medical gallery of Mikael Häggström 2014 \". WikiJournal of Medicine 1 (2). DOI : 10.15347/wjm/2014.008 . ISSN 2002-4436 . Public Domain . or By Mikael Häggström, used with permission.",
+  "author": "Mikael Häggström",
   "page_url": "https://commons.wikimedia.org/wiki/File:Fundus_photograph_of_normal_left_eye.jpg",
   "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Fundus_photograph_of_normal_left_eye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
   "source": "commons",
@@ -161,7 +657,7 @@
   "bytes": 104718,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Fundus photograph of the left eye, showing a fundus with no sign of disease or pathology. It is seen from front so that left in each image is to the person's right. The gaze is into the camera, so the macula is in the center of the image, and the optic disk is located towards the nose (left in image). The optic disk has some pigmentation at the perimeter of the lateral side, which is considered non-pathological. Veins are darker and slightly wider than corresponding arteries. Major nerve pathways are seen as white striped patterns radiating from the optic disk. Photo is taken at Gävle Hospital in Sweden in 2012 on a healthy 25-year old male volunteer.",
   "credit": "Own work"
  },
@@ -173,12 +669,12 @@
    "en": "Normal fundus (right eye)"
   },
   "caption": {
-   "fr": "Photographie du fond d’œil normal d’un œil droit (d’après le nom du fichier).",
-   "en": "Fundus photograph of a normal right eye (per file name)."
+   "fr": "Fond d’œil droit sans signe de maladie : macula au centre, papille du côté nasal (à droite sur l’image) ; veines plus sombres et un peu plus larges que les artères.",
+   "en": "Right fundus with no sign of disease: macula in the centre, optic disc on the nasal side (right of the image); veins darker and slightly wider than the arteries."
   },
   "license": "CC0",
   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "author": "Mikael Häggström . When using this image in external works, it may be cited as: Häggström, Mikael (2014). \" Medical gallery of Mikael Häggström 2014 \". WikiJournal of Medicine 1 (2). DOI : 10.15347/wjm/2014.008 . ISSN 2002-4436 . Public Domain . or By Mikael Häggström, used with permission.",
+  "author": "Mikael Häggström",
   "page_url": "https://commons.wikimedia.org/wiki/File:Fundus_photograph_of_normal_right_eye.jpg",
   "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Fundus_photograph_of_normal_right_eye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
   "source": "commons",
@@ -194,7 +690,7 @@
   "bytes": 99479,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Fundus photograph of the right eye, showing a fundus with no sign of disease or pathology. It is seen from front so that left in each image is to the person's right. The gaze is into the camera, so the macula is in the center of the image, and the optic disk is located towards the nose (right in image). The optic disk has some pigmentation at the perimeter of the lateral side, which is considered non-pathological. Veins are darker and slightly wider than corresponding arteries. Major nerve pathways are seen as white striped patterns radiating from the optic disk. In addition, there are also lighter areas close to larger vessels seen mainly at upper left in the image (person's upper right), which is regarded as a normal finding in younger people. Photo is taken at Gävle Hospital in Sweden in 2012 on a healthy 25-year old male volunteer.",
   "credit": "Own work"
  },
@@ -206,8 +702,8 @@
    "en": "Papilledema"
   },
   "caption": {
-   "fr": "Papilloedème (d’après le nom du fichier).",
-   "en": "Papilledema (per file name)."
+   "fr": "Papilloedème : papille gonflée par hypertension intracrânienne (description source).",
+   "en": "Papilledema: optic disc swollen from raised intracranial pressure (source description)."
   },
   "license": "CC BY 3.0",
   "license_url": "https://creativecommons.org/licenses/by/3.0",
@@ -227,7 +723,7 @@
   "bytes": 15956,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Photo demonstrating Papilledema which is a swollen optic disc caused by increased intracranial pressure.",
   "credit": "The Eyes Have It"
  },
@@ -235,12 +731,12 @@
   "id": "IMG3-029",
   "file": "imgsrc3/web/IMG3-029.jpg",
   "title": {
-   "fr": "Tache rouge cerise d’une occlusion de l’artère centrale de la rétine",
-   "en": "Cherry-red spot in central retinal artery occlusion"
+   "fr": "OACR : tache rouge cerise et œdème rétinien",
+   "en": "CRAO: cherry-red spot and retinal swelling"
   },
   "caption": {
-   "fr": "Tache rouge cerise chez un patient atteint d’occlusion de l’artère centrale de la rétine (d’après le nom du fichier).",
-   "en": "Cherry-red spot in a patient with central retinal artery occlusion (per file name)."
+   "fr": "Tache rouge cerise et œdème rétinien (occlusion de l’artère centrale de la rétine).",
+   "en": "Cherry-red spot and retinal swelling (central retinal artery occlusion)."
   },
   "license": "CC BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
@@ -260,7 +756,7 @@
   "bytes": 49584,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Image showing cherry red spot and retinal swelling.",
   "credit": "Own work"
  },
@@ -268,12 +764,12 @@
   "id": "IMG3-030",
   "file": "imgsrc3/web/IMG3-030.jpg",
   "title": {
-   "fr": "Occlusion de la veine centrale de la rétine (fond d’œil)",
-   "en": "Central retinal vein occlusion (fundus)"
+   "fr": "OVCR : fond d’œil et angiographie",
+   "en": "CRVO: fundus and angiography"
   },
   "caption": {
-   "fr": "Fond d’œil d’une occlusion de la veine centrale de la rétine (d’après le nom du fichier, en espagnol).",
-   "en": "Fundus of a central retinal vein occlusion (per the Spanish file name)."
+   "fr": "Occlusion de la veine centrale de la rétine. A : fond d’œil avec hémorragies intrarétiniennes. B : angiographie à la fluorescéine avec blocage de la fluorescence choroïdienne par les hémorragies.",
+   "en": "Central retinal vein occlusion. A: fundus with intraretinal haemorrhages. B: fluorescein angiography showing blocked choroidal fluorescence from the haemorrhages."
   },
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0",
@@ -293,7 +789,7 @@
   "bytes": 75196,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Fig 1. Oclusión Vena Retinal Central. (A)Fondo de ojo con hemorragias intraretinales. (B)Angiografía fluorescente (FA) luego de inyección tinción mostrando bloqueo de fluorescencia coroidal por hemorragias intraretinales.",
   "credit": "Comparison of foveal avascular zone between optical coherence tomography angiography and fluorescein angiography in patients with retinal vein occlusion. PLoS ONE 14(6): e0217849"
  },
@@ -301,12 +797,12 @@
   "id": "IMG3-031",
   "file": "imgsrc3/web/IMG3-031.jpg",
   "title": {
-   "fr": "Rétinopathie diabétique proliférante (fond d’œil)",
-   "en": "Proliferative diabetic retinopathy (fundus)"
+   "fr": "Rétinopathie diabétique proliférante (NEI)",
+   "en": "Proliferative diabetic retinopathy (NEI)"
   },
   "caption": {
-   "fr": "Fond d’œil : rétinopathie proliférante (d’après le nom du fichier).",
-   "en": "Fundus: proliferative retinopathy (per file name)."
+   "fr": "Rétinopathie proliférante, forme avancée de rétinopathie diabétique : néovaisseaux et tissu cicatriciel à la surface de la rétine (NEI, réf. EDA01).",
+   "en": "Proliferative retinopathy, an advanced form of diabetic retinopathy: abnormal new vessels and scar tissue on the retinal surface (NEI, ref. EDA01)."
   },
   "license": "Public domain",
   "license_url": null,
@@ -326,7 +822,7 @@
   "bytes": 31597,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Proliferative retinopathy Description: Proliferative retinopathy, an advanced form of diabetic retinopathy, occurs when abnormal new blood vessels and scar tissue form on the surface of the retina. Credit: National Eye Institute, National Institutes of Health Ref#: EDA01",
   "credit": "http://www.nei.nih.gov/photo/eyedis/index.asp"
  },
@@ -334,12 +830,12 @@
   "id": "IMG3-032",
   "file": "imgsrc3/web/IMG3-032.jpg",
   "title": {
-   "fr": "Rétinopathie (fond d’œil, série EDA)",
-   "en": "Retinopathy (fundus, EDA series)"
+   "fr": "Rétinopathie diabétique « de fond » (NEI)",
+   "en": "Background diabetic retinopathy (NEI)"
   },
   "caption": {
-   "fr": "Fond d’œil : rétinopathie (d’après le nom du fichier ; type précis à confirmer par la description source).",
-   "en": "Fundus: retinopathy (per file name; exact type to be confirmed from the source description)."
+   "fr": "Rétinopathie de fond : altération légère des petits vaisseaux rétiniens, dont certaines portions gonflent et laissent fuir du liquide dans la rétine (NEI, réf. EDA03).",
+   "en": "Background retinopathy: slight deterioration of the small retinal vessels; portions may swell and leak fluid into the retina (NEI, ref. EDA03)."
   },
   "license": "Public domain",
   "license_url": null,
@@ -359,7 +855,7 @@
   "bytes": 28082,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "In background retinopathy Description: In background retinopathy, a slight deterioration in the small blood vessels of the retina, portions of the vessels may swell and leak fluid into the surrounding retinal tissue. Credit: National Eye Institute, National Institutes of Health Ref#: EDA03",
   "credit": "http://www.nei.nih.gov/photo/eyedis/index.asp"
  },
@@ -367,12 +863,12 @@
   "id": "IMG3-033",
   "file": "imgsrc3/web/IMG3-033.jpg",
   "title": {
-   "fr": "Œdème maculaire diabétique (fond d’œil)",
-   "en": "Diabetic macular oedema (fundus)"
+   "fr": "Œdème maculaire diabétique (NEI)",
+   "en": "Diabetic macular oedema (NEI)"
   },
   "caption": {
-   "fr": "Fond d’œil : œdème maculaire diabétique (d’après le nom du fichier).",
-   "en": "Fundus: diabetic macular oedema (per file name)."
+   "fr": "Œdème maculaire diabétique (NEI, réf. EDA04 ; la description source n’en dit pas plus).",
+   "en": "Diabetic macular oedema (NEI, ref. EDA04; the source description says no more)."
   },
   "license": "Public domain",
   "license_url": null,
@@ -392,7 +888,7 @@
   "bytes": 29110,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Diabetic macular edema Description: Diabetic macular edema. Credit: National Eye Institute, National Institutes of Health Ref#: EDA04",
   "credit": "http://www.nei.nih.gov/photo/eyedis/index.asp"
  },
@@ -400,12 +896,12 @@
   "id": "IMG3-034",
   "file": "imgsrc3/web/IMG3-034.jpg",
   "title": {
-   "fr": "Décollement de rétine rhegmatogène (fond d’œil)",
-   "en": "Rhegmatogenous retinal detachment (fundus)"
+   "fr": "Décollement de rétine sur déchirure en fer à cheval",
+   "en": "Retinal detachment from a horseshoe tear"
   },
   "caption": {
-   "fr": "Décollement de rétine rhegmatogène (d’après le nom du fichier, en allemand).",
-   "en": "Rhegmatogenous retinal detachment (per the German file name)."
+   "fr": "Décollement de rétine lié à une déchirure en fer à cheval : la rétine présente une perte de substance en forme de fer à cheval.",
+   "en": "Horseshoe-tear-related retinal detachment: the retina has a horseshoe-shaped defect."
   },
   "license": "CC BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
@@ -425,7 +921,7 @@
   "bytes": 55897,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Horseshoe tear-related retinal detachment - the retina has a horseshoe-shaped defect.",
   "credit": "Own work"
  },
@@ -433,12 +929,12 @@
   "id": "IMG3-035",
   "file": "imgsrc3/web/IMG3-035.jpg",
   "title": {
-   "fr": "Ulcère cornéen dendritique",
-   "en": "Dendritic corneal ulcer"
+   "fr": "Dendrite herpétique à la fluorescéine",
+   "en": "Dendritic pattern with fluorescein"
   },
   "caption": {
-   "fr": "Ulcère cornéen dendritique (d’après le nom du fichier ; présence de fluorescéine à confirmer sur l’image).",
-   "en": "Dendritic corneal ulcer (per file name; fluorescein staining to be confirmed on the image)."
+   "fr": "Aspect dendritique après instillation de fluorescéine.",
+   "en": "Dendritic pattern after fluorescein staining."
   },
   "license": "CC BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
@@ -459,7 +955,7 @@
   "bytes": 67126,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Dendritic pattern after fluorescein staining",
   "credit": "Own work"
  },
@@ -467,12 +963,12 @@
   "id": "IMG3-036",
   "file": "imgsrc3/web/IMG3-036.jpg",
   "title": {
-   "fr": "Kératite à Acanthamoeba (figure 1A, revue Parasite)",
-   "en": "Acanthamoeba keratitis (figure 1A, journal Parasite)"
+   "fr": "Kératite à Acanthamoeba : fonte et vascularisation cornéennes",
+   "en": "Acanthamoeba keratitis: corneal melting and vascularisation"
   },
   "caption": {
-   "fr": "Kératite à Acanthamoeba, figure 1A d’un article de la revue Parasite (d’après le nom du fichier ; aspect — anneau ou non — à confirmer par la légende source).",
-   "en": "Acanthamoeba keratitis, figure 1A from an article in the journal Parasite (per file name; ring infiltrate or not to be confirmed from the source legend)."
+   "fr": "Fonte cornéenne et vascularisation chez un patient atteint de kératite à Acanthamoeba (figure 1A d’un article de la revue Parasite). Pas d’anneau décrit.",
+   "en": "Corneal melting and vascularisation in a patient with Acanthamoeba keratitis (figure 1A of a paper in Parasite). No ring infiltrate described."
   },
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0",
@@ -492,90 +988,24 @@
   "bytes": 30304,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Figure 1A of published paper. Corneal melting and vascularization in a patient with Acanthamoeba keratitis",
   "credit": "\" (2015). \" An update on Acanthamoeba keratitis: diagnosis, pathogenesis and treatment \". Parasite 22 : 10. DOI : 10.1051/parasite/2015010 . PMID 25687209 . ISSN 1776-1042 ."
- },
- {
-  "id": "IMG3-037",
-  "file": "imgsrc3/web/IMG3-037.jpg",
-  "title": {
-   "fr": "Kératocône : signe de Munson (œil gauche)",
-   "en": "Keratoconus: Munson sign (left eye)"
-  },
-  "caption": {
-   "fr": "Signe de Munson dans un kératocône, œil gauche (d’après le nom du fichier).",
-   "en": "Munson sign in keratoconus, left eye (per file name)."
-  },
-  "license": "CC BY-SA 4.0",
-  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-  "author": "William Charles Caccamise, Sr, MD",
-  "page_url": "https://commons.wikimedia.org/wiki/File:KeratoconusMunsonSignOS.jpg",
-  "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/KeratoconusMunsonSignOS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-  "source": "commons",
-  "doi": null,
-  "article": null,
-  "module": "B",
-  "exam": null,
-  "topics": [
-   "c-keratocone"
-  ],
-  "w": 473,
-  "h": 285,
-  "bytes": 24319,
-  "modified": "resized/re-encoded only (max 1200 px, no crop)",
-  "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
-  "source_description": "Keratoconus is present in both eyes. However, Munson's sign (bowing of the lower lid upon downgaze) is apparent in left eye only.",
-  "credit": "http://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/keratoconus-with-Munsons-sign.html"
- },
- {
-  "id": "IMG3-038",
-  "file": "imgsrc3/web/IMG3-038.jpg",
-  "title": {
-   "fr": "Hydrops cornéen aigu",
-   "en": "Acute corneal hydrops"
-  },
-  "caption": {
-   "fr": "Hydrops cornéen (d’après le nom du fichier).",
-   "en": "Corneal hydrops (per file name)."
-  },
-  "license": "Public domain",
-  "license_url": null,
-  "author": "Wikimedia Commons contributor",
-  "page_url": "https://commons.wikimedia.org/wiki/File:Corneal-hydrops.jpg",
-  "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Corneal-hydrops.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-  "source": "commons",
-  "doi": null,
-  "article": null,
-  "module": "B",
-  "exam": null,
-  "topics": [
-   "c-keratocone"
-  ],
-  "w": 116,
-  "h": 86,
-  "bytes": 2981,
-  "modified": "resized/re-encoded only (max 1200 px, no crop)",
-  "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
-  "source_description": "",
-  "credit": ""
  },
  {
   "id": "IMG3-039",
   "file": "imgsrc3/web/IMG3-039.jpg",
   "title": {
-   "fr": "Topographie cornéenne d’un kératocône stade II",
-   "en": "Corneal topography of stage II keratoconus"
+   "fr": "Topographie : kératocône stade II (œil gauche)",
+   "en": "Topography: stage II keratoconus (left eye)"
   },
   "caption": {
-   "fr": "Topographie cornéenne d’un kératocône de stade II, d’après Elise A. Slim et al. (d’après le nom du fichier).",
-   "en": "Corneal topography of a stage II keratoconus, from Elise A. Slim et al. (per file name)."
+   "fr": "Topographie cornéenne de l’œil gauche montrant un kératocône de stade II (Slim et al.).",
+   "en": "Corneal topography of the left eye showing stage II keratoconus (Slim et al.)."
   },
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0",
-  "author": "Elise A. Slim et al.",
+  "author": "Elise A. Slim et al",
   "page_url": "https://commons.wikimedia.org/wiki/File:Corneal_topography,_stage_II_keratoconus_(Elise_A._Slim_et_al.).jpg",
   "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Corneal_topography%2C_stage_II_keratoconus_%28Elise_A._Slim_et_al.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
   "source": "commons",
@@ -592,7 +1022,7 @@
   "bytes": 112044,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Corneal topography of the left eye showing stage II keratoconus.",
   "credit": "http://www.hindawi.com/journals/criopm/2015/308348/"
  },
@@ -600,12 +1030,12 @@
   "id": "IMG3-040",
   "file": "imgsrc3/web/IMG3-040.jpg",
   "title": {
-   "fr": "Dystrophie de Fuchs",
-   "en": "Fuchs dystrophy"
+   "fr": "Dystrophie de Fuchs : guttae en histologie",
+   "en": "Fuchs dystrophy: guttae on histology"
   },
   "caption": {
-   "fr": "Dystrophie endothéliale de Fuchs (d’après le nom du fichier ; présence de gouttes/guttae à confirmer sur l’image).",
-   "en": "Fuchs endothelial dystrophy (per file name; guttae to be confirmed on the image)."
+   "fr": "Microscopie optique (PAS) : nombreuses excroissances à la face postérieure de la Descemet (guttae) et kystes de l’épithélium sous une membrane basale ectopique (Klintworth, Orphanet J Rare Dis 2009). Coupe histologique, pas une photo à la lampe à fente.",
+   "en": "Light microscopy (PAS): numerous excrescences on the posterior surface of Descemet membrane (guttae) and epithelial cysts beneath ectopic basement membrane (Klintworth, Orphanet J Rare Dis 2009). Histology section, not a slit-lamp photo."
   },
   "license": "CC BY 2.0",
   "license_url": "https://creativecommons.org/licenses/by/2.0",
@@ -625,7 +1055,7 @@
   "bytes": 43256,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Fuchs corneal dystrophy. Light microscopic appearance of the cornea showing numerous excrescences on the posterior surface of Descemet membrane (guttae) and the presence of cysts in the corneal epithelium beneath ectopically placed intraepithelial basement membrane. Periodic acid-Schiff stain. Image URL: http://www.ojrd.com/content/4/1/7/figure/F62 Klintworth Orphanet Journal of Rare Diseases 2009 4:7 doi:10.1186/1750-1172-4-7",
   "credit": "http://www.ojrd.com/content/4/1/7"
  },
@@ -633,12 +1063,12 @@
   "id": "IMG3-041",
   "file": "imgsrc3/web/IMG3-041.jpg",
   "title": {
-   "fr": "Ptérygion à la lampe à fente",
-   "en": "Pterygium at the slit lamp"
+   "fr": "Ptérygion sévère atteignant la pupille",
+   "en": "Severe pterygium reaching the pupil"
   },
   "caption": {
-   "fr": "Ptérygion photographié à la lampe à fente (d’après le nom du fichier).",
-   "en": "Pterygium photographed at the slit lamp (per file name)."
+   "fr": "Ptérygion sévère qui atteint la pupille.",
+   "en": "Severe pterygium reaching the pupil."
   },
   "license": "CC BY 3.0",
   "license_url": "https://creativecommons.org/licenses/by/3.0",
@@ -658,7 +1088,7 @@
   "bytes": 98134,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Severe Pterygium reaching the pupil",
   "credit": "Own work"
  },
@@ -670,8 +1100,8 @@
    "en": "Conjunctival pterygium"
   },
   "caption": {
-   "fr": "Ptérygion de la conjonctive (d’après le nom du fichier).",
-   "en": "Pterygium of the conjunctiva (per file name)."
+   "fr": "Ptérygion de la conjonctive (la description source n’en dit pas plus).",
+   "en": "Pterygium of the conjunctiva (the source description says no more)."
   },
   "license": "CC BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
@@ -691,7 +1121,7 @@
   "bytes": 87177,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Pterygium (conjunctiva)",
   "credit": "Own work"
  },
@@ -703,12 +1133,12 @@
    "en": "Band keratopathy (left eye)"
   },
   "caption": {
-   "fr": "Kératopathie en bandelette, œil gauche (d’après le nom du fichier).",
-   "en": "Band keratopathy, left eye (per file name)."
+   "fr": "Kératopathie en bandelette, œil gauche (nom du fichier ; pas de description source).",
+   "en": "Band keratopathy, left eye (file name; no source description)."
   },
   "license": "CC BY-SA 3.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-  "author": "Wikimedia Commons contributor",
+  "author": "Wikimedia Commons user PaulBone~commonswiki",
   "page_url": "https://commons.wikimedia.org/wiki/File:Band-keratopathy_left-eye.png",
   "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Band-keratopathy_left-eye.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
   "source": "commons",
@@ -724,7 +1154,7 @@
   "bytes": 85222,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "",
   "credit": ""
  },
@@ -732,12 +1162,12 @@
   "id": "IMG3-052",
   "file": "imgsrc3/web/IMG3-052.jpg",
   "title": {
-   "fr": "Fuseau de Krukenberg sur la cornée",
-   "en": "Krukenberg spindle on the cornea"
+   "fr": "Fuseau de Krukenberg",
+   "en": "Krukenberg spindle"
   },
   "caption": {
-   "fr": "Cornée montrant un fuseau de Krukenberg (d’après le nom du fichier).",
-   "en": "Cornea showing a Krukenberg spindle (per file name)."
+   "fr": "Dépôts de cellules pigmentées de l’iris formant un long fuseau vertical à la face postérieure de la cornée : fuseau de Krukenberg.",
+   "en": "Deposits of pigmented iris cells form a long spindle-shaped pattern on the back of the cornea: Krukenberg’s spindle."
   },
   "license": "Public domain",
   "license_url": null,
@@ -757,7 +1187,7 @@
   "bytes": 15712,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Deposits of pigmented iris cells form a long spindle-shaped pattern on the back surface of the cornea - this is named 'Krukenberg's Spindle'",
   "credit": "http://www.mrcophth.com/pd/kruka.html"
  },
@@ -765,12 +1195,12 @@
   "id": "IMG3-053",
   "file": "imgsrc3/web/IMG3-053.jpg",
   "title": {
-   "fr": "Fermeture de l’angle aiguë (photo du segment antérieur)",
-   "en": "Acute angle-closure glaucoma (anterior segment photo)"
+   "fr": "Crise de fermeture de l’angle (œil droit, PIO 42)",
+   "en": "Acute angle closure (right eye, IOP 42)"
   },
   "caption": {
-   "fr": "Glaucome aigu par fermeture de l’angle (d’après le nom du fichier).",
-   "en": "Acute angle-closure glaucoma (per file name)."
+   "fr": "Glaucome aigu par fermeture de l’angle de l’œil droit (PIO 42 mmHg) : pupille mi-dilatée aréactive à la lumière (à gauche sur la photo) et rougeur conjonctivale.",
+   "en": "Acute angle-closure glaucoma of the right eye (IOP 42 mmHg): mid-sized pupil unreactive to light (on the left of the photo) and conjunctival redness."
   },
   "license": "CC BY-SA 3.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
@@ -791,7 +1221,7 @@
   "bytes": 70572,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Acute angle closure glaucoma of the right eye ( intraocular pressure was 42 in the right eye). Note the mid sized pupil on the left that was not reactive to light and conjunctivitis .",
   "credit": "Own work"
  },
@@ -803,12 +1233,12 @@
    "en": "Acute angle closure (second example)"
   },
   "caption": {
-   "fr": "Glaucome aigu par fermeture de l’angle (d’après le nom du fichier).",
-   "en": "Acute angle-closure glaucoma (per file name)."
+   "fr": "Glaucome aigu par fermeture de l’angle : élévation brutale de la PIO quand l’iris bloque le trabéculum (description source).",
+   "en": "Acute angle-closure glaucoma: sudden IOP rise when the iris blocks the trabecular meshwork (source description)."
   },
   "license": "CC BY 3.0",
   "license_url": "https://creativecommons.org/licenses/by/3.0",
-  "author": "Jonathan Trobe, M.D.",
+  "author": "Jonathan Trobe, M.D",
   "page_url": "https://commons.wikimedia.org/wiki/File:Acute_Angle_Closure-glaucoma.jpg",
   "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Acute_Angle_Closure-glaucoma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
   "source": "commons",
@@ -825,7 +1255,7 @@
   "bytes": 17246,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Photograph showing acute angle-closure glaucoma which is a sudden elevation in intraocular pressure that occurs when the iris blocks the eye's drainage channel—the trabecular meshwork.",
   "credit": "The Eyes Have It"
  },
@@ -833,12 +1263,12 @@
   "id": "IMG3-055",
   "file": "imgsrc3/web/IMG3-055.jpg",
   "title": {
-   "fr": "Papille glaucomateuse",
-   "en": "Glaucomatous optic disc"
+   "fr": "Papille d’un glaucome avancé",
+   "en": "Optic disc in advanced glaucoma"
   },
   "caption": {
-   "fr": "Papille glaucomateuse (d’après le nom du fichier, en allemand).",
-   "en": "Glaucomatous optic disc (per the German file name)."
+   "fr": "Nerf optique au stade de glaucome avancé.",
+   "en": "Optic nerve in advanced glaucoma."
   },
   "license": "CC BY-SA 3.0",
   "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
@@ -858,7 +1288,7 @@
   "bytes": 127774,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Optic nerve in advanced glaucoma disease",
   "credit": "Self-photographed"
  },
@@ -866,12 +1296,12 @@
   "id": "IMG3-056",
   "file": "imgsrc3/web/IMG3-056.jpg",
   "title": {
-   "fr": "Angle iridocornéen (animation de parallaxe, 1ʳᵉ image)",
-   "en": "Anterior chamber angle (motion-parallax animation, first frame)"
+   "fr": "Gonioscopie : angle d’un homme de 25 ans",
+   "en": "Gonioscopy: angle of a 25-year-old man"
   },
   "caption": {
-   "fr": "Angle de la chambre antérieure, animation de parallaxe 3D (d’après le nom du fichier) ; seule la première image est conservée.",
-   "en": "Anterior chamber angle, 3D motion-parallax animation (per file name); only the first frame is kept."
+   "fr": "Angle de la chambre antérieure d’un homme de 25 ans, vu au verre de gonioscopie ; du pigment est visible dans l’angle (1ʳᵉ image d’une animation de parallaxe ; consentement du patient).",
+   "en": "Anterior chamber angle of a 25-year-old man seen through a gonioscopy lens; pigment is visible in the angle (first frame of a motion-parallax animation; patient consent)."
   },
   "license": "CC BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
@@ -891,9 +1321,43 @@
   "bytes": 76902,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "The anterior chamber angle of a 25 year old male. Pigment is visible in the angle. Image is released to wikimedia commons with patient consent. GIF displays a three-dimensional view of the iris and angle via motion parallax. Imaged with a gonioscopy lens and viewed through and biomicroscope at Pacific University College of Optometry.",
   "credit": "Own work"
+ },
+ {
+  "id": "IMG3-057",
+  "file": "imgsrc3/web/IMG3-057.jpg",
+  "title": {
+   "fr": "Scanner : abcès orbitaire latéral à contour rehaussé",
+   "en": "CT: rim-enhancing lateral orbital abscess"
+  },
+  "caption": {
+   "fr": "Collection liquidienne à paroi rehaussée (pointes de flèche) en dehors du globe droit, compatible avec un abcès orbitaire (cellulite pré- et rétroseptale).",
+   "en": "Rim-enhancing fluid collection (arrowheads) lateral to the right globe consistent with orbital abscess (pre- and postseptal cellulitis)."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Haight et al. — Clin Pract Cases Emerg Med 2023;7(4)",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10855287/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10855287.1/cpcem-7-262-g002.jpg",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.1427",
+  "article": "Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report",
+  "module": "A",
+  "exam": null,
+  "topics": [
+   "a5-inflammation-infection"
+  ],
+  "w": 607,
+  "h": 432,
+  "bytes": 36781,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "Rim-enhancing fluid collection (arrowheads) lateral to the right globe consistent with orbital abscess.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
  },
  {
   "id": "IMG3-058",
@@ -903,8 +1367,8 @@
    "en": "Orbital cellulitis"
   },
   "caption": {
-   "fr": "Cellulite orbitaire (d’après le nom du fichier).",
-   "en": "Orbital cellulitis (per file name)."
+   "fr": "Cellulite orbitaire, infection bactérienne des tissus périoculaires (description source).",
+   "en": "Orbital cellulitis, a bacterial infection of the periocular tissues (source description)."
   },
   "license": "CC BY 3.0",
   "license_url": "https://creativecommons.org/licenses/by/3.0",
@@ -924,7 +1388,7 @@
   "bytes": 12464,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": false,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Photograph showing orbital cellulitis which is a bacterial infection of the periocular tissues.",
   "credit": "The Eyes Have It"
  },
@@ -932,12 +1396,12 @@
   "id": "IMG3-059",
   "file": "imgsrc3/web/IMG3-059.jpg",
   "title": {
-   "fr": "Anisocorie",
-   "en": "Anisocoria"
+   "fr": "Anisocorie pharmacologique (tropicamide)",
+   "en": "Pharmacological anisocoria (tropicamide)"
   },
   "caption": {
-   "fr": "Anisocorie (d’après le nom du fichier) ; la cause n’est pas indiquée par le nom.",
-   "en": "Anisocoria (per file name); the cause is not given by the name."
+   "fr": "Anisocorie : tropicamide instillé dans l’œil droit.",
+   "en": "Anisocoria: tropicamide instilled in the right eye."
   },
   "license": "CC BY-SA 3.0",
   "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
@@ -958,7 +1422,7 @@
   "bytes": 24633,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Anisocoria (right eye instiled by tropicamide)",
   "credit": "Own work"
  },
@@ -970,8 +1434,8 @@
    "en": "Hyphema filling half of the anterior chamber"
   },
   "caption": {
-   "fr": "Hyphéma occupant la moitié de la chambre antérieure (d’après le nom du fichier).",
-   "en": "Hyphema occupying half of the anterior chamber (per file name)."
+   "fr": "Hyphéma occupant la moitié de la chambre antérieure.",
+   "en": "Hyphema occupying half of the anterior chamber."
   },
   "license": "CC BY-SA 2.5",
   "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
@@ -991,7 +1455,7 @@
   "bytes": 32446,
   "modified": "resized/re-encoded only (max 1200 px, no crop)",
   "share_alike": true,
-  "caption_basis": "file name only (source description added at build)",
+  "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Hyphema - occupying half of anterior chamber of eye",
   "credit": "Own work"
  }
