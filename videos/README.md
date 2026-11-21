@@ -38,28 +38,28 @@ Posters (`*-poster.png`, half resolution) are frames taken from each video and c
 ## Files and durations
 | File | Duration | Size |
 |---|---|---|
-| `ocelle-cas-vedette-en-16x9.mp4` | 19.3 s | 0.8 MB |
-| `ocelle-cas-vedette-en-9x16.mp4` | 22.9 s | 1.6 MB |
-| `ocelle-cas-vedette-fr-16x9.mp4` | 19.3 s | 0.8 MB |
-| `ocelle-cas-vedette-fr-9x16.mp4` | 22.9 s | 1.8 MB |
-| `ocelle-examens-ascan-en-16x9.mp4` | 20.8 s | 0.9 MB |
-| `ocelle-examens-ascan-en-9x16.mp4` | 24.9 s | 1.2 MB |
-| `ocelle-examens-ascan-fr-16x9.mp4` | 20.2 s | 0.9 MB |
-| `ocelle-examens-ascan-fr-9x16.mp4` | 25.2 s | 1.4 MB |
-| `ocelle-image-du-jour-en-16x9.mp4` | 18.7 s | 1.0 MB |
-| `ocelle-image-du-jour-en-9x16.mp4` | 19.0 s | 1.2 MB |
-| `ocelle-image-du-jour-fr-16x9.mp4` | 18.7 s | 1.0 MB |
-| `ocelle-image-du-jour-fr-9x16.mp4` | 18.9 s | 1.3 MB |
-| `ocelle-social-cas-oct-en-16x9.mp4` | 19.3 s | 0.7 MB |
-| `ocelle-social-cas-oct-en-9x16.mp4` | 22.8 s | 1.3 MB |
-| `ocelle-social-cas-oct-fr-16x9.mp4` | 19.3 s | 0.7 MB |
-| `ocelle-social-cas-oct-fr-9x16.mp4` | 22.8 s | 1.3 MB |
+| `ocelle-cas-vedette-en-16x9.mp4` | 19.5 s | 0.7 MB |
+| `ocelle-cas-vedette-en-9x16.mp4` | 23.3 s | 1.5 MB |
+| `ocelle-cas-vedette-fr-16x9.mp4` | 19.5 s | 0.7 MB |
+| `ocelle-cas-vedette-fr-9x16.mp4` | 23.1 s | 1.9 MB |
+| `ocelle-examens-ascan-en-16x9.mp4` | 20.3 s | 0.8 MB |
+| `ocelle-examens-ascan-en-9x16.mp4` | 24.0 s | 1.2 MB |
+| `ocelle-examens-ascan-fr-16x9.mp4` | 20.4 s | 0.9 MB |
+| `ocelle-examens-ascan-fr-9x16.mp4` | 24.0 s | 1.3 MB |
+| `ocelle-image-du-jour-en-16x9.mp4` | 18.9 s | 0.9 MB |
+| `ocelle-image-du-jour-en-9x16.mp4` | 19.2 s | 1.3 MB |
+| `ocelle-image-du-jour-fr-16x9.mp4` | 18.8 s | 0.9 MB |
+| `ocelle-image-du-jour-fr-9x16.mp4` | 19.2 s | 1.1 MB |
+| `ocelle-social-cas-dendrite-en-16x9.mp4` | 19.4 s | 0.6 MB |
+| `ocelle-social-cas-dendrite-en-9x16.mp4` | 23.1 s | 1.3 MB |
+| `ocelle-social-cas-dendrite-fr-16x9.mp4` | 19.5 s | 0.6 MB |
+| `ocelle-social-cas-dendrite-fr-9x16.mp4` | 23.1 s | 1.5 MB |
 | `ocelle-social-reveal-loop-en-9x16.mp4` | 6.0 s | 0.5 MB |
-| `ocelle-social-reveal-loop-fr-9x16.mp4` | 6.0 s | 0.4 MB |
-| `ocelle-social-reveal-loop-en-9x16.gif` | 6.0 s | 1.0 MB |
-| `ocelle-social-reveal-loop-fr-9x16.gif` | 6.0 s | 0.9 MB |
+| `ocelle-social-reveal-loop-fr-9x16.mp4` | 6.0 s | 0.5 MB |
+| `ocelle-social-reveal-loop-en-9x16.gif` | 6.0 s | 0.8 MB |
+| `ocelle-social-reveal-loop-fr-9x16.gif` | 6.0 s | 0.8 MB |
 
-Each MP4 has a matching `*-poster.png`. Total for the folder: about 25 MB. Every file is under 2 MB.
+Each MP4 has a matching `*-poster.png`. Total for the folder: about 24 MB. Every file is under 2 MB.
 
 ## Notes
 - The App Store accepts 1080×1920 previews for some iPhone display classes. For 6.9" / 6.5" slots, use the simulator recordings from the iOS workflow, or re-run with that size (the `FORMATS` table in the recorder script).

@@ -2,7 +2,7 @@
 import json, os, subprocess, sys
 D = os.path.dirname(os.path.abspath(__file__)); V = '/home/claude/ophtalmo-academie/videos'
 os.makedirs(V, exist_ok=True)
-NAMES = {'cas': 'ocelle-cas-vedette', 'ascan': 'ocelle-examens-ascan', 'daily': 'ocelle-image-du-jour', 'social': 'ocelle-social-cas-oct'}
+NAMES = {'cas': 'ocelle-cas-vedette', 'ascan': 'ocelle-examens-ascan', 'daily': 'ocelle-image-du-jour', 'social': 'ocelle-social-cas-dendrite'}
 POSTER = {'cas': ('reveal', 2.2), 'social': ('reveal', 2.2), 'ascan': ('ok1', 1.6), 'daily': ('streak', 1.4)}
 only = sys.argv[1:]
 rows = []

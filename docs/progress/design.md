@@ -37,3 +37,6 @@
 - Hook: `dec` class on decisive hotspots (investigations.js, one line). Investigations hotspot CSS restyled.
 - Checks: test_site.py --quick: 84 checks, 1 failing = offline-images-not-cached (known D13, by design). axe: 28 checks, 0 failing. Screenshots at 390/1280, light/dark: home, fiche, inv-oct reveal, cas-vedette, cartes, progression. No horizontal scroll, no JS errors.
 - TODO (iOS): splash colour #1F2CFF in capacitor.config.json; regenerate AppIcon.
+- Videos v2 (done): 16 MP4s re-recorded with the new identity (cas-vedette, A-scan, image of the day, social), FR/EN, 9:16 + 16:9, 19–24 s, each ≤ 1.9 MB. Captions in Bricolage ExtraBold with the second line in fluo; animated end cards (marker draws the ocellus + circles "signe", CTA sticker pops); 6-s loop MP4 + GIF.
+  - The social variant now uses image case oc-10, the CC BY-SA fluorescein dendrite. It may go on social networks with attribution and a CC BY-SA 4.0 notice; the old OCT schematic files were removed. Rights table in videos/README.md.
+- Brand previews: brand/preview-home-desktop-dark.png, preview-home-phone-light.png, preview-reveal-phone-light.png, preview-practice-desktop-dark.png.

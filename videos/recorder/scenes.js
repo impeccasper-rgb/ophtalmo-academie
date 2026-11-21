@@ -5,8 +5,7 @@ async function cas(opts) {
   const social = opts.scene === 'social';
   const s = await session(opts); const P = phone(opts.fmt), top = P ? 64 : 16;
   await s.goto('accueil');
-  if (social) await s.page.evaluate(() => { FEATURED.id = 'p-oct-9'; });
-  await s.page.evaluate(() => { location.hash = 'cas-vedette'; }); await s.wait(900);
+  await s.page.evaluate(h => { location.hash = h; }, social ? 'cas-images/oc-10' : 'cas-vedette'); await s.wait(1100);
   await s.start();
   s.cue('Tu vois le signe ?', 'Can you spot the sign?');
   await s.wait(1300);
@@ -19,12 +18,12 @@ async function cas(opts) {
   await s.wait(500);
   if (P) await s.scrollTo('.opts', 'center', 0, 900);
   await s.wait(1300);
-  const ans = await s.page.evaluate(() => FEATURED.item.answer);
+  const ans = await s.page.evaluate(soc => soc ? ((OPH.imageCases || []).find(x => x.id === 'oc-10') || {}).answer : FEATURED.item.answer, social);
   s.mark('answer');
   await s.tap('.opt[data-k="' + ans + '"]', 550);
   await s.wait(250);
-  s.cue(social ? 'Le signe décisif s’allume :\\Ndu liquide sous la rétine' : 'Le signe décisif s’allume :\\Nla tache rouge cerise',
-        social ? 'The decisive sign lights up:\\Nfluid under the retina' : 'The decisive sign lights up:\\Nthe cherry-red spot');
+  s.cue(social ? 'Le signe décisif s’allume :\\Nune dendrite à la fluorescéine' : 'Le signe décisif s’allume :\\Nla tache rouge cerise',
+        social ? 'The decisive sign lights up:\\Na fluorescein-stained dendrite' : 'The decisive sign lights up:\\Nthe cherry-red spot');
   if (P) await s.scrollTo('.inv-media', 'start', top, 700); else await s.scrollTo('.inv-run', 'start', top, 500);
   s.mark('reveal');
   await s.wait(3800);
