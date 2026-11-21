@@ -1,0 +1,71 @@
+name: Fetch open-licence images (imgsrc3)
+
+# Downloads the images listed in imgsrc3/sources.json (Wikimedia Commons + PubMed Central
+# open access), checks each licence at the source (CC0 / public domain / CC BY / CC BY-SA
+# only), resizes them and commits imgsrc3/web/*.jpg + imgsrc3/catalog3.json back to main.
+# The dev container cannot reach Wikimedia/PMC, so this runs on GitHub Actions only.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - imgsrc3/sources.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: media3
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Install ImageMagick and curl
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq imagemagick curl
+          convert -version | head -1
+
+      - name: Download, check licences, resize (max 1200 px, JPEG q82, EXIF stripped, no crop)
+        run: python3 -I imgsrc3/build_media3.py
+        # build_media3.py sends User-Agent "OcelleBot/1.0 (educational; github.com/impeccasper-rgb/ophtalmo-academie)"
+        # on every curl call, logs each failure and continues with the next file.
+
+      - name: Summary
+        if: always()
+        run: |
+          python3 - <<'EOF' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          try:
+              d = json.load(open("imgsrc3/build-log.json"))
+          except Exception as e:
+              print("No build log:", e); raise SystemExit
+          print(f"### imgsrc3: {d['ok']} published, {d['skipped']} skipped\n")
+          print("| id | status | detail |\n|---|---|---|")
+          for l in d["log"]:
+              print(f"| {l['id']} | {l['status']} | {l['msg'][:160].replace('|', '/')} |")
+          EOF
+
+      - name: Commit results to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A imgsrc3/web imgsrc3/catalog3.json
+          if git diff --cached --quiet; then
+            echo "No change in images or catalog; nothing to commit."
+            exit 0
+          fi
+          git add imgsrc3/build-log.json
+          git commit -m "media: imgsrc3 images + catalog3.json (open licences, built by media.yml)"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && break
+            sleep 5
+          done

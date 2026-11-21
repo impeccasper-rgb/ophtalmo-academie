@@ -103,3 +103,28 @@ Commande de recomptage : voir `docs/progress/visuals.md`.
 | **Journaux CC BY** (ex. BMC Ophthalmology, PLOS ONE, Scientific Reports, Clinical Ophthalmology/Dove [CC BY-NC]) | CC BY (ou BY-NC selon le journal) | Rechercher « gonioscopy », « A-scan biometry », « immersion A-scan » dans PMC OA ; vérifier la licence sur l’article, citer l’article et indiquer toute modification. |
 | **Schémas originaux** (ce projet) | Propriété du projet | Solution retenue pour l’A-scan (aucune image au catalogue), la lecture de rapport Humphrey et l’angle normal : `m-ascan-*`, `m-cv-7`, `m-gonio-1`. |
 | À **éviter** sans permission : Moran CORE (https://morancore.utah.edu/terms-of-use/ : usage personnel non commercial, pas de dérivés, permission requise), AAO/EyeWiki images (droits des auteurs/AAO), site gonioscopy.org d’Iowa (© University of Iowa, aucune mention CC). | — | — |
+
+## 7. Images libres (imgsrc3) — cycle 2, 2026-11-21
+
+**Fichiers** : `imgsrc3/sources.json` (60 images choisies : 30 PubMed Central, 30 Wikimedia Commons) → `.github/workflows/media.yml` + `imgsrc3/build_media3.py` (GitHub Actions) → `imgsrc3/web/IMG3-xxx.jpg`, `imgsrc3/catalog3.json` (licence, auteur, page source, l × h), `imgsrc3/build-log.json` (publié / rejeté et pourquoi).
+
+**Licences admises** : CC0, domaine public (dont NEI/NIH, PD-USGov), CC BY, CC BY-SA. **Refusées** : toute clause NC ou ND, GFDL seule, « all rights reserved », licence absente. Ces images restent utilisables si un palier payant apparaît un jour (contrairement aux images EyeRounds CC BY-NC-ND).
+
+**Contrôle des licences**
+- *PMC* : licence de l’article vérifiée ici le 2026-11-21 par l’API PubMed/PMC (`get_copyright_status`) pour 27 images (26 en CC BY 4.0 : Community Eye Health Journal 2021 n° 112, Clin Pract Cases Emerg Med ; 1 en CC BY 3.0 : Cureus 2019). 3 images BMC Ophthalmology (CC BY 2.0/4.0 attendu, champ licence absent de l’API) sont marquées `licence_check: build`. Au build, le script relit la licence dans le XML JATS d’Europe PMC **et** rejette la figure si sa légende/attribution porte une mention NC/ND, « with permission » ou un © sans CC BY. Raison : certains journaux licencient l’article en CC BY mais des photos individuelles en BY-NC-SA (constaté sur le Community Eye Health Journal 2024–2025 : « © CORNEA TEAM, SCEH, NEPAL CC BY-NC-SA 4.0 » — ces photos ont été écartées).
+- *Commons* : le conteneur ne peut pas lire commons.wikimedia.org (proxy et WebFetch refusés). Les noms de fichiers ont été confirmés par recherche web, mais **licence, auteur et description sont lus au build** via l’API Commons (`extmetadata`). Un fichier hors liste blanche est **sauté** et n’est jamais publié. Les légendes de ces 30 entrées se limitent à ce que dit le nom du fichier (`caption_basis`) ; la description source est copiée dans `catalog3.json` (`source_description`) : **relire et, au besoin, corriger la légende avant usage pédagogique**.
+
+**Modifications** : redimensionnement à 1200 px max, recompression JPEG q82, suppression des métadonnées EXIF, 1ʳᵉ image d’un GIF. **Aucun recadrage.** Annotations = calques séparés (comme pour EyeRounds).
+
+**Règles d’attribution (à afficher sous chaque image, et dans la page Crédits)**
+
+| Licence | Obligatoire | Format court FR / EN |
+|---|---|---|
+| CC BY (2.0–4.0) | Auteur, titre/source (lien `page_url`), nom + lien de la licence, mention des modifications | « Image : {author}, « {article ou fichier} », {licence} (lien). Redimensionnée ; annotations : ophtalmo app. » / « Image: {author}, “{article or file}”, {licence} (link). Resized; annotations: ophtalmo app. » |
+| CC BY-SA (3.0–4.0) | Idem CC BY **+** partage à l’identique : toute *adaptation* de l’image (recadrage, montage, annotations incrustées dans les pixels) doit être diffusée sous CC BY-SA compatible | Même ligne + « (CC BY-SA : toute version modifiée doit rester sous CC BY-SA) » dans la page Crédits. `catalog3.json` → `share_alike: true`. |
+| CC0 / domaine public | Rien d’obligatoire ; créditer quand même (bonne pratique, exactitude) | « Image : {author} — domaine public / CC0. » NEI : « Image : National Eye Institute, National Institutes of Health (domaine public). » |
+
+- Ne jamais laisser entendre un endossement par l’auteur, le journal ou la Wikimedia Foundation (CC BY 4.0 §2(a)(6)).
+- Pour les figures PMC, citer l’article (auteurs, titre, journal, DOI) et non « PubMed » ; `doi` et `article` sont dans le catalogue.
+- Les calques d’annotation (SVG/CSS) n’altèrent pas les pixels : ce n’est pas une adaptation, donc pas d’obligation SA sur le code de l’app. Ne pas « cuire » les annotations dans un nouveau JPG pour une image BY-SA.
+- Si le concédant demande que son nom soit retiré, le faire (CC BY 4.0 §3(a)(3)). Une demande de retrait de l’image elle-même se traite par courtoisie : retirer l’entrée de `sources.json` ; au build suivant le fichier et l’entrée disparaissent.
