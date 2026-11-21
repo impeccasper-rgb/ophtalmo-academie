@@ -45,3 +45,28 @@
 
 ## Sources consultées (2026-11-21)
 API PubMed/PMC (licences + texte intégral) ; recherche web restreinte à commons.wikimedia.org (noms de fichiers). Pages Commons, PMC (reCAPTCHA) et Europe PMC illisibles depuis ce conteneur.
+
+---
+# Cycle 3 — correctifs PMC et cas en images libres (2026-11-21)
+
+## Fait
+- `imgsrc3/build_media3.py` :
+  - licence lue dans tout le `<front>` (URL CC, ali:license_ref, texte, service OA), la plus restrictive l’emporte;
+  - figures PMC récupérées via AWS PMC Open Data → zip Europe PMC → bin Europe PMC; .webp géré;
+  - une URL en échec n’est jamais retentée, XML Europe PMC relu une fois après 20 s;
+  - contexte du © affiché dans le log; levée possible par `figure_rights_reviewed`;
+  - auteur Commons de repli (uploader).
+- `.github/workflows/media.yml` se déclenche aussi sur un push de `build_media3.py`.
+- `imgsrc3/sources.json` : 45 entrées. 13 retirées : CEHJ 2021, en réalité **NC**. Plus IMG3-037 (filigrane EyeRounds) et IMG3-038 (116 px). Les légendes Commons sont réécrites d’après la description source lue au build; IMG3-023 est la **machine** Humphrey, pas un rapport.
+- **`data/cases-open.js`** : 33 cas `oc-01…oc-33` (`G.OPH.openCases`, même schéma que `imageCases`), médias `mo-xx` fusionnés dans `G.OPH.invMedia` (`photo: 'IMG3-xxx'`, crédit auteur + licence + source).
+  - Ajoutés à `G.OPH.imageCases` sans doublon : 68 cas au total dans #cas-images.
+  - `tools/build.py` liste `cases-open` après `cases-images`.
+  - Hotspots placés après visualisation de chaque image et contrôlés sur une planche de superposition.
+  - Générateurs : `imgsrc3/gen/gen_cases_open.py` (+ `cases_open_pmc.py`), à relancer après un build qui change le catalogue.
+- Répartition des 33 cas : général 22 (12 Commons + 10 PMC : B-scan, OCT, scanner), cornée 5, glaucome 6 (4 Commons + 2 PMC).
+
+## Manques encore ouverts
+- Gonioscopie : aucune photo libre d’angle **fermé**. L’angle normal n’est couvert que par IMG3-056 (pigment visible, structures non légendées par la source) et par l’angle ouvert hyperpigmenté d’IMG3-004.
+- **Signe de Munson** : la seule photo trouvée est exclue (filigrane EyeRounds).
+- A-scan réel, champ visuel 10-2, rapport Humphrey non fiable, OCT DMLA/OMD/MER : toujours aucune source libre.
+- Les photos cliniques CEHJ (papille glaucomateuse, hémorragie de papille, rubéose, PXF) sont perdues (NC).

@@ -152,6 +152,9 @@ Notes:
   wait is 200 s, and periodic screenshots are only taken while the walk is silent (WebView boot or a stall), so they never
   compete with step screenshots.
   Checked in headless Chrome with one screenshot artificially delayed by 100 s: 9/9.
+- **Run [44940902672](https://github.com/impeccasper-rgb/ophtalmo-academie/actions/runs/44940902672) (commit 811e19f): green.**
+  9/9 on iPhone 17 Pro Max and iPad Pro 13" (iOS 26.5), with no warnings left (fonts are now bundled: 0 remote hosts),
+  no blank screenshot and no duplicate files. The video pass also went 9/9. Its evidence is in `ios-evidence/`.
 - Run 44939525283 (commit be94b92) passed 9/9 on the iPhone, both passes. The iPad Pro 13" took **6.7 min** to cold-start
   the WebView, while periodic screenshots hung behind the step screenshots, and the fixed 600 s limit from launch ran
   out after the `boot` step. This was a slow runner, not an app bug. Fixed: a boot allowance (15 min) plus an inactivity

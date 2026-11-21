@@ -1096,6 +1096,630 @@ G.OPH.openCases = [
    "en": "Blood filling half the anterior chamber: hyphema."
   },
   "open": true
+ },
+ {
+  "id": "oc-22",
+  "topic": "general",
+  "media": "mo-22",
+  "level": 2,
+  "q": {
+   "fr": "Traumatisme crânien, œil droit sans perception lumineuse. Échographie (coupe transversale). Où s’attache la membrane échogène et que conclure?",
+   "en": "Head trauma, right eye with no light perception. Ultrasound (transverse view). Where is the echogenic membrane attached, and what does it mean?"
+  },
+  "options": [
+   {
+    "fr": "À la papille et à l’ora serrata : décollement de rétine",
+    "en": "At the disc and the ora serrata: retinal detachment"
+   },
+   {
+    "fr": "Nulle part, elle croise la papille : décollement postérieur du vitré",
+    "en": "Nowhere, it crosses the disc: posterior vitreous detachment"
+   },
+   {
+    "fr": "Dôme épais qui épargne la papille : décollement choroïdien",
+    "en": "Thick dome sparing the disc: choroidal detachment"
+   },
+   {
+    "fr": "Points brillants isolés : hyalite astéroïde",
+    "en": "Isolated bright dots: asteroid hyalosis"
+   }
+  ],
+  "answer": 0,
+  "why": [
+   {
+    "fr": "Juste (légende source) : séparation de la rétine attachée à la papille (*) et à l’ora serrata (flèches). C’est la signature du décollement de rétine.",
+    "en": "Correct (source legend): retinal separation attached at the optic disc (*) and the ora serrata (arrows). This is the signature of a retinal detachment."
+   },
+   {
+    "fr": "Le vitré décollé est plus fin, très mobile et peut croiser la papille; ici la membrane s’ancre à la papille.",
+    "en": "A detached vitreous is thinner, very mobile and may cross the disc; here the membrane anchors at the disc."
+   },
+   {
+    "fr": "Le décollement choroïdien forme des dômes épais et lisses qui ne s’insèrent pas à la papille.",
+    "en": "A choroidal detachment forms thick smooth domes that do not insert at the disc."
+   },
+   {
+    "fr": "La hyalite astéroïde donne des points brillants dispersés, sans membrane.",
+    "en": "Asteroid hyalosis gives scattered bright dots, no membrane."
+   }
+  ],
+  "reveal": {
+   "fr": "Membrane attachée à la papille (*) et à l’ora serrata (flèches) : décollement de rétine.",
+   "en": "Membrane attached at the disc (*) and the ora serrata (arrows): retinal detachment."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-23",
+  "topic": "general",
+  "media": "mo-23",
+  "level": 3,
+  "q": {
+   "fr": "Garçon de 12 ans frappé au visage par une batte. Échographie (A : technique du bain d’eau, B : méthode conventionnelle) et scanner (C). Que montrent les flèches?",
+   "en": "12-year-old boy hit in the face by a bat. Ultrasound (A: water-bath technique, B: conventional) and CT (C). What do the arrows show?"
+  },
+  "options": [
+   {
+    "fr": "Une hémorragie du vitré déposée en membrane dans la partie déclive",
+    "en": "Vitreous haemorrhage settled as a membrane in the dependent part"
+   },
+   {
+    "fr": "Un corps étranger intraoculaire",
+    "en": "An intraocular foreign body"
+   },
+   {
+    "fr": "Un cristallin luxé",
+    "en": "A dislocated lens"
+   },
+   {
+    "fr": "Un œil normal",
+    "en": "A normal eye"
+   }
+  ],
+  "answer": 0,
+  "why": [
+   {
+    "fr": "Juste (tableau de l’article) : globe diminué de taille avec hémorragie du vitré déposée en membrane en bas; le scanner évoque une atteinte du globe. Devant un traumatisme suspect de plaie du globe : pas de pression sur l’œil, scanner, avis ophtalmologique urgent.",
+    "en": "Correct (article table): smaller globe with vitreous haemorrhage settled as a membrane at the bottom; CT suggests globe injury. When an open globe is possible: no pressure on the eye, CT, urgent ophthalmology review."
+   },
+   {
+    "fr": "Un corps étranger est très échogène avec une ombre acoustique postérieure (voir cas suivant).",
+    "en": "A foreign body is very echogenic with posterior acoustic shadowing (see next case)."
+   },
+   {
+    "fr": "Le cristallin luxé est une structure ovale nette, pas une couche déclive.",
+    "en": "A dislocated lens is a well-defined oval structure, not a dependent layer."
+   },
+   {
+    "fr": "L’article décrit une atteinte du globe et une hémorragie du vitré.",
+    "en": "The article describes a globe injury and vitreous haemorrhage."
+   }
+  ],
+  "reveal": {
+   "fr": "Couche échogène déclive (flèches) : hémorragie du vitré après traumatisme.",
+   "en": "Dependent echogenic layer (arrows): vitreous haemorrhage after trauma."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-24",
+  "topic": "general",
+  "media": "mo-24",
+  "level": 2,
+  "q": {
+   "fr": "Blessure par feu d’artifice, œil gauche. Échographie (A : œil droit, B : œil gauche) et scanner (C). Les structures marquées d’un astérisque sont :",
+   "en": "Fireworks injury, left eye. Ultrasound (A: right eye, B: left eye) and CT (C). The structures marked with asterisks are:"
+  },
+  "options": [
+   {
+    "fr": "Des corps étrangers intraoculaires",
+    "en": "Intraocular foreign bodies"
+   },
+   {
+    "fr": "Une hyalite astéroïde",
+    "en": "Asteroid hyalosis"
+   },
+   {
+    "fr": "Des drusen papillaires",
+    "en": "Optic disc drusen"
+   },
+   {
+    "fr": "Un artefact sans signification",
+    "en": "A meaningless artefact"
+   }
+  ],
+  "answer": 0,
+  "why": [
+   {
+    "fr": "Juste (légende source) : structures très échogènes avec ombre acoustique postérieure dans un globe rompu. Le scanner reste l’examen de référence; ne jamais appuyer sur un globe possiblement ouvert.",
+    "en": "Correct (source legend): highly echogenic structures with posterior acoustic shadowing in a ruptured globe. CT remains the reference test; never press on a possibly open globe."
+   },
+   {
+    "fr": "Les corps astéroïdes sont de petits points brillants flottants, sans ombre acoustique, dans un globe intact.",
+    "en": "Asteroid bodies are small floating bright dots without shadowing, in an intact globe."
+   },
+   {
+    "fr": "Les drusen papillaires sont à la tête du nerf optique, pas dispersés dans un globe traumatisé.",
+    "en": "Disc drusen sit at the optic nerve head, not scattered in a traumatised globe."
+   },
+   {
+    "fr": "L’ombre acoustique et le scanner confirment des objets réels.",
+    "en": "Shadowing and the CT confirm real objects."
+   }
+  ],
+  "reveal": {
+   "fr": "Échos très brillants avec ombre acoustique dans un globe rompu : corps étrangers intraoculaires.",
+   "en": "Very bright echoes with acoustic shadowing in a ruptured globe: intraocular foreign bodies."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-25",
+  "topic": "general",
+  "media": "mo-25",
+  "level": 3,
+  "q": {
+   "fr": "Agression, œil droit. Échographie (A : conventionnelle, B : bain d’eau) et scanner (C). Que montrent les flèches?",
+   "en": "Assault, right eye. Ultrasound (A: conventional, B: water bath) and CT (C). What do the arrows show?"
+  },
+  "options": [
+   {
+    "fr": "Un décollement de rétine",
+    "en": "A retinal detachment"
+   },
+   {
+    "fr": "Un décollement choroïdien",
+    "en": "A choroidal detachment"
+   },
+   {
+    "fr": "Une hémorragie du vitré",
+    "en": "A vitreous haemorrhage"
+   },
+   {
+    "fr": "Un décollement postérieur du vitré",
+    "en": "A posterior vitreous detachment"
+   }
+  ],
+  "answer": 1,
+  "why": [
+   {
+    "fr": "Le décollement de rétine est une membrane fine qui s’attache à la papille.",
+    "en": "A retinal detachment is a thin membrane attached at the disc."
+   },
+   {
+    "fr": "Juste (légende et tableau source) : décollement choroïdien après traumatisme, confirmé au scanner. Aspect typique : dômes épais, lisses, convexes.",
+    "en": "Correct (source legend and table): choroidal detachment after trauma, confirmed on CT. Typical look: thick, smooth, convex domes."
+   },
+   {
+    "fr": "L’hémorragie du vitré donne des échos diffus ou une couche déclive, pas des dômes.",
+    "en": "Vitreous haemorrhage gives diffuse echoes or a dependent layer, not domes."
+   },
+   {
+    "fr": "Le vitré décollé est fin, très mobile, et ne forme pas de dômes épais.",
+    "en": "A detached vitreous is thin and very mobile, not thick domes."
+   }
+  ],
+  "reveal": {
+   "fr": "Dômes choroïdiens après traumatisme : décollement choroïdien.",
+   "en": "Choroidal domes after trauma: choroidal detachment."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-26",
+  "topic": "glaucome",
+  "media": "mo-26",
+  "level": 2,
+  "q": {
+   "fr": "Douleur et vision floue 3 semaines après une trabéculoplastie sélective; PIO 4 mmHg. Photo grand champ (A), échographie (B), OCT (C); à 2 mois (D–F). Diagnostic en A–C?",
+   "en": "Pain and blurred vision 3 weeks after selective laser trabeculoplasty; IOP 4 mmHg. Wide-field photo (A), ultrasound (B), OCT (C); at 2 months (D–F). Diagnosis in A–C?"
+  },
+  "options": [
+   {
+    "fr": "Décollement de rétine rhegmatogène",
+    "en": "Rhegmatogenous retinal detachment"
+   },
+   {
+    "fr": "Décollements choroïdiens avec maculopathie d’hypotonie",
+    "en": "Choroidal detachments with hypotony maculopathy"
+   },
+   {
+    "fr": "Mélanome choroïdien",
+    "en": "Choroidal melanoma"
+   },
+   {
+    "fr": "Hémorragie suprachoroïdienne massive",
+    "en": "Massive suprachoroidal haemorrhage"
+   }
+  ],
+  "answer": 1,
+  "why": [
+   {
+    "fr": "La rétine n’est pas décollée par une déchirure; ce sont des dômes choroïdiens, et l’OCT montre un pli choriorétinien.",
+    "en": "The retina is not detached by a tear; these are choroidal domes, and OCT shows a chorioretinal fold."
+   },
+   {
+    "fr": "Juste (légende source) : décollement choroïdien avec PIO à 4 mmHg; pli choriorétinien à l’OCT (maculopathie d’hypotonie). Résolution complète à 2 mois (D–F) sous atropine et corticoïdes.",
+    "en": "Correct (source legend): choroidal detachment with IOP 4 mmHg; chorioretinal fold on OCT (hypotony maculopathy). Complete resolution at 2 months (D–F) with atropine and steroids."
+   },
+   {
+    "fr": "Une tumeur ne disparaît pas en 2 mois; ici tout se résout (E).",
+    "en": "A tumour does not vanish in 2 months; here everything resolves (E)."
+   },
+   {
+    "fr": "L’hémorragie suprachoroïdienne survient brutalement, très douloureuse, souvent en peropératoire, avec PIO élevée.",
+    "en": "Suprachoroidal haemorrhage is sudden, very painful, often intraoperative, with raised IOP."
+   }
+  ],
+  "reveal": {
+   "fr": "Dômes choroïdiens + pli maculaire à PIO 4 : décollement choroïdien d’hypotonie, résolutif.",
+   "en": "Choroidal domes + macular fold at IOP 4: hypotony choroidal detachment, resolved."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-27",
+  "topic": "general",
+  "media": "mo-27",
+  "level": 3,
+  "q": {
+   "fr": "Voile noir brutal après une quinte d’éternuements, sans anticoagulant. Échographie : bande hyperéchogène qui croise la limite du nerf optique, échos en arrière. Diagnostic final de l’ophtalmologiste?",
+   "en": "Sudden dark curtain after a sneezing fit, no anticoagulant. Ultrasound: a hyperechoic band crossing the optic nerve boundary, echoes behind it. Ophthalmologist’s final diagnosis?"
+  },
+  "options": [
+   {
+    "fr": "Décollement de rétine rhegmatogène",
+    "en": "Rhegmatogenous retinal detachment"
+   },
+   {
+    "fr": "Hémorragie prérétinienne (rétinopathie de Valsalva), rétine à plat",
+    "en": "Preretinal haemorrhage (Valsalva retinopathy), retina attached"
+   },
+   {
+    "fr": "Décollement choroïdien",
+    "en": "Choroidal detachment"
+   },
+   {
+    "fr": "Hyalite astéroïde",
+    "en": "Asteroid hyalosis"
+   }
+  ],
+  "answer": 1,
+  "why": [
+   {
+    "fr": "Piège : un décollement de rétine respecte la papille (il s’y attache) et ne la croise pas.",
+    "en": "Pitfall: a retinal detachment respects the disc (it attaches there) and does not cross it."
+   },
+   {
+    "fr": "Juste (article) : hémorragie sous-hyaloïdienne et intrarétinienne après éternuements, rétine à plat confirmée le lendemain. La bande croisait le nerf optique, ce qui écarte un décollement de rétine.",
+    "en": "Correct (article): subhyaloid and intraretinal haemorrhage after sneezing, retina confirmed flat the next day. The band crossed the optic nerve, which argues against a retinal detachment."
+   },
+   {
+    "fr": "Le décollement choroïdien est épais et convexe, sans échos de sang en arrière.",
+    "en": "A choroidal detachment is thick and convex, without blood echoes behind it."
+   },
+   {
+    "fr": "La hyalite astéroïde donne des particules brillantes isolées, pas une bande.",
+    "en": "Asteroid hyalosis gives isolated bright particles, not a band."
+   }
+  ],
+  "reveal": {
+   "fr": "Bande hyperéchogène qui croise le nerf optique, sang en arrière : hémorragie prérétinienne, pas un DR.",
+   "en": "Hyperechoic band crossing the optic nerve, blood behind: preretinal haemorrhage, not RD."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-28",
+  "topic": "general",
+  "media": "mo-28",
+  "level": 2,
+  "q": {
+   "fr": "Chute chez une femme de 86 ans; échographie oculaire de dépistage. Particules brillantes isolées dans le vitré, sans couche déclive. Diagnostic?",
+   "en": "Fall in an 86-year-old woman; screening ocular ultrasound. Isolated bright particles in the vitreous, no dependent layer. Diagnosis?"
+  },
+  "options": [
+   {
+    "fr": "Hémorragie du vitré",
+    "en": "Vitreous haemorrhage"
+   },
+   {
+    "fr": "Hyalite astéroïde",
+    "en": "Asteroid hyalosis"
+   },
+   {
+    "fr": "Endophtalmie",
+    "en": "Endophthalmitis"
+   },
+   {
+    "fr": "Corps étrangers intraoculaires",
+    "en": "Intraocular foreign bodies"
+   }
+  ],
+  "answer": 1,
+  "why": [
+   {
+    "fr": "L’hémorragie donne des échos plus diffus, « fluides », qui se déposent en bas et ondulent avec les mouvements.",
+    "en": "Haemorrhage gives more diffuse, fluid echoes that settle inferiorly and swirl with eye movements."
+   },
+   {
+    "fr": "Juste (légende source) : particules échogènes distinctes flottant librement (^). Condition bénigne, sans urgence; à ne pas confondre avec une hémorragie du vitré.",
+    "en": "Correct (source legend): discrete free-floating echogenic particles (^). Benign, not urgent; not to be confused with vitreous haemorrhage."
+   },
+   {
+    "fr": "L’endophtalmie donne des débris denses cloisonnés dans un œil rouge et douloureux.",
+    "en": "Endophthalmitis gives dense loculated debris in a red, painful eye."
+   },
+   {
+    "fr": "Les corps étrangers sont très brillants avec ombre acoustique, dans un contexte de plaie.",
+    "en": "Foreign bodies are very bright with shadowing, in a penetrating injury."
+   }
+  ],
+  "reveal": {
+   "fr": "Particules brillantes isolées et flottantes : hyalite astéroïde (bénin).",
+   "en": "Isolated floating bright particles: asteroid hyalosis (benign)."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-29",
+  "topic": "general",
+  "media": "mo-29",
+  "level": 2,
+  "q": {
+   "fr": "Traction vitréomaculaire opérée (vitrectomie, pelage de la limitante). OCT : a avant, b à J7, c à 1 mois, d à 5 mois. Que montre b?",
+   "en": "Operated vitreomacular traction (vitrectomy, ILM peel). OCT: a before, b day 7, c 1 month, d 5 months. What does b show?"
+  },
+  "options": [
+   {
+    "fr": "Un trou maculaire transfixiant",
+    "en": "A full-thickness macular hole"
+   },
+   {
+    "fr": "Un œdème maculaire cystoïde isolé",
+    "en": "Isolated cystoid macular oedema"
+   },
+   {
+    "fr": "Un décollement séreux rétinien",
+    "en": "A serous retinal detachment"
+   },
+   {
+    "fr": "Une membrane épirétinienne",
+    "en": "An epiretinal membrane"
+   }
+  ],
+  "answer": 0,
+  "why": [
+   {
+    "fr": "Juste (légende source) : trou de pleine épaisseur avec espaces cystoïdes sur les deux berges; il s’est fermé spontanément (c), contour normal à 5 mois (d).",
+    "en": "Correct (source legend): full-thickness hole with cystoid spaces on both edges; it closed spontaneously (c), normal contour at 5 months (d)."
+   },
+   {
+    "fr": "Il y a des kystes, mais surtout une interruption de toute l’épaisseur de la rétine.",
+    "en": "There are cysts, but above all a break through the full retinal thickness."
+   },
+   {
+    "fr": "Pas de soulèvement de toute la rétine par du liquide sous-rétinien en b.",
+    "en": "No lifting of the whole retina by subretinal fluid in b."
+   },
+   {
+    "fr": "Pas de ligne brillante plissée à la surface interne.",
+    "en": "No bright wrinkled line on the inner surface."
+   }
+  ],
+  "reveal": {
+   "fr": "b : rupture de pleine épaisseur au centre : trou maculaire transfixiant (fermé ensuite).",
+   "en": "b: full-thickness break at the centre: macular hole (later closed)."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-30",
+  "topic": "glaucome",
+  "media": "mo-30",
+  "level": 3,
+  "q": {
+   "fr": "Glaucome secondaire à une uvéite, PIO 28 mmHg malgré un traitement médical maximal. B : gonioscopie. Que montre l’angle, et que disent C–E?",
+   "en": "Glaucoma secondary to uveitis, IOP 28 mmHg despite maximal medical therapy. B: gonioscopy. What does the angle show, and what do C–E say?"
+  },
+  "options": [
+   {
+    "fr": "Angle ouvert, trabéculum hyperpigmenté; glaucome avancé (MD −30,81 dB, RNFL très mince)",
+    "en": "Open angle, hyperpigmented meshwork; advanced glaucoma (MD −30.81 dB, very thin RNFL)"
+   },
+   {
+    "fr": "Angle fermé par synéchies; glaucome débutant",
+    "en": "Synechial angle closure; early glaucoma"
+   },
+   {
+    "fr": "Néovaisseaux de l’angle; champ normal",
+    "en": "Angle new vessels; normal field"
+   },
+   {
+    "fr": "Récession de l’angle; RNFL normale",
+    "en": "Angle recession; normal RNFL"
+   }
+  ],
+  "answer": 0,
+  "why": [
+   {
+    "fr": "Juste (légende source) : angle ouvert à trabéculum hyperpigmenté; Humphrey 30-2 avec constriction sévère (MD −30,81 dB); OCT avec perte diffuse des fibres (moyenne 38 µm, en rouge).",
+    "en": "Correct (source legend): open angle with a hyperpigmented meshwork; Humphrey 30-2 with severe constriction (MD −30.81 dB); OCT with diffuse fibre loss (average 38 µm, in red)."
+   },
+   {
+    "fr": "Les structures de l’angle sont visibles (angle ouvert) et le champ est très atteint.",
+    "en": "Angle structures are visible (open angle) and the field is severely damaged."
+   },
+   {
+    "fr": "Aucun néovaisseau n’est décrit; le champ est très atteint.",
+    "en": "No new vessels are described; the field is severely damaged."
+   },
+   {
+    "fr": "Rien n’évoque une récession; la RNFL est rouge dans tous les secteurs.",
+    "en": "Nothing suggests recession; the RNFL is red in every sector."
+   }
+  ],
+  "reveal": {
+   "fr": "Angle ouvert hyperpigmenté; MD −30,81 dB; RNFL moyenne 38 µm : glaucome avancé.",
+   "en": "Open hyperpigmented angle; MD −30.81 dB; average RNFL 38 µm: advanced glaucoma."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-31",
+  "topic": "general",
+  "media": "mo-31",
+  "level": 3,
+  "q": {
+   "fr": "Femme de 30 ans, éclairs depuis 2 semaines dans l’œil gauche. Échographie B : liquide sous-rétinien et lésion mesurée. Diagnostic confirmé?",
+   "en": "30-year-old woman, flashes for 2 weeks in the left eye. B-scan: subretinal fluid and a measured lesion. Confirmed diagnosis?"
+  },
+  "options": [
+   {
+    "fr": "Décollement de rétine rhegmatogène simple",
+    "en": "Simple rhegmatogenous retinal detachment"
+   },
+   {
+    "fr": "Mélanome choroïdien amélanotique",
+    "en": "Amelanotic choroidal melanoma"
+   },
+   {
+    "fr": "Décollement choroïdien",
+    "en": "Choroidal detachment"
+   },
+   {
+    "fr": "Hémorragie du vitré",
+    "en": "Vitreous haemorrhage"
+   }
+  ],
+  "answer": 1,
+  "why": [
+   {
+    "fr": "Il y a du liquide sous-rétinien, mais aussi une masse choroïdienne sous-jacente (flèche).",
+    "en": "There is subretinal fluid, but also an underlying choroidal mass (arrow)."
+   },
+   {
+    "fr": "Juste (légende source) : liquide sous-rétinien séreux et masse choroïdienne; mélanome confirmé. Un décollement « exsudatif » doit faire chercher une tumeur.",
+    "en": "Correct (source legend): serous subretinal fluid and a choroidal mass; melanoma confirmed. An exudative detachment should prompt a search for a tumour."
+   },
+   {
+    "fr": "Le décollement choroïdien est en dômes lisses, sans masse solide mesurable.",
+    "en": "A choroidal detachment forms smooth domes, without a solid measurable mass."
+   },
+   {
+    "fr": "L’image montre une masse et du liquide sous-rétinien, pas du sang dans le vitré.",
+    "en": "The image shows a mass and subretinal fluid, not blood in the vitreous."
+   }
+  ],
+  "reveal": {
+   "fr": "Masse choroïdienne avec liquide sous-rétinien : mélanome choroïdien.",
+   "en": "Choroidal mass with subretinal fluid: choroidal melanoma."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-32",
+  "topic": "general",
+  "media": "mo-32",
+  "level": 2,
+  "q": {
+   "fr": "Opéré de cataracte il y a des années; vision floue brutale « comme un rideau ». Échographie. La structure curviligne fléchée est :",
+   "en": "Cataract surgery years ago; sudden blurred vision “like a curtain”. Ultrasound. The arrowed curvilinear structure is:"
+  },
+  "options": [
+   {
+    "fr": "L’implant intraoculaire luxé en arrière",
+    "en": "The intraocular lens dislocated posteriorly"
+   },
+   {
+    "fr": "Une rétine décollée",
+    "en": "A detached retina"
+   },
+   {
+    "fr": "Un corps étranger",
+    "en": "A foreign body"
+   },
+   {
+    "fr": "La cornée",
+    "en": "The cornea"
+   }
+  ],
+  "answer": 0,
+  "why": [
+   {
+    "fr": "Juste (légende source) : implant luxé (flèche), structure curviligne hyperéchogène; pas de décollement de rétine ni d’hémorragie du vitré dans ce cas. Réparation chirurgicale.",
+    "en": "Correct (source legend): dislocated lens implant (arrow), a hyperechoic curvilinear structure; no retinal detachment or vitreous haemorrhage in this case. Surgical repair."
+   },
+   {
+    "fr": "Une rétine décollée s’attache à la papille; l’article note l’absence de décollement.",
+    "en": "A detached retina attaches at the disc; the article reports no detachment."
+   },
+   {
+    "fr": "Le contexte (cataracte opérée, pas de traumatisme) et la forme régulière évoquent l’implant.",
+    "en": "The context (prior cataract surgery, no trauma) and regular shape point to the implant."
+   },
+   {
+    "fr": "La cornée est la première interface sous la sonde, pas dans la cavité.",
+    "en": "The cornea is the first interface under the probe, not inside the cavity."
+   }
+  ],
+  "reveal": {
+   "fr": "Structure curviligne hyperéchogène dans la cavité : implant luxé.",
+   "en": "Hyperechoic curvilinear structure in the cavity: dislocated IOL."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-33",
+  "topic": "general",
+  "media": "mo-33",
+  "level": 2,
+  "q": {
+   "fr": "Œil droit rouge et douloureux depuis 7 jours, chémosis, exophtalmie, fièvre. Scanner des orbites. Que montrent les pointes de flèche?",
+   "en": "Red, painful right eye for 7 days, chemosis, proptosis, fever. Orbital CT. What do the arrowheads show?"
+  },
+  "options": [
+   {
+    "fr": "Un abcès orbitaire latéral (collection à paroi rehaussée)",
+    "en": "A lateral orbital abscess (rim-enhancing collection)"
+   },
+   {
+    "fr": "Une cellulite préseptale isolée",
+    "en": "Isolated preseptal cellulitis"
+   },
+   {
+    "fr": "Une tumeur de la glande lacrymale",
+    "en": "A lacrimal gland tumour"
+   },
+   {
+    "fr": "Un globe normal",
+    "en": "A normal globe"
+   }
+  ],
+  "answer": 0,
+  "why": [
+   {
+    "fr": "Juste (légende source) : collection à paroi rehaussée en dehors du globe droit (à gauche sur l’image) = abcès orbitaire. Antibiotiques IV et avis chirurgical.",
+    "en": "Correct (source legend): rim-enhancing collection lateral to the right globe (left of the image) = orbital abscess. IV antibiotics and surgical opinion."
+   },
+   {
+    "fr": "L’atteinte est en arrière du septum (collection orbitaire), pas seulement palpébrale.",
+    "en": "Disease is behind the septum (orbital collection), not just eyelid."
+   },
+   {
+    "fr": "Le contexte infectieux aigu et la paroi rehaussée évoquent un abcès.",
+    "en": "The acute infectious context and enhancing rim point to an abscess."
+   },
+   {
+    "fr": "Les pointes de flèche montrent une collection anormale.",
+    "en": "The arrowheads show an abnormal collection."
+   }
+  ],
+  "reveal": {
+   "fr": "Collection à paroi rehaussée en dehors du globe droit : abcès orbitaire.",
+   "en": "Rim-enhancing collection lateral to the right globe: orbital abscess."
+  },
+  "open": true
  }
 ];
 G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
@@ -1139,8 +1763,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Mikael Häggström . When using this image in external works, it may be cited as: Häggström, Mikael (2014). \" Medical gallery of Mikael Häggström 2014 \". WikiJournal of Medicine 1 (2). DOI : 10.15347/wjm/2014.008 . ISSN 2002-4436 . Public Domain . or By Mikael Häggström, used with permission. — CC0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Mikael Häggström . When using this image in external works, it may be cited as: Häggström, Mikael (2014). \" Medical gallery of Mikael Häggström 2014 \". WikiJournal of Medicine 1 (2). DOI : 10.15347/wjm/2014.008 . ISSN 2002-4436 . Public Domain . or By Mikael Häggström, used with permission. — CC0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Mikael Häggström — CC0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Mikael Häggström — CC0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
   },
   "license": "CC0",
   "source": "https://commons.wikimedia.org/wiki/File:Fundus_photograph_of_normal_left_eye.jpg"
@@ -1515,8 +2139,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Elise A. Slim et al. — CC BY 4.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Elise A. Slim et al. — CC BY 4.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Elise A. Slim et al — CC BY 4.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Elise A. Slim et al — CC BY 4.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
   },
   "license": "CC BY 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Corneal_topography,_stage_II_keratoconus_(Elise_A._Slim_et_al.).jpg"
@@ -1577,8 +2201,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Wikimedia Commons contributor — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Wikimedia Commons contributor — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Wikimedia Commons user PaulBone~commonswiki — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Wikimedia Commons user PaulBone~commonswiki — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
   },
   "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Band-keratopathy_left-eye.png"
@@ -1794,6 +2418,508 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   },
   "license": "CC BY-SA 2.5",
   "source": "https://commons.wikimedia.org/wiki/File:Hyphema_-_occupying_half_of_anterior_chamber_of_eye.jpg"
+ },
+ "mo-22": {
+  "kind": "photo",
+  "photo": "IMG3-005",
+  "alt": {
+   "fr": "Échographie : décollement de rétine attaché à la papille et à l’ora serrata.",
+   "en": "Ultrasound: retinal detachment attached at the disc and ora serrata."
+  },
+  "hotspots": [
+   {
+    "x": 49,
+    "y": 63,
+    "r": 6,
+    "decisive": true,
+    "label": {
+     "fr": "Papille (*) : attache postérieure",
+     "en": "Disc (*): posterior attachment"
+    }
+   },
+   {
+    "x": 52,
+    "y": 10,
+    "r": 6,
+    "decisive": true,
+    "label": {
+     "fr": "Flèche : attache à l’ora serrata",
+     "en": "Arrow: attachment at the ora serrata"
+    }
+   },
+   {
+    "x": 81,
+    "y": 52,
+    "r": 6,
+    "decisive": false,
+    "label": {
+     "fr": "Flèche : attache à l’ora serrata",
+     "en": "Arrow: attachment at the ora serrata"
+    }
+   },
+   {
+    "x": 58,
+    "y": 34,
+    "r": 7,
+    "decisive": false,
+    "label": {
+     "fr": "Rétine décollée, plissée",
+     "en": "Detached, folded retina"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Shirke — Clin Pract Cases Emerg Med 2021;5(4) — CC BY 4.0 (Traumatic Anterior Dislocation of Ocular Cataract Lens). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Shirke — Clin Pract Cases Emerg Med 2021;5(4) — CC BY 4.0 (Traumatic Anterior Dislocation of Ocular Cataract Lens). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8610488/"
+ },
+ "mo-23": {
+  "kind": "photo",
+  "photo": "IMG3-007",
+  "alt": {
+   "fr": "Échographie et scanner : hémorragie du vitré traumatique.",
+   "en": "Ultrasound and CT: traumatic vitreous haemorrhage."
+  },
+  "hotspots": [
+   {
+    "x": 16,
+    "y": 31,
+    "r": 6,
+    "decisive": true,
+    "label": {
+     "fr": "Flèche rouge : hémorragie déposée en bas (A)",
+     "en": "Red arrow: haemorrhage settled at the bottom (A)"
+    }
+   },
+   {
+    "x": 77,
+    "y": 27,
+    "r": 6,
+    "decisive": false,
+    "label": {
+     "fr": "Flèche jaune : même aspect (B)",
+     "en": "Yellow arrow: same finding (B)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13518040/"
+ },
+ "mo-24": {
+  "kind": "photo",
+  "photo": "IMG3-008",
+  "alt": {
+   "fr": "Échographie : rupture du globe gauche avec corps étrangers (astérisques).",
+   "en": "Ultrasound: left globe rupture with foreign bodies (asterisks)."
+  },
+  "hotspots": [
+   {
+    "x": 71,
+    "y": 20,
+    "r": 5,
+    "decisive": true,
+    "label": {
+     "fr": "Corps étranger échogène (*)",
+     "en": "Echogenic foreign body (*)"
+    }
+   },
+   {
+    "x": 85,
+    "y": 14,
+    "r": 5,
+    "decisive": false,
+    "label": {
+     "fr": "Corps étranger (*)",
+     "en": "Foreign body (*)"
+    }
+   },
+   {
+    "x": 26,
+    "y": 20,
+    "r": 9,
+    "decisive": false,
+    "label": {
+     "fr": "Œil droit normal (A)",
+     "en": "Normal right eye (A)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13518040/"
+ },
+ "mo-25": {
+  "kind": "photo",
+  "photo": "IMG3-009",
+  "alt": {
+   "fr": "Échographie et scanner : décollement choroïdien traumatique.",
+   "en": "Ultrasound and CT: traumatic choroidal detachment."
+  },
+  "hotspots": [
+   {
+    "x": 22,
+    "y": 26,
+    "r": 6,
+    "decisive": true,
+    "label": {
+     "fr": "Flèche rouge : décollement choroïdien (A)",
+     "en": "Red arrow: choroidal detachment (A)"
+    }
+   },
+   {
+    "x": 68,
+    "y": 34,
+    "r": 6,
+    "decisive": false,
+    "label": {
+     "fr": "Flèche jaune : décollement choroïdien (B)",
+     "en": "Yellow arrow: choroidal detachment (B)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13518040/"
+ },
+ "mo-26": {
+  "kind": "photo",
+  "photo": "IMG3-010",
+  "alt": {
+   "fr": "Décollement choroïdien après trabéculoplastie, puis résolution.",
+   "en": "Choroidal detachment after trabeculoplasty, then resolution."
+  },
+  "hotspots": [
+   {
+    "x": 46,
+    "y": 25,
+    "r": 8,
+    "decisive": true,
+    "label": {
+     "fr": "Dômes choroïdiens à l’échographie (B)",
+     "en": "Choroidal domes on ultrasound (B)"
+    }
+   },
+   {
+    "x": 10,
+    "y": 22,
+    "r": 7,
+    "decisive": false,
+    "label": {
+     "fr": "Dômes visibles au fond d’œil (A)",
+     "en": "Domes visible on the fundus (A)"
+    }
+   },
+   {
+    "x": 80,
+    "y": 24,
+    "r": 7,
+    "decisive": false,
+    "label": {
+     "fr": "Pli choriorétinien à l’OCT (C)",
+     "en": "Chorioretinal fold on OCT (C)"
+    }
+   },
+   {
+    "x": 43,
+    "y": 75,
+    "r": 7,
+    "decisive": false,
+    "label": {
+     "fr": "Résolution à 2 mois (E)",
+     "en": "Resolution at 2 months (E)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10276512/"
+ },
+ "mo-27": {
+  "kind": "photo",
+  "photo": "IMG3-011",
+  "alt": {
+   "fr": "Échographie mode B : bande hyperéchogène (rétinopathie de Valsalva).",
+   "en": "B-mode ultrasound: hyperechoic band (Valsalva retinopathy)."
+  },
+  "hotspots": [
+   {
+    "x": 29,
+    "y": 56,
+    "r": 7,
+    "decisive": true,
+    "label": {
+     "fr": "Bande hyperéchogène (flèche)",
+     "en": "Hyperechoic band (arrow)"
+    }
+   },
+   {
+    "x": 42,
+    "y": 63,
+    "r": 6,
+    "decisive": false,
+    "label": {
+     "fr": "Échos dispersés en arrière (sang)",
+     "en": "Scattered echoes behind (blood)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Johnson — Clin Pract Cases Emerg Med 2022;6(2) — CC BY 4.0 (Valsalva Retinopathy Masking as a Retinal Detachment on Point-of-care Ocular Ultrasound: A Case Report). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Johnson — Clin Pract Cases Emerg Med 2022;6(2) — CC BY 4.0 (Valsalva Retinopathy Masking as a Retinal Detachment on Point-of-care Ocular Ultrasound: A Case Report). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9197736/"
+ },
+ "mo-28": {
+  "kind": "photo",
+  "photo": "IMG3-013",
+  "alt": {
+   "fr": "Échographie mode B : hyalite astéroïde (^).",
+   "en": "B-mode ultrasound: asteroid hyalosis (^)."
+  },
+  "hotspots": [
+   {
+    "x": 38,
+    "y": 47,
+    "r": 5,
+    "decisive": true,
+    "label": {
+     "fr": "Particule échogène (^)",
+     "en": "Echogenic particle (^)"
+    }
+   },
+   {
+    "x": 51,
+    "y": 34,
+    "r": 5,
+    "decisive": false,
+    "label": {
+     "fr": "Particule (^)",
+     "en": "Particle (^)"
+    }
+   },
+   {
+    "x": 61,
+    "y": 35,
+    "r": 5,
+    "decisive": false,
+    "label": {
+     "fr": "Particule (^)",
+     "en": "Particle (^)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Arthurs et al. — Clin Pract Cases Emerg Med 2019;3(3) — CC BY 4.0 (Asteroid Hyalosis Seen on Ocular Point-of-Care Ultrasound). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Arthurs et al. — Clin Pract Cases Emerg Med 2019;3(3) — CC BY 4.0 (Asteroid Hyalosis Seen on Ocular Point-of-Care Ultrasound). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6682246/"
+ },
+ "mo-29": {
+  "kind": "photo",
+  "photo": "IMG3-018",
+  "alt": {
+   "fr": "OCT : traction vitréomaculaire, trou maculaire, puis fermeture.",
+   "en": "OCT: vitreomacular traction, macular hole, then closure."
+  },
+  "hotspots": [
+   {
+    "x": 49,
+    "y": 33,
+    "r": 6,
+    "decisive": true,
+    "label": {
+     "fr": "Trou maculaire transfixiant (b)",
+     "en": "Full-thickness macular hole (b)"
+    }
+   },
+   {
+    "x": 52,
+    "y": 8,
+    "r": 6,
+    "decisive": false,
+    "label": {
+     "fr": "Hyaloïde qui tire sur la fovéa (a)",
+     "en": "Hyaloid pulling on the fovea (a)"
+    }
+   },
+   {
+    "x": 50,
+    "y": 63,
+    "r": 6,
+    "decisive": false,
+    "label": {
+     "fr": "Trou fermé, soulèvement des photorécepteurs (c)",
+     "en": "Closed hole, photoreceptor elevation (c)"
+    }
+   },
+   {
+    "x": 50,
+    "y": 83,
+    "r": 6,
+    "decisive": false,
+    "label": {
+     "fr": "Contour fovéolaire normal (d)",
+     "en": "Normal foveal contour (d)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Dominik Odrobina, Iwona Laudańska-Olszewska, Piotr Gozdek et al. — BMC Ophthalmology 2014 — CC BY 2.0 (Macular hole formation and spontaneous closure after vitrectomy for vitreomacular traction documented in spectral-domain optical coherence tomography). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Dominik Odrobina, Iwona Laudańska-Olszewska, Piotr Gozdek et al. — BMC Ophthalmology 2014 — CC BY 2.0 (Macular hole formation and spontaneous closure after vitrectomy for vitreomacular traction documented in spectral-domain optical coherence tomography). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 2.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3931271/"
+ },
+ "mo-30": {
+  "kind": "photo",
+  "photo": "IMG3-004",
+  "alt": {
+   "fr": "Glaucome avancé : papille, gonioscopie, champ 30-2, OCT.",
+   "en": "Advanced glaucoma: disc, gonioscopy, 30-2 field, OCT."
+  },
+  "hotspots": [
+   {
+    "x": 37,
+    "y": 40,
+    "r": 7,
+    "decisive": true,
+    "label": {
+     "fr": "Angle ouvert, trabéculum hyperpigmenté (B)",
+     "en": "Open angle, hyperpigmented meshwork (B)"
+    }
+   },
+   {
+    "x": 84,
+    "y": 46,
+    "r": 6,
+    "decisive": false,
+    "label": {
+     "fr": "MD −30,81 dB (C)",
+     "en": "MD −30.81 dB (C)"
+    }
+   },
+   {
+    "x": 13,
+    "y": 78,
+    "r": 6,
+    "decisive": false,
+    "label": {
+     "fr": "RNFL moyenne 38 µm, en rouge (D)",
+     "en": "Average RNFL 38 µm, in red (D)"
+    }
+   },
+   {
+    "x": 13,
+    "y": 25,
+    "r": 7,
+    "decisive": false,
+    "label": {
+     "fr": "Papille glaucomateuse (A)",
+     "en": "Glaucomatous disc (A)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10276512/"
+ },
+ "mo-31": {
+  "kind": "photo",
+  "photo": "IMG3-014",
+  "alt": {
+   "fr": "Échographie B : liquide sous-rétinien et masse choroïdienne.",
+   "en": "B-scan: subretinal fluid and choroidal mass."
+  },
+  "hotspots": [
+   {
+    "x": 60,
+    "y": 45,
+    "r": 8,
+    "decisive": true,
+    "label": {
+     "fr": "Masse choroïdienne mesurée (flèche)",
+     "en": "Measured choroidal mass (arrow)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Matin et al. — Clin Pract Cases Emerg Med 2025 — CC BY 4.0 (Primary Choroidal Melanoma in a 30-year-old Woman with Monocular Flashers). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Matin et al. — Clin Pract Cases Emerg Med 2025 — CC BY 4.0 (Primary Choroidal Melanoma in a 30-year-old Woman with Monocular Flashers). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12594224/"
+ },
+ "mo-32": {
+  "kind": "photo",
+  "photo": "IMG3-016",
+  "alt": {
+   "fr": "Échographie : luxation de l’implant intraoculaire.",
+   "en": "Ultrasound: intraocular lens dislocation."
+  },
+  "hotspots": [
+   {
+    "x": 44,
+    "y": 36,
+    "r": 6,
+    "decisive": true,
+    "label": {
+     "fr": "Implant luxé (flèche)",
+     "en": "Dislocated implant (arrow)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Pizarro et al. — Clin Pract Cases Emerg Med 2021;5(3) — CC BY 4.0 (Case Report: Diagnosis of Late Spontaneous Intraocular Lens Dislocation on Point-of-care Ultrasound). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Pizarro et al. — Clin Pract Cases Emerg Med 2021;5(3) — CC BY 4.0 (Case Report: Diagnosis of Late Spontaneous Intraocular Lens Dislocation on Point-of-care Ultrasound). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8373180/"
+ },
+ "mo-33": {
+  "kind": "photo",
+  "photo": "IMG3-057",
+  "alt": {
+   "fr": "Scanner : abcès orbitaire latéral droit (pointes de flèche).",
+   "en": "CT: right lateral orbital abscess (arrowheads)."
+  },
+  "hotspots": [
+   {
+    "x": 25,
+    "y": 16,
+    "r": 6,
+    "decisive": true,
+    "label": {
+     "fr": "Collection à paroi rehaussée (pointes de flèche)",
+     "en": "Rim-enhancing collection (arrowheads)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10855287/"
  }
 });
 /* Affichage dans #cas-images : ajout aux cas existants (sans doublon). */

@@ -1,0 +1,157 @@
+"""PMC figures (CC BY) for data/cases-open.js — same tuple format as gen_cases_open.py.
+Every sign named here is in the figure legend or text of the source article; hotspots placed after viewing."""
+T = lambda fr, en: {"fr": fr, "en": en}
+H = lambda x, y, r, fr, en, dec=True: {"x": x, "y": y, "r": r, "decisive": dec, "label": T(fr, en)}
+CASES = []
+def case(*a): CASES.append(a)
+
+case("oc-22", "general", 2, "IMG3-005",
+ T("Traumatisme crânien, œil droit sans perception lumineuse. Échographie (coupe transversale). Où s’attache la membrane échogène et que conclure?", "Head trauma, right eye with no light perception. Ultrasound (transverse view). Where is the echogenic membrane attached, and what does it mean?"),
+ [T("À la papille et à l’ora serrata : décollement de rétine", "At the disc and the ora serrata: retinal detachment"), T("Nulle part, elle croise la papille : décollement postérieur du vitré", "Nowhere, it crosses the disc: posterior vitreous detachment"), T("Dôme épais qui épargne la papille : décollement choroïdien", "Thick dome sparing the disc: choroidal detachment"), T("Points brillants isolés : hyalite astéroïde", "Isolated bright dots: asteroid hyalosis")], 0,
+ [T("Juste (légende source) : séparation de la rétine attachée à la papille (*) et à l’ora serrata (flèches). C’est la signature du décollement de rétine.", "Correct (source legend): retinal separation attached at the optic disc (*) and the ora serrata (arrows). This is the signature of a retinal detachment."),
+  T("Le vitré décollé est plus fin, très mobile et peut croiser la papille; ici la membrane s’ancre à la papille.", "A detached vitreous is thinner, very mobile and may cross the disc; here the membrane anchors at the disc."),
+  T("Le décollement choroïdien forme des dômes épais et lisses qui ne s’insèrent pas à la papille.", "A choroidal detachment forms thick smooth domes that do not insert at the disc."),
+  T("La hyalite astéroïde donne des points brillants dispersés, sans membrane.", "Asteroid hyalosis gives scattered bright dots, no membrane.")],
+ T("Membrane attachée à la papille (*) et à l’ora serrata (flèches) : décollement de rétine.", "Membrane attached at the disc (*) and the ora serrata (arrows): retinal detachment."),
+ T("Échographie : décollement de rétine attaché à la papille et à l’ora serrata.", "Ultrasound: retinal detachment attached at the disc and ora serrata."),
+ [H(49, 63, 6, "Papille (*) : attache postérieure", "Disc (*): posterior attachment"),
+  H(52, 10, 6, "Flèche : attache à l’ora serrata", "Arrow: attachment at the ora serrata"),
+  H(81, 52, 6, "Flèche : attache à l’ora serrata", "Arrow: attachment at the ora serrata", False),
+  H(58, 34, 7, "Rétine décollée, plissée", "Detached, folded retina", False)])
+
+case("oc-23", "general", 3, "IMG3-007",
+ T("Garçon de 12 ans frappé au visage par une batte. Échographie (A : technique du bain d’eau, B : méthode conventionnelle) et scanner (C). Que montrent les flèches?", "12-year-old boy hit in the face by a bat. Ultrasound (A: water-bath technique, B: conventional) and CT (C). What do the arrows show?"),
+ [T("Une hémorragie du vitré déposée en membrane dans la partie déclive", "Vitreous haemorrhage settled as a membrane in the dependent part"), T("Un corps étranger intraoculaire", "An intraocular foreign body"), T("Un cristallin luxé", "A dislocated lens"), T("Un œil normal", "A normal eye")], 0,
+ [T("Juste (tableau de l’article) : globe diminué de taille avec hémorragie du vitré déposée en membrane en bas; le scanner évoque une atteinte du globe. Devant un traumatisme suspect de plaie du globe : pas de pression sur l’œil, scanner, avis ophtalmologique urgent.", "Correct (article table): smaller globe with vitreous haemorrhage settled as a membrane at the bottom; CT suggests globe injury. When an open globe is possible: no pressure on the eye, CT, urgent ophthalmology review."),
+  T("Un corps étranger est très échogène avec une ombre acoustique postérieure (voir cas suivant).", "A foreign body is very echogenic with posterior acoustic shadowing (see next case)."),
+  T("Le cristallin luxé est une structure ovale nette, pas une couche déclive.", "A dislocated lens is a well-defined oval structure, not a dependent layer."),
+  T("L’article décrit une atteinte du globe et une hémorragie du vitré.", "The article describes a globe injury and vitreous haemorrhage.")],
+ T("Couche échogène déclive (flèches) : hémorragie du vitré après traumatisme.", "Dependent echogenic layer (arrows): vitreous haemorrhage after trauma."),
+ T("Échographie et scanner : hémorragie du vitré traumatique.", "Ultrasound and CT: traumatic vitreous haemorrhage."),
+ [H(16, 31, 6, "Flèche rouge : hémorragie déposée en bas (A)", "Red arrow: haemorrhage settled at the bottom (A)"),
+  H(77, 27, 6, "Flèche jaune : même aspect (B)", "Yellow arrow: same finding (B)", False)])
+
+case("oc-24", "general", 2, "IMG3-008",
+ T("Blessure par feu d’artifice, œil gauche. Échographie (A : œil droit, B : œil gauche) et scanner (C). Les structures marquées d’un astérisque sont :", "Fireworks injury, left eye. Ultrasound (A: right eye, B: left eye) and CT (C). The structures marked with asterisks are:"),
+ [T("Des corps étrangers intraoculaires", "Intraocular foreign bodies"), T("Une hyalite astéroïde", "Asteroid hyalosis"), T("Des drusen papillaires", "Optic disc drusen"), T("Un artefact sans signification", "A meaningless artefact")], 0,
+ [T("Juste (légende source) : structures très échogènes avec ombre acoustique postérieure dans un globe rompu. Le scanner reste l’examen de référence; ne jamais appuyer sur un globe possiblement ouvert.", "Correct (source legend): highly echogenic structures with posterior acoustic shadowing in a ruptured globe. CT remains the reference test; never press on a possibly open globe."),
+  T("Les corps astéroïdes sont de petits points brillants flottants, sans ombre acoustique, dans un globe intact.", "Asteroid bodies are small floating bright dots without shadowing, in an intact globe."),
+  T("Les drusen papillaires sont à la tête du nerf optique, pas dispersés dans un globe traumatisé.", "Disc drusen sit at the optic nerve head, not scattered in a traumatised globe."),
+  T("L’ombre acoustique et le scanner confirment des objets réels.", "Shadowing and the CT confirm real objects.")],
+ T("Échos très brillants avec ombre acoustique dans un globe rompu : corps étrangers intraoculaires.", "Very bright echoes with acoustic shadowing in a ruptured globe: intraocular foreign bodies."),
+ T("Échographie : rupture du globe gauche avec corps étrangers (astérisques).", "Ultrasound: left globe rupture with foreign bodies (asterisks)."),
+ [H(71, 20, 5, "Corps étranger échogène (*)", "Echogenic foreign body (*)"),
+  H(85, 14, 5, "Corps étranger (*)", "Foreign body (*)", False),
+  H(26, 20, 9, "Œil droit normal (A)", "Normal right eye (A)", False)])
+
+case("oc-25", "general", 3, "IMG3-009",
+ T("Agression, œil droit. Échographie (A : conventionnelle, B : bain d’eau) et scanner (C). Que montrent les flèches?", "Assault, right eye. Ultrasound (A: conventional, B: water bath) and CT (C). What do the arrows show?"),
+ [T("Un décollement de rétine", "A retinal detachment"), T("Un décollement choroïdien", "A choroidal detachment"), T("Une hémorragie du vitré", "A vitreous haemorrhage"), T("Un décollement postérieur du vitré", "A posterior vitreous detachment")], 1,
+ [T("Le décollement de rétine est une membrane fine qui s’attache à la papille.", "A retinal detachment is a thin membrane attached at the disc."),
+  T("Juste (légende et tableau source) : décollement choroïdien après traumatisme, confirmé au scanner. Aspect typique : dômes épais, lisses, convexes.", "Correct (source legend and table): choroidal detachment after trauma, confirmed on CT. Typical look: thick, smooth, convex domes."),
+  T("L’hémorragie du vitré donne des échos diffus ou une couche déclive, pas des dômes.", "Vitreous haemorrhage gives diffuse echoes or a dependent layer, not domes."),
+  T("Le vitré décollé est fin, très mobile, et ne forme pas de dômes épais.", "A detached vitreous is thin and very mobile, not thick domes.")],
+ T("Dômes choroïdiens après traumatisme : décollement choroïdien.", "Choroidal domes after trauma: choroidal detachment."),
+ T("Échographie et scanner : décollement choroïdien traumatique.", "Ultrasound and CT: traumatic choroidal detachment."),
+ [H(22, 26, 6, "Flèche rouge : décollement choroïdien (A)", "Red arrow: choroidal detachment (A)"),
+  H(68, 34, 6, "Flèche jaune : décollement choroïdien (B)", "Yellow arrow: choroidal detachment (B)", False)])
+
+case("oc-26", "glaucome", 2, "IMG3-010",
+ T("Douleur et vision floue 3 semaines après une trabéculoplastie sélective; PIO 4 mmHg. Photo grand champ (A), échographie (B), OCT (C); à 2 mois (D–F). Diagnostic en A–C?", "Pain and blurred vision 3 weeks after selective laser trabeculoplasty; IOP 4 mmHg. Wide-field photo (A), ultrasound (B), OCT (C); at 2 months (D–F). Diagnosis in A–C?"),
+ [T("Décollement de rétine rhegmatogène", "Rhegmatogenous retinal detachment"), T("Décollements choroïdiens avec maculopathie d’hypotonie", "Choroidal detachments with hypotony maculopathy"), T("Mélanome choroïdien", "Choroidal melanoma"), T("Hémorragie suprachoroïdienne massive", "Massive suprachoroidal haemorrhage")], 1,
+ [T("La rétine n’est pas décollée par une déchirure; ce sont des dômes choroïdiens, et l’OCT montre un pli choriorétinien.", "The retina is not detached by a tear; these are choroidal domes, and OCT shows a chorioretinal fold."),
+  T("Juste (légende source) : décollement choroïdien avec PIO à 4 mmHg; pli choriorétinien à l’OCT (maculopathie d’hypotonie). Résolution complète à 2 mois (D–F) sous atropine et corticoïdes.", "Correct (source legend): choroidal detachment with IOP 4 mmHg; chorioretinal fold on OCT (hypotony maculopathy). Complete resolution at 2 months (D–F) with atropine and steroids."),
+  T("Une tumeur ne disparaît pas en 2 mois; ici tout se résout (E).", "A tumour does not vanish in 2 months; here everything resolves (E)."),
+  T("L’hémorragie suprachoroïdienne survient brutalement, très douloureuse, souvent en peropératoire, avec PIO élevée.", "Suprachoroidal haemorrhage is sudden, very painful, often intraoperative, with raised IOP.")],
+ T("Dômes choroïdiens + pli maculaire à PIO 4 : décollement choroïdien d’hypotonie, résolutif.", "Choroidal domes + macular fold at IOP 4: hypotony choroidal detachment, resolved."),
+ T("Décollement choroïdien après trabéculoplastie, puis résolution.", "Choroidal detachment after trabeculoplasty, then resolution."),
+ [H(46, 25, 8, "Dômes choroïdiens à l’échographie (B)", "Choroidal domes on ultrasound (B)"),
+  H(10, 22, 7, "Dômes visibles au fond d’œil (A)", "Domes visible on the fundus (A)", False),
+  H(80, 24, 7, "Pli choriorétinien à l’OCT (C)", "Chorioretinal fold on OCT (C)", False),
+  H(43, 75, 7, "Résolution à 2 mois (E)", "Resolution at 2 months (E)", False)])
+
+case("oc-27", "general", 3, "IMG3-011",
+ T("Voile noir brutal après une quinte d’éternuements, sans anticoagulant. Échographie : bande hyperéchogène qui croise la limite du nerf optique, échos en arrière. Diagnostic final de l’ophtalmologiste?", "Sudden dark curtain after a sneezing fit, no anticoagulant. Ultrasound: a hyperechoic band crossing the optic nerve boundary, echoes behind it. Ophthalmologist’s final diagnosis?"),
+ [T("Décollement de rétine rhegmatogène", "Rhegmatogenous retinal detachment"), T("Hémorragie prérétinienne (rétinopathie de Valsalva), rétine à plat", "Preretinal haemorrhage (Valsalva retinopathy), retina attached"), T("Décollement choroïdien", "Choroidal detachment"), T("Hyalite astéroïde", "Asteroid hyalosis")], 1,
+ [T("Piège : un décollement de rétine respecte la papille (il s’y attache) et ne la croise pas.", "Pitfall: a retinal detachment respects the disc (it attaches there) and does not cross it."),
+  T("Juste (article) : hémorragie sous-hyaloïdienne et intrarétinienne après éternuements, rétine à plat confirmée le lendemain. La bande croisait le nerf optique, ce qui écarte un décollement de rétine.", "Correct (article): subhyaloid and intraretinal haemorrhage after sneezing, retina confirmed flat the next day. The band crossed the optic nerve, which argues against a retinal detachment."),
+  T("Le décollement choroïdien est épais et convexe, sans échos de sang en arrière.", "A choroidal detachment is thick and convex, without blood echoes behind it."),
+  T("La hyalite astéroïde donne des particules brillantes isolées, pas une bande.", "Asteroid hyalosis gives isolated bright particles, not a band.")],
+ T("Bande hyperéchogène qui croise le nerf optique, sang en arrière : hémorragie prérétinienne, pas un DR.", "Hyperechoic band crossing the optic nerve, blood behind: preretinal haemorrhage, not RD."),
+ T("Échographie mode B : bande hyperéchogène (rétinopathie de Valsalva).", "B-mode ultrasound: hyperechoic band (Valsalva retinopathy)."),
+ [H(29, 56, 7, "Bande hyperéchogène (flèche)", "Hyperechoic band (arrow)"),
+  H(42, 63, 6, "Échos dispersés en arrière (sang)", "Scattered echoes behind (blood)", False)])
+
+case("oc-28", "general", 2, "IMG3-013",
+ T("Chute chez une femme de 86 ans; échographie oculaire de dépistage. Particules brillantes isolées dans le vitré, sans couche déclive. Diagnostic?", "Fall in an 86-year-old woman; screening ocular ultrasound. Isolated bright particles in the vitreous, no dependent layer. Diagnosis?"),
+ [T("Hémorragie du vitré", "Vitreous haemorrhage"), T("Hyalite astéroïde", "Asteroid hyalosis"), T("Endophtalmie", "Endophthalmitis"), T("Corps étrangers intraoculaires", "Intraocular foreign bodies")], 1,
+ [T("L’hémorragie donne des échos plus diffus, « fluides », qui se déposent en bas et ondulent avec les mouvements.", "Haemorrhage gives more diffuse, fluid echoes that settle inferiorly and swirl with eye movements."),
+  T("Juste (légende source) : particules échogènes distinctes flottant librement (^). Condition bénigne, sans urgence; à ne pas confondre avec une hémorragie du vitré.", "Correct (source legend): discrete free-floating echogenic particles (^). Benign, not urgent; not to be confused with vitreous haemorrhage."),
+  T("L’endophtalmie donne des débris denses cloisonnés dans un œil rouge et douloureux.", "Endophthalmitis gives dense loculated debris in a red, painful eye."),
+  T("Les corps étrangers sont très brillants avec ombre acoustique, dans un contexte de plaie.", "Foreign bodies are very bright with shadowing, in a penetrating injury.")],
+ T("Particules brillantes isolées et flottantes : hyalite astéroïde (bénin).", "Isolated floating bright particles: asteroid hyalosis (benign)."),
+ T("Échographie mode B : hyalite astéroïde (^).", "B-mode ultrasound: asteroid hyalosis (^)."),
+ [H(38, 47, 5, "Particule échogène (^)", "Echogenic particle (^)"),
+  H(51, 34, 5, "Particule (^)", "Particle (^)", False),
+  H(61, 35, 5, "Particule (^)", "Particle (^)", False)])
+
+case("oc-29", "general", 2, "IMG3-018",
+ T("Traction vitréomaculaire opérée (vitrectomie, pelage de la limitante). OCT : a avant, b à J7, c à 1 mois, d à 5 mois. Que montre b?", "Operated vitreomacular traction (vitrectomy, ILM peel). OCT: a before, b day 7, c 1 month, d 5 months. What does b show?"),
+ [T("Un trou maculaire transfixiant", "A full-thickness macular hole"), T("Un œdème maculaire cystoïde isolé", "Isolated cystoid macular oedema"), T("Un décollement séreux rétinien", "A serous retinal detachment"), T("Une membrane épirétinienne", "An epiretinal membrane")], 0,
+ [T("Juste (légende source) : trou de pleine épaisseur avec espaces cystoïdes sur les deux berges; il s’est fermé spontanément (c), contour normal à 5 mois (d).", "Correct (source legend): full-thickness hole with cystoid spaces on both edges; it closed spontaneously (c), normal contour at 5 months (d)."),
+  T("Il y a des kystes, mais surtout une interruption de toute l’épaisseur de la rétine.", "There are cysts, but above all a break through the full retinal thickness."),
+  T("Pas de soulèvement de toute la rétine par du liquide sous-rétinien en b.", "No lifting of the whole retina by subretinal fluid in b."),
+  T("Pas de ligne brillante plissée à la surface interne.", "No bright wrinkled line on the inner surface.")],
+ T("b : rupture de pleine épaisseur au centre : trou maculaire transfixiant (fermé ensuite).", "b: full-thickness break at the centre: macular hole (later closed)."),
+ T("OCT : traction vitréomaculaire, trou maculaire, puis fermeture.", "OCT: vitreomacular traction, macular hole, then closure."),
+ [H(49, 33, 6, "Trou maculaire transfixiant (b)", "Full-thickness macular hole (b)"),
+  H(52, 8, 6, "Hyaloïde qui tire sur la fovéa (a)", "Hyaloid pulling on the fovea (a)", False),
+  H(50, 63, 6, "Trou fermé, soulèvement des photorécepteurs (c)", "Closed hole, photoreceptor elevation (c)", False),
+  H(50, 83, 6, "Contour fovéolaire normal (d)", "Normal foveal contour (d)", False)])
+
+case("oc-30", "glaucome", 3, "IMG3-004",
+ T("Glaucome secondaire à une uvéite, PIO 28 mmHg malgré un traitement médical maximal. B : gonioscopie. Que montre l’angle, et que disent C–E?", "Glaucoma secondary to uveitis, IOP 28 mmHg despite maximal medical therapy. B: gonioscopy. What does the angle show, and what do C–E say?"),
+ [T("Angle ouvert, trabéculum hyperpigmenté; glaucome avancé (MD −30,81 dB, RNFL très mince)", "Open angle, hyperpigmented meshwork; advanced glaucoma (MD −30.81 dB, very thin RNFL)"), T("Angle fermé par synéchies; glaucome débutant", "Synechial angle closure; early glaucoma"), T("Néovaisseaux de l’angle; champ normal", "Angle new vessels; normal field"), T("Récession de l’angle; RNFL normale", "Angle recession; normal RNFL")], 0,
+ [T("Juste (légende source) : angle ouvert à trabéculum hyperpigmenté; Humphrey 30-2 avec constriction sévère (MD −30,81 dB); OCT avec perte diffuse des fibres (moyenne 38 µm, en rouge).", "Correct (source legend): open angle with a hyperpigmented meshwork; Humphrey 30-2 with severe constriction (MD −30.81 dB); OCT with diffuse fibre loss (average 38 µm, in red)."),
+  T("Les structures de l’angle sont visibles (angle ouvert) et le champ est très atteint.", "Angle structures are visible (open angle) and the field is severely damaged."),
+  T("Aucun néovaisseau n’est décrit; le champ est très atteint.", "No new vessels are described; the field is severely damaged."),
+  T("Rien n’évoque une récession; la RNFL est rouge dans tous les secteurs.", "Nothing suggests recession; the RNFL is red in every sector.")],
+ T("Angle ouvert hyperpigmenté; MD −30,81 dB; RNFL moyenne 38 µm : glaucome avancé.", "Open hyperpigmented angle; MD −30.81 dB; average RNFL 38 µm: advanced glaucoma."),
+ T("Glaucome avancé : papille, gonioscopie, champ 30-2, OCT.", "Advanced glaucoma: disc, gonioscopy, 30-2 field, OCT."),
+ [H(37, 40, 7, "Angle ouvert, trabéculum hyperpigmenté (B)", "Open angle, hyperpigmented meshwork (B)"),
+  H(84, 46, 6, "MD −30,81 dB (C)", "MD −30.81 dB (C)", False),
+  H(13, 78, 6, "RNFL moyenne 38 µm, en rouge (D)", "Average RNFL 38 µm, in red (D)", False),
+  H(13, 25, 7, "Papille glaucomateuse (A)", "Glaucomatous disc (A)", False)])
+
+case("oc-31", "general", 3, "IMG3-014",
+ T("Femme de 30 ans, éclairs depuis 2 semaines dans l’œil gauche. Échographie B : liquide sous-rétinien et lésion mesurée. Diagnostic confirmé?", "30-year-old woman, flashes for 2 weeks in the left eye. B-scan: subretinal fluid and a measured lesion. Confirmed diagnosis?"),
+ [T("Décollement de rétine rhegmatogène simple", "Simple rhegmatogenous retinal detachment"), T("Mélanome choroïdien amélanotique", "Amelanotic choroidal melanoma"), T("Décollement choroïdien", "Choroidal detachment"), T("Hémorragie du vitré", "Vitreous haemorrhage")], 1,
+ [T("Il y a du liquide sous-rétinien, mais aussi une masse choroïdienne sous-jacente (flèche).", "There is subretinal fluid, but also an underlying choroidal mass (arrow)."),
+  T("Juste (légende source) : liquide sous-rétinien séreux et masse choroïdienne; mélanome confirmé. Un décollement « exsudatif » doit faire chercher une tumeur.", "Correct (source legend): serous subretinal fluid and a choroidal mass; melanoma confirmed. An exudative detachment should prompt a search for a tumour."),
+  T("Le décollement choroïdien est en dômes lisses, sans masse solide mesurable.", "A choroidal detachment forms smooth domes, without a solid measurable mass."),
+  T("L’image montre une masse et du liquide sous-rétinien, pas du sang dans le vitré.", "The image shows a mass and subretinal fluid, not blood in the vitreous.")],
+ T("Masse choroïdienne avec liquide sous-rétinien : mélanome choroïdien.", "Choroidal mass with subretinal fluid: choroidal melanoma."),
+ T("Échographie B : liquide sous-rétinien et masse choroïdienne.", "B-scan: subretinal fluid and choroidal mass."),
+ [H(60, 45, 8, "Masse choroïdienne mesurée (flèche)", "Measured choroidal mass (arrow)")])
+
+case("oc-32", "general", 2, "IMG3-016",
+ T("Opéré de cataracte il y a des années; vision floue brutale « comme un rideau ». Échographie. La structure curviligne fléchée est :", "Cataract surgery years ago; sudden blurred vision “like a curtain”. Ultrasound. The arrowed curvilinear structure is:"),
+ [T("L’implant intraoculaire luxé en arrière", "The intraocular lens dislocated posteriorly"), T("Une rétine décollée", "A detached retina"), T("Un corps étranger", "A foreign body"), T("La cornée", "The cornea")], 0,
+ [T("Juste (légende source) : implant luxé (flèche), structure curviligne hyperéchogène; pas de décollement de rétine ni d’hémorragie du vitré dans ce cas. Réparation chirurgicale.", "Correct (source legend): dislocated lens implant (arrow), a hyperechoic curvilinear structure; no retinal detachment or vitreous haemorrhage in this case. Surgical repair."),
+  T("Une rétine décollée s’attache à la papille; l’article note l’absence de décollement.", "A detached retina attaches at the disc; the article reports no detachment."),
+  T("Le contexte (cataracte opérée, pas de traumatisme) et la forme régulière évoquent l’implant.", "The context (prior cataract surgery, no trauma) and regular shape point to the implant."),
+  T("La cornée est la première interface sous la sonde, pas dans la cavité.", "The cornea is the first interface under the probe, not inside the cavity.")],
+ T("Structure curviligne hyperéchogène dans la cavité : implant luxé.", "Hyperechoic curvilinear structure in the cavity: dislocated IOL."),
+ T("Échographie : luxation de l’implant intraoculaire.", "Ultrasound: intraocular lens dislocation."),
+ [H(44, 36, 6, "Implant luxé (flèche)", "Dislocated implant (arrow)")])
+
+case("oc-33", "general", 2, "IMG3-057",
+ T("Œil droit rouge et douloureux depuis 7 jours, chémosis, exophtalmie, fièvre. Scanner des orbites. Que montrent les pointes de flèche?", "Red, painful right eye for 7 days, chemosis, proptosis, fever. Orbital CT. What do the arrowheads show?"),
+ [T("Un abcès orbitaire latéral (collection à paroi rehaussée)", "A lateral orbital abscess (rim-enhancing collection)"), T("Une cellulite préseptale isolée", "Isolated preseptal cellulitis"), T("Une tumeur de la glande lacrymale", "A lacrimal gland tumour"), T("Un globe normal", "A normal globe")], 0,
+ [T("Juste (légende source) : collection à paroi rehaussée en dehors du globe droit (à gauche sur l’image) = abcès orbitaire. Antibiotiques IV et avis chirurgical.", "Correct (source legend): rim-enhancing collection lateral to the right globe (left of the image) = orbital abscess. IV antibiotics and surgical opinion."),
+  T("L’atteinte est en arrière du septum (collection orbitaire), pas seulement palpébrale.", "Disease is behind the septum (orbital collection), not just eyelid."),
+  T("Le contexte infectieux aigu et la paroi rehaussée évoquent un abcès.", "The acute infectious context and enhancing rim point to an abscess."),
+  T("Les pointes de flèche montrent une collection anormale.", "The arrowheads show an abnormal collection.")],
+ T("Collection à paroi rehaussée en dehors du globe droit : abcès orbitaire.", "Rim-enhancing collection lateral to the right globe: orbital abscess."),
+ T("Scanner : abcès orbitaire latéral droit (pointes de flèche).", "CT: right lateral orbital abscess (arrowheads)."),
+ [H(25, 16, 6, "Collection à paroi rehaussée (pointes de flèche)", "Rim-enhancing collection (arrowheads)")])

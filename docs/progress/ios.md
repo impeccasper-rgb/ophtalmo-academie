@@ -32,6 +32,10 @@
   iPad Air 11" by default (`ipad_model` input / `IOS_IPAD_MODEL` variable for the 13"); step timeouts 40 min, job 110 min.
   The concurrency setting no longer cancels a running iOS job on main (pushed by the lead in 811e19f).
 
+- **Run 44940902672 (811e19f): GREEN**, 9/9 on iPhone 17 Pro Max and iPad Pro 13", no warnings, video OK. Evidence in `ios-evidence/` (git-ignored).
+- Observations for other roles, from the screenshots: in EN, one flashcard shows "Key points: Tonométrie" (an untranslated title; data);
+  `zz-final-dark` stays light in this run although the simulator was switched to dark (it was dark in run 44933504936). Check the theme setting (web).
+
 ## Remaining / for others
 - **Web:** fonts are remote (Google Fonts); offline the app falls back to system fonts. Self-host them to be fully offline. Hide web-only UI under `html.native`.
 - **User:** Apple Developer account (legal name), final bundle ID (`set_brand.py --app-id`), API key and GitHub secrets, privacy policy URL, physician review (1.4.1).

@@ -104,7 +104,7 @@ Commande de recomptage : voir `docs/progress/visuals.md`.
 | **Schémas originaux** (ce projet) | Propriété du projet | Solution retenue pour l’A-scan (aucune image au catalogue), la lecture de rapport Humphrey et l’angle normal : `m-ascan-*`, `m-cv-7`, `m-gonio-1`. |
 | À **éviter** sans permission : Moran CORE (https://morancore.utah.edu/terms-of-use/ : usage personnel non commercial, pas de dérivés, permission requise), AAO/EyeWiki images (droits des auteurs/AAO), site gonioscopy.org d’Iowa (© University of Iowa, aucune mention CC). | — | — |
 
-## 7. Images libres (imgsrc3) — cycle 2, 2026-11-21
+## 7. Images libres (imgsrc3) — cycle 2, 2026-11-21 (mis à jour cycle 3)
 
 **Fichiers** : `imgsrc3/sources.json` (60 images choisies : 30 PubMed Central, 30 Wikimedia Commons) → `.github/workflows/media.yml` + `imgsrc3/build_media3.py` (GitHub Actions) → `imgsrc3/web/IMG3-xxx.jpg`, `imgsrc3/catalog3.json` (licence, auteur, page source, l × h), `imgsrc3/build-log.json` (publié / rejeté et pourquoi).
 
@@ -128,3 +128,11 @@ Commande de recomptage : voir `docs/progress/visuals.md`.
 - Pour les figures PMC, citer l’article (auteurs, titre, journal, DOI) et non « PubMed » ; `doi` et `article` sont dans le catalogue.
 - Les calques d’annotation (SVG/CSS) n’altèrent pas les pixels : ce n’est pas une adaptation, donc pas d’obligation SA sur le code de l’app. Ne pas « cuire » les annotations dans un nouveau JPG pour une image BY-SA.
 - Si le concédant demande que son nom soit retiré, le faire (CC BY 4.0 §3(a)(3)). Une demande de retrait de l’image elle-même se traite par courtoisie : retirer l’entrée de `sources.json` ; au build suivant le fichier et l’entrée disparaissent.
+
+### 7 bis. Résultat des builds (cycle 3, runs media.yml 44940902641 puis 44942695155)
+- **Publiées : 43** (29 Commons + 14 PMC) après le run 44940902641; voir `imgsrc3/build-log.json` pour le run le plus récent.
+- **Correction importante** : les 13 figures du *Community Eye Health Journal* 2021 (n° 112) sont **sous licence NC**. Le XML de l’article dit « Creative Commons Attribution Non-Commercial License », alors que l’API de copyright PubMed annonçait CC BY 4.0. Elles sont retirées de `sources.json` (`excluded`). Conclusion : **seule la mention de licence dans le texte de l’article fait foi**, pas le champ de métadonnées. Le build la relit à chaque fois.
+- IMG3-037 (signe de Munson, Commons « CC BY-SA 4.0 ») est **exclue** : l’image porte le filigrane « EyeRounds.org » (EyeRounds = CC BY-NC-ND). La provenance est douteuse; ne pas réintroduire sans preuve que l’auteur a bien placé lui-même la photo sous CC BY-SA.
+- IMG3-038 (hydrops) est exclue : elle ne fait que 116 × 86 px.
+- IMG3-017 (figure 1 du cas CPC-EM endophtalmie) : le script la rejette, car sa légende porte une mention de copyright sans CC BY. Le contexte est affiché dans le log. Pour l’accepter, une personne doit lire la mention et la recopier dans `figure_rights_reviewed`.
+- Routes de téléchargement PMC : le service OA de NCBI (`oa.fcgi`) répond 404 en 2026. Les fichiers viennent du jeu de données **PMC Article Datasets sur AWS** (`pmc-oa-opendata.s3.amazonaws.com/PMCxxxx.N/<fichier>`), d’accès public. Repli : zip Europe PMC `supplementaryFiles`.

@@ -272,7 +272,7 @@ def figure_rights_ok(fig, reviewed=None):
     blob = " ".join(text_of(fig.find(t)) for t in ("caption", "attrib", "permissions"))
     if FIG_BAD.search(blob):
         return False, "figure-level restriction: " + FIG_BAD.search(blob).group(0) + " | " + blob[:300]
-    m = re.search(r"©|\(c\)\s|copyright", blob, re.I)
+    m = re.search(r"©|\bcopyright\b", blob, re.I)  # not "(c)": panel labels like "(C) and (D)" are common
     if m and not re.search(r"cc[ -]by(?!-n)", blob, re.I):
         ctx = blob[max(0, m.start() - 120): m.end() + 160]
         if reviewed and reviewed in blob:
