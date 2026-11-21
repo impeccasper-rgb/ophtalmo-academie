@@ -12,6 +12,14 @@
 - `docs/PEDAGOGY-REVIEW.md` : section « Corrections outils » (8 points, ligne + texte + correction), tableaux complets, lacunes, doutes.
 - Validation : `node -e "…require('data/investigations.js')…"` → `6 46`; `cases-images.js` charge seul → 35 cas.
 
+### Cycle 4 (21 nov. 2026, dépôt ophtalmo-academie)
+- Indice « la bonne réponse est la plus longue » corrigé dans `investigations.js` (74 → 22 % FR, 20 % EN), `cases-images.js` (86 → 23 % / 20 %) et `cases-open.js` (69 → 20 % / 17 %); la plus courte reste ≈ 20–24 %. Commande de contrôle dans PEDAGOGY-REVIEW.md (§ Cycle 4).
+- `cases-open.js` : positions de la bonne réponse réparties (8/9/9/9).
+- Corrections : ic-c06 (hotspot 56/56, plus de « verticales »), p-oct-8 (« sans toucher l’œil »), m-ascan-5 (anneaux à côté des chiffres + texte qui donnait la réponse retiré du schéma), quiz C-012 FR/EN (≥ 180° = PPP AAO; ISGEO initiale ≥ 270°).
+- Validation : fichiers chargés dans node; `tools/build_web.py` OK (missing: none); `tests/web/test_site.py --no-build --quick --only flows` : 32 vérifications, 0 échec.
+- Note : des commits d’autres rôles (ac7a1d3, aca1488) ont inclus une partie de ces modifications en cours de route; le reste est dans l’arbre de travail, non commité, non poussé.
+- À faire par un autre rôle : `docs/FACTS.md` l. 154 (même attribution ISGEO ≥ 180° à corriger).
+
 ## Reste / pour les autres rôles
 - **Exercices interactifs** : appliquer les corrections 1–5 de PEDAGOGY-REVIEW.md (« Corrections outils »); brancher `G.OPH.imageCases` (même schéma que `invPractice`, + `topic`, `featured`) avec `G.OPH.imageCasesMedia` (kind/photo/hotspots/alt; crédit via `Photo.credit`). Le moteur accepte un objet média direct (`mediaById(obj)`).
 - **Web/build** : ajouter `data/cases-images.js` aux données chargées (FR, contenu bilingue natif); route proposée `#cas-images` ou intégration au hub Investigations.

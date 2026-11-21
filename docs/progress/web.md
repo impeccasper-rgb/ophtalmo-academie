@@ -35,6 +35,14 @@ _Dernière mise à jour : 2026-11-21, cycle 2 (rôle web)._
 - `Shell.invRoutes()` couvre `cas-images` et `cas-images/<id>` ; 179 clés `inv.*` dans i18n.js (dont 29 `inv.ic.*`).
 - Vérifié : tests/run.py 0 problème ; websmoke2 0 problème (+ polices chargées, atlas IMG3, crédits SA, pas de doublon EN, onglet Investigations actif sur cas-images).
 
+## Cycle 4 (fait, d'après docs/TEST-REPORT.md)
+- **A11y** : sélecteur de niveau `role="radio"` + `aria-checked` seulement (D4 ; style `[aria-checked]` dans web.css) ; lien « Aller au contenu / Skip to content » premier élément focusable (gabarits build.py et build_web.py, `data-act="skip"` → focus `#view` sans casser le routeur) ; lightbox : le focus revient au bouton d'ouverture (Échap ou Fermer), `aria-modal` ; bouton Menu `aria-expanded`, tiroir `aria-modal="true"`, piège de focus (Tab/Maj+Tab) dans le tiroir et la lightbox, focus rendu au Menu à la fermeture ; `<h1>` (sr-only) sur `#quiz-run` et les pages de jeux ; plus de saut h2 → h4 (sous-titres en `<h3 class="h4">`, même apparence).
+- **Produit public** : tous les modules ouverts (`Prog.unlocked` → true) ; plus de boîte « verrouillé » ni de mention dans le menu ; le plan et les scores suggèrent toujours un ordre.
+- **Débordement** : `.page` et `.sec` en `minmax(0, 1fr)`, légendes/crédits coupables, ligne de filtres de l'atlas qui passe à la ligne : 0 px à 320 px et à 390 px en A++.
+- **EN** : textes des pages A1–A5 (titres, intros, libellés), `A5_GROUPS`, `A5_URG`, tableaux comparatifs (`COMPARE_EN`), atlas, recherche, révision express, groupes de références → clés i18n. `I18N.title(obj)` : en anglais, le terme `en` quand aucune surcouche n'existe ; utilisé par `HY.title()` (ex-/phy-/a5- → « Key points: Tonometry »), `D.title()`, titres de fiche et de sections A. Le corps des sections A (OPH.A physio/exam/recog) reste en français tant que data-en ne fournit pas `OPH_EN.A` (contenu).
+- **Thème sombre iOS** : en « auto », `data-theme` est posé explicitement depuis `matchMedia('(prefers-color-scheme: dark)')`, avec écoute `change` et `visibilitychange` (retour au premier plan).
+- Vérifié : tests/run.py 0 problème ; tests/web/test_site.py --no-build --quick : 84 contrôles, seul échec D13 (images hors ligne non visitées, connu) ; websmoke2.
+
 ## Reste (chaînes UI encore en dur, en français)
 - views.js : contenu pédagogique des pages A1–A5 (`a-anatomie`, `a-physiologie`, `a-examen`, `a-imagerie`, `a-retine` : intertitres et paragraphes d'introduction), `A5_GROUPS`, `A5_URG`, tableaux `COMPARE` (module B/C), vues `atlas`, `sources`, `express-b/c`, `recherche`, `module-a` crumbs « Module A » (identique). Ce sont surtout des textes de contenu : idéalement à déplacer dans data/ + data-en/ (ressources bilingues) plutôt qu'en clés UI.
 - sims.js, figures-a.js, figures-b.js (≈ 210 lignes avec du français : libellés des simulations et des schémas) : hors de mes fichiers ; à traiter par leur propriétaire avec `t()` ou `I18N.pick()`.

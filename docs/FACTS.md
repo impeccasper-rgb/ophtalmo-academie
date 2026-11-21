@@ -151,7 +151,7 @@ Physiologie / examen
   apposition qui s’ouvre vs synéchies (PAS) qui restent. Ligne de Sampaolesi = pigment en avant
   de Schwalbe (PXF). Récession : bande ciliaire élargie, procès iriens déchirés. NVA : vaisseaux
   qui franchissent l’éperon.
-- ISGEO : **PACS** = contact iridotrabéculaire ≥ 180°, PIO normale, sans PAS ni neuropathie ;
+- **PACS** = contact iridotrabéculaire ≥ 180° (AAO PPP ; la définition ISGEO d’origine exigeait ≥ 270°), PIO normale, sans PAS ni neuropathie ;
   **PAC** = contact + PAS et/ou PIO ↑, sans neuropathie ; **PACG** = PAC + neuropathie optique
   glaucomateuse.
 - Pachymétrie : OHTS — EC ≤ 555 µm ≈ 3 fois plus de risque de conversion que > 588 µm. Cornée mince

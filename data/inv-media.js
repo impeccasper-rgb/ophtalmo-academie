@@ -361,7 +361,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     }
    },
    {
-    "x": 44.5,
+    "x": 43,
     "y": 26,
     "r": 5,
     "label": {
@@ -529,7 +529,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "decisive": true
    },
    {
-    "x": 43,
+    "x": 45,
     "y": 46,
     "r": 4,
     "label": {
@@ -538,7 +538,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     }
    },
    {
-    "x": 89.5,
+    "x": 91,
     "y": 46,
     "r": 4,
     "label": {
