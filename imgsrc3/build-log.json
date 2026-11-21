@@ -1,23 +1,8 @@
 {
- "built": "2026-11-21T19:44:22Z",
- "ok": 43,
- "skipped": 15,
+ "built": "2026-11-21T20:01:33Z",
+ "ok": 44,
+ "skipped": 1,
  "log": [
-  {
-   "id": "IMG3-001",
-   "status": "skip",
-   "msg": "article licence rejected: CC BY-NC (text) | evidence: Copyright © 2021 Winnie Nolan and Adeola Onakoya.This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License. This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License."
-  },
-  {
-   "id": "IMG3-002",
-   "status": "skip",
-   "msg": "article licence rejected: CC BY-NC (text) | evidence: Copyright © 2021 Winnie Nolan and Adeola Onakoya.This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License. This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License."
-  },
-  {
-   "id": "IMG3-003",
-   "status": "skip",
-   "msg": "article licence rejected: CC BY-NC (text) | evidence: Copyright © 2021 Winnie Nolan and Adeola Onakoya.This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License. This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License."
-  },
   {
    "id": "IMG3-004",
    "status": "ok",
@@ -86,7 +71,7 @@
   {
    "id": "IMG3-017",
    "status": "skip",
-   "msg": "figure-level copyright notice without CC BY | (A) The hypoechoic fluid collection (asterisk) in the lateral aspect of the orbit is consistent with orbital abscess. (B) The echogenic purulent debris within the vitreous humor (star) has an irregular and loculated appearance and is the key ultrasonographic finding of endophthalmitis. (C) and (D) T"
+   "msg": "figure-level copyright notice without CC BY | …eous humor (star) has an irregular and loculated appearance and is the key ultrasonographic finding of endophthalmitis. (C) and (D) The hypoechoic region posterior to retina and choroid (arrowheads) represents fluid in sub-Tenon’s space (potential space), and the thin membrane crossi…"
   },
   {
    "id": "IMG3-018",
@@ -109,11 +94,6 @@
    "msg": "CC BY-SA 3.0 1200x752 <- https://upload.wikimedia.org/wikipedia/commons/1/1e/Central_serous_retinopathy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   {
-   "id": "IMG3-022",
-   "status": "skip",
-   "msg": "article licence rejected: CC BY-NC (text) | evidence: Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License. This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License."
-  },
-  {
    "id": "IMG3-023",
    "status": "ok",
    "msg": "CC BY-SA 4.0 480x720 <- https://upload.wikimedia.org/wikipedia/commons/1/10/Humphrey_visual_field.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
@@ -127,16 +107,6 @@
    "id": "IMG3-025",
    "status": "ok",
    "msg": "CC0 1200x1200 <- https://upload.wikimedia.org/wikipedia/commons/3/37/Fundus_photograph_of_normal_right_eye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
-  },
-  {
-   "id": "IMG3-026",
-   "status": "skip",
-   "msg": "article licence rejected: CC BY-NC (text) | evidence: Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License. This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License."
-  },
-  {
-   "id": "IMG3-027",
-   "status": "skip",
-   "msg": "article licence rejected: CC BY-NC (text) | evidence: Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License. This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License."
   },
   {
    "id": "IMG3-028",
@@ -210,43 +180,8 @@
   },
   {
    "id": "IMG3-044",
-   "status": "skip",
-   "msg": "Europe PMC full-text XML unavailable"
-  },
-  {
-   "id": "IMG3-045",
-   "status": "skip",
-   "msg": "article licence rejected: CC BY-NC (text) | evidence: Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License. This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License."
-  },
-  {
-   "id": "IMG3-046",
-   "status": "skip",
-   "msg": "article licence rejected: CC BY-NC (text) | evidence: Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License. This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License."
-  },
-  {
-   "id": "IMG3-047",
-   "status": "skip",
-   "msg": "article licence rejected: CC BY-NC (text) | evidence: Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License. This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License."
-  },
-  {
-   "id": "IMG3-048",
-   "status": "skip",
-   "msg": "article licence rejected: CC BY-NC (text) | evidence: Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License. This is an Open Access article distributed under the Creative Commons Attribution Non-Commercial License."
-  },
-  {
-   "id": "IMG3-049",
-   "status": "skip",
-   "msg": "Europe PMC full-text XML unavailable"
-  },
-  {
-   "id": "IMG3-050",
-   "status": "skip",
-   "msg": "Europe PMC full-text XML unavailable"
-  },
-  {
-   "id": "IMG3-051",
-   "status": "skip",
-   "msg": "Europe PMC full-text XML unavailable"
+   "status": "ok",
+   "msg": "CC BY 3.0 800x298 <- https://pmc-oa-opendata.s3.amazonaws.com/PMC6634274.1/cureus-0011-00000004660-i01.jpg"
   },
   {
    "id": "IMG3-052",

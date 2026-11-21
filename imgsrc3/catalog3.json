@@ -1159,6 +1159,41 @@
   "credit": ""
  },
  {
+  "id": "IMG3-044",
+  "file": "imgsrc3/web/IMG3-044.jpg",
+  "title": {
+   "fr": "Sidérose sur corps étranger intraoculaire : hétérochromie et cataracte",
+   "en": "Siderosis from an intraocular foreign body: heterochromia and cataract"
+  },
+  "caption": {
+   "fr": "Photographie à la lampe à fente. A (œil droit) : hétérochromie irienne nette (flèche noire), cicatrice cornéenne et cataracte dense (flèche rouge), évoquant une sidérose sur corps étranger intraoculaire. B (œil gauche) : pas d’anomalie significative. Le B-scan était non concluant ; le scanner a confirmé le corps étranger.",
+   "en": "Slit lamp photography. A (right eye): clinically significant heterochromic iris (black arrow), corneal scar and dense cataract (red arrow), suggestive of ocular siderosis from an intraocular foreign body. B (left eye): no significant abnormality. B-scan was inconclusive; CT confirmed the foreign body."
+  },
+  "license": "CC BY 3.0",
+  "license_url": "http://creativecommons.org/licenses/by/3.0/",
+  "author": "Bloom et al. — Cureus 2019;11(5):e4660",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6634274/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6634274.1/cureus-0011-00000004660-i01.jpg",
+  "source": "pmc",
+  "doi": "10.7759/cureus.4660",
+  "article": "Ocular Siderosis Secondary to Retained Intraocular Foreign Body: A Case Report",
+  "module": "A",
+  "exam": null,
+  "topics": [
+   "a5-tumeurs-toxicite-trauma",
+   "c-depots"
+  ],
+  "w": 800,
+  "h": 298,
+  "bytes": 29783,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "External slit lamp photography of the right eye and left eye (A-B). (A) Shows a clinically significant heterochromic iris (black arrow), a corneal scar, and a dense cataract (red arrow) suggestive of ocular siderosis secondary to intraocular foreign body in the right eye. (B) Shows no clinically significant abnormalities in the left eye.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
   "id": "IMG3-052",
   "file": "imgsrc3/web/IMG3-052.jpg",
   "title": {
