@@ -38,9 +38,15 @@ def log(id_, status, msg):
     LOGS.append({"id": id_, "status": status, "msg": msg})
 
 
-def curl(url, out, params=None, timeout=180):
+_FAILED = set()  # (url, params) that already failed in this run: never retried (keeps the job short)
+
+
+def curl(url, out, params=None, timeout=120):
     """Download url to out with curl; returns True on success."""
-    cmd = ["curl", "-fsSL", "--retry", "3", "--retry-delay", "5", "--connect-timeout", "30",
+    key = (url, json.dumps(params, sort_keys=True) if params else "")
+    if key in _FAILED:
+        return False
+    cmd = ["curl", "-fsSL", "--retry", "2", "--retry-delay", "3", "--connect-timeout", "20",
            "--max-time", str(timeout), "-A", UA, "-o", out]
     if params:
         cmd += ["-G"]
@@ -50,6 +56,7 @@ def curl(url, out, params=None, timeout=180):
     r = subprocess.run(cmd, capture_output=True, text=True)
     time.sleep(1)  # be polite to Wikimedia / EBI / NCBI
     if r.returncode != 0:
+        _FAILED.add(key)
         print(f"    curl {r.returncode} {url} {r.stderr.strip()[:200]}", flush=True)
         try:
             os.remove(out)

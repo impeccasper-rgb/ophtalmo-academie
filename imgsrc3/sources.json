@@ -711,12 +711,12 @@
    },
    "page_url": "https://commons.wikimedia.org/wiki/File:Humphrey_visual_field.JPG",
    "title": {
-    "fr": "Rapport de champ visuel Humphrey",
-    "en": "Humphrey visual field report"
+    "fr": "Périmètre automatisé Humphrey (appareil)",
+    "en": "Humphrey automated perimeter (device)"
    },
    "caption": {
-    "fr": "Rapport de champ visuel Humphrey (description source : « Humphrey VF » ; programme, œil et fiabilité à lire sur l’image).",
-    "en": "Humphrey visual field report (source description: “Humphrey VF”; test pattern, eye and reliability to be read on the image)."
+    "fr": "Photo de l’appareil de champ visuel Humphrey (coupole, écran, imprimante) ; ce n’est pas un rapport de champ visuel.",
+    "en": "Photo of the Humphrey visual field analyser (bowl, screen, printer); not a visual field report."
    },
    "license": "verify-at-build",
    "license_url": null,
@@ -1099,34 +1099,6 @@
    "exam": null,
    "topics": [
     "c-atypiques"
-   ],
-   "area": "cornea",
-   "caption_basis": "Commons source description (read at build 2026-11-21)"
-  },
-  {
-   "id": "IMG3-037",
-   "source": "commons",
-   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/KeratoconusMunsonSignOS.jpg",
-   "resolve": {
-    "commons_file": "KeratoconusMunsonSignOS.jpg"
-   },
-   "page_url": "https://commons.wikimedia.org/wiki/File:KeratoconusMunsonSignOS.jpg",
-   "title": {
-    "fr": "Kératocône : signe de Munson à l’œil gauche",
-    "en": "Keratoconus: Munson sign in the left eye"
-   },
-   "caption": {
-    "fr": "Kératocône bilatéral ; le signe de Munson (paupière inférieure déformée en V dans le regard vers le bas) n’est visible qu’à l’œil gauche.",
-    "en": "Keratoconus in both eyes; Munson’s sign (bowing of the lower lid on downgaze) is apparent in the left eye only."
-   },
-   "license": "verify-at-build",
-   "license_url": null,
-   "licence_check": "build",
-   "author": "verify-at-build",
-   "module": "B",
-   "exam": null,
-   "topics": [
-    "c-keratocone"
    ],
    "area": "cornea",
    "caption_basis": "Commons source description (read at build 2026-11-21)"

@@ -42,9 +42,11 @@ on:
 permissions:
   contents: read
 
+# On main, let a running self-test finish (several roles push often; cancelling would never let a run complete).
+# GitHub keeps one running and one pending run per group: intermediate pushes are skipped, not queued forever.
 concurrency:
   group: ios-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   simulator:
