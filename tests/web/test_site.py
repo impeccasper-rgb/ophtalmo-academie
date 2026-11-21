@@ -621,7 +621,8 @@ def run_axe(browser):
     if not args.axe or not os.path.exists(args.axe):
         log('[axe] skipped (no --axe path)'); return
     src = open(args.axe, encoding='utf-8').read()
-    pages = [('accueil', None), ('c-bacterienne', None), ('inv-oct', 'practice'), ('quiz-run', 'quiz'), ('cartes', 'cards'), ('cas-vedette', 'feat')]
+    pages = [('accueil', None), ('c-bacterienne', None), ('a-anatomie', None), ('inv-oct', 'practice'), ('inv-bscan', None), ('inv-ascan', None), ('inv-gonio', None),
+             ('inv-fondoeil', None), ('inv-cv', None), ('cas-images', 'ic'), ('quiz-run', 'quiz'), ('cartes', 'cards'), ('cas-vedette', 'feat'), ('atlas', None)]
     out = []
     for vw, vh, scheme, lang in [(390, 844, 'light', 'fr'), (1280, 900, 'dark', 'en')]:
         combo = '%d-%s-%s' % (vw, scheme, lang)
@@ -636,6 +637,12 @@ def run_axe(browser):
                     page.locator('[data-invpractice] [data-ip="ready"]').click(); page.wait_for_timeout(150)
                 if mode == 'cards':
                     page.locator('[data-game] [data-flip]').first.click(); page.wait_for_timeout(200)
+                if mode == 'ic':
+                    st_ = page.locator('#view [data-ip="ready"]')
+                    if st_.count() == 0 and page.locator('#view button.btn.primary').count(): page.locator('#view button.btn.primary').first.click(); page.wait_for_timeout(400)
+                    if page.locator('#view [data-ip="ready"]').count():
+                        page.locator('#view [data-ip="ready"]').first.click(); page.wait_for_timeout(150)
+                        page.locator('#view .opt[data-k]:not(.idk)').first.click(); page.wait_for_timeout(300)
             page.add_script_tag(content=src)
             res = page.evaluate("() => axe.run(document, { resultTypes: ['violations'] }).then(r => r.violations.map(v => ({ id: v.id, impact: v.impact, help: v.help, n: v.nodes.length, nodes: v.nodes.slice(0, 4).map(n => ({ t: n.target.join(' '), s: (n.failureSummary || '').slice(0, 200), h: n.html.slice(0, 160) })) })))")
             for v in res:

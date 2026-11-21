@@ -16,7 +16,7 @@ Format: overlays per docs/PLATFORM.md i18n (`G.OPH_EN.hy[key]`, `G.OPH_EN.quiz[i
 - All files are picked up automatically by tools/build_web.py (glob of data-en/*.js). Working tree: /home/claude/ophtalmo-academie only.
 
 ## Remaining
-- Module A anatomy objects (G.OPH.A.anatomy, cornea, angle, disc, annexes) → data-en/module-a.js.
+- Outside data-en (web owner): hard-coded French UI strings in src/sims.js anatomy explorer ("Sélectionne une structure", "En clinique :", "Aller à une structure", zoom buttons, tunic legend) and any SVG labels in src/figures-a.js not taken from `A.*.t`.
 - Photo `look` / `reveal` fields (other translator, cycle 5).
 - Optional: proofreading by an English-speaking ophthalmologist on the terms below.
 
@@ -36,7 +36,7 @@ Format: overlays per docs/PLATFORM.md i18n (`G.OPH_EN.hy[key]`, `G.OPH_EN.quiz[i
 - **data-en/module-a.js (new): module A bodies 35 / 35** — `G.OPH_EN.A = { recog: {id: …}, exam: {id: …}, physio: {id: …} }`, merged by id (src/i18n.js, `k === 'A'` branch → `_byId`).
   - recog 17/17 (title, what, look, why, action, pitfalls, pearl{q,a}); exam 12/12 (title, why, how, normal, patho, pitfalls, pearl); physio 6/6 (title, intro, points, numbers[{label,value}], pearl).
   - Validated: array lengths and `**bold**` counts match FR for every list; id/order/group/urgency/en untouched.
-  - Not translated: the object-shaped anatomy data `G.OPH.A.anatomy / cornea / angle / disc / annexes` (~43 k chars, used by the anatomy explorer).
+  - Interactive anatomy (cycle 5b): `G.OPH_EN.A.anatomy` 32/32, `cornea` 7/7, `angle` 7/7, `disc` 6/6, `annexes` 7/7 — `{t, en, d, c}` per structure, deep-merged by src/i18n.js (object sub-keys → `I18N._merge`; no src change needed). In English `t` = English term and `en` = "" (otherwise the explorer's info panel would repeat the term).
 - data-en/photos.js look/reveal handed to another translator (not touched this cycle).
 
 ## Conventions used
