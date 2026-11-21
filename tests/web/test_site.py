@@ -14,7 +14,7 @@ What it covers (see docs/TEST-REPORT.md for the plan and the last results):
       #cas-images (if the route exists), every Reviser game started + one interaction, QCM series with confidence,
       a full clinical case, progression after reload (localStorage), language switch persistence,
       keyboard basics (Tab to answers, Enter), reduced motion (OS setting and in-app toggle), offline (service worker).
-  * Optional axe-core audit (--axe) on 5 key pages.
+  * Optional axe-core audit (--axe) on 14 pages (home, a fiche, anatomy, the 6 exam tools, image cases, QCM, cards, featured case, atlas).
 All non-local requests are blocked (DNS rules + request routing). Exit code 1 when a check fails.
 Results: <out>/results.json, <out>/shots/*.png (failures + reference shots).
 """

@@ -3,7 +3,14 @@
 _Tester: independent QA and clinical accuracy role (not involved in building the product). Date: 2026-11-21, cycle 3._
 _Tested build: local `python3 tools/build_web.py` from `/home/claude/ophtalmo-academie` (HEAD `e704ccf` plus uncommitted work in progress), served on 127.0.0.1. Every non-local request was blocked. The live GitHub Pages site can't be reached from the test container, so it was not tested._
 
-## 1. Verdict: **ready with fixes**
+> **Final verdict (pass 2, 2026-11-21 evening): ready, with minor fixes.**
+> - **French:** no blocker and no major defect left. The product can launch in French.
+> - **English:** finish translating the interactive figures and the module B/C comparison tables (R1) before an English campaign.
+> - **iOS:** re-run CI on HEAD before TestFlight.
+>
+> Details and the status of each pass 1 defect are in **§8 Passage 2**. Sections 1–7 below are the pass 1 report, kept as history.
+
+## 1. Pass 1 verdict: **ready with fixes**
 
 - **The French web app works well.** I ran 328 route checks: 41 main routes × FR/EN × 390×844/1280×900 × light/dark. All 328 passed: no console or page errors, no horizontal overflow, no raw i18n keys, no 404s or broken images. All flows passed in 4 viewport/theme/language combinations: practice with "Je ne sais pas" and with an answer, #cas-vedette, #image-du-jour and its streak, #cas-images, the 6 games, a QCM series with confidence, a full case, progression after a reload, language persistence, deep links, the in-app motion toggle and the OS reduced-motion setting. Offline mode works through the service worker, including fonts. To show the suite can catch real faults, I injected 5 defects into a copy of the site; it detected all 5.
 - **No blocker.** Before a public launch in **English**, fix four things:
@@ -179,3 +186,126 @@ Images under restricted rights are absent from `site/img`. They are still refere
 - Live site not reachable.
 - No physical device and no screen reader.
 - The clinical review is a random sample (25 of more than 400 items) by one reviewer. It does not replace the physician review planned before App Store submission (guideline 1.4.1).
+
+---
+
+## 8. Passage 2 (second independent pass, 2026-11-21, after cycles 4/5)
+
+- **Builds tested:**
+  - Snapshot of `site/` built at HEAD `c988352` for the full suite.
+  - Snapshot at HEAD `b590ae2` ("Anglais : anatomie interactive") for the quick route check and the EN re-measure of the worst routes.
+- **How the suite was run:** each section on its own with `--only`, to avoid the long-run Chromium crash.
+- **Changes to the suite:** axe now also covers #a-anatomie, the 5 other investigation tools, #cas-images (with an answer revealed) and #atlas.
+
+### 8.1 Suite results
+
+| Section | Result |
+|---|---|
+| Route matrix (41 routes × FR/EN × 390/1280 × light/dark) | **328/328 pass**: no console errors, overflow, raw keys, 404s or broken images. A quick run at HEAD `b590ae2` gives 41/41 |
+| Flows (4 combos + reduced motion) | **60/60 pass**: practice ("Je ne sais pas" + answer), all 6 practice series, #cas-vedette, #image-du-jour, **#cas-images (70 cases)**, 6 games, QCM with confidence, full case, persistence, language, deep links, keyboard, **skip link** ("Aller au contenu" / "Skip to content"), motion toggle, OS reduced motion |
+| Offline (service worker) | 10/11. Reload offline OK, fiches/exams/quiz/reviser OK, practice answerable offline, fonts offline. Only remaining point: images of pages not yet visited (R7) |
+| axe-core 4.10.3 (14 pages × 2 combos) | **13/14 pages with no serious or critical issue**: accueil, c-bacterienne, quiz-run, cartes, cas-vedette, **cas-images**, **inv-oct, inv-bscan, inv-ascan, inv-gonio, inv-fondoeil, inv-cv**, atlas. Remaining: **#a-anatomie** `nested-interactive` (serious, R2). Moderate `heading-order` on #a-anatomie and #atlas |
+
+### 8.2 Status of the pass 1 defects
+
+| # | Pass 1 defect | Status | Evidence in pass 2 |
+|---|---|---|---|
+| D1 | EN largely French | **Partly fixed** | Routes with ≥ 15 % French function words in EN mode: **11/68 → 5/75**. Module A pages: a-examen 78 → 14 %, a-retine 74 → 8 %, a-imagerie 81 → 14 %, a-physiologie 74 → 16 %, **a-anatomie 91 → 46 %**. cas-a2 95 → < 5 %, cas-b5 86 → < 5 %, flashcards 0/15 French. Still French: see R1 |
+| D2 | Correct answer is the longest option | **Fixed** | Correct option is the single longest in invPractice 10/46 (**22 %**), cases-images 8/35 (**23 %**), cases-open 7/35 (**20 %**). EN 17–20 %. Chance ≈ 25 % |
+| D3 | Focusable controls inside `role="img"` (practice media, OCT tool) | **Fixed** | No `nested-interactive` on cas-vedette, cas-images or any inv-* page. Same pattern **remains on #a-anatomie** (R2) |
+| D4 | `aria-pressed` on `role="radio"` (depth selector) | **Fixed** | No `aria-allowed-attr` anywhere |
+| D5 | No skip link | **Fixed** | The first Tab goes to "Aller au contenu" / "Skip to content" (`#view`) |
+| D6 | 14 schematic SVGs without an accessible name | **Fixed (at render)** | No `svg-img-alt`. The raw svg strings in `data/inv-media.js` are unchanged; the engine handles it |
+| D7 | No h1 on quiz-run/games; fiche heading order | **Fixed** | No `page-has-heading-one`, no `heading-order` on c-bacterienne. New moderate `heading-order` on #a-anatomie (h4 "Sélectionne une structure") and #atlas (h3), two pages audited for the first time |
+| D8 | Lightbox focus; drawer ARIA | **Fixed** | Lightbox has `aria-modal="true"` and focus returns to the trigger after Escape. Menu has `aria-expanded="true"`, panel has `role="dialog" aria-modal="true"` |
+| D9 | #atlas overflow at 320 px / A++ | **Partly fixed** | The content no longer exceeds the viewport, but the document is still **2 px (FR) / 7 px (EN) wider at 320 px, and 9/15 px at 390 px with A++**. No element box crosses the viewport (likely a pseudo-element or transform), and the fixed tab bar widens with it (R4) |
+| D10 | Tap targets < 24 px | **Not fixed** | Anatomy pins 18×18 px, "Fovéa" 3×5 px, "Macula" 1×20 px. OCT bands 4–10 px tall at 390 px (chip list as fallback) (R3) |
+| D11 | "Module locked" box on deep links | **Fixed** | Fresh profile → `#c-keratocone`: no `.lockbox` (FR and EN) |
+| D12 | Option 1 looks pre-selected after Ready (iOS) | **Fixed on the web** | After a tap on Ready, focus goes to the options container `.opts` (`:focus-visible` false), not to option 1. The iOS evidence predates the fix |
+| D13 | Offline: images of unvisited pages | **Open (by design)** | 5/8 images missing offline on an unvisited fiche (web only; iOS bundles the images) (R7) |
+| D14 | cas-a2, cas-b5 not in EN | **Fixed** | Both translated |
+| D15 | ic-c06 hotspot / "verticales" | **Fixed** | Hotspot (56, 56, r 10), on the striae. Stem says "fines stries parallèles" |
+| D16 | C-012: ISGEO and 180° | **Fixed** | "≥ 180° selon le PPP de l'AAO — l'ISGEO initiale exigeait ≥ 270°" |
+| D17 | p-oct-8: "sans contact" | **Fixed** | "…sans toucher l'œil" |
+| D18 | p-ascan-5: rings hide the numbers | **Fixed** | Rendered: rings sit beside the values (r 4–5) |
+
+### 8.3 Remaining defects (pass 2)
+
+| # | Severity | Defect | Repro | Where / fix |
+|---|---|---|---|---|
+| R1 | **Moderate (EN only)** | French still visible in EN mode, measured at HEAD `b590ae2`. **a-anatomie 46 %**: the anatomy diagram labels ("Conjonctive", "Limbe", "Trabéculum", "Procès ciliaires", "Fovéa"), instructions ("Aller à une structure", "Touche une structure…", "Glisser pour déplacer…") and the tunics legend. The structure descriptions are now in English. **module-b 43 %, module-c 33 %**: comparison tables (column names and "Clue:/Action:" cells). **a-physiologie/a-examen/a-imagerie 14–16 %**: instructions in the interactive figures and simulators ("Allume une lampe sur un œil…", "Papille dans les limites…"), plus French schematic aria-labels ("Couches de la cornée", "Papille schématique", "Technique de Van Herick, schéma"). About 26 photo zoom labels ("Enlarge: …") still in French (fiche photo lists in a-retine, g-dev, g-pxf, c-bases…). sources 32 % (reference titles; acceptable as is) | `?lang=en#a-anatomie`, `#module-b`, `#a-examen`, `#g-dev` | `src/figures-a.js`, `src/figures-b.js`, `src/sims.js` (labels, `aria-label` and instructions through `t()`/`I18N.pick`). `COMPARE` tables in `src/views.js` (or a `data-en` overlay). Photo `caption`/`look` fields in `data/photos.js` / `data/ext-photos.js` → EN overlay |
+| R2 | Moderate (accessibility, axe "serious") | #a-anatomie: 4 SVGs marked as images (`role="img"`) contain focusable structures, so screen readers can't reach them: `.eye-svg` "Coupe schématique de l'œil", "Couches de la cornée", "Coupe de l'angle iridocornéen", "Vue gonioscopique schématique". Also `heading-order` (h4 directly under an h2) on a-anatomie and atlas | axe on `#a-anatomie` | `src/figures-a.js:73` (and the other explorer SVGs). Use `role="group"` + `aria-label` when the SVG contains controls, as already done for the investigations. Use h3 in the info panel |
+| R3 | Minor | Tap targets < 24 px (anatomy pins, Fovéa/Macula, thin OCT bands) | #a-anatomie, #inv-oct at 390 px | Transparent hit areas ≥ 24 px (`stroke-width` or an invisible `<circle r=12>`) |
+| R4 | Minor | #atlas: page 2–7 px wider than a 320 px screen, 9–15 px at 390 px with A++ text | 320×640 → `#atlas` | Probably a pseudo-element or transform in the atlas grid/filters: test `overflow-x: clip` on `.page` or find the rule (DevTools → Layout) |
+| R5 | Minor (content) | Schematic `m-oct-1` ("Coupe OCT maculaire normale"): the black ellipse of the foveal pit (`cy=78 ry=54`) goes above the frame (top at y = 24 vs frame at y = 30) and **covers the title**. Rings 1 and 2 overlap, so label "1" is hidden. Seen in Chromium and in the iOS evidence (`07-inv-oct`) | `#inv-oct`, practice item 1 | `data/inv-media.js` `m-oct-1`: reduce `ry` (or `cy`), or add a `clipPath` on the frame `rect(30,30,340,210)`. Spread hotspots 1 and 2 apart |
+| R6 | Cosmetic | Old app name in the credits shown under 14 schematics: "Schéma original (ophtalmo app)" (28 FR/EN strings). Also in the 70 `credit` fields of `cases-open.js`, which are not displayed | `#inv-oct` item 1 | `data/inv-media.js` (and `data/cases-open.js`): "Ocelle" |
+| R7 | Minor (web) | Offline: only images already viewed are cached | Visit `/`, go offline, open `#g-gpao` | `sw.js`: placeholder "photo disponible en ligne", or precache the practice/featured images |
+| R8 | Process | iOS evidence is **older than cycles 4/5** (see §8.6) | — | Re-run `ios.yml` on HEAD |
+
+### 8.4 EN coverage per route (share of French function words in `#view`, EN mode, 75 routes)
+
+- **≥ 15 % French:**
+  - a-anatomie 48 % (46 % at HEAD)
+  - module-b 43 %
+  - module-c 33 %
+  - sources 32 %
+  - a-physiologie 16 %
+- **8–14 %:**
+  - a-examen 14 %, a-imagerie 14 %
+  - cas-b3 12 %
+  - g-fermeture 11 %, g-dev 11 %
+  - c-erosion 9 %, g-pxf 9 %
+  - a-retine 8 %, g-secondaires 8 %
+- **5–7 %:** about 25 fiches, plus inv-bscan, inv-oct, inv-fondoeil and associe. That level is mostly background noise ("et al." citations, eponyms) plus a few captions.
+- **< 5 %:** 36 routes, including home, Learn, the investigations hub, cas-images, cas-vedette, quiz, the 12 cases, progression, atlas and the games.
+- **Flashcards:** in a 15-card EN sample, 0 cards are mostly French (1/15 in pass 1).
+
+### 8.5 Spot-check of 10 open-licence cases (`data/cases-open.js`, random sample, seed 20261122)
+
+- **Method:** I read each image (`imgsrc3/web/IMG3-*.jpg`) and drew its hotspots on a copy (x, y and r in % of the width). I then played each case in the app at 390 px in FR and EN, before and after answering.
+- **Credits:** before the answer, they show author + licence (linked: CC0, CC BY 4.0, CC BY-SA 3.0 "partage dans les mêmes conditions" / "share-alike"). After the answer, the "page source" link is added (Commons or PMC). The #sources credits table lists the IMG3 images, with 36 "BY-SA" mentions, inside a collapsed `<details>`.
+- **Integrity of the 35 cases:** answer within range, one `why` per option, FR and EN everywhere, hotspots within 0–100, all images present, answer index spread 8/9/9/9.
+
+| Case | Image / licence | Finding visible? | Hotspots | Clinical accuracy |
+|---|---|---|---|---|
+| oc-01 | IMG3-024, Häggström, CC0 | Yes: pigmented crescent at the temporal edge of the disc (left eye) | Decisive one on the lower part of the crescent (slightly low, acceptable). Disc and macula correct | Normal variant: correct |
+| oc-02 | IMG3-028, Trobe, CC BY 3.0 | Yes: swollen disc, blurred margins, peripapillary haemorrhages | Disc and a haemorrhage: correct | "Papilloedème" reserved for raised intracranial pressure, urgent imaging: correct |
+| oc-03 | IMG3-029, Bisht, CC BY-SA 4.0 | Yes: cherry-red spot, pale retina | On the cherry-red spot: correct | CRAO = stroke pathway, rule out GCA after 50: correct |
+| oc-06 | IMG3-033, NEI, public domain | Yes: groups of exudates around the fovea ("PRETREATMENT") | Both on the exudates: correct | DME, anti-VEGF first line: correct |
+| oc-13 | IMG3-041, Varas, CC BY 3.0 | Yes: pterygium reaching the pupil | Head and wing: correct | Excision with conjunctival autograft: correct |
+| oc-16 | IMG3-053, Heilman, CC BY-SA 3.0 | Yes: right eye red, mid-dilated pupil (left of the image) | Pupil and red eye: correct | Lower IOP then LPI in both eyes: correct |
+| oc-21 | IMG3-060, Ahuja, CC BY-SA 2.5 | Yes: blood filling the lower half of the anterior chamber | Correct | Hyphaema: IOP, shield, avoid NSAIDs/anticoagulants, sickle-cell screen: correct |
+| oc-25 | IMG3-009, Chawang et al., CC BY 4.0 | Yes: choroidal domes at the arrows (A, B), CT (C) | On the arrow tips: correct | Traumatic choroidal detachment: correct |
+| oc-26 | IMG3-010, Kim et al. (BMC Ophthalmol 2023), CC BY 4.0 | Yes: domes on B-scan (B), fold on OCT (C), resolution (E) | 4 hotspots on the right panels | Choroidal detachment from hypotony after SLT: correct |
+| oc-33 | IMG3-057, Haight et al., CC BY 4.0 | Yes: rim-enhancing collection lateral to the right globe (left of the image) | On the arrowheads: correct | Orbital abscess, IV antibiotics + surgical opinion: correct |
+
+**Result: 10/10 compliant.** Every claimed finding is visible, the hotspots land on it and the credits are displayed.
+
+One remark, not a defect: under CC BY / BY-SA, changes must be indicated. The `credit` field of `cases-open.js` says "Redimensionnée; annotations : ophtalmo app", but the interface shows the catalogue credit (author · licence · source), which does not have that mention. The rings are an overlay and resizing is minor, so the risk is low. Adding "image redimensionnée, annotations superposées" next to the licence would cover it completely.
+
+### 8.6 Latest iOS evidence (`/home/claude/ophtalmo-academie/ios-evidence/`)
+
+- **Run:** 44942695151, commit `d0b6700` (2026-11-21 19:46Z). That is **10 commits behind HEAD**: before the end of cycle 3, and before the cycle 4/5 fixes (accessibility, locks, EN, dark mode).
+- **Devices:** iPhone 17 Pro Max and **iPad Air 11″ (M4)**, iOS 26.5.
+- **Results:** **9/9 on both devices**, `js_errors: []`. The offline step now reports **0 remote resources** (fonts are self-hosted).
+- **Fixed since the first evidence set:**
+  - No more blank screenshots.
+  - `07-inv-oct` does show the OCT page.
+  - No more date-suffixed duplicates.
+  - Safe areas are correct (Dynamic Island, home indicator).
+  - Light and dark mode render.
+  - iPad layout is full width, with no clipping.
+- **Still visible because the build is old:**
+  - The "Module B locked" box (`04-fiche-top`, fixed since: D11).
+  - The ring on option 1 after Ready (`09-practice-answer`, fixed on the web: D12).
+- **Real content defect seen:** the title of the `m-oct-1` schematic is covered (R5).
+- **Missing:** `03-home-en` was not captured on iPad.
+- **Recommendation:** re-run `ios.yml` on HEAD, and add #cas-images (an oc-* case), #cas-vedette and a landscape screenshot to the self-test.
+
+### 8.7 Final verdict
+
+**Ready, with minor fixes.**
+- **Web:** functionally clean on 328 route checks, 60 flows and offline. Accessibility: no critical issue left and one serious one (#a-anatomie, R2). Clinical sample: 25 items in pass 1 plus 10 open-licence cases in pass 2, with no error left.
+- **Before an English campaign:** R1, which is the interactive figures, the anatomy explorer and the B/C comparison tables.
+- **Before TestFlight:** a fresh iOS run on HEAD (R8) and the physician review (guideline 1.4.1).
+- **Quick fixes still worth doing:** R2 (role="group" on the anatomy SVGs), R5 (`m-oct-1` ellipse), R6 (app name).
