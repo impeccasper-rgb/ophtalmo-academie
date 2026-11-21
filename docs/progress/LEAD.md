@@ -35,3 +35,10 @@
 - Visuels : hotspots imgsrc3 → nouveaux items (après le workflow).
 - Design/motion : vidéos d’aperçu à partir de l’interface réelle (Playwright, 9:16 + 16:9, sous-titres FR/EN).
 - Tests indépendants (Extra) : site + artefacts iOS + revue clinique échantillonnée.
+
+## Cycle 4 (prévu ~15 h 30) — corrections issues du rapport de tests
+1. Pédagogie : biais « bonne réponse = la plus longue » (74 % Investigations, 86 % cas images) → équilibrer les options ; ic-c06 hotspot (x56,y56, stries obliques), C-012 (ISGEO 270° vs AAO 180°), p-oct-8 libellé, p-ascan-5 anneaux.
+2. Traduction : légendes du catalogue en anglais (data-en/catalog.js), cas-a2 et cas-b5, textes A1–A5 (avec le web : déplacer en données), tableaux COMPARE.
+3. Web : déverrouiller les modules pour le public (pas de boîte « verrouillé »), lien d'évitement, sélecteur de profondeur (role=radio sans aria-pressed), focus lightbox, aria-expanded/aria-modal, débordement atlas 320 px, h1 manquants.
+4. Exercices : bouton Agrandir hors du role=img, couches OCT accessibles, cibles tactiles ≥ 24 px, noms accessibles des SVG.
+5. iOS : relancer sur l'arbre actuel, captures vides.
