@@ -33,6 +33,8 @@
   The concurrency setting no longer cancels a running iOS job on main (pushed by the lead in 811e19f).
 
 - **Run 44940902672 (811e19f): GREEN**, 9/9 on iPhone 17 Pro Max and iPad Pro 13", no warnings, video OK. Evidence in `ios-evidence/` (git-ignored).
+- **Run 44942695151 (d0b6700): GREEN with the final runner**: iPhone 17 Pro Max + iPad Air 11" M4, 9/9 each, 0 warnings, video OK;
+  one hung iPad screenshot was absorbed without failing. Evidence in `ios-evidence/` = this run.
 - Observations for other roles, from the screenshots: in EN, one flashcard shows "Key points: Tonométrie" (an untranslated title; data);
   `zz-final-dark` stays light in this run although the simulator was switched to dark (it was dark in run 44933504936). Check the theme setting (web).
 
