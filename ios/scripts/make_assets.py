@@ -5,7 +5,7 @@ Source of truth, in order:
   1. brand/icon-1024.png      (brand agent; any size >= 1024, square; alpha is flattened)
   2. a generated PLACEHOLDER  (cobalt square + white glyph of the current logo) -> replace before App Store submission
 
-Splash: solid #0A2547 (brand night) with brand/splash-logo.png centred if present, else the brand mark drawn from
+Splash: solid #1F2CFF (brand cobalt) with brand/splash-logo.png centred if present, else the brand mark drawn from
 brand/mark.svg's geometry (brand/HANDOFF.md section 6).
 Colours follow src/styles.css (--paper light #f4f6fa / dark #0b1220, --cobalt #2346d4).
 Run: python3 ios/scripts/make_assets.py   (needs Pillow; also run in CI before xcodebuild)
@@ -70,12 +70,12 @@ def write_icon():
     return origin
 
 
-NIGHT = (0x0A, 0x25, 0x47)  # brand --night-2 (BRAND.md / HANDOFF.md: splash = solid #0A2547 + centred mark)
+NIGHT = (0x1F, 0x2C, 0xFF)  # brand v2 cobalt (BRAND.md v2: splash = solid #1F2CFF + centred mark)
 
 
 def mark_on(canvas, box, ss=3):
     """Draw brand/mark.svg's content (iris, pupil, slit-lamp crescent, fluorescein sign) into `canvas`.
-    `box` = side in px of the mark's 1024-unit square, centred on the canvas. The mark's own background is #0A2547,
+    `box` = side in px of the mark's 1024-unit square, centred on the canvas. The mark's own background is #1F2CFF,
     identical to the splash background, so only the content is drawn."""
     S = box * ss
     layer = Image.new('RGBA', (S, S), (0, 0, 0, 0))
@@ -108,10 +108,10 @@ def write_splash():
         logo = Image.open(logo_src).convert('RGBA')
         logo.thumbnail((460, 460), Image.LANCZOS)
         canvas.paste(logo, ((size - logo.width) // 2, (size - logo.height) // 2), logo)
-        origin = 'brand/splash-logo.png on #0A2547'
+        origin = 'brand/splash-logo.png on #1F2CFF'
     else:
         mark_on(canvas, 720)  # mark content ~ 440 px: ~35 % of a phone's width, ~22 % of an iPad's short side
-        origin = 'brand mark (mark.svg geometry) on #0A2547'
+        origin = 'brand mark (mark.svg geometry) on #1F2CFF'
     for f in os.listdir(out_dir):
         if f.endswith('.png'):
             os.remove(os.path.join(out_dir, f))
