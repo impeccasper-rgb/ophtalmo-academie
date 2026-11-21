@@ -1,0 +1,307 @@
+{
+ "built": "2026-11-21T18:35:14Z",
+ "ok": 30,
+ "skipped": 30,
+ "log": [
+  {
+   "id": "IMG3-001",
+   "status": "skip",
+   "msg": "article licence rejected: none found (Copyright © 2021 Winnie Nolan and Adeola Onakoya.This is an Open Access article distributed under the Creative Commons A)"
+  },
+  {
+   "id": "IMG3-002",
+   "status": "skip",
+   "msg": "article licence rejected: none found (Copyright © 2021 Winnie Nolan and Adeola Onakoya.This is an Open Access article distributed under the Creative Commons A)"
+  },
+  {
+   "id": "IMG3-003",
+   "status": "skip",
+   "msg": "article licence rejected: none found (Copyright © 2021 Winnie Nolan and Adeola Onakoya.This is an Open Access article distributed under the Creative Commons A)"
+  },
+  {
+   "id": "IMG3-004",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC10276512/bin/12886_2023_3033_Fig1_HTML.jpg"
+  },
+  {
+   "id": "IMG3-005",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC8610488/bin/cpcem-5-485-g001.jpg"
+  },
+  {
+   "id": "IMG3-006",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC8610488/bin/cpcem-5-485-g002.jpg"
+  },
+  {
+   "id": "IMG3-007",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC13518040/bin/cpcem-10-232-g006.webp.jpg | https://europepmc.org/articles/PMC13518040/bin/cpcem-10-232-g006.webp.png | https://europepmc.org/articles/PMC13518040/bin/cpcem-10-232-g006.webp.gif"
+  },
+  {
+   "id": "IMG3-008",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC13518040/bin/cpcem-10-232-g005.webp.jpg | https://europepmc.org/articles/PMC13518040/bin/cpcem-10-232-g005.webp.png | https://europepmc.org/articles/PMC13518040/bin/cpcem-10-232-g005.webp.gif"
+  },
+  {
+   "id": "IMG3-009",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC13518040/bin/cpcem-10-232-g007.webp.jpg | https://europepmc.org/articles/PMC13518040/bin/cpcem-10-232-g007.webp.png | https://europepmc.org/articles/PMC13518040/bin/cpcem-10-232-g007.webp.gif"
+  },
+  {
+   "id": "IMG3-010",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC10276512/bin/12886_2023_3033_Fig2_HTML.jpg"
+  },
+  {
+   "id": "IMG3-011",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC9197736/bin/cpcem-6-125-g001.jpg"
+  },
+  {
+   "id": "IMG3-012",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC9197736/bin/cpcem-6-125-g002.jpg"
+  },
+  {
+   "id": "IMG3-013",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC6682246/bin/cpcem-3-318-g002.jpg"
+  },
+  {
+   "id": "IMG3-014",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC12594224/bin/cpcem-9-471-g001.jpg"
+  },
+  {
+   "id": "IMG3-015",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC8373173/bin/cpcem-5-367-g001.jpg"
+  },
+  {
+   "id": "IMG3-016",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC8373180/bin/cpcem-5-332-g001.jpg"
+  },
+  {
+   "id": "IMG3-017",
+   "status": "skip",
+   "msg": "figure-level copyright notice without CC BY"
+  },
+  {
+   "id": "IMG3-018",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC3931271/bin/1471-2415-14-17-1.jpg"
+  },
+  {
+   "id": "IMG3-019",
+   "status": "ok",
+   "msg": "CC BY-SA 3.0 1015x680 <- https://upload.wikimedia.org/wikipedia/commons/7/77/HealthyMacula_OCT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-020",
+   "status": "ok",
+   "msg": "CC BY-SA 4.0 1200x741 <- https://upload.wikimedia.org/wikipedia/commons/6/65/Spectral_Domain_OCT_-_Macula_Cross-Sections.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-021",
+   "status": "ok",
+   "msg": "CC BY-SA 3.0 1200x752 <- https://upload.wikimedia.org/wikipedia/commons/1/1e/Central_serous_retinopathy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-022",
+   "status": "skip",
+   "msg": "article licence rejected: none found (Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commo)"
+  },
+  {
+   "id": "IMG3-023",
+   "status": "ok",
+   "msg": "CC BY-SA 4.0 480x720 <- https://upload.wikimedia.org/wikipedia/commons/1/10/Humphrey_visual_field.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-024",
+   "status": "ok",
+   "msg": "CC0 1200x1200 <- https://upload.wikimedia.org/wikipedia/commons/4/48/Fundus_photograph_of_normal_left_eye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-025",
+   "status": "ok",
+   "msg": "CC0 1200x1200 <- https://upload.wikimedia.org/wikipedia/commons/3/37/Fundus_photograph_of_normal_right_eye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-026",
+   "status": "skip",
+   "msg": "article licence rejected: none found (Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commo)"
+  },
+  {
+   "id": "IMG3-027",
+   "status": "skip",
+   "msg": "article licence rejected: none found (Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commo)"
+  },
+  {
+   "id": "IMG3-028",
+   "status": "ok",
+   "msg": "CC BY 3.0 277x266 <- https://upload.wikimedia.org/wikipedia/commons/1/1a/Papilledema.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-029",
+   "status": "ok",
+   "msg": "CC BY-SA 4.0 813x582 <- https://upload.wikimedia.org/wikipedia/commons/0/07/Cherry_red_spot_in_patient_with_central_retinal_artery_occlusion_%28CRAO%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-030",
+   "status": "ok",
+   "msg": "CC BY 4.0 1072x497 <- https://upload.wikimedia.org/wikipedia/commons/1/19/Fondo_de_ojo_Ostrucci%C3%B3n_Vena_central.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-031",
+   "status": "ok",
+   "msg": "Public domain 1000x655 <- https://upload.wikimedia.org/wikipedia/commons/9/9f/Fundus_Proliferative_retinopathy_EDA01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-032",
+   "status": "ok",
+   "msg": "Public domain 900x600 <- https://upload.wikimedia.org/wikipedia/commons/c/cb/Fundus_retinopathy_EDA03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-033",
+   "status": "ok",
+   "msg": "Public domain 900x600 <- https://upload.wikimedia.org/wikipedia/commons/4/4b/Fundus_Diabetic_macular_edema_EDA04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-034",
+   "status": "ok",
+   "msg": "CC BY-SA 4.0 900x923 <- https://upload.wikimedia.org/wikipedia/commons/5/5a/Rhegmatogene_amotio_retinae.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-035",
+   "status": "ok",
+   "msg": "CC BY-SA 4.0 853x788 <- https://upload.wikimedia.org/wikipedia/commons/9/95/Dendritic_corneal_ulcer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-036",
+   "status": "ok",
+   "msg": "CC BY 4.0 766x570 <- https://upload.wikimedia.org/wikipedia/commons/7/78/Parasite140120-fig1_Acanthamoeba_keratitis_Figure_1A.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-037",
+   "status": "ok",
+   "msg": "CC BY-SA 4.0 473x285 <- https://upload.wikimedia.org/wikipedia/commons/9/9c/KeratoconusMunsonSignOS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-038",
+   "status": "ok",
+   "msg": "Public domain 116x86 <- https://upload.wikimedia.org/wikipedia/commons/f/f7/Corneal-hydrops.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-039",
+   "status": "ok",
+   "msg": "CC BY 4.0 1198x555 <- https://upload.wikimedia.org/wikipedia/commons/6/68/Corneal_topography%2C_stage_II_keratoconus_%28Elise_A._Slim_et_al.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-040",
+   "status": "ok",
+   "msg": "CC BY 2.0 350x500 <- https://upload.wikimedia.org/wikipedia/commons/6/60/Fuchs_dystrophy_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-041",
+   "status": "ok",
+   "msg": "CC BY 3.0 1200x800 <- https://upload.wikimedia.org/wikipedia/commons/3/34/Pterygium_Slitlamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-042",
+   "status": "ok",
+   "msg": "CC BY-SA 4.0 1200x642 <- https://upload.wikimedia.org/wikipedia/commons/4/4c/Pterygium_%28conjunctiva%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-043",
+   "status": "ok",
+   "msg": "CC BY-SA 3.0 1200x900 <- https://upload.wikimedia.org/wikipedia/commons/a/a3/Band-keratopathy_left-eye.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-044",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC6634274/bin/cureus-0011-00000004660-i01.jpg"
+  },
+  {
+   "id": "IMG3-045",
+   "status": "skip",
+   "msg": "article licence rejected: none found (Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commo)"
+  },
+  {
+   "id": "IMG3-046",
+   "status": "skip",
+   "msg": "article licence rejected: none found (Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commo)"
+  },
+  {
+   "id": "IMG3-047",
+   "status": "skip",
+   "msg": "article licence rejected: none found (Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commo)"
+  },
+  {
+   "id": "IMG3-048",
+   "status": "skip",
+   "msg": "article licence rejected: none found (Copyright © 2021 Rupert RA Bourne and Tasneem Khatib.This is an Open Access article distributed under the Creative Commo)"
+  },
+  {
+   "id": "IMG3-049",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC8862624/bin/jceh_34_112_032_f02.jpg"
+  },
+  {
+   "id": "IMG3-050",
+   "status": "skip",
+   "msg": "article licence rejected: none found (Copyright © 2021 Jibran Mohamed-Noriega and Jason A Penniecook.This is an Open Access article distributed under the Crea)"
+  },
+  {
+   "id": "IMG3-051",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC8862627/bin/jceh_34_112_055_f01.jpg"
+  },
+  {
+   "id": "IMG3-052",
+   "status": "ok",
+   "msg": "Public domain 463x396 <- https://upload.wikimedia.org/wikipedia/commons/8/8c/Cornea_showing_Krukenberg%27s_Spindle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-053",
+   "status": "ok",
+   "msg": "CC BY-SA 3.0 1200x404 <- https://upload.wikimedia.org/wikipedia/commons/0/07/Acute_angle_closure_glaucoma.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-054",
+   "status": "ok",
+   "msg": "CC BY 3.0 360x274 <- https://upload.wikimedia.org/wikipedia/commons/1/13/Acute_Angle_Closure-glaucoma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-055",
+   "status": "ok",
+   "msg": "CC BY-SA 3.0 1041x1046 <- https://upload.wikimedia.org/wikipedia/commons/4/4f/Glaukompapille2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-056",
+   "status": "ok",
+   "msg": "CC BY-SA 4.0 1165x774 <- https://upload.wikimedia.org/wikipedia/commons/e/ef/Anterior_chamber_angle_-_3D_motion_parallax.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-057",
+   "status": "skip",
+   "msg": "download failed: https://europepmc.org/articles/PMC10855287/bin/cpcem-7-262-g002.jpg"
+  },
+  {
+   "id": "IMG3-058",
+   "status": "ok",
+   "msg": "CC BY 3.0 360x160 <- https://upload.wikimedia.org/wikipedia/commons/8/8f/Orbital_cellulitis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-059",
+   "status": "ok",
+   "msg": "CC BY-SA 3.0 852x204 <- https://upload.wikimedia.org/wikipedia/commons/2/2e/Anizokoria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-060",
+   "status": "ok",
+   "msg": "CC BY-SA 2.5 762x587 <- https://upload.wikimedia.org/wikipedia/commons/e/e0/Hyphema_-_occupying_half_of_anterior_chamber_of_eye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  }
+ ]
+}

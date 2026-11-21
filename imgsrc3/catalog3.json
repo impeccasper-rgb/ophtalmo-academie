@@ -1,0 +1,998 @@
+[
+ {
+  "id": "IMG3-019",
+  "file": "imgsrc3/web/IMG3-019.jpg",
+  "title": {
+   "fr": "OCT d’une macula saine",
+   "en": "OCT of a healthy macula"
+  },
+  "caption": {
+   "fr": "Coupe OCT d’une macula saine (d’après le nom du fichier ; description source ajoutée au build).",
+   "en": "OCT cross-section of a healthy macula (per file name; source description added at build)."
+  },
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "author": "Rebellos",
+  "page_url": "https://commons.wikimedia.org/wiki/File:HealthyMacula_OCT.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/HealthyMacula_OCT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "oct",
+  "topics": [
+   "ex-oct"
+  ],
+  "w": 1015,
+  "h": 680,
+  "bytes": 195524,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Przekrój przez centralną część siatkówki zdrowego oka, wykonany przy pomocy Optycznej Koherentnej Tomografii (OCT). W centrum widać plamkę żółtą.",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-020",
+  "file": "imgsrc3/web/IMG3-020.jpg",
+  "title": {
+   "fr": "OCT spectral : coupes maculaires",
+   "en": "Spectral-domain OCT: macular cross-sections"
+  },
+  "caption": {
+   "fr": "Coupes maculaires en OCT spectral (d’après le nom du fichier).",
+   "en": "Spectral-domain OCT macular cross-sections (per file name)."
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Wies6014",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Spectral_Domain_OCT_-_Macula_Cross-Sections.png",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Spectral_Domain_OCT_-_Macula_Cross-Sections.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "oct",
+  "topics": [
+   "ex-oct"
+  ],
+  "w": 1200,
+  "h": 741,
+  "bytes": 163577,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "The healthy macula of a 24 year old male (cross-section views). This image is released to Wikimedia with patient consent. Imaged in-vivo with an Optovue iVue Spectral Domain Optical Coherence Tomographer (SD-OCT) at the office of Drs. Harry Wiessner, Steven Davis, Daniel Wiessner, and Eric Wiessner in Walla Walla, WA, USA.",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-021",
+  "file": "imgsrc3/web/IMG3-021.jpg",
+  "title": {
+   "fr": "Choriorétinopathie séreuse centrale",
+   "en": "Central serous retinopathy"
+  },
+  "caption": {
+   "fr": "Choriorétinopathie séreuse centrale (d’après le nom du fichier ; modalité d’imagerie à confirmer par la description source).",
+   "en": "Central serous retinopathy (per file name; imaging modality to be confirmed from the source description)."
+  },
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "author": "Russell Neches ( Rneches )",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Central_serous_retinopathy.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Central_serous_retinopathy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "oct",
+  "topics": [
+   "ex-oct",
+   "a5-macula-chirurgicale"
+  ],
+  "w": 1200,
+  "h": 752,
+  "bytes": 244967,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "This an occurance of central serous retinopathy in my retina, imaged using optical coherence tomography with a Zeiss Visante OCT machine. Unfortunately, the software does not allow easy export of the data, so this is a cameraphone picture of the display.",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-023",
+  "file": "imgsrc3/web/IMG3-023.jpg",
+  "title": {
+   "fr": "Champ visuel Humphrey",
+   "en": "Humphrey visual field"
+  },
+  "caption": {
+   "fr": "Champ visuel Humphrey (d’après le nom du fichier ; type de programme et fiabilité à lire sur l’image source).",
+   "en": "Humphrey visual field (per file name; test pattern and reliability to be read from the source image)."
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Sej994",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Humphrey_visual_field.JPG",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Humphrey_visual_field.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "cv",
+  "topics": [
+   "ex-champs-visuels"
+  ],
+  "w": 480,
+  "h": 720,
+  "bytes": 32368,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Humphrey VF",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-024",
+  "file": "imgsrc3/web/IMG3-024.jpg",
+  "title": {
+   "fr": "Fond d’œil normal (œil gauche)",
+   "en": "Normal fundus (left eye)"
+  },
+  "caption": {
+   "fr": "Photographie du fond d’œil normal d’un œil gauche (d’après le nom du fichier).",
+   "en": "Fundus photograph of a normal left eye (per file name)."
+  },
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "author": "Mikael Häggström . When using this image in external works, it may be cited as: Häggström, Mikael (2014). \" Medical gallery of Mikael Häggström 2014 \". WikiJournal of Medicine 1 (2). DOI : 10.15347/wjm/2014.008 . ISSN 2002-4436 . Public Domain . or By Mikael Häggström, used with permission.",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Fundus_photograph_of_normal_left_eye.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Fundus_photograph_of_normal_left_eye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "fondoeil",
+  "topics": [
+   "ex-papille"
+  ],
+  "w": 1200,
+  "h": 1200,
+  "bytes": 104718,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Fundus photograph of the left eye, showing a fundus with no sign of disease or pathology. It is seen from front so that left in each image is to the person's right. The gaze is into the camera, so the macula is in the center of the image, and the optic disk is located towards the nose (left in image). The optic disk has some pigmentation at the perimeter of the lateral side, which is considered non-pathological. Veins are darker and slightly wider than corresponding arteries. Major nerve pathways are seen as white striped patterns radiating from the optic disk. Photo is taken at Gävle Hospital in Sweden in 2012 on a healthy 25-year old male volunteer.",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-025",
+  "file": "imgsrc3/web/IMG3-025.jpg",
+  "title": {
+   "fr": "Fond d’œil normal (œil droit)",
+   "en": "Normal fundus (right eye)"
+  },
+  "caption": {
+   "fr": "Photographie du fond d’œil normal d’un œil droit (d’après le nom du fichier).",
+   "en": "Fundus photograph of a normal right eye (per file name)."
+  },
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "author": "Mikael Häggström . When using this image in external works, it may be cited as: Häggström, Mikael (2014). \" Medical gallery of Mikael Häggström 2014 \". WikiJournal of Medicine 1 (2). DOI : 10.15347/wjm/2014.008 . ISSN 2002-4436 . Public Domain . or By Mikael Häggström, used with permission.",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Fundus_photograph_of_normal_right_eye.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Fundus_photograph_of_normal_right_eye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "fondoeil",
+  "topics": [
+   "ex-papille"
+  ],
+  "w": 1200,
+  "h": 1200,
+  "bytes": 99479,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Fundus photograph of the right eye, showing a fundus with no sign of disease or pathology. It is seen from front so that left in each image is to the person's right. The gaze is into the camera, so the macula is in the center of the image, and the optic disk is located towards the nose (right in image). The optic disk has some pigmentation at the perimeter of the lateral side, which is considered non-pathological. Veins are darker and slightly wider than corresponding arteries. Major nerve pathways are seen as white striped patterns radiating from the optic disk. In addition, there are also lighter areas close to larger vessels seen mainly at upper left in the image (person's upper right), which is regarded as a normal finding in younger people. Photo is taken at Gävle Hospital in Sweden in 2012 on a healthy 25-year old male volunteer.",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-028",
+  "file": "imgsrc3/web/IMG3-028.jpg",
+  "title": {
+   "fr": "Œdème papillaire (papilloedème)",
+   "en": "Papilledema"
+  },
+  "caption": {
+   "fr": "Papilloedème (d’après le nom du fichier).",
+   "en": "Papilledema (per file name)."
+  },
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "author": "Jonathan Trobe, M.D. - University of Michigan Kellogg Eye Center",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Papilledema.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Papilledema.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "fondoeil",
+  "topics": [
+   "a5-papille-oedeme"
+  ],
+  "w": 277,
+  "h": 266,
+  "bytes": 15956,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Photo demonstrating Papilledema which is a swollen optic disc caused by increased intracranial pressure.",
+  "credit": "The Eyes Have It"
+ },
+ {
+  "id": "IMG3-029",
+  "file": "imgsrc3/web/IMG3-029.jpg",
+  "title": {
+   "fr": "Tache rouge cerise d’une occlusion de l’artère centrale de la rétine",
+   "en": "Cherry-red spot in central retinal artery occlusion"
+  },
+  "caption": {
+   "fr": "Tache rouge cerise chez un patient atteint d’occlusion de l’artère centrale de la rétine (d’après le nom du fichier).",
+   "en": "Cherry-red spot in a patient with central retinal artery occlusion (per file name)."
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Dr. Gopal Bisht",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Cherry_red_spot_in_patient_with_central_retinal_artery_occlusion_(CRAO).jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Cherry_red_spot_in_patient_with_central_retinal_artery_occlusion_%28CRAO%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "fondoeil",
+  "topics": [
+   "a5-occlusions-retiniennes"
+  ],
+  "w": 813,
+  "h": 582,
+  "bytes": 49584,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Image showing cherry red spot and retinal swelling.",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-030",
+  "file": "imgsrc3/web/IMG3-030.jpg",
+  "title": {
+   "fr": "Occlusion de la veine centrale de la rétine (fond d’œil)",
+   "en": "Central retinal vein occlusion (fundus)"
+  },
+  "caption": {
+   "fr": "Fond d’œil d’une occlusion de la veine centrale de la rétine (d’après le nom du fichier, en espagnol).",
+   "en": "Fundus of a central retinal vein occlusion (per the Spanish file name)."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "author": "Werner JU, Böhm F, Lang GE, Dreyhaupt J, Lang GK, Enders C",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Fondo_de_ojo_Ostrucci%C3%B3n_Vena_central.png",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Fondo_de_ojo_Ostrucci%C3%B3n_Vena_central.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "fondoeil",
+  "topics": [
+   "a5-occlusions-retiniennes"
+  ],
+  "w": 1072,
+  "h": 497,
+  "bytes": 75196,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Fig 1. Oclusión Vena Retinal Central. (A)Fondo de ojo con hemorragias intraretinales. (B)Angiografía fluorescente (FA) luego de inyección tinción mostrando bloqueo de fluorescencia coroidal por hemorragias intraretinales.",
+  "credit": "Comparison of foveal avascular zone between optical coherence tomography angiography and fluorescein angiography in patients with retinal vein occlusion. PLoS ONE 14(6): e0217849"
+ },
+ {
+  "id": "IMG3-031",
+  "file": "imgsrc3/web/IMG3-031.jpg",
+  "title": {
+   "fr": "Rétinopathie diabétique proliférante (fond d’œil)",
+   "en": "Proliferative diabetic retinopathy (fundus)"
+  },
+  "caption": {
+   "fr": "Fond d’œil : rétinopathie proliférante (d’après le nom du fichier).",
+   "en": "Fundus: proliferative retinopathy (per file name)."
+  },
+  "license": "Public domain",
+  "license_url": null,
+  "author": "http://www.nei.nih.gov/photo/eyedis/index.asp",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Fundus_Proliferative_retinopathy_EDA01.JPG",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Fundus_Proliferative_retinopathy_EDA01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "fondoeil",
+  "topics": [
+   "a5-retinopathie-diabetique"
+  ],
+  "w": 1000,
+  "h": 655,
+  "bytes": 31597,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Proliferative retinopathy Description: Proliferative retinopathy, an advanced form of diabetic retinopathy, occurs when abnormal new blood vessels and scar tissue form on the surface of the retina. Credit: National Eye Institute, National Institutes of Health Ref#: EDA01",
+  "credit": "http://www.nei.nih.gov/photo/eyedis/index.asp"
+ },
+ {
+  "id": "IMG3-032",
+  "file": "imgsrc3/web/IMG3-032.jpg",
+  "title": {
+   "fr": "Rétinopathie (fond d’œil, série EDA)",
+   "en": "Retinopathy (fundus, EDA series)"
+  },
+  "caption": {
+   "fr": "Fond d’œil : rétinopathie (d’après le nom du fichier ; type précis à confirmer par la description source).",
+   "en": "Fundus: retinopathy (per file name; exact type to be confirmed from the source description)."
+  },
+  "license": "Public domain",
+  "license_url": null,
+  "author": "http://www.nei.nih.gov/photo/eyedis/index.asp",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Fundus_retinopathy_EDA03.JPG",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Fundus_retinopathy_EDA03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "fondoeil",
+  "topics": [
+   "a5-retinopathie-diabetique"
+  ],
+  "w": 900,
+  "h": 600,
+  "bytes": 28082,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "In background retinopathy Description: In background retinopathy, a slight deterioration in the small blood vessels of the retina, portions of the vessels may swell and leak fluid into the surrounding retinal tissue. Credit: National Eye Institute, National Institutes of Health Ref#: EDA03",
+  "credit": "http://www.nei.nih.gov/photo/eyedis/index.asp"
+ },
+ {
+  "id": "IMG3-033",
+  "file": "imgsrc3/web/IMG3-033.jpg",
+  "title": {
+   "fr": "Œdème maculaire diabétique (fond d’œil)",
+   "en": "Diabetic macular oedema (fundus)"
+  },
+  "caption": {
+   "fr": "Fond d’œil : œdème maculaire diabétique (d’après le nom du fichier).",
+   "en": "Fundus: diabetic macular oedema (per file name)."
+  },
+  "license": "Public domain",
+  "license_url": null,
+  "author": "http://www.nei.nih.gov/photo/eyedis/index.asp",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Fundus_Diabetic_macular_edema_EDA04.JPG",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Fundus_Diabetic_macular_edema_EDA04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "fondoeil",
+  "topics": [
+   "a5-retinopathie-diabetique"
+  ],
+  "w": 900,
+  "h": 600,
+  "bytes": 29110,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Diabetic macular edema Description: Diabetic macular edema. Credit: National Eye Institute, National Institutes of Health Ref#: EDA04",
+  "credit": "http://www.nei.nih.gov/photo/eyedis/index.asp"
+ },
+ {
+  "id": "IMG3-034",
+  "file": "imgsrc3/web/IMG3-034.jpg",
+  "title": {
+   "fr": "Décollement de rétine rhegmatogène (fond d’œil)",
+   "en": "Rhegmatogenous retinal detachment (fundus)"
+  },
+  "caption": {
+   "fr": "Décollement de rétine rhegmatogène (d’après le nom du fichier, en allemand).",
+   "en": "Rhegmatogenous retinal detachment (per the German file name)."
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Amaris5",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Rhegmatogene_amotio_retinae.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Rhegmatogene_amotio_retinae.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "fondoeil",
+  "topics": [
+   "a5-decollement-retine"
+  ],
+  "w": 900,
+  "h": 923,
+  "bytes": 55897,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Horseshoe tear-related retinal detachment - the retina has a horseshoe-shaped defect.",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-035",
+  "file": "imgsrc3/web/IMG3-035.jpg",
+  "title": {
+   "fr": "Ulcère cornéen dendritique",
+   "en": "Dendritic corneal ulcer"
+  },
+  "caption": {
+   "fr": "Ulcère cornéen dendritique (d’après le nom du fichier ; présence de fluorescéine à confirmer sur l’image).",
+   "en": "Dendritic corneal ulcer (per file name; fluorescein staining to be confirmed on the image)."
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Imrankabirhossain",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Dendritic_corneal_ulcer.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Dendritic_corneal_ulcer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "B",
+  "exam": null,
+  "topics": [
+   "c-herpes",
+   "ex-fluoresceine"
+  ],
+  "w": 853,
+  "h": 788,
+  "bytes": 67126,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Dendritic pattern after fluorescein staining",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-036",
+  "file": "imgsrc3/web/IMG3-036.jpg",
+  "title": {
+   "fr": "Kératite à Acanthamoeba (figure 1A, revue Parasite)",
+   "en": "Acanthamoeba keratitis (figure 1A, journal Parasite)"
+  },
+  "caption": {
+   "fr": "Kératite à Acanthamoeba, figure 1A d’un article de la revue Parasite (d’après le nom du fichier ; aspect — anneau ou non — à confirmer par la légende source).",
+   "en": "Acanthamoeba keratitis, figure 1A from an article in the journal Parasite (per file name; ring infiltrate or not to be confirmed from the source legend)."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "author": "Jacob Lorenzo-Morales, Naveed A. Khan and Julia Walochnik",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Parasite140120-fig1_Acanthamoeba_keratitis_Figure_1A.png",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Parasite140120-fig1_Acanthamoeba_keratitis_Figure_1A.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "B",
+  "exam": null,
+  "topics": [
+   "c-atypiques"
+  ],
+  "w": 766,
+  "h": 570,
+  "bytes": 30304,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Figure 1A of published paper. Corneal melting and vascularization in a patient with Acanthamoeba keratitis",
+  "credit": "\" (2015). \" An update on Acanthamoeba keratitis: diagnosis, pathogenesis and treatment \". Parasite 22 : 10. DOI : 10.1051/parasite/2015010 . PMID 25687209 . ISSN 1776-1042 ."
+ },
+ {
+  "id": "IMG3-037",
+  "file": "imgsrc3/web/IMG3-037.jpg",
+  "title": {
+   "fr": "Kératocône : signe de Munson (œil gauche)",
+   "en": "Keratoconus: Munson sign (left eye)"
+  },
+  "caption": {
+   "fr": "Signe de Munson dans un kératocône, œil gauche (d’après le nom du fichier).",
+   "en": "Munson sign in keratoconus, left eye (per file name)."
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "William Charles Caccamise, Sr, MD",
+  "page_url": "https://commons.wikimedia.org/wiki/File:KeratoconusMunsonSignOS.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/KeratoconusMunsonSignOS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "B",
+  "exam": null,
+  "topics": [
+   "c-keratocone"
+  ],
+  "w": 473,
+  "h": 285,
+  "bytes": 24319,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Keratoconus is present in both eyes. However, Munson's sign (bowing of the lower lid upon downgaze) is apparent in left eye only.",
+  "credit": "http://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/keratoconus-with-Munsons-sign.html"
+ },
+ {
+  "id": "IMG3-038",
+  "file": "imgsrc3/web/IMG3-038.jpg",
+  "title": {
+   "fr": "Hydrops cornéen aigu",
+   "en": "Acute corneal hydrops"
+  },
+  "caption": {
+   "fr": "Hydrops cornéen (d’après le nom du fichier).",
+   "en": "Corneal hydrops (per file name)."
+  },
+  "license": "Public domain",
+  "license_url": null,
+  "author": "Wikimedia Commons contributor",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Corneal-hydrops.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Corneal-hydrops.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "B",
+  "exam": null,
+  "topics": [
+   "c-keratocone"
+  ],
+  "w": 116,
+  "h": 86,
+  "bytes": 2981,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "",
+  "credit": ""
+ },
+ {
+  "id": "IMG3-039",
+  "file": "imgsrc3/web/IMG3-039.jpg",
+  "title": {
+   "fr": "Topographie cornéenne d’un kératocône stade II",
+   "en": "Corneal topography of stage II keratoconus"
+  },
+  "caption": {
+   "fr": "Topographie cornéenne d’un kératocône de stade II, d’après Elise A. Slim et al. (d’après le nom du fichier).",
+   "en": "Corneal topography of a stage II keratoconus, from Elise A. Slim et al. (per file name)."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "author": "Elise A. Slim et al.",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Corneal_topography,_stage_II_keratoconus_(Elise_A._Slim_et_al.).jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Corneal_topography%2C_stage_II_keratoconus_%28Elise_A._Slim_et_al.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "B",
+  "exam": null,
+  "topics": [
+   "c-keratocone",
+   "ex-topographie"
+  ],
+  "w": 1198,
+  "h": 555,
+  "bytes": 112044,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Corneal topography of the left eye showing stage II keratoconus.",
+  "credit": "http://www.hindawi.com/journals/criopm/2015/308348/"
+ },
+ {
+  "id": "IMG3-040",
+  "file": "imgsrc3/web/IMG3-040.jpg",
+  "title": {
+   "fr": "Dystrophie de Fuchs",
+   "en": "Fuchs dystrophy"
+  },
+  "caption": {
+   "fr": "Dystrophie endothéliale de Fuchs (d’après le nom du fichier ; présence de gouttes/guttae à confirmer sur l’image).",
+   "en": "Fuchs endothelial dystrophy (per file name; guttae to be confirmed on the image)."
+  },
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "author": "Christopher C Leonardo and Keith R Pennypacker",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Fuchs_dystrophy_1.JPG",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Fuchs_dystrophy_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "B",
+  "exam": null,
+  "topics": [
+   "c-fuchs"
+  ],
+  "w": 350,
+  "h": 500,
+  "bytes": 43256,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Fuchs corneal dystrophy. Light microscopic appearance of the cornea showing numerous excrescences on the posterior surface of Descemet membrane (guttae) and the presence of cysts in the corneal epithelium beneath ectopically placed intraepithelial basement membrane. Periodic acid-Schiff stain. Image URL: http://www.ojrd.com/content/4/1/7/figure/F62 Klintworth Orphanet Journal of Rare Diseases 2009 4:7 doi:10.1186/1750-1172-4-7",
+  "credit": "http://www.ojrd.com/content/4/1/7"
+ },
+ {
+  "id": "IMG3-041",
+  "file": "imgsrc3/web/IMG3-041.jpg",
+  "title": {
+   "fr": "Ptérygion à la lampe à fente",
+   "en": "Pterygium at the slit lamp"
+  },
+  "caption": {
+   "fr": "Ptérygion photographié à la lampe à fente (d’après le nom du fichier).",
+   "en": "Pterygium photographed at the slit lamp (per file name)."
+  },
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "author": "Jmvaras José Miguel Varas, MD",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Pterygium_Slitlamp.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Pterygium_Slitlamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "B",
+  "exam": null,
+  "topics": [
+   "c-pterygion"
+  ],
+  "w": 1200,
+  "h": 800,
+  "bytes": 98134,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Severe Pterygium reaching the pupil",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-042",
+  "file": "imgsrc3/web/IMG3-042.jpg",
+  "title": {
+   "fr": "Ptérygion conjonctival",
+   "en": "Conjunctival pterygium"
+  },
+  "caption": {
+   "fr": "Ptérygion de la conjonctive (d’après le nom du fichier).",
+   "en": "Pterygium of the conjunctiva (per file name)."
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Wilfredor",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Pterygium_(conjunctiva).jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Pterygium_%28conjunctiva%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "B",
+  "exam": null,
+  "topics": [
+   "c-pterygion"
+  ],
+  "w": 1200,
+  "h": 642,
+  "bytes": 87177,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Pterygium (conjunctiva)",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-043",
+  "file": "imgsrc3/web/IMG3-043.jpg",
+  "title": {
+   "fr": "Kératopathie en bandelette (œil gauche)",
+   "en": "Band keratopathy (left eye)"
+  },
+  "caption": {
+   "fr": "Kératopathie en bandelette, œil gauche (d’après le nom du fichier).",
+   "en": "Band keratopathy, left eye (per file name)."
+  },
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "author": "Wikimedia Commons contributor",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Band-keratopathy_left-eye.png",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Band-keratopathy_left-eye.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "B",
+  "exam": null,
+  "topics": [
+   "c-depots"
+  ],
+  "w": 1200,
+  "h": 900,
+  "bytes": 85222,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "",
+  "credit": ""
+ },
+ {
+  "id": "IMG3-052",
+  "file": "imgsrc3/web/IMG3-052.jpg",
+  "title": {
+   "fr": "Fuseau de Krukenberg sur la cornée",
+   "en": "Krukenberg spindle on the cornea"
+  },
+  "caption": {
+   "fr": "Cornée montrant un fuseau de Krukenberg (d’après le nom du fichier).",
+   "en": "Cornea showing a Krukenberg spindle (per file name)."
+  },
+  "license": "Public domain",
+  "license_url": null,
+  "author": "Dr Chua",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Cornea_showing_Krukenberg%27s_Spindle.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cornea_showing_Krukenberg%27s_Spindle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "C",
+  "exam": null,
+  "topics": [
+   "g-pigmentaire"
+  ],
+  "w": 463,
+  "h": 396,
+  "bytes": 15712,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Deposits of pigmented iris cells form a long spindle-shaped pattern on the back surface of the cornea - this is named 'Krukenberg's Spindle'",
+  "credit": "http://www.mrcophth.com/pd/kruka.html"
+ },
+ {
+  "id": "IMG3-053",
+  "file": "imgsrc3/web/IMG3-053.jpg",
+  "title": {
+   "fr": "Fermeture de l’angle aiguë (photo du segment antérieur)",
+   "en": "Acute angle-closure glaucoma (anterior segment photo)"
+  },
+  "caption": {
+   "fr": "Glaucome aigu par fermeture de l’angle (d’après le nom du fichier).",
+   "en": "Acute angle-closure glaucoma (per file name)."
+  },
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "author": "James Heilman, MD",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Acute_angle_closure_glaucoma.JPG",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Acute_angle_closure_glaucoma.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "C",
+  "exam": null,
+  "topics": [
+   "g-crise",
+   "g-fermeture"
+  ],
+  "w": 1200,
+  "h": 404,
+  "bytes": 70572,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Acute angle closure glaucoma of the right eye ( intraocular pressure was 42 in the right eye). Note the mid sized pupil on the left that was not reactive to light and conjunctivitis .",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-054",
+  "file": "imgsrc3/web/IMG3-054.jpg",
+  "title": {
+   "fr": "Crise de fermeture de l’angle (2ᵉ exemple)",
+   "en": "Acute angle closure (second example)"
+  },
+  "caption": {
+   "fr": "Glaucome aigu par fermeture de l’angle (d’après le nom du fichier).",
+   "en": "Acute angle-closure glaucoma (per file name)."
+  },
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "author": "Jonathan Trobe, M.D.",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Acute_Angle_Closure-glaucoma.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Acute_Angle_Closure-glaucoma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "C",
+  "exam": null,
+  "topics": [
+   "g-crise",
+   "g-fermeture"
+  ],
+  "w": 360,
+  "h": 274,
+  "bytes": 17246,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Photograph showing acute angle-closure glaucoma which is a sudden elevation in intraocular pressure that occurs when the iris blocks the eye's drainage channel—the trabecular meshwork.",
+  "credit": "The Eyes Have It"
+ },
+ {
+  "id": "IMG3-055",
+  "file": "imgsrc3/web/IMG3-055.jpg",
+  "title": {
+   "fr": "Papille glaucomateuse",
+   "en": "Glaucomatous optic disc"
+  },
+  "caption": {
+   "fr": "Papille glaucomateuse (d’après le nom du fichier, en allemand).",
+   "en": "Glaucomatous optic disc (per the German file name)."
+  },
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "author": "Snoop at German Wikipedia ( Original text: Snoop )",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Glaukompapille2.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Glaukompapille2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "C",
+  "exam": "fondoeil",
+  "topics": [
+   "g-papille"
+  ],
+  "w": 1041,
+  "h": 1046,
+  "bytes": 127774,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Optic nerve in advanced glaucoma disease",
+  "credit": "Self-photographed"
+ },
+ {
+  "id": "IMG3-056",
+  "file": "imgsrc3/web/IMG3-056.jpg",
+  "title": {
+   "fr": "Angle iridocornéen (animation de parallaxe, 1ʳᵉ image)",
+   "en": "Anterior chamber angle (motion-parallax animation, first frame)"
+  },
+  "caption": {
+   "fr": "Angle de la chambre antérieure, animation de parallaxe 3D (d’après le nom du fichier) ; seule la première image est conservée.",
+   "en": "Anterior chamber angle, 3D motion-parallax animation (per file name); only the first frame is kept."
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Eric Wiessner",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Anterior_chamber_angle_-_3D_motion_parallax.gif",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Anterior_chamber_angle_-_3D_motion_parallax.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "I",
+  "exam": "gonio",
+  "topics": [
+   "ex-gonioscopie"
+  ],
+  "w": 1165,
+  "h": 774,
+  "bytes": 76902,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "The anterior chamber angle of a 25 year old male. Pigment is visible in the angle. Image is released to wikimedia commons with patient consent. GIF displays a three-dimensional view of the iris and angle via motion parallax. Imaged with a gonioscopy lens and viewed through and biomicroscope at Pacific University College of Optometry.",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-058",
+  "file": "imgsrc3/web/IMG3-058.jpg",
+  "title": {
+   "fr": "Cellulite orbitaire",
+   "en": "Orbital cellulitis"
+  },
+  "caption": {
+   "fr": "Cellulite orbitaire (d’après le nom du fichier).",
+   "en": "Orbital cellulitis (per file name)."
+  },
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "author": "Jonathan Trobe, M.D. - University of Michigan Kellogg Eye Center",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Orbital_cellulitis.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Orbital_cellulitis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "A",
+  "exam": null,
+  "topics": [
+   "a5-inflammation-infection"
+  ],
+  "w": 360,
+  "h": 160,
+  "bytes": 12464,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Photograph showing orbital cellulitis which is a bacterial infection of the periocular tissues.",
+  "credit": "The Eyes Have It"
+ },
+ {
+  "id": "IMG3-059",
+  "file": "imgsrc3/web/IMG3-059.jpg",
+  "title": {
+   "fr": "Anisocorie",
+   "en": "Anisocoria"
+  },
+  "caption": {
+   "fr": "Anisocorie (d’après le nom du fichier) ; la cause n’est pas indiquée par le nom.",
+   "en": "Anisocoria (per file name); the cause is not given by the name."
+  },
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "author": "Radomil talk",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Anizokoria.JPG",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Anizokoria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "A",
+  "exam": null,
+  "topics": [
+   "a5-pupilles-neuro",
+   "ex-pupilles"
+  ],
+  "w": 852,
+  "h": 204,
+  "bytes": 24633,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Anisocoria (right eye instiled by tropicamide)",
+  "credit": "Own work"
+ },
+ {
+  "id": "IMG3-060",
+  "file": "imgsrc3/web/IMG3-060.jpg",
+  "title": {
+   "fr": "Hyphéma occupant la moitié de la chambre antérieure",
+   "en": "Hyphema filling half of the anterior chamber"
+  },
+  "caption": {
+   "fr": "Hyphéma occupant la moitié de la chambre antérieure (d’après le nom du fichier).",
+   "en": "Hyphema occupying half of the anterior chamber (per file name)."
+  },
+  "license": "CC BY-SA 2.5",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+  "author": "Rakesh Ahuja, MD",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Hyphema_-_occupying_half_of_anterior_chamber_of_eye.jpg",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Hyphema_-_occupying_half_of_anterior_chamber_of_eye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "A",
+  "exam": null,
+  "topics": [
+   "a5-tumeurs-toxicite-trauma"
+  ],
+  "w": 762,
+  "h": 587,
+  "bytes": 32446,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": true,
+  "caption_basis": "file name only (source description added at build)",
+  "source_description": "Hyphema - occupying half of anterior chamber of eye",
+  "credit": "Own work"
+ }
+]
