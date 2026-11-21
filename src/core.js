@@ -244,7 +244,7 @@ var Photo = {
     return 'https://creativecommons.org/licenses/' + m[1].toLowerCase().replace(/ /g, '-') + '/' + (m[2] || '4.0') + '/';
   },
   lic: function (e) {
-    if (e.license) { var u = e.license_url || Photo.licUrl(e.license), sa = e.share_alike || /-SA\b|\bSA\b/i.test(e.license) ? ' (' + t('lic.sa') + ')' : ''; return (u ? '<a href="' + U.esc(u) + '" target="_blank" rel="noopener">' + U.esc(e.license) + '</a>' : U.esc(e.license)) + sa; }
+    if (e.license) { var u = e.license_url || Photo.licUrl(e.license), sa = e.share_alike || /-SA\b|\bSA\b/i.test(e.license) ? ' (' + t('lic.sa') + ')' : ''; return (u ? '<a href="' + U.esc(u) + '" target="_blank" rel="noopener">' + U.esc(e.license) + '</a>' : U.esc(e.license)) + sa + (/^IMG3-/.test(e.id || '') ? ' · ' + t('lic.mod') : ''); }
     return e.cc === false ? t('photo.lic.eyerounds') : '<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank" rel="noopener">CC BY-NC-ND 3.0</a>';
   },
   owner: function (e) { return e.license ? (e.author ? U.esc(e.author) : t('photo.author.unknown')) : '© EyeRounds.org, University of Iowa'; },
@@ -256,7 +256,8 @@ var Photo = {
   card: function (p, opts) {
     opts = opts || {}; var e = D.cat(p.id); if (!e) return '';
     var rid = 'rv-' + p.id + '-' + Math.floor(Math.random() * 1e6);
-    var cap = p.caption || e.title;
+    // in English, an untranslated photo caption falls back to the translated catalogue title
+    var cap = (window.I18N && I18N.lang === 'en' && p.caption && !p._en && e._en) ? e.title : (p.caption || e.title);
     return '<figure class="ph-card" style="margin:0">' +
       '<button type="button" class="ph-img" data-act="lightbox" data-id="' + e.id + '" data-cap="' + U.esc(cap) + '"' + (opts.quiz ? ' data-quiz="1"' : '') + ' aria-label="' + U.esc(t('photo.enlarge', { c: cap })) + '">' +
       '<img loading="lazy" decoding="async" src="' + Photo.src(e.id) + '" width="' + (e.tw || 440) + '" height="' + (e.th || 300) + '" alt="' + U.esc(cap) + '"></button>' +
@@ -452,6 +453,8 @@ document.addEventListener('click', function (ev) {
 });
 document.addEventListener('keydown', function (ev) {
   if (ev.key === 'Escape') { Gloss.hide(); Photo.close(); Shell.close(); return; }
+  // SVG structures with role=button (cornea layers, angle, disc, adnexa): Enter/Space act like a click (the eye explorer has its own handler)
+  if ((ev.key === 'Enter' || ev.key === ' ') && ev.target && ev.target.namespaceURI === 'http://www.w3.org/2000/svg' && ev.target.getAttribute('role') === 'button' && !ev.target.hasAttribute('data-anat')) { ev.preventDefault(); ev.target.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true })); return; }
   // focus trap inside the open modal (lightbox, then drawer)
   if (ev.key === 'Tab') {
     var lb = U.$('#lightbox'), dr = U.$('#drawer'), box = lb && !lb.hidden ? lb : (dr && !dr.hidden ? U.$('.panel', dr) : null); if (!box) return;

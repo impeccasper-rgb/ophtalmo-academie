@@ -56,6 +56,8 @@
 .inv-svg [data-layer]:focus, .inv-svg [data-band]:focus, .inv-svg [data-reg]:focus { outline: none; }
 .inv-svg [data-layer]:focus-visible, .inv-svg [data-reg]:focus-visible, .inv-svg [data-band]:focus-visible { stroke: var(--focus); stroke-width: 2.5; }
 .inv-svg .inv-hl { stroke: #ffd34d; stroke-width: 2.5; paint-order: stroke; }
+.inv-svg .inv-hit { cursor: pointer; }
+.inv-svg .inv-hit:focus-visible { fill: #ffd34d; fill-opacity: .18; stroke: var(--focus); stroke-width: 2; }
 .inv-svg [data-reg].inv-hl { stroke-width: 3; }
 .inv-svg [data-reg="periph"].inv-hl { stroke-width: 6; }
 

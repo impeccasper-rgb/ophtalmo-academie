@@ -308,7 +308,7 @@ function moduleView(m) {
         var st = Prog.ficheDone(f.id) ? t('st.read') : Prog.ficheSeen(f.id) ? t('st.started') : '';
         return '<a class="card link fcard" href="#' + f.id + '"><span class="fcard-img">' + thumbFor(f.id) + '</span><span class="eyebrow">' + m + (i + 1) + (st ? ' · ' + st : '') + '</span><h3>' + U.esc(f.title) + '</h3><span class="en small muted"><i>' + U.esc(f.en) + '</i></span><span class="row tight">' + (f.tags || []).map(L.tag).join('') + '</span><span class="small">' + U.md(f.oneLiner) + '</span></a>';
       }).join('');
-      var bonus = (OPH.bonus[m] || []).map(function (b) { return '<div class="card stack"><h3 class="h4">' + U.esc(b.title) + '</h3><span class="small muted"><i>' + U.esc(b.en) + '</i></span><span class="small"><b>' + t('mod.clue') + '</b>' + U.md(b.clue) + '</span><span class="small"><b>' + t('mod.action') + '</b>' + U.md(b.action) + '</span></div>'; }).join('');
+      var bonus = (OPH.bonus[m] || []).map(function (b) { return '<div class="card stack"><h3 class="h4">' + U.esc(I18N.title(b)) + '</h3>' + (I18N.lang === 'en' ? '' : '<span class="small muted"><i>' + U.esc(b.en) + '</i></span>') + '<span class="small"><b>' + t('mod.clue') + '</b>' + U.md(b.clue) + '</span><span class="small"><b>' + t('mod.action') + '</b>' + U.md(b.action) + '</span></div>'; }).join('');
       var bph = photosFor('bonus-' + m);
       return '<div class="page">' + crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m, null]]) +
         '<div class="phead"><div class="eyebrow">' + U.esc(Dates.custom() ? t('mod.eyebrow', { m: m, d: Dates.fmt(Dates.get(dateK)), r: Dates.rel(Dates.get(dateK)) }) : 'Module ' + m) + '</div><h1>' + L.modules[m] + '</h1><p class="muted" style="max-width:62ch">' + t('mod.lead', { r: readRange(m), lvl: DEPTHS[Settings.get().depth].t }) + '</p></div>' +
@@ -536,7 +536,7 @@ Views.atlas = {
         (groups[e.title] = groups[e.title] || []).push(e);
       });
       var keys = Object.keys(groups);
-      U.$('[data-atlas]', host).innerHTML = keys.length ? keys.map(function (k) { return '<div class="sec"><h3>' + U.esc(k) + ' <span class="small muted">(' + groups[k].length + ')</span></h3>' + Photo.gallery(groups[k].map(function (e) { return { id: e.id, caption: e.title, look: t('lb.srccap') + e.caption, reveal: [] }; })) + '</div>'; }).join('') : '<div class="empty">' + t('atlas.none') + '</div>';
+      U.$('[data-atlas]', host).innerHTML = keys.length ? keys.map(function (k) { return '<div class="sec"><h2 class="atlas-h">' + U.esc(k) + ' <span class="small muted">(' + groups[k].length + ')</span></h2>' + Photo.gallery(groups[k].map(function (e) { return { id: e.id, caption: e.title, look: t('lb.srccap') + e.caption, reveal: [] }; })) + '</div>'; }).join('') : '<div class="empty">' + t('atlas.none') + '</div>';
     }
     host.addEventListener('click', function (ev) { var b = ev.target.closest('[data-am]'); if (!b) return; st.m = b.getAttribute('data-am'); U.$$('[data-am]', host).forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); }); draw(); });
     U.$('#atlas-q', host).addEventListener('input', U.debounce(function (e) { st.q = e.target.value.trim(); draw(); }, 200));
@@ -579,7 +579,7 @@ Views.sources = {
     return '<div class="page read" style="margin:0 auto;width:100%">' + crumbs([[t('nav.home'), 'accueil'], [t('nav.sources'), null]]) + '<div class="phead"><div class="eyebrow">' + t('src.eyebrow') + '</div><h1>' + t('nav.sources') + '</h1></div>' +
       '<div class="callout red" id="about"><span class="eyebrow">' + t('src.about') + '</span><span><b>' + t('disclaimer') + '</b></span><span class="small">' + t('disclaimer.long') + '</span></div>' +
       S.map(function (g) { return '<div class="sec">' + secH('•', g[0]) + '<ul class="src-list">' + g[1].map(function (s) { return '<li><a href="' + U.esc(s[1]) + '" target="_blank" rel="noopener">' + U.esc(s[0]) + '</a>' + (s[2] ? '<div class="small muted">' + U.esc(s[2]) + '</div>' : '') + '</li>'; }).join('') + '</ul></div>'; }).join('') +
-      '<div class="sec">' + secH('•', t('src.images')) + '<p class="small">' + t('src.images.p') + '</p>' + (nOpen ? '<p class="small">' + t('src.open.p', { n: nOpen }) + '</p>' : '') +
+      '<div class="sec">' + secH('•', t('src.images')) + '<p class="small">' + t('src.images.p') + '</p>' + (nOpen ? '<p class="small">' + t('src.open.p', { n: nOpen }) + ' ' + t('src.mod.p') + '</p>' : '') +
       '<div class="callout"><span class="small">' + t('src.cc') + '</span></div>' +
       '<p class="xs muted">' + t('src.fonts') + '</p>' +
       '<details class="acc"><summary>' + t('src.perimg', { n: cat.length }) + '</summary><div class="tbl-wrap" style="padding:0 14px 14px"><table class="tbl credits">' + th + '<tbody>' + rows + '</tbody></table></div></details>' +

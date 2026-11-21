@@ -17,7 +17,7 @@ var Figures = {
     return '<figure class="fig" style="margin:0" data-figtype="' + fig.type + '">' +
       (opts.tools ? '<div class="fig-tools">' + opts.tools + '</div>' : '') +
       '<div class="fig-body">' + out.svg + '</div>' +
-      '<figcaption class="fig-cap"><span>' + (opts.caption ? U.md(opts.caption) : U.esc(out.cap || '')) + '</span><span class="fig-cap-r"><span class="schema-badge">Schéma pédagogique — pas une photographie</span>' + (opts.nozoom ? '' : '<button type="button" class="btn xs" data-act="figzoom">Agrandir</button>') + '</span></figcaption></figure>';
+      '<figcaption class="fig-cap"><span>' + (opts.caption ? U.md(opts.caption) : U.esc(out.cap || '')) + fx('</span><span class="fig-cap-r"><span class="schema-badge">Schéma pédagogique — pas une photographie</span>') + (opts.nozoom ? '' : fx('<button type="button" class="btn xs" data-act="figzoom">Agrandir</button>')) + '</span></figcaption></figure>';
   },
   hydrate: function (root) {
     U.$$('canvas[data-topo]', root).forEach(function (cv) { Figures.drawTopo(cv, cv.getAttribute('data-topo')); });
@@ -49,9 +49,12 @@ function label(x, y, text, tx, ty, anchor, id, cls) {
   var lead = (tx != null) ? '<path class="lead" d="M' + x.toFixed(1) + ',' + y.toFixed(1) + ' L' + tx.toFixed(1) + ',' + ty.toFixed(1) + '"/><circle cx="' + tx.toFixed(1) + '" cy="' + ty.toFixed(1) + '" r="2.2" fill="var(--ink-3)"/>' : '';
   return '<g class="lbl-g"' + (id ? ' data-for="' + id + '"' : '') + '>' + lead + '<text class="' + (cls || 'lbl') + '" x="' + x.toFixed(1) + '" y="' + (y + 4).toFixed(1) + '" text-anchor="' + (anchor || 'start') + '">' + U.esc(text) + '</text></g>';
 }
+/* tiny structures get an invisible 24 px (screen) stroke around their shapes so the tap target is at least 24 px */
+var SMALL_HIT = { fovea: 1, macula: 1, papille: 1, 'lame-criblee': 1, 'ora-serrata': 1, acr: 1, vcr: 1, schlemm: 1, zonules: 1, limbe: 1, schwalbe: 1, eperon: 1, 'points-lacrymaux': 1, canalicules: 1 };
 function grp(id, inner, hl, hit, extraCls) {
   var cls = (hit ? 'hit ' : '') + (hl && hl.indexOf(id) >= 0 ? 'hl ' : '') + (extraCls || '');
-  return '<g data-anat="' + id + '" class="' + cls.trim() + '"' + (hit ? ' role="button" tabindex="0" aria-label="' + U.esc(Figures.anatName(id)) + '"' : '') + '>' + inner + '</g>';
+  var pad = hit && SMALL_HIT[id] ? '<g class="hit-pad" aria-hidden="true">' + inner + '</g>' : '';
+  return '<g data-anat="' + id + '" class="' + cls.trim() + '"' + (hit ? ' role="button" tabindex="0" aria-label="' + U.esc(Figures.anatName(id)) + '"' : '') + '>' + pad + inner + '</g>';
 }
 Figures.anatName = function (id) {
   var A = (typeof OPH !== 'undefined' && OPH.A) || {}, keys = ['anatomy', 'cornea', 'angle', 'disc', 'annexes'];
@@ -160,41 +163,41 @@ Figures.eye = function (fig, opts) {
   // labels
   var lb = [];
   function Lb(id, text, x, y, tx, ty, anchor) { lb.push(label(x, y, text, tx, ty, anchor, id)); }
-  Lb('conjonctive', 'Conjonctive', 250, 160, 372, 204, 'end');
-  Lb('limbe', 'Limbe', 250, 205, 351, 246, 'end');
-  Lb('angle', 'Angle iridocornéen', 250, 248, 371, 249, 'end');
-  Lb('cornee', 'Cornée', 250, 292, 302, 318, 'end');
-  Lb('chambre-anterieure', 'Chambre antérieure', 250, 340, 334, 345, 'end');
-  Lb('pupille', 'Pupille', 250, 384, 366, 360, 'end');
-  Lb('iris', 'Iris', 250, 428, 376, 420, 'end');
-  Lb('trabeculum', 'Trabéculum', 250, 470, 377, 473, 'end');
-  Lb('schlemm', 'Canal de Schlemm', 250, 512, 379, 478, 'end');
-  Lb('chambre-posterieure', 'Chambre postérieure', 250, 554, 389, 440, 'end');
-  Lb('zonules', 'Zonules', 250, 596, 403, 456, 'end');
-  Lb('cristallin', 'Cristallin', 330, 680, 420, 420, 'middle');
-  Lb('corps-ciliaire', 'Corps ciliaire', 300, 52, 420, 202, 'start');
-  Lb('proces-ciliaires', 'Procès ciliaires', 300, 82, 412, 236, 'start');
-  Lb('ora-serrata', 'Ora serrata', 450, 34, 503, 152, 'start');
-  Lb('muscles-droits', 'Muscle droit', 560, 66, 600, 108, 'start');
-  Lb('veines-vortiqueuses', 'Veine vortiqueuse', 640, 34, 595, 136, 'start');
-  Lb('sclere', 'Sclère', 740, 92, 690, 158, 'start');
-  Lb('choroide', 'Choroïde', 820, 150, 735, 215, 'start');
-  Lb('retine', 'Rétine', 845, 200, 756, 270, 'start');
-  Lb('nerfs-ciliaires-courts', 'Nerfs ciliaires courts (ganglion ciliaire)', 990, 300, 884, 333, 'end');
-  Lb('macula', 'Macula', 845, 252, 772, 330, 'start');
-  Lb('fovea', 'Fovéa', 690, 300, 768, 360, 'start');
-  Lb('vitre', 'Vitré', 600, 372, null, null, 'middle');
-  Lb('papille', 'Papille', 700, 470, 764, 403, 'start');
-  Lb('lame-criblee', 'Lame criblée', 690, 506, 784, 412, 'start');
-  Lb('nerf-optique', 'Nerf optique', 985, 450, 960, 400, 'end');
-  Lb('acr', 'Artère centrale de la rétine', 985, 500, 902, 462, 'end');
-  Lb('vcr', 'Veine centrale de la rétine', 985, 528, 889, 470, 'end');
-  Lb('arteres-ciliaires-post', 'Artères ciliaires postérieures', 985, 596, 775, 442, 'end');
-  Lb('arteres-ciliaires-ant', 'Artères ciliaires antérieures', 540, 690, 450, 584, 'middle');
-  Lb('nerfs-ciliaires-longs', 'Nerfs ciliaires longs', 760, 690, 672, 557, 'middle');
+  Lb('conjonctive', fx('Conjonctive'), 250, 160, 372, 204, 'end');
+  Lb('limbe', fx('Limbe'), 250, 205, 351, 246, 'end');
+  Lb('angle', fx('Angle iridocornéen'), 250, 248, 371, 249, 'end');
+  Lb('cornee', fx('Cornée'), 250, 292, 302, 318, 'end');
+  Lb('chambre-anterieure', fx('Chambre antérieure'), 250, 340, 334, 345, 'end');
+  Lb('pupille', fx('Pupille'), 250, 384, 366, 360, 'end');
+  Lb('iris', fx('Iris'), 250, 428, 376, 420, 'end');
+  Lb('trabeculum', fx('Trabéculum'), 250, 470, 377, 473, 'end');
+  Lb('schlemm', fx('Canal de Schlemm'), 250, 512, 379, 478, 'end');
+  Lb('chambre-posterieure', fx('Chambre postérieure'), 250, 554, 389, 440, 'end');
+  Lb('zonules', fx('Zonules'), 250, 596, 403, 456, 'end');
+  Lb('cristallin', fx('Cristallin'), 330, 680, 420, 420, 'middle');
+  Lb('corps-ciliaire', fx('Corps ciliaire'), 300, 52, 420, 202, 'start');
+  Lb('proces-ciliaires', fx('Procès ciliaires'), 300, 82, 412, 236, 'start');
+  Lb('ora-serrata', fx('Ora serrata'), 450, 34, 503, 152, 'start');
+  Lb('muscles-droits', fx('Muscle droit'), 560, 66, 600, 108, 'start');
+  Lb('veines-vortiqueuses', fx('Veine vortiqueuse'), 640, 34, 595, 136, 'start');
+  Lb('sclere', fx('Sclère'), 740, 92, 690, 158, 'start');
+  Lb('choroide', fx('Choroïde'), 820, 150, 735, 215, 'start');
+  Lb('retine', fx('Rétine'), 845, 200, 756, 270, 'start');
+  Lb('nerfs-ciliaires-courts', fx('Nerfs ciliaires courts (ganglion ciliaire)'), 990, 300, 884, 333, 'end');
+  Lb('macula', fx('Macula'), 845, 252, 772, 330, 'start');
+  Lb('fovea', fx('Fovéa'), 690, 300, 768, 360, 'start');
+  Lb('vitre', fx('Vitré'), 600, 372, null, null, 'middle');
+  Lb('papille', fx('Papille'), 700, 470, 764, 403, 'start');
+  Lb('lame-criblee', fx('Lame criblée'), 690, 506, 784, 412, 'start');
+  Lb('nerf-optique', fx('Nerf optique'), 985, 450, 960, 400, 'end');
+  Lb('acr', fx('Artère centrale de la rétine'), 985, 500, 902, 462, 'end');
+  Lb('vcr', fx('Veine centrale de la rétine'), 985, 528, 889, 470, 'end');
+  Lb('arteres-ciliaires-post', fx('Artères ciliaires postérieures'), 985, 596, 775, 442, 'end');
+  Lb('arteres-ciliaires-ant', fx('Artères ciliaires antérieures'), 540, 690, 450, 584, 'middle');
+  Lb('nerfs-ciliaires-longs', fx('Nerfs ciliaires longs'), 760, 690, 672, 557, 'middle');
   s.push('<g class="g-labels">' + lb.join('') + '</g>');
   var vb = opts.viewBox || '0 0 1000 720';
-  return { svg: '<svg class="' + cls + '" viewBox="' + vb + '" role="img" aria-label="Coupe schématique de l’œil" data-vb="0 0 1000 720">' + s.join('') + '</svg>', cap: 'Coupe horizontale schématique du globe (antérieur à gauche).' };
+  return { svg: '<svg class="' + cls + '" viewBox="' + vb + fx('" role="img" aria-label="Coupe schématique de l’œil" data-vb="0 0 1000 720">') + s.join('') + '</svg>', cap: fx('Coupe horizontale schématique du globe (antérieur à gauche).') };
 };
 
 /* ---------- Cornea layers ---------- */
@@ -262,17 +265,17 @@ Figures.cornea = function (fig, opts) {
   // aqueous below
   s.push('<rect x="' + x0 + '" y="' + yy.endothelium[1] + '" width="' + W + '" height="14" fill="var(--t-aqueous)"/>');
   // labels
-  var names = { film: 'Film lacrymal', epithelium: 'Épithélium', bowman: 'Couche de Bowman', stroma: 'Stroma', dua: 'Couche de Dua', descemet: 'Membrane de Descemet', endothelium: 'Endothélium' };
+  var names = { film: fx('Film lacrymal'), epithelium: fx('Épithélium'), bowman: fx('Couche de Bowman'), stroma: fx('Stroma'), dua: fx('Couche de Dua'), descemet: fx('Membrane de Descemet'), endothelium: fx('Endothélium') };
   var labs = '';
   var minGap = 15, lastY = -99;
   order.forEach(function (k) {
     var mid = (yy[k][0] + yy[k][1]) / 2, ly = Math.max(mid, lastY + minGap); lastY = ly;
     labs += label(x0 + W + 20, ly, names[k], x0 + W - 4, mid, 'start', k);
   });
-  labs += '<text class="lbl-sm lbl-muted" x="' + (x0 + W / 2) + '" y="' + (yy.endothelium[1] + 30) + '" text-anchor="middle">Humeur aqueuse (chambre antérieure)</text>';
+  labs += '<text class="lbl-sm lbl-muted" x="' + (x0 + W / 2) + '" y="' + (yy.endothelium[1] + 30) + fx('" text-anchor="middle">Humeur aqueuse (chambre antérieure)</text>');
   s.push('<g class="g-labels">' + labs + '</g>');
   var hgt = total + 26;
-  return { svg: '<svg viewBox="0 0 700 ' + hgt.toFixed(0) + '" role="img" aria-label="Couches de la cornée">' + s.join('') + '</svg>', cap: prop ? 'Couches de la cornée — proportions réelles approximatives (stroma ≈ 90 %).' : 'Couches de la cornée — épaisseurs non proportionnelles pour la lisibilité.' };
+  return { svg: '<svg viewBox="0 0 700 ' + hgt.toFixed(0) + fx('" role="img" aria-label="Couches de la cornée">') + s.join('') + '</svg>', cap: prop ? fx('Couches de la cornée — proportions réelles approximatives (stroma ≈ 90 %).') : fx('Couches de la cornée — épaisseurs non proportionnelles pour la lisibilité.') };
 };
 
 /* ---------- Angle cross-section (anatomy detail) ---------- */
@@ -300,19 +303,19 @@ Figures.angleSection = function (fig, opts) {
   // flows
   s.push('<path class="flow" d="M130,190 C 220,178 280,165 314,150 C 334,140 350,140 360,140"/>');
   s.push('<path class="flow-u" d="M250,228 C 300,226 340,224 368,236 C 400,262 430,310 452,380"/>');
-  s.push('<text class="lbl-sm" x="120" y="176" fill="var(--cobalt-ink)" style="fill:var(--cobalt-ink)">voie trabéculaire (conventionnelle)</text>');
-  s.push('<text class="lbl-sm" x="150" y="222" style="fill:var(--fluo-ink)">voie uvéosclérale</text>');
-  s.push('<text class="lbl-sm lbl-muted" x="16" y="150">Chambre antérieure</text><text class="lbl-sm lbl-muted" x="16" y="40">Cornée</text><text class="lbl-sm lbl-muted" x="575" y="300">Sclère</text><text class="lbl-sm lbl-muted" x="500" y="30">Veine épisclérale</text>');
+  s.push(fx('<text class="lbl-sm" x="120" y="176" fill="var(--cobalt-ink)" style="fill:var(--cobalt-ink)">voie trabéculaire (conventionnelle)</text>'));
+  s.push(fx('<text class="lbl-sm" x="150" y="222" style="fill:var(--fluo-ink)">voie uvéosclérale</text>'));
+  s.push(fx('<text class="lbl-sm lbl-muted" x="16" y="150">Chambre antérieure</text><text class="lbl-sm lbl-muted" x="16" y="40">Cornée</text><text class="lbl-sm lbl-muted" x="575" y="300">Sclère</text><text class="lbl-sm lbl-muted" x="500" y="30">Veine épisclérale</text>'));
   var lb = '';
-  lb += label(150, 330, 'Racine de l’iris', 300, 262, 'end', 'iris-racine');
-  lb += label(470, 226, 'Bande ciliaire', 366, 232, 'start', 'bande-ciliaire');
-  lb += label(470, 200, 'Éperon scléral', 388, 202, 'start', 'eperon');
-  lb += label(470, 174, 'Trabéculum pigmenté', 348, 176, 'start', 'trab-pig');
-  lb += label(470, 148, 'Trabéculum non pigmenté', 328, 142, 'start', 'trab-nonpig');
-  lb += label(150, 120, 'Ligne de Schwalbe', 298, 124, 'end', 'schwalbe');
-  lb += label(470, 120, 'Canal de Schlemm', 366, 146, 'start', 'schlemm');
+  lb += label(150, 330, fx('Racine de l’iris'), 300, 262, 'end', 'iris-racine');
+  lb += label(470, 226, fx('Bande ciliaire'), 366, 232, 'start', 'bande-ciliaire');
+  lb += label(470, 200, fx('Éperon scléral'), 388, 202, 'start', 'eperon');
+  lb += label(470, 174, fx('Trabéculum pigmenté'), 348, 176, 'start', 'trab-pig');
+  lb += label(470, 148, fx('Trabéculum non pigmenté'), 328, 142, 'start', 'trab-nonpig');
+  lb += label(150, 120, fx('Ligne de Schwalbe'), 298, 124, 'end', 'schwalbe');
+  lb += label(470, 120, fx('Canal de Schlemm'), 366, 146, 'start', 'schlemm');
   s.push('<g class="g-labels">' + lb + '</g>');
-  return { svg: '<svg viewBox="0 0 640 420" role="img" aria-label="Coupe de l’angle iridocornéen">' + s.join('') + '</svg>', cap: 'Coupe schématique de l’angle et des deux voies d’évacuation de l’humeur aqueuse.' };
+  return { svg: '<svg viewBox="0 0 640 420" role="img" aria-label="Coupe de l’angle iridocornéen">' + s.join('') + '</svg>', cap: fx('Coupe schématique de l’angle et des deux voies d’évacuation de l’humeur aqueuse.') };
 };
 
 /* ---------- Adnexa: lacrimal system and meibomian glands ---------- */
@@ -335,17 +338,17 @@ Figures.annexes = function (fig, opts) {
   s.push(A('points-lacrymaux', '<circle cx="488" cy="190" r="4.5" fill="#3b2418"/><circle cx="490" cy="230" r="4.5" fill="#3b2418"/>'));
   s.push(A('canalicules', '<path d="M490,190 L494,170 L560,168" stroke="#d98a7c" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M492,230 L496,250 L560,246" stroke="#d98a7c" stroke-width="6" fill="none" stroke-linecap="round"/>'));
   s.push(A('sac-lacrymal', '<rect x="556" y="140" width="34" height="118" rx="16" fill="#e7a6a0" stroke="#b56c69" stroke-width="1.5"/>'));
-  s.push(A('canal-lacrymonasal', '<path d="M573,256 L580,372" stroke="#e7a6a0" stroke-width="22" stroke-linecap="round"/><text class="lbl-sm lbl-muted" x="604" y="380">nez</text>'));
+  s.push(A('canal-lacrymonasal', fx('<path d="M573,256 L580,372" stroke="#e7a6a0" stroke-width="22" stroke-linecap="round"/><text class="lbl-sm lbl-muted" x="604" y="380">nez</text>')));
   // tear flow arrows
   s.push('<path class="flow" d="M150,150 C 220,160 300,170 470,205"/>');
   var lb = '';
-  lb += label(30, 26, 'Glande lacrymale (phase aqueuse)', 120, 52, 'start', 'glande-lacrymale');
-  lb += label(200, 330, 'Glandes de Meibomius (lipides)', 230, 292, 'start', 'meibomius');
-  lb += label(20, 300, 'Cellules caliciformes (mucines)', 180, 262, 'start', 'caliciformes');
-  lb += label(420, 110, 'Points lacrymaux', 488, 188, 'start', 'points-lacrymaux');
-  lb += label(440, 300, 'Canalicules', 520, 248, 'start', 'canalicules');
-  lb += label(600, 120, 'Sac lacrymal', 584, 150, 'middle', 'sac-lacrymal');
-  lb += label(520, 360, 'Canal lacrymonasal', 576, 330, 'end', 'canal-lacrymonasal');
+  lb += label(30, 26, fx('Glande lacrymale (phase aqueuse)'), 120, 52, 'start', 'glande-lacrymale');
+  lb += label(200, 330, fx('Glandes de Meibomius (lipides)'), 230, 292, 'start', 'meibomius');
+  lb += label(20, 300, fx('Cellules caliciformes (mucines)'), 180, 262, 'start', 'caliciformes');
+  lb += label(420, 110, fx('Points lacrymaux'), 488, 188, 'start', 'points-lacrymaux');
+  lb += label(440, 300, fx('Canalicules'), 520, 248, 'start', 'canalicules');
+  lb += label(600, 120, fx('Sac lacrymal'), 584, 150, 'middle', 'sac-lacrymal');
+  lb += label(520, 360, fx('Canal lacrymonasal'), 576, 330, 'end', 'canal-lacrymonasal');
   s.push('<g class="g-labels">' + lb + '</g>');
-  return { svg: '<svg viewBox="0 0 660 400" role="img" aria-label="Voies lacrymales et glandes de Meibomius (œil droit, vue de face)">' + s.join('') + '</svg>', cap: 'Œil droit vu de face : production (glande lacrymale, Meibomius, cellules caliciformes) et drainage des larmes.' };
+  return { svg: '<svg viewBox="0 0 660 400" role="img" aria-label="Voies lacrymales et glandes de Meibomius (œil droit, vue de face)">' + s.join('') + '</svg>', cap: fx('Œil droit vu de face : production (glande lacrymale, Meibomius, cellules caliciformes) et drainage des larmes.') };
 };

@@ -355,8 +355,19 @@
     h += '<polygon points="' + bot.join(' ') + ' 640,300 0,300" fill="url(#' + cid + 's)"/>';
     OCT_LAYERS.forEach(function (l) {
       var g = geo[l.id], poly = g.top.map(function (y, i) { return P2(xs[i], y); }).concat(g.bot.map(function (y, i) { return P2(xs[i], y); }).reverse()).join(' ');
-      h += '<polygon points="' + poly + '" fill="' + gray(l.l) + '"' + (l.gap ? '' : ' data-layer="' + l.id + '"') + (hl === l.id ? ' class="inv-hl"' : '') + '/>';
+      h += '<polygon points="' + poly + '" fill="' + gray(l.l) + '"' + (l.gap ? '' : (o.hitU ? ' data-vl="' : ' data-layer="') + l.id + '"') + (hl === l.id ? ' class="inv-hl"' : '') + '/>';
     });
+    var hitsH = '';
+    if (o.hitU) {   // invisible enlarged hit areas: each tappable layer gets a band at least hitU units tall around its centre line
+      var half = o.hitU / 2;
+      OCT_LAYERS.filter(function (l) { return !l.gap; }).map(function (l) {
+        var g = geo[l.id], th = 0; g.top.forEach(function (y, i) { th += g.bot[i] - y; }); return { l: l, th: th / g.top.length };
+      }).sort(function (a, b) { return b.th - a.th; }).forEach(function (x) {
+        var g = geo[x.l.id], top = [], bot = [];
+        g.top.forEach(function (y, i) { var c = (y + g.bot[i]) / 2, hh = Math.max((g.bot[i] - y) / 2, half); top.push(P2(xs[i], c - hh)); bot.push(P2(xs[i], c + hh)); });
+        hitsH += '<polygon class="inv-hit" data-layer="' + x.l.id + '" points="' + top.concat(bot.reverse()).join(' ') + '" fill="#000" fill-opacity="0"/>';
+      });
+    }
     // choroidal vessel lumens
     var ves = ''; for (var k = 0; k < 46; k++) { var vx = r() * 640, deep = r(), ty = octAt(geo.cho.top, xs, vx), by = octAt(geo.cho.bot, xs, vx), vy = ty + 10 + deep * (by - ty - 16); ves += '<ellipse cx="' + vx.toFixed(1) + '" cy="' + vy.toFixed(1) + '" rx="' + (4 + deep * 10).toFixed(1) + '" ry="' + (2 + deep * 5).toFixed(1) + '"/>'; }
     h += '<g clip-path="url(#' + cid + 'c)" fill="#1c1c1c" pointer-events="none">' + ves + '</g>';
@@ -369,6 +380,7 @@
       h += '<g fill="#050505" pointer-events="none">' + cy + '</g>';
     }
     if (o.label) { var lg = geo[o.label.id]; if (lg) { var lx = o.label.x || 470, ly = (octAt(lg.top, xs, lx) + octAt(lg.bot, xs, lx)) / 2; h += '<g pointer-events="none"><line x1="' + lx + '" y1="' + ly + '" x2="' + (lx + 18) + '" y2="' + (ly - 18) + '" stroke="#ffd34d" stroke-width="1.5"/><text x="' + (lx + 20) + '" y="' + (ly - 21) + '" class="inv-olab">' + E(o.label.text) + '</text></g>'; } }
+    h += hitsH;
     h += '<text x="16" y="74" class="inv-ax" fill="#8aa">' + E(S('oct.nasal', 'nasal (papille)', 'nasal (disc)')) + '</text><text x="624" y="74" text-anchor="end" class="inv-ax" fill="#8aa">' + E(S('oct.temporal', 'temporal', 'temporal')) + '</text>';
     var hot = [], vb = o.crop ? [140, 60, 360, 220] : [0, 50, 640, 240];
     if (fluid === 'srf') hot.push(pctHot(OCT_CX, (octAt(geo.gap2.bot, xs, OCT_CX) + octAt(geo.rpe.top, xs, OCT_CX)) / 2, 30, vb[2], vb[3], { fr: 'Liquide entre rétine et EPR (EPR plat)', en: 'Fluid between retina and RPE (flat RPE)' }, true, vb[0], vb[1]));
@@ -396,7 +408,7 @@
     h += '<defs><linearGradient id="' + cid + 'i" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a6a47"/><stop offset=".25" stop-color="#7a5236"/><stop offset="1" stop-color="#4b301f"/></linearGradient>' +
       '<linearGradient id="' + cid + 't" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cdbfae"/><stop offset=".45" stop-color="#b19a83"/><stop offset="1" stop-color="#6e4f37"/></linearGradient></defs>';
     h += '<rect width="400" height="240" fill="#101418"/>';
-    GONIO_BANDS.forEach(function (b) { h += '<polygon data-band="' + b.id + '" points="' + gBand(b.y0, b.id === 'cbb' && rec ? b.y1 : b.y1, b.id === 'cbb' ? wav : null) + '" fill="' + (b.id === 'tm' ? 'url(#' + cid + 't)' : b.c) + '"/>'; });
+    GONIO_BANDS.forEach(function (b) { h += '<polygon data-vband="' + b.id + '" points="' + gBand(b.y0, b.id === 'cbb' && rec ? b.y1 : b.y1, b.id === 'cbb' ? wav : null) + '" fill="' + (b.id === 'tm' ? 'url(#' + cid + 't)' : b.c) + '"/>'; });
     h += '<polygon points="' + gBand(0, 44) + '" fill="#e8f4f8" opacity=".25" pointer-events="none"/>';
     // iris (rises to hide posterior structures)
     var it = [], x; for (x = 0; x <= 400; x += 10) it.push(P2(x, level + gC(x) + 2 * Math.sin(x / 17)));
@@ -407,6 +419,12 @@
     h += '<polyline points="' + it.map(function (p) { var q = p.split(','); return q[0] + ',' + (+q[1] + 5).toFixed(1); }).join(' ') + '" fill="none" stroke="#c48c60" stroke-width="2" opacity=".55" pointer-events="none"/>';
     var cr = ''; for (var k = 0; k < 14; k++) { var cx = 15 + k * 28 + (k % 3) * 5, cy = level + gC(cx) + 30 + (k % 4) * 14; if (cy < 236) cr += '<ellipse cx="' + cx + '" cy="' + cy + '" rx="' + (6 + k % 3 * 2) + '" ry="3.2"/>'; }
     h += '<g fill="#3a2416" opacity=".7" pointer-events="none">' + cr + '</g>';
+    var hu = o.hitU || 0;
+    GONIO_BANDS.slice().sort(function (a, b) { return (b.y1 - b.y0) - (a.y1 - a.y0); }).forEach(function (b) {
+      var y1 = b.id === 'cbb' && rec ? b.y1 + 30 : b.y1; if (b.y0 >= level - 2) return;      // hidden behind the iris: not tappable
+      var pad = Math.max(0, (hu - (y1 - b.y0)) / 2), a0 = Math.max(0, b.y0 - pad), a1 = Math.min(level, y1 + pad);
+      h += '<polygon class="inv-hit" data-band="' + b.id + '" points="' + gBand(a0, a1) + '" fill="#000" fill-opacity="0"/>';
+    });
     var hot = [];
     if (v === 'pas') {
       [120, 268].forEach(function (px, i) { var base = level + gC(px), tip = (i ? 56 : 49) + gC(px); h += '<polygon data-band="pas" points="' + P2(px - 34, base + 4) + ' ' + P2(px - 12, tip + 4) + ' ' + P2(px + 3, tip) + ' ' + P2(px + 16, tip + 5) + ' ' + P2(px + 36, base + 4) + '" fill="url(#' + cid + 'i)"/>'; });
@@ -500,8 +518,8 @@
     h += '<circle cx="200" cy="200" r="186" fill="url(#' + cid + 'b)" data-reg="periph"/>';
     h += '<ellipse cx="200" cy="200" rx="150" ry="112" fill="#fff" fill-opacity="0" data-reg="pole"/>';
     h += '<circle cx="' + FF.x + '" cy="' + FF.y + '" r="52" fill="url(#' + cid + 'm)" data-reg="macula"/>';
-    h += '<circle cx="' + FF.x + '" cy="' + FF.y + '" r="15" fill="#fff" fill-opacity="0" data-reg="fovea"/><ellipse cx="' + FF.x + '" cy="' + FF.y + '" rx="2.6" ry="2" fill="#fff" opacity=".8" pointer-events="none"/>';
-    // vessels: [path, kind]
+    h += '<circle cx="' + FF.x + '" cy="' + FF.y + '" r="17" fill="#fff" fill-opacity="0" data-reg="fovea"/><ellipse cx="' + FF.x + '" cy="' + FF.y + '" rx="2.6" ry="2" fill="#fff" opacity=".8" pointer-events="none"/>';
+    // vessels: [path, kind, width]; the first 8 (four arcades, artery + vein) are tap targets, small branches (index >= 8) are decorative
     var V = [
       ['M276,181 C252,148 210,118 150,111 S70,120 34,152', 'art', 3.2], ['M278,179 C258,138 206,103 146,99 S64,108 30,136', 'vein', 4.6],
       ['M276,199 C252,232 210,263 150,270 S70,262 34,234', 'art', 3.2], ['M278,201 C258,242 206,279 146,285 S64,276 30,252', 'vein', 4.6],
@@ -510,13 +528,13 @@
       ['M300,190 C330,191 352,192 380,194', 'art', 2], ['M300,186 C330,182 354,178 382,174', 'vein', 2.6],
       ['M205,118 C196,140 190,156 186,170', 'art', 1.5], ['M200,258 C194,240 190,228 186,220', 'art', 1.5], ['M188,104 C182,126 178,150 182,166', 'vein', 2]
     ];
-    V.forEach(function (v) { h += '<path d="' + v[0] + '" fill="none" stroke="transparent" stroke-width="12" data-reg="' + v[1] + '"/><path d="' + v[0] + '" fill="none" stroke="' + (v[1] === 'art' ? '#e4583c' : '#8a1d29') + '" stroke-width="' + v[2] + '" stroke-linecap="round" pointer-events="none"/>' + (v[1] === 'art' ? '<path d="' + v[0] + '" fill="none" stroke="#ffd1bf" stroke-width=".7" opacity=".7" pointer-events="none"/>' : ''); });
+    V.forEach(function (v, vi) { h += (vi >= 8 ? '' : '<path d="' + v[0] + '" fill="none" stroke="transparent" stroke-width="12" data-reg="' + v[1] + '"/>') + '<path d="' + v[0] + '" fill="none" stroke="' + (v[1] === 'art' ? '#e4583c' : '#8a1d29') + '" stroke-width="' + v[2] + '" stroke-linecap="round" pointer-events="none"/>' + (v[1] === 'art' ? '<path d="' + v[0] + '" fill="none" stroke="#ffd1bf" stroke-width=".7" opacity=".7" pointer-events="none"/>' : ''); });
     // disc
     h += '<circle cx="' + FD.x + '" cy="' + FD.y + '" r="' + FD.r + '" fill="url(#' + cid + 'd)" data-reg="disc"/>';
     if (ov.cup) h += '<ellipse cx="' + (FD.x + 1) + '" cy="' + (FD.y + 2.5) + '" rx="15.5" ry="18.5" fill="#fbf0dc" data-reg="ov-cup"/>';
-    else h += '<circle cx="' + (FD.x + 1) + '" cy="' + FD.y + '" r="7" fill="#fbf0dc" data-reg="cup"/>';
+    else h += '<circle cx="' + (FD.x + 1) + '" cy="' + FD.y + '" r="7" fill="#fbf0dc" pointer-events="none"/><circle class="inv-hit" cx="' + (FD.x + 1) + '" cy="' + FD.y + '" r="17" fill="#fff" fill-opacity="0" data-reg="cup"/>';
     h += '<path d="M' + (FD.x - 2) + ',' + (FD.y - FD.r + 2) + ' L' + (FD.x - 2) + ',' + (FD.y + FD.r - 2) + '" stroke="#c84a35" stroke-width="2" pointer-events="none" opacity=".8"/>';
-    if (ov.dischem) { h += '<path d="M' + (FD.x - 12) + ',' + (FD.y + 15) + ' q-6,8 -9,16 q2,1 4,0 q4,-8 8,-14 z" fill="#9c0f18" data-reg="ov-dischem"/>'; hot.push(Object.assign(pctHot(FD.x - 15, FD.y + 23, 13, 400, 400, FUNDUS_OV.dischem.n), { k: 'dischem' })); }
+    if (ov.dischem) { h += '<path d="M' + (FD.x - 12) + ',' + (FD.y + 15) + ' q-6,8 -9,16 q2,1 4,0 q4,-8 8,-14 z" fill="#9c0f18" pointer-events="none"/><circle class="inv-hit" cx="' + (FD.x - 15) + '" cy="' + (FD.y + 23) + '" r="14" fill="#fff" fill-opacity="0" data-reg="ov-dischem"/>'; hot.push(Object.assign(pctHot(FD.x - 15, FD.y + 23, 13, 400, 400, FUNDUS_OV.dischem.n), { k: 'dischem' })); }
     if (ov.cup) hot.push(Object.assign(pctHot(FD.x, FD.y + 2, 26, 400, 400, { fr: 'C/D ~0,8, anneau inférieur aminci', en: 'C/D ~0.8, thin inferior rim' }), { k: 'cup' }));
     if (ov.cws) { var cw = ''; [[206, 148, 11, 6, -20], [140, 140, 9, 5, 15], [216, 260, 10, 6, 25], [128, 262, 8, 5, -10], [236, 172, 7, 4, 0]].forEach(function (c) { cw += '<ellipse cx="' + c[0] + '" cy="' + c[1] + '" rx="' + c[2] + '" ry="' + c[3] + '" transform="rotate(' + c[4] + ' ' + c[0] + ' ' + c[1] + ')"/>'; }); h += '<g fill="#f7f1e4" opacity=".92" filter="url(#' + cid + 'f)" data-reg="ov-cws">' + cw + '</g>'; hot.push(Object.assign(pctHot(206, 148, 18, 400, 400, FUNDUS_OV.cws.n), { k: 'cws' })); }
     if (ov.drusen) { var dr = ''; for (var k = 0; k < 34; k++) { var a = r() * Math.PI * 2, d = 9 + r() * 32; dr += '<circle cx="' + (FF.x + Math.cos(a) * d).toFixed(1) + '" cy="' + (FF.y + Math.sin(a) * d * .85).toFixed(1) + '" r="' + (1.6 + r() * 2.2).toFixed(1) + '"/>'; } h += '<g fill="#f2d36a" opacity=".9" data-reg="ov-drusen">' + dr + '</g>'; hot.push(Object.assign(pctHot(FF.x, FF.y, 30, 400, 400, FUNDUS_OV.drusen.n), { k: 'drusen' })); }
@@ -846,7 +864,8 @@
     function draw() {
       var lab = null;
       if (st.mode === 'explore' && st.sel) lab = { id: st.sel, text: pick(layers.filter(function (l) { return l.id === st.sel; })[0].n).replace(/\s*\(.*\)$/, ''), x: narrow(el) ? 400 : 470 };
-      var g = Gen.oct({ fluid: st.mode === 'fluid' ? st.fluid : 'none', hl: st.mode !== 'fluid' ? st.sel : null, label: lab, crop: narrow(el) });
+      var crop = narrow(el), wpx = svgHost.getBoundingClientRect().width || 640, hitU = st.mode === 'fluid' ? 0 : 24 / (wpx / (crop ? 360 : 640));
+      var g = Gen.oct({ fluid: st.mode === 'fluid' ? st.fluid : 'none', hl: st.mode !== 'fluid' ? st.sel : null, label: lab, crop: crop, hitU: hitU });
       geo = g.geo;
       svgHost.innerHTML = g.svg + (st.mode === 'fluid' && st.fq && st.fq.done ? hotsHtml(g.hot) : '');
       var svgEl = U.$('svg', svgHost);
@@ -916,7 +935,7 @@
         out.innerHTML = '<div class="feedback ' + (ok ? 'ok' : 'bad') + '"><div class="verdict">' + PE(OCT_FLUID[st.fluid].n) + '</div><div class="small">' + PE(OCT_FLUID[st.fluid].d) + '</div><div class="row"><button type="button" class="btn primary sm" data-a="fnext">' + E(S('oct.fnext', 'Autre coupe', 'Another scan')) + '</button></div></div>';
         return;
       }
-      if (t.closest('svg') && st.mode !== 'fluid' && !(st.mode === 'label' && (!st.q || st.q.answered))) { var p = svgPt(U.$('svg', svgHost), ev); choose(hit(p.x, p.y)); }
+      if (t.closest('svg') && st.mode !== 'fluid' && !(st.mode === 'label' && (!st.q || st.q.answered))) { var hl = t.closest('[data-layer]'); if (hl) { choose(hl.getAttribute('data-layer')); return; } var p = svgPt(U.$('svg', svgHost), ev); choose(hit(p.x, p.y)); }
     }
     function onKey(ev) { var l = ev.target.closest && ev.target.closest('[data-layer]'); if (l && (ev.key === 'Enter' || ev.key === ' ')) { ev.preventDefault(); if (st.mode === 'explore' || (st.mode === 'label' && st.q && !st.q.answered)) choose(l.getAttribute('data-layer')); } }
     var onResize = U.debounce(function () { draw(); }, 200);
@@ -949,9 +968,9 @@
     var svgHost = U.$('[data-svg]', el), panel = U.$('[data-panel]', el), out = U.$('[data-out]', el);
     function cur() { return st.mode === 'quiz' && st.cases ? st.cases[st.ci] : { grade: st.grade, variant: st.variant }; }
     function draw(reveal) {
-      var c = cur(), g = Gen.gonio({ grade: c.grade, variant: c.variant });
+      var c = cur(), g = Gen.gonio({ grade: c.grade, variant: c.variant, hitU: 24 / ((svgHost.getBoundingClientRect().width || 400) / 400) });
       svgHost.innerHTML = g.svg + (reveal ? hotsHtml(g.hot) : '');
-      if (st.sel) { var p = U.$('[data-band="' + st.sel + '"]', svgHost); if (p) p.classList.add('inv-hl'); }
+      if (st.sel) { var p = U.$('[data-vband="' + st.sel + '"]', svgHost) || U.$('[data-band="' + st.sel + '"]', svgHost); if (p) p.classList.add('inv-hl'); }
     }
     function bandInfo(id) {
       var b = GONIO_BANDS.filter(function (x) { return x.id === id; })[0];

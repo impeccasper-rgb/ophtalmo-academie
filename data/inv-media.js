@@ -88,8 +88,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -284,8 +284,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -399,8 +399,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -469,8 +469,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -504,8 +504,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -548,8 +548,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -592,8 +592,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -636,22 +636,22 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
  },
  "m-oct-1": {
   "kind": "svg",
-  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Coupe OCT maculaire normale · Normal macular OCT</text><rect x=\"30\" y=\"30\" width=\"340\" height=\"210\" fill=\"#1a1a1a\"/><rect x=\"30\" y=\"80\" width=\"340\" height=\"12\" fill=\"#e6e6e6\"/><rect x=\"30\" y=\"92\" width=\"340\" height=\"10\" fill=\"#9a9a9a\"/><rect x=\"30\" y=\"102\" width=\"340\" height=\"10\" fill=\"#c6c6c6\"/><rect x=\"30\" y=\"112\" width=\"340\" height=\"12\" fill=\"#5a5a5a\"/><rect x=\"30\" y=\"124\" width=\"340\" height=\"8\" fill=\"#bdbdbd\"/><rect x=\"30\" y=\"132\" width=\"340\" height=\"30\" fill=\"#3e3e3e\"/><rect x=\"30\" y=\"162\" width=\"340\" height=\"2\" fill=\"#9c9c9c\"/><rect x=\"30\" y=\"166\" width=\"340\" height=\"5\" fill=\"#f2f2f2\"/><rect x=\"30\" y=\"173\" width=\"340\" height=\"3\" fill=\"#b0b0b0\"/><rect x=\"30\" y=\"177\" width=\"340\" height=\"9\" fill=\"#ffffff\"/><rect x=\"30\" y=\"186\" width=\"340\" height=\"54\" fill=\"#6e6e6e\"/><ellipse cx=\"200\" cy=\"78\" rx=\"58\" ry=\"54\" fill=\"#1a1a1a\"/><text x=\"200\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">vitré en haut, choroïde en bas · vitreous on top, choroid below</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
+  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Coupe OCT maculaire normale · Normal macular OCT</text><rect x=\"30\" y=\"30\" width=\"340\" height=\"210\" fill=\"#1a1a1a\"/><rect x=\"30\" y=\"80\" width=\"340\" height=\"12\" fill=\"#e6e6e6\"/><rect x=\"30\" y=\"92\" width=\"340\" height=\"10\" fill=\"#9a9a9a\"/><rect x=\"30\" y=\"102\" width=\"340\" height=\"10\" fill=\"#c6c6c6\"/><rect x=\"30\" y=\"112\" width=\"340\" height=\"12\" fill=\"#5a5a5a\"/><rect x=\"30\" y=\"124\" width=\"340\" height=\"8\" fill=\"#bdbdbd\"/><rect x=\"30\" y=\"132\" width=\"340\" height=\"30\" fill=\"#3e3e3e\"/><rect x=\"30\" y=\"162\" width=\"340\" height=\"2\" fill=\"#9c9c9c\"/><rect x=\"30\" y=\"166\" width=\"340\" height=\"5\" fill=\"#f2f2f2\"/><rect x=\"30\" y=\"173\" width=\"340\" height=\"3\" fill=\"#b0b0b0\"/><rect x=\"30\" y=\"177\" width=\"340\" height=\"9\" fill=\"#ffffff\"/><rect x=\"30\" y=\"186\" width=\"340\" height=\"54\" fill=\"#6e6e6e\"/><clipPath id=\"moct1-frame\"><rect x=\"30\" y=\"30\" width=\"340\" height=\"210\"/></clipPath><ellipse cx=\"200\" cy=\"78\" rx=\"58\" ry=\"54\" fill=\"#1a1a1a\" clip-path=\"url(#moct1-frame)\"/><text x=\"200\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">vitré en haut, choroïde en bas · vitreous on top, choroid below</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
   "alt": {
    "fr": "Schéma d’une coupe OCT maculaire normale avec dépression fovéolaire et bandes rétiniennes.",
    "en": "Schematic of a normal macular OCT B-scan with the foveal pit and retinal bands."
   },
   "hotspots": [
    {
-    "x": 14,
+    "x": 18,
     "y": 60.5,
     "r": 4,
     "label": {
@@ -661,7 +661,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "decisive": true
    },
    {
-    "x": 14,
+    "x": 34,
     "y": 56,
     "r": 3,
     "label": {
@@ -679,7 +679,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     }
    },
    {
-    "x": 14,
+    "x": 30,
     "y": 39,
     "r": 3,
     "label": {
@@ -706,7 +706,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     }
    },
    {
-    "x": 14,
+    "x": 24,
     "y": 70,
     "r": 4,
     "label": {
@@ -716,8 +716,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -1251,8 +1251,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -1304,8 +1304,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -1516,8 +1516,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -2158,8 +2158,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true
@@ -2202,8 +2202,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "Schéma original · Ocelle, non tiré d’un patient réel.",
+   "en": "Original schematic · Ocelle, not from a real patient."
   },
   "license": "original",
   "schematic": true

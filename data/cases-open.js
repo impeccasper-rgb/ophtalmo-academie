@@ -1867,8 +1867,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Mikael Häggström — CC0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Mikael Häggström — CC0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Mikael Häggström — CC0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Mikael Häggström — CC0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC0",
   "source": "https://commons.wikimedia.org/wiki/File:Fundus_photograph_of_normal_left_eye.jpg"
@@ -1903,8 +1903,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Jonathan Trobe, M.D. - University of Michigan Kellogg Eye Center — CC BY 3.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Jonathan Trobe, M.D. - University of Michigan Kellogg Eye Center — CC BY 3.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Jonathan Trobe, M.D. - University of Michigan Kellogg Eye Center — CC BY 3.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Jonathan Trobe, M.D. - University of Michigan Kellogg Eye Center — CC BY 3.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Papilledema.jpg"
@@ -1939,8 +1939,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Dr. Gopal Bisht — CC BY-SA 4.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Dr. Gopal Bisht — CC BY-SA 4.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Dr. Gopal Bisht — CC BY-SA 4.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Dr. Gopal Bisht — CC BY-SA 4.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Cherry_red_spot_in_patient_with_central_retinal_artery_occlusion_(CRAO).jpg"
@@ -1985,8 +1985,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Werner JU, Böhm F, Lang GE, Dreyhaupt J, Lang GK, Enders C — CC BY 4.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Werner JU, Böhm F, Lang GE, Dreyhaupt J, Lang GK, Enders C — CC BY 4.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Werner JU, Böhm F, Lang GE, Dreyhaupt J, Lang GK, Enders C — CC BY 4.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Werner JU, Böhm F, Lang GE, Dreyhaupt J, Lang GK, Enders C — CC BY 4.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Fondo_de_ojo_Ostrucci%C3%B3n_Vena_central.png"
@@ -2011,8 +2011,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : http://www.nei.nih.gov/photo/eyedis/index.asp — Public domain (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: http://www.nei.nih.gov/photo/eyedis/index.asp — Public domain (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : http://www.nei.nih.gov/photo/eyedis/index.asp — Public domain (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: http://www.nei.nih.gov/photo/eyedis/index.asp — Public domain (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "Public domain",
   "source": "https://commons.wikimedia.org/wiki/File:Fundus_Proliferative_retinopathy_EDA01.JPG"
@@ -2047,8 +2047,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : http://www.nei.nih.gov/photo/eyedis/index.asp — Public domain (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: http://www.nei.nih.gov/photo/eyedis/index.asp — Public domain (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : http://www.nei.nih.gov/photo/eyedis/index.asp — Public domain (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: http://www.nei.nih.gov/photo/eyedis/index.asp — Public domain (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "Public domain",
   "source": "https://commons.wikimedia.org/wiki/File:Fundus_Diabetic_macular_edema_EDA04.JPG"
@@ -2073,8 +2073,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Amaris5 — CC BY-SA 4.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Amaris5 — CC BY-SA 4.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Amaris5 — CC BY-SA 4.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Amaris5 — CC BY-SA 4.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Rhegmatogene_amotio_retinae.jpg"
@@ -2119,8 +2119,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Wies6014 — CC BY-SA 4.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Wies6014 — CC BY-SA 4.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Wies6014 — CC BY-SA 4.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Wies6014 — CC BY-SA 4.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Spectral_Domain_OCT_-_Macula_Cross-Sections.png"
@@ -2145,8 +2145,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Russell Neches ( Rneches ) — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Russell Neches ( Rneches ) — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Russell Neches ( Rneches ) — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Russell Neches ( Rneches ) — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Central_serous_retinopathy.jpg"
@@ -2171,8 +2171,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Imrankabirhossain — CC BY-SA 4.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Imrankabirhossain — CC BY-SA 4.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Imrankabirhossain — CC BY-SA 4.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Imrankabirhossain — CC BY-SA 4.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Dendritic_corneal_ulcer.jpg"
@@ -2207,8 +2207,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Jacob Lorenzo-Morales, Naveed A. Khan and Julia Walochnik — CC BY 4.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Jacob Lorenzo-Morales, Naveed A. Khan and Julia Walochnik — CC BY 4.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Jacob Lorenzo-Morales, Naveed A. Khan and Julia Walochnik — CC BY 4.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Jacob Lorenzo-Morales, Naveed A. Khan and Julia Walochnik — CC BY 4.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Parasite140120-fig1_Acanthamoeba_keratitis_Figure_1A.png"
@@ -2243,8 +2243,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Elise A. Slim et al — CC BY 4.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Elise A. Slim et al — CC BY 4.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Elise A. Slim et al — CC BY 4.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Elise A. Slim et al — CC BY 4.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Corneal_topography,_stage_II_keratoconus_(Elise_A._Slim_et_al.).jpg"
@@ -2279,8 +2279,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Jmvaras José Miguel Varas, MD — CC BY 3.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Jmvaras José Miguel Varas, MD — CC BY 3.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Jmvaras José Miguel Varas, MD — CC BY 3.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Jmvaras José Miguel Varas, MD — CC BY 3.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Pterygium_Slitlamp.jpg"
@@ -2305,8 +2305,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Wikimedia Commons user PaulBone~commonswiki — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Wikimedia Commons user PaulBone~commonswiki — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Wikimedia Commons user PaulBone~commonswiki — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Wikimedia Commons user PaulBone~commonswiki — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Band-keratopathy_left-eye.png"
@@ -2331,8 +2331,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Dr Chua — Public domain (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Dr Chua — Public domain (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Dr Chua — Public domain (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Dr Chua — Public domain (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "Public domain",
   "source": "https://commons.wikimedia.org/wiki/File:Cornea_showing_Krukenberg%27s_Spindle.jpg"
@@ -2367,8 +2367,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : James Heilman, MD — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: James Heilman, MD — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : James Heilman, MD — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: James Heilman, MD — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Acute_angle_closure_glaucoma.JPG"
@@ -2403,8 +2403,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Snoop at German Wikipedia ( Original text: Snoop ) — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Snoop at German Wikipedia ( Original text: Snoop ) — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Snoop at German Wikipedia ( Original text: Snoop ) — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Snoop at German Wikipedia ( Original text: Snoop ) — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Glaukompapille2.jpg"
@@ -2429,8 +2429,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Eric Wiessner — CC BY-SA 4.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Eric Wiessner — CC BY-SA 4.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Eric Wiessner — CC BY-SA 4.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Eric Wiessner — CC BY-SA 4.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Anterior_chamber_angle_-_3D_motion_parallax.gif"
@@ -2455,8 +2455,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Jonathan Trobe, M.D. - University of Michigan Kellogg Eye Center — CC BY 3.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Jonathan Trobe, M.D. - University of Michigan Kellogg Eye Center — CC BY 3.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Jonathan Trobe, M.D. - University of Michigan Kellogg Eye Center — CC BY 3.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Jonathan Trobe, M.D. - University of Michigan Kellogg Eye Center — CC BY 3.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Orbital_cellulitis.jpg"
@@ -2491,8 +2491,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Radomil talk — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Radomil talk — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Radomil talk — CC BY-SA 3.0 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Radomil talk — CC BY-SA 3.0 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Anizokoria.JPG"
@@ -2517,8 +2517,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Rakesh Ahuja, MD — CC BY-SA 2.5 (Wikimedia Commons). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Rakesh Ahuja, MD — CC BY-SA 2.5 (Wikimedia Commons). Resized; annotations: ophtalmo app."
+   "fr": "Image : Rakesh Ahuja, MD — CC BY-SA 2.5 (Wikimedia Commons). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Rakesh Ahuja, MD — CC BY-SA 2.5 (Wikimedia Commons). Resized; annotations: Ocelle."
   },
   "license": "CC BY-SA 2.5",
   "source": "https://commons.wikimedia.org/wiki/File:Hyphema_-_occupying_half_of_anterior_chamber_of_eye.jpg"
@@ -2573,8 +2573,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Shirke — Clin Pract Cases Emerg Med 2021;5(4) — CC BY 4.0 (Traumatic Anterior Dislocation of Ocular Cataract Lens). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Shirke — Clin Pract Cases Emerg Med 2021;5(4) — CC BY 4.0 (Traumatic Anterior Dislocation of Ocular Cataract Lens). Resized; annotations: ophtalmo app."
+   "fr": "Image : Shirke — Clin Pract Cases Emerg Med 2021;5(4) — CC BY 4.0 (Traumatic Anterior Dislocation of Ocular Cataract Lens). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Shirke — Clin Pract Cases Emerg Med 2021;5(4) — CC BY 4.0 (Traumatic Anterior Dislocation of Ocular Cataract Lens). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8610488/"
@@ -2609,8 +2609,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Resized; annotations: ophtalmo app."
+   "fr": "Image : Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13518040/"
@@ -2655,8 +2655,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Resized; annotations: ophtalmo app."
+   "fr": "Image : Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13518040/"
@@ -2691,8 +2691,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Resized; annotations: ophtalmo app."
+   "fr": "Image : Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Chawang et al. — Clin Pract Cases Emerg Med 2026 — CC BY 4.0 (Novel Technique in Performing Ocular Ultrasound in Trauma: A Case Series). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13518040/"
@@ -2747,8 +2747,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Resized; annotations: ophtalmo app."
+   "fr": "Image : Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10276512/"
@@ -2783,8 +2783,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Johnson — Clin Pract Cases Emerg Med 2022;6(2) — CC BY 4.0 (Valsalva Retinopathy Masking as a Retinal Detachment on Point-of-care Ocular Ultrasound: A Case Report). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Johnson — Clin Pract Cases Emerg Med 2022;6(2) — CC BY 4.0 (Valsalva Retinopathy Masking as a Retinal Detachment on Point-of-care Ocular Ultrasound: A Case Report). Resized; annotations: ophtalmo app."
+   "fr": "Image : Johnson — Clin Pract Cases Emerg Med 2022;6(2) — CC BY 4.0 (Valsalva Retinopathy Masking as a Retinal Detachment on Point-of-care Ocular Ultrasound: A Case Report). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Johnson — Clin Pract Cases Emerg Med 2022;6(2) — CC BY 4.0 (Valsalva Retinopathy Masking as a Retinal Detachment on Point-of-care Ocular Ultrasound: A Case Report). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9197736/"
@@ -2829,8 +2829,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Arthurs et al. — Clin Pract Cases Emerg Med 2019;3(3) — CC BY 4.0 (Asteroid Hyalosis Seen on Ocular Point-of-Care Ultrasound). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Arthurs et al. — Clin Pract Cases Emerg Med 2019;3(3) — CC BY 4.0 (Asteroid Hyalosis Seen on Ocular Point-of-Care Ultrasound). Resized; annotations: ophtalmo app."
+   "fr": "Image : Arthurs et al. — Clin Pract Cases Emerg Med 2019;3(3) — CC BY 4.0 (Asteroid Hyalosis Seen on Ocular Point-of-Care Ultrasound). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Arthurs et al. — Clin Pract Cases Emerg Med 2019;3(3) — CC BY 4.0 (Asteroid Hyalosis Seen on Ocular Point-of-Care Ultrasound). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6682246/"
@@ -2885,8 +2885,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Dominik Odrobina, Iwona Laudańska-Olszewska, Piotr Gozdek et al. — BMC Ophthalmology 2014 — CC BY 2.0 (Macular hole formation and spontaneous closure after vitrectomy for vitreomacular traction documented in spectral-domain optical coherence tomography). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Dominik Odrobina, Iwona Laudańska-Olszewska, Piotr Gozdek et al. — BMC Ophthalmology 2014 — CC BY 2.0 (Macular hole formation and spontaneous closure after vitrectomy for vitreomacular traction documented in spectral-domain optical coherence tomography). Resized; annotations: ophtalmo app."
+   "fr": "Image : Dominik Odrobina, Iwona Laudańska-Olszewska, Piotr Gozdek et al. — BMC Ophthalmology 2014 — CC BY 2.0 (Macular hole formation and spontaneous closure after vitrectomy for vitreomacular traction documented in spectral-domain optical coherence tomography). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Dominik Odrobina, Iwona Laudańska-Olszewska, Piotr Gozdek et al. — BMC Ophthalmology 2014 — CC BY 2.0 (Macular hole formation and spontaneous closure after vitrectomy for vitreomacular traction documented in spectral-domain optical coherence tomography). Resized; annotations: Ocelle."
   },
   "license": "CC BY 2.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3931271/"
@@ -2941,8 +2941,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Resized; annotations: ophtalmo app."
+   "fr": "Image : Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Woong Hee Kim, Seung Hyen Lee, Jeong Hyun Seo et al. — BMC Ophthalmology 2023 — CC BY 4.0 (Choroidal detachment and hypotony following selective laser trabeculoplasty: a case report). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10276512/"
@@ -2967,8 +2967,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Matin et al. — Clin Pract Cases Emerg Med 2025 — CC BY 4.0 (Primary Choroidal Melanoma in a 30-year-old Woman with Monocular Flashers). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Matin et al. — Clin Pract Cases Emerg Med 2025 — CC BY 4.0 (Primary Choroidal Melanoma in a 30-year-old Woman with Monocular Flashers). Resized; annotations: ophtalmo app."
+   "fr": "Image : Matin et al. — Clin Pract Cases Emerg Med 2025 — CC BY 4.0 (Primary Choroidal Melanoma in a 30-year-old Woman with Monocular Flashers). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Matin et al. — Clin Pract Cases Emerg Med 2025 — CC BY 4.0 (Primary Choroidal Melanoma in a 30-year-old Woman with Monocular Flashers). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12594224/"
@@ -2993,8 +2993,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Pizarro et al. — Clin Pract Cases Emerg Med 2021;5(3) — CC BY 4.0 (Case Report: Diagnosis of Late Spontaneous Intraocular Lens Dislocation on Point-of-care Ultrasound). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Pizarro et al. — Clin Pract Cases Emerg Med 2021;5(3) — CC BY 4.0 (Case Report: Diagnosis of Late Spontaneous Intraocular Lens Dislocation on Point-of-care Ultrasound). Resized; annotations: ophtalmo app."
+   "fr": "Image : Pizarro et al. — Clin Pract Cases Emerg Med 2021;5(3) — CC BY 4.0 (Case Report: Diagnosis of Late Spontaneous Intraocular Lens Dislocation on Point-of-care Ultrasound). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Pizarro et al. — Clin Pract Cases Emerg Med 2021;5(3) — CC BY 4.0 (Case Report: Diagnosis of Late Spontaneous Intraocular Lens Dislocation on Point-of-care Ultrasound). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8373180/"
@@ -3019,8 +3019,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Resized; annotations: ophtalmo app."
+   "fr": "Image : Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10855287/"
@@ -3065,8 +3065,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Bloom et al. — Cureus 2019;11(5):e4660 — CC BY 3.0 (Ocular Siderosis Secondary to Retained Intraocular Foreign Body: A Case Report). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Bloom et al. — Cureus 2019;11(5):e4660 — CC BY 3.0 (Ocular Siderosis Secondary to Retained Intraocular Foreign Body: A Case Report). Resized; annotations: ophtalmo app."
+   "fr": "Image : Bloom et al. — Cureus 2019;11(5):e4660 — CC BY 3.0 (Ocular Siderosis Secondary to Retained Intraocular Foreign Body: A Case Report). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Bloom et al. — Cureus 2019;11(5):e4660 — CC BY 3.0 (Ocular Siderosis Secondary to Retained Intraocular Foreign Body: A Case Report). Resized; annotations: Ocelle."
   },
   "license": "CC BY 3.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6634274/"
@@ -3121,8 +3121,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    }
   ],
   "credit": {
-   "fr": "Image : Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Redimensionnée; annotations : ophtalmo app.",
-   "en": "Image: Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Resized; annotations: ophtalmo app."
+   "fr": "Image : Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Redimensionnée; annotations : Ocelle.",
+   "en": "Image: Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Resized; annotations: Ocelle."
   },
   "license": "CC BY 4.0",
   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10855287/"

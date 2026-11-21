@@ -51,3 +51,8 @@
 - `#cas-images` : liste paginée 12 par 12 (« Afficher plus », focus sur la 1re nouvelle carte), compteur, focus conservé sur les filtres.
 - Titres des panneaux d’info : h4 → h3 (axe heading-order).
 - Tests : `test_site.py --quick --only flows,axe` 44/44, axe 0 violation; axe en plus sur #cas-images (liste, réponse, révélation), OCT explorer/étiqueter/liquide, fond d’œil, B-scan, CV : 0 violation.
+
+## Cycle 6 (2026-11-21) — R3, R5
+- R5 : `m-oct-1` (data/inv-media.js) : ellipse de la dépression fovéolaire limitée au cadre (clipPath 30,30,340,210) — le titre n’est plus couvert; hotspots 1–5 et 7 décalés en x (18/34/14/30/14/24 %) : plus de chevauchement.
+- R3 : zones de toucher invisibles ≥ 24 px dans les outils : bandes OCT (hauteur min. = 24 px à l’échelle courante, la plus fine au-dessus; 24 px mesurés à 320/390/1280), bandes de gonioscopie (≥ 33 px, coupées au niveau de l’iris), excavation et fovéa du fond d’œil (cercles r 17 : 25–27 px à 390, 24 à 320), hémorragie papillaire (r 14). Petites branches vasculaires du fond d’œil rendues décoratives (les 4 arcades restent des cibles).
+- axe : #inv-oct (explorer, étiqueter, révélation) et #cas-images (liste, révélation) : 0 violation. Suite flows+axe : seul échec restant = `nested-interactive` sur #a-anatomie (figures-a/sims, hors de mes fichiers, R2).

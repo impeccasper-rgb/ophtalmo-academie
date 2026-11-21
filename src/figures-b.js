@@ -20,7 +20,7 @@ Figures.gonio = function (fig, opts) {
   s.push('<rect x="0" y="0" width="640" height="300" fill="#0d1018"/>');
   s.push('<rect x="20" y="16" width="440" height="60" fill="#3d4a5e"/>');
   s.push('<path d="M20,30 L440,72 M20,60 L440,76" stroke="#9fb1c9" stroke-width="1.2" opacity=".8"/>'); // corneal wedge
-  s.push('<text class="lbl-sm lbl-white" x="28" y="34">cornée (prisme cornéen)</text>');
+  s.push(fx('<text class="lbl-sm lbl-white" x="28" y="34">cornée (prisme cornéen)</text>'));
   if (pig === 'sampaolesi') s.push('<path d="M20,72 Q60,66 100,72 T180,72 T260,72 T340,72 T420,72 L460,72" stroke="#4a2c16" stroke-width="3" fill="none"/>');
   var tmpFill = pig === 'heavy' ? '#3b2212' : (pig === 'sampaolesi' ? '#5a3a22' : '#a5835e');
   s.push(band('schwalbe', Y.schw[0], Y.schw[1], '#f3efe4'));
@@ -46,20 +46,20 @@ Figures.gonio = function (fig, opts) {
   // labels (right)
   var lb = '';
   var vis = { schwalbe: irisTop > Y.schw[1] - 1, 'trab-nonpig': irisTop > Y.tmn[0] + 4, 'trab-pig': irisTop > Y.tmp[0] + 4, eperon: irisTop > Y.spur[0] + 3, 'bande-ciliaire': irisTop > Y.cbb[0] + 4 };
-  [['schwalbe', 'Ligne de Schwalbe', 79], ['trab-nonpig', 'Trabéculum non pigmenté', 95], ['trab-pig', 'Trabéculum pigmenté', 124], ['eperon', 'Éperon scléral', 146], ['bande-ciliaire', 'Bande ciliaire', (Y.cbb[0] + Y.cbb[1]) / 2], ['iris-racine', 'Iris (dernier pli)', Math.min(282, irisTop + 22)]].forEach(function (r) {
+  [['schwalbe', fx('Ligne de Schwalbe'), 79], ['trab-nonpig', fx('Trabéculum non pigmenté'), 95], ['trab-pig', fx('Trabéculum pigmenté'), 124], ['eperon', fx('Éperon scléral'), 146], ['bande-ciliaire', fx('Bande ciliaire'), (Y.cbb[0] + Y.cbb[1]) / 2], ['iris-racine', fx('Iris (dernier pli)'), Math.min(282, irisTop + 22)]].forEach(function (r) {
     var isVis = r[0] === 'iris-racine' ? true : vis[r[0]];
-    lb += label(476, r[2], r[1] + (isVis ? '' : ' — caché'), 458, r[2], 'start', r[0], isVis ? 'lbl-sm lbl-white' : 'lbl-sm lbl-muted');
+    lb += label(476, r[2], r[1] + (isVis ? '' : fx(' — caché')), 458, r[2], 'start', r[0], isVis ? 'lbl-sm lbl-white' : 'lbl-sm lbl-muted');
   });
   s.push('<g class="g-labels">' + lb + '</g>');
   if (opts.reveal) {
     if (pig === 'sampaolesi') s.push(ring(240, 72, 18, 'ligne de Sampaolesi', 262, 64));
-    if (nv) s.push(ring(250, 150, 30, 'néovaisseaux franchissant l’éperon', 210, 108));
-    if (pas) s.push(ring(110, 110, 30, 'synéchie (PAS)', 146, 100));
-    if (rec) s.push(ring(240, 200, 26, 'bande ciliaire élargie', 270, 230));
+    if (nv) s.push(ring(250, 150, 30, fx('néovaisseaux franchissant l’éperon'), 210, 108));
+    if (pas) s.push(ring(110, 110, 30, fx('synéchie (PAS)'), 146, 100));
+    if (rec) s.push(ring(240, 200, 26, fx('bande ciliaire élargie'), 270, 230));
     if (pig === 'heavy') s.push(ring(240, 124, 22, 'pigment dense 360°', 268, 130));
   }
-  var shaffer = ['0 : fermé', '1 : ≤ 10°', '2 : ≈ 20°', '3 : 20–35°', '4 : 35–45°'][eff];
-  return { svg: '<svg viewBox="0 0 640 300" role="img" aria-label="Vue gonioscopique schématique">' + s.join('') + '</svg>', cap: 'Vue au miroir de gonioscopie — Shaffer ' + shaffer + (indent ? ' (avec indentation)' : '') };
+  var shaffer = [fx('0 : fermé'), '1 : ≤ 10°', '2 : ≈ 20°', '3 : 20–35°', '4 : 35–45°'][eff];
+  return { svg: '<svg viewBox="0 0 640 300" role="img" aria-label="Vue gonioscopique schématique">' + s.join('') + '</svg>', cap: fx('Vue au miroir de gonioscopie — Shaffer ') + shaffer + (indent ? fx(' (avec indentation)') : '') };
 };
 
 /* ---------- Optic disc (fundus close-up) ---------- */
@@ -115,13 +115,13 @@ Figures.disc = function (fig, opts) {
   }
   s.push('<text class="lbl-sm" x="12" y="392" style="fill:#fff">temporal</text><text class="lbl-sm" x="388" y="392" text-anchor="end" style="fill:#fff">nasal (OD)</text>');
   if (opts.reveal) {
-    if (notch !== 'none') { var nn = pol(cx, cy, 70, notch === 'inf' ? 118 : 242); s.push(ring(nn[0].toFixed(0), nn[1].toFixed(0), 18, 'encoche du bord', 20, notch === 'inf' ? 360 : 40)); }
-    if (heme) { var h2 = pol(cx, cy, 80, notch === 'sup' ? 238 : 122); s.push(ring(h2[0].toFixed(0), h2[1].toFixed(0), 20, 'hémorragie (Drance)', 230, notch === 'sup' ? 60 : 350)); }
-    if (ppa) s.push(ring(108, 200, 22, 'APP zone bêta', 20, 290));
-    if (pallor) s.push(ring(200, 200, 86, 'pâleur > excavation', 210, 316));
+    if (notch !== 'none') { var nn = pol(cx, cy, 70, notch === 'inf' ? 118 : 242); s.push(ring(nn[0].toFixed(0), nn[1].toFixed(0), 18, fx('encoche du bord'), 20, notch === 'inf' ? 360 : 40)); }
+    if (heme) { var h2 = pol(cx, cy, 80, notch === 'sup' ? 238 : 122); s.push(ring(h2[0].toFixed(0), h2[1].toFixed(0), 20, fx('hémorragie (Drance)'), 230, notch === 'sup' ? 60 : 350)); }
+    if (ppa) s.push(ring(108, 200, 22, fx('APP zone bêta'), 20, 290));
+    if (pallor) s.push(ring(200, 200, 86, fx('pâleur > excavation'), 210, 316));
     if (cd >= 0.7) s.push(ring(196, 200, Math.round(ry * cd * 0.9), 'C/D ≈ ' + cd.toFixed(1), 250, 40));
   }
-  return { svg: '<svg viewBox="0 0 400 400" role="img" aria-label="Papille schématique">' + s.join('') + '</svg>', cap: 'Papille (OD) — C/D vertical ≈ ' + cd.toFixed(2).replace('.', ',') };
+  return { svg: '<svg viewBox="0 0 400 400" role="img" aria-label="Papille schématique">' + s.join('') + '</svg>', cap: fx('Papille (OD) — C/D vertical ≈ ') + cd.toFixed(2).replace('.', ',') };
 };
 
 /* ---------- Visual field 24-2 ---------- */
@@ -200,14 +200,14 @@ Figures.vf = function (fig, opts) {
     }
   });
   var md = fig.md != null && !isNaN(+fig.md) ? +fig.md : (n ? -(mdSum / n) : 0);
-  s.push('<text class="lbl-sm lbl-muted" x="' + cx + '" y="18" text-anchor="middle">' + (map === 'pd' ? 'Déviation corrigée (pattern deviation)' : map === 'td' ? 'Déviation totale (total deviation)' : 'Échelle de gris') + ' · ' + eye + '</text>');
+  s.push('<text class="lbl-sm lbl-muted" x="' + cx + '" y="18" text-anchor="middle">' + (map === 'pd' ? fx('Déviation corrigée (pattern deviation)') : map === 'td' ? fx('Déviation totale (total deviation)') : fx('Échelle de gris')) + ' · ' + eye + '</text>');
   s.push('<text class="lbl-sm lbl-muted" x="' + (eye === 'OS' ? 20 : 340) + '" y="' + (cy - 6) + '" text-anchor="' + (eye === 'OS' ? 'start' : 'end') + '">temporal</text><text class="lbl-sm lbl-muted" x="' + (eye === 'OS' ? 340 : 20) + '" y="' + (cy - 6) + '" text-anchor="' + (eye === 'OS' ? 'end' : 'start') + '">nasal</text>');
   if (map !== 'gray') s.push('<g transform="translate(24,338)"><circle cx="4" cy="6" r="1.8" fill="var(--ink)"/><text class="lbl-sm" x="12" y="10">normal</text><rect x="62" y="0" width="12" height="12" fill="url(#' + id + 'p1)" stroke="var(--ink)" stroke-width=".6"/><text class="lbl-sm" x="78" y="10">p&lt;5 %</text><rect x="122" y="0" width="12" height="12" fill="url(#' + id + 'p2)" stroke="var(--ink)" stroke-width=".6"/><text class="lbl-sm" x="138" y="10">p&lt;2 %</text><rect x="182" y="0" width="12" height="12" fill="url(#' + id + 'p3)" stroke="var(--ink)" stroke-width=".6"/><text class="lbl-sm" x="198" y="10">p&lt;1 %</text><rect x="242" y="0" width="12" height="12" fill="var(--ink)"/><text class="lbl-sm" x="258" y="10">p&lt;0,5 %</text></g>');
   if (opts.reveal && pattern !== 'normal' && !(map === 'pd' && gen)) {
-    var rv = { 'sup-arcuate': [140, 110, 'arciforme supérieur'], 'inf-arcuate': [140, 240, 'arciforme inférieur'], 'sup-nasal-step': [70, 150, 'ressaut nasal'], 'inf-nasal-step': [70, 200, 'ressaut nasal'], 'sup-paracentral': [165, 150, 'paracentral'], 'inf-paracentral': [165, 205, 'paracentral'], 'double-arcuate': [140, 176, 'double arciforme'], 'temporal-wedge': [280, 176, 'coin temporal'], 'bitemporal': [260, 140, 'respecte le méridien vertical'], 'homonymous-right': [260, 176, 'hémianopsie'], 'homonymous-left': [100, 176, 'hémianopsie'], 'altitudinal-inf': [180, 240, 'altitudinal'], 'altitudinal-sup': [180, 110, 'altitudinal'], central: [180, 176, 'scotome central'], 'blind-spot': [245, 176, 'tache aveugle élargie'], generalized: [180, 176, 'dépression diffuse'] }[pattern];
+    var rv = { 'sup-arcuate': [140, 110, fx('arciforme supérieur')], 'inf-arcuate': [140, 240, fx('arciforme inférieur')], 'sup-nasal-step': [70, 150, 'ressaut nasal'], 'inf-nasal-step': [70, 200, 'ressaut nasal'], 'sup-paracentral': [165, 150, 'paracentral'], 'inf-paracentral': [165, 205, 'paracentral'], 'double-arcuate': [140, 176, 'double arciforme'], 'temporal-wedge': [280, 176, 'coin temporal'], 'bitemporal': [260, 140, fx('respecte le méridien vertical')], 'homonymous-right': [260, 176, fx('hémianopsie')], 'homonymous-left': [100, 176, fx('hémianopsie')], 'altitudinal-inf': [180, 240, 'altitudinal'], 'altitudinal-sup': [180, 110, 'altitudinal'], central: [180, 176, 'scotome central'], 'blind-spot': [245, 176, fx('tache aveugle élargie')], generalized: [180, 176, fx('dépression diffuse')] }[pattern];
     if (rv) { var rx2 = eye === 'OS' ? 360 - rv[0] : rv[0]; s.push(ring(rx2, rv[1], 40, rv[2], Math.min(250, rx2 + 10), rv[1] > 176 ? rv[1] + 56 : rv[1] - 46)); }
   }
-  var cap = 'Champ 24-2 schématique (' + eye + ') — MD ' + (fig.md != null ? '' : 'illustratif ') + '≈ ' + md.toFixed(1).replace('.', ',').replace('-', '−') + ' dB';
+  var cap = fx('Champ 24-2 schématique (') + eye + ') — MD ' + (fig.md != null ? '' : 'illustratif ') + '≈ ' + md.toFixed(1).replace('.', ',').replace('-', '−') + ' dB';
   return { svg: '<svg viewBox="0 0 360 362" role="img" aria-label="Champ visuel schématique">' + s.join('') + '</svg>', cap: cap, md: md };
 };
 
@@ -260,13 +260,13 @@ Figures.oct = function (fig, opts) {
   });
   pie += '</g>';
   s.push(pie);
-  s.push('<text class="lbl" x="46" y="300">RNFL moyen : <tspan class="lbl-b">' + Math.round(avg) + ' µm</tspan> (illustratif)</text>');
-  s.push('<text class="lbl-sm lbl-muted" x="46" y="320">vert 5–95 % · jaune 1–5 % · rouge &lt; 1 % · blanc &gt; 95 %</text>');
+  s.push(fx('<text class="lbl" x="46" y="300">RNFL moyen : <tspan class="lbl-b">') + Math.round(avg) + fx(' µm</tspan> (illustratif)</text>'));
+  s.push(fx('<text class="lbl-sm lbl-muted" x="46" y="320">vert 5–95 % · jaune 1–5 % · rouge &lt; 1 % · blanc &gt; 95 %</text>'));
   if (opts.reveal) {
-    var rv = { 'inf-thin': [292, 'pic inférieur effondré'], 'sup-thin': [68, 'pic supérieur aminci'], 'bi-arcuate': [180, 'deux pics amincis'], diffuse: [180, 'amincissement diffus'], 'red-disease': [120, 'pics décalés vers T (myopie) : faux positif'], 'green-disease': [292, 'dans le vert malgré une atteinte'] }[pattern];
+    var rv = { 'inf-thin': [292, fx('pic inférieur effondré')], 'sup-thin': [68, fx('pic supérieur aminci')], 'bi-arcuate': [180, 'deux pics amincis'], diffuse: [180, 'amincissement diffus'], 'red-disease': [120, fx('pics décalés vers T (myopie) : faux positif')], 'green-disease': [292, fx('dans le vert malgré une atteinte')] }[pattern];
     if (rv) s.push(ring(X(rv[0]).toFixed(0), Y(Figures.rnflPatient(pattern, rv[0])).toFixed(0), 26, rv[1], Math.min(330, X(rv[0]) - 100), 40));
   }
-  return { svg: '<svg viewBox="0 0 540 340" role="img" aria-label="OCT RNFL schématique">' + s.join('') + '</svg>', cap: 'Courbe TSNIT de l’épaisseur RNFL péripapillaire vs base normative (schéma).' };
+  return { svg: '<svg viewBox="0 0 540 340" role="img" aria-label="OCT RNFL schématique">' + s.join('') + '</svg>', cap: fx('Courbe TSNIT de l’épaisseur RNFL péripapillaire vs base normative (schéma).') };
 };
 
 /* ---------- Corneal topography (axial curvature) ---------- */
@@ -306,7 +306,7 @@ Figures.topo = function (fig, opts) {
     '<circle cx="130" cy="130" r="110" fill="none" stroke="var(--ink-3)"/><path d="M20,130 H240 M130,20 V240" stroke="#fff" stroke-width=".8" opacity=".7"/>' +
     '<text class="lbl-sm" x="130" y="14" text-anchor="middle">90°</text><text class="lbl-sm" x="246" y="134">0°</text><text class="lbl-sm lbl-muted" x="6" y="252">T</text><text class="lbl-sm lbl-muted" x="246" y="252">N (OD)</text>' + legend + '</svg></div>' +
     '<div class="row small" style="padding:6px 12px;justify-content:center;gap:16px"><span>Kmax <b class="mono">' + kmax.toFixed(1).replace('.', ',') + ' D</b></span><span>SimK <b class="mono">' + Math.max(sim[0], sim[1]).toFixed(1).replace('.', ',') + ' / ' + Math.min(sim[0], sim[1]).toFixed(1).replace('.', ',') + '</b></span><span>I–S <b class="mono">' + isd.toFixed(1).replace('.', ',') + ' D</b></span></div>';
-  return { svg: svg, cap: 'Carte de courbure axiale schématique (couleurs chaudes = cornée cambrée) — valeurs illustratives.' };
+  return { svg: svg, cap: fx('Carte de courbure axiale schématique (couleurs chaudes = cornée cambrée) — valeurs illustratives.') };
 };
 Figures.drawTopo = function (cv, pattern) {
   var ctx = cv.getContext('2d'); if (!ctx) return;
@@ -346,10 +346,10 @@ Figures.fluo = function (fig, opts) {
   s.push(g + '</g>');
   s.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + R + '" fill="none" stroke="#2f4fa8" stroke-width="2"/>');
   if (opts.reveal) {
-    var rv = { 'spk-inferior': [160, 222, 'KPS inférieure'], 'spk-interpalpebral': [160, 150, 'bande interpalpébrale'], 'spk-superior': [160, 70, 'KPS supérieure'], dendrite: [160, 140, 'bulbes terminaux'], geographic: [160, 150, 'ulcère à bords dendritiques'], pseudodendrite: [160, 145, 'pas de bulbes, prend peu'], abrasion: [170, 140, 'défaut net, géométrique'], 'fb-tracking': [160, 95, 'stries verticales'], ulcer: [165, 150, 'infiltrat + défaut'], seidel: [165, 196, 'filet vert vif = fuite'], negative: [160, 130, 'coloration négative'] }[pattern];
+    var rv = { 'spk-inferior': [160, 222, fx('KPS inférieure')], 'spk-interpalpebral': [160, 150, fx('bande interpalpébrale')], 'spk-superior': [160, 70, fx('KPS supérieure')], dendrite: [160, 140, 'bulbes terminaux'], geographic: [160, 150, fx('ulcère à bords dendritiques')], pseudodendrite: [160, 145, fx('pas de bulbes, prend peu')], abrasion: [170, 140, fx('défaut net, géométrique')], 'fb-tracking': [160, 95, 'stries verticales'], ulcer: [165, 150, fx('infiltrat + défaut')], seidel: [165, 196, 'filet vert vif = fuite'], negative: [160, 130, fx('coloration négative')] }[pattern];
     if (rv) s.push(ring(rv[0], rv[1], 44, rv[2], 40, rv[1] < 150 ? rv[1] + 70 : rv[1] - 56));
   }
-  return { svg: '<svg viewBox="0 0 320 300" role="img" aria-label="Cornée à la fluorescéine, schéma">' + s.join('') + '</svg>', cap: 'Fluorescéine sous lumière bleu cobalt (schéma).' };
+  return { svg: '<svg viewBox="0 0 320 300" role="img" aria-label="Cornée à la fluorescéine, schéma">' + s.join('') + '</svg>', cap: fx('Fluorescéine sous lumière bleu cobalt (schéma).') };
 };
 
 /* ---------- Slit lamp (anterior segment front view) ---------- */
@@ -393,10 +393,10 @@ Figures.slit = function (fig, opts) {
   s.push('<ellipse cx="' + (cx - 26) + '" cy="' + (cy - 30) + '" rx="10" ry="6" fill="#fff" opacity=".9"/>');
   s.push('</g><path d="M30,150 C 110,40 370,40 450,150 C 370,252 110,252 30,150 Z" fill="none" stroke="#8a5a40" stroke-width="3"/>');
   if (opts.reveal) {
-    var rv = { hypopyon: [cx, cy + 58, 'niveau de pus (hypopyon)'], pxf: [cx, cy, 'dépôts en cible sur la capsule'], krukenberg: [cx, cy + 6, 'fuseau pigmentaire vertical'], nvi: [cx, cy, 'néovaisseaux au rebord pupillaire'], tid: [cx, cy, 'défects radiaires de transillumination'], aacc: [cx, cy, 'cornée œdémateuse, pupille semi-dilatée'], bleb: [cx, 58, 'bulle filtrante supérieure'], kp: [cx, cy + 40, 'précipités rétrocornéens inférieurs'] }[pattern];
+    var rv = { hypopyon: [cx, cy + 58, 'niveau de pus (hypopyon)'], pxf: [cx, cy, fx('dépôts en cible sur la capsule')], krukenberg: [cx, cy + 6, 'fuseau pigmentaire vertical'], nvi: [cx, cy, fx('néovaisseaux au rebord pupillaire')], tid: [cx, cy, fx('défects radiaires de transillumination')], aacc: [cx, cy, fx('cornée œdémateuse, pupille semi-dilatée')], bleb: [cx, 58, fx('bulle filtrante supérieure')], kp: [cx, cy + 40, fx('précipités rétrocornéens inférieurs')] }[pattern];
     if (rv) s.push(ring(rv[0], rv[1], pattern === 'bleb' ? 40 : 46, rv[2], 300, rv[1] > 150 ? 280 : 30));
   }
-  return { svg: '<svg viewBox="0 0 480 300" role="img" aria-label="Segment antérieur à la lampe à fente, schéma">' + s.join('') + '</svg>', cap: 'Segment antérieur, vue de face (schéma).' };
+  return { svg: '<svg viewBox="0 0 480 300" role="img" aria-label="Segment antérieur à la lampe à fente, schéma">' + s.join('') + '</svg>', cap: fx('Segment antérieur, vue de face (schéma).') };
 };
 
 /* ---------- Van Herick ---------- */
@@ -409,9 +409,18 @@ Figures.vanherick = function (fig, opts) {
   var ix = 190 + CT / 2 + gap;
   s.push('<path d="M' + ix + ',90 L' + (ix + 6) + ',220" stroke="#c99a6b" stroke-width="14" stroke-linecap="round"/>');
   s.push('<path d="M' + (ix + 7) + ',90 L' + (ix + 13) + ',220" stroke="#7a5236" stroke-width="12"/>');
-  s.push('<text class="lbl-sm" x="14" y="26" style="fill:#c9d6f5">fente fine à 60°,</text><text class="lbl-sm" x="14" y="42" style="fill:#c9d6f5">au limbe temporal</text>');
-  s.push('<text class="lbl-sm" x="262" y="104" style="fill:#c9d6f5">EC = épaisseur cornéenne</text><text class="lbl-sm" x="262" y="122" style="fill:#c9d6f5">PCA = profondeur</text><text class="lbl-sm" x="262" y="138" style="fill:#c9d6f5">périphérique de la chambre</text>');
-  s.push('<text class="lbl lbl-b" x="262" y="176" style="fill:#fff">Grade ' + g + ' : ' + ['fermé (contact)', '< 1/4 EC', '= 1/4 EC', '1/4–1/2 EC', '≥ 1 EC'][g] + '</text>');
-  if (opts.reveal) s.push(ring(190 + CT / 2 + gap / 2, 175, 22, 'PCA', 120, 210));
-  return { svg: '<svg viewBox="0 0 420 230" role="img" aria-label="Technique de Van Herick, schéma">' + s.join('') + '</svg>', cap: 'Van Herick : comparer la chambre périphérique à l’épaisseur de la cornée.' };
+  s.push(fx('<text class="lbl-sm" x="14" y="26" style="fill:#c9d6f5">fente fine à 60°,</text><text class="lbl-sm" x="14" y="42" style="fill:#c9d6f5">au limbe temporal</text>'));
+  s.push(fx('<text class="lbl-sm" x="262" y="104" style="fill:#c9d6f5">EC = épaisseur cornéenne</text><text class="lbl-sm" x="262" y="122" style="fill:#c9d6f5">PCA = profondeur</text><text class="lbl-sm" x="262" y="138" style="fill:#c9d6f5">périphérique de la chambre</text>'));
+  s.push('<text class="lbl lbl-b" x="262" y="176" style="fill:#fff">Grade ' + g + ' : ' + [fx('fermé (contact)'), '< 1/4 EC', '= 1/4 EC', '1/4–1/2 EC', '≥ 1 EC'][g] + '</text>');
+  if (opts.reveal) s.push(ring(190 + CT / 2 + gap / 2, 175, 22, fx('PCA'), 120, 210));
+  return { svg: '<svg viewBox="0 0 420 230" role="img" aria-label="Technique de Van Herick, schéma">' + s.join('') + '</svg>', cap: fx('Van Herick : comparer la chambre périphérique à l’épaisseur de la cornée.') };
 };
+
+/* accessibility: a diagram whose structures are buttons is a group, not an image (axe nested-interactive) */
+(function () {
+  Object.keys(Figures).forEach(function (k) {
+    var f = Figures[k]; if (typeof f !== 'function' || k === 'render' || k === 'hydrate' || f._grp) return;
+    var w = function () { var r = f.apply(this, arguments); if (r && typeof r.svg === 'string' && r.svg.indexOf('role="button"') > 0) r.svg = r.svg.replace('role="img"', 'role="group"'); return r; };
+    w._grp = true; Object.keys(f).forEach(function (p) { w[p] = f[p]; }); Figures[k] = w;
+  });
+})();

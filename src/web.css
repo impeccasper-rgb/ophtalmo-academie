@@ -50,3 +50,9 @@ h3.h4 { font-family: inherit; font-size: var(--fs-md); font-weight: 700; line-he
 .sec, .stack { min-width: 0; }
 .sec { grid-template-columns: minmax(0, 1fr); }
 .ph-card .cap, .ph-card .muted, .credit { overflow-wrap: anywhere; }
+/* anatomy: invisible enlarged hit area around tiny structures (≥ 24 px on screen) */
+.hit-pad, .hit-pad * { fill: none !important; stroke: transparent !important; stroke-width: 24px !important; vector-effect: non-scaling-stroke; pointer-events: stroke; }
+.info h3.h4 { font-family: var(--font-display); font-size: var(--fs-lg); }
+.atlas-h { font-size: var(--fs-lg, 1.15rem); }
+/* long single words (e.g. « Blépharokératoconjonctivite ») hyphenate or wrap instead of widening the page */
+h1, h2, h3, .atlas-h, .cap, .eyebrow { overflow-wrap: anywhere; -webkit-hyphens: auto; hyphens: auto; }
