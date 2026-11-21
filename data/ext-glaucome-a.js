@@ -10,7 +10,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Glaucomatous cupping and its mimics",
   tags: ["highyield", "piege"],
   oneLiner: "Un C/D élevé n’est pas un diagnostic : mesurer le disque, lire l’anneau, chercher la pâleur qui impose une IRM.",
-  definition: "L’excavation glaucomateuse est la perte des axones de l’anneau, surtout aux pôles, alors que l’anneau restant reste rose. Plusieurs papilles l’imitent (grand disque, papille inclinée, compression, ischémie, hérédité, drusen), et certaines cachent une maladie grave.",
+  definition: "L’excavation glaucomateuse est la perte des axones de l’anneau, surtout aux pôles ; l’anneau restant reste rose. Grand disque, papille inclinée, compression, ischémie, hérédité ou drusen l’imitent.",
   anatomy: {
     text: "La papille (optic disc) mesure ≈ 1,5–2 mm, mais sa taille varie beaucoup alors que l’anneau d’axones occupe une surface assez semblable : grand disque = grand creux physiologique, petit disque = presque aucun creux. Le bord neurorétinien (neuroretinal rim) est normalement plus épais en inférieur, puis supérieur, nasal et temporal (règle ISNT, imparfaite). Les fibres maculaires entrent du côté temporal : une atteinte héréditaire, toxique ou compressive les pâlit en premier.",
     figure: {
@@ -19,11 +19,11 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     }
   },
   causal: {
-    title: "Du nerf qui souffre à la papille qu’on voit",
+    title: "Du nerf à la papille",
     steps: [
-      { label: "Agression des axones", detail: "PIO et lame criblée fragile (glaucome), ou compression, ischémie, gène, toxique, anomalie congénitale.", kind: "cause" },
-      { label: "Perte glaucomateuse aux pôles", detail: "Les axones disparaissent surtout en haut et en bas, sans gliose marquée : le creux grandit, l’anneau restant reste rose.", kind: "mecanisme" },
-      { label: "Perte non glaucomateuse : la pâleur", detail: "Compression, ischémie ou hérédité laissent une gliose : l’anneau pâlit avant de se creuser.", kind: "mecanisme" },
+      { label: "Axones agressés", detail: "PIO et lame criblée fragile (glaucome), ou compression, ischémie, gène, toxique, anomalie congénitale.", kind: "cause" },
+      { label: "Glaucome : perte aux pôles", detail: "Les axones disparaissent surtout en haut et en bas, sans gliose marquée : le creux grandit, l’anneau restant reste rose.", kind: "mecanisme" },
+      { label: "Autre cause : la pâleur", detail: "Compression, ischémie ou hérédité laissent une gliose : l’anneau pâlit avant de se creuser.", kind: "mecanisme" },
       { label: "Signes à la papille", detail: "Encoche, vaisseau circumlinéaire dénudé, baïonnette, hémorragie de Drance, atrophie péripapillaire (APP) zone bêta, défauts de la RNFL.", kind: "lesion" },
       { label: "Défaut de champ concordant", detail: "Glaucome : respecte le méridien horizontal. Chiasma : méridien vertical. Nerf optique : scotome central ou caecocentral.", kind: "signe" },
       { label: "Cause grave manquée", detail: "Tumeur, artérite ou glaucome évolutif, si on se fie au seul C/D.", kind: "complication" }
@@ -113,7 +113,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     { q: "Comment distingues-tu excavation et pâleur ?", a: "L’excavation se lit au relief, la pâleur à la couleur : une pâleur plus étendue que le creux oriente vers une compression ou une ischémie." },
     { q: "Quelle excavation doit faire penser à l’artérite ?", a: "Une excavation pâle après une perte visuelle aiguë à 50 ans ou plus : la NOIA artéritique laisse souvent une excavation, la non artéritique rarement." }
   ],
-  mnemonic: { title: "Les « 5 R » de la papille", text: "**R**ing (anneau scléral : taille du disque) → **R**im (bord neurorétinien : ISNT, couleur) → **R**NFL (défauts en coin) → **R**égion d’APP → **R**ouge (hémorragies). Puis : pâleur > excavation ?" },
+  mnemonic: { title: "Les 5 R de la papille", text: "**R**ing (taille) → **R**im (ISNT, couleur) → **R**NFL → **R**égion d’APP → **R**ouge (hémorragies)." },
   compare: {
     title: "Grande papille : physiologique ou glaucomateuse ?",
     normal: {
@@ -160,7 +160,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Lens-, IOL- and trauma-related glaucomas",
   tags: ["urgent", "highyield"],
   oneLiner: "PIO élevée avec cataracte avancée, implant ou trauma : trouver le mécanisme (angle fermé ou ouvert), baisser la PIO, traiter la cause.",
-  definition: "Le cristallin (gonflé, qui fuit, déplacé), un implant qui frotte l’iris ou un trauma (sang, récession de l’angle, gaz) fait monter la PIO. Le mécanisme dicte le traitement : baisser la PIO, puis retirer ou replacer la cause.",
+  definition: "Le cristallin (gonflé, qui fuit, déplacé), un implant qui frotte l’iris ou un trauma fait monter la PIO. On baisse la PIO, puis on retire ou replace la cause.",
   anatomy: {
     text: "Le cristallin est suspendu derrière l’iris par la zonule (zonules), fibres attachées au corps ciliaire ; il s’épaissit toute la vie et pousse l’iris vers l’avant. Sa capsule retient des protéines qui, libérées, bouchent le trabéculum ou déclenchent une inflammation. Le corps ciliaire est fragile au trauma : sa déchirure entre fibres longitudinales et circulaires donne la récession de l’angle.",
     figure: {
@@ -169,19 +169,19 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     }
   },
   causal: {
-    title: "Comment le cristallin, l’implant ou un coup font monter la PIO",
+    title: "Cristallin, implant, trauma : la PIO monte",
     steps: [
       { label: "Cristallin, implant ou trauma", detail: "Cataracte gonflée ou hypermûre, zonule faible (PXF, Marfan, trauma), implant mal placé, sang ou gaz.", kind: "cause" },
-      { label: "Angle fermé par poussée", detail: "Cristallin gonflé ou déplacé, ou gaz qui se dilate : l’iris est poussé en avant ou la pupille bloquée.", kind: "mecanisme" },
-      { label: "Angle ouvert mais bouché", detail: "Protéines et macrophages, fragments de cristallin, globules rouges, pigment d’un implant qui frotte obstruent le trabéculum.", kind: "mecanisme" },
+      { label: "Angle poussé, fermé", detail: "Cristallin gonflé ou déplacé, ou gaz qui se dilate : l’iris est poussé en avant ou la pupille bloquée.", kind: "mecanisme" },
+      { label: "Angle ouvert, bouché", detail: "Protéines et macrophages, fragments de cristallin, globules rouges, pigment d’un implant qui frotte obstruent le trabéculum.", kind: "mecanisme" },
       { label: "Angle cicatriciel", detail: "Après un trauma contusif, le trabéculum blessé cicatrise : glaucome des années plus tard.", kind: "lesion" },
-      { label: "PIO élevée, œil rouge", detail: "Souvent unilatéral ; brutal (fermeture, hyphéma) ou insidieux (récession, aphaquie).", kind: "signe" },
-      { label: "Nerf et cornée abîmés", detail: "Neuropathie optique, imbibition hématique, perte endothéliale ; nerf plus fragile en drépanocytose.", kind: "complication" }
+      { label: "PIO élevée", detail: "Souvent unilatéral ; brutal (fermeture, hyphéma) ou insidieux (récession, aphaquie).", kind: "signe" },
+      { label: "Nerf, cornée abîmés", detail: "Neuropathie optique, imbibition hématique, perte endothéliale ; nerf plus fragile en drépanocytose.", kind: "complication" }
     ],
     levers: [
       { at: 1, label: "Lever le blocage", detail: "LPI si bloc pupillaire, cycloplégique pour reculer un cristallin déplacé en avant, retrait partiel du gaz." },
       { at: 0, label: "Enlever la cause", detail: "Extraction du cristallin, lavage des fragments ou du sang, repositionnement ou échange de l’implant." },
-      { at: 2, label: "Hypotenseurs et stéroïde", detail: "Suppresseurs de l’aqueuse, stéroïde topique ; drépanocytose : éviter IAC (surtout oraux) et hyperosmotiques." },
+      { at: 2, label: "Hypotenseurs, stéroïde", detail: "Suppresseurs de l’aqueuse, stéroïde topique ; drépanocytose : éviter IAC (surtout oraux) et hyperosmotiques." },
       { at: 3, label: "Suivi à vie", detail: "Gonioscopie après tout trauma contusif ; PIO à vie si récession ou aphaquie de l’enfance." }
     ]
   },
@@ -282,7 +282,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     { q: "Pourquoi éviter l’acétazolamide en cas d’hyphéma et de drépanocytose ?", a: "Il acidifie l’aqueuse et favorise la falciformation : les globules rigides bouchent le trabéculum. On évite aussi les hyperosmotiques et on opère plus tôt." },
     { q: "Que dis-tu à un patient qui a du gaz dans l’œil ?", a: "Pas d’avion, d’altitude ni de protoxyde d’azote tant que le gaz n’est pas résorbé (plusieurs semaines ; plus long pour le C3F8 que pour le SF6) : la bulle grossirait et la PIO monterait brutalement." }
   ],
-  mnemonic: { title: "Cristallin : gros, qui fuit, en morceaux, déplacé", text: "**Gros** = glaucome phacomorphique (angle fermé) ; **fuit** = glaucome phacolytique (angle ouvert, capsule intacte) ; **morceaux** = particules après chirurgie ou trauma ; **déplacé** = subluxation ou luxation (bloc pupillaire). Toujours : PIO d’abord, cristallin ensuite." },
+  mnemonic: { title: "Gros, fuit, morceaux, déplacé", text: "**Gros** : phacomorphique ; **fuit** : phacolytique ; **morceaux** : particules ; **déplacé** : luxation." },
   compare: {
     title: "Angle normal vs récession de l’angle",
     normal: {

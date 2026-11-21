@@ -11,7 +11,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Childhood glaucoma, anterior segment dysgenesis and iridocorneal endothelial syndrome",
   tags: ["urgent", "highyield", "piege"],
   oneLiner: "Nourrisson qui larmoie, fuit la lumière et serre les paupières, cornée large ou trouble : glaucome congénital jusqu’à preuve du contraire.",
-  definition: "Ces glaucomes viennent d’un angle mal formé dès la naissance, d’une membrane anormale (syndrome ICE) ou d’une pression veineuse trop haute (Sturge-Weber). Avant ≈ 3 ans, la PIO élevée étire tout l’œil ; chez l’adulte, elle abîme le nerf sans agrandir le globe.",
+  definition: "Ces glaucomes viennent d’un angle mal formé, d’une membrane (ICE) ou d’une pression veineuse élevée (Sturge-Weber). Avant ≈ 3 ans, la PIO étire tout l’œil ; chez l’adulte, seulement le nerf souffre.",
   anatomy: {
     text: "L’angle se forme pendant la vie fœtale à partir de la crête neurale, qui donne le trabéculum (filtre spongieux), la ligne de Schwalbe (bord de la Descemet) et le stroma irien. Un arrêt de ce développement laisse un trabéculum immature ou des brides d’iris tendues jusqu’à Schwalbe.",
     figure: {
@@ -20,13 +20,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     }
   },
   causal: {
-    title: "De l’angle anormal aux dommages chez l’enfant",
+    title: "De l’angle anormal à l’œil abîmé",
     steps: [
       { label: "Angle mal formé ou recouvert", detail: "Trabéculodysgénésie (glaucome congénital primaire), brides d’Axenfeld-Rieger, membrane de l’ICE ou pression veineuse épisclérale haute (Sturge-Weber).", kind: "cause" },
-      { label: "Écoulement freiné, PIO élevée", detail: "L’humeur aqueuse sort mal : la pression monte.", kind: "mecanisme" },
+      { label: "PIO élevée", detail: "L’humeur aqueuse sort mal : la pression monte.", kind: "mecanisme" },
       { label: "Globe élastique étiré", detail: "Avant 3 ans environ : œil agrandi (buphtalmie), cornée large, myopie par allongement de l’œil.", kind: "lesion" },
       { label: "Descemet rompue, cornée œdémateuse", detail: "L’eau entre par les ruptures (stries de Haab) : cornée trouble, larmoiement, photophobie.", kind: "signe" },
-      { label: "Amblyopie et neuropathie optique", detail: "Cornée trouble et myopie empêchent le cerveau d’apprendre à voir ; la papille s’excave.", kind: "complication" }
+      { label: "Amblyopie, neuropathie optique", detail: "Cornée trouble et myopie empêchent le cerveau d’apprendre à voir ; la papille s’excave.", kind: "complication" }
     ],
     levers: [
       { at: 0, label: "Chirurgie de l’angle", detail: "Goniotomie ou trabéculotomie : ouvre le filtre immature ; traitement de base du glaucome congénital primaire." },
@@ -118,7 +118,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     { q: "Pourquoi pas de brimonidine chez le nourrisson ?", a: "Elle traverse la barrière hémato-encéphalique : somnolence, hypotonie, apnée, bradycardie. Contre-indiquée avant 2 ans ; prudence chez le petit enfant de faible poids." },
     { q: "Œdème cornéen et pupille déformée d’un seul côté chez une femme de 45 ans ?", a: "Syndrome ICE d’abord : unilatéral, acquis, non familial. Dystrophie polymorphe postérieure et Axenfeld-Rieger : bilatéraux, congénitaux, familiaux. La microscopie spéculaire tranche." }
   ],
-  mnemonic: { title: "ICE = ses 3 variantes", text: "**I**ris nevus (Cogan-Reese : nodules pigmentés sur l’iris) ; **C**handler (œdème cornéen au premier plan, iris peu touché) ; **E**ssential iris atrophy (atrophie essentielle : trous et corectopie). Nourrisson : **larmes, lumière, paupières serrées**." },
+  mnemonic: { title: "ICE : 3 variantes", text: "**I**ris nevus (Cogan-Reese : nodules) ; **C**handler (œdème cornéen) ; **E**ssential iris atrophy (trous, corectopie)." },
   compare: {
     title: "Angle normal vs synéchies antérieures périphériques",
     normal: {

@@ -414,7 +414,7 @@ Object.assign(G.OPH_EN.hy, {
   "c-bases": {
     essentials: [
       "Glaucoma is an **optic neuropathy**; IOP is its main modifiable risk factor.",
-      "**IOP = (F − U)/C + Pv**: through the trabecular pathway, IOP cannot fall below Pv.",
+      "**IOP = (F − U)/C + Pv**: via the meshwork, IOP cannot fall below Pv.",
       "Classify: **open or closed** angle (gonioscopy), then primary or secondary glaucoma.",
       "**Structure-function**: inferior RNFL thinning = superior field defect; the two must agree.",
       "Before escalating, check **adherence**: \"progression\" may hide a bottle that was never opened."
@@ -441,11 +441,11 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-gpao": {
     essentials: [
-      "**Painless** chronic optic neuropathy: peripheral field is lost silently, central vision last.",
+      "**Painless** optic neuropathy: peripheral field goes silently, central vision last.",
       "**Gonioscopy** at diagnosis: open angle = scleral spur visible over 360°, no synechiae.",
-      "The only proven lever is **IOP**: initial target ≈ 20–30 % below baseline, lower if advanced.",
-      "**SLT** is a valid first-line option: 69.8 % of eyes at target with no other treatment (LiGHT, 6 years).",
-      "Pallor > cupping, early VA ↓ or a defect respecting the vertical meridian: red flag, **MRI**."
+      "The only proven lever is **IOP**: target ≈ 20–30 % below baseline.",
+      "**SLT** first line: 69.8 % at target with no other treatment (LiGHT).",
+      "Pallor > cupping, early VA ↓, vertical defect: red flag, **MRI**."
     ],
     cloze: [
       "Inferior fibers lost: the field defect is [[superior]].",
@@ -468,11 +468,11 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-hto": {
     essentials: [
-      "**OHT** = IOP > 21 mmHg, open angle on gonioscopy, normal nerve and field: a risk, not a disease.",
-      "**OHTS**: lowering IOP by about 20 % → 5-year conversion 4.4 % vs 9.5 %.",
+      "**OHT**: IOP > 21, open angle, normal nerve and field; a risk, not a disease.",
+      "**OHTS**: IOP −20 % → 5-year conversion 4.4 % vs 9.5 %.",
       "**Thin cornea**: IOP is underestimated AND the risk of conversion rises.",
-      "Do not treat every OHT: estimate the **risk** (age, IOP, cornea, C/D, PSD) and decide together.",
-      "Treat if IOP **≥ 30 mmHg**, only eye or high risk: target ≈ 20 % below baseline."
+      "Do not treat every OHT: estimate the **risk** (age, IOP, cornea, C/D, PSD).",
+      "Treat if IOP **≥ 30 mmHg**, only eye or high risk: target −20 %."
     ],
     cloze: [
       "OHTS: a cornea ≤ 555 µm converts ≈ [[3 times|three times|3]] more often than a cornea > 588 µm.",
@@ -495,11 +495,11 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-gpn": {
     essentials: [
-      "**NTG**: open-angle glaucomatous neuropathy with IOP always ≤ 21 mmHg; a diagnosis of exclusion.",
-      "Before calling it NTG, rule out \"**PACI**\": missed IOP, intermittent angle closure, compression, old ischemia.",
-      "**MRI** if age < 50, pallor > cupping, VA or color vision ↓, or a defect respecting the vertical meridian.",
-      "**CNTGS**: lowering IOP by 30 % reduces progression (≈ 12 % vs 35 %, per protocol).",
-      "Early **paracentral** defects that the 24-2 grid can miss: add a 10-2 field."
+      "**NTG**: open-angle glaucomatous neuropathy, IOP always ≤ 21 mmHg; diagnosis of exclusion.",
+      "Before calling it NTG, rule out \"**PACI**\": missed IOP, intermittent closure, compression, ischemia.",
+      "**MRI** if < 50, pallor > cupping, VA or color vision ↓, vertical defect.",
+      "**CNTGS**: IOP −30 % → less progression (≈ 12 % vs 35 %, per protocol).",
+      "Early **paracentral** defects missed by the 24-2: add a 10-2."
     ],
     cloze: [
       "A classic of NTG, the [[Drance]] disc hemorrhage signals active progression.",
@@ -522,11 +522,11 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-papille": {
     essentials: [
-      "A large C/D is not a diagnosis: measure the **disc size** first.",
-      "**Pallor** more extensive than the cup: probable non-glaucomatous cause (compression, ischemia), MRI.",
-      "Defect respecting the **vertical** meridian: chiasm or visual pathways, MRI.",
-      "Pale cupping after acute vision loss at age ≥ 50: think **arteritic AION**, ESR and CRP.",
-      "A large disc does not protect against glaucoma: the **neuroretinal rim** is what counts."
+      "Large C/D ≠ diagnosis: **disc size** first.",
+      "**Pallor** > cup: probable non-glaucomatous cause, MRI.",
+      "Defect respecting the **vertical** meridian: chiasm, MRI.",
+      "Age ≥ 50, acute loss, pale disc: **arteritic AION**, ESR, CRP.",
+      "A large disc does not protect: the **neuroretinal rim** counts."
     ],
     cloze: [
       "A C/D of 0.7 can be normal in a [[large disc|large|big disc]] and suspicious in a small one.",
@@ -550,11 +550,11 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-fermeture": {
     essentials: [
-      "Classify on gonioscopy: **PACS** (contact ≥ 180°), PAC (PAS or IOP ↑), PACG (neuropathy).",
-      "**Dynamic gonioscopy** in a dark room, with a short beam, so as not to constrict the pupil.",
+      "Gonioscopy: **PACS** (contact ≥ 180°), PAC (PAS or IOP ↑), PACG (neuropathy).",
+      "**Dynamic gonioscopy** in a dark room, short beam: the pupil stays wide.",
       "**Indentation** opens an appositional angle, but not peripheral anterior synechiae (PAS).",
-      "**EAGLE**: PAC with IOP ≥ 30 mmHg or PACG, from age 50 → lens extraction, even a clear lens.",
-      "Acute bilateral myopia on **topiramate**: ciliochoroidal effusion, neither iridotomy nor pilocarpine."
+      "**EAGLE**: age ≥ 50, PAC with IOP ≥ 30 mmHg or PACG → lens extraction.",
+      "Acute bilateral myopia on **topiramate**: effusion; no iridotomy, no pilocarpine."
     ],
     cloze: [
       "At the slit lamp, a Van Herick ≤ [[2|grade 2]] mandates gonioscopy.",
@@ -579,10 +579,10 @@ Object.assign(G.OPH_EN.hy, {
   "g-crise": {
     essentials: [
       "Painful red eye, halos, hazy cornea, fixed **mid-dilated pupil**, very high IOP.",
-      "Lower IOP first: timolol, brimonidine or apraclonidine, dorzolamide and **acetazolamide 500 mg**.",
-      "**Pilocarpine** only after IOP has come down: before that, the ischemic sphincter does not respond.",
+      "Lower IOP first: timolol, brimonidine, dorzolamide, **acetazolamide 500 mg**.",
+      "**Pilocarpine** only once IOP is down (the sphincter is ischemic before).",
       "Pilocarpine **contraindicated** for a lens-induced cause, topiramate effusion or aqueous misdirection.",
-      "**LPI in both eyes**: without it, about half of fellow eyes have an attack within 5 years."
+      "**Bilateral LPI**: otherwise about half of fellow eyes have an attack within 5 years."
     ],
     cloze: [
       "IOP unchanged after 1 h of maximal therapy: IV [[mannitol]] and a call to the on-call ophthalmologist.",
@@ -605,11 +605,11 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-pxf": {
     essentials: [
-      "Whitish **target-pattern** deposits on the anterior capsule, often visible only after dilation.",
-      "**More aggressive** glaucoma than POAG: high, fluctuating IOP, lower target, earlier surgery.",
+      "Whitish **target-pattern** deposits on the capsule, often seen only after dilation.",
+      "**More aggressive** than POAG: high, fluctuating IOP, lower target.",
       "**Weak zonules** (phacodonesis, poor dilation): warn the cataract surgeon.",
       "Sudden vision loss years after cataract surgery: **in-the-bag IOL dislocation**.",
-      "**SLT** is often effective on this pigmented trabecular meshwork, but an IOP spike is more likely: check IOP afterward."
+      "**SLT** often works, but an IOP spike is more likely: recheck IOP."
     ],
     cloze: [
       "Pigment anterior to Schwalbe line on gonioscopy: [[Sampaolesi]] line.",
@@ -632,11 +632,11 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-pigmentaire": {
     essentials: [
-      "Young myopic man: **Krukenberg** spindle, iris transillumination defects and a heavily pigmented angle.",
-      "Mechanism: **reverse pupillary block**; the concave iris, rubbing against the zonules, sheds its pigment.",
-      "Halos and blurred vision after **exercise** or dilation: IOP spike from a pigment shower.",
-      "**Low-energy SLT**: the heavily pigmented meshwork absorbs more, hence a risk of IOP spike.",
-      "Before any **pilocarpine**, a dilated fundus exam: a myope with lattice is at risk of detachment."
+      "Young myopic man: **Krukenberg** spindle, iris defects, heavily pigmented angle.",
+      "**Reverse pupillary block**: the concave iris rubs the zonules and sheds pigment.",
+      "Halos after **exercise** or dilation: IOP spike from a pigment shower.",
+      "**Low-energy SLT**: heavily pigmented meshwork, risk of IOP spike.",
+      "Before **pilocarpine**, a dilated fundus exam: detachment risk in myopes."
     ],
     cloze: [
       "Siddiqui 2003: pigment dispersion progresses to glaucoma in ≈ [[10 %|10|10%]] of patients at 5 years.",
@@ -659,11 +659,11 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-neovasculaire": {
     essentials: [
-      "Ischemic retina → **VEGF** → new vessels on the iris and in the angle, which close off the filter.",
+      "Ischemic retina → **VEGF** → iris and angle new vessels that close the filter.",
       "\"**DCC**\" causes: diabetes, central retinal vein occlusion, carotid (ocular ischemic syndrome).",
-      "Examine the iris and angle **before dilation**, which hides new vessels at the pupillary margin.",
-      "**Anti-VEGF** = a rapid but temporary bridge; PRP durably removes the source of VEGF.",
-      "**No pilocarpine**: it inflames, promotes synechiae and does not open a fibrovascular angle."
+      "Check iris and angle **before dilation**, which hides pupillary-margin new vessels.",
+      "**Anti-VEGF** = rapid but temporary bridge; PRP treats the source.",
+      "**No pilocarpine**: it inflames and does not open a fibrovascular angle."
     ],
     cloze: [
       "\"90-day glaucoma\": look for NVI and NVA at every visit after an ischemic [[CRVO|central retinal vein occlusion]].",
@@ -686,7 +686,7 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-secondaires": {
     essentials: [
-      "IOP ↑ on steroids, quiet eye, open angle: **steroid response**; reduce or switch the steroid.",
+      "IOP ↑ on steroids, quiet eye, open angle: **steroid response**.",
       "Steroids less likely to raise IOP: **loteprednol**, fluorometholone; more likely: difluprednate, dexamethasone, prednisolone.",
       "As uveitis settles, the **ciliary body** resumes production: IOP ↑, not necessarily steroid-induced.",
       "**Iris bombé** (360° posterior synechiae): urgent iridotomy or iridectomy.",
@@ -713,11 +713,11 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-cristallin": {
     essentials: [
-      "Shallow chamber **in one eye only** + swollen cataract: phacomorphic; narrow in both eyes: primary angle closure.",
-      "**Phacolytic**: hypermature cataract, deep chamber, white particles, no KP; prompt extraction.",
-      "Always **IOP first**, lens second; no pilocarpine if the cause is lens-related.",
-      "Hyphema and **sickle cell disease**: avoid CAIs and hyperosmotics; washout if IOP ≥ 24 mmHg for more than 24 h.",
-      "**Angle recession**: glaucoma possible years after blunt trauma; IOP checks for life."
+      "Shallow chamber **in one eye only** + swollen cataract: phacomorphic.",
+      "**Phacolytic**: hypermature cataract, white particles, deep chamber.",
+      "**IOP first**; no pilocarpine for a lens cause.",
+      "Hyphema + **sickle cell**: no CAIs or hyperosmotics; washout if IOP ≥ 24 mmHg > 24 h.",
+      "**Angle recession**: late glaucoma possible; IOP checks for life."
     ],
     cloze: [
       "Pseudophakic eye with microhyphemas, IOP spikes and transillumination that outlines the IOL: [[UGH]] syndrome.",
@@ -741,11 +741,11 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-dev": {
     essentials: [
-      "Infant: **tearing, photophobia, blepharospasm** = congenital glaucoma until proven otherwise.",
-      "Corneal diameter **> 12 mm** before age 1: highly suspicious; compare both eyes.",
-      "**Brimonidine contraindicated under age 2**: somnolence, hypotonia, apnea from CNS depression.",
-      "Mainstay of treatment: **angle surgery** (goniotomy or trabeculotomy); drops serve as a bridge.",
-      "**ICE syndrome**: middle-aged woman, one eye, hammered-silver endothelium, high synechiae."
+      "Infant: **tearing, photophobia, blepharospasm** = congenital glaucoma.",
+      "Cornea **> 12 mm** before age 1: highly suspicious.",
+      "**Brimonidine contraindicated under age 2** (CNS depression).",
+      "Treatment: **angle surgery**; drops are a bridge.",
+      "**ICE**: middle-aged woman, one eye, hammered-silver endothelium."
     ],
     cloze: [
       "Haab striae: [[horizontal|horizontal or concentric|concentric]] breaks in Descemet; forceps breaks are vertical or oblique.",
@@ -768,11 +768,11 @@ Object.assign(G.OPH_EN.hy, {
 
   "g-postop": {
     essentials: [
-      "Read **IOP × chamber**: low + shallow, high + shallow or high + deep points to the diagnosis.",
+      "Read **IOP × chamber**: three combinations point to the diagnosis.",
       "**Low + shallow**: leak (positive Seidel), overfiltration or choroidal effusion.",
       "**High + shallow**: aqueous misdirection, suprachoroidal hemorrhage or pupillary block (occluded iridectomy).",
-      "**High + deep**: tight scleral flap, blocked ostium or encapsulated bleb; massage, suture lysis, needling.",
-      "White bleb in a painful red eye: **blebitis**, treat the same day."
+      "**High + deep**: tight flap, blocked ostium or encapsulated bleb.",
+      "White bleb, painful red eye: **blebitis**, same day."
     ],
     cloze: [
       "On [[Seidel]] testing, a bright green stream over the bleb indicates a leak.",

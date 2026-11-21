@@ -1230,25 +1230,25 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-papille": {
  "title": "The deceptive disc: glaucomatous cupping and its mimics",
  "oneLiner": "A high C/D is not a diagnosis: measure the disc, read the rim, look for the pallor that mandates an MRI.",
- "definition": "Glaucomatous cupping is loss of rim axons, mostly at the poles, while the remaining rim stays pink. Several discs mimic it (large disc, tilted disc, compression, ischemia, heredity, drusen), and some hide serious disease.",
+ "definition": "Glaucomatous cupping is loss of rim axons, mostly at the poles; the remaining rim stays pink. Large or tilted discs, compression, ischemia, heredity and drusen mimic it.",
  "anatomy": {
   "text": "The optic disc measures ≈ 1.5–2 mm, but its size varies widely while the axonal rim occupies a fairly similar area: large disc = large physiologic cup, small disc = almost no cup. The neuroretinal rim is normally thickest inferiorly, then superiorly, nasally and temporally (ISNT rule, imperfect). Macular fibers enter on the temporal side: hereditary, toxic or compressive damage makes them pale first."
  },
  "causal": {
-  "title": "From the suffering nerve to the disc you see",
+  "title": "From the nerve to the disc",
   "steps": [
    {
-    "label": "Insult to the axons",
+    "label": "Axons injured",
     "detail": "IOP and a fragile lamina cribrosa (glaucoma), or compression, ischemia, a gene, a toxin, a congenital anomaly.",
     "kind": "cause"
    },
    {
-    "label": "Glaucomatous loss at the poles",
+    "label": "Glaucoma: loss at the poles",
     "detail": "Axons disappear mainly superiorly and inferiorly, without marked gliosis: the cup enlarges, the remaining rim stays pink.",
     "kind": "mecanisme"
    },
    {
-    "label": "Nonglaucomatous loss: pallor",
+    "label": "Other cause: pallor",
     "detail": "Compression, ischemia or heredity leave gliosis: the rim turns pale before it cups.",
     "kind": "mecanisme"
    },
@@ -1482,8 +1482,8 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   }
  ],
  "mnemonic": {
-  "title": "The \"5 Rs\" of the disc",
-  "text": "**R**ing (scleral ring: disc size) → **R**im (neuroretinal rim: ISNT, color) → **R**NFL (wedge defects) → **R**egion of PPA → **R**ed (hemorrhages). Then: pallor > cupping?"
+  "title": "The 5 Rs of the disc",
+  "text": "**R**ing (size) → **R**im (ISNT, color) → **R**NFL → **R**egion of PPA → **R**ed (hemorrhages)."
  },
  "compare": {
   "title": "Large disc: physiologic or glaucomatous?",
@@ -3083,12 +3083,12 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-cristallin": {
  "title": "Lens-related, IOL-related and traumatic glaucomas",
  "oneLiner": "Elevated IOP with advanced cataract, an IOL or trauma: find the mechanism (closed or open angle), lower the IOP, treat the cause.",
- "definition": "The lens (swollen, leaking, displaced), an IOL rubbing the iris, or trauma (blood, angle recession, gas) raises IOP. The mechanism drives treatment: lower IOP, then remove or reposition the cause.",
+ "definition": "The lens (swollen, leaking, displaced), an IOL rubbing the iris, or trauma raises IOP. Lower IOP first, then remove or reposition the cause.",
  "anatomy": {
   "text": "The lens is suspended behind the iris by the zonules, fibers attached to the ciliary body; it thickens throughout life and pushes the iris forward. Its capsule holds in proteins which, once released, clog the trabecular meshwork or trigger inflammation. The ciliary body is vulnerable to trauma: a tear between its longitudinal and circular fibers produces angle recession."
  },
  "causal": {
-  "title": "How the lens, an IOL or a blow raises IOP",
+  "title": "Lens, IOL, trauma: IOP rises",
   "steps": [
    {
     "label": "Lens, IOL or trauma",
@@ -3096,12 +3096,12 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "kind": "cause"
    },
    {
-    "label": "Angle closed by a push",
+    "label": "Angle pushed shut",
     "detail": "Swollen or displaced lens, or expanding gas: the iris is pushed forward or the pupil is blocked.",
     "kind": "mecanisme"
    },
    {
-    "label": "Angle open but clogged",
+    "label": "Angle open, clogged",
     "detail": "Proteins and macrophages, lens fragments, red blood cells, pigment from a chafing IOL obstruct the trabecular meshwork.",
     "kind": "mecanisme"
    },
@@ -3111,12 +3111,12 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "kind": "lesion"
    },
    {
-    "label": "Elevated IOP, red eye",
+    "label": "Elevated IOP",
     "detail": "Often unilateral; abrupt (closure, hyphema) or insidious (recession, aphakia).",
     "kind": "signe"
    },
    {
-    "label": "Nerve and cornea damaged",
+    "label": "Nerve, cornea damaged",
     "detail": "Optic neuropathy, corneal blood staining, endothelial cell loss; nerve more vulnerable in sickle cell disease.",
     "kind": "complication"
    }
@@ -3134,7 +3134,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    },
    {
     "at": 2,
-    "label": "IOP-lowering agents and steroid",
+    "label": "IOP drops, steroid",
     "detail": "Aqueous suppressants, topical steroid; sickle cell disease: avoid CAIs (especially oral) and hyperosmotics."
    },
    {
@@ -3379,8 +3379,8 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   }
  ],
  "mnemonic": {
-  "title": "Lens: swollen, leaking, in pieces, displaced",
-  "text": "**Swollen** = phacomorphic glaucoma (closed angle); **leaking** = phacolytic glaucoma (open angle, intact capsule); **in pieces** = particles after surgery or trauma; **displaced** = subluxation or dislocation (pupillary block). Always: IOP first, lens second."
+  "title": "Swollen, leaking, in pieces, displaced",
+  "text": "**Swollen**: phacomorphic; **leaking**: phacolytic; **in pieces**: particles; **displaced**: dislocation."
  },
  "compare": {
   "title": "Normal angle vs angle recession",
@@ -3430,12 +3430,12 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-dev": {
  "title": "Childhood glaucomas, developmental anomalies and ICE syndrome",
  "oneLiner": "Infant with tearing, light avoidance and squeezed lids, large or hazy cornea: congenital glaucoma until proven otherwise.",
- "definition": "These glaucomas come from an angle malformed from birth, an abnormal membrane (ICE syndrome) or too-high venous pressure (Sturge-Weber). Before about age 3, raised IOP stretches the whole eye; in adults, it damages the nerve without enlarging the globe.",
+ "definition": "These glaucomas come from a malformed angle, a membrane (ICE) or high venous pressure (Sturge-Weber). Before about age 3, IOP stretches the whole eye; in adults, only the nerve suffers.",
  "anatomy": {
   "text": "The angle forms during fetal life from the neural crest, which gives rise to the trabecular meshwork (spongy filter), Schwalbe's line (the edge of Descemet's membrane) and the iris stroma. Arrested development leaves an immature trabecular meshwork or iris strands stretched up to Schwalbe's line."
  },
  "causal": {
-  "title": "From the abnormal angle to damage in the child",
+  "title": "From the abnormal angle to the damaged eye",
   "steps": [
    {
     "label": "Malformed or covered angle",
@@ -3443,7 +3443,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "kind": "cause"
    },
    {
-    "label": "Impeded outflow, elevated IOP",
+    "label": "Elevated IOP",
     "detail": "Aqueous humor drains poorly: pressure rises.",
     "kind": "mecanisme"
    },
@@ -3458,7 +3458,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "kind": "signe"
    },
    {
-    "label": "Amblyopia and optic neuropathy",
+    "label": "Amblyopia, optic neuropathy",
     "detail": "A hazy cornea and myopia prevent the brain from learning to see; the disc cups.",
     "kind": "complication"
    }
@@ -3698,8 +3698,8 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   }
  ],
  "mnemonic": {
-  "title": "ICE = its 3 variants",
-  "text": "**I**ris nevus (Cogan-Reese: pigmented nodules on the iris); **C**handler (corneal edema predominates, iris little affected); **E**ssential iris atrophy (holes and corectopia). Infant: **tearing, light sensitivity, squeezed lids**."
+  "title": "ICE: 3 variants",
+  "text": "**I**ris nevus (Cogan-Reese: nodules); **C**handler (corneal edema); **E**ssential iris atrophy (holes, corectopia)."
  },
  "compare": {
   "title": "Normal angle vs peripheral anterior synechiae",

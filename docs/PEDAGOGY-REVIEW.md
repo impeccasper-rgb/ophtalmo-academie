@@ -236,35 +236,36 @@ Pages EyeRounds (légendes, contexte) : tutoriel d’échographie oculaire; atla
 
 Périmètre : les 13 fiches du module C (data/fiches-glaucome.js, data/ext-glaucome-a.js, data/ext-glaucome-b.js) et leur surcouche data-en/fiches-glaucome.js (FR/EN synchronisés : mêmes longueurs et ordre de tableaux, `cont` copié ; 0 écart au contrôle). Modifications faites par script (fiche par fiche, objets re-sérialisés), `node tools/validate.js` → OK.
 
-**Comptage** : `node tools/wordcount-fiches.js C [--en] [--root=<arbre>]` compte les mots visibles au niveau « Fondamentaux » par écran, comme le rendu (ponctuation seule non comptée ; Décider inclut le bloc Traitement). Avant = HEAD 86349c4 (arbre extrait), après = arbre de travail.
+**Comptage** : `node tools/wordcount-fiches.js C [--en] [--root=<arbre>]` compte les mots visibles au niveau « Fondamentaux » par écran, comme le rendu (ponctuation seule non comptée ; Décider inclut le bloc Traitement). Avant = contenu d’avant ce cycle (arbre extrait de git ; contenu glaucome identique à l’origine), après = arbre de travail.
 
-| Fiche | oneLiner | Voir (≤ 60) | Comprendre (≤ 120) | Décider hors arbre (≤ 180) | Arbre | Total FR | Total EN | q max / oui-non max (≤ 8 / ≤ 12) | Drapeaux (≤ 3) |
-|---|---|---|---|---|---|---|---|---|---|
-| g-gpao | 19 → 19 | 72 → 58 | 123 → 123 | 136 → 121 | 83 → 75 | 447 → 410 | 424 → 396 | 10/15 → 6/9 | 3 → 3 |
-| g-hto | 18 → 18 | 74 → 59 | 128 → 128 | 105 → 95 | 80 → 70 | 418 → 383 | 397 → 367 | 13/15 → 8/11 | 3 → 3 |
-| g-gpn | 15 → 15 | 81 → 58 | 117 → 117 | 160 → 107 | 58 → 56 | 444 → 366 | 424 → 357 | 10/9 → 8/9 | 4 → 3 |
-| g-fermeture | 22 → 22 | 75 → 55 | 124 → 124 | 157 → 146 | 81 → 77 | 482 → 447 | 491 → 452 | 11/8 → 8/8 | 3 → 3 |
-| g-crise | 22 → 22 | 71 → 57 | 128 → 128 | 168 → 150 | 120 → 105 | 529 → 482 | 531 → 477 | 11/12 → 8/12 | 3 → 3 |
-| g-pxf | 21 → 21 | 81 → 52 | 123 → 123 | 150 → 128 | 86 → 80 | 478 → 421 | 444 → 393 | 7/15 → 7/10 | 3 → 3 |
-| g-pigmentaire | 19 → 19 | 69 → 53 | 124 → 124 | 141 → 109 | 84 → 76 | 464 → 408 | 440 → 375 | 8/15 → 7/9 | 3 → 3 |
-| g-neovasculaire | 20 → 20 | 82 → 59 | 126 → 126 | 150 → 123 | 102 → 92 | 494 → 434 | 472 → 419 | 8/10 → 6/9 | 3 → 3 |
-| g-secondaires | 20 → 20 | 78 → 49 | 123 → 123 | 160 → 150 | 95 → 86 | 500 → 452 | 477 → 430 | 8/13 → 8/10 | 3 → 3 |
-| g-postop | 20 → 20 | 78 → 58 | 128 → 128 | 192 → 131 | 109 → 67 | 553 → 430 | 544 → 410 | 6/22 → 6/11 | 4 → 3 |
-| g-dev | 20 → 20 | 24 → 24 | 193 → 175 | 137 → 134 | 92 → 82 | 496 → 465 | 471 → 440 | 9/12 → 6/11 | 4 → 3 |
-| g-papille | 19 → 19 | 26 → 26 | 190 → 172 | 99 → 121 | 66 → 61 | 418 → 417 | 410 → 409 | 9/8 → 7/8 | 5 → 3 |
-| g-cristallin | 21 → 21 | 21 → 21 | 206 → 189 | 124 → 144 | 70 → 70 | 469 → 472 | 474 → 474 | 5/11 → 5/10 | 5 → 3 |
-| **Total** | | | | | | 6192 → 5587 | 5999 → 5399 | | |
+| Fiche | oneLiner | Voir (≤ 60) | Comprendre (≤ 120) | Décider hors arbre (≤ 180) | Arbre | Total FR | Total EN | Comprendre EN | q max / oui-non max (≤ 8 / ≤ 12) | Drapeaux (≤ 3) | Essentiel max (mots) |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| g-gpao | 19 → 19 | 72 → 58 | 123 → 105 | 136 → 121 | 83 → 75 | 447 → 392 | 424 → 378 | 119 → 101 | 10/15 → 6/9 | 3 → 3 | 17 → 13 |
+| g-hto | 18 → 18 | 74 → 59 | 128 → 114 | 105 → 95 | 80 → 70 | 418 → 369 | 397 → 356 | 119 → 108 | 13/15 → 8/11 | 3 → 3 | 18 → 14 |
+| g-gpn | 15 → 15 | 81 → 58 | 117 → 105 | 160 → 107 | 58 → 56 | 444 → 354 | 424 → 342 | 116 → 101 | 10/9 → 8/9 | 4 → 3 | 16 → 12 |
+| g-fermeture | 22 → 22 | 75 → 55 | 124 → 115 | 157 → 146 | 81 → 77 | 482 → 438 | 491 → 439 | 129 → 116 | 11/8 → 8/8 | 3 → 3 | 16 → 13 |
+| g-crise | 22 → 22 | 71 → 57 | 128 → 116 | 168 → 150 | 120 → 105 | 529 → 470 | 531 → 467 | 127 → 117 | 11/12 → 8/12 | 3 → 3 | 18 → 13 |
+| g-pxf | 21 → 21 | 81 → 52 | 123 → 110 | 150 → 128 | 86 → 80 | 478 → 408 | 444 → 382 | 121 → 110 | 7/15 → 7/10 | 3 → 3 | 17 → 12 |
+| g-pigmentaire | 19 → 19 | 69 → 53 | 124 → 114 | 141 → 109 | 84 → 76 | 464 → 398 | 440 → 356 | 123 → 104 | 8/15 → 7/9 | 3 → 3 | 17 → 14 |
+| g-neovasculaire | 20 → 20 | 82 → 59 | 126 → 119 | 150 → 123 | 102 → 92 | 494 → 427 | 472 → 404 | 125 → 110 | 8/10 → 6/9 | 3 → 3 | 14 → 13 |
+| g-secondaires | 20 → 20 | 78 → 49 | 123 → 116 | 160 → 150 | 95 → 86 | 500 → 445 | 477 → 425 | 118 → 113 | 8/13 → 8/10 | 3 → 3 | 14 → 12 |
+| g-postop | 20 → 20 | 78 → 58 | 128 → 115 | 192 → 131 | 109 → 67 | 553 → 417 | 544 → 396 | 129 → 115 | 6/22 → 6/11 | 4 → 3 | 14 → 11 |
+| g-dev | 20 → 20 | 24 → 24 | 193 → 119 | 137 → 134 | 92 → 82 | 496 → 409 | 471 → 391 | 178 → 113 | 9/12 → 6/11 | 4 → 3 | 14 → 11 |
+| g-papille | 19 → 19 | 26 → 26 | 190 → 120 | 99 → 121 | 66 → 61 | 418 → 365 | 410 → 363 | 184 → 117 | 9/8 → 7/8 | 5 → 3 | 15 → 10 |
+| g-cristallin | 21 → 21 | 21 → 21 | 206 → 120 | 124 → 144 | 70 → 70 | 469 → 403 | 474 → 410 | 201 → 117 | 5/11 → 5/10 | 5 → 3 | 16 → 13 |
+| **Total** | | | | | | 6192 → 5295 | 5999 → 5109 | | | | |
 
 Ce qui a changé, par fiche :
 - **oneLiner** : déjà ≤ 2 phrases et ≤ 26 mots partout, inchangés.
-- **« En deux phrases »** (definition, affichée dans Voir) : réécrite en 2 phrases, 32–40 mots. Voir ≤ 60 partout (avant 69–82). Légende normale de g-gpao raccourcie (ISNT détaillée reste dans g-papille).
+- **« En deux phrases »** (definition, affichée dans Voir) : réécrite en 2 phrases, 32–40 mots (≤ 30 pour g-dev, g-papille, g-cristallin, affichées dans Comprendre). Voir ≤ 60 partout (avant 69–82). Légende normale de g-gpao raccourcie (ISNT détaillée reste dans g-papille).
 - **Arbre (cat.algo)** : chaîne propre, q ≤ 8 mots, oui/non ≤ 12 mots, `cont: 'yes'|'no'` sur chaque nœud sauf le dernier (lu par src/tree.js). Détails longs de g-postop (mal-direction, hémorragie, encapsulation, doses intravitréennes) déplacés en items de la phase « suivi » (niveau 2).
 - **Drapeaux rouges ≤ 3** : g-gpn (doublon de l’arbre supprimé) ; g-postop (tube exposé → présentation) ; g-papille (fusion pâleur/défaut vertical ; progression asymétrique → présentation) ; g-cristallin (resaignement/imbibition → phase suivi) ; g-dev (rupture de Descemet → présentation). g-crise : 3e drapeau raccourci, contre-indications détaillées dans la carte Acétazolamide.
 - **Traitement** : chaque traitement porte maintenant `dose` (nom générique + posologie usuelle ou modalités), `refer` (quand référer / urgence), `pitfall` (un piège), `qc` (seulement si utile). La fiche porte `treatment: {first, refer, pitfall, qc}` lu par `txBlock()` : 1re ligne = toutes les posologies ; Quand référer et Piège = les 1–2 lignes les plus décisives ; Au Québec = notes O-7 (optométristes), Nunavik, centres pédiatriques, électrophorèse à Montréal, priorité de l’IRM, RAMQ des MIGS « à vérifier ». Champs how/why/pros/cons/cx conservés.
 - **Doses employées** (adulte, standard ou FACTS.md) : latanoprost 0,005 % HS, bimatoprost 0,01 %, travoprost 0,004 %, timolol 0,5 % BID (0,25 % chez l’enfant), dorzolamide 2 % TID, brimonidine 0,2 % BID–TID, acétazolamide 500 mg PO/IV puis 250 mg PO QID, mannitol 20 % 1–2 g/kg IV, pilocarpine 1–2 %, prednisolone acétate 1 %, atropine 1 %, loteprednol 0,5 %, fluorométholone 0,1 %, bévacizumab 1,25 mg/0,05 mL, ranibizumab 0,5 mg, aflibercept 2 mg, vancomycine 1 mg/0,1 mL + ceftazidime 2,25 mg/0,1 mL, SLT 360° ≈ 100 impacts, PRP ≈ 1200–1600 impacts en 1–3 séances.
 
-Reste hors budget :
-- **Comprendre 117–189 mots** (plafond 120) : 5 essentiels de data/hy-glaucome.js à 14–18 mots (plafond 15), + mnémo, + chaîne causale ; pour g-dev, g-papille, g-cristallin (sans photo), la définition s’affiche aussi dans Comprendre. À faire : raccourcir les essentiels à ≤ 15 mots dans data/hy-glaucome.js et data-en/hy.js (fichier partagé, non touché ce cycle).
+- **Comprendre (2e passe)** : essentiels de data/hy-glaucome.js (clés g-* et c-bases) raccourcis à ≤ 14 mots (10–14), gras conservés, même changement dans data-en/hy.js pour ces clés seulement (édition par plage de texte des tableaux `essentials`, fichier relu juste avant l’écriture ; le reste du fichier, dont les clés cornée, inchangé). Pour g-dev, g-papille, g-cristallin (sans photo, définition affichée dans Comprendre) : définition ≤ 30 mots, mnémo raccourci (détails gardés dans les signes et la présentation), titres et libellés de la chaîne causale raccourcis (FR et EN, mêmes longueurs de tableaux). Comprendre ≤ 120 partout (FR 105–120, EN 101–117).
+
+Reste :
 - `txBlock()` remplace toute la liste des traitements par la grille de cartes : how/why/pros/cons/cx et les lignes refer/pitfall non retenues ne s’affichent plus à aucun niveau. Proposé au rôle web : liste en accordéon dans « Pour aller plus loin » (niveau 2), avec les champs par traitement.
 - tools/validate.js avertit « long fiche » pour g-postop, g-papille, g-cristallin, g-dev : il compte tout le texte de la fiche, y compris les cartes ajoutées et le niveau 2–3, pas ce qui est visible par défaut.
 

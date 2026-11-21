@@ -69,4 +69,5 @@ for(const lg of ['fr','en']){ const R=rows.filter(r=>r.lg===lg); console.log(lg,
 
 ## Cycle 7 — glaucome (fait)
 - 13 fiches C + surcouche EN : définitions en 2 phrases, arbres avec `cont`, drapeaux ≤ 3, cartes Traitement (`treatment` + `dose/refer/pitfall/qc` par traitement). Chiffres avant/après : docs/PEDAGOGY-REVIEW.md « Cycle 7 — glaucome ». Outil : tools/wordcount-fiches.js.
-- Reste : essentiels hy-glaucome ≤ 15 mots (Comprendre > 120) ; rendu des champs par traitement au niveau 2 (rôle web).
+- 2e passe : essentiels hy-glaucome (g-*, c-bases) ≤ 14 mots FR + EN (data-en/hy.js : seules ces clés) ; Comprendre ≤ 120 partout.
+- Reste : rendu des champs par traitement au niveau 2 (rôle web).

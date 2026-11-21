@@ -4,8 +4,8 @@ G.OPH.hy = G.OPH.hy || {};
 Object.assign(G.OPH.hy, {
   "c-bases": {
     essentials: [
-      "Le glaucome est une **neuropathie optique** ; la PIO en est le principal facteur de risque modifiable.",
-      "**PIO = (F − U)/C + Pv** : par la voie trabéculaire, la PIO ne peut descendre sous la Pv.",
+      "Le glaucome est une **neuropathie optique** ; la PIO, son principal facteur modifiable.",
+      "**PIO = (F − U)/C + Pv** : par le trabéculum, impossible de descendre sous Pv.",
       "Classer : angle **ouvert ou fermé** (gonioscopie), puis glaucome primaire ou secondaire.",
       "**Structure-fonction** : amincissement RNFL inférieur = défaut de champ supérieur ; les deux doivent concorder.",
       "Avant d’escalader, vérifier l’**observance** : une « progression » peut cacher un flacon jamais ouvert."
@@ -32,11 +32,11 @@ Object.assign(G.OPH.hy, {
 
   "g-gpao": {
     essentials: [
-      "Neuropathie optique chronique **indolore** : le champ périphérique se perd en silence, la vision centrale en dernier.",
+      "Neuropathie optique **indolore** : le champ périphérique part en silence, le central en dernier.",
       "**Gonioscopie** au diagnostic : angle ouvert = éperon scléral visible sur 360°, sans synéchies.",
-      "Seul levier prouvé, la **PIO** : cible de départ ≈ 20–30 % sous la base, plus basse si avancé.",
-      "**SLT** valable en première intention : 69,8 % des yeux à la cible sans autre traitement (LiGHT, 6 ans).",
-      "Pâleur > excavation, AV ↓ précoce ou défaut respectant le méridien vertical : drapeau rouge, **IRM**."
+      "Seul levier prouvé, la **PIO** : cible ≈ 20–30 % sous la base.",
+      "**SLT** en première intention : 69,8 % à la cible sans autre traitement (LiGHT).",
+      "Pâleur > excavation, AV ↓ précoce, défaut vertical : drapeau rouge, **IRM**."
     ],
     cloze: [
       "Fibres inférieures perdues : le défaut de champ est [[supérieur]].",
@@ -59,11 +59,11 @@ Object.assign(G.OPH.hy, {
 
   "g-hto": {
     essentials: [
-      "**HTO** = PIO > 21 mmHg, angle ouvert à la gonioscopie, nerf et champ normaux : un risque, pas une maladie.",
-      "**OHTS** : baisser la PIO d’environ 20 % → conversion à 5 ans 4,4 % vs 9,5 %.",
+      "**HTO** : PIO > 21, angle ouvert, nerf et champ normaux ; un risque, pas une maladie.",
+      "**OHTS** : PIO −20 % → conversion à 5 ans 4,4 % vs 9,5 %.",
       "**Cornée mince** : la PIO est sous-estimée ET le risque de conversion augmente.",
-      "Ne pas traiter tous les HTO : estimer le **risque** (âge, PIO, cornée, C/D, PSD) et décider ensemble.",
-      "Traiter si PIO **≥ 30 mmHg**, œil unique ou risque élevé : cible ≈ 20 % sous la base."
+      "Ne pas traiter tout HTO : estimer le **risque** (âge, PIO, cornée, C/D, PSD).",
+      "Traiter si PIO **≥ 30 mmHg**, œil unique ou risque élevé : cible −20 %."
     ],
     cloze: [
       "OHTS : une cornée ≤ 555 µm convertit ≈ [[3 fois|trois fois|3]] plus qu’une cornée > 588 µm.",
@@ -87,10 +87,10 @@ Object.assign(G.OPH.hy, {
   "g-gpn": {
     essentials: [
       "**GPN** : neuropathie glaucomateuse à angle ouvert, PIO toujours ≤ 21 mmHg ; diagnostic d’exclusion.",
-      "Avant de dire GPN, éliminer « **PACI** » : PIO manquée, angle intermittent, compression, ischémie ancienne.",
-      "**IRM** si âge < 50 ans, pâleur > excavation, AV ou couleurs ↓, ou défaut respectant le méridien vertical.",
-      "**CNTGS** : baisser la PIO de 30 % réduit la progression (≈ 12 % vs 35 %, per protocole).",
-      "Défauts **paracentraux** précoces, que la grille 24-2 peut manquer : ajouter un champ 10-2."
+      "Avant de dire GPN, éliminer « **PACI** » : PIO manquée, angle intermittent, compression, ischémie.",
+      "**IRM** si < 50 ans, pâleur > excavation, AV ou couleurs ↓, défaut vertical.",
+      "**CNTGS** : PIO −30 % → moins de progression (≈ 12 % vs 35 %, per protocole).",
+      "Défauts **paracentraux** précoces, manqués par le 24-2 : ajouter un 10-2."
     ],
     cloze: [
       "Classique du GPN, l’hémorragie papillaire de [[Drance]] signale une progression active.",
@@ -113,11 +113,11 @@ Object.assign(G.OPH.hy, {
 
   "g-papille": {
     essentials: [
-      "Un C/D élevé n’est pas un diagnostic : mesurer d’abord la **taille du disque**.",
-      "**Pâleur** plus étendue que le creux : cause non glaucomateuse probable (compression, ischémie), IRM.",
-      "Défaut qui respecte le méridien **vertical** : chiasma ou voies optiques, IRM.",
-      "Excavation pâle après perte visuelle aiguë à ≥ 50 ans : penser **NOIA artéritique**, VS et CRP.",
-      "Une grande papille ne protège pas du glaucome : c’est l’**anneau neurorétinien** qui compte."
+      "C/D élevé ≠ diagnostic : d’abord la **taille du disque**.",
+      "**Pâleur** > creux : cause non glaucomateuse probable, IRM.",
+      "Défaut respectant le méridien **vertical** : chiasma, IRM.",
+      "≥ 50 ans, perte aiguë, papille pâle : **NOIA artéritique**, VS, CRP.",
+      "Grande papille ne protège pas : l’**anneau neurorétinien** compte."
     ],
     cloze: [
       "Un C/D de 0,7 peut être normal dans un [[grand disque|grand]] et suspect dans un petit.",
@@ -141,11 +141,11 @@ Object.assign(G.OPH.hy, {
 
   "g-fermeture": {
     essentials: [
-      "Classer à la gonioscopie : **PACS** (contact ≥ 180°), PAC (PAS ou PIO ↑), PACG (neuropathie).",
-      "**Gonioscopie dynamique** en pièce sombre, petit faisceau, pour ne pas resserrer la pupille.",
+      "Gonioscopie : **PACS** (contact ≥ 180°), PAC (PAS ou PIO ↑), PACG (neuropathie).",
+      "**Gonioscopie dynamique** en pièce sombre, petit faisceau : la pupille reste large.",
       "L’**indentation** ouvre une apposition, mais pas les synéchies antérieures périphériques (PAS).",
-      "**EAGLE** : PAC à PIO ≥ 30 mmHg ou PACG, dès 50 ans → extraire le cristallin, même clair.",
-      "Myopie aiguë bilatérale sous **topiramate** : effusion ciliochoroïdienne, ni iridotomie ni pilocarpine."
+      "**EAGLE** : ≥ 50 ans, PAC à PIO ≥ 30 mmHg ou PACG → extraire le cristallin.",
+      "Myopie aiguë bilatérale sous **topiramate** : effusion ; ni iridotomie ni pilocarpine."
     ],
     cloze: [
       "À la lampe à fente, un Van Herick ≤ [[2|grade 2]] impose une gonioscopie.",
@@ -170,10 +170,10 @@ Object.assign(G.OPH.hy, {
   "g-crise": {
     essentials: [
       "Œil rouge douloureux, halos, cornée dépolie, **pupille mi-dilatée** fixe, PIO très haute.",
-      "Baisser la PIO d’abord : timolol, brimonidine ou apraclonidine, dorzolamide et **acétazolamide 500 mg**.",
-      "**Pilocarpine** seulement après la baisse de PIO : avant, le sphincter ischémique ne répond pas.",
+      "Baisser la PIO d’abord : timolol, brimonidine, dorzolamide, **acétazolamide 500 mg**.",
+      "**Pilocarpine** seulement après la baisse de PIO (sphincter ischémique avant).",
       "Pilocarpine **contre-indiquée** si cause cristallinienne, effusion au topiramate ou mal-direction.",
-      "**LPI des deux yeux** : sans elle, environ la moitié des yeux adelphes font une crise en 5 ans."
+      "**LPI bilatérale** : sinon ≈ la moitié des adelphes font une crise en 5 ans."
     ],
     cloze: [
       "PIO inchangée après 1 h de traitement maximal : [[mannitol]] IV et appel à l’ophtalmologiste de garde.",
@@ -196,11 +196,11 @@ Object.assign(G.OPH.hy, {
 
   "g-pxf": {
     essentials: [
-      "Dépôts blanchâtres **en cible** sur la capsule antérieure, souvent visibles seulement après dilatation.",
-      "Glaucome **plus agressif** que le GPAO : PIO haute et fluctuante, cible plus basse, chirurgie plus tôt.",
+      "Dépôts blanchâtres **en cible** sur la capsule, souvent visibles après dilatation seulement.",
+      "**Plus agressif** que le GPAO : PIO haute et fluctuante, cible plus basse.",
       "**Zonules fragiles** (phacodonésis, mauvaise dilatation) : prévenir le chirurgien de cataracte.",
-      "Baisse de vision brusque des années après la cataracte : **implant luxé** dans son sac.",
-      "**SLT** souvent efficace sur ce trabéculum pigmenté, mais pic de PIO plus probable : contrôler la PIO après."
+      "Vision ↓ brusque des années après la cataracte : **implant luxé** dans son sac.",
+      "**SLT** souvent efficace, mais pic de PIO plus probable : contrôler après."
     ],
     cloze: [
       "Pigment en avant de la ligne de Schwalbe à la gonioscopie : ligne de [[Sampaolesi]].",
@@ -224,10 +224,10 @@ Object.assign(G.OPH.hy, {
   "g-pigmentaire": {
     essentials: [
       "Jeune homme myope : fuseau de **Krukenberg**, fentes iriennes et angle très pigmenté.",
-      "Mécanisme : **bloc pupillaire inversé** ; l’iris concave, plaqué contre les zonules, perd son pigment.",
-      "Halos et vision floue après un **effort** ou une dilatation : pic de PIO par pluie de pigment.",
-      "**SLT à énergie basse** : le trabéculum très pigmenté absorbe plus, d’où un risque de pic de PIO.",
-      "Avant toute **pilocarpine**, fond d’œil dilaté : le myope à palissades risque un décollement."
+      "**Bloc pupillaire inversé** : l’iris concave frotte les zonules et perd son pigment.",
+      "Halos après un **effort** ou une dilatation : pic de PIO par pluie de pigment.",
+      "**SLT à énergie basse** : trabéculum très pigmenté, risque de pic de PIO.",
+      "Avant la **pilocarpine**, fond d’œil dilaté : risque de décollement chez le myope."
     ],
     cloze: [
       "Siddiqui 2003 : la dispersion pigmentaire évolue en glaucome chez ≈ [[10 %|10|10%]] des patients à 5 ans.",
@@ -252,9 +252,9 @@ Object.assign(G.OPH.hy, {
     essentials: [
       "Rétine ischémique → **VEGF** → néovaisseaux de l’iris et de l’angle, qui ferment le filtre.",
       "Causes « **DOC** » : diabète, occlusion de la veine centrale, carotide (syndrome ischémique oculaire).",
-      "Examiner l’iris et l’angle **avant la dilatation**, qui masque les néovaisseaux du bord pupillaire.",
-      "**Anti-VEGF** = pont rapide mais temporaire ; la PRP supprime durablement la source de VEGF.",
-      "**Pas de pilocarpine** : elle enflamme, favorise les synéchies et n’ouvre pas un angle fibrovasculaire."
+      "Iris et angle **avant la dilatation**, qui masque les néovaisseaux du bord pupillaire.",
+      "**Anti-VEGF** = pont rapide mais temporaire ; la PRP traite la source.",
+      "**Pas de pilocarpine** : elle enflamme et n’ouvre pas un angle fibrovasculaire."
     ],
     cloze: [
       "« Glaucome des 90 jours » : chercher NVI et NVA à chaque visite après une [[OVCR|occlusion de la veine centrale]] ischémique.",
@@ -277,9 +277,9 @@ Object.assign(G.OPH.hy, {
 
   "g-secondaires": {
     essentials: [
-      "PIO ↑ sous stéroïde, œil calme, angle ouvert : **réponse cortisonique** ; réduire ou changer le stéroïde.",
+      "PIO ↑ sous stéroïde, œil calme, angle ouvert : **réponse cortisonique**.",
       "Stéroïdes moins hypertensifs : **loteprednol**, fluorométholone ; plus hypertensifs : difluprednate, dexaméthasone, prednisolone.",
-      "Quand l’uvéite se calme, le **corps ciliaire** produit de nouveau : PIO ↑, pas forcément cortisonique.",
+      "Uvéite qui se calme : le **corps ciliaire** reproduit ; PIO ↑ pas forcément cortisonique.",
       "**Iris bombé** (synéchies postérieures sur 360°) : iridotomie ou iridectomie en urgence.",
       "**Jamais de pilocarpine** en uvéite ; gouttes qui ↓ la production en première ligne."
     ],
@@ -304,11 +304,11 @@ Object.assign(G.OPH.hy, {
 
   "g-cristallin": {
     essentials: [
-      "Chambre plate **d’un seul côté** + cataracte gonflée : phacomorphique ; étroite aux deux yeux : fermeture primaire.",
-      "**Phacolytique** : cataracte hypermûre, chambre profonde, particules blanches, pas de KP ; extraction rapide.",
-      "Toujours la **PIO d’abord**, le cristallin ensuite ; pas de pilocarpine si la cause est cristallinienne.",
-      "Hyphéma et **drépanocytose** : éviter IAC et hyperosmotiques ; lavage si PIO ≥ 24 mmHg plus de 24 h.",
-      "**Récession de l’angle** : glaucome possible des années après un trauma contusif ; PIO à vie."
+      "Chambre plate **d’un seul côté** + cataracte gonflée : phacomorphique.",
+      "**Phacolytique** : cataracte hypermûre, particules blanches, chambre profonde.",
+      "**PIO d’abord** ; pas de pilocarpine si cause cristallinienne.",
+      "Hyphéma + **drépanocytose** : ni IAC ni hyperosmotique ; lavage si PIO ≥ 24 mmHg > 24 h.",
+      "**Récession de l’angle** : glaucome tardif possible ; PIO à vie."
     ],
     cloze: [
       "Pseudophaque avec microhyphémas, pics de PIO et transillumination qui épouse l’implant : syndrome [[UGH]].",
@@ -332,11 +332,11 @@ Object.assign(G.OPH.hy, {
 
   "g-dev": {
     essentials: [
-      "Nourrisson : **larmoiement, photophobie, blépharospasme** = glaucome congénital jusqu’à preuve du contraire.",
-      "Diamètre cornéen **> 12 mm** avant 1 an : très suspect ; comparer les deux yeux.",
-      "**Brimonidine contre-indiquée avant 2 ans** : somnolence, hypotonie, apnée par dépression du système nerveux central.",
-      "Traitement de base : **chirurgie de l’angle** (goniotomie ou trabéculotomie) ; les gouttes servent de pont.",
-      "**Syndrome ICE** : femme d’âge moyen, un seul œil, endothélium en argent martelé, synéchies hautes."
+      "Nourrisson : **larmoiement, photophobie, blépharospasme** = glaucome congénital.",
+      "Cornée **> 12 mm** avant 1 an : très suspect.",
+      "**Brimonidine contre-indiquée avant 2 ans** (dépression du SNC).",
+      "Traitement : **chirurgie de l’angle** ; les gouttes servent de pont.",
+      "**ICE** : femme d’âge moyen, un seul œil, endothélium en argent martelé."
     ],
     cloze: [
       "Stries de Haab : ruptures de la Descemet [[horizontales|horizontales ou concentriques|concentriques]] ; celles des forceps sont verticales ou obliques.",
@@ -359,11 +359,11 @@ Object.assign(G.OPH.hy, {
 
   "g-postop": {
     essentials: [
-      "Lire **PIO × chambre** : basse + étroite, haute + étroite ou haute + profonde orientent le diagnostic.",
+      "Lire **PIO × chambre** : trois combinaisons orientent le diagnostic.",
       "**Basse + étroite** : fuite (Seidel positif), surfiltration ou effusion choroïdienne.",
       "**Haute + étroite** : mal-direction, hémorragie suprachoroïdienne ou bloc pupillaire (iridectomie bouchée).",
-      "**Haute + profonde** : volet serré, fistule bouchée ou bulle encapsulée ; massage, lyse de sutures, needling.",
-      "Bulle blanche dans un œil rouge douloureux : **infection de bulle**, traiter le jour même."
+      "**Haute + profonde** : volet serré, fistule bouchée ou bulle encapsulée.",
+      "Bulle blanche, œil rouge douloureux : **infection de bulle**, le jour même."
     ],
     cloze: [
       "Au test de [[Seidel]], un ruisseau vert vif sur la bulle signe une fuite.",
