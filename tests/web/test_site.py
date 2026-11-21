@@ -291,7 +291,7 @@ def run_flows(browser):
             assert ph.locator('.why').count() >= 2, 'per-option explanations missing'
             # hotspots inside the media box
             hs = page.evaluate("""() => { const m = document.querySelector('[data-invpractice] .inv-media-in'); if (!m) return null; const R = m.getBoundingClientRect();
-                return [...m.querySelectorAll('.reveal-hotspot, .hot, [class*=hotspot]')].map(h => { const r = h.getBoundingClientRect(); const cx = r.left + r.width / 2, cy = r.top + r.height / 2; return cx >= R.left - 2 && cx <= R.right + 2 && cy >= R.top - 2 && cy <= R.bottom + 2; }); }""")
+                return [...m.querySelectorAll('.inv-hot, .reveal-hotspot')].map(h => { const r = h.getBoundingClientRect(); const cx = r.left + r.width / 2, cy = r.top + r.height / 2; return cx >= R.left - 2 && cx <= R.right + 2 && cy >= R.top - 2 && cy <= R.bottom + 2; }); }""")
             if hs is not None and hs: assert all(hs), 'a hotspot centre falls outside the image box'
             page.reload(); page.wait_for_timeout(600)
             inv2 = (store(page) or {}).get('inv') or {}
@@ -334,7 +334,8 @@ def run_flows(browser):
             page.locator('[data-feat] [data-ip="ready"]').click(); page.wait_for_timeout(150)
             page.locator('[data-feat] .opt[data-k="%d"]' % item['answer']).click(); page.wait_for_timeout(400)
             assert page.locator('[data-feat] .feedback.ok').count() == 1, 'correct answer not marked ok'
-            nh = page.locator('[data-feat] .reveal-hotspot').count()
+            nh = page.locator('[data-feat] .inv-hot').count()
+            assert nh >= 1, 'no hotspot ring drawn after reveal on the featured case'
             go(page, 'accueil', 300)
             assert not page.evaluate("() => document.documentElement.classList.contains('focus-view')"), 'focus-view not removed after leaving'
             rec('flows', 'cas-vedette', True, 'item=%s hotspots=%d' % (item['id'], nh), combo)
@@ -426,7 +427,7 @@ def run_flows(browser):
             page.keyboard.press('1'); page.wait_for_timeout(300)
             assert host.locator('.feedback').count() == 1, 'key "1" did not answer'
             # finish the series to reach the score card
-            for _ in range(12):
+            for _ in range(40):
                 if host.locator('.scorecard').count(): break
                 if host.locator('[data-next]').count(): host.locator('[data-next]').click()
                 else: host.locator('.opt:not(.idk)').first.click()
@@ -541,6 +542,11 @@ def run_flows(browser):
 
         @flow('motion-toggle', combo)
         def f_motion(page, st):
+            # positive control: with motion on, the reveal rings animate
+            go(page, 'cas-vedette', 400)
+            page.locator('[data-feat] [data-ip="ready"]').click(); page.wait_for_timeout(100)
+            page.locator('[data-feat] .opt[data-k]:not(.idk)').first.click(); page.wait_for_timeout(100)
+            on = page.evaluate("() => [...document.querySelectorAll('.inv-hot i')].map(e => getComputedStyle(e).animationName).filter(a => a && a !== 'none').length")
             go(page, 'progression', 300)
             page.locator('#view [data-act="motion"][data-v="off"]').click(); page.wait_for_timeout(200)
             nm = page.evaluate("() => document.documentElement.classList.contains('no-motion')")
@@ -548,10 +554,10 @@ def run_flows(browser):
             go(page, 'cas-vedette', 400)
             page.locator('[data-feat] [data-ip="ready"]').click(); page.wait_for_timeout(100)
             page.locator('[data-feat] .opt[data-k]:not(.idk)').first.click(); page.wait_for_timeout(200)
-            anim = page.evaluate("() => [...document.querySelectorAll('.reveal-hotspot, .reveal-pulse, .ok-pop, .no-shake, .page-enter, #view > *')].map(e => getComputedStyle(e).animationName).filter(a => a && a !== 'none')")
+            anim = page.evaluate("() => [...document.querySelectorAll('.inv-hot i, .inv-hot b, .inv-hot em, .reveal-hotspot, .reveal-pulse, .ok-pop, .no-shake, .page-enter, #view > *')].map(e => getComputedStyle(e).animationName).filter(a => a && a !== 'none')")
             assert not anim, 'animations still running with motion off: %s' % anim[:5]
             go(page, 'progression', 300); page.locator('#view [data-act="motion"][data-v="on"]').click(); page.wait_for_timeout(150)
-            rec('flows', 'motion-toggle', True, '', combo)
+            rec('flows', 'motion-toggle', True, 'animated rings with motion on=%d, none with motion off' % on, combo)
         f_motion(page, st)
 
         ctx.close()

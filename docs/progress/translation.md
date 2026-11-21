@@ -3,30 +3,23 @@
 Owned files: `data-en/hy.js`, `data-en/quiz.js`, this file.
 Format: overlays per docs/PLATFORM.md i18n (`G.OPH_EN.hy[key]`, `G.OPH_EN.quiz[id]`, same field names, arrays replaced wholesale).
 
-## Done (2026-11-21)
-- **data-en/hy.js: 64 / 64 keys** (hy-cornee 15, hy-glaucome 14, hy-module-a 35). Complete.
+## Done (2026-11-21, cycles 1–3) — all owned files complete
+- **data-en/hy.js: 64 / 64 keys** (hy-cornee 15, hy-glaucome 14, hy-module-a 35).
   - Validated: every FR key has an EN entry; array lengths match for essentials/cloze/triage/cues; each cloze has exactly one `[[answer|synonyms]]` blank; triage `u` values identical to FR (urgent/rapide/routine); `**bold**` count per essential identical to FR.
-- **data-en/quiz.js: 132 / 190 items** (cycle 1: 67; cycle 2: +65).
-  - quiz-a 36/36, quiz-b 36/36, quiz-c 20/20, quiz-c2 18/18, quiz-photos 20/20: complete.
-  - ext-a5-a 2/9 (A-201, A-202 done), ext-a5-b 0/8, ext-cornee-a 0/8, ext-cornee-b 0/8, ext-glaucome-a 0/8, ext-glaucome-b 0/4, ext-photos 0/15 (ext-links.js has no quiz items).
-- **data-en/glossary.js: not started (0 / 353 terms).**
-  - Overlay carries only stem, options, explain, why. answer, type, level, topic, trap, figure stay from FR (not repeated).
+- **data-en/quiz.js: 190 / 190 items** (cycle 1: 67, cycle 2: +65, cycle 3: +58).
+  - quiz-a 36, quiz-b 36, quiz-c 20, quiz-c2 18, quiz-photos 20, ext-a5-a 9, ext-a5-b 8, ext-cornee-a 8, ext-cornee-b 8, ext-glaucome-a 8, ext-glaucome-b 4, ext-photos 15 (ext-links.js has no quiz items).
+  - Overlay carries only stem, options, explain, why. answer, type, level, topic, trap, figure stay from FR.
   - Validated: options/why lengths match FR, `**bold**` count in explain matches FR, no stray ids.
-  - Each batch is its own `Object.assign(G.OPH_EN.quiz, {...});` so the file stays loadable after every append.
+- **data-en/glossary.js: 353 / 353 terms** (capsules.js 182 + ext-a5-a/b, ext-cornee-a/b, ext-glaucome-a/b), format `{ "<frTerm>": { term, def } }`.
+  - Validated: no missing/extra keys; no two FR terms map to the same EN term (case-insensitive); no EN term equals another FR key (which src/i18n.js would overwrite). Simulated the i18n.js merge: 353 → 353 entries.
+  - Near-synonym pairs kept distinct on purpose: "intervalle lucide" → "lucid interval" / "intervalle clair" → "clear interval"; "imprégnation hématique" → "corneal blood staining" / "imbibition hématique" → "hematic imbibition of the cornea"; "UGH" / "syndrome UGH" → "UGH" / "UGH syndrome"; "indentation" → "indentation gonioscopy"; abbreviations and their spelled-out forms are separate entries (KP / keratic precipitates, PAS / peripheral anterior synechiae, SLT / selective laser trabeculoplasty, DPP → PPCD / posterior polymorphous corneal dystrophy, DPV → PVD / posterior vitreous detachment).
+- All files are picked up automatically by tools/build_web.py (glob of data-en/*.js). Working tree: /home/claude/ophtalmo-academie only.
 
 ## Remaining
-1. Quiz: 58 items, load-order index 132 → 189 (rest of ext-a5-a, then ext-a5-b, ext-cornee-a, ext-cornee-b, ext-glaucome-a, ext-glaucome-b, ext-photos).
-2. Glossary → data-en/glossary.js as `G.OPH_EN.glossary = Object.assign(G.OPH_EN.glossary || {}, { "<frTerm>": { term: "English term", def: "…" } })`.
-   - Source: `G.OPH.glossary` is a flat object {frTerm: defString}, built by data/capsules.js (182 terms) plus Object.assign blocks in ext-a5-a, ext-a5-b, ext-cornee-a, ext-cornee-b, ext-glaucome-a, ext-glaucome-b: 353 terms total, ~55 k chars.
-   - src/i18n.js merge: string value = def only; object {term, def} renames the key (deletes the FR key, inserts v.term). Duplicates after renaming (two FR terms → same EN term) would overwrite each other, so check for collisions.
-3. Optional proofreading pass by an English-speaking ophthalmologist on the terms below.
+- Nothing in scope. Optional: proofreading by an English-speaking ophthalmologist on the terms below.
 
-## How to resume
-- Dump FR items in load order (index a..b):
-  `node -e "global.window=undefined;var G=globalThis;G.OPH={};['quiz-a','quiz-b','quiz-c','quiz-c2','quiz-photos','ext-a5-a','ext-a5-b','ext-cornee-a','ext-cornee-b','ext-glaucome-a','ext-glaucome-b','ext-photos'].forEach(f=>require('/home/claude/ophtalmo/data/'+f+'.js'));G.OPH.quiz.slice(132,139).forEach(x=>console.log(JSON.stringify(x)))"`
-  (Note: ids are not in file order by number — quiz-c2 holds C-051…C-068, quiz-photos holds B-1xx/C-1xx/A-1xx, ext-a5-a starts with A-201. Always go by load-order index.)
-- Append a new `Object.assign(G.OPH_EN.quiz, {...});` block to data-en/quiz.js.
-- Check: `node -e "global.window=undefined;var G=globalThis;G.OPH={};G.OPH_EN={};require('/home/claude/ophtalmo/data-en/quiz.js');console.log(Object.keys(G.OPH_EN.quiz).length)"`
+## How to check
+`node -e "global.window=undefined;var G=globalThis;G.OPH={};G.OPH_EN={};['hy','quiz','glossary'].forEach(f=>require('/home/claude/ophtalmo-academie/data-en/'+f+'.js'));console.log(Object.keys(G.OPH_EN.hy).length,Object.keys(G.OPH_EN.quiz).length,Object.keys(G.OPH_EN.glossary).length)"` → 64 190 353
 
 ## Conventions used
 - "ton patron" → "your attending"; "externe" → "medical student"; second person kept ("you").
@@ -47,6 +40,8 @@ Format: overlays per docs/PLATFORM.md i18n (`G.OPH_EN.hy[key]`, `G.OPH_EN.quiz[i
 - "bloc pupillaire inversé" → "reverse pupillary block"; "phase éteinte" → "burnt-out phase".
 - "signe du drapeau argentin" → "Argentinian flag sign".
 - "mal-direction" → "aqueous misdirection" (cloze synonyms include "malignant glaucoma").
+- Glossary acronyms switched to EN forms as keys' display terms: GPAO→POAG, GPN→NTG, HTO→OHT, APP→PPA, IAC→CAI, OVCR→CRVO, OACR→CRAO, OBAR→BRAO, OBVR→BRVO, DMLA→AMD, CRSC→CSCR, DPAR→RAPD, NOIA→AION, PKR→PRK, KLS→SLK, TAAN→NAAT, ITSS→STBBI, AINS→NSAIDs, PIO→IOP.
+- B-214: MADO kept as "reportable disease (MADO)"; "guide québécois" → "the Québec guide".
 - "cellules/mm²" rendered "cells/mm²"; "pression de gonflement" → "swelling pressure".
 - B-025: "Îles-de-la-Madeleine", B-009 "Montérégie", C-007 "Laval", C-012 "Nunavik" kept as place names.
 - C-007: "Règlement O-7, r. 11.1" rendered "Regulation O-7, r. 11.1" (Québec optometry prescribing regulation); content paraphrased faithfully, not checked against the regulation text.
