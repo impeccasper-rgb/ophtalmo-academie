@@ -61,7 +61,7 @@ What the `simulator` job does (about 25–40 min):
 5. `run_selftest.py --family iphone --video`: picks the newest iPhone simulator (Pro Max first) and launches the app **in French**
    (`-AppleLanguages (fr)`).
    - **Pass 1 (verdict):** follows the logs and takes a screenshot each time the walk asks (`SELFTEST SHOT`). The walk waits
-     for each screenshot, and there is also one every 20 s while idle. At the end it takes a light and a dark screenshot.
+     for each screenshot. While the walk is silent (WebView boot, a stall) it also takes one every 30 s. At the end it takes a light and a dark screenshot.
    - **Pass 2 (iPhone only, evidence):** relaunches the app and records a video of a second walk. Pass 2 never changes the verdict.
 6. Same pass 1 on an iPad (Pro 13-inch first).
 7. Uploads the artifact `ios-selftest-<run number>` (full-size PNG) and force-pushes the branch **`ios-evidence`**
@@ -142,6 +142,13 @@ Notes:
 - After a programmatic jump-scroll the GPU-less simulator can paint late, so a screenshot taken right away can be blank
   (seen once, `05-fiche-mid` on iPhone; the video shows the same screen rendered fine). The walk now waits two
   animation frames plus 1.2 s before each screenshot.
+- Run 2 ([44936086879](https://github.com/impeccasper-rgb/ophtalmo-academie/actions/runs/44936086879)) failed on the
+  iPhone at `lang-en`. This was a bug in the test, not in the app. A periodic screenshot hung for 45 s plus the retry, so the
+  `03-home-en` screenshot waited behind it, and the step timer only subtracted screenshot waits once the ack had arrived.
+  The iPad passed 9/9, and so did the iPhone's own video pass. Fixed: waits are now subtracted while they happen, the ack
+  wait is 200 s, and periodic screenshots are only taken while the walk is silent (WebView boot or a stall), so they never
+  compete with step screenshots.
+  Checked in headless Chrome with one screenshot artificially delayed by 100 s: 9/9.
 - Since run 2, the Debug log channel uses `os.Logger` instead of `NSLog`. NSLog also wrote to stderr, which mixed into
   the console capture (merged lines, and a few screenshots saved as `name<date>.png`). The runner also splits merged lines.
 Run locally: `node ios/scripts/overlay.mjs <copy of site> --selftest`, open it in a browser, and read the console.

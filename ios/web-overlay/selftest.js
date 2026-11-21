@@ -16,7 +16,7 @@
 (function () {
   'use strict';
   var KEY = 'oph-selftest', STEP_TIMEOUT = 90000, F = 3; // F scales every UI wait for slow simulators
-  var ackMode = false, extra = 0; // extra = time spent waiting for screenshots (not counted against a step's timeout)
+  var ackMode = false, extra = 0, waitStart = 0; // time spent waiting for screenshots is not counted against a step's timeout
 
   function out(line) {
     line = 'SELFTEST ' + line;
@@ -80,10 +80,15 @@
     out('SHOT ' + name);
     var t = Date.now();
     if (!ackMode) return sleep(2000);
+    waitStart = t;
     return new Promise(function (resolve) {
       (function poll() {
         fetchOk('__acks/' + name + '.txt').then(function (ok) {
-          if (ok || Date.now() - t > 100000) { extra += Date.now() - t; if (!ok) out('WARN shot no screenshot ack for ' + name); return resolve(); }
+          if (ok || Date.now() - t > 200000) {
+            extra += Date.now() - t; waitStart = 0;
+            if (!ok) out('WARN shot no screenshot ack for ' + name);
+            return resolve();
+          }
           setTimeout(poll, 400);
         });
       })();
@@ -295,7 +300,8 @@
     var start = Date.now(), base = extra, limit = STEP_TIMEOUT + (name === 'boot' ? 60000 : 0) + (name === 'inv-pages' ? 60000 : 0);
     return new Promise(function (resolve, reject) {
       var timer = setInterval(function () {
-        if (Date.now() - start - (extra - base) > limit) { clearInterval(timer); reject(new Error('step timed out after ' + Math.round(limit / 1000) + ' s (screenshot waits excluded)')); }
+        var waited = extra - base + (waitStart ? Date.now() - waitStart : 0); // counted live, not only once the ack arrives
+        if (Date.now() - start - waited > limit) { clearInterval(timer); reject(new Error('step timed out after ' + Math.round(limit / 1000) + ' s (screenshot waits excluded)')); }
       }, 500);
       Promise.resolve().then(function () { return fn(st); }).then(function (v) { clearInterval(timer); resolve(v); }, function (e) { clearInterval(timer); reject(e); });
     });

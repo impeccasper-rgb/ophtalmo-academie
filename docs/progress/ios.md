@@ -22,6 +22,10 @@
 - Evidence polish after that run: os.Logger instead of NSLog (merged console lines and `name<date>.png` duplicates); waits
   for paint before each screenshot (one blank `05-fiche-mid` on iPhone); a late screenshot from a killed attempt counts.
 
+- Run 44936086879 (commit 34ea901): iPad 9/9; iPhone failed at `lang-en` because of a test-timer bug (a screenshot
+  wait was only subtracted once the ack arrived, and a hung periodic screenshot sat in front). Fixed: live accounting, ack wait 200 s,
+  periodic screenshots only while the walk is silent. Checked with a screenshot delayed by 100 s in headless Chrome: 9/9.
+
 ## Remaining / for others
 - **Web:** fonts are remote (Google Fonts); offline the app falls back to system fonts. Self-host them to be fully offline. Hide web-only UI under `html.native`.
 - **User:** Apple Developer account (legal name), final bundle ID (`set_brand.py --app-id`), API key and GitHub secrets, privacy policy URL, physician review (1.4.1).

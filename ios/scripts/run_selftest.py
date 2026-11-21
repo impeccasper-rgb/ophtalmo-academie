@@ -96,7 +96,7 @@ class Shooter(threading.Thread):
             path = os.path.join(self.dir, re.sub(r'[^\w.-]+', '_', name) + '.png')
             done = False
             if not self.disabled:
-                for attempt, to in enumerate((45, 30)):
+                for attempt, to in enumerate((40, 30)):
                     r = simctl('io', self.udid, 'screenshot', path, timeout=to, quiet=attempt == 0 and not name.startswith('t'))
                     if r.returncode == 0 and os.path.exists(path):
                         done = True; break
@@ -208,9 +208,10 @@ def main():
     def follow(follower, timeout, on_shot):
         """Returns (done_line, crash_reason, lines)."""
         t_start, last_periodic, detached, lines = time.time(), time.time(), False, []
+        last_line = time.time()
         while True:
             for src, line in follower.poll():
-                lines.append(line)
+                lines.append(line); last_line = time.time()
                 events.append({'t': round(time.time() - started, 1), 'pass': follower.name, 'src': src, 'line': line})
                 log(('%s ' % follower.name) + line)
                 m = re.match(r'SELFTEST SHOT ([A-Za-z0-9_.-]+?)(?=\d{4}-\d\d-\d\d|\s|$)', line)
@@ -219,7 +220,8 @@ def main():
                 if re.match(r'SELFTEST (PASS|FAIL) done\b', line):
                     return line, None, lines
             now = time.time()
-            if on_shot and shooter and now - last_periodic >= 20 and shooter.q.empty() and not shooter.busy:
+            # periodic screenshots only while the walk is silent (WebView boot, a stall): never compete with step shots
+            if on_shot and shooter and now - last_line >= 25 and now - last_periodic >= 30 and shooter.q.empty() and not shooter.busy:
                 shooter.shot('t%03d' % int(now - started)); last_periodic = now
             if procs['app'].poll() is not None and not detached:
                 if app_running():
