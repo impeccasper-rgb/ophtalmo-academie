@@ -43,3 +43,11 @@
 - web : `Shell.invRoutes()` (core.js) ne contient pas `cas-images` ni `cas-images/<id>` : l’onglet Investigations n’est pas surligné sur ces pages.
 - Aucune image IMG3 n’est encore utilisée dans invMedia / imageCasesMedia : crédit vérifié par injection de test seulement.
 - Les clés `inv.ic.*` (≈ 30) ne sont pas dans src/i18n.js : textes par défaut FR/EN fournis par `S()`, liste dans `Inv.keys`.
+
+## Cycle 4 (2026-11-21) — accessibilité (TEST-REPORT D3, D6, D10, D12)
+- Média de pratique : plus de `role="img"` sur le conteneur; nom accessible sur `<img alt>` ou sur le `<svg>` racine (`role="img"` + `aria-label` neutre avant la réponse, `media.alt` après; `<title>` interne retiré). Bouton « Agrandir » hors de tout `role="img"`.
+- OCT (Explorer/Étiqueter) et fond d’œil : SVG en `role="group"`, couches/zones = boutons focusables nommés (nom réel en Explorer, « Couche n » en quiz), Entrée/Espace. Mode « Étiqueter » : boutons numérotés 1–11 (36 px) équivalents aux bandes fines. Cible fovéa agrandie.
+- Après « Je suis prêt » au pointeur, le focus va sur le groupe d’options (plus d’option 1 qui paraît présélectionnée sur iOS).
+- `#cas-images` : liste paginée 12 par 12 (« Afficher plus », focus sur la 1re nouvelle carte), compteur, focus conservé sur les filtres.
+- Titres des panneaux d’info : h4 → h3 (axe heading-order).
+- Tests : `test_site.py --quick --only flows,axe` 44/44, axe 0 violation; axe en plus sur #cas-images (liste, réponse, révélation), OCT explorer/étiqueter/liquide, fond d’œil, B-scan, CV : 0 violation.

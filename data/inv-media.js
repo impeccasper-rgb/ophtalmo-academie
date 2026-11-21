@@ -361,7 +361,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     }
    },
    {
-    "x": 43,
+    "x": 44.5,
     "y": 26,
     "r": 5,
     "label": {
@@ -512,16 +512,16 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
  },
  "m-ascan-5": {
   "kind": "svg",
-  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Biométrie des deux yeux · Biometry, both eyes</text><rect x=\"40\" y=\"50\" width=\"140\" height=\"120\" rx=\"8\" fill=\"#ffffff\" stroke=\"#c9c4b8\"/><rect x=\"220\" y=\"50\" width=\"140\" height=\"120\" rx=\"8\" fill=\"#ffffff\" stroke=\"#c9c4b8\"/><text x=\"110\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2a26\">OD</text><text x=\"290\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2a26\">OG · OS</text><text x=\"110\" y=\"112\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5c5850\">Longueur axiale</text><text x=\"290\" y=\"112\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5c5850\">Axial length</text><text x=\"110\" y=\"145\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"700\" fill=\"#1f6f8b\">23,42 mm</text><text x=\"290\" y=\"145\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"700\" fill=\"#1f6f8b\">24,31 mm</text><text x=\"200\" y=\"205\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#c0392b\">Δ = 0,89 mm</text><text x=\"200\" y=\"228\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">réfraction semblable aux deux yeux · similar refraction in both eyes</text><text x=\"200\" y=\"250\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5c5850\">écart &gt; 0,3 mm inexpliqué → remesurer</text><text x=\"200\" y=\"264\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5c5850\">unexplained difference &gt; 0.3 mm → remeasure</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
+  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Biométrie des deux yeux · Biometry, both eyes</text><rect x=\"40\" y=\"50\" width=\"140\" height=\"120\" rx=\"8\" fill=\"#ffffff\" stroke=\"#c9c4b8\"/><rect x=\"220\" y=\"50\" width=\"140\" height=\"120\" rx=\"8\" fill=\"#ffffff\" stroke=\"#c9c4b8\"/><text x=\"110\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2a26\">OD</text><text x=\"290\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" fill=\"#2b2a26\">OG · OS</text><text x=\"110\" y=\"112\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5c5850\">Longueur axiale</text><text x=\"290\" y=\"112\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5c5850\">Axial length</text><text x=\"110\" y=\"145\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"700\" fill=\"#1f6f8b\">23,42 mm</text><text x=\"290\" y=\"145\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"700\" fill=\"#1f6f8b\">24,31 mm</text><text x=\"200\" y=\"205\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#c0392b\">Δ = 0,89 mm</text><text x=\"200\" y=\"228\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">réfraction semblable aux deux yeux · similar refraction in both eyes</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
   "alt": {
    "fr": "Schéma : longueurs axiales des deux yeux (23,42 et 24,31 mm), écart de 0,89 mm.",
    "en": "Schematic: axial lengths of both eyes (23.42 and 24.31 mm), difference 0.89 mm."
   },
   "hotspots": [
    {
-    "x": 50,
-    "y": 68,
-    "r": 9,
+    "x": 68,
+    "y": 67,
+    "r": 5,
     "label": {
      "fr": "Écart interoculaire 0,89 mm sans anisométropie → erreur de mesure probable",
      "en": "Inter-eye difference 0.89 mm without anisometropia → probable measurement error"
@@ -529,18 +529,18 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "decisive": true
    },
    {
-    "x": 27.5,
-    "y": 48,
-    "r": 8,
+    "x": 43,
+    "y": 46,
+    "r": 4,
     "label": {
      "fr": "OD 23,42 mm",
      "en": "OD 23.42 mm"
     }
    },
    {
-    "x": 72.5,
-    "y": 48,
-    "r": 8,
+    "x": 89.5,
+    "y": 46,
+    "r": 4,
     "label": {
      "fr": "OG 24,31 mm",
      "en": "OS 24.31 mm"
