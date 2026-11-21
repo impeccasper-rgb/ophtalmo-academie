@@ -58,12 +58,12 @@ API PubMed/PMC (licences + texte intégral) ; recherche web restreinte à common
   - auteur Commons de repli (uploader).
 - `.github/workflows/media.yml` se déclenche aussi sur un push de `build_media3.py`.
 - `imgsrc3/sources.json` : 45 entrées. 13 retirées : CEHJ 2021, en réalité **NC**. Plus IMG3-037 (filigrane EyeRounds) et IMG3-038 (116 px). Les légendes Commons sont réécrites d’après la description source lue au build; IMG3-023 est la **machine** Humphrey, pas un rapport.
-- **`data/cases-open.js`** : 33 cas `oc-01…oc-33` (`G.OPH.openCases`, même schéma que `imageCases`), médias `mo-xx` fusionnés dans `G.OPH.invMedia` (`photo: 'IMG3-xxx'`, crédit auteur + licence + source).
-  - Ajoutés à `G.OPH.imageCases` sans doublon : 68 cas au total dans #cas-images.
+- **`data/cases-open.js`** : 35 cas `oc-01…oc-35` (`G.OPH.openCases`, même schéma que `imageCases`), médias `mo-xx` fusionnés dans `G.OPH.invMedia` (`photo: 'IMG3-xxx'`, crédit auteur + licence + source).
+  - Ajoutés à `G.OPH.imageCases` sans doublon : 70 cas au total dans #cas-images.
   - `tools/build.py` liste `cases-open` après `cases-images`.
   - Hotspots placés après visualisation de chaque image et contrôlés sur une planche de superposition.
   - Générateurs : `imgsrc3/gen/gen_cases_open.py` (+ `cases_open_pmc.py`), à relancer après un build qui change le catalogue.
-- Répartition des 33 cas : général 22 (12 Commons + 10 PMC : B-scan, OCT, scanner), cornée 5, glaucome 6 (4 Commons + 2 PMC).
+- Répartition des 35 cas : général 24 (12 Commons + 12 PMC : B-scan, OCT, scanner, sidérose), cornée 5, glaucome 6 (4 Commons + 2 PMC). Build final : 45/45 images publiées (run 44944112560).
 
 ## Manques encore ouverts
 - Gonioscopie : aucune photo libre d’angle **fermé**. L’angle normal n’est couvert que par IMG3-056 (pigment visible, structures non légendées par la source) et par l’angle ouvert hyperpigmenté d’IMG3-004.

@@ -1720,6 +1720,110 @@ G.OPH.openCases = [
    "en": "Rim-enhancing collection lateral to the right globe: orbital abscess."
   },
   "open": true
+ },
+ {
+  "id": "oc-34",
+  "topic": "general",
+  "media": "mo-34",
+  "level": 2,
+  "q": {
+   "fr": "Homme de 20 ans, baisse lente de la vision de l’œil droit depuis 6 mois. Il martelait du métal sans lunettes il y a quelques mois. A : œil droit, B : œil gauche. Diagnostic?",
+   "en": "20-year-old man, slow visual loss in the right eye over 6 months. He hammered metal without eye protection months ago. A: right eye, B: left eye. Diagnosis?"
+  },
+  "options": [
+   {
+    "fr": "Sidérose sur corps étranger intraoculaire",
+    "en": "Siderosis from an intraocular foreign body"
+   },
+   {
+    "fr": "Cataracte congénitale",
+    "en": "Congenital cataract"
+   },
+   {
+    "fr": "Hétérochromie congénitale isolée",
+    "en": "Isolated congenital heterochromia"
+   },
+   {
+    "fr": "Glaucome pigmentaire",
+    "en": "Pigmentary glaucoma"
+   }
+  ],
+  "answer": 0,
+  "why": [
+   {
+    "fr": "Juste (légende source) : hétérochromie irienne (flèche noire), cicatrice cornéenne et cataracte dense (flèche rouge). Le B-scan était non concluant; le scanner (pas d’IRM devant un métal possible) a confirmé le corps étranger.",
+    "en": "Correct (source legend): iris heterochromia (black arrow), corneal scar and dense cataract (red arrow). B-scan was inconclusive; CT (not MRI when metal is possible) confirmed the foreign body."
+   },
+   {
+    "fr": "Une cataracte unilatérale acquise chez un jeune doit faire chercher un traumatisme.",
+    "en": "An acquired unilateral cataract in a young person should prompt a search for trauma."
+   },
+   {
+    "fr": "L’hétérochromie est ici acquise, avec cataracte et cicatrice cornéenne du même côté.",
+    "en": "The heterochromia here is acquired, with cataract and a corneal scar on the same side."
+   },
+   {
+    "fr": "Rien n’évoque une dispersion pigmentaire; le contexte est traumatique.",
+    "en": "Nothing suggests pigment dispersion; the context is traumatic."
+   }
+  ],
+  "reveal": {
+   "fr": "Hétérochromie acquise + cataracte unilatérale après martelage : sidérose, chercher un corps étranger (scanner).",
+   "en": "Acquired heterochromia + unilateral cataract after hammering: siderosis, look for a foreign body (CT)."
+  },
+  "open": true
+ },
+ {
+  "id": "oc-35",
+  "topic": "general",
+  "media": "mo-35",
+  "level": 3,
+  "q": {
+   "fr": "Femme de 52 ans, diabétique, cataractes opérées. Œil droit rouge et douloureux depuis 7 jours, vision perdue, chémosis, exophtalmie, fièvre; PIO 40 mmHg. Échographie (A–D). Que signent les débris marqués d’une étoile en B?",
+   "en": "52-year-old diabetic woman, prior cataract surgery. Red, painful right eye for 7 days, vision lost, chemosis, proptosis, fever; IOP 40 mmHg. Ultrasound (A–D). What do the starred debris in B indicate?"
+  },
+  "options": [
+   {
+    "fr": "Une endophtalmie (débris purulents cloisonnés dans le vitré)",
+    "en": "Endophthalmitis (loculated purulent debris in the vitreous)"
+   },
+   {
+    "fr": "Une hémorragie du vitré",
+    "en": "A vitreous haemorrhage"
+   },
+   {
+    "fr": "Une hyalite astéroïde",
+    "en": "Asteroid hyalosis"
+   },
+   {
+    "fr": "Un décollement de rétine",
+    "en": "A retinal detachment"
+   }
+  ],
+  "answer": 0,
+  "why": [
+   {
+    "fr": "Juste (légende source) : débris échogènes, irréguliers et cloisonnés dans le vitré = signe clé de l’endophtalmie. Aussi : abcès orbitaire latéral (A, astérisque), liquide sous-ténonien (C, pointes) et décollement postérieur du vitré qui croise le nerf (D, flèches). Prélèvement intravitréen et antibiotiques intravitréens en urgence.",
+    "en": "Correct (source legend): echogenic, irregular, loculated vitreous debris = key sign of endophthalmitis. Also: lateral orbital abscess (A, asterisk), sub-Tenon fluid (C, arrowheads) and posterior vitreous detachment crossing the nerve (D, arrows). Urgent vitreous tap and intravitreal antibiotics."
+   },
+   {
+    "fr": "Le sang donne des échos plus fins et mobiles, sans le contexte infectieux (fièvre, chémosis, douleur).",
+    "en": "Blood gives finer, mobile echoes, without the infectious picture (fever, chemosis, pain)."
+   },
+   {
+    "fr": "Les corps astéroïdes sont des points brillants isolés dans un œil calme.",
+    "en": "Asteroid bodies are isolated bright dots in a quiet eye."
+   },
+   {
+    "fr": "La fine membrane (D) croise le nerf optique : c’est le vitré décollé, pas la rétine.",
+    "en": "The thin membrane (D) crosses the optic nerve: it is detached vitreous, not retina."
+   }
+  ],
+  "reveal": {
+   "fr": "Débris cloisonnés dans le vitré + liquide sous-ténonien + abcès orbitaire : endophtalmie avec abcès orbitaire.",
+   "en": "Loculated vitreous debris + sub-Tenon fluid + orbital abscess: endophthalmitis with orbital abscess."
+  },
+  "open": true
  }
 ];
 G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
@@ -2911,6 +3015,108 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "label": {
      "fr": "Collection à paroi rehaussée (pointes de flèche)",
      "en": "Rim-enhancing collection (arrowheads)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Haight et al. — Clin Pract Cases Emerg Med 2023;7(4) — CC BY 4.0 (Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 4.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10855287/"
+ },
+ "mo-34": {
+  "kind": "photo",
+  "photo": "IMG3-044",
+  "alt": {
+   "fr": "Sidérose : hétérochromie et cataracte de l’œil droit (A), œil gauche normal (B).",
+   "en": "Siderosis: heterochromia and cataract in the right eye (A), normal left eye (B)."
+  },
+  "hotspots": [
+   {
+    "x": 23,
+    "y": 10,
+    "r": 5,
+    "decisive": true,
+    "label": {
+     "fr": "Iris hétérochrome (flèche noire)",
+     "en": "Heterochromic iris (black arrow)"
+    }
+   },
+   {
+    "x": 24,
+    "y": 60,
+    "r": 6,
+    "decisive": true,
+    "label": {
+     "fr": "Cataracte dense (flèche rouge)",
+     "en": "Dense cataract (red arrow)"
+    }
+   },
+   {
+    "x": 74,
+    "y": 50,
+    "r": 9,
+    "decisive": false,
+    "label": {
+     "fr": "Œil gauche normal (B)",
+     "en": "Normal left eye (B)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Image : Bloom et al. — Cureus 2019;11(5):e4660 — CC BY 3.0 (Ocular Siderosis Secondary to Retained Intraocular Foreign Body: A Case Report). Redimensionnée; annotations : ophtalmo app.",
+   "en": "Image: Bloom et al. — Cureus 2019;11(5):e4660 — CC BY 3.0 (Ocular Siderosis Secondary to Retained Intraocular Foreign Body: A Case Report). Resized; annotations: ophtalmo app."
+  },
+  "license": "CC BY 3.0",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6634274/"
+ },
+ "mo-35": {
+  "kind": "photo",
+  "photo": "IMG3-017",
+  "alt": {
+   "fr": "Échographie : endophtalmie et abcès orbitaire (A–D).",
+   "en": "Ultrasound: endophthalmitis and orbital abscess (A–D)."
+  },
+  "hotspots": [
+   {
+    "x": 70,
+    "y": 16,
+    "r": 6,
+    "decisive": true,
+    "label": {
+     "fr": "Débris purulents cloisonnés (étoile, B)",
+     "en": "Loculated purulent debris (star, B)"
+    }
+   },
+   {
+    "x": 8,
+    "y": 9,
+    "r": 5,
+    "decisive": false,
+    "label": {
+     "fr": "Collection hypoéchogène latérale : abcès orbitaire (A)",
+     "en": "Lateral hypoechoic collection: orbital abscess (A)"
+    }
+   },
+   {
+    "x": 15,
+    "y": 80,
+    "r": 6,
+    "decisive": false,
+    "label": {
+     "fr": "Liquide sous-ténonien (pointes, C)",
+     "en": "Sub-Tenon fluid (arrowheads, C)"
+    }
+   },
+   {
+    "x": 65,
+    "y": 78,
+    "r": 6,
+    "decisive": false,
+    "label": {
+     "fr": "Vitré décollé croisant le nerf (flèches, D)",
+     "en": "Detached vitreous crossing the nerve (arrows, D)"
     }
    }
   ],
