@@ -2,7 +2,8 @@
 """Mirror the project into the GitHub clone (minus generated/heavy files), commit and push."""
 import fnmatch, os, shutil, subprocess, sys
 SRC, DST = '/home/claude/ophtalmo', '/home/claude/ophtalmo-academie'
-EX = ['.git', 'node_modules', 'dist', 'site', 'imgsrc/raw', 'imgsrc2/raw', 'imgsrc/sheets', 'imgsrc2/sheets', 'imgsrc/thumb',
+R = ['OPH-%03d.jpg' % i for i in list(range(12, 16)) + list(range(114, 131)) + list(range(187, 192)) + list(range(200, 210)) + [211, 212, 213, 215, 216, 227, 292, 293]]
+EX = R + ['.git', 'node_modules', 'dist', 'site', 'imgsrc/raw', 'imgsrc2/raw', 'imgsrc/sheets', 'imgsrc2/sheets', 'imgsrc/thumb',
       'imgsrc2/complement.pdf', 'ios/App/App/public', 'ios/build', '*.log', '__pycache__']
 def skip(rel):
     return any(rel == e or rel.startswith(e + '/') or fnmatch.fnmatch(os.path.basename(rel), e) for e in EX)
