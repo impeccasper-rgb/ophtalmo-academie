@@ -16,10 +16,6 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Une variante normale",
-    "en": "A normal variant"
-   },
-   {
     "fr": "Un nævus choroïdien suspect à photographier",
     "en": "A suspicious choroidal naevus to photograph"
    },
@@ -30,14 +26,14 @@ G.OPH.openCases = [
    {
     "fr": "Une atrophie glaucomateuse",
     "en": "Glaucomatous atrophy"
+   },
+   {
+    "fr": "Une variante normale",
+    "en": "A normal variant"
    }
   ],
-  "answer": 0,
+  "answer": 3,
   "why": [
-   {
-    "fr": "Juste : la description source le dit non pathologique. Le reste est normal : macula au centre, veines plus sombres et un peu plus larges que les artères.",
-    "en": "Correct: the source describes it as non-pathological. The rest is normal: macula in the centre, veins darker and slightly wider than arteries."
-   },
    {
     "fr": "Un nævus est une lésion choroïdienne grise, à distance ou au contact de la papille; ce croissant épouse le bord du disque.",
     "en": "A naevus is a grey choroidal lesion; this crescent hugs the disc margin."
@@ -49,6 +45,10 @@ G.OPH.openCases = [
    {
     "fr": "L’atrophie glaucomateuse s’apprécie sur l’anneau neurorétinien et l’excavation, pas sur un liseré pigmenté.",
     "en": "Glaucomatous damage is judged on the rim and cup, not on a pigmented rim edge."
+   },
+   {
+    "fr": "Juste : la description source le dit non pathologique. Le reste est normal : macula au centre, veines plus sombres et un peu plus larges que les artères.",
+    "en": "Correct: the source describes it as non-pathological. The rest is normal: macula in the centre, veins darker and slightly wider than arteries."
    }
   ],
   "reveal": {
@@ -68,32 +68,24 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Papille normale",
-    "en": "Normal disc"
-   },
-   {
-    "fr": "Papille gonflée à bords flous, hémorragies autour : œdème papillaire",
-    "en": "Swollen disc with blurred margins and surrounding haemorrhages: disc oedema"
-   },
-   {
     "fr": "Excavation glaucomateuse",
     "en": "Glaucomatous cupping"
    },
    {
     "fr": "Tache rouge cerise",
     "en": "Cherry-red spot"
+   },
+   {
+    "fr": "Œdème papillaire",
+    "en": "Disc oedema"
+   },
+   {
+    "fr": "Papille normale",
+    "en": "Normal disc"
    }
   ],
-  "answer": 1,
+  "answer": 2,
   "why": [
-   {
-    "fr": "Les bords ne sont pas nets et les vaisseaux sont masqués au bord du disque.",
-    "en": "The margins are not sharp and vessels are obscured at the disc edge."
-   },
-   {
-    "fr": "Juste : papille gonflée (source : papilloedème par hypertension intracrânienne). Le mot « papilloedème » est réservé à l’œdème par HTIC : examen neurologique et imagerie cérébrale en urgence.",
-    "en": "Correct: swollen disc (source: papilledema from raised intracranial pressure). “Papilledema” means disc oedema from raised ICP: urgent neurological exam and brain imaging."
-   },
    {
     "fr": "L’excavation glaucomateuse creuse la papille; ici elle est surélevée.",
     "en": "Glaucomatous cupping hollows the disc; here it is elevated."
@@ -101,6 +93,14 @@ G.OPH.openCases = [
    {
     "fr": "La tache rouge cerise est maculaire (occlusion artérielle), pas papillaire.",
     "en": "A cherry-red spot is macular (artery occlusion), not at the disc."
+   },
+   {
+    "fr": "Juste : papille gonflée (source : papilloedème par hypertension intracrânienne). Le mot « papilloedème » est réservé à l’œdème par HTIC : examen neurologique et imagerie cérébrale en urgence.",
+    "en": "Correct: swollen disc (source: papilledema from raised intracranial pressure). “Papilledema” means disc oedema from raised ICP: urgent neurological exam and brain imaging."
+   },
+   {
+    "fr": "Les bords ne sont pas nets et les vaisseaux sont masqués au bord du disque.",
+    "en": "The margins are not sharp and vessels are obscured at the disc edge."
    }
   ],
   "reveal": {
@@ -120,39 +120,39 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Occlusion de la veine centrale de la rétine",
-    "en": "Central retinal vein occlusion"
+    "fr": "Trou maculaire",
+    "en": "Macular hole"
    },
    {
     "fr": "Occlusion de l’artère centrale de la rétine",
     "en": "Central retinal artery occlusion"
    },
    {
-    "fr": "DMLA exsudative",
-    "en": "Neovascular AMD"
+    "fr": "Occlusion de la veine centrale de la rétine",
+    "en": "Central retinal vein occlusion"
    },
    {
-    "fr": "Trou maculaire",
-    "en": "Macular hole"
+    "fr": "DMLA exsudative",
+    "en": "Neovascular AMD"
    }
   ],
   "answer": 1,
   "why": [
    {
-    "fr": "L’OVCR donne des hémorragies dans les quatre quadrants et des veines dilatées, absentes ici.",
-    "en": "CRVO gives four-quadrant haemorrhages and dilated veins, absent here."
+    "fr": "Le trou maculaire n’entraîne ni blanchiment rétinien ni perte brutale aussi sévère.",
+    "en": "A macular hole causes no retinal whitening and no such abrupt severe loss."
    },
    {
     "fr": "Juste : tache rouge cerise au centre d’une rétine pâle et œdémateuse. C’est un AVC de l’œil : filière AVC en urgence (imagerie, carotides, cœur) et recherche d’artérite à cellules géantes après 50 ans.",
     "en": "Correct: cherry-red spot within a pale, swollen retina. This is an eye stroke: urgent stroke pathway (imaging, carotids, heart) and look for giant cell arteritis after 50."
    },
    {
-    "fr": "La DMLA exsudative donne liquide, hémorragie ou exsudats maculaires, pas une rétine blanchie.",
-    "en": "Neovascular AMD gives macular fluid, blood or exudate, not a whitened retina."
+    "fr": "L’OVCR donne des hémorragies dans les quatre quadrants et des veines dilatées, absentes ici.",
+    "en": "CRVO gives four-quadrant haemorrhages and dilated veins, absent here."
    },
    {
-    "fr": "Le trou maculaire n’entraîne ni blanchiment rétinien ni perte brutale aussi sévère.",
-    "en": "A macular hole causes no retinal whitening and no such abrupt severe loss."
+    "fr": "La DMLA exsudative donne liquide, hémorragie ou exsudats maculaires, pas une rétine blanchie.",
+    "en": "Neovascular AMD gives macular fluid, blood or exudate, not a whitened retina."
    }
   ],
   "reveal": {
@@ -172,6 +172,10 @@ G.OPH.openCases = [
   },
   "options": [
    {
+    "fr": "Occlusion de la veine centrale de la rétine",
+    "en": "Central retinal vein occlusion"
+   },
+   {
     "fr": "Rétinopathie diabétique non proliférante",
     "en": "Non-proliferative diabetic retinopathy"
    },
@@ -180,16 +184,16 @@ G.OPH.openCases = [
     "en": "Central retinal artery occlusion"
    },
    {
-    "fr": "Occlusion de la veine centrale de la rétine",
-    "en": "Central retinal vein occlusion"
-   },
-   {
     "fr": "Rétinopathie de Valsalva",
     "en": "Valsalva retinopathy"
    }
   ],
-  "answer": 2,
+  "answer": 0,
   "why": [
+   {
+    "fr": "Juste : hémorragies intrarétiniennes dans tout le fond d’œil (a); en angiographie, ces hémorragies masquent la fluorescence choroïdienne (taches sombres, b). Surveiller la néovascularisation de l’iris (glaucome néovasculaire).",
+    "en": "Correct: intraretinal haemorrhages throughout the fundus (a); on angiography they block the choroidal fluorescence (dark spots, b). Watch for iris neovascularisation (neovascular glaucoma)."
+   },
    {
     "fr": "La RD a des hémorragies plus éparses avec microanévrismes et exsudats, pas ce semis diffus autour de la papille.",
     "en": "Diabetic retinopathy has scattered haemorrhages with microaneurysms and exudates, not this diffuse spread around the disc."
@@ -197,10 +201,6 @@ G.OPH.openCases = [
    {
     "fr": "L’OACR blanchit la rétine sans hémorragies diffuses.",
     "en": "CRAO whitens the retina without diffuse haemorrhages."
-   },
-   {
-    "fr": "Juste : hémorragies intrarétiniennes dans tout le fond d’œil (a); en angiographie, ces hémorragies masquent la fluorescence choroïdienne (taches sombres, b). Surveiller la néovascularisation de l’iris (glaucome néovasculaire).",
-    "en": "Correct: intraretinal haemorrhages throughout the fundus (a); on angiography they block the choroidal fluorescence (dark spots, b). Watch for iris neovascularisation (neovascular glaucoma)."
    },
    {
     "fr": "La rétinopathie de Valsalva donne une hémorragie prérétinienne localisée, souvent maculaire.",
@@ -228,27 +228,23 @@ G.OPH.openCases = [
     "en": "Normal vessels"
    },
    {
-    "fr": "Un lacis de néovaisseaux : rétinopathie diabétique proliférante",
-    "en": "A tuft of new vessels: proliferative diabetic retinopathy"
-   },
-   {
     "fr": "Un œdème papillaire",
     "en": "Disc oedema"
    },
    {
     "fr": "Des collatérales optociliaires",
     "en": "Optociliary shunt vessels"
+   },
+   {
+    "fr": "Un lacis de néovaisseaux papillaires",
+    "en": "A tuft of new vessels on the disc"
    }
   ],
-  "answer": 1,
+  "answer": 3,
   "why": [
    {
     "fr": "Le réseau fin et anarchique qui couvre la papille n’existe pas normalement.",
     "en": "The fine, disorganised network covering the disc is not normal."
-   },
-   {
-    "fr": "Juste : néovaisseaux et tissu fibreux à la surface de la rétine (source NEI). Risque d’hémorragie du vitré et de décollement tractionnel : panphotocoagulation et/ou anti-VEGF rapidement.",
-    "en": "Correct: new vessels and fibrous tissue on the retinal surface (NEI source). Risk of vitreous haemorrhage and tractional detachment: prompt panretinal photocoagulation and/or anti-VEGF."
    },
    {
     "fr": "L’œdème papillaire gonfle le disque et efface ses bords sans créer de lacis vasculaire.",
@@ -257,6 +253,10 @@ G.OPH.openCases = [
    {
     "fr": "Les collatérales optociliaires sont quelques gros vaisseaux qui plongent au bord du disque, pas un réseau fin.",
     "en": "Optociliary shunts are a few large vessels diving at the disc edge, not a fine network."
+   },
+   {
+    "fr": "Juste : néovaisseaux et tissu fibreux à la surface de la rétine (source NEI). Risque d’hémorragie du vitré et de décollement tractionnel : panphotocoagulation et/ou anti-VEGF rapidement.",
+    "en": "Correct: new vessels and fibrous tissue on the retinal surface (NEI source). Risk of vitreous haemorrhage and tractional detachment: prompt panretinal photocoagulation and/or anti-VEGF."
    }
   ],
   "reveal": {
@@ -276,39 +276,39 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Des drusen",
-    "en": "Drusen"
-   },
-   {
     "fr": "Des nodules cotonneux",
     "en": "Cotton-wool spots"
    },
    {
-    "fr": "Des exsudats lipidiques d’un œdème maculaire diabétique",
-    "en": "Lipid exudates of diabetic macular oedema"
+    "fr": "Des cicatrices de photocoagulation",
+    "en": "Photocoagulation scars"
    },
    {
-    "fr": "Des cicatrices de laser",
-    "en": "Laser scars"
+    "fr": "Des exsudats lipidiques",
+    "en": "Lipid exudates"
+   },
+   {
+    "fr": "Des drusen",
+    "en": "Drusen"
    }
   ],
   "answer": 2,
   "why": [
    {
-    "fr": "Les drusen sont des dépôts ronds sous l’EPR de la DMLA, sans contexte diabétique.",
-    "en": "Drusen are round sub-RPE deposits of AMD, not diabetic."
-   },
-   {
     "fr": "Les nodules cotonneux sont blancs, flous, en surface (ischémie des fibres), pas jaunes et nets.",
     "en": "Cotton-wool spots are white, fluffy and superficial, not crisp and yellow."
+   },
+   {
+    "fr": "La photo est étiquetée « avant traitement » : il n’y a pas encore de laser.",
+    "en": "The photo is labelled “pretreatment”: no laser yet."
    },
    {
     "fr": "Juste (source : œdème maculaire diabétique, NEI) : les exsudats marquent la fuite de liquide autour de la fovéa; l’OCT quantifie l’œdème, le traitement de première ligne est l’anti-VEGF intravitréen.",
     "en": "Correct (source: diabetic macular oedema, NEI): exudates mark leakage around the fovea; OCT measures the oedema; first-line treatment is intravitreal anti-VEGF."
    },
    {
-    "fr": "La photo est étiquetée « avant traitement » : il n’y a pas encore de laser.",
-    "en": "The photo is labelled “pretreatment”: no laser yet."
+    "fr": "Les drusen sont des dépôts ronds sous l’EPR de la DMLA, sans contexte diabétique.",
+    "en": "Drusen are round sub-RPE deposits of AMD, not diabetic."
    }
   ],
   "reveal": {
@@ -328,8 +328,12 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Déchirure en fer à cheval avec décollement de rétine",
-    "en": "Horseshoe tear with retinal detachment"
+    "fr": "Palissade (dégénérescence grillagée) sans déchirure",
+    "en": "Lattice degeneration without a tear"
+   },
+   {
+    "fr": "Déchirure en fer à cheval et décollement",
+    "en": "Horseshoe tear with detachment"
    },
    {
     "fr": "Trou maculaire",
@@ -338,14 +342,14 @@ G.OPH.openCases = [
    {
     "fr": "Rétinoschisis sénile",
     "en": "Senile retinoschisis"
-   },
-   {
-    "fr": "Palissade sans déchirure",
-    "en": "Lattice degeneration without a tear"
    }
   ],
-  "answer": 0,
+  "answer": 1,
   "why": [
+   {
+    "fr": "La palissade est une zone amincie quadrillée; ici il y a une rupture en fer à cheval.",
+    "en": "Lattice is a thin, latticed area; here there is a horseshoe break."
+   },
    {
     "fr": "Juste : la rétine présente un défaut en fer à cheval (source). Décollement rhegmatogène : avis rétine urgent, surtout si la macula est encore à plat.",
     "en": "Correct: the retina has a horseshoe-shaped defect (source). Rhegmatogenous detachment: urgent retina referral, especially if the macula is still on."
@@ -357,10 +361,6 @@ G.OPH.openCases = [
    {
     "fr": "Le rétinoschisis est un clivage lisse, en dôme, sans déchirure en fer à cheval.",
     "en": "Retinoschisis is a smooth dome-shaped split without a horseshoe tear."
-   },
-   {
-    "fr": "La palissade est une zone amincie quadrillée; ici il y a une rupture en fer à cheval.",
-    "en": "Lattice is a thin, latticed area; here there is a horseshoe break."
    }
   ],
   "reveal": {
@@ -432,10 +432,6 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Du liquide sous la rétine : décollement séreux de la choriorétinopathie séreuse centrale",
-    "en": "Fluid under the retina: serous detachment of central serous chorioretinopathy"
-   },
-   {
     "fr": "Un trou maculaire transfixiant",
     "en": "A full-thickness macular hole"
    },
@@ -446,14 +442,14 @@ G.OPH.openCases = [
    {
     "fr": "Une atrophie de l’EPR",
     "en": "RPE atrophy"
+   },
+   {
+    "fr": "Liquide sous-rétinien (CRSC)",
+    "en": "Subretinal fluid (CSC)"
    }
   ],
-  "answer": 0,
+  "answer": 3,
   "why": [
-   {
-    "fr": "Juste (source : CRSC) : rétine neurosensorielle soulevée par un espace hyporéflectif au-dessus de l’EPR. Chercher une prise de corticoïdes; la plupart des épisodes régressent spontanément.",
-    "en": "Correct (source: CSC): neurosensory retina lifted by a hyporeflective space above the RPE. Ask about steroid use; most episodes resolve spontaneously."
-   },
    {
     "fr": "Un trou interrompt toute l’épaisseur de la rétine; ici la rétine est continue au-dessus de l’espace.",
     "en": "A hole breaks the full retinal thickness; here the retina is continuous over the space."
@@ -465,6 +461,10 @@ G.OPH.openCases = [
    {
     "fr": "L’atrophie amincit l’EPR sans soulever la rétine.",
     "en": "Atrophy thins the RPE without lifting the retina."
+   },
+   {
+    "fr": "Juste (source : CRSC) : rétine neurosensorielle soulevée par un espace hyporéflectif au-dessus de l’EPR. Chercher une prise de corticoïdes; la plupart des épisodes régressent spontanément.",
+    "en": "Correct (source: CSC): neurosensory retina lifted by a hyporeflective space above the RPE. Ask about steroid use; most episodes resolve spontaneously."
    }
   ],
   "reveal": {
@@ -484,32 +484,24 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Abrasion cornéenne",
-    "en": "Corneal abrasion"
-   },
-   {
-    "fr": "Kératite épithéliale herpétique (dendrite)",
-    "en": "Herpes simplex epithelial keratitis (dendrite)"
-   },
-   {
     "fr": "Kératite ponctuée superficielle",
     "en": "Superficial punctate keratitis"
    },
    {
     "fr": "Kératite bactérienne",
     "en": "Bacterial keratitis"
+   },
+   {
+    "fr": "Kératite herpétique (dendrite HSV)",
+    "en": "Herpetic keratitis (HSV dendrite)"
+   },
+   {
+    "fr": "Abrasion cornéenne",
+    "en": "Corneal abrasion"
    }
   ],
-  "answer": 1,
+  "answer": 2,
   "why": [
-   {
-    "fr": "Une abrasion prend la fluorescéine en plage à bords nets, sans ramifications.",
-    "en": "An abrasion stains as a sharp-edged patch, without branches."
-   },
-   {
-    "fr": "Juste : prise de fluorescéine ramifiée (dendritique). Antiviral; pas de corticoïde topique seul sur une kératite épithéliale active.",
-    "en": "Correct: branching (dendritic) fluorescein staining. Antiviral; no topical steroid alone on active epithelial keratitis."
-   },
    {
     "fr": "La KPS donne des points fins dispersés, pas une ligne ramifiée.",
     "en": "SPK gives fine scattered dots, not a branching line."
@@ -517,6 +509,14 @@ G.OPH.openCases = [
    {
     "fr": "La kératite bactérienne forme un infiltrat blanc dense sous un défaut épithélial.",
     "en": "Bacterial keratitis forms a dense white infiltrate under an epithelial defect."
+   },
+   {
+    "fr": "Juste : prise de fluorescéine ramifiée (dendritique). Antiviral; pas de corticoïde topique seul sur une kératite épithéliale active.",
+    "en": "Correct: branching (dendritic) fluorescein staining. Antiviral; no topical steroid alone on active epithelial keratitis."
+   },
+   {
+    "fr": "Une abrasion prend la fluorescéine en plage à bords nets, sans ramifications.",
+    "en": "An abrasion stains as a sharp-edged patch, without branches."
    }
   ],
   "reveal": {
@@ -536,39 +536,39 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Un infiltrat stromal en anneau typique",
-    "en": "A typical stromal ring infiltrate"
+    "fr": "Des guttae",
+    "en": "Guttae"
    },
    {
-    "fr": "Une fonte cornéenne avec vascularisation",
-    "en": "Corneal melting with vascularisation"
+    "fr": "Une fonte cornéenne vascularisée",
+    "en": "Vascularised corneal melt"
+   },
+   {
+    "fr": "Un infiltrat en anneau",
+    "en": "A ring infiltrate"
    },
    {
     "fr": "Une dendrite herpétique",
     "en": "A herpetic dendrite"
-   },
-   {
-    "fr": "Des guttae",
-    "en": "Guttae"
    }
   ],
   "answer": 1,
   "why": [
    {
-    "fr": "L’anneau est le signe classique, mais il n’est pas décrit sur cette image (source : fonte et vascularisation).",
-    "en": "The ring is the classic sign, but it is not described on this image (source: melting and vascularisation)."
+    "fr": "Les guttae sont des excroissances endothéliales de la dystrophie de Fuchs.",
+    "en": "Guttae are endothelial excrescences of Fuchs dystrophy."
    },
    {
     "fr": "Juste (source) : cornée opaque fondue et vascularisée, stade évolué. D’où l’intérêt d’y penser tôt devant une douleur disproportionnée chez un porteur de lentilles.",
     "en": "Correct (source): opaque, melting, vascularised cornea, an advanced stage. Hence thinking of it early when pain is out of proportion in a lens wearer."
    },
    {
-    "fr": "Une dendrite est une lésion épithéliale fine et ramifiée.",
-    "en": "A dendrite is a fine, branching epithelial lesion."
+    "fr": "L’anneau est le signe classique, mais il n’est pas décrit sur cette image (source : fonte et vascularisation).",
+    "en": "The ring is the classic sign, but it is not described on this image (source: melting and vascularisation)."
    },
    {
-    "fr": "Les guttae sont des excroissances endothéliales de la dystrophie de Fuchs.",
-    "en": "Guttae are endothelial excrescences of Fuchs dystrophy."
+    "fr": "Une dendrite est une lésion épithéliale fine et ramifiée.",
+    "en": "A dendrite is a fine, branching epithelial lesion."
    }
   ],
   "reveal": {
@@ -588,12 +588,12 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Astigmatisme régulier, cornée saine",
-    "en": "Regular astigmatism, healthy cornea"
+    "fr": "Kératocône",
+    "en": "Keratoconus"
    },
    {
-    "fr": "Kératocône : bombement inférieur et amincissement",
-    "en": "Keratoconus: inferior steepening and thinning"
+    "fr": "Astigmatisme régulier, cornée saine",
+    "en": "Regular astigmatism, healthy cornea"
    },
    {
     "fr": "Cornée après chirurgie réfractive myopique",
@@ -604,15 +604,15 @@ G.OPH.openCases = [
     "en": "Fuchs dystrophy"
    }
   ],
-  "answer": 1,
+  "answer": 0,
   "why": [
-   {
-    "fr": "Un astigmatisme régulier donne un « nœud papillon » symétrique, pas un point chaud inférieur à 54,6 D.",
-    "en": "Regular astigmatism gives a symmetrical bow-tie, not an inferior hot spot at 54.6 D."
-   },
    {
     "fr": "Juste (source : kératocône stade II) : courbure maximale inférieure (54,6 D) et point le plus mince à 421 µm. Arrêter le frottement; discuter un cross-linking si progression.",
     "en": "Correct (source: stage II keratoconus): maximum inferior curvature (54.6 D) and thinnest point 421 µm. Stop eye rubbing; consider cross-linking if progressing."
+   },
+   {
+    "fr": "Un astigmatisme régulier donne un « nœud papillon » symétrique, pas un point chaud inférieur à 54,6 D.",
+    "en": "Regular astigmatism gives a symmetrical bow-tie, not an inferior hot spot at 54.6 D."
    },
    {
     "fr": "Après chirurgie myopique, le centre est aplati (bleu), pas bombé.",
@@ -644,27 +644,23 @@ G.OPH.openCases = [
     "en": "Pinguecula"
    },
    {
-    "fr": "Ptérygion qui atteint l’axe visuel",
-    "en": "Pterygium reaching the visual axis"
-   },
-   {
     "fr": "Arc sénile",
     "en": "Arcus senilis"
    },
    {
     "fr": "Pannus trachomateux",
     "en": "Trachomatous pannus"
+   },
+   {
+    "fr": "Ptérygion",
+    "en": "Pterygium"
    }
   ],
-  "answer": 1,
+  "answer": 3,
   "why": [
    {
     "fr": "La pinguécula reste sur la conjonctive, sans franchir le limbe.",
     "en": "A pinguecula stays on the conjunctiva without crossing the limbus."
-   },
-   {
-    "fr": "Juste : aile fibrovasculaire qui franchit le limbe; ici sévère, jusqu’à la pupille (source). Exérèse avec autogreffe conjonctivale, protection UV.",
-    "en": "Correct: a fibrovascular wing crossing the limbus; here severe, reaching the pupil (source). Excision with conjunctival autograft, UV protection."
    },
    {
     "fr": "L’arc sénile est un anneau blanc périphérique, séparé du limbe par une zone claire.",
@@ -673,6 +669,10 @@ G.OPH.openCases = [
    {
     "fr": "Le pannus trachomateux envahit la cornée par le haut, avec cicatrices tarsiennes.",
     "en": "Trachomatous pannus invades from above, with tarsal scarring."
+   },
+   {
+    "fr": "Juste : aile fibrovasculaire qui franchit le limbe; ici sévère, jusqu’à la pupille (source). Exérèse avec autogreffe conjonctivale, protection UV.",
+    "en": "Correct: a fibrovascular wing crossing the limbus; here severe, reaching the pupil (source). Excision with conjunctival autograft, UV protection."
    }
   ],
   "reveal": {
@@ -692,32 +692,24 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Kératopathie en bandelette (calcique)",
-    "en": "Band keratopathy (calcific)"
-   },
-   {
-    "fr": "Cataracte blanche",
-    "en": "White cataract"
-   },
-   {
-    "fr": "Dystrophie granulaire",
-    "en": "Granular dystrophy"
+    "fr": "Dystrophie cornéenne granulaire (TGFBI)",
+    "en": "Granular corneal dystrophy (TGFBI)"
    },
    {
     "fr": "Leucome cicatriciel",
     "en": "Corneal scar"
+   },
+   {
+    "fr": "Kératopathie en bandelette",
+    "en": "Band keratopathy"
+   },
+   {
+    "fr": "Cataracte blanche",
+    "en": "White cataract"
    }
   ],
-  "answer": 0,
+  "answer": 2,
   "why": [
-   {
-    "fr": "Juste (nom du fichier source) : dépôt de calcium sous-épithélial, plaque granuleuse percée de petits trous. Chercher une uvéite chronique ou une hypercalcémie; traitement par EDTA.",
-    "en": "Correct (source file name): subepithelial calcium, a granular plaque with small holes. Look for chronic uveitis or hypercalcaemia; treated with EDTA chelation."
-   },
-   {
-    "fr": "La fente lumineuse montre que l’opacité est dans la cornée, en avant de l’iris.",
-    "en": "The slit beam shows the opacity is in the cornea, in front of the iris."
-   },
    {
     "fr": "La dystrophie granulaire donne des opacités stromales discrètes en « miettes », bilatérales, sans plaque.",
     "en": "Granular dystrophy gives discrete crumb-like stromal opacities, bilateral, not a plaque."
@@ -725,6 +717,14 @@ G.OPH.openCases = [
    {
     "fr": "Un leucome est une cicatrice stromale homogène, pas granuleuse et trouée.",
     "en": "A scar is homogeneous stromal opacity, not granular with holes."
+   },
+   {
+    "fr": "Juste (nom du fichier source) : dépôt de calcium sous-épithélial, plaque granuleuse percée de petits trous. Chercher une uvéite chronique ou une hypercalcémie; traitement par EDTA.",
+    "en": "Correct (source file name): subepithelial calcium, a granular plaque with small holes. Look for chronic uveitis or hypercalcaemia; treated with EDTA chelation."
+   },
+   {
+    "fr": "La fente lumineuse montre que l’opacité est dans la cornée, en avant de l’iris.",
+    "en": "The slit beam shows the opacity is in the cornea, in front of the iris."
    }
   ],
   "reveal": {
@@ -744,39 +744,39 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Précipités rétrocornéens granulomateux (uvéite)",
-    "en": "Granulomatous keratic precipitates (uveitis)"
+    "fr": "Ligne de Hudson-Stähli",
+    "en": "Hudson-Stähli line"
    },
    {
     "fr": "Fuseau de Krukenberg : dispersion pigmentaire",
     "en": "Krukenberg spindle: pigment dispersion"
    },
    {
-    "fr": "Guttae de Fuchs",
-    "en": "Fuchs guttae"
+    "fr": "Précipités rétrocornéens granulomateux (uvéite)",
+    "en": "Granulomatous keratic precipitates (uveitis)"
    },
    {
-    "fr": "Ligne de Hudson-Stähli",
-    "en": "Hudson-Stähli line"
+    "fr": "Guttae de Fuchs",
+    "en": "Fuchs guttae"
    }
   ],
   "answer": 1,
   "why": [
    {
-    "fr": "Les précipités sont des amas blanchâtres « en graisse de mouton », souvent en triangle inférieur.",
-    "en": "KPs are whitish “mutton-fat” clumps, often in an inferior triangle."
+    "fr": "La ligne de Hudson-Stähli est un dépôt de fer épithélial horizontal, au tiers inférieur.",
+    "en": "The Hudson-Stähli line is a horizontal epithelial iron line in the lower third."
    },
    {
     "fr": "Juste : cellules pigmentées de l’iris déposées en fuseau vertical sur l’endothélium (source). Chercher défects de transillumination irienne et trabéculum très pigmenté en gonioscopie.",
     "en": "Correct: pigmented iris cells deposited as a vertical spindle on the endothelium (source). Look for iris transillumination defects and a heavily pigmented meshwork on gonioscopy."
    },
    {
-    "fr": "Les guttae sont des excroissances de la Descemet (aspect métal martelé), pas un fuseau pigmenté.",
-    "en": "Guttae are Descemet excrescences (beaten metal), not a pigmented spindle."
+    "fr": "Les précipités sont des amas blanchâtres « en graisse de mouton », souvent en triangle inférieur.",
+    "en": "KPs are whitish “mutton-fat” clumps, often in an inferior triangle."
    },
    {
-    "fr": "La ligne de Hudson-Stähli est un dépôt de fer épithélial horizontal, au tiers inférieur.",
-    "en": "The Hudson-Stähli line is a horizontal epithelial iron line in the lower third."
+    "fr": "Les guttae sont des excroissances de la Descemet (aspect métal martelé), pas un fuseau pigmenté.",
+    "en": "Guttae are Descemet excrescences (beaten metal), not a pigmented spindle."
    }
   ],
   "reveal": {
@@ -796,6 +796,10 @@ G.OPH.openCases = [
   },
   "options": [
    {
+    "fr": "Crise aiguë de fermeture de l’angle",
+    "en": "Acute angle-closure crisis"
+   },
+   {
     "fr": "Conjonctivite",
     "en": "Conjunctivitis"
    },
@@ -804,16 +808,16 @@ G.OPH.openCases = [
     "en": "Acute anterior uveitis"
    },
    {
-    "fr": "Crise aiguë de fermeture de l’angle",
-    "en": "Acute angle-closure crisis"
-   },
-   {
-    "fr": "Glaucome néovasculaire",
-    "en": "Neovascular glaucoma"
+    "fr": "Glaucome néovasculaire sur rubéose irienne",
+    "en": "Neovascular glaucoma from iris rubeosis"
    }
   ],
-  "answer": 2,
+  "answer": 0,
   "why": [
+   {
+    "fr": "Juste : œil rouge, pupille en semi-mydriase aréactive (source), PIO 42. Baisser la PIO en urgence puis iridotomie laser des deux yeux.",
+    "en": "Correct: red eye, mid-dilated unreactive pupil (source), IOP 42. Lower the IOP urgently, then laser iridotomy in both eyes."
+   },
    {
     "fr": "Une conjonctivite ne donne ni PIO à 42 ni pupille aréactive.",
     "en": "Conjunctivitis gives neither an IOP of 42 nor an unreactive pupil."
@@ -821,10 +825,6 @@ G.OPH.openCases = [
    {
     "fr": "L’uvéite donne plutôt une pupille en myosis et une PIO souvent normale ou basse.",
     "en": "Uveitis tends to give a small pupil and an often normal or low IOP."
-   },
-   {
-    "fr": "Juste : œil rouge, pupille en semi-mydriase aréactive (source), PIO 42. Baisser la PIO en urgence puis iridotomie laser des deux yeux.",
-    "en": "Correct: red eye, mid-dilated unreactive pupil (source), IOP 42. Lower the IOP urgently, then laser iridotomy in both eyes."
    },
    {
     "fr": "Le glaucome néovasculaire suppose des néovaisseaux de l’iris sur une rétine ischémique.",
@@ -852,27 +852,23 @@ G.OPH.openCases = [
     "en": "Normal disc"
    },
    {
-    "fr": "Glaucome avancé : excavation pâle très large, anneau très mince",
-    "en": "Advanced glaucoma: very large pale cup, very thin rim"
-   },
-   {
     "fr": "Œdème papillaire",
     "en": "Disc oedema"
    },
    {
     "fr": "Neuropathie optique ischémique aiguë",
     "en": "Acute ischaemic optic neuropathy"
+   },
+   {
+    "fr": "Glaucome avancé",
+    "en": "Advanced glaucoma"
    }
   ],
-  "answer": 1,
+  "answer": 3,
   "why": [
    {
     "fr": "Une papille normale garde un anneau rose épais (règle ISNT).",
     "en": "A normal disc keeps a thick pink rim (ISNT rule)."
-   },
-   {
-    "fr": "Juste (source : glaucome avancé) : l’excavation occupe presque tout le disque; les vaisseaux se coudent au bord. Champ visuel attendu très atteint.",
-    "en": "Correct (source: advanced glaucoma): the cup fills almost the whole disc; vessels bend at its edge. Expect a severely damaged field."
    },
    {
     "fr": "L’œdème surélève la papille et efface ses bords.",
@@ -881,6 +877,10 @@ G.OPH.openCases = [
    {
     "fr": "La NOIA aiguë donne un œdème papillaire, pas une excavation.",
     "en": "Acute AION gives disc swelling, not cupping."
+   },
+   {
+    "fr": "Juste (source : glaucome avancé) : l’excavation occupe presque tout le disque; les vaisseaux se coudent au bord. Champ visuel attendu très atteint.",
+    "en": "Correct (source: advanced glaucoma): the cup fills almost the whole disc; vessels bend at its edge. Expect a severely damaged field."
    }
   ],
   "reveal": {
@@ -900,32 +900,24 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Une pseudo-exfoliation",
-    "en": "Pseudoexfoliation"
-   },
-   {
-    "fr": "Un syndrome de dispersion pigmentaire",
-    "en": "Pigment dispersion syndrome"
-   },
-   {
     "fr": "Des néovaisseaux de l’angle",
-    "en": "Angle new vessels"
+    "en": "Angle neovascularisation"
    },
    {
     "fr": "Une fermeture de l’angle",
     "en": "Angle closure"
+   },
+   {
+    "fr": "Une dispersion pigmentaire",
+    "en": "Pigment dispersion"
+   },
+   {
+    "fr": "Une pseudo-exfoliation",
+    "en": "Pseudoexfoliation"
    }
   ],
-  "answer": 1,
+  "answer": 2,
   "why": [
-   {
-    "fr": "La pseudo-exfoliation touche surtout après 60 ans, avec matériel blanc sur la capsule.",
-    "en": "Pseudoexfoliation mostly affects people over 60, with white material on the capsule."
-   },
-   {
-    "fr": "Juste : jeune myope + trabéculum très pigmenté = dispersion pigmentaire; chercher le fuseau de Krukenberg et les défects de transillumination de l’iris.",
-    "en": "Correct: young myope + heavily pigmented meshwork = pigment dispersion; look for a Krukenberg spindle and iris transillumination defects."
-   },
    {
     "fr": "Les néovaisseaux de l’angle sont de fins vaisseaux rouges qui traversent l’éperon, pas du pigment.",
     "en": "Angle new vessels are fine red vessels crossing the spur, not pigment."
@@ -933,6 +925,14 @@ G.OPH.openCases = [
    {
     "fr": "Le pigment ne dit rien en soi de la largeur de l’angle : il faut identifier les structures visibles.",
     "en": "Pigment says nothing by itself about angle width: you must identify the visible structures."
+   },
+   {
+    "fr": "Juste : jeune myope + trabéculum très pigmenté = dispersion pigmentaire; chercher le fuseau de Krukenberg et les défects de transillumination de l’iris.",
+    "en": "Correct: young myope + heavily pigmented meshwork = pigment dispersion; look for a Krukenberg spindle and iris transillumination defects."
+   },
+   {
+    "fr": "La pseudo-exfoliation touche surtout après 60 ans, avec matériel blanc sur la capsule.",
+    "en": "Pseudoexfoliation mostly affects people over 60, with white material on the capsule."
    }
   ],
   "reveal": {
@@ -952,24 +952,32 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "L’œdème palpébral",
-    "en": "Eyelid swelling"
+    "fr": "La fièvre",
+    "en": "Fever"
+   },
+   {
+    "fr": "Exophtalmie, ophtalmoplégie ou baisse visuelle",
+    "en": "Proptosis, ophthalmoplegia or reduced vision"
+   },
+   {
+    "fr": "Un œdème palpébral important qui ferme complètement l’œil",
+    "en": "Marked eyelid swelling that closes the eye completely"
    },
    {
     "fr": "La rougeur de la peau",
     "en": "Skin redness"
-   },
-   {
-    "fr": "Douleur aux mouvements oculaires, ophtalmoplégie, exophtalmie ou baisse visuelle",
-    "en": "Pain on eye movement, ophthalmoplegia, proptosis or reduced vision"
-   },
-   {
-    "fr": "La fièvre",
-    "en": "Fever"
    }
   ],
-  "answer": 2,
+  "answer": 1,
   "why": [
+   {
+    "fr": "La fièvre peut accompagner les deux formes.",
+    "en": "Fever can accompany both."
+   },
+   {
+    "fr": "Juste : exophtalmie, ophtalmoplégie, douleur aux mouvements oculaires ou baisse visuelle traduisent l’atteinte en arrière du septum. Scanner des orbites et des sinus, antibiotiques intraveineux, avis ORL/ophtalmo.",
+    "en": "Correct: proptosis, ophthalmoplegia, pain on eye movement or reduced vision mean disease behind the septum. CT of orbits and sinuses, IV antibiotics, ENT/ophthalmology review."
+   },
    {
     "fr": "L’œdème palpébral existe dans les deux formes.",
     "en": "Eyelid swelling occurs in both."
@@ -977,14 +985,6 @@ G.OPH.openCases = [
    {
     "fr": "La rougeur est commune aux deux.",
     "en": "Redness is common to both."
-   },
-   {
-    "fr": "Juste : ces signes traduisent l’atteinte en arrière du septum. Scanner des orbites et des sinus, antibiotiques intraveineux, avis ORL/ophtalmo.",
-    "en": "Correct: these signs mean disease behind the septum. CT of orbits and sinuses, IV antibiotics, ENT/ophthalmology review."
-   },
-   {
-    "fr": "La fièvre peut accompagner les deux formes.",
-    "en": "Fever can accompany both."
    }
   ],
   "reveal": {
@@ -1060,27 +1060,23 @@ G.OPH.openCases = [
     "en": "Hypopyon"
    },
    {
-    "fr": "Hyphéma",
-    "en": "Hyphema"
-   },
-   {
     "fr": "Hémorragie sous-conjonctivale",
     "en": "Subconjunctival haemorrhage"
    },
    {
     "fr": "Iridodialyse",
     "en": "Iridodialysis"
+   },
+   {
+    "fr": "Hyphéma",
+    "en": "Hyphema"
    }
   ],
-  "answer": 1,
+  "answer": 3,
   "why": [
    {
     "fr": "L’hypopyon est un niveau blanc de pus (infection, inflammation).",
     "en": "Hypopyon is a white level of pus (infection, inflammation)."
-   },
-   {
-    "fr": "Juste : sang dans la moitié de la chambre antérieure (source). Mesurer la PIO, repos tête surélevée, coque, éviter AINS/anticoagulants; dépister la drépanocytose.",
-    "en": "Correct: blood filling half of the anterior chamber (source). Check IOP, rest with head raised, shield, avoid NSAIDs/anticoagulants; screen for sickle cell disease."
    },
    {
     "fr": "L’hémorragie sous-conjonctivale est en dehors du globe, sur la sclère.",
@@ -1089,6 +1085,10 @@ G.OPH.openCases = [
    {
     "fr": "L’iridodialyse est une désinsertion de la racine de l’iris (pupille en « D »).",
     "en": "Iridodialysis is a disinsertion of the iris root (D-shaped pupil)."
+   },
+   {
+    "fr": "Juste : sang dans la moitié de la chambre antérieure (source). Mesurer la PIO, repos tête surélevée, coque, éviter AINS/anticoagulants; dépister la drépanocytose.",
+    "en": "Correct: blood filling half of the anterior chamber (source). Check IOP, rest with head raised, shield, avoid NSAIDs/anticoagulants; screen for sickle cell disease."
    }
   ],
   "reveal": {
@@ -1108,32 +1108,24 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "À la papille et à l’ora serrata : décollement de rétine",
-    "en": "At the disc and the ora serrata: retinal detachment"
-   },
-   {
-    "fr": "Nulle part, elle croise la papille : décollement postérieur du vitré",
-    "en": "Nowhere, it crosses the disc: posterior vitreous detachment"
-   },
-   {
     "fr": "Dôme épais qui épargne la papille : décollement choroïdien",
     "en": "Thick dome sparing the disc: choroidal detachment"
    },
    {
     "fr": "Points brillants isolés : hyalite astéroïde",
     "en": "Isolated bright dots: asteroid hyalosis"
+   },
+   {
+    "fr": "À la papille et à l’ora serrata : décollement de rétine",
+    "en": "At the disc and the ora serrata: retinal detachment"
+   },
+   {
+    "fr": "Nulle part, elle croise la papille : décollement postérieur du vitré",
+    "en": "Nowhere, it crosses the disc: posterior vitreous detachment"
    }
   ],
-  "answer": 0,
+  "answer": 2,
   "why": [
-   {
-    "fr": "Juste (légende source) : séparation de la rétine attachée à la papille (*) et à l’ora serrata (flèches). C’est la signature du décollement de rétine.",
-    "en": "Correct (source legend): retinal separation attached at the optic disc (*) and the ora serrata (arrows). This is the signature of a retinal detachment."
-   },
-   {
-    "fr": "Le vitré décollé est plus fin, très mobile et peut croiser la papille; ici la membrane s’ancre à la papille.",
-    "en": "A detached vitreous is thinner, very mobile and may cross the disc; here the membrane anchors at the disc."
-   },
    {
     "fr": "Le décollement choroïdien forme des dômes épais et lisses qui ne s’insèrent pas à la papille.",
     "en": "A choroidal detachment forms thick smooth domes that do not insert at the disc."
@@ -1141,6 +1133,14 @@ G.OPH.openCases = [
    {
     "fr": "La hyalite astéroïde donne des points brillants dispersés, sans membrane.",
     "en": "Asteroid hyalosis gives scattered bright dots, no membrane."
+   },
+   {
+    "fr": "Juste (légende source) : séparation de la rétine attachée à la papille (*) et à l’ora serrata (flèches). C’est la signature du décollement de rétine.",
+    "en": "Correct (source legend): retinal separation attached at the optic disc (*) and the ora serrata (arrows). This is the signature of a retinal detachment."
+   },
+   {
+    "fr": "Le vitré décollé est plus fin, très mobile et peut croiser la papille; ici la membrane s’ancre à la papille.",
+    "en": "A detached vitreous is thinner, very mobile and may cross the disc; here the membrane anchors at the disc."
    }
   ],
   "reveal": {
@@ -1160,24 +1160,28 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Une hémorragie du vitré déposée en membrane dans la partie déclive",
-    "en": "Vitreous haemorrhage settled as a membrane in the dependent part"
+    "fr": "Un œil normal pour l’âge",
+    "en": "An entirely normal eye"
+   },
+   {
+    "fr": "Hémorragie du vitré",
+    "en": "Vitreous haemorrhage"
    },
    {
     "fr": "Un corps étranger intraoculaire",
     "en": "An intraocular foreign body"
    },
    {
-    "fr": "Un cristallin luxé",
-    "en": "A dislocated lens"
-   },
-   {
-    "fr": "Un œil normal",
-    "en": "A normal eye"
+    "fr": "Un cristallin luxé en arrière",
+    "en": "A posteriorly dislocated lens"
    }
   ],
-  "answer": 0,
+  "answer": 1,
   "why": [
+   {
+    "fr": "L’article décrit une atteinte du globe et une hémorragie du vitré.",
+    "en": "The article describes a globe injury and vitreous haemorrhage."
+   },
    {
     "fr": "Juste (tableau de l’article) : globe diminué de taille avec hémorragie du vitré déposée en membrane en bas; le scanner évoque une atteinte du globe. Devant un traumatisme suspect de plaie du globe : pas de pression sur l’œil, scanner, avis ophtalmologique urgent.",
     "en": "Correct (article table): smaller globe with vitreous haemorrhage settled as a membrane at the bottom; CT suggests globe injury. When an open globe is possible: no pressure on the eye, CT, urgent ophthalmology review."
@@ -1189,10 +1193,6 @@ G.OPH.openCases = [
    {
     "fr": "Le cristallin luxé est une structure ovale nette, pas une couche déclive.",
     "en": "A dislocated lens is a well-defined oval structure, not a dependent layer."
-   },
-   {
-    "fr": "L’article décrit une atteinte du globe et une hémorragie du vitré.",
-    "en": "The article describes a globe injury and vitreous haemorrhage."
    }
   ],
   "reveal": {
@@ -1224,8 +1224,8 @@ G.OPH.openCases = [
     "en": "Optic disc drusen"
    },
    {
-    "fr": "Un artefact sans signification",
-    "en": "A meaningless artefact"
+    "fr": "Un artefact de réverbération sans signification",
+    "en": "A meaningless reverberation artefact"
    }
   ],
   "answer": 0,
@@ -1268,27 +1268,23 @@ G.OPH.openCases = [
     "en": "A retinal detachment"
    },
    {
-    "fr": "Un décollement choroïdien",
-    "en": "A choroidal detachment"
-   },
-   {
     "fr": "Une hémorragie du vitré",
     "en": "A vitreous haemorrhage"
    },
    {
     "fr": "Un décollement postérieur du vitré",
     "en": "A posterior vitreous detachment"
+   },
+   {
+    "fr": "Un décollement choroïdien",
+    "en": "A choroidal detachment"
    }
   ],
-  "answer": 1,
+  "answer": 3,
   "why": [
    {
     "fr": "Le décollement de rétine est une membrane fine qui s’attache à la papille.",
     "en": "A retinal detachment is a thin membrane attached at the disc."
-   },
-   {
-    "fr": "Juste (légende et tableau source) : décollement choroïdien après traumatisme, confirmé au scanner. Aspect typique : dômes épais, lisses, convexes.",
-    "en": "Correct (source legend and table): choroidal detachment after trauma, confirmed on CT. Typical look: thick, smooth, convex domes."
    },
    {
     "fr": "L’hémorragie du vitré donne des échos diffus ou une couche déclive, pas des dômes.",
@@ -1297,6 +1293,10 @@ G.OPH.openCases = [
    {
     "fr": "Le vitré décollé est fin, très mobile, et ne forme pas de dômes épais.",
     "en": "A detached vitreous is thin and very mobile, not thick domes."
+   },
+   {
+    "fr": "Juste (légende et tableau source) : décollement choroïdien après traumatisme, confirmé au scanner. Aspect typique : dômes épais, lisses, convexes.",
+    "en": "Correct (source legend and table): choroidal detachment after trauma, confirmed on CT. Typical look: thick, smooth, convex domes."
    }
   ],
   "reveal": {
@@ -1316,32 +1316,24 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Décollement de rétine rhegmatogène",
-    "en": "Rhegmatogenous retinal detachment"
-   },
-   {
-    "fr": "Décollements choroïdiens avec maculopathie d’hypotonie",
-    "en": "Choroidal detachments with hypotony maculopathy"
-   },
-   {
     "fr": "Mélanome choroïdien",
     "en": "Choroidal melanoma"
    },
    {
-    "fr": "Hémorragie suprachoroïdienne massive",
-    "en": "Massive suprachoroidal haemorrhage"
+    "fr": "Hémorragie suprachoroïdienne",
+    "en": "Suprachoroidal haemorrhage"
+   },
+   {
+    "fr": "Décollements choroïdiens (hypotonie)",
+    "en": "Hypotony choroidal detachments"
+   },
+   {
+    "fr": "Décollement de rétine rhegmatogène",
+    "en": "Rhegmatogenous retinal detachment"
    }
   ],
-  "answer": 1,
+  "answer": 2,
   "why": [
-   {
-    "fr": "La rétine n’est pas décollée par une déchirure; ce sont des dômes choroïdiens, et l’OCT montre un pli choriorétinien.",
-    "en": "The retina is not detached by a tear; these are choroidal domes, and OCT shows a chorioretinal fold."
-   },
-   {
-    "fr": "Juste (légende source) : décollement choroïdien avec PIO à 4 mmHg; pli choriorétinien à l’OCT (maculopathie d’hypotonie). Résolution complète à 2 mois (D–F) sous atropine et corticoïdes.",
-    "en": "Correct (source legend): choroidal detachment with IOP 4 mmHg; chorioretinal fold on OCT (hypotony maculopathy). Complete resolution at 2 months (D–F) with atropine and steroids."
-   },
    {
     "fr": "Une tumeur ne disparaît pas en 2 mois; ici tout se résout (E).",
     "en": "A tumour does not vanish in 2 months; here everything resolves (E)."
@@ -1349,6 +1341,14 @@ G.OPH.openCases = [
    {
     "fr": "L’hémorragie suprachoroïdienne survient brutalement, très douloureuse, souvent en peropératoire, avec PIO élevée.",
     "en": "Suprachoroidal haemorrhage is sudden, very painful, often intraoperative, with raised IOP."
+   },
+   {
+    "fr": "Juste (légende source) : décollement choroïdien avec PIO à 4 mmHg; pli choriorétinien à l’OCT (maculopathie d’hypotonie). Résolution complète à 2 mois (D–F) sous atropine et corticoïdes.",
+    "en": "Correct (source legend): choroidal detachment with IOP 4 mmHg; chorioretinal fold on OCT (hypotony maculopathy). Complete resolution at 2 months (D–F) with atropine and steroids."
+   },
+   {
+    "fr": "La rétine n’est pas décollée par une déchirure; ce sont des dômes choroïdiens, et l’OCT montre un pli choriorétinien.",
+    "en": "The retina is not detached by a tear; these are choroidal domes, and OCT shows a chorioretinal fold."
    }
   ],
   "reveal": {
@@ -1368,39 +1368,39 @@ G.OPH.openCases = [
   },
   "options": [
    {
+    "fr": "Hyalite astéroïde",
+    "en": "Asteroid hyalosis"
+   },
+   {
+    "fr": "Rétinopathie de Valsalva, rétine à plat",
+    "en": "Valsalva retinopathy, retina attached"
+   },
+   {
     "fr": "Décollement de rétine rhegmatogène",
     "en": "Rhegmatogenous retinal detachment"
    },
    {
-    "fr": "Hémorragie prérétinienne (rétinopathie de Valsalva), rétine à plat",
-    "en": "Preretinal haemorrhage (Valsalva retinopathy), retina attached"
-   },
-   {
     "fr": "Décollement choroïdien",
     "en": "Choroidal detachment"
-   },
-   {
-    "fr": "Hyalite astéroïde",
-    "en": "Asteroid hyalosis"
    }
   ],
   "answer": 1,
   "why": [
    {
-    "fr": "Piège : un décollement de rétine respecte la papille (il s’y attache) et ne la croise pas.",
-    "en": "Pitfall: a retinal detachment respects the disc (it attaches there) and does not cross it."
+    "fr": "La hyalite astéroïde donne des particules brillantes isolées, pas une bande.",
+    "en": "Asteroid hyalosis gives isolated bright particles, not a band."
    },
    {
     "fr": "Juste (article) : hémorragie sous-hyaloïdienne et intrarétinienne après éternuements, rétine à plat confirmée le lendemain. La bande croisait le nerf optique, ce qui écarte un décollement de rétine.",
     "en": "Correct (article): subhyaloid and intraretinal haemorrhage after sneezing, retina confirmed flat the next day. The band crossed the optic nerve, which argues against a retinal detachment."
    },
    {
-    "fr": "Le décollement choroïdien est épais et convexe, sans échos de sang en arrière.",
-    "en": "A choroidal detachment is thick and convex, without blood echoes behind it."
+    "fr": "Piège : un décollement de rétine respecte la papille (il s’y attache) et ne la croise pas.",
+    "en": "Pitfall: a retinal detachment respects the disc (it attaches there) and does not cross it."
    },
    {
-    "fr": "La hyalite astéroïde donne des particules brillantes isolées, pas une bande.",
-    "en": "Asteroid hyalosis gives isolated bright particles, not a band."
+    "fr": "Le décollement choroïdien est épais et convexe, sans échos de sang en arrière.",
+    "en": "A choroidal detachment is thick and convex, without blood echoes behind it."
    }
   ],
   "reveal": {
@@ -1420,31 +1420,31 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Hémorragie du vitré",
-    "en": "Vitreous haemorrhage"
-   },
-   {
     "fr": "Hyalite astéroïde",
     "en": "Asteroid hyalosis"
    },
    {
-    "fr": "Endophtalmie",
-    "en": "Endophthalmitis"
+    "fr": "Hémorragie du vitré",
+    "en": "Vitreous haemorrhage"
+   },
+   {
+    "fr": "Endophtalmie débutante",
+    "en": "Early endophthalmitis"
    },
    {
     "fr": "Corps étrangers intraoculaires",
     "en": "Intraocular foreign bodies"
    }
   ],
-  "answer": 1,
+  "answer": 0,
   "why": [
-   {
-    "fr": "L’hémorragie donne des échos plus diffus, « fluides », qui se déposent en bas et ondulent avec les mouvements.",
-    "en": "Haemorrhage gives more diffuse, fluid echoes that settle inferiorly and swirl with eye movements."
-   },
    {
     "fr": "Juste (légende source) : particules échogènes distinctes flottant librement (^). Condition bénigne, sans urgence; à ne pas confondre avec une hémorragie du vitré.",
     "en": "Correct (source legend): discrete free-floating echogenic particles (^). Benign, not urgent; not to be confused with vitreous haemorrhage."
+   },
+   {
+    "fr": "L’hémorragie donne des échos plus diffus, « fluides », qui se déposent en bas et ondulent avec les mouvements.",
+    "en": "Haemorrhage gives more diffuse, fluid echoes that settle inferiorly and swirl with eye movements."
    },
    {
     "fr": "L’endophtalmie donne des débris denses cloisonnés dans un œil rouge et douloureux.",
@@ -1472,10 +1472,6 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Un trou maculaire transfixiant",
-    "en": "A full-thickness macular hole"
-   },
-   {
     "fr": "Un œdème maculaire cystoïde isolé",
     "en": "Isolated cystoid macular oedema"
    },
@@ -1486,14 +1482,14 @@ G.OPH.openCases = [
    {
     "fr": "Une membrane épirétinienne",
     "en": "An epiretinal membrane"
+   },
+   {
+    "fr": "Un trou maculaire transfixiant",
+    "en": "A full-thickness macular hole"
    }
   ],
-  "answer": 0,
+  "answer": 3,
   "why": [
-   {
-    "fr": "Juste (légende source) : trou de pleine épaisseur avec espaces cystoïdes sur les deux berges; il s’est fermé spontanément (c), contour normal à 5 mois (d).",
-    "en": "Correct (source legend): full-thickness hole with cystoid spaces on both edges; it closed spontaneously (c), normal contour at 5 months (d)."
-   },
    {
     "fr": "Il y a des kystes, mais surtout une interruption de toute l’épaisseur de la rétine.",
     "en": "There are cysts, but above all a break through the full retinal thickness."
@@ -1505,6 +1501,10 @@ G.OPH.openCases = [
    {
     "fr": "Pas de ligne brillante plissée à la surface interne.",
     "en": "No bright wrinkled line on the inner surface."
+   },
+   {
+    "fr": "Juste (légende source) : trou de pleine épaisseur avec espaces cystoïdes sur les deux berges; il s’est fermé spontanément (c), contour normal à 5 mois (d).",
+    "en": "Correct (source legend): full-thickness hole with cystoid spaces on both edges; it closed spontaneously (c), normal contour at 5 months (d)."
    }
   ],
   "reveal": {
@@ -1524,32 +1524,24 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Angle ouvert, trabéculum hyperpigmenté; glaucome avancé (MD −30,81 dB, RNFL très mince)",
-    "en": "Open angle, hyperpigmented meshwork; advanced glaucoma (MD −30.81 dB, very thin RNFL)"
-   },
-   {
-    "fr": "Angle fermé par synéchies; glaucome débutant",
-    "en": "Synechial angle closure; early glaucoma"
-   },
-   {
     "fr": "Néovaisseaux de l’angle; champ normal",
     "en": "Angle new vessels; normal field"
    },
    {
     "fr": "Récession de l’angle; RNFL normale",
     "en": "Angle recession; normal RNFL"
+   },
+   {
+    "fr": "Angle ouvert hyperpigmenté; glaucome avancé",
+    "en": "Open, hyperpigmented angle; advanced glaucoma"
+   },
+   {
+    "fr": "Angle fermé par synéchies; glaucome léger",
+    "en": "Synechial angle closure; mild glaucoma"
    }
   ],
-  "answer": 0,
+  "answer": 2,
   "why": [
-   {
-    "fr": "Juste (légende source) : angle ouvert à trabéculum hyperpigmenté; Humphrey 30-2 avec constriction sévère (MD −30,81 dB); OCT avec perte diffuse des fibres (moyenne 38 µm, en rouge).",
-    "en": "Correct (source legend): open angle with a hyperpigmented meshwork; Humphrey 30-2 with severe constriction (MD −30.81 dB); OCT with diffuse fibre loss (average 38 µm, in red)."
-   },
-   {
-    "fr": "Les structures de l’angle sont visibles (angle ouvert) et le champ est très atteint.",
-    "en": "Angle structures are visible (open angle) and the field is severely damaged."
-   },
    {
     "fr": "Aucun néovaisseau n’est décrit; le champ est très atteint.",
     "en": "No new vessels are described; the field is severely damaged."
@@ -1557,6 +1549,14 @@ G.OPH.openCases = [
    {
     "fr": "Rien n’évoque une récession; la RNFL est rouge dans tous les secteurs.",
     "en": "Nothing suggests recession; the RNFL is red in every sector."
+   },
+   {
+    "fr": "Juste (légende source) : angle ouvert à trabéculum hyperpigmenté; Humphrey 30-2 avec constriction sévère (MD −30,81 dB); OCT avec perte diffuse des fibres (moyenne 38 µm, en rouge).",
+    "en": "Correct (source legend): open angle with a hyperpigmented meshwork; Humphrey 30-2 with severe constriction (MD −30.81 dB); OCT with diffuse fibre loss (average 38 µm, in red)."
+   },
+   {
+    "fr": "Les structures de l’angle sont visibles (angle ouvert) et le champ est très atteint.",
+    "en": "Angle structures are visible (open angle) and the field is severely damaged."
    }
   ],
   "reveal": {
@@ -1576,39 +1576,39 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Décollement de rétine rhegmatogène simple",
-    "en": "Simple rhegmatogenous retinal detachment"
+    "fr": "Hémorragie du vitré",
+    "en": "Vitreous haemorrhage"
    },
    {
     "fr": "Mélanome choroïdien amélanotique",
     "en": "Amelanotic choroidal melanoma"
    },
    {
-    "fr": "Décollement choroïdien",
-    "en": "Choroidal detachment"
+    "fr": "Décollement de rétine rhegmatogène simple",
+    "en": "Simple rhegmatogenous retinal detachment"
    },
    {
-    "fr": "Hémorragie du vitré",
-    "en": "Vitreous haemorrhage"
+    "fr": "Décollement choroïdien",
+    "en": "Choroidal detachment"
    }
   ],
   "answer": 1,
   "why": [
    {
-    "fr": "Il y a du liquide sous-rétinien, mais aussi une masse choroïdienne sous-jacente (flèche).",
-    "en": "There is subretinal fluid, but also an underlying choroidal mass (arrow)."
+    "fr": "L’image montre une masse et du liquide sous-rétinien, pas du sang dans le vitré.",
+    "en": "The image shows a mass and subretinal fluid, not blood in the vitreous."
    },
    {
     "fr": "Juste (légende source) : liquide sous-rétinien séreux et masse choroïdienne; mélanome confirmé. Un décollement « exsudatif » doit faire chercher une tumeur.",
     "en": "Correct (source legend): serous subretinal fluid and a choroidal mass; melanoma confirmed. An exudative detachment should prompt a search for a tumour."
    },
    {
-    "fr": "Le décollement choroïdien est en dômes lisses, sans masse solide mesurable.",
-    "en": "A choroidal detachment forms smooth domes, without a solid measurable mass."
+    "fr": "Il y a du liquide sous-rétinien, mais aussi une masse choroïdienne sous-jacente (flèche).",
+    "en": "There is subretinal fluid, but also an underlying choroidal mass (arrow)."
    },
    {
-    "fr": "L’image montre une masse et du liquide sous-rétinien, pas du sang dans le vitré.",
-    "en": "The image shows a mass and subretinal fluid, not blood in the vitreous."
+    "fr": "Le décollement choroïdien est en dômes lisses, sans masse solide mesurable.",
+    "en": "A choroidal detachment forms smooth domes, without a solid measurable mass."
    }
   ],
   "reveal": {
@@ -1628,12 +1628,12 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "L’implant intraoculaire luxé en arrière",
-    "en": "The intraocular lens dislocated posteriorly"
+    "fr": "L’implant luxé en arrière",
+    "en": "The IOL, dislocated backwards"
    },
    {
-    "fr": "Une rétine décollée",
-    "en": "A detached retina"
+    "fr": "Une rétine décollée en entonnoir",
+    "en": "A funnel-shaped detached retina"
    },
    {
     "fr": "Un corps étranger",
@@ -1680,10 +1680,6 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Un abcès orbitaire latéral (collection à paroi rehaussée)",
-    "en": "A lateral orbital abscess (rim-enhancing collection)"
-   },
-   {
     "fr": "Une cellulite préseptale isolée",
     "en": "Isolated preseptal cellulitis"
    },
@@ -1692,16 +1688,16 @@ G.OPH.openCases = [
     "en": "A lacrimal gland tumour"
    },
    {
-    "fr": "Un globe normal",
-    "en": "A normal globe"
+    "fr": "Un globe et une orbite normaux",
+    "en": "A normal globe and orbit"
+   },
+   {
+    "fr": "Un abcès orbitaire",
+    "en": "An orbital abscess"
    }
   ],
-  "answer": 0,
+  "answer": 3,
   "why": [
-   {
-    "fr": "Juste (légende source) : collection à paroi rehaussée en dehors du globe droit (à gauche sur l’image) = abcès orbitaire. Antibiotiques IV et avis chirurgical.",
-    "en": "Correct (source legend): rim-enhancing collection lateral to the right globe (left of the image) = orbital abscess. IV antibiotics and surgical opinion."
-   },
    {
     "fr": "L’atteinte est en arrière du septum (collection orbitaire), pas seulement palpébrale.",
     "en": "Disease is behind the septum (orbital collection), not just eyelid."
@@ -1713,6 +1709,10 @@ G.OPH.openCases = [
    {
     "fr": "Les pointes de flèche montrent une collection anormale.",
     "en": "The arrowheads show an abnormal collection."
+   },
+   {
+    "fr": "Juste (légende source) : collection à paroi rehaussée en dehors du globe droit (à gauche sur l’image) = abcès orbitaire. Antibiotiques IV et avis chirurgical.",
+    "en": "Correct (source legend): rim-enhancing collection lateral to the right globe (left of the image) = orbital abscess. IV antibiotics and surgical opinion."
    }
   ],
   "reveal": {
@@ -1732,32 +1732,24 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Sidérose sur corps étranger intraoculaire",
-    "en": "Siderosis from an intraocular foreign body"
-   },
-   {
-    "fr": "Cataracte congénitale",
-    "en": "Congenital cataract"
-   },
-   {
     "fr": "Hétérochromie congénitale isolée",
     "en": "Isolated congenital heterochromia"
    },
    {
     "fr": "Glaucome pigmentaire",
     "en": "Pigmentary glaucoma"
+   },
+   {
+    "fr": "Sidérose (corps étranger)",
+    "en": "Siderosis (foreign body)"
+   },
+   {
+    "fr": "Cataracte congénitale",
+    "en": "Congenital cataract"
    }
   ],
-  "answer": 0,
+  "answer": 2,
   "why": [
-   {
-    "fr": "Juste (légende source) : hétérochromie irienne (flèche noire), cicatrice cornéenne et cataracte dense (flèche rouge). Le B-scan était non concluant; le scanner (pas d’IRM devant un métal possible) a confirmé le corps étranger.",
-    "en": "Correct (source legend): iris heterochromia (black arrow), corneal scar and dense cataract (red arrow). B-scan was inconclusive; CT (not MRI when metal is possible) confirmed the foreign body."
-   },
-   {
-    "fr": "Une cataracte unilatérale acquise chez un jeune doit faire chercher un traumatisme.",
-    "en": "An acquired unilateral cataract in a young person should prompt a search for trauma."
-   },
    {
     "fr": "L’hétérochromie est ici acquise, avec cataracte et cicatrice cornéenne du même côté.",
     "en": "The heterochromia here is acquired, with cataract and a corneal scar on the same side."
@@ -1765,6 +1757,14 @@ G.OPH.openCases = [
    {
     "fr": "Rien n’évoque une dispersion pigmentaire; le contexte est traumatique.",
     "en": "Nothing suggests pigment dispersion; the context is traumatic."
+   },
+   {
+    "fr": "Juste (légende source) : hétérochromie irienne (flèche noire), cicatrice cornéenne et cataracte dense (flèche rouge). Le B-scan était non concluant; le scanner (pas d’IRM devant un métal possible) a confirmé le corps étranger.",
+    "en": "Correct (source legend): iris heterochromia (black arrow), corneal scar and dense cataract (red arrow). B-scan was inconclusive; CT (not MRI when metal is possible) confirmed the foreign body."
+   },
+   {
+    "fr": "Une cataracte unilatérale acquise chez un jeune doit faire chercher un traumatisme.",
+    "en": "An acquired unilateral cataract in a young person should prompt a search for trauma."
    }
   ],
   "reveal": {
@@ -1784,8 +1784,12 @@ G.OPH.openCases = [
   },
   "options": [
    {
-    "fr": "Une endophtalmie (débris purulents cloisonnés dans le vitré)",
-    "en": "Endophthalmitis (loculated purulent debris in the vitreous)"
+    "fr": "Un décollement de rétine",
+    "en": "A retinal detachment"
+   },
+   {
+    "fr": "Une endophtalmie",
+    "en": "Endophthalmitis"
    },
    {
     "fr": "Une hémorragie du vitré",
@@ -1794,14 +1798,14 @@ G.OPH.openCases = [
    {
     "fr": "Une hyalite astéroïde",
     "en": "Asteroid hyalosis"
-   },
-   {
-    "fr": "Un décollement de rétine",
-    "en": "A retinal detachment"
    }
   ],
-  "answer": 0,
+  "answer": 1,
   "why": [
+   {
+    "fr": "La fine membrane (D) croise le nerf optique : c’est le vitré décollé, pas la rétine.",
+    "en": "The thin membrane (D) crosses the optic nerve: it is detached vitreous, not retina."
+   },
    {
     "fr": "Juste (légende source) : débris échogènes, irréguliers et cloisonnés dans le vitré = signe clé de l’endophtalmie. Aussi : abcès orbitaire latéral (A, astérisque), liquide sous-ténonien (C, pointes) et décollement postérieur du vitré qui croise le nerf (D, flèches). Prélèvement intravitréen et antibiotiques intravitréens en urgence.",
     "en": "Correct (source legend): echogenic, irregular, loculated vitreous debris = key sign of endophthalmitis. Also: lateral orbital abscess (A, asterisk), sub-Tenon fluid (C, arrowheads) and posterior vitreous detachment crossing the nerve (D, arrows). Urgent vitreous tap and intravitreal antibiotics."
@@ -1813,10 +1817,6 @@ G.OPH.openCases = [
    {
     "fr": "Les corps astéroïdes sont des points brillants isolés dans un œil calme.",
     "en": "Asteroid bodies are isolated bright dots in a quiet eye."
-   },
-   {
-    "fr": "La fine membrane (D) croise le nerf optique : c’est le vitré décollé, pas la rétine.",
-    "en": "The thin membrane (D) crosses the optic nerve: it is detached vitreous, not retina."
    }
   ],
   "reveal": {

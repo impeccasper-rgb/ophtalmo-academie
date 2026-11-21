@@ -17,12 +17,22 @@ var Settings = {
     var s = Object.assign({}, Store.p.settings || {}); s[k] = v; s.t = Date.now();
     Store.p.settings = s; Settings.apply(); Store.touch();
   },
+  sysDark: function () { try { return window.matchMedia('(prefers-color-scheme: dark)').matches; } catch (e) { return false; } },
+  watch: function () {
+    if (Settings._watching) return; Settings._watching = true;
+    var on = function () { if (Settings.get().theme === 'auto') Settings.apply(); };
+    try { var mq = window.matchMedia('(prefers-color-scheme: dark)'); if (mq.addEventListener) mq.addEventListener('change', on); else if (mq.addListener) mq.addListener(on); } catch (e) { }
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) on(); }); // iOS: appearance may change while the app is in the background
+  },
   apply: function () {
+    Settings.watch();
     var s = Settings.get(), r = document.documentElement;
     if (Settings.hostTheme === undefined) Settings.hostTheme = r.getAttribute('data-theme');
     r.setAttribute('data-depth', String(s.depth));
     r.setAttribute('data-size', s.size);
-    if (s.theme === 'auto') { if (Settings.hostTheme) r.setAttribute('data-theme', Settings.hostTheme); else r.removeAttribute('data-theme'); }
+    // auto: follow the host theme (artifact) or the system appearance, set explicitly so it also works where the
+    // CSS media query is not re-evaluated (WKWebView after an appearance change); updated live by the listener below
+    if (s.theme === 'auto') { if (Settings.hostTheme) r.setAttribute('data-theme', Settings.hostTheme); else r.setAttribute('data-theme', Settings.sysDark() ? 'dark' : 'light'); }
     else r.setAttribute('data-theme', s.theme);
     r.classList.toggle('no-motion', !s.motion);
   }
@@ -30,10 +40,10 @@ var Settings = {
 function depthSeg(small) {
   var d = Settings.get().depth;
   return '<div class="seg depth-seg' + (small ? ' sm' : '') + '" role="radiogroup" aria-label="' + t('depth.aria') + '">' + [1, 2, 3].map(function (k) {
-    return '<button type="button" role="radio" data-act="depth" data-v="' + k + '" aria-checked="' + (d === k) + '" aria-pressed="' + (d === k) + '" title="' + U.esc(DEPTHS[k].d) + '">' + DEPTHS[k].t + '</button>';
+    return '<button type="button" role="radio" data-act="depth" data-v="' + k + '" aria-checked="' + (d === k) + '" title="' + U.esc(DEPTHS[k].d) + '">' + DEPTHS[k].t + '</button>';
   }).join('') + '</div>';
 }
-Actions.depth = function (el) { Settings.set('depth', +el.getAttribute('data-v')); var y = window.scrollY; Router.refresh(true); Shell.render(); U.$$('[data-act="depth"]').forEach(function (b) { var on = b.getAttribute('data-v') === String(Settings.get().depth); b.setAttribute('aria-checked', on); b.setAttribute('aria-pressed', on); }); window.scrollTo(0, y); };
+Actions.depth = function (el) { Settings.set('depth', +el.getAttribute('data-v')); var y = window.scrollY; Router.refresh(true); Shell.render(); U.$$('[data-act="depth"]').forEach(function (b) { var on = b.getAttribute('data-v') === String(Settings.get().depth); b.setAttribute(b.getAttribute('role') === 'radio' ? 'aria-checked' : 'aria-pressed', on); }); window.scrollTo(0, y); };
 Actions.size = function (el) { Settings.set('size', el.getAttribute('data-v')); Router.refresh(true); };
 Actions.theme = function (el) { Settings.set('theme', el.getAttribute('data-v')); Router.refresh(true); };
 Actions.motion = function (el) { Settings.set('motion', el.getAttribute('data-v') === 'on'); Router.refresh(true); };
@@ -45,9 +55,9 @@ function dz(level, html) { return html ? (level > 1 ? '<div data-dz="' + level +
 var HY = {
   get: function (id) { return (OPH.hy && OPH.hy[id]) || null; },
   title: function (id) {
-    if (/^a5-/.test(id)) { var r = HY.recog(id.slice(3)); return r ? r.title : id; }
-    if (/^phy-/.test(id)) { var p = ((OPH.A && OPH.A.physio) || []).filter(function (x) { return x.id === id.slice(4); })[0]; return p ? p.title : id; }
-    if (/^ex-/.test(id)) { var e = ((OPH.A && OPH.A.exam) || []).filter(function (x) { return x.id === id.slice(3); })[0]; return e ? e.title : id; }
+    if (/^a5-/.test(id)) { var r = HY.recog(id.slice(3)); return r ? I18N.title(r) : id; }
+    if (/^phy-/.test(id)) { var p = ((OPH.A && OPH.A.physio) || []).filter(function (x) { return x.id === id.slice(4); })[0]; return p ? I18N.title(p) : id; }
+    if (/^ex-/.test(id)) { var e = ((OPH.A && OPH.A.exam) || []).filter(function (x) { return x.id === id.slice(3); })[0]; return e ? I18N.title(e) : id; }
     return D.title(id);
   },
   href: function (id) { if (/^a5-/.test(id)) return 'a-retine'; if (/^phy-/.test(id)) return 'a-physiologie'; if (/^ex-/.test(id)) { var x = id.slice(3); return ['oct', 'topographie', 'champs-visuels', 'speculaire'].indexOf(x) >= 0 ? 'a-imagerie' : 'a-examen'; } return id; },
@@ -340,7 +350,7 @@ Views.reviser = {
       '</div></div>';
   }
 };
-function gameView(title, starter) { return { title: title, keep: false, render: function () { return '<div class="page">' + crumbs([[t('nav.review'), 'reviser'], [title, null]]) + modSeg(Settings.get().mod) + '<div data-game></div></div>'; }, after: function (host) { return starter(U.$('[data-game]', host), Settings.get().mod); } }; }
+function gameView(title, starter) { return { title: title, keep: false, render: function () { return '<div class="page">' + crumbs([[t('nav.review'), 'reviser'], [title, null]]) + '<h1 class="sr-only">' + U.esc(title) + '</h1>' + modSeg(Settings.get().mod) + '<div data-game></div></div>'; }, after: function (host) { return starter(U.$('[data-game]', host), Settings.get().mod); } }; }
 Views.cartes = gameView(t('game.cards'), function (el, mod) {
   var decks = DAILY.slice(), sel = '<div class="chips deck-chips">' + DAILY.map(function (d) { return '<button type="button" class="chip" data-deck="' + d + '" aria-pressed="true">' + SRS.decks[d] + '</button>'; }).join('') + '</div><div data-run></div>';
   el.innerHTML = sel; var run = U.$('[data-run]', el), cleanup = null;
@@ -358,8 +368,8 @@ Views.associe = gameView(t('game.match'), function (el, mod) { Match.start(el, m
 function trainBlock(key, opts) {
   opts = opts || {};
   var h = HY.get(key), parts = [];
-  if (h && h.triage && h.triage.length && opts.triage !== false) parts.push('<div class="stack"><h4>' + t('train.tri') + '</h4><div data-inline-triage="' + key + '"></div></div>');
-  if (h && h.cloze && h.cloze.length) parts.push('<div class="stack"><h4>' + t('train.cloze') + '</h4><div data-inline-cloze="' + key + '"></div></div>');
+  if (h && h.triage && h.triage.length && opts.triage !== false) parts.push('<div class="stack"><h3 class="h4">' + t('train.tri') + '</h3><div data-inline-triage="' + key + '"></div></div>');
+  if (h && h.cloze && h.cloze.length) parts.push('<div class="stack"><h3 class="h4">' + t('train.cloze') + '</h3><div data-inline-cloze="' + key + '"></div></div>');
   return parts.join('');
 }
 function mountTrainers(host) {

@@ -27,6 +27,8 @@ I18N.t = function (key, vars) {
 var t = window.t = I18N.t;
 /* bilingual field {fr, en} → string in the current language */
 I18N.pick = function (v) { if (v == null) return ''; if (typeof v !== 'object' || Array.isArray(v)) return v; return v[I18N.lang] != null ? v[I18N.lang] : (v.fr != null ? v.fr : ''); };
+/* display title of a content object: in English, the English term (obj.en) when no English overlay was applied */
+I18N.title = function (obj) { if (!obj) return ''; return I18N.lang === 'en' && !obj._en && obj.en ? obj.en : obj.title; };
 I18N.locale = function () { return I18N.lang === 'en' ? 'en-CA' : 'fr-CA'; };
 /* true when showing English but this content object has no English overlay */
 I18N.untranslated = function (obj) { return I18N.lang === 'en' && !!obj && typeof obj === 'object' && !obj._en; };
@@ -118,7 +120,27 @@ function G_OPH() { return (window.OPH = window.OPH || {}); }
     'app.loading': ['Chargement de la classe…', 'Loading…'],
     'nav.main': ['Navigation principale', 'Main navigation'],
     'nav.quick': ['Navigation rapide', 'Quick navigation'],
-    'nav.menu': ['Menu', 'Menu'], 'nav.menu.open': ['Ouvrir le menu', 'Open menu'],
+    'nav.menu': ['Menu', 'Menu'],
+    'a1.title': ['Anatomie', 'Anatomy'], 'a2.title': ['Physiologie', 'Physiology'], 'a3.title': ['Examen', 'Examination'], 'a4.title': ['Imagerie', 'Imaging'], 'a5.title': ['Rétine, nerf optique et cristallin', 'Retina, optic nerve and lens'],
+    'a1.s1': ['Le globe en coupe', 'The globe in cross-section'], 'a1.p1': ['Repère d’abord les trois tuniques (fibreuse, vasculaire, nerveuse), puis les deux chambres remplies d’humeur aqueuse. Active les calques pour voir la vascularisation, l’innervation et le trajet de l’humeur aqueuse.', 'First find the three coats (fibrous, vascular, neural), then the two chambers filled with aqueous humour. Turn on the layers to see the blood supply, the nerve supply and the path of the aqueous.'],
+    'a1.s2': ['Les couches de la cornée', 'The layers of the cornea'], 'a1.p2': ['Cinq couches classiques plus la couche de Dua. Ce que chaque couche fait explique la pathologie : l’épithélium cicatrise, Bowman laisse une cicatrice, l’endothélium ne se régénère pas.', 'Five classic layers plus Dua’s layer. What each layer does explains the disease: the epithelium heals, Bowman’s layer leaves a scar, the endothelium does not regenerate.'],
+    'a1.s3': ['L’angle iridocornéen', 'The iridocorneal angle'], 'a1.p3': ['C’est ici que se joue le glaucome : l’humeur aqueuse sort par le trabéculum puis le canal de Schlemm. Compare la coupe et la vue au gonioscope.', 'This is where glaucoma plays out: aqueous leaves through the trabecular meshwork, then Schlemm’s canal. Compare the cross-section with the gonioscopic view.'],
+    'a1.s4': ['La papille (tête du nerf optique)', 'The optic disc (optic nerve head)'], 'a1.s5': ['Annexes : film lacrymal et voies lacrymales', 'Adnexa: tear film and lacrimal drainage'],
+    'a.photos': ['Photographies authentiques', 'Real photographs'], 'a.mini': ['Mini-quiz : {t}', 'Mini-quiz: {t}'], 'a.pearl': ['Perle', 'Pearl'], 'a.sim': ['Simulation interactive', 'Interactive simulation'],
+    'a.train': ['S’entraîner : mots troués et triage', 'Practice: fill in the blank and triage'], 'a.why': ['Pourquoi c’est utile', 'Why it is useful'], 'a.how': ['Technique', 'Technique'], 'a.pitfalls': ['Pièges', 'Pitfalls'],
+    'a.asks': ['Question du patron', 'The attending asks'], 'a.practice': ['Pratiquer', 'Practise'], 'a.look': ['À reconnaître', 'What to recognize'],
+    'a4.sfchip': ['Structure ↔ fonction', 'Structure ↔ function'], 'a4.sf': ['Structure ↔ fonction : papille, OCT et champ visuel', 'Structure ↔ function: optic disc, OCT and visual field'],
+    'a4.sfp': ['Lis toujours les trois ensemble. Change la papille et observe ce qui arrive à l’OCT et au champ : une atteinte inférieure de la papille donne un défaut supérieur du champ.', 'Always read the three together. Change the disc and watch what happens to the OCT and the field: inferior disc damage gives a superior field defect.'],
+    'a5.g.cristallin': ['Cristallin et cataractes', 'Lens and cataracts'], 'a5.g.echo': ['Échographie B', 'B-scan ultrasound'], 'a5.g.retine': ['Rétine et vitré', 'Retina and vitreous'], 'a5.g.nerf': ['Nerf optique', 'Optic nerve'], 'a5.g.neuro': ['Pupilles et voies visuelles', 'Pupils and visual pathways'],
+    'a5.intro': ['En clinique de cornée ou de glaucome, tu dilates, tu fais un OCT, tu évalues une cataracte avant chirurgie : ces trouvailles du segment postérieur et du cristallin passent sous tes yeux. Le but n’est pas de les traiter, mais de les <b>reconnaître</b>, de savoir <b>pourquoi elles comptent</b> pour ton patient et <b>quel délai</b> donner à la référence.', 'In a cornea or glaucoma clinic you dilate, order an OCT and assess a cataract before surgery: these lens and posterior-segment findings pass in front of you. The goal is not to treat them but to <b>recognize</b> them, know <b>why they matter</b> for your patient and <b>how soon</b> to refer.'],
+    'a5.why': ['Pourquoi en cornée ou en glaucome', 'Why it matters in cornea or glaucoma'], 'a5.action': ['Conduite', 'What to do'],
+    'x.pearls': ['Les 3 questions du patron', 'The attending’s 3 questions'], 'x.eyebrow': ['Le matin de l’observation · {d}', 'The morning of your observership · {d}'], 'x.eyebrow0': ['Avant ton stage', 'Before your rotation'],
+    'x.h1': ['Révision express : {m}', 'Express review: {m}'], 'x.lead': ['L’essentiel de chaque fiche sur un écran : phrase de triage, signes à reconnaître, drapeaux rouges, conduite par étape et questions du patron.', 'The essentials of each topic on one screen: triage line, signs to recognize, red flags, step-by-step management and the attending’s questions.'],
+    'x.last': ['Une dernière série de QCM', 'One last set of MCQs'],
+    's.lead': ['Un terme entendu en clinique ? Tape-le : définition, fiches et questions liées.', 'Heard a term in clinic? Type it: definition, related topics and questions.'], 's.ph': ['ex. Seidel, Khodadoust, SLT, Sampaolesi', 'e.g. Seidel, Khodadoust, SLT, Sampaolesi'],
+    's.min': ['Au moins deux lettres.', 'At least two letters.'], 's.gloss': ['Glossaire', 'Glossary'], 's.fiches': ['Fiches et fondations', 'Topics and foundations'], 's.mentions': [['{n} mention', '{n} mentions'], ['{n} mention', '{n} mentions']],
+    's.qs': ['Questions', 'Questions'], 's.train': ['S’entraîner sur ces {n} questions', 'Practise these {n} questions'], 's.none': ['Rien trouvé. Essaie un synonyme ou le terme anglais.', 'Nothing found. Try a synonym or the French term.'],
+    'src.g.glau': ['Glaucome', 'Glaucoma'], 'src.g.cornea': ['Cornée et surface', 'Cornea and ocular surface'], 'src.g.qc': ['Québec', 'Quebec'], 'a11y.skip': ['Aller au contenu', 'Skip to content'], 'nav.menu.open': ['Ouvrir le menu', 'Open menu'],
     'nav.home': ['Accueil', 'Home'], 'nav.learn': ['Apprendre', 'Learn'], 'nav.cases': ['Cas', 'Cases'], 'nav.review': ['Réviser', 'Review'], 'nav.progress': ['Progression', 'Progress'],
     'nav.module': ['Module {m} · {name}', 'Module {m} · {name}'],
     'nav.locked': ['Verrouillé : réussis le quiz {p} ou entre quand même', 'Locked: pass quiz {p} or enter anyway'],

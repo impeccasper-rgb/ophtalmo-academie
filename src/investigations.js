@@ -500,7 +500,7 @@
     h += '<circle cx="200" cy="200" r="186" fill="url(#' + cid + 'b)" data-reg="periph"/>';
     h += '<ellipse cx="200" cy="200" rx="150" ry="112" fill="#fff" fill-opacity="0" data-reg="pole"/>';
     h += '<circle cx="' + FF.x + '" cy="' + FF.y + '" r="52" fill="url(#' + cid + 'm)" data-reg="macula"/>';
-    h += '<circle cx="' + FF.x + '" cy="' + FF.y + '" r="10" fill="#fff" fill-opacity="0" data-reg="fovea"/><ellipse cx="' + FF.x + '" cy="' + FF.y + '" rx="2.6" ry="2" fill="#fff" opacity=".8" pointer-events="none"/>';
+    h += '<circle cx="' + FF.x + '" cy="' + FF.y + '" r="15" fill="#fff" fill-opacity="0" data-reg="fovea"/><ellipse cx="' + FF.x + '" cy="' + FF.y + '" rx="2.6" ry="2" fill="#fff" opacity=".8" pointer-events="none"/>';
     // vessels: [path, kind]
     var V = [
       ['M276,181 C252,148 210,118 150,111 S70,120 34,152', 'art', 3.2], ['M278,179 C258,138 206,103 146,99 S64,108 30,136', 'vein', 4.6],
@@ -559,6 +559,14 @@
     if (!m && typeof id === 'string') { var rq = W.OPH.invMediaRequests && W.OPH.invMediaRequests[id]; if (rq && rq.photo && W.D && D.cat && D.cat(rq.photo)) m = { kind: 'photo', photo: rq.photo, alt: null, hotspots: [] }; }
     return m;
   }
+  /* give a schematic svg string exactly one accessible name: role="img" + aria-label on the root <svg>, inner <title> removed */
+  function svgNamed(svg, name) {
+    if (!svg) return '';
+    return svg.replace(/<svg\b([^>]*)>/i, function (all, attrs) {
+      attrs = attrs.replace(/\s(role|aria-label|aria-labelledby|aria-hidden)="[^"]*"/gi, '');
+      return '<svg' + attrs + ' role="img" aria-label="' + E(name) + '" focusable="false">';
+    }).replace(/<title\b[^>]*>[\s\S]*?<\/title>/i, '');
+  }
   function mediaBlock(m, revealed) {
     if (!m) return '<div class="inv-media empty">' + E(S('media.soon', 'Image à venir', 'Image coming soon')) + '</div>';
     var body = '', hots = m.hotspots, foot = '', zoom = '', alt = revealed && m.alt ? pick(m.alt) : S('media.hidden', 'Image d’examen (légende masquée)', 'Investigation image (caption hidden)');
@@ -571,11 +579,11 @@
       if (e) zoom = '<button type="button" class="btn xs inv-zoom" data-act="lightbox" data-id="' + E(m.photo) + '" data-cap="' + E(revealed && m.alt ? pick(m.alt) : S('media.hidden', 'Image d’examen (légende masquée)', 'Investigation image (caption hidden)')) + '"' + (revealed ? '' : ' data-quiz="1"') + '>' + E(S('media.zoom', 'Agrandir', 'Enlarge')) + '</button>';
     } else {
       var g = (m.kind === 'gen' || m.gen) ? genFrom(m.gen) : null;
-      body = g ? g.svg : (m.svg || '');
+      body = svgNamed(g ? g.svg : (m.svg || ''), revealed && m.alt ? pick(m.alt) : S('media.hiddensch', 'Schéma d’examen (légende masquée)', 'Investigation schematic (caption hidden)'));
       if ((!hots || !hots.length) && g) hots = g.hot;
       foot = '<div class="credit">' + schemaBadge() + ' ' + (m.credit ? PE(m.credit) : E(S('media.orig', 'Schéma pédagogique original — pas une image de patient', 'Original teaching schematic — not a patient image'))) + '</div>';
     }
-    return '<figure class="inv-media' + (revealed ? ' revealed' : '') + '"><div class="inv-media-in" role="img" aria-label="' + E(alt) + '">' + body + (revealed ? hotsHtml(hots) : '') + zoom + '</div><figcaption>' + (revealed ? hotsLegend(hots) : '') + (revealed && m.alt ? '<span class="small">' + PE(m.alt) + '</span>' : (revealed ? '' : '<span class="xs muted">' + E(S('media.caphidden', 'Légende masquée jusqu’à ta réponse', 'Caption hidden until you answer')) + '</span>')) + foot + '</figcaption></figure>';
+    return '<figure class="inv-media' + (revealed ? ' revealed' : '') + '"><div class="inv-media-in">' + body + (revealed ? hotsHtml(hots) : '') + zoom + '</div><figcaption>' + (revealed ? hotsLegend(hots) : '') + (revealed && m.alt ? '<span class="small">' + PE(m.alt) + '</span>' : (revealed ? '' : '<span class="xs muted">' + E(S('media.caphidden', 'Légende masquée jusqu’à ta réponse', 'Caption hidden until you answer')) + '</span>')) + foot + '</figcaption></figure>';
   }
 
   function practice(host, items, opts) {
@@ -600,7 +608,7 @@
       } else {
         var ord = orderFor(it), done = st.phase === 'reveal', last = st.last || {};
         h += '<div class="conf" role="group" aria-label="' + E(S('pr.conf', 'Ton niveau de confiance', 'Your confidence')) + '"><span class="small muted">' + E(S('pr.confl', 'Je réponds :', 'I answer:')) + '</span><button type="button" data-ic="sure" aria-pressed="' + (st.conf === 'sure') + '"' + (done ? ' disabled' : '') + '>' + E(S('pr.sure', 'avec assurance', 'confidently')) + '</button><button type="button" data-ic="unsure" aria-pressed="' + (st.conf === 'unsure') + '"' + (done ? ' disabled' : '') + '>' + E(S('pr.unsure', 'en hésitant', 'unsure')) + '</button></div>';
-        h += '<div class="opts" role="group" aria-label="' + E(S('pr.opts', 'Choix de réponse', 'Answer choices')) + '">' + ord.map(function (k, j) {
+        h += '<div class="opts" tabindex="-1" role="group" aria-label="' + E(S('pr.opts', 'Choix de réponse', 'Answer choices')) + '">' + ord.map(function (k, j) {
           var cls = !done ? '' : k === it.answer ? ' correct' : k === last.k ? ' wrong' : '';
           return '<button type="button" class="opt' + cls + '" data-k="' + k + '"' + (done ? ' disabled' : '') + '><span class="key">' + (j + 1) + '</span><span>' + PM(it.options[k]) + '</span>' +
             (done && it.why && it.why[k] ? '<span class="why">' + (k === it.answer ? '<b>' + E(S('pr.right', 'Bonne réponse.', 'Correct answer.')) + '</b> ' : '<b>' + E(S('pr.whynot', 'Pourquoi pas :', 'Why not:')) + '</b> ') + PM(it.why[k]) + '</span>' : '') + '</button>';
@@ -639,7 +647,7 @@
       var ip = t.closest('[data-ip]');
       if (ip) {
         var a = ip.getAttribute('data-ip');
-        if (a === 'ready') { st.phase = 'answer'; draw('.opt'); }
+        if (a === 'ready') { st.phase = 'answer'; draw(ev.detail > 0 ? '.opts' : '.opt'); }
         else if (a === 'next') { st.i++; st.phase = 'observe'; st.last = null; draw('[data-ip="ready"]'); var top = host.getBoundingClientRect().top; if (top < 0) host.scrollIntoView({ block: 'start', behavior: reduced() ? 'auto' : 'smooth' }); }
         else if (a === 'retry') { var ids = st.wrongIds || []; src = items.filter(function (x) { return ids.indexOf(x.id) >= 0; }); st = { i: 0, res: [], conf: st.conf, phase: 'observe', order: st.order }; draw('[data-ip="ready"]'); }
         else if (a === 'again') { src = items.slice(); st = { i: 0, res: [], conf: st.conf, phase: 'observe', order: {} }; draw('[data-ip="ready"]'); }
@@ -801,7 +809,7 @@
       var i = BS_INFO[st.path], extra = '';
       if (st.ori === 'trans') extra = '<p class="small callout amber">' + E(B('Coupe transverse postérieure : l’ombre du nerf optique sert de repère. Sur une coupe transverse plus antérieure, elle disparaît.', 'Posterior transverse section: the optic nerve shadow is the landmark. On a more anterior transverse section it disappears.')) + '</p>';
       if (st.gain < 40 && (st.path === 'vh' || st.path === 'pvd')) extra += '<p class="small callout amber">' + E(B('Gain faible : les échos peu réflectifs disparaissent. Monte le gain pour les voir.', 'Low gain: weak echoes vanish. Raise the gain to see them.')) + '</p>';
-      U.$('[data-info]', el).innerHTML = '<h4>' + PE(i.n) + '</h4><ul class="small">' + i.s.map(function (x) { return '<li>' + PE(x) + '</li>'; }).join('') + '</ul>' + extra;
+      U.$('[data-info]', el).innerHTML = '<h3>' + PE(i.n) + '</h3><ul class="small">' + i.s.map(function (x) { return '<li>' + PE(x) + '</li>'; }).join('') + '</ul>' + extra;
     }
     function move() {
       cancelAnimationFrame(raf);
@@ -841,12 +849,25 @@
       var g = Gen.oct({ fluid: st.mode === 'fluid' ? st.fluid : 'none', hl: st.mode !== 'fluid' ? st.sel : null, label: lab, crop: narrow(el) });
       geo = g.geo;
       svgHost.innerHTML = g.svg + (st.mode === 'fluid' && st.fq && st.fq.done ? hotsHtml(g.hot) : '');
-      U.$$('[data-layer]', svgHost).forEach(function (p, i) { p.setAttribute('tabindex', '0'); p.setAttribute('role', 'button'); p.setAttribute('aria-label', S('oct.layern', 'Couche', 'Layer') + ' ' + (layers.map(function (l) { return l.id; }).indexOf(p.getAttribute('data-layer')) + 1)); });
+      var svgEl = U.$('svg', svgHost);
+      if (st.mode !== 'fluid' && svgEl) {
+        svgEl.setAttribute('role', 'group');
+        svgEl.setAttribute('aria-label', S('oct.grp', 'Coupe OCT : couches à toucher (de haut en bas)', 'OCT scan: tappable layers (top to bottom)'));
+        var seen = {};
+        U.$$('[data-layer]', svgHost).forEach(function (p) {
+          var id = p.getAttribute('data-layer'), k = layers.map(function (l) { return l.id; }).indexOf(id), l = layers[k];
+          if (seen[id]) { p.setAttribute('aria-hidden', 'true'); return; } seen[id] = 1;
+          p.setAttribute('tabindex', '0'); p.setAttribute('role', 'button');
+          p.setAttribute('aria-label', st.mode === 'explore' ? pick(l.n) : S('oct.layern', 'Couche', 'Layer') + ' ' + (k + 1));
+        });
+      }
     }
-    function layerInfo(id) { var l = layers.filter(function (x) { return x.id === id; })[0]; return '<div class="inv-info"><h4>' + PE(l.n) + '</h4><p class="small">' + PE(l.d) + '</p></div>'; }
+    function layerInfo(id) { var l = layers.filter(function (x) { return x.id === id; })[0]; return '<div class="inv-info"><h3>' + PE(l.n) + '</h3><p class="small">' + PE(l.d) + '</p></div>'; }
     function drawPanel() {
       if (st.mode === 'explore') panel.innerHTML = '<p class="small muted">' + E(S('oct.ehelp', 'Touche une couche sur le schéma, ou choisis-la ici :', 'Tap a layer on the schematic, or pick it here:')) + '</p>' + chipsHtml('ly', layers.map(function (l) { return [l.id, pick(l.n).replace(/^.*\((.*)\)$/, '$1')]; }));
-      else if (st.mode === 'label') panel.innerHTML = st.q ? '<p class="inv-prompt">' + E(S('oct.tap', 'Touche :', 'Tap:')) + ' <b>' + PE(st.q.layer.n) + '</b> <span class="mono xs">' + (st.q.i + 1) + ' / ' + st.q.list.length + ' · ' + st.score[0] + ' ✓</span></p>' : '';
+      else if (st.mode === 'label') panel.innerHTML = st.q ? '<p class="inv-prompt">' + E(S('oct.tap', 'Touche :', 'Tap:')) + ' <b>' + PE(st.q.layer.n) + '</b> <span class="mono xs">' + (st.q.i + 1) + ' / ' + st.q.list.length + ' · ' + st.score[0] + ' ✓</span></p>' +
+        '<p class="xs muted">' + E(S('oct.numhelp', 'Ou choisis le numéro de la couche, de haut (1) en bas :', 'Or pick the layer number, from top (1) down:')) + '</p>' +
+        '<div class="chips inv-chips inv-num" role="group" aria-label="' + E(S('oct.numl', 'Couches numérotées de haut en bas', 'Layers numbered top to bottom')) + '">' + layers.map(function (l, k) { return '<button type="button" class="chip" data-lyn="' + l.id + '" aria-label="' + E(S('oct.layern', 'Couche', 'Layer') + ' ' + (k + 1)) + '"' + (st.q.answered ? ' disabled' : '') + '>' + (k + 1) + '</button>'; }).join('') + '</div>' : '';
       else panel.innerHTML = '<p class="small">' + E(S('oct.fq', 'Où est le liquide ?', 'Where is the fluid?')) + '</p>' + chipsHtml('fl', ['irf', 'srf', 'ped'].map(function (k) { return [k, pick(OCT_FLUID[k].n)]; }));
       if (st.mode === 'explore') U.$$('[data-ly]', panel).forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-ly') === st.sel)); });
     }
@@ -879,6 +900,7 @@
         draw(); drawPanel(); return;
       }
       if ((b = t.closest('[data-ly]'))) { choose(b.getAttribute('data-ly')); return; }
+      if ((b = t.closest('[data-lyn]')) && st.q && !st.q.answered) { choose(b.getAttribute('data-lyn')); U.$$('[data-lyn]', panel).forEach(function (x) { x.disabled = true; }); return; }
       if ((b = t.closest('[data-a="lnext"]'))) {
         st.q.i++; st.q.answered = false; st.sel = null;
         if (st.q.i >= st.q.list.length) { out.innerHTML = '<div class="feedback ok"><div class="verdict">' + st.score[0] + ' / ' + st.score[1] + '</div><div class="row"><button type="button" class="btn sm" data-a="lagain">' + E(S('pr.again', 'Recommencer', 'Start again')) + '</button></div></div>'; st.q = null; }
@@ -933,9 +955,9 @@
     }
     function bandInfo(id) {
       var b = GONIO_BANDS.filter(function (x) { return x.id === id; })[0];
-      if (b) return '<div class="inv-info"><h4>' + PE(b.n) + '</h4><p class="small">' + PE(b.d) + '</p></div>';
-      if (id === 'iris') return '<div class="inv-info"><h4>' + E(B('Iris (racine)', 'Iris (root)')) + '</h4><p class="small">' + E(B('Plus l’iris est convexe et haut, plus il cache de structures : l’angle se ferme.', 'The more convex and high the iris, the more structures it hides: the angle narrows.')) + '</p></div>';
-      if (GONIO_VAR[id]) return '<div class="inv-info"><h4>' + PE(GONIO_VAR[id].n) + '</h4><p class="small">' + PE(GONIO_VAR[id].d) + '</p></div>';
+      if (b) return '<div class="inv-info"><h3>' + PE(b.n) + '</h3><p class="small">' + PE(b.d) + '</p></div>';
+      if (id === 'iris') return '<div class="inv-info"><h3>' + E(B('Iris (racine)', 'Iris (root)')) + '</h3><p class="small">' + E(B('Plus l’iris est convexe et haut, plus il cache de structures : l’angle se ferme.', 'The more convex and high the iris, the more structures it hides: the angle narrows.')) + '</p></div>';
+      if (GONIO_VAR[id]) return '<div class="inv-info"><h3>' + PE(GONIO_VAR[id].n) + '</h3><p class="small">' + PE(GONIO_VAR[id].d) + '</p></div>';
       return '';
     }
     function drawPanel() {
@@ -1045,7 +1067,7 @@
     function mark(attr, right, chosen) { U.$$('[data-' + attr + ']', panel).forEach(function (x) { x.disabled = true; var v = x.getAttribute('data-' + attr); if (v === right) x.classList.add('correct'); else if (v === chosen) x.classList.add('wrong'); }); }
     function onClick(ev) {
       var t = ev.target, b;
-      if ((b = t.closest('[data-ix]'))) { var ix = VF_IDX[b.getAttribute('data-ix')]; ixi.innerHTML = '<h4>' + PE(ix.n) + '</h4><p class="small">' + PE(ix.d) + '</p>'; return; }
+      if ((b = t.closest('[data-ix]'))) { var ix = VF_IDX[b.getAttribute('data-ix')]; ixi.innerHTML = '<h3>' + PE(ix.n) + '</h3><p class="small">' + PE(ix.d) + '</p>'; return; }
       var c = VF_CASES[key()];
       if ((b = t.closest('[data-rl]'))) {
         var v = b.getAttribute('data-rl'), ok = v === c.rel; st.score[1]++; if (ok) st.score[0]++; mark('rl', c.rel, v);
@@ -1083,11 +1105,12 @@
       var g = Gen.fundus({ ov: st.ov });
       svgHost.innerHTML = g.svg + (showKey ? hotsHtml(g.hot.filter(function (h) { return h.k === showKey; })) : '');
       if (st.sel) U.$$('[data-reg="' + st.sel + '"]', svgHost).forEach(function (p) { p.classList.add('inv-hl'); });
-      U.$$('[data-reg]', svgHost).forEach(function (p, i) { p.setAttribute('tabindex', '0'); p.setAttribute('role', 'button'); p.setAttribute('aria-label', S('fo.zone', 'Zone', 'Zone') + ' ' + (i + 1)); });
+      var fsv = U.$('svg', svgHost); if (fsv) { fsv.setAttribute('role', 'group'); fsv.setAttribute('aria-label', S('fo.grp', 'Fond d’œil droit (schéma) : zones à toucher', 'Right fundus (schematic): tappable areas')); }
+      U.$$('[data-reg]', svgHost).forEach(function (p, i) { var r = p.getAttribute('data-reg'), info = FUNDUS_REG[r] || (r.indexOf('ov-') === 0 ? FUNDUS_OV[r.slice(3)] : null); p.setAttribute('tabindex', '0'); p.setAttribute('role', 'button'); p.setAttribute('aria-label', st.mode === 'explore' && info ? pick(info.n) : S('fo.zone', 'Zone', 'Zone') + ' ' + (i + 1)); });
     }
     function regInfo(id) {
       var r = FUNDUS_REG[id] || (id.indexOf('ov-') === 0 ? FUNDUS_OV[id.slice(3)] : null); if (!r) return '';
-      return '<div class="inv-info"><h4>' + PE(r.n) + '</h4><p class="small">' + PE(r.d) + '</p></div>';
+      return '<div class="inv-info"><h3>' + PE(r.n) + '</h3><p class="small">' + PE(r.d) + '</p></div>';
     }
     function drawPanel() {
       if (st.mode === 'explore') panel.innerHTML = '<p class="small muted">' + E(S('fo.ehelp', 'Touche une zone du schéma, ou choisis :', 'Tap an area of the schematic, or pick:')) + '</p>' + chipsHtml('rg', targets.concat(['pole']).map(function (k) { return [k, pick(FUNDUS_REG[k].n)]; }));
@@ -1106,7 +1129,7 @@
     function onClick(ev) {
       var t = ev.target, b;
       if ((b = t.closest('[data-mode]'))) { st.mode = b.getAttribute('data-mode'); setPressed(el, 'mode', st.mode); st.sel = null; out.innerHTML = ''; if (st.mode === 'find') { st.q = { list: U.shuffle(targets), i: 0 }; st.score = [0, 0]; } draw(); drawPanel(); return; }
-      if ((b = t.closest('[data-ov]'))) { var k = b.getAttribute('data-ov'); st.ov[k] = !st.ov[k]; b.setAttribute('aria-pressed', String(!!st.ov[k])); st.sel = null; draw(st.ov[k] ? k : null); out.innerHTML = st.ov[k] ? '<div class="inv-info"><h4>' + PE(FUNDUS_OV[k].n) + '</h4><p class="small">' + PE(FUNDUS_OV[k].d) + '</p></div>' : ''; return; }
+      if ((b = t.closest('[data-ov]'))) { var k = b.getAttribute('data-ov'); st.ov[k] = !st.ov[k]; b.setAttribute('aria-pressed', String(!!st.ov[k])); st.sel = null; draw(st.ov[k] ? k : null); out.innerHTML = st.ov[k] ? '<div class="inv-info"><h3>' + PE(FUNDUS_OV[k].n) + '</h3><p class="small">' + PE(FUNDUS_OV[k].d) + '</p></div>' : ''; return; }
       if ((b = t.closest('[data-rg]'))) { tap(b.getAttribute('data-rg')); return; }
       if ((b = t.closest('[data-a="fnext"]'))) {
         st.q.i++; st.q.answered = false; st.sel = null; out.innerHTML = '';
@@ -1128,7 +1151,7 @@
      Data: G.OPH.imageCases (same item schema as invPractice + topic, featured); media in imageCasesMedia or invMedia.
      ====================================================================== */
   var IC_TOPICS = [['', { fr: 'Tous', en: 'All' }], ['cornee', { fr: 'Cornée', en: 'Cornea' }], ['glaucome', { fr: 'Glaucome', en: 'Glaucoma' }], ['general', { fr: 'Général', en: 'General' }]];
-  var icState = { topic: '', level: 0, run: null };
+  var IC_PAGE = 12, icState = { topic: '', level: 0, run: null, shown: IC_PAGE };
   function icList() { return ((W.OPH.imageCases) || []).filter(function (c) { return c && c.options && c.options.length && resolveMedia(c.media); }); }
   function icById(id) { return icList().filter(function (c) { return c.id === id; })[0] || null; }
   function icFiltered() { return icList().filter(function (c) { return (!icState.topic || c.topic === icState.topic) && (!icState.level || +c.level === icState.level); }); }
@@ -1154,11 +1177,12 @@
     h += '<div class="row"><button type="button" class="btn primary" data-icgo="10"' + (list.length ? '' : ' disabled') + '>' + E(S('ic.series', 'Série de 10', 'Series of 10')) + (list.length < 10 ? ' (' + list.length + ')' : '') + '</button>' +
       '<span class="small muted">' + E(S('ic.serieshint', 'Les cas ratés et hésitants passent en premier.', 'Missed and unsure cases come first.')) + '</span></div>';
     h += '<div data-icrun></div>';
-    h += '<div class="ic-grid" data-iclist>' + list.map(function (c) {
+    h += '<div data-iclist><p class="small muted ic-count" aria-live="polite">' + E(Math.min(icState.shown, list.length) + ' / ' + list.length + ' ' + S('ic.cases', 'cas', 'cases')) + '</p><div class="ic-grid">' + list.slice(0, icState.shown).map(function (c) {
       var s2 = icStatus(c);
       return '<a class="card link ic-card" href="#cas-images/' + E(c.id) + '"><span class="row tight"><span class="mono xs muted">#' + icNum(c) + '</span><span class="tag plain">' + E(icTopicName(c.topic)) + '</span><span class="tag plain">' + E(S('pr.level', 'Niveau', 'Level')) + ' ' + (c.level || 1) + '</span><span class="ic-st ' + s2 + '">' + E(st[s2]) + '</span></span>' +
         '<span class="small ic-q">' + PE(c.q) + '</span></a>';
-    }).join('') + (list.length ? '' : '<div class="empty">' + E(S('ic.nomatch', 'Aucun cas pour ces filtres.', 'No case for these filters.')) + '</div>') + '</div></div>';
+    }).join('') + (list.length ? '' : '<div class="empty">' + E(S('ic.nomatch', 'Aucun cas pour ces filtres.', 'No case for these filters.')) + '</div>') + '</div>' +
+      (list.length > icState.shown ? '<div class="row ic-more"><button type="button" class="btn" data-icmore>' + E(S('ic.more', 'Afficher plus', 'Show more')) + ' (' + Math.min(IC_PAGE, list.length - icState.shown) + ')</button></div>' : '') + '</div></div>';
     return h;
   }
   function icHubAfter(host) {
@@ -1166,8 +1190,12 @@
     function stopRun() { if (typeof clean === 'function') clean(); clean = null; }
     function onClick(ev) {
       var b, t = ev.target;
-      if ((b = t.closest('[data-ict]'))) { icState.topic = b.getAttribute('data-ict'); stopRun(); Router.refresh(true); return; }
-      if ((b = t.closest('[data-icl]'))) { icState.level = +b.getAttribute('data-icl'); stopRun(); Router.refresh(true); return; }
+      if ((b = t.closest('[data-ict]'))) { icState.topic = b.getAttribute('data-ict'); icState.shown = IC_PAGE; stopRun(); Router.refresh(true); var f1 = U.$('[data-ict="' + icState.topic + '"]'); if (f1) f1.focus({ preventScroll: true }); return; }
+      if ((b = t.closest('[data-icl]'))) { icState.level = +b.getAttribute('data-icl'); icState.shown = IC_PAGE; stopRun(); Router.refresh(true); var f2 = U.$('[data-icl="' + icState.level + '"]'); if (f2) f2.focus({ preventScroll: true }); return; }
+      if ((b = t.closest('[data-icmore]'))) {
+        var before = icState.shown; icState.shown += IC_PAGE; var y = window.scrollY; Router.refresh(true); window.scrollTo(0, y);
+        var cards = U.$$('.ic-card', host.ownerDocument); if (cards[before]) cards[before].focus({ preventScroll: true }); return;
+      }
       if ((b = t.closest('[data-icgo]'))) {
         var items = icSeries(icFiltered(), 10), run = U.$('[data-icrun]', host), lst = U.$('[data-iclist]', host);
         if (!items.length) return;

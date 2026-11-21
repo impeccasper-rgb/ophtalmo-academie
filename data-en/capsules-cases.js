@@ -2705,3 +2705,376 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
  ]
 }
 });
+
+G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
+"cas-a2": {
+ "title": "Declining vision in a patient followed for glaucoma",
+ "intro": "A 71-year-old woman is followed in glaucoma clinic for moderate POAG (primary open-angle glaucoma) in both eyes, treated with latanoprost at bedtime. She also has hypertension and type 2 diabetes. She comes in before her appointment: for 8 days, the vision in her right eye has been \"blurry\", without pain or redness, and she is convinced that \"her glaucoma is getting worse\". Corrected VA (visual acuity): 6/60 (20/200) OD, versus 6/9 (20/30) 4 months ago, and 6/7.5 (20/25) OS. IOP: 25 mmHg OD and 17 mmHg OS.",
+ "steps": [
+  {
+   "kind": "exams",
+   "prompt": "Which tests do you do now? (choose 3)",
+   "pick": 3,
+   "options": [
+    {
+     "label": "Humphrey 24-2 visual field today, to compare with the last one",
+     "result": "MD from −7 to −16 dB OD, diffuse depression with central involvement; fair reliability (fixation losses).",
+     "value": 0,
+     "note": "The field is very depressed, but it does not say WHY: macular disease depresses the field as much as glaucomatous progression does. It delays the exam that gives the answer, the dilated fundus exam."
+    },
+    {
+     "label": "Pupils (swinging flashlight test), before any dilation",
+     "result": "RAPD (relative afferent pupillary defect) 2+ OD.",
+     "value": 2,
+     "note": "Her glaucoma is symmetric: a new, definite RAPD indicates severe, recent damage to the retina or nerve of the right eye. In a vein occlusion, a definite RAPD points to the ischemic form. Do it before dilating."
+    },
+    {
+     "label": "Blood pressure in clinic",
+     "result": "172/96 mmHg, asymptomatic.",
+     "value": 1,
+     "note": "Hypertension, diabetes, age, glaucoma and elevated IOP are risk factors for vein occlusion. An elevated BP without symptoms is passed on promptly to the family physician."
+    },
+    {
+     "label": "Peripapillary RNFL OCT to judge progression",
+     "result": "RNFL OD thicker than 4 months ago in all sectors: apparent \"improvement\".",
+     "value": 0,
+     "note": "False negative (green disease): disc edema artificially thickens the RNFL. This test cannot judge the glaucoma in this eye for now."
+    },
+    {
+     "label": "Dilated fundus exam (90 D lens)",
+     "result": "OD: flame and blot hemorrhages in all 4 quadrants, dilated and tortuous veins, numerous cotton-wool spots, swollen disc with blurred margins. OS: C/D 0.7, no hemorrhage.",
+     "value": 2,
+     "note": "This is the exam that gives the diagnosis: CRVO (central retinal vein occlusion) with signs of ischemia. No glaucomatous progression produces hemorrhages in all 4 quadrants."
+    },
+    {
+     "label": "Add timolol and recheck in 3 months with a visual field",
+     "result": "The patient leaves reassured that her \"glaucoma is being treated\".",
+     "value": -1,
+     "note": "Treating a \"progression\" without dilating misses a CRVO, its macular edema and the surveillance for neovascular glaucoma, which occurs precisely in the first 3 months."
+    },
+    {
+     "label": "Undilated iris exam and gonioscopy",
+     "result": "No new vessels at the pupillary margin; angle open to the ciliary body band over 360°, without new vessels.",
+     "value": 1,
+     "note": "Useful as a baseline: if this is a vein occlusion, it will serve as a comparison for detecting new vessels in the coming months. It is done before dilation."
+    },
+    {
+     "label": "Macular OCT",
+     "result": "OD: markedly thickened macula with large intraretinal cystic spaces and a little subretinal fluid. OS: normal.",
+     "value": 2,
+     "note": "The OCT shows the cystoid macular edema that explains the VA loss; it will guide the injections and their follow-up."
+    }
+   ]
+  },
+  {
+   "kind": "choice",
+   "prompt": "What is the most likely diagnosis for the right eye?",
+   "options": [
+    {
+     "label": "Rapid POAG progression, worsened by the IOP of 25 mmHg",
+     "correct": false,
+     "note": "Glaucoma produces neither hemorrhages in all 4 quadrants nor macular edema, and central VA generally stays good until an end stage."
+    },
+    {
+     "label": "Probably ischemic CRVO, with macular edema",
+     "correct": true,
+     "note": "Hemorrhages in all 4 quadrants, tortuous veins, cotton-wool spots, a swollen disc, a definite RAPD and VA of 6/60: central vein occlusion, probably ischemic, with macular edema. Glaucoma and elevated IOP are risk factors for CRVO."
+    },
+    {
+     "label": "Nonarteritic AION with disc hemorrhages",
+     "correct": false,
+     "note": "AION gives disc edema, sometimes with a peripapillary hemorrhage, but not hemorrhages throughout the retina out to the periphery."
+    },
+    {
+     "label": "Proliferative diabetic retinopathy of the right eye",
+     "correct": false,
+     "note": "Diabetic retinopathy is bilateral and fairly symmetric; massive hemorrhagic involvement of one eye with tortuous veins suggests a vein occlusion."
+    }
+   ]
+  },
+  {
+   "kind": "info",
+   "text": "Here is a comparable photo of ischemic CRVO (another patient): diffuse hemorrhages and several white cotton-wool spots. What points to the ischemic form: very low VA, a definite RAPD, numerous cotton-wool spots, extensive hemorrhages and, on angiography, a large area of capillary nonperfusion. This is the form that predisposes to neovascular glaucoma.",
+   "figure": {
+    "type": "photo",
+    "id": "OPH-253"
+   }
+  },
+  {
+   "kind": "choice",
+   "prompt": "What management do you propose today?",
+   "options": [
+    {
+     "label": "Preventive panretinal photocoagulation today, without waiting",
+     "correct": false,
+     "note": "In ischemic CRVO, PRP is usually done as soon as new vessels appear, under close monitoring, rather than as routine prevention (CVOS study)."
+    },
+    {
+     "label": "Immediate oral anticoagulation to dissolve the clot in the vein",
+     "correct": false,
+     "note": "Anticoagulation has shown no benefit in CRVO and increases the risk of hemorrhage."
+    },
+    {
+     "label": "Double the drops and recheck in 3 months with a new field",
+     "correct": false,
+     "note": "A 3-month delay falls exactly within the risk period for neovascular glaucoma, and untreated macular edema leaves sequelae."
+    },
+    {
+     "label": "Retina promptly (anti-VEGF), IOP lowering, monthly gonioscopy",
+     "correct": true,
+     "note": "Macular edema is treated with intravitreal anti-VEGF injections (a dexamethasone implant could raise IOP in a glaucoma patient). Lower the IOP of the right eye, pass BP and diabetes on to the family physician, and examine the undilated iris and the angle about monthly during the first months."
+    }
+   ]
+  },
+  {
+   "kind": "info",
+   "text": "Twist: hospitalized for pneumonia, the patient missed two appointments. She returns 11 weeks after symptom onset with a red, painful right eye, nausea and vision reduced to counting fingers. IOP: 46 mmHg OD. Slightly edematous cornea; on undilated exam, fine tortuous vessels at the pupillary margin and on the iris (NVI); on gonioscopy, new vessels crossing the scleral spur (NVA) with peripheral anterior synechiae over about 180°. This is \"90-day glaucoma\".",
+   "figure": {
+    "type": "slit",
+    "pattern": "nvi"
+   }
+  },
+  {
+   "kind": "choice",
+   "prompt": "What is the best management of this neovascular glaucoma?",
+   "options": [
+    {
+     "label": "Intravitreal anti-VEGF, prompt PRP and medical IOP lowering",
+     "correct": true,
+     "note": "Correct: anti-VEGF makes the new vessels regress within days, PRP durably treats the cause (ischemic retina), and IOP is lowered (beta-blocker, alpha-agonist, CAI, acetazolamide) along with a topical steroid and a cycloplegic. If IOP stays high: surgery (tube) or cyclophotocoagulation."
+    },
+    {
+     "label": "Pilocarpine 2 % 4 times daily to open the angle, recheck in a week",
+     "correct": false,
+     "note": "Pilocarpine increases inflammation and does not open an angle closed by a fibrovascular membrane: it is contraindicated here."
+    },
+    {
+     "label": "Urgent laser peripheral iridotomy, as for an acute attack",
+     "correct": false,
+     "note": "There is no pupillary block: the angle is closed by a neovascular membrane that pulls the iris forward. Iridotomy does not help and may bleed."
+    },
+    {
+     "label": "Urgent selective laser trabeculoplasty (SLT) to improve outflow",
+     "correct": false,
+     "note": "SLT acts on a visible, functional trabecular meshwork; it is ineffective when the angle is covered with new vessels and synechiae."
+    }
+   ]
+  },
+  {
+   "kind": "choice",
+   "prompt": "What link do you explain to the patient between her glaucoma and what happened to her right eye?",
+   "options": [
+    {
+     "label": "Latanoprost caused the occlusion: it must be stopped in both eyes",
+     "correct": false,
+     "note": "Prostaglandin analogs do not cause vein occlusion; stopping them would raise IOP, itself a risk factor."
+    },
+    {
+     "label": "No link: it is a coincidence, with no consequence for the other eye",
+     "correct": false,
+     "note": "Glaucoma and elevated IOP are recognized risk factors for CRVO; the left eye remains at risk."
+    },
+    {
+     "label": "Glaucoma and elevated IOP promote CRVO: we protect the left eye",
+     "correct": true,
+     "note": "Correct: the central vein passes through the lamina cribrosa, where elevated IOP and glaucomatous remodeling can compress it. Keep the left eye's IOP at target and optimize BP, diabetes and lipids with the family physician."
+    },
+    {
+     "label": "The link is hereditary: thrombophilia workup for the whole family",
+     "correct": false,
+     "note": "A thrombophilia workup is reserved for young patients, bilateral disease or the absence of risk factors; it is not indicated here, nor for the family."
+    }
+   ]
+  }
+ ],
+ "debrief": [
+  "In a glaucoma patient, vision loss is not glaucoma until you have done VA, pupils (RAPD), IOP, undilated iris and angle, dilated fundus exam and macular OCT.",
+  "Glaucoma and elevated IOP are risk factors for CRVO, along with age, hypertension and diabetes; the ischemic form (very low VA, RAPD, cotton-wool spots) predisposes to neovascular glaucoma.",
+  "\"90-day glaucoma\": undilated iris exam and gonioscopy about monthly during the first months; NVA can precede NVI, and anti-VEGF can mask them temporarily.",
+  "Neovascular glaucoma: anti-VEGF + PRP + medical IOP lowering (without pilocarpine), steroid and cycloplegic; surgery (tube) if IOP stays high.",
+  "While the disc is swollen from a CRVO, the RNFL OCT is falsely thick: it cannot be used to judge the glaucoma in that eye."
+ ]
+}
+});
+
+G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
+"cas-b5": {
+ "title": "Rheumatoid arthritis and a painful red eye",
+ "intro": "A 66-year-old woman with rheumatoid arthritis for 20 years, taking methotrexate irregularly since the winter. Red, painful right eye for 5 days: deep pain that wakes her at night, tearing, photophobia. She is taking ibuprofen and artificial tears. VA OD 6/12 (20/40), OS 6/6 (20/20); normal IOP in both eyes.",
+ "steps": [
+  {
+   "kind": "exams",
+   "prompt": "Which tests do you do now? (choose 3)",
+   "pick": 3,
+   "options": [
+    {
+     "label": "Phenylephrine 2.5 % test on the redness",
+     "result": "After 15 minutes, the superficial redness blanches slightly, but the deep violaceous hue from 7 to 9 o'clock persists.",
+     "value": 1,
+     "note": "Confirms an associated scleritis; useful, but the cornea and the systemic workup come first."
+    },
+    {
+     "label": "Indentation gonioscopy with a 4-mirror lens",
+     "result": "Open angle; pressure from the lens on the thinned cornea is painful.",
+     "value": -1,
+     "note": "Of no use here, and any pressure must be avoided on a melting cornea."
+    },
+    {
+     "label": "Slit lamp with fluorescein, estimating the thinning",
+     "result": "4 mm crescent along the inferotemporal limbus (7 to 9 o'clock): epithelial defect, stroma thinned by about 30 %, no clear interval with the limbus; negative Seidel; rare anterior chamber cells.",
+     "value": 2,
+     "note": "The key exam: hugging the limbus + epithelial defect + thinning = PUK."
+    },
+    {
+     "label": "Humphrey 24-2 visual field",
+     "result": "Unreliable (pain, photophobia); no decision follows from it.",
+     "value": 0,
+     "note": "Delays management without adding anything."
+    },
+    {
+     "label": "Workup: CBC, creatinine, urinalysis, ESR, CRP, rheumatoid factor, anti-CCP, ANCA, chest X-ray",
+     "result": "Elevated ESR and CRP, strongly positive rheumatoid factor and anti-CCP, negative ANCA, normal creatinine and urinalysis; X-ray pending.",
+     "value": 2,
+     "note": "Essential from day one: PUK can herald a systemic vasculitis."
+    },
+    {
+     "label": "Scraping of the ulcer edge, Gram stain and cultures",
+     "result": "Gram stain without bacteria; cultures negative at 48 h.",
+     "value": 1,
+     "note": "Useful in an immunosuppressed patient: rules out infection before intensifying immunosuppression."
+    },
+    {
+     "label": "AS-OCT of the thinned area",
+     "result": "About 70 % residual thickness at the thinnest point; serves as a baseline.",
+     "value": 1,
+     "note": "Documents thickness to follow progression."
+    }
+   ]
+  },
+  {
+   "kind": "choice",
+   "prompt": "Which diagnosis do you make?",
+   "options": [
+    {
+     "label": "Staphylococcal marginal keratitis",
+     "correct": false,
+     "note": "It leaves a clear interval and causes little thinning; here, a crescent hugging the limbus with melting and scleritis."
+    },
+    {
+     "label": "Terrien marginal degeneration",
+     "correct": false,
+     "note": "Terrien is painless, with a white eye and intact epithelium: the opposite of this picture."
+    },
+    {
+     "label": "PUK associated with scleritis",
+     "correct": true,
+     "note": "Correct: a crescent hugging the limbus, epithelial defect, thinning, adjacent scleritis, poorly controlled rheumatoid arthritis."
+    },
+    {
+     "label": "Idiopathic Mooren ulcer",
+     "correct": false,
+     "note": "A diagnosis of exclusion: it is not made in a patient with rheumatoid arthritis."
+    },
+    {
+     "label": "Peripheral bacterial keratitis",
+     "correct": false,
+     "note": "Always to be ruled out (cultures), but the scleritis and the context point to autoimmune PUK."
+    }
+   ]
+  },
+  {
+   "kind": "choice",
+   "prompt": "Which immediate management do you choose?",
+   "options": [
+    {
+     "label": "A strong topical steroid hourly alone, recheck in a week",
+     "correct": false,
+     "note": "Does not treat the vasculitis and can worsen melting when used alone; follow-up must be close."
+    },
+    {
+     "label": "Rheumatology the same day, oral prednisone, doxycycline, lubricants",
+     "correct": true,
+     "note": "Correct: PUK is treated systemically (dose decided with rheumatology); doxycycline and preservative-free lubricants protect the stroma; stop ibuprofen if prednisone is started."
+    },
+    {
+     "label": "Topical ketorolac for the scleritis and pain, recheck in 2 weeks",
+     "correct": false,
+     "note": "Topical NSAID: risk of corneal melting; the delay is far too long."
+    },
+    {
+     "label": "Artificial tears and warm compresses, recheck in 4 weeks",
+     "correct": false,
+     "note": "A blepharitis treatment: the melt would progress."
+    }
+   ]
+  },
+  {
+   "kind": "info",
+   "text": "Day 5: pain has decreased on prednisone, but the thinning is progressing: about 20 % thickness remains over 2 mm, with a small bulging descemetocele; negative Seidel. The rheumatologist learns that the patient stopped methotrexate 3 months ago, suspects rheumatoid vasculitis and plans a stronger agent. The photo shows a similar case in another patient (according to the source: peripheral melt with inflammation in rheumatoid arthritis).",
+   "figure": {
+    "type": "photo",
+    "id": "OPH-377"
+   }
+  },
+  {
+   "kind": "choice",
+   "prompt": "What do you do for the cornea today?",
+   "options": [
+    {
+     "label": "Pressure patch for 48 h to help the epithelium close",
+     "correct": false,
+     "note": "Any pressure on a descemetocele can perforate it."
+    },
+    {
+     "label": "Large-diameter penetrating keratoplasty today",
+     "correct": false,
+     "note": "On an inflamed eye, the graft melts or is rejected; tectonic grafting is reserved for perforations too large for glue."
+    },
+    {
+     "label": "Double the topical steroid to switch off the melt",
+     "correct": false,
+     "note": "A topical steroid slows stromal repair; the melt is controlled systemically."
+    },
+    {
+     "label": "Cyanoacrylate glue, bandage contact lens and a shield",
+     "correct": true,
+     "note": "Correct: reinforces the area, curbs the influx of neutrophils and protects; systemic immunosuppression continues."
+    }
+   ]
+  },
+  {
+   "kind": "choice",
+   "prompt": "How do you organize follow-up?",
+   "options": [
+    {
+     "label": "Recheck every 1–2 days with rheumatology, then space out",
+     "correct": true,
+     "note": "Correct: monitor glue, Seidel, thickness, infection and IOP while systemic treatment takes effect."
+    },
+    {
+     "label": "Recheck in 3 months if the pain does not return before then",
+     "correct": false,
+     "note": "On steroids, the melt can progress without pain; that would be too late."
+    },
+    {
+     "label": "Stop prednisone as soon as the eye turns white again",
+     "correct": false,
+     "note": "Abrupt cessation risks relapse of the vasculitis and adrenal insufficiency; the taper is managed by rheumatology."
+    },
+    {
+     "label": "Remove the glue at the next visit to examine the cornea",
+     "correct": false,
+     "note": "The glue stays until it falls off on its own or the stroma has consolidated; removing it early risks perforation."
+    }
+   ]
+  }
+ ],
+ "debrief": [
+  "Crescent hugging the limbus + epithelial defect + thinning = PUK; a clear interval and no melting point rather to marginal keratitis.",
+  "PUK is a systemic disease: workup (CBC, creatinine, urinalysis, ESR, CRP, rheumatoid factor, anti-CCP, ANCA, chest X-ray) and rheumatology the same day; treatment is systemic.",
+  "No topical NSAIDs and no topical steroid alone on a melting cornea; doxycycline, preservative-free lubricants, protection.",
+  "Descemetocele or small perforation: cyanoacrylate glue + bandage contact lens; tectonic graft if the hole is too large.",
+  "Associated scleritis (nocturnal pain, violaceous hue, no blanching with phenylephrine): worse prognosis, immunosuppression all the more indicated."
+ ]
+}
+});

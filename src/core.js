@@ -156,6 +156,7 @@ var Prog = {
   },
   passed: function (m) { var s = Prog.stat(m); return s.answered >= Math.min(15, s.total) && s.acc >= 0.6; },
   unlocked: function (m) {
+    return true; // public web/iOS product: every module open; the plan and quiz scores still suggest an order
     if (m === 'A') return true;
     if (Store.p.unlocked[m]) return true;
     return m === 'B' ? Prog.passed('A') : Prog.passed('B');
@@ -178,8 +179,8 @@ var D = {
   cat: function (id) { if (!D._cat) { D._cat = {}; OPH.catalog.forEach(function (e) { D._cat[e.id] = e; }); } return D._cat[id] || null; },
   caseById: function (id) { for (var i = 0; i < OPH.cases.length; i++) if (OPH.cases[i].id === id) return OPH.cases[i]; return null; },
   title: function (id) {
-    var f = D.fiche(id); if (f) return f.title;
-    var c = D.capsule(id); if (c) return c.title;
+    var f = D.fiche(id); if (f) return I18N.title(f);
+    var c = D.capsule(id); if (c) return I18N.title(c);
     if (id === 'b-bases') return t('title.bbases'); if (id === 'c-bases') return t('title.cbases');
     for (var i = 0; i < A_SECTIONS.length; i++) if (A_SECTIONS[i].id === id) return A_SECTIONS[i].title;
     return id;
@@ -266,7 +267,9 @@ var Photo = {
       Photo.credit(e, opts.quiz) + '</figcaption></figure>';
   },
   gallery: function (list, opts) { if (!list || !list.length) return ''; return '<div class="gallery">' + list.map(function (p) { return Photo.card(p, opts); }).join('') + '</div>'; },
+  opener: null,
   open: function (id, cap, quiz) {
+    Photo.opener = document.activeElement;
     var e = D.cat(id); if (!e) return;
     var lb = U.$('#lightbox');
     lb.innerHTML = '<div class="lb-top"><span>' + U.md(cap || e.title) + '</span><button type="button" class="btn sm" data-act="lb-close">' + t('lb.close') + '</button></div>' +
@@ -275,6 +278,7 @@ var Photo = {
     lb.hidden = false; U.$('[data-act="lb-close"]', lb).focus();
   },
   openFig: function (fig) {
+    Photo.opener = document.activeElement;
     if (!fig) return;
     var body = U.$('.fig-body', fig), cap = U.$('.fig-cap > span', fig); if (!body) return;
     var lb = U.$('#lightbox');
@@ -291,7 +295,7 @@ var Photo = {
     z = Math.max(1, Math.min(4, z)); lb.setAttribute('data-z', String(z));
     inner.style.width = (z * 100) + '%';
   },
-  close: function () { var lb = U.$('#lightbox'); lb.hidden = true; lb.innerHTML = ''; }
+  close: function () { var lb = U.$('#lightbox'); if (!lb || lb.hidden) return; lb.hidden = true; lb.innerHTML = ''; var o = Photo.opener; Photo.opener = null; if (o && document.body.contains(o) && o.focus) { try { o.focus({ preventScroll: true }); } catch (e) { } } }
 };
 
 /* ---------- router ---------- */
@@ -408,7 +412,10 @@ var Shell = {
   /* translate the static topbar once (skeleton text is French) and add the language switch */
   top: function () {
     var tb = U.$('.topbar'); if (!tb || tb.getAttribute('data-i18n') === '1') return; tb.setAttribute('data-i18n', '1');
-    var mb = U.$('[data-act="menu"]', tb); if (mb) { mb.textContent = t('nav.menu'); mb.setAttribute('aria-label', t('nav.menu.open')); }
+    var mb = U.$('[data-act="menu"]', tb); if (mb) { mb.textContent = t('nav.menu'); mb.setAttribute('aria-label', t('nav.menu.open')); mb.setAttribute('aria-expanded', 'false'); }
+    var pnl = U.$('#drawer .panel'); if (pnl) { pnl.setAttribute('aria-modal', 'true'); pnl.setAttribute('aria-label', t('nav.menu')); }
+    var lbx0 = U.$('#lightbox'); if (lbx0) lbx0.setAttribute('aria-modal', 'true');
+    var sk = U.$('.skip-link'); if (sk) sk.textContent = t('a11y.skip');
     var br = U.$('.brand > span', tb); if (br) br.innerHTML = '<b>' + t('brand.name') + '</b><span>' + t('brand.sub') + '</span>';
     var tbar = U.$('#tabbar'); if (tbar) tbar.setAttribute('aria-label', t('nav.quick'));
     var lbx = U.$('#lightbox'); if (lbx) lbx.setAttribute('aria-label', t('lb.aria'));
@@ -418,8 +425,8 @@ var Shell = {
     var txt = Store.status === 'sync' ? ['ok', t('sync.sync')] : Store.status === 'local' ? ['ok', t('sync.local')] : ['warn', t('sync.none')];
     U.$$('#syncnote').forEach(function (el) { el.className = 'syncnote ' + txt[0]; el.innerHTML = '<i></i>' + txt[1]; });
   },
-  open: function () { var d = U.$('#drawer'); d.hidden = false; var f = U.$('#drawer a'); if (f) f.focus(); },
-  close: function () { var d = U.$('#drawer'); if (d) d.hidden = true; }
+  open: function () { var d = U.$('#drawer'); d.hidden = false; U.$$('[data-act="menu"]').forEach(function (b) { b.setAttribute('aria-expanded', 'true'); }); var f = U.$('#drawer a'); if (f) f.focus(); },
+  close: function () { var d = U.$('#drawer'); if (!d || d.hidden) return; d.hidden = true; var mb = U.$('.topbar [data-act="menu"]'); if (mb) { mb.setAttribute('aria-expanded', 'false'); if (d.contains(document.activeElement) || document.activeElement === document.body) mb.focus({ preventScroll: true }); } }
 };
 
 /* ---------- global events ---------- */
@@ -432,6 +439,7 @@ document.addEventListener('click', function (ev) {
   var el = t.closest && t.closest('[data-act]');
   if (!el) return;
   var act = el.getAttribute('data-act');
+  if (act === 'skip') { ev.preventDefault(); var vw = U.$('#view'); if (vw) { vw.focus({ preventScroll: true }); vw.scrollIntoView({ block: 'start' }); } return; }
   if (act === 'menu') { Shell.open(); return; }
   if (act === 'close-drawer') { Shell.close(); return; }
   if (act === 'lightbox') { Photo.open(el.getAttribute('data-id'), el.getAttribute('data-cap'), el.getAttribute('data-quiz') === '1'); return; }
@@ -443,7 +451,16 @@ document.addEventListener('click', function (ev) {
   if (Actions[act]) Actions[act](el, ev);
 });
 document.addEventListener('keydown', function (ev) {
-  if (ev.key === 'Escape') { Gloss.hide(); Photo.close(); Shell.close(); }
+  if (ev.key === 'Escape') { Gloss.hide(); Photo.close(); Shell.close(); return; }
+  // focus trap inside the open modal (lightbox, then drawer)
+  if (ev.key === 'Tab') {
+    var lb = U.$('#lightbox'), dr = U.$('#drawer'), box = lb && !lb.hidden ? lb : (dr && !dr.hidden ? U.$('.panel', dr) : null); if (!box) return;
+    var f = U.$$('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])', box).filter(function (x) { return x.offsetParent !== null; }); if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (!box.contains(document.activeElement)) { ev.preventDefault(); first.focus(); }
+    else if (ev.shiftKey && document.activeElement === first) { ev.preventDefault(); last.focus(); }
+    else if (!ev.shiftKey && document.activeElement === last) { ev.preventDefault(); first.focus(); }
+  }
 });
 window.addEventListener('hashchange', function () { Router.refresh(); });
 window.addEventListener('scroll', function () { if (Date.now() - (Gloss.t0 || 0) > 400) Gloss.hide(); }, { passive: true }); // ignore the scroll caused by the tap itself

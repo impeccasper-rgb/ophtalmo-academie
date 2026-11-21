@@ -33,3 +33,20 @@ noscript p { max-width: 40rem; margin: 40px auto; padding: 0 16px; font-family: 
 .feat-cta { margin-top: 18px; border-color: var(--cobalt); }
 /* native app (Capacitor): hide web-only UI */
 html.native .web-only, html.is-native .web-only, html.native [data-web-only], html.native .install-prompt, html.native .open-in-app { display: none !important; }
+
+/* accessibility: skip link (first focusable element), depth radios */
+.skip-link { position: absolute; left: 8px; top: -60px; z-index: 100; padding: 10px 14px; border-radius: 8px; background: var(--cobalt); color: #fff; font-weight: 700; text-decoration: none; }
+.skip-link:focus { top: calc(8px + env(safe-area-inset-top, 0px)); outline: 3px solid var(--fluo, #b6f04e); outline-offset: 2px; }
+.seg button[role="radio"][aria-checked="true"] { background: var(--cobalt-wash); color: var(--cobalt-ink); font-weight: 700; }
+/* atlas filter row wraps on narrow screens and large text */
+.atlas-filters { flex-wrap: wrap; }
+.atlas-filters .seg { max-width: 100%; }
+.atlas-filters input { flex: 1 1 200px; min-width: 0; max-width: 100%; }
+/* sub-headings kept at the former h4 size (heading levels no longer skip from h2 to h4) */
+h3.h4 { font-family: inherit; font-size: var(--fs-md); font-weight: 700; line-height: 1.3; margin: 0; letter-spacing: normal; }
+/* pages never grow wider than the viewport because of one wide child (atlas at 320 px / A++) */
+.page { grid-template-columns: minmax(0, 1fr); }
+.atlas-filters .seg button { white-space: normal; }
+.sec, .stack { min-width: 0; }
+.sec { grid-template-columns: minmax(0, 1fr); }
+.ph-card .cap, .ph-card .muted, .credit { overflow-wrap: anywhere; }

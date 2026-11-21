@@ -157,93 +157,93 @@ function aTools() { return '<div class="row depth-row"><span class="xs muted">' 
 function missing(what) { return '<div class="empty">' + U.esc(t('missing', { what: what })) + '</div>'; }
 
 Views['a-anatomie'] = {
-  title: 'Anatomie', render: function () {
+  title: t('a1.title'), render: function () {
     var ph = photosFor('a-anatomie');
     return '<div class="page">' + aHead('a-anatomie') +
-      '<div class="sec">' + secH('1', 'Le globe en coupe') + '<p class="read">Repère d’abord les trois tuniques (fibreuse, vasculaire, nerveuse), puis les deux chambres remplies d’humeur aqueuse. Active les calques pour voir la vascularisation, l’innervation et le trajet de l’humeur aqueuse.</p><div data-sim="anatomy"></div></div>' +
-      '<div class="sec">' + secH('2', 'Les couches de la cornée') + '<p class="read">Cinq couches classiques plus la couche de Dua. Ce que chaque couche fait explique la pathologie : l’épithélium cicatrise, Bowman laisse une cicatrice, l’endothélium ne se régénère pas.</p><div data-sim="corneaLayers"></div></div>' +
-      '<div class="sec">' + secH('3', 'L’angle iridocornéen') + '<p class="read">C’est ici que se joue le glaucome : l’humeur aqueuse sort par le trabéculum puis le canal de Schlemm. Compare la coupe et la vue au gonioscope.</p><div data-sim="angleExplorer"></div></div>' +
-      '<div class="sec">' + secH('4', 'La papille (tête du nerf optique)') + '<div data-sim="discAnatomy"></div></div>' +
-      '<div class="sec">' + secH('5', 'Annexes : film lacrymal et voies lacrymales') + '<div data-sim="annexes"></div></div>' +
-      (ph.length ? '<div class="sec">' + secH('6', 'Photographies authentiques') + Photo.gallery(ph) + '</div>' : '') +
-      miniQuiz('a-anatomie', quizIds(function (q) { return q.topic === 'a-anatomie'; }), 'Mini-quiz : anatomie') + aNav('a-anatomie') + '</div>';
+      '<div class="sec">' + secH('1', t('a1.s1')) + '<p class="read">' + t('a1.p1') + '</p><div data-sim="anatomy"></div></div>' +
+      '<div class="sec">' + secH('2', t('a1.s2')) + '<p class="read">' + t('a1.p2') + '</p><div data-sim="corneaLayers"></div></div>' +
+      '<div class="sec">' + secH('3', t('a1.s3')) + '<p class="read">' + t('a1.p3') + '</p><div data-sim="angleExplorer"></div></div>' +
+      '<div class="sec">' + secH('4', t('a1.s4')) + '<div data-sim="discAnatomy"></div></div>' +
+      '<div class="sec">' + secH('5', t('a1.s5')) + '<div data-sim="annexes"></div></div>' +
+      (ph.length ? '<div class="sec">' + secH('6', t('a.photos')) + Photo.gallery(ph) + '</div>' : '') +
+      miniQuiz('a-anatomie', quizIds(function (q) { return q.topic === 'a-anatomie'; }), t('a.mini', { t: t('a1.title') })) + aNav('a-anatomie') + '</div>';
   }, after: mountMinis
 };
 var PHYSIO_SIM = { aqueuse: 'aqueous', 'film-lacrymal': 'tbut', transparence: 'edema', refraction: 'refraction' };
 Views['a-physiologie'] = {
-  title: 'Physiologie', render: function () {
+  title: t('a2.title'), render: function () {
     var P = (OPH.A && OPH.A.physio) || [], scope = Gloss.scope();
-    var nav = '<div class="chips">' + P.map(function (p) { return '<button class="chip" data-act="goto" data-target="ph-' + p.id + '">' + U.esc(p.title) + '</button>'; }).join('') + '</div>';
+    var nav = '<div class="chips">' + P.map(function (p) { return '<button class="chip" data-act="goto" data-target="ph-' + p.id + '">' + U.esc(I18N.title(p)) + '</button>'; }).join('') + '</div>';
     var body = P.map(function (p, i) {
       var sim = PHYSIO_SIM[p.id];
-      return '<div class="sec" id="ph-' + p.id + '">' + secH('A2.' + (i + 1), p.title) + '<div class="en small">' + U.esc(p.en) + '</div><p class="read">' + T(p.intro, scope) + '</p>' +
+      return '<div class="sec" id="ph-' + p.id + '">' + secH('A2.' + (i + 1), I18N.title(p)) + enSub(p.en).replace('class="en"', 'class="en small"') + '<p class="read">' + T(p.intro, scope) + '</p>' +
         (p.numbers && p.numbers.length ? '<div class="grid3">' + p.numbers.map(function (n) { return '<div class="readout"><span class="u">' + U.esc(n.label) + '</span><span class="small mono" style="font-weight:700">' + U.esc(n.value) + '</span></div>'; }).join('') + '</div>' : '') +
-        HY.essentials('phy-' + p.id, 'L’essentiel') +
+        HY.essentials('phy-' + p.id, t('hy.title')) +
         '<ul class="blist read" data-dz="2">' + p.points.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' +
-        '<div class="callout amber"><span class="eyebrow">Perle</span><span>' + T(p.pearl, scope) + '</span></div>' +
-        (sim ? '<details class="acc" open><summary>Simulation interactive</summary><div style="padding:0 14px 14px"><div data-sim="' + sim + '"></div></div></details>' : '') +
-        '<details class="acc"><summary>S’entraîner : mots troués et triage</summary><div class="stack" style="padding:0 14px 14px">' + trainBlock('phy-' + p.id) + '</div></details>' + '</div>';
+        '<div class="callout amber"><span class="eyebrow">' + t('a.pearl') + '</span><span>' + T(p.pearl, scope) + '</span></div>' +
+        (sim ? '<details class="acc" open><summary>' + t('a.sim') + '</summary><div style="padding:0 14px 14px"><div data-sim="' + sim + '"></div></div></details>' : '') +
+        '<details class="acc"><summary>' + t('a.train') + '</summary><div class="stack" style="padding:0 14px 14px">' + trainBlock('phy-' + p.id) + '</div></details>' + '</div>';
     }).join('');
-    return '<div class="page mv">' + aHead('a-physiologie') + aTools() + nav + (P.length ? body : missing('Le contenu de physiologie')) + miniQuiz('a-physiologie', quizIds(function (q) { return q.topic === 'a-physiologie'; }), 'Mini-quiz : physiologie') + aNav('a-physiologie') + '</div>';
+    return '<div class="page mv">' + aHead('a-physiologie') + aTools() + nav + (P.length ? body : missing(t('a2.title'))) + miniQuiz('a-physiologie', quizIds(function (q) { return q.topic === 'a-physiologie'; }), t('a.mini', { t: t('a2.title') })) + aNav('a-physiologie') + '</div>';
   }, after: function (host) { mountMinis(host); mountTrainers(host); }
 };
 var EXAM_TOOL = { av: ['acuity'], pupilles: ['rapd'], lampe: ['vanherick', 'patterns:slit'], fluoresceine: ['patterns:fluo:compare'], tonometrie: ['goldmann'], gonioscopie: ['gonio'], papille: ['structure'], oct: ['patterns:oct'], topographie: ['patterns:topo:compare'], 'champs-visuels': ['vf'], speculaire: ['specular'] };
 function examBlock(p, i, prefix, scope) {
   var tools = (EXAM_TOOL[p.id] || []).map(function (t) { var parts = t.split(':'); return parts[0] === 'patterns' ? '<div data-sim="patterns" data-kind="' + parts[1] + '"' + (parts[2] ? ' data-compare="1"' : '') + '></div>' : '<div data-sim="' + parts[0] + '"></div>'; }).join('');
   var ph = photosFor('a-' + p.id);
-  return '<div class="sec" id="ex-' + p.id + '">' + secH(prefix + (i + 1), p.title) + '<div class="en small">' + U.esc(p.en) + '</div><div class="callout"><span class="eyebrow">Pourquoi c’est utile</span><span>' + T(p.why, scope) + '</span></div>' +
-    HY.essentials('ex-' + p.id, 'L’essentiel') + (ph.length ? Photo.carousel(ph) : '') +
-    '<div class="twocol" data-dz="2"><div class="stack"><h4>Technique</h4><ol class="read">' + p.how.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ol></div><div class="stack"><h4>Pièges</h4><ul class="blist red">' + p.pitfalls.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' +
-    '<div class="twocol"><div class="panel-sunk stack"><h4 style="color:var(--ok)">Normal</h4><ul class="blist ok">' + p.normal.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="panel-sunk stack"><h4 style="color:var(--urgent)">Pathologique</h4><ul class="blist red">' + p.patho.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' +
-    '<div class="callout amber"><span class="eyebrow">Question du patron</span><span>' + T(p.pearl, scope) + '</span></div>' +
-    (tools ? '<details class="acc" open><summary>Pratiquer</summary><div class="stack" style="padding:0 14px 14px">' + tools + '</div></details>' : '') +
-    (HY.get('ex-' + p.id) ? '<details class="acc"><summary>S’entraîner : mots troués et triage</summary><div class="stack" style="padding:0 14px 14px">' + trainBlock('ex-' + p.id) + '</div></details>' : '') + '</div>';
+  return '<div class="sec" id="ex-' + p.id + '">' + secH(prefix + (i + 1), I18N.title(p)) + enSub(p.en).replace('class="en"', 'class="en small"') + '<div class="callout"><span class="eyebrow">' + t('a.why') + '</span><span>' + T(p.why, scope) + '</span></div>' +
+    HY.essentials('ex-' + p.id, t('hy.title')) + (ph.length ? Photo.carousel(ph) : '') +
+    '<div class="twocol" data-dz="2"><div class="stack"><h3 class="h4">' + t('a.how') + '</h3><ol class="read">' + p.how.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ol></div><div class="stack"><h3 class="h4">' + t('a.pitfalls') + '</h3><ul class="blist red">' + p.pitfalls.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' +
+    '<div class="twocol"><div class="panel-sunk stack"><h3 class="h4" style="color:var(--ok)">' + t('f.normal') + '</h3><ul class="blist ok">' + p.normal.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="panel-sunk stack"><h3 class="h4" style="color:var(--urgent)">' + t('f.patho') + '</h3><ul class="blist red">' + p.patho.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' +
+    '<div class="callout amber"><span class="eyebrow">' + t('a.asks') + '</span><span>' + T(p.pearl, scope) + '</span></div>' +
+    (tools ? '<details class="acc" open><summary>' + t('a.practice') + '</summary><div class="stack" style="padding:0 14px 14px">' + tools + '</div></details>' : '') +
+    (HY.get('ex-' + p.id) ? '<details class="acc"><summary>' + t('a.train') + '</summary><div class="stack" style="padding:0 14px 14px">' + trainBlock('ex-' + p.id) + '</div></details>' : '') + '</div>';
 }
 var EXAM_CLIN = ['av', 'pupilles', 'lampe', 'fluoresceine', 'tonometrie', 'gonioscopie', 'pachymetrie', 'papille'], EXAM_IMG = ['oct', 'topographie', 'champs-visuels', 'speculaire'];
 Views['a-examen'] = {
-  title: 'Examen', render: function () {
+  title: t('a3.title'), render: function () {
     var E = ((OPH.A && OPH.A.exam) || []).filter(function (p) { return EXAM_CLIN.indexOf(p.id) >= 0; }), scope = Gloss.scope();
-    var nav = '<div class="chips">' + E.map(function (p) { return '<button class="chip" data-act="goto" data-target="ex-' + p.id + '">' + U.esc(p.title) + '</button>'; }).join('') + '</div>';
-    return '<div class="page mv">' + aHead('a-examen') + aTools() + nav + (E.length ? E.map(function (p, i) { return examBlock(p, i, 'A3.', scope); }).join('') : missing('Le contenu d’examen')) +
-      miniQuiz('a-examen', quizIds(function (q) { return q.topic === 'a-examen'; }), 'Mini-quiz : examen') + aNav('a-examen') + '</div>';
+    var nav = '<div class="chips">' + E.map(function (p) { return '<button class="chip" data-act="goto" data-target="ex-' + p.id + '">' + U.esc(I18N.title(p)) + '</button>'; }).join('') + '</div>';
+    return '<div class="page mv">' + aHead('a-examen') + aTools() + nav + (E.length ? E.map(function (p, i) { return examBlock(p, i, 'A3.', scope); }).join('') : missing(t('a3.title'))) +
+      miniQuiz('a-examen', quizIds(function (q) { return q.topic === 'a-examen'; }), t('a.mini', { t: t('a3.title') })) + aNav('a-examen') + '</div>';
   }, after: function (host) { mountMinis(host); mountTrainers(host); }
 };
 Views['a-imagerie'] = {
-  title: 'Imagerie', render: function () {
+  title: t('a4.title'), render: function () {
     var E = ((OPH.A && OPH.A.exam) || []).filter(function (p) { return EXAM_IMG.indexOf(p.id) >= 0; }), scope = Gloss.scope();
-    var nav = '<div class="chips"><button class="chip" data-act="goto" data-target="im-sf">Structure ↔ fonction</button>' + E.map(function (p) { return '<button class="chip" data-act="goto" data-target="ex-' + p.id + '">' + U.esc(p.title) + '</button>'; }).join('') + '</div>';
+    var nav = '<div class="chips"><button class="chip" data-act="goto" data-target="im-sf">' + t('a4.sfchip') + '</button>' + E.map(function (p) { return '<button class="chip" data-act="goto" data-target="ex-' + p.id + '">' + U.esc(I18N.title(p)) + '</button>'; }).join('') + '</div>';
     return '<div class="page mv">' + aHead('a-imagerie') + aTools() + nav +
-      '<div class="sec" id="im-sf">' + secH('A4.0', 'Structure ↔ fonction : papille, OCT et champ visuel') + '<p class="read">Lis toujours les trois ensemble. Change la papille et observe ce qui arrive à l’OCT et au champ : une atteinte inférieure de la papille donne un défaut supérieur du champ.</p><div data-sim="structure"></div></div>' +
-      (E.length ? E.map(function (p, i) { return examBlock(p, i, 'A4.', scope); }).join('') : missing('Le contenu d’imagerie')) +
-      miniQuiz('a-imagerie', quizIds(function (q) { return q.topic === 'a-imagerie'; }), 'Mini-quiz : imagerie') + aNav('a-imagerie') + '</div>';
+      '<div class="sec" id="im-sf">' + secH('A4.0', t('a4.sf')) + '<p class="read">' + t('a4.sfp') + '</p><div data-sim="structure"></div></div>' +
+      (E.length ? E.map(function (p, i) { return examBlock(p, i, 'A4.', scope); }).join('') : missing(t('a4.title'))) +
+      miniQuiz('a-imagerie', quizIds(function (q) { return q.topic === 'a-imagerie'; }), t('a.mini', { t: t('a4.title') })) + aNav('a-imagerie') + '</div>';
   }, after: function (host) { mountMinis(host); mountTrainers(host); }
 };
 
-var A5_GROUPS = [['cristallin', 'Cristallin et cataractes'], ['echo', 'Échographie B'], ['retine', 'Rétine et vitré'], ['nerf', 'Nerf optique'], ['neuro', 'Pupilles et voies visuelles']];
-var A5_URG = { urgent: ['urgent', 'Urgent : le jour même'], rapide: ['highyield', 'Rapide : jours à semaines'], routine: ['frequent', 'Routine'] };
+var A5_GROUPS = [['cristallin', t('a5.g.cristallin')], ['echo', t('a5.g.echo')], ['retine', t('a5.g.retine')], ['nerf', t('a5.g.nerf')], ['neuro', t('a5.g.neuro')]];
+var A5_URG = { urgent: ['urgent', t('urg.urgent')], rapide: ['highyield', t('urg.rapide')], routine: ['frequent', t('urg.routine')] };
 Views['a-retine'] = {
-  title: 'Rétine, nerf optique et cristallin', render: function () {
+  title: t('a5.title'), render: function () {
     var R = ((OPH.A && OPH.A.recog) || []).slice().sort(function (a, b) { return (a.order || 99) - (b.order || 99); }), scope = Gloss.scope();
-    var nav = '<div class="chips">' + R.map(function (r) { return '<button class="chip" data-act="goto" data-target="rc-' + r.id + '">' + U.esc(r.title) + '</button>'; }).join('') + '</div>';
+    var nav = '<div class="chips">' + R.map(function (r) { return '<button class="chip" data-act="goto" data-target="rc-' + r.id + '">' + U.esc(I18N.title(r)) + '</button>'; }).join('') + '</div>';
     var legend = '<div class="row small muted" style="gap:10px;flex-wrap:wrap">' + Object.keys(A5_URG).map(function (k) { return '<span class="tag ' + A5_URG[k][0] + '">' + A5_URG[k][1] + '</span>'; }).join('') + '</div>';
-    var intro = '<p class="read">En clinique de cornée ou de glaucome, tu dilates, tu fais un OCT, tu évalues une cataracte avant chirurgie : ces trouvailles du segment postérieur et du cristallin passent sous tes yeux. Le but n’est pas de les traiter, mais de les <b>reconnaître</b>, de savoir <b>pourquoi elles comptent</b> pour ton patient et <b>quel délai</b> donner à la référence.</p>';
+    var intro = '<p class="read">' + t('a5.intro') + '</p>';
     var n = 0, body = A5_GROUPS.map(function (g) {
       var list = R.filter(function (r) { return r.group === g[0]; }); if (!list.length) return '';
       return '<div class="sec"><div class="eyebrow" style="margin:8px 0 4px">' + U.esc(g[1]) + '</div>' + list.map(function (r) {
         n++; var u = A5_URG[r.urgency] || A5_URG.routine, ph = photosFor('a5-' + r.id);
-        return '<div class="sec" id="rc-' + r.id + '">' + secH('A5.' + n, r.title) + '<div class="row tight"><span class="en small">' + U.esc(r.en) + '</span><span class="tag ' + u[0] + '">' + u[1] + '</span></div>' +
-          '<div class="callout"><span class="eyebrow">Ce que c’est</span><span>' + T(r.what, scope) + '</span></div>' +
+        return '<div class="sec" id="rc-' + r.id + '">' + secH('A5.' + n, I18N.title(r)) + '<div class="row tight">' + (I18N.lang === 'en' ? '' : '<span class="en small">' + U.esc(r.en) + '</span>') + '<span class="tag ' + u[0] + '">' + u[1] + '</span></div>' +
+          '<div class="callout"><span class="eyebrow">' + t('caps.what') + '</span><span>' + T(r.what, scope) + '</span></div>' +
           (ph.length ? Photo.carousel(ph) : '') +
-          HY.essentials('a5-' + r.id, 'L’essentiel') +
-          '<div class="twocol"><div class="stack"><h4>À reconnaître</h4><ul class="blist">' + r.look.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="stack" data-dz="2"><h4>Pièges</h4><ul class="blist red">' + r.pitfalls.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' +
-          '<div class="callout violet" data-dz="2"><span class="eyebrow">Pourquoi en cornée ou en glaucome</span><span>' + T(r.why, scope) + '</span></div>' +
-          '<div class="panel-sunk stack"' + (HY.get('a5-' + r.id) ? ' data-dz="2"' : '') + '><h4>Conduite</h4><ul class="blist">' + r.action.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>' +
-          '<details class="acc"><summary>Question du patron : ' + U.md(r.pearl.q) + '</summary><div style="padding:0 14px 14px">' + T(r.pearl.a, scope) + '</div></details>' +
-          (HY.get('a5-' + r.id) ? '<details class="acc"><summary>S’entraîner : mots troués et triage</summary><div class="stack" style="padding:0 14px 14px">' + trainBlock('a5-' + r.id) + '</div></details>' : '') + '</div>';
+          HY.essentials('a5-' + r.id, t('hy.title')) +
+          '<div class="twocol"><div class="stack"><h3 class="h4">' + t('a.look') + '</h3><ul class="blist">' + r.look.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="stack" data-dz="2"><h3 class="h4">' + t('a.pitfalls') + '</h3><ul class="blist red">' + r.pitfalls.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' +
+          '<div class="callout violet" data-dz="2"><span class="eyebrow">' + t('a5.why') + '</span><span>' + T(r.why, scope) + '</span></div>' +
+          '<div class="panel-sunk stack"' + (HY.get('a5-' + r.id) ? ' data-dz="2"' : '') + '><h3 class="h4">' + t('a5.action') + '</h3><ul class="blist">' + r.action.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>' +
+          '<details class="acc"><summary>' + t('a.asks') + ' : ' + U.md(r.pearl.q) + '</summary><div style="padding:0 14px 14px">' + T(r.pearl.a, scope) + '</div></details>' +
+          (HY.get('a5-' + r.id) ? '<details class="acc"><summary>' + t('a.train') + '</summary><div class="stack" style="padding:0 14px 14px">' + trainBlock('a5-' + r.id) + '</div></details>' : '') + '</div>';
       }).join('') + '</div>';
     }).join('');
-    return '<div class="page mv">' + aHead('a-retine') + aTools() + intro + legend + nav + (R.length ? body : missing('Le contenu de la section A5')) +
-      miniQuiz('a-retine', quizIds(function (q) { return q.topic === 'a-retine'; }), 'Mini-quiz : rétine, nerf optique et cristallin') + aNav('a-retine') + '</div>';
+    return '<div class="page mv">' + aHead('a-retine') + aTools() + intro + legend + nav + (R.length ? body : missing(t('a5.title'))) +
+      miniQuiz('a-retine', quizIds(function (q) { return q.topic === 'a-retine'; }), t('a.mini', { t: t('a5.title') })) + aNav('a-retine') + '</div>';
   }, after: function (host) { mountMinis(host); mountTrainers(host); }
 };
 
@@ -270,8 +270,31 @@ var COMPARE = {
       ['Traitement typique', 'Comme le GPAO mais cible plus basse ; bonne réponse à la SLT', 'Prostaglandine, SLT douce', 'Arrêter ou changer le stéroïde, gouttes, SLT', 'Contrôler l’inflammation ; éviter la pilocarpine', 'Anti-VEGF + PRP, gouttes ; tube si angle fermé']
     ] }
 };
+/* English version of the comparison tables (same rows and order as COMPARE) */
+var COMPARE_EN = {
+  B: { title: 'Infectious keratitis: tell them apart at a glance', note: 'Any keratitis in a contact lens wearer is infectious until proven otherwise. Read this table after topics B3 to B5.',
+    cols: ['', 'Bacterial', 'Fungal', 'Acanthamoeba', 'HSV epithelial'],
+    rows: [
+      ['Setting', 'Contact lenses, trauma, diseased ocular surface', 'Plant-matter trauma, contact lenses, steroids', 'Contact lenses + water (shower, pool, rinsing with tap water)', 'History of herpes, stress, immunosuppression'],
+      ['Pain', 'Severe', 'Moderate, progressive', '**Out of proportion** to the signs', 'Moderate; reduced corneal sensation'],
+      ['Appearance', 'Dense white-yellow infiltrate, sharp edges, anterior chamber reaction, sometimes hypopyon', 'Dry infiltrate, feathery edges, satellite lesions, endothelial plaque', 'Early: epitheliopathy, pseudodendrites, radial perineuritis; late: ring infiltrate', 'Dendrite with terminal bulbs that stains with fluorescein'],
+      ['Course', 'Fast (hours to days)', 'Slow (days to weeks)', 'Slow, chronic, often mistaken for HSV', 'Recurrences'],
+      ['Key test', 'Scraping and cultures (Gram)', 'KOH or calcofluor, Sabouraud, confocal microscopy', 'Confocal microscopy, PCR, culture on non-nutrient agar', 'Clinical (± PCR)'],
+      ['Treatment', 'Fluoroquinolone or hourly fortified drops', 'Natamycin 5% (filamentous), voriconazole', 'Biguanide ± diamidine for months', 'Oral or topical antiviral'],
+      ['Steroid?', 'Not at first; no overall benefit (SCUT, SCUT II)', 'No', 'Not early on', 'Contraindicated in epithelial disease; useful in immune stromal disease under antiviral cover']
+    ] },
+  C: { title: 'Secondary glaucomas: who, what, which pitfall', note: '“Secondary” means another disease is blocking outflow. Read this table after topics C6 to C9.',
+    cols: ['', 'Pseudoexfoliation', 'Pigmentary', 'Steroid-induced', 'Uveitic', 'Neovascular'],
+    rows: [
+      ['Who', 'Older person, often one eye first', 'Young myopic man', 'Anyone on corticosteroids (“responders”)', 'Active or chronic uveitis', 'Retinal ischemia: CRVO, diabetic retinopathy, carotid ischemia'],
+      ['Key sign', 'Target-pattern deposits on the lens capsule, Sampaolesi line', 'Krukenberg spindle, radial transillumination defects, dense 360° angle pigment', 'IOP rising a few weeks after starting the steroid', 'Keratic precipitates, cells, synechiae', 'New vessels at the pupil margin and in the angle'],
+      ['Mechanism', 'Fibrillar material and pigment clog the trabecular meshwork', 'Pigment rubbed off by iris–zonule contact', 'Thickened trabecular matrix', 'Trabeculitis, debris, synechiae, pupillary block', 'Fibrovascular membrane, then angle closure'],
+      ['Pitfall', 'Fragile zonules at cataract surgery', 'IOP spikes with exercise; SLT at reduced energy', 'Iatrogenic glaucoma: always ask about steroids (even inhaled or skin)', 'IOP can rise as the inflammation settles', 'Treat the ischemia (anti-VEGF + PRP), not the IOP alone'],
+      ['Typical treatment', 'As for POAG but with a lower target; good response to SLT', 'Prostaglandin, gentle SLT', 'Stop or change the steroid, drops, SLT', 'Control the inflammation; avoid pilocarpine', 'Anti-VEGF + PRP, drops; tube if the angle is closed']
+    ] }
+};
 function compareTable(m) {
-  var c = COMPARE[m]; if (!c) return '';
+  var c = (I18N.lang === 'en' && COMPARE_EN[m]) || COMPARE[m]; if (!c) return '';
   return '<div class="sec">' + secH('⇄', c.title) + '<p class="small muted">' + U.esc(c.note) + '</p><div class="tbl-wrap"><table class="tbl"><thead><tr>' + c.cols.map(function (h) { return '<th>' + U.esc(h) + '</th>'; }).join('') + '</tr></thead><tbody>' +
     c.rows.map(function (r) { return '<tr>' + r.map(function (x) { return '<td>' + U.md(x) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div></div>';
 }
@@ -285,7 +308,7 @@ function moduleView(m) {
         var st = Prog.ficheDone(f.id) ? t('st.read') : Prog.ficheSeen(f.id) ? t('st.started') : '';
         return '<a class="card link fcard" href="#' + f.id + '"><span class="fcard-img">' + thumbFor(f.id) + '</span><span class="eyebrow">' + m + (i + 1) + (st ? ' · ' + st : '') + '</span><h3>' + U.esc(f.title) + '</h3><span class="en small muted"><i>' + U.esc(f.en) + '</i></span><span class="row tight">' + (f.tags || []).map(L.tag).join('') + '</span><span class="small">' + U.md(f.oneLiner) + '</span></a>';
       }).join('');
-      var bonus = (OPH.bonus[m] || []).map(function (b) { return '<div class="card stack"><h4>' + U.esc(b.title) + '</h4><span class="small muted"><i>' + U.esc(b.en) + '</i></span><span class="small"><b>' + t('mod.clue') + '</b>' + U.md(b.clue) + '</span><span class="small"><b>' + t('mod.action') + '</b>' + U.md(b.action) + '</span></div>'; }).join('');
+      var bonus = (OPH.bonus[m] || []).map(function (b) { return '<div class="card stack"><h3 class="h4">' + U.esc(b.title) + '</h3><span class="small muted"><i>' + U.esc(b.en) + '</i></span><span class="small"><b>' + t('mod.clue') + '</b>' + U.md(b.clue) + '</span><span class="small"><b>' + t('mod.action') + '</b>' + U.md(b.action) + '</span></div>'; }).join('');
       var bph = photosFor('bonus-' + m);
       return '<div class="page">' + crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m, null]]) +
         '<div class="phead"><div class="eyebrow">' + U.esc(Dates.custom() ? t('mod.eyebrow', { m: m, d: Dates.fmt(Dates.get(dateK)), r: Dates.rel(Dates.get(dateK)) }) : 'Module ' + m) + '</div><h1>' + L.modules[m] + '</h1><p class="muted" style="max-width:62ch">' + t('mod.lead', { r: readRange(m), lvl: DEPTHS[Settings.get().depth].t }) + '</p></div>' +
@@ -342,42 +365,42 @@ function ficheView(f) {
       var h = [];
       h.push(crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m + ' · ' + L.modules[m], 'module-' + m.toLowerCase()], [m + (idx + 1), null]]));
       if (!Prog.unlocked(m)) h.push(lockHtml(m));
-      h.push('<div class="phead fiche-head"><div class="eyebrow">' + m + (idx + 1) + ' · ' + L.modules[m] + ' · ' + t('f.min', { n: readMinAt(f, dpt) }) + '</div><h1>' + U.esc(f.title) + (window.I18N ? I18N.badge(f) : '') + '</h1>' + enSub(f.en) + '<div class="row tight">' + (f.tags || []).map(L.tag).join('') + '</div>' +
+      h.push('<div class="phead fiche-head"><div class="eyebrow">' + m + (idx + 1) + ' · ' + L.modules[m] + ' · ' + t('f.min', { n: readMinAt(f, dpt) }) + '</div><h1>' + U.esc(I18N.title(f)) + (window.I18N ? I18N.badge(f) : '') + '</h1>' + enSub(f.en) + '<div class="row tight">' + (f.tags || []).map(L.tag).join('') + '</div>' +
         '<p class="oneliner">' + T(f.oneLiner, scope) + '</p>' + (pre ? '<div class="prereq"><span class="small muted">' + t('f.prereq') + '</span>' + pre + '</div>' : '') +
         '<div class="row depth-row"><span class="xs muted">' + t('f.level') + '</span>' + depthSeg(true) + '</div></div>');
       h.push(mvNav);
       // 1 VOIR
-      var cmp = f.compare ? '<div class="stack"><h4>' + U.esc(f.compare.title) + '</h4><div class="pair"><div><div class="lab n">' + t('f.normal') + '</div>' + Figures.render(f.compare.normal.figure, { caption: f.compare.normal.caption }) + '</div><div><div class="lab p">' + t('f.patho') + '</div><div data-cmp>' + Figures.render(f.compare.patho.figure, { caption: f.compare.patho.caption }) + '</div></div></div>' +
+      var cmp = f.compare ? '<div class="stack"><h3 class="h4">' + U.esc(f.compare.title) + '</h3><div class="pair"><div><div class="lab n">' + t('f.normal') + '</div>' + Figures.render(f.compare.normal.figure, { caption: f.compare.normal.caption }) + '</div><div><div class="lab p">' + t('f.patho') + '</div><div data-cmp>' + Figures.render(f.compare.patho.figure, { caption: f.compare.patho.caption }) + '</div></div></div>' +
         '<div><button class="btn sm" data-cmpreveal aria-expanded="false">' + t('f.revealanom') + '</button><ul class="reveal-list" data-cmplist hidden>' + f.compare.patho.reveal.map(function (r) { return '<li>' + T(r, scope) + '</li>'; }).join('') + '</ul></div></div>' : '';
       var voir = (ph.length ? '<div class="voir-grid"><div class="stack">' + Photo.carousel(ph) + '</div><div class="stack voir-side"><div class="callout"><span class="eyebrow">' + t('f.twosent') + '</span><span>' + T(f.definition, scope) + '</span></div><p class="small muted">' + t('f.observe') + '</p></div></div>' : '') +
-        cmp + dz(2, pairs.length ? '<div class="stack"><h4>' + t('f.pairs') + '</h4>' + pairs.map(pairHtml).join('') + '</div>' : '') +
-        dz(2, '<div class="stack"><h4>' + t('f.anat') + '</h4><p class="read">' + T(f.anatomy.text, scope) + '</p>' + (f.anatomy.figure ? '<div style="max-width:680px">' + Figures.render(f.anatomy.figure) + '</div>' : '') + '</div>');
+        cmp + dz(2, pairs.length ? '<div class="stack"><h3 class="h4">' + t('f.pairs') + '</h3>' + pairs.map(pairHtml).join('') + '</div>' : '') +
+        dz(2, '<div class="stack"><h3 class="h4">' + t('f.anat') + '</h3><p class="read">' + T(f.anatomy.text, scope) + '</p>' + (f.anatomy.figure ? '<div style="max-width:680px">' + Figures.render(f.anatomy.figure) + '</div>' : '') + '</div>');
       h.push('<section class="mv" id="mv-voir">' + secH('1', t('f.see')) + voir + mvMore(2, t('f.more.see')) + '</section>');
       // 2 COMPRENDRE
       var comp = (ph.length ? '' : '<div class="callout"><span class="eyebrow">' + t('f.twosent') + '</span><span style="font-size:var(--fs-md)">' + T(f.definition, scope) + '</span></div>') +
         HY.essentials(f.id, t('f.hy')) +
-        '<div class="stack"><h4>' + U.esc(t('f.mech', { t: f.causal.title })) + '</h4><div class="row"><button class="btn primary sm" data-causal="play">' + t('f.play') + '</button><span class="small muted">' + t('f.levers') + '</span></div>' +
+        '<div class="stack"><h3 class="h4">' + U.esc(t('f.mech', { t: f.causal.title })) + '</h3><div class="row"><button class="btn primary sm" data-causal="play">' + t('f.play') + '</button><span class="small muted">' + t('f.levers') + '</span></div>' +
         '<div class="chips">' + f.causal.levers.map(function (l, i) { return '<button class="chip" data-lever="' + i + '" aria-pressed="false">' + U.esc(l.label) + '</button>'; }).join('') + '</div>' +
         '<div class="chain" data-chain>' + f.causal.steps.map(function (s, i) { return '<div class="cstep k-' + s.kind + '" data-step="' + i + '"><div class="node">' + (i + 1) + '</div><div class="body"><span class="k">' + (L.kinds[s.kind] || s.kind) + '</span><b>' + U.md(s.label) + '</b><span class="small" data-dz="2">' + T(s.detail, scope) + '</span><div class="cutslot"></div></div></div>'; }).join('') + '</div></div>' +
         (f.mnemonic ? '<div class="callout green"><span class="eyebrow">' + U.esc(t('f.mnemo', { t: f.mnemonic.title })) + '</span><span>' + T(f.mnemonic.text, scope) + '</span></div>' : '') +
-        dz(2, '<div class="twocol"><div class="stack"><h4>' + t('f.risk') + '</h4><ul class="blist">' + f.risk.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="stack"><h4>' + t('f.pres') + '</h4><ul class="blist">' + f.presentation.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>');
+        dz(2, '<div class="twocol"><div class="stack"><h3 class="h4">' + t('f.risk') + '</h3><ul class="blist">' + f.risk.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="stack"><h3 class="h4">' + t('f.pres') + '</h3><ul class="blist">' + f.presentation.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>');
       h.push('<section class="mv" id="mv-comp">' + secH('2', t('f.understand')) + comp + mvMore(2, t('f.more.comp')) + '</section>');
       // 3 DÉCIDER
       var dec = '<div class="callout red"><span class="eyebrow">' + t('f.redflags') + '</span><ul class="blist red">' + f.redFlags.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>' +
-        dz(2, '<div class="stack"><h4>' + t('f.signs') + '</h4><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.sign') + '</th><th>' + t('f.signwhy') + '</th></tr></thead><tbody>' + f.exam.signs.map(function (x) { return '<tr><td>' + T(x.sign, scope) + '</td><td>' + T(x.why, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>') +
-        dz(2, '<div class="stack"><h4>' + t('f.tests') + '</h4><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.test') + '</th><th>' + t('f.when') + '</th><th>' + t('f.read') + '</th></tr></thead><tbody>' + f.exam.tests.map(function (x) { return '<tr><td>' + T(x.test, scope) + '</td><td>' + T(x.when, scope) + '</td><td>' + T(x.read, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>') +
-        dz(2, '<div class="stack"><h4>' + t('f.ddx') + '</h4><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.dx') + '</th><th>' + t('f.clue') + '</th></tr></thead><tbody>' + f.ddx.map(function (d) { return '<tr><td>' + T(d.dx, scope) + '</td><td>' + T(d.clue, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>') +
-        '<div class="stack"><div class="row"><h4 style="margin:0">' + t('f.algo') + '</h4><button class="btn sm" data-walk>' + t('f.walk') + '</button></div><div class="algo" data-algo>' +
+        dz(2, '<div class="stack"><h3 class="h4">' + t('f.signs') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.sign') + '</th><th>' + t('f.signwhy') + '</th></tr></thead><tbody>' + f.exam.signs.map(function (x) { return '<tr><td>' + T(x.sign, scope) + '</td><td>' + T(x.why, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>') +
+        dz(2, '<div class="stack"><h3 class="h4">' + t('f.tests') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.test') + '</th><th>' + t('f.when') + '</th><th>' + t('f.read') + '</th></tr></thead><tbody>' + f.exam.tests.map(function (x) { return '<tr><td>' + T(x.test, scope) + '</td><td>' + T(x.when, scope) + '</td><td>' + T(x.read, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>') +
+        dz(2, '<div class="stack"><h3 class="h4">' + t('f.ddx') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.dx') + '</th><th>' + t('f.clue') + '</th></tr></thead><tbody>' + f.ddx.map(function (d) { return '<tr><td>' + T(d.dx, scope) + '</td><td>' + T(d.clue, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>') +
+        '<div class="stack"><div class="row"><h3 class="h4" style="margin:0">' + t('f.algo') + '</h3><button class="btn sm" data-walk>' + t('f.walk') + '</button></div><div class="algo" data-algo>' +
         f.cat.algo.map(function (a, i) { return '<div class="anode" data-node="' + i + '"><div class="q">' + T(a.q, scope) + '</div><div class="yn"><div class="yes" data-yn="yes"><span class="lab">' + t('f.yes') + '</span><span>' + T(a.yes, scope) + '</span></div><div class="no" data-yn="no"><span class="lab">' + t('f.no') + '</span><span>' + T(a.no, scope) + '</span></div></div></div>'; }).join('') + '</div></div>' +
-        '<div class="stack"><h4>' + t('f.tx') + '</h4><p class="xs muted">' + t('f.tx.d') + '</p>' + f.treatments.map(function (tr) {
+        '<div class="stack"><h3 class="h4">' + t('f.tx') + '</h3><p class="xs muted">' + t('f.tx.d') + '</p>' + f.treatments.map(function (tr) {
           return '<details class="acc"><summary>' + U.md(tr.name) + '</summary><div class="acc-b"><div class="kv"><span class="k">' + t('f.how') + '</span><span>' + T(tr.how, scope) + '</span></div><div class="kv"><span class="k">' + t('f.why') + '</span><span>' + T(tr.why, scope) + '</span></div><div class="kv" data-dz="3"><span class="k">' + t('f.pros') + '</span><span>' + T(tr.pros, scope) + '</span></div><div class="kv" data-dz="3"><span class="k">' + t('f.cons') + '</span><span>' + T(tr.cons, scope) + '</span></div><div class="kv" data-dz="2"><span class="k">' + t('f.cx') + '</span><span>' + T(tr.cx, scope) + '</span></div></div></details>';
         }).join('') + '</div>' +
-        dz(2, '<div class="stack"><h4>' + t('f.phases') + '</h4><div class="phases">' + f.cat.phases.map(function (p) { return '<div class="phase p-' + p.phase + '"><div class="ph"><i></i>' + (L.phases[p.phase] || p.phase) + '</div><ul class="blist">' + p.items.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div></div>') +
+        dz(2, '<div class="stack"><h3 class="h4">' + t('f.phases') + '</h3><div class="phases">' + f.cat.phases.map(function (p) { return '<div class="phase p-' + p.phase + '"><div class="ph"><i></i>' + (L.phases[p.phase] || p.phase) + '</div><ul class="blist">' + p.items.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div></div>') +
         dz(3, '<div class="callout violet"><span class="eyebrow">' + t('f.local') + '</span><span>' + T(f.cat.local, scope) + '</span></div>');
       h.push('<section class="mv" id="mv-dec">' + secH('3', t('f.decide')) + dec + mvMore(3, t('f.more.dec')) + '</section>');
       // 4 S'ENTRAÎNER
       var qids = quizIds(function (q) { return q.topic === f.id; });
-      var train = '<div class="stack"><h4>' + t('f.pearls') + '</h4><div class="pearls">' + f.pearls.map(function (p, i) { return '<div class="pearl-card" role="button" tabindex="0" data-pearl="' + i + '" aria-expanded="false"><span class="who">' + t('f.asks') + '</span><span class="q">' + U.md(p.q) + '</span><span class="hint">' + t('f.think') + '</span><span class="a" hidden>' + T(p.a, scope) + '</span></div>'; }).join('') + '</div></div>' +
+      var train = '<div class="stack"><h3 class="h4">' + t('f.pearls') + '</h3><div class="pearls">' + f.pearls.map(function (p, i) { return '<div class="pearl-card" role="button" tabindex="0" data-pearl="' + i + '" aria-expanded="false"><span class="who">' + t('f.asks') + '</span><span class="q">' + U.md(p.q) + '</span><span class="hint">' + t('f.think') + '</span><span class="a" hidden>' + T(p.a, scope) + '</span></div>'; }).join('') + '</div></div>' +
         trainBlock(f.id) + (qids.length ? miniQuiz(f.id, qids, t('mini.fiche')) : '');
       h.push('<section class="mv" id="mv-train">' + secH('4', t('f.train')) + train + '</section>');
       // sources & review
@@ -477,7 +500,7 @@ Views.quiz = {
 Views['quiz-run'] = {
   title: t('qr.title'), track: false, render: function () {
     if (!Quiz.session) return '<div class="page"><div class="empty">' + t('qr.none') + '</div><a class="btn primary" href="#quiz">' + t('qr.choose') + '</a></div>';
-    return '<div class="page read" style="margin:0 auto;width:100%">' + crumbs([[t('qh.title'), 'quiz'], [Quiz.session.title, null]]) + '<div id="quiz-host"></div><p class="xs muted">' + t('qr.keys') + '</p></div>';
+    return '<div class="page read" style="margin:0 auto;width:100%">' + crumbs([[t('qh.title'), 'quiz'], [Quiz.session.title, null]]) + '<h1 class="sr-only">' + U.esc(Quiz.session.title) + '</h1><div id="quiz-host"></div><p class="xs muted">' + t('qr.keys') + '</p></div>';
   },
   after: function (host) { if (Quiz.session) Quiz.mount(U.$('#quiz-host', host), Quiz.session.ids, { title: Quiz.session.title, backHref: 'quiz' }); }
 };
@@ -500,7 +523,7 @@ Views.atlas = {
     var R = window.OPH_RESTRICTED || {}, n = OPH.catalog.filter(function (e) { return !R[e.id]; }).length, hasI = OPH.catalog.some(function (e) { return e.module === 'I'; });
     var segs = [['', t('modseg.all')], ['A', L.modules.A], ['B', L.modules.B], ['C', L.modules.C]].concat(hasI ? [['I', t('atlas.inv')]] : []);
     return '<div class="page">' + crumbs([[t('nav.home'), 'accueil'], [t('atlas.title'), null]]) + '<div class="phead"><div class="eyebrow">' + t('atlas.eyebrow', { n: n }) + '</div><h1>' + t('atlas.title') + '</h1><p class="muted" style="max-width:64ch">' + t('atlas.lead') + '</p></div>' +
-      '<div class="row"><div class="seg" data-amod>' + segs.map(function (x, i) { return '<button data-am="' + x[0] + '" aria-pressed="' + (i === 0) + '">' + U.esc(x[1]) + '</button>'; }).join('') + '</div><input type="text" id="atlas-q" placeholder="' + U.esc(t('atlas.q')) + '" aria-label="' + U.esc(t('atlas.q')) + '" style="min-width:min(100%,280px)"></div><div data-atlas></div></div>';
+      '<div class="row atlas-filters"><div class="seg" data-amod>' + segs.map(function (x, i) { return '<button data-am="' + x[0] + '" aria-pressed="' + (i === 0) + '">' + U.esc(x[1]) + '</button>'; }).join('') + '</div><input type="text" id="atlas-q" placeholder="' + U.esc(t('atlas.q')) + '" aria-label="' + U.esc(t('atlas.q')) + '"></div><div data-atlas></div></div>';
   },
   after: function (host) {
     var st = { m: '', q: '' }, R = window.OPH_RESTRICTED || {};
@@ -526,14 +549,14 @@ Views.atlas = {
 Views.sources = {
   title: t('nav.sources'), render: function () {
     var S = [
-      ['Glaucome', [
+      [t('src.g.glau'), [
         ['AAO PPP Primary Open-Angle Glaucoma (Gedde SJ et al., Ophthalmology, en ligne 9 févr. 2026)', 'https://www.reviewofoptometry.com/news/article/aaos-updated-ppp-for-poag-emphasizes-individualized-monitoring', 'SLT en première intention renforcée, OCT RNFL + GCIPL, champs groupés, nouveaux facteurs de risque (TA basse, hystérésis).'],
         ['AAO PPP Primary Angle-Closure Disease (Gedde SJ, Chopra V, Vinod K et al., Ophthalmology, en ligne 9 févr. 2026)', 'https://www.reviewofoptometry.com/news/article/updated-ppp-for-angleclosure-disease-stresses-gonioscopy-imagingbased-monitoring', 'Gonioscopie dynamique en pièce sombre, LPI prophylactique individualisée, extraction du cristallin (EAGLE).'],
         ['Société canadienne d’ophtalmologie — lignes directrices glaucome de l’adulte (Can J Ophthalmol 2009;44 Suppl 1)', 'https://doi.org/10.3129/cjo44s1', 'Référence canadienne (antérieure aux mises à jour AAO 2026).'],
         ['Guide canadien GPAO pour optométristes (MacIver, MacDonald, Prokopich, Can J Optom 2017)', 'https://openjournals.uwaterloo.ca/index.php/cjo/article/download/1606/1989', 'Fiabilité des champs, bilan des suspects, crise aiguë.'],
         ['LiGHT — résultats à 6 ans (Gazzard G et al., Ophthalmology 2023)', 'https://www.reviewofoptometry.com/news/article/new-data-strengthens-the-case-for-slt-as-firstline-therapy', '']
       ]],
-      ['Cornée et surface', [
+      [t('src.g.cornea'), [
         ['TFOS DEWS III : méthodologie diagnostique (Wolffsohn JS et al., Am J Ophthalmol 2025;279:387-450)', 'https://doi.org/10.1016/j.ajo.2025.05.033', 'Définition révisée, OSDI-6 ≥ 4, seuils NIBUT/osmolarité/coloration.'],
         ['AAO PPP Bacterial Keratitis (2023)', 'https://www.aao.org/education/preferred-practice-pattern/bacterial-keratitis-ppp-2023', ''],
         ['SCUT II — résultats à 12 mois (Prajna NV et al., JAMA Ophthalmol, en ligne 8 oct. 2026)', 'https://www.reviewofoptometry.com/news/article/steroids-cxl-show-no-added-benefit-for-bacterial-keratitis-at-12-months', 'Ni difluprednate ni CXL n’ajoutent de bénéfice à la moxifloxacine.'],
@@ -542,7 +565,7 @@ Views.sources = {
         ['Epioxa (CXL epithelium-on) — approbation FDA (oct. 2025)', 'https://investors.glaukos.com/news/news-details/2025/Glaukos-Announces-FDA-Approval-of-Epioxa/default.aspx', 'Disponibilité canadienne à vérifier.'],
         ['Oxervate (cénégermine) — décision de Santé Canada', 'https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS00483', '']
       ]],
-      ['Québec', [
+      [t('src.g.qc'), [
         ['Normes visuelles SAAQ — guide de l’Ordre des optométristes du Québec (2026)', 'https://ooq.org/sites/default/files/2026-03/20260630_Guide%20soutien%20SAAQ.pdf', 'Classe 5 : AV binoculaire ≥ 6/15 ; champ binoculaire ≥ 100° horizontal.'],
         ['Règlement sur les médicaments qu’un optométriste peut administrer ou prescrire (O-7, r. 11.1)', 'https://www.legisquebec.gouv.qc.ca/en/document/cr/o-7,%20r.%2011.1', 'Glaucome suspect, débutant ou cortisonique, puis orientation en ophtalmologie.']
       ]]
@@ -568,21 +591,21 @@ Views.sources = {
 /* ---------- express review (clinic morning) ---------- */
 function expressView(m) {
   return {
-    title: 'Révision express', render: function () {
+    title: t('mod.express'), render: function () {
       var list = D.ordered(m), scope = Gloss.scope();
       var items = list.map(function (f, i) {
         var t0 = f.treatments && f.treatments[0];
         return '<div class="card stack" id="x-' + f.id + '"><div class="row" style="justify-content:space-between"><h3><a href="#' + f.id + '" style="color:inherit;text-decoration:none">' + m + (i + 1) + ' · ' + U.esc(f.title) + '</a></h3><span class="row tight">' + (f.tags || []).map(L.tag).join('') + '</span></div>' +
           '<p class="oneliner" style="font-size:var(--fs-md)">' + T(f.oneLiner, scope) + '</p>' +
-          '<div class="twocol"><div class="stack"><h4>À reconnaître</h4><ul class="blist">' + f.exam.signs.slice(0, 3).map(function (s) { return '<li>' + T(s.sign, scope) + '</li>'; }).join('') + '</ul></div>' +
-          '<div class="stack"><h4 style="color:var(--urgent)">Drapeaux rouges</h4><ul class="blist red">' + f.redFlags.slice(0, 3).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' +
+          '<div class="twocol"><div class="stack"><h3 class="h4">' + t('a.look') + '</h3><ul class="blist">' + f.exam.signs.slice(0, 3).map(function (s) { return '<li>' + T(s.sign, scope) + '</li>'; }).join('') + '</ul></div>' +
+          '<div class="stack"><h3 class="h4" style="color:var(--urgent)">' + t('f.redflags') + '</h3><ul class="blist red">' + f.redFlags.slice(0, 3).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' +
           '<div class="phases">' + f.cat.phases.map(function (p) { return '<div class="phase p-' + p.phase + '"><div class="ph"><i></i>' + (L.phases[p.phase] || p.phase) + '</div><span class="small">' + T(p.items[0], scope) + '</span></div>'; }).join('') + '</div>' +
-          '<details class="acc"><summary>Les 3 questions du patron</summary><div style="padding:0 14px 14px" class="stack">' + f.pearls.map(function (p) { return '<div class="small"><b>' + U.md(p.q) + '</b><br>' + T(p.a, scope) + '</div>'; }).join('') + '</div></details></div>';
+          '<details class="acc"><summary>' + t('x.pearls') + '</summary><div style="padding:0 14px 14px" class="stack">' + f.pearls.map(function (p) { return '<div class="small"><b>' + U.md(p.q) + '</b><br>' + T(p.a, scope) + '</div>'; }).join('') + '</div></details></div>';
       }).join('');
       var dk = m === 'B' ? 'cornee' : 'glaucome';
-      return '<div class="page read" style="margin:0 auto;width:100%">' + crumbs([['Module ' + m, 'module-' + m.toLowerCase()], ['Révision express', null]]) +
-        '<div class="phead"><div class="eyebrow">Le matin de l’observation · ' + U.esc(Dates.fmt(Dates.get(dk))) + '</div><h1>Révision express : ' + L.modules[m].toLowerCase() + '</h1><p class="muted">L’essentiel de chaque fiche sur un écran : phrase de triage, signes à reconnaître, drapeaux rouges, conduite par étape et questions du patron.</p></div>' +
-        (items || missing('Les fiches')) + '<div class="row"><a class="btn primary" href="#quiz">Une dernière série de QCM</a></div></div>';
+      return '<div class="page read" style="margin:0 auto;width:100%">' + crumbs([['Module ' + m, 'module-' + m.toLowerCase()], [t('mod.express'), null]]) +
+        '<div class="phead"><div class="eyebrow">' + (Dates.custom() ? t('x.eyebrow', { d: U.esc(Dates.fmt(Dates.get(dk))) }) : t('x.eyebrow0')) + '</div><h1>' + t('x.h1', { m: L.modules[m].toLowerCase() }) + '</h1><p class="muted">' + t('x.lead') + '</p></div>' +
+        (items || missing(t('mod.fiches'))) + '<div class="row"><a class="btn primary" href="#quiz">' + t('x.last') + '</a></div></div>';
     }
   };
 }
@@ -591,29 +614,29 @@ Views['express-c'] = expressView('C');
 
 /* ---------- search ---------- */
 Views.recherche = {
-  title: 'Recherche', track: false, render: function () {
-    return '<div class="page read" style="margin:0 auto;width:100%">' + crumbs([['Accueil', 'accueil'], ['Recherche', null]]) + '<div class="phead"><h1>Recherche</h1><p class="muted">Un terme entendu en clinique ? Tape-le : définition, fiches et questions liées.</p></div>' +
-      '<input type="text" id="srch" placeholder="ex. Seidel, Khodadoust, SLT, Sampaolesi" autocomplete="off" style="width:100%;font-size:var(--fs-md)"><div data-sres class="stack"></div></div>';
+  title: t('nav.search'), track: false, render: function () {
+    return '<div class="page read" style="margin:0 auto;width:100%">' + crumbs([[t('nav.home'), 'accueil'], [t('nav.search'), null]]) + '<div class="phead"><h1>' + t('nav.search') + '</h1><p class="muted">' + t('s.lead') + '</p></div>' +
+      '<input type="text" id="srch" placeholder="' + U.esc(t('s.ph')) + '" aria-label="' + U.esc(t('nav.search')) + '" autocomplete="off" style="width:100%;font-size:var(--fs-md)"><div data-sres class="stack"></div></div>';
   },
   after: function (host) {
     var inp = U.$('#srch', host), out = U.$('[data-sres]', host);
     function norm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
     function run() {
-      var q = norm(inp.value.trim()); if (q.length < 2) { out.innerHTML = '<div class="empty">Au moins deux lettres.</div>'; return; }
+      var q = norm(inp.value.trim()); if (q.length < 2) { out.innerHTML = '<div class="empty">' + t('s.min') + '</div>'; return; }
       var gl = Object.keys(OPH.glossary).filter(function (k) { return norm(k).indexOf(q) >= 0 || norm(OPH.glossary[k]).indexOf(q) >= 0; }).slice(0, 8);
       var fi = OPH.fiches.map(function (f) { var txt = norm(JSON.stringify(f)); var n = txt.split(q).length - 1; return [f, n + (norm(f.title).indexOf(q) >= 0 ? 50 : 0)]; }).filter(function (x) { return x[1] > 0; }).sort(function (a, b) { return b[1] - a[1]; }).slice(0, 8);
       var ca = OPH.capsules.filter(function (c) { return norm(JSON.stringify(c)).indexOf(q) >= 0; });
       var qs = OPH.quiz.filter(function (x) { return norm(x.stem + ' ' + x.explain).indexOf(q) >= 0; }).slice(0, 6);
       var ph = OPH.catalog.filter(function (e) { return norm(e.title + ' ' + e.caption).indexOf(q) >= 0; }).slice(0, 6);
       var h = '';
-      if (gl.length) h += '<div class="card stack"><div class="eyebrow">Glossaire</div>' + gl.map(function (k) { return '<div><b>' + U.esc(k) + '</b> — ' + U.md(OPH.glossary[k]) + '</div>'; }).join('') + '</div>';
-      if (fi.length || ca.length) h += '<div class="card stack"><div class="eyebrow">Fiches et fondations</div>' + ca.map(function (c) { return '<a href="#' + c.id + '">' + U.esc(c.title) + '</a>'; }).concat(fi.map(function (x) { return '<a href="#' + x[0].id + '">' + U.esc(x[0].title) + '</a> <span class="small muted">' + U.plural(x[1] % 50 || 1, 'mention', 'mentions') + '</span>'; })).join('<br>') + '</div>';
-      if (qs.length) h += '<div class="card stack"><div class="eyebrow">Questions</div><button class="btn sm" data-sq="' + qs.map(function (x) { return x.id; }).join(',') + '">S’entraîner sur ces ' + qs.length + ' questions</button></div>';
-      if (ph.length) h += '<div class="stack"><div class="eyebrow">Images</div>' + Photo.gallery(ph.map(function (e) { return { id: e.id, caption: e.title, look: 'Légende source : ' + e.caption, reveal: [] }; })) + '</div>';
-      out.innerHTML = h || '<div class="empty">Rien trouvé. Essaie un synonyme ou le terme anglais.</div>';
+      if (gl.length) h += '<div class="card stack"><div class="eyebrow">' + t('s.gloss') + '</div>' + gl.map(function (k) { return '<div><b>' + U.esc(k) + '</b> — ' + U.md(OPH.glossary[k]) + '</div>'; }).join('') + '</div>';
+      if (fi.length || ca.length) h += '<div class="card stack"><div class="eyebrow">' + t('s.fiches') + '</div>' + ca.map(function (c) { return '<a href="#' + c.id + '">' + U.esc(c.title) + '</a>'; }).concat(fi.map(function (x) { return '<a href="#' + x[0].id + '">' + U.esc(x[0].title) + '</a> <span class="small muted">' + t('s.mentions', { n: x[1] % 50 || 1 }) + '</span>'; })).join('<br>') + '</div>';
+      if (qs.length) h += '<div class="card stack"><div class="eyebrow">' + t('s.qs') + '</div><button class="btn sm" data-sq="' + qs.map(function (x) { return x.id; }).join(',') + '">' + t('s.train', { n: qs.length }) + '</button></div>';
+      if (ph.length) h += '<div class="stack"><div class="eyebrow">' + t('src.images') + '</div>' + Photo.gallery(ph.map(function (e) { return { id: e.id, caption: e.title, look: t('lb.srccap') + e.caption, reveal: [] }; })) + '</div>';
+      out.innerHTML = h || '<div class="empty">' + t('s.none') + '</div>';
     }
     inp.addEventListener('input', U.debounce(run, 180));
-    out.addEventListener('click', function (ev) { var b = ev.target.closest('[data-sq]'); if (b) { Quiz.session = { title: 'Recherche : ' + inp.value, ids: b.getAttribute('data-sq').split(','), back: 'recherche' }; Router.go('quiz-run'); } });
+    out.addEventListener('click', function (ev) { var b = ev.target.closest('[data-sq]'); if (b) { Quiz.session = { title: t('nav.search') + ' : ' + inp.value, ids: b.getAttribute('data-sq').split(','), back: 'recherche' }; Router.go('quiz-run'); } });
     setTimeout(function () { inp.focus(); }, 30);
   }
 };

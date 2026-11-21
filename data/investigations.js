@@ -330,10 +330,10 @@ G.OPH.invPractice = [
     id: "p-bscan-3", inv: "bscan", media: "m-bscan-3g", level: 1,
     q: { fr: "Schéma : coupe longitudinale, gain élevé, chez un patient avec hémorragie du vitré au fond d’œil. Que conclure?", en: "Schematic: longitudinal scan at high gain in a patient with a vitreous hemorrhage on fundus exam. What do you conclude?" },
     options: [
-      { fr: "Décollement de rétine", en: "Retinal detachment" },
-      { fr: "Décollement choroïdien", en: "Choroidal detachment" },
+      { fr: "Décollement de rétine (membrane épaisse fixée à la papille)", en: "Retinal detachment (thick membrane tethered to the disc)" },
+      { fr: "Décollement choroïdien (dômes lisses qui épargnent la papille)", en: "Choroidal detachment (smooth domes sparing the disc)" },
       { fr: "Examen normal : ce ne sont que des artéfacts de gain", en: "Normal scan: these are just gain artifacts" },
-      { fr: "Échos ponctués mobiles dans le vitré, rétine à plat : hémorragie du vitré sans décollement", en: "Mobile dot echoes in the vitreous, flat retina: vitreous hemorrhage without detachment" }
+      { fr: "Hémorragie du vitré, rétine à plat", en: "Vitreous hemorrhage, retina attached" }
     ],
     answer: 3,
     why: [
@@ -367,7 +367,7 @@ G.OPH.invPractice = [
     q: { fr: "Série d’échographies B d’un œil. Les dômes choroïdiens se rejoignent au centre du vitré. Comment nomme-t-on cette configuration et pourquoi inquiète-t-elle?", en: "A series of B-scans of one eye. The choroidal domes meet in the middle of the vitreous. What is this configuration called, and why is it worrying?" },
     options: [
       { fr: "Mélanome choroïdien en champignon : radiothérapie", en: "Mushroom-shaped choroidal melanoma: radiotherapy" },
-      { fr: "Décollements choroïdiens « kissing » (appositionnels) : risque d’adhérence rétine-rétine; on discute un drainage chirurgical", en: "“Kissing” (appositional) choroidal detachments: risk of retina-to-retina adhesion; surgical drainage is considered" },
+      { fr: "Décollements choroïdiens « kissing » : drainage discuté", en: "“Kissing” choroidal detachments: drainage considered" },
       { fr: "Décollement postérieur du vitré complet : simple surveillance", en: "Complete posterior vitreous detachment: observation only" },
       { fr: "Décollement de rétine en entonnoir fermé : prolifération vitréorétinienne", en: "Closed-funnel retinal detachment: proliferative vitreoretinopathy" }
     ],
@@ -405,7 +405,7 @@ G.OPH.invPractice = [
       { fr: "La hauteur d’un mélanome choroïdien débutant", en: "The height of an early choroidal melanoma" },
       { fr: "Un décollement de rétine plan", en: "A shallow retinal detachment" },
       { fr: "L’élévation de la papille (œdème papillaire)", en: "Optic disc elevation (disc swelling)" },
-      { fr: "L’épaisseur de la paroi postérieure (surtout la sclère), nettement augmentée", en: "Posterior wall thickness (mainly sclera), clearly increased" }
+      { fr: "Une paroi postérieure (sclère) épaissie", en: "A thickened posterior wall (sclera)" }
     ],
     answer: 3,
     why: [
@@ -423,7 +423,7 @@ G.OPH.invPractice = [
     options: [
       { fr: "Pic 5", en: "Spike 5" },
       { fr: "Pic 1", en: "Spike 1" },
-      { fr: "Pic 4 : le premier pic haut après la longue ligne plate du vitré", en: "Spike 4: the first tall spike after the long flat vitreous line" },
+      { fr: "Pic 4", en: "Spike 4" },
       { fr: "Pic 3", en: "Spike 3" }
     ],
     answer: 2,
@@ -440,7 +440,7 @@ G.OPH.invPractice = [
     q: { fr: "Cataracte blanche à l’œil droit. La biométrie optique ne donne aucune mesure. Pourquoi, et que faire?", en: "White cataract in the right eye. Optical biometry gives no reading. Why, and what next?" },
     options: [
       { fr: "L’œil est trop long pour l’appareil → changer de formule", en: "The eye is too long for the device → change formula" },
-      { fr: "La lumière ne traverse pas la cataracte dense → échographie A, en immersion de préférence", en: "Light can’t cross the dense cataract → A-scan, ideally immersion" },
+      { fr: "Cataracte trop dense pour la lumière → échographie A", en: "Cataract too dense for light → A-scan" },
       { fr: "Utiliser la longueur axiale de l’autre œil", en: "Use the fellow eye’s axial length" },
       { fr: "La cornée est trop cambrée → refaire seulement la kératométrie", en: "The cornea is too steep → just repeat keratometry" }
     ],
@@ -495,7 +495,7 @@ G.OPH.invPractice = [
     options: [
       { fr: "Opérer d’abord l’œil le plus court", en: "Operate on the shorter eye first" },
       { fr: "Calculer les IOL avec ces valeurs", en: "Calculate the IOLs with these values" },
-      { fr: "Refaire les mesures : écart > 0,3 mm non expliqué", en: "Repeat the measurements: unexplained difference > 0.3 mm" },
+      { fr: "Refaire les mesures", en: "Repeat the measurements" },
       { fr: "Utiliser la moyenne des deux yeux", en: "Use the average of both eyes" }
     ],
     answer: 2,
@@ -512,7 +512,7 @@ G.OPH.invPractice = [
     q: { fr: "Œil rempli d’huile de silicone, avec cataracte. L’appareil calcule à 1550 m/s comme pour un œil phaque. Résultat?", en: "Silicone oil–filled eye with cataract. The device calculates at 1550 m/s as for a phakic eye. Result?" },
     options: [
       { fr: "Aucun effet", en: "No effect" },
-      { fr: "Longueur axiale surestimée : corriger la vitesse ou préférer la biométrie optique", en: "Axial length overestimated: correct the velocity or prefer optical biometry" },
+      { fr: "Longueur axiale surestimée", en: "Axial length overestimated" },
       { fr: "Mesure impossible : l’huile bloque les ultrasons", en: "No reading possible: oil blocks ultrasound" },
       { fr: "Longueur axiale sous-estimée", en: "Axial length underestimated" }
     ],
@@ -551,7 +551,7 @@ G.OPH.invPractice = [
       { fr: "La bande hyperréflective la plus interne", en: "The innermost hyperreflective band" },
       { fr: "La couche sombre épaisse au milieu de la rétine externe", en: "The thick dark layer in the outer retina" },
       { fr: "La fine bande brillante juste au-dessus de la plus profonde", en: "The thin bright band just above the deepest one" },
-      { fr: "La bande hyperréflective la plus profonde, posée sur la choroïde", en: "The deepest hyperreflective band, resting on the choroid" }
+      { fr: "La bande brillante la plus profonde", en: "The deepest bright band" }
     ],
     answer: 3,
     why: [
@@ -585,7 +585,7 @@ G.OPH.invPractice = [
     q: { fr: "Carte d’épaisseur ETDRS (sous-champ central 531 µm) et coupe OCT horizontale. Quelle anomalie explique l’épaississement?", en: "ETDRS thickness map (central subfield 531 µm) and horizontal OCT scan. What explains the thickening?" },
     options: [
       { fr: "Un trou maculaire", en: "A macular hole" },
-      { fr: "Une membrane épirétinienne : surface plissée, creux fovéolaire effacé", en: "An epiretinal membrane: wrinkled surface, flattened foveal pit" },
+      { fr: "Une membrane épirétinienne", en: "An epiretinal membrane" },
       { fr: "Rien : artéfact de la carte", en: "Nothing: a map artifact" },
       { fr: "Un décollement séreux rétinien", en: "A serous retinal detachment" }
     ],
@@ -640,7 +640,7 @@ G.OPH.invPractice = [
     options: [
       { fr: "Ininterprétable : signal trop faible", en: "Uninterpretable: signal too weak" },
       { fr: "Normal, car le quadrant nasal OD est vert", en: "Normal, because the OD nasal quadrant is green" },
-      { fr: "Glaucome sévère : RNFL moyenne 51 et 40 µm, rouge aux deux yeux", en: "Severe glaucoma: average RNFL 51 and 40 µm, red in both eyes" },
+      { fr: "Glaucome sévère aux deux yeux", en: "Severe glaucoma in both eyes" },
       { fr: "Mégalopapille physiologique : un grand disque a un grand C/D", en: "Physiologic megalopapilla: a large disc has a large C/D" }
     ],
     answer: 2,
@@ -674,7 +674,7 @@ G.OPH.invPractice = [
     id: "p-oct-8", inv: "oct", media: "m-oct-8", level: 2,
     q: { fr: "OCT du segment antérieur (AS-OCT) après une greffe endothéliale (DMEK). Que montrent les angles?", en: "Anterior segment OCT (AS-OCT) after endothelial keratoplasty (DMEK). What do the angles show?" },
     options: [
-      { fr: "Angle fermé : l’iris touche la cornée périphérique des deux côtés", en: "Closed angle: the iris touches the peripheral cornea on both sides" },
+      { fr: "Angle fermé des deux côtés", en: "Closed angle on both sides" },
       { fr: "Angle largement ouvert", en: "Wide-open angle" },
       { fr: "Chambre antérieure profonde, iris plat", en: "Deep anterior chamber, flat iris" },
       { fr: "On ne peut pas juger l’angle en OCT; seule la gonioscopie le permet", en: "You can’t assess the angle on OCT; only gonioscopy can" }
@@ -684,7 +684,7 @@ G.OPH.invPractice = [
       { fr: "Juste : aucun récessus noir entre iris et cornée en périphérie. Après DMEK, la bulle d’air peut causer un bloc pupillaire.", en: "Correct: no black recess between iris and cornea peripherally. After DMEK, the air bubble can cause pupillary block." },
       { fr: "Un angle ouvert montrerait un récessus noir et l’éperon scléral dégagé.", en: "An open angle would show a black recess and a clear scleral spur." },
       { fr: "L’iris est bombé vers l’avant et la chambre est étroite en périphérie.", en: "The iris bows forward and the chamber is shallow peripherally." },
-      { fr: "L’AS-OCT montre bien le contact iridocornéen, sans contact. La gonioscopie reste la référence pour distinguer apposition et synéchies.", en: "AS-OCT shows iridocorneal contact well, without touching the eye. Gonioscopy remains the reference to tell apposition from synechiae." }
+      { fr: "L’AS-OCT montre bien le contact iridocornéen, sans toucher l’œil. La gonioscopie reste la référence pour distinguer apposition et synéchies.", en: "AS-OCT shows iridocorneal contact well, without touching the eye. Gonioscopy remains the reference to tell apposition from synechiae." }
     ],
     reveal: { fr: "Pas de récessus noir en périphérie : l’iris est accolé à la cornée des deux côtés, angle fermé.", en: "No black recess peripherally: the iris is against the cornea on both sides — closed angle." }
   },
@@ -693,9 +693,9 @@ G.OPH.invPractice = [
     q: { fr: "Schéma de coupe OCT maculaire. Homme de 40 ans, vision floue et déformée d’un œil, sous corticoïdes. Où est le liquide?", en: "Macular OCT schematic. A 40-year-old man on steroids with blurred, distorted vision in one eye. Where is the fluid?" },
     options: [
       { fr: "Dans la rétine : liquide intrarétinien", en: "Within the retina: intraretinal fluid" },
-      { fr: "Sous l’EPR : décollement de l’EPR", en: "Under the RPE: pigment epithelial detachment" },
+      { fr: "Sous l’EPR, qui bombe : décollement de l’EPR", en: "Under a bulging RPE: pigment epithelial detachment" },
       { fr: "Dans le vitré", en: "In the vitreous" },
-      { fr: "Sous la rétine, au-dessus de l’EPR qui reste plat : liquide sous-rétinien", en: "Under the retina, above a flat RPE: subretinal fluid" }
+      { fr: "Sous la rétine : liquide sous-rétinien", en: "Under the retina: subretinal fluid" }
     ],
     answer: 3,
     why: [
@@ -713,7 +713,7 @@ G.OPH.invPractice = [
     options: [
       { fr: "Synéchies antérieures périphériques", en: "Peripheral anterior synechiae" },
       { fr: "Récession de l’angle", en: "Angle recession" },
-      { fr: "Néovaisseaux de l’angle : fins vaisseaux qui franchissent l’éperon scléral", en: "Angle neovascularization: fine vessels crossing the scleral spur" },
+      { fr: "Néovaisseaux de l’angle", en: "Angle neovascularization" },
       { fr: "Vaisseaux normaux de la racine de l’iris", en: "Normal iris root vessels" }
     ],
     answer: 2,
@@ -729,10 +729,10 @@ G.OPH.invPractice = [
     id: "p-gonio-2", inv: "gonio", media: "m-gonio-2", level: 1,
     q: { fr: "Schéma d’un angle ouvert. De postérieur vers antérieur, quel ordre est juste?", en: "Schematic of an open angle. From posterior to anterior, which order is right?" },
     options: [
-      { fr: "Iris → éperon scléral → bande ciliaire → ligne de Schwalbe → trabéculum", en: "Iris → scleral spur → ciliary body band → Schwalbe’s line → trabecular meshwork" },
+      { fr: "Racine de l’iris → éperon scléral → bande ciliaire → ligne de Schwalbe → trabéculum", en: "Iris root → scleral spur → ciliary body band → Schwalbe’s line → trabecular meshwork" },
       { fr: "Racine de l’iris → bande ciliaire → éperon scléral → trabéculum → ligne de Schwalbe", en: "Iris root → ciliary body band → scleral spur → trabecular meshwork → Schwalbe’s line" },
-      { fr: "Iris → trabéculum → éperon scléral → bande ciliaire → ligne de Schwalbe", en: "Iris → trabecular meshwork → scleral spur → ciliary body band → Schwalbe’s line" },
-      { fr: "Iris → ligne de Schwalbe → trabéculum → éperon scléral → bande ciliaire", en: "Iris → Schwalbe’s line → trabecular meshwork → scleral spur → ciliary body band" }
+      { fr: "Racine de l’iris → trabéculum → éperon scléral → bande ciliaire → ligne de Schwalbe", en: "Iris root → trabecular meshwork → scleral spur → ciliary body band → Schwalbe’s line" },
+      { fr: "Racine de l’iris → ligne de Schwalbe → trabéculum → éperon scléral → bande ciliaire", en: "Iris root → Schwalbe’s line → trabecular meshwork → scleral spur → ciliary body band" }
     ],
     answer: 1,
     why: [
@@ -785,7 +785,7 @@ G.OPH.invPractice = [
     options: [
       { fr: "Une synéchie antérieure périphérique", en: "A peripheral anterior synechia" },
       { fr: "La bande ciliaire", en: "The ciliary body band" },
-      { fr: "Une ligne de Sampaolesi : pigment en avant de la ligne de Schwalbe", en: "A Sampaolesi line: pigment anterior to Schwalbe’s line" },
+      { fr: "Une ligne de Sampaolesi", en: "A Sampaolesi line" },
       { fr: "Le trabéculum pigmenté normal", en: "The normal pigmented trabecular meshwork" }
     ],
     answer: 2,
@@ -802,7 +802,7 @@ G.OPH.invPractice = [
     q: { fr: "Traumatisme contusif (balle de racquetball). Que montre la gonioscopie?", en: "Blunt trauma (racquetball). What does gonioscopy show?" },
     options: [
       { fr: "Un angle normal, très pigmenté", en: "A normal, heavily pigmented angle" },
-      { fr: "Une récession de l’angle (bande ciliaire élargie) avec une fente de cyclodialyse (bande blanche)", en: "Angle recession (widened ciliary band) with a cyclodialysis cleft (white band)" },
+      { fr: "Une récession de l’angle avec fente de cyclodialyse", en: "Angle recession with a cyclodialysis cleft" },
       { fr: "Des synéchies antérieures périphériques post-traumatiques", en: "Post-traumatic peripheral anterior synechiae" },
       { fr: "Des néovaisseaux de l’angle", en: "Angle neovascularization" }
     ],
@@ -819,7 +819,7 @@ G.OPH.invPractice = [
     id: "p-gonio-7", inv: "gonio", media: "m-gonio-7", level: 3,
     q: { fr: "Hypotonie (PIO 1–2 mmHg) après une chirurgie de cataracte. Gonioscopie de l’angle nasal : que montrent les flèches blanches?", en: "Hypotony (IOP 1–2 mmHg) after cataract surgery. Gonioscopy of the nasal angle: what do the white arrows show?" },
     options: [
-      { fr: "Une fente de cyclodialyse : sclère blanche entre l’éperon et le corps ciliaire décollé", en: "A cyclodialysis cleft: white sclera between the spur and the detached ciliary body" },
+      { fr: "Une fente de cyclodialyse", en: "A cyclodialysis cleft" },
       { fr: "Un embryotoxon postérieur (ligne de Schwalbe proéminente)", en: "Posterior embryotoxon (prominent Schwalbe’s line)" },
       { fr: "Une récession de l’angle simple", en: "Simple angle recession" },
       { fr: "Un trabéculum très pigmenté", en: "Heavily pigmented meshwork" }
@@ -841,7 +841,7 @@ G.OPH.invPractice = [
       { fr: "Exactement là où vous la voyez", en: "Exactly where you see it" },
       { fr: "En bas, du même côté (inversion verticale seulement)", en: "Bottom, same side (vertical flip only)" },
       { fr: "En haut, du côté opposé (inversion horizontale seulement)", en: "Top, opposite side (horizontal flip only)" },
-      { fr: "En bas et à gauche : l’image est inversée haut-bas et gauche-droite", en: "Bottom left: the image is flipped up–down and left–right" }
+      { fr: "En bas et à gauche", en: "Bottom left" }
     ],
     answer: 3,
     why: [
@@ -858,8 +858,8 @@ G.OPH.invPractice = [
     options: [
       { fr: "Œdème maculaire", en: "Macular edema" },
       { fr: "Nodules cotonneux", en: "Cotton-wool spots" },
-      { fr: "Normal : reflets de la limitante interne, fréquents chez le jeune", en: "Normal: internal limiting membrane reflexes, common in the young" },
-      { fr: "Exsudats durs", en: "Hard exudates" }
+      { fr: "Normal : reflets de la limitante interne", en: "Normal: internal limiting membrane reflexes" },
+      { fr: "Exsudats durs en couronne autour de la macula", en: "Hard exudates forming a ring around the macula" }
     ],
     answer: 2,
     why: [
@@ -894,7 +894,7 @@ G.OPH.invPractice = [
     options: [
       { fr: "En inférotemporal : encoche", en: "Inferotemporally: a notch" },
       { fr: "En nasal", en: "Nasally" },
-      { fr: "Nulle part : bord régulier", en: "Nowhere: the rim is even" },
+      { fr: "Nulle part : le bord est régulier partout", en: "Nowhere: the rim is even all around" },
       { fr: "En supérieur seulement", en: "Superiorly only" }
     ],
     answer: 0,
@@ -911,9 +911,9 @@ G.OPH.invPractice = [
     q: { fr: "Homme de 61 ans qui consulte pour de nouvelles mouches volantes. Fond d’œil ci-contre. Quelle est la priorité?", en: "A 61-year-old man presents with new floaters. Fundus shown. What’s the priority?" },
     options: [
       { fr: "Glaucome avancé : débuter des gouttes hypotensives", en: "Advanced glaucoma: start pressure-lowering drops" },
-      { fr: "Drusen papillaires : rassurer et revoir dans un an", en: "Disc drusen: reassure and review in a year" },
+      { fr: "Drusen papillaires : rassurer et revoir dans un an avec photos", en: "Disc drusen: reassure and review in a year with photos" },
       { fr: "Décollement postérieur du vitré simple : rassurer", en: "Simple posterior vitreous detachment: reassure" },
-      { fr: "Œdème papillaire avec hémorragies : mesurer la TA et faire une imagerie cérébrale en urgence", en: "Disc swelling with hemorrhages: check blood pressure and get urgent brain imaging" }
+      { fr: "Œdème papillaire : TA et imagerie cérébrale urgente", en: "Disc swelling: check BP, urgent brain imaging" }
     ],
     answer: 3,
     why: [
@@ -930,7 +930,7 @@ G.OPH.invPractice = [
     options: [
       { fr: "Papille gonflée : œdème papillaire", en: "Swollen disc: disc edema" },
       { fr: "Rétine soulevée et plissée : décollement de rétine", en: "Elevated folded retina: retinal detachment" },
-      { fr: "Tache rouge cerise sur une rétine blanchâtre : occlusion de l’artère centrale de la rétine", en: "Cherry-red spot on a whitened retina: central retinal artery occlusion" },
+      { fr: "Tache rouge cerise : occlusion de l’artère centrale", en: "Cherry-red spot: central retinal artery occlusion" },
       { fr: "Hémorragies dans les 4 quadrants : occlusion de la veine centrale", en: "Hemorrhages in all 4 quadrants: central vein occlusion" }
     ],
     answer: 2,
@@ -964,10 +964,10 @@ G.OPH.invPractice = [
     id: "p-fondoeil-8", inv: "fondoeil", media: "m-fondoeil-8", level: 3,
     q: { fr: "Montage grand champ, œil gauche. Que délimitent les flèches blanches?", en: "Wide-field montage, left eye. What do the white arrows outline?" },
     options: [
-      { fr: "Le bord d’un décollement de rétine rhegmatogène qui englobe la macula (macula-off)", en: "The edge of a rhegmatogenous retinal detachment involving the macula (macula-off)" },
+      { fr: "Un décollement de rétine macula-off", en: "A macula-off retinal detachment" },
       { fr: "Un œdème maculaire", en: "Macular edema" },
       { fr: "Un décollement choroïdien", en: "A choroidal detachment" },
-      { fr: "Un rétinoschisis", en: "A retinoschisis" }
+      { fr: "Un rétinoschisis périphérique lisse et convexe", en: "A smooth, convex peripheral retinoschisis" }
     ],
     answer: 0,
     why: [
@@ -1056,7 +1056,7 @@ G.OPH.invPractice = [
     q: { fr: "Champs visuels de Goldmann des deux yeux. Quel défaut, et où est la lésion?", en: "Goldmann visual fields of both eyes. What’s the defect, and where’s the lesion?" },
     options: [
       { fr: "Hémianopsie bitemporale : chiasma", en: "Bitemporal hemianopia: chiasm" },
-      { fr: "Hémianopsie homonyme droite : lésion gauche", en: "Right homonymous hemianopia: left lesion" },
+      { fr: "Hémianopsie homonyme droite : lésion rétrochiasmatique gauche", en: "Right homonymous hemianopia: left retrochiasmal lesion" },
       { fr: "Défauts arciformes glaucomateux", en: "Glaucomatous arcuate defects" },
       { fr: "Hémianopsie homonyme gauche : lésion rétrochiasmatique droite", en: "Left homonymous hemianopia: right retrochiasmal lesion" }
     ],
@@ -1109,7 +1109,7 @@ G.OPH.invPractice = [
     id: "p-cv-8", inv: "cv", media: "m-cv-8g", level: 2,
     q: { fr: "Champ 24-2 de l’OD (schéma). Perte de vision indolore au réveil chez un patient vasculaire de 65 ans. Quel défaut et quelle cause?", en: "24-2 field, right eye (schematic). Painless vision loss on waking in a 65-year-old vascular patient. Which defect, and what cause?" },
     options: [
-      { fr: "Défaut altitudinal inférieur : neuropathie optique ischémique antérieure", en: "Inferior altitudinal defect: anterior ischemic optic neuropathy" },
+      { fr: "Défaut altitudinal inférieur : NOIA", en: "Inferior altitudinal defect: AION" },
       { fr: "Hémianopsie homonyme : AVC occipital", en: "Homonymous hemianopia: occipital stroke" },
       { fr: "Hémianopsie bitemporale : adénome hypophysaire", en: "Bitemporal hemianopia: pituitary adenoma" },
       { fr: "Scotome central : névrite optique", en: "Central scotoma: optic neuritis" }

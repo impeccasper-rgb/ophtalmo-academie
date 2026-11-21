@@ -72,7 +72,8 @@ parts.append('<meta name="description" content="Apprends à voir le signe qui co
 parts.append('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>')
 parts.append('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400..800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">')
 parts.append('<style>\n' + '\n'.join(open(os.path.join(SRC, c), encoding='utf-8').read() for c in ('styles.css', 'investigations.css', 'web.css') if os.path.exists(os.path.join(SRC, c))) + '\n</style>')
-parts.append('''<div class="shell">
+parts.append('''<a class="skip-link" href="#view" data-act="skip">Aller au contenu</a>
+<div class="shell">
 <aside class="rail" id="rail" aria-label="Navigation"></aside>
 <div style="min-width:0">
 <header class="topbar"><button type="button" class="btn sm" data-act="menu" aria-label="Ouvrir le menu" aria-controls="drawer">Menu</button><a class="brand" href="#accueil"><svg class="logo" viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" rx="236" fill="#0A2547"/><circle cx="512" cy="512" r="282" fill="#2F4EE6"/><circle cx="512" cy="512" r="116" fill="#050E1D"/><path d="M336 236A330 330 0 0 0 336 788" fill="none" stroke="#EAF3FF" stroke-opacity=".85" stroke-width="40" stroke-linecap="round"/><circle cx="660" cy="364" r="66" fill="#B6F04E"/></svg><span><b>Ocelle</b><span>Ophtalmo · externat et R1</span></span></a></header>

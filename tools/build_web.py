@@ -278,7 +278,8 @@ def main():
 </head>
 <body>
 '''
-    body = '''<div class="shell">
+    body = '''<a class="skip-link" href="#view" data-act="skip">Aller au contenu</a>
+<div class="shell">
 <aside class="rail" id="rail" aria-label="Navigation"></aside>
 <div style="min-width:0">
 <header class="topbar"><button type="button" class="btn sm" data-act="menu" aria-label="Ouvrir le menu" aria-controls="drawer">Menu</button><a class="brand" href="#accueil"><svg class="logo" viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" rx="236" fill="#0A2547"/><circle cx="512" cy="512" r="282" fill="#2F4EE6"/><circle cx="512" cy="512" r="116" fill="#050E1D"/><path d="M336 236A330 330 0 0 0 336 788" fill="none" stroke="#EAF3FF" stroke-opacity=".85" stroke-width="40" stroke-linecap="round"/><circle cx="660" cy="364" r="66" fill="#B6F04E"/></svg><span><b>Ocelle</b><span>Ophtalmo · externat et R1</span></span></a></header>

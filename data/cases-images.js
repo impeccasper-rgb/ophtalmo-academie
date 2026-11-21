@@ -14,7 +14,7 @@ G.OPH.imageCases = [
     options: [
       { fr: "Kératite à Acanthamoeba", en: "Acanthamoeba keratitis" },
       { fr: "Kératite bactérienne", en: "Bacterial keratitis" },
-      { fr: "Kératite épithéliale herpétique (dendrite à HSV)", en: "Herpes simplex epithelial keratitis (HSV dendrite)" },
+      { fr: "Kératite herpétique (HSV)", en: "Herpes simplex keratitis" },
       { fr: "Abrasion cornéenne", en: "Corneal abrasion" }
     ],
     answer: 2,
@@ -30,10 +30,10 @@ G.OPH.imageCases = [
     id: "ic-c02", topic: "cornee", media: "mi-c02", level: 3,
     q: { fr: "Zona ophtalmique récent, œil gauche. Lésions épithéliales colorées. En quoi diffèrent-elles d’une dendrite à HSV?", en: "Recent herpes zoster ophthalmicus, left eye. Stained epithelial lesions. How do they differ from an HSV dendrite?" },
     options: [
-      { fr: "Infiltrat suppuré avec hypopyon", en: "Suppurative infiltrate with hypopyon" },
-      { fr: "Pseudodendrites : surélevées, sans bulbes terminaux, se colorent peu à la fluorescéine", en: "Pseudodendrites: raised, no terminal bulbs, stain poorly with fluorescein" },
+      { fr: "Infiltrat suppuré dense avec hypopyon", en: "Dense suppurative infiltrate with hypopyon" },
+      { fr: "Surélevées, sans bulbes terminaux", en: "Raised, without terminal bulbs" },
       { fr: "Ulcères creusés avec bulbes terminaux", en: "Excavated ulcers with terminal bulbs" },
-      { fr: "Infiltrat stromal en anneau", en: "Stromal ring infiltrate" }
+      { fr: "Infiltrat stromal en anneau immunitaire", en: "An immune ring infiltrate in the stroma" }
     ],
     answer: 1,
     why: [
@@ -48,14 +48,14 @@ G.OPH.imageCases = [
     id: "ic-c03", topic: "cornee", media: "mi-c03", level: 1, featured: true,
     q: { fr: "Porteur de lentilles de contact. Douleur intense, œil très rouge depuis 24 h. Que faire?", en: "Contact lens wearer. Severe pain, very red eye for 24 hours. What do you do?" },
     options: [
-      { fr: "Ulcère bactérien probable : retirer les lentilles, grattage pour cultures, antibiotiques fortifiés en urgence", en: "Probable bacterial ulcer: remove the lenses, scrape for cultures, urgent fortified antibiotics" },
+      { fr: "Ulcère bactérien : cultures, fortifiés en urgence", en: "Bacterial ulcer: cultures, urgent fortified drops" },
       { fr: "Conjonctivite : antibiotique aux 6 h, revoir dans une semaine", en: "Conjunctivitis: antibiotic every 6 hours, review in a week" },
       { fr: "Corticoïde topique pour calmer l’inflammation", en: "Topical steroid to settle the inflammation" },
       { fr: "Pansement occlusif 24 h", en: "Pressure patch for 24 hours" }
     ],
     answer: 0,
     why: [
-      { fr: "Juste : chez le porteur de lentilles, penser Pseudomonas. Les gouttes fortifiées viennent des pharmacies hospitalières : référence urgente en ophtalmologie.", en: "Correct: in contact lens wearers, think Pseudomonas. Fortified drops come from hospital pharmacies: urgent ophthalmology referral." },
+      { fr: "Juste : retirer les lentilles, gratter pour cultures, puis antibiotiques fortifiés. Chez le porteur de lentilles, penser Pseudomonas. Les gouttes fortifiées viennent des pharmacies hospitalières : référence urgente en ophtalmologie.", en: "Correct: remove the lenses, scrape for cultures, then fortified antibiotics. In contact lens wearers, think Pseudomonas. Fortified drops come from hospital pharmacies: urgent ophthalmology referral." },
       { fr: "Un infiltrat cornéen dense n’est pas une conjonctivite; un délai d’une semaine peut mener à la perforation.", en: "A dense corneal infiltrate isn’t conjunctivitis; a one-week delay can lead to perforation." },
       { fr: "Pas de corticoïde avant les cultures et une réponse aux antibiotiques.", en: "No steroid before cultures and a response to antibiotics." },
       { fr: "Jamais de pansement occlusif chez un porteur de lentilles : il favorise le Pseudomonas.", en: "Never patch a contact lens wearer: it favours Pseudomonas." }
@@ -66,7 +66,7 @@ G.OPH.imageCases = [
     id: "ic-c04", topic: "cornee", media: "mi-c04", level: 2,
     q: { fr: "Porteuse de lentilles qui se baigne avec. Douleur très intense, disproportionnée par rapport à l’examen. Quel signe voyez-vous et quel germe suspecter?", en: "Contact lens wearer who swims in her lenses. Very severe pain, out of proportion to the exam. What sign do you see, and which organism do you suspect?" },
     options: [
-      { fr: "Kératite fongique filamenteuse", en: "Filamentous fungal keratitis" },
+      { fr: "Lésions satellites à bords plumeux : kératite fongique", en: "Feathery edges with satellite lesions: fungal keratitis" },
       { fr: "Ulcère neurotrophique", en: "Neurotrophic ulcer" },
       { fr: "Abrasion simple", en: "Simple abrasion" },
       { fr: "Infiltrat stromal en anneau : Acanthamoeba", en: "Stromal ring infiltrate: Acanthamoeba" }
@@ -87,7 +87,7 @@ G.OPH.imageCases = [
       { fr: "Un fuseau de Krukenberg (pigment)", en: "A Krukenberg spindle (pigment)" },
       { fr: "Une cornée verticillée", en: "Cornea verticillata" },
       { fr: "Des guttae : dystrophie endothéliale de Fuchs", en: "Guttae: Fuchs endothelial dystrophy" },
-      { fr: "Des précipités rétrocornéens (uvéite)", en: "Keratic precipitates (uveitis)" }
+      { fr: "Des précipités rétrocornéens d’uvéite antérieure", en: "Keratic precipitates from anterior uveitis" }
     ],
     answer: 2,
     why: [
@@ -100,30 +100,30 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-c06", topic: "cornee", media: "mi-c06", level: 2,
-    q: { fr: "Jeune patient, myopie et astigmatisme qui augmentent vite. Fines lignes verticales dans le stroma profond. Diagnostic?", en: "Young patient, rapidly increasing myopia and astigmatism. Fine vertical lines in the deep stroma. Diagnosis?" },
+    q: { fr: "Jeune patient, myopie et astigmatisme qui augmentent vite. Fines stries parallèles dans le stroma profond. Diagnostic?", en: "Young patient, rapidly increasing myopia and astigmatism. Fine parallel striae in the deep stroma. Diagnosis?" },
     options: [
       { fr: "Plis de Descemet postopératoires", en: "Postoperative Descemet folds" },
       { fr: "Kératocône (stries de Vogt)", en: "Keratoconus (Vogt striae)" },
       { fr: "Glaucome congénital (stries de Haab)", en: "Congenital glaucoma (Haab striae)" },
-      { fr: "Dystrophie grillagée", en: "Lattice dystrophy" }
+      { fr: "Dystrophie grillagée (TGFBI)", en: "Lattice corneal dystrophy (TGFBI)" }
     ],
     answer: 1,
     why: [
       { fr: "Aucun contexte chirurgical; les plis sont irréguliers, pas des stries fines parallèles.", en: "No surgical context; folds are irregular, not fine parallel striae." },
-      { fr: "Juste : stries verticales du stroma postérieur, qui s’effacent à une légère pression sur le globe. Autres signes : anneau de Fleischer, amincissement, signe de Munson. Le cross-linking freine la progression.", en: "Correct: vertical posterior stromal lines that fade with gentle pressure on the globe. Other signs: Fleischer ring, thinning, Munson sign. Cross-linking slows progression." },
+      { fr: "Juste : stries fines et parallèles du stroma postérieur (classiquement verticales, obliques sur cette photo), qui s’effacent à une légère pression sur le globe. Autres signes : anneau de Fleischer, amincissement, signe de Munson. Le cross-linking freine la progression.", en: "Correct: fine parallel posterior stromal striae (classically vertical, oblique in this photo) that fade with gentle pressure on the globe. Other signs: Fleischer ring, thinning, Munson sign. Cross-linking slows progression." },
       { fr: "Les stries de Haab sont horizontales ou curvilignes (ruptures de la Descemet) chez l’enfant au gros œil.", en: "Haab striae are horizontal or curvilinear (Descemet breaks) in a child with an enlarged eye." },
       { fr: "La dystrophie grillagée donne des lignes réfringentes ramifiées, surtout dans le stroma antérieur.", en: "Lattice dystrophy gives branching refractile lines, mostly in the anterior stroma." }
     ],
-    reveal: { fr: "Lignes fines, verticales et parallèles dans le stroma profond : stries de Vogt du kératocône.", en: "Fine, vertical, parallel lines in the deep stroma: keratoconus Vogt striae." }
+    reveal: { fr: "Lignes fines et parallèles dans le stroma profond : stries de Vogt du kératocône.", en: "Fine parallel lines in the deep stroma: keratoconus Vogt striae." }
   },
   {
     id: "ic-c07", topic: "cornee", media: "mi-c07", level: 2,
     q: { fr: "Kératocône connu. Baisse de vision brutale avec cornée blanche et douloureuse. Que s’est-il passé?", en: "Known keratoconus. Sudden vision loss with a white, painful cornea. What happened?" },
     options: [
-      { fr: "Hydrops aigu : rupture de la Descemet, œdème stromal", en: "Acute hydrops: a Descemet break with stromal edema" },
+      { fr: "Hydrops aigu (rupture de la Descemet)", en: "Acute hydrops (Descemet break)" },
       { fr: "Kératite infectieuse", en: "Infectious keratitis" },
       { fr: "Brûlure chimique", en: "Chemical burn" },
-      { fr: "Dystrophie de Fuchs décompensée", en: "Decompensated Fuchs dystrophy" }
+      { fr: "Dystrophie de Fuchs décompensée, œdème diffus", en: "Decompensated Fuchs dystrophy with diffuse edema" }
     ],
     answer: 0,
     why: [
@@ -141,14 +141,14 @@ G.OPH.imageCases = [
       { fr: "Pinguécula : jamais d’intervention", en: "Pinguecula: never any surgery" },
       { fr: "Carcinome épidermoïde : énucléation", en: "Squamous cell carcinoma: enucleation" },
       { fr: "Hémorragie sous-conjonctivale : rassurer", en: "Subconjunctival hemorrhage: reassure" },
-      { fr: "Ptérygion : opérer s’il menace l’axe visuel, induit de l’astigmatisme ou gêne beaucoup", en: "Pterygium: operate if it threatens the visual axis, induces astigmatism or is very bothersome" }
+      { fr: "Ptérygion : chirurgie s’il menace l’axe visuel", en: "Pterygium: surgery if near the visual axis" }
     ],
     answer: 3,
     why: [
       { fr: "La pinguécula ne franchit pas le limbe.", en: "A pinguecula doesn’t cross the limbus." },
       { fr: "Le carcinome de surface est gélatineux ou leucoplasique, avec vaisseaux nourriciers : biopsie, pas énucléation d’emblée.", en: "Surface carcinoma is gelatinous or leukoplakic with feeder vessels: biopsy, not upfront enucleation." },
       { fr: "Une hémorragie est une nappe rouge plane, pas un tissu en relief qui envahit la cornée.", en: "A hemorrhage is a flat red patch, not raised tissue invading the cornea." },
-      { fr: "Juste : tissu fibrovasculaire qui franchit le limbe, lié aux UV. Exérèse avec autogreffe conjonctivale pour limiter la récidive.", en: "Correct: fibrovascular tissue crossing the limbus, linked to UV. Excision with conjunctival autograft limits recurrence." }
+      { fr: "Juste : tissu fibrovasculaire qui franchit le limbe, lié aux UV. Opérer s’il menace l’axe visuel, induit de l’astigmatisme ou gêne beaucoup; exérèse avec autogreffe conjonctivale pour limiter la récidive.", en: "Correct: fibrovascular tissue crossing the limbus, linked to UV. Operate if it threatens the visual axis, induces astigmatism or is very bothersome; excision with conjunctival autograft limits recurrence." }
     ],
     reveal: { fr: "Tissu fibrovasculaire triangulaire dont la tête franchit le limbe et atteint le bord pupillaire : ptérygion.", en: "Triangular fibrovascular tissue whose head crosses the limbus and reaches the pupil edge: pterygium." }
   },
@@ -157,9 +157,9 @@ G.OPH.imageCases = [
     q: { fr: "Éclaboussure d’un produit alcalin (soude) il y a 10 minutes. Première chose à faire?", en: "Splash of an alkali (lye) 10 minutes ago. First thing to do?" },
     options: [
       { fr: "Neutraliser avec une solution acide", en: "Neutralize with an acid solution" },
-      { fr: "Antibiotique topique et revoir le lendemain", en: "Topical antibiotic and review tomorrow" },
-      { fr: "Irriguer immédiatement et abondamment jusqu’à un pH neutre, puis examiner", en: "Irrigate immediately and copiously to a neutral pH, then examine" },
-      { fr: "Mesurer l’acuité visuelle avant tout", en: "Measure visual acuity before anything else" }
+      { fr: "Antibiotique topique, revoir demain", en: "Topical antibiotic, see tomorrow" },
+      { fr: "Irriguer abondamment jusqu’à pH neutre", en: "Irrigate copiously to a neutral pH" },
+      { fr: "Mesurer l’acuité visuelle avant tout", en: "Check visual acuity first" }
     ],
     answer: 2,
     why: [
@@ -194,7 +194,7 @@ G.OPH.imageCases = [
     options: [
       { fr: "Une perte d’épithélium : abrasion cornéenne", en: "Epithelial loss: corneal abrasion" },
       { fr: "Un ulcère infectieux", en: "An infectious ulcer" },
-      { fr: "Une fuite d’humeur aqueuse (Seidel positif)", en: "An aqueous leak (positive Seidel)" },
+      { fr: "Une fuite d’humeur aqueuse (Seidel +)", en: "An aqueous leak (Seidel +)" },
       { fr: "Une dendrite herpétique", en: "A herpetic dendrite" }
     ],
     answer: 0,
@@ -210,10 +210,10 @@ G.OPH.imageCases = [
     id: "ic-c12", topic: "cornee", media: "mi-c12", level: 2,
     q: { fr: "Deux semaines après une conjonctivite virale, la vision est floue. Que sont ces petites opacités rondes et multiples?", en: "Two weeks after viral conjunctivitis, vision is blurred. What are these multiple small round opacities?" },
     options: [
-      { fr: "Abcès bactériens multiples", en: "Multiple bacterial abscesses" },
+      { fr: "Abcès bactériens multiples, satellites d’un ulcère", en: "Multiple bacterial abscesses around an ulcer" },
       { fr: "Kératite ponctuée de Thygeson", en: "Thygeson superficial punctate keratitis" },
       { fr: "Guttae", en: "Guttae" },
-      { fr: "Infiltrats sous-épithéliaux immuns de l’adénovirus", en: "Immune subepithelial infiltrates of adenovirus" }
+      { fr: "Infiltrats sous-épithéliaux de l’adénovirus", en: "Adenoviral subepithelial infiltrates" }
     ],
     answer: 3,
     why: [
@@ -230,8 +230,8 @@ G.OPH.imageCases = [
     q: { fr: "Douleur intense à l’œil droit, céphalée, nausées, baisse de vision. Diagnostic et geste urgent?", en: "Severe right eye pain, headache, nausea, decreased vision. Diagnosis and urgent step?" },
     options: [
       { fr: "Migraine : analgésique et suivi", en: "Migraine: analgesic and follow-up" },
-      { fr: "Uvéite antérieure : dilater la pupille", en: "Anterior uveitis: dilate the pupil" },
-      { fr: "Fermeture aiguë de l’angle : mesurer la PIO, la faire baisser tout de suite, puis iridotomie au laser des deux yeux", en: "Acute angle closure: measure IOP, lower it right away, then laser iridotomy in both eyes" },
+      { fr: "Uvéite antérieure : dilater la pupille et corticoïde topique", en: "Anterior uveitis: dilate the pupil and start topical steroid" },
+      { fr: "Fermeture aiguë de l’angle : PIO, laser des deux yeux", en: "Acute angle closure: lower IOP, laser both eyes" },
       { fr: "Conjonctivite : antibiotique topique", en: "Conjunctivitis: topical antibiotic" }
     ],
     answer: 2,
@@ -248,7 +248,7 @@ G.OPH.imageCases = [
     q: { fr: "Petites taches gris-blanc sous la capsule antérieure du cristallin, iris atrophique par secteur. Qu’indiquent-elles?", en: "Small grey-white spots under the anterior lens capsule, sectoral iris atrophy. What do they indicate?" },
     options: [
       { fr: "Une cataracte sous-capsulaire postérieure cortisonique", en: "Steroid-induced posterior subcapsular cataract" },
-      { fr: "Une crise antérieure de fermeture aiguë de l’angle (glaukomflecken)", en: "A previous acute angle-closure attack (glaukomflecken)" },
+      { fr: "Une ancienne crise de fermeture de l’angle", en: "A past angle-closure attack" },
       { fr: "Une cataracte corticale débutante", en: "Early cortical cataract" },
       { fr: "Une pseudoexfoliation", en: "Pseudoexfoliation" }
     ],
@@ -263,12 +263,12 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-g03", topic: "glaucome", media: "mi-g03", level: 2,
-    q: { fr: "Patient âgé, examen à la lampe à fente. Que voyez-vous sur le rebord pupillaire, et quel risque?", en: "Elderly patient, slit-lamp exam. What do you see on the pupil margin, and what’s the risk?" },
+    q: { fr: "Patient âgé, examen à la lampe à fente. Que voyez-vous sur le rebord pupillaire?", en: "Elderly patient, slit-lamp exam. What do you see on the pupil margin?" },
     options: [
-      { fr: "Matériel pseudoexfoliatif : risque de glaucome et de fragilité zonulaire", en: "Pseudoexfoliative material: risk of glaucoma and weak zonules" },
+      { fr: "Matériel pseudoexfoliatif", en: "Pseudoexfoliative material" },
       { fr: "Pigment de dispersion pigmentaire", en: "Pigment from pigment dispersion" },
       { fr: "Synéchies postérieures d’uvéite", en: "Posterior synechiae from uveitis" },
-      { fr: "Nodules de Koeppe", en: "Koeppe nodules" }
+      { fr: "Nodules de Koeppe (uvéite granulomateuse)", en: "Koeppe nodules (granulomatous uveitis)" }
     ],
     answer: 0,
     why: [
@@ -283,10 +283,10 @@ G.OPH.imageCases = [
     id: "ic-g04", topic: "glaucome", media: "mi-g04", level: 2,
     q: { fr: "Rétro-illumination de l’iris (lumière renvoyée par le fond d’œil). Que montrent les fentes rouges radiaires en périphérie?", en: "Iris retroillumination (light reflected from the fundus). What do the radial red slits in the periphery show?" },
     options: [
-      { fr: "Néovaisseaux iriens", en: "Iris neovascularization" },
-      { fr: "Iridotomies au laser", en: "Laser iridotomies" },
-      { fr: "Albinisme oculaire", en: "Ocular albinism" },
-      { fr: "Défauts de transillumination : syndrome de dispersion pigmentaire", en: "Transillumination defects: pigment dispersion syndrome" }
+      { fr: "Néovaisseaux iriens (rubéose)", en: "Iris rubeosis (new vessels)" },
+      { fr: "Iridotomies au laser multiples", en: "Several laser iridotomies" },
+      { fr: "Albinisme oculaire (transillumination diffuse)", en: "Ocular albinism (diffuse transillumination)" },
+      { fr: "Dispersion pigmentaire", en: "Pigment dispersion" }
     ],
     answer: 3,
     why: [
@@ -320,8 +320,8 @@ G.OPH.imageCases = [
     q: { fr: "Œil droit, après une occlusion de l’artère centrale de la rétine. Que montre la zone encerclée?", en: "Right eye after a central retinal artery occlusion. What does the circled area show?" },
     options: [
       { fr: "Hyphéma", en: "Hyphema" },
-      { fr: "Néovaisseaux iriens (rubéose) : risque de glaucome néovasculaire", en: "Iris new vessels (rubeosis): risk of neovascular glaucoma" },
-      { fr: "Vaisseaux iriens normaux", en: "Normal iris vessels" },
+      { fr: "Néovaisseaux iriens (rubéose)", en: "Iris new vessels (rubeosis)" },
+      { fr: "Vaisseaux iriens normaux, radiaires dans le stroma", en: "Normal radial iris vessels within the stroma" },
       { fr: "Nodules de Koeppe", en: "Koeppe nodules" }
     ],
     answer: 1,
@@ -338,7 +338,7 @@ G.OPH.imageCases = [
     q: { fr: "Jeune patient aux cornées anormalement grandes des deux côtés. Quelle cause éliminer en premier?", en: "Young patient with abnormally large corneas in both eyes. Which cause must be ruled out first?" },
     options: [
       { fr: "Glaucome congénital (buphtalmie)", en: "Congenital glaucoma (buphthalmos)" },
-      { fr: "Obstruction du canal lacrymonasal", en: "Nasolacrimal duct obstruction" },
+      { fr: "Obstruction congénitale du canal lacrymonasal", en: "Congenital nasolacrimal duct obstruction" },
       { fr: "Myopie forte isolée", en: "Isolated high myopia" },
       { fr: "Exophtalmie thyroïdienne", en: "Thyroid exophthalmos" }
     ],
@@ -355,10 +355,10 @@ G.OPH.imageCases = [
     id: "ic-g08", topic: "glaucome", media: "mi-g08", level: 3,
     q: { fr: "Glaucome congénital. Fines lignes à double contour dans la cornée profonde. Comment s’appellent-elles?", en: "Congenital glaucoma. Fine double-contoured lines in the deep cornea. What are they called?" },
     options: [
-      { fr: "Stries de Vogt", en: "Vogt striae" },
+      { fr: "Stries de Vogt (kératocône)", en: "Vogt striae (keratoconus)" },
       { fr: "Lignes de dystrophie grillagée", en: "Lattice dystrophy lines" },
       { fr: "Rayures de lentilles de contact", en: "Contact lens scratches" },
-      { fr: "Stries de Haab : ruptures de la Descemet, horizontales ou curvilignes", en: "Haab striae: Descemet breaks, horizontal or curvilinear" }
+      { fr: "Stries de Haab", en: "Haab striae" }
     ],
     answer: 3,
     why: [
@@ -375,7 +375,7 @@ G.OPH.imageCases = [
     options: [
       { fr: "Glaucome malin : cycloplégie et vitrectomie", en: "Malignant glaucoma: cycloplegia and vitrectomy" },
       { fr: "Glaucome néovasculaire : anti-VEGF", en: "Neovascular glaucoma: anti-VEGF" },
-      { fr: "Bloc pupillaire (iris bombé) : iridotomie au laser ou chirurgicale", en: "Pupillary block (iris bombé): laser or surgical iridotomy" },
+      { fr: "Bloc pupillaire : iridotomie", en: "Pupillary block: iridotomy" },
       { fr: "Iris plateau : iridoplastie", en: "Plateau iris: iridoplasty" }
     ],
     answer: 2,
@@ -391,10 +391,10 @@ G.OPH.imageCases = [
     id: "ic-g10", topic: "glaucome", media: "mi-g10", level: 2,
     q: { fr: "Patient suivi pour glaucome à pression normale (œil droit). Que montre le bord inférotemporal de la papille?", en: "Patient followed for normal-tension glaucoma (right eye). What does the inferotemporal disc margin show?" },
     options: [
-      { fr: "Un vaisseau optociliaire", en: "An optociliary shunt vessel" },
-      { fr: "Une hémorragie papillaire : glaucome actif, revoir la PIO cible", en: "A disc hemorrhage: active glaucoma, revisit the target IOP" },
-      { fr: "Un néovaisseau papillaire", en: "A disc new vessel" },
-      { fr: "Un œdème papillaire", en: "Disc swelling" }
+      { fr: "Un vaisseau de shunt optociliaire", en: "An optociliary shunt vessel" },
+      { fr: "Une hémorragie papillaire", en: "A disc hemorrhage" },
+      { fr: "Un néovaisseau sur la papille", en: "A new vessel on the disc" },
+      { fr: "Un œdème papillaire débutant", en: "Early disc swelling" }
     ],
     answer: 1,
     why: [
@@ -410,8 +410,8 @@ G.OPH.imageCases = [
     id: "ic-x01", topic: "general", media: "mi-x01", level: 1,
     q: { fr: "Nappe rouge vif, bien limitée, sous la conjonctive. Aucune douleur, vision normale, pas de traumatisme. Conduite?", en: "Bright red, well-defined patch under the conjunctiva. No pain, normal vision, no trauma. Management?" },
     options: [
-      { fr: "Hémorragie sous-conjonctivale : rassurer, mesurer la TA, revoir les anticoagulants", en: "Subconjunctival hemorrhage: reassure, check blood pressure, review anticoagulants" },
-      { fr: "Sclérite : AINS oraux et bilan systémique", en: "Scleritis: oral NSAIDs and systemic workup" },
+      { fr: "Hémorragie sous-conjonctivale : rassurer, TA", en: "Subconjunctival hemorrhage: reassure, check BP" },
+      { fr: "Sclérite : AINS oraux, bilan", en: "Scleritis: oral NSAIDs, workup" },
       { fr: "Conjonctivite bactérienne : antibiotique", en: "Bacterial conjunctivitis: antibiotic" },
       { fr: "Fermeture de l’angle : PIO en urgence", en: "Angle closure: urgent IOP" }
     ],
@@ -431,7 +431,7 @@ G.OPH.imageCases = [
       { fr: "Un hypopyon : antibiotiques intravitréens", en: "A hypopyon: intravitreal antibiotics" },
       { fr: "Une hémorragie sous-conjonctivale", en: "A subconjunctival hemorrhage" },
       { fr: "Une rubéose irienne", en: "Iris rubeosis" },
-      { fr: "Un hyphéma : éliminer un globe ouvert, mesurer la PIO, dépister la drépanocytose si à risque", en: "A hyphema: rule out an open globe, measure IOP, screen for sickle cell if at risk" }
+      { fr: "Un hyphéma : éliminer un globe ouvert", en: "A hyphema: rule out an open globe" }
     ],
     answer: 3,
     why: [
@@ -446,10 +446,10 @@ G.OPH.imageCases = [
     id: "ic-x03", topic: "general", media: "mi-x03", level: 2,
     q: { fr: "Antécédent de trabéculectomie. Œil très rouge et douloureux, vision effondrée. La paupière est soulevée. Que montre le bas de la chambre antérieure, et quelle est l’urgence?", en: "History of trabeculectomy. Very red, painful eye, vision crashed. The lid is lifted. What does the bottom of the anterior chamber show, and what’s the emergency?" },
     options: [
-      { fr: "Une cataracte blanche", en: "A white cataract" },
+      { fr: "Une cataracte blanche intumescente", en: "A white, intumescent cataract" },
       { fr: "Une conjonctivite : antibiotique topique seul", en: "Conjunctivitis: topical antibiotic alone" },
-      { fr: "Un hypopyon : endophtalmie liée à la bulle — prélèvements et antibiotiques intravitréens le jour même", en: "A hypopyon: bleb-related endophthalmitis — same-day taps and intravitreal antibiotics" },
-      { fr: "Un hyphéma postopératoire", en: "A postoperative hyphema" }
+      { fr: "Hypopyon : endophtalmie", en: "Hypopyon: endophthalmitis" },
+      { fr: "Un hyphéma postopératoire déposé", en: "A layered postoperative hyphema" }
     ],
     answer: 2,
     why: [
@@ -465,8 +465,8 @@ G.OPH.imageCases = [
     q: { fr: "Douleur profonde, sourde, qui réveille la nuit. Vaisseaux engorgés et nodule sous le limbe. Diagnostic et bilan?", en: "Deep, boring pain that wakes the patient at night. Engorged vessels and a nodule below the limbus. Diagnosis and workup?" },
     options: [
       { fr: "Conjonctivite virale", en: "Viral conjunctivitis" },
-      { fr: "Sclérite antérieure nodulaire : chercher une maladie systémique (PR, vascularite)", en: "Nodular anterior scleritis: look for systemic disease (RA, vasculitis)" },
-      { fr: "Épisclérite : larmes artificielles", en: "Episcleritis: artificial tears" },
+      { fr: "Sclérite nodulaire : bilan systémique", en: "Nodular scleritis: systemic workup" },
+      { fr: "Épisclérite : larmes artificielles et AINS topiques", en: "Episcleritis: artificial tears and topical NSAIDs" },
       { fr: "Pinguécula enflammée", en: "Inflamed pinguecula" }
     ],
     answer: 1,
@@ -482,7 +482,7 @@ G.OPH.imageCases = [
     id: "ic-x05", topic: "general", media: "mi-x05", level: 1,
     q: { fr: "Œil rouge, larmoiement, sensation de sable. Petites élévations rondes et pâles sur la conjonctive palpébrale inférieure. Comment les nomme-t-on, et qu’orientent-elles?", en: "Red eye, tearing, gritty feeling. Small pale round elevations on the lower palpebral conjunctiva. What are they called, and what do they suggest?" },
     options: [
-      { fr: "Follicules : conjonctivite virale (adénovirus) ou à Chlamydia", en: "Follicles: viral (adenovirus) or chlamydial conjunctivitis" },
+      { fr: "Follicules : virus ou Chlamydia", en: "Follicles: virus or Chlamydia" },
       { fr: "Papilles : allergie ou lentilles", en: "Papillae: allergy or contact lenses" },
       { fr: "Concrétions conjonctivales", en: "Conjunctival concretions" },
       { fr: "Membranes", en: "Membranes" }
@@ -503,7 +503,7 @@ G.OPH.imageCases = [
       { fr: "Impétigo : antibiotique topique", en: "Impetigo: topical antibiotic" },
       { fr: "Cellulite préseptale : antibiotique oral seul", en: "Preseptal cellulitis: oral antibiotic only" },
       { fr: "Dermatite de contact : corticoïde topique", en: "Contact dermatitis: topical steroid" },
-      { fr: "Zona ophtalmique (V1) : antiviral oral rapide et examen ophtalmologique", en: "Herpes zoster ophthalmicus (V1): prompt oral antiviral and an eye exam" }
+      { fr: "Zona ophtalmique : antiviral oral", en: "Zoster ophthalmicus: oral antiviral" }
     ],
     answer: 3,
     why: [
@@ -518,10 +518,10 @@ G.OPH.imageCases = [
     id: "ic-x07", topic: "general", media: "mi-x07", level: 3,
     q: { fr: "Perte de vision brutale et indolore. Rétine blanchâtre, sauf une zone de couleur normale entre la papille et la macula. Pourquoi cette zone est-elle épargnée?", en: "Sudden painless vision loss. Whitened retina, except a normally coloured zone between the disc and the macula. Why is that zone spared?" },
     options: [
-      { fr: "La macula est toujours épargnée dans l’OACR", en: "The macula is always spared in CRAO" },
-      { fr: "C’est un œdème papillaire qui s’étend", en: "It’s spreading disc swelling" },
-      { fr: "Une artère ciliorétinienne (circulation ciliaire) la perfuse malgré l’occlusion de l’artère centrale", en: "A cilioretinal artery (ciliary circulation) perfuses it despite the central artery occlusion" },
-      { fr: "C’est une hémorragie qui masque le blanchiment", en: "It’s a hemorrhage masking the whitening" }
+      { fr: "La macula est toujours épargnée", en: "The macula is always spared" },
+      { fr: "Un œdème papillaire qui s’étend", en: "Spreading disc swelling" },
+      { fr: "Une artère ciliorétinienne la perfuse", en: "A cilioretinal artery supplies it" },
+      { fr: "C’est une hémorragie", en: "It’s a hemorrhage" }
     ],
     answer: 2,
     why: [
@@ -537,7 +537,7 @@ G.OPH.imageCases = [
     q: { fr: "Montage du fond d’œil gauche. Hémorragies dans un seul secteur. Diagnostic?", en: "Left fundus montage. Hemorrhages in one sector only. Diagnosis?" },
     options: [
       { fr: "Décollement de rétine", en: "Retinal detachment" },
-      { fr: "Occlusion de branche veineuse (temporale inférieure)", en: "Branch retinal vein occlusion (inferotemporal)" },
+      { fr: "Occlusion de branche veineuse", en: "Branch retinal vein occlusion" },
       { fr: "Occlusion de la veine centrale de la rétine", en: "Central retinal vein occlusion" },
       { fr: "Rétinopathie diabétique non proliférante", en: "Nonproliferative diabetic retinopathy" }
     ],
@@ -554,8 +554,8 @@ G.OPH.imageCases = [
     id: "ic-x09", topic: "general", media: "mi-x09", level: 2,
     q: { fr: "Patient diabétique. Que voit-on sur et autour de la papille?", en: "Diabetic patient. What do you see on and around the disc?" },
     options: [
-      { fr: "Néovaisseaux papillaires : rétinopathie diabétique proliférante", en: "Disc new vessels: proliferative diabetic retinopathy" },
-      { fr: "Hémorragie papillaire glaucomateuse", en: "Glaucomatous disc hemorrhage" },
+      { fr: "Néovaisseaux papillaires", en: "Neovascularization of the disc" },
+      { fr: "Hémorragie papillaire", en: "Disc hemorrhage" },
       { fr: "Œdème papillaire", en: "Disc swelling" },
       { fr: "Vaisseaux optociliaires", en: "Optociliary shunt vessels" }
     ],
@@ -575,7 +575,7 @@ G.OPH.imageCases = [
       { fr: "NOIA non artéritique : aspirine et suivi", en: "Non-arteritic AION: aspirin and follow-up" },
       { fr: "Névrite optique : IRM non urgente", en: "Optic neuritis: non-urgent MRI" },
       { fr: "Œdème papillaire : ponction lombaire d’abord", en: "Papilledema: lumbar puncture first" },
-      { fr: "NOIA artéritique : VS, CRP et corticoïdes à haute dose le jour même, biopsie de l’artère temporale", en: "Arteritic AION: ESR, CRP and same-day high-dose steroids, temporal artery biopsy" }
+      { fr: "NOIA artéritique : corticoïdes le jour même", en: "Arteritic AION: same-day steroids" }
     ],
     answer: 3,
     why: [
@@ -592,7 +592,7 @@ G.OPH.imageCases = [
     options: [
       { fr: "Aucune : anisocorie physiologique", en: "Neither: physiologic anisocoria" },
       { fr: "La plus grande : pupille d’Adie", en: "The larger one: Adie pupil" },
-      { fr: "La plus petite (œil gauche du patient) : elle dilate mal dans le noir — syndrome de Horner probable", en: "The smaller one (patient’s left eye): it dilates poorly in the dark — probable Horner syndrome" },
+      { fr: "La plus petite : Horner probable", en: "The smaller one: probable Horner" },
       { fr: "La plus grande : paralysie du III", en: "The larger one: third nerve palsy" }
     ],
     answer: 2,
@@ -608,8 +608,8 @@ G.OPH.imageCases = [
     id: "ic-x12", topic: "general", media: "mi-x12", level: 3,
     q: { fr: "Anisocorie légère. Photos à la lumière, dans le noir, puis après un collyre de cocaïne. Conclusion?", en: "Mild anisocoria. Photos in light, in the dark, then after cocaine drops. Conclusion?" },
     options: [
-      { fr: "Mydriase pharmacologique", en: "Pharmacologic mydriasis" },
-      { fr: "Anisocorie physiologique : les deux pupilles se dilatent à la cocaïne", en: "Physiologic anisocoria: both pupils dilate with cocaine" },
+      { fr: "Mydriase médicamenteuse", en: "Drug-induced mydriasis" },
+      { fr: "Anisocorie physiologique", en: "Physiologic anisocoria" },
       { fr: "Syndrome de Horner", en: "Horner syndrome" },
       { fr: "Pupille d’Adie", en: "Adie pupil" }
     ],
@@ -626,7 +626,7 @@ G.OPH.imageCases = [
     id: "ic-x13", topic: "general", media: "mi-x13", level: 3,
     q: { fr: "Lésion choroïdienne pigmentée au pôle postérieur, avec des dépôts orange en surface. Conduite?", en: "Pigmented choroidal lesion at the posterior pole, with orange deposits on its surface. Management?" },
     options: [
-      { fr: "Suspicion de mélanome choroïdien : référence en oncologie oculaire (échographie A/B, imagerie)", en: "Suspected choroidal melanoma: refer to ocular oncology (A/B ultrasound, imaging)" },
+      { fr: "Mélanome suspect : oncologie oculaire", en: "Suspected melanoma: ocular oncology" },
       { fr: "Nævus typique : photo dans un an", en: "Typical nevus: photo in a year" },
       { fr: "Hypertrophie congénitale de l’EPR : aucun suivi", en: "Congenital RPE hypertrophy: no follow-up" },
       { fr: "Hémorragie sous-rétinienne : observer", en: "Subretinal hemorrhage: observe" }
