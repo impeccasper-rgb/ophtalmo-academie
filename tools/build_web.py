@@ -104,8 +104,10 @@ def catalog3(root):
         w, h = e.get('w') or e.get('width'), e.get('h') or e.get('height')
         if not (w and h): w, h = jpeg_size(os.path.join(root, 'imgsrc3', 'web', e['id'] + '.jpg')) or (440, 330)
         tw = 440; th = round(h * tw / w)
-        d = {'id': e['id'], 'title': e.get('title', ''), 'caption': e.get('caption', ''), 'page_url': e.get('source_url', ''), 'module': e.get('module', ''), 'kind': e.get('kind', 'clinical'),
-             'tw': tw, 'th': th, 'license': e.get('license', ''), 'author': e.get('author', ''), 'source_url': e.get('source_url', ''), 'src': 'imgsrc3'}
+        # title/caption may be bilingual {fr, en}: i18n.js picks the language at load
+        d = {'id': e['id'], 'title': e.get('title', ''), 'caption': e.get('caption', ''), 'page_url': e.get('page_url') or e.get('source_url', ''), 'module': e.get('module', ''), 'kind': e.get('kind', 'clinical'),
+             'tw': tw, 'th': th, 'license': e.get('license', ''), 'license_url': e.get('license_url', ''), 'author': e.get('author', ''), 'source_url': e.get('source_url', ''),
+             'share_alike': bool(e.get('share_alike')) or '-SA' in e.get('license', '').upper().replace(' ', '-'), 'exam': e.get('exam', ''), 'src': 'imgsrc3'}
         out.append(d)
     return out
 
@@ -173,6 +175,27 @@ def icons():
     return out
 
 
+LATIN = 'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD'
+LATIN_EXT = 'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF'
+
+
+def self_hosted_fonts():
+    """fonts/*.woff2 (Fontsource variable builds, SIL OFL 1.1) → site/fonts + @font-face rules. Returns (css, published paths)."""
+    src = os.path.join(ROOT, 'fonts')
+    if not os.path.isdir(src): return '', []
+    dst = os.path.join(OUT, 'fonts'); os.makedirs(dst, exist_ok=True)
+    rules, pub = [], []
+    for fam, slug, w in [('Lexend', 'lexend', '100 900'), ('Atkinson Hyperlegible Next', 'atkinson-hyperlegible-next', '200 800'), ('Atkinson Hyperlegible Mono', 'atkinson-hyperlegible-mono', '200 800')]:
+        for sub, rng in [('latin-ext', LATIN_EXT), ('latin', LATIN)]:
+            for style in ('normal', 'italic'):
+                fn = '%s-%s-wght-%s.woff2' % (slug, sub, style)
+                if not os.path.exists(os.path.join(src, fn)): continue
+                shutil.copy2(os.path.join(src, fn), os.path.join(dst, fn)); pub.append('fonts/' + fn)
+                rules.append("@font-face{font-family:'%s';font-style:%s;font-display:swap;font-weight:%s;src:url(fonts/%s) format('woff2-variations'),url(fonts/%s) format('woff2');unicode-range:%s}" % (fam, style, w, fn, fn, rng))
+    for lic in glob.glob(os.path.join(src, 'OFL-*.txt')): shutil.copy2(lic, os.path.join(dst, os.path.basename(lic)))
+    return '/* self-hosted fonts (SIL Open Font License 1.1, see fonts/OFL-*.txt) */\n' + '\n'.join(rules) + '\n', pub
+
+
 def js(s):
     return re.sub(r'</(script)', r'<\\/\1', s, flags=re.I)
 
@@ -209,14 +232,17 @@ def main():
         p = os.path.join(SRC, name + '.js')
         if os.path.exists(p): emit(name + '.js', read(p))
         else: missing.append('src/' + name)
-    css = '\n'.join('/* src/%s.css */\n' % n + read(os.path.join(SRC, n + '.css')) for n in CSS_ORDER if os.path.exists(os.path.join(SRC, n + '.css')))
+    font_css, font_files = self_hosted_fonts()
+    css = font_css + '\n'.join('/* src/%s.css */\n' % n + read(os.path.join(SRC, n + '.css')) for n in CSS_ORDER if os.path.exists(os.path.join(SRC, n + '.css')))
     hcss = hashlib.sha1(css.encode()).hexdigest()[:10]
     hjs = hashlib.sha1(''.join(files).encode()).hexdigest()[:10]
     open(os.path.join(OUT, 'app.css'), 'w', encoding='utf-8').write(css)
 
     ic = icons()
     abs_ = lambda p: (SITE_URL + p) if SITE_URL else p
-    fonts = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400..800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">'
+    # Google Fonts only when fonts/ is missing (self-hosted fonts work offline and inside the iOS app)
+    fonts = '' if font_files else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400..800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">')
+    preload = ''.join('<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' % f for f in font_files if f.endswith('-latin-wght-normal.woff2') and 'mono' not in f)
     esc = lambda s: s.replace('&', '&amp;').replace('"', '&quot;').replace('<', '&lt;')
     head = f'''<!doctype html>
 <html lang="fr">
@@ -246,8 +272,7 @@ def main():
 <link rel="icon" href="{ic['svg']}" type="image/svg+xml">
 <link rel="icon" href="{ic['favicon-32.png']}" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{ic['apple-touch-icon.png']}">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-{fonts}
+{preload}{fonts}
 <link rel="stylesheet" href="app.css?v={hcss}">
 <style>:root{{color-scheme:light dark}}body{{margin:0}}img{{max-width:100%}}[hidden]{{display:none!important}}</style>
 </head>
@@ -306,10 +331,11 @@ self.addEventListener('fetch', e => {
     if (req.mode === 'navigate' || u.pathname.endsWith('/') || u.pathname.endsWith('index.html')) {
       e.respondWith(fetch(req).then(r => { const cp = r.clone(); caches.open(CORE).then(c => c.put('index.html', cp)); return r; }).catch(() => caches.match('index.html', { ignoreSearch: true })));
     } else if (u.pathname.includes('/img/') || u.pathname.includes('/icons/')) e.respondWith(cacheFirst(req, IMG));
+    else if (u.pathname.includes('/fonts/')) e.respondWith(cacheFirst(req, FONT));
     else e.respondWith(caches.match(req).then(hit => hit || fetch(req).then(r => { if (r.ok) { const cp = r.clone(); caches.open(CORE).then(c => c.put(req, cp)); } return r; })));
   } else if (u.hostname === 'fonts.googleapis.com' || u.hostname === 'fonts.gstatic.com') e.respondWith(cacheFirst(req, FONT));
 });
-''' % (version, hcss, ic['svg'], ic['icon-192.png'], json.dumps(files))
+''' % (version, hcss, ic['svg'], ic['icon-192.png'], json.dumps(files + [f for f in font_files if '-latin-wght-normal' in f]))
     open(os.path.join(OUT, 'sw.js'), 'w', encoding='utf-8').write(sw)
 
     # ---- 404: send unknown paths back to the SPA (/repo/cas-b1 → /repo/#cas-b1) ----

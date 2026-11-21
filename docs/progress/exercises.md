@@ -30,3 +30,16 @@
 - B-scan : conventions d’affichage (sonde à gauche ; en longitudinale le nerf optique en bas de l’écran) ; amplitude des mouvements et réflectivités relatives schématiques.
 - OCT : la zone myoïde et la zone d’interdigitation sont dessinées mais non étiquetables ; l’EPR et Bruch forment un seul complexe sauf dans le DEP.
 - À relire par la pédagogie : textes cliniques courts des outils (constantes BS_INFO, OCT_LAYERS, OCT_FLUID, GONIO_VAR, VF_EXPL, VF_IDX, FUNDUS_REG, FUNDUS_OV).
+
+## Cycle 3 (2026-11-21)
+- Corrections PEDAGOGY-REVIEW « Corrections outils » 1–8 appliquées : coupe transverse = coupe postérieure avec ombre du nerf (+ BS_ORI.trans réécrit, encadré « repère »); « A-scan en immersion, œil phaque » + pic cornéen « double : faces antérieure et postérieure » (clé `inv.as.cap2`); « NOIA, surtout non artéritique »; Shaffer 3 = 20–35°; asymétrie C/D ≥ 0,2; drusen moyens 63–125 µm = DMLA précoce; pic scléral à L + 0,6 mm; MLI ajoutée aux couches OCT (11 couches étiquetables).
+- `#cas-images` : hub (progression, filtres thème cornée/glaucome/général et niveau 1–3, « Série de 10 » qui met d’abord les ratés/hésitations, liste des 35 cas avec statut nouveau/réussi/à consolider/à revoir) via `Inv.practice`; résultats dans `Store.p.inv[ic-…]`. Carte « Cas en images » ajoutée au hub `#investigations`.
+- `#cas-images/<id>` : un cas en plein écran (classe `focus-view`, comme #cas-vedette), puis « Cas suivant » / « Tous les cas ». Vues enregistrées comme `Views['cas-images/<id>']` (pas de changement du routeur).
+- Médias : recherche dans `invMedia` puis `imageCasesMedia`. Photos du catalogue sous licence ouverte (IMG3-*, champ `license`) : la ligne de crédit vient toujours de `Photo.credit` (auteur + licence pendant la question; id + lien source après).
+- Lightbox en mode question : légende neutre au lieu du titre du catalogue (évite de révéler la réponse).
+- Test Playwright sur site/ (build_web) : 390 FR, 1280 EN, 1280 FR sombre : aucune erreur, pas de débordement, série de 10 complète, lien profond OK, focus-view retiré en quittant.
+
+## Ouvert (cycle 3)
+- web : `Shell.invRoutes()` (core.js) ne contient pas `cas-images` ni `cas-images/<id>` : l’onglet Investigations n’est pas surligné sur ces pages.
+- Aucune image IMG3 n’est encore utilisée dans invMedia / imageCasesMedia : crédit vérifié par injection de test seulement.
+- Les clés `inv.ic.*` (≈ 30) ne sont pas dans src/i18n.js : textes par défaut FR/EN fournis par `S()`, liste dans `Inv.keys`.

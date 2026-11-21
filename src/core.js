@@ -243,11 +243,11 @@ var Photo = {
     return 'https://creativecommons.org/licenses/' + m[1].toLowerCase().replace(/ /g, '-') + '/' + (m[2] || '4.0') + '/';
   },
   lic: function (e) {
-    if (e.license) { var u = Photo.licUrl(e.license); return u ? '<a href="' + u + '" target="_blank" rel="noopener">' + U.esc(e.license) + '</a>' : U.esc(e.license); }
+    if (e.license) { var u = e.license_url || Photo.licUrl(e.license), sa = e.share_alike || /-SA\b|\bSA\b/i.test(e.license) ? ' (' + t('lic.sa') + ')' : ''; return (u ? '<a href="' + U.esc(u) + '" target="_blank" rel="noopener">' + U.esc(e.license) + '</a>' : U.esc(e.license)) + sa; }
     return e.cc === false ? t('photo.lic.eyerounds') : '<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank" rel="noopener">CC BY-NC-ND 3.0</a>';
   },
   owner: function (e) { return e.license ? (e.author ? U.esc(e.author) : t('photo.author.unknown')) : '© EyeRounds.org, University of Iowa'; },
-  srcUrl: function (e) { return e.source_url || e.page_url || ''; },
+  srcUrl: function (e) { return e.page_url || e.source_url || ''; },
   credit: function (e, quiz) {
     return '<div class="credit">' + (quiz ? '' : U.esc(e.id) + ' · ') + Photo.owner(e) + ' · ' + Photo.lic(e) +
       (Photo.srcUrl(e) && !quiz ? ' · <a href="' + U.esc(Photo.srcUrl(e)) + '" target="_blank" rel="noopener">' + t('photo.source') + '</a>' : '') + '</div>';
@@ -396,7 +396,7 @@ var Shell = {
     var tb = function (id, ic, label, also) { var on = cur === id || (also || []).indexOf(cur) >= 0 || (id === 'apprendre' && (D.fiche(cur) || /^(a-|b-bases|c-bases|module-)/.test(cur))); return '<a href="#' + id + '" class="' + (on ? 'on' : '') + '"' + (on ? ' aria-current="page"' : '') + '><span class="ic" aria-hidden="true">' + ic + '</span><span>' + label + '</span></a>'; };
     return tb('apprendre', ICO.book, t('nav.learn')) + tb('cas', ICO.cas, t('nav.cases')) + (Views.investigations ? tb('investigations', ICO.scan, t('nav.inv.short'), Shell.invRoutes()) : '') + tb('reviser', ICO.cards, t('nav.review'), games) + tb('progression', ICO.bars, t('nav.progress'));
   },
-  invRoutes: function () { return Object.keys(Views).filter(function (k) { return /^inv-/.test(k); }).concat(['image-du-jour', 'cas-vedette']);
+  invRoutes: function () { return Object.keys(Views).filter(function (k) { return /^(inv-|cas-images(\/|$))/.test(k); }).concat(['image-du-jour', 'cas-vedette']);
   },
   render: function () {
     U.$('#rail').innerHTML = Shell.navHtml();

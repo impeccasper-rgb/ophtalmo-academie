@@ -1,5 +1,7 @@
 # Plateforme web + iOS bilingue — contrat partagé (lire avant de coder)
 
+> **Arbre de travail unique : /home/claude/ophtalmo-academie (dépôt git). Publier : `python3 tools/push.py "message"`.** /home/claude/ophtalmo est obsolète.
+
 Produit existant : SPA vanilla JS (src/*.js, data/*.js, tools/build.py → dist/index.html pour l’artifact Claude).
 Objectif : site web statique bilingue FR/EN (GitHub Pages) + app iOS (Capacitor) à partir du même code.
 Public : externes motivés par l’ophtalmologie et R1. Gratuit, sans pub (licence images CC BY-NC-ND / EyeRounds).

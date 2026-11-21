@@ -156,7 +156,7 @@
   function practicePool() { return (W.OPH.invPractice && W.OPH.invPractice.length) ? W.OPH.invPractice : (usingFixture() ? FIX.practice : []); }
   function mediaById(id) {
     if (id && typeof id === 'object') return id;
-    var m = (W.OPH.invMedia && W.OPH.invMedia[id]) || FIX.media[id] || null;
+    var m = (W.OPH.invMedia && W.OPH.invMedia[id]) || (W.OPH.imageCasesMedia && W.OPH.imageCasesMedia[id]) || FIX.media[id] || null;
     return m;
   }
   function practiceFor(inv) {
@@ -190,7 +190,7 @@
     var e = EYES[eye] || EYES.normal, r = U.rng(eye.length * 97 + 13), sp = [
       { id: 'cornea', mm: 0, h: .96, w: .12 }, { id: 'cornea2', mm: .55, h: .82, w: .12 },
       { id: 'lensA', mm: e.acd, h: .78, w: .14 }, { id: 'lensP', mm: e.acd + e.lt, h: .66, w: .14 },
-      { id: 'retina', mm: e.al, h: 1, w: .12 }, { id: 'sclera', mm: e.al + .9, h: .9, w: .14 }
+      { id: 'retina', mm: e.al, h: 1, w: .12 }, { id: 'sclera', mm: e.al + .6, h: .9, w: .12 }
     ];
     for (var k = 0; k < 16; k++) { var mm = e.al + 2 + k * .3 + r() * .2; sp.push({ id: k === 0 ? 'orbit' : 'orbitx', mm: mm, h: (.55 - k * .03) * (.6 + .4 * r()), w: .12 }); }
     return sp;
@@ -229,14 +229,14 @@
   var BA = { x: 20, y: 150 }, BC = { x: 205, y: 150 }, BR = 150, BSPAN = 26;
   function bRay(aDeg) { var a = aDeg * Math.PI / 180, d = { x: Math.cos(a), y: Math.sin(a) }, vd = (BA.x - BC.x) * d.x + (BA.y - BC.y) * d.y, vv = (BA.x - BC.x) * (BA.x - BC.x) + (BA.y - BC.y) * (BA.y - BC.y); var t = -vd + Math.sqrt(vd * vd - (vv - BR * BR)); return { d: d, t: t }; }
   function bPt(aDeg, off) { var r = bRay(aDeg); return { x: BA.x + (r.t - off) * r.d.x, y: BA.y + (r.t - off) * r.d.y }; }
-  var BSCAN_DISC = { axial: 0, long: 22, trans: null };
+  var BSCAN_DISC = { axial: 0, long: 22, trans: 0 };   // transverse = posterior section (probe near the limbus): nerve shadow is the landmark
   function bPath(fn, a0, a1, step) { var out = [], s = step || 1; if (a1 < a0) s = -s; for (var a = a0; s > 0 ? a <= a1 + 1e-6 : a >= a1 - 1e-6; a += s) { var p = bPt(a, fn(a)); out.push(P2(p.x, p.y)); } return 'M' + out.join(' L'); }
   function bscanMembranes(path, ori, phase) {
     phase = phase || 0; var disc = BSCAN_DISC[ori], out = [];
     if (path === 'rd') {
       var amp = 6 * phase;
       if (disc == null) out.push({ d: bPath(function (a) { return 34 + 7 * Math.sin(a * .35) + amp * Math.sin(a * .25 + 1); }, -BSPAN, BSPAN), w: 3.2, r: 1 });
-      else (ori === 'axial' ? [[0, -BSPAN], [0, BSPAN]] : [[disc, -BSPAN]]).forEach(function (arm) {
+      else (ori === 'long' ? [[disc, -BSPAN]] : [[disc, -BSPAN], [disc, BSPAN]]).forEach(function (arm) {
         out.push({ d: bPath(function (a) { var u = Math.min(1, Math.abs(a - arm[0]) / 15); u = u * u * (3 - 2 * u); return u * (44 + 6 * Math.sin(Math.abs(a - arm[0]) * .5)) + amp * u * Math.sin(Math.abs(a - arm[0]) * .3); }, arm[0], arm[1]), w: 3.2, r: 1 });
       });
     } else if (path === 'cd') {
@@ -298,6 +298,7 @@
 
   /* ---------- OCT ---------- */
   var OCT_LAYERS = [
+    { id: 'ilm', l: .97, thin: 1, n: { fr: 'Membrane limitante interne (MLI)', en: 'Internal limiting membrane (ILM)' }, d: { fr: 'Surface interne de la rétine, au contact du vitré; plan de clivage des membranes épirétiniennes (pelage).', en: 'Inner surface of the retina, against the vitreous; cleavage plane for epiretinal membranes (peeling).' } },
     { id: 'rnfl', l: .86, n: { fr: 'Couche des fibres nerveuses (CFNR)', en: 'Retinal nerve fibre layer (RNFL)' }, d: { fr: 'Hyperréflective. Axones des cellules ganglionnaires; plus épaisse côté papille, absente à la fovéa. S’amincit dans le glaucome.', en: 'Hyperreflective. Ganglion cell axons; thicker towards the disc, absent at the fovea. Thins in glaucoma.' } },
     { id: 'gcl', l: .46, n: { fr: 'Couche des cellules ganglionnaires (CCG)', en: 'Ganglion cell layer (GCL)' }, d: { fr: 'Moyennement réflective. Corps des cellules ganglionnaires, plus épaisse autour de la fovéa.', en: 'Moderately reflective. Ganglion cell bodies, thickest around the fovea.' } },
     { id: 'ipl', l: .72, n: { fr: 'Couche plexiforme interne (CPI)', en: 'Inner plexiform layer (IPL)' }, d: { fr: 'Hyperréflective. Synapses bipolaires–ganglionnaires.', en: 'Hyperreflective. Bipolar–ganglion cell synapses.' } },
@@ -315,6 +316,7 @@
   function octThick(id, x, fluid) {
     var g = bump(x, OCT_CX, 62), irf = fluid === 'irf' ? bump(x, OCT_CX, 80) : 0;
     switch (id) {
+      case 'ilm': return 2.5;
       case 'rnfl': return (4 + 10 * (1 - x / 640)) * (1 - .95 * g);
       case 'gcl': return 14 * (1 - .92 * g) + 4 * (bump(x, 250, 40) + bump(x, 390, 40));
       case 'ipl': return 10 * (1 - .9 * g);
@@ -326,14 +328,14 @@
     return 0;
   }
   function octLift(id, x, fluid) {
-    var idx = OCT_LAYERS.map(function (l) { return l.id; }).indexOf(id), u;
-    if (fluid === 'srf' && idx <= 9) { u = (x - OCT_CX) / 95; return Math.abs(u) < 1 ? -30 * Math.pow(1 - u * u, 1.5) : 0; }
-    if (fluid === 'ped' && idx <= 10) { u = (x - OCT_CX - 20) / 72; return Math.abs(u) < 1 ? -38 * Math.pow(1 - u * u, .8) : 0; }
+    var ids = OCT_LAYERS.map(function (l) { return l.id; }), idx = ids.indexOf(id), u;
+    if (fluid === 'srf' && idx <= ids.indexOf('gap2')) { u = (x - OCT_CX) / 95; return Math.abs(u) < 1 ? -30 * Math.pow(1 - u * u, 1.5) : 0; }
+    if (fluid === 'ped' && idx <= ids.indexOf('rpe')) { u = (x - OCT_CX - 20) / 72; return Math.abs(u) < 1 ? -38 * Math.pow(1 - u * u, .8) : 0; }
     return 0;
   }
   function octGeom(fluid) {
     var xs = []; for (var x = 0; x <= 640; x += 8) xs.push(x);
-    var L = OCT_LAYERS, iElm = 6, geo = {};
+    var L = OCT_LAYERS, iElm = OCT_LAYERS.map(function (l) { return l.id; }).indexOf('elm'), geo = {};
     xs.forEach(function (x, xi) {
       var y = OCT_ELM;
       for (var i = iElm - 1; i >= 0; i--) { var th = octThick(L[i].id, x, fluid); (geo[L[i].id] = geo[L[i].id] || { top: [], bot: [] }); geo[L[i].id].bot[xi] = y; y -= th; geo[L[i].id].top[xi] = y; }
@@ -372,7 +374,7 @@
     if (fluid === 'srf') hot.push(pctHot(OCT_CX, (octAt(geo.gap2.bot, xs, OCT_CX) + octAt(geo.rpe.top, xs, OCT_CX)) / 2, 30, vb[2], vb[3], { fr: 'Liquide entre rétine et EPR (EPR plat)', en: 'Fluid between retina and RPE (flat RPE)' }, true, vb[0], vb[1]));
     if (fluid === 'ped') hot.push(pctHot(OCT_CX + 20, (octAt(geo.rpe.bot, xs, OCT_CX + 20) + OCT_ELM + 24) / 2, 30, vb[2], vb[3], { fr: 'EPR soulevé au-dessus de Bruch', en: 'RPE lifted above Bruch' }, true, vb[0], vb[1]));
     if (fluid === 'irf') hot.push(pctHot(OCT_CX, octAt(geo.onl.top, xs, OCT_CX) + 18, 34, vb[2], vb[3], { fr: 'Kystes dans la rétine', en: 'Cysts within the retina' }, true, vb[0], vb[1]));
-    if (fluid === 'none') hot.push(pctHot(OCT_CX, octAt(geo.rnfl.top, xs, OCT_CX), 22, vb[2], vb[3], { fr: 'Dépression fovéolaire normale', en: 'Normal foveal pit' }, true, vb[0], vb[1]));
+    if (fluid === 'none') hot.push(pctHot(OCT_CX, octAt(geo.ilm.top, xs, OCT_CX), 22, vb[2], vb[3], { fr: 'Dépression fovéolaire normale', en: 'Normal foveal pit' }, true, vb[0], vb[1]));
     return { svg: '<svg viewBox="' + vb.join(' ') + '" class="inv-svg inv-oct" role="img" aria-label="' + E(S('oct.aria', 'Schéma de coupe OCT maculaire', 'Macular OCT B-scan schematic')) + '">' + h + '</svg>', hot: hot, geo: geo };
   };
 
@@ -472,7 +474,7 @@
   /* ---------- Fundus (right eye) ---------- */
   var FUNDUS_REG = {
     disc: { n: { fr: 'Papille et anneau neurorétinien', en: 'Optic disc and neuroretinal rim' }, d: { fr: 'Disque ≈ 1,5–2 mm, bords nets, anneau rose-orangé. Règle ISNT : anneau Inférieur ≥ Supérieur ≥ Nasal ≥ Temporal.', en: 'Disc ≈ 1.5–2 mm, sharp margins, pink-orange rim. ISNT rule: rim Inferior ≥ Superior ≥ Nasal ≥ Temporal.' } },
-    cup: { n: { fr: 'Excavation', en: 'Cup' }, d: { fr: 'Dépression centrale pâle sans axones. C/D vertical souvent ≤ 0,5 (dépend de la taille du disque); une asymétrie > 0,2 entre les yeux est suspecte.', en: 'Pale central depression without axons. Vertical C/D often ≤ 0.5 (depends on disc size); asymmetry > 0.2 between eyes is suspicious.' } },
+    cup: { n: { fr: 'Excavation', en: 'Cup' }, d: { fr: 'Dépression centrale pâle sans axones. C/D vertical souvent ≤ 0,5 (dépend de la taille du disque); une asymétrie ≥ 0,2 entre les yeux est suspecte.', en: 'Pale central depression without axons. Vertical C/D often ≤ 0.5 (depends on disc size); asymmetry ≥ 0.2 between eyes is suspicious.' } },
     macula: { n: { fr: 'Macula', en: 'Macula' }, d: { fr: 'Zone plus sombre entre les arcades temporales, ~2,5 diamètres papillaires en temporal de la papille.', en: 'Darker area between the temporal arcades, ~2.5 disc diameters temporal to the disc.' } },
     fovea: { n: { fr: 'Fovéa', en: 'Fovea' }, d: { fr: 'Centre de la macula avec reflet fovéolaire; vision la plus fine (cônes).', en: 'Centre of the macula with foveal reflex; finest vision (cones).' } },
     art: { n: { fr: 'Artériole', en: 'Arteriole' }, d: { fr: 'Plus fine et plus claire que la veinule, avec reflet pariétal; rapport A/V normal ≈ 2/3.', en: 'Thinner and lighter than the venule, with a light reflex; normal A/V ratio ≈ 2/3.' } },
@@ -484,7 +486,7 @@
     cup: { n: { fr: 'Excavation agrandie', en: 'Enlarged cup' }, d: { fr: 'C/D ~0,8 avec anneau aminci en inférieur : règle ISNT non respectée, évoque une neuropathie glaucomateuse.', en: 'C/D ~0.8 with inferior rim thinning: ISNT rule broken, suggests glaucomatous optic neuropathy.' } },
     dischem: { n: { fr: 'Hémorragie papillaire', en: 'Disc haemorrhage' }, d: { fr: 'Hémorragie en flammèche au bord du disque, souvent inférotemporale : associée à la progression du glaucome.', en: 'Flame haemorrhage at the disc margin, often inferotemporal: associated with glaucoma progression.' } },
     cws: { n: { fr: 'Nodules cotonneux', en: 'Cotton wool spots' }, d: { fr: 'Taches blanches floues = infarctus de la couche des fibres nerveuses (ischémie : diabète, HTA, occlusion veineuse…).', en: 'Fluffy white patches = nerve fibre layer infarcts (ischaemia: diabetes, hypertension, vein occlusion…).' } },
-    drusen: { n: { fr: 'Drusen', en: 'Drusen' }, d: { fr: 'Dépôts jaunâtres entre l’EPR et la membrane de Bruch. Petits (≤ 63 µm) fréquents avec l’âge; grands (> 125 µm) = DMLA intermédiaire.', en: 'Yellowish deposits between RPE and Bruch membrane. Small (≤ 63 µm) common with age; large (> 125 µm) = intermediate AMD.' } }
+    drusen: { n: { fr: 'Drusen', en: 'Drusen' }, d: { fr: 'Dépôts jaunâtres entre l’EPR et la membrane de Bruch. Petits (≤ 63 µm) fréquents avec l’âge; moyens (63–125 µm) = DMLA précoce; grands (> 125 µm) = DMLA intermédiaire.', en: 'Yellowish deposits between RPE and Bruch membrane. Small (≤ 63 µm) common with age; medium (63–125 µm) = early AMD; large (> 125 µm) = intermediate AMD.' } }
   };
   var FD = { x: 278, y: 190, r: 22 }, FF = { x: 166, y: 203 };
   Gen.fundus = function (o) {
@@ -563,8 +565,10 @@
     if (m.kind === 'photo' && m.photo) {
       var e = W.D && D.cat ? D.cat(m.photo) : null;
       body = '<img src="' + Photo.src(m.photo) + '" alt="' + E(alt) + '"' + (e ? ' width="' + (e.tw || 440) + '" height="' + (e.th || 300) + '"' : '') + ' decoding="async">';
-      foot = m.credit ? '<div class="credit">' + PE(m.credit) + (revealed && m.source ? ' · <a href="' + E(m.source) + '" target="_blank" rel="noopener">' + E(S('media.src', 'page source', 'source page')) + '</a>' : '') + '</div>' : (e ? Photo.credit(e, !revealed) : '');
-      if (e) zoom = '<button type="button" class="btn xs inv-zoom" data-act="lightbox" data-id="' + E(m.photo) + '" data-cap="' + E(revealed && m.alt ? pick(m.alt) : '') + '"' + (revealed ? '' : ' data-quiz="1"') + '>' + E(S('media.zoom', 'Agrandir', 'Enlarge')) + '</button>';
+      // openly licensed catalogue images (IMG3-*, catalog3: author + licence) always use the catalogue credit line
+      if (e && e.license) foot = Photo.credit(e, !revealed);
+      else foot = m.credit ? '<div class="credit">' + PE(m.credit) + (revealed && m.source ? ' · <a href="' + E(m.source) + '" target="_blank" rel="noopener">' + E(S('media.src', 'page source', 'source page')) + '</a>' : '') + '</div>' : (e ? Photo.credit(e, !revealed) : '');
+      if (e) zoom = '<button type="button" class="btn xs inv-zoom" data-act="lightbox" data-id="' + E(m.photo) + '" data-cap="' + E(revealed && m.alt ? pick(m.alt) : S('media.hidden', 'Image d’examen (légende masquée)', 'Investigation image (caption hidden)')) + '"' + (revealed ? '' : ' data-quiz="1"') + '>' + E(S('media.zoom', 'Agrandir', 'Enlarge')) + '</button>';
     } else {
       var g = (m.kind === 'gen' || m.gen) ? genFrom(m.gen) : null;
       body = g ? g.svg : (m.svg || '');
@@ -672,7 +676,7 @@
     el.innerHTML = '<div class="inv-tool">' +
       '<div class="inv-bar">' + seg('eye', [['normal', S('as.normal', 'Œil normal', 'Normal eye')], ['short', S('as.short', 'Œil court', 'Short eye')], ['long', S('as.long', 'Œil long', 'Long eye')]], st.eye, S('as.eyel', 'Type d’œil', 'Eye type')) +
       seg('mode', [['measure', S('as.measure', 'Mesurer', 'Measure')], ['quiz', S('as.quiz', 'Quel pic ?', 'Which spike?')]], st.mode, S('mode', 'Mode', 'Mode')) + '</div>' +
-      figWrap('data-svg', S('as.cap', 'A-scan de contact, œil phake — vitesse moyenne ~1 550 m/s', 'Contact A-scan, phakic eye — average velocity ~1550 m/s')) +
+      figWrap('data-svg', S('as.cap2', 'A-scan en immersion, œil phaque — vitesse moyenne ≈ 1 550 m/s', 'Immersion A-scan, phakic eye — average velocity ≈ 1550 m/s')) +
       '<div data-panel></div><div class="inv-out" data-out aria-live="polite"></div></div>';
     var svgHost = U.$('[data-svg]', el), panel = U.$('[data-panel]', el), out = U.$('[data-out]', el);
     function cal(mm, id, col) { var x = ASX(mm); return '<g data-cal="' + id + '"><line x1="' + x + '" x2="' + x + '" y1="14" y2="' + ASB + '" stroke="' + col + '" stroke-width="1.6" stroke-dasharray="5 3"/><rect x="' + (x - 9) + '" y="4" width="18" height="16" rx="4" fill="' + col + '"/><text x="' + x + '" y="16" text-anchor="middle" class="inv-calt">' + id + '</text><rect x="' + (x - 12) + '" y="0" width="24" height="' + ASB + '" fill="transparent" style="cursor:ew-resize"/></g>'; }
@@ -713,7 +717,7 @@
         var hint = [];
         if (!okA) hint.push(S('as.h1', 'Le caliper avant se place sur le premier pic (cornée).', 'The front caliper goes on the first spike (cornea).'));
         if (!okB) {
-          if (Math.abs(b - (e.al + .9)) < .45) hint.push(S('as.hscl', 'Tu es sur le pic scléral : la mesure s’arrête au pic rétinien, juste devant.', 'You are on the scleral spike: measure to the retinal spike, just in front.'));
+          if (Math.abs(b - (e.al + .6)) < .28) hint.push(S('as.hscl', 'Tu es sur le pic scléral : la mesure s’arrête au pic rétinien, juste devant.', 'You are on the scleral spike: measure to the retinal spike, just in front.'));
           else if (Math.abs(b - (e.acd + e.lt)) < .5 || Math.abs(b - e.acd) < .5) hint.push(S('as.hlens', 'C’est un écho du cristallin : continue jusqu’au grand pic après le vitré silencieux.', 'That is a lens echo: go on to the tall spike after the silent vitreous.'));
           else hint.push(S('as.hret', 'Place le caliper arrière sur le pic rétinien (grand pic net après le vitré).', 'Put the back caliper on the retinal spike (tall sharp spike after the vitreous).'));
         }
@@ -731,7 +735,7 @@
       if ((b = t.closest('[data-sp]')) && st.quiz && !st.quiz.done) {
         var ok = b.getAttribute('data-sp') === st.quiz.id; st.quiz.done = true; st.score[1]++; if (ok) st.score[0]++;
         U.$$('[data-sp]', panel).forEach(function (x) { x.disabled = true; if (x.getAttribute('data-sp') === st.quiz.id) x.classList.add('correct'); else if (x === b) x.classList.add('wrong'); });
-        var why = { cornea: B('Premier pic (double : épithélium et endothélium), collé à l’écho de la sonde.', 'First spike (double: epithelium and endothelium), next to the probe echo.'), lensA: B('Après la chambre antérieure silencieuse.', 'After the silent anterior chamber.'), lensP: B('Ferme le cristallin; ensuite le vitré est silencieux.', 'Closes the lens; then the vitreous is silent.'), retina: B('Grand pic net à pente raide après le vitré : c’est là que finit la longueur axiale.', 'Tall, steep spike after the vitreous: this is where axial length ends.'), sclera: B('Juste derrière la rétine, encore très haut.', 'Just behind the retina, still very tall.'), orbit: B('Échos décroissants et irréguliers de la graisse orbitaire.', 'Decaying, irregular echoes from orbital fat.') }[st.quiz.id];
+        var why = { cornea: B('Premier pic, double : faces antérieure et postérieure de la cornée.', 'First spike, double: anterior and posterior corneal surfaces.'), lensA: B('Après la chambre antérieure silencieuse.', 'After the silent anterior chamber.'), lensP: B('Ferme le cristallin; ensuite le vitré est silencieux.', 'Closes the lens; then the vitreous is silent.'), retina: B('Grand pic net à pente raide après le vitré : c’est là que finit la longueur axiale.', 'Tall, steep spike after the vitreous: this is where axial length ends.'), sclera: B('Juste derrière la rétine, encore très haut.', 'Just behind the retina, still very tall.'), orbit: B('Échos décroissants et irréguliers de la graisse orbitaire.', 'Decaying, irregular echoes from orbital fat.') }[st.quiz.id];
         out.innerHTML = '<div class="feedback ' + (ok ? 'ok' : 'bad') + '"><div class="verdict">' + E(ok ? S('ok', 'Exact', 'Correct') : pick(SPIKE_NAMES[st.quiz.id])) + '</div><div>' + E(why) + '</div><div class="row"><button type="button" class="btn primary sm" data-a="qnext">' + E(S('as.qnext', 'Autre pic', 'Another spike')) + '</button></div></div>';
         drawPanel(); U.$$('[data-sp]', panel).forEach(function (x) { x.disabled = true; if (x.getAttribute('data-sp') === st.quiz.id) x.classList.add('correct'); else if (x.getAttribute('data-sp') === b.getAttribute('data-sp')) x.classList.add('wrong'); });
         var nb = U.$('[data-a="qnext"]', out); if (nb) nb.focus({ preventScroll: true });
@@ -763,7 +767,7 @@
     cd: { n: { fr: 'Décollement choroïdien', en: 'Choroidal detachment' }, s: [{ fr: 'Dôme(s) lisse(s), épais, convexe(s), en périphérie.', en: 'Smooth, thick, convex dome(s) in the periphery.' }, { fr: 'Ne s’insère pas à la papille.', en: 'Does not insert at the disc.' }, { fr: 'Peu ou pas de mobilité; dômes qui se touchent = « kissing ».', en: 'Little or no aftermovement; domes touching = “kissing”.' }] }
   };
   var BS_ORI = {
-    trans: { fr: 'Transverse : sonde parallèle au limbe. Montre l’étendue circonférentielle; la papille n’est pas dans la coupe.', en: 'Transverse: probe parallel to the limbus. Shows circumferential extent; the disc is not in the section.' },
+    trans: { fr: 'Transverse : sonde parallèle au limbe. Montre l’étendue latérale (circonférentielle) d’une lésion; l’ombre du nerf optique n’apparaît que dans les coupes postérieures (sonde près du limbe) et sert alors de repère.', en: 'Transverse: probe parallel to the limbus. Shows the lateral (circumferential) extent of a lesion; the optic nerve shadow appears only on posterior sections (probe near the limbus) and is then used as a landmark.' },
     long: { fr: 'Longitudinale : sonde perpendiculaire au limbe (radiale). Le nerf optique est en bas de l’écran : idéale pour voir l’insertion papillaire.', en: 'Longitudinal: probe perpendicular to the limbus (radial). The optic nerve is at the bottom of the screen: ideal to see insertion at the disc.' },
     axial: { fr: 'Axiale : sonde sur la cornée, faisceau à travers le cristallin jusqu’à la papille (centrée). Repérage facile mais le cristallin atténue le signal.', en: 'Axial: probe on the cornea, beam through the lens to the disc (centred). Easy orientation but the lens attenuates the signal.' }
   };
@@ -795,7 +799,7 @@
       U.$('[data-oriinfo]', el).textContent = pick(BS_ORI[st.ori]);
       U.$('[data-gv]', el).textContent = st.gain < 40 ? S('bs.low', 'faible', 'low') : st.gain > 75 ? S('bs.high', 'élevé', 'high') : S('bs.mid', 'moyen', 'medium');
       var i = BS_INFO[st.path], extra = '';
-      if (st.path === 'rd' && st.ori === 'trans') extra = '<p class="small callout amber">' + E(B('En transverse, l’insertion papillaire n’est pas visible : passe en longitudinale ou en axiale.', 'In a transverse scan the disc insertion is not visible: switch to longitudinal or axial.')) + '</p>';
+      if (st.ori === 'trans') extra = '<p class="small callout amber">' + E(B('Coupe transverse postérieure : l’ombre du nerf optique sert de repère. Sur une coupe transverse plus antérieure, elle disparaît.', 'Posterior transverse section: the optic nerve shadow is the landmark. On a more anterior transverse section it disappears.')) + '</p>';
       if (st.gain < 40 && (st.path === 'vh' || st.path === 'pvd')) extra += '<p class="small callout amber">' + E(B('Gain faible : les échos peu réflectifs disparaissent. Monte le gain pour les voir.', 'Low gain: weak echoes vanish. Raise the gain to see them.')) + '</p>';
       U.$('[data-info]', el).innerHTML = '<h4>' + PE(i.n) + '</h4><ul class="small">' + i.s.map(function (x) { return '<li>' + PE(x) + '</li>'; }).join('') + '</ul>' + extra;
     }
@@ -902,7 +906,7 @@
   /* ---------- Gonioscopy grader ---------- */
   var SHAFFER = {
     4: { fr: 'Shaffer 4 : 35–45°, bande ciliaire visible. Fermeture improbable.', en: 'Shaffer 4: 35–45°, ciliary band visible. Closure unlikely.' },
-    3: { fr: 'Shaffer 3 : 25–35°, éperon scléral visible. Fermeture improbable.', en: 'Shaffer 3: 25–35°, scleral spur visible. Closure unlikely.' },
+    3: { fr: 'Shaffer 3 : 20–35°, éperon scléral visible. Fermeture improbable.', en: 'Shaffer 3: 20–35°, scleral spur visible. Closure unlikely.' },
     2: { fr: 'Shaffer 2 : ~20°, trabéculum visible. Fermeture possible.', en: 'Shaffer 2: ~20°, meshwork visible. Closure possible.' },
     1: { fr: 'Shaffer 1 : ≤ 10°, seule la ligne de Schwalbe. Fermeture probable.', en: 'Shaffer 1: ≤ 10°, Schwalbe line only. Closure likely.' },
     0: { fr: 'Shaffer 0 : contact irido-cornéen, angle fermé.', en: 'Shaffer 0: iridocorneal contact, closed angle.' }
@@ -996,7 +1000,7 @@
     nasal: { fr: 'Ressaut nasal : la perte s’arrête net au méridien horizontal nasal (les fibres arciformes ne croisent pas le raphé). Signe précoce de glaucome.', en: 'Nasal step: loss stops sharply at the nasal horizontal meridian (arcuate fibres do not cross the raphe). Early glaucoma sign.' },
     arcuate: { fr: 'Scotome arciforme (Bjerrum) : de la tache aveugle vers le méridien horizontal nasal, en respectant ce méridien : fibres arciformes, typique du glaucome.', en: 'Arcuate (Bjerrum) scotoma: from the blind spot to the nasal horizontal meridian, respecting it: arcuate fibres, typical of glaucoma.' },
     paracentral: { fr: 'Scotome paracentral (< 10° de la fixation) : possible tôt dans le glaucome; compléter par un 10-2.', en: 'Paracentral scotoma (< 10° from fixation): can be early in glaucoma; add a 10-2 test.' },
-    altitudinal: { fr: 'Défaut altitudinal : tout un hémichamp, limité par le méridien horizontal : nerf optique (ex. NOIAA) ou occlusion artérielle de branche.', en: 'Altitudinal defect: a whole hemifield bounded by the horizontal meridian: optic nerve (e.g. NAION) or branch artery occlusion.' },
+    altitudinal: { fr: 'Défaut altitudinal : tout un hémichamp, limité par le méridien horizontal : nerf optique (ex. NOIA, surtout non artéritique) ou occlusion artérielle de branche.', en: 'Altitudinal defect: a whole hemifield bounded by the horizontal meridian: optic nerve (e.g., AION, mostly non-arteritic) or branch artery occlusion.' },
     bitemporal: { fr: 'Hémianopsie bitemporale : pertes temporales aux deux yeux, limitées par le méridien vertical : chiasma (ex. adénome hypophysaire). Imagerie cérébrale.', en: 'Bitemporal hemianopia: temporal loss in both eyes, bounded by the vertical meridian: chiasm (e.g. pituitary adenoma). Brain imaging.' },
     homonymous: { fr: 'Hémianopsie homonyme gauche : même côté aux deux yeux, limitée par le méridien vertical : lésion rétrochiasmatique droite (ex. AVC). Imagerie cérébrale.', en: 'Left homonymous hemianopia: same side in both eyes, bounded by the vertical meridian: right retrochiasmal lesion (e.g. stroke). Brain imaging.' }
   };
@@ -1118,6 +1122,94 @@
     return function () { el.removeEventListener('click', onClick); el.removeEventListener('keydown', onKey); };
   };
 
+
+  /* ======================================================================
+     CAS EN IMAGES — #cas-images (hub, filters, series of 10) and #cas-images/<id> (one case, full screen)
+     Data: G.OPH.imageCases (same item schema as invPractice + topic, featured); media in imageCasesMedia or invMedia.
+     ====================================================================== */
+  var IC_TOPICS = [['', { fr: 'Tous', en: 'All' }], ['cornee', { fr: 'Cornée', en: 'Cornea' }], ['glaucome', { fr: 'Glaucome', en: 'Glaucoma' }], ['general', { fr: 'Général', en: 'General' }]];
+  var icState = { topic: '', level: 0, run: null };
+  function icList() { return ((W.OPH.imageCases) || []).filter(function (c) { return c && c.options && c.options.length && resolveMedia(c.media); }); }
+  function icById(id) { return icList().filter(function (c) { return c.id === id; })[0] || null; }
+  function icFiltered() { return icList().filter(function (c) { return (!icState.topic || c.topic === icState.topic) && (!icState.level || +c.level === icState.level); }); }
+  function icStatus(c) { var r = Store.p && Store.p.inv && Store.p.inv[c.id]; return !r ? 'new' : (r.ok && r.conf === 'sure') ? 'ok' : r.ok ? 'shaky' : 'bad'; }
+  function icTopicName(k) { var x = IC_TOPICS.filter(function (t) { return t[0] === k; })[0]; return x ? pick(x[1]) : k; }
+  function icSeries(pool, n) {
+    var rank = { bad: 0, shaky: 1, 'new': 2, ok: 3 };
+    return U.shuffle(pool).sort(function (a, b) { return rank[icStatus(a)] - rank[icStatus(b)]; }).slice(0, n || 10)
+      .sort(function (a, b) { return (a.level || 1) - (b.level || 1); });
+  }
+  function icNum(c) { return icList().indexOf(c) + 1; }
+  function icHubHtml() {
+    var all = icList(), list = icFiltered(), done = all.filter(function (c) { return icStatus(c) !== 'new'; }).length, ok = all.filter(function (c) { return icStatus(c) === 'ok'; }).length;
+    var st = { 'new': S('ic.new', 'Nouveau', 'New'), ok: S('ic.ok', 'Réussi', 'Done'), shaky: S('ic.shaky', 'À consolider', 'Consolidate'), bad: S('ic.bad', 'À revoir', 'Review') };
+    var h = '<div class="page inv-page ic-page">' + crumbsH([[S('home', 'Accueil', 'Home'), 'accueil'], [S('hub', 'Investigations', 'Investigations'), 'investigations'], [S('ic.title', 'Cas en images', 'Image cases'), null]]) +
+      '<div class="phead"><div class="eyebrow">' + E(S('ic.eye', 'Cas en images · observe, réponds, révèle', 'Image cases · observe, answer, reveal')) + '</div><h1>' + E(S('ic.h1', 'Cas en images', 'Image cases')) + '</h1>' +
+      '<p class="muted" style="max-width:62ch">' + E(S('ic.lead', 'Une photo clinique, une courte mise en situation, une décision. La légende reste cachée jusqu’à ta réponse; le signe décisif est ensuite entouré.', 'One clinical photo, a short scenario, one decision. The caption stays hidden until you answer; the decisive sign is then circled.')) + '</p></div>';
+    if (!all.length) return h + '<div class="empty">' + E(S('ic.none', 'Les cas en images arrivent bientôt.', 'Image cases are coming soon.')) + '</div></div>';
+    h += '<div class="card ic-prog"><div class="stack" style="gap:4px"><span class="eyebrow">' + E(S('ic.progress', 'Ta progression', 'Your progress')) + '</span><b class="ic-big">' + ok + ' / ' + all.length + '</b><span class="small muted">' + E(done + ' ' + S('ic.seen', 'cas tentés · réussis = justes avec assurance', 'cases tried · done = correct with confidence')) + '</span></div>' +
+      '<div class="pbar' + (ok / all.length >= .6 ? ' ok' : '') + '"><i style="width:' + Math.round(100 * ok / all.length) + '%"></i></div></div>';
+    h += '<div class="ic-filters">' + seg('ict', IC_TOPICS.map(function (t) { return [t[0], pick(t[1])]; }), icState.topic, S('ic.topic', 'Thème', 'Topic')) +
+      seg('icl', [['0', S('ic.alllv', 'Tous niveaux', 'All levels')], ['1', S('ic.l1', 'Niveau 1', 'Level 1')], ['2', S('ic.l2', 'Niveau 2', 'Level 2')], ['3', S('ic.l3', 'Niveau 3', 'Level 3')]], String(icState.level), S('pr.level', 'Niveau', 'Level')) + '</div>';
+    h += '<div class="row"><button type="button" class="btn primary" data-icgo="10"' + (list.length ? '' : ' disabled') + '>' + E(S('ic.series', 'Série de 10', 'Series of 10')) + (list.length < 10 ? ' (' + list.length + ')' : '') + '</button>' +
+      '<span class="small muted">' + E(S('ic.serieshint', 'Les cas ratés et hésitants passent en premier.', 'Missed and unsure cases come first.')) + '</span></div>';
+    h += '<div data-icrun></div>';
+    h += '<div class="ic-grid" data-iclist>' + list.map(function (c) {
+      var s2 = icStatus(c);
+      return '<a class="card link ic-card" href="#cas-images/' + E(c.id) + '"><span class="row tight"><span class="mono xs muted">#' + icNum(c) + '</span><span class="tag plain">' + E(icTopicName(c.topic)) + '</span><span class="tag plain">' + E(S('pr.level', 'Niveau', 'Level')) + ' ' + (c.level || 1) + '</span><span class="ic-st ' + s2 + '">' + E(st[s2]) + '</span></span>' +
+        '<span class="small ic-q">' + PE(c.q) + '</span></a>';
+    }).join('') + (list.length ? '' : '<div class="empty">' + E(S('ic.nomatch', 'Aucun cas pour ces filtres.', 'No case for these filters.')) + '</div>') + '</div></div>';
+    return h;
+  }
+  function icHubAfter(host) {
+    var clean = null;
+    function stopRun() { if (typeof clean === 'function') clean(); clean = null; }
+    function onClick(ev) {
+      var b, t = ev.target;
+      if ((b = t.closest('[data-ict]'))) { icState.topic = b.getAttribute('data-ict'); stopRun(); Router.refresh(true); return; }
+      if ((b = t.closest('[data-icl]'))) { icState.level = +b.getAttribute('data-icl'); stopRun(); Router.refresh(true); return; }
+      if ((b = t.closest('[data-icgo]'))) {
+        var items = icSeries(icFiltered(), 10), run = U.$('[data-icrun]', host), lst = U.$('[data-iclist]', host);
+        if (!items.length) return;
+        stopRun(); lst.hidden = true;
+        run.innerHTML = '<div class="row ic-runbar"><button type="button" class="btn ghost sm" data-icstop>← ' + E(S('ic.backlist', 'Retour à la liste', 'Back to the list')) + '</button></div><div data-icp></div>';
+        clean = practice(U.$('[data-icp]', run), items, { title: S('ic.title', 'Cas en images', 'Image cases') });
+        var r = U.$('.inv-run', run); if (r) r.scrollIntoView({ block: 'start', behavior: reduced() ? 'auto' : 'smooth' });
+        var f = U.$('[data-ip="ready"]', run); if (f) f.focus({ preventScroll: true });
+        return;
+      }
+      if (t.closest('[data-icstop]')) { stopRun(); Router.refresh(true); }
+    }
+    host.addEventListener('click', onClick);
+    return function () { stopRun(); host.removeEventListener('click', onClick); };
+  }
+  function icCaseView(id) {
+    return {
+      get title() { return S('ic.title', 'Cas en images', 'Image cases'); },
+      render: function () {
+        var c = icById(id);
+        if (!c) return '<div class="page"><div class="empty">' + E(S('ic.missing', 'Ce cas n’existe pas.', 'This case does not exist.')) + '</div><a class="btn primary" href="#cas-images">' + E(S('ic.all', 'Tous les cas en images', 'All image cases')) + '</a></div>';
+        var all = icList(), i = all.indexOf(c), next = all[i + 1] || all[0];
+        return '<div class="page inv-page featured ic-one">' + crumbsH([[S('hub', 'Investigations', 'Investigations'), 'investigations'], [S('ic.title', 'Cas en images', 'Image cases'), 'cas-images'], [S('ic.case', 'Cas', 'Case') + ' ' + (i + 1), null]]) +
+          '<div data-icone></div>' +
+          '<div class="card stack ic-cta"><div class="row"><a class="btn primary" href="#cas-images/' + E(next.id) + '">' + E(S('ic.next', 'Cas suivant', 'Next case')) + ' →</a><a class="btn" href="#cas-images">' + E(S('ic.all', 'Tous les cas en images', 'All image cases')) + '</a><a class="btn ghost" href="#investigations">' + E(S('allinv', 'Toutes les investigations', 'All investigations')) + '</a></div></div></div>';
+      },
+      after: function (host) {
+        var c = icById(id), el = U.$('[data-icone]', host), clean = null;
+        document.documentElement.classList.add('focus-view');
+        if (c && el) clean = practice(el, [c], { title: S('ic.title', 'Cas en images', 'Image cases') + ' · ' + icTopicName(c.topic), onEnd: function () { var cta = U.$('.ic-cta', host); if (cta) { cta.classList.add('ok-pop'); var a = U.$('a', cta); if (a) a.focus({ preventScroll: true }); } } });
+        return function () { document.documentElement.classList.remove('focus-view'); if (typeof clean === 'function') clean(); };
+      }
+    };
+  }
+  function icHubCard() {
+    var all = icList(); if (!all.length) return '';
+    var ok = all.filter(function (c) { return icStatus(c) === 'ok'; }).length;
+    return '<a class="card link ic-hubcard" href="#cas-images"><span class="stack" style="gap:4px"><span class="eyebrow">' + E(S('ic.eye2', 'Nouveau · cas cliniques', 'New · clinical cases')) + '</span><b class="inv-card-t">' + E(S('ic.h1', 'Cas en images', 'Image cases')) + '</b>' +
+      '<span class="small muted">' + E(S('ic.cardd', 'Photos cliniques : cornée, glaucome et ophtalmologie générale. Séries de 10, filtres par thème et niveau.', 'Clinical photos: cornea, glaucoma and general ophthalmology. Series of 10, filters by topic and level.')) + '</span></span>' +
+      '<span class="row tight"><span class="tag plain">' + all.length + ' ' + E(S('ic.cases', 'cas', 'cases')) + '</span><span class="tag plain">' + ok + ' ' + E(S('ic.okn', 'réussis', 'done')) + '</span><span class="btn primary sm" aria-hidden="true">' + E(S('ic.open', 'Ouvrir', 'Open')) + ' →</span></span></a>';
+  }
+
   /* ======================================================================
      VIEWS — hub + one page per investigation
      ====================================================================== */
@@ -1146,7 +1238,7 @@
           '<span class="small muted">' + PE(inv.why) + '</span>' +
           '<span class="row tight">' + (inv.tool && TOOL_NAMES[inv.tool] ? '<span class="tag plain">' + PE(TOOL_NAMES[inv.tool]) + '</span>' : '') + '<span class="tag plain">' + p.n + ' ' + E(S('hub.imgs', 'images', 'images')) + '</span></span>' +
           (p.n ? '<span class="pbar' + (pct >= 60 ? ' ok' : '') + '" aria-label="' + E(p.ok + ' / ' + p.n) + '"><i style="width:' + pct + '%"></i></span>' : '') + '</a>';
-      }).join('') + '</div></div>';
+      }).join('') + '</div>' + icHubCard() + '</div>';
   }
   function listBlock(title, arr, cls) {
     if (!arr || !arr.length) return '';
@@ -1180,10 +1272,12 @@
   if (typeof Views !== 'undefined') {
     Views.investigations = { title: S('hub', 'Investigations', 'Investigations'), render: hubHtml };
     var ids = ORDER.slice(); try { invList().forEach(function (x) { if (ids.indexOf(x.id) < 0) ids.push(x.id); }); } catch (e) { }
+    Views['cas-images'] = { title: S('ic.title', 'Cas en images', 'Image cases'), render: icHubHtml, after: icHubAfter };
+    try { icList().forEach(function (c) { Views['cas-images/' + c.id] = icCaseView(c.id); }); } catch (e) { console.error('inv cas-images', e); }
     ids.forEach(function (id) {
       Views['inv-' + id] = { get title() { var i = invById(id); return i ? pick(i.title) : S('hub', 'Investigations', 'Investigations'); }, render: function () { return render(id); }, after: function (host) { return mount(host, id); } };
     });
   }
 
-  W.Inv = { render: render, mount: mount, practice: practice, tools: tools, gen: genFrom, Gen: Gen, keys: KEYS, hub: hubHtml, usingFixture: usingFixture };
+  W.Inv = { imageCases: icList, render: render, mount: mount, practice: practice, tools: tools, gen: genFrom, Gen: Gen, keys: KEYS, hub: hubHtml, usingFixture: usingFixture };
 })();

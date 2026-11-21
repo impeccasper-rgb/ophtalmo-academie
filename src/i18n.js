@@ -130,6 +130,11 @@ function G_OPH() { return (window.OPH = window.OPH || {}); }
     'disclaimer': ['Outil éducatif — ne remplace pas le jugement clinique.', 'Educational tool — does not replace clinical judgment.'],
     'disclaimer.long': ['Ocelle sert à apprendre et à réviser. Il ne pose pas de diagnostic et ne doit pas guider la prise en charge d’un patient : l’avis de ton patron, les protocoles de ton milieu et les lignes directrices l’emportent toujours. En cas d’urgence, consulte un professionnel de la santé.', 'Ocelle is for learning and review. It does not diagnose and must not guide patient care: your attending, local protocols and the guidelines always prevail. In an emergency, see a health professional.'],
     'photo.author.unknown': ['Auteur non indiqué', 'Author not stated'],
+    'lic.sa': ['partage dans les mêmes conditions', 'share-alike'],
+    'src.fonts': ['Polices Lexend et Atkinson Hyperlegible (Next, Mono) hébergées avec l’application, sous licence SIL Open Font License 1.1.', 'Lexend and Atkinson Hyperlegible (Next, Mono) fonts are bundled with the app under the SIL Open Font License 1.1.'],
+    'atlas.title': ['Atlas d’images', 'Image atlas'], 'atlas.inv': ['Examens', 'Tests'], 'atlas.q': ['Filtrer (ex. Fuchs, rubéose, OCT)', 'Filter (e.g. Fuchs, rubeosis, OCT)'], 'atlas.none': ['Aucune image ne correspond.', 'No matching image.'],
+    'atlas.eyebrow': ['{n} images authentiques · EyeRounds.org et sources sous licence libre', '{n} real images · EyeRounds.org and openly licensed sources'],
+    'atlas.lead': ['Images classées par thème. Touche une image pour l’agrandir et lire sa légende d’origine. Licence, auteur et lien source sous chaque image ; images non modifiées.', 'Images grouped by topic. Tap an image to enlarge it and read its original caption. Licence, author and source link under each image; images are unmodified.'],
     'daily.title': ['Image du jour', 'Image of the day'], 'daily.cta': ['Une image, un signe : 1 minute', 'One image, one sign: 1 minute'], 'daily.done': ['Faite aujourd’hui : reviens demain', 'Done today: come back tomorrow'],
     'daily.lead': ['Une nouvelle image chaque jour. Réponds pour garder ta série.', 'A new image every day. Answer to keep your streak.'], 'daily.none': ['Aucune image disponible pour l’instant.', 'No image available yet.'],
     'daily.back': ['Reviens demain pour une nouvelle image.', 'Come back tomorrow for a new image.'], 'daily.again': ['Déjà comptée aujourd’hui. Reviens demain.', 'Already counted today. Come back tomorrow.'],
@@ -559,5 +564,7 @@ function G_OPH() { return (window.OPH = window.OPH || {}); }
   }
   if (I18N.lang === 'en' && typeof A_SECTIONS !== 'undefined') A_SECTIONS.forEach(function (s) { s.fr = s.title; s.title = s.en || s.title; s.blurb = t('asec.' + s.id); });
   try { I18N.applyContent(); } catch (e) { if (window.console) console.warn('i18n overlay', e); }
+  // bilingual catalogue fields (imgsrc3: {fr, en}) → current language
+  ((window.OPH && OPH.catalog) || []).forEach(function (e) { ['title', 'caption'].forEach(function (k) { if (e[k] && typeof e[k] === 'object') e[k] = I18N.pick(e[k]); }); });
 })();
 if (typeof Actions !== 'undefined') Actions.lang = function (el) { var v = el.getAttribute('data-v'); if (v !== I18N.lang) I18N.set(v); };

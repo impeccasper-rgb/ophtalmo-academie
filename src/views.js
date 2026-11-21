@@ -1,5 +1,7 @@
 /* ===== Views ===== */
 'use strict';
+/* English term under a French title; hidden in English, where the title already is the English term */
+function enSub(en) { return en && !(window.I18N && I18N.lang === 'en') ? '<div class="en">' + U.esc(en) + '</div>' : ''; }
 function crumbs(items) { return '<div class="crumbs">' + items.map(function (it, i) { return (i ? '<span aria-hidden="true">›</span>' : '') + (it[1] ? '<a href="#' + it[1] + '">' + U.esc(it[0]) + '</a>' : '<span>' + U.esc(it[0]) + '</span>'); }).join('') + '</div>'; }
 function secH(k, title, id) { return '<div class="section-h"' + (id ? ' id="' + id + '"' : '') + '><span class="k">' + k + '</span><h2>' + U.esc(title) + '</h2></div>'; }
 function photosFor(key) { var seen = {}; return ((OPH.photos && OPH.photos[key]) || []).filter(function (p) { if (!p || seen[p.id]) return false; seen[p.id] = 1; return true; }); }
@@ -150,7 +152,7 @@ Views['module-a'] = {
 };
 Actions['quiz-module'] = function (el) { var m = el.getAttribute('data-m'); Quiz.start({ modules: [m], adaptive: true, n: 10, back: 'quiz' }, t('mod.adaptive', { m: m })); };
 function aNav(cur) { var i = A_SECTIONS.map(function (s) { return s.id; }).indexOf(cur); var prev = A_SECTIONS[i - 1], next = A_SECTIONS[i + 1]; return '<details class="acc src-acc"><summary>' + t('aside.reviewreport') + '</summary><div style="padding:0 14px 14px">' + reviewMeta(cur) + '</div></details>' + '<div class="row" style="justify-content:space-between">' + (prev ? '<a class="btn ghost" href="#' + prev.id + '">← ' + U.esc(prev.title) + '</a>' : '<span></span>') + readBtn(cur) + (next ? '<a class="btn" href="#' + next.id + '">' + U.esc(next.title) + ' →</a>' : '<a class="btn" href="#module-b">' + t('nav.module', { m: 'B', name: L.modules.B }) + ' →</a>') + '</div>'; }
-function aHead(id) { var s = A_SECTIONS.filter(function (x) { return x.id === id; })[0]; return crumbs([[t('nav.home'), 'accueil'], ['Module A', 'module-a'], [s.n, null]]) + '<div class="phead"><div class="eyebrow">' + s.n + ' · Module A</div><h1>' + U.esc(s.title) + '</h1><div class="en">' + U.esc(s.en) + '</div><p class="muted" style="max-width:64ch">' + U.esc(s.blurb) + '</p></div>'; }
+function aHead(id) { var s = A_SECTIONS.filter(function (x) { return x.id === id; })[0]; return crumbs([[t('nav.home'), 'accueil'], ['Module A', 'module-a'], [s.n, null]]) + '<div class="phead"><div class="eyebrow">' + s.n + ' · Module A</div><h1>' + U.esc(s.title) + '</h1>' + enSub(s.en) + '<p class="muted" style="max-width:64ch">' + U.esc(s.blurb) + '</p></div>'; }
 function aTools() { return '<div class="row depth-row"><span class="xs muted">' + t('f.level') + '</span>' + depthSeg(true) + mvMore(2, t('a.showall')) + '</div>'; }
 function missing(what) { return '<div class="empty">' + U.esc(t('missing', { what: what })) + '</div>'; }
 
@@ -315,7 +317,7 @@ function capsuleView(id) {
       var vocab = '<div class="sec" data-dz="2">' + secH(t('caps.words'), t('caps.vocab')) + '<div class="tbl-wrap"><table class="tbl"><tbody>' + c.vocab.map(function (v) { return '<tr><td>' + U.esc(v.term) + '</td><td>' + U.md(v.def) + '</td></tr>'; }).join('') + '</tbody></table></div></div>';
       var ph = photosFor(id);
       return '<div class="page mv">' + crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m, 'module-' + m.toLowerCase()], [m + '0', null]]) + (Prog.unlocked(m) ? '' : lockHtml(m)) +
-        '<div class="phead"><div class="eyebrow">' + t('caps.eyebrow', { m: m }) + '</div><h1>' + U.esc(c.title) + (window.I18N ? I18N.badge(c) : '') + '</h1><div class="en">' + U.esc(c.en) + '</div><p class="read">' + T(c.intro, scope) + '</p>' + aTools() + '</div>' +
+        '<div class="phead"><div class="eyebrow">' + t('caps.eyebrow', { m: m }) + '</div><h1>' + U.esc(c.title) + (window.I18N ? I18N.badge(c) : '') + '</h1>' + enSub(c.en) + '<p class="read">' + T(c.intro, scope) + '</p>' + aTools() + '</div>' +
         HY.essentials(id, t('caps.hy')) + (ph.length ? '<div class="sec">' + secH(t('caps.see'), t('caps.realimg')) + Photo.carousel(ph) + '</div>' : '') +
         sections + tools + vocab + (HY.get(id) ? '<div class="sec">' + secH(t('caps.game'), t('f.train')) + trainBlock(id) + '</div>' : '') +
         '<details class="acc src-acc"><summary>' + t('aside.reviewreport') + '</summary><div style="padding:0 14px 14px">' + reviewMeta(id) + '</div></details>' +
@@ -340,7 +342,7 @@ function ficheView(f) {
       var h = [];
       h.push(crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m + ' · ' + L.modules[m], 'module-' + m.toLowerCase()], [m + (idx + 1), null]]));
       if (!Prog.unlocked(m)) h.push(lockHtml(m));
-      h.push('<div class="phead fiche-head"><div class="eyebrow">' + m + (idx + 1) + ' · ' + L.modules[m] + ' · ' + t('f.min', { n: readMinAt(f, dpt) }) + '</div><h1>' + U.esc(f.title) + (window.I18N ? I18N.badge(f) : '') + '</h1><div class="en">' + U.esc(f.en) + '</div><div class="row tight">' + (f.tags || []).map(L.tag).join('') + '</div>' +
+      h.push('<div class="phead fiche-head"><div class="eyebrow">' + m + (idx + 1) + ' · ' + L.modules[m] + ' · ' + t('f.min', { n: readMinAt(f, dpt) }) + '</div><h1>' + U.esc(f.title) + (window.I18N ? I18N.badge(f) : '') + '</h1>' + enSub(f.en) + '<div class="row tight">' + (f.tags || []).map(L.tag).join('') + '</div>' +
         '<p class="oneliner">' + T(f.oneLiner, scope) + '</p>' + (pre ? '<div class="prereq"><span class="small muted">' + t('f.prereq') + '</span>' + pre + '</div>' : '') +
         '<div class="row depth-row"><span class="xs muted">' + t('f.level') + '</span>' + depthSeg(true) + '</div></div>');
       h.push(mvNav);
@@ -494,28 +496,31 @@ function caseView(c) { return { title: c.title, render: function () { return '<d
 
 /* ---------- atlas ---------- */
 Views.atlas = {
-  title: 'Atlas d’images', render: function () {
-    return '<div class="page">' + crumbs([['Accueil', 'accueil'], ['Atlas', null]]) + '<div class="phead"><div class="eyebrow">' + OPH.catalog.length + ' images authentiques · EyeRounds.org (University of Iowa)</div><h1>Atlas d’images</h1><p class="muted" style="max-width:64ch">Tes deux banques d’images (catalogue initial et complément), classées par thème. Touche une image pour l’agrandir et lire sa légende d’origine et le cas source. Licence CC BY-NC-ND 3.0 ou usage pédagogique selon les conditions EyeRounds (indiqué sous chaque image) : images non modifiées, crédits conservés.</p></div>' +
-      '<div class="row"><div class="seg" data-amod>' + [['', 'Tout'], ['A', 'Général'], ['B', 'Cornée'], ['C', 'Glaucome']].map(function (x, i) { return '<button data-am="' + x[0] + '" aria-pressed="' + (i === 0) + '">' + x[1] + '</button>'; }).join('') + '</div><input type="text" id="atlas-q" placeholder="Filtrer (ex. Fuchs, rubéose, Pentacam)" style="min-width:min(100%,280px)"></div><div data-atlas></div></div>';
+  title: t('atlas.title'), render: function () {
+    var R = window.OPH_RESTRICTED || {}, n = OPH.catalog.filter(function (e) { return !R[e.id]; }).length, hasI = OPH.catalog.some(function (e) { return e.module === 'I'; });
+    var segs = [['', t('modseg.all')], ['A', L.modules.A], ['B', L.modules.B], ['C', L.modules.C]].concat(hasI ? [['I', t('atlas.inv')]] : []);
+    return '<div class="page">' + crumbs([[t('nav.home'), 'accueil'], [t('atlas.title'), null]]) + '<div class="phead"><div class="eyebrow">' + t('atlas.eyebrow', { n: n }) + '</div><h1>' + t('atlas.title') + '</h1><p class="muted" style="max-width:64ch">' + t('atlas.lead') + '</p></div>' +
+      '<div class="row"><div class="seg" data-amod>' + segs.map(function (x, i) { return '<button data-am="' + x[0] + '" aria-pressed="' + (i === 0) + '">' + U.esc(x[1]) + '</button>'; }).join('') + '</div><input type="text" id="atlas-q" placeholder="' + U.esc(t('atlas.q')) + '" aria-label="' + U.esc(t('atlas.q')) + '" style="min-width:min(100%,280px)"></div><div data-atlas></div></div>';
   },
   after: function (host) {
-    var st = { m: '', q: '' };
+    var st = { m: '', q: '' }, R = window.OPH_RESTRICTED || {};
     function draw() {
       var q = st.q.toLowerCase(), groups = {};
       OPH.catalog.forEach(function (e) {
+        if (R[e.id] || e.id === 'OPH-185' || e.id === 'OPH-186') return;
         if (st.m && e.module !== st.m) return;
-        if (q && (e.title + ' ' + e.caption + ' ' + e.id).toLowerCase().indexOf(q) < 0) return;
-        if (e.id === 'OPH-185' || e.id === 'OPH-186') return;
+        if (q && (e.title + ' ' + e.caption + ' ' + e.id + ' ' + (e.author || '')).toLowerCase().indexOf(q) < 0) return;
         (groups[e.title] = groups[e.title] || []).push(e);
       });
       var keys = Object.keys(groups);
-      U.$('[data-atlas]', host).innerHTML = keys.length ? keys.map(function (k) { return '<div class="sec"><h3>' + U.esc(k) + ' <span class="small muted">(' + groups[k].length + ')</span></h3>' + Photo.gallery(groups[k].map(function (e) { return { id: e.id, caption: e.title, look: 'Légende source : ' + e.caption, reveal: [] }; })) + '</div>'; }).join('') : '<div class="empty">Aucune image ne correspond.</div>';
+      U.$('[data-atlas]', host).innerHTML = keys.length ? keys.map(function (k) { return '<div class="sec"><h3>' + U.esc(k) + ' <span class="small muted">(' + groups[k].length + ')</span></h3>' + Photo.gallery(groups[k].map(function (e) { return { id: e.id, caption: e.title, look: t('lb.srccap') + e.caption, reveal: [] }; })) + '</div>'; }).join('') : '<div class="empty">' + t('atlas.none') + '</div>';
     }
     host.addEventListener('click', function (ev) { var b = ev.target.closest('[data-am]'); if (!b) return; st.m = b.getAttribute('data-am'); U.$$('[data-am]', host).forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); }); draw(); });
     U.$('#atlas-q', host).addEventListener('input', U.debounce(function (e) { st.q = e.target.value.trim(); draw(); }, 200));
     draw();
   }
 };
+
 
 /* ---------- sources ---------- */
 Views.sources = {
@@ -553,6 +558,7 @@ Views.sources = {
       S.map(function (g) { return '<div class="sec">' + secH('•', g[0]) + '<ul class="src-list">' + g[1].map(function (s) { return '<li><a href="' + U.esc(s[1]) + '" target="_blank" rel="noopener">' + U.esc(s[0]) + '</a>' + (s[2] ? '<div class="small muted">' + U.esc(s[2]) + '</div>' : '') + '</li>'; }).join('') + '</ul></div>'; }).join('') +
       '<div class="sec">' + secH('•', t('src.images')) + '<p class="small">' + t('src.images.p') + '</p>' + (nOpen ? '<p class="small">' + t('src.open.p', { n: nOpen }) + '</p>' : '') +
       '<div class="callout"><span class="small">' + t('src.cc') + '</span></div>' +
+      '<p class="xs muted">' + t('src.fonts') + '</p>' +
       '<details class="acc"><summary>' + t('src.perimg', { n: cat.length }) + '</summary><div class="tbl-wrap" style="padding:0 14px 14px"><table class="tbl credits">' + th + '<tbody>' + rows + '</tbody></table></div></details>' +
       (mrows ? '<details class="acc"><summary>' + t('src.invmedia') + '</summary><div class="tbl-wrap" style="padding:0 14px 14px"><table class="tbl credits">' + th + '<tbody>' + mrows + '</tbody></table></div></details>' : '') + '</div>' +
       '<div class="callout amber"><span class="eyebrow">' + t('src.keep') + '</span><span class="small">' + t('src.keep.p') + '</span></div></div>';

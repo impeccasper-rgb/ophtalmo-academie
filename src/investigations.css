@@ -128,3 +128,20 @@
   .inv-calv { font-size: 17px; }
   .inv-olab { font-size: 16px; }
 }
+
+/* cas en images */
+.ic-prog { display: grid; gap: 10px; }
+.ic-big { font-family: var(--font-display); font-size: var(--fs-xl); line-height: 1; }
+.ic-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.ic-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.ic-grid[hidden] { display: none; }
+.ic-card { align-content: start; }
+.ic-q { color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.ic-st { font-size: var(--fs-xs); font-weight: 700; padding: 2px 8px; border-radius: 99px; background: var(--sunk); color: var(--ink-3); }
+.ic-st.ok { background: var(--ok-wash); color: var(--ok); }
+.ic-st.shaky { background: var(--hy-wash); color: var(--hy); }
+.ic-st.bad { background: var(--bad-wash); color: var(--bad); }
+.ic-hubcard { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: end; border-left: 4px solid var(--cobalt); }
+.ic-hubcard > .stack { flex: 1 1 320px; }
+.ic-runbar { margin-bottom: 6px; }
+@media (max-width: 480px) { .ic-filters .seg { width: 100%; } .ic-filters .seg button { flex: 1 1 auto; } }

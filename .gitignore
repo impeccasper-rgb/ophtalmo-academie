@@ -12,3 +12,6 @@ imgsrc2/sheets/
 imgsrc/thumb/
 imgsrc2/complement.pdf
 ios-evidence/
+__pycache__/
+*.pyc
+ios-evidence/

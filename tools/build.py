@@ -36,8 +36,10 @@ def catalog3(root):
         w, h = e.get('w') or e.get('width'), e.get('h') or e.get('height')
         if not (w and h): w, h = jpeg_size(os.path.join(root, 'imgsrc3', 'web', e['id'] + '.jpg')) or (440, 330)
         tw = 440; th = round(h * tw / w)
-        d = {'id': e['id'], 'title': e.get('title', ''), 'caption': e.get('caption', ''), 'page_url': e.get('source_url', ''), 'module': e.get('module', ''), 'kind': e.get('kind', 'clinical'),
-             'tw': tw, 'th': th, 'license': e.get('license', ''), 'author': e.get('author', ''), 'source_url': e.get('source_url', ''), 'src': 'imgsrc3'}
+        # title/caption may be bilingual {fr, en}: i18n.js picks the language at load
+        d = {'id': e['id'], 'title': e.get('title', ''), 'caption': e.get('caption', ''), 'page_url': e.get('page_url') or e.get('source_url', ''), 'module': e.get('module', ''), 'kind': e.get('kind', 'clinical'),
+             'tw': tw, 'th': th, 'license': e.get('license', ''), 'license_url': e.get('license_url', ''), 'author': e.get('author', ''), 'source_url': e.get('source_url', ''),
+             'share_alike': bool(e.get('share_alike')) or '-SA' in e.get('license', '').upper().replace(' ', '-'), 'exam': e.get('exam', ''), 'src': 'imgsrc3'}
         out.append(d)
     return out
 
@@ -56,7 +58,7 @@ with open(os.path.join(DATA, 'catalog.js'), 'w', encoding='utf-8') as f:
     f.write("var G = (typeof window !== 'undefined') ? window : globalThis;\nG.OPH = G.OPH || {};\nG.OPH.catalog = " + json.dumps([{k: v for k, v in e.items() if k != 'src'} for e in slim], ensure_ascii=False) + ";\n")
 
 data_order = ['catalog', 'module-a', 'capsules', 'fiches-cornee', 'fiches-cornee-2', 'fiches-glaucome', 'quiz-a', 'quiz-b', 'quiz-c', 'quiz-c2', 'quiz-photos', 'cases', 'photos', 'images',
-              'ext-a5-a', 'ext-a5-b', 'ext-cornee-a', 'ext-cornee-b', 'ext-glaucome-a', 'ext-glaucome-b', 'ext-photos', 'ext-links', 'hy-module-a', 'hy-cornee', 'hy-glaucome', 'investigations', 'inv-media']
+              'ext-a5-a', 'ext-a5-b', 'ext-cornee-a', 'ext-cornee-b', 'ext-glaucome-a', 'ext-glaucome-b', 'ext-photos', 'ext-links', 'hy-module-a', 'hy-cornee', 'hy-glaucome', 'investigations', 'inv-media', 'cases-images']
 src_order = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'views']
 
 def js(path):
@@ -107,6 +109,7 @@ shutil.rmtree(os.path.join(img_dir, 't'), ignore_errors=True)  # single image si
 n = 0
 for e in slim:
     src, dst = os.path.join(ROOT, e['src'], 'web', e['id'] + '.jpg'), os.path.join(img_dir, e['id'] + '.jpg')
+    if not os.path.exists(src): continue  # image not in this checkout (e.g. restricted rights)
     if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
         shutil.copy2(src, dst)
     n += 1
