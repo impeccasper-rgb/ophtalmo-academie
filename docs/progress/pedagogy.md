@@ -1,23 +1,22 @@
-# Progrès — pédagogie clinique (Investigations)
+# Progrès — pédagogie clinique (Investigations + cas en images)
 
-## Fait (21 nov. 2026)
-- `data/investigations.js` validé (node : `6 44`).
-  - `G.OPH.inv` : 6 examens (bscan, ascan, oct, gonio, fondoeil, cv), champs why/how/normal/keys/pitfalls bilingues, `tool` selon le contrat, `practice` → ids existants.
-  - `G.OPH.invPractice` : 44 items (7/7/8/7/8/7), niveaux 14/20/10, 4 options + 4 « why » chacun, bonne réponse répartie 11/11/11/11.
-  - `G.OPH.invMediaRequests` : 44 entrées (31 photos du catalogue vérifiées visuellement, 13 schémas `photo: null`) avec description de l’image et positions approximatives des hotspots (%).
-- `docs/PEDAGOGY-REVIEW.md` : tableau des items, 3 items démo, doutes à vérifier, sources.
+## Fait
+### Cycle 1 (21 nov. 2026)
+- `data/investigations.js` : 6 examens complets, 44 items, `invMediaRequests`.
+### Cycle 2 (21 nov. 2026)
+- **Droits** : 8 items qui utilisaient des images sans licence CC (OPH-189, 190, 191, 203, 205, 209, 292, 293) remplacés par des photos CC (OPH-308, 307, 136) ou des générateurs (`bscan:vh:long:85`, `gonio:nv`, `vf:arcuate`, `vf:fp`); p-bscan-2 garde le svg du rôle visuels. Vérifié par script : 0 image non CC.
+- **Nouveaux items** : p-oct-9 (`oct:srf`), p-cv-8 (`vf:altitudinal`) → **46 items** (7/7/9/7/8/8).
+- Médias propres sous nouveaux ids, fusionnés dans `G.OPH.invMedia` par `Object.assign` (n’écrase pas `inv-media.js`).
+- Doutes corrigés : p-bscan-7 (sclère ≈ 2,4 mm selon la source, normale ≈ 1 mm), p-ascan-4 (tracés A/B comme le svg), p-fondoeil-4 (latéralité non affirmée).
+- **`data/cases-images.js`** (nouveau) : `G.OPH.imageCases` = **35 cas** (cornée 12, glaucome 10, général 13; niveaux 10/14/11), `G.OPH.imageCasesMedia` = 35 photos CC distinctes (aucune déjà utilisée dans les Investigations), hotspots placés à la main sur grille. Vedette : `ic-c03` (`featured:true`).
+- `docs/PEDAGOGY-REVIEW.md` : section « Corrections outils » (8 points, ligne + texte + correction), tableaux complets, lacunes, doutes.
+- Validation : `node -e "…require('data/investigations.js')…"` → `6 46`; `cases-images.js` charge seul → 35 cas.
 
 ## Reste / pour les autres rôles
-- Ressources visuelles : créer `data/inv-media.js` à partir de `G.OPH.invMediaRequests` (vérifier les positions des hotspots, dessiner les 13 schémas étiquetés « schéma »).
-- Droits : OPH-190, 200–209, 292, 293 = « Usage pédagogique EyeRounds » (non CC); les autres CC BY-NC-ND → aucune modification de l’image (ND).
-- Exercices interactifs : le moteur peut garder l’ordre des options tel quel (déjà mélangé). Les items p-cv-4 et p-oct-5 parlent de « panneau A/B/C » de l’image — à ne pas confondre avec des lettres d’options si l’UI en affiche.
-
-## Doutes (détail dans docs/PEDAGOGY-REVIEW.md)
-- Épaisseur normale de la paroi postérieure en B-scan (≈ 1–1,5 mm) approximative.
-- OPH-302 : légende du catalogue inversée par rapport au rapport imprimé (OS à gauche).
-- OPH-219 : deux photos de la fig. 1, latéralité non précisée par la source.
-- OPH-172 : localisation exacte de la bande ciliaire large vs bande de cyclodialyse à confirmer.
-- OPH-214 et OPH-193 exclus (œil atteint incertain).
+- **Exercices interactifs** : appliquer les corrections 1–5 de PEDAGOGY-REVIEW.md (« Corrections outils »); brancher `G.OPH.imageCases` (même schéma que `invPractice`, + `topic`, `featured`) avec `G.OPH.imageCasesMedia` (kind/photo/hotspots/alt; crédit via `Photo.credit`). Le moteur accepte un objet média direct (`mediaById(obj)`).
+- **Web/build** : ajouter `data/cases-images.js` aux données chargées (FR, contenu bilingue natif); route proposée `#cas-images` ou intégration au hub Investigations.
+- **Ressources visuelles** : supprimer les entrées restreintes devenues inutiles (`m-bscan-3`, `m-oct-6`, `m-gonio-1`, `m-fondoeil-3`, `m-fondoeil-4`, `m-cv-3`, `m-cv-4`); vérifier visuellement les hotspots des cas fins (voir revue §Points à vérifier).
+- Lacune : aucune image de cellulite orbitaire au catalogue.
 
 ## Blocages
-- Aucun. Sources web non ajoutées à market/SOURCES.md (hors périmètre) : listées dans PEDAGOGY-REVIEW.md.
+- Aucun. Sources web listées dans PEDAGOGY-REVIEW.md (market/SOURCES.md hors périmètre).

@@ -74,6 +74,9 @@
     return fetch(path + '?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.ok; }, function () { return false; });
   }
   function shot(name) {
+    return painted().then(function () { return shotNow(name); });
+  }
+  function shotNow(name) {
     out('SHOT ' + name);
     var t = Date.now();
     if (!ackMode) return sleep(2000);
@@ -89,7 +92,10 @@
   function lang() { return window.I18N && I18N.lang; }
   function visible(el) { return !!(el && (el.offsetWidth || el.offsetHeight || el.getClientRects().length)); }
   function clickEl(el) { try { el.scrollIntoView({ block: 'center' }); } catch (e) { } el.click(); }
-  function scrollToEl(el) { try { el.scrollIntoView({ block: 'start' }); } catch (e) { } return sleep(500); }
+  function painted() { // two animation frames + a margin: the simulator on CI has no GPU and paints late after a jump
+    return new Promise(function (r) { requestAnimationFrame(function () { requestAnimationFrame(function () { setTimeout(r, 1200); }); }); });
+  }
+  function scrollToEl(el) { try { el.scrollIntoView({ block: 'start' }); } catch (e) { } return painted(); }
   function byText(re, root, sel) {
     return $$(sel || 'button, a, [role="button"]', root).filter(function (b) {
       return re.test((b.textContent || '').trim()) || re.test(b.getAttribute('aria-label') || '');
@@ -183,7 +189,7 @@
           if (broken.length) out('WARN fiche broken images: ' + broken.slice(0, 5).map(function (i) { return i.getAttribute('src'); }).join(', '));
           if (local.length) throw new Error(local.length + ' bundled image(s) missing, e.g. ' + local[0].getAttribute('src'));
           return shot('04-fiche-top');
-        }).then(function () { window.scrollTo(0, Math.round(document.body.scrollHeight * 0.35)); return sleep(600); })
+        }).then(function () { window.scrollTo(0, Math.round(document.body.scrollHeight * 0.35)); return painted(); })
           .then(function () { return shot('05-fiche-mid'); })
           .then(function () { window.scrollTo(0, 0); return f.id + ' "' + text(h1).slice(0, 60) + '"'; });
       });

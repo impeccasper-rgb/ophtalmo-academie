@@ -1,27 +1,27 @@
-# iOS role: progress (2026-11-21)
+# iOS role: progress (2026-11-21, cycle 2)
 
 ## Done
 - Capacitor **8.6.2** (current stable major; 9.0 is still an RC) with **Swift Package Manager** (no CocoaPods). Plugins: splash-screen 8.0.2, haptics 8.0.2. `package.json` + `package-lock.json` (exact versions; `npm ci` checked).
-- `capacitor.config.json`: appName **Ocelle** (brand/BRAND.md), appId **`ca.academie.ophtalmo` = placeholder**, `webDir: site`, no `server.url` (offline), splash `#0A2547`.
-- `ios/` generated with `npx cap add ios --packagemanager SPM` (on Linux). Then:
-  - Info.plist: dev region fr, CFBundleLocalizations fr+en, ITSAppUsesNonExemptEncryption=false, arm64, orientations (iPhone portrait + landscape; iPad all 4), launch screen, education category.
-  - `fr.lproj` / `en.lproj` InfoPlist.strings (display name), added as a variant group in the pbxproj; knownRegions fr,en,Base.
-  - PrivacyInfo.xcprivacy (no tracking, no data, no required-reason API; grep of Capacitor + plugins: none used).
-  - AppViewController.swift (swipe back/forward; Debug-only `selftestLog` → NSLog), SceneDelegate uses it.
-  - Shared scheme `App.xcscheme` (xcodebuild -scheme App, archive).
-  - AppIcon 1024 from brand/icon-1024.png; splash solid #0A2547 + mark (make_assets.py, re-run in CI); LaunchScreen background #0A2547.
-- iOS web overlay (`ios/web-overlay/`, injected into the bundle copy by `ios/scripts/overlay.mjs`, never into site/): native-ios.js (`.native` class, haptics) and selftest.js (self-test variant only).
-- `.github/workflows/ios.yml`: simulator build plus self-test on iPhone and iPad (screenshots, video, logs, summary); TestFlight job written but disabled (variable `IOS_RELEASE_ENABLED` + secrets), manual trigger.
-- Scripts: check_ios.py (static checks), run_selftest.py (simulator runner), set_brand.py, make_assets.py.
-- docs/IOS.md (architecture, CI, artifacts, TestFlight, listing, review risks).
+- `capacitor.config.json`: appName **Ocelle**, appId **`ca.academie.ophtalmo` = placeholder**, `webDir: site`, no `server.url` (offline), splash `#0A2547`.
+- `ios/` project: Info.plist (fr dev region, fr+en localizations, export compliance, orientations), fr/en InfoPlist.strings, PrivacyInfo.xcprivacy, AppViewController.swift (swipe back, Debug log channel), shared scheme, icon + splash (make_assets.py).
+- iOS web overlay: native-ios.js (`.native` class, haptics); selftest.js (self-test variant only).
+- `.github/workflows/ios.yml`: simulator build, self-test on iPhone (+ video pass) and iPad, artifact plus branch `ios-evidence`; TestFlight job written, disabled until the secrets exist.
+- docs/IOS.md.
 
-## Verified on Linux
-- `npm install` / `npm ci`, `npx cap sync ios` (Package.swift lists both plugins), plistlib parse of every plist, pbxproj parsed with the `pbxproj` library (all IDs resolve, files present), xmllint on storyboards and scheme, workflow YAML parsed (PyYAML), `check_ios.py` OK (normal and `--release`).
-- Self-test in headless Chrome on the real `site/` build: boot, home-fr, lang-en (via the UI button), fiche and flashcards **PASS**; investigations and practice **FAIL** because `src/investigations.js` / the `#investigations` route don't exist yet (expected).
-- run_selftest.py checked against a simulated `xcrun` (device choice, dedupe of the two logs, screenshots, PASS/FAIL verdict, summary).
-- Not checked here (needs macOS): xcodebuild, the simulator, video, haptics. The first push will tell. actionlint could not be run (binary download not allowed).
+## Cycle 2 (CI feedback)
+- Run 44928422573 (commit 37b186b, image macos-26-arm64, Xcode 26.6): **the app compiled (about 1 min) and launched** on an iPhone 17 Pro Max with iOS 26.5 (capacitor=true, native overlay OK). The walk started. Then `run_selftest.py` crashed: `simctl io screenshot` timed out after 60 s while `recordVideo` was running. The iPad run then crashed on `simctl status_bar` (over 120 s; the iPhone simulator and its video recorder were still running).
+- Fixes:
+  - **Runner:** every simctl call has a timeout and never raises; screenshots run in a worker thread with a retry, and are turned off after 3 failures; the video is recorded in a separate pass 2 (iPhone only) that never changes the verdict; cleanup is in `finally`; timeouts are longer (boot 15 min, walk 10 min); the iPad step first runs `simctl shutdown all`.
+  - **Screenshot acks:** the runner writes `public/__acks/<name>.txt` into the installed app after each screenshot, and selftest.js polls it (Capacitor serves bundle files from disk). It falls back to fixed pauses.
+  - **selftest.js:** waits ×3; screenshot waits don't count against a step; a new `inv-pages` step (the 6 exams, screenshot of each tool); `practice` fitted to src/investigations.js (`[data-invpractice]`, `[data-ip="ready"]`, `.opt[data-k]`, `.feedback`, `.reveal-hotspot`).
+  - **Evidence:** CI artifacts can't be downloaded from this sandbox (blob storage is blocked by the proxy), so the workflow force-pushes JPEG copies, logs and the video to the branch `ios-evidence`, which can be read with plain git (and browsed on github.com).
+- Verified on Linux: **9/9 steps pass** in headless Chrome on a fresh build (with and without acks); runner checked with a simulated xcrun (a hung screenshot is retried, the run continues, acks work, video pass works).
 
-## Remaining / blockers
-- **Exercises role:** the `#investigations` route and the practice engine. Until they exist, the iOS job will be red at the `investigations` and `practice` steps. If their markup differs, adjust the selectors in selftest.js (step `practice`: `[data-inv-opt]`, `[data-opt]`, `.opts button`, `button.opt`).
-- **Web role:** fonts are remote (Google Fonts). Offline they fall back to system fonts; self-host them to be fully offline. Hide web-only UI under `html.native`.
-- **User:** Apple Developer account (legal name), final bundle ID (`set_brand.py --app-id`), API key, GitHub secrets, privacy policy URL, physician review of the content (guideline 1.4.1).
+- **Run 44933504936 (commit 1b0a347): GREEN.** iPhone 17 Pro Max and iPad Pro 13" on iOS 26.5, 9/9 steps each, video recorded,
+  evidence branch pushed. Evidence copied to `ios-evidence/` (git-ignored: line added to the root .gitignore so that sync_repo.py doesn't push it to main).
+- Evidence polish after that run: os.Logger instead of NSLog (merged console lines and `name<date>.png` duplicates); waits
+  for paint before each screenshot (one blank `05-fiche-mid` on iPhone); a late screenshot from a killed attempt counts.
+
+## Remaining / for others
+- **Web:** fonts are remote (Google Fonts); offline the app falls back to system fonts. Self-host them to be fully offline. Hide web-only UI under `html.native`.
+- **User:** Apple Developer account (legal name), final bundle ID (`set_brand.py --app-id`), API key and GitHub secrets, privacy policy URL, physician review (1.4.1).

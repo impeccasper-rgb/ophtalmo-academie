@@ -144,7 +144,7 @@ G.OPH.inv = [
       { fr: "Effet plancher (floor effect) : au stade avancé, la RNFL ne baisse plus (≈ 50–60 µm); suivre le champ visuel.", en: "Floor effect: in advanced glaucoma the RNFL stops dropping (~50–60 µm); follow the visual field." }
     ],
     tool: "oct-layers",
-    practice: ["p-oct-1", "p-oct-2", "p-oct-3", "p-oct-4", "p-oct-5", "p-oct-6", "p-oct-7", "p-oct-8"]
+    practice: ["p-oct-1", "p-oct-2", "p-oct-3", "p-oct-4", "p-oct-5", "p-oct-6", "p-oct-7", "p-oct-8", "p-oct-9"]
   },
 
   /* ───────────────────────── I4 — Gonioscopie ───────────────────────── */
@@ -265,7 +265,7 @@ G.OPH.inv = [
     ],
     normal: [
       { fr: "Tache aveugle (blind spot) ≈ 15° en temporal, juste sous le méridien horizontal.", en: "Blind spot ~15° temporal, just below the horizontal meridian." },
-      { fr: "Fiable si pertes de fixation ≤ 20 % et faux positifs ≤ 15 %.", en: "Reliable if fixation losses ≤ 20% and false positives ≤ 15%." },
+      { fr: "Fiable si pertes de fixation ≤ 20 % et faux positifs ≤ 15 %; faux négatifs > 33 % : prudence (souvent élevés si le champ est très atteint).", en: "Reliable if fixation losses ≤ 20% and false positives ≤ 15%; false negatives > 33%: be cautious (often high in badly damaged fields)." },
       { fr: "MD proche de 0 dB, PSD non significatif, GHT « Within Normal Limits ».", en: "MD near 0 dB, non-significant PSD, GHT “Within Normal Limits”." },
       { fr: "Sensibilité maximale au centre (fovéa ≈ 30–35 dB chez l’adulte).", en: "Highest sensitivity centrally (fovea ~30–35 dB in adults)." }
     ],
@@ -284,7 +284,7 @@ G.OPH.inv = [
       { fr: "Conclure sur un seul champ : effet d’apprentissage → toujours confirmer.", en: "Drawing conclusions from one field: learning effect → always confirm." }
     ],
     tool: "vf-reader",
-    practice: ["p-cv-1", "p-cv-2", "p-cv-3", "p-cv-4", "p-cv-5", "p-cv-6", "p-cv-7"]
+    practice: ["p-cv-1", "p-cv-2", "p-cv-3", "p-cv-4", "p-cv-5", "p-cv-6", "p-cv-7", "p-cv-8"]
   }
 ];
 
@@ -294,17 +294,17 @@ G.OPH.invPractice = [
     id: "p-bscan-1", inv: "bscan", media: "m-bscan-1", level: 1,
     q: { fr: "Patiente âgée, cataracte blanche à l’œil droit. Le fond d’œil est invisible. Quel examen vérifie que la rétine est à plat avant la chirurgie?", en: "Elderly patient, white cataract in the right eye. You can’t see the fundus. Which test confirms the retina is flat before surgery?" },
     options: [
-      { fr: "Champ visuel Humphrey", en: "Humphrey visual field" },
+      { fr: "Angiographie à la fluorescéine", en: "Fluorescein angiography" },
       { fr: "Échographie B", en: "B-scan ultrasound" },
-      { fr: "OCT maculaire", en: "Macular OCT" },
-      { fr: "Angiographie à la fluorescéine", en: "Fluorescein angiography" }
+      { fr: "Champ visuel Humphrey", en: "Humphrey visual field" },
+      { fr: "OCT maculaire", en: "Macular OCT" }
     ],
     answer: 1,
     why: [
-      { fr: "Le champ visuel mesure la fonction, pas l’anatomie, et il est ininterprétable derrière une cataracte mature.", en: "A visual field measures function, not anatomy, and it’s uninterpretable behind a mature cataract." },
+      { fr: "L’angiographie exige de voir le fond d’œil; elle est aussi bloquée.", en: "Angiography needs a view of the fundus; it’s blocked too." },
       { fr: "Juste : les ultrasons traversent les milieux opaques. On cherche un décollement de rétine, une masse ou une hémorragie.", en: "Correct: ultrasound passes through opaque media. You’re looking for a detachment, a mass or a hemorrhage." },
-      { fr: "L’OCT utilise la lumière : une cataracte mature la bloque.", en: "OCT uses light: a mature cataract blocks it." },
-      { fr: "L’angiographie exige de voir le fond d’œil; elle est aussi bloquée.", en: "Angiography needs a view of the fundus; it’s blocked too." }
+      { fr: "Le champ visuel mesure la fonction, pas l’anatomie, et il est ininterprétable derrière une cataracte mature.", en: "A visual field measures function, not anatomy, and it’s uninterpretable behind a mature cataract." },
+      { fr: "L’OCT utilise la lumière : une cataracte mature la bloque.", en: "OCT uses light: a mature cataract blocks it." }
     ],
     reveal: { fr: "Pupille blanche (cataracte mature) : la lumière ne passe pas, les ultrasons oui.", en: "White pupil (mature cataract): light can’t get through, ultrasound can." }
   },
@@ -327,38 +327,38 @@ G.OPH.invPractice = [
     reveal: { fr: "La bande hypoéchogène derrière la paroi, sous la macula, est l’ombre du nerf optique : le repère qui oriente chaque coupe.", en: "The hypoechoic band behind the wall, below the macula, is the optic nerve shadow — the landmark that orients every scan." }
   },
   {
-    id: "p-bscan-3", inv: "bscan", media: "m-bscan-3", level: 2,
-    q: { fr: "Coupe transverse T12. Où regarde le patient et où pose-t-on la sonde?", en: "Transverse T12 scan. Where does the patient look, and where does the probe go?" },
+    id: "p-bscan-3", inv: "bscan", media: "m-bscan-3g", level: 1,
+    q: { fr: "Schéma : coupe longitudinale, gain élevé, chez un patient avec hémorragie du vitré au fond d’œil. Que conclure?", en: "Schematic: longitudinal scan at high gain in a patient with a vitreous hemorrhage on fundus exam. What do you conclude?" },
     options: [
-      { fr: "Regard en bas; sonde sur le globe supérieur", en: "Looking down; probe on the superior globe" },
-      { fr: "Regard droit devant; sonde sur la cornée", en: "Looking straight ahead; probe on the cornea" },
-      { fr: "Regard en haut; sonde sur le globe supérieur", en: "Looking up; probe on the superior globe" },
-      { fr: "Regard en haut; sonde sur le globe inférieur", en: "Looking up; probe on the inferior globe" }
+      { fr: "Décollement de rétine", en: "Retinal detachment" },
+      { fr: "Décollement choroïdien", en: "Choroidal detachment" },
+      { fr: "Examen normal : ce ne sont que des artéfacts de gain", en: "Normal scan: these are just gain artifacts" },
+      { fr: "Échos ponctués mobiles dans le vitré, rétine à plat : hémorragie du vitré sans décollement", en: "Mobile dot echoes in the vitreous, flat retina: vitreous hemorrhage without detachment" }
     ],
     answer: 3,
     why: [
-      { fr: "C’est la coupe T6 (quadrant inférieur).", en: "That’s the T6 scan (inferior quadrant)." },
-      { fr: "Sonde sur la cornée = coupe axiale; le cristallin atténue et déforme le faisceau. Pas une coupe transverse.", en: "Probe on the cornea = axial scan; the lens attenuates and distorts the beam. Not a transverse scan." },
-      { fr: "On ne pose jamais la sonde sur la zone qu’on veut voir : le faisceau doit traverser le globe.", en: "Never put the probe over the area you want to see: the beam has to cross the globe." },
-      { fr: "Juste : le patient regarde vers la zone examinée et la sonde est posée à l’opposé. Le faisceau traverse le globe jusqu’à 12 h.", en: "Correct: the patient looks toward the area of interest and the probe sits opposite. The beam crosses the globe to 12 o’clock." }
+      { fr: "Aucune membrane épaisse et brillante n’est fixée à la papille.", en: "No thick bright membrane is tethered to the disc." },
+      { fr: "Aucun dôme épais et lisse ne soulève la paroi.", en: "No thick smooth dome lifts the wall." },
+      { fr: "Les échos persistent et bougent avec l’œil : ce sont des structures réelles, pas du bruit.", en: "The echoes persist and move with the eye: they’re real, not noise." },
+      { fr: "Juste : à gain élevé, le sang donne des échos ponctués de faible réflectivité, mobiles. Le but est de vérifier qu’aucune membrane n’est attachée à la papille.", en: "Correct: at high gain, blood gives low-reflectivity mobile dot echoes. The goal is to confirm no membrane is tethered to the disc." }
     ],
-    reveal: { fr: "T12 = méridien de 12 h : regard en haut, sonde en bas, marqueur nasal.", en: "T12 = the 12 o’clock meridian: gaze up, probe below, marker nasal." }
+    reveal: { fr: "Échos ponctués mobiles dans un vitré par ailleurs vide, paroi postérieure à plat : hémorragie du vitré, rétine en place.", en: "Mobile dot echoes in an otherwise empty vitreous, flat posterior wall: vitreous hemorrhage, retina attached." }
   },
   {
     id: "p-bscan-4", inv: "bscan", media: "m-bscan-4", level: 2,
     q: { fr: "Fond d’œil (en haut) et échographie B (en bas) du même œil. Quel signe échographique oriente vers un décollement choroïdien plutôt qu’un décollement de rétine?", en: "Fundus (top) and B-scan (bottom) of the same eye. Which ultrasound sign points to a choroidal rather than a retinal detachment?" },
     options: [
-      { fr: "Une membrane en V qui s’insère sur la papille", en: "A V-shaped membrane inserting at the disc" },
       { fr: "Des échos ponctués libres dans le vitré", en: "Free dot-like echoes in the vitreous" },
+      { fr: "Une membrane fine, très mobile, peu réfléchissante", en: "A thin, very mobile, low-reflectivity membrane" },
       { fr: "Un dôme épais et lisse qui ne rejoint pas la papille", en: "A thick, smooth dome that doesn’t reach the disc" },
-      { fr: "Une membrane fine, très mobile, peu réfléchissante", en: "A thin, very mobile, low-reflectivity membrane" }
+      { fr: "Une membrane en V qui s’insère sur la papille", en: "A V-shaped membrane inserting at the disc" }
     ],
     answer: 2,
     why: [
-      { fr: "C’est l’aspect d’un décollement de rétine : la rétine reste attachée à la papille et à l’ora serrata.", en: "That’s a retinal detachment: the retina stays attached at the disc and the ora serrata." },
       { fr: "Ce sont des échos d’hémorragie du vitré ou d’inflammation, sans membrane.", en: "Those are vitreous hemorrhage or inflammatory echoes, with no membrane." },
+      { fr: "C’est l’aspect d’un décollement postérieur du vitré.", en: "That’s a posterior vitreous detachment." },
       { fr: "Juste : la choroïde reste ancrée autour du nerf optique et aux veines vortiqueuses, d’où des dômes convexes qui épargnent la papille. Ici, le contenu est hémorragique.", en: "Correct: the choroid stays anchored around the optic nerve and at the vortex veins, so it forms convex domes that spare the disc. Here the content is hemorrhagic." },
-      { fr: "C’est l’aspect d’un décollement postérieur du vitré.", en: "That’s a posterior vitreous detachment." }
+      { fr: "C’est l’aspect d’un décollement de rétine : la rétine reste attachée à la papille et à l’ora serrata.", en: "That’s a retinal detachment: the retina stays attached at the disc and the ora serrata." }
     ],
     reveal: { fr: "Dômes épais, lisses et convexes : c’est la choroïde qui est soulevée (décollement choroïdien hémorragique), pas la rétine.", en: "Thick, smooth, convex domes: the choroid is elevated (hemorrhagic choroidal detachment), not the retina." }
   },
@@ -366,17 +366,17 @@ G.OPH.invPractice = [
     id: "p-bscan-5", inv: "bscan", media: "m-bscan-5", level: 3,
     q: { fr: "Série d’échographies B d’un œil. Les dômes choroïdiens se rejoignent au centre du vitré. Comment nomme-t-on cette configuration et pourquoi inquiète-t-elle?", en: "A series of B-scans of one eye. The choroidal domes meet in the middle of the vitreous. What is this configuration called, and why is it worrying?" },
     options: [
-      { fr: "Décollement postérieur du vitré complet : simple surveillance", en: "Complete posterior vitreous detachment: observation only" },
+      { fr: "Mélanome choroïdien en champignon : radiothérapie", en: "Mushroom-shaped choroidal melanoma: radiotherapy" },
       { fr: "Décollements choroïdiens « kissing » (appositionnels) : risque d’adhérence rétine-rétine; on discute un drainage chirurgical", en: "“Kissing” (appositional) choroidal detachments: risk of retina-to-retina adhesion; surgical drainage is considered" },
-      { fr: "Décollement de rétine en entonnoir fermé : prolifération vitréorétinienne", en: "Closed-funnel retinal detachment: proliferative vitreoretinopathy" },
-      { fr: "Mélanome choroïdien en champignon : radiothérapie", en: "Mushroom-shaped choroidal melanoma: radiotherapy" }
+      { fr: "Décollement postérieur du vitré complet : simple surveillance", en: "Complete posterior vitreous detachment: observation only" },
+      { fr: "Décollement de rétine en entonnoir fermé : prolifération vitréorétinienne", en: "Closed-funnel retinal detachment: proliferative vitreoretinopathy" }
     ],
     answer: 1,
     why: [
-      { fr: "Un DPV est une membrane fine et mobile, sans contenu sous elle.", en: "A PVD is a thin, mobile membrane with nothing underneath it." },
+      { fr: "Un mélanome est une masse solide unique (dôme ou champignon), pas des dômes symétriques remplis de caillot.", en: "A melanoma is a single solid mass (dome or mushroom), not symmetric clot-filled domes." },
       { fr: "Juste : quand les dômes se touchent (« kissing »), les surfaces rétiniennes peuvent adhérer. Pour un décollement hémorragique, on attend souvent la liquéfaction du caillot, suivie à l’échographie, avant de drainer.", en: "Correct: when the domes touch (“kissing”), the retinal surfaces can stick together. For hemorrhagic detachments, drainage is often timed to clot liquefaction, followed by ultrasound." },
-      { fr: "Un décollement de rétine en entonnoir s’insère à la papille avec une membrane fine et brillante, pas deux dômes épais.", en: "A funnel retinal detachment inserts at the disc as a thin bright membrane, not two thick domes." },
-      { fr: "Un mélanome est une masse solide unique (dôme ou champignon), pas des dômes symétriques remplis de caillot.", en: "A melanoma is a single solid mass (dome or mushroom), not symmetric clot-filled domes." }
+      { fr: "Un DPV est une membrane fine et mobile, sans contenu sous elle.", en: "A PVD is a thin, mobile membrane with nothing underneath it." },
+      { fr: "Un décollement de rétine en entonnoir s’insère à la papille avec une membrane fine et brillante, pas deux dômes épais.", en: "A funnel retinal detachment inserts at the disc as a thin bright membrane, not two thick domes." }
     ],
     reveal: { fr: "Deux dômes choroïdiens épais qui se touchent au centre : décollement choroïdien hémorragique appositionnel (« kissing »).", en: "Two thick choroidal domes touching centrally: appositional (“kissing”) hemorrhagic choroidal detachment." }
   },
@@ -405,33 +405,33 @@ G.OPH.invPractice = [
       { fr: "La hauteur d’un mélanome choroïdien débutant", en: "The height of an early choroidal melanoma" },
       { fr: "Un décollement de rétine plan", en: "A shallow retinal detachment" },
       { fr: "L’élévation de la papille (œdème papillaire)", en: "Optic disc elevation (disc swelling)" },
-      { fr: "L’épaisseur de la paroi postérieure (rétine-choroïde-sclère), nettement augmentée", en: "Posterior wall thickness (retina–choroid–sclera), clearly increased" }
+      { fr: "L’épaisseur de la paroi postérieure (surtout la sclère), nettement augmentée", en: "Posterior wall thickness (mainly sclera), clearly increased" }
     ],
     answer: 3,
     why: [
       { fr: "Un mélanome est une masse focale en dôme, pas un épaississement diffus de toute la paroi.", en: "A melanoma is a focal dome-shaped mass, not diffuse thickening of the whole wall." },
       { fr: "Un décollement de rétine est une membrane séparée de la paroi par du liquide noir; ici la paroi est pleine.", en: "A retinal detachment is a membrane separated from the wall by black fluid; here the wall is solid." },
       { fr: "La mesure n’est pas sur la papille; l’œdème papillaire se voit comme une élévation focale à la tête du nerf.", en: "The caliper isn’t on the disc; disc swelling shows as a focal elevation at the nerve head." },
-      { fr: "Juste : la paroi mesure normalement ≈ 1 à 1,5 mm. Une sclère épaisse dans un œil court est la signature de la nanophtalmie (risque d’effusion uvéale et de fermeture de l’angle, chirurgie à risque).", en: "Correct: the wall is normally ~1–1.5 mm. A thick sclera in a short eye is the hallmark of nanophthalmos (risk of uveal effusion and angle closure; high-risk surgery)." }
+      { fr: "Juste : selon la source, la sclère mesure près de 2,4 mm dans un œil de ≈ 17 mm de long (la sclère postérieure normale fait ≈ 1 mm). Sclère épaisse + œil court = nanophtalmie : risque d’effusion uvéale et de fermeture de l’angle, chirurgie à risque.", en: "Correct: per the source, the sclera is almost 2.4 mm thick in an eye ~17 mm long (normal posterior sclera is ~1 mm). Thick sclera + short eye = nanophthalmos: risk of uveal effusion and angle closure; high-risk surgery." }
     ],
-    reveal: { fr: "Paroi postérieure épaissie à 2,38 mm dans un œil court : sclère épaisse de la nanophtalmie.", en: "Posterior wall thickened to 2.38 mm in a short eye: the thick sclera of nanophthalmos." }
+    reveal: { fr: "Paroi postérieure (sclère) épaissie à 2,38 mm dans un œil court : nanophtalmie.", en: "Posterior wall (sclera) thickened to 2.38 mm in a short eye: nanophthalmos." }
   },
   /* ═════════════════════════ A-SCAN / BIOMÉTRIE ═════════════════════════ */
   {
     id: "p-ascan-1", inv: "ascan", media: "m-ascan-1", level: 1,
     q: { fr: "A-scan d’un œil phaque, pics numérotés de 1 à 6. Lequel est la rétine?", en: "A-scan of a phakic eye, spikes numbered 1 to 6. Which one is the retina?" },
     options: [
-      { fr: "Pic 3", en: "Spike 3" },
       { fr: "Pic 5", en: "Spike 5" },
+      { fr: "Pic 1", en: "Spike 1" },
       { fr: "Pic 4 : le premier pic haut après la longue ligne plate du vitré", en: "Spike 4: the first tall spike after the long flat vitreous line" },
-      { fr: "Pic 1", en: "Spike 1" }
+      { fr: "Pic 3", en: "Spike 3" }
     ],
     answer: 2,
     why: [
-      { fr: "Pic 3 = capsule postérieure du cristallin, juste avant le vitré.", en: "Spike 3 = posterior lens capsule, just before the vitreous." },
       { fr: "Pic 5 = sclère, juste derrière la rétine, avant les échos décroissants de la graisse orbitaire.", en: "Spike 5 = sclera, right behind the retina, before the decaying orbital fat echoes." },
+      { fr: "Pic 1 = cornée (souvent double : face antérieure et postérieure).", en: "Spike 1 = cornea (often double: front and back surfaces)." },
       { fr: "Juste : le vitré ne renvoie pas d’écho (ligne plate); la rétine est le premier pic abrupt qui suit.", en: "Correct: the vitreous returns no echo (flat line); the retina is the first steep spike after it." },
-      { fr: "Pic 1 = cornée (souvent double : face antérieure et postérieure).", en: "Spike 1 = cornea (often double: front and back surfaces)." }
+      { fr: "Pic 3 = capsule postérieure du cristallin, juste avant le vitré.", en: "Spike 3 = posterior lens capsule, just before the vitreous." }
     ],
     reveal: { fr: "Rétine = premier pic haut et vertical après le silence du vitré; la sclère suit, puis la graisse orbitaire.", en: "Retina = the first tall vertical spike after the silent vitreous; sclera follows, then orbital fat." }
   },
@@ -439,17 +439,17 @@ G.OPH.invPractice = [
     id: "p-ascan-2", inv: "ascan", media: "m-ascan-2", level: 1,
     q: { fr: "Cataracte blanche à l’œil droit. La biométrie optique ne donne aucune mesure. Pourquoi, et que faire?", en: "White cataract in the right eye. Optical biometry gives no reading. Why, and what next?" },
     options: [
-      { fr: "Utiliser la longueur axiale de l’autre œil", en: "Use the fellow eye’s axial length" },
+      { fr: "L’œil est trop long pour l’appareil → changer de formule", en: "The eye is too long for the device → change formula" },
       { fr: "La lumière ne traverse pas la cataracte dense → échographie A, en immersion de préférence", en: "Light can’t cross the dense cataract → A-scan, ideally immersion" },
-      { fr: "La cornée est trop cambrée → refaire seulement la kératométrie", en: "The cornea is too steep → just repeat keratometry" },
-      { fr: "L’œil est trop long pour l’appareil → changer de formule", en: "The eye is too long for the device → change formula" }
+      { fr: "Utiliser la longueur axiale de l’autre œil", en: "Use the fellow eye’s axial length" },
+      { fr: "La cornée est trop cambrée → refaire seulement la kératométrie", en: "The cornea is too steep → just repeat keratometry" }
     ],
     answer: 1,
     why: [
-      { fr: "L’autre œil sert de contrôle, jamais de substitut : les deux yeux peuvent différer.", en: "The fellow eye is a check, never a substitute: the two eyes can differ." },
+      { fr: "Rien n’indique un œil long; c’est l’opacité qui bloque le signal.", en: "Nothing suggests a long eye; the opacity blocks the signal." },
       { fr: "Juste : la biométrie optique repose sur la lumière; l’ultrason passe à travers une cataracte mature.", en: "Correct: optical biometry relies on light; ultrasound gets through a mature cataract." },
-      { fr: "La kératométrie mesure la cornée; elle n’explique pas l’échec de la longueur axiale.", en: "Keratometry measures the cornea; it doesn’t explain the failed axial length." },
-      { fr: "Rien n’indique un œil long; c’est l’opacité qui bloque le signal.", en: "Nothing suggests a long eye; the opacity blocks the signal." }
+      { fr: "L’autre œil sert de contrôle, jamais de substitut : les deux yeux peuvent différer.", en: "The fellow eye is a check, never a substitute: the two eyes can differ." },
+      { fr: "La kératométrie mesure la cornée; elle n’explique pas l’échec de la longueur axiale.", en: "Keratometry measures the cornea; it doesn’t explain the failed axial length." }
     ],
     reveal: { fr: "Cataracte blanche = lumière bloquée : la biométrie optique échoue, l’ultrason passe.", en: "White cataract = light blocked: optical biometry fails, ultrasound gets through." }
   },
@@ -473,12 +473,12 @@ G.OPH.invPractice = [
   },
   {
     id: "p-ascan-4", inv: "ascan", media: "m-ascan-4", level: 2,
-    q: { fr: "Deux mesures du même œil (tracé 1 en haut, tracé 2 en bas). Laquelle accepter?", en: "Two readings of the same eye (trace 1 on top, trace 2 below). Which one do you accept?" },
+    q: { fr: "Deux mesures du même œil (tracés A et B). Laquelle accepter?", en: "Two readings of the same eye (traces A and B). Which one do you accept?" },
     options: [
-      { fr: "Tracé 2 : pic rétinien bas, en escalier, mais longueur plus grande", en: "Trace 2: low, stair-stepped retinal spike, but a longer length" },
+      { fr: "B : pic rétinien bas, en escalier, mais longueur plus grande", en: "B: low, stair-stepped retinal spike, but a longer length" },
       { fr: "La moyenne des deux", en: "The average of the two" },
       { fr: "La plus courte, par prudence", en: "The shorter one, to be safe" },
-      { fr: "Tracé 1 : pic rétinien haut, vertical, suivi d’un pic scléral distinct", en: "Trace 1: tall, vertical retinal spike followed by a distinct scleral spike" }
+      { fr: "A : pic rétinien haut, vertical, suivi d’un pic scléral distinct", en: "A: tall, vertical retinal spike followed by a distinct scleral spike" }
     ],
     answer: 3,
     why: [
@@ -493,17 +493,17 @@ G.OPH.invPractice = [
     id: "p-ascan-5", inv: "ascan", media: "m-ascan-5", level: 2,
     q: { fr: "Longueurs axiales : OD 23,42 mm, OG 24,31 mm. Réfraction semblable aux deux yeux. Que faire?", en: "Axial lengths: OD 23.42 mm, OS 24.31 mm. Similar refraction in both eyes. What now?" },
     options: [
-      { fr: "Utiliser la moyenne des deux yeux", en: "Use the average of both eyes" },
       { fr: "Opérer d’abord l’œil le plus court", en: "Operate on the shorter eye first" },
+      { fr: "Calculer les IOL avec ces valeurs", en: "Calculate the IOLs with these values" },
       { fr: "Refaire les mesures : écart > 0,3 mm non expliqué", en: "Repeat the measurements: unexplained difference > 0.3 mm" },
-      { fr: "Calculer les IOL avec ces valeurs", en: "Calculate the IOLs with these values" }
+      { fr: "Utiliser la moyenne des deux yeux", en: "Use the average of both eyes" }
     ],
     answer: 2,
     why: [
-      { fr: "Chaque œil a sa propre mesure; la moyenne fausse les deux.", en: "Each eye gets its own measurement; averaging corrupts both." },
       { fr: "L’ordre des chirurgies ne règle pas une erreur de mesure.", en: "Surgical order doesn’t fix a measurement error." },
+      { fr: "0,89 mm d’écart ≈ 2 à 3 D d’erreur possible sur un œil.", en: "A 0.89 mm gap ≈ a possible 2–3 D error in one eye." },
       { fr: "Juste : un écart > 0,3 mm n’est attendu qu’en cas d’anisométropie. Vérifier alignement, compression, staphylome.", en: "Correct: a difference > 0.3 mm is expected only with anisometropia. Check alignment, compression, staphyloma." },
-      { fr: "0,89 mm d’écart ≈ 2 à 3 D d’erreur possible sur un œil.", en: "A 0.89 mm gap ≈ a possible 2–3 D error in one eye." }
+      { fr: "Chaque œil a sa propre mesure; la moyenne fausse les deux.", en: "Each eye gets its own measurement; averaging corrupts both." }
     ],
     reveal: { fr: "Écart interoculaire de 0,89 mm sans anisométropie = erreur de mesure probable jusqu’à preuve du contraire.", en: "A 0.89 mm interocular difference without anisometropia = measurement error until proven otherwise." }
   },
@@ -511,17 +511,17 @@ G.OPH.invPractice = [
     id: "p-ascan-6", inv: "ascan", media: "m-ascan-6", level: 3,
     q: { fr: "Œil rempli d’huile de silicone, avec cataracte. L’appareil calcule à 1550 m/s comme pour un œil phaque. Résultat?", en: "Silicone oil–filled eye with cataract. The device calculates at 1550 m/s as for a phakic eye. Result?" },
     options: [
-      { fr: "Mesure impossible : l’huile bloque les ultrasons", en: "No reading possible: oil blocks ultrasound" },
+      { fr: "Aucun effet", en: "No effect" },
       { fr: "Longueur axiale surestimée : corriger la vitesse ou préférer la biométrie optique", en: "Axial length overestimated: correct the velocity or prefer optical biometry" },
-      { fr: "Longueur axiale sous-estimée", en: "Axial length underestimated" },
-      { fr: "Aucun effet", en: "No effect" }
+      { fr: "Mesure impossible : l’huile bloque les ultrasons", en: "No reading possible: oil blocks ultrasound" },
+      { fr: "Longueur axiale sous-estimée", en: "Axial length underestimated" }
     ],
     answer: 1,
     why: [
-      { fr: "Le son traverse l’huile, lentement et atténué : la mesure est possible mais piégeuse.", en: "Sound does cross oil, slowly and attenuated: a reading is possible but tricky." },
+      { fr: "La vitesse entre directement dans le calcul.", en: "Velocity is built right into the calculation." },
       { fr: "Juste : distance = vitesse × temps. Le son est plus lent dans l’huile (≈ 980 m/s), le temps s’allonge, donc la distance calculée aussi.", en: "Correct: distance = velocity × time. Sound is slower in oil (~980 m/s), the transit time lengthens, and so does the calculated distance." },
-      { fr: "C’est l’inverse : un son plus lent donne une longueur trop grande.", en: "It’s the reverse: slower sound gives a length that’s too long." },
-      { fr: "La vitesse entre directement dans le calcul.", en: "Velocity is built right into the calculation." }
+      { fr: "Le son traverse l’huile, lentement et atténué : la mesure est possible mais piégeuse.", en: "Sound does cross oil, slowly and attenuated: a reading is possible but tricky." },
+      { fr: "C’est l’inverse : un son plus lent donne une longueur trop grande.", en: "It’s the reverse: slower sound gives a length that’s too long." }
     ],
     reveal: { fr: "Son lent dans l’huile = temps plus long = œil faussement long si la vitesse n’est pas corrigée.", en: "Slow sound in oil = longer transit = a falsely long eye if velocity isn’t corrected." }
   },
@@ -566,17 +566,17 @@ G.OPH.invPractice = [
     id: "p-oct-2", inv: "oct", media: "m-oct-2", level: 2,
     q: { fr: "Image infrarouge (à gauche) et coupe OCT verticale (à droite). Que montre la coupe?", en: "Infrared image (left) and vertical OCT scan (right). What does the scan show?" },
     options: [
-      { fr: "Une membrane épirétinienne", en: "An epiretinal membrane" },
       { fr: "Un décollement séreux rétinien", en: "A serous retinal detachment" },
+      { fr: "Un trou maculaire de pleine épaisseur", en: "A full-thickness macular hole" },
       { fr: "Une traction vitréomaculaire avec œdème cystoïde", en: "Vitreomacular traction with cystoid edema" },
-      { fr: "Un trou maculaire de pleine épaisseur", en: "A full-thickness macular hole" }
+      { fr: "Une membrane épirétinienne", en: "An epiretinal membrane" }
     ],
     answer: 2,
     why: [
-      { fr: "Une membrane épirétinienne est une ligne collée à la surface, sans hyaloïde qui monte en arc dans le vitré.", en: "An epiretinal membrane is a line stuck to the surface, without a hyaloid arching up into the vitreous." },
       { fr: "Le liquide sous-rétinien se trouve sous la rétine, sur l’EPR; ici, les espaces sont dans la rétine.", en: "Subretinal fluid sits under the retina, on the RPE; here the spaces are within the retina." },
+      { fr: "Dans un trou de pleine épaisseur, la rétine est interrompue jusqu’à l’EPR. Ici, le toit fovéolaire est soulevé mais présent.", en: "In a full-thickness hole the retina is interrupted down to the RPE. Here the foveal roof is lifted but present." },
       { fr: "Juste : la hyaloïde postérieure, décollée de part et d’autre, reste accrochée à la fovéa et la soulève; des kystes se forment dans la rétine.", en: "Correct: the posterior hyaloid, detached on both sides, is still stuck to the fovea and lifts it; cysts form within the retina." },
-      { fr: "Dans un trou de pleine épaisseur, la rétine est interrompue jusqu’à l’EPR. Ici, le toit fovéolaire est soulevé mais présent.", en: "In a full-thickness hole the retina is interrupted down to the RPE. Here the foveal roof is lifted but present." }
+      { fr: "Une membrane épirétinienne est une ligne collée à la surface, sans hyaloïde qui monte en arc dans le vitré.", en: "An epiretinal membrane is a line stuck to the surface, without a hyaloid arching up into the vitreous." }
     ],
     reveal: { fr: "Deux arcs de hyaloïde convergent sur la fovéa et la tirent vers le haut : traction vitréomaculaire, avec kystes intrarétiniens.", en: "Two hyaloid arcs converge on the fovea and pull it up: vitreomacular traction, with intraretinal cysts." }
   },
@@ -584,17 +584,17 @@ G.OPH.invPractice = [
     id: "p-oct-3", inv: "oct", media: "m-oct-3", level: 2,
     q: { fr: "Carte d’épaisseur ETDRS (sous-champ central 531 µm) et coupe OCT horizontale. Quelle anomalie explique l’épaississement?", en: "ETDRS thickness map (central subfield 531 µm) and horizontal OCT scan. What explains the thickening?" },
     options: [
-      { fr: "Rien : artéfact de la carte", en: "Nothing: a map artifact" },
+      { fr: "Un trou maculaire", en: "A macular hole" },
       { fr: "Une membrane épirétinienne : surface plissée, creux fovéolaire effacé", en: "An epiretinal membrane: wrinkled surface, flattened foveal pit" },
-      { fr: "Un décollement séreux rétinien", en: "A serous retinal detachment" },
-      { fr: "Un trou maculaire", en: "A macular hole" }
+      { fr: "Rien : artéfact de la carte", en: "Nothing: a map artifact" },
+      { fr: "Un décollement séreux rétinien", en: "A serous retinal detachment" }
     ],
     answer: 1,
     why: [
-      { fr: "La coupe confirme l’épaississement et la perte du creux : ce n’est pas un artéfact.", en: "The scan confirms the thickening and the lost pit: it’s not an artifact." },
+      { fr: "Un trou est une perte de tissu au centre; la fovéa serait creusée, pas épaissie à 531 µm.", en: "A hole is tissue loss at the centre; the fovea would be dug out, not thickened to 531 µm." },
       { fr: "Juste : une membrane à la surface contracte la rétine, efface le creux fovéolaire et l’épaissit.", en: "Correct: a membrane on the surface contracts the retina, flattens the foveal pit and thickens it." },
-      { fr: "Le liquide sous-rétinien serait un espace noir entre la rétine et l’EPR; il n’y en a pas.", en: "Subretinal fluid would be a black space between retina and RPE; there is none." },
-      { fr: "Un trou est une perte de tissu au centre; la fovéa serait creusée, pas épaissie à 531 µm.", en: "A hole is tissue loss at the centre; the fovea would be dug out, not thickened to 531 µm." }
+      { fr: "La coupe confirme l’épaississement et la perte du creux : ce n’est pas un artéfact.", en: "The scan confirms the thickening and the lost pit: it’s not an artifact." },
+      { fr: "Le liquide sous-rétinien serait un espace noir entre la rétine et l’EPR; il n’y en a pas.", en: "Subretinal fluid would be a black space between retina and RPE; there is none." }
     ],
     reveal: { fr: "Carte rouge-blanc centrée sur la fovéa (531 µm) et creux fovéolaire effacé sous une surface plissée : membrane épirétinienne.", en: "Red-white map centred on the fovea (531 µm) and a flattened pit under a wrinkled surface: epiretinal membrane." }
   },
@@ -635,38 +635,38 @@ G.OPH.invPractice = [
     reveal: { fr: "C’est la ligne de l’EPR elle-même qui bombe, remplie d’un matériel modérément réflectif : décollement drusénoïde de l’EPR.", en: "The RPE line itself bulges, filled with moderately reflective material: drusenoid PED." }
   },
   {
-    id: "p-oct-6", inv: "oct", media: "m-oct-6", level: 2,
-    q: { fr: "OCT RNFL (Cirrus) d’un patient suivi pour glaucome à angle ouvert. Quels quadrants sont anormaux?", en: "RNFL OCT (Cirrus) in a patient followed for open-angle glaucoma. Which quadrants are abnormal?" },
+    id: "p-oct-6", inv: "oct", media: "m-oct-6b", level: 3,
+    q: { fr: "OCT papille et RNFL (Cirrus), deux yeux. Surfaces du disque 4,18 et 3,69 mm² (très grandes), C/D vertical 0,92 et 0,96. Grande papille physiologique ou glaucome?", en: "Optic disc and RNFL OCT (Cirrus), both eyes. Disc areas 4.18 and 3.69 mm² (very large), vertical C/D 0.92 and 0.96. Physiologic large disc or glaucoma?" },
     options: [
-      { fr: "Nasal et temporal", en: "Nasal and temporal" },
-      { fr: "Aucun : toutes les valeurs dépassent 50 µm", en: "None: all values are above 50 µm" },
-      { fr: "Supérieur et inférieur", en: "Superior and inferior" },
-      { fr: "Temporal seulement : 50 µm, la plus petite valeur", en: "Temporal only: 50 µm, the lowest value" }
+      { fr: "Ininterprétable : signal trop faible", en: "Uninterpretable: signal too weak" },
+      { fr: "Normal, car le quadrant nasal OD est vert", en: "Normal, because the OD nasal quadrant is green" },
+      { fr: "Glaucome sévère : RNFL moyenne 51 et 40 µm, rouge aux deux yeux", en: "Severe glaucoma: average RNFL 51 and 40 µm, red in both eyes" },
+      { fr: "Mégalopapille physiologique : un grand disque a un grand C/D", en: "Physiologic megalopapilla: a large disc has a large C/D" }
     ],
     answer: 2,
     why: [
-      { fr: "Nasal et temporal sont verts.", en: "Nasal and temporal are green." },
-      { fr: "Il n’y a pas de seuil absolu : chaque secteur est comparé aux normaux du même âge.", en: "There’s no absolute cut-off: each sector is compared with age-matched normals." },
-      { fr: "Juste : rouge = sous le 1er percentile des normaux. S (58 µm) et I (53 µm) devraient être les plus épais.", en: "Correct: red = below the 1st percentile of normals. S (58 µm) and I (53 µm) should be the thickest." },
-      { fr: "Piège : le temporal est normalement le plus mince; 50 µm y reste vert.", en: "Trap: temporal is normally the thinnest; 50 µm is still green there." }
+      { fr: "Signal 6/10 et 7/10 : acceptable pour interpréter.", en: "Signal 6/10 and 7/10: acceptable to interpret." },
+      { fr: "Un seul secteur vert ne compense pas une moyenne et des quadrants rouges.", en: "One green sector doesn’t outweigh a red average and red quadrants." },
+      { fr: "Juste : un grand disque peut avoir un grand C/D sans maladie, mais la RNFL tranche. Ici elle est effondrée, proche du plancher (≈ 50 µm) : suivre surtout le champ visuel.", en: "Correct: a large disc can have a large C/D without disease, but the RNFL decides. Here it has collapsed, near the floor (~50 µm): follow mainly the visual field." },
+      { fr: "Le piège est réel, mais une mégalopapille physiologique garde une RNFL normale.", en: "The trap is real, but a physiologic megalopapilla keeps a normal RNFL." }
     ],
-    reveal: { fr: "Ce n’est pas le chiffre qui compte mais la couleur : S et I sont rouges, T à 50 µm reste vert.", en: "It’s the colour, not the number: S and I are red, while T at 50 µm stays green." }
+    reveal: { fr: "RNFL moyenne rouge aux deux yeux (51 et 40 µm) malgré de grands disques : ce n’est pas la taille du disque, c’est une perte de fibres.", en: "Red average RNFL in both eyes (51 and 40 µm) despite large discs: it’s not the disc size, it’s fibre loss." }
   },
   {
     id: "p-oct-7", inv: "oct", media: "m-oct-7", level: 3,
     q: { fr: "Rapport OCT papille et RNFL des deux yeux. RNFL moyenne OG : 91 µm (vert). Conclusion?", en: "Optic disc and RNFL OCT report, both eyes. Average RNFL OS: 91 µm (green). Conclusion?" },
     options: [
-      { fr: "Ininterprétable : les disques n’ont pas la même taille", en: "Uninterpretable: the discs differ in size" },
+      { fr: "Atteinte de l’OD : C/D vertical 0,66", en: "OD is affected: vertical C/D 0.66" },
       { fr: "Atteinte inférotemporale de l’OG malgré une moyenne normale", en: "Inferotemporal damage in OS despite a normal average" },
-      { fr: "OG normal, puisque la moyenne est verte", en: "OS is normal, since the average is green" },
-      { fr: "Atteinte de l’OD : C/D vertical 0,66", en: "OD is affected: vertical C/D 0.66" }
+      { fr: "Ininterprétable : les disques n’ont pas la même taille", en: "Uninterpretable: the discs differ in size" },
+      { fr: "OG normal, puisque la moyenne est verte", en: "OS is normal, since the average is green" }
     ],
     answer: 1,
     why: [
-      { fr: "1,71 vs 1,87 mm² : différence modeste, qui n’empêche pas l’interprétation.", en: "1.71 vs 1.87 mm²: a modest difference that doesn’t prevent interpretation." },
+      { fr: "OD : RNFL verte, carte de déviation sans défaut net; un C/D jaune isolé n’est pas une atteinte.", en: "OD: green RNFL, no clear defect on the deviation map; an isolated yellow C/D isn’t damage." },
       { fr: "Juste : carte de déviation OG rouge-jaune en inférotemporal, bord neurorétinien OG (pointillés) qui plonge dans le rouge en inférieur, C/D vertical 0,84 et symétrie 59 % en rouge.", en: "Correct: OS deviation map red-yellow inferotemporally, OS rim curve (dashed) diving into red inferiorly, vertical C/D 0.84 and symmetry 59% in red." },
-      { fr: "« Green disease » : la moyenne dilue un défaut focal.", en: "“Green disease”: the average dilutes a focal defect." },
-      { fr: "OD : RNFL verte, carte de déviation sans défaut net; un C/D jaune isolé n’est pas une atteinte.", en: "OD: green RNFL, no clear defect on the deviation map; an isolated yellow C/D isn’t damage." }
+      { fr: "1,71 vs 1,87 mm² : différence modeste, qui n’empêche pas l’interprétation.", en: "1.71 vs 1.87 mm²: a modest difference that doesn’t prevent interpretation." },
+      { fr: "« Green disease » : la moyenne dilue un défaut focal.", en: "“Green disease”: the average dilutes a focal defect." }
     ],
     reveal: { fr: "Défaut focal : bande rouge inférotemporale sur la carte de déviation OG et bord inférieur effondré, alors que la moyenne reste verte.", en: "Focal defect: a red inferotemporal band on the OS deviation map and a collapsed inferior rim, while the average stays green." }
   },
@@ -688,40 +688,58 @@ G.OPH.invPractice = [
     ],
     reveal: { fr: "Pas de récessus noir en périphérie : l’iris est accolé à la cornée des deux côtés, angle fermé.", en: "No black recess peripherally: the iris is against the cornea on both sides — closed angle." }
   },
-  /* ═════════════════════════ GONIOSCOPIE ═════════════════════════ */
   {
-    id: "p-gonio-1", inv: "gonio", media: "m-gonio-1", level: 1,
-    q: { fr: "Gonioscopie à la lampe à fente (flèche : la lentille). Pourquoi faut-il une lentille de contact pour voir l’angle?", en: "Gonioscopy at the slit lamp (arrow: the lens). Why do you need a contact lens to see the angle?" },
+    id: "p-oct-9", inv: "oct", media: "m-oct-9g", level: 1,
+    q: { fr: "Schéma de coupe OCT maculaire. Homme de 40 ans, vision floue et déformée d’un œil, sous corticoïdes. Où est le liquide?", en: "Macular OCT schematic. A 40-year-old man on steroids with blurred, distorted vision in one eye. Where is the fluid?" },
     options: [
-      { fr: "Pour grossir l’image : l’angle est trop petit", en: "To magnify: the angle is too small" },
-      { fr: "Pour dilater la pupille", en: "To dilate the pupil" },
-      { fr: "Pour aplanir la cornée et mesurer la PIO", en: "To flatten the cornea and measure IOP" },
-      { fr: "À cause de la réflexion totale interne à l’interface cornée-air", en: "Because of total internal reflection at the cornea–air interface" }
+      { fr: "Dans la rétine : liquide intrarétinien", en: "Within the retina: intraretinal fluid" },
+      { fr: "Sous l’EPR : décollement de l’EPR", en: "Under the RPE: pigment epithelial detachment" },
+      { fr: "Dans le vitré", en: "In the vitreous" },
+      { fr: "Sous la rétine, au-dessus de l’EPR qui reste plat : liquide sous-rétinien", en: "Under the retina, above a flat RPE: subretinal fluid" }
     ],
     answer: 3,
     why: [
-      { fr: "Le grossissement vient de la lampe à fente; le problème est optique, pas de taille.", en: "Magnification comes from the slit lamp; the problem is optical, not size." },
-      { fr: "La lentille ne dilate rien; on évite même la lumière dans la pupille.", en: "The lens dilates nothing; you even keep light out of the pupil." },
-      { fr: "Aplanir la cornée pour mesurer la PIO, c’est la tonométrie de Goldmann.", en: "Flattening the cornea to measure IOP is Goldmann tonometry." },
-      { fr: "Juste : la lumière venant de l’angle est réfléchie vers l’intérieur à la surface cornée-air. La lentille, d’indice proche de la cornée, la laisse sortir; un miroir la renvoie vers vous.", en: "Correct: light from the angle is reflected back inside at the cornea–air surface. The lens, with an index close to the cornea, lets it out; a mirror sends it to you." }
+      { fr: "Le liquide intrarétinien forme des kystes dans l’épaisseur de la rétine.", en: "Intraretinal fluid forms cysts within the retina." },
+      { fr: "Dans un DEP, c’est l’EPR lui-même qui bombe; ici il reste à plat.", en: "In a PED the RPE itself bulges; here it stays flat." },
+      { fr: "Le vitré est au-dessus de la rétine; le liquide est sous elle.", en: "The vitreous is above the retina; this fluid is beneath it." },
+      { fr: "Juste : dôme noir entre la rétine neurosensorielle et l’EPR. Profil typique de la choriorétinopathie séreuse centrale (homme jeune, corticoïdes, stress).", en: "Correct: a black dome between the neurosensory retina and the RPE. Typical of central serous chorioretinopathy (young man, steroids, stress)." }
     ],
-    reveal: { fr: "Sans lentille, l’angle reste piégé par la réflexion totale interne; la lentille élimine l’interface cornée-air.", en: "Without a lens, the angle stays trapped by total internal reflection; the lens removes the cornea–air interface." }
+    reveal: { fr: "Dôme noir sous la rétine, avec l’EPR à plat dessous : liquide sous-rétinien.", en: "A black dome under the retina, with a flat RPE beneath: subretinal fluid." }
+  },
+  /* ═════════════════════════ GONIOSCOPIE ═════════════════════════ */
+  {
+    id: "p-gonio-1", inv: "gonio", media: "m-gonio-1g", level: 2,
+    q: { fr: "Schéma de gonioscopie chez un diabétique avec rétinopathie proliférante. Quelle anomalie?", en: "Gonioscopy schematic in a diabetic with proliferative retinopathy. What abnormality?" },
+    options: [
+      { fr: "Synéchies antérieures périphériques", en: "Peripheral anterior synechiae" },
+      { fr: "Récession de l’angle", en: "Angle recession" },
+      { fr: "Néovaisseaux de l’angle : fins vaisseaux qui franchissent l’éperon scléral", en: "Angle neovascularization: fine vessels crossing the scleral spur" },
+      { fr: "Vaisseaux normaux de la racine de l’iris", en: "Normal iris root vessels" }
+    ],
+    answer: 2,
+    why: [
+      { fr: "Les synéchies sont de l’iris collé, pas des vaisseaux fins.", en: "Synechiae are adherent iris, not fine vessels." },
+      { fr: "La récession élargit la bande ciliaire après un trauma.", en: "Recession widens the ciliary band after trauma." },
+      { fr: "Juste : un vaisseau qui croise l’éperon vers le trabéculum est anormal. Sans traitement (panphotocoagulation, anti-VEGF), membrane fibrovasculaire puis glaucome néovasculaire à angle fermé.", en: "Correct: a vessel crossing the spur onto the meshwork is abnormal. Untreated (panretinal photocoagulation, anti-VEGF), a fibrovascular membrane forms, then closed-angle neovascular glaucoma." },
+      { fr: "Les vaisseaux normaux restent radiaires dans la racine de l’iris ou la bande ciliaire, sans croiser l’éperon.", en: "Normal vessels stay radial in the iris root or ciliary band and don’t cross the spur." }
+    ],
+    reveal: { fr: "Fins vaisseaux qui croisent l’éperon scléral vers le trabéculum : néovaisseaux de l’angle.", en: "Fine vessels crossing the scleral spur onto the meshwork: angle neovascularization." }
   },
   {
     id: "p-gonio-2", inv: "gonio", media: "m-gonio-2", level: 1,
     q: { fr: "Schéma d’un angle ouvert. De postérieur vers antérieur, quel ordre est juste?", en: "Schematic of an open angle. From posterior to anterior, which order is right?" },
     options: [
-      { fr: "Iris → trabéculum → éperon scléral → bande ciliaire → ligne de Schwalbe", en: "Iris → trabecular meshwork → scleral spur → ciliary body band → Schwalbe’s line" },
-      { fr: "Iris → ligne de Schwalbe → trabéculum → éperon scléral → bande ciliaire", en: "Iris → Schwalbe’s line → trabecular meshwork → scleral spur → ciliary body band" },
+      { fr: "Iris → éperon scléral → bande ciliaire → ligne de Schwalbe → trabéculum", en: "Iris → scleral spur → ciliary body band → Schwalbe’s line → trabecular meshwork" },
       { fr: "Racine de l’iris → bande ciliaire → éperon scléral → trabéculum → ligne de Schwalbe", en: "Iris root → ciliary body band → scleral spur → trabecular meshwork → Schwalbe’s line" },
-      { fr: "Iris → éperon scléral → bande ciliaire → ligne de Schwalbe → trabéculum", en: "Iris → scleral spur → ciliary body band → Schwalbe’s line → trabecular meshwork" }
+      { fr: "Iris → trabéculum → éperon scléral → bande ciliaire → ligne de Schwalbe", en: "Iris → trabecular meshwork → scleral spur → ciliary body band → Schwalbe’s line" },
+      { fr: "Iris → ligne de Schwalbe → trabéculum → éperon scléral → bande ciliaire", en: "Iris → Schwalbe’s line → trabecular meshwork → scleral spur → ciliary body band" }
     ],
-    answer: 2,
+    answer: 1,
     why: [
-      { fr: "Le trabéculum est en avant de l’éperon.", en: "The meshwork is anterior to the spur." },
-      { fr: "C’est l’ordre inversé (antérieur vers postérieur).", en: "That’s the reverse order (anterior to posterior)." },
+      { fr: "L’éperon (blanc) est entre la bande ciliaire et le trabéculum, pas avant la bande ciliaire.", en: "The (white) spur lies between the ciliary band and the meshwork, not before the ciliary band." },
       { fr: "Juste : « I Can’t See Til Schwalbe » — Iris, Ciliary body band, Scleral spur, Trabecular meshwork, Schwalbe.", en: "Correct: “I Can’t See Til Schwalbe” — Iris, Ciliary body band, Scleral spur, Trabecular meshwork, Schwalbe." },
-      { fr: "L’éperon (blanc) est entre la bande ciliaire et le trabéculum, pas avant la bande ciliaire.", en: "The (white) spur lies between the ciliary band and the meshwork, not before the ciliary band." }
+      { fr: "Le trabéculum est en avant de l’éperon.", en: "The meshwork is anterior to the spur." },
+      { fr: "C’est l’ordre inversé (antérieur vers postérieur).", en: "That’s the reverse order (anterior to posterior)." }
     ],
     reveal: { fr: "« I Can’t See Til Schwalbe » : la ligne de Schwalbe marque la fin de la cornée (Descemet), donc la limite antérieure de l’angle.", en: "“I Can’t See Til Schwalbe”: Schwalbe’s line marks the end of Descemet’s membrane — the anterior limit of the angle." }
   },
@@ -729,15 +747,15 @@ G.OPH.invPractice = [
     id: "p-gonio-3", inv: "gonio", media: "m-gonio-3", level: 2,
     q: { fr: "Sans indentation, seule la ligne de Schwalbe est visible. À l’indentation, l’angle s’ouvre et l’éperon scléral apparaît, sans adhérence. Conclusion?", en: "Without indentation, only Schwalbe’s line is visible. With indentation, the angle opens and the scleral spur appears, with no adhesions. Conclusion?" },
     options: [
-      { fr: "Récession de l’angle", en: "Angle recession" },
       { fr: "Fermeture appositionnelle (Shaffer 1), sans synéchies", en: "Appositional closure (Shaffer 1), no synechiae" },
+      { fr: "Récession de l’angle", en: "Angle recession" },
       { fr: "Fermeture synéchiale", en: "Synechial closure" },
       { fr: "Angle ouvert normal (Shaffer 4)", en: "Normal open angle (Shaffer 4)" }
     ],
-    answer: 1,
+    answer: 0,
     why: [
-      { fr: "La récession donne au contraire un angle très profond avec une bande ciliaire large.", en: "Recession gives the opposite: a very deep angle with a wide ciliary band." },
       { fr: "Juste : un angle étroit qui s’ouvre à l’indentation = contact appositionnel. La conduite (iridotomie au laser ou non) dépend du contexte (ISGEO).", en: "Correct: a narrow angle that opens with indentation = appositional contact. Management (laser iridotomy or not) depends on the context (ISGEO)." },
+      { fr: "La récession donne au contraire un angle très profond avec une bande ciliaire large.", en: "Recession gives the opposite: a very deep angle with a wide ciliary band." },
       { fr: "Des synéchies resteraient collées pendant l’indentation.", en: "Synechiae would stay stuck during indentation." },
       { fr: "On grade l’angle sans indentation : seule la ligne de Schwalbe visible n’est pas un angle ouvert.", en: "The angle is graded without indentation: seeing only Schwalbe’s line isn’t an open angle." }
     ],
@@ -747,17 +765,17 @@ G.OPH.invPractice = [
     id: "p-gonio-4", inv: "gonio", media: "m-gonio-4", level: 2,
     q: { fr: "Gonioscopie OD d’une jeune femme qui consulte pour une pupille déformée (corectopie). Que montre la flèche noire?", en: "Gonioscopy, right eye, of a young woman seen for a distorted pupil (corectopia). What does the black arrow show?" },
     options: [
-      { fr: "Une synéchie antérieure périphérique haute (PAS)", en: "A high peripheral anterior synechia (PAS)" },
       { fr: "Un procès irien normal", en: "A normal iris process" },
       { fr: "Un néovaisseau de l’angle", en: "Angle neovascularization" },
-      { fr: "Une ligne de Sampaolesi", en: "A Sampaolesi line" }
+      { fr: "Une ligne de Sampaolesi", en: "A Sampaolesi line" },
+      { fr: "Une synéchie antérieure périphérique haute (PAS)", en: "A high peripheral anterior synechia (PAS)" }
     ],
-    answer: 0,
+    answer: 3,
     why: [
-      { fr: "Juste : l’iris monte et adhère haut sur la paroi de l’angle. Avec une corectopie chez une jeune femme : syndrome iridocornéen endothélial (ICE). Les flèches blanches encadrent des procès ciliaires, visibles parce que l’iris est tiré.", en: "Correct: the iris climbs and sticks high on the angle wall. With corectopia in a young woman: iridocorneal endothelial (ICE) syndrome. The white arrows bracket ciliary processes, visible because the iris is pulled forward." },
       { fr: "Les procès iriens sont fins, en dentelle, et ne masquent pas l’angle.", en: "Iris processes are fine, lacy and don’t hide the angle." },
       { fr: "Les néovaisseaux sont des vaisseaux rouges ramifiés qui franchissent l’éperon.", en: "New vessels are branching red vessels crossing the spur." },
-      { fr: "La ligne de Sampaolesi est une ligne de pigment ondulée, pas une adhérence de tissu irien.", en: "A Sampaolesi line is a wavy pigment line, not an adhesion of iris tissue." }
+      { fr: "La ligne de Sampaolesi est une ligne de pigment ondulée, pas une adhérence de tissu irien.", en: "A Sampaolesi line is a wavy pigment line, not an adhesion of iris tissue." },
+      { fr: "Juste : l’iris monte et adhère haut sur la paroi de l’angle. Avec une corectopie chez une jeune femme : syndrome iridocornéen endothélial (ICE). Les flèches blanches encadrent des procès ciliaires, visibles parce que l’iris est tiré.", en: "Correct: the iris climbs and sticks high on the angle wall. With corectopia in a young woman: iridocorneal endothelial (ICE) syndrome. The white arrows bracket ciliary processes, visible because the iris is pulled forward." }
     ],
     reveal: { fr: "L’iris est collé haut sur la paroi de l’angle (flèche noire) : synéchie antérieure périphérique; avec une corectopie, penser au syndrome ICE.", en: "The iris is stuck high on the angle wall (black arrow): a peripheral anterior synechia; with corectopia, think ICE syndrome." }
   },
@@ -765,17 +783,17 @@ G.OPH.invPractice = [
     id: "p-gonio-5", inv: "gonio", media: "m-gonio-5", level: 3,
     q: { fr: "Gonioscopie. Que désigne la pointe de flèche (ligne pigmentée ondulée)?", en: "Gonioscopy. What does the arrowhead point to (a wavy pigmented line)?" },
     options: [
-      { fr: "Le trabéculum pigmenté normal", en: "The normal pigmented trabecular meshwork" },
       { fr: "Une synéchie antérieure périphérique", en: "A peripheral anterior synechia" },
       { fr: "La bande ciliaire", en: "The ciliary body band" },
-      { fr: "Une ligne de Sampaolesi : pigment en avant de la ligne de Schwalbe", en: "A Sampaolesi line: pigment anterior to Schwalbe’s line" }
+      { fr: "Une ligne de Sampaolesi : pigment en avant de la ligne de Schwalbe", en: "A Sampaolesi line: pigment anterior to Schwalbe’s line" },
+      { fr: "Le trabéculum pigmenté normal", en: "The normal pigmented trabecular meshwork" }
     ],
-    answer: 3,
+    answer: 2,
     why: [
-      { fr: "Le trabéculum est en arrière de la ligne de Schwalbe. Le confondre avec Sampaolesi fait surestimer l’ouverture de l’angle.", en: "The meshwork is posterior to Schwalbe’s line. Confusing the two overestimates how open the angle is." },
       { fr: "Une synéchie est du tissu irien collé, pas une fine ligne de pigment.", en: "A synechia is adherent iris tissue, not a thin pigment line." },
       { fr: "La bande ciliaire est la structure la plus postérieure, juste devant la racine de l’iris.", en: "The ciliary body band is the most posterior structure, just in front of the iris root." },
-      { fr: "Juste : pigment déposé en avant de la ligne de Schwalbe; classique en pseudoexfoliation.", en: "Correct: pigment deposited anterior to Schwalbe’s line; classic in pseudoexfoliation." }
+      { fr: "Juste : pigment déposé en avant de la ligne de Schwalbe; classique en pseudoexfoliation.", en: "Correct: pigment deposited anterior to Schwalbe’s line; classic in pseudoexfoliation." },
+      { fr: "Le trabéculum est en arrière de la ligne de Schwalbe. Le confondre avec Sampaolesi fait surestimer l’ouverture de l’angle.", en: "The meshwork is posterior to Schwalbe’s line. Confusing the two overestimates how open the angle is." }
     ],
     reveal: { fr: "Ligne de pigment ondulée en avant de Schwalbe : ligne de Sampaolesi, pensez pseudoexfoliation.", en: "A wavy pigment line anterior to Schwalbe: Sampaolesi line — think pseudoexfoliation." }
   },
@@ -783,17 +801,17 @@ G.OPH.invPractice = [
     id: "p-gonio-6", inv: "gonio", media: "m-gonio-6", level: 3,
     q: { fr: "Traumatisme contusif (balle de racquetball). Que montre la gonioscopie?", en: "Blunt trauma (racquetball). What does gonioscopy show?" },
     options: [
-      { fr: "Des synéchies antérieures périphériques post-traumatiques", en: "Post-traumatic peripheral anterior synechiae" },
-      { fr: "Des néovaisseaux de l’angle", en: "Angle neovascularization" },
+      { fr: "Un angle normal, très pigmenté", en: "A normal, heavily pigmented angle" },
       { fr: "Une récession de l’angle (bande ciliaire élargie) avec une fente de cyclodialyse (bande blanche)", en: "Angle recession (widened ciliary band) with a cyclodialysis cleft (white band)" },
-      { fr: "Un angle normal, très pigmenté", en: "A normal, heavily pigmented angle" }
+      { fr: "Des synéchies antérieures périphériques post-traumatiques", en: "Post-traumatic peripheral anterior synechiae" },
+      { fr: "Des néovaisseaux de l’angle", en: "Angle neovascularization" }
     ],
-    answer: 2,
+    answer: 1,
     why: [
-      { fr: "Ici l’angle est plus profond, pas fermé par l’iris.", en: "Here the angle is deeper, not closed by iris." },
-      { fr: "Aucun vaisseau ne franchit l’éperon.", en: "No vessels cross the spur." },
+      { fr: "Un angle normal a une bande ciliaire étroite et régulière, sans bande blanche profonde.", en: "A normal angle has a narrow, regular ciliary band and no deep white band." },
       { fr: "Juste : récession = déchirure entre les fibres longitudinales et circulaires du muscle ciliaire, d’où une bande ciliaire large (risque de glaucome des années plus tard, suivi à vie). La bande blanche = sclère exposée par une cyclodialyse.", en: "Correct: recession = a tear between the longitudinal and circular ciliary muscle fibres, hence a wide ciliary band (risk of glaucoma years later; lifelong follow-up). The white band = sclera bared by a cyclodialysis cleft." },
-      { fr: "Un angle normal a une bande ciliaire étroite et régulière, sans bande blanche profonde.", en: "A normal angle has a narrow, regular ciliary band and no deep white band." }
+      { fr: "Ici l’angle est plus profond, pas fermé par l’iris.", en: "Here the angle is deeper, not closed by iris." },
+      { fr: "Aucun vaisseau ne franchit l’éperon.", en: "No vessels cross the spur." }
     ],
     reveal: { fr: "Bande ciliaire anormalement large (récession) et bande blanche profonde (cyclodialyse) : l’angle a été déchiré par le traumatisme.", en: "An abnormally wide ciliary band (recession) and a deep white band (cyclodialysis): the angle was torn by the trauma." }
   },
@@ -801,15 +819,15 @@ G.OPH.invPractice = [
     id: "p-gonio-7", inv: "gonio", media: "m-gonio-7", level: 3,
     q: { fr: "Hypotonie (PIO 1–2 mmHg) après une chirurgie de cataracte. Gonioscopie de l’angle nasal : que montrent les flèches blanches?", en: "Hypotony (IOP 1–2 mmHg) after cataract surgery. Gonioscopy of the nasal angle: what do the white arrows show?" },
     options: [
-      { fr: "Un embryotoxon postérieur (ligne de Schwalbe proéminente)", en: "Posterior embryotoxon (prominent Schwalbe’s line)" },
       { fr: "Une fente de cyclodialyse : sclère blanche entre l’éperon et le corps ciliaire décollé", en: "A cyclodialysis cleft: white sclera between the spur and the detached ciliary body" },
+      { fr: "Un embryotoxon postérieur (ligne de Schwalbe proéminente)", en: "Posterior embryotoxon (prominent Schwalbe’s line)" },
       { fr: "Une récession de l’angle simple", en: "Simple angle recession" },
       { fr: "Un trabéculum très pigmenté", en: "Heavily pigmented meshwork" }
     ],
-    answer: 1,
+    answer: 0,
     why: [
-      { fr: "L’embryotoxon postérieur est une ligne blanche en avant du trabéculum, pas une fente profonde sous l’éperon.", en: "Posterior embryotoxon is a white line anterior to the meshwork, not a deep cleft below the spur." },
       { fr: "Juste : le corps ciliaire est désinséré de l’éperon. L’humeur aqueuse fuit vers l’espace suprachoroïdien : hypotonie.", en: "Correct: the ciliary body is disinserted from the spur. Aqueous drains into the suprachoroidal space: hypotony." },
+      { fr: "L’embryotoxon postérieur est une ligne blanche en avant du trabéculum, pas une fente profonde sous l’éperon.", en: "Posterior embryotoxon is a white line anterior to the meshwork, not a deep cleft below the spur." },
       { fr: "Dans une récession, le corps ciliaire reste attaché à l’éperon; on craint plutôt un glaucome tardif qu’une hypotonie.", en: "In recession the ciliary body stays attached to the spur; late glaucoma, not hypotony, is the concern." },
       { fr: "Le pigment est brun; ici la bande est blanche (sclère).", en: "Pigment is brown; this band is white (sclera)." }
     ],
@@ -820,17 +838,17 @@ G.OPH.invPractice = [
     id: "p-fondoeil-1", inv: "fondoeil", media: "m-fondoeil-1", level: 1,
     q: { fr: "À l’ophtalmoscope indirect (lentille 20 D), vous voyez une déchirure en haut à droite de votre image. Où est-elle réellement?", en: "With the indirect ophthalmoscope (20 D lens), you see a tear at the top right of your view. Where is it really?" },
     options: [
-      { fr: "En bas et à gauche : l’image est inversée haut-bas et gauche-droite", en: "Bottom left: the image is flipped up–down and left–right" },
       { fr: "Exactement là où vous la voyez", en: "Exactly where you see it" },
       { fr: "En bas, du même côté (inversion verticale seulement)", en: "Bottom, same side (vertical flip only)" },
-      { fr: "En haut, du côté opposé (inversion horizontale seulement)", en: "Top, opposite side (horizontal flip only)" }
+      { fr: "En haut, du côté opposé (inversion horizontale seulement)", en: "Top, opposite side (horizontal flip only)" },
+      { fr: "En bas et à gauche : l’image est inversée haut-bas et gauche-droite", en: "Bottom left: the image is flipped up–down and left–right" }
     ],
-    answer: 0,
+    answer: 3,
     why: [
-      { fr: "Juste : l’image aérienne est tournée de 180°. Astuce : dessinez la carte du fond d’œil à l’envers.", en: "Correct: the aerial image is rotated 180°. Tip: draw your fundus chart upside down." },
       { fr: "Vrai seulement à l’ophtalmoscope direct (image droite).", en: "True only with the direct ophthalmoscope (upright image)." },
       { fr: "L’inversion est double, pas seulement verticale.", en: "The flip is in both axes, not just vertical." },
-      { fr: "L’inversion est double, pas seulement horizontale.", en: "The flip is in both axes, not just horizontal." }
+      { fr: "L’inversion est double, pas seulement horizontale.", en: "The flip is in both axes, not just horizontal." },
+      { fr: "Juste : l’image aérienne est tournée de 180°. Astuce : dessinez la carte du fond d’œil à l’envers.", en: "Correct: the aerial image is rotated 180°. Tip: draw your fundus chart upside down." }
     ],
     reveal: { fr: "L’image de l’indirect (et de la 90 D) est tournée de 180° : haut ↔ bas et droite ↔ gauche.", en: "The indirect (and 90 D) image is rotated 180°: top ↔ bottom and right ↔ left." }
   },
@@ -838,71 +856,71 @@ G.OPH.invPractice = [
     id: "p-fondoeil-2", inv: "fondoeil", media: "m-fondoeil-2", level: 1,
     q: { fr: "Examen de routine chez un enfant. Reflets brillants le long des arcades et autour de la macula. Interprétation?", en: "Routine exam in a child. Bright reflexes along the arcades and around the macula. Interpretation?" },
     options: [
-      { fr: "Exsudats durs", en: "Hard exudates" },
       { fr: "Œdème maculaire", en: "Macular edema" },
       { fr: "Nodules cotonneux", en: "Cotton-wool spots" },
-      { fr: "Normal : reflets de la limitante interne, fréquents chez le jeune", en: "Normal: internal limiting membrane reflexes, common in the young" }
+      { fr: "Normal : reflets de la limitante interne, fréquents chez le jeune", en: "Normal: internal limiting membrane reflexes, common in the young" },
+      { fr: "Exsudats durs", en: "Hard exudates" }
     ],
-    answer: 3,
+    answer: 2,
     why: [
-      { fr: "Les exsudats sont jaunes, à bords nets, fixes, souvent en couronne.", en: "Exudates are yellow, sharp-edged, fixed, often in a ring." },
       { fr: "L’œdème fait perdre le reflet fovéolaire; ici il est bien visible.", en: "Edema erases the foveal reflex; here it’s clearly visible." },
       { fr: "Les nodules cotonneux sont blancs, duveteux, petits et ne bougent pas avec la lumière.", en: "Cotton-wool spots are white, fluffy, small and don’t move with the light." },
-      { fr: "Juste : ces reflets suivent les vaisseaux, bougent avec la lumière et s’estompent avec l’âge. Papille rose et nette, reflet fovéolaire présent.", en: "Correct: these reflexes follow the vessels, shift with the light and fade with age. Pink sharp disc, foveal reflex present." }
+      { fr: "Juste : ces reflets suivent les vaisseaux, bougent avec la lumière et s’estompent avec l’âge. Papille rose et nette, reflet fovéolaire présent.", en: "Correct: these reflexes follow the vessels, shift with the light and fade with age. Pink sharp disc, foveal reflex present." },
+      { fr: "Les exsudats sont jaunes, à bords nets, fixes, souvent en couronne.", en: "Exudates are yellow, sharp-edged, fixed, often in a ring." }
     ],
     reveal: { fr: "Reflets brillants le long des vaisseaux chez un enfant, avec un reflet fovéolaire net : fond d’œil normal.", en: "Bright reflexes along the vessels in a child, with a crisp foveal reflex: normal fundus." }
   },
   {
-    id: "p-fondoeil-3", inv: "fondoeil", media: "m-fondoeil-3", level: 1,
-    q: { fr: "Estimez le rapport cup/disc (C/D) vertical de cette papille.", en: "Estimate the vertical cup-to-disc ratio (C/D) of this disc." },
+    id: "p-fondoeil-3", inv: "fondoeil", media: "m-fondoeil-3b", level: 1,
+    q: { fr: "Œil gauche d’un jeune patient avec glaucome aphaque. Estimez le C/D vertical.", en: "Left eye of a young patient with aphakic glaucoma. Estimate the vertical C/D." },
     options: [
-      { fr: "≈ 0,5", en: "~0.5" },
       { fr: "Impossible sans OCT", en: "Impossible without OCT" },
       { fr: "≈ 0,9", en: "~0.9" },
-      { fr: "≈ 0,3", en: "~0.3" }
+      { fr: "≈ 0,3", en: "~0.3" },
+      { fr: "≈ 0,5", en: "~0.5" }
     ],
-    answer: 2,
+    answer: 1,
     why: [
-      { fr: "À 0,5, le bord occuperait encore la moitié du rayon.", en: "At 0.5, the rim would still fill half the radius." },
-      { fr: "Le C/D s’estime cliniquement; l’OCT complète, il ne remplace pas l’examen.", en: "C/D is a clinical estimate; OCT complements, it doesn’t replace the exam." },
-      { fr: "Juste : l’excavation blanche occupe presque tout le disque; le bord neurorétinien n’est plus qu’un liseré.", en: "Correct: the white cup fills almost the whole disc; the neuroretinal rim is only a thin sliver." },
-      { fr: "0,3 est la valeur d’une papille normale typique, avec un bord rose épais.", en: "0.3 is a typical normal disc, with a thick pink rim." }
+      { fr: "Le C/D s’estime cliniquement; l’OCT complète l’examen sans le remplacer.", en: "C/D is a clinical estimate; OCT complements the exam, it doesn’t replace it." },
+      { fr: "Juste : l’excavation pâle occupe presque tout le disque; le bord neurorétinien n’est plus qu’un liseré.", en: "Correct: the pale cup fills almost the whole disc; the neuroretinal rim is just a sliver." },
+      { fr: "0,3 correspond à une papille normale typique, avec un bord rose épais.", en: "0.3 is a typical normal disc, with a thick pink rim." },
+      { fr: "À 0,5, le bord occuperait encore la moitié du rayon.", en: "At 0.5, the rim would still fill half the radius." }
     ],
     reveal: { fr: "Le bord rose a presque disparu : l’excavation remplit ≈ 90 % du diamètre vertical.", en: "The pink rim is almost gone: the cup fills ~90% of the vertical diameter." }
   },
   {
-    id: "p-fondoeil-4", inv: "fondoeil", media: "m-fondoeil-4", level: 2,
-    q: { fr: "Papille d’un patient avec glaucome primaire à angle ouvert. Que montre la flèche?", en: "Optic disc of a patient with primary open-angle glaucoma. What does the arrow show?" },
+    id: "p-fondoeil-4", inv: "fondoeil", media: "m-fondoeil-4b", level: 2,
+    q: { fr: "Papille en vue rapprochée, glaucome primaire à angle ouvert. Les gros vaisseaux émergent du côté nasal (à droite de l’image). Où le bord neurorétinien manque-t-il?", en: "Close-up of the optic disc, primary open-angle glaucoma. The large vessels emerge on the nasal side (right of the image). Where is the neuroretinal rim missing?" },
     options: [
-      { fr: "Une fossette colobomateuse (optic pit)", en: "An optic pit" },
-      { fr: "Une encoche du bord neurorétinien inférieur", en: "An inferior neuroretinal rim notch" },
-      { fr: "Une hémorragie papillaire", en: "A disc hemorrhage" },
-      { fr: "Une atrophie péripapillaire", en: "Peripapillary atrophy" }
+      { fr: "En inférotemporal : encoche", en: "Inferotemporally: a notch" },
+      { fr: "En nasal", en: "Nasally" },
+      { fr: "Nulle part : bord régulier", en: "Nowhere: the rim is even" },
+      { fr: "En supérieur seulement", en: "Superiorly only" }
     ],
-    answer: 1,
+    answer: 0,
     why: [
-      { fr: "Une fossette est une dépression ovale grisâtre congénitale, souvent temporale, et non une perte focale du bord.", en: "An optic pit is a congenital grayish oval depression, often temporal, not a focal rim loss." },
-      { fr: "Juste : le bord s’interrompt et l’excavation atteint le rebord du disque. Une encoche inférieure annonce un défaut de champ supérieur.", en: "Correct: the rim breaks and the cup reaches the disc edge. An inferior notch predicts a superior field defect." },
-      { fr: "Une hémorragie papillaire est une petite strie rouge en flammèche au bord du disque.", en: "A disc hemorrhage is a small red flame-shaped streak at the disc edge." },
-      { fr: "L’atrophie péripapillaire est autour du disque, pas dans le bord neurorétinien.", en: "Peripapillary atrophy lies around the disc, not within the rim." }
+      { fr: "Juste : l’excavation profonde atteint le rebord du disque en inférotemporal. Encoche inférieure → défaut de champ supérieur attendu.", en: "Correct: the deep cup reaches the disc edge inferotemporally. Inferior notch → expect a superior field defect." },
+      { fr: "Le bord nasal est conservé; les gros vaisseaux émergent de ce côté.", en: "The nasal rim is preserved; the large vessels emerge on that side." },
+      { fr: "La règle ISNT est rompue : le bord inférieur devrait être le plus épais.", en: "The ISNT rule is broken: the inferior rim should be the thickest." },
+      { fr: "L’atteinte décrite et visible est inférotemporale.", en: "The described and visible damage is inferotemporal." }
     ],
-    reveal: { fr: "À la flèche, le bord rose s’interrompt en inférieur : encoche → défaut de champ supérieur attendu.", en: "At the arrow, the pink rim breaks inferiorly: a notch → expect a superior field defect." }
+    reveal: { fr: "En bas et du côté temporal (en bas à gauche de l’image), l’excavation touche le rebord du disque : encoche inférotemporale.", en: "Inferiorly and temporally (lower left of the image), the cup reaches the disc edge: inferotemporal notch." }
   },
   {
     id: "p-fondoeil-5", inv: "fondoeil", media: "m-fondoeil-5", level: 2,
     q: { fr: "Homme de 61 ans qui consulte pour de nouvelles mouches volantes. Fond d’œil ci-contre. Quelle est la priorité?", en: "A 61-year-old man presents with new floaters. Fundus shown. What’s the priority?" },
     options: [
-      { fr: "Œdème papillaire avec hémorragies : mesurer la TA et faire une imagerie cérébrale en urgence", en: "Disc swelling with hemorrhages: check blood pressure and get urgent brain imaging" },
       { fr: "Glaucome avancé : débuter des gouttes hypotensives", en: "Advanced glaucoma: start pressure-lowering drops" },
       { fr: "Drusen papillaires : rassurer et revoir dans un an", en: "Disc drusen: reassure and review in a year" },
-      { fr: "Décollement postérieur du vitré simple : rassurer", en: "Simple posterior vitreous detachment: reassure" }
+      { fr: "Décollement postérieur du vitré simple : rassurer", en: "Simple posterior vitreous detachment: reassure" },
+      { fr: "Œdème papillaire avec hémorragies : mesurer la TA et faire une imagerie cérébrale en urgence", en: "Disc swelling with hemorrhages: check blood pressure and get urgent brain imaging" }
     ],
-    answer: 0,
+    answer: 3,
     why: [
-      { fr: "Juste : papille soulevée, bords effacés, vaisseaux masqués, hémorragies péripapillaires. Hypertension intracrânienne jusqu’à preuve du contraire, mais une urgence hypertensive peut aussi le faire : TA d’abord. Ici, plusieurs causes s’additionnaient (urgence hypertensive, apnée du sommeil, intoxication au CO, méningite aseptique).", en: "Correct: elevated disc, blurred margins, obscured vessels, peripapillary hemorrhages. Raised intracranial pressure until proven otherwise — but a hypertensive emergency can do this too: check BP first. Here several causes added up (hypertensive emergency, sleep apnea, CO poisoning, aseptic meningitis)." },
       { fr: "Le glaucome creuse et pâlit la papille; il ne la fait pas gonfler.", en: "Glaucoma cups and pales the disc; it doesn’t swell it." },
       { fr: "Les drusen donnent une papille bosselée et réfringente, sans vaisseaux masqués ni hémorragies abondantes.", en: "Drusen give a lumpy, refractile disc, without obscured vessels or abundant hemorrhages." },
-      { fr: "Les mouches volantes évoquent un DPV, mais une papille gonflée ne s’ignore jamais.", en: "Floaters suggest a PVD, but a swollen disc is never ignored." }
+      { fr: "Les mouches volantes évoquent un DPV, mais une papille gonflée ne s’ignore jamais.", en: "Floaters suggest a PVD, but a swollen disc is never ignored." },
+      { fr: "Juste : papille soulevée, bords effacés, vaisseaux masqués, hémorragies péripapillaires. Hypertension intracrânienne jusqu’à preuve du contraire, mais une urgence hypertensive peut aussi le faire : TA d’abord. Ici, plusieurs causes s’additionnaient (urgence hypertensive, apnée du sommeil, intoxication au CO, méningite aseptique).", en: "Correct: elevated disc, blurred margins, obscured vessels, peripapillary hemorrhages. Raised intracranial pressure until proven otherwise — but a hypertensive emergency can do this too: check BP first. Here several causes added up (hypertensive emergency, sleep apnea, CO poisoning, aseptic meningitis)." }
     ],
     reveal: { fr: "Papille soulevée aux bords effacés, vaisseaux masqués, hémorragies péripapillaires : œdème papillaire — TA et imagerie en urgence.", en: "Elevated disc with blurred margins, obscured vessels, peripapillary hemorrhages: disc swelling — BP and urgent imaging." }
   },
@@ -910,17 +928,17 @@ G.OPH.invPractice = [
     id: "p-fondoeil-6", inv: "fondoeil", media: "m-fondoeil-6", level: 2,
     q: { fr: "Baisse de vision brutale et indolore de l’œil droit. Quel signe est décisif?", en: "Sudden painless vision loss in the right eye. Which sign is decisive?" },
     options: [
-      { fr: "Hémorragies dans les 4 quadrants : occlusion de la veine centrale", en: "Hemorrhages in all 4 quadrants: central vein occlusion" },
       { fr: "Papille gonflée : œdème papillaire", en: "Swollen disc: disc edema" },
       { fr: "Rétine soulevée et plissée : décollement de rétine", en: "Elevated folded retina: retinal detachment" },
-      { fr: "Tache rouge cerise sur une rétine blanchâtre : occlusion de l’artère centrale de la rétine", en: "Cherry-red spot on a whitened retina: central retinal artery occlusion" }
+      { fr: "Tache rouge cerise sur une rétine blanchâtre : occlusion de l’artère centrale de la rétine", en: "Cherry-red spot on a whitened retina: central retinal artery occlusion" },
+      { fr: "Hémorragies dans les 4 quadrants : occlusion de la veine centrale", en: "Hemorrhages in all 4 quadrants: central vein occlusion" }
     ],
-    answer: 3,
+    answer: 2,
     why: [
-      { fr: "Il y a peu d’hémorragies; les veines ne sont pas tortueuses.", en: "There are few hemorrhages; the veins aren’t tortuous." },
       { fr: "La papille n’est pas soulevée.", en: "The disc isn’t elevated." },
       { fr: "La rétine est pâle mais à plat, sans plis ni bord de soulèvement.", en: "The retina is pale but flat, with no folds or detachment edge." },
-      { fr: "Juste : la rétine interne ischémique blanchit; la fovéa, mince, laisse voir la choroïde rouge. Nodules cotonneux associés. C’est un AVC de l’œil : évaluation urgente en centre d’AVC et, après 50 ans, éliminer l’artérite à cellules géantes (VS, CRP).", en: "Correct: the ischemic inner retina turns white; the thin fovea lets the red choroid show through. Cotton-wool spots too. This is an eye stroke: urgent stroke-centre workup and, over 50, rule out giant cell arteritis (ESR, CRP)." }
+      { fr: "Juste : la rétine interne ischémique blanchit; la fovéa, mince, laisse voir la choroïde rouge. Nodules cotonneux associés. C’est un AVC de l’œil : évaluation urgente en centre d’AVC et, après 50 ans, éliminer l’artérite à cellules géantes (VS, CRP).", en: "Correct: the ischemic inner retina turns white; the thin fovea lets the red choroid show through. Cotton-wool spots too. This is an eye stroke: urgent stroke-centre workup and, over 50, rule out giant cell arteritis (ESR, CRP)." },
+      { fr: "Il y a peu d’hémorragies; les veines ne sont pas tortueuses.", en: "There are few hemorrhages; the veins aren’t tortuous." }
     ],
     reveal: { fr: "Fovéa rouge sombre au centre d’une rétine pâle et œdémateuse : tache rouge cerise = OACR, une urgence (AVC oculaire).", en: "Dark red fovea in a pale, edematous retina: cherry-red spot = CRAO, an emergency (eye stroke)." }
   },
@@ -928,17 +946,17 @@ G.OPH.invPractice = [
     id: "p-fondoeil-7", inv: "fondoeil", media: "m-fondoeil-7", level: 2,
     q: { fr: "Fond d’œil. Quel diagnostic?", en: "Fundus. What’s the diagnosis?" },
     options: [
-      { fr: "Occlusion de l’artère centrale de la rétine", en: "Central retinal artery occlusion" },
-      { fr: "Rétinopathie hypertensive", en: "Hypertensive retinopathy" },
+      { fr: "Rétinopathie diabétique proliférante", en: "Proliferative diabetic retinopathy" },
       { fr: "Occlusion de la veine centrale de la rétine", en: "Central retinal vein occlusion" },
-      { fr: "Rétinopathie diabétique proliférante", en: "Proliferative diabetic retinopathy" }
+      { fr: "Occlusion de l’artère centrale de la rétine", en: "Central retinal artery occlusion" },
+      { fr: "Rétinopathie hypertensive", en: "Hypertensive retinopathy" }
     ],
-    answer: 2,
+    answer: 1,
     why: [
-      { fr: "L’OACR donne une rétine blanche avec peu d’hémorragies.", en: "CRAO gives a white retina with few hemorrhages." },
-      { fr: "La rétinopathie hypertensive est bilatérale, avec rétrécissement artériolaire et croisements pathologiques; des veines tortueuses avec hémorragies diffuses d’un seul œil évoquent l’OVCR.", en: "Hypertensive retinopathy is bilateral, with arteriolar narrowing and AV nicking; tortuous veins with diffuse hemorrhages in one eye point to CRVO." },
+      { fr: "La rétinopathie diabétique donne surtout microanévrismes et hémorragies ponctuées, pas des hémorragies qui irradient de la papille dans tous les quadrants.", en: "Diabetic retinopathy mostly gives microaneurysms and dot hemorrhages, not hemorrhages radiating from the disc into every quadrant." },
       { fr: "Juste : hémorragies en flammèche dans les 4 quadrants, veines dilatées et tortueuses, nodules cotonneux, papille gonflée (« blood and thunder »). Bilan : TA, glycémie, facteurs de risque vasculaires.", en: "Correct: flame hemorrhages in all 4 quadrants, dilated tortuous veins, cotton-wool spots, swollen disc (“blood and thunder”). Workup: BP, glucose, vascular risk factors." },
-      { fr: "La rétinopathie diabétique donne surtout microanévrismes et hémorragies ponctuées, pas des hémorragies qui irradient de la papille dans tous les quadrants.", en: "Diabetic retinopathy mostly gives microaneurysms and dot hemorrhages, not hemorrhages radiating from the disc into every quadrant." }
+      { fr: "L’OACR donne une rétine blanche avec peu d’hémorragies.", en: "CRAO gives a white retina with few hemorrhages." },
+      { fr: "La rétinopathie hypertensive est bilatérale, avec rétrécissement artériolaire et croisements pathologiques; des veines tortueuses avec hémorragies diffuses d’un seul œil évoquent l’OVCR.", en: "Hypertensive retinopathy is bilateral, with arteriolar narrowing and AV nicking; tortuous veins with diffuse hemorrhages in one eye point to CRVO." }
     ],
     reveal: { fr: "Hémorragies dans les 4 quadrants qui irradient de la papille, veines tortueuses et dilatées : OVCR.", en: "Hemorrhages in all 4 quadrants radiating from the disc, dilated tortuous veins: CRVO." }
   },
@@ -946,15 +964,15 @@ G.OPH.invPractice = [
     id: "p-fondoeil-8", inv: "fondoeil", media: "m-fondoeil-8", level: 3,
     q: { fr: "Montage grand champ, œil gauche. Que délimitent les flèches blanches?", en: "Wide-field montage, left eye. What do the white arrows outline?" },
     options: [
-      { fr: "Un œdème maculaire", en: "Macular edema" },
       { fr: "Le bord d’un décollement de rétine rhegmatogène qui englobe la macula (macula-off)", en: "The edge of a rhegmatogenous retinal detachment involving the macula (macula-off)" },
+      { fr: "Un œdème maculaire", en: "Macular edema" },
       { fr: "Un décollement choroïdien", en: "A choroidal detachment" },
       { fr: "Un rétinoschisis", en: "A retinoschisis" }
     ],
-    answer: 1,
+    answer: 0,
     why: [
-      { fr: "L’œdème maculaire est central, sans bord de soulèvement qui part de la périphérie.", en: "Macular edema is central, with no detachment edge coming in from the periphery." },
       { fr: "Juste : la rétine temporale est soulevée, plus terne, et la fovéa est dedans. Macula-on = urgence maximale pour protéger la macula; macula-off = chirurgie rapide, le pronostic dépend de la durée.", en: "Correct: the temporal retina is elevated and duller, with the fovea inside it. Macula-on = top urgency to save the macula; macula-off = prompt surgery, prognosis depends on duration." },
+      { fr: "L’œdème maculaire est central, sans bord de soulèvement qui part de la périphérie.", en: "Macular edema is central, with no detachment edge coming in from the periphery." },
       { fr: "Le décollement choroïdien forme des dômes brun-orangé lisses, souvent périphériques, sans ce bord net qui traverse le pôle postérieur.", en: "A choroidal detachment forms smooth orange-brown domes, usually peripheral, without this sharp edge crossing the posterior pole." },
       { fr: "Le rétinoschisis est lisse, convexe, immobile, typiquement inférotemporal en périphérie, et respecte en général la macula.", en: "Retinoschisis is smooth, convex, immobile, typically inferotemporal in the periphery, and usually spares the macula." }
     ],
@@ -965,17 +983,17 @@ G.OPH.invPractice = [
     id: "p-cv-1", inv: "cv", media: "m-cv-1", level: 1,
     q: { fr: "Champ visuel 24-2 de l’OD (moitié droite du rapport). Le test est-il fiable et normal?", en: "24-2 visual field of the right eye (right half of the printout). Is the test reliable and normal?" },
     options: [
-      { fr: "Fiable et normal", en: "Reliable and normal" },
       { fr: "Anormal : la tache noire en temporal est un scotome", en: "Abnormal: the black spot temporally is a scotoma" },
       { fr: "Anormal : PSD à 1,72 dB", en: "Abnormal: PSD 1.72 dB" },
-      { fr: "Ininterprétable sans 10-2", en: "Uninterpretable without a 10-2" }
+      { fr: "Ininterprétable sans 10-2", en: "Uninterpretable without a 10-2" },
+      { fr: "Fiable et normal", en: "Reliable and normal" }
     ],
-    answer: 0,
+    answer: 3,
     why: [
-      { fr: "Juste : pertes de fixation 0/15, faux positifs 4 %, faux négatifs 2 %; GHT dans les limites normales, MD −0,18 dB, VFI 99 %.", en: "Correct: fixation losses 0/15, false positives 4%, false negatives 2%; GHT within normal limits, MD −0.18 dB, VFI 99%." },
       { fr: "Tache noire à ≈ 15° en temporal, juste sous l’horizontale : c’est la tache aveugle physiologique.", en: "A black spot ~15° temporal, just below horizontal: that’s the physiologic blind spot." },
       { fr: "Un PSD de 1,72 dB sans valeur p n’est pas significatif.", en: "A PSD of 1.72 dB with no p value isn’t significant." },
-      { fr: "Le 24-2 suffit ici; le 10-2 sert pour une atteinte centrale.", en: "The 24-2 is enough here; the 10-2 is for central disease." }
+      { fr: "Le 24-2 suffit ici; le 10-2 sert pour une atteinte centrale.", en: "The 24-2 is enough here; the 10-2 is for central disease." },
+      { fr: "Juste : pertes de fixation 0/15, faux positifs 4 %, faux négatifs 2 %; GHT dans les limites normales, MD −0,18 dB, VFI 99 %.", en: "Correct: fixation losses 0/15, false positives 4%, false negatives 2%; GHT within normal limits, MD −0.18 dB, VFI 99%." }
     ],
     reveal: { fr: "Fiabilité excellente, GHT normal, MD ≈ 0 et seule la tache aveugle en temporal : champ normal.", en: "Excellent reliability, normal GHT, MD ≈ 0 and only the temporal blind spot: normal field." }
   },
@@ -983,71 +1001,71 @@ G.OPH.invPractice = [
     id: "p-cv-2", inv: "cv", media: "m-cv-2", level: 2,
     q: { fr: "OG du même rapport : MD −16,93 dB (p < 0,5 %), PSD 11,32 dB, VFI 61 %. Quel stade selon Hodapp-Parrish-Anderson?", en: "Left eye on the same printout: MD −16.93 dB (p < 0.5%), PSD 11.32 dB, VFI 61%. What’s the Hodapp-Parrish-Anderson stage?" },
     options: [
-      { fr: "Débutant", en: "Early" },
       { fr: "Modéré", en: "Moderate" },
       { fr: "Impossible : test non fiable", en: "Impossible: unreliable test" },
-      { fr: "Avancé : MD < −12 dB", en: "Advanced: MD < −12 dB" }
+      { fr: "Avancé : MD < −12 dB", en: "Advanced: MD < −12 dB" },
+      { fr: "Débutant", en: "Early" }
     ],
-    answer: 3,
+    answer: 2,
     why: [
-      { fr: "Débutant = MD meilleur que −6 dB.", en: "Early = MD better than −6 dB." },
       { fr: "Modéré = MD entre −6 et −12 dB.", en: "Moderate = MD between −6 and −12 dB." },
       { fr: "Pertes de fixation 1/17, faux positifs 2 %, faux négatifs 0 % : test fiable.", en: "Fixation losses 1/17, false positives 2%, false negatives 0%: a reliable test." },
-      { fr: "Juste : MD au-delà de −12 dB. Hodapp tient aussi compte du nombre de points atteints et de l’atteinte centrale; ici tout concorde, avec défauts arciformes supérieur et inférieur.", en: "Correct: MD beyond −12 dB. Hodapp also counts depressed points and central involvement; here everything agrees, with superior and inferior arcuate defects." }
+      { fr: "Juste : MD au-delà de −12 dB. Hodapp tient aussi compte du nombre de points atteints et de l’atteinte centrale; ici tout concorde, avec défauts arciformes supérieur et inférieur.", en: "Correct: MD beyond −12 dB. Hodapp also counts depressed points and central involvement; here everything agrees, with superior and inferior arcuate defects." },
+      { fr: "Débutant = MD meilleur que −6 dB.", en: "Early = MD better than −6 dB." }
     ],
     reveal: { fr: "MD de −16,93 dB, au-delà de −12 dB, sur un test fiable : glaucome à un stade avancé.", en: "MD of −16.93 dB, beyond −12 dB, on a reliable test: advanced glaucoma." }
   },
   {
-    id: "p-cv-3", inv: "cv", media: "m-cv-3", level: 2,
-    q: { fr: "Champ visuel Humphrey (échelle de gris et déviation corrigée). Quel méridien le défaut respecte-t-il, et quelle partie de la papille est atteinte?", en: "Humphrey field (grayscale and pattern deviation). Which meridian does the defect respect, and which part of the disc is damaged?" },
+    id: "p-cv-3", inv: "cv", media: "m-cv-3g", level: 2,
+    q: { fr: "Champ 24-2 de l’OD (schéma de déviation). Quel méridien le défaut respecte-t-il, et quelle partie de la papille est atteinte?", en: "24-2 field, right eye (deviation schematic). Which meridian does the defect respect, and which part of the disc is damaged?" },
     options: [
-      { fr: "Méridien horizontal; bord supérieur de la papille", en: "Horizontal meridian; superior disc rim" },
       { fr: "Aucun; baisse diffuse de cataracte", en: "None; diffuse cataract depression" },
       { fr: "Méridien horizontal; bord inférieur de la papille", en: "Horizontal meridian; inferior disc rim" },
-      { fr: "Méridien vertical; chiasma", en: "Vertical meridian; chiasm" }
-    ],
-    answer: 2,
-    why: [
-      { fr: "C’est inversé : l’optique de l’œil inverse l’image, un défaut supérieur vient du bas.", en: "It’s reversed: the eye’s optics invert the image; a superior defect comes from below." },
-      { fr: "La cataracte abaisse la déviation totale mais laisse la déviation corrigée presque normale; ici elle montre une grappe dense.", en: "Cataract lowers total deviation but leaves pattern deviation nearly normal; here it shows a dense cluster." },
-      { fr: "Juste : défaut supérieur qui s’arrête net sur l’horizontale (ressaut nasal); les fibres arciformes ne croisent pas le raphé horizontal. Champ supérieur = rétine et papille inférieures.", en: "Correct: a superior defect stopping sharply at the horizontal (nasal step); arcuate fibres don’t cross the horizontal raphe. Superior field = inferior retina and disc." },
-      { fr: "Le défaut s’arrête sur l’horizontale, pas sur la verticale.", en: "The defect stops at the horizontal, not the vertical." }
-    ],
-    reveal: { fr: "Défaut dense limité à l’hémichamp supérieur, arrêté par le méridien horizontal : glaucome, fibres inférieures atteintes.", en: "A dense defect confined to the superior hemifield, stopped by the horizontal meridian: glaucoma, inferior fibres damaged." }
-  },
-  {
-    id: "p-cv-4", inv: "cv", media: "m-cv-4", level: 1,
-    q: { fr: "Trois champs visuels (échelle de gris). Dans le panneau B, de quel œil s’agit-il?", en: "Three visual fields (grayscale). In panel B, which eye is it?" },
-    options: [
-      { fr: "Les deux yeux superposés", en: "Both eyes superimposed" },
-      { fr: "Œil droit : la tache aveugle est à droite du centre", en: "Right eye: the blind spot is right of centre" },
-      { fr: "Œil gauche", en: "Left eye" },
-      { fr: "Impossible à dire sans l’en-tête", en: "Can’t tell without the header" }
+      { fr: "Méridien vertical; chiasma", en: "Vertical meridian; chiasm" },
+      { fr: "Méridien horizontal; bord supérieur de la papille", en: "Horizontal meridian; superior disc rim" }
     ],
     answer: 1,
     why: [
-      { fr: "Le Humphrey teste un œil à la fois.", en: "The Humphrey tests one eye at a time." },
-      { fr: "Juste : le champ est tracé tel que le patient le voit. La papille est nasale à la fovéa, donc la tache aveugle tombe en temporal : à droite pour l’OD.", en: "Correct: the field is plotted as the patient sees it. The disc is nasal to the fovea, so the blind spot falls temporally: on the right for OD." },
-      { fr: "Les panneaux A et C sont des yeux gauches (tache aveugle à gauche).", en: "Panels A and C are left eyes (blind spot on the left)." },
-      { fr: "La tache aveugle suffit à identifier l’œil.", en: "The blind spot is enough to identify the eye." }
+      { fr: "La cataracte donne une baisse diffuse, pas un arc localisé.", en: "Cataract gives a diffuse loss, not a localized arc." },
+      { fr: "Juste : scotome arciforme supérieur qui s’arrête au méridien horizontal; les fibres arciformes ne croisent pas le raphé. Champ supérieur = rétine et papille inférieures.", en: "Correct: a superior arcuate scotoma stopping at the horizontal meridian; arcuate fibres don’t cross the raphe. Superior field = inferior retina and disc." },
+      { fr: "Le défaut s’arrête sur l’horizontale, pas sur la verticale.", en: "The defect stops at the horizontal, not the vertical." },
+      { fr: "C’est inversé : l’optique de l’œil inverse l’image; un défaut supérieur vient d’en bas.", en: "It’s reversed: the eye’s optics invert the image; a superior defect comes from below." }
     ],
-    reveal: { fr: "Tache aveugle à droite du centre = champ temporal droit = œil droit.", en: "Blind spot right of centre = right temporal field = right eye." }
+    reveal: { fr: "Arc de points déprimés dans l’hémichamp supérieur, arrêté par le méridien horizontal : glaucome, fibres inférieures atteintes.", en: "An arc of depressed points in the superior hemifield, stopped by the horizontal meridian: glaucoma, inferior fibres damaged." }
+  },
+  {
+    id: "p-cv-4", inv: "cv", media: "m-cv-4g", level: 1,
+    q: { fr: "Champ 24-2 (schéma) : carte « parfaite ». Faux positifs 27 %, pertes de fixation 0/13, MD +3,4 dB, GHT « sensibilité anormalement élevée ». Interprétation?", en: "24-2 field (schematic): a “perfect” map. False positives 27%, fixation losses 0/13, MD +3.4 dB, GHT “abnormally high sensitivity”. Interpretation?" },
+    options: [
+      { fr: "Non fiable : trop de faux positifs, refaire le test", en: "Unreliable: too many false positives, repeat the test" },
+      { fr: "Champ normal, excellent", en: "Normal, excellent field" },
+      { fr: "Fiable : les pertes de fixation sont à 0", en: "Reliable: fixation losses are 0" },
+      { fr: "Glaucome débutant", en: "Early glaucoma" }
+    ],
+    answer: 0,
+    why: [
+      { fr: "Juste : faux positifs > 15 % = le patient répond sans stimulus. Le champ paraît trop beau (MD positif) et peut masquer un vrai défaut. Réexpliquer et refaire.", en: "Correct: false positives > 15% = the patient presses without a stimulus. The field looks too good (positive MD) and can hide a real defect. Re-instruct and repeat." },
+      { fr: "Un champ « trop beau » avec MD positif est un signal d’alarme, pas un bon résultat.", en: "A field that looks “too good” with a positive MD is a red flag, not a good result." },
+      { fr: "Une seule mesure de fiabilité correcte ne compense pas 27 % de faux positifs.", en: "One good reliability index doesn’t make up for 27% false positives." },
+      { fr: "Aucun défaut localisé n’est visible; et le test n’est de toute façon pas interprétable.", en: "No localized defect is visible; and the test can’t be interpreted anyway." }
+    ],
+    reveal: { fr: "Faux positifs à 27 % et GHT « sensibilité anormalement élevée » : test non fiable, à refaire.", en: "False positives at 27% and GHT “abnormally high sensitivity”: unreliable test, repeat it." }
   },
   {
     id: "p-cv-5", inv: "cv", media: "m-cv-5", level: 2,
     q: { fr: "Champs visuels de Goldmann des deux yeux. Quel défaut, et où est la lésion?", en: "Goldmann visual fields of both eyes. What’s the defect, and where’s the lesion?" },
     options: [
-      { fr: "Hémianopsie homonyme gauche : lésion rétrochiasmatique droite", en: "Left homonymous hemianopia: right retrochiasmal lesion" },
       { fr: "Hémianopsie bitemporale : chiasma", en: "Bitemporal hemianopia: chiasm" },
       { fr: "Hémianopsie homonyme droite : lésion gauche", en: "Right homonymous hemianopia: left lesion" },
-      { fr: "Défauts arciformes glaucomateux", en: "Glaucomatous arcuate defects" }
+      { fr: "Défauts arciformes glaucomateux", en: "Glaucomatous arcuate defects" },
+      { fr: "Hémianopsie homonyme gauche : lésion rétrochiasmatique droite", en: "Left homonymous hemianopia: right retrochiasmal lesion" }
     ],
-    answer: 0,
+    answer: 3,
     why: [
-      { fr: "Juste : les deux yeux perdent l’hémichamp gauche, coupé net sur la verticale. Les voies visuelles droites portent le champ gauche. Ici, AVC occipital.", en: "Correct: both eyes lose the left hemifield, cut sharply at the vertical. The right visual pathways carry the left field. Here, an occipital stroke." },
       { fr: "Bitemporale = chaque œil perd son côté temporal (gauche pour l’OG, droit pour l’OD).", en: "Bitemporal = each eye loses its temporal side (left for OS, right for OD)." },
       { fr: "C’est l’hémichamp droit qui est conservé, pas perdu.", en: "The right hemifield is preserved, not lost." },
-      { fr: "Le glaucome respecte l’horizontale, pas la verticale.", en: "Glaucoma respects the horizontal, not the vertical." }
+      { fr: "Le glaucome respecte l’horizontale, pas la verticale.", en: "Glaucoma respects the horizontal, not the vertical." },
+      { fr: "Juste : les deux yeux perdent l’hémichamp gauche, coupé net sur la verticale. Les voies visuelles droites portent le champ gauche. Ici, AVC occipital.", en: "Correct: both eyes lose the left hemifield, cut sharply at the vertical. The right visual pathways carry the left field. Here, an occipital stroke." }
     ],
     reveal: { fr: "Hémichamp gauche perdu aux deux yeux, coupé sur le méridien vertical : hémianopsie homonyme gauche, lésion rétrochiasmatique droite (ici occipitale).", en: "Left hemifield lost in both eyes, cut at the vertical meridian: left homonymous hemianopia, right retrochiasmal lesion (here occipital)." }
   },
@@ -1055,17 +1073,17 @@ G.OPH.invPractice = [
     id: "p-cv-6", inv: "cv", media: "m-cv-6", level: 1,
     q: { fr: "Schéma : chaque œil perd son hémichamp temporal. Où est la lésion?", en: "Schematic: each eye loses its temporal hemifield. Where’s the lesion?" },
     options: [
-      { fr: "Nerf optique droit", en: "Right optic nerve" },
       { fr: "Lobe occipital", en: "Occipital lobe" },
       { fr: "Glaucome bilatéral", en: "Bilateral glaucoma" },
-      { fr: "Chiasma optique (ex. adénome hypophysaire)", en: "Optic chiasm (e.g., pituitary adenoma)" }
+      { fr: "Chiasma optique (ex. adénome hypophysaire)", en: "Optic chiasm (e.g., pituitary adenoma)" },
+      { fr: "Nerf optique droit", en: "Right optic nerve" }
     ],
-    answer: 3,
+    answer: 2,
     why: [
-      { fr: "Un nerf optique atteint donne un défaut d’un seul œil.", en: "An optic nerve lesion gives a defect in one eye only." },
       { fr: "Une lésion occipitale donne une hémianopsie homonyme (même côté aux deux yeux).", en: "An occipital lesion gives a homonymous hemianopia (same side in both eyes)." },
       { fr: "Le glaucome respecte l’horizontale, pas la verticale.", en: "Glaucoma respects the horizontal, not the vertical." },
-      { fr: "Juste : au chiasma croisent les fibres de la rétine nasale, qui voient le champ temporal.", en: "Correct: fibres from the nasal retina, which see the temporal field, cross at the chiasm." }
+      { fr: "Juste : au chiasma croisent les fibres de la rétine nasale, qui voient le champ temporal.", en: "Correct: fibres from the nasal retina, which see the temporal field, cross at the chiasm." },
+      { fr: "Un nerf optique atteint donne un défaut d’un seul œil.", en: "An optic nerve lesion gives a defect in one eye only." }
     ],
     reveal: { fr: "Deux hémichamps temporaux perdus, limités par le méridien vertical : fibres croisées touchées au chiasma.", en: "Both temporal hemifields lost, bounded by the vertical meridian: crossing fibres hit at the chiasm." }
   },
@@ -1073,19 +1091,37 @@ G.OPH.invPractice = [
     id: "p-cv-7", inv: "cv", media: "m-cv-7", level: 2,
     q: { fr: "Schéma : déviation totale abaissée partout, déviation corrigée presque normale, MD −5 dB, PSD non significatif. Cause la plus probable?", en: "Schematic: total deviation depressed everywhere, pattern deviation nearly normal, MD −5 dB, non-significant PSD. Most likely cause?" },
     options: [
-      { fr: "Hémianopsie homonyme", en: "Homonymous hemianopia" },
-      { fr: "Test non fiable par excès de faux positifs", en: "Unreliable test from too many false positives" },
+      { fr: "Glaucome débutant", en: "Early glaucoma" },
       { fr: "Opacité des milieux (cataracte) ou petite pupille", en: "Media opacity (cataract) or small pupil" },
-      { fr: "Glaucome débutant", en: "Early glaucoma" }
+      { fr: "Hémianopsie homonyme", en: "Homonymous hemianopia" },
+      { fr: "Test non fiable par excès de faux positifs", en: "Unreliable test from too many false positives" }
     ],
-    answer: 2,
+    answer: 1,
     why: [
-      { fr: "Une hémianopsie respecte la verticale et reste visible sur la déviation corrigée.", en: "A hemianopia respects the vertical and stays visible on pattern deviation." },
-      { fr: "Les faux positifs élevés donnent des sensibilités trop hautes, pas une baisse diffuse.", en: "High false positives give sensitivities that are too high, not a diffuse loss." },
+      { fr: "Le glaucome laisse des grappes localisées sur la déviation corrigée, avec un PSD élevé.", en: "Glaucoma leaves localized clusters on pattern deviation, with a raised PSD." },
       { fr: "Juste : la déviation corrigée retire la baisse générale. S’il ne reste rien, la baisse est diffuse : cataracte, pupille étroite, mauvaise correction.", en: "Correct: pattern deviation removes the general depression. If nothing remains, the loss is diffuse: cataract, small pupil, wrong correction." },
-      { fr: "Le glaucome laisse des grappes localisées sur la déviation corrigée, avec un PSD élevé.", en: "Glaucoma leaves localized clusters on pattern deviation, with a raised PSD." }
+      { fr: "Une hémianopsie respecte la verticale et reste visible sur la déviation corrigée.", en: "A hemianopia respects the vertical and stays visible on pattern deviation." },
+      { fr: "Les faux positifs élevés donnent des sensibilités trop hautes, pas une baisse diffuse.", en: "High false positives give sensitivities that are too high, not a diffuse loss." }
     ],
     reveal: { fr: "La déviation corrigée efface tout : la baisse est diffuse, pas localisée — pensez milieux avant glaucome.", en: "Pattern deviation wipes it all out: the loss is diffuse, not localized — think media before glaucoma." }
+  },
+  {
+    id: "p-cv-8", inv: "cv", media: "m-cv-8g", level: 2,
+    q: { fr: "Champ 24-2 de l’OD (schéma). Perte de vision indolore au réveil chez un patient vasculaire de 65 ans. Quel défaut et quelle cause?", en: "24-2 field, right eye (schematic). Painless vision loss on waking in a 65-year-old vascular patient. Which defect, and what cause?" },
+    options: [
+      { fr: "Défaut altitudinal inférieur : neuropathie optique ischémique antérieure", en: "Inferior altitudinal defect: anterior ischemic optic neuropathy" },
+      { fr: "Hémianopsie homonyme : AVC occipital", en: "Homonymous hemianopia: occipital stroke" },
+      { fr: "Hémianopsie bitemporale : adénome hypophysaire", en: "Bitemporal hemianopia: pituitary adenoma" },
+      { fr: "Scotome central : névrite optique", en: "Central scotoma: optic neuritis" }
+    ],
+    answer: 0,
+    why: [
+      { fr: "Juste : tout l’hémichamp inférieur est atteint et la limite suit le méridien horizontal : atteinte du nerf optique (NOIA, surtout non artéritique) ou occlusion artérielle de branche. Éliminer l’artérite à cellules géantes après 50 ans.", en: "Correct: the whole inferior hemifield is lost and the border follows the horizontal meridian: optic nerve damage (AION, mostly non-arteritic) or a branch artery occlusion. Rule out giant cell arteritis over 50." },
+      { fr: "Une hémianopsie homonyme respecte le méridien vertical et touche les deux yeux.", en: "A homonymous hemianopia respects the vertical meridian and affects both eyes." },
+      { fr: "La bitemporale respecte aussi le méridien vertical, aux deux yeux.", en: "A bitemporal defect also respects the vertical meridian, in both eyes." },
+      { fr: "Un scotome central touche la fixation, pas tout un hémichamp.", en: "A central scotoma involves fixation, not a whole hemifield." }
+    ],
+    reveal: { fr: "Tout l’hémichamp inférieur perdu, bordé par le méridien horizontal : défaut altitudinal du nerf optique.", en: "The whole inferior hemifield lost, bordered by the horizontal meridian: an optic nerve altitudinal defect." }
   }
 ];
 
@@ -1095,8 +1131,7 @@ G.OPH.invPractice = [
 G.OPH.invMediaRequests = {
   /* B-scan */
   "m-bscan-1": { photo: "OPH-210", want: "Photo de face, cataracte mature blanche OD (à gauche de l’image, ≈ x 21 %, y 56 %). Hotspot décisif sur la pupille blanche. OG (à droite) sert de comparaison." },
-  "m-bscan-2": { photo: "OPH-209", want: "Planche sonde + écho, coupe longitudinale maculaire L9 OD. Hotspot décisif : ombre hypoéchogène du nerf optique dans la moitié inférieure de l’écho (≈ x 61 %, y 72 %). Hotspots secondaires : vitré noir (≈ x 55 %, y 45 %), paroi postérieure/macula (≈ x 66 %, y 33 %), sonde sur la photo (≈ x 25 %, y 42 %)." },
-  "m-bscan-3": { photo: "OPH-205", want: "Planche T12 : photo de la sonde (moitié gauche) + écho (droite). Hotspot décisif sur la sonde posée sous l’œil, regard vers le haut (≈ x 17 %, y 40 %); hotspot sur la flèche L-F (≈ x 27 %, y 55 %) et sur l’étiquette T12P en bas à droite de l’écho (≈ x 85 %, y 95 %)." },
+  "m-bscan-2": { photo: null, want: "Schéma déjà fourni par le rôle visuels (svg) : coupe LMAC, ombre du nerf optique sous la macula. OPH-209 retiré (sans licence CC)." },
   "m-bscan-4": { photo: "OPH-289", want: "Fond d’œil (haut) + B-scan (bas) d’un décollement choroïdien hémorragique non appositionnel. Hotspot décisif : dôme lisse et convexe sur le B-scan bas-gauche (≈ x 17 %, y 75 %) et bas-droite (≈ x 68 %, y 75 %). Hotspot secondaire : soulèvement brun-orangé lisse sur la photo couleur (≈ x 19 %, y 30 %)." },
   "m-bscan-5": { photo: "OPH-194", want: "Mosaïque de 10 B-scans (décollements choroïdiens hémorragiques « kissing »). Hotspot décisif là où deux dômes se touchent au centre, p. ex. rangée 3 gauche (≈ x 23 %, y 48 %) ou rangée 2 gauche (≈ x 22 %, y 28 %). Choisir le panneau où le contact est le plus net." },
   "m-bscan-6": { photo: null, want: "SCHÉMA B-scan (étiqueté « schéma ») : globe en coupe, vitré noir, membrane épaisse très brillante en V fixée à la papille (pointe du V sur l’ombre du nerf) et vers l’ora des deux côtés. Petit encart A-scan : pic de 100 % sur la membrane. Hotspot décisif sur l’insertion papillaire. Option : 2e panneau comparatif (DPV fin, pic bas) affiché seulement après la révélation." },
@@ -1115,11 +1150,9 @@ G.OPH.invMediaRequests = {
   "m-oct-3": { photo: "OPH-268", want: "Carte ETDRS + coupe OCT d’une membrane épirétinienne. Hotspot décisif sur la coupe (en bas à droite) : surface plissée et creux fovéolaire effacé (≈ x 72 %, y 87 %). Secondaires : valeur 531 µm du sous-champ central (≈ x 65 %, y 34 %), carte rouge-blanc centrée (≈ x 21 %, y 50 %)." },
   "m-oct-4": { photo: "OPH-262", want: "IR + OCT oblique d’œdème maculaire diabétique. Hotspot décisif sur les espaces hyporéflectifs intrarétiniens de la zone épaissie (≈ x 59 %, y 31 %). Secondaires : points hyperréflectifs avec ombre (exsudats) (≈ x 48 %, y 25 % et ≈ x 65 %, y 25 %), gros vaisseaux choroïdiens sombres sous l’EPR (≈ x 70 %, y 50 %) pour le distracteur." },
   "m-oct-5": { photo: "OPH-266", want: "Deux coupes OCT (A horizontale, B oblique) d’un décollement drusénoïde de l’EPR. Hotspot décisif sur le dôme de la bande EPR du panneau A (≈ x 73 %, y 19 %); secondaire sur les drusen jaunâtres de l’image IR (≈ x 20 %, y 25 %)." },
-  "m-oct-6": { photo: "OPH-191", want: "Rapport Cirrus RNFL + photo de papille + déviation corrigée. Hotspots décisifs sur les quadrants rouges S 58 (≈ x 86 %, y 8 %) et I 53 (≈ x 86 %, y 17 %); hotspot piège sur T 50 vert (≈ x 63 %, y 14 %). Secondaire : zones rouges de la carte de déviation (≈ x 25 %, y 35 %)." },
   "m-oct-7": { photo: "OPH-134", want: "Rapport Cirrus ONH/RNFL OU. Hotspot décisif sur la bande rouge-jaune inférotemporale de la carte de déviation OG (≈ x 91 %, y 83 %). Secondaires : RNFL moyenne OG 91 µm verte (≈ x 66 %, y 19 %), symétrie 59 % (≈ x 60 %, y 24 %), C/D vertical OG 0,84 (≈ x 66 %, y 44 %), courbe du bord OG en pointillés qui plonge en INF (≈ x 60 %, y 86 %)." },
   "m-oct-8": { photo: "OPH-147", want: "AS-OCT : fermeture de l’angle après DMEK. Hotspots décisifs aux deux angles où l’iris touche la cornée périphérique (≈ x 14 %, y 85 % et ≈ x 87 %, y 83 %); secondaire sur l’iris bombé vers l’avant (≈ x 30 %, y 65 %)." },
   /* Gonioscopie */
-  "m-gonio-1": { photo: "OPH-292", want: "Photo de la technique : lentille de gonioscopie tenue sur l’œil à la lampe à fente. Hotspot décisif sur la lentille (flèche blanche, ≈ x 50 %, y 50 %). Option : petit schéma de la réflexion totale interne (étiqueté « schéma ») affiché à la révélation." },
   "m-gonio-2": { photo: null, want: "SCHÉMA d’angle ouvert vu en gonioscopie (et en coupe) : racine de l’iris, bande ciliaire, éperon scléral (blanc), trabéculum (pigmenté en postérieur), ligne de Schwalbe. Étiquettes masquées avant la réponse (réutilisable par gonio-grader). Hotspots sur chaque structure, l’éperon en décisif." },
   "m-gonio-3": { photo: null, want: "SCHÉMA en deux temps : (1) sans indentation, iris convexe, seule la ligne de Schwalbe visible; (2) avec indentation, l’iris recule et l’éperon scléral apparaît, sans adhérence. Hotspot décisif sur l’éperon dévoilé au panneau 2." },
   "m-gonio-4": { photo: "OPH-180", want: "Gonioscopie OD, syndrome ICE. Hotspot décisif à la pointe de la flèche noire = synéchie antérieure périphérique haute (≈ x 38 %, y 61 %). Secondaires : les deux flèches blanches qui encadrent les procès ciliaires visibles (≈ x 37 %, y 32 % et ≈ x 57 %, y 70 %)." },
@@ -1129,8 +1162,6 @@ G.OPH.invMediaRequests = {
   /* Fond d’œil */
   "m-fondoeil-1": { photo: null, want: "SCHÉMA : à gauche, fond d’œil réel avec une déchirure en fer à cheval en bas à gauche; à droite, image vue à l’ophtalmoscope indirect, tournée de 180° (déchirure en haut à droite). Flèches de correspondance. Hotspot décisif sur la vraie position." },
   "m-fondoeil-2": { photo: "OPH-003", want: "Fond d’œil normal d’enfant (OD). Hotspot décisif sur les reflets de la limitante interne le long de l’arcade temporale supérieure (≈ x 55 %, y 17 %) et autour de la macula (≈ x 45 %, y 40 %); secondaires : fovéa avec reflet (≈ x 49 %, y 51 %), papille rose nette (≈ x 79 %, y 50 %)." },
-  "m-fondoeil-3": { photo: "OPH-203", want: "Papille glaucomateuse C/D 0,9. Hotspot décisif sur l’excavation blanche qui remplit le disque (≈ x 51 %, y 51 %); secondaire sur le liseré de bord restant (≈ x 51 %, y 40 %) et l’atrophie péripapillaire (≈ x 44 %, y 55 %). Option à la révélation : vignette OPH-202 (C/D 0,3) pour comparer." },
-  "m-fondoeil-4": { photo: "OPH-189", want: "Papille de GPAO avec encoche inférieure. Hotspot décisif à la pointe de la flèche noire (≈ x 59 %, y 65 %)." },
   "m-fondoeil-5": { photo: "OPH-219", want: "Deux photos (fig. 1 du cas EyeRounds) : œdème papillaire marqué avec hémorragies péripapillaires. Hotspots décisifs sur la papille gonflée aux bords effacés de chaque photo (≈ x 24 %, y 42 % et ≈ x 74 %, y 42 %); secondaire sur les hémorragies en flammèche (≈ x 30 %, y 30 %)." },
   "m-fondoeil-6": { photo: "OPH-250", want: "OACR OD : rétine blanchâtre, tache rouge cerise, nodules cotonneux. Hotspot décisif sur la fovéa rouge (≈ x 52 %, y 54 %); secondaires sur un nodule cotonneux de l’arcade supérieure (≈ x 68 %, y 27 %) et la rétine pâle péripapillaire (≈ x 75 %, y 45 %)." },
   "m-fondoeil-7": { photo: "OPH-252", want: "OVCR : hémorragies dans les 4 quadrants, veines tortueuses, nodules cotonneux, papille gonflée. Hotspot décisif sur la papille entourée d’hémorragies (≈ x 28 %, y 42 %); secondaires : veine dilatée et tortueuse (≈ x 45 %, y 15 %), hémorragies en périphérie temporale (≈ x 75 %, y 45 %), nodule cotonneux (≈ x 28 %, y 25 %)." },
@@ -1138,9 +1169,196 @@ G.OPH.invMediaRequests = {
   /* Champ visuel */
   "m-cv-1": { photo: "OPH-302", want: "Rapport HFA 24-2 : OS à gauche, OD à droite (se fier aux en-têtes imprimés; la légende du catalogue inverse gauche/droite). Pour cet item, cibler la moitié OD. Hotspot décisif sur le bloc de fiabilité OD (≈ x 57 %, y 13 %) et GHT/MD OD (≈ x 94 %, y 66 %); secondaire sur la tache aveugle de l’échelle de gris OD (≈ x 91 %, y 36 %)." },
   "m-cv-2": { photo: "OPH-302", want: "Même rapport, moitié OS (gauche). Hotspot décisif sur MD −16,93 dB (≈ x 44 %, y 67 %); secondaires : fiabilité OS (≈ x 9 %, y 13 %), déviation corrigée OS avec défauts arciformes (≈ x 25 %, y 83 %)." },
-  "m-cv-3": { photo: "OPH-190", want: "Humphrey OD (échelle de gris + déviation corrigée). Hotspot décisif sur la limite nette du défaut supérieur le long du méridien horizontal côté nasal (≈ x 12 %, y 50 %); secondaires : grappe dense de la déviation corrigée (≈ x 80 %, y 35 %), tache aveugle (≈ x 43 %, y 56 %)." },
-  "m-cv-4": { photo: "OPH-293", want: "Trois échelles de gris comparatives (A, B, C) avec étiquettes imprimées. Hotspot décisif sur la tache aveugle du panneau B, à droite du centre (≈ x 87 %, y 30 %); secondaires sur les taches aveugles de A (≈ x 12 %, y 25 %) et C (≈ x 12 %, y 75 %). Ne pas modifier l’image (pas d’œuvre dérivée)." },
   "m-cv-5": { photo: "OPH-283", want: "Goldmann des deux yeux, hémianopsie homonyme gauche (AVC occipital). Hotspot décisif sur la limite verticale de chaque champ (≈ x 26 %, y 50 % et ≈ x 76 %, y 50 %)." },
   "m-cv-6": { photo: null, want: "SCHÉMA : deux cercles de champ visuel (OG à gauche, OD à droite, vus par le patient) avec hémichamps temporaux noirs, limite sur le méridien vertical; petit schéma des voies optiques avec le chiasma marqué. Hotspot décisif sur le chiasma." },
-  "m-cv-7": { photo: null, want: "SCHÉMA de cartes de probabilité HFA : déviation totale avec symboles de baisse partout, déviation corrigée presque vide; MD −5 dB, PSD non significatif. Hotspot décisif sur la déviation corrigée « propre »." }
+  "m-cv-7": { photo: null, want: "SCHÉMA de cartes de probabilité HFA : déviation totale avec symboles de baisse partout, déviation corrigée presque vide; MD −5 dB, PSD non significatif. Hotspot décisif sur la déviation corrigée « propre »." },
+  /* Remplacements cycle 2 (images sans licence CC retirées) et nouveaux items */
+  "m-bscan-3g": { photo: null, want: "Fourni par la pédagogie dans G.OPH.invMedia : générateur bscan:vh:long:85 (hotspots par défaut)." },
+  "m-oct-6b": { photo: "OPH-308", want: "Fourni dans G.OPH.invMedia (hotspots placés). Rapport Cirrus ONH/RNFL OU, mégalopapille et glaucome sévère (CC)." },
+  "m-oct-9g": { photo: null, want: "Fourni dans G.OPH.invMedia : générateur oct:srf." },
+  "m-gonio-1g": { photo: null, want: "Fourni dans G.OPH.invMedia : générateur gonio:nv." },
+  "m-fondoeil-3b": { photo: "OPH-307", want: "Fourni dans G.OPH.invMedia (hotspot placé). Papille OG C/D 0,9, glaucome aphaque (CC)." },
+  "m-fondoeil-4b": { photo: "OPH-136", want: "Fourni dans G.OPH.invMedia (hotspots placés). Papille en vue rapprochée, encoche inférotemporale (CC)." },
+  "m-cv-3g": { photo: null, want: "Fourni dans G.OPH.invMedia : générateur vf:arcuate." },
+  "m-cv-4g": { photo: null, want: "Fourni dans G.OPH.invMedia : générateur vf:fp." },
+  "m-cv-8g": { photo: null, want: "Fourni dans G.OPH.invMedia : générateur vf:altitudinal." }
 };
+
+/* Médias propres à la pédagogie (nouveaux ids seulement) : fusion sans écraser data/inv-media.js, quel que soit l’ordre de chargement. */
+G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
+ "m-bscan-3g": {
+  "kind": "gen",
+  "gen": "bscan:vh:long:85",
+  "alt": {
+   "fr": "Schéma d’échographie B, coupe longitudinale à gain élevé : échos ponctués dans le vitré, rétine à plat.",
+   "en": "B-scan schematic, longitudinal scan at high gain: dot echoes in the vitreous, flat retina."
+  }
+ },
+ "m-oct-9g": {
+  "kind": "gen",
+  "gen": "oct:srf",
+  "alt": {
+   "fr": "Schéma OCT : liquide sous-rétinien entre la rétine et l’EPR, qui reste plat.",
+   "en": "OCT schematic: subretinal fluid between the retina and a flat RPE."
+  }
+ },
+ "m-gonio-1g": {
+  "kind": "gen",
+  "gen": "gonio:nv",
+  "alt": {
+   "fr": "Schéma de gonioscopie : fins vaisseaux qui croisent l’éperon scléral vers le trabéculum.",
+   "en": "Gonioscopy schematic: fine vessels crossing the scleral spur onto the meshwork."
+  }
+ },
+ "m-cv-3g": {
+  "kind": "gen",
+  "gen": "vf:arcuate",
+  "alt": {
+   "fr": "Schéma de champ 24-2 (OD) : scotome arciforme supérieur qui respecte le méridien horizontal.",
+   "en": "24-2 field schematic (OD): superior arcuate scotoma respecting the horizontal meridian."
+  }
+ },
+ "m-cv-4g": {
+  "kind": "gen",
+  "gen": "vf:fp",
+  "alt": {
+   "fr": "Schéma de champ 24-2 (OD) sans aucun point déprimé : champ « trop beau » d’un test à faux positifs élevés.",
+   "en": "24-2 field schematic (OD) with no depressed points: a “too good” field from a test with high false positives."
+  },
+  "hotspots": [
+   {
+    "x": 50,
+    "y": 50,
+    "r": 30,
+    "decisive": true,
+    "label": {
+     "fr": "Aucun point déprimé : champ trop « parfait »",
+     "en": "No depressed points: a field that’s too “perfect”"
+    }
+   }
+  ]
+ },
+ "m-cv-8g": {
+  "kind": "gen",
+  "gen": "vf:altitudinal",
+  "alt": {
+   "fr": "Schéma de champ 24-2 (OD) : défaut altitudinal inférieur limité par le méridien horizontal.",
+   "en": "24-2 field schematic (OD): inferior altitudinal defect bounded by the horizontal meridian."
+  }
+ },
+ "m-oct-6b": {
+  "kind": "photo",
+  "photo": "OPH-308",
+  "alt": {
+   "fr": "Rapport Cirrus ONH/RNFL des deux yeux : mégalopapille et glaucome sévère, RNFL moyenne 51 et 40 µm.",
+   "en": "Cirrus ONH/RNFL report, both eyes: megalopapilla and severe glaucoma, average RNFL 51 and 40 µm."
+  },
+  "hotspots": [
+   {
+    "x": 56,
+    "y": 13,
+    "r": 3,
+    "decisive": true,
+    "label": {
+     "fr": "RNFL moyenne OD 51 µm (rouge)",
+     "en": "Average RNFL OD 51 µm (red)"
+    }
+   },
+   {
+    "x": 66,
+    "y": 13,
+    "r": 3,
+    "decisive": true,
+    "label": {
+     "fr": "RNFL moyenne OS 40 µm (rouge)",
+     "en": "Average RNFL OS 40 µm (red)"
+    }
+   },
+   {
+    "x": 61,
+    "y": 21,
+    "r": 3,
+    "label": {
+     "fr": "Surface du disque 4,18 et 3,69 mm² : très grands disques",
+     "en": "Disc area 4.18 and 3.69 mm²: very large discs"
+    }
+   },
+   {
+    "x": 61,
+    "y": 26,
+    "r": 3,
+    "label": {
+     "fr": "C/D vertical 0,92 et 0,96",
+     "en": "Vertical C/D 0.92 and 0.96"
+    }
+   },
+   {
+    "x": 54,
+    "y": 4,
+    "r": 3,
+    "label": {
+     "fr": "Qualité du signal 6/10 et 7/10",
+     "en": "Signal strength 6/10 and 7/10"
+    }
+   }
+  ]
+ },
+ "m-fondoeil-3b": {
+  "kind": "photo",
+  "photo": "OPH-307",
+  "alt": {
+   "fr": "Rétinophotographie de l’œil gauche : papille pâle et excavée, C/D ≈ 0,9 (glaucome aphaque).",
+   "en": "Left eye fundus photo: pale cupped disc, C/D ~0.9 (aphakic glaucoma)."
+  },
+  "hotspots": [
+   {
+    "x": 26,
+    "y": 40,
+    "r": 8,
+    "decisive": true,
+    "label": {
+     "fr": "Excavation qui remplit presque tout le disque",
+     "en": "Cup filling almost the whole disc"
+    }
+   }
+  ]
+ },
+ "m-fondoeil-4b": {
+  "kind": "photo",
+  "photo": "OPH-136",
+  "alt": {
+   "fr": "Papille en vue rapprochée : excavation profonde (lame criblée visible) et encoche inférotemporale.",
+   "en": "Close-up of the disc: deep cup (lamina cribrosa visible) and inferotemporal notch."
+  },
+  "hotspots": [
+   {
+    "x": 27,
+    "y": 70,
+    "r": 10,
+    "decisive": true,
+    "label": {
+     "fr": "Encoche : l’excavation atteint le rebord en inférotemporal",
+     "en": "Notch: the cup reaches the edge inferotemporally"
+    }
+   },
+   {
+    "x": 63,
+    "y": 45,
+    "r": 8,
+    "label": {
+     "fr": "Vaisseaux qui émergent côté nasal",
+     "en": "Vessels emerging on the nasal side"
+    }
+   },
+   {
+    "x": 45,
+    "y": 45,
+    "r": 10,
+    "label": {
+     "fr": "Lame criblée visible au fond de l’excavation",
+     "en": "Lamina cribrosa visible at the cup floor"
+    }
+   }
+  ]
+ }
+});

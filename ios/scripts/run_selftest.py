@@ -100,6 +100,9 @@ class Shooter(threading.Thread):
                     r = simctl('io', self.udid, 'screenshot', path, timeout=to, quiet=attempt == 0 and not name.startswith('t'))
                     if r.returncode == 0 and os.path.exists(path):
                         done = True; break
+                    time.sleep(2)
+                    if os.path.exists(path) and os.path.getsize(path) > 0:  # the killed attempt finished writing anyway
+                        done = True; break
                     log('screenshot %s attempt %d failed (%s)' % (name, attempt + 1, 'timeout' if r.returncode == -9 else r.returncode))
                 if done:
                     self.fails = 0; self.ok.append(name)
@@ -144,12 +147,14 @@ class Follower:
             except FileNotFoundError:
                 continue
             for raw in chunk.splitlines():
-                i = raw.find('SELFTEST ')
-                if i < 0 or 'eventMessage CONTAINS' in raw:
+                if 'SELFTEST ' not in raw or 'eventMessage CONTAINS' in raw:
                     continue
-                line = raw[i:].strip()
-                if line not in self.seen:
-                    self.seen.add(line); out.append((src, line))
+                # one physical line can hold several messages when stdout and stderr interleave: split them,
+                # and drop a trailing "2026-11-21 18:13:55.387 App[7909:29160]" prefix of the next message
+                for seg in re.split(r'(?=SELFTEST )', raw)[1:]:
+                    line = re.sub(r'\s*\d{4}-\d\d-\d\d[ T]\d\d:\d\d:\d\d.*$', '', seg).strip()
+                    if line and line not in self.seen:
+                        self.seen.add(line); out.append((src, line))
         return out
 
 
@@ -208,7 +213,7 @@ def main():
                 lines.append(line)
                 events.append({'t': round(time.time() - started, 1), 'pass': follower.name, 'src': src, 'line': line})
                 log(('%s ' % follower.name) + line)
-                m = re.match(r'SELFTEST SHOT (\S+)', line)
+                m = re.match(r'SELFTEST SHOT ([A-Za-z0-9_.-]+?)(?=\d{4}-\d\d-\d\d|\s|$)', line)
                 if m and on_shot:
                     on_shot(m.group(1))
                 if re.match(r'SELFTEST (PASS|FAIL) done\b', line):

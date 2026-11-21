@@ -19,3 +19,19 @@
 
 ## Cycle 3
 - Vidéos d’aperçu (Playwright, interface réelle, 9:16 et 1:1), tests indépendants (web + artefacts iOS), corrections, rapport de réveil.
+
+## Cycle 2 (12 h 52 – 13 h 27) — fait
+- Web : Investigations dans la nav (5e onglet), Image du jour + série avec gel, #cas-vedette (OACR, OPH-250), crédits + avertissement éducatif, imgsrc3 pris en charge.
+- Traduction : quiz 132/190 ; fiches cornée 14/14 ; fiches glaucome 13/13 ; capsules 2/2 ; cas 10/10.
+- Pédagogie : 46 items Investigations (sans image restreinte), 35 cas sur images (data/cases-images.js), corrections outils (docs/PEDAGOGY-REVIEW.md).
+- Images libres : 60 images (PMC + Commons) → workflow media.yml lancé.
+- Acquisition : launch/ (PLAN, CONTENU, LANDING, RISQUES). Photos EyeRounds hors réseaux sociaux.
+- iOS : agent en cours (exécuteur robuste, poussé 18:04Z).
+
+## Cycle 3 (prévu 14 h 00)
+- Exercices : corrections outils 1–5 (+6–8), route #cas-images + section hub pour G.OPH.imageCases, Shaffer 3 = 20–35°.
+- Web : cases-images dans data_order, sous-titre EN dupliqué, crédits imgsrc3, supprimer m-* restreints inutilisés.
+- Traduction : 58 QCM + glossaire 353 termes.
+- Visuels : hotspots imgsrc3 → nouveaux items (après le workflow).
+- Design/motion : vidéos d’aperçu à partir de l’interface réelle (Playwright, 9:16 + 16:9, sous-titres FR/EN).
+- Tests indépendants (Extra) : site + artefacts iOS + revue clinique échantillonnée.

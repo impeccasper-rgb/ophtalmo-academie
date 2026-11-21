@@ -129,7 +129,21 @@ both with fixed pauses and with screenshot acks. The runner's logic (device choi
 retried, acks, video pass, verdict, summary) was checked with a simulated `xcrun`. On the first CI run the app compiled,
 launched on an iPhone 17 Pro Max (iOS 26.5) with Capacitor and the native overlay active, and the walk started. The old
 runner then crashed on a screenshot timeout, which led to the redesign above.
-Note: on iOS 26 the WebView user agent says `iPhone OS 18_7` (Apple froze the version string), which is normal.
+**First green run: [44933504936](https://github.com/impeccasper-rgb/ophtalmo-academie/actions/runs/44933504936)**
+(commit 1b0a347, 2026-11-21, 22 min). **9/9 steps on iPhone 17 Pro Max (iOS 26.5) and on iPad Pro 13-inch M5
+(iOS 26.5)**: boot, locale autodetect (`navigator.language=fr-FR` → FR), home FR, switch to EN through the UI button,
+fiche, investigations hub (6 exams), the 6 exam pages, Observe → Answer → Reveal saved in `Store.p.inv`, flashcards.
+The only warning was remote Google Fonts. The evidence (34 iPhone and 36 iPad screenshots, a 44 s video) is in `ios-evidence/`
+(local, git-ignored) and on the branch `ios-evidence`.
+Timings on the runner: iPhone boot 2 min, iPad 2.5 min; WebView cold start 20 s (iPhone) and 2.5 min (iPad); walk 3.7 min.
+Notes:
+- On iOS 26 the WebView user agent says `iPhone OS 18_7` (Apple froze the version string). On iPad, WKWebView
+  presents itself as desktop Safari (`Macintosh`, iPadOS desktop-class browsing). Both are normal, and the responsive layout handles them.
+- After a programmatic jump-scroll the GPU-less simulator can paint late, so a screenshot taken right away can be blank
+  (seen once, `05-fiche-mid` on iPhone; the video shows the same screen rendered fine). The walk now waits two
+  animation frames plus 1.2 s before each screenshot.
+- Since run 2, the Debug log channel uses `os.Logger` instead of `NSLog`. NSLog also wrote to stderr, which mixed into
+  the console capture (merged lines, and a few screenshots saved as `name<date>.png`). The runner also splits merged lines.
 Run locally: `node ios/scripts/overlay.mjs <copy of site> --selftest`, open it in a browser, and read the console.
 
 ## 4. Name, bundle ID, icon

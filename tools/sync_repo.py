@@ -4,7 +4,7 @@ import fcntl, fnmatch, os, shutil, subprocess, sys
 _lock = open("/tmp/claude-0/-home-claude/48201f62-0d4f-5281-b310-ecd57583383e/scratchpad/sync.lock", "w"); fcntl.flock(_lock, fcntl.LOCK_EX)  # one sync at a time
 SRC, DST = '/home/claude/ophtalmo', '/home/claude/ophtalmo-academie'
 R = ['OPH-%03d.jpg' % i for i in list(range(12, 16)) + list(range(114, 131)) + list(range(187, 192)) + list(range(200, 210)) + [211, 212, 213, 215, 216, 227, 292, 293]]
-EX = R + ['imgsrc3', '.git', 'node_modules', 'dist', 'site', 'imgsrc/raw', 'imgsrc2/raw', 'imgsrc/sheets', 'imgsrc2/sheets', 'imgsrc/thumb',
+EX = R + ['imgsrc3/web', 'imgsrc3/catalog3.json', 'imgsrc3/build-log.json', '.git', 'node_modules', 'dist', 'site', 'imgsrc/raw', 'imgsrc2/raw', 'imgsrc/sheets', 'imgsrc2/sheets', 'imgsrc/thumb',
       'imgsrc2/complement.pdf', 'ios/App/App/public', 'ios/build', '*.log', '__pycache__']
 def skip(rel):
     return any(rel == e or rel.startswith(e + '/') or fnmatch.fnmatch(os.path.basename(rel), e) for e in EX)
@@ -27,7 +27,7 @@ for dp, dns, fns in os.walk(DST):
     if rd.split('/')[0] == '.git': continue
     for f in fns:
         rel = os.path.join(rd, f)
-        if rel not in keep and not rel.startswith('.git/') and not rel.startswith('imgsrc3/'): os.remove(os.path.join(DST, rel))
+        if rel not in keep and not rel.startswith('.git/') and not (rel.startswith('imgsrc3/web/') or rel in ('imgsrc3/catalog3.json', 'imgsrc3/build-log.json')): os.remove(os.path.join(DST, rel))
 msg = (sys.argv[1] if len(sys.argv) > 1 else 'Mise à jour') + '\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_018GVFi3F6V1uxxUXMe3i7GE'
 run = lambda *a: subprocess.run(a, cwd=DST, capture_output=True, text=True)
 run('git', 'add', '-A')
