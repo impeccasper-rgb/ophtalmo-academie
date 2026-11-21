@@ -10,7 +10,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Glaucomatous cupping and its mimics",
   tags: ["highyield", "piege"],
   oneLiner: "Un C/D élevé n’est pas un diagnostic : mesurer le disque, lire l’anneau, chercher la pâleur qui impose une IRM.",
-  definition: "L’excavation glaucomateuse est la perte progressive des axones du bord neurorétinien, qui agrandit le creux central de la papille (cup) surtout aux pôles, alors que l’anneau restant reste rose. Plusieurs papilles non glaucomateuses l’imitent (grand disque, papille inclinée, hypoplasie, atrophie compressive ou héréditaire, séquelle d’ischémie, drusen papillaires) et certaines cachent une maladie grave.",
+  definition: "L’excavation glaucomateuse est la perte des axones de l’anneau, surtout aux pôles, alors que l’anneau restant reste rose. Plusieurs papilles l’imitent (grand disque, papille inclinée, compression, ischémie, hérédité, drusen), et certaines cachent une maladie grave.",
   anatomy: {
     text: "La papille (optic disc) mesure ≈ 1,5–2 mm, mais sa taille varie beaucoup alors que l’anneau d’axones occupe une surface assez semblable : grand disque = grand creux physiologique, petit disque = presque aucun creux. Le bord neurorétinien (neuroretinal rim) est normalement plus épais en inférieur, puis supérieur, nasal et temporal (règle ISNT, imparfaite). Les fibres maculaires entrent du côté temporal : une atteinte héréditaire, toxique ou compressive les pâlit en premier.",
     figure: {
@@ -45,7 +45,8 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Dirigé pour « C/D élevé », souvent sans symptôme",
     "Glaucome : anneau rose aminci aux pôles, AV et couleurs conservées longtemps",
     "Imitateur compressif ou héréditaire : AV ou couleurs ↓, déficit pupillaire afférent relatif (DPAR), pâleur",
-    "Imitateur congénital : aspect stable, défaut de champ qui ne progresse pas"
+    "Imitateur congénital : aspect stable, défaut de champ qui ne progresse pas",
+    "Progression rapide ou asymétrie sans PIO qui l’explique"
   ],
   exam: {
     signs: [
@@ -72,16 +73,14 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   redFlags: [
     "Âge < 50 ans, AV ou couleurs ↓, DPAR inexpliqué",
-    "Pâleur > excavation, anneau restant pâle",
-    "Défaut qui respecte le méridien vertical",
-    "Progression rapide ou asymétrie sans PIO qui l’explique",
+    "Pâleur > excavation ou défaut respectant le méridien vertical",
     "≥ 50 ans avec symptômes d’artérite : VS, CRP le jour même"
   ],
   cat: {
     algo: [
-      { q: "Le creux est-il proportionné à la taille du disque ?", yes: "Grand disque, anneau normal : imitateur physiologique probable ; documenter.", no: "Creux trop grand : suspect de glaucome." },
-      { q: "Drapeau rouge (voir plus bas) ?", yes: "IRM ± VS, CRP.", no: "Bilan de glaucome : PIO, pachymétrie, gonioscopie." },
-      { q: "OCT et champ concordent ?", yes: "Diagnostic posé : PIO cible.", no: "Refaire ; chercher un artefact ou une autre cause." },
+      { q: "Creux proportionné à la taille du disque ?", yes: "Grand disque, anneau normal : imitateur probable ; documenter.", no: "Creux trop grand : suspect de glaucome.", cont: "no" },
+      { q: "Drapeau rouge présent ?", yes: "IRM ± VS, CRP.", no: "Bilan de glaucome : PIO, pachymétrie, gonioscopie.", cont: "no" },
+      { q: "OCT et champ concordent ?", yes: "Diagnostic posé : PIO cible.", no: "Refaire ; chercher un artefact ou une autre cause.", cont: "yes" },
       { q: "Changement documenté au suivi ?", yes: "Traiter ou intensifier.", no: "Anomalie stable : suivi espacé, sans gouttes." }
     ],
     phases: [
@@ -105,9 +104,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     local: "Au Québec, beaucoup de références « C/D élevé » viennent de l’optométrie ; l’optométriste peut traiter un glaucome suspect ou débutant, mais doit diriger vers l’ophtalmologiste pour le suivi (Règlement O-7, r. 11.1). Sur la requête d’IRM, nommer le drapeau rouge."
   },
   treatments: [
-    { name: "OCT et champs en série", how: "OCT RNFL et GCL ; périmétrie 24-2 et 10-2.", why: "Tout disque suspect : référence, puis changement.", pros: "Objectifs ; la forme du défaut localise la lésion.", cons: "Bases normatives mal adaptées aux disques atypiques.", cx: "Erreur si on traite l’imprimé sans regarder la papille." },
-    { name: "IRM et bilan d’artérite", how: "IRM avec gadolinium ; VS, CRP, plaquettes, biopsie de l’artère temporale.", why: "Drapeau rouge, ou excavation pâle après une perte visuelle aiguë.", pros: "Trouve des causes traitables ; protège l’autre œil.", cons: "Délais ; faible rendement sans drapeau rouge.", cx: "Gadolinium et fonction rénale ; stéroïdes à haute dose." },
-    { name: "Traitement hypotenseur", how: "Gouttes, SLT ou chirurgie selon le stade.", why: "Glaucome confirmé, même dans une mégalopapille ou une papille inclinée.", pros: "Ralentit la perte.", cons: "Inutile dans un imitateur.", cx: "Effets indésirables à vie (voir GPAO, GPN)." }
+    { name: "OCT et champs en série", how: "OCT RNFL et GCL ; périmétrie 24-2 et 10-2.", why: "Tout disque suspect : référence, puis changement.", pros: "Objectifs ; la forme du défaut localise la lésion.", cons: "Bases normatives mal adaptées aux disques atypiques.", cx: "Erreur si on traite l’imprimé sans regarder la papille.", dose: "OCT RNFL et GCL ; champs 24-2 et 10-2, en série.", refer: "Tout disque suspect : examen de référence, puis comparer.", pitfall: "Ne pas traiter l’imprimé : un disque atypique sort de la base normative." },
+    { name: "IRM et bilan d’artérite", how: "IRM avec gadolinium ; VS, CRP, plaquettes, biopsie de l’artère temporale.", why: "Drapeau rouge, ou excavation pâle après une perte visuelle aiguë.", pros: "Trouve des causes traitables ; protège l’autre œil.", cons: "Délais ; faible rendement sans drapeau rouge.", cx: "Gadolinium et fonction rénale ; stéroïdes à haute dose.", dose: "IRM avec gadolinium ; VS, CRP, plaquettes ± biopsie de l’artère temporale.", refer: "Drapeau rouge : IRM rapide ; artérite suspectée : le jour même.", pitfall: "Pas de gouttes avant d’avoir exclu une compression.", qc: "Québec : nommer le drapeau rouge sur la requête d’IRM pour la prioriser." },
+    { name: "Traitement hypotenseur", how: "Gouttes, SLT ou chirurgie selon le stade.", why: "Glaucome confirmé, même dans une mégalopapille ou une papille inclinée.", pros: "Ralentit la perte.", cons: "Inutile dans un imitateur.", cx: "Effets indésirables à vie (voir GPAO, GPN).", dose: "Latanoprost 0,005 % au coucher, SLT ou chirurgie selon le stade.", refer: "Glaucome confirmé, même dans une mégalopapille ou une papille inclinée.", pitfall: "Inutile dans un imitateur stable : effets indésirables à vie." }
   ],
   pearls: [
     { q: "Un C/D de 0,7 est-il anormal ?", a: "Ça dépend du disque : dans un grand disque, 0,7 avec un anneau rose régulier peut être normal ; dans un petit disque, 0,5 peut déjà être glaucomateux." },
@@ -138,7 +137,20 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Guide optométrique canadien GPAO (MacIver S, MacDonald M, Prokopich CL, Can J Optom 2017;79 Suppl 1)",
     "Greenfield DS et al. The cupped disc: who needs neuroimaging? (Ophthalmology 1998)",
     "Trobe JD et al. Nonglaucomatous excavation of the optic disc (Arch Ophthalmol 1980)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**OCT et champs en série** : OCT RNFL et GCL ; champs 24-2 et 10-2, en série.",
+      "**IRM et bilan d’artérite** : IRM avec gadolinium ; VS, CRP, plaquettes ± biopsie de l’artère temporale.",
+      "**Traitement hypotenseur** : Latanoprost 0,005 % au coucher, SLT ou chirurgie selon le stade."
+    ],
+    refer: ["**IRM et bilan d’artérite** : Drapeau rouge : IRM rapide ; artérite suspectée : le jour même."],
+    pitfall: [
+      "**IRM et bilan d’artérite** : Pas de gouttes avant d’avoir exclu une compression.",
+      "**OCT et champs en série** : Ne pas traiter l’imprimé : un disque atypique sort de la base normative."
+    ],
+    qc: ["Québec : nommer le drapeau rouge sur la requête d’IRM pour la prioriser."]
+  }
 },
 {
   id: "g-cristallin",
@@ -148,10 +160,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Lens-, IOL- and trauma-related glaucomas",
   tags: ["urgent", "highyield"],
   oneLiner: "PIO élevée avec cataracte avancée, implant ou trauma : trouver le mécanisme (angle fermé ou ouvert), baisser la PIO, traiter la cause.",
-  definition: "Ce sont des glaucomes secondaires où le cristallin (trop gros, qui fuit, déplacé), un implant intraoculaire (IOL) qui frotte l’iris, ou un traumatisme (sang, déchirure de l’angle, gaz dans l’œil) fait monter la pression intraoculaire (PIO). Le mécanisme dicte le traitement : on baisse d’abord la PIO, puis on enlève ou on repositionne la cause.",
+  definition: "Le cristallin (gonflé, qui fuit, déplacé), un implant qui frotte l’iris ou un trauma (sang, récession de l’angle, gaz) fait monter la PIO. Le mécanisme dicte le traitement : baisser la PIO, puis retirer ou replacer la cause.",
   anatomy: {
     text: "Le cristallin est suspendu derrière l’iris par la zonule (zonules), fibres attachées au corps ciliaire ; il s’épaissit toute la vie et pousse l’iris vers l’avant. Sa capsule retient des protéines qui, libérées, bouchent le trabéculum ou déclenchent une inflammation. Le corps ciliaire est fragile au trauma : sa déchirure entre fibres longitudinales et circulaires donne la récession de l’angle.",
-    figure: { type: "eye", highlight: ["cristallin", "zonules", "iris", "angle", "corps-ciliaire", "trabeculum"] }
+    figure: {
+      type: "eye",
+      highlight: ["cristallin", "zonules", "iris", "angle", "corps-ciliaire", "trabeculum"]
+    }
   },
   causal: {
     title: "Comment le cristallin, l’implant ou un coup font monter la PIO",
@@ -212,33 +227,55 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   redFlags: [
     "Cristallin ou implant luxé en chambre antérieure : contact endothélial, bloc → chirurgie rapide",
     "Hyphéma et drépanocytose : PIO ≥ 24 mmHg plus de 24 h → lavage chirurgical",
-    "Imbibition hématique débutante ou hyphéma total",
-    "Douleur après vitrectomie avec gaz : PIO immédiate",
-    "Resaignement, surtout entre le 2e et le 5e jour"
+    "Douleur après vitrectomie avec gaz : PIO immédiate"
   ],
   cat: {
     algo: [
-      { q: "Angle fermé (chambre plate, gonioscopie) ?", yes: "Poussée : LPI si bloc, cycloplégique si cristallin en avant, puis chirurgie.", no: "Angle ouvert : chercher ce qui bouche." },
-      { q: "Cataracte hypermûre, particules, chambre profonde ?", yes: "Phacolytique : PIO, stéroïde, extraction rapide.", no: "Continuer." },
-      { q: "Pseudophaque avec microhyphémas et transillumination ?", yes: "UGH : UBM, repositionnement ou échange de l’implant.", no: "Continuer." },
-      { q: "Trauma récent avec sang ?", yes: "Protocole de l’hyphéma ; drépanocytose ?", no: "Trauma ancien : gonioscopie (récession)." },
+      { q: "Angle fermé (chambre plate, gonioscopie) ?", yes: "LPI si bloc, cycloplégique si cristallin en avant, puis chirurgie.", no: "Angle ouvert : chercher ce qui bouche.", cont: "no" },
+      { q: "Cataracte hypermûre, particules, chambre profonde ?", yes: "Phacolytique : baisser la PIO, stéroïde, extraction rapide.", no: "Continuer.", cont: "no" },
+      { q: "Pseudophaque, microhyphémas, transillumination ?", yes: "UGH : UBM, repositionner ou échanger l’implant.", no: "Continuer.", cont: "no" },
+      { q: "Trauma récent avec sang ?", yes: "Protocole de l’hyphéma ; dépister la drépanocytose.", no: "Trauma ancien : gonioscopie (récession).", cont: "no" },
       { q: "Gaz dans l’œil ?", yes: "Hypotenseurs, positionnement, ± retrait partiel du gaz.", no: "Autre cause secondaire." }
     ],
     phases: [
-      { phase: "medical", items: ["Bêtabloquant, alpha-agoniste ; IAC sauf drépanocytose ; acétazolamide 500 mg PO ou mannitol IV si réfractaire (à éviter en drépanocytose)", "Prednisolone 1 % et cycloplégique ; pas de pilocarpine si cause cristallinienne"] },
-      { phase: "laser", items: ["LPI si bloc pupillaire"] },
-      { phase: "chirurgie", items: ["Extraction du cristallin dès que possible ; équipe de rétine si luxé en arrière", "Lavage : fragments, hyphéma persistant ; UGH : implant replacé ou échangé"] },
-      { phase: "suivi", items: ["Hyphéma : examen presque quotidien les premiers jours ; récession et aphaquie : PIO à vie"] },
-      { phase: "escalade", items: ["PIO non contrôlée ou imbibition : lavage ; glaucome réfractaire : tube (Ahmed, Baerveldt)"] }
+      {
+        phase: "medical",
+        items: [
+          "Bêtabloquant, alpha-agoniste ; IAC sauf drépanocytose ; acétazolamide 500 mg PO ou mannitol IV si réfractaire (à éviter en drépanocytose)",
+          "Prednisolone 1 % et cycloplégique ; pas de pilocarpine si cause cristallinienne"
+        ]
+      },
+      {
+        phase: "laser",
+        items: ["LPI si bloc pupillaire"]
+      },
+      {
+        phase: "chirurgie",
+        items: [
+          "Extraction du cristallin dès que possible ; équipe de rétine si luxé en arrière",
+          "Lavage : fragments, hyphéma persistant ; UGH : implant replacé ou échangé"
+        ]
+      },
+      {
+        phase: "suivi",
+        items: [
+          "Hyphéma : examen presque quotidien les premiers jours ; récession et aphaquie : PIO à vie",
+          "Hyphéma : guetter le resaignement (surtout du 2e au 5e jour), l’imbibition hématique débutante ou un hyphéma total."
+        ]
+      },
+      {
+        phase: "escalade",
+        items: ["PIO non contrôlée ou imbibition : lavage ; glaucome réfractaire : tube (Ahmed, Baerveldt)"]
+      }
     ],
     local: "À Montréal, demander l’électrophorèse de l’hémoglobine devant tout hyphéma chez les patients d’origine haïtienne, africaine, antillaise, méditerranéenne, moyen-orientale ou indienne, avant de choisir les hypotenseurs."
   },
   treatments: [
-    { name: "Extraction du cristallin", how: "Phacoémulsification ou extraction extracapsulaire.", why: "Phacomorphique, phacolytique, cristallin subluxé ou luxé.", pros: "Traite la cause.", cons: "Capsule fragile, zonule faible, cornée œdémateuse.", cx: "Rupture capsulaire, noyau dans le vitré, perte endothéliale." },
-    { name: "Hypotenseurs et anti-inflammatoires", how: "Suppresseurs de l’aqueuse ; prednisolone 1 %, cycloplégique.", why: "Toujours en premier.", pros: "Rapides, en clinique.", cons: "Temporisent sans traiter la cause.", cx: "IAC, hyperosmotiques : falciformation ; acétazolamide : sulfamides, potassium, rein." },
-    { name: "Repositionnement ou échange d’implant", how: "Implant remis dans le sac, optique capturée, fixation, ou modèle conçu pour le sulcus.", why: "UGH, implant migré.", pros: "Seul traitement définitif du frottement.", cons: "Chirurgie complexe.", cx: "Hémorragie, décollement de rétine, œdème maculaire." },
-    { name: "Protocole de l’hyphéma", how: "Tête du lit à 30–45°, coque, activité réduite, atropine, prednisolone 1 % ; pas d’AINS ni d’aspirine.", why: "Tout hyphéma traumatique.", pros: "Confort, moins d’inflammation.", cons: "Preuves limitées pour chaque mesure.", cx: "Resaignement, PIO, imbibition." },
-    { name: "Tube de drainage", how: "Ahmed ou Baerveldt.", why: "Récession ou glaucome aphaque réfractaire.", pros: "Contrôle durable.", cons: "Dans la récession, SLT peu efficace et miotiques parfois paradoxaux.", cx: "Hypotonie, érosion du tube, décompensation cornéenne." }
+    { name: "Extraction du cristallin", how: "Phacoémulsification ou extraction extracapsulaire.", why: "Phacomorphique, phacolytique, cristallin subluxé ou luxé.", pros: "Traite la cause.", cons: "Capsule fragile, zonule faible, cornée œdémateuse.", cx: "Rupture capsulaire, noyau dans le vitré, perte endothéliale.", dose: "Phacoémulsification ou extraction extracapsulaire.", refer: "Phacomorphique ou phacolytique : chirurgie rapide, après baisse de la PIO.", pitfall: "Capsule fragile, zonules faibles : chirurgien expérimenté." },
+    { name: "Hypotenseurs et anti-inflammatoires", how: "Suppresseurs de l’aqueuse ; prednisolone 1 %, cycloplégique.", why: "Toujours en premier.", pros: "Rapides, en clinique.", cons: "Temporisent sans traiter la cause.", cx: "IAC, hyperosmotiques : falciformation ; acétazolamide : sulfamides, potassium, rein.", dose: "Timolol 0,5 %, brimonidine 0,2 % ; prednisolone acétate 1 % QID, cycloplégique.", refer: "Toujours en premier ; diriger le jour même.", pitfall: "Drépanocytose : éviter IAC et hyperosmotiques (falciformation)." },
+    { name: "Repositionnement ou échange d’implant", how: "Implant remis dans le sac, optique capturée, fixation, ou modèle conçu pour le sulcus.", why: "UGH, implant migré.", pros: "Seul traitement définitif du frottement.", cons: "Chirurgie complexe.", cx: "Hémorragie, décollement de rétine, œdème maculaire.", dose: "Implant replacé dans le sac, capturé, fixé ou échangé.", refer: "UGH ou implant migré : chirurgien du segment antérieur.", pitfall: "Chirurgie complexe : risque d’hémorragie et de décollement de rétine." },
+    { name: "Protocole de l’hyphéma", how: "Tête du lit à 30–45°, coque, activité réduite, atropine, prednisolone 1 % ; pas d’AINS ni d’aspirine.", why: "Tout hyphéma traumatique.", pros: "Confort, moins d’inflammation.", cons: "Preuves limitées pour chaque mesure.", cx: "Resaignement, PIO, imbibition.", dose: "Tête du lit à 30–45°, coque, atropine 1 %, prednisolone acétate 1 %.", refer: "Tout hyphéma traumatique : suivi rapproché les premiers jours.", pitfall: "Pas d’AINS ni d’aspirine ; drépanocytose : PIO ≥ 24 mmHg plus de 24 h = lavage.", qc: "Montréal : électrophorèse de l’hémoglobine si origine haïtienne, africaine, antillaise, méditerranéenne, moyen-orientale ou indienne." },
+    { name: "Tube de drainage", how: "Ahmed ou Baerveldt.", why: "Récession ou glaucome aphaque réfractaire.", pros: "Contrôle durable.", cons: "Dans la récession, SLT peu efficace et miotiques parfois paradoxaux.", cx: "Hypotonie, érosion du tube, décompensation cornéenne.", dose: "Ahmed ou Baerveldt, au bloc.", refer: "Récession de l’angle ou glaucome aphaque réfractaire.", pitfall: "Récession : SLT peu efficace, miotiques parfois paradoxaux." }
   ],
   pearls: [
     { q: "Comment distingues-tu glaucome phacomorphique et fermeture primaire ?", a: "Phacomorphique : chambre plate d’un seul côté, cataracte gonflée, œil adelphe plus profond. La LPI ne règle pas la cause : on retire le cristallin une fois la PIO abaissée." },
@@ -248,15 +285,40 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "Cristallin : gros, qui fuit, en morceaux, déplacé", text: "**Gros** = glaucome phacomorphique (angle fermé) ; **fuit** = glaucome phacolytique (angle ouvert, capsule intacte) ; **morceaux** = particules après chirurgie ou trauma ; **déplacé** = subluxation ou luxation (bloc pupillaire). Toujours : PIO d’abord, cristallin ensuite." },
   compare: {
     title: "Angle normal vs récession de l’angle",
-    normal: { figure: { type: "gonio", grade: 4 }, caption: "Angle ouvert : bande ciliaire de largeur habituelle, procès iriens intacts." },
-    patho: { figure: { type: "gonio", grade: 4, recession: true }, caption: "Récession après un trauma contusif.", reveal: ["Bande ciliaire anormalement large", "Procès iriens déchirés", "Racine de l’iris reculée", "Comparer à l’autre œil : l’asymétrie trahit la récession"] }
+    normal: {
+      figure: { type: "gonio", grade: 4 },
+      caption: "Angle ouvert : bande ciliaire de largeur habituelle, procès iriens intacts."
+    },
+    patho: {
+      figure: { type: "gonio", grade: 4, recession: true },
+      caption: "Récession après un trauma contusif.",
+      reveal: ["Bande ciliaire anormalement large", "Procès iriens déchirés", "Racine de l’iris reculée", "Comparer à l’autre œil : l’asymétrie trahit la récession"]
+    }
   },
   sources: [
     "AAO PPP Primary Angle Closure Disease (Gedde SJ, Chopra V, Vinod K et al., Ophthalmology, en ligne 9 févr. 2026)",
     "COS 2009 : Canadian Ophthalmological Society glaucoma guidelines (Can J Ophthalmol 2009;44 Suppl 1:S7-S93)",
     "AAO Basic and Clinical Science Course, section 10 : Glaucoma",
     "EyeRounds (University of Iowa) : cas Uveitis-glaucoma-hyphema syndrome et Aphakic glaucoma"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**Extraction du cristallin** : Phacoémulsification ou extraction extracapsulaire.",
+      "**Hypotenseurs et anti-inflammatoires** : Timolol 0,5 %, brimonidine 0,2 % ; prednisolone acétate 1 % QID, cycloplégique.",
+      "**Repositionnement ou échange d’implant** : Implant replacé dans le sac, capturé, fixé ou échangé.",
+      "**Protocole de l’hyphéma** : Tête du lit à 30–45°, coque, atropine 1 %, prednisolone acétate 1 %.",
+      "**Tube de drainage** : Ahmed ou Baerveldt, au bloc."
+    ],
+    refer: [
+      "**Hypotenseurs et anti-inflammatoires** : Toujours en premier ; diriger le jour même.",
+      "**Protocole de l’hyphéma** : Tout hyphéma traumatique : suivi rapproché les premiers jours."
+    ],
+    pitfall: [
+      "**Hypotenseurs et anti-inflammatoires** : Drépanocytose : éviter IAC et hyperosmotiques (falciformation).",
+      "**Protocole de l’hyphéma** : Pas d’AINS ni d’aspirine ; drépanocytose : PIO ≥ 24 mmHg plus de 24 h = lavage."
+    ],
+    qc: ["Montréal : électrophorèse de l’hémoglobine si origine haïtienne, africaine, antillaise, méditerranéenne, moyen-orientale ou indienne."]
+  }
 }
 ]);
 

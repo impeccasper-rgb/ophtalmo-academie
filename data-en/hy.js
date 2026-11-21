@@ -37,8 +37,7 @@ Object.assign(G.OPH_EN.hy, {
       "Most often the problem is not a lack of tears but poor-quality meibomian oil (**MGD**).",
       "DEWS III: **no symptoms, no dry eye**; OSDI-6 ≥ 4, then one objective sign.",
       "**Inferior** punctate keratitis: MGD, exposure or toxic drops; interpalpebral: aqueous deficiency.",
-      "Dry eyes on glaucoma drops: **BAK** toxicity, switch to preservative-free drops.",
-      "Refractory unilateral blepharitis: rule out **sebaceous carcinoma**.",
+      "Dry eyes on glaucoma drops: **BAK** toxicity, switch to preservative-free drops."
     ],
     cloze: [
       "DEWS III criterion: non-invasive tear breakup time (NIBUT) under [[10 s|10 seconds|10]].",
@@ -65,7 +64,6 @@ Object.assign(G.OPH_EN.hy, {
       "Red eye: read the conjunctiva, but the **cornea with fluorescein** decides the urgency.",
       "**Follicle**: vessels around the base (virus, Chlamydia); **papilla**: central vessel (allergy, contact lenses).",
       "Adenovirus: **no antibiotic**; steroid only for pseudomembranes or vision-reducing infiltrates.",
-      "Copious pus within hours: **gonococcus**, systemic ceftriaxone the same day.",
       "Follicular for more than 3–4 weeks despite drops: think **Chlamydia**, treat partners."
     ],
     cloze: [
@@ -92,7 +90,6 @@ Object.assign(G.OPH_EN.hy, {
     essentials: [
       "Sharp pain **on waking**, weeks after a fingernail scratch: poorly anchored epithelium that tears off.",
       "**Never topical anesthetic** at home: abuse blocks healing and can cause ulceration and perforation.",
-      "Abrasion in a contact lens wearer: fluoroquinolone, **never patch**, recheck at 24 h.",
       "Recurrent erosion: **NaCl 5 %** ointment at bedtime for 3–6 months.",
       "EBMD before cataract surgery: **polish first**, then repeat biometry on a stable cornea."
     ],
@@ -118,11 +115,10 @@ Object.assign(G.OPH_EN.hy, {
 
   "c-bacterienne": {
     essentials: [
-      "Epithelial defect + stromal infiltrate: **infectious** until proven otherwise, especially in a contact lens wearer.",
-      "**1-2-3** rule (AC ≥ 1+, infiltrate ≥ 2 mm, ≤ 3 mm from center): one criterion is enough.",
+      "Epithelial defect + stromal infiltrate: **infectious** until proven otherwise, especially with contact lenses.",
       "Scrape and culture **before the antibiotic**, but never delay it.",
-      "**No steroid** at the outset: SCUT and SCUT II showed no overall benefit; never with Nocardia.",
-      "**No pressure patch**: a closed, warm, moist eye favors Pseudomonas and prevents hourly drops."
+      "**No steroid** at the outset (SCUT, SCUT II); never with Nocardia.",
+      "**No pressure patch**: it favors Pseudomonas and prevents hourly drops."
     ],
     cloze: [
       "In a contact lens wearer, the antibiotic must always cover [[Pseudomonas]].",
@@ -147,7 +143,6 @@ Object.assign(G.OPH_EN.hy, {
   "c-atypiques": {
     essentials: [
       "Contact lenses + water + **pain out of proportion** = Acanthamoeba until proven otherwise.",
-      "Branch or soil + **feathery margins** + satellite lesions = filamentous fungus.",
       "Ulcer not responding after **48–72 h** of antibiotics: stop steroids, revisit the diagnosis, resample.",
       "**Never steroid**: it suppresses the neutrophils that contain the fungus.",
       "MUTT I: **natamycin 5 %** superior to voriconazole for filamentous fungi, especially Fusarium."
@@ -203,7 +198,6 @@ Object.assign(G.OPH_EN.hy, {
   "c-peripherie": {
     essentials: [
       "**Clear interval** + blepharitis = marginal keratitis; crescent hugging the limbus = PUK.",
-      "PUK: **systemic workup and rheumatology the same day**; often a life-threatening vasculitis.",
       "Melting cornea: **no topical NSAIDs**, which promote melting; oral doxycycline.",
       "**Phenylephrine 2.5 %**: episcleritis blanches, scleritis (deep plexus) persists.",
       "Terrien: **painless white eye**, superior gutter lined with lipid, against-the-rule astigmatism."
@@ -231,7 +225,6 @@ Object.assign(G.OPH_EN.hy, {
   "c-pterygion": {
     essentials: [
       "Pterygium: UV-related **nasal** wing that crosses the limbus; a pinguecula stays on the conjunctiva.",
-      "Gelatinous, leukoplakic, papillomatous lesion or one with feeder vessels: **OSSN** until proven otherwise.",
       "**Conjunctival autograft** after excision: far lower recurrence than bare sclera.",
       "Pterygium and cataract: **remove the pterygium first**, then repeat biometry.",
       "Pseudopterygium: after a burn or trauma, any meridian; **a probe passes under the neck**."
@@ -257,11 +250,10 @@ Object.assign(G.OPH_EN.hy, {
 
   "c-depots": {
     essentials: [
-      "Facing an opacity: **layer, color, context** lead to the deposit, the workup and the treatment.",
-      "**Arcus** before age 50: lipid panel; unilateral arcus: carotid stenosis on the side without arcus.",
-      "Chalky white band in Bowman layer = **calcium**; in a child, look for JIA uveitis.",
-      "**Kayser-Fleischer**: copper in Descemet = Wilson; Fleischer: iron around the cone.",
-      "**Crystals** in a graft on steroids: infection until proven otherwise, culture it."
+      "Faced with an opacity: **layer, color, context** lead to the deposit and the workup.",
+      "**Arcus** before 50: lipid panel; unilateral arcus: carotid stenosis on the side without arcus.",
+      "Chalky white band in Bowman = **calcium**; in a child, look for JIA.",
+      "**Kayser-Fleischer**: copper in Descemet = Wilson; Fleischer: iron around the cone."
     ],
     cloze: [
       "Cornea verticillata: amiodarone, hydroxychloroquine or [[Fabry]] disease.",
@@ -316,8 +308,7 @@ Object.assign(G.OPH_EN.hy, {
       "**Bilateral, symmetric**, familial opacities without vessels or inflammation: dystrophy; localize the layer.",
       "Granular: discrete crumbs with clear stroma between them; **macular**: haze out to the limbus, thin cornea.",
       "Of the three stromal dystrophies, only **macular is recessive** (CHST6); granular and lattice are dominant (TGFBI).",
-      "**TGFBI** mutation or snowflake opacities: no LASIK, deposits proliferate at the interface.",
-      "**Unilateral**, red or painful opacity: infection, not dystrophy."
+      "**TGFBI** mutation or snowflake opacities: no LASIK, deposits proliferate at the interface."
     ],
     cloze: [
       "Lattice dystrophy: [[amyloid]] deposits that stain with Congo red.",
@@ -368,7 +359,6 @@ Object.assign(G.OPH_EN.hy, {
 
   "c-greffe": {
     essentials: [
-      "Graft patient with **RSVP** (redness, sensitivity to light, vision ↓, pain): rejection until proven otherwise, seen the same day.",
       "Rejection risk: **PK > DSAEK > DMEK**; DALK has no endothelial rejection.",
       "**Khodadoust line**: advancing KP with edematous graft behind it; endothelial rejection, the most serious.",
       "Infiltrate on the graft or near a suture: **culture before** increasing steroids.",
@@ -396,7 +386,6 @@ Object.assign(G.OPH_EN.hy, {
 
   "c-brulure": {
     essentials: [
-      "**Irrigate first**, before the history and visual acuity; only pH paper may come first.",
       "Irrigate ≥ 30 min until **pH 7.0–7.5**, rechecked 5–10 min after stopping.",
       "**Alkalis** are worse: they saponify membranes and penetrate; acid coagulates and forms a barrier.",
       "Pitfall: a **white** eye (ischemic limbus) is often worse than a red eye.",

@@ -38,8 +38,7 @@ Object.assign(G.OPH.hy, {
       "Le plus souvent, ce n’est pas un manque de larmes, mais une huile meibomienne de mauvaise qualité (**MGD**).",
       "DEWS III : **sans symptômes, pas de sécheresse** ; OSDI-6 ≥ 4 puis un signe objectif.",
       "Kératite ponctuée **inférieure** : MGD, exposition ou gouttes toxiques ; entre les paupières : manque d’eau.",
-      "Yeux secs sous gouttes de glaucome : **BAK** toxique, passer aux gouttes sans agent de conservation.",
-      "Blépharite rebelle d’un seul côté : exclure un **carcinome sébacé**."
+      "Yeux secs sous gouttes de glaucome : **BAK** toxique, passer aux gouttes sans agent de conservation."
     ],
     cloze: [
       "Critère DEWS III : temps de rupture sans fluorescéine (NIBUT) inférieur à [[10 s|10 secondes|10]].",
@@ -66,7 +65,6 @@ Object.assign(G.OPH.hy, {
       "Œil rouge : lire la conjonctive, mais la **cornée à la fluorescéine** décide de l’urgence.",
       "**Follicule** : vaisseaux autour de la base (virus, Chlamydia) ; **papille** : vaisseau central (allergie, lentilles).",
       "Adénovirus : **pas d’antibiotique** ; stéroïde seulement si pseudomembranes ou infiltrats qui baissent la vision.",
-      "Pus abondant en quelques heures : **gonocoque**, ceftriaxone systémique le jour même.",
       "Folliculaire depuis plus de 3–4 semaines malgré les gouttes : penser **Chlamydia**, traiter les partenaires."
     ],
     cloze: [
@@ -93,7 +91,6 @@ Object.assign(G.OPH.hy, {
     essentials: [
       "Douleur vive **au réveil**, des semaines après une égratignure d’ongle : épithélium mal ancré qui s’arrache.",
       "**Jamais d’anesthésique topique** à la maison : l’abus bloque la guérison et peut causer ulcère et perforation.",
-      "Abrasion chez un porteur de lentilles : fluoroquinolone, **jamais de pansement**, revoir à 24 h.",
       "Érosion récidivante : onguent **NaCl 5 %** au coucher pendant 3–6 mois.",
       "EBMD avant une cataracte : **polir d’abord**, puis refaire la biométrie sur une cornée stable."
     ],
@@ -119,11 +116,10 @@ Object.assign(G.OPH.hy, {
 
   "c-bacterienne": {
     essentials: [
-      "Défaut épithélial + infiltrat stromal : **infectieux** jusqu’à preuve du contraire, surtout chez un porteur de lentilles.",
-      "Règle **1-2-3** (CA ≥ 1+, infiltrat ≥ 2 mm, ≤ 3 mm du centre) : un critère suffit.",
+      "Défaut épithélial + infiltrat stromal : **infectieux** jusqu’à preuve du contraire, surtout sous lentilles.",
       "Gratter et cultiver **avant l’antibiotique**, sans jamais retarder celui-ci.",
-      "**Pas de stéroïde** au départ : SCUT et SCUT II sans bénéfice global ; jamais si Nocardia.",
-      "**Pas de pansement fermé** : l’œil clos, chaud et humide favorise Pseudomonas et empêche les gouttes aux heures."
+      "**Pas de stéroïde** au départ (SCUT, SCUT II) ; jamais si Nocardia.",
+      "**Pas de pansement fermé** : il favorise Pseudomonas et empêche les gouttes aux heures."
     ],
     cloze: [
       "Chez le porteur de lentilles, l’antibiotique doit toujours couvrir [[Pseudomonas]].",
@@ -148,7 +144,6 @@ Object.assign(G.OPH.hy, {
   "c-atypiques": {
     essentials: [
       "Lentilles + eau + **douleur hors de proportion** = Acanthamoeba jusqu’à preuve du contraire.",
-      "Branche ou terre + **bords plumeux** + lésions satellites = champignon filamenteux.",
       "Ulcère sans réponse après **48–72 h** d’antibiotiques : arrêter les stéroïdes, reprendre le diagnostic, prélever.",
       "**Jamais de stéroïde** : il freine les neutrophiles qui contiennent le champignon.",
       "MUTT I : **natamycine 5 %** supérieure au voriconazole pour les filamenteux, surtout Fusarium."
@@ -204,7 +199,6 @@ Object.assign(G.OPH.hy, {
   "c-peripherie": {
     essentials: [
       "**Intervalle clair** + blépharite = kératite marginale ; croissant collé au limbe = PUK.",
-      "PUK : **bilan systémique et rhumatologie le jour même** ; souvent une vasculite qui menace la vie.",
       "Cornée qui fond : **pas d’AINS topiques**, qui favorisent la fonte ; doxycycline orale.",
       "**Phényléphrine 2,5 %** : l’épisclérite blanchit, la sclérite (plexus profond) persiste.",
       "Terrien : **œil blanc indolore**, gouttière supérieure bordée de lipides, astigmatisme contre la règle."
@@ -232,7 +226,6 @@ Object.assign(G.OPH.hy, {
   "c-pterygion": {
     essentials: [
       "Ptérygion : aile **nasale** liée aux UV qui franchit le limbe ; la pinguécula reste sur la conjonctive.",
-      "Lésion gélatineuse, leucoplasique, papillomateuse ou à vaisseaux nourriciers : **OSSN** jusqu’à preuve du contraire.",
       "**Autogreffe conjonctivale** après exérèse : récidive bien plus faible qu’avec la sclère nue.",
       "Ptérygion et cataracte : **enlever le ptérygion d’abord**, puis refaire la biométrie.",
       "Pseudoptérygion : après brûlure ou trauma, tout méridien ; **la sonde passe sous le col**."
@@ -258,11 +251,10 @@ Object.assign(G.OPH.hy, {
 
   "c-depots": {
     essentials: [
-      "Devant une opacité : **couche, couleur, contexte** mènent au dépôt, au bilan et au traitement.",
+      "Devant une opacité : **couche, couleur, contexte** mènent au dépôt et au bilan.",
       "**Arc** avant 50 ans : bilan lipidique ; arc unilatéral : sténose carotidienne du côté sans arc.",
-      "Bande blanc crayeux dans la Bowman = **calcium** ; chez l’enfant, chercher l’uvéite de l’AJI.",
-      "**Kayser-Fleischer** : cuivre dans la Descemet = Wilson ; Fleischer : fer autour du cône.",
-      "**Cristaux** dans un greffon sous stéroïde : infection jusqu’à preuve du contraire, à cultiver."
+      "Bande blanc crayeux dans la Bowman = **calcium** ; chez l’enfant, chercher l’AJI.",
+      "**Kayser-Fleischer** : cuivre dans la Descemet = Wilson ; Fleischer : fer autour du cône."
     ],
     cloze: [
       "Cornée verticillée : amiodarone, hydroxychloroquine ou maladie de [[Fabry]].",
@@ -317,8 +309,7 @@ Object.assign(G.OPH.hy, {
       "Opacités **bilatérales et symétriques**, sans vaisseaux ni inflammation, familiales : dystrophie ; situer la couche.",
       "Granulaire : miettes nettes, stroma clair entre elles ; **maculaire** : voile jusqu’au limbe, cornée mince.",
       "Des trois dystrophies stromales, seule la **maculaire est récessive** (CHST6) ; granulaire et grillagée sont dominantes (TGFBI).",
-      "Mutation **TGFBI** ou opacités en flocons : pas de LASIK, les dépôts prolifèrent à l’interface.",
-      "Opacité **unilatérale**, rouge ou douloureuse : infection, pas dystrophie."
+      "Mutation **TGFBI** ou opacités en flocons : pas de LASIK, les dépôts prolifèrent à l’interface."
     ],
     cloze: [
       "Dystrophie grillagée : dépôts d’[[amyloïde|amyloide]] colorés au rouge Congo.",
@@ -369,7 +360,6 @@ Object.assign(G.OPH.hy, {
 
   "c-greffe": {
     essentials: [
-      "Greffé avec **RSVP** (rougeur, photophobie, vision ↓, douleur) : rejet jusqu’à preuve du contraire, vu le jour même.",
       "Risque de rejet : **PK > DSAEK > DMEK** ; la DALK n’a pas de rejet endothélial.",
       "**Ligne de Khodadoust** : KP qui avancent, greffon œdémateux derrière ; rejet endothélial, le plus grave.",
       "Infiltrat sur le greffon ou près d’une suture : **cultiver avant** de monter les stéroïdes.",
@@ -397,7 +387,6 @@ Object.assign(G.OPH.hy, {
 
   "c-brulure": {
     essentials: [
-      "**Irriguer d’abord**, avant l’histoire et l’acuité ; seul le papier pH peut précéder.",
       "Irrigation ≥ 30 min jusqu’à **pH 7,0–7,5**, recontrôlé 5–10 min après la fin.",
       "Les **bases** sont pires : elles saponifient les membranes et pénètrent ; l’acide coagule et fait barrière.",
       "Piège : un œil **blanc** (limbe ischémique) est souvent plus grave qu’un œil rouge.",

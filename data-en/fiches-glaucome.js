@@ -5,7 +5,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-gpao": {
  "title": "Primary open-angle glaucoma",
  "oneLiner": "Chronic, painless optic neuropathy with an open angle: the disc cups and peripheral field is lost silently.",
- "definition": "Primary open-angle glaucoma is a chronic disease in which optic nerve fibers die slowly, mainly because the intraocular pressure (IOP) is too high for that nerve, while the drainage angle looks normal. Peripheral vision goes first, without pain, hence the importance of screening.",
+ "definition": "POAG is a chronic optic neuropathy: nerve fibers die slowly, mainly because intraocular pressure (IOP) is too high for that nerve, with a normal angle. Peripheral vision goes first, painlessly: hence screening.",
  "anatomy": {
   "text": "Aqueous humor, made by the ciliary processes, leaves mainly through the trabecular meshwork (the angle's filter) and Schlemm's canal, and partly between the ciliary muscle fibers (uveoscleral outflow); IOP reflects this balance. Retinal ganglion cell axons leave the eye through the lamina cribrosa, a vulnerable collagen sieve."
  },
@@ -137,22 +137,25 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "algo": [
    {
     "q": "Open angle, no secondary cause?",
-    "yes": "Baseline workup.",
-    "no": "Treat the angle closure or the cause."
+    "yes": "Baseline workup (4 Ps + G).",
+    "no": "Treat the closure or the cause.",
+    "cont": "yes"
    },
    {
     "q": "Disc, OCT and field concordant?",
     "yes": "Glaucoma: target ≈ 20–30% below baseline.",
-    "no": "Suspect: estimate the risk."
+    "no": "Suspect: estimate the risk (OHT fiche).",
+    "cont": "yes"
    },
    {
-    "q": "Target reached (SLT or PGA)?",
+    "q": "Target met on PGA or SLT?",
     "yes": "Follow with OCT and fields.",
-    "no": "Check adherence; drug ineffective: switch it; effective but insufficient: add a class or SLT."
+    "no": "Check adherence, then switch, add a class, or SLT.",
+    "cont": "yes"
    },
    {
-    "q": "Progression despite target reached or maximal tolerated therapy?",
-    "yes": "Lower the target; MIGS if mild–moderate, filtering surgery if advanced or low target.",
+    "q": "Progression despite target or maximal therapy?",
+    "yes": "Lower the target; MIGS if mild–moderate, filtering surgery if advanced.",
     "no": "Continue; reassess the target at every visit."
    }
   ],
@@ -204,7 +207,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Usual first drop.",
    "pros": "Largest IOP reduction, once daily.",
    "cons": "Cosmetic effects, especially if only one eye is treated; caution with uveitis or herpes.",
-   "cx": "Hyperemia, long lashes, iris darkening (irreversible), orbital fat atrophy, macular edema, herpetic reactivation."
+   "cx": "Hyperemia, long lashes, iris darkening (irreversible), orbital fat atrophy, macular edema, herpetic reactivation.",
+   "dose": "Latanoprost 0.005%: 1 drop at bedtime (bimatoprost 0.01%, travoprost 0.004%).",
+   "refer": "Refer if IOP is off target or there is progression.",
+   "pitfall": "Irreversible iris darkening: warn, especially if only one eye is treated.",
+   "qc": "Quebec: an equipped optometrist may start drops (suspect or early glaucoma), then must refer (O-7, r. 11.1)."
   },
   {
    "name": "Timolol, CAIs, brimonidine",
@@ -212,7 +219,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Add-on to a PGA or alternative.",
    "pros": "Fixed combinations.",
    "cons": "Adherence ↓.",
-   "cx": "Timolol: bronchospasm (asthma, COPD), bradycardia, AV block; CAIs: stinging, bitter taste (sulfonamide); brimonidine: allergy, drowsiness, contraindicated under age 2."
+   "cx": "Timolol: bronchospasm (asthma, COPD), bradycardia, AV block; CAIs: stinging, bitter taste (sulfonamide); brimonidine: allergy, drowsiness, contraindicated under age 2.",
+   "dose": "Timolol 0.5% BID; dorzolamide 2% TID; brimonidine 0.2% BID–TID.",
+   "refer": "Add-on to a PGA or alternative; not urgent.",
+   "pitfall": "Timolol is contraindicated in asthma, severe COPD or AV block."
   },
   {
    "name": "SLT (selective laser trabeculoplasty)",
@@ -220,7 +230,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "First-line or adjunct.",
    "pros": "Drop-free, repeatable.",
    "cons": "Effect wears off.",
-   "cx": "IOP spike, mild inflammation."
+   "cx": "IOP spike, mild inflammation.",
+   "dose": "360°, ≈ 100 non-overlapping spots, in clinic.",
+   "refer": "First line or add-on (LiGHT); not urgent.",
+   "pitfall": "The effect wanes over time: repeatable, keep measuring IOP."
   },
   {
    "name": "Surgery: MIGS, trabeculectomy, PreserFlo, tube",
@@ -228,7 +241,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Progression or target not reached.",
    "pros": "Trabeculectomy: lowest IOP; MIGS: safe.",
    "cons": "MIGS: modest reduction.",
-   "cx": "Hypotony, leak, bleb infection."
+   "cx": "Hypotony, leak, bleb infection.",
+   "dose": "MIGS with cataract surgery; trabeculectomy with MMC or tube if advanced.",
+   "refer": "Progression or target missed despite drops and laser.",
+   "pitfall": "Bleb: a red, painful eye is infection until proven otherwise."
   }
  ],
  "pearls": [
@@ -252,7 +268,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "compare": {
   "title": "Normal disc vs POAG",
   "normal": {
-   "caption": "C/D 0.3, even neuroretinal rim (ISNT rule: inferior ≥ superior ≥ nasal ≥ temporal)."
+   "caption": "C/D 0.3, even rim (ISNT rule)."
   },
   "patho": {
    "caption": "C/D 0.8, inferior notch and disc hemorrhage.",
@@ -271,7 +287,26 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "EMGT (Heijl A et al., Arch Ophthalmol 2002)",
   "COS 2009: Canadian Ophthalmological Society glaucoma guidelines (Can J Ophthalmol 2009;44 Suppl 1:S7-S93)",
   "Chauhan BC et al., Br J Ophthalmol 2008 (visual field frequency)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**PGAs**: Latanoprost 0.005%: 1 drop at bedtime (bimatoprost 0.01%, travoprost 0.004%).",
+   "**Timolol, CAIs, brimonidine**: Timolol 0.5% BID; dorzolamide 2% TID; brimonidine 0.2% BID–TID.",
+   "**SLT**: 360°, ≈ 100 non-overlapping spots, in clinic.",
+   "**Surgery**: MIGS with cataract surgery; trabeculectomy with MMC or tube if advanced."
+  ],
+  "refer": [
+   "**PGAs**: Refer if IOP is off target or there is progression.",
+   "**Surgery**: Progression or target missed despite drops and laser."
+  ],
+  "pitfall": [
+   "**Timolol, CAIs, brimonidine**: Timolol is contraindicated in asthma, severe COPD or AV block.",
+   "**Surgery**: Bleb: a red, painful eye is infection until proven otherwise."
+  ],
+  "qc": [
+   "Quebec: an equipped optometrist may start drops (suspect or early glaucoma), then must refer (O-7, r. 11.1)."
+  ]
+ }
 }
 });
 
@@ -279,7 +314,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-crise": {
  "title": "Acute angle-closure crisis",
  "oneLiner": "Painful red eye, halos, hazy cornea, fixed mid-dilated pupil and very high IOP: lower the IOP now, then iridotomy in both eyes.",
- "definition": "An acute angle-closure crisis occurs when the iris suddenly and completely blocks the angle's filter: aqueous humor can no longer leave and the intraocular pressure (IOP) climbs very high within hours. It is an emergency: the optic nerve, cornea and iris can be permanently damaged.",
+ "definition": "The iris suddenly blocks the whole angle filter: aqueous can no longer leave and IOP rises very high within hours. It is an emergency: the nerve, cornea and iris can be permanently damaged.",
  "anatomy": {
   "text": "Aqueous flows from the posterior to the anterior chamber through the pupil, then leaves through the trabecular meshwork (the angle's filter). In a short eye with a thick lens, the iris rubs against the lens; in mid-dilation, this contact hinders flow the most (pupillary block). The corneal endothelium pumps water out of the cornea; a very high IOP overwhelms this pump."
  },
@@ -409,32 +444,36 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "redFlags": [
   "IOP unchanged after 1 h of maximal treatment: mannitol, call the on-call ophthalmologist",
   "Bilateral crisis: think drug-induced effusion (topiramate)",
-  "Contraindications to acetazolamide (sulfa allergy, renal failure, sickle cell disease) or to mannitol (heart or renal failure)"
+  "Before acetazolamide or mannitol: sulfa allergy, kidney, heart, sickle cell"
  ],
  "cat": {
   "algo": [
    {
-    "q": "Painful red eye, very high IOP, shallow chamber, mid-dilated pupil?",
-    "yes": "Crisis: IOP-lowering drops and acetazolamide without delay.",
-    "no": "Other painful red eye (uveitis, keratitis, neovascular glaucoma)."
+    "q": "Painful red eye, very high IOP, mid-dilated pupil?",
+    "yes": "Attack: IOP-lowering drops and acetazolamide now.",
+    "no": "Other painful red eye (uveitis, keratitis, neovascular).",
+    "cont": "yes"
    },
    {
-    "q": "Bilateral involvement, acute myopia or topiramate?",
-    "yes": "Effusion: stop the drug, cycloplegic, steroid, IOP-lowering agents; neither LPI nor pilocarpine.",
-    "no": "Examine the lens."
+    "q": "Bilateral, acute myopia or topiramate?",
+    "yes": "Effusion: stop the drug, cycloplegic, steroid, IOP drops; no LPI, no pilocarpine.",
+    "no": "Examine the lens.",
+    "cont": "no"
    },
    {
-    "q": "Intumescent cataract or subluxated lens (chamber much shallower than the fellow eye)?",
-    "yes": "No pilocarpine: lower the IOP, then prompt lens extraction.",
-    "no": "Primary pupillary block likely."
+    "q": "Swollen cataract or subluxated lens?",
+    "yes": "No pilocarpine: lower IOP, then remove the lens.",
+    "no": "Probable primary pupillary block.",
+    "cont": "no"
    },
    {
-    "q": "IOP coming down 30–60 min after drops and acetazolamide?",
-    "yes": "Pilocarpine 1–2%, then LPI in both eyes as soon as the cornea clears.",
-    "no": "IV mannitol, indentation; urgent consult (paracentesis, laser, surgery)."
+    "q": "IOP falling after 30–60 min?",
+    "yes": "Pilocarpine 1–2%, then bilateral LPI once the cornea clears.",
+    "no": "IV mannitol, indentation; urgent consult (paracentesis, laser, surgery).",
+    "cont": "yes"
    },
    {
-    "q": "Angle still closed after a patent LPI?",
+    "q": "Angle closed despite a patent LPI?",
     "yes": "Plateau iris or lens: UBM, iridoplasty or extraction.",
     "no": "Follow-up: IOP, gonioscopy, optic nerve, endothelium."
    }
@@ -478,7 +517,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "First step in any crisis.",
    "pros": "Immediate.",
    "cons": "Limited effect if IOP is extreme.",
-   "cx": "Timolol: bronchospasm, bradycardia."
+   "cx": "Timolol: bronchospasm, bradycardia.",
+   "dose": "Timolol 0.5%, brimonidine 0.2%, dorzolamide 2%: 1 drop of each; prednisolone acetate 1%.",
+   "refer": "At diagnosis; on-call ophthalmologist the same day.",
+   "pitfall": "Timolol: check for asthma, COPD, bradycardia before the drop.",
+   "qc": "Quebec: often seen first in the ER: start treatment, then refer the same day."
   },
   {
    "name": "Acetazolamide and mannitol",
@@ -486,7 +529,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Confirmed crisis; mannitol if refractory.",
    "pros": "Rapid, powerful reduction.",
    "cons": "Systemic contraindications.",
-   "cx": "Paresthesias, hypokalemia; mannitol: volume overload, heart or renal failure."
+   "cx": "Paresthesias, hypokalemia; mannitol: volume overload, heart or renal failure.",
+   "dose": "Acetazolamide 500 mg PO or IV; mannitol 20% 1–2 g/kg IV if refractory.",
+   "refer": "Confirmed attack; mannitol if IOP unchanged after 1 h.",
+   "pitfall": "Check sulfa, kidney, potassium, sickle cell; mannitol: heart, kidney."
   },
   {
    "name": "Pilocarpine 1–2% and indentation",
@@ -494,7 +540,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Once IOP has come down.",
    "pros": "Can break the attack before laser.",
    "cons": "Ineffective if the sphincter is ischemic; contraindicated if lens-induced or effusion.",
-   "cx": "Headache, myopia, anterior lens shift."
+   "cx": "Headache, myopia, anterior lens shift.",
+   "dose": "Pilocarpine 1–2%: 1 drop, once IOP is lowered.",
+   "refer": "Pupillary block, after IOP has come down.",
+   "pitfall": "Never for a lens cause, effusion (topiramate) or misdirection."
   },
   {
    "name": "Laser iridotomy (LPI) of both eyes",
@@ -502,7 +551,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Definitive treatment of the block; prophylaxis for the fellow eye.",
    "pros": "Quick.",
    "cons": "Difficult if the cornea is edematous.",
-   "cx": "IOP spike, bleeding, dysphotopsias."
+   "cx": "IOP spike, bleeding, dysphotopsias.",
+   "dose": "YAG laser to both eyes, in clinic.",
+   "refer": "As soon as the cornea clears.",
+   "pitfall": "Do not forget the fellow eye: prophylactic LPI."
   },
   {
    "name": "Lens extraction",
@@ -510,7 +562,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Cataract, lens component, IOP uncontrolled after LPI.",
    "pros": "Corrects the anatomic cause.",
    "cons": "Riskier in an inflamed eye.",
-   "cx": "Corneal edema, posterior capsule rupture."
+   "cx": "Corneal edema, posterior capsule rupture.",
+   "dose": "Phacoemulsification with IOL.",
+   "refer": "Cataract, lens component, or IOP uncontrolled after LPI.",
+   "pitfall": "Inflamed eye: quiet it first if possible."
   }
  ],
  "pearls": [
@@ -550,7 +605,27 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "AAO PPP Primary Angle Closure Disease (Gedde SJ, Chopra V, Vinod K et al., Ophthalmology, online Feb 9, 2026)",
   "Canadian optometric POAG guideline (MacIver S et al., Can J Optom 2017;79 Suppl 1)",
   "COS 2009: Canadian Ophthalmological Society glaucoma guidelines (Can J Ophthalmol 2009;44 Suppl 1:S7-S93)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**IOP-lowering drops and steroid**: Timolol 0.5%, brimonidine 0.2%, dorzolamide 2%: 1 drop of each; prednisolone acetate 1%.",
+   "**Acetazolamide and mannitol**: Acetazolamide 500 mg PO or IV; mannitol 20% 1–2 g/kg IV if refractory.",
+   "**Pilocarpine 1–2% and indentation**: Pilocarpine 1–2%: 1 drop, once IOP is lowered.",
+   "**Laser iridotomy**: YAG laser to both eyes, in clinic.",
+   "**Lens extraction**: Phacoemulsification with IOL."
+  ],
+  "refer": [
+   "**IOP-lowering drops and steroid**: At diagnosis; on-call ophthalmologist the same day.",
+   "**Acetazolamide and mannitol**: Confirmed attack; mannitol if IOP unchanged after 1 h."
+  ],
+  "pitfall": [
+   "**Pilocarpine 1–2% and indentation**: Never for a lens cause, effusion (topiramate) or misdirection.",
+   "**Acetazolamide and mannitol**: Check sulfa, kidney, potassium, sickle cell; mannitol: heart, kidney."
+  ],
+  "qc": [
+   "Quebec: often seen first in the ER: start treatment, then refer the same day."
+  ]
+ }
 }
 });
 
@@ -558,7 +633,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-fermeture": {
  "title": "Primary angle closure (PACS, PAC, PACG)",
  "oneLiner": "The peripheral iris blocks the angle's filter: detect it on gonioscopy, classify as PACS, PAC or PACG, then open the angle according to risk.",
- "definition": "In primary angle closure, the peripheral iris comes to rest against the trabecular meshwork (the angle's filter) and prevents aqueous humor from leaving, in a predisposed eye (small eye, thick lens). It is classified in three stages: contact without damage (PACS), contact with elevated pressure or adhesions (PAC), then optic nerve damage (PACG).",
+ "definition": "The peripheral iris presses against the trabecular meshwork and blocks aqueous outflow, in a predisposed eye (small eye, thick lens). Three stages: contact only (PACS), raised IOP or synechiae (PAC), then nerve damage (PACG).",
  "anatomy": {
   "text": "The iridocorneal angle contains the trabecular meshwork; on gonioscopy (examination of the angle with a mirrored lens), you see from posterior to anterior: iris root, ciliary body band, scleral spur, trabecular meshwork, Schwalbe's line. Aqueous passes from the posterior to the anterior chamber by sliding between iris and lens; a short eye with a thick lens has a narrow angle."
  },
@@ -696,25 +771,29 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "q": "Van Herick ≤ 2 or narrow angle suspected?",
     "yes": "Dynamic gonioscopy in a dark room.",
-    "no": "Routine follow-up."
+    "no": "Routine follow-up.",
+    "cont": "yes"
    },
    {
     "q": "Iridotrabecular contact ≥ 180°?",
-    "yes": "Primary angle closure: classify.",
-    "no": "Open angle; reassess with age."
+    "yes": "Primary angle closure: stage it.",
+    "no": "Open angle; reassess with age.",
+    "cont": "yes"
    },
    {
-    "q": "Elevated IOP, PAS or neuropathy?",
+    "q": "Raised IOP, PAS or neuropathy?",
     "yes": "PAC or PACG: treat.",
-    "no": "PACS: shared decision (LPI or observation)."
+    "no": "PACS: shared decision (LPI or observation).",
+    "cont": "yes"
    },
    {
-    "q": "≥ 50 years and PAC with IOP ≥ 30 mmHg, PACG or cataract?",
+    "q": "Age ≥ 50: PAC ≥ 30 mmHg, PACG or cataract?",
     "yes": "Lens extraction, even if clear (EAGLE).",
-    "no": "Iridotomy, then drops as needed."
+    "no": "Iridotomy, then drops as needed.",
+    "cont": "no"
    },
    {
-    "q": "Angle still closed after a patent iridotomy?",
+    "q": "Angle closed despite a patent iridotomy?",
     "yes": "Plateau iris or lens: UBM, iridoplasty or extraction.",
     "no": "Follow-up: gonioscopy, IOP, OCT, field."
    }
@@ -762,7 +841,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Pupillary block: PAC, fellow eye after a crisis, PACS chosen by shared decision.",
    "pros": "Quick; prevents a crisis.",
    "cons": "No effect on plateau iris or lens-induced closure.",
-   "cx": "IOP spike, bleeding, dysphotopsias (mostly transient), zonular damage."
+   "cx": "IOP spike, bleeding, dysphotopsias (mostly transient), zonular damage.",
+   "dose": "YAG laser in clinic, after pilocarpine 1–2% and apraclonidine.",
+   "refer": "PAC, fellow eye of an attack, PACS by shared decision.",
+   "pitfall": "An LPI does not open plateau iris: repeat gonioscopy afterwards.",
+   "qc": "Quebec: routine gonioscopy in Inuit patients (Nunavik), who are at high risk."
   },
   {
    "name": "Lens extraction (phacoemulsification)",
@@ -770,7 +853,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "≥ 50 years with PAC and IOP ≥ 30 mmHg or PACG (EAGLE); cataract; plateau iris.",
    "pros": "EAGLE: better IOP control and quality of life than LPI; 10 times more likely to be drop-free at 3 years.",
    "cons": "More difficult in a short eye.",
-   "cx": "Posterior capsule rupture, corneal edema, aqueous misdirection (aqueous diverted into the vitreous, rare)."
+   "cx": "Posterior capsule rupture, corneal edema, aqueous misdirection (aqueous diverted into the vitreous, rare).",
+   "dose": "Phacoemulsification with IOL, even on a clear lens.",
+   "refer": "Age ≥ 50 with PAC at IOP ≥ 30 mmHg or PACG (EAGLE); cataract.",
+   "pitfall": "Short eye: harder surgery, risk of aqueous misdirection."
   },
   {
    "name": "Laser iridoplasty",
@@ -778,7 +864,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Plateau iris, angle closed despite iridotomy.",
    "pros": "Quick, incisionless.",
    "cons": "Effect sometimes temporary.",
-   "cx": "Inflammation, iris atrophy."
+   "cx": "Inflammation, iris atrophy.",
+   "dose": "Thermal (argon) laser: large, gentle burns on the far-peripheral iris.",
+   "refer": "Plateau iris or angle closed despite a patent LPI.",
+   "pitfall": "Effect sometimes temporary: follow with gonioscopy."
   },
   {
    "name": "Drops and glaucoma surgery",
@@ -786,7 +875,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Persistent elevated IOP or PACG.",
    "pros": "Controls residual IOP.",
    "cons": "Drops do not reopen the angle.",
-   "cx": "Aqueous misdirection, suprachoroidal hemorrhage, hypotony."
+   "cx": "Aqueous misdirection, suprachoroidal hemorrhage, hypotony.",
+   "dose": "IOP-lowering drops (PGA, timolol); trabeculectomy or goniosynechialysis if needed.",
+   "refer": "Persistent high IOP or PACG after the angle is opened.",
+   "pitfall": "Drops do not reopen the angle: do not delay the LPI."
   }
  ],
  "pearls": [
@@ -827,7 +919,26 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "EAGLE (Azuara-Blanco A et al., Lancet 2016)",
   "ZAP (He M et al., Lancet 2019)",
   "ISGEO classification (Foster PJ et al., Br J Ophthalmol 2002)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**Laser peripheral iridotomy**: YAG laser in clinic, after pilocarpine 1–2% and apraclonidine.",
+   "**Lens extraction**: Phacoemulsification with IOL, even on a clear lens.",
+   "**Laser iridoplasty**: Thermal (argon) laser: large, gentle burns on the far-peripheral iris.",
+   "**Drops and glaucoma surgery**: IOP-lowering drops (PGA, timolol); trabeculectomy or goniosynechialysis if needed."
+  ],
+  "refer": [
+   "**Laser peripheral iridotomy**: PAC, fellow eye of an attack, PACS by shared decision.",
+   "**Lens extraction**: Age ≥ 50 with PAC at IOP ≥ 30 mmHg or PACG (EAGLE); cataract."
+  ],
+  "pitfall": [
+   "**Laser peripheral iridotomy**: An LPI does not open plateau iris: repeat gonioscopy afterwards.",
+   "**Drops and glaucoma surgery**: Drops do not reopen the angle: do not delay the LPI."
+  ],
+  "qc": [
+   "Quebec: routine gonioscopy in Inuit patients (Nunavik), who are at high risk."
+  ]
+ }
 }
 });
 
@@ -835,7 +946,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-hto": {
  "title": "Ocular hypertension and glaucoma suspect",
  "oneLiner": "IOP > 21 mmHg or a suspicious disc without proven neuropathy: estimate the risk of conversion, then observe or treat.",
- "definition": "Ocular hypertension (OHT) is an intraocular pressure (IOP) above 21 mmHg with an open angle and a normal optic nerve and visual field. A glaucoma suspect has a questionable finding (IOP, disc, OCT or field) without evidence of neuropathy, and we estimate the risk of becoming glaucomatous.",
+ "definition": "Ocular hypertension (OHT) is IOP > 21 mmHg with an open angle and a normal nerve and field. A glaucoma suspect has one doubtful finding (IOP, disc, OCT or field) without proven neuropathy.",
  "anatomy": {
   "text": "Normal IOP ranges from 10 to 21 mmHg (mean ≈ 15–16) and varies by 2 to 6 mmHg over 24 h; it reflects the balance between aqueous production and outflow. The Goldmann tonometer flattens the cornea: a thick cornea resists and leads to overestimating IOP, a thin cornea to underestimating it. A large disc normally has a large cup."
  },
@@ -966,24 +1077,27 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "cat": {
   "algo": [
    {
-    "q": "Confirmed IOP > 21 mmHg, or suspicious disc?",
-    "yes": "Complete workup.",
-    "no": "Routine screening."
+    "q": "Confirmed IOP > 21 or suspicious disc?",
+    "yes": "Full workup.",
+    "no": "Routine screening.",
+    "cont": "yes"
    },
    {
     "q": "Open angle, no secondary cause?",
     "yes": "Primary OHT or suspect.",
-    "no": "Treat the cause (closure, steroids, uveitis)."
+    "no": "Treat the cause (closure, steroid, uveitis).",
+    "cont": "yes"
    },
    {
     "q": "Proven neuropathy (OCT, reproducible field)?",
     "yes": "Glaucoma: see the POAG fiche.",
-    "no": "Estimate the 5-year risk (OHTS-EGPS calculator, derived from two large OHT trials)."
+    "no": "Estimate 5-year risk (OHTS-EGPS calculator).",
+    "cont": "no"
    },
    {
-    "q": "High estimated risk, long life expectancy, only eye or IOP ≥ 30 mmHg?",
-    "yes": "Treat: target ≈ 20% below baseline (PGA or SLT).",
-    "no": "Observe with regular OCT and fields; reassess the risk."
+    "q": "High risk, only eye, or IOP ≥ 30 mmHg?",
+    "yes": "Treat if long life expectancy: PGA or SLT, target −20%.",
+    "no": "Observe: regular OCT and fields; reassess the risk."
    }
   ],
   "phases": [
@@ -1023,7 +1137,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Low risk (thick cornea, moderate IOP, healthy disc).",
    "pros": "Avoids side effects and costs; most OHT patients do not convert.",
    "cons": "Requires reliable follow-up.",
-   "cx": "Missed conversion if lost to follow-up."
+   "cx": "Missed conversion if lost to follow-up.",
+   "dose": "Visits every ≈ 6–24 months depending on risk: IOP, OCT, fields.",
+   "refer": "Refer if new RNFL thinning, disc hemorrhage or field defect.",
+   "pitfall": "Lost to follow-up = missed conversion: book the next visit.",
+   "qc": "Quebec: often co-managed by optometrist and ophthalmologist."
   },
   {
    "name": "Prostaglandin analogue (PGA)",
@@ -1031,7 +1149,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "High risk or patient preference.",
    "pros": "1 drop a day, few systemic effects.",
    "cons": "Long-term treatment for a modest risk.",
-   "cx": "Hyperemia, long lashes, iris darkening, orbital fat atrophy."
+   "cx": "Hyperemia, long lashes, iris darkening, orbital fat atrophy.",
+   "dose": "Latanoprost 0.005%: 1 drop at bedtime.",
+   "refer": "High risk or patient preference; not urgent.",
+   "pitfall": "Do not treat a low risk for life: calculate it first."
   },
   {
    "name": "SLT (selective laser trabeculoplasty)",
@@ -1039,7 +1160,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Alternative to drops, especially when adherence is difficult.",
    "pros": "No drops; repeatable.",
    "cons": "Effect wanes.",
-   "cx": "Transient IOP spike, mild inflammation."
+   "cx": "Transient IOP spike, mild inflammation.",
+   "dose": "360°, ≈ 100 spots, in clinic.",
+   "refer": "Alternative to drops, especially if adherence is hard.",
+   "pitfall": "The effect wanes: keep measuring IOP."
   }
  ],
  "pearls": [
@@ -1081,7 +1205,24 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "OHTS-EGPS: validated prediction model (Ophthalmology 2007)",
   "Canadian optometric POAG guideline (MacIver S et al., Can J Optom 2017;79 Suppl 1)",
   "COS 2009: Canadian Ophthalmological Society glaucoma guidelines (Can J Ophthalmol 2009;44 Suppl 1:S7-S93)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**Structured observation**: Visits every ≈ 6–24 months depending on risk: IOP, OCT, fields.",
+   "**Prostaglandin analogue**: Latanoprost 0.005%: 1 drop at bedtime.",
+   "**SLT**: 360°, ≈ 100 spots, in clinic."
+  ],
+  "refer": [
+   "**Structured observation**: Refer if new RNFL thinning, disc hemorrhage or field defect."
+  ],
+  "pitfall": [
+   "**Prostaglandin analogue**: Do not treat a low risk for life: calculate it first.",
+   "**Structured observation**: Lost to follow-up = missed conversion: book the next visit."
+  ],
+  "qc": [
+   "Quebec: often co-managed by optometrist and ophthalmologist."
+  ]
+ }
 }
 });
 
@@ -1089,7 +1230,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-papille": {
  "title": "The deceptive disc: glaucomatous cupping and its mimics",
  "oneLiner": "A high C/D is not a diagnosis: measure the disc, read the rim, look for the pallor that mandates an MRI.",
- "definition": "Glaucomatous cupping is the progressive loss of axons in the neuroretinal rim, which enlarges the central cup of the disc mainly at the poles, while the remaining rim stays pink. Several nonglaucomatous discs mimic it (large disc, tilted disc, hypoplasia, compressive or hereditary atrophy, post-ischemic sequela, optic disc drusen) and some hide a serious disease.",
+ "definition": "Glaucomatous cupping is loss of rim axons, mostly at the poles, while the remaining rim stays pink. Several discs mimic it (large disc, tilted disc, compression, ischemia, heredity, drusen), and some hide serious disease.",
  "anatomy": {
   "text": "The optic disc measures ≈ 1.5–2 mm, but its size varies widely while the axonal rim occupies a fairly similar area: large disc = large physiologic cup, small disc = almost no cup. The neuroretinal rim is normally thickest inferiorly, then superiorly, nasally and temporally (ISNT rule, imperfect). Macular fibers enter on the temporal side: hereditary, toxic or compressive damage makes them pale first."
  },
@@ -1156,7 +1297,8 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "Referred for \"high C/D\", often asymptomatic",
   "Glaucoma: pink rim thinned at the poles, VA and color vision preserved for a long time",
   "Compressive or hereditary mimic: VA or color vision ↓, relative afferent pupillary defect (RAPD), pallor",
-  "Congenital mimic: stable appearance, nonprogressive field defect"
+  "Congenital mimic: stable appearance, nonprogressive field defect",
+  "Rapid progression or asymmetry not explained by IOP"
  ],
  "exam": {
   "signs": [
@@ -1232,32 +1374,33 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "redFlags": [
   "Age < 50, VA or color vision ↓, unexplained RAPD",
-  "Pallor > cupping, remaining rim pale",
-  "Defect respecting the vertical meridian",
-  "Rapid progression or asymmetry not explained by IOP",
+  "Pallor > cupping, or a defect respecting the vertical meridian",
   "≥ 50 years with arteritis symptoms: ESR, CRP the same day"
  ],
  "cat": {
   "algo": [
    {
-    "q": "Is the cup proportional to disc size?",
-    "yes": "Large disc, normal rim: physiologic mimic likely; document.",
-    "no": "Cup too large: glaucoma suspect."
+    "q": "Cup in proportion to disc size?",
+    "yes": "Large disc, normal rim: probable mimic; document.",
+    "no": "Cup too large: glaucoma suspect.",
+    "cont": "no"
    },
    {
-    "q": "Red flag (see below)?",
+    "q": "Any red flag?",
     "yes": "MRI ± ESR, CRP.",
-    "no": "Glaucoma workup: IOP, pachymetry, gonioscopy."
+    "no": "Glaucoma workup: IOP, pachymetry, gonioscopy.",
+    "cont": "no"
    },
    {
     "q": "OCT and field concordant?",
-    "yes": "Diagnosis established: target IOP.",
-    "no": "Repeat; look for an artifact or another cause."
+    "yes": "Diagnosis made: target IOP.",
+    "no": "Repeat; look for an artifact or another cause.",
+    "cont": "yes"
    },
    {
     "q": "Documented change on follow-up?",
     "yes": "Treat or intensify.",
-    "no": "Stable anomaly: spaced-out follow-up, no drops."
+    "no": "Stable anomaly: spaced follow-up, no drops."
    }
   ],
   "phases": [
@@ -1295,7 +1438,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Any suspicious disc: baseline, then change.",
    "pros": "Objective; the shape of the defect localizes the lesion.",
    "cons": "Normative databases poorly suited to atypical discs.",
-   "cx": "Error if you treat the printout without looking at the disc."
+   "cx": "Error if you treat the printout without looking at the disc.",
+   "dose": "RNFL and GCL OCT; 24-2 and 10-2 fields, serially.",
+   "refer": "Any suspicious disc: baseline, then compare.",
+   "pitfall": "Do not treat the printout: an atypical disc falls outside the normative database."
   },
   {
    "name": "MRI and arteritis workup",
@@ -1303,7 +1449,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Red flag, or pale cupping after acute vision loss.",
    "pros": "Finds treatable causes; protects the other eye.",
    "cons": "Delays; low yield without a red flag.",
-   "cx": "Gadolinium and renal function; high-dose steroids."
+   "cx": "Gadolinium and renal function; high-dose steroids.",
+   "dose": "MRI with gadolinium; ESR, CRP, platelets ± temporal artery biopsy.",
+   "refer": "Red flag: prompt MRI; suspected arteritis: same day.",
+   "pitfall": "No drops before compression has been excluded.",
+   "qc": "Quebec: name the red flag on the MRI request to get it prioritized."
   },
   {
    "name": "IOP-lowering treatment",
@@ -1311,7 +1461,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Confirmed glaucoma, even in a megalopapilla or a tilted disc.",
    "pros": "Slows the loss.",
    "cons": "Useless in a mimic.",
-   "cx": "Lifelong side effects (see POAG, NTG)."
+   "cx": "Lifelong side effects (see POAG, NTG).",
+   "dose": "Latanoprost 0.005% at bedtime, SLT or surgery depending on stage.",
+   "refer": "Confirmed glaucoma, even in a megalopapilla or a tilted disc.",
+   "pitfall": "Useless in a stable mimic: lifelong side effects."
   }
  ],
  "pearls": [
@@ -1353,7 +1506,24 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "Canadian optometric POAG guideline (MacIver S, MacDonald M, Prokopich CL, Can J Optom 2017;79 Suppl 1)",
   "Greenfield DS et al. The cupped disc: who needs neuroimaging? (Ophthalmology 1998)",
   "Trobe JD et al. Nonglaucomatous excavation of the optic disc (Arch Ophthalmol 1980)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**Serial OCT and fields**: RNFL and GCL OCT; 24-2 and 10-2 fields, serially.",
+   "**MRI and arteritis workup**: MRI with gadolinium; ESR, CRP, platelets ± temporal artery biopsy.",
+   "**IOP-lowering treatment**: Latanoprost 0.005% at bedtime, SLT or surgery depending on stage."
+  ],
+  "refer": [
+   "**MRI and arteritis workup**: Red flag: prompt MRI; suspected arteritis: same day."
+  ],
+  "pitfall": [
+   "**MRI and arteritis workup**: No drops before compression has been excluded.",
+   "**Serial OCT and fields**: Do not treat the printout: an atypical disc falls outside the normative database."
+  ],
+  "qc": [
+   "Quebec: name the red flag on the MRI request to get it prioritized."
+  ]
+ }
 }
 });
 
@@ -1361,7 +1531,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-pxf": {
  "title": "Pseudoexfoliation glaucoma",
  "oneLiner": "Older patient, whitish target-pattern deposits on the lens after dilation, high and fluctuating IOP: aggressive glaucoma and a high-risk cataract.",
- "definition": "Pseudoexfoliation syndrome is an age-related disease in which abnormal fibrillar material, resembling dandruff flakes, is deposited on the lens, zonules, iris and trabecular meshwork (the angle's filter). When this material and pigment clog the filter, pressure rises and the optic nerve is damaged: this is pseudoexfoliation glaucoma, more aggressive than primary glaucoma.",
+ "definition": "With age, a whitish fibrillar material is deposited on the lens, zonules, iris and trabecular meshwork. When it clogs the filter, IOP rises: this is pseudoexfoliation glaucoma, more aggressive than POAG.",
  "anatomy": {
   "text": "The lens is suspended by the zonules, fibers attached to the ciliary body. With each pupil movement, the pigmented posterior surface of the iris slides over the anterior lens capsule. Aqueous carries whatever floats in the anterior chamber to the trabecular meshwork."
  },
@@ -1492,28 +1662,32 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "cat": {
   "algo": [
    {
-    "q": "Capsular deposits or flakes at the pupillary margin?",
+    "q": "Capsular deposits or flakes at the pupil margin?",
     "yes": "Pseudoexfoliation: examine the other eye.",
-    "no": "Other open-angle glaucoma."
+    "no": "Another open-angle glaucoma.",
+    "cont": "yes"
    },
    {
     "q": "Neuropathy (disc, OCT, field)?",
-    "yes": "Pseudoexfoliation glaucoma: treat, lower target.",
-    "no": "Syndrome without glaucoma: IOP and nerve followed closely; treat elevated IOP earlier."
+    "yes": "PXF glaucoma: treat, lower target.",
+    "no": "No glaucoma: follow closely; treat raised IOP early.",
+    "cont": "yes"
    },
    {
-    "q": "Angle open and visible?",
+    "q": "Open, visible angle?",
     "yes": "SLT or prostaglandin analogue.",
-    "no": "Associated angle closure: iridotomy or lens extraction."
+    "no": "Associated closure: iridotomy or lens extraction.",
+    "cont": "yes"
    },
    {
-    "q": "Progression or target not reached?",
+    "q": "Progression or target not met?",
     "yes": "Add a class, then trabeculectomy or tube.",
-    "no": "Close follow-up."
+    "no": "Close follow-up.",
+    "cont": "no"
    },
    {
-    "q": "Cataract needing surgery?",
-    "yes": "Plan for weak zonules: capsular tension ring, hooks.",
+    "q": "Cataract to operate?",
+    "yes": "Weak zonules: capsular tension ring, hooks.",
     "no": "Reassess at every visit."
    }
   ],
@@ -1559,7 +1733,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "First-line, often in combination.",
    "pros": "Simple, no procedure.",
    "cons": "Control fluctuations less well; several classes often needed.",
-   "cx": "Depending on class (hyperemia, bronchospasm, allergy)."
+   "cx": "Depending on class (hyperemia, bronchospasm, allergy).",
+   "dose": "Latanoprost 0.005% at bedtime; add timolol 0.5% BID or dorzolamide 2% as needed.",
+   "refer": "Refer promptly: aggressive glaucoma, fluctuating IOP.",
+   "pitfall": "A normal clinic IOP can hide spikes: close follow-up.",
+   "qc": "Quebec: outside suspect, early or steroid-induced glaucoma, an optometrist treats only with a physician's consent (O-7)."
   },
   {
    "name": "SLT (selective laser trabeculoplasty)",
@@ -1567,7 +1745,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "First-line or adjunct; pigmented trabecular meshwork = good target.",
    "pros": "Initial response often good; drop-free.",
    "cons": "Effect sometimes less durable.",
-   "cx": "IOP spike (more likely if heavily pigmented), inflammation."
+   "cx": "IOP spike (more likely if heavily pigmented), inflammation.",
+   "dose": "360° SLT in clinic.",
+   "refer": "First line or add-on.",
+   "pitfall": "IOP spike more likely if heavily pigmented: check IOP afterwards."
   },
   {
    "name": "Filtering surgery (trabeculectomy, tube)",
@@ -1575,7 +1756,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Progression or uncontrolled IOP.",
    "pros": "Bypasses the clogged filter; low IOP.",
    "cons": "Intensive follow-up.",
-   "cx": "Hypotony, leak, bleb infection."
+   "cx": "Hypotony, leak, bleb infection.",
+   "dose": "Trabeculectomy with MMC or tube, in the OR.",
+   "refer": "Progression or uncontrolled IOP.",
+   "pitfall": "Intensive postoperative follow-up (post-op fiche)."
   },
   {
    "name": "Adapted cataract surgery",
@@ -1583,7 +1767,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Cataract (common); also opens the angle if narrow.",
    "pros": "Improves vision; often lowers IOP slightly.",
    "cons": "Small pupil, more difficult surgery.",
-   "cx": "Zonular dialysis, vitreous loss, postoperative IOP spike, capsular contraction, late in-the-bag IOL dislocation."
+   "cx": "Zonular dialysis, vitreous loss, postoperative IOP spike, capsular contraction, late in-the-bag IOL dislocation.",
+   "dose": "Phacoemulsification with capsular tension ring and hooks as needed.",
+   "refer": "Cataract (common); also opens a narrow angle.",
+   "pitfall": "Weak zonules: warn the surgeon, risk of vitreous loss."
   }
  ],
  "pearls": [
@@ -1624,7 +1811,25 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "Thorleifsson G et al. LOXL1 variants and exfoliation glaucoma (Science 2007)",
   "EMGT: factors for progression (Leske MC et al., Arch Ophthalmol 2003)",
   "AAO PPP Primary Open-Angle Glaucoma (Gedde SJ et al., Ophthalmology, online Feb 9, 2026)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**IOP-lowering drops**: Latanoprost 0.005% at bedtime; add timolol 0.5% BID or dorzolamide 2% as needed.",
+   "**SLT**: 360° SLT in clinic.",
+   "**Filtering surgery**: Trabeculectomy with MMC or tube, in the OR.",
+   "**Adapted cataract surgery**: Phacoemulsification with capsular tension ring and hooks as needed."
+  ],
+  "refer": [
+   "**IOP-lowering drops**: Refer promptly: aggressive glaucoma, fluctuating IOP."
+  ],
+  "pitfall": [
+   "**IOP-lowering drops**: A normal clinic IOP can hide spikes: close follow-up.",
+   "**Adapted cataract surgery**: Weak zonules: warn the surgeon, risk of vitreous loss."
+  ],
+  "qc": [
+   "Quebec: outside suspect, early or steroid-induced glaucoma, an optometrist treats only with a physician's consent (O-7)."
+  ]
+ }
 }
 });
 
@@ -1632,7 +1837,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-pigmentaire": {
  "title": "Pigment dispersion and pigmentary glaucoma",
  "oneLiner": "Young myopic man, Krukenberg spindle, mid-peripheral transillumination slits and a heavily pigmented angle: IOP spikes with exercise.",
- "definition": "In pigment dispersion, the iris, bowed backward, rubs against the lens zonules and releases its pigment, which is deposited on the cornea, lens and trabecular meshwork (the angle's filter). If the overloaded filter lets the pressure rise and the optic nerve is damaged, it is called pigmentary glaucoma.",
+ "definition": "The posteriorly bowed iris rubs against the zonules and sheds pigment, which settles on the cornea, lens and trabecular meshwork. If IOP rises and the nerve is damaged, it is pigmentary glaucoma.",
  "anatomy": {
   "text": "The posterior surface of the iris is lined with a heavily pigmented epithelium; just behind it lie the zonules, the fibers that hold the lens. In myopes, the anterior chamber is deep and the iris can take on a concave shape. Aqueous circulates in a loop in the anterior chamber and ends up at the trabecular meshwork."
  },
@@ -1772,29 +1977,33 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "cat": {
   "algo": [
    {
-    "q": "Krukenberg, radial slits and dense pigment in the angle?",
+    "q": "Krukenberg, radial defects and heavily pigmented angle?",
     "yes": "Pigment dispersion.",
-    "no": "Other source of pigment (PXF, IOL, uveitis)."
+    "no": "Other pigment source (PXF, IOL, uveitis).",
+    "cont": "yes"
    },
    {
     "q": "Neuropathy (disc, OCT, field)?",
     "yes": "Pigmentary glaucoma: target IOP.",
-    "no": "Syndrome without glaucoma: monitor IOP and nerve."
+    "no": "No glaucoma: monitor IOP and nerve.",
+    "cont": "yes"
    },
    {
     "q": "Open angle, laser candidate?",
     "yes": "Low-energy SLT or prostaglandin analogue.",
-    "no": "Drops."
+    "no": "Drops.",
+    "cont": "yes"
    },
    {
-    "q": "Pilocarpine being considered?",
+    "q": "Considering pilocarpine?",
     "yes": "Dilated fundus exam first; poorly tolerated in the young.",
-    "no": "Continue drops and laser."
+    "no": "Continue drops and laser.",
+    "cont": "no"
    },
    {
     "q": "Progression despite everything?",
-    "yes": "Trabeculectomy or tube (young myope: risk of hypotony maculopathy, macular folds if IOP too low).",
-    "no": "Follow-up; space out visits in the burnt-out phase."
+    "yes": "Trabeculectomy or tube; young myope: risk of hypotony maculopathy.",
+    "no": "Follow-up; space out once burnt out."
    }
   ],
   "phases": [
@@ -1839,7 +2048,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "First-line.",
    "pros": "Effective, once daily.",
    "cons": "Lifelong treatment in a young patient.",
-   "cx": "Hyperemia, long lashes, iris darkening, orbital fat atrophy."
+   "cx": "Hyperemia, long lashes, iris darkening, orbital fat atrophy.",
+   "dose": "Latanoprost 0.005%: 1 drop at bedtime.",
+   "refer": "Established pigmentary glaucoma: followed by the ophthalmologist.",
+   "pitfall": "Lifelong treatment in a young patient: support adherence.",
+   "qc": "Quebec: dispersion without neuropathy is often followed in optometry (glaucoma suspect)."
   },
   {
    "name": "Low-energy SLT",
@@ -1847,7 +2060,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Alternative or add-on to drops.",
    "pros": "Initial response often good.",
    "cons": "Effect wanes.",
-   "cx": "Marked IOP spike if energy too high."
+   "cx": "Marked IOP spike if energy too high.",
+   "dose": "Reduced-energy SLT, sometimes over 180° only.",
+   "refer": "Alternative or add-on to drops.",
+   "pitfall": "Too much energy = marked IOP spike: check IOP afterwards."
   },
   {
    "name": "Pilocarpine",
@@ -1855,7 +2071,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Rarely; selected cases.",
    "pros": "Acts on the mechanism.",
    "cons": "Induced myopia, blurred vision, headache: poorly tolerated in the young.",
-   "cx": "Retinal detachment in a myope with lattice."
+   "cx": "Retinal detachment in a myope with lattice.",
+   "dose": "Pilocarpine drops, selected cases only.",
+   "refer": "Rarely; the ophthalmologist decides.",
+   "pitfall": "Dilated fundus exam first: retinal detachment in myopes."
   },
   {
    "name": "Laser iridotomy (LPI)",
@@ -1863,7 +2082,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Debated in young patients with a very concave iris; not routine.",
    "pros": "Corrects the concavity.",
    "cons": "No proven benefit on glaucoma progression.",
-   "cx": "Dysphotopsias, IOP spike, bleeding."
+   "cx": "Dysphotopsias, IOP spike, bleeding.",
+   "dose": "YAG laser: small hole in the peripheral iris.",
+   "refer": "Discussed if the iris is very concave; not routine.",
+   "pitfall": "No proven benefit on glaucoma progression."
   }
  ],
  "pearls": [
@@ -1903,7 +2125,25 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "Siddiqui Y et al. Risk of pigmentary glaucoma after pigment dispersion (Am J Ophthalmol 2003)",
   "Campbell DG. Pigmentary dispersion and glaucoma: a new theory (Arch Ophthalmol 1979)",
   "Michelessi M, Lindsley K. Peripheral iridotomy for pigmentary glaucoma (Cochrane Database Syst Rev 2016)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**Prostaglandin analogue**: Latanoprost 0.005%: 1 drop at bedtime.",
+   "**Low-energy SLT**: Reduced-energy SLT, sometimes over 180° only.",
+   "**Pilocarpine**: Pilocarpine drops, selected cases only.",
+   "**Laser iridotomy**: YAG laser: small hole in the peripheral iris."
+  ],
+  "refer": [
+   "**Prostaglandin analogue**: Established pigmentary glaucoma: followed by the ophthalmologist."
+  ],
+  "pitfall": [
+   "**Pilocarpine**: Dilated fundus exam first: retinal detachment in myopes.",
+   "**Low-energy SLT**: Too much energy = marked IOP spike: check IOP afterwards."
+  ],
+  "qc": [
+   "Quebec: dispersion without neuropathy is often followed in optometry (glaucoma suspect)."
+  ]
+ }
 }
 });
 
@@ -1911,7 +2151,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-neovasculaire": {
  "title": "Neovascular glaucoma",
  "oneLiner": "Ischemic retina (vein occlusion, diabetes, carotid), neovessels on the iris and in the angle, very high IOP: urgent anti-VEGF and panretinal photocoagulation.",
- "definition": "Neovascular glaucoma occurs when an oxygen-starved retina secretes a vessel growth factor (VEGF, vascular endothelial growth factor) that makes new abnormal vessels grow on the iris and in the angle. These vessels and their fibrous membrane clog and then close the angle's filter, and the pressure rises very high, often in an eye that already sees poorly.",
+ "definition": "An ischemic retina releases VEGF (vascular endothelial growth factor), which grows new vessels on the iris and in the angle. Their fibrous membrane closes the filter: IOP rises, often in an eye that already sees poorly.",
  "anatomy": {
   "text": "The inner retina is supplied by the central retinal artery and drained by the central retinal vein; if this network becomes occluded or depleted, the retina becomes ischemic. VEGF diffuses into the vitreous and then the aqueous, reaching the iris and angle. Normally, no vessel crosses the scleral spur to branch over the trabecular meshwork."
  },
@@ -2048,27 +2288,31 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "algo": [
    {
     "q": "Iris or angle neovessels?",
-    "yes": "Neovascularization: find the ischemic cause.",
-    "no": "If ischemic CRVO or proliferative retinopathy: regular undilated gonioscopy."
+    "yes": "Find the ischemic cause.",
+    "no": "Ischemic CRVO, proliferative retinopathy: regular undilated gonioscopy.",
+    "cont": "yes"
    },
    {
-    "q": "Elevated IOP?",
-    "yes": "Neovascular glaucoma: urgent anti-VEGF, PRP and IOP lowering.",
-    "no": "Neovessels without glaucoma: prompt anti-VEGF and PRP to save the angle."
+    "q": "Raised IOP?",
+    "yes": "NVG: anti-VEGF, PRP and urgent IOP lowering.",
+    "no": "Neovessels only: prompt anti-VEGF and PRP to save the angle.",
+    "cont": "yes"
    },
    {
-    "q": "Angle closed by synechiae over a large extent?",
-    "yes": "Drops will not be enough: plan a tube.",
-    "no": "Open-angle stage: PRP can still preserve the angle."
+    "q": "Angle closed by extensive synechiae?",
+    "yes": "Drops will not suffice: plan a tube.",
+    "no": "Angle still open: PRP can preserve it.",
+    "cont": "yes"
    },
    {
     "q": "Useful visual potential?",
     "yes": "Tube after anti-VEGF (less bleeding).",
-    "no": "Cyclophotocoagulation, atropine and steroid for comfort."
+    "no": "Cyclophotocoagulation, atropine and steroid for comfort.",
+    "cont": "yes"
    },
    {
     "q": "Obvious retinal cause?",
-    "yes": "Coordinate retina and the family physician (glycemia, blood pressure).",
+    "yes": "Coordinate retina and family physician (glucose, blood pressure).",
     "no": "Ocular ischemic syndrome: carotid Doppler (stroke risk)."
    }
   ],
@@ -2115,7 +2359,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "At diagnosis; before surgery (less bleeding).",
    "pros": "Rapid effect.",
    "cons": "Temporary: does not replace PRP.",
-   "cx": "Endophthalmitis (rare), IOP spike."
+   "cx": "Endophthalmitis (rare), IOP spike.",
+   "dose": "Bevacizumab 1.25 mg/0.05 mL intravitreal (or ranibizumab 0.5 mg, aflibercept 2 mg).",
+   "refer": "At diagnosis: refer to retina the same day.",
+   "pitfall": "Temporary effect: does not replace PRP.",
+   "qc": "Quebec: injections and PRP in retina clinics; tubes in hospital centres."
   },
   {
    "name": "Panretinal photocoagulation (PRP)",
@@ -2123,7 +2371,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Definitive treatment.",
    "pros": "Durable effect.",
    "cons": "Works over a few weeks; clear media required.",
-   "cx": "Peripheral field and night vision ↓, worsened macular edema."
+   "cx": "Peripheral field and night vision ↓, worsened macular edema.",
+   "dose": "Laser in clinic: ≈ 1200–1600 spots over 1–3 sessions.",
+   "refer": "Definitive treatment, as soon as the media allow.",
+   "pitfall": "Works over weeks: cover with anti-VEGF meanwhile."
   },
   {
    "name": "Glaucoma drainage tube (Ahmed, Baerveldt)",
@@ -2131,7 +2382,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Uncontrolled IOP with visual potential.",
    "pros": "Resists scarring better than trabeculectomy.",
    "cons": "Inflamed, fragile eye.",
-   "cx": "Hyphema, hypotony, tube occlusion, exposure."
+   "cx": "Hyphema, hypotony, tube occlusion, exposure.",
+   "dose": "Ahmed or Baerveldt, in the OR, after anti-VEGF.",
+   "refer": "Uncontrolled IOP with visual potential.",
+   "pitfall": "Inflamed, fragile eye: risk of hyphema and tube blockage."
   },
   {
    "name": "Cyclophotocoagulation",
@@ -2139,7 +2393,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Poor visual potential or tube failure.",
    "pros": "Quick, incisionless.",
    "cons": "Effect hard to titrate.",
-   "cx": "Hypotony, phthisis (shrinking eye), vision loss."
+   "cx": "Hypotony, phthisis (shrinking eye), vision loss.",
+   "dose": "Transscleral diode laser cyclophotocoagulation.",
+   "refer": "Poor visual potential or failed tube.",
+   "pitfall": "Hard to titrate: risk of hypotony and phthisis."
   }
  ],
  "pearls": [
@@ -2180,7 +2437,26 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "Hayreh SS. Neovascular glaucoma (Prog Retin Eye Res 2007)",
   "Ahmed Baerveldt Comparison Study (Budenz DL et al., Ophthalmology 2011)",
   "AAO PPP Retinal Vein Occlusions (Flaxel CJ et al., Ophthalmology 2020)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**Intravitreal anti-VEGF**: Bevacizumab 1.25 mg/0.05 mL intravitreal (or ranibizumab 0.5 mg, aflibercept 2 mg).",
+   "**Panretinal photocoagulation**: Laser in clinic: ≈ 1200–1600 spots over 1–3 sessions.",
+   "**Glaucoma drainage tube**: Ahmed or Baerveldt, in the OR, after anti-VEGF.",
+   "**Cyclophotocoagulation**: Transscleral diode laser cyclophotocoagulation."
+  ],
+  "refer": [
+   "**Intravitreal anti-VEGF**: At diagnosis: refer to retina the same day.",
+   "**Glaucoma drainage tube**: Uncontrolled IOP with visual potential."
+  ],
+  "pitfall": [
+   "**Intravitreal anti-VEGF**: Temporary effect: does not replace PRP.",
+   "**Panretinal photocoagulation**: Works over weeks: cover with anti-VEGF meanwhile."
+  ],
+  "qc": [
+   "Quebec: injections and PRP in retina clinics; tubes in hospital centres."
+  ]
+ }
 }
 });
 
@@ -2188,7 +2464,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-gpn": {
  "title": "Normal-tension glaucoma",
  "oneLiner": "Glaucomatous neuropathy with IOP always ≤ 21 mmHg: a diagnosis of exclusion, disc hemorrhages and early paracentral defects.",
- "definition": "Normal-tension glaucoma (NTG) is an open-angle glaucoma in which the optic nerve cups and the visual field is lost while the measured intraocular pressure (IOP) always stays within normal limits (≤ 21 mmHg). It is a diagnosis of exclusion: first rule out a missed elevated IOP, intermittent angle closure and nonglaucomatous optic nerve damage.",
+ "definition": "Normal-tension glaucoma (NTG) is open-angle glaucoma in which the nerve cups while IOP stays ≤ 21 mmHg. It is a diagnosis of exclusion: missed high IOP, intermittent angle closure or a non-glaucomatous neuropathy.",
  "anatomy": {
   "text": "The optic nerve head is supplied by the short posterior ciliary arteries; its blood flow depends on perfusion pressure (blood pressure minus IOP) and on vascular autoregulation. The axons pass through the lamina cribrosa, a collagen sieve that is more fragile in some individuals, in whom they are damaged even at a normal IOP."
  },
@@ -2315,30 +2591,32 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "redFlags": [
   "Age < 50, pallor > cupping, VA or color vision ↓: MRI",
   "Defect respecting the vertical meridian (chiasm)",
-  "≥ 50 years with headache or jaw claudication: ESR, CRP (arteritis)",
-  "Paracentral defect threatening fixation: treat without delay"
+  "≥ 50 years with headache or jaw claudication: ESR, CRP (arteritis)"
  ],
  "cat": {
   "algo": [
    {
-    "q": "IOP truly ≤ 21 mmHg (curve, cornea)?",
+    "q": "IOP truly ≤ 21 (curve, cornea)?",
     "yes": "Continue the exclusion.",
-    "no": "Classic open-angle glaucoma."
+    "no": "Classic open-angle glaucoma.",
+    "cont": "yes"
    },
    {
     "q": "Open angle, no secondary cause?",
     "yes": "Continue.",
-    "no": "Angle closure or secondary glaucoma."
+    "no": "Angle closure or secondary glaucoma.",
+    "cont": "yes"
    },
    {
-    "q": "Atypical sign (age < 50, pallor > cupping, VA ↓, vertical defect)?",
-    "yes": "MRI ± ESR/CRP.",
-    "no": "NTG likely."
+    "q": "Atypical sign (< 50, pallor, VA ↓, vertical defect)?",
+    "yes": "MRI ± ESR, CRP.",
+    "no": "Probable NTG.",
+    "cont": "no"
    },
    {
-    "q": "Fixation threatened or documented progression?",
+    "q": "Threatened fixation or documented progression?",
     "yes": "Treat: target ≈ 30% below baseline.",
-    "no": "Observe: ≈ 3 fields per year to measure the rate."
+    "no": "Observe: ≈ 3 fields a year to measure the rate."
    }
   ],
   "phases": [
@@ -2384,7 +2662,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "First-line once the decision to treat is made.",
    "pros": "1 drop a day; effective at night.",
    "cons": "Hard to reach −30% if baseline IOP is low.",
-   "cx": "Hyperemia, long lashes, iris darkening, orbital fat atrophy."
+   "cx": "Hyperemia, long lashes, iris darkening, orbital fat atrophy.",
+   "dose": "Latanoprost 0.005%: 1 drop at bedtime.",
+   "refer": "Threatened fixation or documented progression.",
+   "pitfall": "IOP already low: −30% is hard; check adherence before escalating."
   },
   {
    "name": "Brimonidine",
@@ -2392,7 +2673,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Option in NTG: less field progression than with timolol in LoGTS, at comparable IOP.",
    "pros": "The only drop trial suggesting an effect beyond IOP.",
    "cons": "Many dropouts due to allergy: result debated.",
-   "cx": "Follicular conjunctivitis, dry mouth, drowsiness; contraindicated under age 2."
+   "cx": "Follicular conjunctivitis, dry mouth, drowsiness; contraindicated under age 2.",
+   "dose": "Brimonidine 0.2% BID (LoGTS dose).",
+   "refer": "Option if a PGA is insufficient or poorly tolerated.",
+   "pitfall": "Follicular allergy is common; contraindicated under age 2."
   },
   {
    "name": "Systemic factors",
@@ -2400,7 +2684,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Progressing NTG with nocturnal hypotension or apnea.",
    "pros": "No risk to the eye.",
    "cons": "Limited evidence.",
-   "cx": "Cardiovascular risk if a treatment is changed without the physician."
+   "cx": "Cardiovascular risk if a treatment is changed without the physician.",
+   "dose": "Review bedtime antihypertensives with the family physician; screen for sleep apnea.",
+   "refer": "NTG progressing with nocturnal hypotension or apnea.",
+   "pitfall": "Never change an antihypertensive without the family physician."
   },
   {
    "name": "SLT or trabeculectomy",
@@ -2408,7 +2695,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Progression despite drops.",
    "pros": "Trabeculectomy: lowest IOP.",
    "cons": "SLT modest if IOP is low; surgery carries risk.",
-   "cx": "Hypotony, leak, bleb infection, cataract."
+   "cx": "Hypotony, leak, bleb infection, cataract.",
+   "dose": "SLT in clinic; trabeculectomy with MMC in the OR.",
+   "refer": "Progression despite drops: glaucoma specialist.",
+   "pitfall": "SLT does little when baseline IOP is low."
   }
  ],
  "pearls": [
@@ -2449,7 +2739,23 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "LoGTS (Krupin T et al., Am J Ophthalmol 2011)",
   "AAO PPP Primary Open-Angle Glaucoma (Gedde SJ et al., Ophthalmology, online Feb 9, 2026)",
   "COS 2009: Canadian Ophthalmological Society glaucoma guidelines (Can J Ophthalmol 2009;44 Suppl 1:S7-S93)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**Prostaglandin analogue**: Latanoprost 0.005%: 1 drop at bedtime.",
+   "**Brimonidine**: Brimonidine 0.2% BID (LoGTS dose).",
+   "**Systemic factors**: Review bedtime antihypertensives with the family physician; screen for sleep apnea.",
+   "**SLT or trabeculectomy**: SLT in clinic; trabeculectomy with MMC in the OR."
+  ],
+  "refer": [
+   "**Prostaglandin analogue**: Threatened fixation or documented progression.",
+   "**SLT or trabeculectomy**: Progression despite drops: glaucoma specialist."
+  ],
+  "pitfall": [
+   "**Systemic factors**: Never change an antihypertensive without the family physician.",
+   "**Prostaglandin analogue**: IOP already low: −30% is hard; check adherence before escalating."
+  ]
+ }
 }
 });
 
@@ -2457,7 +2763,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-secondaires": {
  "title": "Steroid-induced and uveitic glaucoma",
  "oneLiner": "IOP rising on steroids or during uveitis: identify the mechanism, adjust the steroid, treat the inflammation, avoid pilocarpine.",
- "definition": "Steroid-induced glaucoma is a rise in intraocular pressure (IOP) caused by a corticosteroid (drops, injection, implant, less often inhaled or oral) in a susceptible person, called a responder. Uveitic glaucoma is a rise in IOP caused by intraocular inflammation (uveitis), which inflames or clogs the angle's filter or makes the iris stick, and whose steroid treatment can also raise the pressure.",
+ "definition": "Steroid-induced glaucoma: IOP rises on a corticosteroid (drops, injection, implant, sometimes inhaled or oral) in a responder. Uveitic glaucoma: inflammation clogs the filter or sticks the iris down, and its steroid can also raise IOP.",
  "anatomy": {
   "text": "Trabecular meshwork cells (the angle's filter) clean and renew their matrix to let aqueous through; steroids alter this function. The ciliary body produces aqueous: severe inflammation shuts it down (production ↓), hence an IOP that is sometimes low in active uveitis. The inflamed iris can stick to the lens (posterior synechiae) or to the angle."
  },
@@ -2594,29 +2900,33 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "cat": {
   "algo": [
    {
-    "q": "Elevated IOP on steroids, quiet eye, open angle?",
-    "yes": "Steroid response: taper, switch or stop the steroid, IOP-lowering drops.",
-    "no": "Look for inflammation, synechiae, neovessels."
+    "q": "High IOP on steroid, quiet eye, open angle?",
+    "yes": "Steroid response: reduce or switch the steroid, IOP drops.",
+    "no": "Look for inflammation, synechiae, neovessels.",
+    "cont": "no"
    },
    {
-    "q": "Active uveitis (cells, precipitates)?",
-    "yes": "Control the inflammation (adequate steroid, antiviral if herpes or CMV) + drops that ↓ production.",
-    "no": "Post-uveitic glaucoma: drops, then laser or surgery."
+    "q": "Active uveitis (cells, KP)?",
+    "yes": "Control inflammation (antiviral if HSV, CMV) + aqueous suppressants.",
+    "no": "Post-uveitic: drops, then laser or surgery.",
+    "cont": "yes"
    },
    {
     "q": "Iris bombé?",
-    "yes": "Emergency: iridotomy (often several) or surgical iridectomy.",
-    "no": "Gonioscopy: extent of anterior synechiae."
+    "yes": "Emergency: multiple iridotomies or surgical iridectomy.",
+    "no": "Gonioscopy: extent of synechiae.",
+    "cont": "no"
    },
    {
-    "q": "Steroid depot or implant involved?",
+    "q": "Steroid depot or implant to blame?",
     "yes": "Remove the depot if possible; otherwise filtering surgery.",
-    "no": "Continue adjusting."
+    "no": "Keep adjusting.",
+    "cont": "no"
    },
    {
-    "q": "IOP uncontrolled with drops?",
-    "yes": "Steroid-induced: SLT; uveitic: tube, under anti-inflammatory cover.",
-    "no": "Close IOP monitoring."
+    "q": "IOP uncontrolled on drops?",
+    "yes": "Steroid: SLT; uveitic: tube under anti-inflammatory cover.",
+    "no": "Close IOP follow-up."
    }
   ],
   "phases": [
@@ -2656,7 +2966,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Steroid response.",
    "pros": "Treats the cause.",
    "cons": "Impossible if the steroid is essential or if it is an implant.",
-   "cx": "Inflammatory rebound, graft rejection."
+   "cx": "Inflammatory rebound, graft rejection.",
+   "dose": "Switch to loteprednol 0.5% or fluorometholone 0.1%, or taper; NSAID if possible.",
+   "refer": "Steroid response; recovery in weeks if the meshwork is intact.",
+   "pitfall": "Do not stop an essential steroid abruptly (uveitis, graft): rebound.",
+   "qc": "Quebec: an equipped optometrist may treat steroid-induced glaucoma, then must refer (O-7)."
   },
   {
    "name": "Drops that ↓ aqueous production",
@@ -2664,7 +2978,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "First line in both glaucomas.",
    "pros": "Do not worsen inflammation.",
    "cons": "Prostaglandin analogue with caution (inflammation, herpes).",
-   "cx": "Timolol: bronchospasm; brimonidine: allergy."
+   "cx": "Timolol: bronchospasm; brimonidine: allergy.",
+   "dose": "Timolol 0.5% BID, dorzolamide 2% TID; acetazolamide 250 mg PO QID if needed.",
+   "refer": "First line in both glaucomas.",
+   "pitfall": "PGA with caution in active uveitis or herpes."
   },
   {
    "name": "SLT (selective laser trabeculoplasty)",
@@ -2672,7 +2989,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Uncontrolled steroid-induced glaucoma.",
    "pros": "Works well in steroid-induced glaucoma.",
    "cons": "Avoid in active uveitis.",
-   "cx": "Inflammation, IOP spike."
+   "cx": "Inflammation, IOP spike.",
+   "dose": "360° SLT in clinic.",
+   "refer": "Uncontrolled steroid-induced glaucoma.",
+   "pitfall": "Avoid in active uveitis."
   },
   {
    "name": "Iridotomy or iridectomy",
@@ -2680,7 +3000,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Iris bombé.",
    "pros": "Restores outflow immediately.",
    "cons": "The iridotomy often closes in an inflamed eye.",
-   "cx": "Bleeding, inflammation."
+   "cx": "Bleeding, inflammation.",
+   "dose": "YAG laser (often several openings) or surgical iridectomy.",
+   "refer": "Iris bombé: same-day emergency.",
+   "pitfall": "Often closes in an inflamed eye: check patency."
   },
   {
    "name": "Surgery (depot removal, tube, trabeculectomy)",
@@ -2688,7 +3011,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Uncontrolled IOP.",
    "pros": "The tube holds up better against inflammation.",
    "cons": "Trabeculectomy: failure more frequent.",
-   "cx": "Hypotony, tube exposure, endothelial cell loss."
+   "cx": "Hypotony, tube exposure, endothelial cell loss.",
+   "dose": "Depot removal, tube (Ahmed, Baerveldt) or trabeculectomy with MMC.",
+   "refer": "IOP uncontrolled despite drops and laser.",
+   "pitfall": "Operate on a quiet eye, under anti-inflammatory cover."
   }
  ],
  "pearls": [
@@ -2729,7 +3055,27 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "Armaly MF (Arch Ophthalmol 1963) and Becker B (Invest Ophthalmol 1965): steroid response",
   "Siddique SS et al. Glaucoma and uveitis (Surv Ophthalmol 2013)",
   "Regulation respecting the medications an optometrist may administer or prescribe (O-7, r. 11.1, Québec 2018)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**Modify or stop the steroid**: Switch to loteprednol 0.5% or fluorometholone 0.1%, or taper; NSAID if possible.",
+   "**Drops that ↓ aqueous production**: Timolol 0.5% BID, dorzolamide 2% TID; acetazolamide 250 mg PO QID if needed.",
+   "**SLT**: 360° SLT in clinic.",
+   "**Iridotomy or iridectomy**: YAG laser (often several openings) or surgical iridectomy.",
+   "**Surgery**: Depot removal, tube (Ahmed, Baerveldt) or trabeculectomy with MMC."
+  ],
+  "refer": [
+   "**Iridotomy or iridectomy**: Iris bombé: same-day emergency.",
+   "**Modify or stop the steroid**: Steroid response; recovery in weeks if the meshwork is intact."
+  ],
+  "pitfall": [
+   "**Modify or stop the steroid**: Do not stop an essential steroid abruptly (uveitis, graft): rebound.",
+   "**SLT**: Avoid in active uveitis."
+  ],
+  "qc": [
+   "Quebec: an equipped optometrist may treat steroid-induced glaucoma, then must refer (O-7)."
+  ]
+ }
 }
 });
 
@@ -2737,7 +3083,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-cristallin": {
  "title": "Lens-related, IOL-related and traumatic glaucomas",
  "oneLiner": "Elevated IOP with advanced cataract, an IOL or trauma: find the mechanism (closed or open angle), lower the IOP, treat the cause.",
- "definition": "These are secondary glaucomas in which the lens (too large, leaking, displaced), an intraocular lens (IOL) chafing the iris, or trauma (blood, a tear in the angle, gas in the eye) raises the intraocular pressure (IOP). The mechanism dictates treatment: lower the IOP first, then remove or reposition the cause.",
+ "definition": "The lens (swollen, leaking, displaced), an IOL rubbing the iris, or trauma (blood, angle recession, gas) raises IOP. The mechanism drives treatment: lower IOP, then remove or reposition the cause.",
  "anatomy": {
   "text": "The lens is suspended behind the iris by the zonules, fibers attached to the ciliary body; it thickens throughout life and pushes the iris forward. Its capsule holds in proteins which, once released, clog the trabecular meshwork or trigger inflammation. The ciliary body is vulnerable to trauma: a tear between its longitudinal and circular fibers produces angle recession."
  },
@@ -2889,35 +3235,37 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "redFlags": [
   "Lens or IOL dislocated into the anterior chamber: endothelial contact, block → prompt surgery",
   "Hyphema and sickle cell disease: IOP ≥ 24 mmHg for more than 24 h → surgical washout",
-  "Early corneal blood staining or total hyphema",
-  "Pain after vitrectomy with gas: check IOP immediately",
-  "Rebleed, especially between day 2 and day 5"
+  "Pain after vitrectomy with gas: check IOP immediately"
  ],
  "cat": {
   "algo": [
    {
-    "q": "Angle closed (shallow chamber, gonioscopy)?",
-    "yes": "Push: LPI if block, cycloplegic if the lens is forward, then surgery.",
-    "no": "Open angle: look for what is clogging it."
+    "q": "Closed angle (flat chamber, gonioscopy)?",
+    "yes": "LPI if block, cycloplegic if lens forward, then surgery.",
+    "no": "Open angle: find what is clogging it.",
+    "cont": "no"
    },
    {
     "q": "Hypermature cataract, particles, deep chamber?",
-    "yes": "Phacolytic: IOP, steroid, prompt extraction.",
-    "no": "Continue."
+    "yes": "Phacolytic: lower IOP, steroid, prompt extraction.",
+    "no": "Continue.",
+    "cont": "no"
    },
    {
-    "q": "Pseudophakic with microhyphemas and transillumination?",
-    "yes": "UGH: UBM, IOL repositioning or exchange.",
-    "no": "Continue."
+    "q": "Pseudophakic, microhyphemas, transillumination?",
+    "yes": "UGH: UBM, reposition or exchange the IOL.",
+    "no": "Continue.",
+    "cont": "no"
    },
    {
     "q": "Recent trauma with blood?",
-    "yes": "Hyphema protocol; sickle cell disease?",
-    "no": "Old trauma: gonioscopy (recession)."
+    "yes": "Hyphema protocol; screen for sickle cell.",
+    "no": "Old trauma: gonioscopy (recession).",
+    "cont": "no"
    },
    {
     "q": "Gas in the eye?",
-    "yes": "IOP-lowering agents, positioning, ± partial gas removal.",
+    "yes": "IOP drops, positioning, ± partial gas removal.",
     "no": "Other secondary cause."
    }
   ],
@@ -2945,7 +3293,8 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "phase": "suivi",
     "items": [
-     "Hyphema: near-daily exams in the first days; recession and aphakia: lifelong IOP checks"
+     "Hyphema: near-daily exams in the first days; recession and aphakia: lifelong IOP checks",
+     "Hyphema: watch for rebleeding (especially days 2–5), early corneal blood staining or a total hyphema."
     ]
    },
    {
@@ -2964,7 +3313,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Phacomorphic, phacolytic, subluxated or dislocated lens.",
    "pros": "Treats the cause.",
    "cons": "Fragile capsule, weak zonules, edematous cornea.",
-   "cx": "Capsule rupture, nucleus in the vitreous, endothelial cell loss."
+   "cx": "Capsule rupture, nucleus in the vitreous, endothelial cell loss.",
+   "dose": "Phacoemulsification or extracapsular extraction.",
+   "refer": "Phacomorphic or phacolytic: prompt surgery, after IOP lowering.",
+   "pitfall": "Fragile capsule, weak zonules: experienced surgeon."
   },
   {
    "name": "IOP-lowering and anti-inflammatory agents",
@@ -2972,7 +3324,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Always first.",
    "pros": "Quick, in clinic.",
    "cons": "Buy time without treating the cause.",
-   "cx": "CAIs, hyperosmotics: sickling; acetazolamide: sulfonamides, potassium, kidneys."
+   "cx": "CAIs, hyperosmotics: sickling; acetazolamide: sulfonamides, potassium, kidneys.",
+   "dose": "Timolol 0.5%, brimonidine 0.2%; prednisolone acetate 1% QID, cycloplegic.",
+   "refer": "Always first; same-day referral.",
+   "pitfall": "Sickle cell: avoid CAIs and hyperosmotics (sickling)."
   },
   {
    "name": "IOL repositioning or exchange",
@@ -2980,7 +3335,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "UGH, migrated IOL.",
    "pros": "The only definitive treatment of chafing.",
    "cons": "Complex surgery.",
-   "cx": "Hemorrhage, retinal detachment, macular edema."
+   "cx": "Hemorrhage, retinal detachment, macular edema.",
+   "dose": "IOL put back in the bag, captured, fixated or exchanged.",
+   "refer": "UGH or migrated IOL: anterior segment surgeon.",
+   "pitfall": "Complex surgery: risk of hemorrhage and retinal detachment."
   },
   {
    "name": "Hyphema protocol",
@@ -2988,7 +3346,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Every traumatic hyphema.",
    "pros": "Comfort, less inflammation.",
    "cons": "Limited evidence for each measure.",
-   "cx": "Rebleed, IOP, blood staining."
+   "cx": "Rebleed, IOP, blood staining.",
+   "dose": "Head of bed at 30–45°, shield, atropine 1%, prednisolone acetate 1%.",
+   "refer": "Any traumatic hyphema: close follow-up in the first days.",
+   "pitfall": "No NSAIDs or aspirin; sickle cell: IOP ≥ 24 mmHg for over 24 h = washout.",
+   "qc": "Montreal: hemoglobin electrophoresis if Haitian, African, Caribbean, Mediterranean, Middle Eastern or Indian origin."
   },
   {
    "name": "Glaucoma drainage tube",
@@ -2996,7 +3358,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Refractory recession or aphakic glaucoma.",
    "pros": "Durable control.",
    "cons": "In recession, SLT is of little benefit and miotics can act paradoxically.",
-   "cx": "Hypotony, tube erosion, corneal decompensation."
+   "cx": "Hypotony, tube erosion, corneal decompensation.",
+   "dose": "Ahmed or Baerveldt, in the OR.",
+   "refer": "Angle recession or refractory aphakic glaucoma.",
+   "pitfall": "Recession: SLT works poorly, miotics sometimes paradoxical."
   }
  ],
  "pearls": [
@@ -3037,7 +3402,27 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "COS 2009: Canadian Ophthalmological Society glaucoma guidelines (Can J Ophthalmol 2009;44 Suppl 1:S7-S93)",
   "AAO Basic and Clinical Science Course, Section 10: Glaucoma",
   "EyeRounds (University of Iowa): Uveitis-glaucoma-hyphema syndrome and Aphakic glaucoma cases"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**Lens extraction**: Phacoemulsification or extracapsular extraction.",
+   "**IOP-lowering and anti-inflammatory agents**: Timolol 0.5%, brimonidine 0.2%; prednisolone acetate 1% QID, cycloplegic.",
+   "**IOL repositioning or exchange**: IOL put back in the bag, captured, fixated or exchanged.",
+   "**Hyphema protocol**: Head of bed at 30–45°, shield, atropine 1%, prednisolone acetate 1%.",
+   "**Glaucoma drainage tube**: Ahmed or Baerveldt, in the OR."
+  ],
+  "refer": [
+   "**IOP-lowering and anti-inflammatory agents**: Always first; same-day referral.",
+   "**Hyphema protocol**: Any traumatic hyphema: close follow-up in the first days."
+  ],
+  "pitfall": [
+   "**IOP-lowering and anti-inflammatory agents**: Sickle cell: avoid CAIs and hyperosmotics (sickling).",
+   "**Hyphema protocol**: No NSAIDs or aspirin; sickle cell: IOP ≥ 24 mmHg for over 24 h = washout."
+  ],
+  "qc": [
+   "Montreal: hemoglobin electrophoresis if Haitian, African, Caribbean, Mediterranean, Middle Eastern or Indian origin."
+  ]
+ }
 }
 });
 
@@ -3045,7 +3430,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-dev": {
  "title": "Childhood glaucomas, developmental anomalies and ICE syndrome",
  "oneLiner": "Infant with tearing, light avoidance and squeezed lids, large or hazy cornea: congenital glaucoma until proven otherwise.",
- "definition": "These glaucomas arise from an iridocorneal angle (the filter through which aqueous humor leaves) that is malformed from birth, later covered by an abnormal membrane (ICE syndrome) or impeded downstream by excessive venous pressure (Sturge-Weber). Before about age 3, elevated IOP stretches the whole eye; in adults, it damages the nerve without enlarging the globe.",
+ "definition": "These glaucomas come from an angle malformed from birth, an abnormal membrane (ICE syndrome) or too-high venous pressure (Sturge-Weber). Before about age 3, raised IOP stretches the whole eye; in adults, it damages the nerve without enlarging the globe.",
  "anatomy": {
   "text": "The angle forms during fetal life from the neural crest, which gives rise to the trabecular meshwork (spongy filter), Schwalbe's line (the edge of Descemet's membrane) and the iris stroma. Arrested development leaves an immature trabecular meshwork or iris strands stretched up to Schwalbe's line."
  },
@@ -3108,7 +3493,8 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "\"Big, beautiful\" eye, large or bluish cornea; often bilateral",
   "Juvenile open-angle glaucoma (later in childhood): silent, no enlargement of the eye",
   "Sturge-Weber: glaucoma on the side of the port-wine stain, early (abnormal angle) or late (episcleral venous pressure)",
-  "ICE syndrome: blurred vision in the morning (corneal edema), distorted pupil, unilateral elevated IOP"
+  "ICE syndrome: blurred vision in the morning (corneal edema), distorted pupil, unilateral elevated IOP",
+  "Cornea that suddenly turns hazy: rupture of Descemet's membrane"
  ],
  "exam": {
   "signs": [
@@ -3188,36 +3574,39 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "redFlags": [
   "Infant with tearing and photophobia, or a large or hazy cornea: urgent referral",
-  "Cornea that suddenly turns hazy: rupture of Descemet's membrane",
   "Aniridia without family history: screen for Wilms tumor (kidney)",
   "V1 port-wine stain: IOP and discs from birth, then regularly"
  ],
  "cat": {
   "algo": [
    {
-    "q": "Triad or a large or hazy cornea in an infant?",
-    "yes": "Urgent referral → examination under anesthesia.",
-    "no": "Isolated tearing, clear cornea: nasolacrimal obstruction likely."
+    "q": "Triad, large or cloudy cornea (infant)?",
+    "yes": "Urgent referral: examination under anesthesia.",
+    "no": "Tearing, clear cornea: probable nasolacrimal duct obstruction.",
+    "cont": "yes"
    },
    {
     "q": "Glaucoma confirmed?",
-    "yes": "Drops as a bridge, angle surgery promptly.",
-    "no": "Close monitoring."
+    "yes": "Bridging drops, angle surgery promptly.",
+    "no": "Close monitoring.",
+    "cont": "yes"
    },
    {
     "q": "Cornea clear enough to see the angle?",
     "yes": "Goniotomy or trabeculotomy.",
-    "no": "External trabeculotomy."
+    "no": "External trabeculotomy.",
+    "cont": "yes"
    },
    {
     "q": "Angle surgery failed?",
-    "yes": "Repeat angle surgery, tube, trabeculectomy with mitomycin C (MMC) or cyclophotocoagulation.",
-    "no": "Follow-up: IOP, diameter, refraction, amblyopia."
+    "yes": "Repeat, tube, trabeculectomy with MMC or cyclophotocoagulation.",
+    "no": "Follow-up: IOP, diameter, refraction, amblyopia.",
+    "cont": "no"
    },
    {
-    "q": "Adult: unilateral edema, corectopia, synechiae?",
-    "yes": "ICE syndrome: specular microscopy, drops, tube if they fail; DSAEK or DMEK for the edema.",
-    "no": "Think Axenfeld-Rieger or posterior polymorphous dystrophy."
+    "q": "Adult: edema, corectopia, one-sided synechiae?",
+    "yes": "ICE: specular microscopy, drops, tube if failure; DSAEK or DMEK for edema.",
+    "no": "Consider Axenfeld-Rieger or posterior polymorphous dystrophy."
    }
   ],
   "phases": [
@@ -3254,7 +3643,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Primary congenital, clear cornea.",
    "pros": "No conjunctival scarring; repeatable.",
    "cons": "The angle must be visible.",
-   "cx": "Hyphema, iris or lens injury."
+   "cx": "Hyphema, iris or lens injury.",
+   "dose": "Under a gonioscopy lens: incision of the meshwork over ≈ 1/3 of the angle.",
+   "refer": "Primary congenital with a clear cornea: tertiary pediatric centre, promptly.",
+   "pitfall": "The angle must be visible: impossible if the cornea is cloudy.",
+   "qc": "Quebec: CHU Sainte-Justine, Montreal Children's Hospital, CHU de Québec; call the on-call attending."
   },
   {
    "name": "Trabeculotomy",
@@ -3262,7 +3655,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Primary congenital, even with a hazy cornea.",
    "pros": "Feasible despite edema; 360° in one session.",
    "cons": "Canal sometimes cannot be found.",
-   "cx": "Transient hyphema, false passage."
+   "cx": "Transient hyphema, false passage.",
+   "dose": "Probe or 360° suture passed into Schlemm's canal.",
+   "refer": "Primary congenital, even with a cloudy cornea.",
+   "pitfall": "Canal sometimes not found: false passage possible."
   },
   {
    "name": "Drops as a bridge",
@@ -3270,7 +3666,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Before surgery or as an adjunct.",
    "pros": "Clear the cornea for the EUA.",
    "cons": "Rarely sufficient alone.",
-   "cx": "Timolol: apnea, bradycardia, bronchospasm; brimonidine: central nervous system depression."
+   "cx": "Timolol: apnea, bradycardia, bronchospasm; brimonidine: central nervous system depression.",
+   "dose": "Timolol 0.25% BID, dorzolamide 2% TID, as a bridge before surgery.",
+   "refer": "Before surgery or as an adjunct.",
+   "pitfall": "Brimonidine contraindicated under age 2 (CNS depression); timolol: apnea."
   },
   {
    "name": "Drainage tube or trabeculectomy",
@@ -3278,7 +3677,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Failed angle surgery, secondary glaucomas, ICE.",
    "pros": "Large IOP reduction.",
    "cons": "Vigorous scarring in children.",
-   "cx": "Hypotony, infection, tube occlusion (ICE), effusion (Sturge-Weber)."
+   "cx": "Hypotony, infection, tube occlusion (ICE), effusion (Sturge-Weber).",
+   "dose": "Tube and plate, or trabeculectomy with MMC.",
+   "refer": "Failed angle surgery, secondary glaucomas, ICE.",
+   "pitfall": "Vigorous healing in children: more frequent failure."
   }
  ],
  "pearls": [
@@ -3318,7 +3720,25 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "World Glaucoma Association. Childhood Glaucoma, Consensus Series 9 (Weinreb RN, Grajewski A, Papadopoulos M, Grigg J, Freedman S, eds. Kugler 2013)",
   "American Academy of Ophthalmology. Basic and Clinical Science Course, Section 10: Glaucoma",
   "Shields MB. Progressive essential iris atrophy, Chandler's syndrome, and the iris nevus (Cogan-Reese) syndrome: a spectrum of disease (Surv Ophthalmol 1979)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**Goniotomy**: Under a gonioscopy lens: incision of the meshwork over ≈ 1/3 of the angle.",
+   "**Trabeculotomy**: Probe or 360° suture passed into Schlemm's canal.",
+   "**Drops as a bridge**: Timolol 0.25% BID, dorzolamide 2% TID, as a bridge before surgery.",
+   "**Drainage tube or trabeculectomy**: Tube and plate, or trabeculectomy with MMC."
+  ],
+  "refer": [
+   "**Goniotomy**: Primary congenital with a clear cornea: tertiary pediatric centre, promptly."
+  ],
+  "pitfall": [
+   "**Drops as a bridge**: Brimonidine contraindicated under age 2 (CNS depression); timolol: apnea.",
+   "**Goniotomy**: The angle must be visible: impossible if the cornea is cloudy."
+  ],
+  "qc": [
+   "Quebec: CHU Sainte-Justine, Montreal Children's Hospital, CHU de Québec; call the on-call attending."
+  ]
+ }
 }
 });
 
@@ -3326,7 +3746,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-postop": {
  "title": "The postoperative patient: trabeculectomy, tubes, MIGS",
  "oneLiner": "After filtering surgery, read IOP × chamber depth, look for a leak (Seidel) and never miss a bleb infection.",
- "definition": "Glaucoma surgeries create a new outflow route for aqueous humor: into a pocket under the conjunctiva called the bleb (trabeculectomy, PreserFlo, XEN), toward a plate fixed on the sclera (tubes) or into Schlemm's canal (MIGS, minimally invasive glaucoma surgery). In clinic, you distinguish the normal course from complications, some of which, like bleb infection, threaten vision within hours.",
+ "definition": "Glaucoma surgery creates a new exit for aqueous: to a bleb under the conjunctiva (trabeculectomy, PreserFlo, XEN), to a plate (tubes) or into Schlemm's canal (MIGS). Tell normal healing apart from complications, including bleb infection, an emergency.",
  "anatomy": {
   "text": "In trabeculectomy, aqueous passes through a fistula created under a scleral flap, then collects under the conjunctiva where the vessels absorb it: this is the filtering bleb. Scarring is the main enemy; mitomycin C (MMC, an antifibrotic) slows it. MIGS stay within the natural pathway: IOP cannot go below episcleral venous pressure (≈ 8–10 mmHg)."
  },
@@ -3397,7 +3817,8 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "presentation": [
   "Functioning bleb: diffuse, low, moderately vascularized",
   "At-risk bleb: thin, avascular, cystic; encapsulated: firm dome, high IOP",
-  "Warning signs: red eye, pain, discharge, vision ↓"
+  "Warning signs: red eye, pain, discharge, vision ↓",
+  "Exposed tube: risk of endophthalmitis, repair it"
  ],
  "exam": {
   "signs": [
@@ -3465,30 +3886,32 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "redFlags": [
   "White bleb, red and painful eye ± hypopyon: infection, same day",
   "Sudden pain, high IOP, flat chamber: suprachoroidal hemorrhage",
-  "Lens touching the cornea: re-form the chamber urgently",
-  "Exposed tube: risk of endophthalmitis, repair it"
+  "Lens touching the cornea: re-form the chamber urgently"
  ],
  "cat": {
   "algo": [
    {
     "q": "Signs of infection (white bleb, hypopyon, pain)?",
-    "yes": "Blebitis: intensive topical antibiotics; endophthalmitis: tap + intravitreal vancomycin 1 mg/0.1 mL and ceftazidime 2.25 mg/0.1 mL ± vitrectomy, the same day.",
-    "no": "Assess IOP and chamber."
+    "yes": "Same day: blebitis = antibiotics; endophthalmitis = tap + injection.",
+    "no": "Assess IOP and chamber.",
+    "cont": "no"
    },
    {
     "q": "Low IOP, shallow chamber?",
-    "yes": "Seidel positive: bandage contact lens, suture; negative: atropine, monitor; re-form if lens–cornea touch.",
-    "no": "Next question."
+    "yes": "Seidel +: bandage lens, suture; Seidel −: atropine, observe.",
+    "no": "Next question.",
+    "cont": "no"
    },
    {
     "q": "High IOP, shallow chamber?",
-    "yes": "Blocked iridectomy: iridotomy; patent: aqueous misdirection (atropine, YAG laser, vitrectomy); dark domes: hemorrhage.",
-    "no": "Next question."
+    "yes": "Iridotomy if block; otherwise misdirection or suprachoroidal hemorrhage.",
+    "no": "Next question.",
+    "cont": "no"
    },
    {
     "q": "High IOP, deep chamber?",
-    "yes": "Gonioscopy, massage, laser suture lysis or ripcord removal; encapsulated bleb: needling ± 5-FU; late rise on steroids: think steroid response.",
-    "no": "IOP at target: slow steroid taper; low IOP with a formed chamber: Seidel, watch the macula."
+    "yes": "Massage, suture lysis or ripcord removal; needling if encapsulated.",
+    "no": "IOP at target: slow steroid taper."
    }
   ],
   "phases": [
@@ -3515,7 +3938,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "phase": "suivi",
     "items": [
      "Day 1, week 1, then close follow-up in the first months; lifelong, inspect the bleb",
-     "Painful red eye: be seen the same day"
+     "Painful red eye: be seen the same day",
+     "Bleb-related endophthalmitis: tap + intravitreal vancomycin 1 mg/0.1 mL and ceftazidime 2.25 mg/0.1 mL ± vitrectomy, the same day.",
+     "High IOP, shallow chamber: blocked iridectomy → iridotomy; patent → misdirection (atropine, YAG laser, vitrectomy); dark domes → suprachoroidal hemorrhage.",
+     "High IOP, deep chamber: gonioscopy, massage, laser suture lysis or ripcord removal; encapsulated bleb: needling ± 5-FU; late rise on steroid: steroid response. Low IOP with a formed chamber: Seidel, watch the macula."
     ]
    },
    {
@@ -3534,7 +3960,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Advanced glaucoma, low target IOP.",
    "pros": "Lowest IOP.",
    "cons": "Intensive follow-up; failure from fibrosis.",
-   "cx": "Hypotony, leak, cataract, lifelong risk of bleb infection."
+   "cx": "Hypotony, leak, cataract, lifelong risk of bleb infection.",
+   "dose": "In the OR, with mitomycin C; adjustable sutures in clinic (massage, laser lysis).",
+   "refer": "Advanced glaucoma or low target IOP.",
+   "pitfall": "Bleb infection possible for life: red, painful eye = same-day visit."
   },
   {
    "name": "PreserFlo MicroShunt and XEN",
@@ -3542,7 +3971,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Less invasive alternative to trabeculectomy.",
    "pros": "Quick recovery, less hypotony.",
    "cons": "IOP somewhat less low; needling common (XEN).",
-   "cx": "Fibrosis, hypotony, exposure, bleb infection."
+   "cx": "Fibrosis, hypotony, exposure, bleb infection.",
+   "dose": "Microtube to a bleb; ripcord sometimes removed in clinic.",
+   "refer": "Less invasive alternative to trabeculectomy.",
+   "pitfall": "Fibrosis: needling is common (XEN)."
   },
   {
    "name": "Tube: Ahmed or Baerveldt",
@@ -3550,7 +3982,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Failed trabeculectomy, neovascular or uveitic glaucoma.",
    "pros": "Resists fibrosis; Baerveldt: lower IOP in the long term.",
    "cons": "Ahmed: hypertensive phase; Baerveldt: hypotony when it opens.",
-   "cx": "Exposure, tube–cornea touch (endothelial cell loss), diplopia."
+   "cx": "Exposure, tube–cornea touch (endothelial cell loss), diplopia.",
+   "dose": "Ahmed (valved) or Baerveldt (ligated until the capsule forms).",
+   "refer": "Failed trabeculectomy, neovascular or uveitic glaucoma.",
+   "pitfall": "Exposed tube or tube touching the cornea: refer promptly."
   },
   {
    "name": "MIGS: iStent, Hydrus, KDB",
@@ -3558,7 +3993,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "why": "Mild to moderate glaucoma.",
    "pros": "Very safe, no bleb.",
    "cons": "Modest reduction (episcleral floor).",
-   "cx": "Hyphema, IOP spike, blocked implant."
+   "cx": "Hyphema, IOP spike, blocked implant.",
+   "dose": "iStent, Hydrus or KDB, often with cataract surgery.",
+   "refer": "Mild to moderate glaucoma.",
+   "pitfall": "Modest lowering: not for a very low target IOP.",
+   "qc": "Quebec: mostly in hospital centres; RAMQ coverage of MIGS and implants to be checked."
   }
  ],
  "pearls": [
@@ -3600,6 +4039,24 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "Ahmed Baerveldt Comparison Study (Budenz DL et al., Ophthalmology 2011)",
   "MicroShunt vs trabeculectomy (Baker ND et al., Ophthalmology 2021)",
   "AAO PPP Primary Open-Angle Glaucoma (Gedde SJ et al., Ophthalmology, online Feb 9, 2026)"
- ]
+ ],
+ "treatment": {
+  "first": [
+   "**Trabeculectomy with mitomycin C**: In the OR, with mitomycin C; adjustable sutures in clinic (massage, laser lysis).",
+   "**PreserFlo MicroShunt and XEN**: Microtube to a bleb; ripcord sometimes removed in clinic.",
+   "**Tube**: Ahmed (valved) or Baerveldt (ligated until the capsule forms).",
+   "**MIGS**: iStent, Hydrus or KDB, often with cataract surgery."
+  ],
+  "refer": [
+   "**Tube**: Failed trabeculectomy, neovascular or uveitic glaucoma."
+  ],
+  "pitfall": [
+   "**Trabeculectomy with mitomycin C**: Bleb infection possible for life: red, painful eye = same-day visit.",
+   "**MIGS**: Modest lowering: not for a very low target IOP."
+  ],
+  "qc": [
+   "Quebec: mostly in hospital centres; RAMQ coverage of MIGS and implants to be checked."
+  ]
+ }
 }
 });

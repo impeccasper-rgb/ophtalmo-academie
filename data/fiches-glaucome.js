@@ -10,7 +10,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Primary open-angle glaucoma (POAG)",
   tags: ["frequent", "highyield"],
   oneLiner: "Neuropathie optique chronique, indolore, à angle ouvert : la papille se creuse et le champ périphérique se perd en silence.",
-  definition: "Le glaucome primaire à angle ouvert est une maladie chronique où les fibres du nerf optique meurent lentement, surtout parce que la pression intraoculaire (PIO) est trop haute pour ce nerf, alors que l’angle de drainage paraît normal. La vision périphérique part en premier, sans douleur, d’où l’importance du dépistage.",
+  definition: "Le GPAO est une neuropathie optique chronique : les fibres du nerf meurent lentement, surtout parce que la pression intraoculaire (PIO) est trop haute pour ce nerf, avec un angle normal. La vision périphérique part en premier, sans douleur : d’où le dépistage.",
   anatomy: {
     text: "L’humeur aqueuse (aqueous humor), fabriquée par les procès ciliaires, sort surtout par le trabéculum (trabecular meshwork : filtre de l’angle) et le canal de Schlemm, et en partie entre les fibres du muscle ciliaire (voie uvéosclérale, uveoscleral outflow) ; la PIO reflète cet équilibre. Les axones des cellules ganglionnaires (retinal ganglion cells) quittent l’œil par la lame criblée (lamina cribrosa), tamis de collagène vulnérable.",
     figure: {
@@ -68,10 +68,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   redFlags: ["Pâleur > excavation ou AV ↓ précoce : IRM", "Défaut respectant le méridien vertical (chiasma)", "Perte ≥ 2 dB/an malgré une PIO à la cible"],
   cat: {
     algo: [
-      { q: "Angle ouvert, sans cause secondaire ?", yes: "Bilan de base.", no: "Traiter la fermeture ou la cause." },
-      { q: "Papille, OCT et champ concordants ?", yes: "Glaucome : cible ≈ 20–30 % sous la base.", no: "Suspect : estimer le risque." },
-      { q: "Cible atteinte (SLT ou PGA) ?", yes: "Suivi OCT et champ.", no: "Vérifier l’observance ; produit inefficace : le remplacer ; efficace mais insuffisant : ajouter une classe ou une SLT." },
-      { q: "Progression malgré la cible atteinte ou un traitement maximal toléré ?", yes: "Abaisser la cible ; MIGS si léger–modéré, chirurgie filtrante si avancé ou cible basse.", no: "Poursuivre ; réévaluer la cible à chaque visite." }
+      { q: "Angle ouvert, sans cause secondaire ?", yes: "Bilan de base (4 P + G).", no: "Traiter la fermeture ou la cause.", cont: "yes" },
+      { q: "Papille, OCT et champ concordants ?", yes: "Glaucome : cible ≈ 20–30 % sous la base.", no: "Suspect : estimer le risque (fiche HTO).", cont: "yes" },
+      { q: "Cible atteinte sous PGA ou SLT ?", yes: "Suivi OCT et champ.", no: "Vérifier l’observance, puis changer, ajouter une classe ou SLT.", cont: "yes" },
+      { q: "Progression malgré cible ou traitement maximal ?", yes: "Baisser la cible ; MIGS si léger–modéré, filtrante si avancé.", no: "Poursuivre ; revoir la cible à chaque visite." }
     ],
     phases: [
       {
@@ -105,10 +105,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     local: "Québec : l’optométriste équipé peut traiter un glaucome suspect ou débutant puis doit diriger vers l’ophtalmologiste (O-7, r. 11.1). SAAQ classe 5 : AV binoculaire ≥ 6/15 (20/50) et champ binoculaire ≥ 100° à l’horizontale (≥ 30° de chaque côté), 10° au-dessus et 20° au-dessous de la fixation ; si défaut, champ binoculaire signé exigé (Esterman ou Goldmann III/4e)."
   },
   treatments: [
-    { name: "PGA : latanoprost, bimatoprost, travoprost", how: "Goutte le soir qui relâche la matrice du muscle ciliaire : ↑ sortie uvéosclérale ; Vyzulta (latanoprostène bunod, approuvé par Santé Canada) agit aussi sur le trabéculum.", why: "Première goutte habituelle.", pros: "Baisse la plus forte, 1 fois par jour.", cons: "Effets esthétiques, surtout si un seul œil est traité ; prudence si uvéite ou herpès.", cx: "Rougeur, cils longs, iris foncé (irréversible), fonte graisseuse orbitaire, œdème maculaire, réactivation herpétique." },
-    { name: "Timolol, IAC, brimonidine", how: "Gouttes 1–3 fois par jour qui ↓ la production d’aqueuse (blocage bêta, inhibition enzymatique) ; la brimonidine ↑ aussi l’uvéosclérale.", why: "Ajout au PGA ou alternative.", pros: "Combinaisons fixes.", cons: "Observance ↓.", cx: "Timolol : bronchospasme (asthme, MPOC), bradycardie, bloc AV ; IAC : brûlure, goût amer (sulfamide) ; brimonidine : allergie, somnolence, contre-indiquée avant 2 ans." },
-    { name: "SLT (trabéculoplastie sélective au laser)", how: "Laser en clinique, à travers une lentille : impacts doux sur le trabéculum pigmenté ; le remodelage biologique ↑ la sortie.", why: "Première intention ou appoint.", pros: "Sans gouttes, répétable.", cons: "Effet qui s’estompe.", cx: "Pic de PIO, inflammation légère." },
-    { name: "Chirurgie : MIGS, trabéculectomie, PreserFlo, tube", how: "Au bloc. MIGS : micro-implant dans le trabéculum ; trabéculectomie : fistule sous un volet scléral vers la bulle ; tube : drain relié à une plaque.", why: "Progression ou cible non atteinte.", pros: "Trabéculectomie : PIO la plus basse ; MIGS : sécuritaires.", cons: "MIGS : baisse modeste.", cx: "Hypotonie, fuite, infection de la bulle." }
+    { name: "PGA : latanoprost, bimatoprost, travoprost", how: "Goutte le soir qui relâche la matrice du muscle ciliaire : ↑ sortie uvéosclérale ; Vyzulta (latanoprostène bunod, approuvé par Santé Canada) agit aussi sur le trabéculum.", why: "Première goutte habituelle.", pros: "Baisse la plus forte, 1 fois par jour.", cons: "Effets esthétiques, surtout si un seul œil est traité ; prudence si uvéite ou herpès.", cx: "Rougeur, cils longs, iris foncé (irréversible), fonte graisseuse orbitaire, œdème maculaire, réactivation herpétique.", dose: "Latanoprost 0,005 % : 1 goutte au coucher (bimatoprost 0,01 %, travoprost 0,004 %).", refer: "Référer si PIO hors cible ou progression.", pitfall: "Iris foncé irréversible : prévenir, surtout si un seul œil est traité.", qc: "Québec : l’optométriste équipé peut amorcer les gouttes (glaucome suspect ou débutant), puis doit diriger (O-7, r. 11.1)." },
+    { name: "Timolol, IAC, brimonidine", how: "Gouttes 1–3 fois par jour qui ↓ la production d’aqueuse (blocage bêta, inhibition enzymatique) ; la brimonidine ↑ aussi l’uvéosclérale.", why: "Ajout au PGA ou alternative.", pros: "Combinaisons fixes.", cons: "Observance ↓.", cx: "Timolol : bronchospasme (asthme, MPOC), bradycardie, bloc AV ; IAC : brûlure, goût amer (sulfamide) ; brimonidine : allergie, somnolence, contre-indiquée avant 2 ans.", dose: "Timolol 0,5 % BID ; dorzolamide 2 % TID ; brimonidine 0,2 % BID–TID.", refer: "Ajout au PGA ou alternative ; non urgent.", pitfall: "Timolol contre-indiqué si asthme, MPOC sévère ou bloc AV." },
+    { name: "SLT (trabéculoplastie sélective au laser)", how: "Laser en clinique, à travers une lentille : impacts doux sur le trabéculum pigmenté ; le remodelage biologique ↑ la sortie.", why: "Première intention ou appoint.", pros: "Sans gouttes, répétable.", cons: "Effet qui s’estompe.", cx: "Pic de PIO, inflammation légère.", dose: "360°, ≈ 100 impacts non chevauchants, en clinique.", refer: "Première intention ou appoint (LiGHT) ; non urgent.", pitfall: "L’effet s’estompe avec le temps : répétable, continuer à mesurer la PIO." },
+    { name: "Chirurgie : MIGS, trabéculectomie, PreserFlo, tube", how: "Au bloc. MIGS : micro-implant dans le trabéculum ; trabéculectomie : fistule sous un volet scléral vers la bulle ; tube : drain relié à une plaque.", why: "Progression ou cible non atteinte.", pros: "Trabéculectomie : PIO la plus basse ; MIGS : sécuritaires.", cons: "MIGS : baisse modeste.", cx: "Hypotonie, fuite, infection de la bulle.", dose: "MIGS avec la cataracte ; trabéculectomie avec MMC ou tube si avancé.", refer: "Progression ou cible non atteinte malgré gouttes et laser.", pitfall: "Bulle : œil rouge douloureux = infection jusqu’à preuve du contraire." }
   ],
   pearls: [
     { q: "Quelle PIO cible ?", a: "Individualisée selon le stade, la PIO à laquelle le dommage est survenu, la vitesse de progression, l’espérance de vie et les facteurs de risque : point de départ ≈ 20–30 % sous la base, plus basse si avancé, révisée à chaque visite. Essai EMGT : chaque mmHg de baisse ≈ 10 % moins de risque de progression." },
@@ -120,7 +120,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     title: "Papille normale vs GPAO",
     normal: {
       figure: { type: "disc", cd: 0.3, notch: "none", heme: false, ppa: false, pallor: false },
-      caption: "C/D 0,3, bord neurorétinien régulier (règle ISNT : inférieur ≥ supérieur ≥ nasal ≥ temporal)."
+      caption: "C/D 0,3, anneau régulier (règle ISNT)."
     },
     patho: {
       figure: { type: "disc", cd: 0.8, notch: "inf", heme: true, ppa: true, pallor: false },
@@ -140,7 +140,21 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "EMGT (Heijl A et al., Arch Ophthalmol 2002)",
     "COS 2009 : Canadian Ophthalmological Society glaucoma guidelines (Can J Ophthalmol 2009;44 Suppl 1:S7-S93)",
     "Chauhan BC et al., Br J Ophthalmol 2008 (fréquence des champs visuels)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**PGA** : Latanoprost 0,005 % : 1 goutte au coucher (bimatoprost 0,01 %, travoprost 0,004 %).",
+      "**Timolol, IAC, brimonidine** : Timolol 0,5 % BID ; dorzolamide 2 % TID ; brimonidine 0,2 % BID–TID.",
+      "**SLT** : 360°, ≈ 100 impacts non chevauchants, en clinique.",
+      "**Chirurgie** : MIGS avec la cataracte ; trabéculectomie avec MMC ou tube si avancé."
+    ],
+    refer: ["**PGA** : Référer si PIO hors cible ou progression.", "**Chirurgie** : Progression ou cible non atteinte malgré gouttes et laser."],
+    pitfall: [
+      "**Timolol, IAC, brimonidine** : Timolol contre-indiqué si asthme, MPOC sévère ou bloc AV.",
+      "**Chirurgie** : Bulle : œil rouge douloureux = infection jusqu’à preuve du contraire."
+    ],
+    qc: ["Québec : l’optométriste équipé peut amorcer les gouttes (glaucome suspect ou débutant), puis doit diriger (O-7, r. 11.1)."]
+  }
 },
 {
   id: "g-hto",
@@ -150,10 +164,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Ocular hypertension and glaucoma suspect",
   tags: ["frequent", "highyield"],
   oneLiner: "PIO > 21 mmHg ou papille douteuse sans neuropathie démontrée : estimer le risque de conversion, puis observer ou traiter.",
-  definition: "L’hypertension oculaire (HTO) est une pression intraoculaire (PIO) au-dessus de 21 mmHg avec un angle ouvert, un nerf optique et un champ visuel normaux. Le suspect de glaucome présente un élément douteux (PIO, papille, OCT ou champ) sans preuve de neuropathie, et on estime son risque de devenir glaucomateux.",
+  definition: "L’hypertension oculaire (HTO) est une PIO > 21 mmHg avec un angle ouvert, un nerf et un champ normaux. Le suspect de glaucome a un élément douteux (PIO, papille, OCT ou champ) sans neuropathie prouvée.",
   anatomy: {
     text: "La PIO normale va de 10 à 21 mmHg (moyenne ≈ 15–16) et varie de 2 à 6 mmHg sur 24 h ; elle reflète l’équilibre entre production et sortie de l’aqueuse. Le tonomètre de Goldmann aplatit la cornée : une cornée épaisse résiste et fait surestimer la PIO, une cornée mince la fait sous-estimer. Une grande papille a normalement une grande excavation.",
-    figure: { type: "eye", highlight: ["cornee", "trabeculum", "schlemm", "papille"] }
+    figure: {
+      type: "eye",
+      highlight: ["cornee", "trabeculum", "schlemm", "papille"]
+    }
   },
   causal: {
     title: "Un risque, pas encore une maladie",
@@ -210,23 +227,35 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "PIO > 21 mmHg confirmée, ou papille suspecte ?", yes: "Bilan complet.", no: "Dépistage habituel." },
-      { q: "Angle ouvert, sans cause secondaire ?", yes: "HTO primaire ou suspect.", no: "Traiter la cause (fermeture, cortisone, uvéite)." },
-      { q: "Neuropathie démontrée (OCT, champ reproductible) ?", yes: "Glaucome : fiche GPAO.", no: "Estimer le risque à 5 ans (calculateur OHTS-EGPS, issu de deux grands essais sur l’HTO)." },
-      { q: "Risque estimé élevé, longue espérance de vie, œil unique ou PIO ≥ 30 mmHg ?", yes: "Traiter : cible ≈ 20 % sous la base (PGA ou SLT).", no: "Observer avec OCT et champ réguliers ; réévaluer le risque." }
+      { q: "PIO > 21 confirmée ou papille suspecte ?", yes: "Bilan complet.", no: "Dépistage habituel.", cont: "yes" },
+      { q: "Angle ouvert, sans cause secondaire ?", yes: "HTO primaire ou suspect.", no: "Traiter la cause (fermeture, cortisone, uvéite).", cont: "yes" },
+      { q: "Neuropathie démontrée (OCT, champ reproductible) ?", yes: "Glaucome : voir la fiche GPAO.", no: "Estimer le risque à 5 ans (calculateur OHTS-EGPS).", cont: "no" },
+      { q: "Risque élevé, œil unique ou PIO ≥ 30 mmHg ?", yes: "Traiter si longue espérance de vie : PGA ou SLT, cible −20 %.", no: "Observer : OCT et champ réguliers ; revoir le risque." }
     ],
     phases: [
-      { phase: "observation", items: ["Bilan de référence : PIO répétées, pachymétrie, gonioscopie, photos, OCT, champ", "Risque faible : observation, contrôles plus espacés"] },
-      { phase: "medical", items: ["Si traitement : analogue des prostaglandines (PGA) le soir, cible ≈ 20 % sous la base"] },
-      { phase: "laser", items: ["SLT : alternative sans gouttes"] },
-      { phase: "suivi", items: ["Comparer chaque OCT et champ à la référence ; répéter un champ anormal", "Réévaluer le risque à chaque visite"] }
+      {
+        phase: "observation",
+        items: ["Bilan de référence : PIO répétées, pachymétrie, gonioscopie, photos, OCT, champ", "Risque faible : observation, contrôles plus espacés"]
+      },
+      {
+        phase: "medical",
+        items: ["Si traitement : analogue des prostaglandines (PGA) le soir, cible ≈ 20 % sous la base"]
+      },
+      {
+        phase: "laser",
+        items: ["SLT : alternative sans gouttes"]
+      },
+      {
+        phase: "suivi",
+        items: ["Comparer chaque OCT et champ à la référence ; répéter un champ anormal", "Réévaluer le risque à chaque visite"]
+      }
     ],
     local: "Au Québec, l’optométriste outillé peut traiter un glaucome suspect, puis doit diriger vers l’ophtalmologiste pour le suivi médical (O-7, r. 11.1) ; beaucoup d’HTO sont suivies en cogestion. Sans défaut de champ ni baisse d’AV, l’HTO n’affecte pas le permis (SAAQ)."
   },
   treatments: [
-    { name: "Observation structurée", how: "Aucun médicament : visites périodiques avec PIO, OCT et champ comparés à la référence.", why: "Risque faible (cornée épaisse, PIO modérée, papille saine).", pros: "Évite effets secondaires et coûts ; la plupart des HTO ne convertissent pas.", cons: "Exige un suivi fiable.", cx: "Conversion manquée si perdu au suivi." },
-    { name: "Analogue des prostaglandines (PGA)", how: "Goutte le soir qui relâche la matrice du muscle ciliaire et ouvre la voie uvéosclérale.", why: "Risque élevé ou préférence du patient.", pros: "1 goutte par jour, peu d’effets systémiques.", cons: "Traitement prolongé pour un risque modeste.", cx: "Rougeur, cils longs, iris foncé, fonte graisseuse orbitaire." },
-    { name: "SLT (trabéculoplastie sélective au laser)", how: "Laser en clinique, à travers une lentille : impacts doux sur le trabéculum pigmenté qui stimulent son remodelage et ↑ la sortie.", why: "Alternative aux gouttes, surtout si observance difficile.", pros: "Aucune goutte ; répétable.", cons: "Effet qui s’atténue.", cx: "Pic de PIO transitoire, inflammation légère." }
+    { name: "Observation structurée", how: "Aucun médicament : visites périodiques avec PIO, OCT et champ comparés à la référence.", why: "Risque faible (cornée épaisse, PIO modérée, papille saine).", pros: "Évite effets secondaires et coûts ; la plupart des HTO ne convertissent pas.", cons: "Exige un suivi fiable.", cx: "Conversion manquée si perdu au suivi.", dose: "Visites aux ≈ 6–24 mois selon le risque : PIO, OCT, champ.", refer: "Diriger si nouvel amincissement RNFL, hémorragie papillaire ou défaut de champ.", pitfall: "Perdu au suivi = conversion manquée : fixer le prochain rendez-vous.", qc: "Québec : souvent suivi en cogestion optométriste–ophtalmologiste." },
+    { name: "Analogue des prostaglandines (PGA)", how: "Goutte le soir qui relâche la matrice du muscle ciliaire et ouvre la voie uvéosclérale.", why: "Risque élevé ou préférence du patient.", pros: "1 goutte par jour, peu d’effets systémiques.", cons: "Traitement prolongé pour un risque modeste.", cx: "Rougeur, cils longs, iris foncé, fonte graisseuse orbitaire.", dose: "Latanoprost 0,005 % : 1 goutte au coucher.", refer: "Risque élevé ou préférence du patient ; non urgent.", pitfall: "Ne pas traiter à vie un risque faible : calculer d’abord." },
+    { name: "SLT (trabéculoplastie sélective au laser)", how: "Laser en clinique, à travers une lentille : impacts doux sur le trabéculum pigmenté qui stimulent son remodelage et ↑ la sortie.", why: "Alternative aux gouttes, surtout si observance difficile.", pros: "Aucune goutte ; répétable.", cons: "Effet qui s’atténue.", cx: "Pic de PIO transitoire, inflammation légère.", dose: "360°, ≈ 100 impacts, en clinique.", refer: "Alternative aux gouttes, surtout si observance difficile.", pitfall: "L’effet s’atténue : continuer à mesurer la PIO." }
   ],
   pearls: [
     { q: "Pourquoi mesurer la cornée d’un HTO ?", a: "Une cornée mince fait sous-estimer la PIO ET est un facteur de risque indépendant (OHTS : ≤ 555 µm ≈ 3 fois plus de conversion que > 588 µm)." },
@@ -236,8 +265,20 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "Prédicteurs OHTS : « APÉCP »", text: "**Â**ge, **P**IO, **É**paisseur cornéenne mince, **C**/D vertical, **P**SD : plus il y en a, plus on penche vers le traitement." },
   compare: {
     title: "OCT normal vs suspect qui convertit",
-    normal: { figure: { type: "oct", pattern: "normal" }, caption: "RNFL péripapillaire dans les limites (vert), courbe TSNIT en double bosse." },
-    patho: { figure: { type: "oct", pattern: "inf-thin" }, caption: "Amincissement RNFL inférieur avant tout défaut au champ.", reveal: ["Secteurs inférieurs en rouge", "Courbe TSNIT sous la normale en inférieur", "Défaut de champ attendu : supérieur", "Confirmer sur un 2e examen avant de conclure"] }
+    normal: {
+      figure: { type: "oct", pattern: "normal" },
+      caption: "RNFL péripapillaire dans les limites (vert), courbe TSNIT en double bosse."
+    },
+    patho: {
+      figure: { type: "oct", pattern: "inf-thin" },
+      caption: "Amincissement RNFL inférieur avant tout défaut au champ.",
+      reveal: [
+        "Secteurs inférieurs en rouge",
+        "Courbe TSNIT sous la normale en inférieur",
+        "Défaut de champ attendu : supérieur",
+        "Confirmer sur un 2e examen avant de conclure"
+      ]
+    }
   },
   sources: [
     "OHTS (Kass MA et al., Arch Ophthalmol 2002)",
@@ -245,7 +286,20 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "OHTS-EGPS : modèle de prédiction validé (Ophthalmology 2007)",
     "Guide optométrique canadien GPAO (MacIver S et al., Can J Optom 2017;79 Suppl 1)",
     "COS 2009 : Canadian Ophthalmological Society glaucoma guidelines (Can J Ophthalmol 2009;44 Suppl 1:S7-S93)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**Observation structurée** : Visites aux ≈ 6–24 mois selon le risque : PIO, OCT, champ.",
+      "**Analogue des prostaglandines** : Latanoprost 0,005 % : 1 goutte au coucher.",
+      "**SLT** : 360°, ≈ 100 impacts, en clinique."
+    ],
+    refer: ["**Observation structurée** : Diriger si nouvel amincissement RNFL, hémorragie papillaire ou défaut de champ."],
+    pitfall: [
+      "**Analogue des prostaglandines** : Ne pas traiter à vie un risque faible : calculer d’abord.",
+      "**Observation structurée** : Perdu au suivi = conversion manquée : fixer le prochain rendez-vous."
+    ],
+    qc: ["Québec : souvent suivi en cogestion optométriste–ophtalmologiste."]
+  }
 },
 {
   id: "g-gpn",
@@ -255,10 +309,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Normal-tension glaucoma (NTG)",
   tags: ["highyield", "piege"],
   oneLiner: "Neuropathie glaucomateuse avec PIO toujours ≤ 21 mmHg : diagnostic d’exclusion, hémorragies papillaires et défauts paracentraux précoces.",
-  definition: "Le glaucome à pression normale (GPN) est un glaucome à angle ouvert où le nerf optique se creuse et le champ visuel se perd alors que la pression intraoculaire (PIO) mesurée reste toujours dans la normale (≤ 21 mmHg). C’est un diagnostic d’exclusion : on élimine d’abord une PIO élevée manquée, une fermeture d’angle intermittente et une atteinte non glaucomateuse du nerf.",
+  definition: "Le glaucome à pression normale (GPN) est un glaucome à angle ouvert où le nerf se creuse alors que la PIO reste ≤ 21 mmHg. C’est un diagnostic d’exclusion : PIO élevée manquée, fermeture intermittente ou atteinte non glaucomateuse.",
   anatomy: {
     text: "La tête du nerf optique est irriguée par les artères ciliaires postérieures courtes ; son débit dépend de la pression de perfusion (tension artérielle moins PIO) et d’une autorégulation vasculaire. Les axones passent par la lame criblée (lamina cribrosa), tamis de collagène plus fragile chez certains sujets, chez qui ils s’abîment même à une PIO normale.",
-    figure: { type: "eye", highlight: ["papille", "lame-criblee", "arteres-ciliaires-post", "nerf-optique"] }
+    figure: {
+      type: "eye",
+      highlight: ["papille", "lame-criblee", "arteres-ciliaires-post", "nerf-optique"]
+    }
   },
   causal: {
     title: "Un nerf fragile à pression normale",
@@ -312,30 +369,50 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   redFlags: [
     "Âge < 50 ans, pâleur > excavation, AV ou couleurs ↓ : IRM",
     "Défaut respectant le méridien vertical (chiasma)",
-    "≥ 50 ans avec céphalée ou claudication de la mâchoire : VS, CRP (artérite)",
-    "Défaut paracentral qui menace la fixation : traiter sans attendre"
+    "≥ 50 ans avec céphalée ou claudication de la mâchoire : VS, CRP (artérite)"
   ],
   cat: {
     algo: [
-      { q: "PIO réellement ≤ 21 mmHg (courbe, cornée) ?", yes: "Poursuivre l’exclusion.", no: "Glaucome à angle ouvert classique." },
-      { q: "Angle ouvert, sans cause secondaire ?", yes: "Continuer.", no: "Fermeture d’angle ou glaucome secondaire." },
-      { q: "Signe atypique (âge < 50 ans, pâleur > excavation, AV ↓, défaut vertical) ?", yes: "IRM ± VS/CRP.", no: "GPN probable." },
+      { q: "PIO vraiment ≤ 21 (courbe, cornée) ?", yes: "Poursuivre l’exclusion.", no: "Glaucome à angle ouvert classique.", cont: "yes" },
+      { q: "Angle ouvert, sans cause secondaire ?", yes: "Continuer.", no: "Fermeture d’angle ou glaucome secondaire.", cont: "yes" },
+      { q: "Signe atypique (< 50 ans, pâleur, AV ↓, défaut vertical) ?", yes: "IRM ± VS, CRP.", no: "GPN probable.", cont: "no" },
       { q: "Fixation menacée ou progression documentée ?", yes: "Traiter : cible ≈ 30 % sous la base.", no: "Observer : ≈ 3 champs par an pour mesurer le rythme." }
     ],
     phases: [
-      { phase: "observation", items: ["Exclure les imitateurs : courbe de PIO, gonioscopie, pachymétrie, IRM si atypique", "Mesurer le rythme : bien des GPN non traités ne progressent pas (CNTGS)"] },
-      { phase: "medical", items: ["Analogue des prostaglandines (PGA) le soir ; brimonidine en option (LoGTS)", "Hypotension nocturne et apnée : à revoir avec le médecin traitant (tension artérielle sur 24 h si progression)"] },
-      { phase: "laser", items: ["SLT (laser doux sur le trabéculum) : baisse absolue plus faible quand la PIO de départ est basse"] },
-      { phase: "chirurgie", items: ["Progression malgré tout : trabéculectomie avec mitomycine C (anticicatrisant), la plus apte à obtenir une PIO très basse"] },
-      { phase: "suivi", items: ["24-2 et 10-2, OCT RNFL et maculaire ; noter chaque hémorragie papillaire"] }
+      {
+        phase: "observation",
+        items: [
+          "Exclure les imitateurs : courbe de PIO, gonioscopie, pachymétrie, IRM si atypique",
+          "Mesurer le rythme : bien des GPN non traités ne progressent pas (CNTGS)"
+        ]
+      },
+      {
+        phase: "medical",
+        items: [
+          "Analogue des prostaglandines (PGA) le soir ; brimonidine en option (LoGTS)",
+          "Hypotension nocturne et apnée : à revoir avec le médecin traitant (tension artérielle sur 24 h si progression)"
+        ]
+      },
+      {
+        phase: "laser",
+        items: ["SLT (laser doux sur le trabéculum) : baisse absolue plus faible quand la PIO de départ est basse"]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Progression malgré tout : trabéculectomie avec mitomycine C (anticicatrisant), la plus apte à obtenir une PIO très basse"]
+      },
+      {
+        phase: "suivi",
+        items: ["24-2 et 10-2, OCT RNFL et maculaire ; noter chaque hémorragie papillaire"]
+      }
     ],
     local: "Au Québec, l’optométriste peut amorcer le traitement d’un glaucome débutant, mais doit diriger vers l’ophtalmologiste (O-7, r. 11.1) ; le GPN justifie une évaluation médicale pour exclure les imitateurs. Prioriser l’IRM pour les cas atypiques, vu les délais d’accès."
   },
   treatments: [
-    { name: "Analogue des prostaglandines (PGA)", how: "Goutte le soir qui relâche la matrice du muscle ciliaire : ↑ sortie uvéosclérale, même quand la PIO est déjà normale.", why: "Première intention quand on décide de traiter.", pros: "1 goutte par jour ; efficace la nuit.", cons: "Difficile d’atteindre −30 % si la PIO de départ est basse.", cx: "Rougeur, cils longs, iris foncé, fonte graisseuse orbitaire." },
-    { name: "Brimonidine", how: "Goutte 2–3 fois par jour (agoniste alpha-2) : ↓ production d’aqueuse et ↑ voie uvéosclérale ; neuroprotection suggérée en laboratoire.", why: "Option dans le GPN : moins de progression du champ qu’avec le timolol dans LoGTS, à PIO comparable.", pros: "Seul essai de gouttes suggérant un effet au-delà de la PIO.", cons: "Nombreux abandons pour allergie : résultat débattu.", cx: "Conjonctivite folliculaire, bouche sèche, somnolence ; contre-indiquée avant 2 ans." },
-    { name: "Facteurs systémiques", how: "Pas un traitement oculaire : demander au médecin traitant de revoir les antihypertenseurs pris au coucher ; dépister et traiter l’apnée du sommeil.", why: "GPN qui progresse avec hypotension nocturne ou apnée.", pros: "Aucun risque pour l’œil.", cons: "Preuves limitées.", cx: "Risque cardiovasculaire si on modifie un traitement sans le médecin." },
-    { name: "SLT ou trabéculectomie", how: "SLT : laser en clinique sur le trabéculum. Trabéculectomie : au bloc, fistule sous un volet de sclère vers une bulle sous la conjonctive.", why: "Progression malgré les gouttes.", pros: "Trabéculectomie : PIO la plus basse.", cons: "SLT modeste si PIO basse ; chirurgie risquée.", cx: "Hypotonie, fuite, infection de la bulle, cataracte." }
+    { name: "Analogue des prostaglandines (PGA)", how: "Goutte le soir qui relâche la matrice du muscle ciliaire : ↑ sortie uvéosclérale, même quand la PIO est déjà normale.", why: "Première intention quand on décide de traiter.", pros: "1 goutte par jour ; efficace la nuit.", cons: "Difficile d’atteindre −30 % si la PIO de départ est basse.", cx: "Rougeur, cils longs, iris foncé, fonte graisseuse orbitaire.", dose: "Latanoprost 0,005 % : 1 goutte au coucher.", refer: "Fixation menacée ou progression documentée.", pitfall: "PIO déjà basse : −30 % est difficile ; vérifier l’observance avant d’escalader." },
+    { name: "Brimonidine", how: "Goutte 2–3 fois par jour (agoniste alpha-2) : ↓ production d’aqueuse et ↑ voie uvéosclérale ; neuroprotection suggérée en laboratoire.", why: "Option dans le GPN : moins de progression du champ qu’avec le timolol dans LoGTS, à PIO comparable.", pros: "Seul essai de gouttes suggérant un effet au-delà de la PIO.", cons: "Nombreux abandons pour allergie : résultat débattu.", cx: "Conjonctivite folliculaire, bouche sèche, somnolence ; contre-indiquée avant 2 ans.", dose: "Brimonidine 0,2 % BID (dose de LoGTS).", refer: "Option si PGA insuffisant ou mal toléré.", pitfall: "Allergie folliculaire fréquente ; contre-indiquée avant 2 ans." },
+    { name: "Facteurs systémiques", how: "Pas un traitement oculaire : demander au médecin traitant de revoir les antihypertenseurs pris au coucher ; dépister et traiter l’apnée du sommeil.", why: "GPN qui progresse avec hypotension nocturne ou apnée.", pros: "Aucun risque pour l’œil.", cons: "Preuves limitées.", cx: "Risque cardiovasculaire si on modifie un traitement sans le médecin.", dose: "Revoir avec le médecin traitant les antihypertenseurs du coucher ; dépister l’apnée.", refer: "GPN qui progresse avec hypotension nocturne ou apnée.", pitfall: "Ne jamais modifier un antihypertenseur sans le médecin traitant." },
+    { name: "SLT ou trabéculectomie", how: "SLT : laser en clinique sur le trabéculum. Trabéculectomie : au bloc, fistule sous un volet de sclère vers une bulle sous la conjonctive.", why: "Progression malgré les gouttes.", pros: "Trabéculectomie : PIO la plus basse.", cons: "SLT modeste si PIO basse ; chirurgie risquée.", cx: "Hypotonie, fuite, infection de la bulle, cataracte.", dose: "SLT en clinique ; trabéculectomie avec MMC au bloc.", refer: "Progression malgré les gouttes : glaucomatologue.", pitfall: "SLT peu efficace si la PIO de départ est basse." }
   ],
   pearls: [
     { q: "Qu’élimines-tu avant de dire GPN ?", a: "Une PIO élevée manquée (courbe, cornée mince), une fermeture intermittente (gonioscopie), une cause secondaire, puis une neuropathie non glaucomateuse (IRM si atypique, VS/CRP si artérite possible)." },
@@ -345,15 +422,43 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "Avant de dire GPN : « PACI »", text: "Éliminer **P**IO manquée, **A**ngle qui se ferme par intermittence, **C**ompression (IRM), **I**schémie ancienne (artérite, choc)." },
   compare: {
     title: "Champ normal vs GPN",
-    normal: { figure: { type: "vf", pattern: "normal", eye: "OD", map: "pd" }, caption: "Champ 24-2 normal : aucune zone déprimée en déviation corrigée (PD)." },
-    patho: { figure: { type: "vf", pattern: "sup-paracentral", eye: "OD", map: "pd" }, caption: "Scotome paracentral supérieur, près de la fixation.", reveal: ["Points déprimés quelques degrés au-dessus de la fixation", "Respecte le méridien horizontal", "Atteinte attendue : papille et RNFL inférieurs", "Préciser avec un 10-2"] }
+    normal: {
+      figure: { type: "vf", pattern: "normal", eye: "OD", map: "pd" },
+      caption: "Champ 24-2 normal : aucune zone déprimée en déviation corrigée (PD)."
+    },
+    patho: {
+      figure: { type: "vf", pattern: "sup-paracentral", eye: "OD", map: "pd" },
+      caption: "Scotome paracentral supérieur, près de la fixation.",
+      reveal: [
+        "Points déprimés quelques degrés au-dessus de la fixation",
+        "Respecte le méridien horizontal",
+        "Atteinte attendue : papille et RNFL inférieurs",
+        "Préciser avec un 10-2"
+      ]
+    }
   },
   sources: [
     "CNTGS (Collaborative Normal-Tension Glaucoma Study Group, Am J Ophthalmol 1998)",
     "LoGTS (Krupin T et al., Am J Ophthalmol 2011)",
     "AAO PPP Primary Open-Angle Glaucoma (Gedde SJ et al., Ophthalmology, en ligne 9 févr. 2026)",
     "COS 2009 : Canadian Ophthalmological Society glaucoma guidelines (Can J Ophthalmol 2009;44 Suppl 1:S7-S93)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**Analogue des prostaglandines** : Latanoprost 0,005 % : 1 goutte au coucher.",
+      "**Brimonidine** : Brimonidine 0,2 % BID (dose de LoGTS).",
+      "**Facteurs systémiques** : Revoir avec le médecin traitant les antihypertenseurs du coucher ; dépister l’apnée.",
+      "**SLT ou trabéculectomie** : SLT en clinique ; trabéculectomie avec MMC au bloc."
+    ],
+    refer: [
+      "**Analogue des prostaglandines** : Fixation menacée ou progression documentée.",
+      "**SLT ou trabéculectomie** : Progression malgré les gouttes : glaucomatologue."
+    ],
+    pitfall: [
+      "**Facteurs systémiques** : Ne jamais modifier un antihypertenseur sans le médecin traitant.",
+      "**Analogue des prostaglandines** : PIO déjà basse : −30 % est difficile ; vérifier l’observance avant d’escalader."
+    ]
+  }
 },
 {
   id: "g-fermeture",
@@ -363,10 +468,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Primary angle-closure disease (PACD)",
   tags: ["frequent", "highyield"],
   oneLiner: "L’iris périphérique bloque le filtre de l’angle : dépister à la gonioscopie, classer PACS, PAC ou PACG, puis ouvrir l’angle selon le risque.",
-  definition: "Dans la fermeture primaire de l’angle, l’iris périphérique vient s’appliquer contre le trabéculum (le filtre de l’angle) et empêche l’humeur aqueuse de sortir, sur un œil prédisposé (petit œil, cristallin épais). On la classe en trois stades : contact sans dommage (PACS), contact avec pression élevée ou adhérences (PAC), puis atteinte du nerf optique (PACG).",
+  definition: "L’iris périphérique s’applique contre le trabéculum et bloque la sortie de l’aqueuse, sur un œil prédisposé (petit œil, cristallin épais). Trois stades : contact seul (PACS), PIO élevée ou synéchies (PAC), puis nerf atteint (PACG).",
   anatomy: {
     text: "L’angle iridocornéen (iridocorneal angle) contient le trabéculum ; à la gonioscopie (examen de l’angle avec une lentille à miroir), on voit de l’arrière vers l’avant : racine de l’iris, bande ciliaire, éperon scléral, trabéculum, ligne de Schwalbe. L’aqueuse passe de la chambre postérieure à l’antérieure en glissant entre iris et cristallin ; un œil court au cristallin épais a un angle étroit.",
-    figure: { type: "eye", highlight: ["angle", "trabeculum", "iris", "pupille", "cristallin", "chambre-posterieure"] }
+    figure: {
+      type: "eye",
+      highlight: ["angle", "trabeculum", "iris", "pupille", "cristallin", "chambre-posterieure"]
+    }
   },
   causal: {
     title: "Du bloc pupillaire à la neuropathie",
@@ -423,26 +531,44 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Van Herick ≤ 2 ou angle étroit suspecté ?", yes: "Gonioscopie dynamique en pièce sombre.", no: "Suivi habituel." },
-      { q: "Contact iridotrabéculaire ≥ 180° ?", yes: "Fermeture primaire : classer.", no: "Angle ouvert ; réévaluer avec l’âge." },
-      { q: "PIO élevée, PAS ou neuropathie ?", yes: "PAC ou PACG : traiter.", no: "PACS : décision partagée (LPI ou observation)." },
-      { q: "≥ 50 ans et PAC à PIO ≥ 30 mmHg, PACG ou cataracte ?", yes: "Extraction du cristallin, même clair (EAGLE).", no: "Iridotomie, puis gouttes au besoin." },
-      { q: "Angle encore fermé après iridotomie perméable ?", yes: "Iris plateau ou cristallin : UBM, iridoplastie ou extraction.", no: "Suivi : gonioscopie, PIO, OCT, champ." }
+      { q: "Van Herick ≤ 2 ou angle étroit suspecté ?", yes: "Gonioscopie dynamique en pièce sombre.", no: "Suivi habituel.", cont: "yes" },
+      { q: "Contact iridotrabéculaire ≥ 180° ?", yes: "Fermeture primaire : classer.", no: "Angle ouvert ; réévaluer avec l’âge.", cont: "yes" },
+      { q: "PIO élevée, PAS ou neuropathie ?", yes: "PAC ou PACG : traiter.", no: "PACS : décision partagée (LPI ou observation).", cont: "yes" },
+      { q: "≥ 50 ans : PAC ≥ 30 mmHg, PACG ou cataracte ?", yes: "Extraction du cristallin, même clair (EAGLE).", no: "Iridotomie, puis gouttes au besoin.", cont: "no" },
+      { q: "Angle fermé malgré iridotomie perméable ?", yes: "Iris plateau ou cristallin : UBM, iridoplastie ou extraction.", no: "Suivi : gonioscopie, PIO, OCT, champ." }
     ],
     phases: [
-      { phase: "observation", items: ["PACS à faible risque : observation et gonioscopie périodique ; enseigner les symptômes d’alarme"] },
-      { phase: "medical", items: ["Gouttes pour la PIO résiduelle après ouverture de l’angle"] },
-      { phase: "laser", items: ["Iridotomie : vérifier sa perméabilité et la PIO 30 min à 2 h après", "Iridoplastie si iris plateau"] },
-      { phase: "chirurgie", items: ["Extraction du cristallin, même clair (PAC à PIO élevée, PACG)", "PACG avancé : phaco + goniosynéchialyse (décollement chirurgical des PAS) ou chirurgie filtrante"] },
-      { phase: "suivi", items: ["Gonioscopie, PIO, OCT et champ : l’angle se referme à mesure que le cristallin grossit"] }
+      {
+        phase: "observation",
+        items: ["PACS à faible risque : observation et gonioscopie périodique ; enseigner les symptômes d’alarme"]
+      },
+      {
+        phase: "medical",
+        items: ["Gouttes pour la PIO résiduelle après ouverture de l’angle"]
+      },
+      {
+        phase: "laser",
+        items: ["Iridotomie : vérifier sa perméabilité et la PIO 30 min à 2 h après", "Iridoplastie si iris plateau"]
+      },
+      {
+        phase: "chirurgie",
+        items: [
+          "Extraction du cristallin, même clair (PAC à PIO élevée, PACG)",
+          "PACG avancé : phaco + goniosynéchialyse (décollement chirurgical des PAS) ou chirurgie filtrante"
+        ]
+      },
+      {
+        phase: "suivi",
+        items: ["Gonioscopie, PIO, OCT et champ : l’angle se referme à mesure que le cristallin grossit"]
+      }
     ],
     local: "Les populations inuites du Nunavik ont parmi les plus hauts taux de fermeture primaire au monde : gonioscopie systématique chez ces patients. L’optométriste qui voit un angle étroit dirige vers l’ophtalmologiste."
   },
   treatments: [
-    { name: "Iridotomie périphérique au laser (LPI)", how: "Laser en clinique : après pilocarpine (iris tendu) et apraclonidine (contre le pic de PIO), le laser YAG perce un petit trou dans l’iris périphérique ; l’aqueuse y passe et l’iris s’aplatit.", why: "Bloc pupillaire : PAC, œil adelphe d’une crise, PACS choisi en décision partagée.", pros: "Rapide ; prévient la crise.", cons: "Sans effet sur iris plateau ou cristallin.", cx: "Pic de PIO, saignement, dysphotopsies (surtout transitoires), atteinte zonulaire." },
-    { name: "Extraction du cristallin (phacoémulsification)", how: "Chirurgie de la cataracte, même sur cristallin clair : un implant mince remplace le cristallin épais et l’angle s’ouvre.", why: "≥ 50 ans avec PAC à PIO ≥ 30 mmHg ou PACG (EAGLE) ; cataracte ; iris plateau.", pros: "EAGLE : meilleur contrôle de la PIO et qualité de vie que la LPI ; 10 fois plus de chances d’être sans gouttes à 3 ans.", cons: "Plus difficile sur œil court.", cx: "Rupture capsulaire, œdème cornéen, mal-direction (aqueuse détournée vers le vitré, rare)." },
-    { name: "Iridoplastie au laser", how: "Laser en clinique : brûlures larges et douces sur l’iris très périphérique, qui se contracte et libère l’angle.", why: "Iris plateau, angle fermé malgré iridotomie.", pros: "Rapide, sans incision.", cons: "Effet parfois temporaire.", cx: "Inflammation, atrophie irienne." },
-    { name: "Gouttes et chirurgie de glaucome", how: "Gouttes hypotensives ; sinon trabéculectomie (fistule vers une bulle sous la conjonctive) ou goniosynéchialyse.", why: "PIO élevée persistante ou PACG.", pros: "Contrôle la PIO résiduelle.", cons: "Les gouttes ne rouvrent pas l’angle.", cx: "Mal-direction, hémorragie suprachoroïdienne, hypotonie." }
+    { name: "Iridotomie périphérique au laser (LPI)", how: "Laser en clinique : après pilocarpine (iris tendu) et apraclonidine (contre le pic de PIO), le laser YAG perce un petit trou dans l’iris périphérique ; l’aqueuse y passe et l’iris s’aplatit.", why: "Bloc pupillaire : PAC, œil adelphe d’une crise, PACS choisi en décision partagée.", pros: "Rapide ; prévient la crise.", cons: "Sans effet sur iris plateau ou cristallin.", cx: "Pic de PIO, saignement, dysphotopsies (surtout transitoires), atteinte zonulaire.", dose: "Laser YAG en clinique, après pilocarpine 1–2 % et apraclonidine.", refer: "PAC, œil adelphe d’une crise, PACS en décision partagée.", pitfall: "Une LPI n’ouvre pas un iris plateau : refaire la gonioscopie après.", qc: "Québec : gonioscopie systématique chez les patients inuits (Nunavik), à risque élevé." },
+    { name: "Extraction du cristallin (phacoémulsification)", how: "Chirurgie de la cataracte, même sur cristallin clair : un implant mince remplace le cristallin épais et l’angle s’ouvre.", why: "≥ 50 ans avec PAC à PIO ≥ 30 mmHg ou PACG (EAGLE) ; cataracte ; iris plateau.", pros: "EAGLE : meilleur contrôle de la PIO et qualité de vie que la LPI ; 10 fois plus de chances d’être sans gouttes à 3 ans.", cons: "Plus difficile sur œil court.", cx: "Rupture capsulaire, œdème cornéen, mal-direction (aqueuse détournée vers le vitré, rare).", dose: "Phacoémulsification avec implant, même sur cristallin clair.", refer: "≥ 50 ans avec PAC à PIO ≥ 30 mmHg ou PACG (EAGLE) ; cataracte.", pitfall: "Œil court : chirurgie plus difficile, risque de mal-direction." },
+    { name: "Iridoplastie au laser", how: "Laser en clinique : brûlures larges et douces sur l’iris très périphérique, qui se contracte et libère l’angle.", why: "Iris plateau, angle fermé malgré iridotomie.", pros: "Rapide, sans incision.", cons: "Effet parfois temporaire.", cx: "Inflammation, atrophie irienne.", dose: "Laser thermique (argon) : brûlures larges et douces sur l’iris très périphérique.", refer: "Iris plateau ou angle fermé malgré une LPI perméable.", pitfall: "Effet parfois temporaire : suivre à la gonioscopie." },
+    { name: "Gouttes et chirurgie de glaucome", how: "Gouttes hypotensives ; sinon trabéculectomie (fistule vers une bulle sous la conjonctive) ou goniosynéchialyse.", why: "PIO élevée persistante ou PACG.", pros: "Contrôle la PIO résiduelle.", cons: "Les gouttes ne rouvrent pas l’angle.", cx: "Mal-direction, hémorragie suprachoroïdienne, hypotonie.", dose: "Gouttes hypotensives (PGA, timolol) ; trabéculectomie ou goniosynéchialyse au besoin.", refer: "PIO élevée persistante ou PACG après ouverture de l’angle.", pitfall: "Les gouttes ne rouvrent pas l’angle : ne pas retarder la LPI." }
   ],
   pearls: [
     { q: "Quels sont les mécanismes de fermeture ?", a: "Iris (bloc pupillaire, le plus fréquent), corps ciliaire (iris plateau), cristallin (épais ou gonflé) et poussée postérieure (effusion, mal-direction). L’iridotomie ne corrige que le bloc pupillaire." },
@@ -452,15 +578,44 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "Angle : « I Can’t See Til Schwalbe »", text: "De l’arrière vers l’avant : **I**ris (racine), **C**iliaire (bande), **S**cléral (éperon), **T**rabéculum, **S**chwalbe. Shaffer 4 = bande ciliaire visible ; 1 = Schwalbe seulement." },
   compare: {
     title: "Angle ouvert vs angle fermé",
-    normal: { figure: { type: "gonio", grade: 4, pas: false, pigment: "light", nv: false, recession: false }, caption: "Shaffer 4 : toutes les structures visibles jusqu’à la bande ciliaire." },
-    patho: { figure: { type: "gonio", grade: 1, pas: true, pigment: "light", nv: false, recession: false }, caption: "Shaffer 1 avec synéchies antérieures périphériques.", reveal: ["Ligne de Schwalbe (± trabéculum antérieur, non pigmenté) seule visible", "Trabéculum pigmenté et éperon cachés par l’iris", "PAS : l’indentation ne les décolle pas", "Stade PAC si le nerf est sain"] }
+    normal: {
+      figure: { type: "gonio", grade: 4, pas: false, pigment: "light", nv: false, recession: false },
+      caption: "Shaffer 4 : toutes les structures visibles jusqu’à la bande ciliaire."
+    },
+    patho: {
+      figure: { type: "gonio", grade: 1, pas: true, pigment: "light", nv: false, recession: false },
+      caption: "Shaffer 1 avec synéchies antérieures périphériques.",
+      reveal: [
+        "Ligne de Schwalbe (± trabéculum antérieur, non pigmenté) seule visible",
+        "Trabéculum pigmenté et éperon cachés par l’iris",
+        "PAS : l’indentation ne les décolle pas",
+        "Stade PAC si le nerf est sain"
+      ]
+    }
   },
   sources: [
     "AAO PPP Primary Angle Closure Disease (Gedde SJ, Chopra V, Vinod K et al., Ophthalmology, en ligne 9 févr. 2026)",
     "EAGLE (Azuara-Blanco A et al., Lancet 2016)",
     "ZAP (He M et al., Lancet 2019)",
     "Classification ISGEO (Foster PJ et al., Br J Ophthalmol 2002)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**Iridotomie périphérique au laser** : Laser YAG en clinique, après pilocarpine 1–2 % et apraclonidine.",
+      "**Extraction du cristallin** : Phacoémulsification avec implant, même sur cristallin clair.",
+      "**Iridoplastie au laser** : Laser thermique (argon) : brûlures larges et douces sur l’iris très périphérique.",
+      "**Gouttes et chirurgie de glaucome** : Gouttes hypotensives (PGA, timolol) ; trabéculectomie ou goniosynéchialyse au besoin."
+    ],
+    refer: [
+      "**Iridotomie périphérique au laser** : PAC, œil adelphe d’une crise, PACS en décision partagée.",
+      "**Extraction du cristallin** : ≥ 50 ans avec PAC à PIO ≥ 30 mmHg ou PACG (EAGLE) ; cataracte."
+    ],
+    pitfall: [
+      "**Iridotomie périphérique au laser** : Une LPI n’ouvre pas un iris plateau : refaire la gonioscopie après.",
+      "**Gouttes et chirurgie de glaucome** : Les gouttes ne rouvrent pas l’angle : ne pas retarder la LPI."
+    ],
+    qc: ["Québec : gonioscopie systématique chez les patients inuits (Nunavik), à risque élevé."]
+  }
 },
 {
   id: "g-crise",
@@ -470,10 +625,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Acute angle-closure crisis",
   tags: ["urgent", "highyield", "piege"],
   oneLiner: "Œil rouge douloureux, halos, cornée trouble, pupille mi-dilatée fixe et PIO très haute : baisser la PIO maintenant, puis iridotomie des deux yeux.",
-  definition: "La crise aiguë de fermeture de l’angle survient quand l’iris bloque soudainement et complètement le filtre de l’angle : l’humeur aqueuse ne sort plus et la pression intraoculaire (PIO) monte très haut en quelques heures. C’est une urgence : le nerf optique, la cornée et l’iris peuvent être abîmés de façon permanente.",
+  definition: "L’iris bloque soudain tout le filtre de l’angle : l’aqueuse ne sort plus et la PIO monte très haut en quelques heures. C’est une urgence : le nerf, la cornée et l’iris peuvent être abîmés pour de bon.",
   anatomy: {
     text: "L’aqueuse passe de la chambre postérieure à l’antérieure par la pupille, puis sort par le trabéculum (filtre de l’angle). Sur un œil court au cristallin épais, l’iris frotte contre le cristallin ; en mi-dilatation, ce contact gêne le plus le passage (bloc pupillaire). L’endothélium cornéen pompe l’eau hors de la cornée ; une PIO très haute dépasse cette pompe.",
-    figure: { type: "eye", highlight: ["angle", "iris", "pupille", "cristallin", "chambre-posterieure", "cornee"] }
+    figure: {
+      type: "eye",
+      highlight: ["angle", "iris", "pupille", "cristallin", "chambre-posterieure", "cornee"]
+    }
   },
   causal: {
     title: "Du déclencheur à l’œil dur",
@@ -526,30 +684,47 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   redFlags: [
     "PIO inchangée après 1 h de traitement maximal : mannitol, appeler l’ophtalmologiste de garde",
     "Crise bilatérale : penser effusion médicamenteuse (topiramate)",
-    "Contre-indications à l’acétazolamide (allergie sulfa, insuffisance rénale, drépanocytose) ou au mannitol (insuffisance cardiaque ou rénale)"
+    "Avant acétazolamide ou mannitol : allergie sulfa, rein, cœur, drépanocytose"
   ],
   cat: {
     algo: [
-      { q: "Œil rouge douloureux, PIO très haute, chambre étroite, pupille mi-dilatée ?", yes: "Crise : gouttes hypotensives et acétazolamide sans délai.", no: "Autre œil rouge douloureux (uvéite, kératite, glaucome néovasculaire)." },
-      { q: "Atteinte bilatérale, myopie aiguë ou topiramate ?", yes: "Effusion : cesser le médicament, cycloplégique, stéroïde, hypotenseurs ; ni LPI ni pilocarpine.", no: "Examiner le cristallin." },
-      { q: "Cataracte gonflée ou cristallin subluxé (chambre bien plus étroite que l’adelphe) ?", yes: "Pas de pilocarpine : baisser la PIO, puis extraction du cristallin rapide.", no: "Bloc pupillaire primaire probable." },
-      { q: "PIO en baisse 30–60 min après gouttes et acétazolamide ?", yes: "Pilocarpine 1–2 %, puis LPI des deux yeux dès que la cornée s’éclaircit.", no: "Mannitol IV, indentation ; avis urgent (paracentèse, laser, chirurgie)." },
-      { q: "Angle encore fermé après LPI perméable ?", yes: "Iris plateau ou cristallin : UBM, iridoplastie ou extraction.", no: "Suivi : PIO, gonioscopie, nerf optique, endothélium." }
+      { q: "Œil rouge douloureux, PIO très haute, pupille mi-dilatée ?", yes: "Crise : gouttes hypotensives et acétazolamide sans délai.", no: "Autre œil rouge douloureux (uvéite, kératite, néovasculaire).", cont: "yes" },
+      { q: "Bilatérale, myopie aiguë ou topiramate ?", yes: "Effusion : cesser le médicament, cycloplégique, stéroïde, hypotenseurs ; pas de LPI ni pilocarpine.", no: "Examiner le cristallin.", cont: "no" },
+      { q: "Cataracte gonflée ou cristallin subluxé ?", yes: "Pas de pilocarpine : baisser la PIO, puis extraire le cristallin.", no: "Bloc pupillaire primaire probable.", cont: "no" },
+      { q: "PIO en baisse après 30–60 min ?", yes: "Pilocarpine 1–2 %, puis LPI des deux yeux dès la cornée claire.", no: "Mannitol IV, indentation ; avis urgent (paracentèse, laser, chirurgie).", cont: "yes" },
+      { q: "Angle fermé malgré LPI perméable ?", yes: "Iris plateau ou cristallin : UBM, iridoplastie ou extraction.", no: "Suivi : PIO, gonioscopie, nerf optique, endothélium." }
     ],
     phases: [
-      { phase: "medical", items: ["Sans délai : timolol 0,5 %, brimonidine ou apraclonidine, dorzolamide (1 goutte de chacun)", "Acétazolamide 500 mg PO ou IV (vérifier allergie sulfa, rein, potassium, drépanocytose)", "Acétate de prednisolone 1 % ; analgésique, antiémétique ; mannitol IV 1–2 g/kg si réfractaire", "Pilocarpine 1–2 % seulement après baisse de la PIO"] },
-      { phase: "laser", items: ["LPI de l’œil atteint dès que la cornée est claire, et de l’œil adelphe", "Vérifier que le trou est perméable et mesurer la PIO 30 min à 2 h après"] },
-      { phase: "chirurgie", items: ["Iridectomie chirurgicale si laser impossible ; extraction du cristallin si composante cristallinienne ou PIO non contrôlée"] },
-      { phase: "suivi", items: ["Gonioscopie après LPI ; gouttes si PAS ou PIO résiduelle ; discuter l’extraction du cristallin"] }
+      {
+        phase: "medical",
+        items: [
+          "Sans délai : timolol 0,5 %, brimonidine ou apraclonidine, dorzolamide (1 goutte de chacun)",
+          "Acétazolamide 500 mg PO ou IV (vérifier allergie sulfa, rein, potassium, drépanocytose)",
+          "Acétate de prednisolone 1 % ; analgésique, antiémétique ; mannitol IV 1–2 g/kg si réfractaire",
+          "Pilocarpine 1–2 % seulement après baisse de la PIO"
+        ]
+      },
+      {
+        phase: "laser",
+        items: ["LPI de l’œil atteint dès que la cornée est claire, et de l’œil adelphe", "Vérifier que le trou est perméable et mesurer la PIO 30 min à 2 h après"]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Iridectomie chirurgicale si laser impossible ; extraction du cristallin si composante cristallinienne ou PIO non contrôlée"]
+      },
+      {
+        phase: "suivi",
+        items: ["Gonioscopie après LPI ; gouttes si PAS ou PIO résiduelle ; discuter l’extraction du cristallin"]
+      }
     ],
     local: "Au Québec, ces patients consultent souvent d’abord l’urgence pour céphalée et vomissements, ou l’optométriste : amorcer le traitement et diriger le jour même vers l’ophtalmologiste de garde. Le guide optométrique canadien décrit la même séquence, jusqu’à la LPI bilatérale."
   },
   treatments: [
-    { name: "Gouttes hypotensives et stéroïde", how: "Timolol (bêtabloquant), dorzolamide (IAC) et brimonidine ↓ la production d’aqueuse ; prednisolone 1 % calme l’inflammation.", why: "Première étape de toute crise.", pros: "Immédiat.", cons: "Effet limité si PIO extrême.", cx: "Timolol : bronchospasme, bradycardie." },
-    { name: "Acétazolamide et mannitol", how: "Acétazolamide (PO, ou IV si vomissements) : inhibe l’anhydrase carbonique du corps ciliaire. Mannitol IV : déshydrate le vitré, le cristallin recule.", why: "Crise avérée ; mannitol si réfractaire.", pros: "Baisse rapide et puissante.", cons: "Contre-indications systémiques.", cx: "Paresthésies, hypokaliémie ; mannitol : surcharge, insuffisance cardiaque ou rénale." },
-    { name: "Pilocarpine 1–2 % et indentation", how: "Goutte myotique qui tire l’iris hors de l’angle ; l’indentation (pression sur la cornée) pousse l’aqueuse vers l’angle.", why: "Une fois la PIO abaissée.", pros: "Peut rompre la crise avant le laser.", cons: "Inefficace si sphincter ischémique ; contre-indiquée si cause cristallinienne ou effusion.", cx: "Céphalée, myopie, avancée du cristallin." },
-    { name: "Iridotomie au laser (LPI) des deux yeux", how: "Laser YAG en clinique : petit trou dans l’iris périphérique ; l’aqueuse contourne la pupille et l’iris s’aplatit.", why: "Traitement définitif du bloc ; prévention pour l’œil adelphe.", pros: "Rapide.", cons: "Difficile si cornée œdémateuse.", cx: "Pic de PIO, saignement, dysphotopsies." },
-    { name: "Extraction du cristallin", how: "Chirurgie de la cataracte : implant mince à la place du cristallin épais, ce qui ouvre l’angle.", why: "Cataracte, composante cristallinienne, PIO non contrôlée après LPI.", pros: "Corrige la cause anatomique.", cons: "Plus risquée sur œil inflammé.", cx: "Œdème cornéen, rupture capsulaire." }
+    { name: "Gouttes hypotensives et stéroïde", how: "Timolol (bêtabloquant), dorzolamide (IAC) et brimonidine ↓ la production d’aqueuse ; prednisolone 1 % calme l’inflammation.", why: "Première étape de toute crise.", pros: "Immédiat.", cons: "Effet limité si PIO extrême.", cx: "Timolol : bronchospasme, bradycardie.", dose: "Timolol 0,5 %, brimonidine 0,2 %, dorzolamide 2 % : 1 goutte de chaque ; prednisolone acétate 1 %.", refer: "Dès le diagnostic ; ophtalmologiste de garde le jour même.", pitfall: "Timolol : vérifier asthme, MPOC, bradycardie avant la goutte.", qc: "Québec : souvent vu d’abord à l’urgence : amorcer, puis diriger le jour même." },
+    { name: "Acétazolamide et mannitol", how: "Acétazolamide (PO, ou IV si vomissements) : inhibe l’anhydrase carbonique du corps ciliaire. Mannitol IV : déshydrate le vitré, le cristallin recule.", why: "Crise avérée ; mannitol si réfractaire.", pros: "Baisse rapide et puissante.", cons: "Contre-indications systémiques.", cx: "Paresthésies, hypokaliémie ; mannitol : surcharge, insuffisance cardiaque ou rénale.", dose: "Acétazolamide 500 mg PO ou IV ; mannitol 20 % 1–2 g/kg IV si réfractaire.", refer: "Crise avérée ; mannitol si PIO inchangée après 1 h.", pitfall: "Vérifier sulfa, rein, potassium, drépanocytose ; mannitol : cœur, rein." },
+    { name: "Pilocarpine 1–2 % et indentation", how: "Goutte myotique qui tire l’iris hors de l’angle ; l’indentation (pression sur la cornée) pousse l’aqueuse vers l’angle.", why: "Une fois la PIO abaissée.", pros: "Peut rompre la crise avant le laser.", cons: "Inefficace si sphincter ischémique ; contre-indiquée si cause cristallinienne ou effusion.", cx: "Céphalée, myopie, avancée du cristallin.", dose: "Pilocarpine 1–2 % : 1 goutte, une fois la PIO abaissée.", refer: "Bloc pupillaire, après la baisse de PIO.", pitfall: "Jamais si cause cristallinienne, effusion (topiramate) ou mal-direction." },
+    { name: "Iridotomie au laser (LPI) des deux yeux", how: "Laser YAG en clinique : petit trou dans l’iris périphérique ; l’aqueuse contourne la pupille et l’iris s’aplatit.", why: "Traitement définitif du bloc ; prévention pour l’œil adelphe.", pros: "Rapide.", cons: "Difficile si cornée œdémateuse.", cx: "Pic de PIO, saignement, dysphotopsies.", dose: "Laser YAG des deux yeux, en clinique.", refer: "Dès que la cornée s’éclaircit.", pitfall: "Ne pas oublier l’œil adelphe : LPI préventive." },
+    { name: "Extraction du cristallin", how: "Chirurgie de la cataracte : implant mince à la place du cristallin épais, ce qui ouvre l’angle.", why: "Cataracte, composante cristallinienne, PIO non contrôlée après LPI.", pros: "Corrige la cause anatomique.", cons: "Plus risquée sur œil inflammé.", cx: "Œdème cornéen, rupture capsulaire.", dose: "Phacoémulsification avec implant.", refer: "Cataracte, composante cristallinienne ou PIO non contrôlée après LPI.", pitfall: "Œil inflammé : le calmer d’abord si possible." }
   ],
   pearls: [
     { q: "Pourquoi la pilocarpine seulement après la baisse de PIO ?", a: "Le sphincter ischémique ne répond pas tant que la PIO est très haute. Et si le cristallin est en cause (gonflé, subluxé) ou en cas d’effusion, la pilocarpine avance le cristallin et aggrave la fermeture." },
@@ -559,14 +734,44 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "Crise : « Baisser, Myosis, Percer »", text: "**Baisser** la PIO (gouttes, acétazolamide ± mannitol), **Myosis** à la pilocarpine une fois la PIO abaissée, **Percer** l’iris (LPI) des **deux** yeux." },
   compare: {
     title: "Segment antérieur normal vs crise aiguë",
-    normal: { figure: { type: "slit", pattern: "normal" }, caption: "Cornée claire, chambre profonde, pupille ronde réactive." },
-    patho: { figure: { type: "slit", pattern: "aacc" }, caption: "Crise aiguë : œil congestif, cornée dépolie, pupille mi-dilatée.", reveal: ["Œdème épithélial cornéen (aspect dépoli)", "Pupille mi-dilatée, ovale, aréactive", "Rougeur ciliaire autour du limbe", "Chambre étroite : invisible de face, à confirmer en fente fine (Van Herick)"] }
+    normal: {
+      figure: { type: "slit", pattern: "normal" },
+      caption: "Cornée claire, chambre profonde, pupille ronde réactive."
+    },
+    patho: {
+      figure: { type: "slit", pattern: "aacc" },
+      caption: "Crise aiguë : œil congestif, cornée dépolie, pupille mi-dilatée.",
+      reveal: [
+        "Œdème épithélial cornéen (aspect dépoli)",
+        "Pupille mi-dilatée, ovale, aréactive",
+        "Rougeur ciliaire autour du limbe",
+        "Chambre étroite : invisible de face, à confirmer en fente fine (Van Herick)"
+      ]
+    }
   },
   sources: [
     "AAO PPP Primary Angle Closure Disease (Gedde SJ, Chopra V, Vinod K et al., Ophthalmology, en ligne 9 févr. 2026)",
     "Guide optométrique canadien GPAO (MacIver S et al., Can J Optom 2017;79 Suppl 1)",
     "COS 2009 : Canadian Ophthalmological Society glaucoma guidelines (Can J Ophthalmol 2009;44 Suppl 1:S7-S93)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**Gouttes hypotensives et stéroïde** : Timolol 0,5 %, brimonidine 0,2 %, dorzolamide 2 % : 1 goutte de chaque ; prednisolone acétate 1 %.",
+      "**Acétazolamide et mannitol** : Acétazolamide 500 mg PO ou IV ; mannitol 20 % 1–2 g/kg IV si réfractaire.",
+      "**Pilocarpine 1–2 % et indentation** : Pilocarpine 1–2 % : 1 goutte, une fois la PIO abaissée.",
+      "**Iridotomie au laser** : Laser YAG des deux yeux, en clinique.",
+      "**Extraction du cristallin** : Phacoémulsification avec implant."
+    ],
+    refer: [
+      "**Gouttes hypotensives et stéroïde** : Dès le diagnostic ; ophtalmologiste de garde le jour même.",
+      "**Acétazolamide et mannitol** : Crise avérée ; mannitol si PIO inchangée après 1 h."
+    ],
+    pitfall: [
+      "**Pilocarpine 1–2 % et indentation** : Jamais si cause cristallinienne, effusion (topiramate) ou mal-direction.",
+      "**Acétazolamide et mannitol** : Vérifier sulfa, rein, potassium, drépanocytose ; mannitol : cœur, rein."
+    ],
+    qc: ["Québec : souvent vu d’abord à l’urgence : amorcer, puis diriger le jour même."]
+  }
 },
 {
   id: "g-pxf",
@@ -576,10 +781,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Pseudoexfoliation (exfoliation) glaucoma",
   tags: ["frequent", "highyield"],
   oneLiner: "Patient âgé, dépôts blanchâtres en cible sur le cristallin après dilatation, PIO haute et fluctuante : glaucome agressif et cataracte à risque.",
-  definition: "La pseudo-exfoliation (pseudoexfoliation syndrome) est une maladie liée à l’âge où un matériel fibrillaire anormal, semblable à des flocons de pellicule, se dépose sur le cristallin, les zonules, l’iris et le trabéculum (le filtre de l’angle). Quand ce matériel et le pigment bouchent le filtre, la pression monte et le nerf optique s’abîme : c’est le glaucome pseudo-exfoliatif, plus agressif que le glaucome primaire.",
+  definition: "Avec l’âge, un matériel fibrillaire blanchâtre se dépose sur le cristallin, les zonules, l’iris et le trabéculum. Quand il bouche le filtre, la PIO monte : c’est le glaucome pseudo-exfoliatif, plus agressif que le GPAO.",
   anatomy: {
     text: "Le cristallin est suspendu par les zonules, fibres attachées au corps ciliaire. À chaque mouvement de la pupille, la face postérieure pigmentée de l’iris glisse sur la capsule antérieure du cristallin. L’aqueuse transporte ce qui flotte dans la chambre antérieure jusqu’au trabéculum.",
-    figure: { type: "eye", highlight: ["cristallin", "zonules", "iris", "pupille", "trabeculum"] }
+    figure: {
+      type: "eye",
+      highlight: ["cristallin", "zonules", "iris", "pupille", "trabeculum"]
+    }
   },
   causal: {
     title: "Des flocons au filtre bouché",
@@ -635,26 +843,41 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Dépôts capsulaires ou flocons au bord pupillaire ?", yes: "Pseudo-exfoliation : examiner l’autre œil.", no: "Autre glaucome à angle ouvert." },
-      { q: "Neuropathie (papille, OCT, champ) ?", yes: "Glaucome pseudo-exfoliatif : traiter, cible plus basse.", no: "Syndrome sans glaucome : PIO et nerf suivis de près ; traiter plus tôt une PIO élevée." },
-      { q: "Angle ouvert et visible ?", yes: "SLT ou analogue des prostaglandines.", no: "Fermeture associée : iridotomie ou extraction du cristallin." },
-      { q: "Progression ou cible non atteinte ?", yes: "Ajouter une classe, puis trabéculectomie ou tube.", no: "Suivi rapproché." },
-      { q: "Cataracte à opérer ?", yes: "Prévoir zonules faibles : anneau de tension capsulaire, crochets.", no: "Réévaluer à chaque visite." }
+      { q: "Dépôts capsulaires ou flocons au bord pupillaire ?", yes: "Pseudo-exfoliation : examiner l’autre œil.", no: "Autre glaucome à angle ouvert.", cont: "yes" },
+      { q: "Neuropathie (papille, OCT, champ) ?", yes: "Glaucome pseudo-exfoliatif : traiter, cible plus basse.", no: "Sans glaucome : suivre de près ; traiter tôt une PIO élevée.", cont: "yes" },
+      { q: "Angle ouvert et visible ?", yes: "SLT ou analogue des prostaglandines.", no: "Fermeture associée : iridotomie ou extraction du cristallin.", cont: "yes" },
+      { q: "Progression ou cible non atteinte ?", yes: "Ajouter une classe, puis trabéculectomie ou tube.", no: "Suivi rapproché.", cont: "no" },
+      { q: "Cataracte à opérer ?", yes: "Zonules faibles : anneau de tension capsulaire, crochets.", no: "Réévaluer à chaque visite." }
     ],
     phases: [
-      { phase: "observation", items: ["Syndrome sans glaucome : PIO, papille, OCT et champ plus souvent qu’un suspect ordinaire"] },
-      { phase: "medical", items: ["Analogue des prostaglandines (PGA), puis combinaisons ; souvent plusieurs classes"] },
-      { phase: "laser", items: ["SLT (souvent bonne réponse) ; énergie réduite si trabéculum très pigmenté, PIO contrôlée après"] },
-      { phase: "chirurgie", items: ["Trabéculectomie avec mitomycine C (anticicatrisant) ou tube si progression", "Cataracte : chirurgien averti, pupille petite, zonules fragiles"] },
-      { phase: "suivi", items: ["Visites rapprochées ; vérifier le centrage de l’implant après cataracte, à vie"] }
+      {
+        phase: "observation",
+        items: ["Syndrome sans glaucome : PIO, papille, OCT et champ plus souvent qu’un suspect ordinaire"]
+      },
+      {
+        phase: "medical",
+        items: ["Analogue des prostaglandines (PGA), puis combinaisons ; souvent plusieurs classes"]
+      },
+      {
+        phase: "laser",
+        items: ["SLT (souvent bonne réponse) ; énergie réduite si trabéculum très pigmenté, PIO contrôlée après"]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Trabéculectomie avec mitomycine C (anticicatrisant) ou tube si progression", "Cataracte : chirurgien averti, pupille petite, zonules fragiles"]
+      },
+      {
+        phase: "suivi",
+        items: ["Visites rapprochées ; vérifier le centrage de l’implant après cataracte, à vie"]
+      }
     ],
     local: "Fréquente chez les personnes âgées, surtout d’ascendance nord-européenne. Vu son agressivité, orienter rapidement vers l’ophtalmologiste (O-7, r. 11.1 : hors glaucome suspect, débutant ou cortisonique, l’optométriste doit obtenir le consentement d’un médecin pour traiter)."
   },
   treatments: [
-    { name: "Gouttes hypotensives", how: "Gouttes quotidiennes : analogue des prostaglandines (↑ sortie uvéosclérale) puis bêtabloquant, inhibiteur de l’anhydrase carbonique ou brimonidine (↓ production).", why: "Première intention, souvent en combinaison.", pros: "Simples, sans intervention.", cons: "Contrôlent moins bien les fluctuations ; plusieurs classes souvent nécessaires.", cx: "Selon la classe (rougeur, bronchospasme, allergie)." },
-    { name: "SLT (trabéculoplastie sélective au laser)", how: "Laser en clinique à travers une lentille : impacts doux sur le trabéculum, qui se remodèle et laisse mieux sortir l’aqueuse.", why: "Première intention ou appoint ; trabéculum pigmenté = bonne cible.", pros: "Réponse initiale souvent bonne ; sans gouttes.", cons: "Effet parfois moins durable.", cx: "Pic de PIO (plus probable si très pigmenté), inflammation." },
-    { name: "Chirurgie filtrante (trabéculectomie, tube)", how: "Au bloc : trabéculectomie (fistule sous un volet de sclère vers une bulle sous la conjonctive) ou tube relié à une plaque.", why: "Progression ou PIO non contrôlée.", pros: "Contourne le filtre encombré ; PIO basse.", cons: "Suivi intensif.", cx: "Hypotonie, fuite, infection de la bulle." },
-    { name: "Chirurgie de cataracte adaptée", how: "Phacoémulsification avec outils pour zonules faibles : anneau de tension capsulaire (anneau qui tend le sac), crochets iriens ou capsulaires.", why: "Cataracte (fréquente) ; ouvre aussi l’angle si étroit.", pros: "Améliore la vision ; baisse souvent un peu la PIO.", cons: "Pupille petite, chirurgie plus difficile.", cx: "Rupture zonulaire, issue de vitré, pic de PIO postopératoire, contraction du sac, luxation tardive de l’implant dans son sac." }
+    { name: "Gouttes hypotensives", how: "Gouttes quotidiennes : analogue des prostaglandines (↑ sortie uvéosclérale) puis bêtabloquant, inhibiteur de l’anhydrase carbonique ou brimonidine (↓ production).", why: "Première intention, souvent en combinaison.", pros: "Simples, sans intervention.", cons: "Contrôlent moins bien les fluctuations ; plusieurs classes souvent nécessaires.", cx: "Selon la classe (rougeur, bronchospasme, allergie).", dose: "Latanoprost 0,005 % au coucher ; ajouter timolol 0,5 % BID ou dorzolamide 2 % au besoin.", refer: "Diriger rapidement : glaucome agressif, PIO qui fluctue.", pitfall: "Une PIO normale en clinique peut cacher des pics : suivi rapproché.", qc: "Québec : hors glaucome suspect, débutant ou cortisonique, l’optométriste traite seulement avec le consentement d’un médecin (O-7)." },
+    { name: "SLT (trabéculoplastie sélective au laser)", how: "Laser en clinique à travers une lentille : impacts doux sur le trabéculum, qui se remodèle et laisse mieux sortir l’aqueuse.", why: "Première intention ou appoint ; trabéculum pigmenté = bonne cible.", pros: "Réponse initiale souvent bonne ; sans gouttes.", cons: "Effet parfois moins durable.", cx: "Pic de PIO (plus probable si très pigmenté), inflammation.", dose: "SLT 360° en clinique.", refer: "Première intention ou appoint.", pitfall: "Pic de PIO plus probable si très pigmenté : mesurer la PIO après." },
+    { name: "Chirurgie filtrante (trabéculectomie, tube)", how: "Au bloc : trabéculectomie (fistule sous un volet de sclère vers une bulle sous la conjonctive) ou tube relié à une plaque.", why: "Progression ou PIO non contrôlée.", pros: "Contourne le filtre encombré ; PIO basse.", cons: "Suivi intensif.", cx: "Hypotonie, fuite, infection de la bulle.", dose: "Trabéculectomie avec MMC ou tube, au bloc.", refer: "Progression ou PIO non contrôlée.", pitfall: "Suivi postopératoire intensif (fiche Patient opéré)." },
+    { name: "Chirurgie de cataracte adaptée", how: "Phacoémulsification avec outils pour zonules faibles : anneau de tension capsulaire (anneau qui tend le sac), crochets iriens ou capsulaires.", why: "Cataracte (fréquente) ; ouvre aussi l’angle si étroit.", pros: "Améliore la vision ; baisse souvent un peu la PIO.", cons: "Pupille petite, chirurgie plus difficile.", cx: "Rupture zonulaire, issue de vitré, pic de PIO postopératoire, contraction du sac, luxation tardive de l’implant dans son sac.", dose: "Phacoémulsification avec anneau de tension capsulaire et crochets au besoin.", refer: "Cataracte (fréquente) ; ouvre aussi un angle étroit.", pitfall: "Zonules faibles : prévenir le chirurgien, risque d’issue de vitré." }
   ],
   pearls: [
     { q: "Pourquoi dilater ce patient ?", a: "Le disque central et la zone périphérique des dépôts sont souvent invisibles sans dilatation ; on note aussi la mauvaise dilatation et la phacodonésis, précieuses pour le chirurgien." },
@@ -664,15 +887,36 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "PXF : les 5 P", text: "**P**oudre en cible sur le cristallin, **P**upille qui dilate mal, **P**igment trabéculaire (Sampaolesi), **P**ression haute et fluctuante, **P**hacodonésis." },
   compare: {
     title: "Cristallin normal vs pseudo-exfoliation",
-    normal: { figure: { type: "slit", pattern: "normal" }, caption: "Capsule antérieure lisse, pupille bien dilatée." },
-    patho: { figure: { type: "slit", pattern: "pxf" }, caption: "Dépôts blanchâtres en cible sur la capsule antérieure.", reveal: ["Disque central de matériel", "Zone claire intermédiaire (frottement de l’iris)", "Zone granuleuse périphérique", "Flocons au bord pupillaire"] }
+    normal: {
+      figure: { type: "slit", pattern: "normal" },
+      caption: "Capsule antérieure lisse, pupille bien dilatée."
+    },
+    patho: {
+      figure: { type: "slit", pattern: "pxf" },
+      caption: "Dépôts blanchâtres en cible sur la capsule antérieure.",
+      reveal: ["Disque central de matériel", "Zone claire intermédiaire (frottement de l’iris)", "Zone granuleuse périphérique", "Flocons au bord pupillaire"]
+    }
   },
   sources: [
     "Ritch R, Schlötzer-Schrehardt U. Exfoliation syndrome (Surv Ophthalmol 2001)",
     "Thorleifsson G et al. Variants LOXL1 et glaucome exfoliatif (Science 2007)",
     "EMGT : facteurs de progression (Leske MC et al., Arch Ophthalmol 2003)",
     "AAO PPP Primary Open-Angle Glaucoma (Gedde SJ et al., Ophthalmology, en ligne 9 févr. 2026)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**Gouttes hypotensives** : Latanoprost 0,005 % au coucher ; ajouter timolol 0,5 % BID ou dorzolamide 2 % au besoin.",
+      "**SLT** : SLT 360° en clinique.",
+      "**Chirurgie filtrante** : Trabéculectomie avec MMC ou tube, au bloc.",
+      "**Chirurgie de cataracte adaptée** : Phacoémulsification avec anneau de tension capsulaire et crochets au besoin."
+    ],
+    refer: ["**Gouttes hypotensives** : Diriger rapidement : glaucome agressif, PIO qui fluctue."],
+    pitfall: [
+      "**Gouttes hypotensives** : Une PIO normale en clinique peut cacher des pics : suivi rapproché.",
+      "**Chirurgie de cataracte adaptée** : Zonules faibles : prévenir le chirurgien, risque d’issue de vitré."
+    ],
+    qc: ["Québec : hors glaucome suspect, débutant ou cortisonique, l’optométriste traite seulement avec le consentement d’un médecin (O-7)."]
+  }
 },
 {
   id: "g-pigmentaire",
@@ -682,10 +926,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Pigment dispersion syndrome and pigmentary glaucoma",
   tags: ["highyield", "piege"],
   oneLiner: "Jeune homme myope, fuseau de Krukenberg, fentes de transillumination médio-périphériques et angle très pigmenté : pics de PIO à l’effort.",
-  definition: "Dans la dispersion pigmentaire, l’iris, creusé vers l’arrière, frotte contre les zonules du cristallin et libère son pigment, qui se dépose sur la cornée, le cristallin et le trabéculum (le filtre de l’angle). Si le filtre surchargé laisse monter la pression et que le nerf optique s’abîme, on parle de glaucome pigmentaire.",
+  definition: "L’iris, creusé vers l’arrière, frotte contre les zonules et libère son pigment, qui se dépose sur la cornée, le cristallin et le trabéculum. Si la PIO monte et que le nerf s’abîme, c’est un glaucome pigmentaire.",
   anatomy: {
     text: "La face postérieure de l’iris est tapissée d’un épithélium très pigmenté ; juste derrière se trouvent les zonules, fibres qui retiennent le cristallin. Chez le myope, la chambre antérieure est profonde et l’iris peut prendre une forme concave. L’aqueuse circule en boucle dans la chambre antérieure et finit au trabéculum.",
-    figure: { type: "eye", highlight: ["iris", "zonules", "cristallin", "trabeculum", "cornee"] }
+    figure: {
+      type: "eye",
+      highlight: ["iris", "zonules", "cristallin", "trabeculum", "cornee"]
+    }
   },
   causal: {
     title: "Du frottement de l’iris au filtre saturé",
@@ -743,26 +990,44 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Krukenberg, fentes radiaires et pigment dense dans l’angle ?", yes: "Dispersion pigmentaire.", no: "Autre source de pigment (PXF, implant, uvéite)." },
-      { q: "Neuropathie (papille, OCT, champ) ?", yes: "Glaucome pigmentaire : PIO cible.", no: "Syndrome sans glaucome : surveiller PIO et nerf." },
-      { q: "Angle ouvert, candidat au laser ?", yes: "SLT à énergie basse ou analogue des prostaglandines.", no: "Gouttes." },
-      { q: "Pilocarpine envisagée ?", yes: "Fond d’œil dilaté d’abord ; mal tolérée chez le jeune.", no: "Poursuivre gouttes et laser." },
-      { q: "Progression malgré tout ?", yes: "Trabéculectomie ou tube (jeune myope : risque de maculopathie d’hypotonie, plis maculaires si PIO trop basse).", no: "Suivi ; espacer si phase éteinte." }
+      { q: "Krukenberg, fentes radiaires et angle très pigmenté ?", yes: "Dispersion pigmentaire.", no: "Autre source de pigment (PXF, implant, uvéite).", cont: "yes" },
+      { q: "Neuropathie (papille, OCT, champ) ?", yes: "Glaucome pigmentaire : PIO cible.", no: "Sans glaucome : surveiller PIO et nerf.", cont: "yes" },
+      { q: "Angle ouvert, candidat au laser ?", yes: "SLT à énergie basse ou analogue des prostaglandines.", no: "Gouttes.", cont: "yes" },
+      { q: "Pilocarpine envisagée ?", yes: "Fond d’œil dilaté d’abord ; mal tolérée chez le jeune.", no: "Poursuivre gouttes et laser.", cont: "no" },
+      { q: "Progression malgré tout ?", yes: "Trabéculectomie ou tube ; jeune myope : risque de maculopathie d’hypotonie.", no: "Suivi ; espacer si phase éteinte." }
     ],
     phases: [
-      { phase: "observation", items: ["Syndrome sans glaucome : PIO, OCT et champ réguliers ; signaler les symptômes à l’effort"] },
-      { phase: "medical", items: ["Analogue des prostaglandines (PGA) en première intention ; ajouter une classe au besoin"] },
-      { phase: "laser", items: ["SLT à énergie basse (trabéculum très pigmenté), PIO contrôlée après", "Iridotomie : aplatit l’iris, mais bénéfice sur le glaucome non prouvé ; pas systématique"] },
-      { phase: "chirurgie", items: ["Trabéculectomie avec mitomycine C (anticicatrisant) ou tube si progression"] },
-      { phase: "suivi", items: ["Bilatéral et durable ; la PIO peut se normaliser après 50 ans (phase éteinte)"] }
+      {
+        phase: "observation",
+        items: ["Syndrome sans glaucome : PIO, OCT et champ réguliers ; signaler les symptômes à l’effort"]
+      },
+      {
+        phase: "medical",
+        items: ["Analogue des prostaglandines (PGA) en première intention ; ajouter une classe au besoin"]
+      },
+      {
+        phase: "laser",
+        items: [
+          "SLT à énergie basse (trabéculum très pigmenté), PIO contrôlée après",
+          "Iridotomie : aplatit l’iris, mais bénéfice sur le glaucome non prouvé ; pas systématique"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Trabéculectomie avec mitomycine C (anticicatrisant) ou tube si progression"]
+      },
+      {
+        phase: "suivi",
+        items: ["Bilatéral et durable ; la PIO peut se normaliser après 50 ans (phase éteinte)"]
+      }
     ],
     local: "Au Québec, la dispersion pigmentaire sans neuropathie est souvent suivie en optométrie comme glaucome suspect ; dès qu’un glaucome pigmentaire est établi, diriger vers l’ophtalmologiste pour le suivi médical (O-7, r. 11.1)."
   },
   treatments: [
-    { name: "Analogue des prostaglandines (PGA)", how: "Goutte le soir qui relâche la matrice du muscle ciliaire : l’aqueuse sort par la voie uvéosclérale, sans passer par le filtre saturé.", why: "Première intention.", pros: "Efficace, 1 fois par jour.", cons: "Traitement à vie chez un jeune.", cx: "Rougeur, cils longs, iris foncé, fonte graisseuse orbitaire." },
-    { name: "SLT à énergie basse", how: "Laser en clinique à travers une lentille : impacts doux sur le trabéculum, qui se remodèle ; énergie réduite, parfois sur la moitié de l’angle seulement, car le pigment absorbe beaucoup.", why: "Alternative ou ajout aux gouttes.", pros: "Réponse initiale souvent bonne.", cons: "Effet qui s’atténue.", cx: "Pic de PIO marqué si énergie trop forte." },
-    { name: "Pilocarpine", how: "Goutte myotique : resserre la pupille, tend l’iris et l’éloigne des zonules, ce qui réduit la libération de pigment.", why: "Rarement ; cas choisis.", pros: "Agit sur le mécanisme.", cons: "Myopie induite, vision trouble, céphalée : mal tolérée chez le jeune.", cx: "Décollement de rétine chez le myope à palissades." },
-    { name: "Iridotomie au laser (LPI)", how: "Laser YAG : petit trou dans l’iris périphérique ; les pressions s’égalisent et l’iris concave s’aplatit.", why: "Discutée chez le jeune avec iris très concave ; pas systématique.", pros: "Corrige la concavité.", cons: "Aucun bénéfice démontré sur la progression du glaucome.", cx: "Dysphotopsies, pic de PIO, saignement." }
+    { name: "Analogue des prostaglandines (PGA)", how: "Goutte le soir qui relâche la matrice du muscle ciliaire : l’aqueuse sort par la voie uvéosclérale, sans passer par le filtre saturé.", why: "Première intention.", pros: "Efficace, 1 fois par jour.", cons: "Traitement à vie chez un jeune.", cx: "Rougeur, cils longs, iris foncé, fonte graisseuse orbitaire.", dose: "Latanoprost 0,005 % : 1 goutte au coucher.", refer: "Glaucome pigmentaire établi : suivi par l’ophtalmologiste.", pitfall: "Traitement à vie chez un jeune : soutenir l’observance.", qc: "Québec : la dispersion sans neuropathie est souvent suivie en optométrie (glaucome suspect)." },
+    { name: "SLT à énergie basse", how: "Laser en clinique à travers une lentille : impacts doux sur le trabéculum, qui se remodèle ; énergie réduite, parfois sur la moitié de l’angle seulement, car le pigment absorbe beaucoup.", why: "Alternative ou ajout aux gouttes.", pros: "Réponse initiale souvent bonne.", cons: "Effet qui s’atténue.", cx: "Pic de PIO marqué si énergie trop forte.", dose: "SLT à énergie réduite, parfois sur 180° seulement.", refer: "Alternative ou ajout aux gouttes.", pitfall: "Trop d’énergie = pic de PIO marqué : mesurer la PIO après." },
+    { name: "Pilocarpine", how: "Goutte myotique : resserre la pupille, tend l’iris et l’éloigne des zonules, ce qui réduit la libération de pigment.", why: "Rarement ; cas choisis.", pros: "Agit sur le mécanisme.", cons: "Myopie induite, vision trouble, céphalée : mal tolérée chez le jeune.", cx: "Décollement de rétine chez le myope à palissades.", dose: "Pilocarpine en goutte, cas choisis seulement.", refer: "Rarement ; décision de l’ophtalmologiste.", pitfall: "Fond d’œil dilaté avant : décollement de rétine chez le myope." },
+    { name: "Iridotomie au laser (LPI)", how: "Laser YAG : petit trou dans l’iris périphérique ; les pressions s’égalisent et l’iris concave s’aplatit.", why: "Discutée chez le jeune avec iris très concave ; pas systématique.", pros: "Corrige la concavité.", cons: "Aucun bénéfice démontré sur la progression du glaucome.", cx: "Dysphotopsies, pic de PIO, saignement.", dose: "Laser YAG : petit trou dans l’iris périphérique.", refer: "Discutée si iris très concave ; pas systématique.", pitfall: "Aucun bénéfice démontré sur la progression du glaucome." }
   ],
   pearls: [
     { q: "Quel est le mécanisme de la dispersion ?", a: "Bloc pupillaire inversé : l’aqueuse poussée devant l’iris le plaque vers l’arrière, contre les zonules, qui en arrachent le pigment. D’où les fentes radiaires médio-périphériques." },
@@ -772,14 +1037,40 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "Pigment à 3 endroits", text: "**Cornée** : fuseau de Krukenberg. **Iris** : fentes radiaires médio-périphériques. **Angle** : bande noire dense et homogène sur 360°." },
   compare: {
     title: "Cornée normale vs fuseau de Krukenberg",
-    normal: { figure: { type: "slit", pattern: "normal" }, caption: "Endothélium clair, sans pigment." },
-    patho: { figure: { type: "slit", pattern: "krukenberg" }, caption: "Fuseau vertical de pigment sur l’endothélium central.", reveal: ["Bande verticale brunâtre au centre de la cornée", "Dépôt sur l’endothélium, pas dans le stroma", "Chercher les fentes de transillumination", "Gonioscopie : pigment dense et homogène"] }
+    normal: {
+      figure: { type: "slit", pattern: "normal" },
+      caption: "Endothélium clair, sans pigment."
+    },
+    patho: {
+      figure: { type: "slit", pattern: "krukenberg" },
+      caption: "Fuseau vertical de pigment sur l’endothélium central.",
+      reveal: [
+        "Bande verticale brunâtre au centre de la cornée",
+        "Dépôt sur l’endothélium, pas dans le stroma",
+        "Chercher les fentes de transillumination",
+        "Gonioscopie : pigment dense et homogène"
+      ]
+    }
   },
   sources: [
     "Siddiqui Y et al. Risque de glaucome pigmentaire après dispersion pigmentaire (Am J Ophthalmol 2003)",
     "Campbell DG. Pigmentary dispersion and glaucoma: a new theory (Arch Ophthalmol 1979)",
     "Michelessi M, Lindsley K. Peripheral iridotomy for pigmentary glaucoma (Cochrane Database Syst Rev 2016)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**Analogue des prostaglandines** : Latanoprost 0,005 % : 1 goutte au coucher.",
+      "**SLT à énergie basse** : SLT à énergie réduite, parfois sur 180° seulement.",
+      "**Pilocarpine** : Pilocarpine en goutte, cas choisis seulement.",
+      "**Iridotomie au laser** : Laser YAG : petit trou dans l’iris périphérique."
+    ],
+    refer: ["**Analogue des prostaglandines** : Glaucome pigmentaire établi : suivi par l’ophtalmologiste."],
+    pitfall: [
+      "**Pilocarpine** : Fond d’œil dilaté avant : décollement de rétine chez le myope.",
+      "**SLT à énergie basse** : Trop d’énergie = pic de PIO marqué : mesurer la PIO après."
+    ],
+    qc: ["Québec : la dispersion sans neuropathie est souvent suivie en optométrie (glaucome suspect)."]
+  }
 },
 {
   id: "g-neovasculaire",
@@ -789,10 +1080,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Neovascular glaucoma (NVG)",
   tags: ["urgent", "highyield"],
   oneLiner: "Rétine ischémique (occlusion veineuse, diabète, carotide), néovaisseaux sur l’iris et dans l’angle, PIO très haute : anti-VEGF et panphotocoagulation en urgence.",
-  definition: "Le glaucome néovasculaire survient quand une rétine privée d’oxygène sécrète un facteur de croissance des vaisseaux (VEGF, vascular endothelial growth factor) qui fait pousser de nouveaux vaisseaux anormaux sur l’iris et dans l’angle. Ces vaisseaux et leur membrane fibreuse bouchent puis ferment le filtre de l’angle, et la pression monte très haut, souvent dans un œil qui voit déjà mal.",
+  definition: "Une rétine ischémique sécrète du VEGF (vascular endothelial growth factor), qui fait pousser des néovaisseaux sur l’iris et dans l’angle. Leur membrane fibreuse ferme le filtre : la PIO monte, souvent dans un œil qui voit déjà mal.",
   anatomy: {
     text: "La rétine interne est nourrie par l’artère centrale de la rétine et drainée par la veine centrale ; si ce réseau se bouche ou s’appauvrit, la rétine devient ischémique. Le VEGF diffuse dans le vitré puis dans l’aqueuse jusqu’à l’iris et l’angle. Normalement, aucun vaisseau ne franchit l’éperon scléral pour se ramifier sur le trabéculum.",
-    figure: { type: "eye", highlight: ["retine", "acr", "vcr", "iris", "angle", "trabeculum"] }
+    figure: {
+      type: "eye",
+      highlight: ["retine", "acr", "vcr", "iris", "angle", "trabeculum"]
+    }
   },
   causal: {
     title: "De la rétine ischémique à l’angle fermé",
@@ -849,26 +1143,45 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Néovaisseaux de l’iris ou de l’angle ?", yes: "Néovascularisation : trouver la cause ischémique.", no: "Si OVCR ischémique ou rétinopathie proliférante : gonioscopie non dilatée régulière." },
-      { q: "PIO élevée ?", yes: "Glaucome néovasculaire : anti-VEGF, PRP et baisse de PIO en urgence.", no: "Néovaisseaux sans glaucome : anti-VEGF et PRP rapides pour sauver l’angle." },
-      { q: "Angle fermé par synéchies sur une grande partie ?", yes: "Les gouttes ne suffiront pas : prévoir un tube.", no: "Stade à angle ouvert : la PRP peut encore préserver l’angle." },
-      { q: "Potentiel visuel utile ?", yes: "Tube après anti-VEGF (moins de saignement).", no: "Cyclophotocoagulation, atropine et stéroïde pour le confort." },
+      { q: "Néovaisseaux de l’iris ou de l’angle ?", yes: "Trouver la cause ischémique.", no: "OVCR ischémique, rétinopathie proliférante : gonioscopie non dilatée régulière.", cont: "yes" },
+      { q: "PIO élevée ?", yes: "GNV : anti-VEGF, PRP et baisse de PIO en urgence.", no: "Néovaisseaux seuls : anti-VEGF et PRP rapides pour sauver l’angle.", cont: "yes" },
+      { q: "Angle fermé par synéchies étendues ?", yes: "Les gouttes ne suffiront pas : prévoir un tube.", no: "Angle encore ouvert : la PRP peut le préserver.", cont: "yes" },
+      { q: "Potentiel visuel utile ?", yes: "Tube après anti-VEGF (moins de saignement).", no: "Cyclophotocoagulation, atropine et stéroïde pour le confort.", cont: "yes" },
       { q: "Cause rétinienne évidente ?", yes: "Coordonner rétine et médecin traitant (glycémie, tension).", no: "Syndrome ischémique oculaire : Doppler carotidien (risque d’AVC)." }
     ],
     phases: [
-      { phase: "medical", items: ["Anti-VEGF intravitréen le plus tôt possible (pont vers la PRP)", "Gouttes qui ↓ la production (timolol, dorzolamide, brimonidine) ± acétazolamide oral ; pas de pilocarpine", "Atropine 1 % et acétate de prednisolone 1 % : confort et inflammation"] },
-      { phase: "laser", items: ["PRP complète dès que possible ; cryothérapie ou laser au bloc si milieux troubles"] },
-      { phase: "chirurgie", items: ["Tube de drainage (Ahmed ou Baerveldt), idéalement après anti-VEGF ; trabéculectomie moins favorable (cicatrisation)"] },
-      { phase: "suivi", items: ["Régression des néovaisseaux, gonioscopie, PIO, œil adelphe ; anti-VEGF répété au besoin"] },
-      { phase: "escalade", items: ["Cyclophotocoagulation si potentiel visuel faible ou échec du tube ; œil aveugle douloureux : confort d’abord"] }
+      {
+        phase: "medical",
+        items: [
+          "Anti-VEGF intravitréen le plus tôt possible (pont vers la PRP)",
+          "Gouttes qui ↓ la production (timolol, dorzolamide, brimonidine) ± acétazolamide oral ; pas de pilocarpine",
+          "Atropine 1 % et acétate de prednisolone 1 % : confort et inflammation"
+        ]
+      },
+      {
+        phase: "laser",
+        items: ["PRP complète dès que possible ; cryothérapie ou laser au bloc si milieux troubles"]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Tube de drainage (Ahmed ou Baerveldt), idéalement après anti-VEGF ; trabéculectomie moins favorable (cicatrisation)"]
+      },
+      {
+        phase: "suivi",
+        items: ["Régression des néovaisseaux, gonioscopie, PIO, œil adelphe ; anti-VEGF répété au besoin"]
+      },
+      {
+        phase: "escalade",
+        items: ["Cyclophotocoagulation si potentiel visuel faible ou échec du tube ; œil aveugle douloureux : confort d’abord"]
+      }
     ],
     local: "Au Québec, les injections et la PRP se font en clinique de rétine et les tubes en centre hospitalier : diriger le jour même et coordonner rétine et glaucome. Le dépistage de la rétinopathie diabétique, souvent fait par l’optométriste, reste la meilleure prévention."
   },
   treatments: [
-    { name: "Anti-VEGF intravitréen (bévacizumab, ranibizumab, aflibercept)", how: "Injection en clinique d’un anticorps dans le vitré : il neutralise le VEGF et les néovaisseaux régressent en quelques jours.", why: "Dès le diagnostic ; avant une chirurgie (moins de saignement).", pros: "Effet rapide.", cons: "Temporaire : ne remplace pas la PRP.", cx: "Endophtalmite (rare), pic de PIO." },
-    { name: "Panphotocoagulation rétinienne (PRP)", how: "Laser en clinique à travers une lentille : des centaines d’impacts détruisent la rétine ischémique, qui cesse de produire du VEGF.", why: "Traitement de fond.", pros: "Effet durable.", cons: "Agit en quelques semaines ; milieux clairs requis.", cx: "Champ périphérique et vision nocturne ↓, œdème maculaire aggravé." },
-    { name: "Tube de drainage (Ahmed, Baerveldt)", how: "Au bloc : tube placé dans la chambre (ou par la pars plana) et relié à une plaque sur la sclère ; l’aqueuse court-circuite l’angle fermé.", why: "PIO non contrôlée avec potentiel visuel.", pros: "Résiste mieux à la cicatrisation que la trabéculectomie.", cons: "Œil inflammé et fragile.", cx: "Hyphéma, hypotonie, tube bouché, exposition." },
-    { name: "Cyclophotocoagulation", how: "Laser appliqué à travers la sclère qui détruit une partie du corps ciliaire : moins d’aqueuse produite.", why: "Potentiel visuel faible ou échec du tube.", pros: "Rapide, sans incision.", cons: "Effet difficile à doser.", cx: "Hypotonie, phtisie (œil qui s’atrophie), baisse de vision." }
+    { name: "Anti-VEGF intravitréen (bévacizumab, ranibizumab, aflibercept)", how: "Injection en clinique d’un anticorps dans le vitré : il neutralise le VEGF et les néovaisseaux régressent en quelques jours.", why: "Dès le diagnostic ; avant une chirurgie (moins de saignement).", pros: "Effet rapide.", cons: "Temporaire : ne remplace pas la PRP.", cx: "Endophtalmite (rare), pic de PIO.", dose: "Bévacizumab 1,25 mg/0,05 mL intravitréen (ou ranibizumab 0,5 mg, aflibercept 2 mg).", refer: "Dès le diagnostic : diriger en rétine le jour même.", pitfall: "Effet temporaire : ne remplace pas la PRP.", qc: "Québec : injections et PRP en clinique de rétine ; tubes en centre hospitalier." },
+    { name: "Panphotocoagulation rétinienne (PRP)", how: "Laser en clinique à travers une lentille : des centaines d’impacts détruisent la rétine ischémique, qui cesse de produire du VEGF.", why: "Traitement de fond.", pros: "Effet durable.", cons: "Agit en quelques semaines ; milieux clairs requis.", cx: "Champ périphérique et vision nocturne ↓, œdème maculaire aggravé.", dose: "Laser en clinique : ≈ 1200–1600 impacts en 1–3 séances.", refer: "Traitement de fond, dès que les milieux le permettent.", pitfall: "Agit en quelques semaines : couvrir par anti-VEGF entre-temps." },
+    { name: "Tube de drainage (Ahmed, Baerveldt)", how: "Au bloc : tube placé dans la chambre (ou par la pars plana) et relié à une plaque sur la sclère ; l’aqueuse court-circuite l’angle fermé.", why: "PIO non contrôlée avec potentiel visuel.", pros: "Résiste mieux à la cicatrisation que la trabéculectomie.", cons: "Œil inflammé et fragile.", cx: "Hyphéma, hypotonie, tube bouché, exposition.", dose: "Ahmed ou Baerveldt, au bloc, après anti-VEGF.", refer: "PIO non contrôlée avec potentiel visuel.", pitfall: "Œil inflammé et fragile : risque d’hyphéma et de tube bouché." },
+    { name: "Cyclophotocoagulation", how: "Laser appliqué à travers la sclère qui détruit une partie du corps ciliaire : moins d’aqueuse produite.", why: "Potentiel visuel faible ou échec du tube.", pros: "Rapide, sans incision.", cons: "Effet difficile à doser.", cx: "Hypotonie, phtisie (œil qui s’atrophie), baisse de vision.", dose: "Cyclophotocoagulation transsclérale au laser diode.", refer: "Potentiel visuel faible ou échec du tube.", pitfall: "Effet difficile à doser : risque d’hypotonie et de phtisie." }
   ],
   pearls: [
     { q: "Anti-VEGF ou PRP ?", a: "Les deux : l’anti-VEGF fait régresser les néovaisseaux en quelques jours mais temporairement ; la PRP enlève durablement la source de VEGF. L’anti-VEGF est un pont, la PRP le traitement de fond." },
@@ -878,15 +1191,41 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "Causes « DOC », traitement « IBBD »", text: "Causes : **D**iabète (rétinopathie proliférante), **O**cclusion veineuse centrale, **C**arotide (syndrome ischémique oculaire). Traitement : **I**njecter (anti-VEGF), **B**rûler (PRP), **B**aisser (PIO), **D**rainer (tube)." },
   compare: {
     title: "Angle normal vs néovaisseaux de l’angle",
-    normal: { figure: { type: "gonio", grade: 4, pas: false, pigment: "light", nv: false, recession: false }, caption: "Angle ouvert, aucun vaisseau sur le trabéculum." },
-    patho: { figure: { type: "gonio", grade: 3, pas: false, pigment: "light", nv: true, recession: false }, caption: "Fins vaisseaux qui franchissent l’éperon : stade à angle ouvert.", reveal: ["Vaisseaux fins, arborisés, qui croisent l’éperon scléral", "Ramification sur le trabéculum", "Angle encore ouvert : la PRP peut encore le sauver", "Chercher les NVI au bord pupillaire"] }
+    normal: {
+      figure: { type: "gonio", grade: 4, pas: false, pigment: "light", nv: false, recession: false },
+      caption: "Angle ouvert, aucun vaisseau sur le trabéculum."
+    },
+    patho: {
+      figure: { type: "gonio", grade: 3, pas: false, pigment: "light", nv: true, recession: false },
+      caption: "Fins vaisseaux qui franchissent l’éperon : stade à angle ouvert.",
+      reveal: [
+        "Vaisseaux fins, arborisés, qui croisent l’éperon scléral",
+        "Ramification sur le trabéculum",
+        "Angle encore ouvert : la PRP peut encore le sauver",
+        "Chercher les NVI au bord pupillaire"
+      ]
+    }
   },
   sources: [
     "Central Vein Occlusion Study (CVOS Group, Ophthalmology 1995)",
     "Hayreh SS. Neovascular glaucoma (Prog Retin Eye Res 2007)",
     "Ahmed Baerveldt Comparison Study (Budenz DL et al., Ophthalmology 2011)",
     "AAO PPP Retinal Vein Occlusions (Flaxel CJ et al., Ophthalmology 2020)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**Anti-VEGF intravitréen** : Bévacizumab 1,25 mg/0,05 mL intravitréen (ou ranibizumab 0,5 mg, aflibercept 2 mg).",
+      "**Panphotocoagulation rétinienne** : Laser en clinique : ≈ 1200–1600 impacts en 1–3 séances.",
+      "**Tube de drainage** : Ahmed ou Baerveldt, au bloc, après anti-VEGF.",
+      "**Cyclophotocoagulation** : Cyclophotocoagulation transsclérale au laser diode."
+    ],
+    refer: ["**Anti-VEGF intravitréen** : Dès le diagnostic : diriger en rétine le jour même.", "**Tube de drainage** : PIO non contrôlée avec potentiel visuel."],
+    pitfall: [
+      "**Anti-VEGF intravitréen** : Effet temporaire : ne remplace pas la PRP.",
+      "**Panphotocoagulation rétinienne** : Agit en quelques semaines : couvrir par anti-VEGF entre-temps."
+    ],
+    qc: ["Québec : injections et PRP en clinique de rétine ; tubes en centre hospitalier."]
+  }
 },
 {
   id: "g-secondaires",
@@ -896,10 +1235,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Steroid-induced and uveitic glaucoma",
   tags: ["frequent", "highyield", "piege"],
   oneLiner: "PIO qui monte sous cortisone ou pendant une uvéite : identifier le mécanisme, ajuster le stéroïde, traiter l’inflammation, éviter la pilocarpine.",
-  definition: "Le glaucome cortisonique est une hausse de pression intraoculaire (PIO) provoquée par un corticostéroïde (gouttes, injection, implant, plus rarement inhalé ou oral) chez une personne sensible, appelée répondeur. Le glaucome uvéitique est une hausse de PIO causée par l’inflammation intraoculaire (uvéite), qui enflamme ou bouche le filtre de l’angle ou colle l’iris, et dont le traitement par cortisone peut aussi faire monter la pression.",
+  definition: "Glaucome cortisonique : la PIO monte sous corticostéroïde (gouttes, injection, implant, parfois inhalé ou oral) chez un répondeur. Glaucome uvéitique : l’inflammation bouche le filtre ou colle l’iris, et sa cortisone peut aussi faire monter la PIO.",
   anatomy: {
     text: "Les cellules du trabéculum (filtre de l’angle) nettoient et renouvellent leur matrice pour laisser passer l’aqueuse ; la cortisone modifie ce fonctionnement. Le corps ciliaire produit l’aqueuse : une inflammation forte le met au repos (production ↓), d’où une PIO parfois basse en uvéite active. L’iris inflammé peut se coller au cristallin (synéchies postérieures) ou à l’angle.",
-    figure: { type: "eye", highlight: ["trabeculum", "corps-ciliaire", "iris", "pupille", "chambre-anterieure", "cristallin"] }
+    figure: {
+      type: "eye",
+      highlight: ["trabeculum", "corps-ciliaire", "iris", "pupille", "chambre-anterieure", "cristallin"]
+    }
   },
   causal: {
     title: "Cortisone, inflammation et filtre de l’angle",
@@ -956,26 +1298,41 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "PIO élevée sous stéroïde, œil calme, angle ouvert ?", yes: "Réponse cortisonique : réduire, changer ou cesser le stéroïde, gouttes hypotensives.", no: "Chercher inflammation, synéchies, néovaisseaux." },
-      { q: "Uvéite active (cellules, précipités) ?", yes: "Contrôler l’inflammation (stéroïde adéquat, antiviral si herpès ou CMV) + gouttes qui ↓ la production.", no: "Glaucome post-uvéitique : gouttes, puis laser ou chirurgie." },
-      { q: "Iris bombé ?", yes: "Urgence : iridotomie (souvent plusieurs) ou iridectomie chirurgicale.", no: "Gonioscopie : étendue des synéchies antérieures." },
-      { q: "Dépôt ou implant de stéroïde en cause ?", yes: "Retirer le dépôt si possible ; sinon chirurgie filtrante.", no: "Poursuivre l’ajustement." },
-      { q: "PIO non contrôlée par les gouttes ?", yes: "Cortisonique : SLT ; uvéitique : tube, sous couverture anti-inflammatoire.", no: "Suivi rapproché de la PIO." }
+      { q: "PIO élevée sous stéroïde, œil calme, angle ouvert ?", yes: "Réponse cortisonique : réduire ou changer le stéroïde, hypotenseurs.", no: "Chercher inflammation, synéchies, néovaisseaux.", cont: "no" },
+      { q: "Uvéite active (cellules, précipités) ?", yes: "Contrôler l’inflammation (antiviral si herpès, CMV) + gouttes qui ↓ la production.", no: "Post-uvéitique : gouttes, puis laser ou chirurgie.", cont: "yes" },
+      { q: "Iris bombé ?", yes: "Urgence : iridotomies multiples ou iridectomie chirurgicale.", no: "Gonioscopie : étendue des synéchies.", cont: "no" },
+      { q: "Dépôt ou implant de stéroïde en cause ?", yes: "Retirer le dépôt si possible ; sinon chirurgie filtrante.", no: "Poursuivre l’ajustement.", cont: "no" },
+      { q: "PIO non contrôlée par les gouttes ?", yes: "Cortisonique : SLT ; uvéitique : tube sous anti-inflammatoires.", no: "Suivi rapproché de la PIO." }
     ],
     phases: [
-      { phase: "medical", items: ["Ajuster le stéroïde (voir traitements) ; immunosuppresseur avec l’uvéitologue", "Gouttes qui ↓ la production ± acétazolamide ; analogue des prostaglandines avec prudence en uvéite active ; jamais de pilocarpine"] },
-      { phase: "laser", items: ["SLT pour le glaucome cortisonique ; éviter si inflammation active", "Iridotomie pour iris bombé (peut se refermer)"] },
-      { phase: "chirurgie", items: ["Retrait d’un dépôt de triamcinolone sous-ténonien ; si réfractaire, tube (souvent Ahmed) ou trabéculectomie avec mitomycine C"] },
-      { phase: "suivi", items: ["PIO à chaque visite sous stéroïde ; prévoir une hausse quand l’uvéite se calme"] }
+      {
+        phase: "medical",
+        items: [
+          "Ajuster le stéroïde (voir traitements) ; immunosuppresseur avec l’uvéitologue",
+          "Gouttes qui ↓ la production ± acétazolamide ; analogue des prostaglandines avec prudence en uvéite active ; jamais de pilocarpine"
+        ]
+      },
+      {
+        phase: "laser",
+        items: ["SLT pour le glaucome cortisonique ; éviter si inflammation active", "Iridotomie pour iris bombé (peut se refermer)"]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Retrait d’un dépôt de triamcinolone sous-ténonien ; si réfractaire, tube (souvent Ahmed) ou trabéculectomie avec mitomycine C"]
+      },
+      {
+        phase: "suivi",
+        items: ["PIO à chaque visite sous stéroïde ; prévoir une hausse quand l’uvéite se calme"]
+      }
     ],
     local: "Au Québec, l’optométriste outillé peut traiter un glaucome cortisonique, puis doit diriger vers l’ophtalmologiste pour le suivi médical (O-7, r. 11.1). Uvéites complexes : suivi conjoint avec les cliniques d’uvéite et de rhumatologie."
   },
   treatments: [
-    { name: "Modifier ou cesser le stéroïde", how: "Réduire, espacer ou passer à un stéroïde moins hypertensif (loteprednol, fluorométholone) ou à un anti-inflammatoire non stéroïdien ; le trabéculum récupère en quelques semaines s’il est intact.", why: "Réponse cortisonique.", pros: "Traite la cause.", cons: "Impossible si le stéroïde est indispensable ou s’il s’agit d’un implant.", cx: "Rebond inflammatoire, rejet de greffe." },
-    { name: "Gouttes qui ↓ la production d’aqueuse", how: "Timolol, dorzolamide, brimonidine ; acétazolamide oral au besoin.", why: "Première ligne dans les deux glaucomes.", pros: "N’aggravent pas l’inflammation.", cons: "Analogue des prostaglandines avec prudence (inflammation, herpès).", cx: "Timolol : bronchospasme ; brimonidine : allergie." },
-    { name: "SLT (trabéculoplastie sélective au laser)", how: "Laser doux en clinique sur le trabéculum, qui se remodèle et laisse mieux sortir l’aqueuse.", why: "Glaucome cortisonique non contrôlé.", pros: "Fonctionne bien dans le cortisonique.", cons: "À éviter en uvéite active.", cx: "Inflammation, pic de PIO." },
-    { name: "Iridotomie ou iridectomie", how: "Laser YAG qui perce un petit trou dans l’iris, ou ablation chirurgicale d’un fragment d’iris : l’aqueuse contourne la pupille bloquée.", why: "Iris bombé.", pros: "Rétablit l’écoulement immédiatement.", cons: "L’iridotomie se referme souvent dans un œil inflammé.", cx: "Saignement, inflammation." },
-    { name: "Chirurgie (retrait de dépôt, tube, trabéculectomie)", how: "Au bloc : exciser un dépôt de stéroïde ; tube relié à une plaque sous la conjonctive ; ou trabéculectomie avec mitomycine C.", why: "PIO non contrôlée.", pros: "Le tube résiste mieux à l’inflammation.", cons: "Trabéculectomie : échec plus fréquent.", cx: "Hypotonie, exposition du tube, perte endothéliale." }
+    { name: "Modifier ou cesser le stéroïde", how: "Réduire, espacer ou passer à un stéroïde moins hypertensif (loteprednol, fluorométholone) ou à un anti-inflammatoire non stéroïdien ; le trabéculum récupère en quelques semaines s’il est intact.", why: "Réponse cortisonique.", pros: "Traite la cause.", cons: "Impossible si le stéroïde est indispensable ou s’il s’agit d’un implant.", cx: "Rebond inflammatoire, rejet de greffe.", dose: "Passer à loteprednol 0,5 % ou fluorométholone 0,1 %, ou espacer ; AINS si possible.", refer: "Réponse cortisonique ; récupération en semaines si le trabéculum est intact.", pitfall: "Ne pas cesser brusquement un stéroïde indispensable (uvéite, greffe) : rebond.", qc: "Québec : l’optométriste outillé peut traiter un glaucome cortisonique, puis doit diriger (O-7)." },
+    { name: "Gouttes qui ↓ la production d’aqueuse", how: "Timolol, dorzolamide, brimonidine ; acétazolamide oral au besoin.", why: "Première ligne dans les deux glaucomes.", pros: "N’aggravent pas l’inflammation.", cons: "Analogue des prostaglandines avec prudence (inflammation, herpès).", cx: "Timolol : bronchospasme ; brimonidine : allergie.", dose: "Timolol 0,5 % BID, dorzolamide 2 % TID ; acétazolamide 250 mg PO QID au besoin.", refer: "Première ligne dans les deux glaucomes.", pitfall: "PGA avec prudence en uvéite active ou herpès." },
+    { name: "SLT (trabéculoplastie sélective au laser)", how: "Laser doux en clinique sur le trabéculum, qui se remodèle et laisse mieux sortir l’aqueuse.", why: "Glaucome cortisonique non contrôlé.", pros: "Fonctionne bien dans le cortisonique.", cons: "À éviter en uvéite active.", cx: "Inflammation, pic de PIO.", dose: "SLT 360° en clinique.", refer: "Glaucome cortisonique non contrôlé.", pitfall: "À éviter en uvéite active." },
+    { name: "Iridotomie ou iridectomie", how: "Laser YAG qui perce un petit trou dans l’iris, ou ablation chirurgicale d’un fragment d’iris : l’aqueuse contourne la pupille bloquée.", why: "Iris bombé.", pros: "Rétablit l’écoulement immédiatement.", cons: "L’iridotomie se referme souvent dans un œil inflammé.", cx: "Saignement, inflammation.", dose: "Laser YAG (souvent plusieurs ouvertures) ou iridectomie chirurgicale.", refer: "Iris bombé : urgence le jour même.", pitfall: "Se referme souvent dans un œil inflammé : vérifier la perméabilité." },
+    { name: "Chirurgie (retrait de dépôt, tube, trabéculectomie)", how: "Au bloc : exciser un dépôt de stéroïde ; tube relié à une plaque sous la conjonctive ; ou trabéculectomie avec mitomycine C.", why: "PIO non contrôlée.", pros: "Le tube résiste mieux à l’inflammation.", cons: "Trabéculectomie : échec plus fréquent.", cx: "Hypotonie, exposition du tube, perte endothéliale.", dose: "Retrait du dépôt, tube (Ahmed, Baerveldt) ou trabéculectomie avec MMC.", refer: "PIO non contrôlée malgré gouttes et laser.", pitfall: "Opérer un œil calme, sous couverture anti-inflammatoire." }
   ],
   pearls: [
     { q: "Pourquoi la PIO monte-t-elle quand l’uvéite se calme ?", a: "L’inflammation avait mis le corps ciliaire au repos (production ↓). En guérissant, il produit de nouveau alors que le filtre reste abîmé : la PIO monte. Ne pas conclure trop vite à une réponse cortisonique." },
@@ -985,15 +1342,45 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "Mécanismes uvéitiques : « TIPS »", text: "**T**rabéculite (filtre enflammé), **I**ris bombé (synéchies postérieures), **P**AS (synéchies antérieures), **S**téroïdes (réponse cortisonique). Plus : reprise du corps ciliaire quand l’uvéite se calme." },
   compare: {
     title: "Cornée normale vs précipités cornéens",
-    normal: { figure: { type: "slit", pattern: "normal" }, caption: "Endothélium clair, chambre calme." },
-    patho: { figure: { type: "slit", pattern: "kp" }, caption: "Précipités sur l’endothélium : uvéite antérieure.", reveal: ["Amas blanchâtres sur l’endothélium, souvent en triangle inférieur (Arlt)", "Étoilés diffus : Fuchs ; en pièce de monnaie : CMV ; en graisse de mouton : granulomateuse", "Chercher cellules et flare", "PIO élevée = uvéite hypertensive"] }
+    normal: {
+      figure: { type: "slit", pattern: "normal" },
+      caption: "Endothélium clair, chambre calme."
+    },
+    patho: {
+      figure: { type: "slit", pattern: "kp" },
+      caption: "Précipités sur l’endothélium : uvéite antérieure.",
+      reveal: [
+        "Amas blanchâtres sur l’endothélium, souvent en triangle inférieur (Arlt)",
+        "Étoilés diffus : Fuchs ; en pièce de monnaie : CMV ; en graisse de mouton : granulomateuse",
+        "Chercher cellules et flare",
+        "PIO élevée = uvéite hypertensive"
+      ]
+    }
   },
   sources: [
     "Jones R, Rhee DJ. Corticosteroid-induced ocular hypertension and glaucoma (Curr Opin Ophthalmol 2006)",
     "Armaly MF (Arch Ophthalmol 1963) et Becker B (Invest Ophthalmol 1965) : réponse cortisonique",
     "Siddique SS et al. Glaucoma and uveitis (Surv Ophthalmol 2013)",
     "Règlement sur les médicaments qu’un optométriste peut administrer ou prescrire (O-7, r. 11.1, Québec 2018)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**Modifier ou cesser le stéroïde** : Passer à loteprednol 0,5 % ou fluorométholone 0,1 %, ou espacer ; AINS si possible.",
+      "**Gouttes qui ↓ la production d’aqueuse** : Timolol 0,5 % BID, dorzolamide 2 % TID ; acétazolamide 250 mg PO QID au besoin.",
+      "**SLT** : SLT 360° en clinique.",
+      "**Iridotomie ou iridectomie** : Laser YAG (souvent plusieurs ouvertures) ou iridectomie chirurgicale.",
+      "**Chirurgie** : Retrait du dépôt, tube (Ahmed, Baerveldt) ou trabéculectomie avec MMC."
+    ],
+    refer: [
+      "**Iridotomie ou iridectomie** : Iris bombé : urgence le jour même.",
+      "**Modifier ou cesser le stéroïde** : Réponse cortisonique ; récupération en semaines si le trabéculum est intact."
+    ],
+    pitfall: [
+      "**Modifier ou cesser le stéroïde** : Ne pas cesser brusquement un stéroïde indispensable (uvéite, greffe) : rebond.",
+      "**SLT** : À éviter en uvéite active."
+    ],
+    qc: ["Québec : l’optométriste outillé peut traiter un glaucome cortisonique, puis doit diriger (O-7)."]
+  }
 },
 {
   id: "g-postop",
@@ -1003,10 +1390,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "The operated glaucoma patient: trabeculectomy, tubes, MIGS",
   tags: ["urgent", "frequent", "highyield"],
   oneLiner: "Après chirurgie filtrante, lire PIO × profondeur de chambre, chercher une fuite (Seidel) et ne jamais manquer une infection de bulle.",
-  definition: "Les chirurgies du glaucome créent une nouvelle sortie pour l’humeur aqueuse : vers une poche sous la conjonctive appelée bulle (trabéculectomie, PreserFlo, XEN), vers une plaque fixée sur la sclère (tubes) ou vers le canal de Schlemm (MIGS, chirurgies microinvasives). En clinique, on distingue l’évolution normale des complications, dont certaines, comme l’infection de la bulle, menacent la vision en quelques heures.",
+  definition: "Les chirurgies du glaucome créent une nouvelle sortie pour l’aqueuse : vers une bulle sous la conjonctive (trabéculectomie, PreserFlo, XEN), une plaque (tubes) ou le canal de Schlemm (MIGS). Il faut distinguer l’évolution normale des complications, dont l’infection de bulle, urgente.",
   anatomy: {
     text: "Dans la trabéculectomie, l’aqueuse passe par une fistule creusée sous un volet de sclère, puis s’accumule sous la conjonctive où les vaisseaux la résorbent : c’est la bulle de filtration. La cicatrisation est l’ennemi principal ; la mitomycine C (MMC, anticicatrisant) la freine. Les MIGS restent dans la voie naturelle : la PIO ne peut y descendre sous la pression veineuse épisclérale (≈ 8–10 mmHg).",
-    figure: { type: "eye", highlight: ["conjonctive", "sclere", "chambre-anterieure", "trabeculum", "schlemm", "choroide"] }
+    figure: {
+      type: "eye",
+      highlight: ["conjonctive", "sclere", "chambre-anterieure", "trabeculum", "schlemm", "choroide"]
+    }
   },
   causal: {
     title: "Filtrer juste assez : débit, cicatrice, infection",
@@ -1035,7 +1425,8 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   presentation: [
     "Bulle fonctionnelle : diffuse, peu surélevée, modérément vascularisée",
     "Bulle à risque : mince, avasculaire, kystique ; encapsulée : dôme ferme, PIO haute",
-    "Alarme : œil rouge, douleur, écoulement, vision ↓"
+    "Alarme : œil rouge, douleur, écoulement, vision ↓",
+    "Tube exposé : risque d’endophtalmite, réparer"
   ],
   exam: {
     signs: [
@@ -1061,30 +1452,50 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   redFlags: [
     "Bulle blanche, œil rouge et douloureux ± hypopyon : infection, le jour même",
     "Douleur brutale, PIO haute, chambre plate : hémorragie suprachoroïdienne",
-    "Cristallin qui touche la cornée : reformer la chambre en urgence",
-    "Tube exposé : risque d’endophtalmite, réparer"
+    "Cristallin qui touche la cornée : reformer la chambre en urgence"
   ],
   cat: {
     algo: [
-      { q: "Signes d’infection (bulle blanche, hypopyon, douleur) ?", yes: "Blébite : antibiotiques topiques intensifs ; endophtalmite : ponction + vancomycine 1 mg/0,1 mL et ceftazidime 2,25 mg/0,1 mL intravitréennes ± vitrectomie, le jour même.", no: "Évaluer PIO et chambre." },
-      { q: "PIO basse, chambre étroite ?", yes: "Seidel positif : lentille pansement, suture ; négatif : atropine, surveiller ; reformer si contact cristallin–cornée.", no: "Question suivante." },
-      { q: "PIO haute, chambre étroite ?", yes: "Iridectomie bouchée : iridotomie ; perméable : mal-direction (atropine, laser YAG, vitrectomie) ; dômes sombres : hémorragie.", no: "Question suivante." },
-      { q: "PIO haute, chambre profonde ?", yes: "Gonioscopie, massage, lyse de sutures au laser ou retrait du ripcord ; bulle encapsulée : needling ± 5-FU ; hausse tardive sous stéroïde : penser réponse cortisonique.", no: "PIO à la cible : sevrage lent du stéroïde ; PIO basse et chambre formée : Seidel, surveiller la macula." }
+      { q: "Signes d’infection (bulle blanche, hypopyon, douleur) ?", yes: "Le jour même : blébite = antibiotiques ; endophtalmite = ponction + injection.", no: "Évaluer PIO et chambre.", cont: "no" },
+      { q: "PIO basse, chambre étroite ?", yes: "Seidel + : lentille, suture ; Seidel − : atropine, surveiller.", no: "Question suivante.", cont: "no" },
+      { q: "PIO haute, chambre étroite ?", yes: "Iridotomie si bloc ; sinon mal-direction ou hémorragie suprachoroïdienne.", no: "Question suivante.", cont: "no" },
+      { q: "PIO haute, chambre profonde ?", yes: "Massage, lyse de sutures ou retrait du ripcord ; needling si encapsulée.", no: "PIO à la cible : sevrage lent du stéroïde." }
     ],
     phases: [
-      { phase: "medical", items: ["Antibiotique les premières semaines ; stéroïde topique intensif, sevré lentement", "Atropine si chambre étroite"] },
-      { phase: "laser", items: ["Lyse de sutures au laser ; laser YAG si mal-direction ou fistule bouchée"] },
-      { phase: "chirurgie", items: ["Needling, révision de bulle, reformation de chambre, recouvrement d’un tube exposé"] },
-      { phase: "suivi", items: ["Jour 1, semaine 1, puis rapproché les premiers mois ; à vie, inspecter la bulle", "Œil rouge douloureux : consulter le jour même"] },
-      { phase: "escalade", items: ["Seconde chirurgie (souvent tube), puis cyclophotocoagulation"] }
+      {
+        phase: "medical",
+        items: ["Antibiotique les premières semaines ; stéroïde topique intensif, sevré lentement", "Atropine si chambre étroite"]
+      },
+      {
+        phase: "laser",
+        items: ["Lyse de sutures au laser ; laser YAG si mal-direction ou fistule bouchée"]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Needling, révision de bulle, reformation de chambre, recouvrement d’un tube exposé"]
+      },
+      {
+        phase: "suivi",
+        items: [
+          "Jour 1, semaine 1, puis rapproché les premiers mois ; à vie, inspecter la bulle",
+          "Œil rouge douloureux : consulter le jour même",
+          "Endophtalmite liée à la bulle : ponction + vancomycine 1 mg/0,1 mL et ceftazidime 2,25 mg/0,1 mL intravitréennes ± vitrectomie, le jour même.",
+          "PIO haute, chambre étroite : iridectomie bouchée → iridotomie ; perméable → mal-direction (atropine, laser YAG, vitrectomie) ; dômes sombres → hémorragie suprachoroïdienne.",
+          "PIO haute, chambre profonde : gonioscopie, massage, lyse de sutures au laser ou retrait du ripcord ; bulle encapsulée : needling ± 5-FU ; hausse tardive sous stéroïde : réponse cortisonique. PIO basse et chambre formée : Seidel, surveiller la macula."
+        ]
+      },
+      {
+        phase: "escalade",
+        items: ["Seconde chirurgie (souvent tube), puis cyclophotocoagulation"]
+      }
     ],
     local: "Au Québec, ces chirurgies se font surtout en centre hospitalier ; couverture RAMQ des MIGS et des implants à vérifier."
   },
   treatments: [
-    { name: "Trabéculectomie avec mitomycine C", how: "Au bloc : volet taillé dans la sclère, fistule sous ce volet vers la chambre et petite iridectomie ; l’aqueuse forme une bulle sous la conjonctive. Sutures ajustables pour titrer le débit (massage, lyse au laser).", why: "Glaucome avancé, PIO cible basse.", pros: "PIO la plus basse.", cons: "Suivi intensif ; échec par fibrose.", cx: "Hypotonie, fuite, cataracte, infection de bulle à vie." },
-    { name: "PreserFlo MicroShunt et XEN", how: "Au bloc : microtube souple (PreserFlo par l’extérieur avec MMC ; XEN par l’intérieur ou à conjonctive ouverte) qui draine vers une bulle ; parfois un ripcord (fil intraluminal), retiré en clinique pour ↑ le débit.", why: "Alternative moins invasive à la trabéculectomie.", pros: "Récupération rapide, moins d’hypotonie.", cons: "PIO un peu moins basse ; needling fréquent (XEN).", cx: "Fibrose, hypotonie, exposition, infection de bulle." },
-    { name: "Tube : Ahmed ou Baerveldt", how: "Au bloc : tube dans la chambre relié à une plaque sur la sclère, où une capsule résorbe l’aqueuse. Ahmed : valve ; Baerveldt : sans valve, ligaturé (± ripcord) jusqu’à la formation de la capsule.", why: "Échec de trabéculectomie, glaucome néovasculaire ou uvéitique.", pros: "Résiste à la fibrose ; Baerveldt : PIO plus basse à long terme.", cons: "Ahmed : phase hypertensive ; Baerveldt : hypotonie à l’ouverture.", cx: "Exposition, contact tube–cornée (perte endothéliale), diplopie." },
-    { name: "MIGS : iStent, Hydrus, KDB", how: "Au bloc, souvent avec la cataracte, par l’intérieur : micro-implant vers le canal de Schlemm (iStent, Hydrus) ou excision d’une bande de trabéculum (KDB).", why: "Glaucome léger à modéré.", pros: "Très sécuritaires, sans bulle.", cons: "Baisse modeste (plancher épiscléral).", cx: "Hyphéma, pic de PIO, implant bouché." }
+    { name: "Trabéculectomie avec mitomycine C", how: "Au bloc : volet taillé dans la sclère, fistule sous ce volet vers la chambre et petite iridectomie ; l’aqueuse forme une bulle sous la conjonctive. Sutures ajustables pour titrer le débit (massage, lyse au laser).", why: "Glaucome avancé, PIO cible basse.", pros: "PIO la plus basse.", cons: "Suivi intensif ; échec par fibrose.", cx: "Hypotonie, fuite, cataracte, infection de bulle à vie.", dose: "Au bloc, avec mitomycine C ; sutures ajustables en clinique (massage, lyse au laser).", refer: "Glaucome avancé ou PIO cible basse.", pitfall: "Infection de bulle possible à vie : œil rouge et douloureux = consulter le jour même." },
+    { name: "PreserFlo MicroShunt et XEN", how: "Au bloc : microtube souple (PreserFlo par l’extérieur avec MMC ; XEN par l’intérieur ou à conjonctive ouverte) qui draine vers une bulle ; parfois un ripcord (fil intraluminal), retiré en clinique pour ↑ le débit.", why: "Alternative moins invasive à la trabéculectomie.", pros: "Récupération rapide, moins d’hypotonie.", cons: "PIO un peu moins basse ; needling fréquent (XEN).", cx: "Fibrose, hypotonie, exposition, infection de bulle.", dose: "Microtube vers une bulle ; ripcord parfois retiré en clinique.", refer: "Alternative moins invasive à la trabéculectomie.", pitfall: "Fibrose : needling fréquent (XEN)." },
+    { name: "Tube : Ahmed ou Baerveldt", how: "Au bloc : tube dans la chambre relié à une plaque sur la sclère, où une capsule résorbe l’aqueuse. Ahmed : valve ; Baerveldt : sans valve, ligaturé (± ripcord) jusqu’à la formation de la capsule.", why: "Échec de trabéculectomie, glaucome néovasculaire ou uvéitique.", pros: "Résiste à la fibrose ; Baerveldt : PIO plus basse à long terme.", cons: "Ahmed : phase hypertensive ; Baerveldt : hypotonie à l’ouverture.", cx: "Exposition, contact tube–cornée (perte endothéliale), diplopie.", dose: "Ahmed (valve) ou Baerveldt (ligaturé jusqu’à la formation de la capsule).", refer: "Échec de trabéculectomie, glaucome néovasculaire ou uvéitique.", pitfall: "Tube exposé ou qui touche la cornée : référer rapidement." },
+    { name: "MIGS : iStent, Hydrus, KDB", how: "Au bloc, souvent avec la cataracte, par l’intérieur : micro-implant vers le canal de Schlemm (iStent, Hydrus) ou excision d’une bande de trabéculum (KDB).", why: "Glaucome léger à modéré.", pros: "Très sécuritaires, sans bulle.", cons: "Baisse modeste (plancher épiscléral).", cx: "Hyphéma, pic de PIO, implant bouché.", dose: "iStent, Hydrus ou KDB, souvent avec la cataracte.", refer: "Glaucome léger à modéré.", pitfall: "Baisse modeste : ne vise pas une PIO cible très basse.", qc: "Québec : surtout en centre hospitalier ; couverture RAMQ des MIGS et des implants à vérifier." }
   ],
   pearls: [
     { q: "Jour 1 post-trabéculectomie : PIO 4 mmHg, chambre étroite ?", a: "Seidel : positif = fuite (lentille, suture) ; négatif = surfiltration ou effusion (fond d’œil, atropine). Reformer si le cristallin touche la cornée." },
@@ -1094,15 +1505,42 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "Grille PIO × chambre", text: "**Basse + étroite** : fuite (Seidel), surfiltration, effusion choroïdienne. **Haute + étroite** : mal-direction, hémorragie suprachoroïdienne, bloc pupillaire. **Haute + profonde** : volet serré, fistule bouchée, bulle encapsulée." },
   compare: {
     title: "Segment antérieur normal vs bulle de filtration",
-    normal: { figure: { type: "slit", pattern: "normal" }, caption: "Conjonctive supérieure plate, aucune bulle." },
-    patho: { figure: { type: "slit", pattern: "bleb" }, caption: "Bulle de filtration supérieure après trabéculectomie.", reveal: ["Soulèvement conjonctival sous la paupière supérieure", "Iridectomie périphérique à 12 h, sous la bulle", "Diffuse et modérément vascularisée = fonctionnelle", "Mince, avasculaire, kystique = risque de fuite et d’infection", "PIO basse : faire un Seidel"] }
+    normal: {
+      figure: { type: "slit", pattern: "normal" },
+      caption: "Conjonctive supérieure plate, aucune bulle."
+    },
+    patho: {
+      figure: { type: "slit", pattern: "bleb" },
+      caption: "Bulle de filtration supérieure après trabéculectomie.",
+      reveal: [
+        "Soulèvement conjonctival sous la paupière supérieure",
+        "Iridectomie périphérique à 12 h, sous la bulle",
+        "Diffuse et modérément vascularisée = fonctionnelle",
+        "Mince, avasculaire, kystique = risque de fuite et d’infection",
+        "PIO basse : faire un Seidel"
+      ]
+    }
   },
   sources: [
     "Tube Versus Trabeculectomy Study (Gedde SJ et al., Am J Ophthalmol 2012)",
     "Ahmed Baerveldt Comparison Study (Budenz DL et al., Ophthalmology 2011)",
     "MicroShunt vs trabéculectomie (Baker ND et al., Ophthalmology 2021)",
     "AAO PPP Primary Open-Angle Glaucoma (Gedde SJ et al., Ophthalmology, en ligne 9 févr. 2026)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**Trabéculectomie avec mitomycine C** : Au bloc, avec mitomycine C ; sutures ajustables en clinique (massage, lyse au laser).",
+      "**PreserFlo MicroShunt et XEN** : Microtube vers une bulle ; ripcord parfois retiré en clinique.",
+      "**Tube** : Ahmed (valve) ou Baerveldt (ligaturé jusqu’à la formation de la capsule).",
+      "**MIGS** : iStent, Hydrus ou KDB, souvent avec la cataracte."
+    ],
+    refer: ["**Tube** : Échec de trabéculectomie, glaucome néovasculaire ou uvéitique."],
+    pitfall: [
+      "**Trabéculectomie avec mitomycine C** : Infection de bulle possible à vie : œil rouge et douloureux = consulter le jour même.",
+      "**MIGS** : Baisse modeste : ne vise pas une PIO cible très basse."
+    ],
+    qc: ["Québec : surtout en centre hospitalier ; couverture RAMQ des MIGS et des implants à vérifier."]
+  }
 }
 ]);
 

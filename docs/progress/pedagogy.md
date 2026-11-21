@@ -20,6 +20,44 @@
 - Note : des commits d’autres rôles (ac7a1d3, aca1488) ont inclus une partie de ces modifications en cours de route; le reste est dans l’arbre de travail, non commité, non poussé.
 - À faire par un autre rôle : `docs/FACTS.md` l. 154 (même attribution ISGEO ≥ 180° à corriger).
 
+### Cycle 7 (21 nov. 2026) — fiches cornée allégées
+- 14 fiches du module B : définitions de 2 phrases (≤ 60 mots à l’écran Voir); arbres réécrits avec `cont`; cartes Traitement (`treatment: {first, refer, pitfall, qc}`) générées depuis les nouveaux champs par traitement `dose/refer/pitfall/qc`; ≤ 3 drapeaux rouges; 4–5 points essentiels (doublons retirés); moyens mnémotechniques raccourcis; les détails déplacés vont dans `anatomy.text` (Pour aller plus loin).
+- Mots visibles par défaut : FR 6605 → 5143 (−22 %), EN 6360 → 4998 (−21 %); 0 écran au-dessus des plafonds (détail dans PEDAGOGY-REVIEW.md, Cycle 7).
+- Validation : 7 fichiers chargés dans node, alignement FR/EN vérifié (longueurs, `cont`, champs des traitements), `tools/validate.js` OK, `tools/build_web.py` OK, rendu Playwright (arbre + cartes) sans erreur JS.
+- Pour le web : afficher `f.treatments` (détail) dans « Pour aller plus loin » quand `f.treatment` existe.
+- Non commité, non poussé (le rôle web pousse).
+
+Script de comptage (à lancer avec `node wc.js [racine]`, `--json` pour la sortie brute) :
+```js
+// Default-visible word counts per cornea fiche (level 1 « Fondamentaux »), per screen, FR and EN (overlay merged).
+const root=process.argv.slice(2).find(a=>!a.startsWith('-'))||'/home/claude/ophtalmo-academie';
+const path=require('path'); global.window=undefined; globalThis.OPH={}; globalThis.OPH_EN={};
+['fiches-cornee','fiches-cornee-2','ext-cornee-a','ext-cornee-b','hy-cornee'].forEach(f=>require(path.join(root,'data',f+'.js')));
+require(path.join(root,'data-en','fiches-cornee.js')); try{ require(path.join(root,'data-en','hy.js')); }catch(e){}
+const merge=(a,b)=>{ if(b===undefined) return a; if(Array.isArray(b)||typeof b!=='object'||b===null) return b; const o=Object.assign({},a); for(const k of Object.keys(b)) o[k]=merge(a?a[k]:undefined,b[k]); return o; };
+const W=s=>!s?0:String(s).replace(/\*\*|\[\[|\]\]/g,'').split(/\s+/).filter(x=>/[\p{L}\p{N}]/u.test(x)).length;
+const sum=a=>a.reduce((x,y)=>x+W(y),0);
+const ids=OPH.fiches.filter(f=>f.module==='B').map(f=>f.id);
+const rows=[]; const tot={};
+for(const lg of ['fr','en']) for(const id of ids){
+  let f=OPH.fiches.find(x=>x.id===id); let h=OPH.hy[id]||{};
+  if(lg==='en'){ f=merge(f,OPH_EN.fiches[id]||{}); h=merge(h,(OPH_EN.hy||{})[id]||{}); }
+  const r={id,lg};
+  r.one=W(f.oneLiner);
+  r.voir=W(f.definition)+(f.compare?W(f.compare.title)+W(f.compare.normal.caption)+W(f.compare.patho.caption):0);
+  r.comp=sum(h.essentials||[])+W(f.causal.title)+sum(f.causal.levers.map(l=>l.label))+sum(f.causal.steps.map(s=>s.label))+(f.mnemonic?W(f.mnemonic.title)+W(f.mnemonic.text):0);
+  r.ess=(h.essentials||[]).length;
+  r.dec=sum(f.redFlags.slice(0,3))+(f.treatment?sum([].concat(f.treatment.first||[],f.treatment.refer||[],f.treatment.pitfall||[],f.treatment.qc||[])):sum(f.treatments.map(t=>[t.name,t.how,t.why].join(' '))));
+  r.algo=sum(f.cat.algo.map(a=>a.q+' '+a.yes+' '+a.no)); r.algoMaxQ=Math.max(...f.cat.algo.map(a=>W(a.q))); r.algoMaxA=Math.max(...f.cat.algo.map(a=>Math.max(W(a.yes),W(a.no))));
+  r.train=sum(f.pearls.map(p=>p.q));
+  r.total=r.one+r.voir+r.comp+r.dec+r.algo+r.train; rows.push(r);
+}
+const json=process.argv.includes('--json'); if(json){ console.log(JSON.stringify(rows)); process.exit(0); }
+console.log('id               lg  1line voir comp(ess) dec algo(maxQ/maxA) train total');
+for(const r of rows) console.log(r.id.padEnd(16),r.lg,String(r.one).padStart(5),String(r.voir).padStart(4),(r.comp+'('+r.ess+')').padStart(9),String(r.dec).padStart(4),(r.algo+'('+r.algoMaxQ+'/'+r.algoMaxA+')').padStart(11),String(r.train).padStart(5),String(r.total).padStart(5));
+for(const lg of ['fr','en']){ const R=rows.filter(r=>r.lg===lg); console.log(lg,'TOTAL', R.reduce((a,r)=>a+r.total,0), '| over budget: voir>60', R.filter(r=>r.voir>60).length, 'comp>120', R.filter(r=>r.comp>120).length, 'dec>180', R.filter(r=>r.dec>180).length, 'oneLiner>40', R.filter(r=>r.one>40).length, 'ess>5', R.filter(r=>r.ess>5).length); }
+```
+
 ## Reste / pour les autres rôles
 - **Exercices interactifs** : appliquer les corrections 1–5 de PEDAGOGY-REVIEW.md (« Corrections outils »); brancher `G.OPH.imageCases` (même schéma que `invPractice`, + `topic`, `featured`) avec `G.OPH.imageCasesMedia` (kind/photo/hotspots/alt; crédit via `Photo.credit`). Le moteur accepte un objet média direct (`mediaById(obj)`).
 - **Web/build** : ajouter `data/cases-images.js` aux données chargées (FR, contenu bilingue natif); route proposée `#cas-images` ou intégration au hub Investigations.
@@ -28,3 +66,7 @@
 
 ## Blocages
 - Aucun. Sources web listées dans PEDAGOGY-REVIEW.md (market/SOURCES.md hors périmètre).
+
+## Cycle 7 — glaucome (fait)
+- 13 fiches C + surcouche EN : définitions en 2 phrases, arbres avec `cont`, drapeaux ≤ 3, cartes Traitement (`treatment` + `dose/refer/pitfall/qc` par traitement). Chiffres avant/après : docs/PEDAGOGY-REVIEW.md « Cycle 7 — glaucome ». Outil : tools/wordcount-fiches.js.
+- Reste : essentiels hy-glaucome ≤ 15 mots (Comprendre > 120) ; rendu des champs par traitement au niveau 2 (rôle web).

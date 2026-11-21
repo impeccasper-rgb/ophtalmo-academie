@@ -42,6 +42,46 @@ Les nouveaux médias sont définis dans `data/investigations.js` sous de **nouve
 2. p-ascan-4 : le schéma svg du rôle visuels étiquette les tracés **A** (haut) et **B** (bas) → texte remis en A/B.
 3. OPH-136/135 : la source ne donne pas la latéralité; l’image montre l’excavation qui atteint le rebord en bas à gauche et les vaisseaux qui émergent à droite → avec la légende « inferotemporal », c’est un OD. La question évite d’affirmer l’œil et guide par l’image (vaisseaux côté nasal = à droite).
 
+## Cycle 7 — fiches cornée (module B) allégées, arbres et traitement (2026-11-21)
+Cadre : `docs/STYLE-PEDAGO.md` (budgets par écran au niveau « Fondamentaux »). Fichiers : `data/fiches-cornee.js`, `fiches-cornee-2.js`, `ext-cornee-a.js`, `ext-cornee-b.js`, `data/hy-cornee.js`, overlays `data-en/fiches-cornee.js` et `data-en/hy.js` (clés cornée seulement). Tableaux FR/EN gardés identiques en nombre et en ordre (vérifié par script).
+
+**Mots visibles par défaut** (en-tête + Voir + Comprendre + Décider hors arbre + arbre + questions du patron; mêmes règles avant et après; Décider avant = drapeaux + traitements « nom, comment, pourquoi »; après = 3 drapeaux + cartes Traitement) :
+
+| Fiche | FR avant → après | EN avant → après | Voir FR (≤ 60) | Comprendre FR (≤ 120) | Décider FR hors arbre (≤ 180) | Arbre : q max / branche max (mots) |
+|---|---|---|---|---|---|---|
+| c-secheresse | 416 → 349 | 377 → 327 | 65 → 50 | 118 → 102 | 131 → 103 | 11/11 → 7/7 |
+| c-bacterienne | 461 → 354 | 456 → 350 | 60 → 46 | 128 → 96 | 137 → 96 | 7/15 → 6/9 |
+| c-atypiques | 458 → 360 | 425 → 340 | 68 → 50 | 114 → 96 | 149 → 103 | 13/11 → 8/8 |
+| c-herpes | 478 → 359 | 471 → 357 | 78 → 53 | 120 → 107 | 128 → 97 | 12/23 → 7/10 |
+| c-keratocone | 429 → 358 | 409 → 340 | 52 → 46 | 119 → 99 | 131 → 104 | 6/12 → 6/7 |
+| c-fuchs | 482 → 365 | 467 → 366 | 90 → 59 | 113 → 105 | 157 → 106 | 14/20 → 6/8 |
+| c-erosion | 547 → 381 | 530 → 377 | 83 → 58 | 144 → 108 | 201 → 116 | 11/14 → 6/8 |
+| c-pterygion | 474 → 348 | 461 → 340 | 88 → 55 | 126 → 99 | 157 → 96 | 8/8 → 7/7 |
+| c-greffe | 476 → 363 | 447 → 350 | 73 → 52 | 118 → 94 | 158 → 105 | 8/13 → 8/9 |
+| c-brulure | 518 → 402 | 510 → 385 | 80 → 57 | 127 → 111 | 180 → 128 | 9/19 → 6/8 |
+| c-dystrophies | 444 → 371 | 433 → 366 | 77 → 55 | 136 → 108 | 110 → 90 | 6/11 → 6/9 |
+| c-depots | 484 → 358 | 469 → 357 | 72 → 51 | 160 → 101 | 132 → 97 | 8/10 → 7/7 |
+| c-surface | 442 → 375 | 433 → 360 | 76 → 55 | 133 → 112 | 123 → 115 | 8/13 → 8/8 |
+| c-peripherie | 496 → 400 | 472 → 383 | 82 → 53 | 119 → 99 | 138 → 115 | 8/12 → 6/8 |
+| **Total (14)** | **6605 → 5143** (-22 %) | **6360 → 4998** (-21 %) | | | | |
+
+Les 14 fiches respectent maintenant les plafonds (Voir ≤ 60, Comprendre ≤ 120, Décider ≤ 180, ≤ 5 points essentiels, arbre : question ≤ 8 mots et branche ≤ 12 mots), en FR et en EN. Au rendu (Playwright, 390 px), l’arbre affiche bien la branche qui continue et les 4 cartes Traitement.
+
+**Ce qui a changé, par fiche**
+- **En deux phrases** (`definition`) : ≤ 2 phrases, environ 30–35 mots. Les détails propres qui en sortent sont ajoutés à `anatomy.text`, sous « Pour aller plus loin » (zona, pinguécula et OSSN, causes de PUK, formes cornéennes des conjonctivites, séquelle de brûlure).
+- **Arbre** (`cat.algo`) : réécrit en chaîne de décisions, avec `cont: "yes"|"no"` (la branche qui mène à la question suivante; absent sur le dernier nœud, comme le prévoit `src/tree.js`).
+- **Traitement** : chaque traitement garde ses champs détaillés (`how`, `why`, `pros`, `cons`, `cx`) et reçoit `dose` (1re ligne, posologie usuelle), `refer` (quand référer), `pitfall` (piège) et `qc` (note québécoise, seulement si utile). Un bloc `treatment: { first, refer, pitfall, qc }` est généré à partir de ces champs pour les 4 cartes de `txBlock`.
+- **Drapeaux rouges** : ≤ 3. Les items en double sont fusionnés; « Wilson » (c-depots) passe dans `anatomy.text`.
+- **Points essentiels** : 4–5 points. Un point par fiche est retiré dans 9 fiches seulement quand il répétait un drapeau rouge, le moyen mnémotechnique ou l’arbre (ex. RSVP, carcinome sébacé, OSSN, gonocoque, PUK).
+- **Moyens mnémotechniques** : raccourcis. Les listes longues (signes du kératocône, phrase « Marilyn Monroe… », couches et couleurs des dépôts) passent dans `anatomy.text`.
+- Rien de supprimé hors redondance; aucun contenu clinique nouveau sauf les posologies usuelles des cartes (doses standard, à relire ci-dessous).
+
+**À relire (posologies ajoutées dans les cartes)** : larmes sans agent de conservation 4–6×/j; cyclosporine 0,05–0,09 % ou lifitégrast 5 % 2×/j; moxifloxacine 0,5 % aux heures; vancomycine (ou céfazoline) + tobramycine fortifiées alternées aux heures; PHMB ou chlorhexidine 0,02 % aux heures; natamycine 5 % aux heures; voriconazole 1 % aux heures; acyclovir 400 mg 5×/j ou valacyclovir 500 mg 3×/j (épithéliale), prophylaxie acyclovir 400 mg 2×/j (HEDS); trifluridine 1 % 9×/j; NaCl 5 % goutte 4×/j ou onguent au coucher; érythromycine onguent 4×/j; doxycycline 50 mg 2×/j × 2 mois (érosions) ou 100 mg 2×/j (brûlure, fonte); vitamine C 1–2 g/j; olopatadine 0,1 % ou kétotifène 0,025 % 2×/j; fluorométholone 0,1 % 4×/j.
+
+**Pour le rôle web** : quand `f.treatment` est présent, `txBlock` n’affiche plus la liste détaillée `f.treatments` (comment, pourquoi, avantages, limites, complications) à aucun niveau. Proposer de l’ajouter dans « Pour aller plus loin » de l’écran Décider.
+
+Contrôle des mots : script `wc.js` (écrans visibles par défaut, FR et EN fusionnés), reproduit dans `docs/progress/pedagogy.md`.
+
 ## Cycle 4 — indice de longueur des réponses et corrections (2026-11-21)
 **Constat (docs/TEST-REPORT.md, D2)** : la bonne réponse était l’option la plus longue dans 74 % des items Investigations, 86 % des cas en images et 69 % des cas sur images libres (`cases-open.js`).
 **Méthode** : bonnes réponses resserrées sur le seul diagnostic ou geste (le « parce que » est déjà dans `why`/`reveal`; `why` complété quand un détail retiré n’y figurait pas : ic-c03, ic-c08, ic-c06, oc-19), distracteurs allongés avec un détail clinique aussi précis (ex. « Décollement choroïdien (dômes lisses qui épargnent la papille) »). Ensuite, rééquilibrage pour éviter l’indice inverse : la bonne réponse redevient la plus longue dans ≈ 20 % des items, et la plus courte dans ≈ 20 %. Sens, bonne réponse et explications inchangés. `cases-open.js` : positions de la bonne réponse réparties (avant : 15/16/4/0; après : 8/9/9/9).
@@ -191,3 +231,46 @@ Vérifié **sans correction** : EYES (normal 23,5 / ACD 3,2 / cristallin 4,0; co
 
 ## Sources consultées (21 nov. 2026)
 Pages EyeRounds (légendes, contexte) : tutoriel d’échographie oculaire; atlas *Nanophthalmos B-scan* (sclère ≈ 2,4 mm, LA 17,1 mm); *Angle recession / cyclodialysis*; *Peripheral anterior synechiae* (ICE); *CRAO*; *Papilledema*; *Acute angle closure* (PIO 70+ mmHg, OD); *Lamina cribrosa in POAG* (encoche inférotemporale, latéralité non précisée); *Apraclonidine test for Horner’s* (œil non précisé); *Endophthalmitis* (post-trabéculectomie). EyeWiki *Nanophthalmos* (LA ≤ 18–20 mm; pas de seuil chiffré d’épaisseur). Non consignées dans market/SOURCES.md (hors périmètre).
+
+## Cycle 7 — glaucome (2026-11-21)
+
+Périmètre : les 13 fiches du module C (data/fiches-glaucome.js, data/ext-glaucome-a.js, data/ext-glaucome-b.js) et leur surcouche data-en/fiches-glaucome.js (FR/EN synchronisés : mêmes longueurs et ordre de tableaux, `cont` copié ; 0 écart au contrôle). Modifications faites par script (fiche par fiche, objets re-sérialisés), `node tools/validate.js` → OK.
+
+**Comptage** : `node tools/wordcount-fiches.js C [--en] [--root=<arbre>]` compte les mots visibles au niveau « Fondamentaux » par écran, comme le rendu (ponctuation seule non comptée ; Décider inclut le bloc Traitement). Avant = HEAD 86349c4 (arbre extrait), après = arbre de travail.
+
+| Fiche | oneLiner | Voir (≤ 60) | Comprendre (≤ 120) | Décider hors arbre (≤ 180) | Arbre | Total FR | Total EN | q max / oui-non max (≤ 8 / ≤ 12) | Drapeaux (≤ 3) |
+|---|---|---|---|---|---|---|---|---|---|
+| g-gpao | 19 → 19 | 72 → 58 | 123 → 123 | 136 → 121 | 83 → 75 | 447 → 410 | 424 → 396 | 10/15 → 6/9 | 3 → 3 |
+| g-hto | 18 → 18 | 74 → 59 | 128 → 128 | 105 → 95 | 80 → 70 | 418 → 383 | 397 → 367 | 13/15 → 8/11 | 3 → 3 |
+| g-gpn | 15 → 15 | 81 → 58 | 117 → 117 | 160 → 107 | 58 → 56 | 444 → 366 | 424 → 357 | 10/9 → 8/9 | 4 → 3 |
+| g-fermeture | 22 → 22 | 75 → 55 | 124 → 124 | 157 → 146 | 81 → 77 | 482 → 447 | 491 → 452 | 11/8 → 8/8 | 3 → 3 |
+| g-crise | 22 → 22 | 71 → 57 | 128 → 128 | 168 → 150 | 120 → 105 | 529 → 482 | 531 → 477 | 11/12 → 8/12 | 3 → 3 |
+| g-pxf | 21 → 21 | 81 → 52 | 123 → 123 | 150 → 128 | 86 → 80 | 478 → 421 | 444 → 393 | 7/15 → 7/10 | 3 → 3 |
+| g-pigmentaire | 19 → 19 | 69 → 53 | 124 → 124 | 141 → 109 | 84 → 76 | 464 → 408 | 440 → 375 | 8/15 → 7/9 | 3 → 3 |
+| g-neovasculaire | 20 → 20 | 82 → 59 | 126 → 126 | 150 → 123 | 102 → 92 | 494 → 434 | 472 → 419 | 8/10 → 6/9 | 3 → 3 |
+| g-secondaires | 20 → 20 | 78 → 49 | 123 → 123 | 160 → 150 | 95 → 86 | 500 → 452 | 477 → 430 | 8/13 → 8/10 | 3 → 3 |
+| g-postop | 20 → 20 | 78 → 58 | 128 → 128 | 192 → 131 | 109 → 67 | 553 → 430 | 544 → 410 | 6/22 → 6/11 | 4 → 3 |
+| g-dev | 20 → 20 | 24 → 24 | 193 → 175 | 137 → 134 | 92 → 82 | 496 → 465 | 471 → 440 | 9/12 → 6/11 | 4 → 3 |
+| g-papille | 19 → 19 | 26 → 26 | 190 → 172 | 99 → 121 | 66 → 61 | 418 → 417 | 410 → 409 | 9/8 → 7/8 | 5 → 3 |
+| g-cristallin | 21 → 21 | 21 → 21 | 206 → 189 | 124 → 144 | 70 → 70 | 469 → 472 | 474 → 474 | 5/11 → 5/10 | 5 → 3 |
+| **Total** | | | | | | 6192 → 5587 | 5999 → 5399 | | |
+
+Ce qui a changé, par fiche :
+- **oneLiner** : déjà ≤ 2 phrases et ≤ 26 mots partout, inchangés.
+- **« En deux phrases »** (definition, affichée dans Voir) : réécrite en 2 phrases, 32–40 mots. Voir ≤ 60 partout (avant 69–82). Légende normale de g-gpao raccourcie (ISNT détaillée reste dans g-papille).
+- **Arbre (cat.algo)** : chaîne propre, q ≤ 8 mots, oui/non ≤ 12 mots, `cont: 'yes'|'no'` sur chaque nœud sauf le dernier (lu par src/tree.js). Détails longs de g-postop (mal-direction, hémorragie, encapsulation, doses intravitréennes) déplacés en items de la phase « suivi » (niveau 2).
+- **Drapeaux rouges ≤ 3** : g-gpn (doublon de l’arbre supprimé) ; g-postop (tube exposé → présentation) ; g-papille (fusion pâleur/défaut vertical ; progression asymétrique → présentation) ; g-cristallin (resaignement/imbibition → phase suivi) ; g-dev (rupture de Descemet → présentation). g-crise : 3e drapeau raccourci, contre-indications détaillées dans la carte Acétazolamide.
+- **Traitement** : chaque traitement porte maintenant `dose` (nom générique + posologie usuelle ou modalités), `refer` (quand référer / urgence), `pitfall` (un piège), `qc` (seulement si utile). La fiche porte `treatment: {first, refer, pitfall, qc}` lu par `txBlock()` : 1re ligne = toutes les posologies ; Quand référer et Piège = les 1–2 lignes les plus décisives ; Au Québec = notes O-7 (optométristes), Nunavik, centres pédiatriques, électrophorèse à Montréal, priorité de l’IRM, RAMQ des MIGS « à vérifier ». Champs how/why/pros/cons/cx conservés.
+- **Doses employées** (adulte, standard ou FACTS.md) : latanoprost 0,005 % HS, bimatoprost 0,01 %, travoprost 0,004 %, timolol 0,5 % BID (0,25 % chez l’enfant), dorzolamide 2 % TID, brimonidine 0,2 % BID–TID, acétazolamide 500 mg PO/IV puis 250 mg PO QID, mannitol 20 % 1–2 g/kg IV, pilocarpine 1–2 %, prednisolone acétate 1 %, atropine 1 %, loteprednol 0,5 %, fluorométholone 0,1 %, bévacizumab 1,25 mg/0,05 mL, ranibizumab 0,5 mg, aflibercept 2 mg, vancomycine 1 mg/0,1 mL + ceftazidime 2,25 mg/0,1 mL, SLT 360° ≈ 100 impacts, PRP ≈ 1200–1600 impacts en 1–3 séances.
+
+Reste hors budget :
+- **Comprendre 117–189 mots** (plafond 120) : 5 essentiels de data/hy-glaucome.js à 14–18 mots (plafond 15), + mnémo, + chaîne causale ; pour g-dev, g-papille, g-cristallin (sans photo), la définition s’affiche aussi dans Comprendre. À faire : raccourcir les essentiels à ≤ 15 mots dans data/hy-glaucome.js et data-en/hy.js (fichier partagé, non touché ce cycle).
+- `txBlock()` remplace toute la liste des traitements par la grille de cartes : how/why/pros/cons/cx et les lignes refer/pitfall non retenues ne s’affichent plus à aucun niveau. Proposé au rôle web : liste en accordéon dans « Pour aller plus loin » (niveau 2), avec les champs par traitement.
+- tools/validate.js avertit « long fiche » pour g-postop, g-papille, g-cristallin, g-dev : il compte tout le texte de la fiche, y compris les cartes ajoutées et le niveau 2–3, pas ce qui est visible par défaut.
+
+Doutes cliniques à vérifier :
+- g-hto : fréquence d’observation « ≈ 6–24 mois selon le risque » (d’après AAO PPP, non vérifiée dans FACTS.md).
+- g-fermeture : iridoplastie notée « laser thermique (argon) » ; g-neovasculaire : cyclophotocoagulation « au laser diode » ; g-pigmentaire : SLT réduite « parfois sur 180° ».
+- g-dev : timolol 0,25 % BID chez l’enfant (pratique courante, pas dans FACTS.md).
+- g-cristallin : « suivi rapproché les premiers jours » pour l’hyphéma, formulé sans fréquence.
+- Aucune affirmation de couverture RAMQ (FACTS.md D) ; aucun médicament d’exception cité.

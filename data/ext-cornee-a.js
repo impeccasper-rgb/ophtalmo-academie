@@ -11,9 +11,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Corneal dystrophies",
     tags: ["highyield", "piege"],
     oneLiner: "Opacités bilatérales et symétriques, sans vaisseaux ni inflammation, souvent familiales : penser dystrophie, situer la couche, puis protéger la surface.",
-    definition: "Une dystrophie cornéenne (corneal dystrophy) est une maladie héréditaire où une substance anormale s’accumule dans une couche précise de la cornée, aux deux yeux, de façon lente et souvent symétrique, sans inflammation ni vaisseaux. Une dégénérescence (degeneration), elle, est acquise (âge, maladie), souvent asymétrique ou périphérique, parfois vascularisée (fiche Opacités, dépôts et dégénérescences).",
+    definition: "Maladie héréditaire où une substance anormale s’accumule dans une couche précise de la cornée, aux deux yeux, lentement, sans inflammation ni vaisseaux. Une dégénérescence, elle, est acquise, souvent asymétrique ou périphérique.",
     anatomy: {
-      text: "La cornée compte cinq couches classiques : épithélium (≈ 50 µm, se renouvelle), couche de Bowman (8–12 µm, ne se régénère pas), stroma (≈ 90 % de l’épaisseur, collagène très ordonné), Descemet et endothélium (pompe qui ne se divise pas). Tout dépôt qui brise cet ordre diffuse la lumière. La classification IC3D (International Committee for Classification of Corneal Dystrophies) range les dystrophies par couche et par gène ; elle regroupe Reis-Bücklers, granulaires et grillagée sous le gène TGFBI.",
+      text: "La cornée compte cinq couches classiques : épithélium (≈ 50 µm, se renouvelle), couche de Bowman (8–12 µm, ne se régénère pas), stroma (≈ 90 % de l’épaisseur, collagène très ordonné), Descemet et endothélium (pompe qui ne se divise pas). Tout dépôt qui brise cet ordre diffuse la lumière. La classification IC3D (International Committee for Classification of Corneal Dystrophies) range les dystrophies par couche et par gène ; elle regroupe Reis-Bücklers, granulaires et grillagée sous le gène TGFBI. Moyen mnémotechnique des colorations : « Marilyn Monroe Always Gets Her Men in LA City » (Maculaire – Mucopolysaccharides – Alcian ; Granulaire – Hyaline – Masson ; Lattice – Amyloïde – Congo).",
       figure: { type: "cornea", highlight: ["epithelium", "bowman", "stroma", "endothelium"] }
     },
     causal: {
@@ -70,17 +70,16 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     redFlags: [
       "Opacité unilatérale, rouge ou douloureuse : infection, pas dystrophie",
-      "Opacités stromales chez un candidat au LASIK ou à la PKR : exclure une dystrophie TGFBI",
-      "DPP avec PIO ↑ ou synéchies : glaucome secondaire",
-      "Nourrisson aux cornées troubles : exclure un glaucome congénital avant une CHED (dystrophie endothéliale héréditaire congénitale)"
+      "Opacités stromales avant LASIK ou PKR : exclure une dystrophie TGFBI",
+      "Nourrisson aux cornées troubles : exclure un glaucome congénital"
     ],
     cat: {
       algo: [
-        { q: "Bilatéral, symétrique, sans vaisseaux, souvent familial ?", yes: "Dystrophie : situer la couche à la fente fine.", no: "Dégénérescence, dépôt ou cicatrice." },
-        { q: "Épithélium seulement (cartes, points, empreintes) ?", yes: "EBMD (fiche Érosion récidivante).", no: "Couche suivante." },
-        { q: "Bowman ou stroma antérieur ?", yes: "Soigner les érosions ; PTK si vision ↓ ; test TGFBI, pas de LASIK.", no: "Stroma profond ?" },
-        { q: "Voile jusqu’au limbe, cornée mince ?", yes: "Maculaire : DALK si endothélium sain, sinon PK.", no: "Regarder l’endothélium." },
-        { q: "Guttae ou lésions de la Descemet ?", yes: "Guttae : Fuchs ; vésicules ou bandes : DPP, avec PIO et gonioscopie.", no: "Revoir : dépôt acquis ?" }
+        { q: "Bilatéral, symétrique, sans vaisseaux, familial ?", yes: "Dystrophie : situer la couche à la fente fine.", no: "Dégénérescence, dépôt ou cicatrice.", cont: "yes" },
+        { q: "Épithélium seulement (cartes, points, empreintes) ?", yes: "EBMD : voir Érosion récidivante.", no: "Couche suivante.", cont: "no" },
+        { q: "Bowman ou stroma antérieur ?", yes: "Soigner les érosions ; PTK si vision ↓ ; pas de LASIK.", no: "Regarder le stroma profond.", cont: "no" },
+        { q: "Voile jusqu’au limbe, cornée mince ?", yes: "Maculaire : DALK si endothélium sain, sinon PK.", no: "Regarder l’endothélium.", cont: "no" },
+        { q: "Guttae ou lésions de la Descemet ?", yes: "Guttae : Fuchs ; vésicules ou bandes : DPP (PIO, gonioscopie).", no: "Revoir : dépôt acquis ?" }
       ],
       phases: [
         { phase: "observation", items: ["Vision fonctionnelle : suivi annuel, photos, examen de la famille"] },
@@ -92,17 +91,22 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       local: "Au Québec, l’optométriste découvre souvent ces opacités ; diriger si vision ↓, érosions ou projet de chirurgie réfractive. Test génétique : accès et couverture à vérifier localement (génétique médicale)."
     },
     treatments: [
-      { name: "Soins de surface", how: "Lubrifiants, onguent NaCl 5 % au coucher, lentille souple de pansement en crise.", why: "Érosions récidivantes.", pros: "Simple, peu risqué.", cons: "Ne retire pas les opacités.", cx: "Infection sous lentille." },
-      { name: "PTK (photokératectomie thérapeutique)", how: "Laser excimer qui vaporise et lisse la surface.", why: "Opacités de Bowman ou du stroma antérieur ; érosions rebelles.", pros: "Sans greffe, répétable.", cons: "Inutile en profondeur ; les dépôts reviennent.", cx: "Virage hypermétropique, haze, infection." },
-      { name: "DALK (deep anterior lamellar keratoplasty)", how: "Greffe lamellaire antérieure profonde : remplace épithélium et stroma, garde la Descemet et l’endothélium du patient.", why: "Dystrophie stromale, endothélium sain.", pros: "Pas de rejet endothélial, globe plus solide.", cons: "Technique exigeante.", cx: "Perforation de la Descemet (conversion en PK), récidive." },
-      { name: "Kératoplastie transfixiante (PK)", how: "Remplacement d’un disque de cornée de pleine épaisseur, cousu.", why: "Atteinte de toute l’épaisseur ou endothélium malade.", pros: "Remplace toutes les couches.", cons: "Récupération lente, astigmatisme.", cx: "Rejet, glaucome, récidive dans le greffon." }
+      { name: "Soins de surface", dose: "Onguent NaCl 5 % au coucher ; lentille pansement en crise.", pitfall: "Ne retire pas les opacités.", how: "Lubrifiants, onguent NaCl 5 % au coucher, lentille souple de pansement en crise.", why: "Érosions récidivantes.", pros: "Simple, peu risqué.", cons: "Ne retire pas les opacités.", cx: "Infection sous lentille." },
+      { name: "PTK (photokératectomie thérapeutique)", dose: "Laser excimer pour la Bowman ou le stroma antérieur.", refer: "Vision ↓ ou érosions rebelles : cornée.", pitfall: "Les dépôts reviennent.", how: "Laser excimer qui vaporise et lisse la surface.", why: "Opacités de Bowman ou du stroma antérieur ; érosions rebelles.", pros: "Sans greffe, répétable.", cons: "Inutile en profondeur ; les dépôts reviennent.", cx: "Virage hypermétropique, haze, infection." },
+      { name: "DALK (deep anterior lamellar keratoplasty)", dose: "Greffe lamellaire si l’endothélium est sain.", pitfall: "Technique exigeante.", how: "Greffe lamellaire antérieure profonde : remplace épithélium et stroma, garde la Descemet et l’endothélium du patient.", why: "Dystrophie stromale, endothélium sain.", pros: "Pas de rejet endothélial, globe plus solide.", cons: "Technique exigeante.", cx: "Perforation de la Descemet (conversion en PK), récidive." },
+      { name: "Kératoplastie transfixiante (PK)", dose: "Greffe de pleine épaisseur si l’endothélium est malade.", pitfall: "Récupération lente, astigmatisme.", how: "Remplacement d’un disque de cornée de pleine épaisseur, cousu.", why: "Atteinte de toute l’épaisseur ou endothélium malade.", pros: "Remplace toutes les couches.", cons: "Récupération lente, astigmatisme.", cx: "Rejet, glaucome, récidive dans le greffon." }
     ],
+    treatment: {
+      first: ["**Soins de surface** : onguent NaCl 5 % au coucher ; lentille pansement en crise.", "**PTK (photokératectomie thérapeutique)** : laser excimer pour la Bowman ou le stroma antérieur.", "**DALK (deep anterior lamellar keratoplasty)** : greffe lamellaire si l’endothélium est sain.", "**Kératoplastie transfixiante (PK)** : greffe de pleine épaisseur si l’endothélium est malade."],
+      refer: ["Vision ↓ ou érosions rebelles : cornée."],
+      pitfall: ["Ne retire pas les opacités.", "Les dépôts reviennent.", "Technique exigeante.", "Récupération lente, astigmatisme."]
+    },
     pearls: [
       { q: "Comment distingues-tu granulaire, grillagée et maculaire ?", a: "Granulaire : miettes nettes, stroma clair entre elles. Grillagée : lignes ramifiées, érosions. Maculaire : voile jusqu’au limbe, cornée mince, **récessive** (les deux autres sont dominantes)." },
       { q: "Quelques opacités en flocons chez un candidat au LASIK : que fais-tu ?", a: "Penser dystrophie d’Avellino : test TGFBI avant toute chirurgie réfractive. Le LASIK fait proliférer les dépôts à l’interface et peut ruiner la vision." },
       { q: "Dystrophie polymorphe postérieure ou syndrome ICE ?", a: "DPP : bilatérale, héréditaire, souvent muette. ICE (syndrome irido-cornéo-endothélial) : unilatéral, acquis, iris déformé. Les deux peuvent donner synéchies et glaucome : gonioscopie et PIO." }
     ],
-    mnemonic: { title: "Colorations des dystrophies stromales", text: "« **M**arilyn **M**onroe **A**lways **G**ets **H**er **M**en in **L**A **C**ity » : **M**aculaire – **M**ucopolysaccharides – bleu **A**lcian ; **G**ranulaire – **H**yaline – trichrome de **M**asson ; **L**attice (grillagée) – **A**myloïde – rouge **C**ongo. Bonus : des trois, seule la maculaire est récessive." },
+    mnemonic: { title: "Colorations des dystrophies stromales", text: "Maculaire : mucopolysaccharides, bleu alcian. Granulaire : hyaline, Masson. Grillagée : amyloïde, rouge Congo." },
     compare: {
       title: "Cornée normale vs dystrophie granulaire",
       normal: { figure: { type: "photo", id: "OPH-001" }, caption: "Cornée normale à la lampe à fente : transparente, sans dépôt." },
@@ -130,9 +134,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Corneal deposits, opacities and degenerations",
     tags: ["frequent", "highyield", "piege"],
     oneLiner: "Devant une opacité : quelle couche, quelle couleur, quel contexte ? Ces trois questions mènent au dépôt, au bilan et au traitement.",
-    definition: "Une dégénérescence cornéenne (corneal degeneration) est un changement acquis, lié à l’âge ou à une maladie, souvent asymétrique et parfois vascularisé, contrairement à une dystrophie héréditaire. Un dépôt (deposit) est une substance venue d’ailleurs (lipides, calcium, fer, cuivre, sang, médicament) qui se loge dans une couche précise et lui donne une couleur typique.",
+    definition: "La dégénérescence est un changement acquis (âge, maladie), souvent asymétrique, parfois vascularisé. Le dépôt est une substance venue d’ailleurs (lipides, calcium, fer, cuivre, sang, médicament), avec une couche et une couleur typiques.",
     anatomy: {
-      text: "Chaque couche retient ses dépôts : épithélium (médicaments en tourbillon, lignes de fer), Bowman (calcium), stroma (lipides, sang, cicatrices), Descemet périphérique (cuivre). La cornée normale n’a aucun vaisseau : les lipides de la kératopathie lipidique fuient de vaisseaux anormaux venus du limbe (l’arc cornéen, lui, se forme sans vaisseaux). Pour situer la couche : fente fine et rétroillumination (éclairage par le reflet de l’iris ou du fond d’œil).",
+      text: "Chaque couche retient ses dépôts : épithélium (médicaments en tourbillon, lignes de fer), Bowman (calcium), stroma (lipides, sang, cicatrices), Descemet périphérique (cuivre). La cornée normale n’a aucun vaisseau : les lipides de la kératopathie lipidique fuient de vaisseaux anormaux venus du limbe (l’arc cornéen, lui, se forme sans vaisseaux). Pour situer la couche : fente fine et rétroillumination (éclairage par le reflet de l’iris ou du fond d’œil). Couche + couleur + contexte : blanc crayeux dans la Bowman = calcium (bande) ; gris-blanc en anneau périphérique = lipides (arc) ; jaune au bout de vaisseaux = kératopathie lipidique ; brun doré en tourbillon épithélial = médicament ou Fabry, en anneau de Descemet = cuivre (Wilson), autour d’un corps étranger = rouille ; brun-rouge à vert diffus = sang ; cristaux dans un greffon = infection. Anneau brun périphérique avec atteinte du foie ou du système nerveux : maladie de Wilson.",
       figure: { type: "cornea", highlight: ["epithelium", "bowman", "stroma", "descemet"] }
     },
     causal: {
@@ -189,17 +193,16 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     redFlags: [
       "Cristaux ou plaque sur une greffe sous stéroïde : infection jusqu’à preuve du contraire",
-      "Hyphéma avec PIO élevée persistante : imprégnation, amblyopie chez l’enfant ; drépanocytose : nerf optique fragile même à PIO modérée",
-      "Anneau brun périphérique, foie ou système nerveux atteints : maladie de Wilson",
-      "Bande chez un enfant : uvéite de l’AJI, souvent œil blanc et indolore"
+      "Hyphéma avec PIO élevée : imprégnation ; drépanocytose : nerf optique fragile",
+      "Bande chez un enfant : uvéite de l’AJI, souvent œil blanc"
     ],
     cat: {
       algo: [
-        { q: "Rougeur, douleur, infiltrat ou cristaux sur greffe ?", yes: "Infection : cultures, antibiotiques (fiche Kératite bactérienne).", no: "Couche et couleur." },
-        { q: "Blanc crayeux en bande ?", yes: "Cause oculaire ? Sinon calcium, phosphore, PTH, créatinine ; EDTA si gêne.", no: "Question suivante." },
-        { q: "Anneau gris-blanc périphérique ?", yes: "Arc : bilan lipidique avant 50 ans.", no: "Question suivante." },
-        { q: "Brun doré ?", yes: "Tourbillon : médicament ou Fabry ; Descemet : Wilson ; rouille : la retirer.", no: "Question suivante." },
-        { q: "Dépôt stromal avec vaisseaux, sang ou vaisseaux fantômes ?", yes: "Lipides : fermer les vaisseaux ; sang : PIO, lavage ; fantômes : syphilis, HSV.", no: "Dystrophie, haze, cicatrice ?" }
+        { q: "Rougeur, douleur, infiltrat ou cristaux sur greffe ?", yes: "Infection : cultures, antibiotiques.", no: "Regarder couche et couleur.", cont: "no" },
+        { q: "Blanc crayeux en bande ?", yes: "Calcium : cause oculaire, sinon bilan phosphocalcique ; EDTA.", no: "Question suivante.", cont: "no" },
+        { q: "Anneau gris-blanc périphérique ?", yes: "Arc : bilan lipidique avant 50 ans.", no: "Question suivante.", cont: "no" },
+        { q: "Brun doré ?", yes: "Tourbillon : médicament, Fabry ; Descemet : Wilson ; rouille : retirer.", no: "Question suivante.", cont: "no" },
+        { q: "Dépôt stromal avec vaisseaux ou sang ?", yes: "Lipides : fermer les vaisseaux ; sang : PIO, lavage.", no: "Dystrophie, haze ou cicatrice ?" }
       ],
       phases: [
         { phase: "observation", items: ["Arc, cornée verticillée : rassurer, documenter"] },
@@ -219,17 +222,23 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       local: "Au Québec, l’optométriste dirige souvent ces opacités ; bilan systémique avec le médecin de famille. EDTA disodique : préparation hospitalière, disponibilité à vérifier."
     },
     treatments: [
-      { name: "Chélation à l’EDTA", how: "Après grattage épithélial, une éponge d’EDTA disodique (chélateur) dissout le calcium.", why: "Kératopathie en bande gênante.", pros: "Efficace, en salle de procédure.", cons: "Récidive si la cause persiste.", cx: "Retard de cicatrisation, infection." },
-      { name: "Retrait de l’anneau de rouille", how: "Sous anesthésie topique : aiguille, puis fraise rotative à basse vitesse.", why: "Le fer oxydé irrite et retarde la guérison.", pros: "Soulagement rapide.", cons: "Rouille profonde ou centrale : retirer l’essentiel ; le résidu remonte souvent et s’enlève au suivi rapproché.", cx: "Perforation (rare), cicatrice." },
-      { name: "Fermeture des vaisseaux", how: "Laser argon ou diathermie à l’aiguille fine du vaisseau nourricier ; anti-VEGF (bloque la croissance des vaisseaux) en gouttes ou sous-conjonctival, hors indication.", why: "Kératopathie lipidique qui progresse.", pros: "Peut faire régresser les lipides.", cons: "Lent, variable.", cx: "Hémorragie stromale, amincissement." },
-      { name: "PTK ± mitomycine C", how: "Laser excimer qui lisse la surface ; la mitomycine C freine la repousse du voile.", why: "Haze persistant, calcium résiduel.", pros: "Évite une greffe.", cons: "Superficiel seulement.", cx: "Retard de cicatrisation, récidive." }
+      { name: "Chélation à l’EDTA", dose: "EDTA disodique sur éponge, après grattage épithélial.", refer: "Bande gênante : ophtalmologie.", pitfall: "Récidive si la cause persiste.", qc: "Préparation hospitalière.", how: "Après grattage épithélial, une éponge d’EDTA disodique (chélateur) dissout le calcium.", why: "Kératopathie en bande gênante.", pros: "Efficace, en salle de procédure.", cons: "Récidive si la cause persiste.", cx: "Retard de cicatrisation, infection." },
+      { name: "Retrait de l’anneau de rouille", dose: "Aiguille, puis fraise rotative, sous anesthésie topique.", pitfall: "Résidu profond : revoir plutôt que creuser.", how: "Sous anesthésie topique : aiguille, puis fraise rotative à basse vitesse.", why: "Le fer oxydé irrite et retarde la guérison.", pros: "Soulagement rapide.", cons: "Rouille profonde ou centrale : retirer l’essentiel ; le résidu remonte souvent et s’enlève au suivi rapproché.", cx: "Perforation (rare), cicatrice." },
+      { name: "Fermeture des vaisseaux", dose: "Laser argon, diathermie fine ou anti-VEGF (hors indication).", pitfall: "Effet lent et variable.", how: "Laser argon ou diathermie à l’aiguille fine du vaisseau nourricier ; anti-VEGF (bloque la croissance des vaisseaux) en gouttes ou sous-conjonctival, hors indication.", why: "Kératopathie lipidique qui progresse.", pros: "Peut faire régresser les lipides.", cons: "Lent, variable.", cx: "Hémorragie stromale, amincissement." },
+      { name: "PTK ± mitomycine C", dose: "Laser excimer ± mitomycine C contre le voile.", pitfall: "Superficiel seulement.", how: "Laser excimer qui lisse la surface ; la mitomycine C freine la repousse du voile.", why: "Haze persistant, calcium résiduel.", pros: "Évite une greffe.", cons: "Superficiel seulement.", cx: "Retard de cicatrisation, récidive." }
     ],
+    treatment: {
+      first: ["**Chélation à l’EDTA** : EDTA disodique sur éponge, après grattage épithélial.", "**Retrait de l’anneau de rouille** : aiguille, puis fraise rotative, sous anesthésie topique.", "**Fermeture des vaisseaux** : laser argon, diathermie fine ou anti-VEGF (hors indication).", "**PTK ± mitomycine C** : laser excimer ± mitomycine C contre le voile."],
+      refer: ["Bande gênante : ophtalmologie."],
+      pitfall: ["Récidive si la cause persiste.", "Résidu profond : revoir plutôt que creuser.", "Effet lent et variable.", "Superficiel seulement."],
+      qc: ["Préparation hospitalière."]
+    },
     pearls: [
       { q: "Arc cornéen chez un homme de 38 ans : que fais-tu ?", a: "Penser hypercholestérolémie familiale : bilan lipidique, lettre au médecin de famille. Arc unilatéral : sténose carotidienne du côté **sans** arc." },
       { q: "Kayser-Fleischer ou Fleischer : quelle différence ?", a: "**Kayser-Fleischer** : cuivre dans la Descemet périphérique, maladie de Wilson. **Fleischer** : fer épithélial autour du cône. Autres lignes de fer : Hudson-Stähli (tiers inférieur, âge), Stocker (ptérygion), Ferry (bulle de filtration)." },
       { q: "Plaque blanche dans un ulcère sous ciprofloxacine : aggravation ?", a: "Souvent un précipité du médicament, qui retarde la fermeture. Infiltrat et réaction stables : changer d’antibiotique ; au moindre doute, recultiver." }
     ],
-    mnemonic: { title: "Couche + couleur + contexte", text: "**Blanc crayeux** dans la Bowman = calcium (bande). **Gris-blanc** en anneau périphérique = lipides (arc). **Jaune** au bout de vaisseaux = lipides (kératopathie lipidique). **Brun doré** : en tourbillon épithélial = médicament ou Fabry ; en anneau de Descemet = cuivre (Wilson) ; autour d’un corps étranger = rouille. **Brun-rouge à vert** diffus = sang. **Cristaux** dans un greffon = infection jusqu’à preuve du contraire." },
+    mnemonic: { title: "Couche + couleur + contexte", text: "Blanc crayeux = calcium ; anneau gris = lipides ; brun doré = fer, cuivre ou médicament." },
     compare: {
       title: "Cornée normale vs kératopathie en bande",
       normal: { figure: { type: "photo", id: "OPH-001" }, caption: "Cornée normale : transparente, iris net." },

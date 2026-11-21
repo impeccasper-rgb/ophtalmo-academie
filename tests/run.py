@@ -118,9 +118,9 @@ try:
                     go_('comprendre')
                     step('causal step', lambda: (page.click('[data-causal="next"]'), page.click('[data-causal="all"]')))
                     step('lever', lambda: page.click('[data-lever="0"]'))
-                    if page.query_selector('.gt'):
-                        step('glossary', lambda: (page.click('.gt:visible >> nth=0'), page.wait_for_selector('#gt-pop', timeout=1000)))
                     go_('decider')
+                    if page.locator('.gt:visible').count():
+                        step('glossary', lambda: (page.click('.gt:visible >> nth=0'), page.wait_for_selector('#gt-pop', timeout=1000)))
                     if page.query_selector('[data-walk]'): step('walk', lambda: (page.click('[data-walk]'), page.click('[data-node="0"] [data-yn="yes"]')))
                     elif not page.query_selector('[data-tree]'): problems.append('[interact] decider: no decision tree')
                     go_('entrainer')

@@ -11,7 +11,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Childhood glaucoma, anterior segment dysgenesis and iridocorneal endothelial syndrome",
   tags: ["urgent", "highyield", "piege"],
   oneLiner: "Nourrisson qui larmoie, fuit la lumière et serre les paupières, cornée large ou trouble : glaucome congénital jusqu’à preuve du contraire.",
-  definition: "Ces glaucomes viennent d’un angle iridocornéen (iridocorneal angle, filtre par où sort l’humeur aqueuse) mal formé dès la naissance, recouvert plus tard par une membrane anormale (syndrome ICE) ou freiné en aval par une pression veineuse trop haute (Sturge-Weber). Avant 3 ans environ, la PIO élevée étire tout l’œil ; chez l’adulte, elle abîme le nerf sans agrandir le globe.",
+  definition: "Ces glaucomes viennent d’un angle mal formé dès la naissance, d’une membrane anormale (syndrome ICE) ou d’une pression veineuse trop haute (Sturge-Weber). Avant ≈ 3 ans, la PIO élevée étire tout l’œil ; chez l’adulte, elle abîme le nerf sans agrandir le globe.",
   anatomy: {
     text: "L’angle se forme pendant la vie fœtale à partir de la crête neurale, qui donne le trabéculum (filtre spongieux), la ligne de Schwalbe (bord de la Descemet) et le stroma irien. Un arrêt de ce développement laisse un trabéculum immature ou des brides d’iris tendues jusqu’à Schwalbe.",
     figure: {
@@ -46,7 +46,8 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Œil « grand et beau », cornée large ou bleutée ; souvent bilatéral",
     "Glaucome juvénile à angle ouvert (plus tard dans l’enfance) : silencieux, sans agrandissement de l’œil",
     "Sturge-Weber : glaucome du côté de l’angiome, précoce (angle anormal) ou tardif (pression veineuse épisclérale)",
-    "Syndrome ICE : vision floue le matin (œdème cornéen), pupille déformée, PIO élevée d’un seul côté"
+    "Syndrome ICE : vision floue le matin (œdème cornéen), pupille déformée, PIO élevée d’un seul côté",
+    "Cornée qui s’opacifie brusquement : rupture de la Descemet"
   ],
   exam: {
     signs: [
@@ -74,17 +75,16 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   redFlags: [
     "Nourrisson avec larmoiement et photophobie, ou cornée large ou trouble : référence urgente",
-    "Cornée qui s’opacifie brusquement : rupture de la Descemet",
     "Aniridie sans histoire familiale : dépister une tumeur de Wilms (rein)",
     "Angiome plan de V1 : PIO et papilles dès la naissance, puis régulièrement"
   ],
   cat: {
     algo: [
-      { q: "Triade ou cornée large ou trouble chez un nourrisson ?", yes: "Référence urgente → examen sous anesthésie.", no: "Larmoiement isolé, cornée claire : obstruction lacrymonasale probable." },
-      { q: "Glaucome confirmé ?", yes: "Gouttes en pont, chirurgie de l’angle rapidement.", no: "Surveillance rapprochée." },
-      { q: "Cornée assez claire pour voir l’angle ?", yes: "Goniotomie ou trabéculotomie.", no: "Trabéculotomie par voie externe." },
-      { q: "Échec de la chirurgie de l’angle ?", yes: "Reprise de l’angle, tube, trabéculectomie avec mitomycine C (MMC) ou cyclophotocoagulation.", no: "Suivi : PIO, diamètre, réfraction, amblyopie." },
-      { q: "Adulte : œdème, corectopie, synéchies d’un seul côté ?", yes: "Syndrome ICE : spéculaire, gouttes, tube si échec ; DSAEK ou DMEK pour l’œdème.", no: "Penser Axenfeld-Rieger ou dystrophie polymorphe postérieure." }
+      { q: "Triade, cornée large ou trouble (nourrisson) ?", yes: "Référence urgente : examen sous anesthésie.", no: "Larmoiement, cornée claire : obstruction lacrymonasale probable.", cont: "yes" },
+      { q: "Glaucome confirmé ?", yes: "Gouttes en pont, chirurgie de l’angle rapidement.", no: "Surveillance rapprochée.", cont: "yes" },
+      { q: "Cornée assez claire pour voir l’angle ?", yes: "Goniotomie ou trabéculotomie.", no: "Trabéculotomie par voie externe.", cont: "yes" },
+      { q: "Échec de la chirurgie de l’angle ?", yes: "Reprise, tube, trabéculectomie avec MMC ou cyclophotocoagulation.", no: "Suivi : PIO, diamètre, réfraction, amblyopie.", cont: "no" },
+      { q: "Adulte : œdème, corectopie, synéchies d’un côté ?", yes: "ICE : spéculaire, gouttes, tube si échec ; DSAEK ou DMEK si œdème.", no: "Penser Axenfeld-Rieger ou dystrophie polymorphe postérieure." }
     ],
     phases: [
       {
@@ -108,10 +108,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     local: "Au Québec : centres pédiatriques tertiaires (ex. CHU Sainte-Justine, Hôpital de Montréal pour enfants, CHU de Québec) ; si tu le soupçonnes, appelle le patron de garde."
   },
   treatments: [
-    { name: "Goniotomie", how: "Sous lentille de gonioscopie, une lame incise le trabéculum immature sur environ un tiers de l’angle.", why: "Congénital primaire, cornée claire.", pros: "Aucune cicatrice conjonctivale ; répétable.", cons: "Il faut voir l’angle.", cx: "Hyphéma, lésion de l’iris ou du cristallin." },
-    { name: "Trabéculotomie", how: "Par voie externe, une sonde, ou un fil sur 360°, passé dans le canal de Schlemm déchire sa paroi interne et le trabéculum.", why: "Congénital primaire, même avec une cornée trouble.", pros: "Possible malgré l’œdème ; 360° en une séance.", cons: "Canal parfois introuvable.", cx: "Hyphéma transitoire, fausse route." },
-    { name: "Gouttes en pont", how: "Réduisent la production d’humeur aqueuse ou augmentent son écoulement.", why: "Avant la chirurgie ou en appoint.", pros: "Éclaircissent la cornée pour l’EUA.", cons: "Rarement suffisantes seules.", cx: "Timolol : apnée, bradycardie, bronchospasme ; brimonidine : dépression du système nerveux central." },
-    { name: "Tube de drainage ou trabéculectomie", how: "Dérivent l’aqueuse sous la conjonctive (tube et plaque, ou volet scléral).", why: "Échec de la chirurgie de l’angle, glaucomes secondaires, ICE.", pros: "Baisse forte de la PIO.", cons: "Cicatrisation vigoureuse de l’enfant.", cx: "Hypotonie, infection, tube bouché (ICE), effusion (Sturge-Weber)." }
+    { name: "Goniotomie", how: "Sous lentille de gonioscopie, une lame incise le trabéculum immature sur environ un tiers de l’angle.", why: "Congénital primaire, cornée claire.", pros: "Aucune cicatrice conjonctivale ; répétable.", cons: "Il faut voir l’angle.", cx: "Hyphéma, lésion de l’iris ou du cristallin.", dose: "Sous lentille de gonioscopie : incision du trabéculum sur ≈ 1/3 de l’angle.", refer: "Congénital primaire à cornée claire : centre pédiatrique tertiaire, rapidement.", pitfall: "Il faut voir l’angle : impossible si la cornée est trouble.", qc: "Québec : CHU Sainte-Justine, Hôpital de Montréal pour enfants, CHU de Québec ; appeler le patron de garde." },
+    { name: "Trabéculotomie", how: "Par voie externe, une sonde, ou un fil sur 360°, passé dans le canal de Schlemm déchire sa paroi interne et le trabéculum.", why: "Congénital primaire, même avec une cornée trouble.", pros: "Possible malgré l’œdème ; 360° en une séance.", cons: "Canal parfois introuvable.", cx: "Hyphéma transitoire, fausse route.", dose: "Sonde ou fil sur 360° passé dans le canal de Schlemm.", refer: "Congénital primaire, même avec une cornée trouble.", pitfall: "Canal parfois introuvable : fausse route possible." },
+    { name: "Gouttes en pont", how: "Réduisent la production d’humeur aqueuse ou augmentent son écoulement.", why: "Avant la chirurgie ou en appoint.", pros: "Éclaircissent la cornée pour l’EUA.", cons: "Rarement suffisantes seules.", cx: "Timolol : apnée, bradycardie, bronchospasme ; brimonidine : dépression du système nerveux central.", dose: "Timolol 0,25 % BID, dorzolamide 2 % TID, en pont avant la chirurgie.", refer: "Avant la chirurgie ou en appoint.", pitfall: "Brimonidine contre-indiquée avant 2 ans (dépression du SNC) ; timolol : apnée." },
+    { name: "Tube de drainage ou trabéculectomie", how: "Dérivent l’aqueuse sous la conjonctive (tube et plaque, ou volet scléral).", why: "Échec de la chirurgie de l’angle, glaucomes secondaires, ICE.", pros: "Baisse forte de la PIO.", cons: "Cicatrisation vigoureuse de l’enfant.", cx: "Hypotonie, infection, tube bouché (ICE), effusion (Sturge-Weber).", dose: "Tube et plaque, ou trabéculectomie avec MMC.", refer: "Échec de la chirurgie de l’angle, glaucomes secondaires, ICE.", pitfall: "Cicatrisation vigoureuse de l’enfant : échec plus fréquent." }
   ],
   pearls: [
     { q: "Comment distinguer les stries de Haab des stries obstétricales ?", a: "Haab : horizontales ou concentriques au limbe, dans un œil agrandi. Forceps : verticales ou obliques, unilatérales, diamètre cornéen normal." },
@@ -140,7 +140,21 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "World Glaucoma Association. Childhood Glaucoma, Consensus Series 9 (Weinreb RN, Grajewski A, Papadopoulos M, Grigg J, Freedman S, éd. Kugler 2013)",
     "American Academy of Ophthalmology. Basic and Clinical Science Course, Section 10 : Glaucoma",
     "Shields MB. Progressive essential iris atrophy, Chandler’s syndrome, and the iris nevus (Cogan-Reese) syndrome: a spectrum of disease (Surv Ophthalmol 1979)"
-  ]
+  ],
+  treatment: {
+    first: [
+      "**Goniotomie** : Sous lentille de gonioscopie : incision du trabéculum sur ≈ 1/3 de l’angle.",
+      "**Trabéculotomie** : Sonde ou fil sur 360° passé dans le canal de Schlemm.",
+      "**Gouttes en pont** : Timolol 0,25 % BID, dorzolamide 2 % TID, en pont avant la chirurgie.",
+      "**Tube de drainage ou trabéculectomie** : Tube et plaque, ou trabéculectomie avec MMC."
+    ],
+    refer: ["**Goniotomie** : Congénital primaire à cornée claire : centre pédiatrique tertiaire, rapidement."],
+    pitfall: [
+      "**Gouttes en pont** : Brimonidine contre-indiquée avant 2 ans (dépression du SNC) ; timolol : apnée.",
+      "**Goniotomie** : Il faut voir l’angle : impossible si la cornée est trouble."
+    ],
+    qc: ["Québec : CHU Sainte-Justine, Hôpital de Montréal pour enfants, CHU de Québec ; appeler le patron de garde."]
+  }
 }
 ]);
 

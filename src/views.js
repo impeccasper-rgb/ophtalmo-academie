@@ -353,16 +353,23 @@ function ficheStep(id) { var s = (Store.p.fstep || {})[id]; return s && FSTEPS.i
 /* collapsed overflow block (open by default from level 2) */
 function moreBlock(html) { return html ? '<details class="acc more"' + (Settings.get().depth >= 2 ? ' open' : '') + '><summary>' + t('f.more') + '</summary><div class="acc-b stack">' + html + '</div></details>' : ''; }
 function hyList(items, title) { return items && items.length ? '<div class="hy-box"><div class="hy-h"><span class="hy-badge">High yield</span><b>' + U.esc(title) + '</b></div><ul class="hy-list">' + items.map(function (s) { return '<li>' + U.md(s) + '</li>'; }).join('') + '</ul></div>' : ''; }
+function txList(f, scope) {
+  // full treatment list; every field is optional (how, why, dose, pros, cons, cx, refer, pitfall, qc)
+  var F = [['how', 'f.how', 0], ['why', 'f.why', 0], ['dose', 'tx.dose', 0], ['refer', 'tx.refer', 0], ['pitfall', 'tx.trap', 0], ['pros', 'f.pros', 3], ['cons', 'f.cons', 3], ['cx', 'f.cx', 2], ['qc', 'tx.qc', 0]];
+  return (f.treatments || []).map(function (tr) {
+    return '<details class="acc"><summary>' + U.md(tr.name) + '</summary><div class="acc-b">' + F.map(function (k) { var v = tr[k[0]]; return v ? '<div class="kv"' + (k[2] ? ' data-dz="' + k[2] + '"' : '') + '><span class="k">' + t(k[1]) + '</span><span>' + T(v, scope) + '</span></div>' : ''; }).join('') + '</div></details>';
+  }).join('');
+}
 function txBlock(f, scope) {
-  // compact card group when the content provides it (first line / when to refer / pitfall / Quebec); otherwise the treatment list
+  // compact card group when the content provides it (first line / when to refer / pitfall / Quebec) + the full list collapsed
   var c = f.treatment || f.txCard || null;
   if (c && (c.first || c.refer || c.pitfall || c.trap)) {
     var card = function (k, cls, v) { return v ? '<div class="tx-card ' + cls + '"><span class="eyebrow">' + t(k) + '</span><div>' + (Array.isArray(v) ? '<ul class="blist">' + v.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' : T(v, scope)) + '</div></div>' : ''; };
-    return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><div class="tx-grid">' + card('tx.first', 'first', c.first) + card('tx.refer', 'refer', c.refer) + card('tx.trap', 'trap', c.pitfall || c.trap) + card('tx.qc', 'qc', c.qc || c.quebec) + '</div></div>';
+    var list = txList(f, scope);
+    return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><div class="tx-grid">' + card('tx.first', 'first', c.first) + card('tx.refer', 'refer', c.refer) + card('tx.trap', 'trap', c.pitfall || c.trap) + card('tx.qc', 'qc', c.qc || c.quebec) + '</div>' +
+      (list ? '<details class="acc more tx-more"' + (Settings.get().depth >= 2 ? ' open' : '') + '><summary>' + t('f.tx.more') + '</summary><div class="acc-b stack">' + list + '</div></details>' : '') + '</div>';
   }
-  return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><p class="xs muted">' + t('f.tx.d') + '</p>' + (f.treatments || []).map(function (tr) {
-    return '<details class="acc"><summary>' + U.md(tr.name) + '</summary><div class="acc-b"><div class="kv"><span class="k">' + t('f.how') + '</span><span>' + T(tr.how, scope) + '</span></div><div class="kv"><span class="k">' + t('f.why') + '</span><span>' + T(tr.why, scope) + '</span></div><div class="kv" data-dz="3"><span class="k">' + t('f.pros') + '</span><span>' + T(tr.pros, scope) + '</span></div><div class="kv" data-dz="3"><span class="k">' + t('f.cons') + '</span><span>' + T(tr.cons, scope) + '</span></div><div class="kv" data-dz="2"><span class="k">' + t('f.cx') + '</span><span>' + T(tr.cx, scope) + '</span></div></div></details>';
-  }).join('') + '</div>';
+  return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><p class="xs muted">' + t('f.tx.d') + '</p>' + txList(f, scope) + '</div>';
 }
 function algoHtml(f, scope) {
   if (window.Tree && typeof Tree.render === 'function') { try { return '<div class="stack"><h2 class="h3">' + t('f.algo') + '</h2><div class="tree-wrap">' + Tree.render(f.cat.algo, { fmt: function (x) { return T(x, scope); }, title: t('f.algo'), mode: 'overview' }) + '</div></div>'; } catch (e) { console.error('Tree.render', e); } }
