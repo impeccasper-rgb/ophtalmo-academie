@@ -1,6 +1,6 @@
 # Web (site statique bilingue) — avancement
 
-_Dernière mise à jour : 2026-11-21 (rôle web)._
+_Dernière mise à jour : 2026-11-21, cycle 2 (rôle web)._
 
 ## Fait
 - **src/i18n.js** (contrat PLATFORM.md) : `I18N.lang` (?lang= > localStorage `oph-lang` > navigateur > fr), `t(key, vars)` (interpolation `{n}`, pluriels `[un, plusieurs]`, repli FR puis la clé), `I18N.pick`, `I18N.locale()`, `I18N.applyContent()` (fusion profonde des surcouches `OPH_EN` par id : quiz, fiches, cases, capsules, catalog et tout tableau d'objets à `id` ; objets à clé : hy, photos, bonus… ; `A.*` par id ; glossaire par terme, avec `{term, def}` pour renommer le terme en anglais), `I18N.untranslated(obj)` + `I18N.badge(obj)` (badge « FR » sur fiches, capsules, cas, questions non traduites), `I18N.switchHtml()` (FR | EN) dans le rail, le tiroir, la barre du haut et l'onglet Progression → Affichage. `Actions.lang` enregistre puis recharge (et réécrit `?lang=` s'il est dans l'URL). Le fichier modifie aussi `L.tags/kinds/phases/qtypes/modules` et les titres/blurbs de `A_SECTIONS` au chargement.
@@ -13,11 +13,23 @@ _Dernière mise à jour : 2026-11-21 (rôle web)._
 - **Correctif** : la bulle du glossaire se fermait sur le défilement provoqué par le toucher lui-même (core.js : on ignore le scroll pendant 400 ms après l'ouverture).
 - **Vérifié** : tests/run.py (artifact) : 0 problème (Chrome headless en locale anglaise, donc l'interface EN est aussi parcourue) ; smoke test web (scratchpad, Playwright, 390 px et 1280 px) : accueil FR, bascule EN par le sélecteur, fiche, cartes, réponse QCM en anglais, liens profonds, 404, service worker actif, 0 erreur console, pas de débordement horizontal.
 
+## Cycle 2 (fait)
+- **Investigations intégrées** : entrée dans le rail (icône « scan »), la barre d'onglets (5 onglets, libellé court « Examens » / « Tests »), carte dans le hub Apprendre et sur l'accueil ; `'inv'` ajouté aux clés fusionnées de `Store.merge` ; 150 clés `inv.*` copiées dans i18n.js (106 relevées à l'exécution dans `window.Inv.keys` + relevé statique des appels `S('…')`), bloc séparé qui n'écrase pas une clé déjà définie.
+- **Accueil public** : compte à rebours, dates de stage du plan et des modules masqués tant que l'apprenant n'a pas saisi ses dates (`Dates.custom()`) ; carte Dates de Progression marquée facultative. Nouvelle carte **Image du jour** (`#image-du-jour`) : un item par jour, choisi par date (hash de la date locale) parmi `OPH.invPractice` + cartes images ; série (`Store.p.streak` : n, best, last, days, freeze par semaine, fusion par `t`) avec **un gel par semaine** (une journée manquée ne casse pas la série) ; pas de ligues.
+- **Cas vedette** `#cas-vedette` (aussi `?lang=en#cas-vedette`) : item `p-fondoeil-6` (OVCR, OPH-250) dans le moteur Observe → Réponds → Révèle, mise en page plein écran (`html.focus-view` masque rail et onglets), CTA « Essayer d'autres cas » → `#investigations` (+ Cas cliniques, Découvrir Ocelle). Repli sur le 1er item photo si l'item était filtré.
+- **Signalements** : plus de « Demande-moi » ; message « enregistré sur cet appareil… copie depuis Progression » ; bouton **Copier mes signalements** (Clipboard API, repli `execCommand`).
+- **Sources et crédits** : avertissement « Outil éducatif — ne remplace pas le jugement clinique » (+ texte long, ancre `#about`), aussi en pied du rail/tiroir et de l'accueil ; texte EyeRounds + avis CC BY-NC-ND 3.0 ; tableau crédit/licence/lien **par image** (catalogue moins les images restreintes, via `window.OPH_RESTRICTED` exposé par le filtre de droits) et tableau des médias d'investigations (crédit, licence, source).
+- **Natif** : web.js ajoute `html.native` (+ `data-platform`) ; web.css masque `.web-only`, `[data-web-only]`, `.install-prompt`, `.open-in-app`.
+- **imgsrc3** : `catalog3()` (build.py et build_web.py) fusionne `imgsrc3/catalog3.json` (id `IMG3-…`, license, author, source_url ; dimensions lues dans le JPEG sans Pillow) et copie `imgsrc3/web/*.jpg` ; ignoré si absent ou si l'image manque. `Photo.lic/owner/credit` (et la lightbox) affichent auteur + licence (lien CC déduit) + source pour ces images, EyeRounds sinon.
+- tools/build.py inclut maintenant web.css (onglets à 5, focus-view, carte du jour).
+- Filtre de droits du lead conservé (seul ajout : `G.OPH_RESTRICTED = R`).
+- **Vérifié** : tests/run.py 0 problème ; smoke test cycle 2 (`scratchpad/websmoke2.py`, 390 et 1280 px) 0 problème : accueil sans compte à rebours, 5 onglets, image du jour → série = 1, règles du gel, bascule EN, fiche, cartes, QCM, investigations, cas vedette EN (OPH-250, plein écran, nettoyage), sources (> 100 lignes de crédits), copie des signalements, liens profonds, 404, service worker.
+
 ## Reste (chaînes UI encore en dur, en français)
 - views.js : contenu pédagogique des pages A1–A5 (`a-anatomie`, `a-physiologie`, `a-examen`, `a-imagerie`, `a-retine` : intertitres et paragraphes d'introduction), `A5_GROUPS`, `A5_URG`, tableaux `COMPARE` (module B/C), vues `atlas`, `sources`, `express-b/c`, `recherche`, `module-a` crumbs « Module A » (identique). Ce sont surtout des textes de contenu : idéalement à déplacer dans data/ + data-en/ (ressources bilingues) plutôt qu'en clés UI.
 - sims.js, figures-a.js, figures-b.js (≈ 210 lignes avec du français : libellés des simulations et des schémas) : hors de mes fichiers ; à traiter par leur propriétaire avec `t()` ou `I18N.pick()`.
-- `Store.remote` / signalements : le texte « Demande-moi de les relire » a été remplacé en EN par une formulation neutre ; en FR il reste celui de l'artifact (à revoir pour le site public, où il n'y a pas de Claude pour relire).
-- Les dates de stage par défaut (`Dates.defaults`) sont passées : l'accueil affiche « passé ». Décision produit (masquer le compte à rebours sur le web ?).
+- Les listes de références de la page Sources restent en français (contenu).
+- Signalements : stockés localement seulement ; pas d'envoi serveur (à décider : courriel `mailto:` ou formulaire).
 
 ## Blocages / notes
 - Les surcouches data-en couvrent 67 QCM et 64 clés hy ; le reste s'affiche en FR avec le badge.

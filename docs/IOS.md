@@ -52,27 +52,45 @@ The workflow runs **automatically on every push to `main`** (and on pull request
 `data*/`, `brand/`, `imgsrc*/`, `tools/build_web.py`, `ios/`, `capacitor.config.json`, `package*.json` or the workflow.
 To run it by hand: GitHub → **Actions** → **iOS** → **Run workflow**. The "ipad" box adds the iPad run (on by default).
 
-What the `simulator` job does (about 15–25 min):
-1. macOS runner (`macos-latest`, which you can change with the repository variable `IOS_RUNNER`, e.g. `macos-26`), newest stable
-   Xcode (`IOS_XCODE` pins a version, e.g. `26.1`), Node 22, Python 3.12.
+What the `simulator` job does (about 25–40 min):
+1. macOS runner (`macos-latest`, which in Nov 2026 is the `macos-26-arm64` image with Xcode 26.6 and iOS 26.x simulators;
+   the repository variable `IOS_RUNNER` changes it, and `IOS_XCODE` pins an Xcode version, e.g. `26.6`), Node 22, Python 3.12.
 2. `npm ci` → `python3 tools/build_web.py` → `make_assets.py` → `check_ios.py`.
 3. `npx cap sync ios` + `overlay.mjs --selftest`.
-4. `xcodebuild … -sdk iphonesimulator -configuration Debug CODE_SIGNING_ALLOWED=NO` (unsigned, simulator only).
-5. `run_selftest.py --family iphone`: picks the newest iPhone simulator (Pro Max first), launches the app **in French**
-   (`-AppleLanguages (fr)`), follows the logs, takes a screenshot at each step and every 15 s, records a video, then
-   switches to dark mode for a final screenshot.
-6. Same thing on an iPad (Pro 13-inch first).
-7. Uploads the artifact `ios-selftest-<run number>`.
+4. `xcodebuild … -sdk iphonesimulator -configuration Debug CODE_SIGNING_ALLOWED=NO` (unsigned, simulator only; about 1 min).
+5. `run_selftest.py --family iphone --video`: picks the newest iPhone simulator (Pro Max first) and launches the app **in French**
+   (`-AppleLanguages (fr)`).
+   - **Pass 1 (verdict):** follows the logs and takes a screenshot each time the walk asks (`SELFTEST SHOT`). The walk waits
+     for each screenshot, and there is also one every 20 s while idle. At the end it takes a light and a dark screenshot.
+   - **Pass 2 (iPhone only, evidence):** relaunches the app and records a video of a second walk. Pass 2 never changes the verdict.
+6. Same pass 1 on an iPad (Pro 13-inch first).
+7. Uploads the artifact `ios-selftest-<run number>` (full-size PNG) and force-pushes the branch **`ios-evidence`**
+   (JPEG copies, logs, `result.json`, the video if it is under 45 MB).
 
-The job fails if a step logs `SELFTEST FAIL`, if `SELFTEST PASS done` never appears (240 s timeout), or if the app crashes.
+The job fails if a step logs `SELFTEST FAIL`, if `SELFTEST PASS done` never appears (600 s timeout), or if the app crashes.
 Warnings (`SELFTEST WARN`, JS errors) show as yellow annotations and in the run summary, but they don't fail the job.
 
+**Slow simulators.** GitHub's macOS runners have no GPU. In the first CI run (run 44928422573) the iPhone simulator took
+2 min to boot and the iPad one 6 min, a single `simctl status_bar` took 40 s, and `simctl io screenshot` hung for over 60 s
+while `recordVideo` was running. So the runner:
+- puts a timeout on every `simctl` call and never crashes; only boot, install and launch failures are fatal, and it still
+  writes its report;
+- takes screenshots in a worker thread, retries a hung one once, and turns screenshots off after 3 failures in a row;
+- after each screenshot, writes `public/__acks/<name>.txt` into the installed app. The page polls that file, so the walk
+  waits for the screenshot instead of guessing;
+- never records video while it takes screenshots (the video is a separate pass);
+- uses timeouts in `selftest.js` scaled ×3, and time spent waiting for screenshots doesn't count against a step.
+
 ### Getting the results (from Windows, in a browser)
-Open the run → **Summary**. The table lists each step ✅/❌ with its warnings. At the bottom, under **Artifacts**,
-download `ios-selftest-N.zip`:
+Open the run → **Summary**. The table lists each step ✅/❌ with its warnings and notes.
+- **Quickest:** on the repo page, switch the branch selector to **`ios-evidence`**. The screenshots (JPEG), logs and video
+  of the latest run can be viewed right there, with no download.
+  The branch is overwritten on every run (one commit), and its README gives the run and commit.
+- **Full resolution (for the App Store):** at the bottom of the run, under **Artifacts**, download `ios-selftest-N.zip`:
 ```
-iphone/  screenshots/01-boot.png … 11-card-next.png, t015.png …, zz-final-light.png, zz-final-dark.png
-         run.mp4               video of the whole run
+iphone/  screenshots/01-boot.png … 14-card-next.png, 07-inv-<exam>.png, t020.png …, zz-final-light.png, zz-final-dark.png
+         run.mp4               video of the second walk (pass 2)
+         app-console-video.log app stdout during pass 2
          selftest.log          SELFTEST lines with timestamps
          app-console.log       app stdout (Capacitor "⚡️ [log]" lines, native errors)
          app-unified.log       unified log of the app + WebKit (for crashes)
@@ -95,8 +113,9 @@ The iPhone Pro Max and iPad Pro 13" screenshots (status bar set to 9:41) are the
 | home-fr | starts in French (proves the fr localization reaches the WebView; otherwise WARN and FR is forced); home has content |
 | lang-en | clicks the EN button (`[data-act="lang"][data-v="en"]`, with fallbacks); after the reload, `I18N.lang === 'en'` and the home text changed |
 | fiche | opens the first fiche that has an EN translation (otherwise the first one): `<h1>`, content, no missing bundled image |
-| investigations | `#investigations` shows links to `#inv-<id>` |
-| practice | opens an `#inv-<id>` that has practice items, picks an answer, and checks that the exercise reacts (reveal); WARN if nothing is saved in `Store.p.inv` |
+| investigations | `#investigations` shows links to `#inv-<id>` (the six exams) |
+| inv-pages | opens every `#inv-<id>`, scrolls to its interactive tool, takes a screenshot (`07-inv-<id>`); WARN if a tool shows "could not start" |
+| practice | in `[data-invpractice]`: Observe (`[data-ip="ready"]`) → Answer (first `.opt[data-k]`) → Reveal (`.feedback`, decisive sign); WARN if nothing is saved in `Store.p.inv` |
 | flashcards | `#cartes`: flip → "Knew it" → next card |
 | offline | lists remote hosts the page requested (WARN) |
 | done | `SELFTEST PASS done n/n` only if every step passed |
@@ -105,10 +124,12 @@ Log lines leave the app two ways: `console.log`, which Capacitor prints to the a
 `simctl launch --console-pty`), and in Debug builds `NSLog`, through `AppViewController` into the unified log
 (`simctl spawn … log stream`). The runner merges both and removes duplicates.
 
-**Tested on Linux (2026-11-21)** with headless Chrome against the real `site/` build: boot, home-fr, lang-en (through the
-UI button), fiche and flashcards pass. `investigations` and `practice` fail while `src/investigations.js` doesn't exist
-yet. That is expected, and they will pass once the exercises role delivers the `#investigations` route. The runner's
-logic (device choice, deduplication, screenshots, verdict, summary) was checked with a simulated `xcrun`.
+**Tested on Linux (2026-11-21)** with headless Chrome against a fresh build of the current sources: **9/9 steps pass**,
+both with fixed pauses and with screenshot acks. The runner's logic (device choice, deduplication, a hung screenshot
+retried, acks, video pass, verdict, summary) was checked with a simulated `xcrun`. On the first CI run the app compiled,
+launched on an iPhone 17 Pro Max (iOS 26.5) with Capacitor and the native overlay active, and the walk started. The old
+runner then crashed on a screenshot timeout, which led to the redesign above.
+Note: on iOS 26 the WebView user agent says `iPhone OS 18_7` (Apple froze the version string), which is normal.
 Run locally: `node ios/scripts/overlay.mjs <copy of site> --selftest`, open it in a browser, and read the console.
 
 ## 4. Name, bundle ID, icon
@@ -175,5 +196,7 @@ it right away. External testers need a short Beta App Review.
   If you see "requires a newer Xcode", set `IOS_RUNNER=macos-26` and/or `IOS_XCODE`.
 - **No simulator found:** `run_selftest.py` creates one from the newest iOS runtime. Check the "Tool versions" step.
 - **Self-test silent (timeout, no SELFTEST lines):** check `app-console.log` (did the page load? JS error?) and the
-  screenshots `t015.png…`.
+  screenshots `t020.png…`.
+- **Screenshots missing:** see the ℹ️ notes in the run summary ("screenshots failed: …"). The verdict comes from the logs,
+  so it holds without them. A runner that is overloaded right after boot is the usual cause, and re-running the job helps.
 - **Step fails after a UI change:** the selectors are in `ios/web-overlay/selftest.js` (one function per step).

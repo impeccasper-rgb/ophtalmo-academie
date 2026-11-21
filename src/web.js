@@ -10,7 +10,7 @@
     if (d && I.lang === 'en' && d.getAttribute('data-en')) d.setAttribute('content', d.getAttribute('data-en'));
   }
   var native = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
-  if (native) document.documentElement.classList.add('is-native');
+  if (native) { document.documentElement.classList.add('is-native', 'native'); try { document.documentElement.setAttribute('data-platform', window.Capacitor.getPlatform()); } catch (e) { } }
   // offline cache (web only: WKWebView under Capacitor serves files locally)
   var local = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
   if (!native && 'serviceWorker' in navigator && (location.protocol === 'https:' || local)) {

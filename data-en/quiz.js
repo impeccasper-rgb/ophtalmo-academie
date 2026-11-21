@@ -1099,3 +1099,1065 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
 });
+Object.assign(G.OPH_EN.quiz, {
+  "B-032": {
+    stem: "Two workers present with chemical burns: one was splashed with sulfuric acid (car battery), the other with sodium hydroxide (oven cleaner). Why is the alkali burn usually more severe?",
+    options: [
+      "Alkali is always more concentrated than acids sold to the public",
+      "Alkali coagulates surface proteins, which holds the product in the epithelium",
+      "Alkali saponifies membrane lipids and penetrates deeply and quickly",
+      "Alkali releases strong heat on contact with tears, which burns mainly the epithelium"
+    ],
+    explain: "**What it is**: alkali dissolves the lipids of cell membranes (saponification) and causes liquefactive necrosis, which lets it pass through the cornea into the anterior chamber, iris, lens and trabecular meshwork. **Why it matters**: acid, by contrast, coagulates surface proteins, forming a barrier that limits its penetration (exception: hydrofluoric acid, which penetrates like an alkali); alkali therefore poses a greater threat to the limbus, transparency and IOP. **What to do**: the same immediate management for all agents (irrigation to neutral pH), but with alkali, anticipate limbal ischemia, an IOP rise and stromal melting.",
+    why: [
+      "Severity comes from the mechanism of action, not just concentration: at equal concentration, alkali penetrates more.",
+      "That is the mechanism of acid: protein coagulation forms a barrier that limits penetration.",
+      "Correct: saponification and liquefactive necrosis.",
+      "Heat is not the main mechanism; chemical destruction of membranes is what allows deep penetration."
+    ]
+  },
+  "B-033": {
+    stem: "After 40 minutes of irrigation, the pH of an alkali-burned eye is 7.2. You note a white, avascular area at the limbus over 4 clock hours. Why is this limbal ischemia the key prognostic factor?",
+    options: [
+      "The limbus contains the glands that produce the lipid layer of the tears",
+      "The limbus contains the endothelium, the only layer that pumps water out of the cornea",
+      "The limbus contains the goblet cells that secrete tear mucus",
+      "The limbus houses the stem cells that renew the corneal epithelium"
+    ],
+    explain: "**What it is**: corneal epithelial stem cells live at the limbus, in the palisades of Vogt; a white avascular zone means this limbus is ischemic and its stem cells are threatened. **Why it matters**: the more extensive the limbal ischemia (Roper-Hall and Dua classifications), the higher the risk of limbal stem cell deficiency: the conjunctiva then invades the cornea, which becomes vascularized and opaque, with a persistent epithelial defect. **What to do**: intensive topical steroid for ≤ 10–14 days then a rapid taper (risk of melting), oral ascorbate 1–2 g/day, doxycycline 100 mg BID, cycloplegic, preservative-free topical antibiotic, and early amniotic membrane from grade II.",
+    why: [
+      "The meibomian glands, which produce the lipid layer, are in the lids, not at the limbus.",
+      "The endothelium lines the posterior surface of the whole cornea; it is not specific to the limbus.",
+      "Goblet cells (mucus cells) are in the conjunctiva, mostly in the fornices; their loss worsens dryness after a burn, but does not determine the corneal prognosis.",
+      "Correct: limbal stem cells of the palisades of Vogt."
+    ]
+  },
+  "B-034": {
+    stem: "A 69-year-old man, herpes zoster ophthalmicus one year ago. Central epithelial defect with smooth, rolled edges for 4 weeks, without infiltrate, despite preservative-free tears; corneal sensation is absent. Which option is appropriate at this stage?",
+    options: [
+      "Cenegermin 0.002 % (Oxervate), 1 drop 6 times daily every 2 h for 8 weeks",
+      "Tetracaine drops as needed to relieve discomfort during healing",
+      "Prednisolone 1 % hourly to speed closure of the epithelial defect",
+      "Hourly moxifloxacin day and night, then fortified drops if no response"
+    ],
+    explain: "**What it is**: neurotrophic keratopathy occurs when the corneal nerves (V1) are destroyed, for example after zoster or herpes; without these nerves, the epithelium heals poorly, hence a persistent epithelial defect with smooth, rolled edges (moderate stage), which can progress to ulceration, melting and perforation (severe stage). **Why it matters**: cenegermin (Oxervate, recombinant human nerve growth factor) is approved by Health Canada for the **moderate or severe form in adults**, at 1 drop 6 times daily every 2 h for 8 weeks. **What to do**: stop toxic drops, lubricate without preservatives, discuss cenegermin with the cornea team, and consider amniotic membrane or tarsorrhaphy (partial closure of the lids) if the defect persists.",
+    why: [
+      "Correct: approved indication (persistent epithelial defect, moderate form) and dosing.",
+      "A repeated topical anesthetic is toxic to the epithelium and would worsen the defect; besides, this patient has no sensation left.",
+      "Intensive steroids slow epithelial healing and increase the risk of melting; they do not treat neurotrophic keratopathy.",
+      "Without an infiltrate, there is no infection to treat intensively; an infrequent prophylactic antibiotic is enough if needed."
+    ]
+  },
+  "B-035": {
+    stem: "A 66-year-old woman with rheumatoid arthritis. Very painful red eye, crescent-shaped peripheral ulcer hugging the limbus with marked stromal thinning, and adjacent scleritis. Which diagnosis and management are most appropriate?",
+    options: [
+      "Staphylococcal marginal keratitis: lid hygiene and a weak topical steroid",
+      "PUK (peripheral ulcerative keratitis): systemic workup, urgent immunosuppression",
+      "Terrien marginal degeneration: observation and correction of astigmatism",
+      "Mooren ulcer: no workup, since no systemic disease is associated"
+    ],
+    explain: "**What it is**: peripheral ulcerative keratitis (PUK) is an inflammatory melt of the peripheral stroma, crescent-shaped against the limbus, often associated with systemic vasculitis (rheumatoid arthritis, granulomatosis with polyangiitis). **Why it matters**: it can perforate and sometimes signals a life-threatening active vasculitis; by contrast, marginal keratitis (an immune reaction to staphylococcal toxins from blepharitis) leaves a clear zone between the infiltrate and the limbus, with little thinning. **What to do**: systemic workup (including ANCA, the antibodies of vasculitis, and rheumatoid factor), urgent systemic immunosuppression with rheumatology, surface protection and close follow-up of the perforation risk.",
+    why: [
+      "Marginal keratitis leaves a clear interval with the limbus, with little thinning and no scleritis; here, the thinning and scleritis point to PUK.",
+      "Correct: PUK associated with rheumatoid arthritis, systemic treatment.",
+      "Terrien degeneration (slow, minimally inflammatory, minimally painful marginal thinning) does not give a painful red eye with scleritis.",
+      "Mooren ulcer (painful peripheral melt without systemic disease) is a diagnosis of exclusion; with rheumatoid arthritis, look for systemic PUK."
+    ]
+  },
+  "B-036": {
+    stem: "A 46-year-old man with high, increasing against-the-rule astigmatism on refraction, without eye rubbing or atopy. This topography diagram shows his axial curvature map. What is the diagnosis, and which slit-lamp or pachymetry finding confirms it?",
+    options: [
+      "Keratoconus with inferior steepening; maximal thinning at the apex of the cone",
+      "Regular against-the-rule astigmatism; normal corneal thickness throughout",
+      "Pellucid marginal degeneration; band of thinning near the inferior limbus",
+      "Terrien marginal degeneration; superior thinning with lipid deposits"
+    ],
+    explain: "**What it is**: pellucid marginal degeneration is an ectasia (a thinned cornea that deforms) in which the thinning forms an inferior band 1–2 mm from the limbus; the cornea bulges just above it, hence the \"crab-claw\" image with against-the-rule astigmatism on the axial map. **Why it matters**: in keratoconus, maximal thinning coincides with the apex of the cone, which is more central, whereas here the steepest zone lies above the thinnest zone; tomography (pachymetry map) makes the distinction, and any ectasia contraindicates laser refractive surgery. **What to do**: confirm with tomography, correct with glasses or contact lenses (often scleral), and discuss CXL at a specialized center if the ectasia progresses.",
+    why: [
+      "In keratoconus, the most marked thinning coincides with the apex of the cone, and the map shows an asymmetric bowtie rather than a crab claw.",
+      "Regular against-the-rule astigmatism gives a symmetric horizontal bowtie, without thinning.",
+      "Correct: crab claw, against-the-rule astigmatism and an inferior band of thinning.",
+      "Terrien degeneration (slow, minimally inflammatory marginal thinning) is usually superior, with a lipid line at the leading edge of the thinning."
+    ]
+  },
+
+  // ---- data/quiz-c.js ----
+  "C-001": {
+    stem: "A 58-year-old man, IOP 24 mmHg OD, open angle on gonioscopy. The diagram shows the peripapillary retinal nerve fiber layer (RNFL) OCT of the OD, with the TSNIT curve and sectors. Which visual field defect is most consistent with this damage?",
+    options: [
+      "Inferior arcuate defect or inferior nasal step",
+      "Bitemporal hemianopia respecting the vertical meridian",
+      "Isolated enlargement of the blind spot",
+      "Superior arcuate defect or superior nasal step"
+    ],
+    explain: "**What the OCT (optical coherence tomography: cross-sectional imaging) shows:** the RNFL (the axons of ganglion cells converging on the disc) is thinned at the inferior pole, the site most often affected first in glaucoma (especially inferotemporally). **Why:** the image is inverted on the retina, so the inferior fibers carry information from the superior hemifield, and they stop at the horizontal raphe. **Consequence:** a superior arcuate defect or superior nasal step (a step at the nasal edge of the field, along the horizontal meridian) is expected; always check that structure (OCT, disc) and function (field) agree.",
+    why: [
+      "It is the reverse: an inferior field defect comes from superior damage to the disc or RNFL.",
+      "A bitemporal hemianopia (loss of both temporal fields) comes from chiasmal compression, not from inferior RNFL loss in one eye.",
+      "The blind spot (the projection of the disc in the field) enlarges mainly with disc edema (a swollen disc) or peripapillary damage, not with focal inferior thinning.",
+      "Correct: thinned inferior RNFL → superior field defect respecting the horizontal meridian."
+    ]
+  },
+  "C-002": {
+    stem: "A 63-year-old asthmatic woman referred by her optometrist. Diagnosis of early primary open-angle glaucoma (POAG) OD: IOP 26 mmHg, inferior notch of the disc, superior nasal step on the visual field, open angle on gonioscopy. She would prefer to avoid daily drops. According to the AAO POAG Preferred Practice Pattern (PPP) published in 2026, what is the best first option?",
+    options: [
+      "Selective laser trabeculoplasty (SLT) as first-line treatment",
+      "Timolol 0.5 %, inexpensive and well tolerated on the ocular surface",
+      "Trabeculectomy right away to avoid any long-term medication",
+      "Observation without treatment until progression is documented"
+    ],
+    explain: "**Reminder:** POAG is a slow, painless optic nerve disease with an open drainage angle, often related to an IOP too high for that nerve. **What it is:** SLT (selective laser trabeculoplasty) is a gentle laser done in clinic, through a lens, on the trabecular meshwork (the angle's filter); it triggers remodeling of the filter, whose layer adjacent to Schlemm canal (juxtacanalicular tissue) is the main site of outflow resistance in POAG. **Why first:** the 2026 PPP more strongly supports first-line SLT on the basis of the LiGHT trial (SLT vs drops as first-line therapy): at 6 years, 69.8 % of SLT-treated eyes were at target without further treatment, with less progression (19.6 % vs 26.8 %) and about 3 times fewer trabeculectomies. **What to do:** set an individualized target IOP (starting point ≈ 20–30 % below baseline IOP), perform SLT, then check IOP and follow OCT and visual fields.",
+    why: [
+      "Correct: effective, with no daily drops or systemic side effects, ideal for this asthmatic patient.",
+      "Timolol (a beta-blocker drop that reduces aqueous production) enters the circulation and can trigger bronchospasm (sudden narrowing of the airways): it is contraindicated in asthma.",
+      "Trabeculectomy (surgery that creates a fistula to a pocket under the conjunctiva, the bleb) carries more risk; it is reserved for failure of laser and drops or for advanced disease.",
+      "Glaucoma with disc and field damage is treated: in EMGT (Early Manifest Glaucoma Trial), treatment reduced progression (45 % vs 62 %)."
+    ]
+  },
+});
+Object.assign(G.OPH_EN.quiz, {
+  "C-003": {
+    stem: "A 74-year-old man with POAG stable for 6 years (IOP 14–15 mmHg on latanoprost). He complains of glare at night and his VA has dropped from 6/7.5 (20/25) to 6/15 (20/50); the MD (mean deviation) of the 24-2 field has fallen by 3 dB in one year. The diagram shows the total deviation map of the OD; the pattern deviation map is unchanged from previous exams. What is the most accurate interpretation?",
+    options: [
+      "Rapid glaucomatous progression: add a second medication",
+      "Diffuse neurological damage: order a brain MRI",
+      "Diffuse depression due to cataract: no progression demonstrated",
+      "Unreliable exam: repeat the field with the SITA Fast strategy"
+    ],
+    explain: "**What the maps show:** the MD summarizes the overall field loss; total deviation (TD) compares each point with age-matched normals, whereas pattern deviation (PD) first removes the general depression to keep only localized defects. **Why it matters:** a media opacity such as cataract dims the whole field uniformly: TD and MD worsen, but the PD stays stable, which is not glaucomatous progression (that creates or deepens localized defects). **What to do:** confirm stability on OCT and disc exam, refer for cataract surgery, then repeat a baseline field after the operation.",
+    why: [
+      "Trap: the MD falls from diffuse depression, with no new localized defect; adding a drop is not justified.",
+      "Neurological damage gives localized defects that respect the vertical meridian, not uniform depression with a stable PD.",
+      "Correct: depressed TD and stable PD = cataract effect, consistent with the glare and the VA loss.",
+      "Nothing indicates unreliability (false positives, fixation losses); switching to SITA Fast (a shorter but less precise strategy) would also prevent progression analysis against previous exams."
+    ]
+  },
+  "C-004": {
+    stem: "A 71-year-old man with advanced POAG in both eyes, VA 6/7.5 (20/25) in each eye. The diagram shows the pattern deviation map of the 24-2 field of his OD; the OS shows a similar but less extensive defect. He asks whether he can keep driving his car (class 5 licence). What is the most appropriate course of action?",
+    options: [
+      "Tell him to stop driving: advanced glaucoma automatically suspends the licence",
+      "Do a binocular field (Esterman) and compare it with SAAQ standards",
+      "Reassure him: with VA of 6/7.5 in both eyes, he meets the standards",
+      "Rely on the 24-2 field of each eye, which is enough to complete the SAAQ report"
+    ],
+    explain: "**What it is:** for class 5, the SAAQ requires binocular VA ≥ 6/15 (20/50) and a continuous binocular field of at least 100° along the horizontal meridian (including ≥ 30° on each side of the vertical meridian), 10° above and 20° below fixation. **Why:** the 24-2 tests one eye at a time and only the central 24°; the two eyes together can fill in each other's gaps, hence the requirement for a signed binocular field as soon as a defect exists (Esterman: a screening test done with both eyes open, or Goldmann III/4e). **What to do:** order the Esterman, complete the report and counsel the patient; glaucoma does not lead to automatic suspension, but a restriction (e.g. night driving) or a recommendation to stop remains possible.",
+    why: [
+      "False: there is no automatic suspension; everything depends on the measured VA and binocular field.",
+      "Correct: only a binocular field can verify the 100° horizontal threshold and the limits above and below fixation.",
+      "VA is not enough: advanced glaucoma can leave good central vision with a field too narrow for driving.",
+      "The monocular 24-2 covers only the central 24° of one eye; the SAAQ requires a signed binocular field (Esterman or Goldmann III/4e)."
+    ]
+  },
+  "C-005": {
+    stem: "A 61-year-old man: IOP 27 mmHg in both eyes at three visits, open angles, normal discs, normal 24-2 visual field and OCT. Pachymetry (measurement of central corneal thickness) gives 520 µm in both eyes. Why is this result important?",
+    options: [
+      "Goldmann overestimates his IOP: the true IOP is probably normal",
+      "Goldmann underestimates his IOP, and a thin cornea increases the risk",
+      "It matters only after laser refractive surgery (LASIK)",
+      "His IOP must be corrected with a fixed formula and treated according to that number"
+    ],
+    explain: "**What it is:** the central cornea measures 540–550 µm on average; the Goldmann tonometer flattens the cornea assuming an average thickness. **Why it matters:** a thin cornea flattens more easily, so the IOP read is lower than the true IOP; moreover, in the Ocular Hypertension Treatment Study (OHTS), a cornea ≤ 555 µm carried about 3 times the risk of conversion to glaucoma compared with a cornea > 588 µm. **What to do:** do not apply a correction formula mechanically, but integrate the thin cornea into the overall risk; in this ocular hypertensive (elevated IOP without nerve damage), treatment is offered, which reduced 5-year conversion from 9.5 % to 4.4 % in OHTS.",
+    why: [
+      "It is the reverse: a thick cornea causes IOP to be overestimated, a thin cornea causes it to be underestimated.",
+      "Correct: the true IOP is probably higher than 27 mmHg and the risk of conversion is higher (OHTS).",
+      "LASIK thins the cornea and causes IOP to be underestimated, but a naturally thin cornea also matters, as OHTS showed.",
+      "Correction formulas are imprecise, because corneal rigidity varies from person to person; thickness is integrated into the overall risk instead."
+    ]
+  },
+  "C-006": {
+    stem: "A 34-year-old woman, myopic at −8.00 D, referred for \"glaucoma\" because of an OCT done at her optometrist's. IOP 15 mmHg in both eyes, open angles, tilted discs surrounded by peripapillary atrophy, normal and reliable 24-2 visual field. The diagram shows her retinal nerve fiber layer (RNFL) OCT. What is the most appropriate course of action?",
+    options: [
+      "Recognize a probable false positive and establish a baseline for follow-up",
+      "Confirm early glaucoma and prescribe a prostaglandin analog",
+      "Offer SLT right away, because high myopia is a risk factor",
+      "Repeat the OCT in a week: a second red result will confirm glaucoma"
+    ],
+    explain: "**What the OCT shows:** sectors in red, meaning an RNFL thinner than the device's normative database. **Why to be wary of it:** this database contains few high myopes; a tilted disc (an oval, oblique disc, common in high myopia), peripapillary atrophy (a pale zone where retina and pigment epithelium are thinned around the disc) or a segmentation error produce red without disease: this is \"red disease\", a false positive. **What to do:** without agreement with the disc and the visual field, the diagnosis is not made; document a baseline (photos, RNFL and macular OCT, field) and judge on change over time.",
+    why: [
+      "Correct: structure-function discordance in a high myope; follow the trend rather than labeling.",
+      "The diagnosis of glaucoma requires a consistent optic neuropathy (disc, visual field), not an isolated color code; a prostaglandin analog (an evening drop that increases outflow) would be premature.",
+      "Myopia increases the risk, but without demonstrated neuropathy or elevated IOP, SLT (laser applied to the angle's filter) is not indicated.",
+      "Repeating the exam will reproduce the same artifact; what counts is loss documented over time, not the color."
+    ]
+  },
+  "C-007": {
+    stem: "An optometrist from Laval calls you: she is following a 56-year-old woman who is a glaucoma suspect (IOP 25 mmHg, questionable discs, normal visual field) and started latanoprost 2 months ago; IOP is now 18 mmHg. Under the Québec regulation governing optometrists' prescription of these drops (Regulation O-7, r. 11.1), what is the expected next step?",
+    options: [
+      "She can follow the patient on her own long term, since IOP is controlled",
+      "She should have referred the patient before starting any drop",
+      "She must stop latanoprost, because only a physician can prescribe it",
+      "She must refer the patient to an ophthalmologist for medical follow-up"
+    ],
+    explain: "**What it is:** in Québec, an optometrist who has the required instruments may initiate glaucoma treatment for a glaucoma suspect (a questionable finding, without proof of nerve damage), early glaucoma or steroid-induced glaucoma (caused by corticosteroids). **Why:** the regulation then requires her to refer the patient to an ophthalmologist for medical follow-up, and then to comply with the ophthalmologist's plan; for other glaucomas, she needs a physician's consent, and she must refer the patient if the response is inadequate. **What to do:** accept the consultation request, do the full workup (gonioscopy, pachymetry, OCT, visual field) and agree on a clear shared follow-up plan.",
+    why: [
+      "The regulation requires referral to the ophthalmologist for medical follow-up, even if IOP is well controlled.",
+      "False: for a glaucoma suspect or early glaucoma, an equipped optometrist may initiate treatment before referring.",
+      "False: latanoprost (a prostaglandin analog, an evening drop that increases outflow) is among the glaucoma drugs permitted in these situations.",
+      "Correct: treatment can be started, then referral to the ophthalmologist for medical follow-up is mandatory."
+    ]
+  },
+  "C-008": {
+    stem: "A 66-year-old woman, IOP between 13 and 16 mmHg without treatment, open angles on gonioscopy. The diagram shows her OS disc on fundus exam. What is the significance of the small red flame-shaped lesion at the inferior disc margin?",
+    options: [
+      "A diabetic retinopathy hemorrhage, unrelated to glaucoma",
+      "A sign of intracranial hypertension: urgent brain imaging",
+      "Disc hemorrhage: a marker of active damage and progression",
+      "An unimportant artifact: IOP is normal, so there is no glaucoma"
+    ],
+    explain: "**What it is:** a disc hemorrhage (Drance hemorrhage) is a small flame-shaped hemorrhage at the disc margin, often inferotemporal, here next to a notch (focal loss of the neuroretinal rim). **Why it matters:** it signals ongoing damage; it is common in normal-tension glaucoma (NTG: glaucomatous neuropathy with IOP always ≤ 21 mmHg), and the AAO (2026) lists it as a risk factor for progression. **What to do:** photograph it (it resorbs), check agreement with OCT and visual field (expected defect: superior), tighten follow-up and consider lowering IOP.",
+    why: [
+      "Diabetic hemorrhages are retinal (dots, blots) and scattered; a flame at the edge of a notch points to glaucoma.",
+      "Intracranial hypertension produces disc edema: elevated discs with blurred margins, on both sides, with no notch or enlarged cup.",
+      "Correct: hemorrhage at the disc margin + notch = active glaucoma that warrants closer follow-up.",
+      "A normal IOP does not rule out glaucoma: that is precisely the definition of normal-tension glaucoma."
+    ]
+  },
+  "C-009": {
+    stem: "A 64-year-old woman followed for early normal-tension glaucoma (NTG): IOP 14 mmHg, inferotemporal notch of the disc OD. The diagram shows the pattern deviation map of her 24-2 visual field OD. Which test will best characterize this damage and its course?",
+    options: [
+      "A 10-2 visual field, which finely tests the central 10°",
+      "A Goldmann kinetic field focused on the far periphery",
+      "An Esterman binocular field, as for a driver's licence",
+      "A brain MRI to rule out damage to the optic chiasm"
+    ],
+    explain: "**What the field shows:** a superior paracentral scotoma, i.e. depressed points a few degrees above fixation, respecting the horizontal meridian; it matches the inferotemporal notch (focal loss of the disc rim). **Why it matters:** NTG (glaucoma in which the nerve cups while IOP stays ≤ 21 mmHg) often affects the area near fixation early, and the 24-2 grid, with points spaced 6° apart, places only a few points in this zone: it can underestimate the defect. **What to do:** add a 10-2 field (dense grid over the central 10°) at baseline and at follow-up, with RNFL and macular ganglion cell OCT; a defect threatening fixation prompts treatment without delay.",
+    why: [
+      "Correct: the 10-2 maps paracentral defects that the 24-2 grid can miss or underestimate.",
+      "Goldmann kinetic perimetry (a light target moved from the periphery toward the center) is mainly used for very constricted fields; it measures a small defect near fixation poorly.",
+      "The Esterman (a screening field done with both eyes open) assesses fitness to drive, not a small central defect in one eye.",
+      "Chiasmal damage (where the optic nerves cross) respects the vertical meridian; this defect, matching the notch, respects the horizontal meridian, typical of glaucoma."
+    ]
+  },
+});
+Object.assign(G.OPH_EN.quiz, {
+  "C-010": {
+    stem: "A 69-year-old woman of Vietnamese origin, hyperopic at +3.50 D, asymptomatic. Cupped OD disc (C/D 0.8) with a matching arcuate field defect; IOP 16 to 19 mmHg at three daytime visits; cornea 548 µm. A colleague proposes concluding normal-tension glaucoma and starting drops. Which exam is essential before accepting this diagnosis?",
+    options: [
+      "Brain and orbit MRI to rule out nerve compression",
+      "ESR and CRP to rule out temporal arteritis",
+      "Gonioscopy to rule out intermittent angle closure",
+      "24-hour ambulatory blood pressure monitoring"
+    ],
+    explain: "**What it is:** NTG (a nerve that cups with IOP always ≤ 21 mmHg) is a diagnosis of exclusion: first rule out a missed elevated IOP, angle closure and non-glaucomatous nerve damage. **Why gonioscopy:** this hyperopic woman (short eye) of East Asian origin has the profile of primary angle closure; if the iris intermittently blocks the filter, often in the evening in dim light, IOP rises between visits and looks normal in clinic, mimicking NTG. Gonioscopy (examination of the angle with a mirrored lens, in a dark room with a small beam) then shows iridotrabecular contact or synechiae (adhesions). **What to do:** perform gonioscopy in every patient labeled NTG; if the angle is narrow, treatment changes (laser iridotomy or lens extraction) instead of simple drops.",
+    why: [
+      "MRI is ordered for an atypical sign (age < 50, pallor more marked than cupping, loss of VA or color vision, defect respecting the vertical meridian); none of these is present here.",
+      "ESR and CRP (inflammatory markers) look for giant cell arteritis in a patient ≥ 50 with headache or jaw pain on chewing; they do not replace examination of the angle.",
+      "Correct: a classic trap; an angle that closes intermittently causes IOP spikes invisible in clinic and changes the whole treatment.",
+      "Nocturnal hypotension (a drop in blood pressure at night) can worsen NTG, but it is sought once the diagnosis is established; it does not rule out angle closure."
+    ]
+  },
+  "C-011": {
+    stem: "During your first gonioscopy (examination of the iridocorneal angle with a mirrored lens), your attending asks which structure lies just behind the pigmented trabecular meshwork and serves as a landmark: if it is seen over 360°, the whole functional filter is uncovered. What do you answer?",
+    options: [
+      "Schwalbe line, the end of Descemet membrane",
+      "The non-pigmented trabecular meshwork, the anterior part of the filter",
+      "The scleral spur, a whitish projection of the sclera",
+      "The ciliary body band, the visible part of the ciliary body"
+    ],
+    explain: "**What it is:** from posterior to anterior, you see the iris root, the ciliary body band, the scleral spur, the trabecular meshwork (pigmented posteriorly, the part that filters the most; non-pigmented anteriorly) and Schwalbe line: \"I Can't See Til Schwalbe\". **Why it matters:** the scleral spur marks the posterior limit of the trabecular meshwork; if it is visible, the filter just in front of it is not hidden by the iris. **What to do:** look for the spur in all 4 quadrants; if it is hidden over at least 180°, this is iridotrabecular contact (iris applied against the filter), the basis for diagnosing primary angle closure.",
+    why: [
+      "Schwalbe line is the most anterior structure; if it alone is visible, the angle is very narrow (Shaffer 1, on a scale from 0 = closed to 4 = wide open).",
+      "The non-pigmented meshwork lies in front of the pigmented meshwork; seeing it does not guarantee that the filtering part, further back, is uncovered.",
+      "Correct: a scleral spur visible over 360° confirms that the angle is open.",
+      "The ciliary body band is even further back, behind the spur; it is seen only in a wide-open angle (Shaffer 4)."
+    ]
+  },
+  "C-012": {
+    stem: "A 62-year-old man from Nunavik, referred to Montréal for narrow angles. IOP 27 mmHg OD; healthy OD disc (C/D 0.3), normal RNFL OCT and visual field. The diagram shows gonioscopy of his OD after indentation (pressing the lens on the cornea). How do you classify the OD?",
+    options: [
+      "Primary angle-closure suspect (PACS)",
+      "Primary angle closure (PAC)",
+      "Primary angle-closure glaucoma (PACG)",
+      "Primary open-angle glaucoma (POAG)"
+    ],
+    explain: "**What the diagram shows:** only Schwalbe line (at best with the anterior, non-pigmented meshwork) is visible (Shaffer 1); the pigmented meshwork and the spur are hidden and the iris stays stuck to the filter despite indentation: these are peripheral anterior synechiae (PAS: permanent adhesions between iris and trabecular meshwork). **Why this stage:** the ISGEO classification distinguishes PACS (iridotrabecular contact ≥ 180°, normal IOP, no PAS and no nerve damage), PAC (contact with PAS and/or elevated IOP, healthy nerve) and PACG (PAC with glaucomatous optic neuropathy); here, PAS and IOP of 27 mmHg with a healthy nerve = PAC. The Inuit of Nunavik have some of the highest rates of primary angle closure in the world. **What to do:** open the angle with a laser iridotomy (LPI: a small hole in the peripheral iris), or with lens extraction if ≥ 50 years with IOP ≥ 30 mmHg (EAGLE); drops if IOP remains elevated; follow gonioscopy, OCT and field.",
+    why: [
+      "PACS requires normal IOP, without PAS; here, PAS and elevated IOP move the case to the next stage.",
+      "Correct: PAS and elevated IOP, but normal optic nerve and visual field.",
+      "PACG requires glaucomatous optic neuropathy (cupping, RNFL loss, field defect); the nerve is healthy here.",
+      "POAG requires an open angle, with the scleral spur visible over 360°; here the angle is closed and stuck."
+    ]
+  },
+  "C-013": {
+    stem: "A 34-year-old woman, normally emmetropic, who started topiramate for migraines 10 days ago. Since yesterday, blurred vision in both eyes and a dull ache. VA 6/30 (20/100) OU, improving to 6/7.5 (20/25) with −4.00 D; IOP 44 mmHg OD and 42 mmHg OS; anterior chambers very shallow centrally as well as peripherally. What is the best management?",
+    options: [
+      "Laser iridotomy in both eyes the same day",
+      "Pilocarpine 2 % QID to pull the iris out of the angle",
+      "Urgent clear lens extraction in both eyes",
+      "Stop topiramate, cycloplegic, steroid and pressure-lowering drops"
+    ],
+    explain: "**What it is:** topiramate (like some sulfonamides) can cause ciliochoroidal effusion: fluid accumulates around the ciliary body, which rotates forward and pushes the lens and iris against the angle, in both eyes, with acute myopia. **Why it is different:** there is no pupillary block (impeded aqueous flow between iris and lens), so laser iridotomy (a small hole in the iris) does not open the angle, and pilocarpine (a drop that constricts the pupil and the ciliary muscle) moves the lens further forward and worsens the closure. **What to do:** stop topiramate with the prescriber, cycloplegic (a drop that relaxes the ciliary muscle and moves the lens back), topical steroid and pressure-lowering drops; the condition usually improves within a few days of stopping.",
+    why: [
+      "Iridotomy treats pupillary block; here, the angle is closed by a push from behind, which the hole in the iris does not correct.",
+      "Pilocarpine is contraindicated: by contracting the ciliary muscle, it moves the lens forward and worsens the closure.",
+      "Lens extraction is not indicated: the cause is drug-induced and reversible when topiramate is stopped.",
+      "Correct: remove the cause, move the lens back with a cycloplegic and control IOP."
+    ]
+  },
+  "C-014": {
+    stem: "A 61-year-old woman, hyperopic at +3.00 D, clear lens, VA 6/6 (20/20) OU. Gonioscopy: iris in contact with the trabecular meshwork over 360°, with a few synechiae (adhesions); IOP 32 mmHg OU; normal optic nerves and visual fields. According to the EAGLE trial, which option offers the best long-term IOP control?",
+    options: [
+      "Laser iridotomy in both eyes, then drops as needed",
+      "Clear lens extraction with an intraocular lens",
+      "Long-term pilocarpine 2 % to keep the angle open",
+      "Trabeculectomy right away to aim for a very low IOP"
+    ],
+    explain: "**What it is:** this patient has primary angle closure (PAC: iris applied against the filter, with synechiae and elevated IOP, nerve still healthy); in a short eye, the lens that thickens with age pushes the iris forward. **Why extraction:** in EAGLE (≥ 50 years, PAC with IOP ≥ 30 mmHg or PACG), replacing the clear lens with a thin implant gave better IOP control and better quality of life than laser iridotomy; at 3 years, operated patients were about 10 times more likely to be controlled without drops. **What to do:** discuss the surgery and its risks (short eye, endothelium to check with specular microscopy), then follow IOP, gonioscopy, OCT and field.",
+    why: [
+      "Laser iridotomy (a small hole in the iris that bypasses the pupil) remains possible, but it gave poorer control than lens extraction in EAGLE.",
+      "Correct: in a patient ≥ 50 with PAC and IOP ≥ 30 mmHg, clear lens extraction outperforms iridotomy (EAGLE).",
+      "Long-term pilocarpine (a drop that constricts the pupil) is poorly tolerated (headache, myopia) and does not address the cause, the thick lens.",
+      "Trabeculectomy (a surgical fistula to a bleb under the conjunctiva) is risky in a short eye (aqueous misdirection, suprachoroidal hemorrhage) and is not the first choice when the nerve is healthy."
+    ]
+  },
+  "C-015": {
+    stem: "A 67-year-old woman in the ED with headache, vomiting and colored halos for 3 hours. OD: red eye, hazy cornea, non-reactive mid-dilated pupil, IOP 60 mmHg; OS: shallow anterior chamber, IOP 16 mmHg. No asthma or sulfa allergy, normal renal function. The ED physician has already ordered pilocarpine 2 % every 5 minutes. What is the best immediate management?",
+    options: [
+      "Continue pilocarpine 2 % every 5 minutes until the angle opens",
+      "Timolol, brimonidine, dorzolamide and acetazolamide 500 mg",
+      "Immediate laser iridotomy despite the edematous cornea",
+      "Head CT before any ocular treatment"
+    ],
+    explain: "**What it is:** an acute angle-closure attack: the iris suddenly blocks the entire angle filter, IOP soars, the cornea swells (halos, blur) and the iris sphincter, deprived of blood, stops reacting (fixed mid-dilated pupil). **Why not pilocarpine first:** at 60 mmHg, this ischemic sphincter does not respond to pilocarpine (a drop that constricts the pupil); repeating doses does not open the angle and delays the real treatment. **What to do:** first lower IOP with timolol 0.5 % (beta-blocker), brimonidine (alpha-agonist) and dorzolamide (carbonic anhydrase inhibitor), which reduce aqueous production, plus acetazolamide 500 mg PO or IV; add prednisolone acetate 1 %; IV mannitol if IOP does not fall; pilocarpine 1–2 % once IOP has come down, then laser iridotomy in both eyes.",
+    why: [
+      "Trap: the iris sphincter, ischemic at an IOP of 60 mmHg, does not respond; pilocarpine is given once IOP has been lowered.",
+      "Correct: reduce aqueous production through several pathways, then pilocarpine and laser iridotomy follow.",
+      "Laser iridotomy (a small hole in the iris that bypasses the pupil) is the definitive treatment, but the edematous cornea hampers the laser; lower IOP first to clear the cornea.",
+      "The attack mimics migraine or a neurological disorder, but the hazy cornea, fixed pupil and IOP of 60 mmHg make the diagnosis; delaying treatment threatens the nerve."
+    ]
+  },
+  "C-016": {
+    stem: "A 72-year-old hyperopic man presents with intense pain in the OS that began last night at the movies, with blurred vision and nausea. The diagram shows his OS anterior segment at the slit lamp. What is the most likely diagnosis?",
+    options: [
+      "Acute angle-closure attack",
+      "Acute anterior uveitis with ocular hypertension",
+      "Neovascular glaucoma from a vein occlusion",
+      "Bacterial keratitis with a chamber reaction"
+    ],
+    explain: "**What the diagram shows:** a congested eye with redness around the limbus (ciliary flush), a cornea hazy from edema and an oval, mid-dilated pupil; the shallow chamber, not visible on this frontal view, is confirmed with a thin slit (Van Herick). **Why it is an attack:** the very high IOP overwhelms the corneal endothelial pump (hence the edema, halos and blur) and deprives the iris sphincter of blood (fixed pupil); the dim light of the movie theater put the pupil in mid-dilation, a position that favors angle block in a short eye. **What to do:** measure IOP, examine the fellow eye, lower IOP without delay (pressure-lowering drops and acetazolamide), then laser iridotomy in both eyes.",
+    why: [
+      "Correct: corneal edema, mid-dilated pupil, ciliary flush and pain after time in dim light, in a hyperope.",
+      "Anterior uveitis (inflammation of the iris and ciliary body) rather gives a small pupil, cells and precipitates on the endothelium, with a chamber of normal depth.",
+      "Neovascular glaucoma (an angle closed by abnormal vessels, after diabetes or a retinal vein occlusion) shows new vessels on the iris and sets in less abruptly.",
+      "Bacterial keratitis (infection of the cornea) gives a white infiltrate with an ulcer that takes up fluorescein, often in a contact lens wearer."
+    ]
+  },
+});
+Object.assign(G.OPH_EN.quiz, {
+  "C-017": {
+    stem: "One week after an acute angle-closure attack OD treated with drops, acetazolamide and then laser peripheral iridotomy (LPI), IOP OD is 14 mmHg. The OS is asymptomatic: IOP 15 mmHg, but on gonioscopy the iris touches the trabecular meshwork over 270°. What do you propose for the OS?",
+    options: [
+      "Simple observation, since the OS has never had an attack",
+      "Long-term pilocarpine 2 % to keep the pupil small",
+      "Preventive timolol 0.5 % to keep IOP low",
+      "Prophylactic laser iridotomy of the OS without delay"
+    ],
+    explain: "**What it is:** the fellow eye of an attack almost always has the same anatomy: short eye, thick lens, narrow angle. **Why it matters:** without iridotomy, about half of fellow eyes have an attack within 5 years (AAO 2026), with the same risks for the nerve, cornea and iris. **What to do:** offer an LPI (a small laser hole in the peripheral iris so aqueous bypasses the pupil), then check that the opening is patent and measure IOP 30 minutes to 2 hours afterward, then follow both eyes with gonioscopy.",
+    why: [
+      "Waiting exposes the eye to an attack in about half of cases within 5 years; this risk is much higher than in a simple angle-closure suspect.",
+      "Long-term pilocarpine (a drop that constricts the pupil) is poorly tolerated and does not protect reliably; it does not replace iridotomy.",
+      "Timolol (a beta-blocker that reduces aqueous production) lowers IOP, but does not stop the iris from blocking the angle.",
+      "Correct: prophylactic LPI of the fellow eye is part of the standard treatment of a pupillary-block attack."
+    ]
+  },
+  "C-018": {
+    stem: "A 4-month-old infant brought in by his parents: he tears a lot, shuts his eyes in light and rubs his eyes. The corneas look large and slightly bluish; with a penlight, you see curved lines deep in the cornea of the OD. Which diagnosis should you consider first?",
+    options: [
+      "Congenital nasolacrimal duct obstruction",
+      "Neonatal Chlamydia conjunctivitis",
+      "Neonatal herpetic keratitis",
+      "Primary congenital glaucoma"
+    ],
+    explain: "**What it is:** primary congenital glaucoma comes from an angle that is malformed at birth: aqueous humor drains poorly and IOP rises. **Why these signs:** in infants, the wall of the eye is soft and stretches under pressure: the cornea enlarges and clouds (buphthalmos, \"ox eye\"), Descemet membrane (the deep layer of the cornea) breaks in curved lines (Haab striae), and corneal edema produces the triad of tearing, photophobia and blepharospasm (forced lid closure). **What to do:** urgent referral to pediatric ophthalmology for an examination under anesthesia, then surgery (goniotomy or trabeculotomy: surgical opening of the angle filter); drops are only a bridge, and never brimonidine under age 2 (profound somnolence, apnea).",
+    why: [
+      "Nasolacrimal duct obstruction gives tearing with sticky discharge, but a clear cornea of normal size, without photophobia.",
+      "Chlamydia conjunctivitis (an infection transmitted at delivery, mostly in the first weeks) gives discharge and conjunctival redness, not an enlarged cornea with striae.",
+      "Herpetic keratitis (infection of the cornea by herpes virus) gives lesions that take up fluorescein, without corneal enlargement.",
+      "Correct: tearing, photophobia, blepharospasm, a large cloudy cornea and Haab striae."
+    ]
+  },
+  "C-019": {
+    stem: "A 45-year-old former hockey player, IOP 29 mmHg OD and 15 mmHg OS, with no other slit-lamp abnormality. The diagram shows gonioscopy of his OD. What is the most likely diagnosis?",
+    options: [
+      "Angle-recession glaucoma, a sequela of old trauma",
+      "Neovascular glaucoma, with vessels crossing the spur",
+      "Primary angle closure with anterior synechiae",
+      "Iridocorneal endothelial syndrome with high synechiae"
+    ],
+    explain: "**What the diagram shows:** a wide-open angle with an abnormally wide, irregular ciliary body band and torn iris processes (fine strands of iris). **Why it matters:** a blow to the eye (e.g. a hockey puck or ball) can tear the ciliary muscle between its layers (angle recession) and damage the adjacent trabecular meshwork, which scars and filters less well; glaucoma can appear years later, on one side only, hence the IOP asymmetry. **What to do:** compare gonioscopy of both eyes, document the nerve (OCT, field), treat with drops then filtering surgery if they fail, and monitor IOP for life.",
+    why: [
+      "Correct: widened ciliary body band and torn iris processes, on one side, with elevated IOP on the same side.",
+      "Neovascular glaucoma (abnormal vessels growing in the angle, often after diabetes or a vein occlusion) shows vessels crossing the scleral spur, absent here.",
+      "In primary angle closure, the iris hides the angle structures; here the angle is wide open, without synechiae (adhesions).",
+      "ICE syndrome (abnormal endothelium migrating over the angle and iris) gives synechiae that extend beyond Schwalbe line and a distorted iris, not a widened ciliary body band."
+    ]
+  },
+  "C-020": {
+    stem: "A 70-year-old woman, hyperopic at +5.00 D (short eye), who already had a patent laser iridotomy OD. Three days after uncomplicated cataract surgery OD: IOP 36 mmHg, anterior chamber uniformly flat centrally as well as peripherally, iridotomy still patent, moderate pain; ultrasound shows no choroidal elevation. Which mechanism best explains this picture?",
+    options: [
+      "Pupillary block: aqueous no longer passes between iris and IOL",
+      "Suprachoroidal hemorrhage pushing the eye contents forward",
+      "Aqueous misdirection, with aqueous accumulating in the vitreous",
+      "Reactivated Posner-Schlossman hypertensive uveitis"
+    ],
+    explain: "**What it is:** in aqueous misdirection (malignant glaucoma), aqueous humor is diverted posteriorly into the vitreous instead of passing to the anterior chamber; the vitreous swells and pushes the IOL and iris forward. **Why this is the right mechanism:** the chamber is flat centrally AND peripherally with elevated IOP despite a patent iridotomy (which rules out pupillary block), and ultrasound shows no blood or fluid under the choroid (which rules out hemorrhage or choroidal effusion); the short eye is the typical setting. **What to do:** atropine (relaxes the ciliary muscle and moves the lens implant back) and pressure-lowering drops, never pilocarpine; in this pseudophakic eye (an eye with an IOL), open the anterior hyaloid (the membrane at the front of the vitreous) with the Nd:YAG laser to restore flow, or vitrectomy if that fails.",
+    why: [
+      "Pupillary block gives iris bombé with a chamber deeper centrally than peripherally; a patent iridotomy bypasses it.",
+      "Suprachoroidal hemorrhage (sudden bleeding under the choroid) causes intense pain and dark choroidal elevations visible on fundus exam and ultrasound, absent here.",
+      "Correct: uniformly flat chamber, elevated IOP, patent iridotomy and flat choroid = misdirection.",
+      "Posner-Schlossman (recurrent attacks of very high IOP with little inflammation, open angle) leaves a chamber of normal depth."
+    ]
+  },
+  "C-051": {
+    stem: "A 74-year-old woman of Scandinavian origin seen for progressive vision loss OS. Before dilation, whitish flakes are noted at the pupillary margin; after dilation, the anterior lens capsule is photographed (photo). IOP 27 mmHg OS, 16 mmHg OD. What is the most likely diagnosis?",
+    options: [
+      "True exfoliation of the capsule, heat-related (glassblowers)",
+      "Pseudoexfoliation syndrome (PXF) with probable secondary glaucoma",
+      "Pigment dispersion syndrome with pigment deposited on the lens",
+      "Congenital anterior polar cataract, unrelated to IOP"
+    ],
+    explain: "**What it is:** pseudoexfoliation (PXF) is an age-related disease in which whitish fibrillar material deposits on the lens capsule, the zonules (fibers that suspend the lens), the iris and the trabecular meshwork (the angle's filter). **Why it matters:** on the capsule, it forms a target (bull's-eye) — a central disc, a clear ring where the iris rubs, and a granular peripheral band often visible only after dilation — and it clogs the meshwork: it is a common cause of secondary open-angle glaucoma, often asymmetric as here. **What to do:** gonioscopy (irregular pigment, Sampaolesi line), disc exam, OCT and visual field, then note in the chart the zonular fragility for future cataract surgery.",
+    why: [
+      "True exfoliation is a splitting of the capsule into thin sheets after long exposure to infrared heat; it is rare and does not form a three-zone target.",
+      "Correct: a target on the capsule, flakes at the pupillary margin, asymmetric IOP and typical age.",
+      "Pigment dispersion mainly affects young myopes; pigment deposits at the zonule–posterior capsule junction (Scheie line), not as a whitish target on the anterior capsule.",
+      "An anterior polar cataract is a small central opacity present from childhood; it has no peripheral band and does not explain an elevated IOP."
+    ]
+  },
+  "C-052": {
+    stem: "A 71-year-old man with unilateral PXF OS. IOP OS: 21 mmHg 4 months ago, 34 mmHg today; the angle is open on gonioscopy, with irregular trabecular pigment. Which mechanism best explains such a high and variable IOP?",
+    options: [
+      "Hypersecretion of aqueous humor by a stimulated ciliary body",
+      "Elevated episcleral venous pressure from orbital stasis",
+      "Angle closure from a lens pushed forward",
+      "A trabecular meshwork obstructed by fibrillar material and pigment"
+    ],
+    explain: "**What it is:** PXF material, and the pigment released when the iris rubs on the rough capsule, accumulate in the trabecular meshwork and the wall of Schlemm canal, which increases resistance to aqueous outflow. **Why it matters:** compared with primary open-angle glaucoma (POAG), pseudoexfoliation glaucoma gives higher IOPs, fluctuations and spikes that a single clinic reading can miss, and faster progression. **What to do:** aim for a lower target IOP, follow more often (IOP, OCT, visual field) and think early of SLT (selective laser trabeculoplasty: a gentle laser applied to the filter), which often responds well in PXF.",
+    why: [
+      "Aqueous production is normal in PXF; it is outflow that is impeded.",
+      "Episcleral venous pressure rises, for example, in a carotid-cavernous fistula (dilated episcleral vessels, proptosis), not in PXF.",
+      "This is possible in PXF, because weak zonules let the lens move forward; but here, the angle is open on gonioscopy.",
+      "Correct: trabecular obstruction by fibrillar material and pigment, with an open angle."
+    ]
+  },
+  "C-053": {
+    stem: "A 78-year-old woman with controlled pseudoexfoliation glaucoma, dense cataract with VA 6/30 (20/100). Her pupil dilates to only 5 mm, and the lens trembles slightly when she moves her eye (phacodonesis). Which surgical planning is most appropriate?",
+    options: [
+      "Pupil expander, capsular tension ring and an experienced surgeon",
+      "Operate as a standard cataract, because PXF affects only the trabecular meshwork",
+      "First perform a laser iridotomy so the pupil dilates better",
+      "Postpone surgery until IOP is below 12 mmHg without drops"
+    ],
+    explain: "**What it is:** in PXF, fibrillar material stiffens the iris (small pupil) and weakens the zonules; phacodonesis reveals this zonular weakness. **Why it matters:** during phaco, the zonules can give way (dialysis, vitreous loss, dropped nucleus), and even after uneventful surgery, the capsular bag–IOL complex can dislocate years later (late in-the-bag IOL dislocation). **What to do:** enlarge the pupil (iris hooks or a pupil expansion ring), support the bag with a capsular tension ring (a flexible ring placed in the bag that distributes tension over all the zonules), have a backup plan, monitor IOP after surgery and warn the patient to come in if her vision drops suddenly.",
+    why: [
+      "Correct: anticipate the small pupil and zonular weakness before entering the eye.",
+      "False: the material also deposits on the zonules and iris; ignoring phacodonesis risks zonular rupture during surgery.",
+      "Iridotomy (a small laser hole in the peripheral iris) treats pupillary block; it does not enlarge a rigid pupil.",
+      "IOP is already controlled; waiting does not strengthen zonules that weaken over time, and the dense cataract hampers glaucoma follow-up."
+    ]
+  },
+});
+Object.assign(G.OPH_EN.quiz, {
+  "C-054": {
+    stem: "A 76-year-old man with pseudoexfoliation glaucoma OD: IOP 25 mmHg on two drops, early progression on the visual field, and he tolerates a third drop poorly. The diagram shows his OD gonioscopy. What is the best next step?",
+    options: [
+      "Laser iridotomy, because this pigment signals angle closure",
+      "Pilocarpine 2 % QID, to better expose the pigmented meshwork",
+      "SLT starting at lower energy, then an IOP check",
+      "Laser cyclophotocoagulation, because SLT is ineffective here"
+    ],
+    explain: "**What the diagram shows:** the angle is open (scleral spur, the white landmark at the base of the filter, clearly visible), the trabecular meshwork is heavily pigmented and a wavy line of pigment runs anterior to Schwalbe line: this is the Sampaolesi line, typical of PXF. **Why it matters:** SLT (a gentle laser that stimulates remodeling of the meshwork) often lowers IOP well in PXF, but a heavily pigmented meshwork absorbs more energy, hence a risk of IOP spike and inflammation after the laser. **What to do:** start at lower energy and adjust according to the reaction (small bubbles), measure IOP within the following hour, then judge the effect after a few weeks.",
+    why: [
+      "The angle is open and the spur is visible: the pigment does not signal closure, and iridotomy (a laser hole in the iris) does not treat a block that does not exist.",
+      "Pilocarpine (a drop that constricts the pupil) does not help the laser, adds to an already poorly tolerated regimen and promotes an even smaller pupil and posterior synechiae (iris stuck to the lens).",
+      "Correct: SLT is effective in PXF, and energy is titrated down in a heavily pigmented angle.",
+      "Cyclophotocoagulation (a laser that destroys part of the ciliary body, the aqueous \"factory\") is reserved for refractory glaucoma; SLT works well in PXF."
+    ]
+  },
+  "C-055": {
+    stem: "A 29-year-old man, myopic at −6.00 D, who sees halos and blurred vision after playing basketball; IOP 36 mmHg OD right after exercise, 19 mmHg at rest. The diagram shows his iris on retroillumination (light reflected back from the fundus). Which anatomical contact explains these findings?",
+    options: [
+      "The pupillary margin rubbing on fibrillar material on the capsule",
+      "The iris root apposed to the trabecular meshwork at the periphery of the angle",
+      "The concave posterior surface of the iris rubbing on the anterior zonules",
+      "The anterior surface of the iris touching the central corneal endothelium"
+    ],
+    explain: "**What it is:** in pigment dispersion syndrome, typical of young myopic men, the midperipheral iris bows backward (reverse pupillary block: aqueous trapped in front pushes the iris back) and its pigment epithelium rubs against the zonular bundles. **Why it matters:** the rubbed areas lose their pigment and let light through as midperipheral spokes (transillumination defects); the released pigment deposits as a vertical spindle on the endothelium (Krukenberg spindle) and as a dense, homogeneous band in the trabecular meshwork, and exercise releases clouds of it that clog the filter and drive IOP up. **What to do:** baseline gonioscopy, OCT and visual field, regular follow-up (per Siddiqui 2003, about 10 % progress to glaucoma at 5 years and 15 % at 15 years) and examination of the peripheral retina, since these myopes have more lattice degeneration (thin areas of retina that can tear).",
+    why: [
+      "That is the mechanism of PXF, in an older person, with defects around the pupil rather than midperipheral spokes.",
+      "That is the iridotrabecular contact of angle closure, in a hyperope with a shallow chamber; here, the iris is concave and the angle wide.",
+      "Correct: concave iris against zonules = midperipheral radial defects and released pigment.",
+      "The iris does not touch the central cornea; the Krukenberg spindle comes from floating pigment that aqueous convection currents deposit on the endothelium."
+    ]
+  },
+  "C-056": {
+    stem: "A 41-year-old myopic man with pigmentary glaucoma OD: IOP 27 mmHg on latanoprost and an early arcuate defect. The diagram shows his gonioscopy. He wants to avoid adding drops. Which option is most appropriate?",
+    options: [
+      "360° SLT at the usual energy, since the pigment guides the laser well",
+      "SLT at reduced energy, sometimes over 180°, with an IOP check afterward",
+      "Laser iridotomy to flatten the iris and prevent progression",
+      "Pilocarpine 2 % QID to lift the iris off the zonules, with no further exam"
+    ],
+    explain: "**What it is:** SLT delivers energy that is absorbed by the pigment of the trabecular meshwork; in pigmentary glaucoma, the dense, homogeneous 360° band of pigment absorbs much more than usual. **Why it is a trap:** the usual energy can cause a marked, sometimes prolonged IOP spike and inflammation in an already damaged eye. **What to do:** start at lower energy (sometimes over 180° only), give an alpha-agonist (apraclonidine or brimonidine: a drop that slows aqueous production) before the laser, measure IOP within the following hour and judge the effect after a few weeks.",
+    why: [
+      "Trap: a heavily pigmented meshwork absorbs too much energy, hence a risk of a marked and prolonged IOP spike.",
+      "Correct: the same laser, but energy titrated down and IOP monitored.",
+      "Iridotomy flattens the concave iris, but no solid evidence shows that it prevents conversion or progression of pigmentary glaucoma.",
+      "Pilocarpine reduces rubbing by constricting the pupil, but it makes the young myope more myopic and causes headaches, and it can promote retinal detachment: examine the peripheral retina under dilation first."
+    ]
+  },
+  "C-057": {
+    stem: "A 66-year-old man, myopic at −5.00 D, referred for \"normal-tension glaucoma\": cupping and field defects in both eyes, untreated IOP of 15 to 17 mmHg at each visit. He remembers halos after sports in his thirties. The photo shows his cornea at the slit lamp. What is the most accurate interpretation?",
+    options: [
+      "Typical normal-tension glaucoma: brain MRI right away",
+      "Pseudoexfoliation glaucoma: look for deposits on the anterior capsule",
+      "Old steroid-induced glaucoma: ask about drops he has received",
+      "\"Burned-out\" pigmentary glaucoma: IOP formerly high, signs attenuated"
+    ],
+    explain: "**What the photo shows:** a fine vertical deposit of pigment on the central corneal endothelium, the Krukenberg spindle, a trace of old pigment dispersion. **Why it is a trap:** with age, the lens grows and pushes the iris forward, iris–zonule rubbing decreases, the meshwork partly clears and IOP normalizes; in this \"burned-out\" phase, the damage comes from past IOP spikes and mimics normal-tension glaucoma (NTG: glaucomatous damage with an always-normal IOP). **What to do:** before concluding NTG, perform gonioscopy (residual trabecular pigment), look for transillumination defects, then document progression to set a target IOP.",
+    why: [
+      "Trap: IOP is normal today, but the spindle and halos with exercise point to pigment dispersion; MRI is reserved for atypical features (pallor more marked than cupping, a defect respecting the vertical meridian).",
+      "PXF can deposit pigment on the cornea, but it mainly gives a whitish target on the capsule and high IOPs; halos with exercise in a young myope point elsewhere.",
+      "Steroid-induced glaucoma requires steroid exposure; it explains neither the pigment spindle nor the halos with exercise.",
+      "Correct: signs of pigment dispersion and a normalized IOP = burned-out pigmentary glaucoma, not to be labeled NTG."
+    ]
+  },
+  "C-058": {
+    stem: "A 59-year-old man with poorly controlled type 2 diabetes, never treated for his retinopathy; VA 6/24 (20/80) and IOP 23 mmHg OS. The photo shows his iris at the slit lamp, before dilation. What is the finding and the next step?",
+    options: [
+      "Iris new vessels: gonioscopy and urgent referral to retina",
+      "Normal vessels of a light-colored iris: no further testing required",
+      "Hyperemia from anterior uveitis: topical steroid and recheck in 1 week",
+      "Pseudoexfoliation deposits: look for a Sampaolesi line on gonioscopy"
+    ],
+    explain: "**What the photo shows:** fine, tortuous, irregular red vessels on the surface of the iris, up to the pupillary margin: these are iris new vessels (neovascularization of the iris, NVI, or rubeosis iridis). **Why it matters:** a retina starved of oxygen (here, untreated proliferative diabetic retinopathy) releases VEGF (a factor that makes abnormal vessels grow); these vessels reach the angle, where they clog and then close the filter: this is neovascular glaucoma. **What to do:** examine the iris before dilating (dilation hides the pupillary margin), perform gonioscopy to look for angle new vessels (NVA), examine the fundus and refer promptly to retina for an anti-VEGF injection (a drug injected into the vitreous that blocks VEGF) and panretinal photocoagulation (PRP: laser to the ischemic peripheral retina that reduces VEGF production).",
+    why: [
+      "Correct: rubeosis iridis in an untreated diabetic, to be confirmed on gonioscopy and treated promptly.",
+      "Normal iris vessels are radial and buried in the stroma; these are fine, tortuous, superficial and near the pupil, hence abnormal.",
+      "Anterior uveitis (inflammation of the iris and ciliary body) gives cells in the anterior chamber and redness around the limbus, not a network of new vessels on the iris.",
+      "PXF gives whitish flakes at the pupillary margin and a target on the capsule, not red vessels on the iris."
+    ]
+  },
+  "C-059": {
+    stem: "A 72-year-old woman with an ischemic central retinal vein occlusion (CRVO: blockage of the main vein of the retina) OD 10 weeks ago; IOP 31 mmHg today. The diagram shows her OD gonioscopy. Which mechanism explains the IOP rise at this stage?",
+    options: [
+      "Peripheral synechiae closing the angle around its entire circumference",
+      "A fibrovascular membrane covering a still-open angle",
+      "Pupillary block caused by a pupil stuck to the lens",
+      "Blood in Schlemm canal from elevated venous pressure"
+    ],
+    explain: "**What the diagram shows:** the angle is open, but fine vessels cross the scleral spur and arborize over the trabecular meshwork: these are angle new vessels (neovascularization of the angle, NVA), whereas normal angle vessels do not cross the spur. **Why it matters:** the ischemic retina releases VEGF; the new vessels are accompanied by a fibrovascular membrane (tissue made of vessels and scar) that lines the filter and blocks outflow while the angle is still open; the membrane then contracts and pulls the iris onto the meshwork (synechiae), closing the angle irreversibly, often about 3 months after an ischemic CRVO (\"90-day glaucoma\"). **What to do:** treat quickly during this open, still reversible stage: intravitreal anti-VEGF, panretinal photocoagulation and pressure-lowering drops.",
+    why: [
+      "That is the next, synechial stage: on the diagram, the angle is still open and no synechiae are seen.",
+      "Correct: open-angle stage of neovascular glaucoma, still reversible.",
+      "Pupillary block (iris stuck to the lens over 360°, bowing forward) would close the angle peripherally; here, the angle is open and the spur visible.",
+      "Blood can reflux into Schlemm canal during gonioscopy when episcleral venous pressure is high; it forms a red band without branches and does not explain this IOP."
+    ]
+  },
+  "C-060": {
+    stem: "A 68-year-old man with an ischemic CRVO OS 3 months ago. Red, painful eye, cornea steamy from edema, IOP 46 mmHg, iris and angle new vessels, synechiae over 180°; VA 6/60 (20/200). What is the best initial management?",
+    options: [
+      "Pilocarpine 2 % to open the angle, then laser iridotomy",
+      "Urgent trabeculectomy with mitomycin C, with no other treatment",
+      "Anti-VEGF, pressure-lowering drops, atropine and steroid, then PRP",
+      "Cyclophotocoagulation alone, since vision is already compromised"
+    ],
+    explain: "**What it is:** neovascular glaucoma, in which the ischemic retina, through VEGF, grows vessels that obstruct and then close the angle. **Why it matters:** the cause must be treated (intravitreal anti-VEGF, which makes new vessels regress within days, then panretinal photocoagulation for a lasting effect), IOP lowered (beta-blocker, carbonic anhydrase inhibitor, alpha-agonist, oral acetazolamide if needed) and the eye calmed (atropine, which relieves pain and stabilizes the blood–aqueous barrier, and a topical steroid); pilocarpine is contraindicated, because it increases inflammation and cannot reopen an angle sealed by synechiae. **What to do:** if IOP stays high, prefer a drainage tube (Ahmed, Baerveldt) to trabeculectomy, keep cyclophotocoagulation for eyes with low visual potential, and look for the cause: with no diabetes or obvious vein occlusion, think of ocular ischemic syndrome (reduced blood supply to the whole eye from carotid narrowing) and order a carotid Doppler.",
+    why: [
+      "Trap: pilocarpine worsens inflammation and does not reopen an angle closed by synechiae; there is no pupillary block to relieve.",
+      "With active new vessels, trabeculectomy bleeds and often fails from scarring; VEGF is treated first, and a tube is generally preferred.",
+      "Correct: treat the cause (anti-VEGF, PRP), the IOP and the inflammation at the same time.",
+      "Cyclophotocoagulation (a laser that destroys part of the ciliary body) does not treat the ischemia: alone, it lets the new vessels progress; it is mainly reserved for painful eyes or those with low visual potential."
+    ]
+  },
+});
+Object.assign(G.OPH_EN.quiz, {
+  "C-061": {
+    stem: "A 27-year-old man with severe allergic keratoconjunctivitis treated with prednisolone acetate 1 % QID for 4 weeks. IOP 33 mmHg OD, versus 15 mmHg before treatment; quiet anterior chamber, open angle. What is the most appropriate management?",
+    options: [
+      "Switch to loteprednol or reduce the steroid, and add a pressure-lowering drop",
+      "Replace with difluprednate, a steroid that raises IOP less",
+      "Continue the same steroid and plan a trabeculectomy soon",
+      "Perform a laser iridotomy to prevent angle closure"
+    ],
+    explain: "**What it is:** a steroid response: in some people, the \"responders\" (more often with a personal or family history of POAG, high myopia, or in children), steroids alter the trabecular matrix and impede outflow, usually 2 to 6 weeks after starting the drops. **Why it matters:** the risk depends on potency and route: difluprednate and prednisolone acetate raise IOP more often than weaker steroids such as loteprednol or fluorometholone, and intravitreal depots or implants (triamcinolone, dexamethasone, fluocinolone) can cause prolonged rises. **What to do:** reduce or replace the steroid (a weaker one, or a steroid-sparing topical anti-allergic), add a pressure-lowering drop and follow IOP until it returns to normal; if it persists, SLT is an effective option and an accessible depot can be removed.",
+    why: [
+      "Correct: remove or soften the cause and lower IOP in the meantime.",
+      "On the contrary, difluprednate is one of the steroids that raise IOP the most, often quickly.",
+      "The rise is generally reversible when the steroid is withdrawn; surgery is reserved for refractory IOP or progressing damage.",
+      "The angle is open: the mechanism is trabecular, with no pupillary block, and iridotomy does not help."
+    ]
+  },
+  "C-062": {
+    stem: "A 45-year-old man with chronic recurrent anterior uveitis (inflammation of the iris and ciliary body). The iris is stuck to the lens around the entire pupil (360° posterior synechiae); IOP 44 mmHg, chamber deep centrally but very shallow peripherally. The photo shows the eye at the slit lamp. Which treatment addresses the mechanism?",
+    options: [
+      "Pilocarpine 2 % to pull the iris centrally and open the angle",
+      "A prostaglandin analog alone, as first line",
+      "360° SLT to increase trabecular outflow",
+      "Laser iridotomy or surgical iridectomy"
+    ],
+    explain: "**What the photo shows:** the iris bows forward (iris bombé): aqueous humor, produced behind the iris, can no longer pass through the pupil sealed to the lens (seclusio pupillae); it accumulates behind the iris and pushes it against the trabecular meshwork, which closes the angle. **Why it matters:** this is an inflammatory pupillary block; until a new pathway is created, drops alone fail and peripheral synechiae (iris sealed to the angle) set in. **What to do:** open a pathway with a laser iridotomy (often more than one, because they close in an inflamed eye) or a surgical iridectomy, which is more durable, while controlling inflammation (steroid, cycloplegic) and IOP (aqueous suppressants).",
+    why: [
+      "Pilocarpine worsens inflammation, promotes new synechiae and cannot relieve the pupillary block.",
+      "Prostaglandin analogs (drops that increase uveoscleral outflow) are used cautiously in uveitis and do not relieve pupillary block.",
+      "The angle is closed by the iris: the laser cannot reach the trabecular meshwork, and SLT works poorly in an inflamed eye.",
+      "Correct: a new pathway through the iris relieves the block and flattens the iris."
+    ]
+  },
+  "C-063": {
+    stem: "A 32-year-old HLA-B27-positive man (a genetic marker linked to spondyloarthritis) with acute anterior uveitis: on day 1, anterior chamber cells 3+ and IOP 7 mmHg. After 10 days of prednisolone acetate 1 % (hourly, then QID): cells 0.5+ and IOP 30 mmHg; open angle, no synechiae. What is the most likely explanation?",
+    options: [
+      "A definite steroid response, requiring the steroid to be stopped at once",
+      "The ciliary body resumes secretion while the trabecular meshwork is still affected",
+      "Early iris bombé from posterior synechiae, despite an open angle",
+      "IOP overestimated because of corneal edema, to be remeasured without treatment"
+    ],
+    explain: "**What it is:** during acute inflammation, the inflamed ciliary body produces less aqueous, which masks a trabecular meshwork clogged with cells and proteins, or itself inflamed (trabeculitis); as the eye settles, production returns before the filter recovers, and IOP rises. **Why it matters:** do not jump to a steroid response (more typical after 2 to 6 weeks) or stop the steroid abruptly, which would make the uveitis rebound; other uveitides raise IOP through viral trabeculitis (HSV, VZV, CMV) or in Posner-Schlossman syndrome (unilateral attacks of very high IOP with few cells). **What to do:** keep controlling the inflammation with a gradual taper, add an aqueous suppressant (beta-blocker, carbonic anhydrase inhibitor), avoid pilocarpine and recheck IOP closely; if it keeps rising after a few weeks, switch to a weaker steroid.",
+    why: [
+      "A steroid response remains possible, but it is less typical at 10 days; stopping abruptly makes the uveitis rebound, so taper gradually.",
+      "Correct: ciliary secretion recovers before the filter, hence the IOP rise as the eye settles.",
+      "Iris bombé requires a pupil sealed over 360° and closes the angle peripherally; here, the angle is open, without synechiae.",
+      "Corneal edema tends to make Goldmann tonometry underestimate IOP, not overestimate it."
+    ]
+  },
+  "C-064": {
+    stem: "A 67-year-old woman, postoperative day 1 after a trabeculectomy (a fistula under a scleral flap that drains aqueous into a pocket under the conjunctiva, the bleb) with mitomycin C OD: IOP 3 mmHg, flat bleb, shallow anterior chamber (iris and cornea touching peripherally), blurred vision. The diagram shows fluorescein applied to the bleb. What is the most appropriate management?",
+    options: [
+      "Massage the globe through the lid to restart filtration",
+      "Laser lysis of a flap suture to increase drainage",
+      "Close the leak and protect the chamber (atropine, close follow-up)",
+      "Start pilocarpine to pull the iris out of the angle"
+    ],
+    explain: "**What the diagram shows:** a positive Seidel test: concentrated fluorescein is diluted by a trickle of aqueous escaping from the bleb or the conjunctival wound. **Why it is a trap:** low IOP + shallow chamber means too much aqueous outflow (leak, overfiltration or choroidal effusion: detachment of the choroid by fluid); massaging or opening the flap would worsen the hypotony and could flatten the chamber, with a risk of lens–cornea touch, macular folds (hypotony maculopathy) and bleb failure. **What to do:** atropine to move the lens and iris back, an aqueous suppressant to reduce flow through the leak, a bandage contact lens or pressure patch, suturing if the leak persists or is large, and reformation of the chamber (viscoelastic) if there is lens–cornea touch.",
+    why: [
+      "Trap: massage pushes even more aqueous out; it is reserved for high IOP with a deep chamber.",
+      "Suture lysis opens the flap to increase filtration: it is used when IOP is too high, not too low.",
+      "Correct: close the leak and protect the anterior chamber.",
+      "Pilocarpine moves the lens and iris forward and increases inflammation: it would make the chamber even shallower."
+    ]
+  },
+  "C-065": {
+    stem: "A 62-year-old man, postoperative day 8 after a trabeculectomy with mitomycin C: IOP 27 mmHg, deep anterior chamber, flat and limited bleb, negative Seidel test; on gonioscopy, the internal ostium of the fistula is clear. What is the best management?",
+    options: [
+      "Atropine and supine positioning to deepen the anterior chamber",
+      "Immediate bleb needling with a subconjunctival antimetabolite injection",
+      "Pilocarpine to restart outflow through the remaining meshwork",
+      "Digital massage, then laser suture lysis or removal of a releasable suture"
+    ],
+    explain: "**What it is:** high IOP + deep chamber + flat bleb with a clear internal ostium means the scleral flap is too tight: not enough aqueous passes to the bleb. **Why it matters:** the surgeon deliberately tightens the flap to avoid early hypotony, then adjusts filtration during the first weeks, before scarring fixes the result (mitomycin extends this window). **What to do:** try digital massage through the lid, then cut a suture with the laser through a lens that compresses the conjunctiva (laser suture lysis) or pull a releasable suture; a few weeks later, a high, tense, vascularized bleb with high IOP rather suggests an encapsulated bleb, treated by needling (a needle slipped under the conjunctiva to open the fibrous capsule).",
+    why: [
+      "Atropine and supine positioning are for a shallow chamber; here, it is deep.",
+      "Needling targets an encapsulated bleb, high and tense, which comes later; here, the bleb is flat and the cause is a flap that is too tight.",
+      "Pilocarpine has no effect on the flap; it adds inflammation and miosis without addressing the cause.",
+      "Correct: gradually open the flap to increase filtration."
+    ]
+  },
+  "C-066": {
+    stem: "A 70-year-old hyperopic woman, postoperative day 3 after a trabeculectomy OS: IOP 38 mmHg, anterior chamber uniformly flat centrally and peripherally, patent iridectomy, flat bleb, negative Seidel, moderate pain. B-scan shows no choroidal detachment. What is the most likely diagnosis?",
+    options: [
+      "Aqueous misdirection (malignant glaucoma)",
+      "Delayed suprachoroidal hemorrhage",
+      "Pupillary block from a non-functional iridectomy",
+      "Overfiltration complicated by choroidal effusion"
+    ],
+    explain: "**What it is:** in aqueous misdirection (malignant glaucoma), aqueous humor flows posteriorly into the vitreous instead of toward the pupil; the vitreous swells and pushes the lens and iris forward. **Why it matters:** this gives high IOP with a chamber flat throughout despite a patent iridectomy, with no blood or fluid under the choroid on ultrasound, and the short hyperopic eye is a typical setting. **What to do:** cycloplegic (atropine, which pulls the lens back), aqueous suppressants and a hyperosmotic agent (mannitol, which dehydrates the vitreous), without pilocarpine, which makes it worse; if this fails, YAG laser to open the membrane at the front of the vitreous (anterior hyaloid) in a pseudophakic eye, or vitrectomy (surgery that removes the vitreous).",
+    why: [
+      "Correct: high IOP, uniformly flat chamber, patent iridectomy and flat choroid on ultrasound.",
+      "Suprachoroidal hemorrhage (bleeding under the choroid) gives sudden, intense pain and dark dome-shaped choroidal elevations, clearly visible on ultrasound.",
+      "Pupillary block bows the iris peripherally and leaves the central chamber deeper; it requires an occluded iridectomy, whereas here it is patent.",
+      "Overfiltration and choroidal effusion give low IOP, not 38 mmHg, and ultrasound would show the choroidal detachment."
+    ]
+  },
+  "C-067": {
+    stem: "A 58-year-old man with refractory glaucoma who had a Baerveldt tube last week: the plate is fixed to the sclera between two rectus muscles, well behind the limbus, and the tube enters the anterior chamber. The surgeon tied an absorbable suture around the tube. Why?",
+    options: [
+      "To fix the tube to the sclera and keep it from backing out of the anterior chamber",
+      "To block flow until a capsule forms around the plate",
+      "To replace the flow-limiting valve, removed to avoid encapsulation",
+      "To keep aqueous from reaching the neighboring suprachoroidal space"
+    ],
+    explain: "**What it is:** a glaucoma drainage device carries aqueous from the anterior chamber to a plate placed under Tenon capsule, near the equator of the globe; within a few weeks, a fibrous capsule forms around the plate and becomes the reservoir whose wall restricts and absorbs the flow. **Why it matters:** the Baerveldt has no valve, so without an obstruction all the aqueous would drain from day one (hypotony, flat chamber, choroidal effusion); hence the absorbable ligature, sometimes with a thread slipped into the tube lumen (ripcord) that is removed in clinic, whereas the Ahmed contains a valve that limits flow from the start (some surgeons also leave a ripcord in a PreserFlo or a XEN placed with an open conjunctival approach, to adjust filtration in clinic). **What to do:** expect IOP to stay high, on drops, until the ligature releases at around 4 to 6 weeks, and watch at follow-up for tube exposure (worn conjunctiva uncovering it, a portal of entry for infection) and tube–cornea touch (endothelial cell loss).",
+    why: [
+      "The plate is sutured to the sclera and the tube is covered with a patch graft (sclera, pericardium or cornea); the ligature does not serve as an anchor.",
+      "Correct: the ligature prevents early hypotony with a non-valved tube.",
+      "The Baerveldt never had a valve; the Ahmed has one, and a fibrous capsule forms around both plates.",
+      "Aqueous goes to the plate under Tenon, not to the suprachoroidal space; the ligature controls flow in the tube."
+    ]
+  },
+});
+Object.assign(G.OPH_EN.quiz, {
+  "C-068": {
+    stem: "A 66-year-old woman, trabeculectomy with mitomycin C 6 years ago; thin white (avascular) bleb. For 24 h: red eye, pain, discharge, VA dropped from 6/9 (20/30) to hand motions. Milky white bleb, hypopyon (a level of pus in the anterior chamber), dense vitreous cells. What is the diagnosis and management?",
+    options: [
+      "Blebitis: hourly topical antibiotic and recheck in 48 h",
+      "Late non-infectious uveitis: intensive topical steroid and cycloplegic",
+      "Bleb leak: bandage contact lens and IOP suppressants",
+      "Endophthalmitis: urgent tap and intravitreal antibiotics"
+    ],
+    explain: "**What it is:** bleb-related endophthalmitis: bacteria cross a thin bleb, sometimes years after surgery, and infect the inside of the eye as far as the vitreous. **Why it matters:** it must be distinguished from blebitis (infection limited to the bleb, milky white surrounded by redness, with little chamber reaction and a clear vitreous); here, the hypopyon, inflamed vitreous and loss of vision indicate vitreous involvement, an emergency, because the organisms involved (streptococci, Haemophilus) destroy the retina quickly. **What to do:** the same day, vitreous tap for culture and intravitreal injection of vancomycin 1 mg/0.1 mL and ceftazidime 2.25 mg/0.1 mL (± vitrectomy), with intensive topical antibiotics; once the infection is controlled, repair the bleb if it leaks.",
+    why: [
+      "This treatment suits blebitis without vitreous involvement; here, the hypopyon and inflamed vitreous require immediate intravitreal treatment.",
+      "Steroids alone would let the bacteria destroy the eye: thin bleb + red, painful eye = infection until proven otherwise.",
+      "A bleb leak (positive Seidel test) can be the portal of entry, but on its own it causes neither hypopyon nor an inflamed vitreous.",
+      "Correct: bleb-related endophthalmitis = intravitreal tap and antibiotic injection without delay."
+    ]
+  },
+
+  // ---- data/quiz-photos.js ----
+  "B-101": {
+    stem: "Gritty sensation and fluctuating vision at the end of the day. After instilling fluorescein, the patient is asked to keep the eyes open without blinking (cobalt blue light). What do the dark lines that appear on the cornea represent?",
+    options: [
+      "Punctate epithelial erosions that do not take up the dye",
+      "Tear film breakup, a sign of an unstable film",
+      "Folds in Descemet membrane due to edema",
+      "Herpetic dendrites seen as negative staining"
+    ],
+    explain: "The dark areas that appear in the fluorescein-stained film between two blinks are the places where the tear film has broken up. The interval between the last blink and the first dark spot is the tear breakup time: less than 10 seconds indicates an unstable film, common in dry eye.",
+    why: [
+      "False: punctate erosions take up fluorescein and appear as bright green dots, not dark lines.",
+      "Correct: dark lines = areas without film; a short breakup time (less than 10 s) reflects an unstable film.",
+      "False: Descemet folds are seen with a thin slit in an edematous stroma, not as lines that appear between two blinks.",
+      "False: a herpetic dendrite is an epithelial ulcer that retains fluorescein (bright green), with terminal bulbs."
+    ]
+  },
+  "B-102": {
+    stem: "Intense pain, photophobia and vision loss for 36 hours. Here is the appearance of the eye under diffuse illumination. What is the most appropriate immediate management?",
+    options: [
+      "Corneal scraping for cultures, then fortified antibiotics alternating hourly",
+      "A topical corticosteroid alone to limit scarring, then recheck in 48 hours",
+      "Occlusive patch and lubricant, then recheck in 2 to 3 days",
+      "An oral antiviral and follow-up in one week"
+    ],
+    explain: "The suppurative infiltrate is central, much larger than 2 mm, with a strong reaction: the 1-2-3 rule calls for cultures and then fortified antibiotics. Fortified drops are concentrated antibiotics compounded by the hospital pharmacy (for example vancomycin 25 mg/mL and tobramycin 14 mg/mL), given alternating hourly, day and night, for the first 24–48 hours. Pseudomonas, the leading cause in contact lens wearers, produces this necrotic appearance with mucopurulent exudate.",
+    why: [
+      "Correct: central infiltrate larger than 2 mm with a significant reaction; cultures first make it possible to adjust treatment later.",
+      "False: a corticosteroid alone on an active infection worsens melting; even as an adjunct to an antibiotic, the SCUT trial showed no overall benefit.",
+      "False: an occlusive patch is contraindicated in infectious keratitis and delays treatment.",
+      "False: the dense, suppurative appearance points to a bacterium, not a virus; waiting a week threatens the eye."
+    ]
+  },
+  "B-103": {
+    stem: "Soft contact lens wearer; intense pain that persists despite a week of antibiotic drops. Slit lamp, diffuse illumination. Which diagnosis should this corneal appearance bring to mind first?",
+    options: [
+      "Pseudomonas bacterial keratitis",
+      "Dendritic herpetic epithelial keratitis",
+      "Acanthamoeba keratitis",
+      "Subepithelial infiltrates of adenoviral keratoconjunctivitis"
+    ],
+    explain: "The paracentral stromal ring surrounding a clearer zone is the ring infiltrate typical of Acanthamoeba keratitis, an infection by a free-living ameba found in water, mainly in contact lens wearers. The diagnosis is confirmed by scraping (culture, PCR) or by confocal microscopy, as in this patient according to the source.",
+    why: [
+      "False: Pseudomonas can form an immune ring, but mainly a dense, suppurative abscess that progresses quickly; a ring in a minimally suppurative eye, despite antibiotics, points to the ameba.",
+      "False: the herpetic dendrite is a branching epithelial ulcer with terminal bulbs, not a ring in the stroma.",
+      "Correct: paracentral ring infiltrate, classic for the stromal stage of amebic keratitis.",
+      "False: adenoviral infiltrates are multiple, small and round, just beneath the epithelium, after contagious conjunctivitis."
+    ]
+  },
+  "B-104": {
+    stem: "Patient on long-term topical corticosteroids after a corneal graft, with a red, watery eye. Here is the cornea after fluorescein, under cobalt blue light. What is the most likely diagnosis?",
+    options: [
+      "A healing corneal abrasion",
+      "Zoster (VZV) pseudodendrites",
+      "Early Acanthamoeba keratitis",
+      "Herpes simplex (HSV) epithelial keratitis"
+    ],
+    explain: "A branching lesion whose base retains fluorescein, with swellings at the ends of the branches (terminal bulbs): this is a herpes simplex virus (HSV) dendritic ulcer, with broad branches; on corticosteroids, these dendrites can coalesce into a geographic ulcer. Treatment: an antiviral, for example valacyclovir 500 mg PO TID or acyclovir 400 mg PO 5 times daily for 7–10 days, and a careful reassessment of the corticosteroids (after a graft, do not stop them abruptly: risk of rejection).",
+    why: [
+      "False: a closing abrasion can leave a healing line, but without branches ending in terminal bulbs.",
+      "False: zoster (varicella-zoster virus) pseudodendrites are elevated, stain poorly and have no terminal bulbs.",
+      "False: the ameba can produce pseudodendrites early on, but not a frank, well-stained ulcer with terminal bulbs.",
+      "Correct: a stained branching ulcer with terminal bulbs, promoted by topical corticosteroids."
+    ]
+  },
+  "B-105": {
+    stem: "A patient known to have advanced keratoconus, photographed while looking down. Which sign is illustrated?",
+    options: [
+      "Munson sign",
+      "Rizzuti sign",
+      "Fleischer ring",
+      "Vogt striae"
+    ],
+    explain: "On downgaze, the cone pushes the lower lid, whose margin bulges into a V: this is Munson sign. It is a late sign of advanced keratoconus, worth recognizing but useless for early diagnosis, which relies on tomography.",
+    why: [
+      "Correct: lower lid margin bulged by the cone on downgaze.",
+      "False: Rizzuti sign is a conical reflex on the nasal iris when the cornea is lit from the temporal side.",
+      "False: the Fleischer ring is a brown iron deposit at the base of the cone, within the cornea.",
+      "False: Vogt striae are fine lines in the deep stroma, seen at the slit lamp."
+    ]
+  },
+  "B-106": {
+    stem: "A patient followed for advanced keratoconus. At the slit lamp, under cobalt blue light, you see a thin dark-brown line encircling the base of the cone. What does this ring represent?",
+    options: [
+      "A copper deposit in peripheral Descemet (Kayser-Fleischer ring)",
+      "A lipid deposit in the peripheral stroma (arcus senilis)",
+      "An iron deposit in the basal epithelium at the base of the cone (Fleischer ring)",
+      "Iris pigment deposited on the endothelium (Krukenberg spindle)"
+    ],
+    explain: "The Fleischer ring is an iron deposit in the basal epithelium that outlines the base of the cone; it is best seen under cobalt blue light, where it appears dark. The trap is the name: the Kayser-Fleischer ring of Wilson disease (copper overload) lies in Descemet, very close to the limbus, and is unrelated to keratoconus.",
+    why: [
+      "False: a classic trap; the Kayser-Fleischer ring (copper, Wilson disease) involves Descemet very close to the limbus.",
+      "False: arcus senilis is grey-white, peripheral, separated from the limbus by a clear zone, unrelated to a cone.",
+      "Correct: an epithelial iron deposit encircling the base of the cone.",
+      "False: the Krukenberg spindle is a vertical band of pigment on the endothelium, in pigment dispersion."
+    ]
+  },
+});
+Object.assign(G.OPH_EN.quiz, {
+  "B-107": {
+    stem: "Scheimpflug tomography (Pentacam, four-map display: axial curvature, anterior elevation, pachymetry, posterior elevation). Which reading is most accurate?",
+    options: [
+      "Regular with-the-rule astigmatism: symmetric vertical bowtie and normal pachymetry",
+      "Inferior steepening, thinnest point decentered inferiorly and bulging on both elevations: keratoconus",
+      "Crab claw and band-shaped thinning near the inferior limbus: pellucid marginal degeneration",
+      "Central flattening after refractive surgery, with no posterior elevation abnormality"
+    ],
+    explain: "The axial curvature shows inferior paracentral steepening up to 56 D; the pachymetry, a thinnest point decentered inferotemporally, with a cornea thinner below than above; the anterior and posterior elevations, an inferior hot spot. This combination points to keratoconus (progressive corneal ectasia); posterior elevation and thinning at the thinnest point are markers recognized by the global consensus.",
+    why: [
+      "False: the map is not symmetric; the top is flat (about 38 D) and the bottom very steep.",
+      "Correct: inferior steepening, decentered thinnest point and matching bulges on all four maps.",
+      "False: the crab claw gives two lateral hot zones curving downward, with the thinnest band 1–2 mm from the inferior limbus; here, the thin zone is paracentral and the inferior periphery remains thick (blue-violet).",
+      "False: a myopic ablation flattens the center (central cool zone), with no inferior hot spot or posterior bulge."
+    ]
+  },
+  "B-108": {
+    stem: "Blurred vision in the morning that improves during the day. Slit lamp, wide beam. What are the fine dots visible, and where are they located?",
+    options: [
+      "Punctate epithelial erosions, on the corneal surface",
+      "Subepithelial infiltrates, in the anterior stroma",
+      "Pseudoexfoliation deposits, on the lens capsule",
+      "Guttae, on the posterior surface of the cornea (endothelium)"
+    ],
+    explain: "Guttae are excrescences of Descemet membrane produced by a diseased endothelium; they appear as fine dots on the posterior surface of the cornea, with a beaten-metal look when they coalesce. Central guttae and morning blur (edema that accumulates overnight, with the lids closed) suggest Fuchs endothelial dystrophy.",
+    why: [
+      "False: erosions are on the surface and show up mainly with fluorescein.",
+      "False: subepithelial infiltrates are larger, grey-white, located just beneath the epithelium.",
+      "False: pseudoexfoliation (a deposit of fibrillar material) is seen on the lens, behind the pupil, not in the cornea.",
+      "Correct: endothelial guttae, a sign of Fuchs dystrophy."
+    ]
+  },
+  "B-109": {
+    stem: "A patient with an old penetrating keratoplasty (full-thickness corneal graft), blurred vision and photophobia for 2 days. Photo with sclerotic scatter. What is the most appropriate management?",
+    options: [
+      "Endothelial rejection: intensive topical corticosteroid starting today",
+      "Herpetic epithelial keratitis: oral antiviral alone",
+      "Late non-immune decompensation: simple observation",
+      "Suture abscess: suture removal and antibiotic"
+    ],
+    explain: "The line of precipitates crossing the graft, with edema on the side already crossed, is a Khodadoust line: the front of lymphocytes destroying the donor endothelium. It is an emergency: intensive, frequent topical corticosteroid, sometimes supplemented by a systemic or periocular steroid. The RSVP reminder (redness, sensitivity to light, vision loss, pain) warrants a same-day visit.",
+    why: [
+      "Correct: Khodadoust line with precipitates at the front and edema behind; treat immediately to save the graft.",
+      "False: no dendritic ulcer is visible; the involvement is endothelial, not epithelial.",
+      "False: non-immune endothelial attrition is gradual, without a line of precipitates or inflammation.",
+      "False: no localized white infiltrate around a suture is visible; the line crosses the graft."
+    ]
+  },
+  "C-101": {
+    stem: "A 71-year-old woman, fundus photographs of both eyes. What is the most likely diagnosis?",
+    options: [
+      "Old anterior ischemic optic neuropathy",
+      "Bilateral optic disc edema",
+      "Advanced glaucoma in both eyes",
+      "Compressive optic atrophy"
+    ],
+    explain: "Both discs are almost entirely cupped, the rim has nearly disappeared and the vessels dive into the cup and reappear at its floor (bayoneting): this is advanced glaucoma, here open-angle according to the source. Deep cupping points to glaucoma; pallor more extensive than the cupping would prompt a search for another cause.",
+    why: [
+      "False: ischemic optic neuropathy (infarction of the optic nerve head) leaves pallor, often sectoral, without such deep cupping.",
+      "False: disc edema gives blurred, elevated margins with obscured vessels, the opposite of cupping.",
+      "Correct: near-total cupping, vanished rim, bayoneting vessels and peripapillary atrophy.",
+      "False: compressive atrophy (a nerve compressed by a mass) mainly gives pallor, with little cupping."
+    ]
+  },
+  "C-102": {
+    stem: "Fundus photograph of the left eye of a patient followed for open-angle glaucoma. Which visual field defect is expected?",
+    options: [
+      "An inferior arcuate defect",
+      "A superior arcuate defect",
+      "A bitemporal hemianopia",
+      "An isolated central scotoma"
+    ],
+    explain: "The disc shows an inferior notch of the rim, from which a band lacking the nerve fiber reflex extends temporally (a defect described by the source, clearer on OCT). The inferior retina sees the superior field: inferior damage to the disc therefore gives a superior arcuate defect, often with a nasal step. This patient's field did show a superior arcuate scotoma.",
+    why: [
+      "False: a common trap; the damage is inferior on the disc, so the defect is superior in the field.",
+      "Correct: inferior notch → superior arcuate defect.",
+      "False: bitemporal hemianopia comes from the chiasm and respects the vertical meridian.",
+      "False: an isolated central scotoma points to the macula or the papillomacular bundle, not to an inferior notch."
+    ]
+  },
+  "C-103": {
+    stem: "A patient followed for normal-tension glaucoma, IOP considered at target for one year. Here is his disc at the follow-up visit. What is the most appropriate course of action?",
+    options: [
+      "Reassure: it is a photographic artifact with no clinical value",
+      "Stop treatment since the IOP is normal",
+      "Refer urgently for ischemic optic neuropathy",
+      "Treat it as a sign of insufficient control: revisit the target and bring fields and OCT closer together"
+    ],
+    explain: "A flame-shaped disc hemorrhage is seen at the inferotemporal margin (bottom left). More common in normal-tension glaucoma, it is a risk factor for progression; the source describes it as a sign of insufficient IOP control. Document it, schedule visual fields and OCT more frequently, and consider lowering the target.",
+    why: [
+      "False: the hemorrhage is real and significant; it resorbs within a few weeks to a few months, hence the importance of recording it.",
+      "False: in normal-tension glaucoma, lowering IOP slows progression (CNTGS), even when it is called normal.",
+      "False: ischemic neuropathy gives acute disc edema, not a large chronic cup with an isolated hemorrhage.",
+      "Correct: the disc hemorrhage signals a risk of progression; adjust the target and the monitoring."
+    ]
+  },
+  "C-104": {
+    stem: "A hyperopic patient woken by intense pain in the right eye, with headache, nausea and vision loss. What is the priority?",
+    options: [
+      "Measure IOP and lower it medically, then perform a laser iridotomy",
+      "Dilate the pupil to better examine the fundus",
+      "Prescribe a topical antibiotic for conjunctivitis",
+      "Prescribe a topical corticosteroid alone and recheck in a week"
+    ],
+    explain: "A red right eye with a hazy cornea in a symptomatic hyperope: this is an acute angle-closure attack (IOP over 70 mmHg according to the source). Lower IOP medically (topical beta-blocker, alpha-agonist and carbonic anhydrase inhibitor, acetazolamide 500 mg PO or IV), add pilocarpine once IOP has come down, then perform a laser peripheral iridotomy (a small opening in the iris), in both eyes.",
+    why: [
+      "Correct: a sight-threatening emergency; medical lowering of IOP then iridotomy, and examination of the fellow eye.",
+      "False: dilating the pupil can worsen or trigger angle closure.",
+      "False: the hazy cornea, intense pain and nausea are not those of conjunctivitis.",
+      "False: the steroid calms inflammation but does not lower IOP; waiting loses the optic nerve."
+    ]
+  },
+  "C-105": {
+    stem: "Dilated pupil, slit lamp. Which diagnosis does this appearance of the anterior lens capsule suggest?",
+    options: [
+      "Pigment dispersion syndrome",
+      "Glaukomflecken after an angle-closure attack",
+      "Pseudoexfoliation syndrome",
+      "Congenital anterior polar cataract"
+    ],
+    explain: "A central disc with a scalloped edge, a clear zone, then material in the periphery: this is the typical target of pseudoexfoliation syndrome, an age-related deposit of fibrillar material (LOXL1 gene). It predisposes to secondary open-angle glaucoma, weak zonules and poor dilation during cataract surgery.",
+    why: [
+      "False: pigment dispersion deposits pigment (Krukenberg spindle, Scheie line), not a target-shaped deposit on the capsule.",
+      "False: glaukomflecken (necrosis of the lens epithelium after an attack) are small scattered white spots, without a disc or ring.",
+      "Correct: a target-shaped deposit on the anterior capsule, the key sign of pseudoexfoliation.",
+      "False: anterior polar cataract is a small, well-defined central opacity, with no peripheral ring."
+    ]
+  },
+  "C-106": {
+    stem: "A 57-year-old man with poorly controlled type 2 diabetes, proliferative diabetic retinopathy, IOP 32 mmHg in the left eye (photo); open angle on gonioscopy with 360° new vessels. What is the treatment priority?",
+    options: [
+      "Topical pilocarpine to open the angle",
+      "Selective laser trabeculoplasty (SLT)",
+      "Laser peripheral iridotomy",
+      "Treat the ischemia: panretinal photocoagulation ± intravitreal anti-VEGF"
+    ],
+    explain: "The fine vessels on the surface of the iris are new vessels (rubeosis iridis) caused by diabetic retinal ischemia; with the elevated IOP, this is neovascular glaucoma still at the open-angle stage. The priority is to remove the stimulus: panretinal photocoagulation (a laser that destroys the ischemic retina) with or without an intravitreal anti-VEGF injection (a drug that makes new vessels regress), in addition to pressure-lowering drops.",
+    why: [
+      "False: pilocarpine (a drop that constricts the pupil) increases inflammation and does not address the cause.",
+      "False: SLT (a laser that stimulates the trabecular meshwork to improve outflow) has no effect on a fibrovascular membrane covering the angle.",
+      "False: there is no pupillary block; the angle is open but invaded by new vessels.",
+      "Correct: treating the ischemia makes the new vessels regress before the angle closes with synechiae."
+    ]
+  },
+});
+Object.assign(G.OPH_EN.quiz, {
+  "C-107": {
+    stem: "One week after placement of an Ahmed drainage tube, the anterior chamber is flat and IOP is 7 mmHg. What does the photo taken through the pupil show?",
+    options: [
+      "A massive suprachoroidal hemorrhage",
+      "Choroidal detachments touching centrally",
+      "Iris bombé from pupillary block",
+      "Aqueous misdirection (malignant glaucoma)"
+    ],
+    explain: "Two brownish domes meet behind the pupil, on either side of a vertical line of contact: these are serous \"kissing\" choroidal detachments (kissing choroidals), due to overfiltration through the tube (hypotony, flat chamber). Suprachoroidal hemorrhage is the main diagnosis to rule out: sudden pain and often elevated IOP. Here, the tube was ligated for fear of such a hemorrhage, and the detachments had resolved by the next day (source).",
+    why: [
+      "False: suprachoroidal hemorrhage (bleeding between choroid and sclera) typically gives sudden pain and elevated IOP, with dark red domes; here, IOP is low (7 mmHg).",
+      "Correct: hypotony and a flat chamber after a tube, with choroidal detachments meeting centrally.",
+      "False: in iris bombé, the iris pushes forward and IOP rises; there are no domes behind the pupil.",
+      "False: in misdirection (aqueous diverted into the vitreous), the chamber is flat with normal or elevated IOP, without choroidal detachment."
+    ]
+  },
+  "C-108": {
+    stem: "A 34-year-old man referred for \"severe thinning of the temporal rim\". The RNFL OCT is normal in all quadrants. What is the most likely explanation?",
+    options: [
+      "Gray crescent: pigment at the temporal margin that mimics a thinned rim",
+      "Early glaucoma with a falsely reassuring OCT",
+      "Beta-zone peripapillary atrophy",
+      "Tilted disc of high myopia"
+    ],
+    explain: "The slate-grey band at the temporal margin of the disc is a gray crescent: pigment in the peripheral disc tissue. If the true disc margin is traced outside the crescent, the temporal rim is healthy, as confirmed by the normal OCT (the source caption \"severe thinning of the temporal neuroretinal rim\" describes the misleading impression, not the diagnosis). More common in patients of African ancestry, it does not increase the risk of glaucoma according to the source: recognizing it avoids a false glaucoma-suspect diagnosis and unnecessary treatment.",
+    why: [
+      "Correct: a classic trap; the pigment suggests a thin rim when the neural tissue is present.",
+      "False: a falsely normal OCT (green disease) exists, but here the pigment explains the whole appearance and the OCT is normal in all quadrants.",
+      "False: peripapillary atrophy lies outside the disc margin and exposes white sclera or large choroidal vessels.",
+      "False: the tilted disc of a myope is oval and oblique, with a white scleral crescent, not a grey band within the disc."
+    ]
+  },
+  "C-109": {
+    stem: "Retroillumination (transillumination) of the iris at the slit lamp. Which mechanism explains the visible abnormalities?",
+    options: [
+      "Deposition of fibrillar material that wears the pupillary margin",
+      "Ischemia of the iris stroma during an angle-closure attack",
+      "Rubbing of the concave iris against the lens zonules",
+      "Congenital absence of pigment throughout the iris"
+    ],
+    explain: "The radial red slits arranged in a ring in the iris periphery are the transillumination defects of pigment dispersion syndrome. The iris, concave posteriorly, rubs against the zonules and loses its pigment epithelium; this pigment deposits on the cornea (Krukenberg spindle), the lens (Scheie line) and the trabecular meshwork. Typical profile: young myopic man; risk of glaucoma about 10 % at 5 years.",
+    why: [
+      "False: that is the mechanism of pseudoexfoliation, which gives \"moth-eaten\" peripupillary defects.",
+      "False: ischemia from an attack gives sectoral atrophy, often with a distorted pupil and glaukomflecken.",
+      "Correct: mechanical iris–zonule rubbing, hence radial midperipheral defects.",
+      "False: ocular albinism gives diffuse transillumination of the whole iris, not radial slits in a ring."
+    ]
+  },
+  "A-101": {
+    stem: "Annotated Humphrey 24-2 (SITA Standard) visual field report in a 23-year-old subject. Which conclusion is correct?",
+    options: [
+      "Unreliable test, because false negatives are 0 %",
+      "Early defect, because the PSD is 1.21 dB",
+      "Generalized depression, because the fovea is 36 dB",
+      "Reliable test and normal field"
+    ],
+    explain: "Reliability is good (fixation losses 1/13, false positives 1 %, false negatives 0 %); the GHT (glaucoma hemifield test) is within normal limits, VFI 100 %, MD +0.28 dB and PSD 1.21 dB, with no cluster of significant points on the probability maps. Always read reliability before the indices: false positives above 15 % make a test unreliable.",
+    why: [
+      "False: few false negatives is a good sign; a test becomes questionable mainly with more than 15 % false positives or many fixation losses.",
+      "False: a PSD of 1.21 dB is normal; a localized defect raises it markedly.",
+      "False: 36 dB at the fovea is normal sensitivity, and the MD is positive.",
+      "Correct: good reliability indices, normal GHT, normal MD and PSD."
+    ]
+  },
+  "A-102": {
+    stem: "Humphrey visual field: grayscale (left) and pattern deviation map (right). Which defect is present?",
+    options: [
+      "Superior quadrantanopia respecting the vertical meridian",
+      "Superior arcuate defect with a nasal step",
+      "Central scotoma",
+      "Generalized depression as in cataract"
+    ],
+    explain: "The black zone occupies mainly the superior hemifield, in an arc, and stops sharply at the horizontal meridian on the nasal side (the blind spot, on the right, marks the temporal side): this is a superior arcuate defect with a nasal step, typical of nerve fiber damage as in glaucoma. The pattern deviation map confirms a localized defect.",
+    why: [
+      "False: here, the black squares extend on both sides of the vertical meridian; a defect stopping sharply at that meridian would point to the chiasm or the posterior visual pathways.",
+      "Correct: respect of the horizontal meridian and a nasal step = nerve fiber damage (glaucoma).",
+      "False: the defect occupies the superior hemifield in an arc, not just the point of fixation.",
+      "False: a cataract depresses total deviation but leaves pattern deviation almost normal; here, it is very abnormal superiorly."
+    ]
+  },
+  "A-201": {
+    stem: "A corneal graft patient has been using prednisolone acetate for several years. He complains of glare from headlights at night and difficulty reading. Here is the image obtained on retroillumination, with the pupil dilated. What is the most likely finding?",
+    options: [
+      "Cortical cataract with peripheral spokes",
+      "Brunescent nuclear cataract",
+      "Posterior subcapsular cataract",
+      "Endothelial rejection with precipitates"
+    ],
+    explain: "A granular central plaque on the red reflex, in a patient on long-term steroids, is typical of a posterior subcapsular cataract. It causes glare and difficulty with near tasks; IOP should also be measured (steroid response).",
+    why: [
+      "Cortical spokes run from the periphery toward the center like the spokes of a wheel; here, it is a granular central plaque.",
+      "A brunescent nucleus gives a diffuse yellow-brown tint and a myopic shift, not a granular plaque on the red reflex.",
+      "Correct: posterior central plaque, long-term steroids, glare and difficulty at near.",
+      "Rejection is seen on the cornea (precipitates, edema), not as a plaque on the lens red reflex."
+    ]
+  },
+  "A-202": {
+    stem: "A 74-year-old woman with Fuchs dystrophy (confluent guttae, blurred vision in the morning) says she has been reading without glasses for a year. Refraction shows a myopic shift and the nucleus is dark brown. Which statement is correct?",
+    options: [
+      "The more refractive nucleus explains the myopia; its hardness will increase phaco energy and endothelial risk",
+      "The myopic shift indicates late keratoconus caused by Fuchs edema; topography is needed first",
+      "Nuclear sclerosis has no refractive effect; a retinal cause for this myopic shift must be sought",
+      "It is better to wait until the cataract is mature to combine phaco and graft in a single surgery"
+    ],
+    explain: "Nuclear sclerosis increases the refractive index of the nucleus: myopic shift and \"second sight\". A hard nucleus requires more ultrasound energy, which increases endothelial loss on an already fragile Fuchs cornea: assess the endothelium and plan early with the cornea service.",
+    why: [
+      "Correct: a nuclear myopic shift and an endothelial risk increased by a hard nucleus.",
+      "Fuchs edema does not create keratoconus; the myopic shift is explained by the nucleus.",
+      "False: a myopic shift is precisely the classic refractive effect of nuclear sclerosis.",
+      "Waiting hardens the nucleus further, increases the energy needed and puts the endothelium at greater risk."
+    ]
+  },
+});

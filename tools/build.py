@@ -6,6 +6,42 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC, DATA, DIST = (os.path.join(ROOT, d) for d in ('src', 'data', 'dist'))
 os.makedirs(DIST, exist_ok=True)
 
+def jpeg_size(path):
+    """(w, h) of a JPEG without Pillow; None if unreadable."""
+    try:
+        with open(path, 'rb') as f:
+            if f.read(2) != b'\xff\xd8': return None
+            while True:
+                b = f.read(1)
+                while b and b != b'\xff': b = f.read(1)
+                while b == b'\xff': b = f.read(1)
+                if not b: return None
+                m = b[0]
+                if m in (0xD8, 0x01) or 0xD0 <= m <= 0xD7: continue
+                ln = int.from_bytes(f.read(2), 'big')
+                if 0xC0 <= m <= 0xCF and m not in (0xC4, 0xC8, 0xCC):
+                    d = f.read(5); return int.from_bytes(d[3:5], 'big'), int.from_bytes(d[1:3], 'big')
+                f.seek(ln - 2, 1)
+    except Exception:
+        return None
+
+
+def catalog3(root):
+    """imgsrc3/catalog3.json: openly licensed images (Wikimedia / PMC). Skipped when absent."""
+    p = os.path.join(root, 'imgsrc3', 'catalog3.json')
+    if not os.path.exists(p): return []
+    out = []
+    for e in json.load(open(p, encoding='utf-8')):
+        if not e.get('id') or not os.path.exists(os.path.join(root, 'imgsrc3', 'web', e['id'] + '.jpg')): continue
+        w, h = e.get('w') or e.get('width'), e.get('h') or e.get('height')
+        if not (w and h): w, h = jpeg_size(os.path.join(root, 'imgsrc3', 'web', e['id'] + '.jpg')) or (440, 330)
+        tw = 440; th = round(h * tw / w)
+        d = {'id': e['id'], 'title': e.get('title', ''), 'caption': e.get('caption', ''), 'page_url': e.get('source_url', ''), 'module': e.get('module', ''), 'kind': e.get('kind', 'clinical'),
+             'tw': tw, 'th': th, 'license': e.get('license', ''), 'author': e.get('author', ''), 'source_url': e.get('source_url', ''), 'src': 'imgsrc3'}
+        out.append(d)
+    return out
+
+
 # catalog → data/catalog.js
 cat = json.load(open(os.path.join(ROOT, 'imgsrc', 'catalog.json'), encoding='utf-8'))
 slim = [dict({k: e.get(k) for k in ('id', 'title', 'caption', 'page_url', 'module', 'kind', 'tw', 'th')}, src='imgsrc') for e in cat if e['id'] not in ('OPH-185', 'OPH-186')]
@@ -15,6 +51,7 @@ for e in cat2:
     d = {'id': e['id'], 'title': e['title'], 'caption': e['caption'], 'page_url': e['page_url'], 'module': e['module'], 'kind': 'clinical', 'tw': tw, 'th': th, 'dossier': e.get('dossier', ''), 'src': 'imgsrc2'}
     if not e.get('cc'): d['cc'] = False
     slim.append(d)
+slim += catalog3(ROOT)
 with open(os.path.join(DATA, 'catalog.js'), 'w', encoding='utf-8') as f:
     f.write("var G = (typeof window !== 'undefined') ? window : globalThis;\nG.OPH = G.OPH || {};\nG.OPH.catalog = " + json.dumps([{k: v for k, v in e.items() if k != 'src'} for e in slim], ensure_ascii=False) + ";\n")
 
@@ -32,7 +69,7 @@ parts.append('<meta name="claude:viewport-fit-sides" content="cover">')
 parts.append('<meta name="description" content="Apprends à voir le signe qui compte : cornée, glaucome et examens, en images, cas et jeux. Gratuit, sans pub.">')
 parts.append('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>')
 parts.append('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400..800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">')
-parts.append('<style>\n' + '\n'.join(open(os.path.join(SRC, c), encoding='utf-8').read() for c in ('styles.css', 'investigations.css') if os.path.exists(os.path.join(SRC, c))) + '\n</style>')
+parts.append('<style>\n' + '\n'.join(open(os.path.join(SRC, c), encoding='utf-8').read() for c in ('styles.css', 'investigations.css', 'web.css') if os.path.exists(os.path.join(SRC, c))) + '\n</style>')
 parts.append('''<div class="shell">
 <aside class="rail" id="rail" aria-label="Navigation"></aside>
 <div style="min-width:0">

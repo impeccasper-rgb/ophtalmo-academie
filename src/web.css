@@ -7,3 +7,29 @@
 h1 .fr-badge { position: relative; top: -.2em; }
 @media (max-width: 380px) { .topbar .brand > span > span { display: none; } }
 noscript p { max-width: 40rem; margin: 40px auto; padding: 0 16px; font-family: system-ui, sans-serif; }
+
+/* five-item tab bar when Investigations is present */
+.tabbar[data-n="5"] { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.tabbar[data-n="5"] a { font-size: .68rem; }
+/* educational disclaimer (rail, home) */
+.disclaimer { margin: 4px 0 0; line-height: 1.35; }
+.disclaimer a { color: inherit; }
+.page > .disclaimer { margin-top: 28px; }
+/* image du jour + streak */
+.daily-card { position: relative; }
+.daily-card .daily-th { display: block; height: 96px; margin: -2px 0 6px; border-radius: 10px; overflow: hidden; background: var(--sunk); }
+.daily-card .daily-th img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.daily-card.done b::after { content: " ✓"; }
+.daily-streak { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.streak b { font-size: 1.15em; }
+.inv-banner { margin: 0 0 16px; border-color: var(--cobalt); }
+.tbl.credits td { font-size: var(--fs-xs, .8rem); vertical-align: top; }
+/* featured case (campaign link): focus layout without the navigation chrome */
+.focus-view .rail, .focus-view .tabbar { display: none !important; }
+.focus-view .shell { grid-template-columns: minmax(0, 1fr) !important; }
+.focus-view .main { padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px)) !important; }
+@media (min-width: 1040px) { .focus-view .topbar { display: flex; } .focus-view .topbar [data-act="menu"] { display: none; } }
+.featured { max-width: 980px; margin: 0 auto; }
+.feat-cta { margin-top: 18px; border-color: var(--cobalt); }
+/* native app (Capacitor): hide web-only UI */
+html.native .web-only, html.is-native .web-only, html.native [data-web-only], html.native .install-prompt, html.native .open-in-app { display: none !important; }

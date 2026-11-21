@@ -51,7 +51,9 @@ jobs:
     name: Build + simulator self-test
     # Override without editing: repository variables IOS_RUNNER (e.g. macos-26) and IOS_XCODE (e.g. 26.1).
     runs-on: ${{ vars.IOS_RUNNER || 'macos-latest' }}
-    timeout-minutes: 50
+    timeout-minutes: 80
+    permissions:
+      contents: write   # only to force-push the evidence branch "ios-evidence" (skipped on pull requests)
     steps:
       - uses: actions/checkout@v4
 
@@ -112,14 +114,20 @@ jobs:
           fi
           test -d build/Build/Products/Debug-iphonesimulator/App.app
 
-      - name: Self-test on iPhone simulator
+      # GitHub's macOS runners have no GPU: the simulator is slow, so the runner uses long timeouts, takes screenshots
+      # in a worker thread (the walk waits for each one), and records the video in a separate second pass.
+      - name: Self-test on iPhone simulator (+ video pass)
         id: iphone
-        run: python3 ios/scripts/run_selftest.py --app build/Build/Products/Debug-iphonesimulator/App.app --family iphone --out artifacts/iphone
+        timeout-minutes: 35
+        run: python3 ios/scripts/run_selftest.py --app build/Build/Products/Debug-iphonesimulator/App.app --family iphone --out artifacts/iphone --video
 
       - name: Self-test on iPad simulator
         id: ipad
         if: ${{ always() && steps.build.outcome == 'success' && (github.event_name != 'workflow_dispatch' || inputs.ipad) }}
-        run: python3 ios/scripts/run_selftest.py --app build/Build/Products/Debug-iphonesimulator/App.app --family ipad --out artifacts/ipad
+        timeout-minutes: 30
+        run: |
+          xcrun simctl shutdown all || true
+          python3 ios/scripts/run_selftest.py --app build/Build/Products/Debug-iphonesimulator/App.app --family ipad --out artifacts/ipad
 
       - name: Upload screenshots, video and logs
         if: always()
@@ -131,6 +139,27 @@ jobs:
             xcodebuild.log
           if-no-files-found: warn
           retention-days: 14
+
+      # Artifacts need a signed-in browser to download; this branch makes the evidence readable with plain git
+      # (git clone --depth 1 -b ios-evidence <repo>): JPEG copies of the screenshots, logs, result.json, video.
+      - name: Publish evidence to branch ios-evidence
+        if: ${{ always() && github.event_name != 'pull_request' && steps.build.outcome == 'success' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          EV="$RUNNER_TEMP/evidence"; rm -rf "$EV"; mkdir -p "$EV"
+          if [ -d artifacts ]; then cp -R artifacts/. "$EV/"; fi
+          find "$EV" -name '*.png' | while read -r f; do sips -s format jpeg -s formatOptions 80 -Z 1600 "$f" --out "${f%.png}.jpg" >/dev/null && rm -f "$f"; done
+          find "$EV" -name '*.mp4' -size +45M -print -delete
+          find "$EV" -name '*.log' -size +5M -exec sh -c 'tail -c 3000000 "$1" > "$1.tail" && mv "$1.tail" "$1"' _ {} \;
+          tail -n 300 xcodebuild.log > "$EV/xcodebuild-tail.log" 2>/dev/null || true
+          printf '# iOS self-test evidence\n\nRun: %s/%s/actions/runs/%s\nCommit: %s\nDate: %s\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" "$GITHUB_SHA" "$(date -u +%FT%TZ)" > "$EV/README.md"
+          cd "$EV"
+          git init -q -b ios-evidence
+          git add -A
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -qm "iOS evidence: run $GITHUB_RUN_ID ($GITHUB_SHA)"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:ios-evidence
 
   testflight:
     name: Archive + upload to TestFlight (manual)

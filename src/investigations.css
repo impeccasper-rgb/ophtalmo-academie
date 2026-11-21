@@ -123,4 +123,8 @@
   .inv-bar .seg button { flex: 1 1 auto; }
   .inv-gain { grid-template-columns: 1fr; }
   .inv-vfcol dl { font-size: var(--fs-xs); }
+  .inv-ascan .inv-alab { font-size: 15px; }
+  .inv-ascan .inv-ax, .inv-bscan .inv-ax { font-size: 16px; }
+  .inv-calv { font-size: 17px; }
+  .inv-olab { font-size: 16px; }
 }

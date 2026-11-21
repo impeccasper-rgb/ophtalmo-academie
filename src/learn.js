@@ -408,9 +408,9 @@ Views.progression = {
       '<div class="row"><span class="small" style="min-width:9rem">' + t('prog.size') + '</span><div class="seg sm">' + opt('size', 's', 'A−', s.size) + opt('size', 'm', 'A', s.size) + opt('size', 'l', 'A+', s.size) + opt('size', 'xl', 'A++', s.size) + '</div></div>' +
       '<div class="row"><span class="small" style="min-width:9rem">' + t('prog.theme') + '</span><div class="seg sm">' + opt('theme', 'auto', t('prog.auto'), s.theme) + opt('theme', 'light', t('prog.light'), s.theme) + opt('theme', 'dark', t('prog.dark'), s.theme) + '</div></div>' +
       '<div class="row"><span class="small" style="min-width:9rem">' + t('prog.motion') + '</span><div class="seg sm">' + opt('motion', 'on', t('prog.on'), s.motion ? 'on' : 'off') + opt('motion', 'off', t('prog.off'), s.motion ? 'on' : 'off') + '</div></div></div>' +
-      '<div class="card stack"><div class="eyebrow">' + t('prog.dates') + '</div><div class="row"><label class="small" for="d-c">' + t('prog.dateC') + '</label><input type="date" id="d-c" value="' + Dates.get('cornee') + '"><label class="small" for="d-g">' + t('prog.dateG') + '</label><input type="date" id="d-g" value="' + Dates.get('glaucome') + '"><button class="btn" data-act="save-dates">' + t('prog.savedates') + '</button></div>' +
+      '<div class="card stack"><div class="eyebrow">' + t('prog.dates') + '</div><p class="small muted">' + t('prog.dates.d') + '</p><div class="row"><label class="small" for="d-c">' + t('prog.dateC') + '</label><input type="date" id="d-c" value="' + Dates.get('cornee') + '"><label class="small" for="d-g">' + t('prog.dateG') + '</label><input type="date" id="d-g" value="' + Dates.get('glaucome') + '"><button class="btn" data-act="save-dates">' + t('prog.savedates') + '</button></div>' +
       '<div class="row"><button class="btn" data-act="reset-ask">' + t('prog.reset') + '</button><span data-reset></span></div></div>' +
-      (reps.length ? '<div class="card stack"><div class="eyebrow">' + t('prog.reports', { n: reps.length }) + '</div><ul class="blist small">' + reps.slice(0, 10).map(function (r) { return '<li><b>' + U.esc(HY.title(r.where) || r.where) + '</b> : ' + U.esc(r.text) + '</li>'; }).join('') + '</ul><span class="xs muted">' + t('prog.reports.d') + '</span></div>' : '') +
+      (reps.length ? '<div class="card stack"><div class="eyebrow">' + t('prog.reports', { n: reps.length }) + '</div><ul class="blist small">' + reps.slice(0, 10).map(function (r) { return '<li><b>' + U.esc(HY.title(r.where) || r.where) + '</b> : ' + U.esc(r.text) + '</li>'; }).join('') + '</ul><span class="xs muted">' + t('prog.reports.d') + '</span><div class="row"><button type="button" class="btn sm" data-act="reports-copy">' + t('rep.copy') + '</button></div></div>' : '') +
       '</div>';
   }
 };
@@ -426,6 +426,115 @@ Views.apprendre = {
     var mod = function (m) { var cap = m === 'B' ? 'b-bases' : 'c-bases'; return row(cap, m + '0', t('nav.foundations'), t('learn.first')) + D.ordered(m).map(function (f, i) { return row(f.id, m + (i + 1), f.title, f.en); }).join(''); };
     var col = function (m, title, html) { var s = Prog.stat(m); return '<section class="lcol"><div class="lcover" style="background-image:url(' + Photo.src(COVER[m]) + ')"><span class="eyebrow">Module ' + m + '</span><b>' + title + '</b><span class="xs">' + t('learn.mastered', { a: s.mastered, b: s.total }) + '</span></div><div class="stack" style="gap:6px">' + html + '</div></section>'; };
     return '<div class="page">' + crumbs([[t('nav.home'), 'accueil'], [t('nav.learn'), null]]) + '<div class="phead"><div class="eyebrow">' + t('learn.eyebrow') + '</div><h1>' + t('learn.h1') + '</h1><p class="muted">' + t('learn.lead') + '</p>' + depthSeg() + '</div>' +
-      '<div class="lgrid">' + col('A', L.modules.A, A) + col('B', L.modules.B, mod('B')) + col('C', L.modules.C, mod('C')) + '</div></div>';
+      (Views.investigations ? '<a class="card link inv-banner" href="#investigations"><span class="eyebrow">' + t('brand.method') + '</span><h3>' + t('nav.inv') + '</h3><span class="small muted">' + t('learn.inv.d') + '</span></a>' : '') + '<div class="lgrid">' + col('A', L.modules.A, A) + col('B', L.modules.B, mod('B')) + col('C', L.modules.C, mod('C')) + '</div></div>';
   }
+};
+
+/* ---------- image du jour + série (streak) avec un gel par semaine ---------- */
+var Streak = {
+  iso: function (d) { d = d || new Date(); var p = function (n) { return (n < 10 ? '0' : '') + n; }; return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()); },
+  add: function (iso, n) { var d = Dates.parse(iso); d.setDate(d.getDate() + n); return Streak.iso(d); },
+  week: function (iso) { var d = Dates.parse(iso); d.setDate(d.getDate() - (d.getDay() + 6) % 7); return Streak.iso(d); }, // Monday of that week
+  get: function () { var s = Store.p.streak || {}; return { n: s.n || 0, best: s.best || 0, last: s.last || '', freeze: s.freeze || {}, days: s.days || {}, t: s.t || 0 }; },
+  current: function () {
+    var s = Streak.get(), td = Streak.iso(); if (!s.last) return 0;
+    if (s.last === td || s.last === Streak.add(td, -1)) return s.n;
+    if (s.last === Streak.add(td, -2) && !s.freeze[Streak.week(Streak.add(td, -1))]) return s.n; // yesterday missed: today's image still saves the series with the weekly freeze
+    return 0;
+  },
+  doneToday: function () { return Streak.get().last === Streak.iso(); },
+  freezeLeft: function () { return Streak.get().freeze[Streak.week(Streak.iso())] ? 0 : 1; },
+  complete: function () {
+    var s = Streak.get(), td = Streak.iso(), y = Streak.add(td, -1), used = false;
+    if (s.last === td) return s;
+    if (s.last === y) s.n++;
+    else if (s.last === Streak.add(td, -2) && !s.freeze[Streak.week(y)]) { s.freeze[Streak.week(y)] = y; s.n++; used = true; }
+    else s.n = 1;
+    s.last = td; s.best = Math.max(s.best, s.n); s.days[td] = 1;
+    Object.keys(s.days).sort().slice(0, -60).forEach(function (k) { delete s.days[k]; });
+    Object.keys(s.freeze).sort().slice(0, -8).forEach(function (k) { delete s.freeze[k]; });
+    s.t = Date.now(); Store.p.streak = s; Store.touch();
+    s.usedFreeze = used; return s;
+  },
+  html: function () {
+    var n = Streak.current(), fl = Streak.freezeLeft();
+    return '<span class="streak" title="' + U.esc(t('streak.best', { n: Streak.get().best })) + '"><b class="mono">' + n + '</b> ' + t('streak.days', { n: n }) + '</span><span class="xs muted">' + (fl ? t('streak.freeze1') : t('streak.freeze0')) + '</span>';
+  }
+};
+var Daily = {
+  pool: function () {
+    var out = [];
+    ((window.OPH && OPH.invPractice) || []).forEach(function (p) { if (p && p.options && p.options.length > 1) out.push({ kind: 'inv', id: p.id, item: p }); });
+    SRS.all().forEach(function (c) { if (c.deck === 'images' && c.img) out.push({ kind: 'card', id: c.id, card: c }); });
+    return out.sort(function (a, b) { return a.id < b.id ? -1 : a.id > b.id ? 1 : 0; });
+  },
+  today: function () { var p = Daily.pool(); return p.length ? p[U.hash('ocelle-' + Streak.iso()) % p.length] : null; },
+  photoOf: function (d) {
+    if (!d) return null;
+    if (d.kind === 'card') return d.card.img;
+    var m = OPH.invMedia && OPH.invMedia[d.item.media]; return m && m.kind === 'photo' && m.photo && D.cat(m.photo) ? m.photo : null;
+  },
+  card: function () {
+    var d = Daily.today(); if (!d) return '';
+    var ph = Daily.photoOf(d), done = Streak.doneToday();
+    return '<a class="next-step daily-card' + (done ? ' done' : '') + '" href="#image-du-jour">' + (ph ? '<span class="daily-th"><img loading="lazy" src="' + Photo.src(ph) + '" alt=""></span>' : '') +
+      '<span class="eyebrow">' + t('daily.title') + '</span><b>' + (done ? t('daily.done') : t('daily.cta')) + '</b><span class="small daily-streak">' + Streak.html() + '</span></a>';
+  },
+  finish: function (host) {
+    var before = Streak.doneToday(), s = Streak.complete(), box = U.$('[data-dailyend]', host);
+    if (box) { box.hidden = false; box.innerHTML = '<div class="card stack daily-end"><div class="eyebrow">' + t('daily.title') + '</div><b class="today-n">' + t('streak.days.n', { n: Streak.current() }) + '</b>' +
+      '<span class="small muted">' + (before ? t('daily.again') : s.usedFreeze ? t('streak.used') : t('daily.back')) + '</span><div class="row"><a class="btn primary" href="#investigations">' + t('feat.more') + '</a><a class="btn" href="#reviser">' + t('nav.review') + '</a></div></div>'; }
+    Shell.render();
+  }
+};
+Views['image-du-jour'] = {
+  title: t('daily.title'), render: function () {
+    var d = Daily.today();
+    return '<div class="page read" style="margin:0 auto;width:100%">' + crumbs([[t('nav.home'), 'accueil'], [t('daily.title'), null]]) +
+      '<div class="phead"><div class="eyebrow">' + U.esc(Dates.fmt(Streak.iso())) + '</div><h1>' + t('daily.title') + '</h1><p class="muted">' + t('daily.lead') + '</p><div class="row daily-streak">' + Streak.html() + '</div></div>' +
+      (d ? '<div data-daily></div><div data-dailyend hidden></div>' : '<div class="empty">' + t('daily.none') + '</div>') + '</div>';
+  },
+  after: function (host) {
+    var d = Daily.today(), el = U.$('[data-daily]', host); if (!d || !el) return;
+    if (d.kind === 'inv' && window.Inv) return Inv.practice(el, [d.item], { title: t('daily.title'), onEnd: function () { Daily.finish(host); } });
+    var c = d.card, flipped = false;
+    function draw() {
+      el.innerHTML = '<div class="run card"><div class="fc' + (flipped ? ' flipped' : '') + '" data-fc><div class="fc-face">' + SRS.face(c, flipped) + '</div></div>' +
+        (flipped ? '<div class="fc-rate" role="group" aria-label="' + t('srs.rate.aria') + '"><button type="button" class="btn rate0" data-g="0">' + t('srs.r0') + '</button><button type="button" class="btn rate1" data-g="1">' + t('srs.r1') + '</button><button type="button" class="btn rate2" data-g="2">' + t('srs.r2') + '</button></div>'
+          : '<div class="row"><button type="button" class="btn primary" data-flip>' + t('srs.flip') + '</button></div>') + '</div>';
+    }
+    el.onclick = function (ev) {
+      if (ev.target.closest('[data-act="lightbox"]')) return;
+      if (!flipped && (ev.target.closest('[data-flip]') || (ev.target.closest('[data-fc]') && !ev.target.closest('details')))) { flipped = true; draw(); return; }
+      var g = ev.target.closest('[data-g]'); if (g) { SRS.rate(c, +g.getAttribute('data-g')); U.$$('[data-g]', el).forEach(function (b) { b.disabled = true; }); Daily.finish(host); }
+    };
+    draw();
+  }
+};
+
+/* ---------- cas vedette (lien de campagne #cas-vedette) ---------- */
+var FEATURED = { id: 'p-fondoeil-6' };
+Views['cas-vedette'] = {
+  title: t('feat.title'), render: function () {
+    var pr = (window.OPH && OPH.invPractice) || [], it = pr.filter(function (p) { return p.id === FEATURED.id; })[0] || pr.filter(function (p) { var m = OPH.invMedia && OPH.invMedia[p.media]; return m && m.kind === 'photo'; })[0];
+    FEATURED.item = it;
+    return '<div class="page featured">' + '<div class="phead"><div class="eyebrow">' + t('feat.title') + ' · ' + t('brand.name') + '</div><h1>' + t('feat.h1') + '</h1><p class="muted">' + t('brand.method') + ' ' + t('feat.lead') + '</p></div>' +
+      (it && window.Inv ? '<div data-feat></div>' : '<div class="empty">' + t('daily.none') + '</div>') +
+      '<div class="card stack feat-cta"><b>' + t('brand.tagline') + '</b><span class="small muted">' + t('feat.cta.d') + '</span><div class="row"><a class="btn primary" href="#investigations">' + t('feat.more') + '</a><a class="btn" href="#cas">' + t('cas.title') + '</a><a class="btn ghost" href="#accueil">' + t('feat.home') + '</a></div></div>' +
+      '<p class="xs muted">' + t('disclaimer') + '</p></div>';
+  },
+  after: function (host) {
+    document.documentElement.classList.add('focus-view');
+    var el = U.$('[data-feat]', host), clean = null;
+    if (el && FEATURED.item) clean = Inv.practice(el, [FEATURED.item], { title: t('feat.title'), onEnd: function () { var c = U.$('.feat-cta', host); if (c) { c.classList.add('ok-pop'); c.scrollIntoView({ block: 'nearest', behavior: U.reduced() ? 'auto' : 'smooth' }); } } });
+    return function () { document.documentElement.classList.remove('focus-view'); if (typeof clean === 'function') clean(); };
+  }
+};
+
+/* ---------- copier mes signalements ---------- */
+Actions['reports-copy'] = function () {
+  var txt = (Store.p.reports || []).map(function (r) { return '[' + new Date(r.t).toISOString().slice(0, 10) + '] ' + (HY.title(r.where) || r.where) + ' (' + r.where + ') : ' + r.text; }).join('\n');
+  if (!txt) return;
+  var ok = function () { U.toast(t('rep.copied')); }, fallback = function () { var ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); ok(); } catch (e) { U.toast(t('rep.copyfail')); } ta.remove(); };
+  try { if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(ok, fallback); else fallback(); } catch (e) { fallback(); }
 };

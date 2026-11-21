@@ -30,6 +30,7 @@ RIGHTS_FILTER_JS = r"""(function () {
     if (Array.isArray(x)) { for (var i = x.length - 1; i >= 0; i--) { if (bad(x[i])) x.splice(i, 1); else walk(x[i], d + 1); } return; }
     for (var k in x) if (k !== 'catalog') walk(x[k], d + 1);
   }
+  G.OPH_RESTRICTED = R;
   [O, G.OPH_EN].forEach(function (root) { if (root) walk(root, 0); });
   if (O.invMedia) { Object.keys(O.invMedia).forEach(function (k) { var m = O.invMedia[k]; if (m && (R[m.photo] || m.restricted)) delete O.invMedia[k]; }); }
   if (O.invPractice && O.invMedia) { O.invPractice = O.invPractice.filter(function (p) { return !p.media || O.invMedia[p.media]; });
@@ -69,7 +70,44 @@ def catalog():
             d = {'id': e['id'], 'title': e['title'], 'caption': e['caption'], 'page_url': e['page_url'], 'module': e['module'], 'kind': 'clinical', 'tw': tw, 'th': th, 'dossier': e.get('dossier', ''), 'src': 'imgsrc2'}
             if not e.get('cc'): d['cc'] = False
             slim.append(d)
+    slim += catalog3(ROOT)
     return slim
+
+
+def jpeg_size(path):
+    """(w, h) of a JPEG without Pillow; None if unreadable."""
+    try:
+        with open(path, 'rb') as f:
+            if f.read(2) != b'\xff\xd8': return None
+            while True:
+                b = f.read(1)
+                while b and b != b'\xff': b = f.read(1)
+                while b == b'\xff': b = f.read(1)
+                if not b: return None
+                m = b[0]
+                if m in (0xD8, 0x01) or 0xD0 <= m <= 0xD7: continue
+                ln = int.from_bytes(f.read(2), 'big')
+                if 0xC0 <= m <= 0xCF and m not in (0xC4, 0xC8, 0xCC):
+                    d = f.read(5); return int.from_bytes(d[3:5], 'big'), int.from_bytes(d[1:3], 'big')
+                f.seek(ln - 2, 1)
+    except Exception:
+        return None
+
+
+def catalog3(root):
+    """imgsrc3/catalog3.json: openly licensed images (Wikimedia / PMC). Skipped when absent."""
+    p = os.path.join(root, 'imgsrc3', 'catalog3.json')
+    if not os.path.exists(p): return []
+    out = []
+    for e in json.load(open(p, encoding='utf-8')):
+        if not e.get('id') or not os.path.exists(os.path.join(root, 'imgsrc3', 'web', e['id'] + '.jpg')): continue
+        w, h = e.get('w') or e.get('width'), e.get('h') or e.get('height')
+        if not (w and h): w, h = jpeg_size(os.path.join(root, 'imgsrc3', 'web', e['id'] + '.jpg')) or (440, 330)
+        tw = 440; th = round(h * tw / w)
+        d = {'id': e['id'], 'title': e.get('title', ''), 'caption': e.get('caption', ''), 'page_url': e.get('source_url', ''), 'module': e.get('module', ''), 'kind': e.get('kind', 'clinical'),
+             'tw': tw, 'th': th, 'license': e.get('license', ''), 'author': e.get('author', ''), 'source_url': e.get('source_url', ''), 'src': 'imgsrc3'}
+        out.append(d)
+    return out
 
 
 # ---------- placeholder icons (pure Python PNG, no Pillow needed in CI) ----------

@@ -60,6 +60,7 @@ var Dates = {
   defaults: { cornee: '2026-11-04', glaucome: '2026-11-09' },
   get: function (k) { return (Store.p.settings && Store.p.settings[k]) || Dates.defaults[k]; },
   parse: function (iso) { var p = iso.split('-').map(Number); return new Date(p[0], p[1] - 1, p[2]); },
+  custom: function () { var s = Store.p.settings || {}; return !!(s.cornee || s.glaucome); }, // learner entered rotation dates (public site: no countdown otherwise)
   daysTo: function (iso) { var t = new Date(); t.setHours(0, 0, 0, 0); return Math.round((Dates.parse(iso) - t) / 864e5); },
   fmt: function (iso) { try { return Dates.parse(iso).toLocaleDateString(Dates.loc(), { weekday: 'long', day: 'numeric', month: 'long' }); } catch (e) { return iso; } },
   short: function (d) { try { return d.toLocaleDateString(Dates.loc(), { weekday: 'short', day: 'numeric', month: 'short' }); } catch (e) { return ''; } },
@@ -81,7 +82,7 @@ var Store = {
   },
   merge: function (a, b) {
     var out = JSON.parse(JSON.stringify(a));
-    ['answers', 'visited', 'read', 'cases', 'srs', 'cloze', 'games'].forEach(function (k) {
+    ['answers', 'visited', 'read', 'cases', 'srs', 'cloze', 'games', 'inv'].forEach(function (k) {
       var src = b[k] || {}; out[k] = out[k] || {};
       Object.keys(src).forEach(function (id) {
         var x = out[k][id], y = src[id];
@@ -94,6 +95,7 @@ var Store = {
     Object.keys(b.unlocked || {}).forEach(function (m) { if (b.unlocked[m]) out.unlocked[m] = true; });
     if ((b.settings && b.settings.t || 0) > (a.settings && a.settings.t || 0)) out.settings = b.settings;
     if ((b.t || 0) > (a.t || 0) && b.last) out.last = b.last;
+    if (b.streak && (!a.streak || (b.streak.t || 0) > (a.streak.t || 0))) out.streak = b.streak;
     out.t = Math.max(a.t || 0, b.t || 0);
     return out;
   },
@@ -235,10 +237,20 @@ function T(s, scope) { return Gloss.link(U.md(s), scope); }
 /* ---------- photos & lightbox ---------- */
 var Photo = {
   src: function (id) { return 'img/' + id + '.jpg'; },
-  lic: function (e) { return e.cc === false ? t('photo.lic.eyerounds') : '<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank" rel="noopener">CC BY-NC-ND 3.0</a>'; },
+  /* licence: openly licensed sources (catalog3: license/author/source_url) or EyeRounds (CC BY-NC-ND 3.0 atlas, tutorials under EyeRounds terms) */
+  licUrl: function (l) {
+    var m = /^CC[ -]?(BY(?:[- ](?:NC|SA|ND))*)[ -]?(\d\.\d)?/i.exec(String(l || '').trim()); if (!m) return /^CC0|public domain|domaine public/i.test(l || '') ? 'https://creativecommons.org/publicdomain/zero/1.0/' : '';
+    return 'https://creativecommons.org/licenses/' + m[1].toLowerCase().replace(/ /g, '-') + '/' + (m[2] || '4.0') + '/';
+  },
+  lic: function (e) {
+    if (e.license) { var u = Photo.licUrl(e.license); return u ? '<a href="' + u + '" target="_blank" rel="noopener">' + U.esc(e.license) + '</a>' : U.esc(e.license); }
+    return e.cc === false ? t('photo.lic.eyerounds') : '<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank" rel="noopener">CC BY-NC-ND 3.0</a>';
+  },
+  owner: function (e) { return e.license ? (e.author ? U.esc(e.author) : t('photo.author.unknown')) : '© EyeRounds.org, University of Iowa'; },
+  srcUrl: function (e) { return e.source_url || e.page_url || ''; },
   credit: function (e, quiz) {
-    return '<div class="credit">' + (quiz ? '' : U.esc(e.id) + ' · ') + '© EyeRounds.org, University of Iowa · ' + Photo.lic(e) +
-      (e.page_url && !quiz ? ' · <a href="' + U.esc(e.page_url) + '" target="_blank" rel="noopener">' + t('photo.source') + '</a>' : '') + '</div>';
+    return '<div class="credit">' + (quiz ? '' : U.esc(e.id) + ' · ') + Photo.owner(e) + ' · ' + Photo.lic(e) +
+      (Photo.srcUrl(e) && !quiz ? ' · <a href="' + U.esc(Photo.srcUrl(e)) + '" target="_blank" rel="noopener">' + t('photo.source') + '</a>' : '') + '</div>';
   },
   card: function (p, opts) {
     opts = opts || {}; var e = D.cat(p.id); if (!e) return '';
@@ -259,7 +271,7 @@ var Photo = {
     var lb = U.$('#lightbox');
     lb.innerHTML = '<div class="lb-top"><span>' + U.md(cap || e.title) + '</span><button type="button" class="btn sm" data-act="lb-close">' + t('lb.close') + '</button></div>' +
       '<div class="lb-img"><img src="' + Photo.src(id) + '" alt="' + U.esc(cap || e.title) + '"></div>' +
-      '<div class="lb-bot"><span class="xs">' + (quiz ? t('lb.hidden') : U.esc(e.id) + ' · ' + t('lb.srccap') + U.esc(e.caption) + (e.dossier ? ' · ' + t('lb.srccase') + U.esc(e.dossier) : '')) + '</span><span class="xs">© EyeRounds.org, University of Iowa · ' + Photo.lic(e) + (e.page_url && !quiz ? ' · <a href="' + U.esc(e.page_url) + '" target="_blank" rel="noopener">' + t('photo.source') + '</a>' : '') + '</span></div>';
+      '<div class="lb-bot"><span class="xs">' + (quiz ? t('lb.hidden') : U.esc(e.id) + ' · ' + t('lb.srccap') + U.esc(e.caption) + (e.dossier ? ' · ' + t('lb.srccase') + U.esc(e.dossier) : '')) + '</span><span class="xs">' + Photo.owner(e) + ' · ' + Photo.lic(e) + (Photo.srcUrl(e) && !quiz ? ' · <a href="' + U.esc(Photo.srcUrl(e)) + '" target="_blank" rel="noopener">' + t('photo.source') + '</a>' : '') + '</span></div>';
     lb.hidden = false; U.$('[data-act="lb-close"]', lb).focus();
   },
   openFig: function (fig) {
@@ -336,7 +348,8 @@ var ICO = (function () {
     book: svg('<path d="M10 5.6C8.6 4.5 6.5 4.1 3.5 4.1v10.7c3 0 5.1.4 6.5 1.6 1.4-1.2 3.5-1.6 6.5-1.6V4.1c-3 0-5.1.4-6.5 1.5zM10 5.6v10.8"/>'),
     cas: svg('<rect x="4.5" y="3.8" width="11" height="13.4" rx="1.6"/><path d="M7.8 3.8V2.9h4.4v.9M7.5 8.5h5M7.5 11.3h5M7.5 14.1h3"/>'),
     cards: svg('<rect x="3.2" y="6.2" width="9.8" height="11" rx="1.5"/><path d="M6.8 3.2h8.5a1.5 1.5 0 0 1 1.5 1.5v9.1"/>'),
-    bars: svg('<path d="M4.5 16.5v-5M10 16.5V4.5M15.5 16.5v-8M3 17h14"/>')
+    bars: svg('<path d="M4.5 16.5v-5M10 16.5V4.5M15.5 16.5v-8M3 17h14"/>'),
+    scan: svg('<path d="M2.8 10s2.7-4.6 7.2-4.6 7.2 4.6 7.2 4.6-2.7 4.6-7.2 4.6S2.8 10 2.8 10z"/><circle cx="10" cy="10" r="2.3"/><path d="M3 3.5v-1h2M15 2.5h2v1M17 16.5v1h-2M5 17.5H3v-1"/>')
   };
 })();
 
@@ -357,7 +370,7 @@ var Shell = {
     var games = ['cartes', 'cartes-vocab', 'mots-troues', 'jeu-images', 'triage', 'associe', 'quiz', 'quiz-run'];
     var h = '<a class="brand" href="#accueil">' + Shell.logo() + '<span><b>' + t('brand.name') + '</b><span>' + t('brand.sub') + '</span></span></a>';
     h += '<nav class="nav" aria-label="' + t('nav.main') + '">';
-    h += '<div class="prims">' + p('accueil', ICO.home, t('nav.home')) + p('apprendre', ICO.book, t('nav.learn')) + p('cas', ICO.cas, t('nav.cases')) + p('reviser', ICO.cards, t('nav.review'), games) + p('progression', ICO.bars, t('nav.progress')) + '</div>';
+    h += '<div class="prims">' + p('accueil', ICO.home, t('nav.home')) + p('apprendre', ICO.book, t('nav.learn')) + p('cas', ICO.cas, t('nav.cases')) + p('reviser', ICO.cards, t('nav.review'), games) + (Views.investigations ? p('investigations', ICO.scan, t('nav.inv'), Shell.invRoutes()) : '') + p('progression', ICO.bars, t('nav.progress')) + '</div>';
     var inA = A_SECTIONS.some(function (x) { return x.id === cur; }) || cur === 'module-a';
     h += '<details class="grp"' + (inA ? ' open' : '') + '><summary class="grp-h">' + t('nav.module', { m: 'A', name: L.modules.A }) + '</summary>';
     A_SECTIONS.forEach(function (x) { h += a(x.id, x.title, null, x.n); });
@@ -371,20 +384,23 @@ var Shell = {
       list.forEach(function (f, i) { h += a(f.id, f.title, null, m + (i + 1)); });
       h += '</details>';
     });
-    h += '<details class="grp"><summary class="grp-h">' + t('nav.more') + '</summary>' + a('atlas', t('nav.atlas'), ' ') + a('recherche', t('nav.search'), ' ') + a('express-b', t('nav.expressB'), ' ') + a('express-c', t('nav.expressC'), ' ') + a('sources', t('nav.sources'), ' ') + (window.Views && Views.investigations ? a('investigations', t('nav.inv'), ' ') : '') + '</details>';
+    h += '<details class="grp"><summary class="grp-h">' + t('nav.more') + '</summary>' + a('atlas', t('nav.atlas'), ' ') + a('recherche', t('nav.search'), ' ') + a('express-b', t('nav.expressB'), ' ') + a('express-c', t('nav.expressC'), ' ') + a('image-du-jour', t('daily.title'), ' ') + a('sources', t('nav.sources'), ' ') + '</details>';
     h += '</nav>';
     h += '<div class="syncnote" id="syncnote"></div>';
     if (window.I18N) h += '<div class="lang-row">' + I18N.switchHtml() + '</div>';
+    h += '<p class="xs muted disclaimer"><a href="#sources">' + t('disclaimer') + '</a></p>';
     return h;
   },
   tabHtml: function () {
     var cur = Router.cur, games = ['cartes', 'cartes-vocab', 'mots-troues', 'jeu-images', 'triage', 'associe', 'quiz', 'quiz-run'];
     var tb = function (id, ic, label, also) { var on = cur === id || (also || []).indexOf(cur) >= 0 || (id === 'apprendre' && (D.fiche(cur) || /^(a-|b-bases|c-bases|module-)/.test(cur))); return '<a href="#' + id + '" class="' + (on ? 'on' : '') + '"' + (on ? ' aria-current="page"' : '') + '><span class="ic" aria-hidden="true">' + ic + '</span><span>' + label + '</span></a>'; };
-    return tb('apprendre', ICO.book, t('nav.learn')) + tb('cas', ICO.cas, t('nav.cases')) + tb('reviser', ICO.cards, t('nav.review'), games) + tb('progression', ICO.bars, t('nav.progress'));
+    return tb('apprendre', ICO.book, t('nav.learn')) + tb('cas', ICO.cas, t('nav.cases')) + (Views.investigations ? tb('investigations', ICO.scan, t('nav.inv.short'), Shell.invRoutes()) : '') + tb('reviser', ICO.cards, t('nav.review'), games) + tb('progression', ICO.bars, t('nav.progress'));
+  },
+  invRoutes: function () { return Object.keys(Views).filter(function (k) { return /^inv-/.test(k); }).concat(['image-du-jour', 'cas-vedette']);
   },
   render: function () {
     U.$('#rail').innerHTML = Shell.navHtml();
-    var tb = U.$('#tabbar'); if (tb) tb.innerHTML = Shell.tabHtml();
+    var tb = U.$('#tabbar'); if (tb) { tb.innerHTML = Shell.tabHtml(); tb.setAttribute('data-n', String(tb.children.length)); }
     var dp = U.$('#drawer .panel'); if (dp) dp.innerHTML = Shell.navHtml();
     Shell.top();
     Shell.sync();

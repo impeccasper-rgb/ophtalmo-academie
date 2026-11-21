@@ -84,10 +84,10 @@ var Plan = {
     var d1 = Dates.parse(Dates.get('cornee')), d2 = Dates.parse(Dates.get('glaucome')), T2 = Plan.tasks();
     var rows = [];
     Plan.spread(T2.pre1, today, d1).forEach(function (r) { rows.push(r); });
-    rows.push({ day: d1, stage: t('plan.stageC') });
+    if (Dates.custom()) rows.push({ day: d1, stage: t('plan.stageC') });
     var after = new Date(d1); after.setDate(after.getDate() + 1);
     Plan.spread(T2.pre2, after > today ? after : today, d2).forEach(function (r) { rows.push(r); });
-    rows.push({ day: d2, stage: t('plan.stageG') });
+    if (Dates.custom()) rows.push({ day: d2, stage: t('plan.stageG') });
     return '<ul class="plan">' + rows.map(function (r) {
       if (r.stage) return '<li><span class="ck on" aria-hidden="true">★</span><div><div class="when">' + U.esc(r.day ? Dates.short(r.day) : '') + '</div><b>' + U.esc(r.stage) + '</b></div></li>';
       return r.tasks.map(function (tk, i) { var ok = Plan.done(tk); return '<li><span class="ck ' + (ok ? 'on' : '') + '" aria-label="' + (ok ? t('plan.done') : t('plan.todo')) + '">' + (ok ? '✓' : '') + '</span><div>' + (i === 0 ? '<div class="when">' + U.esc(r.day ? Dates.short(r.day) : t('plan.asap')) + '</div>' : '') + U.esc(tk.t) + '</div></li>'; }).join('');
@@ -116,11 +116,12 @@ Views.accueil = {
   render: function () {
     var dc = Dates.get('cornee'), dg = Dates.get('glaucome'), d = Settings.get().depth;
     var cd = '<div class="hero-cd"><span><b>' + L.modules.B + '</b> ' + U.esc(Dates.rel(dc)) + '</span><span><b>' + L.modules.C + '</b> ' + U.esc(Dates.rel(dg)) + '</span></div>';
+    if (!Dates.custom()) cd = '';
     var last = Store.p.last && Store.p.last !== 'accueil' && D.title(Store.p.last) ? '<a class="btn hero-btn" href="#' + Store.p.last + '">' + U.esc(t('home.resume', { t: D.title(Store.p.last) })) + '</a>' : '<a class="btn hero-btn" href="#a-anatomie">' + t('home.start') + '</a>';
     var q = SRS.queue(DAILY, '', 15), nx = Plan.next();
     var nxt = nx ? (function () { var id = nx.ids.filter(function (x) { return !Prog.ficheDone(x); })[0] || (nx.quiz ? 'quiz' : nx.cases ? 'cas' : 'reviser'); return '<a class="next-step" href="#' + id + '"><span class="eyebrow">' + t('home.next') + '</span><b>' + U.esc(nx.t) + '</b><span class="small">' + U.esc(t('home.open', { t: D.title(id) || t('nav.review') })) + '</span></a>'; })() : '<div class="next-step"><span class="eyebrow">' + t('home.plan') + '</span><b>' + t('home.plandone') + '</b></div>';
     var levels = [1, 2, 3].map(function (k) { return '<button type="button" class="level-card' + (d === k ? ' on' : '') + '" data-act="depth" data-v="' + k + '" aria-pressed="' + (d === k) + '"><span class="lvl-n">' + k + '</span><b>' + DEPTHS[k].t + '</b><span class="xs muted">' + DEPTHS[k].en + '</span><span class="small">' + U.esc(DEPTHS[k].d) + '</span></button>'; }).join('');
-    var mods = [['A', 'module-a', L.modules.A, t('home.modA.d')], ['B', 'module-b', L.modules.B, t('home.mod.d', { n: D.ordered('B').length, d: Dates.fmt(dc) })], ['C', 'module-c', L.modules.C, t('home.mod.d', { n: D.ordered('C').length, d: Dates.fmt(dg) })]].map(function (x) {
+    var mods = [['A', 'module-a', L.modules.A, t('home.modA.d')], ['B', 'module-b', L.modules.B, (Dates.custom() ? t('home.mod.d', { n: D.ordered('B').length, d: Dates.fmt(dc) }) : t('home.mod.d0', { n: D.ordered('B').length }))], ['C', 'module-c', L.modules.C, (Dates.custom() ? t('home.mod.d', { n: D.ordered('C').length, d: Dates.fmt(dg) }) : t('home.mod.d0', { n: D.ordered('C').length }))]].map(function (x) {
       var st = Prog.stat(x[0]), unl = Prog.unlocked(x[0]);
       return '<a class="mod-card" href="#' + x[1] + '"><span class="mod-img" style="background-image:url(' + Photo.src(COVER[x[0]]) + ')"></span><span class="stack" style="gap:4px;padding:12px 14px 14px"><span class="eyebrow">Module ' + x[0] + (unl ? '' : t('home.tounlock')) + '</span><b class="mod-t">' + x[2] + '</b><span class="small muted">' + x[3] + '</span><span class="pbar"><i style="width:' + (100 * st.mastery).toFixed(0) + '%"></i></span><span class="xs mono">' + t('learn.mastered', { a: st.mastered, b: st.total }) + '</span></span></a>';
     }).join('');
@@ -128,9 +129,9 @@ Views.accueil = {
       '<div class="row">' + last + '<a class="btn hero-btn ghost" href="#reviser">' + t('home.today', { n: q.length }) + '</a></div></div><div class="hero-eye">' + eyeSvg() + '</div></div></div>' +
       '<div class="page">' +
       '<div class="sec"><div class="section-h"><span class="k">1</span><h2>' + t('home.level.h') + '</h2></div><p class="small muted">' + t('home.level.d') + '</p><div class="level-grid">' + levels + '</div></div>' +
-      '<div class="today-grid">' + nxt + '<a class="next-step alt" href="#cartes"><span class="eyebrow">' + t('home.srs') + '</span><b>' + t('home.srs.n', { n: q.length }) + '</b><span class="small">' + t('home.srs.d') + '</span></a><a class="next-step alt2" href="#jeu-images"><span class="eyebrow">' + t('home.game') + '</span><b>' + t('game.img') + '</b><span class="small">' + t('home.game.d', { n: ImgGame.pool('').length }) + '</span></a></div>' +
+      '<div class="today-grid">' + Daily.card() + nxt + '<a class="next-step alt" href="#cartes"><span class="eyebrow">' + t('home.srs') + '</span><b>' + t('home.srs.n', { n: q.length }) + '</b><span class="small">' + t('home.srs.d') + '</span></a>' + (Views.investigations ? '<a class="next-step alt2" href="#investigations"><span class="eyebrow">' + t('brand.method') + '</span><b>' + t('nav.inv') + '</b><span class="small">' + t('home.inv.d', { n: ((window.OPH && OPH.invPractice) || []).length }) + '</span></a>' : '<a class="next-step alt2" href="#jeu-images"><span class="eyebrow">' + t('home.game') + '</span><b>' + t('game.img') + '</b><span class="small">' + t('home.game.d', { n: ImgGame.pool('').length }) + '</span></a>') + '</div>' +
       '<div class="sec"><div class="section-h"><span class="k">2</span><h2>' + t('home.mod.h') + '</h2></div><div class="mod-grid">' + mods + '</div></div>' +
-      '</div>';
+      '<p class="xs muted disclaimer">' + t('disclaimer') + ' · <a href="#sources">' + t('nav.sources') + '</a></p></div>';
   }
 };
 Actions['save-dates'] = function () { var c = U.$('#d-c').value, g = U.$('#d-g').value; if (!c || !g) { U.toast(t('dates.invalid')); return; } Store.p.settings = Object.assign({}, Store.p.settings || {}, { cornee: c, glaucome: g, t: Date.now() }); Store.touch(); Router.refresh(); U.toast(t('dates.saved')); };
@@ -285,7 +286,7 @@ function moduleView(m) {
       var bonus = (OPH.bonus[m] || []).map(function (b) { return '<div class="card stack"><h4>' + U.esc(b.title) + '</h4><span class="small muted"><i>' + U.esc(b.en) + '</i></span><span class="small"><b>' + t('mod.clue') + '</b>' + U.md(b.clue) + '</span><span class="small"><b>' + t('mod.action') + '</b>' + U.md(b.action) + '</span></div>'; }).join('');
       var bph = photosFor('bonus-' + m);
       return '<div class="page">' + crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m, null]]) +
-        '<div class="phead"><div class="eyebrow">' + U.esc(t('mod.eyebrow', { m: m, d: Dates.fmt(Dates.get(dateK)), r: Dates.rel(Dates.get(dateK)) })) + '</div><h1>' + L.modules[m] + '</h1><p class="muted" style="max-width:62ch">' + t('mod.lead', { r: readRange(m), lvl: DEPTHS[Settings.get().depth].t }) + '</p></div>' +
+        '<div class="phead"><div class="eyebrow">' + U.esc(Dates.custom() ? t('mod.eyebrow', { m: m, d: Dates.fmt(Dates.get(dateK)), r: Dates.rel(Dates.get(dateK)) }) : 'Module ' + m) + '</div><h1>' + L.modules[m] + '</h1><p class="muted" style="max-width:62ch">' + t('mod.lead', { r: readRange(m), lvl: DEPTHS[Settings.get().depth].t }) + '</p></div>' +
         (unl ? '' : lockHtml(m)) +
         '<a class="card link" href="#' + cap + '" style="border-color:var(--cobalt)"><span class="eyebrow">' + t('mod.first', { m: m }) + (Prog.ficheDone(cap) ? ' · ' + t('st.read') : '') + '</span><h3>' + U.esc(capD ? capD.title : t('nav.foundations')) + '</h3><span class="small muted">' + U.esc(capD ? capD.intro : t('mod.caps.d')) + '</span></a>' +
         TAG_LEGEND + '<div class="grid2">' + (cards || missing(t('mod.fiches'))) + '</div>' + compareTable(m) +
@@ -518,7 +519,7 @@ Views.atlas = {
 
 /* ---------- sources ---------- */
 Views.sources = {
-  title: 'Sources', render: function () {
+  title: t('nav.sources'), render: function () {
     var S = [
       ['Glaucome', [
         ['AAO PPP Primary Open-Angle Glaucoma (Gedde SJ et al., Ophthalmology, en ligne 9 févr. 2026)', 'https://www.reviewofoptometry.com/news/article/aaos-updated-ppp-for-poag-emphasizes-individualized-monitoring', 'SLT en première intention renforcée, OCT RNFL + GCIPL, champs groupés, nouveaux facteurs de risque (TA basse, hystérésis).'],
@@ -541,10 +542,20 @@ Views.sources = {
         ['Règlement sur les médicaments qu’un optométriste peut administrer ou prescrire (O-7, r. 11.1)', 'https://www.legisquebec.gouv.qc.ca/en/document/cr/o-7,%20r.%2011.1', 'Glaucome suspect, débutant ou cortisonique, puis orientation en ophtalmologie.']
       ]]
     ];
-    return '<div class="page read" style="margin:0 auto;width:100%">' + crumbs([['Accueil', 'accueil'], ['Sources', null]]) + '<div class="phead"><div class="eyebrow">Références vérifiées en octobre 2026</div><h1>Sources et crédits</h1></div>' +
+    var R = window.OPH_RESTRICTED || {}, cat = (OPH.catalog || []).filter(function (e) { return !R[e.id]; });
+    var nOpen = cat.filter(function (e) { return e.license; }).length;
+    var rows = cat.map(function (e) { var u = Photo.srcUrl(e); return '<tr><td class="mono">' + U.esc(e.id) + '</td><td>' + U.esc(e.title || '') + '</td><td>' + Photo.owner(e) + '</td><td>' + Photo.lic(e) + '</td><td>' + (u ? '<a href="' + U.esc(u) + '" target="_blank" rel="noopener">' + t('photo.source') + '</a>' : '') + '</td></tr>'; }).join('');
+    var im = OPH.invMedia || {}, mrows = Object.keys(im).filter(function (k) { var m = im[k]; return m && (m.license || m.source || m.credit) && !(m.photo && R[m.photo]); }).map(function (k) { var m = im[k];
+      return '<tr><td class="mono">' + U.esc(m.photo || k) + '</td><td>' + U.esc(I18N.pick(m.alt) || '') + '</td><td>' + U.esc(I18N.pick(m.credit) || (m.kind === 'photo' ? '' : t('src.schema'))) + '</td><td>' + U.esc(I18N.pick(m.license) || '') + '</td><td>' + (m.source ? '<a href="' + U.esc(m.source) + '" target="_blank" rel="noopener">' + t('photo.source') + '</a>' : '') + '</td></tr>'; }).join('');
+    var th = '<thead><tr><th>' + t('src.id') + '</th><th>' + t('src.title') + '</th><th>' + t('src.author') + '</th><th>' + t('src.lic') + '</th><th>' + t('src.link') + '</th></tr></thead>';
+    return '<div class="page read" style="margin:0 auto;width:100%">' + crumbs([[t('nav.home'), 'accueil'], [t('nav.sources'), null]]) + '<div class="phead"><div class="eyebrow">' + t('src.eyebrow') + '</div><h1>' + t('nav.sources') + '</h1></div>' +
+      '<div class="callout red" id="about"><span class="eyebrow">' + t('src.about') + '</span><span><b>' + t('disclaimer') + '</b></span><span class="small">' + t('disclaimer.long') + '</span></div>' +
       S.map(function (g) { return '<div class="sec">' + secH('•', g[0]) + '<ul class="src-list">' + g[1].map(function (s) { return '<li><a href="' + U.esc(s[1]) + '" target="_blank" rel="noopener">' + U.esc(s[0]) + '</a>' + (s[2] ? '<div class="small muted">' + U.esc(s[2]) + '</div>' : '') + '</li>'; }).join('') + '</ul></div>'; }).join('') +
-      '<div class="sec">' + secH('•', 'Images') + '<p class="small">Photographies cliniques : deux banques fournies par l’apprenant (OPH-001 à 191, puis complément OPH-192 à 391), provenant d’<a href="https://eyerounds.org/TOS.htm" target="_blank" rel="noopener">EyeRounds.org</a>, Department of Ophthalmology and Visual Sciences, University of Iowa — images de l’atlas sous licence <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank" rel="noopener">CC BY-NC-ND 3.0</a> ; tutoriels selon les conditions EyeRounds. Affichées sans modification, crédit et lien source sur chaque image. Tous les autres visuels sont des schémas pédagogiques dessinés pour l’application et identifiés comme tels ; aucune image n’est générée par IA ni présentée comme authentique si elle ne l’est pas.</p></div>' +
-      '<div class="callout amber"><span class="eyebrow">À garder en tête</span><span class="small">Outil d’étude, pas un protocole : vérifie toujours les pratiques de ton milieu (accès à la SLT et aux MIGS, couverture RAMQ de la CXL et de certains médicaments, protocoles de gouttes fortifiées). Les doses sont des doses adultes usuelles à valider selon le patient.</span></div></div>';
+      '<div class="sec">' + secH('•', t('src.images')) + '<p class="small">' + t('src.images.p') + '</p>' + (nOpen ? '<p class="small">' + t('src.open.p', { n: nOpen }) + '</p>' : '') +
+      '<div class="callout"><span class="small">' + t('src.cc') + '</span></div>' +
+      '<details class="acc"><summary>' + t('src.perimg', { n: cat.length }) + '</summary><div class="tbl-wrap" style="padding:0 14px 14px"><table class="tbl credits">' + th + '<tbody>' + rows + '</tbody></table></div></details>' +
+      (mrows ? '<details class="acc"><summary>' + t('src.invmedia') + '</summary><div class="tbl-wrap" style="padding:0 14px 14px"><table class="tbl credits">' + th + '<tbody>' + mrows + '</tbody></table></div></details>' : '') + '</div>' +
+      '<div class="callout amber"><span class="eyebrow">' + t('src.keep') + '</span><span class="small">' + t('src.keep.p') + '</span></div></div>';
   }
 };
 
