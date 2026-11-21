@@ -210,9 +210,9 @@
     var ticks = '';
     for (var t = 0; t <= 30; t += 5) ticks += '<line x1="' + ASX(t) + '" y1="' + ASB + '" x2="' + ASX(t) + '" y2="' + (ASB + 5) + '" stroke="#5f8f6a"/><text x="' + ASX(t) + '" y="' + (ASB + 17) + '" text-anchor="middle" class="inv-ax">' + t + '</text>';
     var lab = '';
-    if (o.labels) [['cornea', 0], ['lensA', 0], ['lensP', 0], ['retina', 0], ['sclera', 1], ['orbit', 0]].forEach(function (p, i) {
-      var s = sp.filter(function (q) { return q.id === p[0]; })[0]; var y = ASB - s.h * ASH - 8 - (i % 2) * 12;
-      lab += '<text x="' + ASX(s.mm) + '" y="' + y + '" text-anchor="' + (p[0] === 'cornea' ? 'start' : 'middle') + '" class="inv-alab">' + E(pick(SPIKE_NAMES[p[0]])) + '</text>';
+    if (o.labels) [['cornea', 5, 40, 'start'], ['lensA', 5, 56, 'start'], ['lensP', 5, 76, 'start'], ['retina', -5, 40, 'end'], ['sclera', 5, 40, 'start'], ['orbit', 5, 118, 'start']].forEach(function (p) {
+      var s = sp.filter(function (q) { return q.id === p[0]; })[0];
+      lab += '<text x="' + (ASX(s.mm) + p[1]) + '" y="' + p[2] + '" text-anchor="' + p[3] + '" class="inv-alab">' + E(pick(SPIKE_NAMES[p[0]])) + '</text>';
     });
     var svg = '<svg viewBox="0 0 640 214" class="inv-svg inv-ascan" role="img" aria-label="' + E(S('ascan.aria', 'Schéma de tracé A-scan', 'A-scan trace schematic')) + '">' +
       '<rect width="640" height="214" fill="#07140c"/>' +
@@ -241,9 +241,9 @@
       });
     } else if (path === 'cd') {
       var domes = ori === 'axial' ? [[-BSPAN, -5], [BSPAN, 5]] : ori === 'long' ? [[-BSPAN, 6]] : [[-BSPAN, -2], [BSPAN, 2]];
-      domes.forEach(function (dm) { out.push({ d: bPath(function (a) { var u = (a - dm[0]) / (dm[1] - dm[0]); return 58 * Math.pow(Math.max(0, 1 - u * u), .65); }, dm[0], dm[1]), w: 5, r: .92 }); });
+      domes.forEach(function (dm) { out.push({ d: bPath(function (a) { var u = (a - dm[0]) / (dm[1] - dm[0]), v = u < .25 ? (.25 - u) / .25 * .55 : (u - .25) / .75; return 58 * Math.pow(Math.max(0, 1 - v * v), .65); }, dm[0], dm[1]), w: 5, r: .92 }); });
     } else if (path === 'pvd') {
-      out.push({ d: bPath(function (a) { return 66 + 9 * Math.sin(a * .13) + 16 * phase * Math.sin(a * .22 + .5); }, -23, 23), w: 1.6, r: .36 });
+      out.push({ d: bPath(function (a) { return 66 + 9 * Math.sin(a * .13) + 16 * phase * Math.sin(a * .22 + .5); }, -23, 23), w: 1.8, r: .45 });
     }
     return out;
   }
@@ -289,7 +289,7 @@
     if (path === 'rd') {
       if (disc != null) { var pd = bPt(disc, 3); hot.push(pctHot(pd.x, pd.y, 16, 400, 300, { fr: 'Insertion à la papille', en: 'Inserts at the disc' })); }
       else { var pm = bPt(0, 34); hot.push(pctHot(pm.x, pm.y, 18, 400, 300, { fr: 'Membrane très réflective', en: 'Highly reflective membrane' })); }
-    } else if (path === 'cd') { var pc = bPt(ori === 'long' ? -16 : -BSPAN + 6, 52); hot.push(pctHot(pc.x, pc.y, 20, 400, 300, { fr: 'Dôme lisse et épais, sans insertion papillaire', en: 'Smooth thick dome, no disc insertion' })); }
+    } else if (path === 'cd') { var pc = bPt(ori === 'long' ? -18 : -BSPAN + 8, 55); hot.push(pctHot(pc.x, pc.y, 20, 400, 300, { fr: 'Dôme lisse et épais, sans insertion papillaire', en: 'Smooth thick dome, no disc insertion' })); }
     else if (path === 'pvd') { var pp = bPt(0, 66); hot.push(pctHot(pp.x, pp.y, 18, 400, 300, { fr: 'Membrane fine, peu réflective', en: 'Thin, weakly reflective membrane' })); }
     else if (path === 'vh') { var pv = bPt(14, 120); hot.push(pctHot(pv.x, pv.y, 26, 400, 300, { fr: 'Échos ponctués mobiles; rétine à plat', en: 'Mobile dot echoes; retina flat' })); }
     else if (disc != null) { lab = bPt(disc, -30); hot.push(pctHot(lab.x, lab.y, 14, 400, 300, { fr: 'Ombre du nerf optique', en: 'Optic nerve shadow' })); }
@@ -397,8 +397,11 @@
     GONIO_BANDS.forEach(function (b) { h += '<polygon data-band="' + b.id + '" points="' + gBand(b.y0, b.id === 'cbb' && rec ? b.y1 : b.y1, b.id === 'cbb' ? wav : null) + '" fill="' + (b.id === 'tm' ? 'url(#' + cid + 't)' : b.c) + '"/>'; });
     h += '<polygon points="' + gBand(0, 44) + '" fill="#e8f4f8" opacity=".25" pointer-events="none"/>';
     // iris (rises to hide posterior structures)
-    var it = [], x; for (x = 0; x <= 400; x += 10) it.push(P2(x, level + gC(x) + 2 * Math.sin(x / 17) + (grade <= 2 && !rec ? -6 * Math.sin(Math.PI * x / 400) * 0 : 0)));
+    var it = [], x; for (x = 0; x <= 400; x += 10) it.push(P2(x, level + gC(x) + 2 * Math.sin(x / 17)));
+    h += '<polyline points="' + it.join(' ') + '" fill="none" stroke="#120a05" stroke-width="5" opacity=".55" pointer-events="none"/>';
     h += '<polygon data-band="iris" points="' + it.join(' ') + ' 400,240 0,240" fill="url(#' + cid + 'i)"/>';
+    var stri = ''; for (x = 6; x < 400; x += 9) { var yt = level + gC(x) + 8; stri += '<path d="M' + x + ',' + yt.toFixed(1) + ' l' + ((x % 3) - 1) + ',' + (18 + (x % 5) * 3) + '"/>'; }
+    h += '<g stroke="#d49a62" stroke-width="1.2" opacity=".35" pointer-events="none">' + stri + '</g>';
     h += '<polyline points="' + it.map(function (p) { var q = p.split(','); return q[0] + ',' + (+q[1] + 5).toFixed(1); }).join(' ') + '" fill="none" stroke="#c48c60" stroke-width="2" opacity=".55" pointer-events="none"/>';
     var cr = ''; for (var k = 0; k < 14; k++) { var cx = 15 + k * 28 + (k % 3) * 5, cy = level + gC(cx) + 30 + (k % 4) * 14; if (cy < 236) cr += '<ellipse cx="' + cx + '" cy="' + cy + '" rx="' + (6 + k % 3 * 2) + '" ry="3.2"/>'; }
     h += '<g fill="#3a2416" opacity=".7" pointer-events="none">' + cr + '</g>';
@@ -431,7 +434,7 @@
     return out;
   }
   var VF_CASES = {
-    normal: { eyes: ['OD'], rel: 'ok', ans: 'normal', idx: { OD: { fl: [1, 14], fp: 2, fn: 3, md: -0.6, psd: 1.6, ght: 'wnl' } }, f: function (x, y, e, r) { return r() < .04 ? 1 : 0; } },
+    normal: { eyes: ['OD'], rel: 'ok', ans: 'normal', idx: { OD: { fl: [1, 14], fp: 2, fn: 3, md: -0.6, psd: 1.6, ght: 'wnl' } }, f: function (x, y, e, r) { return r() < .03 ? 1 : 0; } },
     fp: { eyes: ['OD'], rel: 'bad', ans: 'uninterp', idx: { OD: { fl: [0, 13], fp: 27, fn: 0, md: 3.4, psd: 1.2, ght: 'high' } }, f: function () { return 0; } },
     fl: { eyes: ['OD'], rel: 'bad', ans: 'uninterp', idx: { OD: { fl: [7, 15], fp: 4, fn: 9, md: -2.0, psd: 3.1, ght: 'bl' } }, f: function (x, y, e, r) { return r() < .16 ? 1 + Math.floor(r() * 2) : 0; } },
     nasal: { eyes: ['OD'], rel: 'ok', ans: 'nasal', merid: 'h', idx: { OD: { fl: [1, 15], fp: 1, fn: 4, md: -2.2, psd: 3.8, ght: 'onl' } }, f: function (x, y) { return (x <= -15 && (y === 3 || y === 9)) ? (x === -27 || x === -21 ? 4 : 3) : 0; } },
@@ -458,7 +461,7 @@
         else h += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="1.7" fill="#333"/>';
       });
       h += '<text x="' + (ox + pw - 10) + '" y="18" text-anchor="end" class="inv-vfs">' + E(S('vf.pd', 'déviation (schéma)', 'deviation (schematic)')) + '</text></g>';
-      if (sum.n) { var hr = Math.max(14, Math.max(sum.maxx - sum.minx, sum.maxy - sum.miny) / 2 + 8); hot.push(pctHot(sum.x / sum.n, sum.y / sum.n, Math.min(hr, 70), Wd, 272, ei === eyes.length - 1 || eyes.length === 1 ? VF_ANS_REVEAL(c.ans) : '', ei === eyes.length - 1)); }
+      if (sum.n) { var hr = Math.max(14, Math.max(sum.maxx - sum.minx, sum.maxy - sum.miny) / 2 + 8); hot.push(pctHot(sum.x / sum.n, sum.y / sum.n, Math.min(hr, 46), Wd, 272, ei === eyes.length - 1 || eyes.length === 1 ? VF_ANS_REVEAL(c.ans) : '', ei === eyes.length - 1)); }
     });
     return { svg: '<svg viewBox="0 0 ' + Wd + ' 272" class="inv-svg inv-vf" role="img" aria-label="' + E(S('vf.aria', 'Schéma de champ visuel 24-2 (carte des déviations)', '24-2 visual field schematic (deviation map)')) + '">' + h + '</svg>', hot: hot, c: c };
   };
@@ -468,7 +471,7 @@
 
   /* ---------- Fundus (right eye) ---------- */
   var FUNDUS_REG = {
-    disc: { n: { fr: 'Papille et anneau neurorétinien', en: 'Optic disc and neuroretinal rim' }, d: { fr: 'Disque ~1,5–1,8 mm, bords nets, anneau rose-orangé. Règle ISNT : anneau Inférieur ≥ Supérieur ≥ Nasal ≥ Temporal.', en: 'Disc ~1.5–1.8 mm, sharp margins, pink-orange rim. ISNT rule: rim Inferior ≥ Superior ≥ Nasal ≥ Temporal.' } },
+    disc: { n: { fr: 'Papille et anneau neurorétinien', en: 'Optic disc and neuroretinal rim' }, d: { fr: 'Disque ≈ 1,5–2 mm, bords nets, anneau rose-orangé. Règle ISNT : anneau Inférieur ≥ Supérieur ≥ Nasal ≥ Temporal.', en: 'Disc ≈ 1.5–2 mm, sharp margins, pink-orange rim. ISNT rule: rim Inferior ≥ Superior ≥ Nasal ≥ Temporal.' } },
     cup: { n: { fr: 'Excavation', en: 'Cup' }, d: { fr: 'Dépression centrale pâle sans axones. C/D vertical souvent ≤ 0,5 (dépend de la taille du disque); une asymétrie > 0,2 entre les yeux est suspecte.', en: 'Pale central depression without axons. Vertical C/D often ≤ 0.5 (depends on disc size); asymmetry > 0.2 between eyes is suspicious.' } },
     macula: { n: { fr: 'Macula', en: 'Macula' }, d: { fr: 'Zone plus sombre entre les arcades temporales, ~2,5 diamètres papillaires en temporal de la papille.', en: 'Darker area between the temporal arcades, ~2.5 disc diameters temporal to the disc.' } },
     fovea: { n: { fr: 'Fovéa', en: 'Fovea' }, d: { fr: 'Centre de la macula avec reflet fovéolaire; vision la plus fine (cônes).', en: 'Centre of the macula with foveal reflex; finest vision (cones).' } },
@@ -481,7 +484,7 @@
     cup: { n: { fr: 'Excavation agrandie', en: 'Enlarged cup' }, d: { fr: 'C/D ~0,8 avec anneau aminci en inférieur : règle ISNT non respectée, évoque une neuropathie glaucomateuse.', en: 'C/D ~0.8 with inferior rim thinning: ISNT rule broken, suggests glaucomatous optic neuropathy.' } },
     dischem: { n: { fr: 'Hémorragie papillaire', en: 'Disc haemorrhage' }, d: { fr: 'Hémorragie en flammèche au bord du disque, souvent inférotemporale : associée à la progression du glaucome.', en: 'Flame haemorrhage at the disc margin, often inferotemporal: associated with glaucoma progression.' } },
     cws: { n: { fr: 'Nodules cotonneux', en: 'Cotton wool spots' }, d: { fr: 'Taches blanches floues = infarctus de la couche des fibres nerveuses (ischémie : diabète, HTA, occlusion veineuse…).', en: 'Fluffy white patches = nerve fibre layer infarcts (ischaemia: diabetes, hypertension, vein occlusion…).' } },
-    drusen: { n: { fr: 'Drusen', en: 'Drusen' }, d: { fr: 'Dépôts jaunâtres entre l’EPR et la membrane de Bruch. Petits (< 63 µm) fréquents avec l’âge; grands (≥ 125 µm) = DMLA intermédiaire.', en: 'Yellowish deposits between RPE and Bruch membrane. Small (< 63 µm) common with age; large (≥ 125 µm) = intermediate AMD.' } }
+    drusen: { n: { fr: 'Drusen', en: 'Drusen' }, d: { fr: 'Dépôts jaunâtres entre l’EPR et la membrane de Bruch. Petits (≤ 63 µm) fréquents avec l’âge; grands (> 125 µm) = DMLA intermédiaire.', en: 'Yellowish deposits between RPE and Bruch membrane. Small (≤ 63 µm) common with age; large (> 125 µm) = intermediate AMD.' } }
   };
   var FD = { x: 278, y: 190, r: 22 }, FF = { x: 166, y: 203 };
   Gen.fundus = function (o) {
@@ -511,10 +514,10 @@
     if (ov.cup) h += '<ellipse cx="' + (FD.x + 1) + '" cy="' + (FD.y + 2.5) + '" rx="15.5" ry="18.5" fill="#fbf0dc" data-reg="ov-cup"/>';
     else h += '<circle cx="' + (FD.x + 1) + '" cy="' + FD.y + '" r="7" fill="#fbf0dc" data-reg="cup"/>';
     h += '<path d="M' + (FD.x - 2) + ',' + (FD.y - FD.r + 2) + ' L' + (FD.x - 2) + ',' + (FD.y + FD.r - 2) + '" stroke="#c84a35" stroke-width="2" pointer-events="none" opacity=".8"/>';
-    if (ov.dischem) { h += '<path d="M' + (FD.x - 12) + ',' + (FD.y + 15) + ' q-6,8 -9,16 q2,1 4,0 q4,-8 8,-14 z" fill="#9c0f18" data-reg="ov-dischem"/>'; hot.push(pctHot(FD.x - 15, FD.y + 23, 13, 400, 400, FUNDUS_OV.dischem.n)); }
-    if (ov.cup) hot.push(pctHot(FD.x, FD.y + 2, 26, 400, 400, { fr: 'C/D ~0,8, anneau inférieur aminci', en: 'C/D ~0.8, thin inferior rim' }));
-    if (ov.cws) { var cw = ''; [[206, 148, 11, 6, -20], [140, 140, 9, 5, 15], [216, 260, 10, 6, 25], [128, 262, 8, 5, -10], [236, 172, 7, 4, 0]].forEach(function (c) { cw += '<ellipse cx="' + c[0] + '" cy="' + c[1] + '" rx="' + c[2] + '" ry="' + c[3] + '" transform="rotate(' + c[4] + ' ' + c[0] + ' ' + c[1] + ')"/>'; }); h += '<g fill="#f7f1e4" opacity=".92" filter="url(#' + cid + 'f)" data-reg="ov-cws">' + cw + '</g>'; hot.push(pctHot(206, 148, 18, 400, 400, FUNDUS_OV.cws.n)); }
-    if (ov.drusen) { var dr = ''; for (var k = 0; k < 34; k++) { var a = r() * Math.PI * 2, d = 9 + r() * 32; dr += '<circle cx="' + (FF.x + Math.cos(a) * d).toFixed(1) + '" cy="' + (FF.y + Math.sin(a) * d * .85).toFixed(1) + '" r="' + (1.6 + r() * 2.2).toFixed(1) + '"/>'; } h += '<g fill="#f2d36a" opacity=".9" data-reg="ov-drusen">' + dr + '</g>'; hot.push(pctHot(FF.x, FF.y, 30, 400, 400, FUNDUS_OV.drusen.n)); }
+    if (ov.dischem) { h += '<path d="M' + (FD.x - 12) + ',' + (FD.y + 15) + ' q-6,8 -9,16 q2,1 4,0 q4,-8 8,-14 z" fill="#9c0f18" data-reg="ov-dischem"/>'; hot.push(Object.assign(pctHot(FD.x - 15, FD.y + 23, 13, 400, 400, FUNDUS_OV.dischem.n), { k: 'dischem' })); }
+    if (ov.cup) hot.push(Object.assign(pctHot(FD.x, FD.y + 2, 26, 400, 400, { fr: 'C/D ~0,8, anneau inférieur aminci', en: 'C/D ~0.8, thin inferior rim' }), { k: 'cup' }));
+    if (ov.cws) { var cw = ''; [[206, 148, 11, 6, -20], [140, 140, 9, 5, 15], [216, 260, 10, 6, 25], [128, 262, 8, 5, -10], [236, 172, 7, 4, 0]].forEach(function (c) { cw += '<ellipse cx="' + c[0] + '" cy="' + c[1] + '" rx="' + c[2] + '" ry="' + c[3] + '" transform="rotate(' + c[4] + ' ' + c[0] + ' ' + c[1] + ')"/>'; }); h += '<g fill="#f7f1e4" opacity=".92" filter="url(#' + cid + 'f)" data-reg="ov-cws">' + cw + '</g>'; hot.push(Object.assign(pctHot(206, 148, 18, 400, 400, FUNDUS_OV.cws.n), { k: 'cws' })); }
+    if (ov.drusen) { var dr = ''; for (var k = 0; k < 34; k++) { var a = r() * Math.PI * 2, d = 9 + r() * 32; dr += '<circle cx="' + (FF.x + Math.cos(a) * d).toFixed(1) + '" cy="' + (FF.y + Math.sin(a) * d * .85).toFixed(1) + '" r="' + (1.6 + r() * 2.2).toFixed(1) + '"/>'; } h += '<g fill="#f2d36a" opacity=".9" data-reg="ov-drusen">' + dr + '</g>'; hot.push(Object.assign(pctHot(FF.x, FF.y, 30, 400, 400, FUNDUS_OV.drusen.n), { k: 'drusen' })); }
     h += '</g><text x="8" y="394" class="inv-ax" fill="#bbb">' + E(S('fo.od', 'œil droit (OD)', 'right eye (OD)')) + '</text>';
     if (!hot.length) hot.push(pctHot(FD.x, FD.y, 26, 400, 400, FUNDUS_REG.disc.n));
     return { svg: '<svg viewBox="0 0 400 400" class="inv-svg inv-fundus" role="img" aria-label="' + E(S('fo.aria', 'Schéma de fond d’œil droit', 'Right fundus schematic')) + '">' + h + '</svg>', hot: hot };
@@ -537,26 +540,38 @@
   /* ======================================================================
      PRACTICE ENGINE — Observe → Réponds → Révèle
      ====================================================================== */
+  function hotInline(hots) { var lab = (hots || []).filter(function (h) { return pick(h.label); }); return lab.length <= 1 && (!lab.length || String(pick(lab[0].label)).length <= 48); }
   function hotsHtml(hots) {
-    return '<div class="inv-hots" aria-hidden="true">' + (hots || []).map(function (hs) {
+    hots = hots || []; var inline = hotInline(hots);
+    return '<div class="inv-hots" aria-hidden="true">' + hots.map(function (hs, k) {
       var lab = pick(hs.label), side = hs.x > 68 ? ' r' : hs.x < 32 ? ' l' : '', below = hs.y > 78 ? ' up' : '';
-      return '<span class="inv-hot' + (hs.decisive === false ? ' minor' : '') + side + below + '" style="left:' + hs.x + '%;top:' + hs.y + '%;--r:' + (hs.r || 8) + '"><i></i>' + (lab ? '<b>' + E(lab) + '</b>' : '') + '</span>';
+      return '<span class="inv-hot' + (hs.decisive === false ? ' minor' : '') + side + below + (k % 2 ? ' alt' : '') + '" style="left:' + hs.x + '%;top:' + hs.y + '%;--r:' + (hs.r || 8) + ';--d:' + (k * 0.18).toFixed(2) + 's"><i></i>' + (!lab ? '' : inline ? '<b>' + E(lab) + '</b>' : '<em>' + (k + 1) + '</em>') + '</span>';
     }).join('') + '</div>';
+  }
+  function hotsLegend(hots) {
+    if (!hots || !hots.length || hotInline(hots)) return '';
+    return '<ol class="inv-hlist">' + hots.map(function (hs, k) { var lab = pick(hs.label); return lab ? '<li class="' + (hs.decisive === false ? '' : 'dec') + '"><span>' + (k + 1) + '</span>' + E(lab) + '</li>' : ''; }).join('') + '</ol>';
+  }
+  function resolveMedia(id) {
+    var m = mediaById(id);
+    if (!m && typeof id === 'string') { var rq = W.OPH.invMediaRequests && W.OPH.invMediaRequests[id]; if (rq && rq.photo && W.D && D.cat && D.cat(rq.photo)) m = { kind: 'photo', photo: rq.photo, alt: null, hotspots: [] }; }
+    return m;
   }
   function mediaBlock(m, revealed) {
     if (!m) return '<div class="inv-media empty">' + E(S('media.soon', 'Image à venir', 'Image coming soon')) + '</div>';
-    var body = '', hots = m.hotspots, foot = '', alt = revealed ? pick(m.alt) : S('media.hidden', 'Image d’examen (légende masquée)', 'Investigation image (caption hidden)');
+    var body = '', hots = m.hotspots, foot = '', zoom = '', alt = revealed && m.alt ? pick(m.alt) : S('media.hidden', 'Image d’examen (légende masquée)', 'Investigation image (caption hidden)');
     if (m.kind === 'photo' && m.photo) {
       var e = W.D && D.cat ? D.cat(m.photo) : null;
       body = '<img src="' + Photo.src(m.photo) + '" alt="' + E(alt) + '"' + (e ? ' width="' + (e.tw || 440) + '" height="' + (e.th || 300) + '"' : '') + ' decoding="async">';
-      foot = m.credit ? '<div class="credit">' + PE(m.credit) + '</div>' : (e ? Photo.credit(e, !revealed) : '');
+      foot = m.credit ? '<div class="credit">' + PE(m.credit) + (revealed && m.source ? ' · <a href="' + E(m.source) + '" target="_blank" rel="noopener">' + E(S('media.src', 'page source', 'source page')) + '</a>' : '') + '</div>' : (e ? Photo.credit(e, !revealed) : '');
+      if (e) zoom = '<button type="button" class="btn xs inv-zoom" data-act="lightbox" data-id="' + E(m.photo) + '" data-cap="' + E(revealed && m.alt ? pick(m.alt) : '') + '"' + (revealed ? '' : ' data-quiz="1"') + '>' + E(S('media.zoom', 'Agrandir', 'Enlarge')) + '</button>';
     } else {
       var g = (m.kind === 'gen' || m.gen) ? genFrom(m.gen) : null;
       body = g ? g.svg : (m.svg || '');
-      if (!hots && g) hots = g.hot;
+      if ((!hots || !hots.length) && g) hots = g.hot;
       foot = '<div class="credit">' + schemaBadge() + ' ' + (m.credit ? PE(m.credit) : E(S('media.orig', 'Schéma pédagogique original — pas une image de patient', 'Original teaching schematic — not a patient image'))) + '</div>';
     }
-    return '<figure class="inv-media' + (revealed ? ' revealed' : '') + '"><div class="inv-media-in" role="img" aria-label="' + E(alt) + '">' + body + (revealed ? hotsHtml(hots) : '') + '</div><figcaption>' + (revealed && m.alt ? '<span class="small">' + PE(m.alt) + '</span>' : '<span class="xs muted">' + E(S('media.caphidden', 'Légende masquée jusqu’à ta réponse', 'Caption hidden until you answer')) + '</span>') + foot + '</figcaption></figure>';
+    return '<figure class="inv-media' + (revealed ? ' revealed' : '') + '"><div class="inv-media-in" role="img" aria-label="' + E(alt) + '">' + body + (revealed ? hotsHtml(hots) : '') + zoom + '</div><figcaption>' + (revealed ? hotsLegend(hots) : '') + (revealed && m.alt ? '<span class="small">' + PE(m.alt) + '</span>' : (revealed ? '' : '<span class="xs muted">' + E(S('media.caphidden', 'Légende masquée jusqu’à ta réponse', 'Caption hidden until you answer')) + '</span>')) + foot + '</figcaption></figure>';
   }
 
   function practice(host, items, opts) {
@@ -573,7 +588,7 @@
     }
     function draw(focusSel) {
       if (st.i >= src.length) return end();
-      var it = src[st.i], m = mediaById(it.media), lvl = it.level ? '<span class="tag plain">' + E(S('pr.level', 'Niveau', 'Level')) + ' ' + it.level + '</span>' : '';
+      var it = src[st.i], m = resolveMedia(it.media), lvl = it.level ? '<span class="tag plain">' + E(S('pr.level', 'Niveau', 'Level')) + ' ' + it.level + '</span>' : '';
       var h = '<div class="inv-run card">' + head() + steps() + '<div class="inv-pgrid"><div class="inv-pmedia">' + mediaBlock(m, st.phase === 'reveal') + '</div><div class="inv-pside stack">' +
         '<div class="row tight">' + lvl + '</div><p class="inv-q">' + PM(it.q) + '</p>';
       if (st.phase === 'observe') {
@@ -1006,7 +1021,7 @@
         '<dt><button type="button" class="inv-term" data-ix="psd">PSD</button></dt><dd>' + num(x.psd) + ' dB</dd>' +
         '<dt><button type="button" class="inv-term" data-ix="ght">GHT</button></dt><dd>' + PE(GHT_TXT[x.ght]) + '</dd></dl></div>';
     }).join('') + '</div>';
-    return { html: '<div class="inv-vfp"><div class="inv-vfhead"><span class="mono xs">24-2 · SITA · ' + E(S('vf.sch', 'schéma', 'schematic')) + '</span><span class="xs muted">' + E(S('vf.legend', '■ plus foncé = plus déprimé · · = normal', '■ darker = more depressed · · = normal')) + '</span></div>' + idx + '<div class="inv-vfmap">' + g.svg + (reveal ? hotsHtml(g.hot) : '') + '</div>' + (c.eyes.length > 1 ? '<p class="xs muted">' + E(S('vf.note', 'Note : le GHT compare haut et bas; il n’aide pas pour un défaut qui respecte le méridien vertical.', 'Note: the GHT compares upper and lower halves; it does not help for a defect respecting the vertical meridian.')) + '</p>' : '') + '</div>' };
+    return { html: '<div class="inv-vfp"><div class="inv-vfhead"><span class="mono xs">24-2 · SITA · ' + E(S('vf.sch', 'schéma', 'schematic')) + '</span><span class="xs muted">' + E(S('vf.legend', '■ plus foncé = plus déprimé · · = normal', '■ darker = more depressed · · = normal')) + '</span></div>' + idx + '<div class="inv-vfmap" style="max-width:' + (c.eyes.length > 1 ? 600 : 340) + 'px">' + g.svg + (reveal ? hotsHtml(g.hot) : '') + '</div>' + (c.eyes.length > 1 ? '<p class="xs muted">' + E(S('vf.note', 'Note : le GHT compare haut et bas; il n’aide pas pour un défaut qui respecte le méridien vertical.', 'Note: the GHT compares upper and lower halves; it does not help for a defect respecting the vertical meridian.')) + '</p>' : '') + '</div>' };
   }
   tools['vf-reader'] = function (el) {
     var order = ['normal', 'fp', 'nasal', 'arcuate', 'paracentral', 'fl', 'altitudinal', 'bitemporal', 'homonymous'], st = { list: null, i: 0, step: 0, score: [0, 0], rel: null };
@@ -1060,9 +1075,9 @@
       '<div class="stack"><div><p class="small muted">' + E(S('fo.ovl', 'Superposer une anomalie :', 'Overlay an abnormality:')) + '</p><div class="chips inv-chips">' + Object.keys(FUNDUS_OV).map(function (k) { return '<button type="button" class="chip" data-ov="' + k + '" aria-pressed="false">' + PE(FUNDUS_OV[k].n) + '</button>'; }).join('') + '</div></div>' +
       '<div data-panel></div><div class="inv-out" data-out aria-live="polite"></div></div></div></div>';
     var svgHost = U.$('[data-svg]', el), panel = U.$('[data-panel]', el), out = U.$('[data-out]', el);
-    function draw(showHot) {
+    function draw(showKey) {
       var g = Gen.fundus({ ov: st.ov });
-      svgHost.innerHTML = g.svg + (showHot ? hotsHtml(g.hot) : '');
+      svgHost.innerHTML = g.svg + (showKey ? hotsHtml(g.hot.filter(function (h) { return h.k === showKey; })) : '');
       if (st.sel) U.$$('[data-reg="' + st.sel + '"]', svgHost).forEach(function (p) { p.classList.add('inv-hl'); });
       U.$$('[data-reg]', svgHost).forEach(function (p, i) { p.setAttribute('tabindex', '0'); p.setAttribute('role', 'button'); p.setAttribute('aria-label', S('fo.zone', 'Zone', 'Zone') + ' ' + (i + 1)); });
     }
@@ -1087,7 +1102,7 @@
     function onClick(ev) {
       var t = ev.target, b;
       if ((b = t.closest('[data-mode]'))) { st.mode = b.getAttribute('data-mode'); setPressed(el, 'mode', st.mode); st.sel = null; out.innerHTML = ''; if (st.mode === 'find') { st.q = { list: U.shuffle(targets), i: 0 }; st.score = [0, 0]; } draw(); drawPanel(); return; }
-      if ((b = t.closest('[data-ov]'))) { var k = b.getAttribute('data-ov'); st.ov[k] = !st.ov[k]; b.setAttribute('aria-pressed', String(!!st.ov[k])); st.sel = null; draw(!!st.ov[k]); out.innerHTML = st.ov[k] ? '<div class="inv-info"><h4>' + PE(FUNDUS_OV[k].n) + '</h4><p class="small">' + PE(FUNDUS_OV[k].d) + '</p></div>' : ''; return; }
+      if ((b = t.closest('[data-ov]'))) { var k = b.getAttribute('data-ov'); st.ov[k] = !st.ov[k]; b.setAttribute('aria-pressed', String(!!st.ov[k])); st.sel = null; draw(st.ov[k] ? k : null); out.innerHTML = st.ov[k] ? '<div class="inv-info"><h4>' + PE(FUNDUS_OV[k].n) + '</h4><p class="small">' + PE(FUNDUS_OV[k].d) + '</p></div>' : ''; return; }
       if ((b = t.closest('[data-rg]'))) { tap(b.getAttribute('data-rg')); return; }
       if ((b = t.closest('[data-a="fnext"]'))) {
         st.q.i++; st.q.answered = false; st.sel = null; out.innerHTML = '';

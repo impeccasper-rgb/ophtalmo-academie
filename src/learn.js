@@ -416,7 +416,7 @@ Views.progression = {
 };
 
 /* ---------- apprendre hub (all modules, visual) ---------- */
-var COVER = { A: 'OPH-192', B: 'OPH-001', C: 'OPH-202' };
+var COVER = { A: 'OPH-192', B: 'OPH-001', C: 'OPH-298' };
 var THUMB_ALIAS = { 'a-physiologie': 'a-gonioscopie', 'a-examen': 'a-lampe', 'a-imagerie': 'a-oct', 'a-retine': 'a5-retinopathie-diabetique' };
 function thumbFor(key) { var p = photosFor(key)[0] || (THUMB_ALIAS[key] && photosFor(THUMB_ALIAS[key])[0]); return p && D.cat(p.id) ? '<img loading="lazy" src="' + Photo.src(p.id) + '" alt="">' : '<span class="nothumb" aria-hidden="true"></span>'; }
 Views.apprendre = {

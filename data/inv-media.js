@@ -8,21 +8,30 @@ G.OPH = G.OPH || {};
 G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
  "m-bscan-1": {
   "kind": "photo",
-  "photo": "OPH-243",
+  "photo": "OPH-210",
   "alt": {
-   "fr": "Cataracte blanche (mature) : la pupille est blanche, le fond d’œil n’est pas visible.",
-   "en": "White (mature) cataract: the pupil is white, the fundus cannot be seen."
+   "fr": "Photo de face : cataracte mature blanche de l’œil droit (à gauche de l’image); œil gauche à droite pour comparaison.",
+   "en": "Frontal photo: white mature cataract in the right eye (left of image); left eye on the right for comparison."
   },
   "hotspots": [
    {
-    "x": 50,
-    "y": 52,
-    "r": 14.0,
+    "x": 20.5,
+    "y": 55,
+    "r": 3,
     "label": {
-     "fr": "Pupille blanche : cataracte mature, aucun reflet du fond d’œil → la lumière ne passe pas, les ultrasons oui",
-     "en": "White pupil: mature cataract, no fundus reflex → light is blocked, ultrasound is not"
+     "fr": "OD : pupille blanche (cataracte mature), aucun reflet du fond → la lumière ne passe pas, les ultrasons oui",
+     "en": "OD: white pupil (mature cataract), no fundus reflex → light is blocked, ultrasound is not"
     },
     "decisive": true
+   },
+   {
+    "x": 77,
+    "y": 54,
+    "r": 3,
+    "label": {
+     "fr": "OG : pupille sombre, pour comparaison",
+     "en": "OS: dark pupil, for comparison"
+    }
    }
   ],
   "credit": {
@@ -30,7 +39,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
   },
   "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/mature-cortical-cataract.htm"
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/Mature-Cataract.html"
  },
  "m-bscan-2": {
   "kind": "svg",
@@ -89,45 +98,45 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "kind": "photo",
   "photo": "OPH-205",
   "alt": {
-   "fr": "Échographie B normale, coupe transverse supérieure (T12) : position de la sonde à gauche, image à droite.",
-   "en": "Normal B-scan, superior transverse view (T12): probe position on the left, echogram on the right."
+   "fr": "Échographie B normale, coupe transverse T12 : sonde posée sur la paupière inférieure (patient regarde en haut) et image.",
+   "en": "Normal B-scan, T12 transverse view: probe on the lower lid (patient looks up) and echogram."
   },
   "hotspots": [
    {
-    "x": 27,
-    "y": 57,
-    "r": 5.2,
+    "x": 14,
+    "y": 44,
+    "r": 3.1,
     "label": {
-     "fr": "Sonde posée sur la paupière, marqueur orienté : la flèche L/F indique le plan de coupe (limbe ↔ fornix)",
-     "en": "Probe on the closed lid; the L/F arrow shows the scan plane (limbus ↔ fornix)"
-    }
-   },
-   {
-    "x": 57,
-    "y": 50,
-    "r": 4.7,
-    "label": {
-     "fr": "Vitré normal : vide d’échos (noir)",
-     "en": "Normal vitreous: echo-free (black)"
-    }
-   },
-   {
-    "x": 67,
-    "y": 50,
-    "r": 4.1,
-    "label": {
-     "fr": "Paroi postérieure lisse et régulière (rétine-choroïde-sclère)",
-     "en": "Smooth, regular posterior wall (retina-choroid-sclera)"
+     "fr": "Sonde posée en bas, sur la paupière inférieure : le patient regarde vers 12 h",
+     "en": "Probe placed inferiorly on the lower lid: the patient looks toward 12 o’clock"
     },
     "decisive": true
+   },
+   {
+    "x": 27,
+    "y": 57,
+    "r": 3.1,
+    "label": {
+     "fr": "Flèche L–F : plan de coupe limbe ↔ fornix",
+     "en": "L–F arrow: limbus ↔ fornix scan plane"
+    }
    },
    {
     "x": 96,
     "y": 96,
     "r": 3,
     "label": {
-     "fr": "Étiquette de la coupe : T12P = transverse, 12 h, postérieur",
-     "en": "View label: T12P = transverse, 12 o’clock, posterior"
+     "fr": "Étiquette T12P = transverse, 12 h, postérieur",
+     "en": "T12P label = transverse, 12 o’clock, posterior"
+    }
+   },
+   {
+    "x": 67,
+    "y": 50,
+    "r": 3,
+    "label": {
+     "fr": "Paroi postérieure lisse (normale)",
+     "en": "Smooth posterior wall (normal)"
     }
    }
   ],
@@ -148,31 +157,32 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   },
   "hotspots": [
    {
-    "x": 20,
-    "y": 72,
-    "r": 8.9,
+    "x": 19,
+    "y": 74,
+    "r": 6.0,
     "label": {
-     "fr": "Soulèvement en dôme, épais et lisse, de la paroi (décollement choroïdien)",
-     "en": "Thick, smooth dome-shaped elevation of the wall (choroidal detachment)"
+     "fr": "Dôme lisse, convexe et épais de la paroi (B-scan gauche)",
+     "en": "Smooth, convex, thick dome of the wall (left B-scan)"
+    },
+    "decisive": true
+   },
+   {
+    "x": 69,
+    "y": 79,
+    "r": 6.0,
+    "label": {
+     "fr": "Contour convexe lisse sur le B-scan droit",
+     "en": "Smooth convex contour on the right B-scan"
     },
     "decisive": true
    },
    {
     "x": 19,
-    "y": 89,
-    "r": 8.0,
-    "label": {
-     "fr": "Second dôme sur la paroi opposée; les dômes ne se touchent pas (non apposés)",
-     "en": "Second dome on the opposite wall; the domes do not touch (non-appositional)"
-    }
-   },
-   {
-    "x": 20,
     "y": 30,
-    "r": 9.9,
+    "r": 7.0,
     "label": {
-     "fr": "Au fond d’œil : masse sombre, lisse, en relief",
-     "en": "Fundus: dark, smooth, elevated mass"
+     "fr": "Fond d’œil : soulèvement brun-orangé lisse",
+     "en": "Fundus: smooth brown-orange elevation"
     }
    }
   ],
@@ -187,17 +197,17 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "kind": "photo",
   "photo": "OPH-194",
   "alt": {
-   "fr": "Série d’échographies B : décollement choroïdien hémorragique apposé (« kissing »).",
-   "en": "Series of B-scans: hemorrhagic appositional (“kissing”) choroidal detachment."
+   "fr": "Mosaïque de 10 échographies B : décollements choroïdiens hémorragiques apposés (« kissing »).",
+   "en": "Mosaic of 10 B-scans: hemorrhagic appositional (“kissing”) choroidal detachments."
   },
   "hotspots": [
    {
-    "x": 28,
-    "y": 30,
+    "x": 23,
+    "y": 48,
     "r": 6.0,
     "label": {
-     "fr": "Dômes choroïdiens épais occupant la cavité vitréenne",
-     "en": "Thick choroidal domes filling the vitreous cavity"
+     "fr": "Les dômes choroïdiens se rejoignent au centre de la cavité : configuration « kissing »",
+     "en": "Choroidal domes meet in the middle of the cavity: “kissing” configuration"
     },
     "decisive": true
    },
@@ -206,8 +216,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "y": 27,
     "r": 4.0,
     "label": {
-     "fr": "Mesure de l’épaisseur du soulèvement (12,04 mm)",
-     "en": "Caliper on the elevation (12.04 mm)"
+     "fr": "Calibre 12,04 mm sur l’épaisseur du soulèvement",
+     "en": "12.04 mm caliper across the elevation"
     }
    },
    {
@@ -229,47 +239,47 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
  },
  "m-bscan-6": {
   "kind": "svg",
-  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Membrane en B-scan : laquelle ? · Which membrane?</text><g transform=\"translate(10,40)\"><path d=\"M10 10 L60 110 L110 10\" fill=\"none\" stroke=\"#c9c4b8\"/><path d=\"M14 60 A60 60 0 0 0 106 60\" fill=\"none\" stroke=\"#2b2a26\" stroke-width=\"0\"/><ellipse cx=\"60\" cy=\"95\" rx=\"50\" ry=\"70\" fill=\"#1d1d1f\"/><path d=\"M14 120 Q60 185 106 120\" fill=\"none\" stroke=\"#e8e3d6\" stroke-width=\"3\"/><rect x=\"54\" y=\"160\" width=\"12\" height=\"40\" fill=\"#555\"/></g><g transform=\"translate(140,40)\"><path d=\"M10 10 L60 110 L110 10\" fill=\"none\" stroke=\"#c9c4b8\"/><path d=\"M14 60 A60 60 0 0 0 106 60\" fill=\"none\" stroke=\"#2b2a26\" stroke-width=\"0\"/><ellipse cx=\"60\" cy=\"95\" rx=\"50\" ry=\"70\" fill=\"#1d1d1f\"/><path d=\"M14 120 Q60 185 106 120\" fill=\"none\" stroke=\"#e8e3d6\" stroke-width=\"3\"/><rect x=\"54\" y=\"160\" width=\"12\" height=\"40\" fill=\"#555\"/></g><g transform=\"translate(270,40)\"><path d=\"M10 10 L60 110 L110 10\" fill=\"none\" stroke=\"#c9c4b8\"/><path d=\"M14 60 A60 60 0 0 0 106 60\" fill=\"none\" stroke=\"#2b2a26\" stroke-width=\"0\"/><ellipse cx=\"60\" cy=\"95\" rx=\"50\" ry=\"70\" fill=\"#1d1d1f\"/><path d=\"M14 120 Q60 185 106 120\" fill=\"none\" stroke=\"#e8e3d6\" stroke-width=\"3\"/><rect x=\"54\" y=\"160\" width=\"12\" height=\"40\" fill=\"#555\"/></g><path d=\"M28 150 Q70 120 112 150\" fill=\"none\" stroke=\"#9fd3ff\" stroke-width=\"1.5\" stroke-dasharray=\"1 0\"/><path d=\"M152 150 Q185 165 200 196 M248 150 Q215 165 200 196\" fill=\"none\" stroke=\"#ffd166\" stroke-width=\"3.5\"/><path d=\"M286 140 Q300 170 316 186 Q300 175 288 150 Z\" fill=\"#ff8c69\"/><path d=\"M374 140 Q360 170 344 186 Q360 175 372 150 Z\" fill=\"#ff8c69\"/><path d=\"M286 140 Q312 160 318 186\" fill=\"none\" stroke=\"#ff8c69\" stroke-width=\"5\"/><path d=\"M374 140 Q348 160 342 186\" fill=\"none\" stroke=\"#ff8c69\" stroke-width=\"5\"/><text x=\"70\" y=\"262\" text-anchor=\"middle\" font-size=\"11\" fill=\"#2b2a26\">DPV · PVD</text><text x=\"70\" y=\"275\" text-anchor=\"middle\" font-size=\"8.5\" fill=\"#5c5850\">fine, très mobile</text><text x=\"70\" y=\"286\" text-anchor=\"middle\" font-size=\"8.5\" fill=\"#5c5850\">thin, very mobile</text><text x=\"200\" y=\"262\" text-anchor=\"middle\" font-size=\"11\" fill=\"#2b2a26\">DR · RD</text><text x=\"200\" y=\"275\" text-anchor=\"middle\" font-size=\"8.5\" fill=\"#5c5850\">épaisse, ancrée à la papille</text><text x=\"200\" y=\"286\" text-anchor=\"middle\" font-size=\"8.5\" fill=\"#5c5850\">thick, inserts on disc</text><text x=\"330\" y=\"262\" text-anchor=\"middle\" font-size=\"11\" fill=\"#2b2a26\">Choroïde · Choroidal</text><text x=\"330\" y=\"275\" text-anchor=\"middle\" font-size=\"8.5\" fill=\"#5c5850\">dômes lisses, épargne papille</text><text x=\"330\" y=\"286\" text-anchor=\"middle\" font-size=\"8.5\" fill=\"#5c5850\">smooth domes, spare disc</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
+  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Membrane en V · V-shaped membrane</text><path d=\"M28 150 L372 36 A360 360 0 0 1 372 264 Z\" fill=\"#5d5d5d\"/><circle cx=\"170\" cy=\"150\" r=\"105\" fill=\"#141414\"/><path d=\"M240 72 A105 105 0 0 1 240 228\" fill=\"none\" stroke=\"#d8d8d8\" stroke-width=\"3\"/><path d=\"M274 142 L274 158 L372 175 L372 125 Z\" fill=\"#1b1b1b\"/><path d=\"M273 150 Q200 118 116 62 M273 150 Q200 182 116 238\" fill=\"none\" stroke=\"#fafafa\" stroke-width=\"4.5\"/><rect x=\"292\" y=\"40\" width=\"96\" height=\"62\" rx=\"4\" fill=\"#f7f6f2\" stroke=\"#8a8578\"/><path d=\"M298 92 L340 92 L343 46 L346 92 L384 92\" fill=\"none\" stroke=\"#1f6f8b\" stroke-width=\"2\"/><text x=\"343\" y=\"56\" font-size=\"8\" fill=\"#c0392b\" text-anchor=\"start\" dx=\"5\">100 %</text><text x=\"300\" y=\"52\" font-size=\"8\" fill=\"#2b2a26\">A-scan</text><text x=\"200\" y=\"285\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">membrane épaisse, très brillante, peu mobile · thick, very bright, little mobility</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
   "alt": {
-   "fr": "Schéma comparant en échographie B un décollement postérieur du vitré, un décollement de rétine et un décollement choroïdien.",
-   "en": "Schematic comparing posterior vitreous detachment, retinal detachment and choroidal detachment on B-scan."
+   "fr": "Schéma d’échographie B : membrane épaisse en V insérée à la papille, avec encart A-scan montrant un pic de 100 %.",
+   "en": "B-scan schematic: thick V-shaped membrane inserting at the disc, with an A-scan inset showing a 100% spike."
   },
   "hotspots": [
    {
-    "x": 17,
-    "y": 46,
-    "r": 8,
+    "x": 68,
+    "y": 50,
+    "r": 4,
     "label": {
-     "fr": "DPV : membrane fine, peu réflective, très mobile; peut flotter au-delà de la papille",
-     "en": "PVD: thin, low-reflective, highly mobile membrane; may float past the disc"
-    }
-   },
-   {
-    "x": 50,
-    "y": 60,
-    "r": 9,
-    "label": {
-     "fr": "DR : membrane épaisse, très réflective, ancrée à la papille (aspect en V/entonnoir si total)",
-     "en": "RD: thick, highly reflective membrane anchored at the disc (V/funnel shape if total)"
+     "fr": "Pointe du V insérée sur la papille (ombre du nerf) : rétine décollée",
+     "en": "Apex of the V inserting on the disc (nerve shadow): detached retina"
     },
     "decisive": true
    },
    {
-    "x": 80,
-    "y": 55,
-    "r": 9,
+    "x": 42,
+    "y": 33,
+    "r": 6,
     "label": {
-     "fr": "Décollement choroïdien : dômes épais et lisses, sans insertion à la papille",
-     "en": "Choroidal detachment: thick smooth domes, no insertion at the disc"
+     "fr": "Membrane épaisse, très réflective, vers l’ora",
+     "en": "Thick, highly reflective membrane toward the ora"
     }
    },
    {
-    "x": 50,
-    "y": 72,
+    "x": 81,
+    "y": 50,
     "r": 5,
     "label": {
-     "fr": "Nerf optique (ombre)",
-     "en": "Optic nerve (shadow)"
+     "fr": "Ombre du nerf optique",
+     "en": "Optic nerve shadow"
+    }
+   },
+   {
+    "x": 86,
+    "y": 18,
+    "r": 5,
+    "label": {
+     "fr": "A-scan : pic de 100 % sur la membrane",
+     "en": "A-scan: 100% spike on the membrane"
     }
    }
   ],
@@ -323,60 +333,6 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   },
   "license": "CC BY-NC-ND 3.0",
   "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/nanophthalmos-b-scan/index.htm"
- },
- "m-bscan-8": {
-  "kind": "photo",
-  "photo": "OPH-209",
-  "alt": {
-   "fr": "Échographie B normale, coupe longitudinale vers la macula (L9, œil droit).",
-   "en": "Normal B-scan, longitudinal macular view (L9, right eye)."
-  },
-  "hotspots": [
-   {
-    "x": 27,
-    "y": 44,
-    "r": 5.5,
-    "label": {
-     "fr": "Sonde en position longitudinale, côté temporal",
-     "en": "Probe in longitudinal position, temporal side"
-    }
-   },
-   {
-    "x": 55,
-    "y": 44,
-    "r": 5.0,
-    "label": {
-     "fr": "Vitré anéchogène",
-     "en": "Echo-free vitreous"
-    }
-   },
-   {
-    "x": 65,
-    "y": 45,
-    "r": 4.4,
-    "label": {
-     "fr": "Pôle postérieur : paroi concave régulière, aucun soulèvement",
-     "en": "Posterior pole: regular concave wall, no elevation"
-    },
-    "decisive": true
-   },
-   {
-    "x": 92,
-    "y": 97,
-    "r": 3,
-    "label": {
-     "fr": "Étiquette L9 : coupe longitudinale à 9 h",
-     "en": "L9 label: longitudinal view at 9 o’clock"
-    }
-   }
-  ],
-  "credit": {
-   "fr": "EyeRounds.org, University of Iowa. © University of Iowa, tous droits réservés; usage éducatif selon les conditions EyeRounds (permission écrite demandée).",
-   "en": "EyeRounds.org, University of Iowa. © University of Iowa, all rights reserved; educational use under EyeRounds terms (written permission requested)."
-  },
-  "license": "EyeRounds TOS (no CC licence)",
-  "source": "https://eyerounds.org/tutorials/ultrasound/index.htm",
-  "restricted": true
  },
  "m-ascan-1": {
   "kind": "svg",
@@ -451,19 +407,19 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
  },
  "m-ascan-2": {
   "kind": "photo",
-  "photo": "OPH-243",
+  "photo": "OPH-210",
   "alt": {
-   "fr": "Cataracte blanche (mature) : opacité dense qui bloque la lumière.",
-   "en": "White (mature) cataract: dense opacity that blocks light."
+   "fr": "Cataracte mature blanche de l’œil droit (à gauche de l’image).",
+   "en": "White mature cataract in the right eye (left of image)."
   },
   "hotspots": [
    {
-    "x": 50,
-    "y": 52,
-    "r": 14.0,
+    "x": 20.5,
+    "y": 55,
+    "r": 3,
     "label": {
-     "fr": "Cataracte blanche dense : la biométrie optique (lumière) échoue → échographie A (immersion de préférence)",
-     "en": "Dense white cataract: optical (light-based) biometry fails → ultrasound A-scan (immersion preferred)"
+     "fr": "Pupille blanche : lumière bloquée → biométrie optique impossible; passer à l’échographie A (immersion)",
+     "en": "White pupil: light blocked → optical biometry impossible; switch to ultrasound A-scan (immersion)"
     },
     "decisive": true
    }
@@ -473,14 +429,14 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
   },
   "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/mature-cortical-cataract.htm"
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/Mature-Cataract.html"
  },
  "m-ascan-3": {
   "kind": "svg",
-  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Contact : compression cornéenne · Corneal compression</text><g transform=\"translate(0,-10)\"><text x=\"330\" y=\"70\" font-size=\"10\" fill=\"#2b2a26\">Correct</text><path d=\"M20 120 L22 120 L28 50 L34 120 L118 120 L122 60 L126 120 L172 120 L175 80 L178 120 L298 120 L300 50 L302 120 L385 120\" fill=\"none\" stroke=\"#1f6f8b\" stroke-width=\"2\"/><path d=\"M28 132 L118 132\" stroke=\"#2b2a26\"/><text x=\"73\" y=\"145\" font-size=\"9\" text-anchor=\"middle\" fill=\"#2b2a26\">CA · ACD</text></g><g transform=\"translate(0,95)\"><text x=\"330\" y=\"70\" font-size=\"10\" fill=\"#c0392b\">Compression</text><path d=\"M20 120 L22 120 L28 50 L34 120 L104 120 L108 60 L112 120 L158 120 L161 80 L164 120 L284 120 L286 50 L288 120 L385 120\" fill=\"none\" stroke=\"#c0392b\" stroke-width=\"2\"/><path d=\"M28 132 L104 132\" stroke=\"#c0392b\"/><text x=\"66\" y=\"145\" font-size=\"9\" text-anchor=\"middle\" fill=\"#c0392b\">CA plus courte · shorter ACD</text><path d=\"M286 140 L300 140\" stroke=\"#c0392b\" stroke-width=\"2\"/><text x=\"330\" y=\"150\" font-size=\"9\" text-anchor=\"middle\" fill=\"#c0392b\">LA sous-estimée</text></g><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
+  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Contact : compression cornéenne · Corneal compression</text><g transform=\"translate(0,-10)\"><text x=\"330\" y=\"70\" font-size=\"10\" fill=\"#2b2a26\">Immersion</text><path d=\"M20 120 L22 120 L28 50 L34 120 L118 120 L122 60 L126 120 L172 120 L175 80 L178 120 L298 120 L300 50 L302 120 L385 120\" fill=\"none\" stroke=\"#1f6f8b\" stroke-width=\"2\"/><path d=\"M28 132 L118 132\" stroke=\"#2b2a26\"/><text x=\"73\" y=\"145\" font-size=\"9\" text-anchor=\"middle\" fill=\"#2b2a26\">CA · ACD</text></g><g transform=\"translate(0,95)\"><text x=\"330\" y=\"70\" font-size=\"10\" fill=\"#c0392b\">Contact</text><path d=\"M20 120 L22 120 L28 50 L34 120 L104 120 L108 60 L112 120 L158 120 L161 80 L164 120 L284 120 L286 50 L288 120 L385 120\" fill=\"none\" stroke=\"#c0392b\" stroke-width=\"2\"/><path d=\"M28 132 L104 132\" stroke=\"#c0392b\"/><text x=\"66\" y=\"145\" font-size=\"9\" text-anchor=\"middle\" fill=\"#c0392b\">CA plus courte · shorter ACD</text><path d=\"M286 140 L300 140\" stroke=\"#c0392b\" stroke-width=\"2\"/><text x=\"330\" y=\"150\" font-size=\"9\" text-anchor=\"middle\" fill=\"#c0392b\">LA sous-estimée</text></g><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text><g transform=\"translate(150,138)\"><rect x=\"0\" y=\"-6\" width=\"34\" height=\"12\" rx=\"3\" fill=\"#8a8578\"/><path d=\"M34 -16 Q38 0 34 16\" stroke=\"#c0392b\" fill=\"none\" stroke-width=\"2.5\"/><path d=\"M44 -16 Q56 0 44 16\" stroke=\"#8a8578\" fill=\"none\" stroke-dasharray=\"2 2\"/><text x=\"62\" y=\"0\" font-size=\"8.5\" fill=\"#c0392b\">sonde qui enfonce la cornée</text><text x=\"62\" y=\"11\" font-size=\"8.5\" fill=\"#c0392b\">probe indenting the cornea</text></g></svg>",
   "alt": {
-   "fr": "Schéma : en A-scan par contact, appuyer sur la cornée raccourcit la chambre antérieure et la longueur axiale.",
-   "en": "Schematic: in contact A-scan, pressing on the cornea shortens the anterior chamber depth and the axial length."
+   "fr": "Schéma : deux tracés A-scan du même œil; en contact, la chambre antérieure est plus courte qu’en immersion (cornée comprimée).",
+   "en": "Schematic: two A-scan traces of the same eye; with contact the anterior chamber is shorter than with immersion (corneal compression)."
   },
   "hotspots": [
    {
@@ -600,38 +556,38 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
  },
  "m-ascan-6": {
   "kind": "svg",
-  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Huile de silicone · Silicone oil</text><rect x=\"176\" y=\"60\" width=\"124\" height=\"180\" fill=\"#fff3d6\"/><text x=\"238\" y=\"76\" text-anchor=\"middle\" font-size=\"9\" fill=\"#8a6d1f\">huile ≈ 980 m/s</text><text x=\"238\" y=\"88\" text-anchor=\"middle\" font-size=\"9\" fill=\"#8a6d1f\">(vitré ≈ 1532 m/s)</text><line x1=\"20\" y1=\"240\" x2=\"385\" y2=\"240\" stroke=\"#8a8578\"/><text x=\"20\" y=\"256\" font-size=\"9\" fill=\"#5c5850\">temps → profondeur · time → depth</text><path d=\"M20 240 L22 240 L28 40 L34 240 L36 240 L38 70 L41 240 L114 240 L118 52 L122 240 L168 240 L172 78 L176 240 L298 240 L300 42 L302 240 L307 240 L309 60 L312 240 L385 240\" fill=\"none\" stroke=\"#1f6f8b\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M330 240 L332 70 L334 240\" fill=\"none\" stroke=\"#c0392b\" stroke-width=\"2\" stroke-dasharray=\"4 3\"/><text x=\"300\" y=\"36\" text-anchor=\"middle\" font-size=\"9\" fill=\"#1f6f8b\">rétine réelle</text><text x=\"345\" y=\"64\" text-anchor=\"middle\" font-size=\"9\" fill=\"#c0392b\">à 1550 m/s</text><text x=\"200\" y=\"272\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">son plus lent → écho plus tardif → œil affiché trop long</text><text x=\"200\" y=\"286\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5c5850\">slower sound → later echo → eye shown too long</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
+  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Huile de silicone · Silicone oil</text><circle cx=\"130\" cy=\"160\" r=\"92\" fill=\"#f3d36b\" stroke=\"#2b2a26\" stroke-width=\"2\"/><path d=\"M44 125 Q22 160 44 195\" fill=\"#dfe9ee\" stroke=\"#2b2a26\" stroke-width=\"2\"/><ellipse cx=\"66\" cy=\"160\" rx=\"14\" ry=\"34\" fill=\"#e8e3d6\" stroke=\"#2b2a26\"/><path d=\"M196 96 A92 92 0 0 1 196 224\" fill=\"none\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"140\" y=\"164\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5a4500\">huile · oil</text><path d=\"M30 160 L222 160\" stroke=\"#1f6f8b\" stroke-dasharray=\"4 3\"/><rect x=\"240\" y=\"70\" width=\"150\" height=\"150\" rx=\"8\" fill=\"#ffffff\" stroke=\"#c9c4b8\"/><g font-size=\"10\" fill=\"#2b2a26\"><text x=\"250\" y=\"92\">Réglée · set : 1550 m/s</text><text x=\"250\" y=\"110\" fill=\"#8a6d1f\">Huile · oil : ≈ 980 m/s</text><text x=\"250\" y=\"138\" font-weight=\"700\">distance = vitesse × temps</text><text x=\"250\" y=\"152\" fill=\"#5c5850\">distance = speed × time</text><text x=\"250\" y=\"178\">son lent → temps long</text><text x=\"250\" y=\"192\">→ LA surestimée</text><text x=\"250\" y=\"208\" fill=\"#5c5850\">AL overestimated</text></g><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
   "alt": {
-   "fr": "Schéma : A-scan d’un œil rempli d’huile de silicone; sans correction de vitesse, la rétine est placée trop loin.",
-   "en": "Schematic: A-scan of a silicone-oil-filled eye; without velocity correction the retina is placed too far."
+   "fr": "Schéma : œil dont la cavité vitréenne est remplie d’huile de silicone; encart sur la vitesse du son et la formule distance = vitesse × temps.",
+   "en": "Schematic: eye with a silicone-oil-filled vitreous cavity; inset on sound velocity and distance = speed × time."
   },
   "hotspots": [
    {
-    "x": 83,
-    "y": 52,
-    "r": 5,
+    "x": 37,
+    "y": 53,
+    "r": 9,
     "label": {
-     "fr": "Rétine affichée trop loin si l’appareil calcule à 1550 m/s : longueur axiale surestimée",
-     "en": "Retina shown too far when the device assumes 1550 m/s: axial length overestimated"
+     "fr": "Cavité vitréenne remplie d’huile : le son y va à ≈ 980 m/s au lieu de ≈ 1532 m/s",
+     "en": "Oil-filled vitreous cavity: sound travels at ≈ 980 m/s instead of ≈ 1532 m/s"
     },
     "decisive": true
    },
    {
-    "x": 59.5,
-    "y": 50,
+    "x": 79,
+    "y": 47,
     "r": 9,
     "label": {
-     "fr": "Cavité remplie d’huile : le son y est beaucoup plus lent",
-     "en": "Oil-filled cavity: sound travels much more slowly"
+     "fr": "Si l’appareil calcule à 1550 m/s, l’écho tardif est converti en œil trop long",
+     "en": "If the device assumes 1550 m/s, the late echo is converted into an eye that is too long"
     }
    },
    {
-    "x": 75,
-    "y": 14,
+    "x": 51,
+    "y": 53,
     "r": 4,
     "label": {
-     "fr": "Position réelle de la rétine",
-     "en": "True retinal position"
+     "fr": "Rétine",
+     "en": "Retina"
     }
    }
   ],
@@ -644,7 +600,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
  },
  "m-ascan-7": {
   "kind": "svg",
-  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">A-scan standardisé · Standardised A-scan</text><line x1=\"20\" y1=\"240\" x2=\"385\" y2=\"240\" stroke=\"#8a8578\"/><text x=\"20\" y=\"256\" font-size=\"9\" fill=\"#5c5850\">temps → profondeur · time → depth</text><path d=\"M20 240 L22 240 L30 50 L36 240 L60 240 L62 40 L66 240 L72 240 L74 150 L78 240 L84 240 L86 160 L90 240 L96 240 L98 168 L102 240 L108 240 L110 178 L114 240 L120 240 L122 186 L126 240 L132 240 L134 194 L138 240 L144 240 L146 200 L150 240 L156 240 L158 206 L162 240 L176 240 L178 46 L182 240 L192 240 L194 150 L198 240 L208 240 L210 175 L214 240 L224 240 L226 195 L230 240 L385 240\" fill=\"none\" stroke=\"#1f6f8b\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M62 120 L162 200\" stroke=\"#c0392b\" stroke-dasharray=\"4 3\"/><g font-size=\"9\" fill=\"#2b2a26\" text-anchor=\"middle\"><text x=\"62\" y=\"34\">surface</text><text x=\"112\" y=\"130\">échos internes</text><text x=\"178\" y=\"40\">sclère</text><text x=\"220\" y=\"140\">orbite</text></g><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
+  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">A-scan standardisé · Standardised A-scan</text><line x1=\"20\" y1=\"240\" x2=\"385\" y2=\"240\" stroke=\"#8a8578\"/><text x=\"20\" y=\"256\" font-size=\"9\" fill=\"#5c5850\">temps → profondeur · time → depth</text><path d=\"M20 240 L22 240 L30 50 L36 240 L60 240 L62 40 L66 240 L72 240 L74 150 L78 240 L84 240 L86 160 L90 240 L96 240 L98 168 L102 240 L108 240 L110 178 L114 240 L120 240 L122 186 L126 240 L132 240 L134 194 L138 240 L144 240 L146 200 L150 240 L156 240 L158 206 L162 240 L176 240 L178 46 L182 240 L192 240 L194 150 L198 240 L208 240 L210 175 L214 240 L224 240 L226 195 L230 240 L385 240\" fill=\"none\" stroke=\"#1f6f8b\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M62 120 L162 200\" stroke=\"#c0392b\" stroke-dasharray=\"4 3\"/><g font-size=\"9\" fill=\"#2b2a26\" text-anchor=\"middle\"><text x=\"66\" y=\"56\" text-anchor=\"start\">surface</text><text x=\"112\" y=\"130\">échos internes</text><text x=\"182\" y=\"56\" text-anchor=\"start\">sclère</text><text x=\"220\" y=\"140\">orbite</text></g><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text><g transform=\"translate(286,48)\"><rect x=\"-4\" y=\"-8\" width=\"104\" height=\"96\" rx=\"4\" fill=\"#f7f6f2\" stroke=\"#8a8578\"/><path d=\"M0 40 L96 4 L96 76 Z\" fill=\"#3a3a3a\"/><circle cx=\"58\" cy=\"40\" r=\"30\" fill=\"#111\"/><path d=\"M84 22 Q64 40 84 58 Z\" fill=\"#8a8a8a\"/><text x=\"2\" y=\"84\" font-size=\"8\" fill=\"#2b2a26\">B-scan : dôme</text></g></svg>",
   "alt": {
    "fr": "Schéma d’un A-scan standardisé à travers une masse choroïdienne en dôme : réflectivité interne faible à moyenne, régulière, décroissante.",
    "en": "Schematic of a standardised A-scan through a dome-shaped choroidal mass: low-to-medium, regular, decreasing internal reflectivity."
@@ -676,139 +632,6 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "label": {
      "fr": "Pic scléral",
      "en": "Scleral spike"
-    }
-   }
-  ],
-  "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
-  },
-  "license": "original",
-  "schematic": true
- },
- "m-ascan-8": {
-  "kind": "svg",
-  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">A-scan pseudophaque · Pseudophakic A-scan</text><line x1=\"20\" y1=\"240\" x2=\"385\" y2=\"240\" stroke=\"#8a8578\"/><text x=\"20\" y=\"256\" font-size=\"9\" fill=\"#5c5850\">temps → profondeur · time → depth</text><path d=\"M20 240 L22 240 L28 40 L34 240 L31 240 L36 70 L41 240 L117 240 L120 40 L123 240 L147 240 L150 150 L153 240 L177 240 L180 185 L183 240 L207 240 L210 210 L213 240 L298 240 L300 42 L302 240 L306 240 L309 60 L312 240 L319 240 L322 150 L325 240 L335 240 L338 175 L341 240 L351 240 L354 195 L357 240 L367 240 L370 210 L373 240 L385 240\" fill=\"none\" stroke=\"#1f6f8b\" stroke-width=\"2\" stroke-linejoin=\"round\"/><g font-size=\"9\" fill=\"#2b2a26\" text-anchor=\"middle\"><text x=\"32\" y=\"34\">Cornée</text><text x=\"130\" y=\"66\" text-anchor=\"start\">Implant (LIO) · IOL</text><text x=\"182\" y=\"140\">réverbérations</text><text x=\"300\" y=\"36\">Rétine</text></g><text x=\"200\" y=\"282\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">régler l’appareil sur « pseudophaque » (vitesse) · set device to pseudophakic mode</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
-  "alt": {
-   "fr": "Schéma d’un A-scan d’œil pseudophaque : pic très haut de l’implant suivi de réverbérations décroissantes dans le vitré.",
-   "en": "Schematic of a pseudophakic A-scan: very tall IOL spike followed by decreasing reverberations in the vitreous."
-  },
-  "hotspots": [
-   {
-    "x": 30,
-    "y": 15,
-    "r": 6,
-    "label": {
-     "fr": "Pic de l’implant intraoculaire : très haut (forte réflectivité)",
-     "en": "Intraocular lens spike: very tall (high reflectivity)"
-    },
-    "decisive": true
-   },
-   {
-    "x": 45,
-    "y": 55,
-    "r": 9,
-    "label": {
-     "fr": "Réverbérations décroissantes derrière l’implant : artéfact, pas une structure",
-     "en": "Decreasing reverberations behind the IOL: artifact, not a structure"
-    }
-   },
-   {
-    "x": 75,
-    "y": 14,
-    "r": 5,
-    "label": {
-     "fr": "Pic rétinien : repère de fin de la longueur axiale",
-     "en": "Retinal spike: end point of the axial length"
-    }
-   }
-  ],
-  "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
-  },
-  "license": "original",
-  "schematic": true
- },
- "m-ascan-9": {
-  "kind": "svg",
-  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">A-scan phaque normal · Normal phakic A-scan</text><line x1=\"20\" y1=\"240\" x2=\"385\" y2=\"240\" stroke=\"#8a8578\"/><text x=\"20\" y=\"256\" font-size=\"9\" fill=\"#5c5850\">temps → profondeur · time → depth</text><path d=\"M20 240 L22 240 L28 40 L34 240 L31 240 L36 70 L41 240 L114 240 L118 52 L122 240 L168 240 L172 78 L176 240 L298 240 L300 42 L302 240 L306 240 L309 60 L312 240 L319 240 L322 150 L325 240 L331 240 L334 170 L337 240 L343 240 L346 185 L349 240 L355 240 L358 200 L361 240 L367 240 L370 212 L373 240 L385 240\" fill=\"none\" stroke=\"#1f6f8b\" stroke-width=\"2\" stroke-linejoin=\"round\"/><g font-size=\"9\" fill=\"#2b2a26\" text-anchor=\"middle\"><text x=\"32\" y=\"34\">Cornée</text><text x=\"118\" y=\"46\">Cristallin ant.</text><text x=\"172\" y=\"72\">Cristallin post.</text><text x=\"236\" y=\"225\">vitré (plat)</text><text x=\"300\" y=\"36\">Rétine</text><text x=\"322\" y=\"56\" text-anchor=\"start\">Sclère</text><text x=\"350\" y=\"145\">graisse orbitaire</text></g><path d=\"M300 262 L300 270 M28 262 L28 270 M28 266 L300 266\" stroke=\"#c0392b\" stroke-width=\"1.5\"/><text x=\"164\" y=\"282\" text-anchor=\"middle\" font-size=\"10\" fill=\"#c0392b\">longueur axiale · axial length</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
-  "alt": {
-   "fr": "Schéma d’un A-scan biométrique normal d’un œil phaque, avec les pics successifs et la longueur axiale.",
-   "en": "Schematic of a normal phakic biometry A-scan, with successive spikes and axial length."
-  },
-  "hotspots": [
-   {
-    "x": 8,
-    "y": 14,
-    "r": 6,
-    "label": {
-     "fr": "Pic initial : sonde + cornée",
-     "en": "Initial spike: probe + cornea"
-    }
-   },
-   {
-    "x": 29,
-    "y": 18,
-    "r": 6,
-    "label": {
-     "fr": "Face antérieure du cristallin",
-     "en": "Anterior lens surface"
-    }
-   },
-   {
-    "x": 43,
-    "y": 26,
-    "r": 6,
-    "label": {
-     "fr": "Face postérieure du cristallin",
-     "en": "Posterior lens surface"
-    }
-   },
-   {
-    "x": 59,
-    "y": 75,
-    "r": 8,
-    "label": {
-     "fr": "Vitré : ligne plate (aucun écho)",
-     "en": "Vitreous: flat line (no echoes)"
-    }
-   },
-   {
-    "x": 75,
-    "y": 14,
-    "r": 5,
-    "label": {
-     "fr": "Pic rétinien : haut et à montée verticale = sonde bien alignée",
-     "en": "Retinal spike: tall with a vertical rise = probe well aligned"
-    },
-    "decisive": true
-   },
-   {
-    "x": 78,
-    "y": 20,
-    "r": 4,
-    "label": {
-     "fr": "Pic scléral juste derrière la rétine",
-     "en": "Scleral spike just behind the retina"
-    }
-   },
-   {
-    "x": 88,
-    "y": 58,
-    "r": 7,
-    "label": {
-     "fr": "Échos orbitaires décroissants",
-     "en": "Decreasing orbital echoes"
-    }
-   },
-   {
-    "x": 41,
-    "y": 89,
-    "r": 8,
-    "label": {
-     "fr": "Longueur axiale = cornée → rétine (adulte moyen ≈ 23–24 mm)",
-     "en": "Axial length = cornea → retina (average adult ≈ 23–24 mm)"
     }
    }
   ],
@@ -903,54 +726,63 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "kind": "photo",
   "photo": "OPH-011",
   "alt": {
-   "fr": "OCT maculaire : traction vitréomaculaire avec œdème maculaire; cliché infrarouge et ligne de coupe à gauche.",
-   "en": "Macular OCT: vitreomacular traction with macular edema; infrared image and scan line on the left."
+   "fr": "Cliché infrarouge (ligne verte = coupe) et OCT vertical : traction vitréomaculaire avec kystes intrarétiniens.",
+   "en": "Infrared image (green line = scan) and vertical OCT: vitreomacular traction with intraretinal cysts."
   },
   "hotspots": [
    {
-    "x": 20,
-    "y": 50,
-    "r": 3.7,
-    "label": {
-     "fr": "Ligne verte : position de la coupe OCT",
-     "en": "Green line: OCT scan position"
-    }
-   },
-   {
-    "x": 59,
-    "y": 22,
-    "r": 4.2,
-    "label": {
-     "fr": "Hyaloïde postérieure décollée en périphérie (fine ligne)",
-     "en": "Posterior hyaloid detached peripherally (thin line)"
-    }
-   },
-   {
-    "x": 69,
+    "x": 69.5,
     "y": 45,
-    "r": 3.7,
+    "r": 3,
     "label": {
-     "fr": "Hyaloïde encore attachée à la fovéa : elle tire la rétine vers le haut",
-     "en": "Hyaloid still attached at the fovea, pulling the retina upward"
+     "fr": "Hyaloïde postérieure attachée au toit de la fovéa, qu’elle soulève : traction vitréomaculaire",
+     "en": "Posterior hyaloid attached to the foveal roof, lifting it: vitreomacular traction"
     },
     "decisive": true
    },
    {
-    "x": 70,
-    "y": 62,
-    "r": 3.7,
+    "x": 61,
+    "y": 24,
+    "r": 3,
     "label": {
-     "fr": "Espaces kystiques hyporéflectifs intrarétiniens (œdème)",
-     "en": "Hyporeflective intraretinal cystic spaces (edema)"
+     "fr": "Arc de hyaloïde décollée dans le vitré",
+     "en": "Arc of detached hyaloid in the vitreous"
     }
    },
    {
-    "x": 90,
-    "y": 76,
-    "r": 3.1,
+    "x": 72,
+    "y": 17,
+    "r": 3,
     "label": {
-     "fr": "Bande hyperréflective externe (EP) continue",
-     "en": "Outer hyperreflective band (RPE) continuous"
+     "fr": "Second arc de hyaloïde qui converge vers la fovéa",
+     "en": "Second hyaloid arc converging on the fovea"
+    }
+   },
+   {
+    "x": 70,
+    "y": 59,
+    "r": 3,
+    "label": {
+     "fr": "Kystes intrarétiniens hyporéflectifs sous la fovéa soulevée",
+     "en": "Hyporeflective intraretinal cysts under the lifted fovea"
+    }
+   },
+   {
+    "x": 89,
+    "y": 78,
+    "r": 3,
+    "label": {
+     "fr": "EPR continu",
+     "en": "Continuous RPE"
+    }
+   },
+   {
+    "x": 19.6,
+    "y": 50,
+    "r": 3,
+    "label": {
+     "fr": "Ligne verte : position de la coupe",
+     "en": "Green line: scan position"
     }
    }
   ],
@@ -1033,12 +865,21 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "decisive": true
    },
    {
-    "x": 64,
-    "y": 26,
-    "r": 3,
+    "x": 48,
+    "y": 25,
+    "r": 3.5,
     "label": {
-     "fr": "Points hyperréflectifs (exsudats) avec ombre portée en dessous",
-     "en": "Hyperreflective dots (exudates) with shadowing below"
+     "fr": "Points hyperréflectifs (exsudats) avec ombre portée",
+     "en": "Hyperreflective dots (exudates) with shadowing"
+    }
+   },
+   {
+    "x": 65,
+    "y": 25,
+    "r": 3.5,
+    "label": {
+     "fr": "Autres points hyperréflectifs avec ombre",
+     "en": "More hyperreflective dots with shadowing"
     }
    },
    {
@@ -1113,56 +954,76 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
  },
  "m-oct-6": {
   "kind": "photo",
-  "photo": "OPH-132",
+  "photo": "OPH-191",
   "alt": {
-   "fr": "Rapport OCT Cirrus : papille et RNFL des deux yeux (gauche) et analyse des cellules ganglionnaires (droite), glaucome avancé.",
-   "en": "Cirrus OCT report: optic disc and RNFL of both eyes (left) and ganglion cell analysis (right), advanced glaucoma."
+   "fr": "Rapport Cirrus : carte de déviation RNFL, quadrants et heures, photo de la papille et déviation corrigée du champ visuel.",
+   "en": "Cirrus report: RNFL deviation map, quadrants and clock hours, optic disc photo and visual field pattern deviation."
   },
   "hotspots": [
    {
-    "x": 18,
-    "y": 77,
-    "r": 3.8,
+    "x": 78.5,
+    "y": 9,
+    "r": 3.5,
     "label": {
-     "fr": "OD quadrants : S 61, I 52, T 39 µm en rouge; seul N 50 µm reste vert",
-     "en": "OD quadrants: S 61, I 52, T 39 µm red; only N 50 µm stays green"
+     "fr": "Quadrant supérieur 58 µm en ROUGE (< 1 %)",
+     "en": "Superior quadrant 58 µm in RED (< 1%)"
     },
     "decisive": true
    },
    {
-    "x": 32,
-    "y": 77,
-    "r": 3.8,
+    "x": 78.5,
+    "y": 19.5,
+    "r": 3.5,
     "label": {
-     "fr": "OS quadrants : S, T, I rouges, N 42 µm jaune",
-     "en": "OS quadrants: S, T, I red, N 42 µm yellow"
+     "fr": "Quadrant inférieur 53 µm en ROUGE",
+     "en": "Inferior quadrant 53 µm in RED"
+    },
+    "decisive": true
+   },
+   {
+    "x": 71.5,
+    "y": 14.3,
+    "r": 3.5,
+    "label": {
+     "fr": "Piège : temporal 50 µm (plus petit chiffre) mais VERT — la norme temporale est plus basse",
+     "en": "Trap: temporal 50 µm (smallest number) but GREEN — the temporal norm is lower"
     }
    },
    {
-    "x": 25,
-    "y": 5.5,
-    "r": 3,
+    "x": 24,
+    "y": 39,
+    "r": 6.0,
     "label": {
-     "fr": "RNFL moyenne : OD 50 µm, OS 47 µm (rouge)",
-     "en": "Average RNFL: OD 50 µm, OS 47 µm (red)"
+     "fr": "Carte de déviation : zones rouges arciformes inférieures",
+     "en": "Deviation map: inferior arcuate red areas"
     }
    },
    {
-    "x": 69,
-    "y": 52,
-    "r": 4.6,
+    "x": 15,
+    "y": 12,
+    "r": 5.0,
     "label": {
-     "fr": "Couche ganglionnaire : secteurs rouges aux deux yeux",
-     "en": "Ganglion cell layer: red sectors in both eyes"
+     "fr": "Zones rouges supérieures",
+     "en": "Superior red areas"
+    }
+   },
+   {
+    "x": 73,
+    "y": 75,
+    "r": 7.0,
+    "label": {
+     "fr": "Champ visuel (déviation corrigée) : défaut supérieur",
+     "en": "Visual field (pattern deviation): superior defect"
     }
    }
   ],
   "credit": {
-   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
-   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
+   "fr": "EyeRounds.org, University of Iowa. © University of Iowa, tous droits réservés; usage éducatif selon les conditions EyeRounds (permission écrite demandée).",
+   "en": "EyeRounds.org, University of Iowa. © University of Iowa, all rights reserved; educational use under EyeRounds terms (written permission requested)."
   },
-  "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/Bean%20Pot%20Cupping/bean-pot-cupping.htm"
+  "license": "EyeRounds TOS (no CC licence)",
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/tutorials/POAG/index.htm",
+  "restricted": true
  },
  "m-oct-7": {
   "kind": "photo",
@@ -1235,22 +1096,32 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   },
   "hotspots": [
    {
-    "x": 27,
-    "y": 68,
+    "x": 17,
+    "y": 82,
     "r": 3,
     "label": {
-     "fr": "Iris accolé à la face postérieure de la cornée : angle fermé",
-     "en": "Iris apposed to the posterior cornea: closed angle"
+     "fr": "Angle fermé : l’iris touche la cornée périphérique",
+     "en": "Closed angle: iris touches the peripheral cornea"
     },
     "decisive": true
    },
    {
-    "x": 76,
-    "y": 66,
+    "x": 84,
+    "y": 80,
     "r": 3,
     "label": {
-     "fr": "Même apposition du côté opposé",
-     "en": "Same apposition on the opposite side"
+     "fr": "Angle fermé de l’autre côté",
+     "en": "Closed angle on the other side"
+    },
+    "decisive": true
+   },
+   {
+    "x": 29,
+    "y": 64,
+    "r": 3,
+    "label": {
+     "fr": "Iris bombé vers l’avant, accolé à la face postérieure de la cornée",
+     "en": "Iris bowed forward, apposed to the posterior cornea"
     }
    },
    {
@@ -1270,122 +1141,52 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "license": "CC BY-NC-ND 3.0",
   "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/angle-closure-post-DMEK.htm"
  },
- "m-oct-9": {
-  "kind": "photo",
-  "photo": "OPH-261",
-  "alt": {
-   "fr": "OCT maculaire d’un œdème maculaire diabétique; cliché infrarouge à gauche.",
-   "en": "Macular OCT in diabetic macular edema; infrared image on the left."
-  },
-  "hotspots": [
-   {
-    "x": 76,
-    "y": 26,
-    "r": 3.6,
-    "label": {
-     "fr": "Logettes hyporéflectives intrarétiniennes",
-     "en": "Hyporeflective intraretinal cysts"
-    },
-    "decisive": true
-   },
-   {
-    "x": 84,
-    "y": 33,
-    "r": 4.7,
-    "label": {
-     "fr": "Rétine épaissie, contour interne bombé",
-     "en": "Thickened retina, bulging inner contour"
-    }
-   },
-   {
-    "x": 55,
-    "y": 33,
-    "r": 3.6,
-    "label": {
-     "fr": "Segment d’épaisseur plus normale pour comparaison",
-     "en": "Segment of more normal thickness for comparison"
-    }
-   },
-   {
-    "x": 19,
-    "y": 50,
-    "r": 3.1,
-    "label": {
-     "fr": "Ligne verte : plan de coupe",
-     "en": "Green line: scan plane"
-    }
-   }
-  ],
-  "credit": {
-   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
-   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
-  },
-  "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/diabetic-macular-edema.htm"
- },
- "m-oct-10": {
-  "kind": "photo",
-  "photo": "OPH-298",
-  "alt": {
-   "fr": "OCT des fibres nerveuses (profil TSNIT) des deux yeux dans un glaucome à pression normale.",
-   "en": "Nerve fiber layer OCT (TSNIT profile) of both eyes in normal-tension glaucoma."
-  },
-  "hotspots": [
-   {
-    "x": 93,
-    "y": 67,
-    "r": 5.0,
-    "label": {
-     "fr": "OS : épaisseur moyenne 62,05 µm en rouge (< 1 % de la normale)",
-     "en": "OS: average thickness 62.05 µm in red (< 1st percentile)"
-    },
-    "decisive": true
-   },
-   {
-    "x": 87.5,
-    "y": 55.5,
-    "r": 7.0,
-    "label": {
-     "fr": "OS : plusieurs secteurs horaires rouges/jaunes",
-     "en": "OS: several red/yellow clock-hour sectors"
-    }
-   },
-   {
-    "x": 92,
-    "y": 28,
-    "r": 5.0,
-    "label": {
-     "fr": "OD : moyenne 74,43 µm en jaune (limite)",
-     "en": "OD: average 74.43 µm in yellow (borderline)"
-    }
-   },
-   {
-    "x": 58,
-    "y": 58,
-    "r": 8.0,
-    "label": {
-     "fr": "Profil OS sous la bande verte aux pôles supérieur et inférieur",
-     "en": "OS profile below the green band at superior and inferior poles"
-    }
-   },
-   {
-    "x": 48,
-    "y": 88,
-    "r": 7.0,
-    "label": {
-     "fr": "Légende : vert = normal, jaune < 5 %, rouge < 1 %",
-     "en": "Legend: green = normal, yellow < 5%, red < 1%"
-    }
-   }
-  ],
-  "credit": {
-   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
-   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
-  },
-  "license": "CC BY-NC-ND 3.0",
-  "source": "https://eyerounds.org/cases/86-Normal-Low-Tension-Glaucoma.htm"
- },
  "m-gonio-1": {
+  "kind": "photo",
+  "photo": "OPH-292",
+  "alt": {
+   "fr": "Technique de gonioscopie : verre de gonioscopie tenu sur l’œil, à la lampe à fente (flèche).",
+   "en": "Gonioscopy technique: gonioscopy lens held on the eye at the slit lamp (arrow)."
+  },
+  "hotspots": [
+   {
+    "x": 49,
+    "y": 50,
+    "r": 5.0,
+    "label": {
+     "fr": "Verre de gonioscopie appliqué sur la cornée (miroir : contourne la réflexion totale interne)",
+     "en": "Gonioscopy lens on the cornea (mirror: bypasses total internal reflection)"
+    },
+    "decisive": true
+   },
+   {
+    "x": 70,
+    "y": 40,
+    "r": 7.0,
+    "label": {
+     "fr": "Lampe à fente",
+     "en": "Slit lamp"
+    }
+   },
+   {
+    "x": 40,
+    "y": 62,
+    "r": 7.0,
+    "label": {
+     "fr": "Main de l’examinateur qui stabilise le verre",
+     "en": "Examiner’s hand stabilising the lens"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "EyeRounds.org, University of Iowa. © University of Iowa, tous droits réservés; usage éducatif selon les conditions EyeRounds (permission écrite demandée).",
+   "en": "EyeRounds.org, University of Iowa. © University of Iowa, all rights reserved; educational use under EyeRounds terms (written permission requested)."
+  },
+  "license": "EyeRounds TOS (no CC licence)",
+  "source": "https://eyerounds.org/books/glaucoma_guide/chapter6.html",
+  "restricted": true
+ },
+ "m-gonio-2": {
   "kind": "svg",
   "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Angle normal en gonioscopie · Normal angle on gonioscopy</text><rect x=\"30\" y=\"40\" width=\"340\" height=\"200\" rx=\"6\" fill=\"#2a2420\"/><rect x=\"30\" y=\"40\" width=\"340\" height=\"40\" fill=\"#cfd8dc\"/><rect x=\"30\" y=\"80\" width=\"340\" height=\"6\" fill=\"#fffbe6\"/><rect x=\"30\" y=\"86\" width=\"340\" height=\"16\" fill=\"#b9a68f\"/><rect x=\"30\" y=\"102\" width=\"340\" height=\"16\" fill=\"#6d4c35\"/><rect x=\"30\" y=\"118\" width=\"340\" height=\"10\" fill=\"#f4f1ea\"/><rect x=\"30\" y=\"128\" width=\"340\" height=\"26\" fill=\"#4a3b33\"/><path d=\"M30 154 Q120 150 200 158 T370 154 L370 240 L30 240 Z\" fill=\"#8a5a3b\"/><g font-size=\"10\" fill=\"#2b2a26\"><text x=\"40\" y=\"62\">cornée · cornea</text></g><g font-size=\"9\" fill=\"#ffffff\"><text x=\"40\" y=\"84\" fill=\"#2b2a26\">Ligne de Schwalbe · Schwalbe’s line</text><text x=\"40\" y=\"98\" fill=\"#2b2a26\">Trabéculum non pigmenté · non-pigmented TM</text><text x=\"40\" y=\"114\">Trabéculum pigmenté · pigmented TM</text><text x=\"40\" y=\"126\" fill=\"#2b2a26\">Éperon scléral · scleral spur</text><text x=\"40\" y=\"145\">Bande ciliaire · ciliary body band</text><text x=\"40\" y=\"200\">Racine de l’iris · iris root</text></g><text x=\"200\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">De l’avant (haut) vers l’arrière (bas) · anterior (top) → posterior (bottom)</text><text x=\"200\" y=\"276\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">Bande ciliaire visible = angle grand ouvert · ciliary band visible = wide-open angle</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
   "alt": {
@@ -1418,8 +1219,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "label": {
      "fr": "Trabéculum pigmenté : zone de filtration principale",
      "en": "Pigmented trabecular meshwork: main filtering zone"
-    },
-    "decisive": true
+    }
    },
    {
     "x": 85,
@@ -1428,7 +1228,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "label": {
      "fr": "Éperon scléral : bande blanche, repère clé",
      "en": "Scleral spur: white band, key landmark"
-    }
+    },
+    "decisive": true
    },
    {
     "x": 85,
@@ -1456,75 +1257,58 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "license": "original",
   "schematic": true
  },
- "m-gonio-2": {
-  "kind": "photo",
-  "photo": "OPH-156",
-  "alt": {
-   "fr": "Gonioscopie dans un glaucome pseudoexfoliatif : ligne de Sampaolesi (pointe de flèche).",
-   "en": "Gonioscopy in pseudoexfoliation glaucoma: Sampaolesi line (arrowhead)."
-  },
-  "hotspots": [
-   {
-    "x": 58,
-    "y": 37,
-    "r": 6.9,
-    "label": {
-     "fr": "Ligne de Sampaolesi : pigment ondulé en avant de la ligne de Schwalbe",
-     "en": "Sampaolesi line: wavy pigment anterior to Schwalbe’s line"
-    },
-    "decisive": true
-   },
-   {
-    "x": 35,
-    "y": 42,
-    "r": 7.8,
-    "label": {
-     "fr": "Bande pigmentée de l’angle (trabéculum pigmenté)",
-     "en": "Pigmented band of the angle (pigmented meshwork)"
-    }
-   }
-  ],
-  "credit": {
-   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
-   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
-  },
-  "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/pseudoexfoliation-glaucoma.html"
- },
  "m-gonio-3": {
-  "kind": "photo",
-  "photo": "OPH-172",
+  "kind": "svg",
+  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Gonioscopie dynamique (indentation) · Indentation gonioscopy</text><g><rect x=\"20\" y=\"50\" width=\"170\" height=\"180\" rx=\"6\" fill=\"#2a2420\"/><rect x=\"20\" y=\"50\" width=\"170\" height=\"40\" fill=\"#cfd8dc\"/><rect x=\"20\" y=\"90\" width=\"170\" height=\"5\" fill=\"#fffbe6\"/><path d=\"M20 95 Q105 86 190 95 L190 230 L20 230 Z\" fill=\"#8a5a3b\"/></g><g><rect x=\"210\" y=\"50\" width=\"170\" height=\"180\" rx=\"6\" fill=\"#2a2420\"/><rect x=\"210\" y=\"50\" width=\"170\" height=\"40\" fill=\"#cfd8dc\"/><rect x=\"210\" y=\"90\" width=\"170\" height=\"5\" fill=\"#fffbe6\"/><rect x=\"210\" y=\"95\" width=\"170\" height=\"13\" fill=\"#b9a68f\"/><rect x=\"210\" y=\"108\" width=\"170\" height=\"12\" fill=\"#6d4c35\"/><rect x=\"210\" y=\"120\" width=\"170\" height=\"8\" fill=\"#f4f1ea\"/><rect x=\"210\" y=\"128\" width=\"170\" height=\"12\" fill=\"#4a3b33\"/><path d=\"M210 140 Q295 146 380 140 L380 230 L210 230 Z\" fill=\"#8a5a3b\"/></g><text x=\"105\" y=\"44\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">1 · sans indentation</text><text x=\"295\" y=\"44\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">2 · avec indentation</text><text x=\"105\" y=\"250\" text-anchor=\"middle\" font-size=\"9\" fill=\"#2b2a26\">iris convexe : Schwalbe seul visible</text><text x=\"105\" y=\"262\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">convex iris: only Schwalbe visible</text><text x=\"295\" y=\"250\" text-anchor=\"middle\" font-size=\"9\" fill=\"#2b2a26\">l’iris recule : éperon visible, pas de synéchie</text><text x=\"295\" y=\"262\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">iris falls back: spur visible, no synechia</text><text x=\"200\" y=\"282\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">fermeture apposée (non synéchiale) · appositional (non-synechial) closure</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
   "alt": {
-   "fr": "Gonioscopie après contusion (balle de racquetball) : récession de l’angle et fente de cyclodialyse.",
-   "en": "Gonioscopy after blunt trauma (racquetball): angle recession and cyclodialysis cleft."
+   "fr": "Schéma en deux temps : sans indentation l’iris convexe ne laisse voir que la ligne de Schwalbe; avec indentation l’iris recule et l’éperon scléral apparaît.",
+   "en": "Two-step schematic: without indentation the convex iris shows only Schwalbe’s line; with indentation the iris falls back and the scleral spur appears."
   },
   "hotspots": [
    {
-    "x": 58,
-    "y": 60,
-    "r": 8.0,
+    "x": 74,
+    "y": 41,
+    "r": 4,
     "label": {
-     "fr": "Large bande de face du corps ciliaire visible : récession de l’angle",
-     "en": "Broad band of visible ciliary body face: angle recession"
+     "fr": "Éperon scléral dévoilé par l’indentation : angle apposé, sans synéchie",
+     "en": "Scleral spur revealed by indentation: appositional angle, no synechia"
+    },
+    "decisive": true
+   },
+   {
+    "x": 26,
+    "y": 31,
+    "r": 4,
+    "label": {
+     "fr": "Panneau 1 : seule la ligne de Schwalbe est visible",
+     "en": "Panel 1: only Schwalbe’s line is visible"
     }
    },
    {
-    "x": 52,
-    "y": 79,
-    "r": 7.1,
+    "x": 26,
+    "y": 55,
+    "r": 8,
     "label": {
-     "fr": "Large bande blanche à la jonction corps ciliaire / éperon : fente de cyclodialyse",
-     "en": "Broad white band at the ciliary body / scleral spur junction: cyclodialysis cleft"
-    },
-    "decisive": true
+     "fr": "Iris convexe qui masque l’angle",
+     "en": "Convex iris hiding the angle"
+    }
+   },
+   {
+    "x": 74,
+    "y": 37.5,
+    "r": 3,
+    "label": {
+     "fr": "Trabéculum pigmenté",
+     "en": "Pigmented meshwork"
+    }
    }
   ],
   "credit": {
-   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
-   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
+   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
+   "en": "Original schematic (ophtalmo app), not from a real patient."
   },
-  "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/angle-recession-cyclodialysis-cleft.htm"
+  "license": "original",
+  "schematic": true
  },
  "m-gonio-4": {
   "kind": "photo",
@@ -1535,22 +1319,31 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   },
   "hotspots": [
    {
-    "x": 39,
-    "y": 58,
-    "r": 7.0,
+    "x": 38.5,
+    "y": 59,
+    "r": 4,
     "label": {
-     "fr": "Flèche noire : synéchie antérieure périphérique haute (iris collé à la paroi de l’angle)",
-     "en": "Black arrow: high peripheral anterior synechia (iris adherent to the angle wall)"
+     "fr": "Pointe de la flèche noire : synéchie antérieure périphérique haute",
+     "en": "Black arrow tip: high peripheral anterior synechia"
     },
     "decisive": true
    },
    {
-    "x": 45,
-    "y": 50,
-    "r": 9.0,
+    "x": 37,
+    "y": 34,
+    "r": 4,
     "label": {
-     "fr": "Entre les flèches blanches : procès ciliaires visibles",
-     "en": "Between the white arrows: visible ciliary processes"
+     "fr": "Flèche blanche (haut) : début des procès ciliaires visibles",
+     "en": "White arrow (top): start of visible ciliary processes"
+    }
+   },
+   {
+    "x": 56,
+    "y": 68,
+    "r": 4,
+    "label": {
+     "fr": "Flèche blanche (bas) : fin des procès ciliaires visibles",
+     "en": "White arrow (bottom): end of visible ciliary processes"
     }
    }
   ],
@@ -1563,55 +1356,29 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
  },
  "m-gonio-5": {
   "kind": "photo",
-  "photo": "OPH-178",
+  "photo": "OPH-156",
   "alt": {
-   "fr": "Gonioscopie : synéchie antérieure périphérique haute atteignant la ligne de Schwalbe (syndrome ICE).",
-   "en": "Gonioscopy: high peripheral anterior synechia reaching Schwalbe’s line (ICE syndrome)."
+   "fr": "Gonioscopie dans un glaucome pseudoexfoliatif : ligne de Sampaolesi (pointe de flèche).",
+   "en": "Gonioscopy in pseudoexfoliation glaucoma: Sampaolesi line (arrowhead)."
   },
   "hotspots": [
    {
-    "x": 50,
-    "y": 38,
-    "r": 9.0,
+    "x": 58.5,
+    "y": 35,
+    "r": 5,
     "label": {
-     "fr": "Synéchie haute : l’iris remonte jusqu’à la ligne de Schwalbe et masque les repères de l’angle",
-     "en": "High synechia: iris extends up to Schwalbe’s line, hiding the angle landmarks"
-    },
-    "decisive": true
-   }
-  ],
-  "credit": {
-   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
-   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
-  },
-  "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/Peripheral-anterior-synechiae.htm"
- },
- "m-gonio-6": {
-  "kind": "photo",
-  "photo": "OPH-312",
-  "alt": {
-   "fr": "Gonioscopie : procès iriens (variante normale).",
-   "en": "Gonioscopy: iris processes (normal variant)."
-  },
-  "hotspots": [
-   {
-    "x": 51,
-    "y": 23,
-    "r": 6.2,
-    "label": {
-     "fr": "Fins ponts de tissu irien vers la paroi de l’angle : procès iriens, sans fermer l’angle",
-     "en": "Fine strands of iris tissue to the angle wall: iris processes, not closing the angle"
+     "fr": "Pointe de flèche : ligne de Sampaolesi, pigment ondulé en avant de Schwalbe",
+     "en": "Arrowhead: Sampaolesi line, wavy pigment anterior to Schwalbe’s line"
     },
     "decisive": true
    },
    {
-    "x": 50,
-    "y": 55,
-    "r": 8.9,
+    "x": 45,
+    "y": 42,
+    "r": 6,
     "label": {
-     "fr": "Pupille (reflet rouge) vue à travers le verre",
-     "en": "Pupil (red reflex) seen through the lens"
+     "fr": "Bande trabéculaire très pigmentée, juste en dessous",
+     "en": "Heavily pigmented trabecular band just below"
     }
    }
   ],
@@ -1620,36 +1387,195 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
   },
   "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/Iris-processes/index.htm"
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/pseudoexfoliation-glaucoma.html"
  },
- "m-fondoeil-1": {
+ "m-gonio-6": {
   "kind": "photo",
-  "photo": "OPH-202",
+  "photo": "OPH-172",
   "alt": {
-   "fr": "Rétinophotographie : papille normale, rapport cup/disc ≈ 0,3.",
-   "en": "Fundus photo: normal optic disc, cup-to-disc ratio ≈ 0.3."
+   "fr": "Gonioscopie après contusion (balle de racquetball) : récession de l’angle et fente de cyclodialyse.",
+   "en": "Gonioscopy after blunt trauma (racquetball): angle recession and cyclodialysis cleft."
   },
   "hotspots": [
    {
-    "x": 49,
-    "y": 47,
-    "r": 8.0,
+    "x": 56,
+    "y": 62,
+    "r": 5,
     "label": {
-     "fr": "Papille rosée, petite excavation centrale (C/D ≈ 0,3), anneau régulier",
-     "en": "Pink disc, small central cup (C/D ≈ 0.3), even rim"
+     "fr": "Large bande brune de face du corps ciliaire : récession de l’angle",
+     "en": "Broad brown band of ciliary body face: angle recession"
+    },
+    "decisive": true
+   },
+   {
+    "x": 52,
+    "y": 81,
+    "r": 5,
+    "label": {
+     "fr": "Large bande blanche à la jonction corps ciliaire / éperon : fente de cyclodialyse",
+     "en": "Broad white band at the ciliary body / spur junction: cyclodialysis cleft"
     },
     "decisive": true
    }
   ],
   "credit": {
-   "fr": "EyeRounds.org, University of Iowa. © University of Iowa, tous droits réservés; usage éducatif selon les conditions EyeRounds (permission écrite demandée).",
-   "en": "EyeRounds.org, University of Iowa. © University of Iowa, all rights reserved; educational use under EyeRounds terms (written permission requested)."
+   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
+   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
   },
-  "license": "EyeRounds TOS (no CC licence)",
-  "source": "https://eyerounds.org/books/glaucoma_guide/chapter6.html",
-  "restricted": true
+  "license": "CC BY-NC-ND 3.0",
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/angle-recession-cyclodialysis-cleft.htm"
+ },
+ "m-gonio-7": {
+  "kind": "photo",
+  "photo": "OPH-174",
+  "alt": {
+   "fr": "Deux vues gonioscopiques de l’angle nasal de l’œil gauche, hypotonie après chirurgie de cataracte (fente de cyclodialyse).",
+   "en": "Two gonioscopic views of the nasal angle of the left eye, hypotony after cataract surgery (cyclodialysis cleft)."
+  },
+  "hotspots": [
+   {
+    "x": 82,
+    "y": 69,
+    "r": 3,
+    "label": {
+     "fr": "Flèches blanches : large fente de cyclodialyse nasale (communication chambre antérieure ↔ espace suprachoroïdien)",
+     "en": "White arrows: large nasal cyclodialysis cleft (anterior chamber ↔ suprachoroidal space)"
+    },
+    "decisive": true
+   },
+   {
+    "x": 83,
+    "y": 58.5,
+    "r": 3,
+    "label": {
+     "fr": "Flèche blanche (haut)",
+     "en": "White arrow (top)"
+    }
+   },
+   {
+    "x": 81,
+    "y": 80,
+    "r": 3,
+    "label": {
+     "fr": "Flèche blanche (bas)",
+     "en": "White arrow (bottom)"
+    }
+   },
+   {
+    "x": 25,
+    "y": 55,
+    "r": 3.6,
+    "label": {
+     "fr": "Vue de gauche : même angle, plus faible grossissement",
+     "en": "Left view: same angle, lower magnification"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
+   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
+  },
+  "license": "CC BY-NC-ND 3.0",
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/angle-recession-cyclodialysis-cleft.htm"
+ },
+ "m-fondoeil-1": {
+  "kind": "svg",
+  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Image inversée (indirect) · Inverted image</text><circle cx=\"105\" cy=\"145\" r=\"78\" fill=\"#e9a07a\"/><circle cx=\"295\" cy=\"145\" r=\"78\" fill=\"#e9a07a\"/><circle cx=\"135\" cy=\"145\" r=\"10\" fill=\"#fff1d6\"/><circle cx=\"265\" cy=\"145\" r=\"10\" fill=\"#fff1d6\"/><path transform=\"translate(70,190) rotate(0)\" d=\"M-9 -6 Q0 14 9 -6 L5 -7 Q0 6 -5 -7 Z\" fill=\"#c0392b\"/><path transform=\"translate(330,100) rotate(180)\" d=\"M-9 -6 Q0 14 9 -6 L5 -7 Q0 6 -5 -7 Z\" fill=\"#c0392b\"/><path d=\"M188 145 L212 145\" stroke=\"#2b2a26\" stroke-width=\"2\"/><path d=\"M206 139 L214 145 L206 151\" fill=\"none\" stroke=\"#2b2a26\" stroke-width=\"2\"/><text x=\"200\" y=\"135\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">180°</text><path d=\"M76 196 Q200 260 326 106\" fill=\"none\" stroke=\"#c0392b\" stroke-dasharray=\"3 3\"/><text x=\"105\" y=\"244\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">Fond d’œil réel</text><text x=\"105\" y=\"257\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">real fundus</text><text x=\"295\" y=\"244\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">Image vue (inversée)</text><text x=\"295\" y=\"257\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">image seen (inverted)</text><text x=\"200\" y=\"282\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">haut ↔ bas et gauche ↔ droite inversés · up/down and left/right reversed</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
+  "alt": {
+   "fr": "Schéma : à gauche le fond d’œil réel avec une déchirure en fer à cheval en bas à gauche; à droite l’image vue à l’ophtalmoscope indirect, tournée de 180° (déchirure en haut à droite).",
+   "en": "Schematic: left, the real fundus with a horseshoe tear at lower left; right, the image seen with the indirect ophthalmoscope, rotated 180° (tear at upper right)."
+  },
+  "hotspots": [
+   {
+    "x": 17.5,
+    "y": 63,
+    "r": 5,
+    "label": {
+     "fr": "Position réelle de la déchirure : en bas à gauche",
+     "en": "True position of the tear: lower left"
+    },
+    "decisive": true
+   },
+   {
+    "x": 82.5,
+    "y": 33,
+    "r": 5,
+    "label": {
+     "fr": "Dans la lentille, la déchirure paraît en haut à droite",
+     "en": "In the lens, the tear appears at upper right"
+    }
+   },
+   {
+    "x": 50,
+    "y": 48,
+    "r": 5,
+    "label": {
+     "fr": "Rotation de 180°",
+     "en": "180° rotation"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
+   "en": "Original schematic (ophtalmo app), not from a real patient."
+  },
+  "license": "original",
+  "schematic": true
  },
  "m-fondoeil-2": {
+  "kind": "photo",
+  "photo": "OPH-003",
+  "alt": {
+   "fr": "Fond d’œil normal d’un enfant (œil droit) avec reflets brillants de la limitante interne.",
+   "en": "Normal fundus of a child (right eye) with bright internal limiting membrane reflexes."
+  },
+  "hotspots": [
+   {
+    "x": 42,
+    "y": 38,
+    "r": 6.0,
+    "label": {
+     "fr": "Reflets brillants de la limitante interne autour de la macula : normaux chez l’enfant",
+     "en": "Bright internal limiting membrane reflexes around the macula: normal in children"
+    },
+    "decisive": true
+   },
+   {
+    "x": 53,
+    "y": 86,
+    "r": 5.0,
+    "label": {
+     "fr": "Reflets le long de l’arcade temporale inférieure",
+     "en": "Reflexes along the inferior temporal arcade"
+    }
+   },
+   {
+    "x": 48.5,
+    "y": 51.5,
+    "r": 3,
+    "label": {
+     "fr": "Fovéa avec reflet fovéolaire",
+     "en": "Fovea with foveal reflex"
+    }
+   },
+   {
+    "x": 77.5,
+    "y": 50,
+    "r": 5.0,
+    "label": {
+     "fr": "Papille rose, bords nets",
+     "en": "Pink disc, sharp margins"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
+   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
+  },
+  "license": "CC BY-NC-ND 3.0",
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/normal-fundus-child/index.htm"
+ },
+ "m-fondoeil-3": {
   "kind": "photo",
   "photo": "OPH-203",
   "alt": {
@@ -1659,13 +1585,31 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "hotspots": [
    {
     "x": 51,
-    "y": 50,
-    "r": 9.0,
+    "y": 51,
+    "r": 6.0,
     "label": {
-     "fr": "Excavation très large et pâle (C/D ≈ 0,9) : anneau neurorétinien presque absent",
-     "en": "Very large pale cup (C/D ≈ 0.9): neuroretinal rim almost gone"
+     "fr": "Excavation blanche qui remplit presque tout le disque (C/D ≈ 0,9)",
+     "en": "White cup filling almost the whole disc (C/D ≈ 0.9)"
     },
     "decisive": true
+   },
+   {
+    "x": 52,
+    "y": 41.5,
+    "r": 3,
+    "label": {
+     "fr": "Fin liseré d’anneau restant",
+     "en": "Thin remaining rim"
+    }
+   },
+   {
+    "x": 44.5,
+    "y": 58,
+    "r": 4.0,
+    "label": {
+     "fr": "Atrophie péripapillaire pâle",
+     "en": "Pale peripapillary atrophy"
+    }
    }
   ],
   "credit": {
@@ -1676,121 +1620,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "source": "https://eyerounds.org/books/glaucoma_guide/chapter6.html",
   "restricted": true
  },
- "m-fondoeil-3": {
-  "kind": "photo",
-  "photo": "OPH-133",
-  "alt": {
-   "fr": "Rétinophotographie de l’œil gauche : glaucome primaire à angle ouvert avec encoche inférieure et déficit des fibres.",
-   "en": "Fundus photo of the left eye: primary open-angle glaucoma with inferior notch and nerve fiber layer defect."
-  },
-  "hotspots": [
-   {
-    "x": 20,
-    "y": 51,
-    "r": 6.0,
-    "label": {
-     "fr": "Encoche inférieure de l’anneau neurorétinien",
-     "en": "Inferior notch of the neuroretinal rim"
-    },
-    "decisive": true
-   },
-   {
-    "x": 30,
-    "y": 63,
-    "r": 9.0,
-    "label": {
-     "fr": "Perte du reflet des fibres partant en temporal de l’encoche",
-     "en": "Loss of nerve fiber sheen radiating temporally from the notch"
-    }
-   },
-   {
-    "x": 57,
-    "y": 52,
-    "r": 6.0,
-    "label": {
-     "fr": "Fovéa",
-     "en": "Fovea"
-    }
-   }
-  ],
-  "credit": {
-   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
-   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
-  },
-  "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/inf-notch-NFL-defect-HVF.htm"
- },
  "m-fondoeil-4": {
-  "kind": "photo",
-  "photo": "OPH-137",
-  "alt": {
-   "fr": "Rétinophotographie : hémorragie papillaire dans un glaucome à pression normale.",
-   "en": "Fundus photo: optic disc hemorrhage in normal-tension glaucoma."
-  },
-  "hotspots": [
-   {
-    "x": 48,
-    "y": 55,
-    "r": 6.0,
-    "label": {
-     "fr": "Hémorragie en flammèche au bord inféro-temporal de la papille",
-     "en": "Flame-shaped hemorrhage at the inferotemporal disc margin"
-    },
-    "decisive": true
-   },
-   {
-    "x": 53,
-    "y": 47,
-    "r": 8.0,
-    "label": {
-     "fr": "Grande excavation",
-     "en": "Large cup"
-    }
-   }
-  ],
-  "credit": {
-   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
-   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
-  },
-  "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/Optic-Disc-Hemorrhage-in-NTG.htm"
- },
- "m-fondoeil-5": {
-  "kind": "photo",
-  "photo": "OPH-219",
-  "alt": {
-   "fr": "Rétinophotographies des deux yeux : œdème papillaire marqué.",
-   "en": "Fundus photos of both eyes: prominent papilledema."
-  },
-  "hotspots": [
-   {
-    "x": 25,
-    "y": 45,
-    "r": 6.4,
-    "label": {
-     "fr": "Papille très surélevée, bords effacés, hémorragies péripapillaires",
-     "en": "Markedly elevated disc, blurred margins, peripapillary hemorrhages"
-    },
-    "decisive": true
-   },
-   {
-    "x": 75,
-    "y": 45,
-    "r": 6.4,
-    "label": {
-     "fr": "Même aspect à l’autre œil : atteinte bilatérale",
-     "en": "Same appearance in the other eye: bilateral"
-    }
-   }
-  ],
-  "credit": {
-   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
-   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
-  },
-  "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/Papilledema/index.htm"
- },
- "m-fondoeil-6": {
   "kind": "photo",
   "photo": "OPH-189",
   "alt": {
@@ -1799,12 +1629,12 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   },
   "hotspots": [
    {
-    "x": 60,
-    "y": 64,
-    "r": 8.0,
+    "x": 59.5,
+    "y": 64.5,
+    "r": 5,
     "label": {
-     "fr": "Encoche inférieure de l’anneau (flèche)",
-     "en": "Inferior rim notch (arrow)"
+     "fr": "Pointe de la flèche : encoche inférieure de l’anneau neurorétinien",
+     "en": "Arrow tip: inferior notch of the neuroretinal rim"
     },
     "decisive": true
    }
@@ -1817,138 +1647,263 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "source": "https://webeye.ophth.uiowa.edu/eyeforum/tutorials/POAG/index.htm",
   "restricted": true
  },
- "m-fondoeil-7": {
-  "kind": "svg",
-  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Règle ISNT · ISNT rule (œil droit · right eye)</text><g transform=\"translate(130,150)\"><ellipse rx=\"78\" ry=\"90\" fill=\"#f0a77a\"/><ellipse cx=\"-8\" cy=\"-6\" rx=\"34\" ry=\"40\" fill=\"#fff4dc\"/><path d=\"M0 -90 L0 90 M-78 0 L78 0\" stroke=\"#b5532c\" stroke-width=\"0.8\" stroke-dasharray=\"3 3\"/><text y=\"-70\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2a26\">S</text><text y=\"80\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2a26\">I</text><text x=\"-66\" y=\"4\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2a26\">T</text><text x=\"64\" y=\"4\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2a26\">N</text></g><g font-size=\"10\" fill=\"#2b2a26\"><text x=\"245\" y=\"110\">Épaisseur de l’anneau :</text><text x=\"245\" y=\"124\">Rim thickness:</text><text x=\"245\" y=\"146\" font-weight=\"700\">I ≥ S ≥ N ≥ T</text><text x=\"245\" y=\"170\">Violée (I ou S aminci)</text><text x=\"245\" y=\"184\">→ penser glaucome</text><text x=\"245\" y=\"198\" fill=\"#5c5850\">broken (thin I or S)</text><text x=\"245\" y=\"212\" fill=\"#5c5850\">→ think glaucoma</text></g><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
+ "m-fondoeil-5": {
+  "kind": "photo",
+  "photo": "OPH-219",
   "alt": {
-   "fr": "Schéma d’une papille droite montrant la règle ISNT : l’anneau est normalement le plus épais en inférieur, puis supérieur, nasal, temporal.",
-   "en": "Schematic of a right optic disc showing the ISNT rule: the rim is normally thickest inferiorly, then superiorly, nasally, temporally."
+   "fr": "Rétinophotographies des deux yeux : œdème papillaire marqué.",
+   "en": "Fundus photos of both eyes: prominent papilledema."
   },
   "hotspots": [
    {
-    "x": 33,
-    "y": 76,
-    "r": 6,
+    "x": 24.5,
+    "y": 43,
+    "r": 4.1,
     "label": {
-     "fr": "Anneau inférieur : normalement le plus épais",
-     "en": "Inferior rim: normally the thickest"
+     "fr": "Papille très gonflée, bords effacés",
+     "en": "Markedly swollen disc, blurred margins"
     },
     "decisive": true
    },
    {
-    "x": 33,
-    "y": 28,
-    "r": 6,
+    "x": 74.5,
+    "y": 43,
+    "r": 4.1,
     "label": {
-     "fr": "Anneau supérieur",
-     "en": "Superior rim"
-    }
+     "fr": "Même aspect à l’autre œil : bilatéral",
+     "en": "Same appearance in the other eye: bilateral"
+    },
+    "decisive": true
    },
    {
-    "x": 49,
-    "y": 51,
-    "r": 6,
+    "x": 17,
+    "y": 30,
+    "r": 3,
     "label": {
-     "fr": "Anneau nasal",
-     "en": "Nasal rim"
-    }
-   },
-   {
-    "x": 16,
-    "y": 51,
-    "r": 6,
-    "label": {
-     "fr": "Anneau temporal : normalement le plus mince",
-     "en": "Temporal rim: normally the thinnest"
-    }
-   },
-   {
-    "x": 30.5,
-    "y": 48,
-    "r": 6,
-    "label": {
-     "fr": "Excavation (cup)",
-     "en": "Cup"
+     "fr": "Hémorragies péripapillaires en flammèche",
+     "en": "Flame-shaped peripapillary hemorrhages"
     }
    }
   ],
   "credit": {
-   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
-   "en": "Original schematic (ophtalmo app), not from a real patient."
+   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
+   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
   },
-  "license": "original",
-  "schematic": true
+  "license": "CC BY-NC-ND 3.0",
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/Papilledema/index.htm"
+ },
+ "m-fondoeil-6": {
+  "kind": "photo",
+  "photo": "OPH-250",
+  "alt": {
+   "fr": "Occlusion de l’artère centrale de la rétine (œil droit) : pôle postérieur blanchâtre et tache rouge cerise.",
+   "en": "Central retinal artery occlusion (right eye): whitened posterior pole and cherry-red spot."
+  },
+  "hotspots": [
+   {
+    "x": 51.5,
+    "y": 54,
+    "r": 3.5,
+    "label": {
+     "fr": "Tache rouge cerise : la fovéa (sans couches internes) garde la couleur de la choroïde au milieu de la rétine pâle",
+     "en": "Cherry-red spot: the fovea (no inner layers) keeps the choroidal colour amid the pale retina"
+    },
+    "decisive": true
+   },
+   {
+    "x": 67,
+    "y": 27.5,
+    "r": 4.0,
+    "label": {
+     "fr": "Plages blanches duveteuses le long de l’arcade supérieure (ischémie, nodules cotonneux)",
+     "en": "Fluffy white patches along the superior arcade (ischemia, cotton-wool spots)"
+    }
+   },
+   {
+    "x": 62,
+    "y": 47,
+    "r": 5.0,
+    "label": {
+     "fr": "Rétine pâle, œdémateuse, du pôle postérieur",
+     "en": "Pale, edematous posterior-pole retina"
+    }
+   },
+   {
+    "x": 81.5,
+    "y": 50,
+    "r": 4.0,
+    "label": {
+     "fr": "Papille",
+     "en": "Optic disc"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
+   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
+  },
+  "license": "CC BY-NC-ND 3.0",
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/CRAO/index.htm"
+ },
+ "m-fondoeil-7": {
+  "kind": "photo",
+  "photo": "OPH-252",
+  "alt": {
+   "fr": "Occlusion de la veine centrale de la rétine : hémorragies dans les quatre quadrants, veines tortueuses, nodules cotonneux, papille gonflée.",
+   "en": "Central retinal vein occlusion: hemorrhages in all four quadrants, tortuous veins, cotton-wool spots, swollen disc."
+  },
+  "hotspots": [
+   {
+    "x": 31,
+    "y": 39,
+    "r": 7.0,
+    "label": {
+     "fr": "Papille gonflée entourée d’hémorragies en flammèche",
+     "en": "Swollen disc surrounded by flame hemorrhages"
+    },
+    "decisive": true
+   },
+   {
+    "x": 44,
+    "y": 12,
+    "r": 5.0,
+    "label": {
+     "fr": "Veine dilatée et tortueuse",
+     "en": "Dilated, tortuous vein"
+    }
+   },
+   {
+    "x": 75,
+    "y": 45,
+    "r": 7.0,
+    "label": {
+     "fr": "Hémorragies jusqu’en périphérie temporale",
+     "en": "Hemorrhages out to the temporal periphery"
+    }
+   },
+   {
+    "x": 28,
+    "y": 24,
+    "r": 4.0,
+    "label": {
+     "fr": "Nodules cotonneux (blancs) près de la papille",
+     "en": "Cotton-wool spots (white) near the disc"
+    }
+   },
+   {
+    "x": 82,
+    "y": 34,
+    "r": 3,
+    "label": {
+     "fr": "Nodule cotonneux",
+     "en": "Cotton-wool spot"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
+   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
+  },
+  "license": "CC BY-NC-ND 3.0",
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/CRVO/index.htm"
+ },
+ "m-fondoeil-8": {
+  "kind": "photo",
+  "photo": "OPH-287",
+  "alt": {
+   "fr": "Montage grand champ de l’œil gauche : décollement de rétine rhegmatogène avec macula décollée; flèches blanches sur la limite du décollement.",
+   "en": "Wide-field montage of the left eye: rhegmatogenous retinal detachment, macula off; white arrows on the detachment border."
+  },
+  "hotspots": [
+   {
+    "x": 54.5,
+    "y": 53,
+    "r": 4.0,
+    "label": {
+     "fr": "Fovéa incluse dans la zone décollée (rétine soulevée, plis) : macula décollée",
+     "en": "Fovea within the detached area (elevated, folded retina): macula off"
+    },
+    "decisive": true
+   },
+   {
+    "x": 64,
+    "y": 15,
+    "r": 3,
+    "label": {
+     "fr": "Flèche : limite du décollement",
+     "en": "Arrow: detachment border"
+    }
+   },
+   {
+    "x": 51,
+    "y": 33,
+    "r": 3,
+    "label": {
+     "fr": "Flèche : limite du décollement",
+     "en": "Arrow: detachment border"
+    }
+   },
+   {
+    "x": 47.5,
+    "y": 69,
+    "r": 3,
+    "label": {
+     "fr": "Flèche : limite du décollement",
+     "en": "Arrow: detachment border"
+    }
+   },
+   {
+    "x": 41,
+    "y": 49,
+    "r": 4.0,
+    "label": {
+     "fr": "Papille (rétine à plat de ce côté)",
+     "en": "Optic disc (retina flat on this side)"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
+   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
+  },
+  "license": "CC BY-NC-ND 3.0",
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/rhegmatogenous-ret-detach-macula-off.htm"
  },
  "m-cv-1": {
   "kind": "photo",
   "photo": "OPH-302",
   "alt": {
-   "fr": "Champs visuels Humphrey 24-2 : OS (gauche de l’image) glaucome sévère; OD (droite) normal.",
-   "en": "Humphrey 24-2 visual fields: OS (left of image) severe glaucoma; OD (right) normal."
+   "fr": "Rapport Humphrey 24-2 : OS à gauche, OD à droite (selon les en-têtes imprimés). Item centré sur OD.",
+   "en": "Humphrey 24-2 report: OS on the left, OD on the right (per printed headers). Item focuses on OD."
   },
   "hotspots": [
    {
-    "x": 8,
-    "y": 11,
-    "r": 4.7,
+    "x": 57,
+    "y": 12,
+    "r": 3.9,
     "label": {
-     "fr": "Fiabilité OS : pertes de fixation 1/17, faux positifs 2 %, faux négatifs 0 % → examen fiable",
-     "en": "OS reliability: fixation losses 1/17, false positives 2%, false negatives 0% → reliable test"
-    }
-   },
-   {
-    "x": 37,
-    "y": 34,
-    "r": 8.7,
-    "label": {
-     "fr": "OS échelle de gris : déficits denses supérieur et inférieur, marche nasale",
-     "en": "OS grey scale: dense superior and inferior defects, nasal step"
-    }
-   },
-   {
-    "x": 44,
-    "y": 70,
-    "r": 4.7,
-    "label": {
-     "fr": "OS : MD −16,93 dB, PSD 11,32 dB (p < 0,5 %)",
-     "en": "OS: MD −16.93 dB, PSD 11.32 dB (p < 0.5%)"
+     "fr": "OD fiabilité : pertes de fixation 0/15, faux + 4 %, faux − 2 % → fiable",
+     "en": "OD reliability: fixation losses 0/15, false + 4%, false − 2% → reliable"
     },
     "decisive": true
    },
    {
-    "x": 44,
-    "y": 62,
-    "r": 3.9,
+    "x": 88,
+    "y": 66,
+    "r": 4.7,
     "label": {
-     "fr": "GHT : hors des limites normales",
-     "en": "GHT: outside normal limits"
-    }
-   },
-   {
-    "x": 24,
-    "y": 82,
-    "r": 6.3,
-    "label": {
-     "fr": "Carte de probabilité de la déviation individuelle : carrés noirs = p < 0,5 %",
-     "en": "Pattern deviation probability map: black squares = p < 0.5%"
-    }
+     "fr": "OD : GHT dans les limites normales, MD −0,18 dB, PSD 1,72 dB",
+     "en": "OD: GHT within normal limits, MD −0.18 dB, PSD 1.72 dB"
+    },
+    "decisive": true
    },
    {
     "x": 90,
     "y": 36,
-    "r": 5.5,
+    "r": 3.2,
     "label": {
-     "fr": "OD : seule la tache aveugle (normale)",
-     "en": "OD: only the blind spot (normal)"
-    }
-   },
-   {
-    "x": 87,
-    "y": 70,
-    "r": 3.9,
-    "label": {
-     "fr": "OD : MD −0,18 dB, PSD 1,72 dB, GHT normal",
-     "en": "OD: MD −0.18 dB, PSD 1.72 dB, GHT within normal limits"
+     "fr": "OD : seule la tache aveugle sur l’échelle de gris",
+     "en": "OD: only the blind spot on the grey scale"
     }
    }
   ],
@@ -1961,171 +1916,91 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
  },
  "m-cv-2": {
   "kind": "photo",
-  "photo": "OPH-296",
+  "photo": "OPH-302",
   "alt": {
-   "fr": "Champ visuel Humphrey (échelle de gris) dans un glaucome à pression normale : défauts denses près de la fixation.",
-   "en": "Humphrey visual field (grey scale) in normal-tension glaucoma: dense defects near fixation."
+   "fr": "Même rapport Humphrey 24-2 : moitié OS (gauche), glaucome sévère.",
+   "en": "Same Humphrey 24-2 report: OS half (left), severe glaucoma."
   },
   "hotspots": [
    {
-    "x": 55,
-    "y": 58,
-    "r": 8.0,
+    "x": 44,
+    "y": 69,
+    "r": 3.9,
     "label": {
-     "fr": "Défaut dense inférieur juste sous la fixation (paracentral)",
-     "en": "Dense inferior defect just below fixation (paracentral)"
+     "fr": "OS : MD −16,93 dB (p < 0,5 %), PSD 11,32 dB",
+     "en": "OS: MD −16.93 dB (p < 0.5%), PSD 11.32 dB"
     },
     "decisive": true
    },
    {
-    "x": 81,
-    "y": 40,
-    "r": 7.0,
+    "x": 8,
+    "y": 11,
+    "r": 3.2,
     "label": {
-     "fr": "Défaut nasal supérieur dense, arrêté au méridien horizontal",
-     "en": "Dense superonasal defect stopping at the horizontal meridian"
-    }
-   },
-   {
-    "x": 81,
-    "y": 60,
-    "r": 7.0,
-    "label": {
-     "fr": "Défaut nasal inférieur",
-     "en": "Inferonasal defect"
+     "fr": "Fiabilité OS : pertes de fixation 1/17, faux + 2 %, faux − 0 %",
+     "en": "OS reliability: fixation losses 1/17, false + 2%, false − 0%"
     }
    },
    {
     "x": 24,
-    "y": 56,
-    "r": 5.0,
+    "y": 82,
+    "r": 4.7,
     "label": {
-     "fr": "Tache aveugle",
-     "en": "Blind spot"
+     "fr": "Déviation corrigée OS : défauts arciformes denses",
+     "en": "OS pattern deviation: dense arcuate defects"
     }
-   }
-  ],
-  "credit": {
-   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
-   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
-  },
-  "license": "CC BY-NC-ND 3.0",
-  "source": "https://eyerounds.org/cases/86-Normal-Low-Tension-Glaucoma.htm"
- },
- "m-cv-3": {
-  "kind": "photo",
-  "photo": "OPH-283",
-  "alt": {
-   "fr": "Champs visuels de Goldmann des deux yeux : hémianopsie homonyme gauche (AVC occipital).",
-   "en": "Goldmann visual fields of both eyes: left homonymous hemianopia (occipital stroke)."
-  },
-  "hotspots": [
-   {
-    "x": 27,
-    "y": 45,
-    "r": 3.9,
-    "label": {
-     "fr": "Isoptères coupés net au méridien vertical",
-     "en": "Isopters cut sharply at the vertical meridian"
-    },
-    "decisive": true
-   },
-   {
-    "x": 76,
-    "y": 45,
-    "r": 3.9,
-    "label": {
-     "fr": "Même coupure verticale à l’autre œil : hémianopsie homonyme (rétrochiasmatique)",
-     "en": "Same vertical cut in the other eye: homonymous hemianopia (retrochiasmal)"
-    }
-   },
-   {
-    "x": 12,
-    "y": 40,
-    "r": 5.0,
-    "label": {
-     "fr": "Hémichamp gauche absent",
-     "en": "Left hemifield missing"
-    }
-   },
-   {
-    "x": 79,
-    "y": 35,
-    "r": 3,
-    "label": {
-     "fr": "Tache aveugle (bleu)",
-     "en": "Blind spot (blue)"
-    }
-   }
-  ],
-  "credit": {
-   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
-   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
-  },
-  "license": "CC BY-NC-ND 3.0",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/left-homonymous-hemianopsia-occipital-stroke.html"
- },
- "m-cv-4": {
-  "kind": "photo",
-  "photo": "OPH-013",
-  "alt": {
-   "fr": "Rapport Humphrey 24-2 annoté (normal) : chaque zone du rapport est nommée par la source.",
-   "en": "Annotated (normal) Humphrey 24-2 printout: each area of the report is labelled by the source."
-  },
-  "hotspots": [
-   {
-    "x": 15,
-    "y": 14,
-    "r": 6.0,
-    "label": {
-     "fr": "Indices de fiabilité (pertes de fixation, faux +, faux −)",
-     "en": "Reliability indices (fixation losses, false +, false −)"
-    },
-    "decisive": true
    },
    {
     "x": 37,
-    "y": 32,
-    "r": 8.0,
-    "label": {
-     "fr": "Carte des seuils numériques (dB)",
-     "en": "Numerical sensitivity plot (dB)"
-    }
-   },
-   {
-    "x": 71,
     "y": 34,
-    "r": 8.0,
+    "r": 6.3,
     "label": {
-     "fr": "Échelle de gris",
-     "en": "Grey scale map"
+     "fr": "Échelle de gris OS",
+     "en": "OS grey scale"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
+   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
+  },
+  "license": "CC BY-NC-ND 3.0",
+  "source": "https://eyerounds.org/cases/257-UGH-syndrome.htm"
+ },
+ "m-cv-3": {
+  "kind": "photo",
+  "photo": "OPH-190",
+  "alt": {
+   "fr": "Champ visuel Humphrey de l’œil droit (échelle de gris et déviation corrigée) : déficit supérieur.",
+   "en": "Humphrey visual field of the right eye (grey scale and pattern deviation): superior defect."
+  },
+  "hotspots": [
+   {
+    "x": 12,
+    "y": 49,
+    "r": 4.1,
+    "label": {
+     "fr": "Limite nette du défaut supérieur sur le méridien horizontal, côté nasal (marche nasale)",
+     "en": "Sharp border of the superior defect along the horizontal meridian, nasal side (nasal step)"
+    },
+    "decisive": true
+   },
+   {
+    "x": 73,
+    "y": 37,
+    "r": 5.7,
+    "label": {
+     "fr": "Déviation corrigée : grappe dense de points anormaux en supérieur",
+     "en": "Pattern deviation: dense superior cluster of abnormal points"
     }
    },
    {
-    "x": 22,
-    "y": 53,
-    "r": 8.0,
-    "label": {
-     "fr": "Déviation totale (valeurs), carte de probabilité en dessous",
-     "en": "Total deviation (values), probability map below"
-    }
-   },
-   {
-    "x": 52,
-    "y": 53,
-    "r": 8.0,
-    "label": {
-     "fr": "Déviation individuelle / pattern (valeurs), carte de probabilité en dessous",
-     "en": "Pattern deviation (values), probability map below"
-    }
-   },
-   {
-    "x": 75,
+    "x": 42,
     "y": 57,
-    "r": 6.0,
+    "r": 3.2,
     "label": {
-     "fr": "GHT, VFI, MD, PSD",
-     "en": "GHT, VFI, MD, PSD"
+     "fr": "Tache aveugle",
+     "en": "Blind spot"
     }
    }
   ],
@@ -2134,10 +2009,10 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    "en": "EyeRounds.org, University of Iowa. © University of Iowa, all rights reserved; educational use under EyeRounds terms (written permission requested)."
   },
   "license": "EyeRounds TOS (no CC licence)",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/tutorials/VF-testing/index.htm",
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/tutorials/POAG/index.htm",
   "restricted": true
  },
- "m-cv-5": {
+ "m-cv-4": {
   "kind": "photo",
   "photo": "OPH-293",
   "alt": {
@@ -2146,40 +2021,40 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   },
   "hotspots": [
    {
+    "x": 88,
+    "y": 31,
+    "r": 4,
+    "label": {
+     "fr": "Panneau B : tache aveugle à droite du centre (œil droit)",
+     "en": "Panel B: blind spot right of centre (right eye)"
+    },
+    "decisive": true
+   },
+   {
     "x": 11,
     "y": 27,
-    "r": 5.0,
+    "r": 4,
     "label": {
-     "fr": "A : tache aveugle normale",
-     "en": "A: normal blind spot"
+     "fr": "Panneau A : tache aveugle à gauche (œil gauche)",
+     "en": "Panel A: blind spot on the left (left eye)"
+    }
+   },
+   {
+    "x": 10,
+    "y": 74,
+    "r": 4,
+    "label": {
+     "fr": "Panneau C : tache aveugle à gauche (œil gauche)",
+     "en": "Panel C: blind spot on the left (left eye)"
     }
    },
    {
     "x": 66,
     "y": 18,
-    "r": 8.0,
+    "r": 6,
     "label": {
-     "fr": "B : déficit arciforme glaucomateux",
-     "en": "B: glaucomatous arcuate defect"
-    },
-    "decisive": true
-   },
-   {
-    "x": 20,
-    "y": 79,
-    "r": 6.0,
-    "label": {
-     "fr": "C : déficit arciforme",
-     "en": "C: arcuate defect"
-    }
-   },
-   {
-    "x": 37,
-    "y": 78,
-    "r": 6.0,
-    "label": {
-     "fr": "C : marche nasale (arrêt au méridien horizontal)",
-     "en": "C: nasal step (stops at the horizontal meridian)"
+     "fr": "Panneau B : déficit arciforme",
+     "en": "Panel B: arcuate defect"
     }
    }
   ],
@@ -2191,103 +2066,138 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "source": "https://eyerounds.org/books/glaucoma_guide/chapter6.html",
   "restricted": true
  },
- "m-cv-6": {
+ "m-cv-5": {
   "kind": "photo",
-  "photo": "OPH-015",
+  "photo": "OPH-283",
   "alt": {
-   "fr": "Planche de dessins (source EyeRounds) des défauts du champ visuel fréquents, identifiés par des lettres.",
-   "en": "EyeRounds chart of common visual field defects, identified by letters."
+   "fr": "Champs visuels de Goldmann des deux yeux : hémianopsie homonyme gauche (AVC occipital).",
+   "en": "Goldmann visual fields of both eyes: left homonymous hemianopia (occipital stroke)."
   },
   "hotspots": [
    {
-    "x": 25,
-    "y": 67,
-    "r": 12.0,
+    "x": 26.5,
+    "y": 45,
+    "r": 3,
     "label": {
-     "fr": "Défauts qui respectent le méridien vertical (hémianopsies) : comparer les deux yeux pour localiser la lésion",
-     "en": "Defects respecting the vertical meridian (hemianopias): compare both eyes to localise the lesion"
+     "fr": "Isoptères coupés net au méridien vertical (œil gauche)",
+     "en": "Isopters cut sharply at the vertical meridian (left eye)"
     },
     "decisive": true
    },
    {
-    "x": 50,
-    "y": 8,
-    "r": 6.0,
+    "x": 76,
+    "y": 45,
+    "r": 3,
     "label": {
-     "fr": "Ligne du haut : défauts centraux (ex. C, scotome central) et annulaires (A, B)",
-     "en": "Top row: central (e.g. C, central scotoma) and ring defects (A, B)"
+     "fr": "Même coupure verticale à l’œil droit : hémianopsie homonyme gauche",
+     "en": "Same vertical cut in the right eye: left homonymous hemianopia"
+    },
+    "decisive": true
+   },
+   {
+    "x": 12,
+    "y": 40,
+    "r": 3,
+    "label": {
+     "fr": "Hémichamp gauche absent",
+     "en": "Left hemifield missing"
     }
    }
   ],
   "credit": {
-   "fr": "EyeRounds.org, University of Iowa. © University of Iowa, tous droits réservés; usage éducatif selon les conditions EyeRounds (permission écrite demandée).",
-   "en": "EyeRounds.org, University of Iowa. © University of Iowa, all rights reserved; educational use under EyeRounds terms (written permission requested)."
+   "fr": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image non modifiée.",
+   "en": "EyeRounds.org, University of Iowa (CC BY-NC-ND 3.0). Image unmodified."
   },
-  "license": "EyeRounds TOS (no CC licence)",
-  "source": "https://webeye.ophth.uiowa.edu/eyeforum/tutorials/VF-testing/index.htm",
-  "restricted": true
+  "license": "CC BY-NC-ND 3.0",
+  "source": "https://webeye.ophth.uiowa.edu/eyeforum/atlas/pages/left-homonymous-hemianopsia-occipital-stroke.html"
  },
- "m-cv-7": {
+ "m-cv-6": {
   "kind": "svg",
-  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Lire un rapport Humphrey · Reading a Humphrey printout</text><rect x=\"20\" y=\"32\" width=\"360\" height=\"232\" rx=\"6\" fill=\"#ffffff\" stroke=\"#c9c4b8\"/><g font-size=\"9\" fill=\"#2b2a26\"><rect x=\"30\" y=\"40\" width=\"110\" height=\"46\" fill=\"#eaf4fb\"/><text x=\"36\" y=\"54\" font-weight=\"700\">1 Fiabilité · Reliability</text><text x=\"36\" y=\"67\">Pertes fixation · FL &lt; 20 %</text><text x=\"36\" y=\"79\">Faux + · FP &lt; 15 %</text><rect x=\"160\" y=\"40\" width=\"80\" height=\"80\" fill=\"#f1efe9\"/><text x=\"166\" y=\"54\" font-weight=\"700\">2 Seuils (dB)</text><rect x=\"260\" y=\"40\" width=\"110\" height=\"80\" fill=\"#f1efe9\"/><text x=\"266\" y=\"54\" font-weight=\"700\">Échelle de gris</text><text x=\"266\" y=\"66\" fill=\"#5c5850\">vue d’ensemble seulement</text><circle cx=\"315\" cy=\"94\" r=\"20\" fill=\"#d9d6cf\"/><circle cx=\"300\" cy=\"96\" r=\"3\" fill=\"#2b2a26\"/><rect x=\"30\" y=\"130\" width=\"110\" height=\"110\" fill=\"#f1efe9\"/><text x=\"36\" y=\"144\" font-weight=\"700\">3 Déviation totale</text><text x=\"36\" y=\"156\" fill=\"#5c5850\">vs âge · vs age-matched</text><rect x=\"160\" y=\"130\" width=\"110\" height=\"110\" fill=\"#fff3d6\"/><text x=\"166\" y=\"144\" font-weight=\"700\">4 Déviation individuelle</text><text x=\"166\" y=\"156\" fill=\"#5c5850\">pattern : défaut localisé</text><rect x=\"285\" y=\"130\" width=\"85\" height=\"110\" fill=\"#eaf4fb\"/><text x=\"291\" y=\"144\" font-weight=\"700\">5 Indices</text><text x=\"291\" y=\"162\">GHT</text><text x=\"291\" y=\"178\">VFI</text><text x=\"291\" y=\"194\">MD (global)</text><text x=\"291\" y=\"210\">PSD (localisé)</text></g><text x=\"200\" y=\"280\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">ordre de lecture 1 → 5 · seuils de fiabilité indicatifs (SITA) · indicative reliability cut-offs</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
+  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Hémianopsie bitemporale · Bitemporal hemianopia</text><circle cx=\"85\" cy=\"125\" r=\"55\" fill=\"#ffffff\" stroke=\"#2b2a26\"/><path d=\"M85 70 A55 55 0 0 0 85 180 Z\" fill=\"#1d1d1f\"/><circle cx=\"205\" cy=\"125\" r=\"55\" fill=\"#ffffff\" stroke=\"#2b2a26\"/><path d=\"M205 70 A55 55 0 0 1 205 180 Z\" fill=\"#1d1d1f\"/><path d=\"M85 62 L85 188 M205 62 L205 188\" stroke=\"#c0392b\" stroke-dasharray=\"3 3\"/><text x=\"85\" y=\"200\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2a26\">OG · OS</text><text x=\"205\" y=\"200\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#2b2a26\">OD</text><text x=\"145\" y=\"218\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">vu par le patient · patient’s view</text><g stroke=\"#1f6f8b\" stroke-width=\"3\" fill=\"none\"><path d=\"M305 70 L335 125 L305 200\"/><path d=\"M365 70 L335 125 L365 200\"/></g><circle cx=\"305\" cy=\"62\" r=\"10\" fill=\"#dfe9ee\" stroke=\"#2b2a26\"/><circle cx=\"365\" cy=\"62\" r=\"10\" fill=\"#dfe9ee\" stroke=\"#2b2a26\"/><circle cx=\"335\" cy=\"125\" r=\"11\" fill=\"none\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"352\" y=\"129\" font-size=\"9\" fill=\"#c0392b\">chiasma</text><text x=\"335\" y=\"220\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">voies optiques · visual pathway</text><text x=\"200\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">fibres nasales croisées au chiasma → perte des champs temporaux</text><text x=\"200\" y=\"276\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">crossing nasal fibres at the chiasm → loss of temporal fields</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
   "alt": {
-   "fr": "Schéma de la disposition d’un rapport de champ visuel Humphrey et de l’ordre de lecture recommandé.",
-   "en": "Schematic of the layout of a Humphrey visual field printout and the recommended reading order."
+   "fr": "Schéma : champs visuels des deux yeux avec perte des deux hémichamps temporaux limitée au méridien vertical, et voies optiques avec le chiasma marqué.",
+   "en": "Schematic: visual fields of both eyes with loss of both temporal hemifields respecting the vertical meridian, and the visual pathway with the chiasm marked."
   },
   "hotspots": [
    {
-    "x": 21,
-    "y": 21,
-    "r": 8,
+    "x": 84,
+    "y": 42,
+    "r": 4,
     "label": {
-     "fr": "Commencer par la fiabilité : si non fiable, ne pas surinterpréter",
-     "en": "Start with reliability: if unreliable, do not over-interpret"
+     "fr": "Chiasma optique : lésion (ex. adénome hypophysaire) qui touche les fibres nasales croisées",
+     "en": "Optic chiasm: lesion (e.g. pituitary adenoma) affecting crossing nasal fibres"
     },
     "decisive": true
    },
    {
-    "x": 50,
-    "y": 27,
-    "r": 7,
+    "x": 13,
+    "y": 42,
+    "r": 4,
     "label": {
-     "fr": "Seuils numériques en dB",
-     "en": "Numerical thresholds in dB"
+     "fr": "OG : hémichamp temporal perdu",
+     "en": "OS: temporal hemifield lost"
     }
    },
    {
-    "x": 79,
-    "y": 27,
-    "r": 8,
+    "x": 58,
+    "y": 42,
+    "r": 5,
     "label": {
-     "fr": "Échelle de gris : jolie mais non quantitative",
-     "en": "Grey scale: eye-catching but not quantitative"
+     "fr": "OD : hémichamp temporal perdu",
+     "en": "OD: temporal hemifield lost"
     }
    },
    {
     "x": 21,
-    "y": 61,
-    "r": 8,
+    "y": 42,
+    "r": 3,
     "label": {
-     "fr": "Déviation totale : perte diffuse + localisée (ex. cataracte = diffuse)",
-     "en": "Total deviation: diffuse + localised loss (e.g. cataract = diffuse)"
+     "fr": "Limite sur le méridien vertical",
+     "en": "Border on the vertical meridian"
+    }
+   }
+  ],
+  "credit": {
+   "fr": "Schéma original (ophtalmo app), non tiré d’un patient réel.",
+   "en": "Original schematic (ophtalmo app), not from a real patient."
+  },
+  "license": "original",
+  "schematic": true
+ },
+ "m-cv-7": {
+  "kind": "svg",
+  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Cartes de probabilité · Probability plots</text><line x1=\"100\" y1=\"48\" x2=\"100\" y2=\"150\" stroke=\"#8a8578\"/><line x1=\"40\" y1=\"96\" x2=\"160\" y2=\"96\" stroke=\"#8a8578\"/><line x1=\"300\" y1=\"48\" x2=\"300\" y2=\"150\" stroke=\"#8a8578\"/><line x1=\"240\" y1=\"96\" x2=\"360\" y2=\"96\" stroke=\"#8a8578\"/><rect x=\"76.5\" y=\"48\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"89.5\" y=\"48\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"102.5\" y=\"48\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"115.5\" y=\"48\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"63.5\" y=\"61\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"76.5\" y=\"61\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"89.5\" y=\"61\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"102.5\" y=\"61\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"115.5\" y=\"61\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"128.5\" y=\"61\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"50.5\" y=\"74\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"63.5\" y=\"74\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"76.5\" y=\"74\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"89.5\" y=\"74\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"102.5\" y=\"74\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"115.5\" y=\"74\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"128.5\" y=\"74\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"141.5\" y=\"74\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"44.0\" y=\"87\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"57.0\" y=\"87\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"70.0\" y=\"87\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"83.0\" y=\"87\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"96.0\" y=\"87\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"109.0\" y=\"87\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"122.0\" y=\"87\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"135.0\" y=\"87\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"148.0\" y=\"87\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"44.0\" y=\"100\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"57.0\" y=\"100\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"70.0\" y=\"100\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"83.0\" y=\"100\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"96.0\" y=\"100\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"109.0\" y=\"100\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"122.0\" y=\"100\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"135.0\" y=\"100\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"148.0\" y=\"100\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"50.5\" y=\"113\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"63.5\" y=\"113\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"76.5\" y=\"113\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"89.5\" y=\"113\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"102.5\" y=\"113\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"115.5\" y=\"113\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"128.5\" y=\"113\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"141.5\" y=\"113\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"63.5\" y=\"126\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"76.5\" y=\"126\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"89.5\" y=\"126\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"102.5\" y=\"126\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"115.5\" y=\"126\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"128.5\" y=\"126\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"76.5\" y=\"139\" width=\"8\" height=\"8\" fill=\"#555\"/><rect x=\"89.5\" y=\"139\" width=\"8\" height=\"8\" fill=\"#888\"/><rect x=\"102.5\" y=\"139\" width=\"8\" height=\"8\" fill=\"#1d1d1f\"/><rect x=\"115.5\" y=\"139\" width=\"8\" height=\"8\" fill=\"#555\"/><circle cx=\"280.5\" cy=\"52\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"293.5\" cy=\"52\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"306.5\" cy=\"52\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"319.5\" cy=\"52\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"267.5\" cy=\"65\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"280.5\" cy=\"65\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"293.5\" cy=\"65\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"306.5\" cy=\"65\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"319.5\" cy=\"65\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"332.5\" cy=\"65\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"254.5\" cy=\"78\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"267.5\" cy=\"78\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"280.5\" cy=\"78\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"293.5\" cy=\"78\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"306.5\" cy=\"78\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"319.5\" cy=\"78\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"332.5\" cy=\"78\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"345.5\" cy=\"78\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"248.0\" cy=\"91\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"261.0\" cy=\"91\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"274.0\" cy=\"91\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"287.0\" cy=\"91\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"300.0\" cy=\"91\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"313.0\" cy=\"91\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"326.0\" cy=\"91\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"339.0\" cy=\"91\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"352.0\" cy=\"91\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"248.0\" cy=\"104\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"261.0\" cy=\"104\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"274.0\" cy=\"104\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"287.0\" cy=\"104\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"300.0\" cy=\"104\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"313.0\" cy=\"104\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"326.0\" cy=\"104\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"339.0\" cy=\"104\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"352.0\" cy=\"104\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"254.5\" cy=\"117\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"267.5\" cy=\"117\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"280.5\" cy=\"117\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"293.5\" cy=\"117\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"306.5\" cy=\"117\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"319.5\" cy=\"117\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"332.5\" cy=\"117\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"345.5\" cy=\"117\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"267.5\" cy=\"130\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"280.5\" cy=\"130\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"293.5\" cy=\"130\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"306.5\" cy=\"130\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"319.5\" cy=\"130\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"332.5\" cy=\"130\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"280.5\" cy=\"143\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"293.5\" cy=\"143\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"306.5\" cy=\"143\" r=\"1.2\" fill=\"#2b2a26\"/><circle cx=\"319.5\" cy=\"143\" r=\"1.2\" fill=\"#2b2a26\"/><text x=\"100\" y=\"170\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"700\" fill=\"#2b2a26\">Déviation totale</text><text x=\"100\" y=\"182\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">total deviation</text><text x=\"300\" y=\"170\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"700\" fill=\"#2b2a26\">Déviation corrigée</text><text x=\"300\" y=\"182\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">pattern deviation</text><rect x=\"110\" y=\"200\" width=\"180\" height=\"44\" rx=\"6\" fill=\"#ffffff\" stroke=\"#c9c4b8\"/><text x=\"200\" y=\"217\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">MD −5,0 dB (p &lt; 1 %)</text><text x=\"200\" y=\"233\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">PSD 1,6 dB (non significatif · NS)</text><text x=\"200\" y=\"270\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">baisse diffuse (ex. cataracte) · diffuse depression (e.g. cataract)</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
+  "alt": {
+   "fr": "Schéma (valeurs fictives) : déviation totale avec des points abaissés partout, déviation corrigée presque vide; MD −5 dB, PSD non significatif.",
+   "en": "Schematic (fictitious values): total deviation depressed everywhere, pattern deviation almost empty; MD −5 dB, PSD not significant."
+  },
+  "hotspots": [
+   {
+    "x": 75,
+    "y": 33,
+    "r": 9,
+    "label": {
+     "fr": "Déviation corrigée « propre » : pas de défaut localisé une fois la baisse générale retirée",
+     "en": "Clean pattern deviation: no localised defect once the general depression is removed"
+    },
+    "decisive": true
+   },
+   {
+    "x": 25,
+    "y": 33,
+    "r": 9,
+    "label": {
+     "fr": "Déviation totale : points abaissés partout",
+     "en": "Total deviation: points depressed everywhere"
     }
    },
    {
-    "x": 54,
-    "y": 61,
-    "r": 8,
+    "x": 50,
+    "y": 74,
+    "r": 6,
     "label": {
-     "fr": "Déviation individuelle : défaut localisé (glaucome, neuro)",
-     "en": "Pattern deviation: localised defect (glaucoma, neuro)"
-    }
-   },
-   {
-    "x": 82,
-    "y": 61,
-    "r": 7,
-    "label": {
-     "fr": "GHT/MD/PSD/VFI : résumé chiffré",
-     "en": "GHT/MD/PSD/VFI: numeric summary"
+     "fr": "MD abaissée mais PSD normal → atteinte diffuse",
+     "en": "Low MD but normal PSD → diffuse loss"
     }
    }
   ],

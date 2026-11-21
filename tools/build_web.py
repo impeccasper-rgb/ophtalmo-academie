@@ -13,6 +13,30 @@ OUT = os.path.join(ROOT, 'site')
 SITE_URL = os.environ.get('SITE_URL', '').rstrip('/') + ('/' if os.environ.get('SITE_URL') else '')
 SITE_BASE = os.environ.get('SITE_BASE', '')
 
+RESTRICTED_IDS = ['OPH-%03d' % i for i in list(range(12, 16)) + list(range(114, 131)) + list(range(187, 192)) + list(range(200, 210)) + [211, 212, 213, 215, 216, 227, 292, 293]]
+RIGHTS_FILTER_JS = r"""(function () {
+  var G = window, O = G.OPH || {}, R = {}; __IDS__.forEach(function (id) { R[id] = 1; });
+  var KEYS = /^(id|photo|img|image|normal|patho|figure|src|pic)$/;
+  function bad(o) {
+    if (typeof o === 'string') return !!R[o];
+    if (!o || typeof o !== 'object' || Array.isArray(o)) return false;
+    for (var k in o) { var v = o[k];
+      if (typeof v === 'string' && R[v] && KEYS.test(k)) return true;
+      if (v && typeof v === 'object' && !Array.isArray(v) && /^(img|image|figure|photo|media)$/.test(k) && bad(v)) return true; }
+    return false;
+  }
+  function walk(x, d) {
+    if (d > 9 || !x || typeof x !== 'object') return;
+    if (Array.isArray(x)) { for (var i = x.length - 1; i >= 0; i--) { if (bad(x[i])) x.splice(i, 1); else walk(x[i], d + 1); } return; }
+    for (var k in x) if (k !== 'catalog') walk(x[k], d + 1);
+  }
+  [O, G.OPH_EN].forEach(function (root) { if (root) walk(root, 0); });
+  if (O.invMedia) { Object.keys(O.invMedia).forEach(function (k) { var m = O.invMedia[k]; if (m && (R[m.photo] || m.restricted)) delete O.invMedia[k]; }); }
+  if (O.invPractice && O.invMedia) { O.invPractice = O.invPractice.filter(function (p) { return !p.media || O.invMedia[p.media]; });
+    var ok = {}; O.invPractice.forEach(function (p) { ok[p.id] = 1; });
+    (O.inv || []).forEach(function (e) { if (e.practice) e.practice = e.practice.filter(function (id) { return ok[id]; }); }); }
+})();
+"""
 SRC_ORDER = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'views', 'web']
 CSS_ORDER = ['styles', 'investigations', 'web']
 THEME_LIGHT, THEME_DARK, COBALT, BRAND_BG = '#ffffff', '#0f1a2c', '#2340d0', '#0A2547'
@@ -122,6 +146,9 @@ def main():
             if n != 'img': shutil.rmtree(p) if os.path.isdir(p) else os.remove(p)
     os.makedirs(OUT, exist_ok=True)
     slim = catalog()
+    # Rights (docs/RIGHTS.md): images without a CC licence stay out of the public site/app until EyeRounds grants written permission
+    restricted = {e['id'] for e in slim if e.get('cc') is False} | set(RESTRICTED_IDS)
+    slim = [e for e in slim if e['id'] not in restricted]
 
     # ---- JS: data FR → data-en overlays → src (PLATFORM.md order); one file each (keeps 'use strict' per file and isolates load errors) ----
     jsdir = os.path.join(OUT, 'js'); os.makedirs(jsdir, exist_ok=True)
@@ -139,6 +166,7 @@ def main():
         else: missing.append('data/' + name)
     en_files = sorted(glob.glob(os.path.join(DATA_EN, '*.js')))
     for p in en_files: emit('en-' + os.path.basename(p), read(p))
+    emit('rights-filter.js', RIGHTS_FILTER_JS.replace('__IDS__', json.dumps(sorted(restricted))))
     for name in SRC_ORDER:
         p = os.path.join(SRC, name + '.js')
         if os.path.exists(p): emit(name + '.js', read(p))
@@ -221,7 +249,7 @@ def main():
         nimg += 1
     for extra in glob.glob(os.path.join(ROOT, 'dist', 'img', '*')):  # any other supporting image the artifact build ships (e.g. inv media)
         b = os.path.basename(extra)
-        if b not in want and os.path.isfile(extra): shutil.copy2(extra, os.path.join(img, b)); want.add(b)
+        if b not in want and os.path.splitext(b)[0] not in restricted and os.path.isfile(extra): shutil.copy2(extra, os.path.join(img, b)); want.add(b)
     for n in os.listdir(img):
         if n not in want: os.remove(os.path.join(img, n))
 
