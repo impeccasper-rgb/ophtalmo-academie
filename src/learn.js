@@ -382,7 +382,7 @@ Photo.carousel = function (list, opts) {
   opts = opts || {};
   if (!list || !list.length) return '';
   var id = 'car' + Math.floor(Math.random() * 1e7);
-  return '<div class="carousel" data-car="' + id + '" data-i="0">' + list.map(function (p, i) { return '<div class="car-slide"' + (i ? ' hidden' : '') + ' data-slide="' + i + '">' + Photo.card(p) + '</div>'; }).join('') +
+  return '<div class="carousel" data-car="' + id + '" data-i="0">' + list.map(function (p, i) { return '<div class="car-slide"' + (i ? ' hidden' : '') + ' data-slide="' + i + '">' + Photo.card(p, opts) + '</div>'; }).join('') +
     (list.length > 1 ? '<div class="car-nav"><button type="button" class="btn sm" data-car-step="-1" aria-label="' + t('car.prev') + '">‹</button><span class="mono small" data-car-count>1 / ' + list.length + '</span><button type="button" class="btn sm" data-car-step="1" aria-label="' + t('car.next') + '">›</button></div><div class="car-thumbs">' +
       list.map(function (p, i) { return '<button type="button" class="car-th' + (i ? '' : ' on') + '" data-car-go="' + i + '" aria-label="' + t('car.n', { n: i + 1 }) + '"><img loading="lazy" src="' + Photo.src(p.id) + '" alt=""></button>'; }).join('') + '</div>' : '') + '</div>';
 };

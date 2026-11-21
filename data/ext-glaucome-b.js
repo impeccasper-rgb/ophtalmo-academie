@@ -14,7 +14,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   definition: "Ces glaucomes viennent d’un angle iridocornéen (iridocorneal angle, filtre par où sort l’humeur aqueuse) mal formé dès la naissance, recouvert plus tard par une membrane anormale (syndrome ICE) ou freiné en aval par une pression veineuse trop haute (Sturge-Weber). Avant 3 ans environ, la PIO élevée étire tout l’œil ; chez l’adulte, elle abîme le nerf sans agrandir le globe.",
   anatomy: {
     text: "L’angle se forme pendant la vie fœtale à partir de la crête neurale, qui donne le trabéculum (filtre spongieux), la ligne de Schwalbe (bord de la Descemet) et le stroma irien. Un arrêt de ce développement laisse un trabéculum immature ou des brides d’iris tendues jusqu’à Schwalbe.",
-    figure: { type: "eye", highlight: ["angle", "trabeculum", "schlemm", "iris", "cornee"] }
+    figure: {
+      type: "eye",
+      highlight: ["angle", "trabeculum", "schlemm", "iris", "cornee"]
+    }
   },
   causal: {
     title: "De l’angle anormal aux dommages chez l’enfant",
@@ -84,9 +87,23 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       { q: "Adulte : œdème, corectopie, synéchies d’un seul côté ?", yes: "Syndrome ICE : spéculaire, gouttes, tube si échec ; DSAEK ou DMEK pour l’œdème.", no: "Penser Axenfeld-Rieger ou dystrophie polymorphe postérieure." }
     ],
     phases: [
-      { phase: "medical", items: ["En pont : timolol 0,25 %, dorzolamide, analogue des prostaglandines", "**Brimonidine contre-indiquée avant 2 ans** (somnolence, hypotonie, apnée)"] },
-      { phase: "chirurgie", items: ["Congénital primaire : goniotomie ou trabéculotomie en première intention", "Échecs, Axenfeld-Rieger, aniridie : tube ou trabéculectomie avec MMC ; cyclophotocoagulation si réfractaire", "Sturge-Weber : échographie B avant, baisse progressive de la PIO en salle", "ICE : laser trabéculaire inefficace, tube souvent nécessaire ; greffe endothéliale pour l’œdème"] },
-      { phase: "suivi", items: ["Lunettes et occlusion pour l’amblyopie", "Suivi **à vie** ; chez le nourrisson, l’excavation peut régresser si la PIO est contrôlée"] }
+      {
+        phase: "medical",
+        items: ["En pont : timolol 0,25 %, dorzolamide, analogue des prostaglandines", "**Brimonidine contre-indiquée avant 2 ans** (somnolence, hypotonie, apnée)"]
+      },
+      {
+        phase: "chirurgie",
+        items: [
+          "Congénital primaire : goniotomie ou trabéculotomie en première intention",
+          "Échecs, Axenfeld-Rieger, aniridie : tube ou trabéculectomie avec MMC ; cyclophotocoagulation si réfractaire",
+          "Sturge-Weber : échographie B avant, baisse progressive de la PIO en salle",
+          "ICE : laser trabéculaire inefficace, tube souvent nécessaire ; greffe endothéliale pour l’œdème"
+        ]
+      },
+      {
+        phase: "suivi",
+        items: ["Lunettes et occlusion pour l’amblyopie", "Suivi **à vie** ; chez le nourrisson, l’excavation peut régresser si la PIO est contrôlée"]
+      }
     ],
     local: "Au Québec : centres pédiatriques tertiaires (ex. CHU Sainte-Justine, Hôpital de Montréal pour enfants, CHU de Québec) ; si tu le soupçonnes, appelle le patron de garde."
   },
@@ -104,8 +121,20 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "ICE = ses 3 variantes", text: "**I**ris nevus (Cogan-Reese : nodules pigmentés sur l’iris) ; **C**handler (œdème cornéen au premier plan, iris peu touché) ; **E**ssential iris atrophy (atrophie essentielle : trous et corectopie). Nourrisson : **larmes, lumière, paupières serrées**." },
   compare: {
     title: "Angle normal vs synéchies antérieures périphériques",
-    normal: { figure: { type: "gonio", grade: 4, pigment: "light" }, caption: "Angle ouvert : bande ciliaire, éperon, trabéculum et Schwalbe visibles." },
-    patho: { figure: { type: "gonio", grade: 4, pigment: "light", pas: true }, caption: "Synéchies antérieures périphériques : l’iris adhère et masque le trabéculum.", reveal: ["Adhérences larges, en tente, qui cachent le trabéculum", "Dans l’ICE, elles montent souvent au-delà de la ligne de Schwalbe", "Elles ne s’ouvrent pas à l’indentation", "Les procès iriens, eux, sont fins et laissent voir l’angle"] }
+    normal: {
+      figure: { type: "gonio", grade: 4, pigment: "light" },
+      caption: "Angle ouvert : bande ciliaire, éperon, trabéculum et Schwalbe visibles."
+    },
+    patho: {
+      figure: { type: "gonio", grade: 4, pigment: "light", pas: true },
+      caption: "Synéchies antérieures périphériques : l’iris adhère et masque le trabéculum.",
+      reveal: [
+        "Adhérences larges, en tente, qui cachent le trabéculum",
+        "Dans l’ICE, elles montent souvent au-delà de la ligne de Schwalbe",
+        "Elles ne s’ouvrent pas à l’indentation",
+        "Les procès iriens, eux, sont fins et laissent voir l’angle"
+      ]
+    }
   },
   sources: [
     "World Glaucoma Association. Childhood Glaucoma, Consensus Series 9 (Weinreb RN, Grajewski A, Papadopoulos M, Grigg J, Freedman S, éd. Kugler 2013)",

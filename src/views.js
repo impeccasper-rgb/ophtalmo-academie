@@ -365,7 +365,7 @@ function txBlock(f, scope) {
   }).join('') + '</div>';
 }
 function algoHtml(f, scope) {
-  if (window.Tree && typeof Tree.render === 'function') { try { return '<div class="stack"><h2 class="h3">' + t('f.algo') + '</h2><div data-tree>' + Tree.render(f.cat.algo, { fiche: f.id, scope: scope }) + '</div></div>'; } catch (e) { console.error('Tree.render', e); } }
+  if (window.Tree && typeof Tree.render === 'function') { try { return '<div class="stack"><h2 class="h3">' + t('f.algo') + '</h2><div class="tree-wrap">' + Tree.render(f.cat.algo, { fmt: function (x) { return T(x, scope); }, title: t('f.algo'), mode: 'overview' }) + '</div></div>'; } catch (e) { console.error('Tree.render', e); } }
   return '<div class="stack"><div class="row"><h2 class="h3" style="margin:0">' + t('f.algo') + '</h2><button class="btn sm" data-walk>' + t('f.walk') + '</button></div><div class="algo" data-algo>' +
     f.cat.algo.map(function (a, i) { return '<div class="anode" data-node="' + i + '"><div class="q">' + T(a.q, scope) + '</div><div class="yn"><div class="yes" data-yn="yes"><span class="lab">' + t('f.yes') + '</span><span>' + T(a.yes, scope) + '</span></div><div class="no" data-yn="no"><span class="lab">' + t('f.no') + '</span><span>' + T(a.no, scope) + '</span></div></div></div>'; }).join('') + '</div></div>';
 }
@@ -391,7 +391,7 @@ function ficheView(f, step) {
         var cmp = f.compare ? '<div class="stack"><h2 class="h3">' + U.esc(f.compare.title) + '</h2><div class="pair"><div><div class="lab n">' + t('f.normal') + '</div>' + Figures.render(f.compare.normal.figure, { caption: f.compare.normal.caption }) + '</div><div><div class="lab p">' + t('f.patho') + '</div><div data-cmp>' + Figures.render(f.compare.patho.figure, { caption: f.compare.patho.caption }) + '</div></div></div>' +
           '<div><button class="btn sm" data-cmpreveal aria-expanded="false">' + t('f.revealanom') + '</button><ul class="reveal-list" data-cmplist hidden>' + f.compare.patho.reveal.map(function (r) { return '<li>' + T(r, scope) + '</li>'; }).join('') + '</ul></div></div>' : '';
         var two = '<div class="callout"><span class="eyebrow">' + t('f.twosent') + '</span><span>' + T(f.definition, scope) + '</span></div>';
-        body = (ph.length ? '<div class="voir-grid"><div class="stack">' + Photo.carousel(ph) + '</div><div class="stack voir-side">' + two + '</div></div>' : (cmp || (f.anatomy.figure ? '<div style="max-width:680px">' + Figures.render(f.anatomy.figure) + '</div>' : '')) + two) +
+        body = (ph.length ? '<div class="voir-grid"><div class="stack">' + Photo.carousel(ph, { brief: true }) + '</div><div class="stack voir-side">' + two + '</div></div>' : (cmp || (f.anatomy.figure ? '<div style="max-width:680px">' + Figures.render(f.anatomy.figure) + '</div>' : '')) + two) +
           moreBlock((f.oneLiner ? '<p class="oneliner">' + T(f.oneLiner, scope) + '</p>' : '') + (ph.length ? '<p class="small muted">' + t('f.observe') + '</p>' + cmp : '') +
             (pairs.length ? '<div class="stack"><h3 class="h4">' + t('f.pairs') + '</h3>' + pairs.map(pairHtml).join('') + '</div>' : '') +
             '<div class="stack"><h3 class="h4">' + t('f.anat') + '</h3><p class="read">' + T(f.anatomy.text, scope) + '</p>' + (f.anatomy.figure && (ph.length || cmp) ? '<div style="max-width:680px">' + Figures.render(f.anatomy.figure) + '</div>' : '') + '</div>' +
@@ -441,7 +441,7 @@ function ficheView(f, step) {
     after: function (host) {
       var fs = Store.p.fstep = Store.p.fstep || {}; fs[f.id] = { s: step, t: Date.now() }; Store.saveLocal();
       mountMinis(host); mountTrainers(host);
-      var tr = U.$('[data-tree]', host); if (tr && window.Tree && typeof Tree.mount === 'function') { try { Tree.mount(tr); } catch (e) { console.error('Tree.mount', e); } }
+      var treeClean = null; if (U.$('[data-tree]', host) && window.Tree && typeof Tree.mount === 'function') { try { treeClean = Tree.mount(host); } catch (e) { console.error('Tree.mount', e); } }
       var onClick = function (ev) {
         var tg = ev.target;
         var cz = tg.closest('[data-causal]');
@@ -499,7 +499,7 @@ function ficheView(f, step) {
       host.addEventListener('click', onClick); host.addEventListener('keydown', kd); document.addEventListener('keydown', arrows);
       host.addEventListener('touchstart', ts, { passive: true }); host.addEventListener('touchend', te, { passive: true });
       if (U.wordsDev()) console.info('[words] ' + f.id + '/' + step + ': ' + U.wordsVisible(U.$('[data-step-body]', host)) + ' visible words');
-      return function () { host.removeEventListener('click', onClick); host.removeEventListener('keydown', kd); document.removeEventListener('keydown', arrows); host.removeEventListener('touchstart', ts); host.removeEventListener('touchend', te); };
+      return function () { if (typeof treeClean === 'function') { try { treeClean(); } catch (e) { } } host.removeEventListener('click', onClick); host.removeEventListener('keydown', kd); document.removeEventListener('keydown', arrows); host.removeEventListener('touchstart', ts); host.removeEventListener('touchend', te); };
     }
   };
 }

@@ -13,7 +13,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   definition: "Le glaucome primaire à angle ouvert est une maladie chronique où les fibres du nerf optique meurent lentement, surtout parce que la pression intraoculaire (PIO) est trop haute pour ce nerf, alors que l’angle de drainage paraît normal. La vision périphérique part en premier, sans douleur, d’où l’importance du dépistage.",
   anatomy: {
     text: "L’humeur aqueuse (aqueous humor), fabriquée par les procès ciliaires, sort surtout par le trabéculum (trabecular meshwork : filtre de l’angle) et le canal de Schlemm, et en partie entre les fibres du muscle ciliaire (voie uvéosclérale, uveoscleral outflow) ; la PIO reflète cet équilibre. Les axones des cellules ganglionnaires (retinal ganglion cells) quittent l’œil par la lame criblée (lamina cribrosa), tamis de collagène vulnérable.",
-    figure: { type: "eye", highlight: ["proces-ciliaires", "trabeculum", "schlemm", "lame-criblee", "papille"] }
+    figure: {
+      type: "eye",
+      highlight: ["proces-ciliaires", "trabeculum", "schlemm", "lame-criblee", "papille"]
+    }
   },
   causal: {
     title: "Du filtre encrassé à la perte de champ",
@@ -62,11 +65,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     { dx: "Neuropathie compressive", clue: "Pâleur > excavation, AV et couleurs ↓." },
     { dx: "Grande papille à excavation physiologique", clue: "Bord neurorétinien régulier, symétrique et stable ; OCT et champ normaux." }
   ],
-  redFlags: [
-    "Pâleur > excavation ou AV ↓ précoce : IRM",
-    "Défaut respectant le méridien vertical (chiasma)",
-    "Perte ≥ 2 dB/an malgré une PIO à la cible"
-  ],
+  redFlags: ["Pâleur > excavation ou AV ↓ précoce : IRM", "Défaut respectant le méridien vertical (chiasma)", "Perte ≥ 2 dB/an malgré une PIO à la cible"],
   cat: {
     algo: [
       { q: "Angle ouvert, sans cause secondaire ?", yes: "Bilan de base.", no: "Traiter la fermeture ou la cause." },
@@ -75,12 +74,33 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       { q: "Progression malgré la cible atteinte ou un traitement maximal toléré ?", yes: "Abaisser la cible ; MIGS si léger–modéré, chirurgie filtrante si avancé ou cible basse.", no: "Poursuivre ; réévaluer la cible à chaque visite." }
     ],
     phases: [
-      { phase: "observation", items: ["Bilan de départ (voir mnémo) avant tout traitement"] },
-      { phase: "medical", items: ["PGA le soir ; s’il baisse peu la PIO, le remplacer plutôt qu’ajouter ; sinon ajouter une classe", "1 goutte, 5 min entre produits, presser le coin interne (occlusion ponctuelle), surtout si grossesse ou allaitement"] },
-      { phase: "laser", items: ["SLT d’emblée ou en appoint"] },
-      { phase: "chirurgie", items: ["MIGS (souvent avec la cataracte) ; trabéculectomie avec mitomycine C (anticicatrisant) ou tube si avancé"] },
-      { phase: "suivi", items: ["Champs groupés si nouveau ou instable ; sinon OCT et champ 1–2 fois par an"] },
-      { phase: "escalade", items: ["Cyclophotocoagulation (laser détruisant une partie du corps ciliaire) si échecs"] }
+      {
+        phase: "observation",
+        items: ["Bilan de départ (voir mnémo) avant tout traitement"]
+      },
+      {
+        phase: "medical",
+        items: [
+          "PGA le soir ; s’il baisse peu la PIO, le remplacer plutôt qu’ajouter ; sinon ajouter une classe",
+          "1 goutte, 5 min entre produits, presser le coin interne (occlusion ponctuelle), surtout si grossesse ou allaitement"
+        ]
+      },
+      {
+        phase: "laser",
+        items: ["SLT d’emblée ou en appoint"]
+      },
+      {
+        phase: "chirurgie",
+        items: ["MIGS (souvent avec la cataracte) ; trabéculectomie avec mitomycine C (anticicatrisant) ou tube si avancé"]
+      },
+      {
+        phase: "suivi",
+        items: ["Champs groupés si nouveau ou instable ; sinon OCT et champ 1–2 fois par an"]
+      },
+      {
+        phase: "escalade",
+        items: ["Cyclophotocoagulation (laser détruisant une partie du corps ciliaire) si échecs"]
+      }
     ],
     local: "Québec : l’optométriste équipé peut traiter un glaucome suspect ou débutant puis doit diriger vers l’ophtalmologiste (O-7, r. 11.1). SAAQ classe 5 : AV binoculaire ≥ 6/15 (20/50) et champ binoculaire ≥ 100° à l’horizontale (≥ 30° de chaque côté), 10° au-dessus et 20° au-dessous de la fixation ; si défaut, champ binoculaire signé exigé (Esterman ou Goldmann III/4e)."
   },
@@ -98,8 +118,21 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "Bilan de base : 4 P + G", text: "**P**IO répétée, **P**achymétrie, **P**apille (photo + OCT), **P**érimétrie (24-2 ± 10-2), + **G**onioscopie." },
   compare: {
     title: "Papille normale vs GPAO",
-    normal: { figure: { type: "disc", cd: 0.3, notch: "none", heme: false, ppa: false, pallor: false }, caption: "C/D 0,3, bord neurorétinien régulier (règle ISNT : inférieur ≥ supérieur ≥ nasal ≥ temporal)." },
-    patho: { figure: { type: "disc", cd: 0.8, notch: "inf", heme: true, ppa: true, pallor: false }, caption: "C/D 0,8, encoche inférieure et hémorragie papillaire.", reveal: ["C/D vertical 0,8", "Encoche inférotemporale du bord neurorétinien", "Hémorragie en flammèche au bord (Drance)", "Atrophie péripapillaire zone bêta", "Défaut attendu : arciforme supérieur du champ"] }
+    normal: {
+      figure: { type: "disc", cd: 0.3, notch: "none", heme: false, ppa: false, pallor: false },
+      caption: "C/D 0,3, bord neurorétinien régulier (règle ISNT : inférieur ≥ supérieur ≥ nasal ≥ temporal)."
+    },
+    patho: {
+      figure: { type: "disc", cd: 0.8, notch: "inf", heme: true, ppa: true, pallor: false },
+      caption: "C/D 0,8, encoche inférieure et hémorragie papillaire.",
+      reveal: [
+        "C/D vertical 0,8",
+        "Encoche inférotemporale du bord neurorétinien",
+        "Hémorragie en flammèche au bord (Drance)",
+        "Atrophie péripapillaire zone bêta",
+        "Défaut attendu : arciforme supérieur du champ"
+      ]
+    }
   },
   sources: [
     "AAO PPP Primary Open-Angle Glaucoma (Gedde SJ et al., Ophthalmology, en ligne 9 févr. 2026)",

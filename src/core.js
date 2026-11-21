@@ -24,7 +24,8 @@ var U = {
     while ((node = w.nextNode())) {
       var el = node.parentElement, skip = false;
       for (var e = el; e && e !== root.parentElement; e = e.parentElement) {
-        if (e.hidden || e.getAttribute('aria-hidden') === 'true' || e.namespaceURI === 'http://www.w3.org/2000/svg' || e.hasAttribute('data-tree') || e.classList.contains('tree')) { skip = true; break; }
+        // prose only: controls, credits/licences, eyebrows and diagram labels are not counted
+        if (e.hidden || e.getAttribute('aria-hidden') === 'true' || e.namespaceURI === 'http://www.w3.org/2000/svg' || e.hasAttribute('data-tree') || /(^| )(tree|credit|eyebrow|lab|tag|car-nav|kbd)( |$)/.test(e.getAttribute('class') || '') || /^(BUTTON|SUMMARY|NAV|SELECT|LABEL)$/.test(e.tagName)) { skip = true; break; }
         if (e.tagName === 'DETAILS' && !e.open && !(el.closest('summary') && el.closest('summary').parentElement === e)) { skip = true; break; }
       }
       if (skip || !el || (el.offsetParent === null && getComputedStyle(el).position !== 'fixed')) continue;
@@ -271,6 +272,7 @@ var Photo = {
   },
   card: function (p, opts) {
     opts = opts || {}; var e = D.cat(p.id); if (!e) return '';
+    if (opts.brief && p.look) p = Object.assign({}, p, { look: '', reveal: [p.look].concat(p.reveal || []) }); // brief (fiche « Voir »): the observation prompt sits behind « Révéler »
     var rid = 'rv-' + p.id + '-' + Math.floor(Math.random() * 1e6);
     // in English, an untranslated photo caption falls back to the translated catalogue title
     var cap = (window.I18N && I18N.lang === 'en' && p.caption && !p._en && e._en) ? e.title : (p.caption || e.title);

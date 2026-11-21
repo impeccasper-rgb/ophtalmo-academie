@@ -109,22 +109,29 @@ try:
                 # fiche interactions
                 first = page.evaluate("() => (OPH.fiches[0]||{}).id")
                 if first:
-                    page.evaluate("h => { location.hash = h }", first); page.wait_for_timeout(300)
-                    step('causal play', lambda: page.click('[data-causal="play"]'))
+                    # a fiche is 4 screens (#<id>/voir, /comprendre, /decider, /entrainer)
+                    go_ = lambda st: (page.evaluate("h => { location.hash = h }", first + '/' + st), page.wait_for_timeout(300))
+                    go_('voir')
+                    if page.query_selector('[data-cmpreveal]') and page.is_visible('[data-cmpreveal]'): step('compare reveal', lambda: page.click('[data-cmpreveal]'))
+                    if page.query_selector('[data-act="lightbox"]'):
+                        step('lightbox', lambda: (page.click('[data-act="lightbox"] >> nth=0'), page.wait_for_selector('#lightbox:not([hidden])', timeout=1500), page.click('[data-act="lb-close"]')))
+                    go_('comprendre')
+                    step('causal step', lambda: (page.click('[data-causal="next"]'), page.click('[data-causal="all"]')))
                     step('lever', lambda: page.click('[data-lever="0"]'))
+                    if page.query_selector('.gt'):
+                        step('glossary', lambda: (page.click('.gt:visible >> nth=0'), page.wait_for_selector('#gt-pop', timeout=1000)))
+                    go_('decider')
+                    if page.query_selector('[data-walk]'): step('walk', lambda: (page.click('[data-walk]'), page.click('[data-node="0"] [data-yn="yes"]')))
+                    elif not page.query_selector('[data-tree]'): problems.append('[interact] decider: no decision tree')
+                    go_('entrainer')
                     step('pearl', lambda: page.click('[data-pearl="0"]'))
-                    step('walk', lambda: (page.click('[data-walk]'), page.click('[data-node="0"] [data-yn="yes"]')))
-                    if page.query_selector('[data-cmpreveal]'): step('compare reveal', lambda: page.click('[data-cmpreveal]'))
                     if page.query_selector('[data-startmini]'):
                         def mini():
                             page.click('[data-startmini]'); page.click('[data-miniquiz] .opt >> nth=0')
                             if not page.query_selector('[data-miniquiz] .feedback'): raise Exception('no feedback')
                         step('mini quiz', mini)
                     step('mark read', lambda: page.click('[data-act="mark-read"] >> nth=0'))
-                    if page.query_selector('.gt'):
-                        step('glossary', lambda: (page.click('.gt:visible >> nth=0'), page.wait_for_selector('#gt-pop', timeout=1000)))
-                    if page.query_selector('[data-act="lightbox"]'):
-                        step('lightbox', lambda: (page.click('[data-act="lightbox"] >> nth=0'), page.wait_for_selector('#lightbox:not([hidden])', timeout=1500), page.click('[data-act="lb-close"]')))
+                    step('next screen', lambda: (page.click('[data-fnext]'), page.wait_for_timeout(200)))
                 # quiz run
                 page.evaluate("h => { location.hash = h }", 'quiz'); page.wait_for_timeout(300)
                 def qrun():
@@ -200,16 +207,18 @@ try:
                 step('depth 3', lambda: page.click('.level-card[data-v="3"]'))
                 step('depth 1', lambda: page.click('.level-card[data-v="1"]'))
                 fid = page.evaluate("() => (OPH.fiches.find(f => (OPH.photos||{})[f.id]) || {}).id")
-                page.evaluate("h => { location.hash = h }", fid); page.wait_for_timeout(400)
+                page.evaluate("h => { location.hash = h }", fid + '/decider'); page.wait_for_timeout(400)
                 def gating():
-                    hid = page.evaluate("() => { const e = document.querySelector('#mv-dec [data-dz=\"2\"]'); return e ? getComputedStyle(e).display : 'none-found' }")
-                    if hid != 'none': raise Exception('depth 1 should hide level-2 blocks, got ' + hid)
-                    page.click('#mv-dec .mv-more')
-                    shown = page.evaluate("() => getComputedStyle(document.querySelector('#mv-dec [data-dz=\"2\"]')).display")
-                    if shown == 'none': raise Exception('mv-more did not reveal details')
+                    # level 1: overflow content (signs, ddx, tests…) sits in a collapsed « Pour aller plus loin »
+                    op = page.evaluate("() => { const d = document.querySelector('#mv-dec details.more'); return d ? d.open : 'none-found' }")
+                    if op is not False: raise Exception('depth 1 should collapse « plus loin », got ' + str(op))
+                    page.click('#mv-dec details.more > summary')
+                    if not page.evaluate("() => document.querySelector('#mv-dec details.more').open"): raise Exception('« plus loin » did not open')
                 step('depth gating', gating)
+                page.evaluate("h => { location.hash = h }", fid + '/voir'); page.wait_for_timeout(400)
                 if page.query_selector('[data-car-step]'):
                     step('carousel', lambda: page.click('[data-car-step="1"] >> nth=0'))
+                page.evaluate("h => { location.hash = h }", fid + '/entrainer'); page.wait_for_timeout(400)
                 step('report form', lambda: (page.click('.src-acc summary'), page.click('[data-act="report-open"] >> nth=0'), page.fill('.report textarea >> nth=0', 'test'), page.click('[data-act="report-send"] >> nth=0')))
                 page.evaluate("h => { location.hash = h }", 'cartes'); page.wait_for_timeout(400)
                 def cards():

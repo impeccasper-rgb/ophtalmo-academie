@@ -4,7 +4,8 @@
      cont missing      → both leaves are shown and a neutral « puis » connector links the step to the next one.
      yes / no may also be objects { t: '…', urgent: true } (urgent is otherwise detected from keywords).
    API:
-     Tree.render(algo, opts) → HTML string (static, works without JS: top-down flowchart + hidden ordered list)
+     Tree.render(algo, opts) → HTML string (static, works without JS). The flowchart is itself an ordered list
+     (steps = <li>, Oui/Non leaves = nested <ul> with text labels), so screen readers get the same logic once.
        opts.fmt(text)  formats a content string (default U.md; views can pass T for glossary links)
        opts.title      accessible name of the tree (default « Algorithme »)
        opts.mode       'overview' (default) | 'walk'
@@ -39,32 +40,26 @@ var Tree = (function () {
       '<button type="button" data-tmode="walk" aria-pressed="' + (mode === 'walk') + '">' + esc(TT('walk', 'Pas à pas', 'Step by step')) + '</button></div>' +
       '<button type="button" class="btn sm tree-restart" data-trestart>' + esc(TT('restart', 'Recommencer', 'Start again')) + '</button></div>';
     h += '<p class="tree-hint small muted">' + esc(TT('hint', 'Réponds Oui ou Non à chaque question : le chemin choisi s’allume.', 'Answer Yes or No to each question: your path lights up.')) + '</p>';
-    h += '<div class="tree-box"><div class="tree-flow" aria-hidden="false"><svg class="tree-wires" aria-hidden="true" focusable="false"></svg>';
+    h += '<div class="tree-box"><div class="tree-canvas"><svg class="tree-wires" aria-hidden="true" focusable="false"></svg><ol class="tree-flow" aria-label="' + esc(opts.title || TT('title', 'Algorithme', 'Algorithm')) + '">';
     algo.forEach(function (a, i) {
       var ly = leaf(a.yes), ln = leaf(a.no), cont = (a.cont === 'yes' || a.cont === 'no') && i < algo.length - 1 ? a.cont : '';
       var qtxt = plain(fmt(a.q));
-      h += '<section class="tree-step" data-i="' + i + '" data-cont="' + cont + '"' + (i === algo.length - 1 ? ' data-last="1"' : '') + '>' +
-        '<div class="tree-q"><span class="tree-qn" aria-hidden="true">' + (i + 1) + '</span><p class="tree-qt" aria-hidden="true">' + fmt(a.q) + '</p>' +
+      h += '<li class="tree-step" data-i="' + i + '" data-cont="' + cont + '"' + (i === algo.length - 1 ? ' data-last="1"' : '') + '>' +
+        '<div class="tree-q"><span class="tree-qn" aria-hidden="true">' + (i + 1) + '</span><p class="tree-qt"><span class="tree-sr">' + esc(TT('q', 'Question', 'Question') + ' ' + (i + 1) + ' : ') + '</span>' + fmt(a.q) + '</p>' +
         '<div class="tree-yn" role="group" aria-label="' + esc(TT('q', 'Question', 'Question') + ' ' + (i + 1) + ' : ' + qtxt) + '">' +
         '<button type="button" class="btn sm" data-tyn="yes">' + esc(yes) + '</button><button type="button" class="btn sm" data-tyn="no">' + esc(no) + '</button></div></div>' +
-        '<div class="tree-br">' + [['yes', ly, yes], ['no', ln, no]].map(function (x) {
+        '<ul class="tree-br">' + [['yes', ly, yes], ['no', ln, no]].map(function (x) {
           var ends = cont && cont !== x[0], goes = cont === x[0];
-          return '<div class="tree-leaf ' + x[0] + (x[1].urgent ? ' urgent' : '') + (ends ? ' end' : '') + (goes ? ' cont' : '') + '" data-leaf="' + x[0] + '" aria-hidden="true">' +
-            '<span class="tree-edge">' + esc(x[2]) + '</span>' + (x[1].urgent ? '<span class="tree-tag">' + esc(urgentTag) + '</span>' : '') +
-            '<p>' + fmt(x[1].t) + '</p>' + (goes ? '<span class="tree-go">↓ ' + esc(TT('next', 'question suivante', 'next question')) + '</span>' : '') + '</div>';
-        }).join('') + '</div>' +
+          return '<li class="tree-leaf ' + x[0] + (x[1].urgent ? ' urgent' : '') + (ends ? ' end' : '') + (goes ? ' cont' : '') + '" data-leaf="' + x[0] + '">' +
+            '<span class="tree-edge">' + esc(x[2]) + '<span class="tree-sr"> : </span></span>' + (x[1].urgent ? '<span class="tree-tag">' + esc(urgentTag) + '<span class="tree-sr"> — </span></span>' : '') +
+            '<p>' + fmt(x[1].t) + '</p>' + (goes ? '<span class="tree-go">↓ ' + esc(TT('next', 'question suivante', 'next question')) + '</span>' : ends ? '<span class="tree-sr">' + esc(TT('srend', '(fin)', '(end)')) + '</span>' : '') + '</li>';
+        }).join('') + '</ul>' +
         (cont ? '' : (i < algo.length - 1 ? '<span class="tree-then" aria-hidden="true">' + esc(then) + '</span>' : '')) +
         '<div class="tree-stepnav"><button type="button" class="btn sm" data-tnext>' + esc(TT('nextq', 'Question suivante', 'Next question')) + ' ↓</button></div>' +
-        '</section>';
+        '</li>';
     });
-    h += '<div class="tree-end" tabindex="-1"><b>' + esc(TT('end', 'Fin du parcours', 'End of path')) + '</b><span class="small" data-tendtxt></span><button type="button" class="btn sm" data-trestart>' + esc(TT('restart', 'Recommencer', 'Start again')) + '</button></div>';
+    h += '</ol><div class="tree-end" tabindex="-1"><b>' + esc(TT('end', 'Fin du parcours', 'End of path')) + '</b><span class="small" data-tendtxt></span><button type="button" class="btn sm" data-trestart>' + esc(TT('restart', 'Recommencer', 'Start again')) + '</button></div>';
     h += '</div></div>';
-    // screen-reader version with the same logic
-    h += '<div class="tree-sr"><p>' + esc(opts.title || TT('title', 'Algorithme', 'Algorithm')) + '</p><ol>' + algo.map(function (a, i) {
-      var ly = leaf(a.yes), ln = leaf(a.no), cont = (a.cont === 'yes' || a.cont === 'no') && i < algo.length - 1 ? a.cont : '';
-      var item = function (lab, l, k) { return '<li>' + esc(lab) + ' : ' + (l.urgent ? esc(urgentTag) + ' — ' : '') + fmt(l.t) + (cont === k ? ' ' + esc(TT('srnext', '(puis question suivante)', '(then next question)')) : cont ? ' ' + esc(TT('srend', '(fin)', '(end)')) : '') + '</li>'; };
-      return '<li>' + fmt(a.q) + '<ul>' + item(yes, ly, 'yes') + item(no, ln, 'no') + '</ul></li>';
-    }).join('') + '</ol></div>';
     h += '<div class="tree-live tree-sr" aria-live="polite"></div></div>';
     return h;
   }
@@ -75,7 +70,7 @@ var Tree = (function () {
   function curve(x1, y1, x2, y2) { var m = (y1 + y2) / 2; return 'M' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' C' + x1.toFixed(1) + ' ' + m.toFixed(1) + ' ' + x2.toFixed(1) + ' ' + m.toFixed(1) + ' ' + x2.toFixed(1) + ' ' + y2.toFixed(1); }
   function elbow(x1, y1, x2, y2) { var r = Math.min(10, Math.abs(y2 - y1) / 2); return 'M' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' V' + (y2 - r).toFixed(1) + ' Q' + x1.toFixed(1) + ' ' + y2.toFixed(1) + ' ' + (x1 + r).toFixed(1) + ' ' + y2.toFixed(1) + ' H' + x2.toFixed(1); }
   function wires(tree, animateChoice) {
-    var flow = tree.querySelector('.tree-flow'), svg = flow.querySelector('.tree-wires'); if (!flow || !svg) return;
+    var flow = tree.querySelector('.tree-canvas'), svg = flow && flow.querySelector('.tree-wires'); if (!flow || !svg) return;
     var base = flow.getBoundingClientRect(), Wd = flow.scrollWidth, Ht = flow.scrollHeight;
     svg.setAttribute('viewBox', '0 0 ' + Wd + ' ' + Ht); svg.setAttribute('width', Wd); svg.setAttribute('height', Ht);
     while (svg.firstChild) svg.removeChild(svg.firstChild);
@@ -83,7 +78,7 @@ var Tree = (function () {
     function path(d, cls) { var p = document.createElementNS(NS, 'path'); p.setAttribute('d', d); p.setAttribute('class', 'tree-wire ' + (cls || '')); svg.appendChild(p); return p; }
     steps.forEach(function (st, k) {
       var q = rel(st.querySelector('.tree-q'), base), leaves = Array.prototype.slice.call(st.querySelectorAll('.tree-leaf')).filter(shown);
-      var sameRow = leaves.length === 2 && Math.abs(leaves[0].getBoundingClientRect().top - leaves[1].getBoundingClientRect().top) < 4;
+      var sameRow = leaves.length === 2 && leaves[1].getBoundingClientRect().left >= leaves[0].getBoundingClientRect().right - 1;   // side by side (wide box)
       var spine = q.l + 18;
       leaves.forEach(function (lf) {
         var L = rel(lf, base), cls = lf.getAttribute('data-leaf') + (lf.classList.contains('on') ? ' on' : '') + (lf.classList.contains('dim') ? ' dim' : '');
@@ -152,7 +147,7 @@ var Tree = (function () {
     }
     tree.addEventListener('click', onClick);
     var ro = W.ResizeObserver ? new ResizeObserver(function () { W.requestAnimationFrame(function () { wires(tree, false); }); }) : null;
-    if (ro) ro.observe(tree.querySelector('.tree-flow')); else W.addEventListener('resize', onResize);
+    if (ro) ro.observe(tree.querySelector('.tree-canvas')); else W.addEventListener('resize', onResize);
     function onResize() { wires(tree, false); }
     reset();
     // fonts can change the layout after the first paint

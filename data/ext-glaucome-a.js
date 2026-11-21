@@ -13,7 +13,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   definition: "L’excavation glaucomateuse est la perte progressive des axones du bord neurorétinien, qui agrandit le creux central de la papille (cup) surtout aux pôles, alors que l’anneau restant reste rose. Plusieurs papilles non glaucomateuses l’imitent (grand disque, papille inclinée, hypoplasie, atrophie compressive ou héréditaire, séquelle d’ischémie, drusen papillaires) et certaines cachent une maladie grave.",
   anatomy: {
     text: "La papille (optic disc) mesure ≈ 1,5–2 mm, mais sa taille varie beaucoup alors que l’anneau d’axones occupe une surface assez semblable : grand disque = grand creux physiologique, petit disque = presque aucun creux. Le bord neurorétinien (neuroretinal rim) est normalement plus épais en inférieur, puis supérieur, nasal et temporal (règle ISNT, imparfaite). Les fibres maculaires entrent du côté temporal : une atteinte héréditaire, toxique ou compressive les pâlit en premier.",
-    figure: { type: "eye", highlight: ["papille", "lame-criblee", "nerf-optique", "retine"] }
+    figure: {
+      type: "eye",
+      highlight: ["papille", "lame-criblee", "nerf-optique", "retine"]
+    }
   },
   causal: {
     title: "Du nerf qui souffre à la papille qu’on voit",
@@ -82,10 +85,22 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       { q: "Changement documenté au suivi ?", yes: "Traiter ou intensifier.", no: "Anomalie stable : suivi espacé, sans gouttes." }
     ],
     phases: [
-      { phase: "observation", items: ["Photos et OCT de référence : la comparaison dans le temps tranche souvent"] },
-      { phase: "medical", items: ["Gouttes seulement si glaucome confirmé : cible ≈ 20–30 % sous la PIO de base"] },
-      { phase: "suivi", items: ["OCT et champ ensemble (AAO 2026) ; noter chaque hémorragie papillaire"] },
-      { phase: "escalade", items: ["Drapeau rouge : IRM priorisée, neuro-ophtalmologie ; artérite suspectée : stéroïdes le jour même"] }
+      {
+        phase: "observation",
+        items: ["Photos et OCT de référence : la comparaison dans le temps tranche souvent"]
+      },
+      {
+        phase: "medical",
+        items: ["Gouttes seulement si glaucome confirmé : cible ≈ 20–30 % sous la PIO de base"]
+      },
+      {
+        phase: "suivi",
+        items: ["OCT et champ ensemble (AAO 2026) ; noter chaque hémorragie papillaire"]
+      },
+      {
+        phase: "escalade",
+        items: ["Drapeau rouge : IRM priorisée, neuro-ophtalmologie ; artérite suspectée : stéroïdes le jour même"]
+      }
     ],
     local: "Au Québec, beaucoup de références « C/D élevé » viennent de l’optométrie ; l’optométriste peut traiter un glaucome suspect ou débutant, mais doit diriger vers l’ophtalmologiste pour le suivi (Règlement O-7, r. 11.1). Sur la requête d’IRM, nommer le drapeau rouge."
   },
@@ -102,8 +117,20 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   mnemonic: { title: "Les « 5 R » de la papille", text: "**R**ing (anneau scléral : taille du disque) → **R**im (bord neurorétinien : ISNT, couleur) → **R**NFL (défauts en coin) → **R**égion d’APP → **R**ouge (hémorragies). Puis : pâleur > excavation ?" },
   compare: {
     title: "Grande papille : physiologique ou glaucomateuse ?",
-    normal: { figure: { type: "photo", id: "OPH-228" }, caption: "Selon la source : anomalie congénitale (grand disque, à gauche), papille adelphe normale à droite." },
-    patho: { figure: { type: "photo", id: "OPH-309" }, caption: "Mégalopapille avec glaucome sévère (selon la source).", reveal: ["Disque très grand, presque entièrement pâle et creusé", "Bord neurorétinien réduit à un mince liseré près de l’émergence des vaisseaux", "Vaisseaux coudés au bord du creux (baïonnette)", "La taille du disque ne protège pas : c’est l’anneau qui compte"] }
+    normal: {
+      figure: { type: "photo", id: "OPH-228" },
+      caption: "Selon la source : anomalie congénitale (grand disque, à gauche), papille adelphe normale à droite."
+    },
+    patho: {
+      figure: { type: "photo", id: "OPH-309" },
+      caption: "Mégalopapille avec glaucome sévère (selon la source).",
+      reveal: [
+        "Disque très grand, presque entièrement pâle et creusé",
+        "Bord neurorétinien réduit à un mince liseré près de l’émergence des vaisseaux",
+        "Vaisseaux coudés au bord du creux (baïonnette)",
+        "La taille du disque ne protège pas : c’est l’anneau qui compte"
+      ]
+    }
   },
   sources: [
     "AAO PPP Primary Open-Angle Glaucoma (Gedde SJ et al., Ophthalmology, en ligne 9 févr. 2026)",

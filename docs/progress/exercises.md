@@ -56,3 +56,23 @@
 - R5 : `m-oct-1` (data/inv-media.js) : ellipse de la dépression fovéolaire limitée au cadre (clipPath 30,30,340,210) — le titre n’est plus couvert; hotspots 1–5 et 7 décalés en x (18/34/14/30/14/24 %) : plus de chevauchement.
 - R3 : zones de toucher invisibles ≥ 24 px dans les outils : bandes OCT (hauteur min. = 24 px à l’échelle courante, la plus fine au-dessus; 24 px mesurés à 320/390/1280), bandes de gonioscopie (≥ 33 px, coupées au niveau de l’iris), excavation et fovéa du fond d’œil (cercles r 17 : 25–27 px à 390, 24 à 320), hémorragie papillaire (r 14). Petites branches vasculaires du fond d’œil rendues décoratives (les 4 arcades restent des cibles).
 - axe : #inv-oct (explorer, étiqueter, révélation) et #cas-images (liste, révélation) : 0 violation. Suite flows+axe : seul échec restant = `nested-interactive` sur #a-anatomie (figures-a/sims, hors de mes fichiers, R2).
+
+## Cycle 7 (2026-11-21) — arbre décisionnel visuel (STYLE-PEDAGO §3–4)
+Nouveaux fichiers : `src/tree.js`, `src/tree.css` (ajoutés à SRC_ORDER/CSS_ORDER de tools/build_web.py et à src_order + css de tools/build.py, avant `views`).
+
+### API (pour le rôle web, intégration dans views.js)
+```js
+html = Tree.render(f.cat.algo, { fmt: function (s) { return T(s, scope); }, title: t('f.algo'), mode: 'overview' /* ou 'walk' */ });
+// … insérer html dans l’écran « Décider », puis dans view.after(host) :
+var cleanup = Tree.mount(host);   // hydrate tous les [data-tree] du host; renvoyer cleanup au routeur
+```
+- Données : `[{ q, yes, no, cont? }]`. `cont: 'yes'|'no'` = branche qui continue (l’autre finit sur une action, marquée « fin »). Sans `cont` : les deux feuilles + un connecteur pointillé « puis » vers la question suivante; en mode pas à pas, bouton « Question suivante ». `yes`/`no` peuvent être `{ t, urgent:true }`; sinon « urgent » est détecté par mots-clés (urgent, sans délai, tout de suite, immédiat, emergency, without delay…).
+- Visuel : questions = nœuds arrondis encre; arêtes étiquetées en texte (« OUI »/« NON », NON en pointillé); feuilles = cartes calmes; urgentes = bord rouge + étiquette « Urgent ». Connecteurs SVG recalculés (ResizeObserver). Boîte large : courbes vers deux colonnes; boîte ≤ 520 px (container query) : une colonne avec épine à gauche. Pas de débordement de page.
+- Pas à pas : piloté par l’apprenant uniquement; les feuilles de la question courante sont cachées jusqu’à la réponse (prédire d’abord); le chemin choisi est tracé au feutre fluo (`Motion.marker`, animé sauf mouvement réduit), l’autre branche est atténuée (couleurs, pas d’opacité → contraste AA); fin = encadré « Fin du parcours » + « Recommencer »; focus déplacé sur la question suivante / le bouton; région `aria-live` qui annonce le choix.
+- Accessibilité : l’organigramme EST une liste ordonnée (`<ol>` des questions, `<ul>` Oui/Non avec étiquettes textuelles, « Question n : » et « (fin) » pour lecteurs d’écran) — pas de liste cachée dupliquée (elle aurait été lue deux fois et aurait caché des liens du glossaire focusables : axe `aria-hidden-focus`).
+- i18n : `t`-style via `TT('tree.*', fr, en)`; clés listées dans `Tree.keys` (tree.yes, no, urgent, then, modes, overview, walk, restart, hint, q, next, nextq, end, title, srend).
+- Tests : c-brulure (cont simulé yes/yes/yes), g-crise (cont simulé yes/no/no/yes), c-bacterienne (sans cont) × 390 FR clair, 1280 EN clair, 390 EN sombre, 1280 FR sombre : parcours complet jusqu’à « Fin », Recommencer, axe sur l’arbre 0 violation (vue d’ensemble et pas à pas), aucun débordement de page ni de boîte.
+
+### Pour la pédagogie
+- Aucune fiche n’a encore `cont` (0/20) : rendu dégradé « puis » partout tant que ce champ manque.
+- Les feuilles dépassent souvent le plafond « actions ≤ 12 mots » (jusqu’à 170 caractères) : l’arbre reste lisible mais haut sur téléphone.
