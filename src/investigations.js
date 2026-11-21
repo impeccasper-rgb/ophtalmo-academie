@@ -565,7 +565,7 @@
     hots = hots || []; var inline = hotInline(hots);
     return '<div class="inv-hots" aria-hidden="true">' + hots.map(function (hs, k) {
       var lab = pick(hs.label), side = hs.x > 68 ? ' r' : hs.x < 32 ? ' l' : '', below = hs.y > 78 ? ' up' : '';
-      return '<span class="inv-hot' + (hs.decisive === false ? ' minor' : '') + side + below + (k % 2 ? ' alt' : '') + '" style="left:' + hs.x + '%;top:' + hs.y + '%;--r:' + (hs.r || 8) + ';--d:' + (k * 0.18).toFixed(2) + 's"><i></i>' + (!lab ? '' : inline ? '<b>' + E(lab) + '</b>' : '<em>' + (k + 1) + '</em>') + '</span>';
+      return '<span class="inv-hot' + (hs.decisive === false ? ' minor' : hs.decisive ? ' dec' : '') + side + below + (k % 2 ? ' alt' : '') + '" style="left:' + hs.x + '%;top:' + hs.y + '%;--r:' + (hs.r || 8) + ';--d:' + (k * 0.18).toFixed(2) + 's"><i></i>' + (!lab ? '' : inline ? '<b>' + E(lab) + '</b>' : '<em>' + (k + 1) + '</em>') + '</span>';
     }).join('') + '</div>';
   }
   function hotsLegend(hots) {

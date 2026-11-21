@@ -38,9 +38,9 @@ RIGHTS_FILTER_JS = r"""(function () {
     (O.inv || []).forEach(function (e) { if (e.practice) e.practice = e.practice.filter(function (id) { return ok[id]; }); }); }
 })();
 """
-SRC_ORDER = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'views', 'web']
+SRC_ORDER = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'motion', 'views', 'web']
 CSS_ORDER = ['styles', 'investigations', 'web']
-THEME_LIGHT, THEME_DARK, COBALT, BRAND_BG = '#ffffff', '#0f1a2c', '#2340d0', '#0A2547'
+THEME_LIGHT, THEME_DARK, COBALT, BRAND_BG = '#1f2cff', '#1a23d9', '#1f2cff', '#1F2CFF'
 TITLE = {'fr': 'Ocelle · ophtalmologie pour externes et R1', 'en': 'Ocelle · ophthalmology for clerks and R1s'}
 DESC = {'fr': 'Apprends à voir le signe qui compte : cornée, glaucome et examens, en images, cas et jeux. Gratuit, sans pub.',
         'en': 'Learn to see the sign that matters: cornea, glaucoma and eye investigations through images, cases and games. Free, no ads.'}
@@ -185,7 +185,7 @@ def self_hosted_fonts():
     if not os.path.isdir(src): return '', []
     dst = os.path.join(OUT, 'fonts'); os.makedirs(dst, exist_ok=True)
     rules, pub = [], []
-    for fam, slug, w in [('Lexend', 'lexend', '100 900'), ('Atkinson Hyperlegible Next', 'atkinson-hyperlegible-next', '200 800'), ('Atkinson Hyperlegible Mono', 'atkinson-hyperlegible-mono', '200 800')]:
+    for fam, slug, w in [('Bricolage Grotesque', 'bricolage-grotesque', '200 800'), ('Atkinson Hyperlegible Next', 'atkinson-hyperlegible-next', '200 800'), ('Atkinson Hyperlegible Mono', 'atkinson-hyperlegible-mono', '200 800')]:
         for sub, rng in [('latin-ext', LATIN_EXT), ('latin', LATIN)]:
             for style in ('normal', 'italic'):
                 fn = '%s-%s-wght-%s.woff2' % (slug, sub, style)
@@ -241,7 +241,7 @@ def main():
     ic = icons()
     abs_ = lambda p: (SITE_URL + p) if SITE_URL else p
     # Google Fonts only when fonts/ is missing (self-hosted fonts work offline and inside the iOS app)
-    fonts = '' if font_files else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400..800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">')
+    fonts = '' if font_files else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">')
     preload = ''.join('<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' % f for f in font_files if f.endswith('-latin-wght-normal.woff2') and 'mono' not in f)
     esc = lambda s: s.replace('&', '&amp;').replace('"', '&quot;').replace('<', '&lt;')
     head = f'''<!doctype html>
@@ -282,7 +282,7 @@ def main():
 <div class="shell">
 <aside class="rail" id="rail" aria-label="Navigation"></aside>
 <div style="min-width:0">
-<header class="topbar"><button type="button" class="btn sm" data-act="menu" aria-label="Ouvrir le menu" aria-controls="drawer">Menu</button><a class="brand" href="#accueil"><svg class="logo" viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" rx="236" fill="#0A2547"/><circle cx="512" cy="512" r="282" fill="#2F4EE6"/><circle cx="512" cy="512" r="116" fill="#050E1D"/><path d="M336 236A330 330 0 0 0 336 788" fill="none" stroke="#EAF3FF" stroke-opacity=".85" stroke-width="40" stroke-linecap="round"/><circle cx="660" cy="364" r="66" fill="#B6F04E"/></svg><span><b>Ocelle</b><span>Ophtalmo · externat et R1</span></span></a></header>
+<header class="topbar"><button type="button" class="btn sm" data-act="menu" aria-label="Ouvrir le menu" aria-controls="drawer">Menu</button><a class="brand" href="#accueil"><svg class="logo" viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" rx="236" fill="#1F2CFF"/><path d="M302.4 302.8C314.8 296.5 351.2 274.4 377.2 264.8C403.2 255.3 431.3 248.9 458.3 245.5C485.4 242.2 513.4 242.1 539.7 244.8C566.0 247.6 592.3 253.6 616.1 262.0C639.9 270.4 662.7 282.0 682.7 295.3C702.7 308.6 720.6 324.7 735.9 341.7C751.1 358.7 763.8 377.8 774.2 397.3C784.6 416.8 792.5 437.6 798.2 458.8C803.8 480.0 807.4 502.1 808.0 524.5C808.6 546.9 807.2 570.3 801.9 593.1C796.5 615.9 788.3 639.8 775.9 661.2C763.5 682.6 746.9 704.3 727.5 721.8C708.0 739.3 683.9 755.1 659.2 766.0C634.6 776.9 606.2 784.1 579.6 787.2C553.0 790.2 524.9 788.5 499.7 784.4C474.5 780.4 450.2 772.0 428.2 762.9C406.3 753.8 386.5 741.9 368.0 729.8C349.5 717.6 332.8 704.3 317.2 690.0C301.5 675.7 286.7 660.7 273.9 644.1C261.0 627.5 248.8 609.6 240.1 590.2C231.3 570.8 224.2 549.4 221.6 527.9C219.1 506.3 219.8 482.8 224.9 460.8C230.0 438.9 239.7 416.1 252.4 396.2C265.1 376.4 282.5 357.3 301.3 341.5C320.1 325.8 342.6 312.2 365.1 301.7C387.7 291.2 424.8 282.5 436.7 278.7" fill="none" stroke="#D8FF3A" stroke-width="76" stroke-linecap="round" stroke-linejoin="round"/><circle cx="530" cy="500" r="96" fill="#D8FF3A"/></svg><span><b>Ocelle</b><span>Ophtalmo · externat et R1</span></span></a></header>
 <main class="main" id="view" tabindex="-1"><div class="page"><p class="muted">Chargement… / Loading…</p></div></main>
 </div></div>
 <nav class="tabbar" id="tabbar" aria-label="Navigation rapide"></nav>

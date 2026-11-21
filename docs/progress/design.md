@@ -28,3 +28,12 @@
 - Rights: `ocelle-cas-vedette-*` and `ocelle-image-du-jour-*` show EyeRounds photos, so site and App Store only. `ocelle-examens-ascan-*`, `ocelle-social-*` and the loop are original schematics, OK on social networks. The table is in videos/README.md.
 - Demo data: a 6-day streak is pre-loaded, and the image of the day is pinned to OPH-059 for the recording (stated in the README).
 - Remaining: App Store 6.9"/6.5" preview sizes (use the iOS simulator videos or re-run the recorder at those sizes). No audio track.
+
+## Cycle 7: identity v2 « Fluorescéine » (user's choice: art direction C)
+- Done: brand/BRAND.md v2 (art direction, palette with AA contrast light and dark, type system, iconography, motion), new mark (ocellus as a marker loop + fluo dot), wordmark in Bricolage Grotesque 800 outlined, icon 1024 + PNG set, og.png.
+- Fonts: Bricolage Grotesque (display, variable opsz/wght/wdth) + Atkinson Hyperlegible Next (body) + Atkinson Mono (data), self-hosted from @fontsource. Lexend removed. build_web/build.py updated.
+- styles.css: v2 tokens; cobalt chrome; calm study surfaces; fluo primary CTA with ink edge; cobalt hero with a tilted open-licence photo card (IMG3-035, CC BY-SA, credited, "annotation superposée").
+- src/motion.js (new): marker loops on decisive hotspots (seeded hand-drawn paths, stroke-dashoffset), stickers, "Bien vu !" on correct answers, scribble + shake on wrong ones, cobalt wipe on route change, count-up + burst on rewards, hero sequence. Everything is static under reduced motion / .no-motion.
+- Hook: `dec` class on decisive hotspots (investigations.js, one line). Investigations hotspot CSS restyled.
+- Checks: test_site.py --quick: 84 checks, 1 failing = offline-images-not-cached (known D13, by design). axe: 28 checks, 0 failing. Screenshots at 390/1280, light/dark: home, fiche, inv-oct reveal, cas-vedette, cartes, progression. No horizontal scroll, no JS errors.
+- TODO (iOS): splash colour #1F2CFF in capacitor.config.json; regenerate AppIcon.

@@ -99,18 +99,12 @@ var Plan = {
 
 /* ---------- home ---------- */
 function eyeSvg() {
-  var fib = ''; for (var i = 0; i < 40; i++) { var a = i * 9 * Math.PI / 180, r1 = 128, r2 = 250 + (i % 3) * 10; fib += '<line x1="' + (512 + r1 * Math.cos(a)).toFixed(1) + '" y1="' + (512 + r1 * Math.sin(a)).toFixed(1) + '" x2="' + (512 + r2 * Math.cos(a)).toFixed(1) + '" y2="' + (512 + r2 * Math.sin(a)).toFixed(1) + '"/>'; }
-  return '<svg class="eye-anim oc-hero" viewBox="160 160 704 704" role="img" aria-label="' + U.esc(t('hero.eyeAlt')) + '"><defs>' +
-    '<radialGradient id="oc-iris-h" cx="50%" cy="50%" r="50%"><stop offset=".38" stop-color="#5C7BFF"/><stop offset=".8" stop-color="#2340D0"/><stop offset="1" stop-color="#16289A"/></radialGradient>' +
-    '<linearGradient id="oc-beam-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAF3FF" stop-opacity="0"/><stop offset=".5" stop-color="#EAF3FF" stop-opacity=".95"/><stop offset="1" stop-color="#EAF3FF" stop-opacity="0"/></linearGradient>' +
-    '<radialGradient id="oc-glow-h"><stop offset="0" stop-color="#B6F04E" stop-opacity=".55"/><stop offset="1" stop-color="#B6F04E" stop-opacity="0"/></radialGradient></defs>' +
-    '<circle cx="512" cy="512" r="318" fill="none" stroke="#5C7BFF" stroke-opacity=".3" stroke-width="8"/>' +
-    '<circle cx="512" cy="512" r="282" fill="url(#oc-iris-h)"/>' +
-    '<g class="eye-fib" stroke="#DCE5FF" stroke-opacity=".22" stroke-width="5">' + fib + '</g>' +
-    '<circle class="eye-pupil" cx="512" cy="512" r="116" fill="#050E1D"/>' +
-    '<g class="oc-beam"><circle cx="512" cy="512" r="340" fill="none"/><path d="M 336 236 A 330 330 0 0 0 336 788" fill="none" stroke="url(#oc-beam-h)" stroke-width="30" stroke-linecap="round"/></g>' +
-    '<g class="oc-sign"><circle cx="660" cy="364" r="120" fill="url(#oc-glow-h)"/><circle cx="660" cy="364" r="58" fill="#B6F04E"/></g>' +
-    '<circle class="oc-sign-ring" cx="660" cy="364" r="58" fill="none" stroke="#B6F04E" stroke-width="8"/></svg>';
+  /* hero art: a marker draws the ocellus (fluorescein dot lights up), then circles the sign on a tilted photo card (open licence, never filtered) */
+  var oc = window.Motion ? Motion.loop(230, 232, 150, 134, 7, { tilt: -.18, over: .42, drift: .12 }) : 'M80 232a150 134 0 1 0 300 0a150 134 0 1 0-300 0';
+  var e = D.cat('IMG3-035'), credit = e ? (Photo.owner(e) + ' · ' + (e.license_url ? '<a href="' + U.esc(e.license_url) + '" target="_blank" rel="noopener">' + U.esc(e.license) + '</a>' : U.esc(e.license)) + (Photo.srcUrl(e) ? ' · <a href="' + U.esc(Photo.srcUrl(e)) + '" target="_blank" rel="noopener">Wikimedia Commons</a>' : '') + ' · ' + t('hero.annot')) : '';
+  return '<svg class="hero-ocellus" viewBox="0 0 460 460" aria-hidden="true" focusable="false"><path class="mo-path draw" pathLength="1" d="' + oc + '" style="--mo-delay:.15s;--mo-dur:.85s"/><circle cx="240" cy="222" r="46"/></svg>' +
+    '<div class="hero-art"><figure class="hero-photo" style="margin:0"><div class="hero-img" data-loop="53.5,32,23,17"><img src="' + Photo.src('IMG3-035') + '" width="853" height="788" alt="' + U.esc(t('hero.photoAlt')) + '" decoding="async"></div>' +
+    '<figcaption>' + credit + '</figcaption><span class="mo-sticker" aria-hidden="true" style="--mo-delay:1.75s">' + U.esc(t('hero.sticker')) + '</span></figure></div>';
 }
 Plan.next = function () { var T2 = Plan.tasks(), all = T2.pre1.concat(T2.pre2); for (var i = 0; i < all.length; i++) if (!Plan.done(all[i])) return all[i]; return null; };
 Views.accueil = {

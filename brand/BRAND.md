@@ -1,92 +1,76 @@
-# Ocelle — brand guide
+# Ocelle — brand guide v2 « Fluorescéine »
 
-## 1. Name
+The name stays **Ocelle** (FR *ocelle*, EN *ocellus*: an eyespot). Tagline: **Apprends à voir le signe qui compte.** / **Learn to see the sign that matters.** Method line: **Observe. Réponds. Révèle.** / **Observe. Answer. Reveal.**
 
-**Ocelle** (FR *ocelle*, EN *ocellus*, pl. *ocelli*): the simple eye of an insect, and the eyespot on a butterfly wing or a peacock feather.
-- It is a learner's first eye, and a spot you learn to notice. The whole product is about noticing the decisive sign.
-- Six letters, said the same way in both languages (o-SELL), easy to spell from hearing it. It sounds like a word, not like a drug or a device.
-- The mark comes straight from the name: a ring, a pupil and one bright spot.
+v1 ("slit-lamp night") is retired. The user found it too generic.
 
-### Shortlist (quick checks on 2026-11-21, not a legal clearance)
-| Candidate | Idea | Quick check | Verdict |
-|---|---|---|---|
-| **Ocelle** | eyespot / simple eye | No App Store app named Ocelle in the search results. A mark *OCELLI* is registered in Australia (class not checked) and there is a US application for *ocellus*. | **Chosen.** Run a proper CIPO + USPTO search in classes 9 and 41, and check the domain, before any filing. |
-| Mydria | from mydriasis: dilate to see the whole fundus | No app found, but it is very close to Théa's *MYDRANE* and *Mydriasert*, which are ophthalmic drugs in the same field. | Rejected: people could confuse it with the drugs or think a drug company sponsors the app. |
-| Placido | Placido disc (keratoscopy rings) | Generic technical term already used by corneal topographers. | Rejected: descriptive, weak and hard to protect. |
-| *(Foveo/Fovea)* | fovea | The space is crowded (FoveApp, Fovea Learning on the App Store). | Dropped early. |
+## 1. Art direction
+The exam itself provides the look. Under the **cobalt blue filter**, **fluorescein** lights up what is abnormal. The senior then circles it on the photo with a **marker** and slaps a **sticker** on it ("dendrite !").
 
-Sources seen: apps.apple.com searches for "Mydria", "Ocelle", "Foveo/Fovea", "Placido" (results included FoveApp id6468361899 and FOVEA LEARNING id6463009342, with no Ocelle or Mydria app); trademark aggregators: justia (MYDRANE 79065994), trademarkelite (OCELLI AU 2028384), markinton (ocellus 99835125).
+The identity has three gestures:
+1. **Cobalt field.** A saturated blue plane for the chrome, the hero, page changes and rewards.
+2. **Fluorescein.** One acid yellow-green used only for what matters: the decisive sign, the main call to action, the current place in the navigation, rewards.
+3. **The hand of the attending.**
+   - A marker loop drawn around the sign: irregular, it overshoots its own start, and it is drawn with `stroke-dashoffset`.
+   - Sticker tags that pop in at an angle.
+   - A scribble under a wrong answer.
 
-## 2. Tagline
-- **FR:** Apprends à voir le signe qui compte.
-- **EN:** Learn to see the sign that matters.
-- Method line, used wherever the exercises are explained: **Observe. Réponds. Révèle.** / **Observe. Answer. Reveal.**
+**Study comfort is a rule, not an afterthought.**
+- Reading and study surfaces stay calm: paper white `#FBFBF8` in light, deep navy `#060A2A` in dark, ink text, cobalt only for links and small badges.
+- Fluorescein never fills a reading surface.
+- Photos are never recoloured, filtered, rotated or redrawn. EyeRounds photos are CC BY-NC-ND. Annotations are always separate overlays.
+- The tilted photo card on the home page uses an openly licensed image (IMG3-035, CC BY-SA 4.0, credited with "annotation superposée").
 
-## 3. Voice
-- Talks like a senior resident at the slit lamp: direct and precise, warm without being cute. FR uses *tu* (as the existing content does); EN uses *you*.
-- Short sentences and verbs first ("Repère l'infiltrat", "Spot the infiltrate"). No exclamation marks, no hype, no emoji.
-- Errors are information: "Pas tout à fait : regarde le bord de l'ulcère." Never "Wrong!".
-- Clinical words in full the first time, with the English term in italics in FR content.
-- Every schematic says it is a schematic (« schéma »), as PLATFORM.md requires.
-
-## 4. Palette
-Two brand colours come from the exam itself: the **cobalt** blue filter, and **fluorescein** green, which lights up what is abnormal. Around them sit the night of the slit-lamp room and quiet paper neutrals. Token names are unchanged (code depends on them). Values live in `src/styles.css`.
-
-| Role | Token | Light | Dark | Contrast (text on its pair) |
+## 2. Palette (token names unchanged; values in `src/styles.css`)
+| Role | Token | Light | Dark | Contrast |
 |---|---|---|---|---|
-| Page | `--paper` | `#F4F6F9` | `#070F1C` | — |
-| Card | `--surface` | `#FFFFFF` | `#0F1A2C` | — |
-| Recessed | `--sunk` | `#EAEEF4` | `#16233A` | — |
-| Text | `--ink` | `#0B1A30` | `#E6ECF5` | 16.1 / 16.2 on paper |
-| Secondary text | `--ink-2` | `#3E4E66` | `#B0BDD1` | 7.8 / 9.2 |
-| Tertiary text | `--ink-3` | `#5C6B82` | `#8A99B0` | 5.0 on paper, 4.65 on sunk / 6.0 on surface |
-| Lines | `--line`, `--line-2` | `#D3DBE6`, `#E5EAF1` | `#24324A`, `#1B283D` | decorative |
-| **Primary: Cobalt** | `--cobalt` | `#2340D0` | `#8199FF` | 7.7 with `--on-cobalt` (white / night) |
-| Cobalt text | `--cobalt-ink` | `#1A2FA0` | `#AFC0FF` | 9.1 / 8.4 on `--cobalt-wash` |
-| Text on cobalt | `--on-cobalt` (new) | `#FFFFFF` | `#070F1C` | — |
-| **Accent: Fluorescein** | `--fluo` / `--fluo-ink` | `#A8E63C` / `#2E6A0C` | `#B4F04F` / `#BDF26B` | ink on wash 6.0 / 11.5 |
-| Decisive sign | `--sign` (new) + `--sign-halo` | `#B6F04E` + dark halo | same | always drawn with its halo so it shows on light and dark media |
-| Night (hero, icon) | `--night-1/2/3` | `#05101F`, `#0A2547`, `#16478A` | same | hero text `#CFE0F2` on night-2: 11.4 |
-| Aqueous (high-yield boxes) | `--teal-ink/-wash/-line` | `#0A6F64` / `#E0F5F1` | `#5FE3D0` / `#0F2E2C` | 5.3 / 9.3 |
-| Urgent / bad | `--urgent`, `--bad` | `#B42323` | `#FF7A73` | 5.6 / 6.1 on wash |
-| High yield (amber) | `--hy` | `#8A5A06` | `#F0B64D` | 5.3 / 7.9 |
-| Trap (violet) | `--trap` | `#6A32A3` | `#C49BF0` | 6.8 / 7.0 |
-| Correct | `--ok` | `#25702C` | `#78CF7E` | 5.3 / 7.5; white on ok 6.1 |
-| Frequent | `--frequent` | `#1A6E80` | `#63C3D6` | 5.0 |
+| Page / card / recessed | `--paper` `--surface` `--sunk` | `#FBFBF8` `#FFFFFF` `#F1F2F7` | `#060A2A` `#0E1440` `#151C52` | — |
+| Text | `--ink` `--ink-2` `--ink-3` | `#0A0F40` `#3A406B` `#5B6188` | `#EEF0FF` `#B9BEE6` `#8E94C4` | 17.5 / 9.5 / 5.8 on paper (5.3 on sunk); dark 17.1 / 9.7 / 6.0 on surface |
+| **Cobalt** (primary, links) | `--cobalt` / `--cobalt-ink` / `--cobalt-wash` | `#1F2CFF` / `#1A24D6` / `#ECEEFF` | `#4A57FF` / `#9DA5FF` / `#1A2266` | white on cobalt 7.3 (dark 5.1); cobalt on paper 7.1; cobalt-ink on wash 7.9 (dark 6.3) |
+| **Fluorescein** (sign, primary CTA, rewards) | `--fluo` `--sign` / `--on-fluo` | `#D8FF3A` / `#0A0F40` | same | ink on fluo 15.8; fluo on cobalt 6.4; fluo on dark surface 15.3 |
+| Fluo as text on light | `--fluo-ink` / `--fluo-wash` | `#3C5A00` / `#F4FFD1` | `#D8FF3A` / `#232B0C` | 7.6 / 12.9 |
+| Chrome (top bar, rail, tab bar, drawer) | `--chrome` `--chrome-ink` `--chrome-ink-2` | `#1F2CFF` `#FFF` `#C9CEFF` | `#1A23D9` `#FFF` `#C9CEFF` | 7.3 / 4.8 (dark 9.2 / 6.0) |
+| Sticker edge / hard shadow | `--edge` | `#0A0F40` | `#000` | — |
+| Marker halo | `--sign-halo` | ink at 72 % | black at 70 % | keeps the fluo loop visible on light and dark media |
+| Semantics | `--urgent` `--hy` `--trap` `--ok` `--frequent` | as v1 | as v1 | all ≥ 4.5 on their wash |
 
-Rules: fluorescein green belongs to the **decisive sign** and to the single main call to action on the night hero. Never use it as plain body text on white. Colour never carries meaning alone: progress dots also change shape, and verdicts always have a word.
+Rules:
+- Fluo text only ever sits on cobalt, ink or navy, never on white.
+- A primary button is fluo with an ink border and a 3 px hard ink shadow, so it stays visible on white.
+- Colour never carries meaning alone: verdicts have words, progress dots change shape.
 
-## 5. Typography (Google Fonts only)
-- **Display: Lexend** (variable, 400–800; we use 600 for headings, 700 for the name in the app chrome, 800 for the acuity-chart optotypes). It is geometric and open, and it echoes the round strokes of the wordmark. It was designed to make reading easier.
-- **Body: Atkinson Hyperlegible Next** (400–700). The Braille Institute designed it for low-vision readers, which suits an eye app, and it keeps 1/l/I and 0/O distinct, which matters in doses and measurements.
-- **Numbers: Atkinson Hyperlegible Mono** (400/600), with tabular figures, for readouts, scores and counters.
-- Link: `https://fonts.googleapis.com/css2?family=Lexend:wght@400..800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap`
-- Scale is unchanged (`--fs-xs` … `--fs-3xl`). Headings use -0.012 em tracking (h1 -0.02 em) and `text-wrap: balance`.
+## 3. Type system (self-hosted, SIL OFL, from npm @fontsource; files in `fonts/`)
+- **Display: Bricolage Grotesque** (variable: opsz 12–96, wght 200–800, wdth 75–100). Headings use 760–800 with tight tracking (h1 −0.034 em, hero −0.045 em, line-height 0.94–1). It is quirky, editorial and social-native, and it is legible at size thanks to its optical sizes.
+- **Body: Atkinson Hyperlegible Next** (variable 200–800). It was designed for low-vision readers. It keeps l/I/1 and 0/O distinct, which matters for doses and measurements, and it stays calm in long reading. Its neutral texture lets the display face carry the personality.
+- **Data: Atkinson Hyperlegible Mono**: scores, counters, readouts, section numbers.
+- No Google Fonts on the site. `tools/build_web.py` writes the `@font-face` rules from `fonts/*.woff2`.
 
-## 6. Logo and icon
-- `logo.svg` / `logo-dark.svg`: the mark plus the wordmark. The wordmark is drawn with geometric strokes (x-height 60, stroke 13, round caps), so it needs no font file. The **o** carries a small green dot: the sign.
-- `mark.svg`: the rounded-square mark on its own (favicon, in-app logo).
-- `icon.svg`: full-bleed square app icon with no text (iOS applies the mask). The night gradient holds a cobalt iris and a dark pupil. A pale crescent on the left is the **slit-lamp optical section**, and a fluorescein-green spot at upper right is **the decisive sign**. All content sits within the central 66 %, safe for maskable/PWA crops.
-- PNGs: `icon-1024.png` (App Store, opaque RGB), `icon-512.png`, `icon-192.png` (PWA), `apple-touch-icon-180.png`, `favicon-32.png` (rounded, transparent corners).
-- Clear space is half the mark's width. Minimum size: 16 px for the mark alone, 96 px wide for the lock-up. Do not recolour the mark. On busy photos, use the mark alone.
+## 4. Logo and icon
+- **Mark** (`mark.svg`, `icon.svg`): a cobalt field with the **ocellus drawn as a marker loop** (fluorescein, round caps; the stroke overshoots its start like a real hand) and a **fluorescein dot** at its centre: the sign, circled. `mark-loop.svg` is the loop and dot alone, for use on cobalt.
+- **Wordmark** (`wordmark.svg`): "ocelle" in Bricolage Grotesque 800, outlined, so it needs no font file. `logo.svg` / `logo-dark.svg` are the lock-ups.
+- **App icon**: `icon-1024.png` (opaque, full bleed; iOS applies the mask), plus `icon-512.png`, `icon-192.png`, `apple-touch-icon-180.png` and `favicon-32.png`. It reads at 16 px as a yellow ring on blue.
+- **OG image** (`og.png`, 1200×630): the tagline with "signe" circled by the marker, the large mark, and a "le signe !" sticker. It contains no photo, so it has no licence constraint.
+- On the cobalt chrome, the square of the mark merges with the bar and only the loop and dot remain.
 
-## 7. Iconography
-- Line icons on a 20 px grid, 1.7 px stroke, round caps and joins, `currentColor` (the existing `ICO` set in core.js follows this; new icons should too).
-- **Ocellus motif** for state: the current navigation entry sits in a filled cobalt circle with a small green sign dot. Section numbers sit in a cobalt ring. Phone tabs use a soft pill plus the sign dot.
-- Medical drawings keep the tissue palette (`--t-*`) and the « schéma » label.
+## 5. Iconography
+- Line icons on a 20 px grid, 1.7 px stroke, round caps, `currentColor` (the `ICO` set in core.js).
+- The current navigation entry sits on a **fluo tile rotated −6°** (rail) or a **fluo pill rotated −4°** (tab bar), like a sticker.
+- Section numbers are small cobalt tiles rotated −5°.
+- Schematics keep the tissue palette (`--t-*`) and the « schéma » label.
 
-## 8. Motion principles
-Motion explains something, or it does not happen.
-1. **Reveal the decisive sign.** `.reveal-hotspot` scales in, then sends out three slow rings (1.5 s each), then rests as a static ring with a label. `.reveal-ring` and `.reveal-pulse` do the same for SVG figures. It is the only looping motion in learning content, and it stops after 3 cycles.
-2. **Feedback.** Correct answers get `.ok-pop`, a 420 ms overshoot on the key or chip. Wrong answers get `.no-shake`, a 380 ms damped shake. The explanation (`.feedback`) rises 6 px into place. These run automatically on `.opt.correct/.wrong`, `.chip.correct/.wrong`, `.triage-btns .btn.correct/.wrong`, `.blank.ok/.bad` and `.mcard.matched/.nope`.
-3. **Progress.** Bars grow from zero when a page opens (`.pbar i`, 800 ms). `.progress-pop` marks a step you just completed.
-4. **Page change.** The new view rises 10 px and fades in (420 ms, `--ease-out`). Nothing slides sideways, and there is no exit animation, so navigation stays instant.
-5. **Hero.** The slit beam sweeps onto the eye once, the pupil constricts (existing animation), and then the sign lights up. That is the method told in 2 seconds.
-- Tokens: `--ease-out: cubic-bezier(.2,.8,.2,1)`, `--ease-pop: cubic-bezier(.34,1.56,.64,1)`, `--dur-1/2/3: 140/240/420 ms`.
-- **Accessibility:** every animation sits inside `@media (prefers-reduced-motion: no-preference)`. The `.no-motion` class on `<html>` (the in-app setting) removes all of them. In both cases the final state shows straight away, so nothing is hidden. Pulses never flash (opacity fades only, below 3 per second).
+## 6. Motion system (`src/motion.js` + the motion section of `src/styles.css`)
+1. **Marker reveal.** When an Investigations, image-case or featured-case answer is revealed, a loop is generated for the decisive hotspot (or the first one if none is flagged). Each loop has its own seeded irregular path that overshoots its start. It is drawn with `stroke-dashoffset` (0.7 s, `--ease-marker`), over a dark halo. Other landmarks keep quiet white rings, and their labels become stickers.
+2. **Stickers.** Hotspot labels and numbers pop in rotated (scale 0.3 → 1.12 → 1).
+3. **Correct answer.** A fluo sticker on the verdict, «&nbsp;Bien vu !&nbsp;» / "Nice catch!" (with two variants).
+4. **Wrong answer.** A red scribble is drawn under the chosen option, plus a 0.38 s shake.
+5. **Page change.** A cobalt wipe with a fluo trailing edge slides off the new page (0.48 s), only when the route changes. The content also rises 10 px.
+6. **Rewards.** At the end of a series or a daily image, the counter counts up and a burst of fluo, cobalt and ink confetti fires. Progress bars grow. The current tab or rail tile snaps in.
+7. **Hero.** The marker draws the ocellus and its fluo dot lights up. Then the marker circles the dendrite on the tilted photo card, and the «&nbsp;dendrite !&nbsp;» sticker pops.
+- Only `transform`, `opacity` and `stroke-dashoffset` are animated, on absolute overlays, so nothing shifts the layout.
+- **Accessibility.** Every animation sits inside `@media (prefers-reduced-motion: no-preference)`, and `html.no-motion` (the in-app setting) cancels them. Loops and stickers are information, so they still appear, fully drawn and static. Wipes, bursts and count-ups are skipped. Overlays are `aria-hidden`; the verdict and the hotspot legend carry the text.
 
-## 9. App icon concept
-"The sign lights up under the cobalt light." A dark slit-lamp room, an iris lit cobalt, the optical-section crescent, and one fluorescein spot: what the learner will train their eye to find. It reads at 32 px as a blue eye with a green dot, and it is distinct from the usual red-and-white or eye-chart medical icons.
+## 7. Voice
+As in v1: a senior resident at the slit lamp. FR uses *tu*, EN uses *you*. Verbs first, no hype. Stickers are the only place for exclamation marks («&nbsp;Bien vu !&nbsp;», «&nbsp;dendrite !&nbsp;»).
 
-## 10. Previews
-`preview-*.png` (4 files) show the app with this stylesheet **plus** the HANDOFF changes simulated (new name, logo and hero mark), with fonts blocked (system fallback).
+## 8. Previews
+`preview-*.png` (4 files): home on desktop (dark) and on phone (light), the featured-case reveal on phone, and an Investigations practice reveal on desktop (dark).
