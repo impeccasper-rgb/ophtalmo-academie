@@ -461,6 +461,41 @@
   "licence_evidence": "licence URL in article XML"
  },
  {
+  "id": "IMG3-017",
+  "file": "imgsrc3/web/IMG3-017.jpg",
+  "title": {
+   "fr": "Échographie : endophtalmie et abcès orbitaire",
+   "en": "Ultrasound: endophthalmitis and orbital abscess"
+  },
+  "caption": {
+   "fr": "A : collection hypoéchogène (astérisque) dans la partie latérale de l’orbite = abcès orbitaire. B : débris purulents échogènes, irréguliers et cloisonnés dans le vitré (étoile) = signe clé de l’endophtalmie. C, D : zone hypoéchogène en arrière de la rétine et de la choroïde (pointes de flèche) = liquide dans l’espace sous-ténonien ; fine membrane croisant le nerf optique (flèches) = décollement postérieur du vitré.",
+   "en": "A: hypoechoic fluid collection (asterisk) in the lateral orbit = orbital abscess. B: echogenic, irregular, loculated purulent debris in the vitreous (star) = key finding of endophthalmitis. C, D: hypoechoic region behind the retina and choroid (arrowheads) = fluid in sub-Tenon’s space; thin membrane crossing the optic nerve (arrows) = posterior vitreous detachment."
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "author": "Haight et al. — Clin Pract Cases Emerg Med 2023;7(4)",
+  "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10855287/",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10855287.1/cpcem-7-262-g001.jpg",
+  "source": "pmc",
+  "doi": "10.5811/cpcem.1427",
+  "article": "Diagnosis of Endophthalmitis and Orbital Abscess by Ultrasound: A Case Report",
+  "module": "I",
+  "exam": "bscan",
+  "topics": [
+   "a5-bscan",
+   "a5-inflammation-infection"
+  ],
+  "w": 750,
+  "h": 550,
+  "bytes": 50056,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "figure legend (PMC full text)",
+  "source_description": "(A) The hypoechoic fluid collection (asterisk) in the lateral aspect of the orbit is consistent with orbital abscess. (B) The echogenic purulent debris within the vitreous humor (star) has an irregular and loculated appearance and is the key ultrasonographic finding of endophthalmitis. (C) and (D) The hypoechoic region posterior to retina and choroid (arrowheads) represents fluid in sub-Tenon’s space (potential space), and the thin membrane crossing the optic nerve (arrows) represents a posterior vitreous detachment, both of which are less common ultrasonographic findings of endophthalmitis.",
+  "credit": "",
+  "licence_evidence": "licence URL in article XML"
+ },
+ {
   "id": "IMG3-018",
   "file": "imgsrc3/web/IMG3-018.jpg",
   "title": {

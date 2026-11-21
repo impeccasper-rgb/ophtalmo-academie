@@ -1,7 +1,7 @@
 {
- "built": "2026-11-21T20:01:33Z",
- "ok": 44,
- "skipped": 1,
+ "built": "2026-11-21T20:19:08Z",
+ "ok": 45,
+ "skipped": 0,
  "log": [
   {
    "id": "IMG3-004",
@@ -70,8 +70,8 @@
   },
   {
    "id": "IMG3-017",
-   "status": "skip",
-   "msg": "figure-level copyright notice without CC BY | …eous humor (star) has an irregular and loculated appearance and is the key ultrasonographic finding of endophthalmitis. (C) and (D) The hypoechoic region posterior to retina and choroid (arrowheads) represents fluid in sub-Tenon’s space (potential space), and the thin membrane crossi…"
+   "status": "ok",
+   "msg": "CC BY 4.0 750x550 <- https://pmc-oa-opendata.s3.amazonaws.com/PMC10855287.1/cpcem-7-262-g001.jpg"
   },
   {
    "id": "IMG3-018",
