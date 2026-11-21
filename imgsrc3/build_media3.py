@@ -109,7 +109,7 @@ def resolve_commons(s):
     meta = os.path.join(TMP, s["id"] + ".commons.json")
     ok = curl("https://commons.wikimedia.org/w/api.php", meta, params={
         "action": "query", "format": "json", "formatversion": "2", "redirects": "1", "uselang": "en",
-        "prop": "imageinfo", "iiprop": "url|size|mime|extmetadata", "titles": "File:" + name})
+        "prop": "imageinfo", "iiprop": "url|size|mime|user|extmetadata", "titles": "File:" + name})
     if not ok:
         raise RuntimeError("Commons API unreachable")
     data = json.load(open(meta, encoding="utf-8"))
@@ -125,7 +125,8 @@ def resolve_commons(s):
     if not allowed_licence(lic):
         raise RuntimeError(f"licence rejected: {lic or 'none'}")
     lic_url = g("LicenseUrl") or licence_url_for(lic)
-    author = g("Artist") or g("Credit") or "Wikimedia Commons contributor"
+    author = g("Artist") or g("Credit") or (("Wikimedia Commons user " + ii["user"]) if ii.get("user") else "Wikimedia Commons contributor")
+    author = re.split(r"\s*\.?\s*When using this image", author)[0].strip(" .")[:200]
     return {
         "download": ii["url"], "resolved_url": ii["url"], "page_url": ii.get("descriptionurl") or s["page_url"],
         "license": lic, "license_url": lic_url, "author": author,
@@ -136,6 +137,9 @@ def resolve_commons(s):
 
 # ---------------------------------------------------------------- PMC
 _xml_cache = {}
+_oa_cache = {}
+_pkg_cache = {}
+IMG_EXT = (".jpg", ".jpeg", ".png", ".gif", ".webp", ".tif", ".tiff")
 
 
 def pmc_xml(pmcid):
@@ -151,26 +155,82 @@ def pmc_xml(pmcid):
     return root
 
 
-def article_licence(root):
-    perms = root.find(".//article-meta/permissions")
-    if perms is None:
-        perms = root.find(".//permissions")
-    if perms is None:
-        return None, None, ""
-    blob = ET.tostring(perms, encoding="unicode")
-    urls = re.findall(r"https?://creativecommons\.org/[^\s\"'<>]+", blob)
-    name = None
-    for u in urls:
-        name = licence_from_url(u)
-        if name:
-            return name, u.rstrip(".,;)"), text_of(perms)
-    t = text_of(perms)
-    if re.search(r"Creative Commons Attribution(?! ?-? ?Non)(?! ?-? ?No ?Deriv)", t) and not re.search(r"non-?commercial|no ?deriv", t, re.I):
-        m = re.search(r"Attribution(?: ?-? ?ShareAlike)? ?(\d\.\d)?", t)
-        ver = (m.group(1) if m else None) or "4.0"
-        name = ("CC BY-SA " if "ShareAlike" in t else "CC BY ") + ver
-        return name, licence_url_for(name), t
-    return None, None, t
+def oa_record(pmcid):
+    """PMC OA web service record: {'license': 'CC BY', 'links': {'tgz': url, 'pdf': url}} or {'error': ...}."""
+    if pmcid in _oa_cache:
+        return _oa_cache[pmcid]
+    out = os.path.join(TMP, pmcid + ".oa.xml")
+    rec = {"links": {}}
+    if curl("https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi", out, params={"id": pmcid}):
+        t = open(out, encoding="utf-8", errors="replace").read()
+        m = re.search(r'<record[^>]*\blicense="([^"]*)"', t)
+        if m:
+            rec["license"] = m.group(1)
+        for fmt, href in re.findall(r'<link[^>]*format="([^"]+)"[^>]*href="([^"]+)"', t):
+            rec["links"][fmt] = href.replace("ftp://", "https://")
+        m = re.search(r'<error[^>]*code="([^"]+)"', t)
+        if m:
+            rec["error"] = m.group(1)
+    _oa_cache[pmcid] = rec
+    return rec
+
+
+def _norm_oa_licence(s):
+    """'CC BY' / 'CC BY-SA' / 'CC0' from the OA service -> a versionless name ('CC BY 4.0' assumed only for display)."""
+    s = (s or "").strip().upper().replace("_", " ")
+    if s in ("CC0", "CC 0", "PUBLIC DOMAIN"):
+        return "CC0 1.0"
+    m = re.match(r"CC[ -]?BY(-SA)?$", s)
+    if m:
+        return "CC BY" + (m.group(1) or "")
+    return s or None
+
+
+def article_licence(root, pmcid=None):
+    """Return (name, url, evidence). Looks at every licence element/attribute in <front>, then the
+    licence text, then the PMC OA service. Never guesses: no evidence -> (None, None, evidence)."""
+    front = root.find(".//front")
+    if front is None:
+        front = root
+    urls, texts = [], []
+    for el in front.iter():
+        tag = el.tag.split("}")[-1] if isinstance(el.tag, str) else ""
+        for v in el.attrib.values():
+            if "creativecommons.org" in v:
+                urls.append(v)
+        if tag in ("license_ref", "license-ref") and el.text:
+            urls.append(el.text.strip())
+        if tag in ("license", "permissions"):
+            texts.append(text_of(el))
+    blob = ET.tostring(front, encoding="unicode")
+    urls += re.findall(r"https?://(?:www\.)?creativecommons\.org/[^\s\"'<>]+", blob)
+    names = [n for n in (licence_from_url(u) for u in urls) if n]
+    # prefer the most restrictive statement found (an NC anywhere wins -> rejected)
+    if names:
+        bad = [n for n in names if not allowed_licence(n)]
+        n = bad[0] if bad else names[0]
+        u = next(u for u in urls if licence_from_url(u) == n)
+        return n, u.rstrip(".,;)"), "url"
+    t = " ".join(texts)
+    if re.search(r"non-?commercial|no-?deriv|\bCC[ -]BY-N[CD]", t, re.I):
+        return "CC BY-NC (text)", None, t[:400]
+    m = re.search(r"\bCC[ -]?BY(-SA)?[ -]?(\d\.\d)?\b", t)
+    if m:
+        name = "CC BY" + (m.group(1) or "") + " " + (m.group(2) or "4.0")
+        return name, licence_url_for(name), t[:400]
+    if re.search(r"Creative\W+Commons\W+Attribution", t, re.I):
+        sa = re.search(r"Share\W*Alike", t, re.I)
+        ver = re.search(r"Attribution[^.]{0,40}?(\d\.\d)", t)
+        name = ("CC BY-SA " if sa else "CC BY ") + (ver.group(1) if ver else "4.0")
+        return name, licence_url_for(name), t[:400]
+    if pmcid:
+        rec = oa_record(pmcid)
+        n = _norm_oa_licence(rec.get("license"))
+        if n and allowed_licence(n + (" 4.0" if not re.search(r"\d", n) else "")):
+            return n, licence_url_for(n + " 4.0") if not re.search(r"\d", n) else licence_url_for(n), "PMC OA service license=" + rec.get("license", "")
+        if n:
+            return n, None, "PMC OA service license=" + rec.get("license", "")
+    return None, None, (t or blob)[:600]
 
 
 def norm_label(s):
@@ -200,9 +260,9 @@ FIG_BAD = re.compile(r"by-nc|by-nd|nc-sa|nc-nd|non-?commercial|no ?deriv|(reprod
 def figure_rights_ok(fig):
     blob = " ".join(text_of(fig.find(t)) for t in ("caption", "attrib", "permissions"))
     if FIG_BAD.search(blob):
-        return False, "figure-level restriction: " + FIG_BAD.search(blob).group(0)
+        return False, "figure-level restriction: " + FIG_BAD.search(blob).group(0) + " | " + blob[:300]
     if re.search(r"©|\(c\)\s|copyright", blob, re.I) and not re.search(r"cc[ -]by(?!-n)", blob, re.I):
-        return False, "figure-level copyright notice without CC BY"
+        return False, "figure-level copyright notice without CC BY | " + blob[:300]
     return True, ""
 
 
@@ -220,38 +280,98 @@ def authors_from_xml(root):
     return " — ".join(x for x in (au, f"{journal} {year}".strip()) if x)
 
 
-def oa_package_member(pmcid, href):
-    """Fallback: PMC OA web service -> tgz package -> extract the figure file."""
-    meta = os.path.join(TMP, pmcid + ".oa.xml")
-    if not curl("https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi", meta, params={"id": pmcid}):
-        return None
-    m = re.search(r'href="([^"]+\.tar\.gz)"', open(meta, encoding="utf-8", errors="replace").read())
-    if not m:
-        return None
-    link = m.group(1).replace("ftp://", "https://")
+def _stem(name):
+    b = os.path.basename(name).lower()
+    while True:
+        r, e = os.path.splitext(b)
+        if e in IMG_EXT:
+            b = r
+        else:
+            return b
+
+
+def _pick(names, href):
+    """Best member for a figure href: same stem, preferred formats first."""
+    st = _stem(href)
+    c = [n for n in names if _stem(n) == st and os.path.splitext(n)[1].lower() in IMG_EXT]
+    pref = [".jpg", ".jpeg", ".png", ".gif", ".webp", ".tif", ".tiff"]
+    c.sort(key=lambda n: pref.index(os.path.splitext(n)[1].lower()))
+    return c[0] if c else None
+
+
+def from_oa_tgz(pmcid, href):
+    rec = oa_record(pmcid)
+    link = rec["links"].get("tgz")
+    if not link:
+        return None, "OA service: no tgz (" + rec.get("error", "no record") + ")"
     tgz = os.path.join(TMP, pmcid + ".tgz")
     if not os.path.exists(tgz) and not curl(link, tgz, timeout=600):
-        return None
-    base = os.path.splitext(os.path.basename(href))[0].lower()
+        return None, "tgz download failed " + link
     with tarfile.open(tgz) as tf:
-        cands = [mb for mb in tf.getmembers() if mb.isfile()
-                 and os.path.splitext(os.path.basename(mb.name))[0].lower() == base
-                 and os.path.splitext(mb.name)[1].lower() in (".jpg", ".jpeg", ".png", ".gif", ".tif", ".tiff")]
-        cands.sort(key=lambda mb: [".jpg", ".jpeg", ".png", ".gif", ".tif", ".tiff"].index(os.path.splitext(mb.name)[1].lower()))
-        if not cands:
-            return None
-        out = os.path.join(TMP, pmcid + "-" + os.path.basename(cands[0].name))
-        with tf.extractfile(cands[0]) as fsrc, open(out, "wb") as fdst:
-            shutil.copyfileobj(fsrc, fdst)
-        return out
+        members = {m.name: m for m in tf.getmembers() if m.isfile()}
+        best = _pick(list(members), href)
+        if not best:
+            return None, "tgz has no file for " + href
+        out = os.path.join(TMP, pmcid + "-tgz-" + os.path.basename(best))
+        with tf.extractfile(members[best]) as fs, open(out, "wb") as fd:
+            shutil.copyfileobj(fs, fd)
+        return out, link + " :: " + best
+
+
+def from_s3(pmcid, href):
+    """PMC Article Datasets on AWS (s3://pmc-oa-opendata), public HTTPS listing."""
+    lst = os.path.join(TMP, pmcid + ".s3.xml")
+    if not curl("https://pmc-oa-opendata.s3.amazonaws.com/", lst, params={"list-type": "2", "prefix": pmcid + "."}):
+        return None, "S3 listing failed"
+    keys = re.findall(r"<Key>([^<]+)</Key>", open(lst, encoding="utf-8", errors="replace").read())
+    best = _pick(keys, href)
+    if not best:
+        return None, f"S3: no file for {href} ({len(keys)} keys)"
+    url = "https://pmc-oa-opendata.s3.amazonaws.com/" + urllib.parse.quote(best)
+    out = os.path.join(TMP, pmcid + "-s3-" + os.path.basename(best))
+    return (out, url) if curl(url, out) else (None, "S3 download failed " + url)
+
+
+def from_epmc_zip(pmcid, href):
+    import zipfile
+    for params in ({"includeInlineImage": "true"}, None):
+        z = os.path.join(TMP, pmcid + (".inl" if params else "") + ".zip")
+        url = f"https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/supplementaryFiles"
+        if not os.path.exists(z) and not curl(url, z, params=params, timeout=600):
+            continue
+        try:
+            with zipfile.ZipFile(z) as zf:
+                best = _pick(zf.namelist(), href)
+                if best:
+                    out = os.path.join(TMP, pmcid + "-zip-" + os.path.basename(best))
+                    with zf.open(best) as fs, open(out, "wb") as fd:
+                        shutil.copyfileobj(fs, fd)
+                    return out, url + (" (inline images)" if params else "") + " :: " + best
+        except zipfile.BadZipFile:
+            continue
+    return None, "Europe PMC supplementaryFiles: no file for " + href
+
+
+def from_epmc_bin(pmcid, href):
+    st = _stem(href)
+    tried = []
+    for e in ([os.path.splitext(href)[1]] if os.path.splitext(href)[1].lower() in IMG_EXT else []) + [".jpg", ".png", ".gif"]:
+        url = f"https://europepmc.org/articles/{pmcid}/bin/{st}{e}"
+        if url in tried:
+            continue
+        tried.append(url)
+        out = os.path.join(TMP, pmcid + "-bin-" + st + e)
+        if curl(url, out):
+            return out, url
+    return None, "europepmc bin failed"
 
 
 def resolve_pmc(s):
     pmcid, want = s["resolve"]["pmcid"], s["resolve"]["fig"]
     root = pmc_xml(pmcid)
-    lic, lic_url, lic_text = article_licence(root)
-    if not allowed_licence(lic):
-        raise RuntimeError(f"article licence rejected: {lic or 'none found'} ({lic_text[:120]})")
+    lic, lic_url, evidence = article_licence(root, pmcid)
+    if not allowed_licence(lic if (lic and re.search(r"\d", lic)) else (lic or "") + " 4.0"):
+        raise RuntimeError(f"article licence rejected: {lic or 'none found'} | evidence: {evidence}")
     fig = find_fig(root, want)
     if fig is None:
         labels = [text_of(f.find("label")) for f in root.iter("fig")]
@@ -266,15 +386,29 @@ def resolve_pmc(s):
     author = s.get("author") or ""
     if not author or author.startswith("Authors of"):
         author = authors_from_xml(root) or author
-    exts = [""] if re.search(r"\.(jpe?g|png|gif|tiff?)$", href, re.I) else [".jpg", ".png", ".gif"]
-    cands = [f"https://europepmc.org/articles/{pmcid}/bin/{href}{e}" for e in exts]
-    return {"download_candidates": cands, "href": href, "pmcid": pmcid,
-            "license": lic, "license_url": lic_url, "author": author,
+    if lic and not re.search(r"\d", lic):  # versionless name from the OA service: keep the manifest's version
+        exp = s.get("license") or ""
+        lic = exp if exp.upper().startswith(lic.upper()) else lic
+        lic_url = licence_url_for(lic) or lic_url
+    return {"href": href, "pmcid": pmcid, "license": lic, "license_url": lic_url, "author": author,
+            "licence_evidence": evidence if evidence != "url" else "licence URL in article XML",
             "source_description": text_of(fig.find("caption"))[:1500],
             "credit": text_of(fig.find("attrib"))[:300]}
 
 
-# ---------------------------------------------------------------- images
+def fetch_pmc_figure(info):
+    """Try every route; return (path, source string) or raise with all reasons."""
+    reasons = []
+    for fn in (from_oa_tgz, from_s3, from_epmc_zip, from_epmc_bin):
+        try:
+            p, where = fn(info["pmcid"], info["href"])
+        except Exception as e:  # corrupt archive etc.
+            p, where = None, f"{fn.__name__}: {e}"
+        if p and is_image(p):
+            return p, where
+        reasons.append(where if not p else f"{where} (not an image)")
+    raise RuntimeError("download failed: " + " | ".join(reasons))
+
 IM = shutil.which("magick")
 CONVERT = [IM] if IM else ["convert"]
 IDENTIFY = [IM, "identify"] if IM else ["identify"]
@@ -311,12 +445,14 @@ def main():
     for s in items:
         id_ = s["id"]
         try:
+            pmc_file = None
             if s["source"] == "commons":
                 info = resolve_commons(s)
                 cands = [info["download"]]
             elif s["source"] == "pmc":
                 info = resolve_pmc(s)
-                cands = info["download_candidates"]
+                pmc_file = fetch_pmc_figure(info)
+                cands = []
             else:
                 if not allowed_licence(s.get("license")):
                     raise RuntimeError("licence rejected: " + str(s.get("license")))
@@ -328,10 +464,8 @@ def main():
                 if curl(u, raw) and is_image(raw):
                     got = u
                     break
-            if not got and s["source"] == "pmc":
-                p = oa_package_member(info["pmcid"], info["href"])
-                if p and is_image(p):
-                    raw, got = p, f"PMC OA package ({info['pmcid']}) / {info['href']}"
+            if pmc_file:
+                raw, got = pmc_file
             if not got:
                 raise RuntimeError("download failed: " + " | ".join(cands))
             dst = os.path.join(WEB, id_ + ".jpg")
@@ -352,6 +486,8 @@ def main():
                 "source_description": info.get("source_description", ""),
                 "credit": info.get("credit", ""),
             }
+            if info.get("licence_evidence"):
+                entry["licence_evidence"] = info["licence_evidence"][:300]
             if s["source"] == "pmc" and s.get("license") and s["license"] != info["license"]:
                 entry["licence_note"] = f"expected {s['license']}, source says {info['license']}"
             catalog.append(entry)

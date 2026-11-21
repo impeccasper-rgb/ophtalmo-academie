@@ -11,6 +11,7 @@ on:
     branches: [main]
     paths:
       - imgsrc3/sources.json
+      - imgsrc3/build_media3.py
 
 permissions:
   contents: write

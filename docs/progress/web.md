@@ -25,6 +25,16 @@ _Dernière mise à jour : 2026-11-21, cycle 2 (rôle web)._
 - Filtre de droits du lead conservé (seul ajout : `G.OPH_RESTRICTED = R`).
 - **Vérifié** : tests/run.py 0 problème ; smoke test cycle 2 (`scratchpad/websmoke2.py`, 390 et 1280 px) 0 problème : accueil sans compte à rebours, 5 onglets, image du jour → série = 1, règles du gel, bascule EN, fiche, cartes, QCM, investigations, cas vedette EN (OPH-250, plein écran, nettoyage), sources (> 100 lignes de crédits), copie des signalements, liens profonds, 404, service worker.
 
+## Cycle 3 (fait)
+- `cases-images` ajouté à `data_order` (tools/build.py ; build_web le relit).
+- En anglais, le sous-titre `en` (doublon du titre anglais) est masqué : fiches, capsules, sections A (`enSub()` dans views.js).
+- Filtre de droits : confirmé, `m-bscan-3`, `m-oct-6`, `m-gonio-1`, `m-fondoeil-3`, `m-fondoeil-4`, `m-cv-3`, `m-cv-4` portent `restricted: true` (photos OPH-205/191/292/203/189/190/293) et ne sont utilisés par aucun item : le filtre les supprime de `OPH.invMedia`. L'atlas et la page crédits excluent aussi les images restreintes (`window.OPH_RESTRICTED`).
+- Polices auto-hébergées : `fonts/` (woff2 variables Fontsource 5.3.0 : Lexend, Atkinson Hyperlegible Next + italique, Mono ; latin + latin-ext ; licences OFL copiées) → `site/fonts/`, `@font-face` générés en tête de `app.css`, préchargement des 2 polices latines, pré-cache SW, Google Fonts retiré du site (gardé dans l'artifact). Mention OFL sur la page crédits.
+- imgsrc3 (30 images) : champs réels (`title`/`caption` bilingues, `license_url`, `share_alike`, `page_url` Commons) ; titres choisis selon la langue au chargement (i18n.js) ; crédit = auteur + licence (lien) + « partage dans les mêmes conditions » pour CC BY-SA + page source. Visibles dans l'atlas (nouveau filtre « Examens » pour le module I) et le tableau des crédits. Atlas traduit.
+- tools/build.py ignore les images absentes du dépôt (restreintes) au lieu de planter.
+- `Shell.invRoutes()` couvre `cas-images` et `cas-images/<id>` ; 179 clés `inv.*` dans i18n.js (dont 29 `inv.ic.*`).
+- Vérifié : tests/run.py 0 problème ; websmoke2 0 problème (+ polices chargées, atlas IMG3, crédits SA, pas de doublon EN, onglet Investigations actif sur cas-images).
+
 ## Reste (chaînes UI encore en dur, en français)
 - views.js : contenu pédagogique des pages A1–A5 (`a-anatomie`, `a-physiologie`, `a-examen`, `a-imagerie`, `a-retine` : intertitres et paragraphes d'introduction), `A5_GROUPS`, `A5_URG`, tableaux `COMPARE` (module B/C), vues `atlas`, `sources`, `express-b/c`, `recherche`, `module-a` crumbs « Module A » (identique). Ce sont surtout des textes de contenu : idéalement à déplacer dans data/ + data-en/ (ressources bilingues) plutôt qu'en clés UI.
 - sims.js, figures-a.js, figures-b.js (≈ 210 lignes avec du français : libellés des simulations et des schémas) : hors de mes fichiers ; à traiter par leur propriétaire avec `t()` ou `I18N.pick()`.
@@ -33,4 +43,3 @@ _Dernière mise à jour : 2026-11-21, cycle 2 (rôle web)._
 
 ## Blocages / notes
 - Les surcouches data-en couvrent 67 QCM et 64 clés hy ; le reste s'affiche en FR avec le badge.
-- Polices Google chargées depuis le réseau (cache SW après la 1re visite). Pour l'app iOS, prévoir l'auto-hébergement (OFL).
