@@ -26,6 +26,12 @@
   wait was only subtracted once the ack arrived, and a hung periodic screenshot sat in front). Fixed: live accounting, ack wait 200 s,
   periodic screenshots only while the walk is silent. Checked with a screenshot delayed by 100 s in headless Chrome: 9/9.
 
+- Run 44939525283 (be94b92): iPhone 9/9 (both passes); iPad timed out (WebView cold start 6.7 min on a slow runner,
+  then the absolute 600 s limit ran out). Changes in the working tree (shipped by the next push.py): boot allowance 15 min,
+  inactivity limit 7 min (cap 30 min); periodic screenshots only before the walk; screenshot attempts 75 + 45 s;
+  iPad Air 11" by default (`ipad_model` input / `IOS_IPAD_MODEL` variable for the 13"); step timeouts 40 min, job 110 min.
+  The concurrency setting no longer cancels a running iOS job on main (pushed by the lead in 811e19f).
+
 ## Remaining / for others
 - **Web:** fonts are remote (Google Fonts); offline the app falls back to system fonts. Self-host them to be fully offline. Hide web-only UI under `html.native`.
 - **User:** Apple Developer account (legal name), final bundle ID (`set_brand.py --app-id`), API key and GitHub secrets, privacy policy URL, physician review (1.4.1).

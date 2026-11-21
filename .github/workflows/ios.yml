@@ -34,6 +34,10 @@ on:
         description: 'Also run the self-test on an iPad simulator'
         type: boolean
         default: true
+      ipad_model:
+        description: 'iPad simulator to prefer (e.g. "iPad Pro 13" for 13-inch App Store screenshots; default "iPad Air 11", lighter for the GPU-less runner)'
+        type: string
+        default: ''
       testflight:
         description: 'Archive + upload to TestFlight (needs the secrets and IOS_RELEASE_ENABLED=true, see docs/IOS.md)'
         type: boolean
@@ -53,7 +57,7 @@ jobs:
     name: Build + simulator self-test
     # Override without editing: repository variables IOS_RUNNER (e.g. macos-26) and IOS_XCODE (e.g. 26.1).
     runs-on: ${{ vars.IOS_RUNNER || 'macos-latest' }}
-    timeout-minutes: 80
+    timeout-minutes: 110
     permissions:
       contents: write   # only to force-push the evidence branch "ios-evidence" (skipped on pull requests)
     steps:
@@ -120,16 +124,18 @@ jobs:
       # in a worker thread (the walk waits for each one), and records the video in a separate second pass.
       - name: Self-test on iPhone simulator (+ video pass)
         id: iphone
-        timeout-minutes: 35
+        timeout-minutes: 40
         run: python3 ios/scripts/run_selftest.py --app build/Build/Products/Debug-iphonesimulator/App.app --family iphone --out artifacts/iphone --video
 
       - name: Self-test on iPad simulator
         id: ipad
         if: ${{ always() && steps.build.outcome == 'success' && (github.event_name != 'workflow_dispatch' || inputs.ipad) }}
-        timeout-minutes: 30
+        timeout-minutes: 40
+        env:
+          IPAD_MODEL: ${{ inputs.ipad_model || vars.IOS_IPAD_MODEL || 'iPad Air 11' }}
         run: |
           xcrun simctl shutdown all || true
-          python3 ios/scripts/run_selftest.py --app build/Build/Products/Debug-iphonesimulator/App.app --family ipad --out artifacts/ipad
+          python3 ios/scripts/run_selftest.py --app build/Build/Products/Debug-iphonesimulator/App.app --family ipad --out artifacts/ipad --prefer "$IPAD_MODEL"
 
       - name: Upload screenshots, video and logs
         if: always()

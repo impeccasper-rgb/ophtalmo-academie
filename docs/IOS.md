@@ -61,13 +61,16 @@ What the `simulator` job does (about 25–40 min):
 5. `run_selftest.py --family iphone --video`: picks the newest iPhone simulator (Pro Max first) and launches the app **in French**
    (`-AppleLanguages (fr)`).
    - **Pass 1 (verdict):** follows the logs and takes a screenshot each time the walk asks (`SELFTEST SHOT`). The walk waits
-     for each screenshot. While the walk is silent (WebView boot, a stall) it also takes one every 30 s. At the end it takes a light and a dark screenshot.
+     for each screenshot. Before the walk starts (WebView boot) it also takes one every 30 s. At the end it takes a light and a dark screenshot.
    - **Pass 2 (iPhone only, evidence):** relaunches the app and records a video of a second walk. Pass 2 never changes the verdict.
-6. Same pass 1 on an iPad (Pro 13-inch first).
+6. Same pass 1 on an iPad. The default is **iPad Air 11"**, which has fewer pixels than the 13" and so is lighter for the
+   GPU-less runner. For 13" App Store screenshots, run the workflow by hand with `ipad_model` = `iPad Pro 13`
+   (or set the variable `IOS_IPAD_MODEL`).
 7. Uploads the artifact `ios-selftest-<run number>` (full-size PNG) and force-pushes the branch **`ios-evidence`**
    (JPEG copies, logs, `result.json`, the video if it is under 45 MB).
 
-The job fails if a step logs `SELFTEST FAIL`, if `SELFTEST PASS done` never appears (600 s timeout), or if the app crashes.
+The job fails if a step logs `SELFTEST FAIL`, if the walk never starts (15 min after launch), if it stalls (7 min without a
+new `SELFTEST` line, or 30 min in total), or if the app crashes.
 Warnings (`SELFTEST WARN`, JS errors) show as yellow annotations and in the run summary, but they don't fail the job.
 
 **Slow simulators.** GitHub's macOS runners have no GPU. In the first CI run (run 44928422573) the iPhone simulator took
@@ -149,6 +152,11 @@ Notes:
   wait is 200 s, and periodic screenshots are only taken while the walk is silent (WebView boot or a stall), so they never
   compete with step screenshots.
   Checked in headless Chrome with one screenshot artificially delayed by 100 s: 9/9.
+- Run 44939525283 (commit be94b92) passed 9/9 on the iPhone, both passes. The iPad Pro 13" took **6.7 min** to cold-start
+  the WebView, while periodic screenshots hung behind the step screenshots, and the fixed 600 s limit from launch ran
+  out after the `boot` step. This was a slow runner, not an app bug. Fixed: a boot allowance (15 min) plus an inactivity
+  limit (7 min) instead of one absolute timeout; periodic screenshots only before the walk starts and never after a
+  screenshot failure; screenshot attempts of 75 s + 45 s; iPad Air 11" by default.
 - Since run 2, the Debug log channel uses `os.Logger` instead of `NSLog`. NSLog also wrote to stderr, which mixed into
   the console capture (merged lines, and a few screenshots saved as `name<date>.png`). The runner also splits merged lines.
 Run locally: `node ios/scripts/overlay.mjs <copy of site> --selftest`, open it in a browser, and read the console.

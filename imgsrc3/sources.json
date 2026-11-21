@@ -4,101 +4,6 @@
  "policy": "Only CC0 / public domain / CC BY / CC BY-SA. Build rejects anything else (incl. NC, ND, or figure-level © / NC notes). Images are resized only (max 1200 px, no crop).",
  "images": [
   {
-   "id": "IMG3-001",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862628",
-    "fig": "Figure 1"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862628/",
-   "doi": null,
-   "article": "Gonioscopy skills and techniques",
-   "title": {
-    "fr": "Gonioscopie : angle ouvert normal (photos et schémas)",
-    "en": "Gonioscopy: normal open angle (photos and drawings)"
-   },
-   "caption": {
-    "fr": "Deux photographies (A, B) et deux dessins (C, D) des structures vues en gonioscopie d’un angle ouvert. B : dispersion pigmentaire, angle densément pigmenté (surtout le trabéculum pigmenté). Le dessin en coupe et le dessin de face montrent le « coin cornéen » (rencontre des reflets des faces interne et externe de la cornée), qui situe la ligne de Schwalbe, utile dans les angles peu pigmentés.",
-    "en": "Two photographs (A, B) and two drawings (C, D) of the structures seen on gonioscopy of an open angle. B: pigment dispersion, densely pigmented angle (especially the pigmented trabecular meshwork). The cross-section and face-on drawings show the corneal wedge (where the reflections from the inner and outer corneal surfaces meet), marking Schwalbe’s line, helpful in hypopigmented angles."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Winnie Nolan, Adeola Onakoya — Community Eye Health Journal 2021;34(112)",
-   "module": "I",
-   "exam": "gonio",
-   "topics": [
-    "ex-gonioscopie",
-    "g-pigmentaire"
-   ],
-   "area": "gonio",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
-   "id": "IMG3-002",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862628",
-    "fig": "Figure 3"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862628/",
-   "doi": null,
-   "article": "Gonioscopy skills and techniques",
-   "title": {
-    "fr": "Pose d’un verre de gonioscopie indirect avec gel de couplage",
-    "en": "Inserting an indirect gonioscopy lens with coupling gel"
-   },
-   "caption": {
-    "fr": "Insertion d’un verre de gonioscopie indirect avec gel de couplage.",
-    "en": "Insertion of an indirect gonioscopy lens using coupling gel."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Winnie Nolan, Adeola Onakoya — Community Eye Health Journal 2021;34(112)",
-   "module": "I",
-   "exam": "gonio",
-   "topics": [
-    "ex-gonioscopie"
-   ],
-   "area": "gonio",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
-   "id": "IMG3-003",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862628",
-    "fig": "Figure 4"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862628/",
-   "doi": null,
-   "article": "Gonioscopy skills and techniques",
-   "title": {
-    "fr": "Classification de Shaffer de l’angle",
-    "en": "Shaffer grading of the angle"
-   },
-   "caption": {
-    "fr": "Système de classification de Shaffer (figure de l’article ; grade 0 : aucune structure visible … grade 4 : bande ciliaire visible).",
-    "en": "Shaffer grading system (figure from the article; grade 0: no structure visible … grade 4: ciliary body band visible)."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Winnie Nolan, Adeola Onakoya — Community Eye Health Journal 2021;34(112)",
-   "module": "I",
-   "exam": "gonio",
-   "topics": [
-    "ex-gonioscopie",
-    "g-fermeture"
-   ],
-   "area": "gonio",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
    "id": "IMG3-004",
    "source": "pmc",
    "url": null,
@@ -670,39 +575,6 @@
    "caption_basis": "Commons source description (read at build 2026-11-21)"
   },
   {
-   "id": "IMG3-022",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862619",
-    "fig": "Figure 8"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862619/",
-   "doi": null,
-   "article": "The optic nerve head in glaucoma",
-   "title": {
-    "fr": "Glaucome : photo de papille, rapport OCT et champ visuel du même œil",
-    "en": "Glaucoma: disc photo, OCT report and visual field of the same eye"
-   },
-   "caption": {
-    "fr": "Photographie du fond d’œil, rapport d’OCT et champ visuel du nerf optique droit d’un patient glaucomateux.",
-    "en": "Fundus photograph, optical coherence tomography report and visual field of the right optic nerve of a patient with glaucoma."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Rupert R A Bourne, Tasneem Khatib — Community Eye Health Journal 2021;34(112)",
-   "module": "I",
-   "exam": "cv",
-   "topics": [
-    "ex-champs-visuels",
-    "ex-oct",
-    "g-papille"
-   ],
-   "area": "cv",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
    "id": "IMG3-023",
    "source": "commons",
    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Humphrey_visual_field.JPG",
@@ -785,70 +657,6 @@
    ],
    "area": "fondoeil",
    "caption_basis": "Commons source description (read at build 2026-11-21)"
-  },
-  {
-   "id": "IMG3-026",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862619",
-    "fig": "Figure 2"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862619/",
-   "doi": null,
-   "article": "The optic nerve head in glaucoma",
-   "title": {
-    "fr": "Tête du nerf optique normale",
-    "en": "Normal optic nerve head"
-   },
-   "caption": {
-    "fr": "Tête du nerf optique normale (le bord de l’excavation se lit au coude des petits vaisseaux, pas à la différence de couleur).",
-    "en": "Normal optic nerve head (the cup edge is judged by the bend of the small vessels, not by the colour difference)."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Rupert R A Bourne, Tasneem Khatib — Community Eye Health Journal 2021;34(112)",
-   "module": "I",
-   "exam": "fondoeil",
-   "topics": [
-    "ex-papille",
-    "g-papille"
-   ],
-   "area": "fondoeil",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
-   "id": "IMG3-027",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862619",
-    "fig": "Figure 3"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862619/",
-   "doi": null,
-   "article": "The optic nerve head in glaucoma",
-   "title": {
-    "fr": "Papille normale d’un jeune patient africain",
-    "en": "Normal optic disc of a young African patient"
-   },
-   "caption": {
-    "fr": "Tête du nerf optique normale d’un jeune patient africain ; aspect « plumeux » des fibres nerveuses au-dessus et au-dessous du disque.",
-    "en": "Normal optic nerve head of a young African patient; ‘feathery’ nerve fibre layer above and below the disc."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Rupert R A Bourne, Tasneem Khatib — Community Eye Health Journal 2021;34(112)",
-   "module": "I",
-   "exam": "fondoeil",
-   "topics": [
-    "ex-papille",
-    "g-papille"
-   ],
-   "area": "fondoeil",
-   "caption_basis": "figure legend (PMC full text)"
   },
   {
    "id": "IMG3-028",
@@ -1277,229 +1085,6 @@
    "caption_basis": "figure legend (PMC full text)"
   },
   {
-   "id": "IMG3-045",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862619",
-    "fig": "Figure 5"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862619/",
-   "doi": null,
-   "article": "The optic nerve head in glaucoma",
-   "title": {
-    "fr": "Papille normale et papilles glaucomateuses de deux sévérités",
-    "en": "Normal disc and glaucomatous discs of two severities"
-   },
-   "caption": {
-    "fr": "Papille normale (a) et têtes du nerf optique glaucomateuses de deux patients à des stades de sévérité différents.",
-    "en": "Normal optic disc (a) and glaucomatous optic nerve heads of two patients with different severities of glaucoma."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Rupert R A Bourne, Tasneem Khatib — Community Eye Health Journal 2021;34(112)",
-   "module": "C",
-   "exam": "fondoeil",
-   "topics": [
-    "g-papille",
-    "ex-papille"
-   ],
-   "area": "glaucoma",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
-   "id": "IMG3-046",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862619",
-    "fig": "Figure 4"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862619/",
-   "doi": null,
-   "article": "The optic nerve head in glaucoma",
-   "title": {
-    "fr": "Neuropathie glaucomateuse : hémorragies en flammèche de la papille",
-    "en": "Glaucomatous optic neuropathy: splinter disc haemorrhages"
-   },
-   "caption": {
-    "fr": "Neuropathie optique glaucomateuse : hémorragies en flammèche (« splinter ») de la papille.",
-    "en": "Glaucomatous optic neuropathy: splinter haemorrhages."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Rupert R A Bourne, Tasneem Khatib — Community Eye Health Journal 2021;34(112)",
-   "module": "C",
-   "exam": "fondoeil",
-   "topics": [
-    "g-papille",
-    "g-gpn"
-   ],
-   "area": "glaucoma",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
-   "id": "IMG3-047",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862619",
-    "fig": "Figure 6"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862619/",
-   "doi": null,
-   "article": "The optic nerve head in glaucoma",
-   "title": {
-    "fr": "Papille d’un glaucome pseudo-exfoliatif : lire le bord aux vaisseaux, pas à la pâleur",
-    "en": "Disc in pseudoexfoliation glaucoma: judge the rim by the vessels, not the pallor"
-   },
-   "caption": {
-    "fr": "Tête du nerf optique d’un patient avec glaucome pseudo-exfoliatif. La limite de l’excavation marquée par les vaisseaux diffère de la limite entre la pâleur du fond de l’excavation et la zone plus rose ; se fier à la couleur est trompeur. Le coude des petits vaisseaux indique ici un anneau plus mince que ne le suggère la couleur.",
-    "en": "Optic nerve head of a patient with pseudoexfoliation glaucoma. The cup outlined by the blood vessels differs from the margin between the pallor of the cup base and the pinker zone; focusing on colour is misleading. The change in direction of the small vessels indicates a thinner rim than the colour suggests."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Rupert R A Bourne, Tasneem Khatib — Community Eye Health Journal 2021;34(112)",
-   "module": "C",
-   "exam": "fondoeil",
-   "topics": [
-    "g-papille",
-    "g-pxf"
-   ],
-   "area": "glaucoma",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
-   "id": "IMG3-048",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862619",
-    "fig": "Figure 7"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862619/",
-   "doi": null,
-   "article": "The optic nerve head in glaucoma",
-   "title": {
-    "fr": "Encoche de l’anneau et défaut de la couche des fibres nerveuses",
-    "en": "Rim notch and retinal nerve fibre layer defect"
-   },
-   "caption": {
-    "fr": "Neuropathie optique glaucomateuse : élargissement focal de l’excavation (encoche) et défaut de la couche des fibres nerveuses.",
-    "en": "Glaucomatous optic neuropathy: focal enlargement of the cup (notch) and nerve fibre layer defect."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Rupert R A Bourne, Tasneem Khatib — Community Eye Health Journal 2021;34(112)",
-   "module": "C",
-   "exam": "fondoeil",
-   "topics": [
-    "g-papille",
-    "ex-papille"
-   ],
-   "area": "glaucoma",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
-   "id": "IMG3-049",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862624",
-    "fig": "Figure 1"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862624/",
-   "doi": null,
-   "article": "Defining and diagnosing glaucoma: a focus on blindness prevention",
-   "title": {
-    "fr": "Formes de neuropathie optique glaucomateuse (A–D)",
-    "en": "Forms of glaucomatous optic neuropathy (A–D)"
-   },
-   "caption": {
-    "fr": "A : C/D augmenté. B : amincissement focal de l’anneau supérieur. C : perte diffuse de l’anneau inférieur. D : amincissement inféro-temporal de l’anneau et défaut de la couche des fibres nerveuses.",
-    "en": "A: enlarged cup-to-disc ratio. B: focal superior rim narrowing. C: diffuse loss of the inferior rim. D: inferotemporal rim thinning and retinal nerve fibre layer defect."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Jibran Mohamed-Noriega, G Chandra Sekhar — Community Eye Health Journal 2021;34(112)",
-   "module": "C",
-   "exam": "fondoeil",
-   "topics": [
-    "g-papille",
-    "g-gpao"
-   ],
-   "area": "glaucoma",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
-   "id": "IMG3-050",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862626",
-    "fig": "Figure 1"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862626/",
-   "doi": null,
-   "article": "Neovascular glaucoma: prevention and treatment",
-   "title": {
-    "fr": "Glaucome néovasculaire aigu : rubéose irienne",
-    "en": "Acute neovascular glaucoma: rubeosis iridis"
-   },
-   "caption": {
-    "fr": "Patient diabétique avec douleur sévère, vision floue et œil rouge. Signes du stade aigu du glaucome néovasculaire : injection ciliaire, œdème épithélial cornéen modéré et rubéose irienne. En haut à droite : agrandissement de la rubéose.",
-    "en": "Diabetic patient with severe pain, blurred vision and red eye. Signs of the acute stage of neovascular glaucoma: ciliary injection, mild corneal epithelial oedema and rubeosis iridis. Top right: enlarged view of the rubeosis."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Jibran Mohamed-Noriega, Jason A Penniecook — Community Eye Health Journal 2021;34(112)",
-   "module": "C",
-   "exam": null,
-   "topics": [
-    "g-neovasculaire"
-   ],
-   "area": "glaucoma",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
-   "id": "IMG3-051",
-   "source": "pmc",
-   "url": null,
-   "resolve": {
-    "pmcid": "PMC8862627",
-    "fig": "Figure 1"
-   },
-   "page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862627/",
-   "doi": null,
-   "article": "Managing the painful blind eye",
-   "title": {
-    "fr": "Glaucome néovasculaire : chambre antérieure effondrée, angle fermé",
-    "en": "Neovascular glaucoma: collapsed anterior chamber, closed angle"
-   },
-   "caption": {
-    "fr": "Le glaucome néovasculaire aboutit souvent à un œil aveugle douloureux. Cet œil a une chambre antérieure effondrée avec fermeture de l’angle due à un glaucome néovasculaire secondaire à une rétinopathie diabétique proliférante.",
-    "en": "Neovascular glaucoma often results in a painful blind eye. This eye has a collapsed anterior chamber with angle closure resulting from neovascular glaucoma secondary to proliferative diabetic retinopathy."
-   },
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "licence_check": "verified-2026-11-21",
-   "author": "Jason A Penniecook, Doris Saraí Garza Cruz, Maria Soledad Pighin Caminos — Community Eye Health Journal 2021;34(112)",
-   "module": "C",
-   "exam": null,
-   "topics": [
-    "g-neovasculaire",
-    "g-fermeture"
-   ],
-   "area": "glaucoma",
-   "caption_basis": "figure legend (PMC full text)"
-  },
-  {
    "id": "IMG3-052",
    "source": "commons",
    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cornea_showing_Krukenberg%27s_Spindle.jpg",
@@ -1757,5 +1342,25 @@
    "area": "general",
    "caption_basis": "Commons source description (read at build 2026-11-21)"
   }
- ]
+ ],
+ "excluded": {
+  "ids": [
+   "IMG3-001",
+   "IMG3-002",
+   "IMG3-003",
+   "IMG3-022",
+   "IMG3-026",
+   "IMG3-027",
+   "IMG3-045",
+   "IMG3-046",
+   "IMG3-047",
+   "IMG3-048",
+   "IMG3-049",
+   "IMG3-050",
+   "IMG3-051"
+  ],
+  "reason": "Community Eye Health Journal 2021 (n° 112): the article XML licence reads 'Creative Commons Attribution Non-Commercial License' (the PubMed copyright API had reported CC BY 4.0). NC is not allowed. Verified by media.yml run 44940902641 on 2026-11-21.",
+  "IMG3-037": "Commons lists CC BY-SA 4.0 but the image carries an 'EyeRounds.org' watermark (EyeRounds = CC BY-NC-ND): provenance doubtful.",
+  "IMG3-038": "116 x 86 px on Commons: unusable."
+ }
 }

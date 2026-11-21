@@ -153,8 +153,12 @@ def pmc_xml(pmcid):
     if pmcid in _xml_cache:
         return _xml_cache[pmcid]
     out = os.path.join(TMP, pmcid + ".xml")
-    if not curl(f"https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/fullTextXML", out):
-        raise RuntimeError("Europe PMC full-text XML unavailable")
+    url = f"https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/fullTextXML"
+    if not curl(url, out):
+        time.sleep(20)  # EBI sometimes refuses bursts: one late retry
+        _FAILED.discard((url, ""))
+        if not curl(url, out):
+            raise RuntimeError("Europe PMC full-text XML unavailable")
     raw = open(out, "rb").read()
     raw = re.sub(rb"<!DOCTYPE[^>]*>", b"", raw, count=1)
     root = ET.fromstring(raw)
@@ -264,12 +268,16 @@ def find_fig(root, want):
 FIG_BAD = re.compile(r"by-nc|by-nd|nc-sa|nc-nd|non-?commercial|no ?deriv|(reproduced|reprinted|used|adapted) with (kind )?permission|courtesy of", re.I)
 
 
-def figure_rights_ok(fig):
+def figure_rights_ok(fig, reviewed=None):
     blob = " ".join(text_of(fig.find(t)) for t in ("caption", "attrib", "permissions"))
     if FIG_BAD.search(blob):
         return False, "figure-level restriction: " + FIG_BAD.search(blob).group(0) + " | " + blob[:300]
-    if re.search(r"©|\(c\)\s|copyright", blob, re.I) and not re.search(r"cc[ -]by(?!-n)", blob, re.I):
-        return False, "figure-level copyright notice without CC BY | " + blob[:300]
+    m = re.search(r"©|\(c\)\s|copyright", blob, re.I)
+    if m and not re.search(r"cc[ -]by(?!-n)", blob, re.I):
+        ctx = blob[max(0, m.start() - 120): m.end() + 160]
+        if reviewed and reviewed in blob:
+            return True, ""  # notice read by a person and recorded in sources.json (figure_rights_reviewed)
+        return False, "figure-level copyright notice without CC BY | …" + ctx + "…"
     return True, ""
 
 
@@ -383,7 +391,7 @@ def resolve_pmc(s):
     if fig is None:
         labels = [text_of(f.find("label")) for f in root.iter("fig")]
         raise RuntimeError(f"figure '{want}' not found (labels: {labels})")
-    ok, why = figure_rights_ok(fig)
+    ok, why = figure_rights_ok(fig, s.get("figure_rights_reviewed"))
     if not ok:
         raise RuntimeError(why)
     g = fig.find(".//graphic")

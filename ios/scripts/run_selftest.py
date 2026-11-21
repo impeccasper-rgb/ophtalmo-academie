@@ -17,7 +17,8 @@ Pass 2 (optional --video, evidence only, never changes the verdict):
 Exit 1 if pass 1 has any "SELFTEST FAIL", no "SELFTEST PASS done", a crash, or a fatal simctl error.
 
 Usage: python3 ios/scripts/run_selftest.py --app build/Build/Products/Debug-iphonesimulator/App.app \
-           --family iphone --out artifacts/iphone [--video] [--timeout 600] [--lang fr]
+           --family iphone --out artifacts/iphone [--video] [--prefer "iPad Air 11"] [--lang fr]
+           [--boot-timeout 900] [--idle-timeout 420] [--max-time 1800]
 """
 import argparse, glob, json, os, plistlib, queue, re, shutil, signal, subprocess, sys, threading, time
 
@@ -50,7 +51,7 @@ def simctl(*a, timeout=120, quiet=False):
 def version_key(s):
     return tuple(int(x) for x in re.findall(r'\d+', s))
 
-def pick_device(family):
+def pick_device(family, prefer=''):
     r1 = simctl('list', '-j', 'devices', 'available', timeout=180)
     r2 = simctl('list', '-j', 'runtimes', 'available', timeout=180)
     if r1.returncode or r2.returncode:
@@ -60,6 +61,8 @@ def pick_device(family):
                  key=lambda r: version_key(r['version']), reverse=True)
     prefix = 'iPhone' if family == 'iphone' else 'iPad'
     prefs = ['Pro Max', 'Pro', 'Air', ''] if family == 'iphone' else ['Pro 13', 'Pro (12.9', 'Air 13', 'Pro', 'Air', '']
+    if prefer:
+        prefs = [prefer] + prefs
     for rt in ios:
         devs = [d for d in data['devices'].get(rt['identifier'], []) if d['name'].startswith(prefix) and d.get('isAvailable', True)]
         devs = [d for d in devs if 'SE' not in d['name'] and 'mini' not in d['name']] or devs
@@ -96,7 +99,7 @@ class Shooter(threading.Thread):
             path = os.path.join(self.dir, re.sub(r'[^\w.-]+', '_', name) + '.png')
             done = False
             if not self.disabled:
-                for attempt, to in enumerate((40, 30)):
+                for attempt, to in enumerate((75, 45)):
                     r = simctl('io', self.udid, 'screenshot', path, timeout=to, quiet=attempt == 0 and not name.startswith('t'))
                     if r.returncode == 0 and os.path.exists(path):
                         done = True; break
@@ -163,7 +166,10 @@ def main():
     ap.add_argument('--app', required=True)
     ap.add_argument('--family', choices=['iphone', 'ipad'], default='iphone')
     ap.add_argument('--out', required=True)
-    ap.add_argument('--timeout', type=int, default=600, help='seconds to wait for "SELFTEST ... done" in pass 1')
+    ap.add_argument('--boot-timeout', type=int, default=900, help='seconds from launch to the first SELFTEST line (WebView cold start: 20 s to 7 min on CI)')
+    ap.add_argument('--idle-timeout', type=int, default=420, help='seconds without a new SELFTEST line once the walk has started')
+    ap.add_argument('--max-time', type=int, default=1800, help='absolute cap for pass 1')
+    ap.add_argument('--prefer', default='', help='device name fragment to prefer, e.g. "iPad Air 11" (default: Pro Max / Pro 13)')
     ap.add_argument('--video', action='store_true', help='pass 2: record a video of a second walk (evidence only)')
     ap.add_argument('--video-timeout', type=int, default=300)
     ap.add_argument('--lang', default='fr', help='simulator app language (the walk expects to start in FR)')
@@ -205,8 +211,9 @@ def main():
         r = simctl('spawn', udid, 'launchctl', 'list', timeout=60, quiet=True)
         return r.returncode == 0 and bundle_id in (r.stdout or '')
 
-    def follow(follower, timeout, on_shot):
-        """Returns (done_line, crash_reason, lines)."""
+    def follow(follower, timeout, on_shot, boot_timeout=None, idle_timeout=None):
+        """Returns (done_line, crash_reason, lines). Stops at "done", a crash, `timeout` (absolute), no first line
+        within `boot_timeout`, or no new line for `idle_timeout` once the walk has started."""
         t_start, last_periodic, detached, lines = time.time(), time.time(), False, []
         last_line = time.time()
         while True:
@@ -220,8 +227,9 @@ def main():
                 if re.match(r'SELFTEST (PASS|FAIL) done\b', line):
                     return line, None, lines
             now = time.time()
-            # periodic screenshots only while the walk is silent (WebView boot, a stall): never compete with step shots
-            if on_shot and shooter and now - last_line >= 25 and now - last_periodic >= 30 and shooter.q.empty() and not shooter.busy:
+            # periodic screenshots only before the walk starts (to see the WebView boot) and while screenshots work:
+            # once the walk runs, every screenshot slot belongs to its SHOT requests
+            if on_shot and shooter and not lines and not shooter.failed and now - last_periodic >= 30 and shooter.q.empty() and not shooter.busy:
                 shooter.shot('t%03d' % int(now - started)); last_periodic = now
             if procs['app'].poll() is not None and not detached:
                 if app_running():
@@ -234,10 +242,14 @@ def main():
                     return None, 'app process ended before the self-test finished (simctl exit %s)' % procs['app'].returncode, lines
             if now - t_start > timeout:
                 return None, None, lines
+            if boot_timeout and not lines and now - t_start > boot_timeout:
+                return None, 'no SELFTEST output %ds after launch (WebView never started the walk)' % boot_timeout, lines
+            if idle_timeout and lines and now - last_line > idle_timeout:
+                return None, None, lines
             time.sleep(0.3)
 
     try:
-        udid, dev_name, rt_name = pick_device(a.family)
+        udid, dev_name, rt_name = pick_device(a.family, a.prefer)
         res['device'], res['runtime'] = dev_name, rt_name
         log('device: %s (%s) %s  bundle: %s' % (dev_name, rt_name, udid, bundle_id))
         simctl('boot', udid, timeout=300)
@@ -268,7 +280,7 @@ def main():
         # ---------- pass 1: verdict + screenshots ----------
         follower = Follower({'console': files['console'], 'unified': files['unified']}); follower.name = 'p1'
         procs['app'] = launch(files['console'], {})
-        done, crash, lines = follow(follower, a.timeout, lambda n: shooter.shot(n, ack=True))
+        done, crash, lines = follow(follower, a.max_time, lambda n: shooter.shot(n, ack=True), a.boot_timeout, a.idle_timeout)
         shooter.drain(120)
         res['passed'] = [l for l in lines if l.startswith('SELFTEST PASS')]
         res['failed'] = [l for l in lines if l.startswith('SELFTEST FAIL')]
@@ -276,7 +288,7 @@ def main():
         res['js_errors'] = [l for l in lines if l.startswith('SELFTEST JSERROR')]
         res['ok'] = bool(done) and done.startswith('SELFTEST PASS') and not res['failed'] and not crash
         res['reason'] = 'ok' if res['ok'] else (crash or ('; '.join(res['failed'][:3]) if res['failed'] else
-                        ('timeout after %ss without any SELFTEST line' % a.timeout if not lines else 'timeout after %ss before "done"' % a.timeout)))
+                        ('no SELFTEST line' if not lines else 'walk stalled (no new SELFTEST line for %ss, or %ss in total) after: %s' % (a.idle_timeout, a.max_time, lines[-1][:120]))))
 
         shooter.shot('zz-final-light'); shooter.drain(90)
         if simctl('ui', udid, 'appearance', 'dark', timeout=60).returncode == 0:
