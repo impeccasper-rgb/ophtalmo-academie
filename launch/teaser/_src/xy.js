@@ -46,7 +46,7 @@ var XY = (function () {
       } },
     herpes: { hook: { fr: 'Herpès<br>ou ' + GL('zona') + '&nbsp;?', en: 'Herpes<br>or ' + GL('shingles') + '?' },
       labels: [{ fr: 'Herpès (VHS)', en: 'Herpes (HSV)' }, { fr: 'Zona (VZV)', en: 'Shingles (VZV)' }],
-      q: { fr: 'Quel signe trahit le VHS ?', en: 'Which sign gives HSV away?' }, opts: [{ fr: 'Bulbes terminaux', en: 'Terminal bulbs' }, { fr: 'Lésion surélevée', en: 'Raised lesion' }], ok: 0,
+      q: { fr: 'Quel signe trahit le VHS ?', en: 'Which sign gives HSV away?' }, opts: [{ fr: 'Lésion surélevée', en: 'Raised lesion' }, { fr: 'Bulbes terminaux', en: 'Terminal bulbs' }], ok: 1,
       why: { fr: GL('VHS') + ' : vrai ulcère, prend la fluorescéine', en: GL('HSV') + ': a true ulcer that stains' },
       draw: function (P) { P[0].e = eyeIn(P[0], { mode: 'cobalt', dendrite: true }); P[1].e = eyeIn(P[1], { mode: 'cobalt', pseudo: true }); },
       reveal: function (S, P, t) {
@@ -71,44 +71,45 @@ var XY = (function () {
       } },
     anisocorie: { hook: { fr: 'Grande<br>ou ' + GL('petite') + '&nbsp;?', en: 'Large<br>or ' + GL('small') + '?' },
       labels: [{ fr: 'Lumière', en: 'Light' }, { fr: 'Obscurité', en: 'Dark' }],
-      q: { fr: 'L’écart grandit à la lumière. Laquelle est anormale ?', en: 'Bigger gap in the light. Which is abnormal?' }, opts: [{ fr: 'La grande', en: 'Large pupil' }, { fr: 'La petite', en: 'Small pupil' }], ok: 0,
-      why: { fr: 'À l’obscurité, c’est la petite : ' + GL('Horner'), en: 'In the dark, the small one: ' + GL('Horner') },
+      q: { fr: 'L’écart grandit à l’obscurité. Laquelle est anormale ?', en: 'Bigger gap in the dark. Which is abnormal?' }, opts: [{ fr: 'La grande', en: 'Large pupil' }, { fr: 'La petite', en: 'Small pupil' }], ok: 1,
+      why: { fr: 'Écart à l’obscurité : la petite, ' + GL('Horner'), en: 'Bigger in the dark: small pupil, ' + GL('Horner') },
       draw: function (P) {
-        [[64, 26], [70, 62]].forEach(function (r, i) { var p = P[i];
+        [[26, 21], [66, 30]].forEach(function (r, i) { var p = P[i];
           p.r = eyeIn(p, { pupil: r[0] }, [150, 40, 320, 270]); p.l = eyeIn(p, { pupil: r[1] }, [490, 40, 320, 270]);
           var ic = i ? '<svg viewBox="0 0 60 60"><path d="M40,8 A24,24 0 1,0 52,40 A18,18 0 1,1 40,8 Z" fill="#c9ceff"/></svg>' : '<svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="12" fill="#d8ff3a"/>' + [0, 45, 90, 135, 180, 225, 270, 315].map(function (a) { var r2 = a * Math.PI / 180; return '<line x1="' + (30 + Math.cos(r2) * 18).toFixed(1) + '" y1="' + (30 + Math.sin(r2) * 18).toFixed(1) + '" x2="' + (30 + Math.cos(r2) * 27).toFixed(1) + '" y2="' + (30 + Math.sin(r2) * 27).toFixed(1) + '" stroke="#d8ff3a" stroke-width="4" stroke-linecap="round"/>'; }).join('') + '</svg>';
           K.div(p, 'left:40px;top:139px;width:72px;height:72px', ic); });
       },
       reveal: function (S, P, t) {
-        var c = P[0].r.map(450, 280); loopPx(P[0], c[0], c[1], 58, 56, t + .1, 9);
-        sticker(S, SX(0), SY(0), H.t({ fr: 'III · Adie · collyre', en: 'CN III · Adie · drops' }), t + .5, -4, 38);
-        return [['sticker-1', H.t({ fr: 'III · Adie · collyre', en: 'CN III · Adie · drops' }), t + .95]];
+        var c = P[1].l.map(450, 280); loopPx(P[1], c[0], c[1], 58, 56, t + .1, 9);
+        sticker(S, SX(1) + 440, SY(1) - 34, H.t({ fr: 'ne se dilate pas', en: 'won’t dilate' }), t + .5, 4, 38);
+        return [['sticker-2', H.t({ fr: 'ne se dilate pas', en: 'won’t dilate' }), t + .95]];
       } },
-    occlusions: { hook: { fr: 'OACR<br>ou ' + GL('OVCR') + '&nbsp;?', en: 'CRAO<br>or ' + GL('CRVO') + '?' },
+    occlusions: { hook: { fr: 'Artère ou veine<br>' + GL('bouchée') + '&nbsp;?', en: 'Artery or vein<br>' + GL('blocked') + '?' },
       labels: [{ fr: 'Patient 1', en: 'Patient 1' }, { fr: 'Patient 2', en: 'Patient 2' }],
       q: { fr: 'Lequel est un AVC de l’œil ?', en: 'Which one is an eye stroke?' }, opts: [{ fr: 'Tache rouge cerise', en: 'Cherry-red spot' }, { fr: 'Sang partout', en: 'Blood everywhere' }], ok: 0,
       why: { fr: GL('OACR') + ' : centre d’AVC, tout de suite', en: GL('CRAO') + ': stroke centre, right now' },
-      draw: function (P) { P[0].e = fundusIn(P[0], { pale: true, narrow: true, cherry: true }); P[1].e = fundusIn(P[1], { tortuous: 'all', dilate: true, hem: 'all', cws: true }); },
+      draw: function (P) { P[0].e = place(P[0], ART.fundus({ kind: 'crao', bg: 'none' }), [0, 0, 440, 400], [250, 6, PW - 500, PH - 12]); P[1].e = place(P[1], ART.fundus({ kind: 'crvo', bg: 'none' }), [0, 0, 440, 400], [250, 6, PW - 500, PH - 12]); },
       reveal: function (S, P, t) {
-        var c = P[0].e.map(128, 102); loopPx(P[0], c[0], c[1], 54, 50, t + .1, 21);
+        var c = P[0].e.map(224, 216); loopPx(P[0], c[0], c[1], 44, 40, t + .1, 21);
         sticker(S, SX(0), SY(0), H.t({ fr: 'OACR', en: 'CRAO' }), t + .5, -4);
         sticker(S, SX(1), SY(1), H.t({ fr: 'sang et tonnerre', en: 'blood and thunder' }), t + .7, 4, 36);
         return [['sticker-1', H.t({ fr: 'OACR', en: 'CRAO' }), t + .95], ['sticker-2', H.t({ fr: 'sang et tonnerre', en: 'blood and thunder' }), t + 1.15]];
       } },
     lentille: { hook: { fr: 'Lentille<br>ou ' + GL('pas') + '&nbsp;?', en: 'Contact lens<br>or ' + GL('not') + '?' },
       labels: [{ fr: 'Avec lentilles', en: 'Lens wearer' }, { fr: 'Sans lentilles', en: 'No lenses' }],
-      q: { fr: 'Lequel exige une fluoroquinolone ?', en: 'Which one needs a fluoroquinolone?' }, opts: [{ fr: 'Porteur de lentilles', en: 'Lens wearer' }, { fr: 'Non-porteur', en: 'Non-wearer' }], ok: 0,
-      why: { fr: GL('Pseudomonas') + ' : fluoroquinolone, jamais de pansement', en: GL('Pseudomonas') + ': fluoroquinolone, never a patch' },
-      draw: function (P) { P[0].e = eyeIn(P[0], { mode: 'cobalt', patch: true, lensRing: true }); P[1].e = eyeIn(P[1], { mode: 'cobalt', patch: true }); },
+      q: { fr: 'Lequel exige une fluoroquinolone ?', en: 'Which one needs a fluoroquinolone?' }, opts: [{ fr: 'Non-porteur', en: 'Non-wearer' }, { fr: 'Porteur de lentilles', en: 'Lens wearer' }], ok: 1,
+      why: { fr: 'Aucun pansement ; lentilles : ' + GL('fluoroquinolone'), en: 'No patch; lens wearer: ' + GL('fluoroquinolone') },
+      draw: function (P) { P[0].e = eyeIn(P[0], { mode: 'cobalt', patch: true, lensRing: true }); P[1].e = eyeIn(P[1], { mode: 'cobalt', scratch: true });
+        K.div(P[0], 'left:' + (PW - 170) + 'px;top:' + (PH / 2 - 60) + 'px;width:130px;height:120px', '<svg viewBox="0 0 130 120"><path d="M10,84 Q65,4 120,84" fill="#dfe3ff" fill-opacity=".25" stroke="#ffffff" stroke-width="6"/><path d="M10,84 Q65,96 120,84" fill="none" stroke="#ffffff" stroke-width="4" opacity=".7"/></svg>'); },
       reveal: function (S, P, t) {
         var c = P[0].e.map(446, 264); loopPx(P[0], c[0], c[1], 70, 58, t + .1, 14);
         var pt = K.div(P[0], 'left:' + (PW - 250) + 'px;top:30px;width:220px;height:150px;z-index:7', '<svg viewBox="0 0 220 150"><path d="M10,40 L60,60 M210,40 L160,60" stroke="#c9ceff" stroke-width="6"/><ellipse cx="110" cy="75" rx="60" ry="44" fill="#eef0ff" stroke="#0a0f40" stroke-width="5"/><path class="x" d="M70,40 L150,110 M150,40 L70,110" stroke="#ff5a4f" stroke-width="14" stroke-linecap="round" fill="none"/></svg>');
         K.track(pt, [[0, { opacity: 0, transform: 'translateY(-30px)' }], [t + .5, { opacity: 0, transform: 'translateY(-30px)' }, EZ.out], [t + .8, { opacity: 1, transform: 'translateY(0px)' }]]);
         K.draw(pt.querySelector('.x'), t + .85, .35, EZ.out);
-        sticker(S, SX(0), SY(0), H.t({ fr: 'jamais de pansement', en: 'never patch' }), t + 1.1, -4, 38);
-        return [['sticker-1', H.t({ fr: 'jamais de pansement', en: 'never patch' }), t + 1.55]];
+        sticker(S, SX(0), SY(0), H.t({ fr: 'Pseudomonas', en: 'Pseudomonas' }), t + 1.1, -4, 38);
+        return [['sticker-1', 'Pseudomonas', t + 1.55]];
       } },
-    uveite: { hook: { fr: 'Uvéite<br>ou ' + GL('crise') + '&nbsp;?', en: 'Uveitis<br>or ' + GL('angle closure') + '?' },
+    uveite: { hook: { fr: 'Uvéite<br>ou ' + GL('crise') + '&nbsp;?', en: 'Uveitis<br>or ' + GL('AACG') + '?' },
       labels: [{ fr: 'Patient 1', en: 'Patient 1' }, { fr: 'Patient 2', en: 'Patient 2' }],
       q: { fr: 'Œil rouge, vision floue. Quel signe tranche ?', en: 'Red eye, blurry vision. Which sign decides?' }, opts: [{ fr: 'La pupille', en: 'The pupil' }, { fr: 'La rougeur', en: 'The redness' }], ok: 0,
       tree: true,
@@ -127,10 +128,10 @@ var XY = (function () {
       draw: function (P, Tm) {
         // both eyes drawn without a pupil; the pupils are animated overlays (consensual: both change together)
         P.forEach(function (p) { p.e = eyeIn(p, { pupil: 0 }); var c = p.e.map(450, 280), r0 = 60 * p.e.sc;
-          p.pu = K.div(p, 'left:' + (c[0] - r0) + 'px;top:' + (c[1] - r0) + 'px;width:' + (2 * r0) + 'px;height:' + (2 * r0) + 'px;border-radius:50%;background:#05060f;z-index:4'); });
+          p.pu = K.div(p, 'left:' + (c[0] - r0) + 'px;top:' + (c[1] - r0) + 'px;width:' + (2 * r0) + 'px;height:' + (2 * r0) + 'px;border-radius:50%;background:#000;box-shadow:0 0 0 3px #05060f;z-index:40'); });
         // light schedule: on the right eye (pupils small), swing, on the left eye (pupils widen): RAPD OS. Ends on the left eye.
         var keysL = [], keysP = [], t = 0, rev = Tm.rev, on = 0;
-        var beam = K.div(P[0].parentNode, 'left:0;top:0;width:300px;height:300px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,250,210,.75),rgba(255,250,210,.25) 55%,transparent);mix-blend-mode:screen;z-index:30');
+        var beam = K.div(P[0].parentNode, 'left:0;top:0;width:300px;height:300px;border-radius:50%;background:radial-gradient(closest-side,transparent 0%,transparent 38%,rgba(255,250,210,.55) 52%,rgba(255,250,210,.2) 72%,transparent);mix-blend-mode:screen;z-index:30');
         var xs = [0, 1].map(function (k) { return 'translate(' + (PXS[k] + PW / 2 - 150) + 'px,' + (PYS[k] + PH / 2 - 150) + 'px)'; });
         while (t < rev) { var side = on % 2; keysL.push([t, { transform: xs[side] }], [Math.min(t + 1.2, rev), { transform: xs[side] }, EZ.io]);
           keysP.push([t, { transform: 'scale(' + (side ? .95 : .55) + ')' }], [Math.min(t + 1.2, rev), { transform: 'scale(' + (side ? .95 : .55) + ')' }]); t += 1.5; on++; }
@@ -146,20 +147,22 @@ var XY = (function () {
   X.ORDER = ['episclerite', 'herpes', 'dpv', 'anisocorie', 'occlusions', 'lentille', 'uveite', 'dpar'];
 
   /* mini tree for « uvéite ou crise » (the sorting questions), A look */
-  function tree(S, t0) {
+  function tree(S, t0) { // the sorting questions: vision, pupil, fluorescein (keratitis, lens wearer)
     var T = H.t, w = K.div(S, 'left:72px;top:176px;width:876px;height:290px;z-index:20');
-    var n = function (x, y, wd, txt, hl) { return K.div(w, 'left:' + x + 'px;top:' + y + 'px;width:' + wd + 'px;padding:8px 14px;text-align:center;font:700 38px/1.1 var(--body);color:' + (hl ? '#0a0f40' : '#fff') + ';' + (hl ? 'background:#d8ff3a;border-color:#d8ff3a;box-shadow:0 0 30px rgba(216,255,58,.5)' : ''), txt, 'hud'); };
+    var dot = function (d, fill) { return ' <span style="display:inline-block;width:' + d + 'px;height:' + d + 'px;border-radius:50%;background:' + fill + ';vertical-align:middle;box-shadow:0 0 0 3px #c9ceff"></span>'; };
+    var n = function (x, y, wd, txt, hl, fs) { return K.div(w, 'left:' + x + 'px;top:' + y + 'px;width:' + wd + 'px;padding:8px 8px;text-align:center;white-space:nowrap;font:700 ' + (fs || 36) + 'px/1.1 var(--body);color:' + (hl ? '#0a0f40' : '#fff') + ';' + (hl ? 'background:#d8ff3a;border-color:#d8ff3a;box-shadow:0 0 30px rgba(216,255,58,.5)' : ''), txt, 'hud'); };
     var lines = K.svgBox(w, 'left:0;top:0;width:876px;height:290px', '0 0 876 290');
-    [['M438,58 L190,112', '✗'], ['M438,58 L650,112', '✓'], ['M650,170 L500,222', '•'], ['M650,170 L760,222', '●']].forEach(function (l) { K.svgEl('path', { d: l[0], stroke: '#9da5ff', 'stroke-width': 4, fill: 'none' }, lines); });
-    n(178, 0, 520, T({ fr: 'Vision ↓, photophobie ?', en: 'Vision ↓, photophobia?' }));
-    n(30, 112, 330, T({ fr: 'Conjonctivite', en: 'Conjunctivitis' }));
-    n(470, 112, 360, T({ fr: 'Pupille ?', en: 'Pupil?' }));
-    n(370, 222, 240, T({ fr: 'Uvéite', en: 'Uveitis' }) + ' <span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#fff;vertical-align:middle"></span>');
-    n(630, 222, 246, T({ fr: 'Crise', en: 'Closure' }) + ' <span style="display:inline-block;width:30px;height:30px;border-radius:50%;background:#0a0f40;vertical-align:middle"></span>', true);
-    K.svgEl('text', { x: 280, y: 96, fill: '#ff8a80', 'font-size': 44, 'font-weight': 800, 'font-family': 'Atkinson Hyperlegible Next' }, lines).textContent = '✗';
-    K.svgEl('text', { x: 560, y: 96, fill: '#d8ff3a', 'font-size': 44, 'font-weight': 800, 'font-family': 'Atkinson Hyperlegible Next' }, lines).textContent = '✓';
-    K.rise(w, t0, .4, 20);
-    return T({ fr: 'Vision photophobie Conjonctivite Pupille Uvéite Crise', en: 'Vision photophobia Conjunctivitis Pupil Uveitis Closure' });
+    ['M438,56 L170,104', 'M438,56 L660,104', 'M660,160 L167,206', 'M660,160 L441,206', 'M660,160 L712,206'].forEach(function (d) { K.svgEl('path', { d: d, stroke: '#9da5ff', 'stroke-width': 4, fill: 'none' }, lines); });
+    K.svgEl('text', { x: 268, y: 92, fill: '#ff8a80', 'font-size': 40, 'font-weight': 800, 'font-family': 'Atkinson Hyperlegible Next' }, lines).textContent = '✗';
+    K.svgEl('text', { x: 560, y: 92, fill: '#d8ff3a', 'font-size': 40, 'font-weight': 800, 'font-family': 'Atkinson Hyperlegible Next' }, lines).textContent = '✓';
+    n(258, 0, 360, T({ fr: 'Vision ↓ ?', en: 'Vision ↓?' }));
+    n(20, 104, 320, T({ fr: 'Conjonctivite', en: 'Conjunctivitis' }));
+    n(520, 104, 280, T({ fr: 'Pupille ?', en: 'Pupil?' }));
+    n(0, 206, 334, T({ fr: 'Kératite · lentille', en: 'Keratitis · lens' }) + ' <span style="display:inline-block;width:26px;height:26px;border-radius:50%;background:#1f2cff;box-shadow:inset 0 0 0 6px #1f2cff,inset 0 0 0 13px #d8ff3a;vertical-align:middle"></span>', false, 32);
+    n(348, 206, 186, T({ fr: 'Uvéite', en: 'Uveitis' }) + dot(12, '#000'), false, 32);
+    n(548, 206, 328, T({ fr: 'Crise', en: 'Angle closure' }) + dot(24, '#000'), true, 32);
+    K.rise(w, t0, .3, 20);
+    return T({ fr: 'Vision Conjonctivite Pupille Kératite lentille Uvéite Crise', en: 'Vision Conjunctivitis Pupil Keratitis lens Uveitis Angle closure' });
   }
 
   X.reel = function (S, key) {
@@ -203,8 +206,8 @@ var XY = (function () {
     H.burst(S, 72 + 24 + 34, BY + 55, Q.rev + .45, 12, 3);
     var labs = C.reveal(S, P, Q.rev) || [];
     labs.forEach(function (l) { H.reg(l[0], l[1], l[2], Q.end, 'label'); });
-    if (C.tree) { var tt = tree(S, Q.rev); H.reg('tree', tt, Q.rev + .4, Q.end); }
-    else { var why = H.t(C.why), wy = K.div(S, 'left:72px;top:190px;width:876px;color:#fff;font-size:78px;z-index:20', '<div class="dsp">' + why + '</div>'); K.rise(wy, Q.rev, .45, 30); H.reg('why', why, Q.rev + .45, Q.end); }
+    if (C.tree) { var tt = tree(S, Q.rev + .3); H.reg('tree', tt, Q.rev + .6, Q.end); }
+    else { var why = H.t(C.why), wy = K.div(S, 'left:72px;top:190px;width:876px;color:#fff;font-size:78px;z-index:20', '<div class="dsp">' + why + '</div>'); K.rise(wy, Q.rev + .3, .45, 30); H.reg('why', why, Q.rev + .75, Q.end); }
     H.endCard(S, Q.end);
     return { cuts: [0, snap, Q.tm, Q.rev, Q.end, K.T] };
   };

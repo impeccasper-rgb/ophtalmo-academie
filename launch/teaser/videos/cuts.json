@@ -191,7 +191,7 @@
      "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 10.45,
+     "start": 10.75,
      "text": "Angle closure : lower the IOP",
      "words": 5
     },
@@ -270,7 +270,7 @@
      "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 10.45,
+     "start": 10.75,
      "text": "Fermeture de l\u2019angle : baisser la PIO",
      "words": 6
     },
@@ -611,7 +611,7 @@
      "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.25,
      "text": "Herpes keratitis: antiviral, no steroids",
      "words": 5
     },
@@ -688,7 +688,7 @@
      "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.25,
      "text": "K\u00e9ratite herp\u00e9tique : antiviral, pas de cortico\u00efde",
      "words": 6
     },
@@ -945,7 +945,7 @@
      "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 10.45,
+     "start": 10.75,
      "text": "Retinal detachment : same-day ophthalmology",
      "words": 4
     },
@@ -1024,7 +1024,7 @@
      "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 10.45,
+     "start": 10.75,
      "text": "D\u00e9collement de r\u00e9tine : ophtalmo aujourd\u2019hui",
      "words": 5
     },
@@ -1243,7 +1243,7 @@
      "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.25,
      "text": "Central retinal artery occlusion: eye stroke",
      "words": 6
     },
@@ -1320,7 +1320,7 @@
      "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.25,
      "text": "Occlusion de l\u2019art\u00e8re centrale de la r\u00e9tine",
      "words": 7
     },
@@ -1399,7 +1399,7 @@
      "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 10.45,
+     "start": 10.75,
      "text": "Endophthalmitis : same-day ophthalmology",
      "words": 3
     },
@@ -1478,7 +1478,7 @@
      "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 10.45,
+     "start": 10.75,
      "text": "Endophtalmie : ophtalmo le jour m\u00eame",
      "words": 5
     },
@@ -2011,7 +2011,7 @@
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.25,
      "text": "Scleritis : deep pain, systemic work-up",
      "words": 5
     },
@@ -2112,7 +2112,7 @@
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.25,
      "text": "Scl\u00e9rite : douleur profonde, bilan syst\u00e9mique",
      "words": 5
     },
@@ -2174,7 +2174,7 @@
      "id": "question+options",
      "kind": "card",
      "start": 3.6,
-     "text": "Which sign gives HSV away? Terminal bulbs Raised lesion",
+     "text": "Which sign gives HSV away? Raised lesion Terminal bulbs",
      "words": 9
     },
     {
@@ -2190,7 +2190,7 @@
      "id": "answer-letter",
      "kind": "label",
      "start": 10.15,
-     "text": "Answer A",
+     "text": "Answer B",
      "words": 2
     },
     {
@@ -2213,7 +2213,7 @@
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.25,
      "text": "HSV : a true ulcer that stains",
      "words": 6
     },
@@ -2275,7 +2275,7 @@
      "id": "question+options",
      "kind": "card",
      "start": 3.6,
-     "text": "Quel signe trahit le VHS ? Bulbes terminaux L\u00e9sion sur\u00e9lev\u00e9e",
+     "text": "Quel signe trahit le VHS ? L\u00e9sion sur\u00e9lev\u00e9e Bulbes terminaux",
      "words": 9
     },
     {
@@ -2291,7 +2291,7 @@
      "id": "answer-letter",
      "kind": "label",
      "start": 10.15,
-     "text": "R\u00e9ponse A",
+     "text": "R\u00e9ponse B",
      "words": 2
     },
     {
@@ -2314,7 +2314,7 @@
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.25,
      "text": "VHS : vrai ulc\u00e8re, prend la fluoresc\u00e9ine",
      "words": 6
     },
@@ -2415,7 +2415,7 @@
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 10.45,
+     "start": 10.75,
      "text": "Shafer sign : urgent retina referral",
      "words": 5
     },
@@ -2516,7 +2516,7 @@
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 10.45,
+     "start": 10.75,
      "text": "Signe de Shafer : r\u00e9tine en urgence",
      "words": 6
     },
@@ -2578,7 +2578,7 @@
      "id": "question+options",
      "kind": "card",
      "start": 3.6,
-     "text": "Bigger gap in the light. Which is abnormal? Large pupil Small pupil",
+     "text": "Bigger gap in the dark. Which is abnormal? Large pupil Small pupil",
      "words": 12
     },
     {
@@ -2594,23 +2594,23 @@
      "id": "answer-letter",
      "kind": "label",
      "start": 10.15,
-     "text": "Answer A",
+     "text": "Answer B",
      "words": 2
     },
     {
      "end": 14.5,
-     "id": "sticker-1",
+     "id": "sticker-2",
      "kind": "label",
      "start": 10.45,
-     "text": "CN III \u00b7 Adie \u00b7 drops",
-     "words": 4
+     "text": "won\u2019t dilate",
+     "words": 2
     },
     {
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 9.95,
-     "text": "In the dark, the small one: Horner",
+     "start": 10.25,
+     "text": "Bigger in the dark: small pupil, Horner",
      "words": 7
     },
     {
@@ -2671,8 +2671,8 @@
      "id": "question+options",
      "kind": "card",
      "start": 3.6,
-     "text": "L\u2019\u00e9cart grandit \u00e0 la lumi\u00e8re. Laquelle est anormale ? La grande La petite",
-     "words": 12
+     "text": "L\u2019\u00e9cart grandit \u00e0 l\u2019obscurit\u00e9. Laquelle est anormale ? La grande La petite",
+     "words": 11
     },
     {
      "end": 9.5,
@@ -2687,23 +2687,23 @@
      "id": "answer-letter",
      "kind": "label",
      "start": 10.15,
-     "text": "R\u00e9ponse A",
+     "text": "R\u00e9ponse B",
      "words": 2
     },
     {
      "end": 14.5,
-     "id": "sticker-1",
+     "id": "sticker-2",
      "kind": "label",
      "start": 10.45,
-     "text": "III \u00b7 Adie \u00b7 collyre",
-     "words": 3
+     "text": "ne se dilate pas",
+     "words": 4
     },
     {
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 9.95,
-     "text": "\u00c0 l\u2019obscurit\u00e9, c\u2019est la petite : Horner",
+     "start": 10.25,
+     "text": "\u00c9cart \u00e0 l\u2019obscurit\u00e9 : la petite, Horner",
      "words": 6
     },
     {
@@ -2720,9 +2720,9 @@
    "T": 20,
    "cuts": [
     0,
-    3,
     3.5,
-    9.5,
+    4,
+    10,
     14.5,
     20
    ],
@@ -2752,26 +2752,26 @@
      "words": 2
     },
     {
-     "end": 2.9,
+     "end": 3.4,
      "id": "hook",
      "kind": "card",
      "start": 0.25,
-     "text": "CRAO or CRVO ?",
-     "words": 3
+     "text": "Artery or vein blocked ?",
+     "words": 4
     },
     {
-     "end": 9.5,
+     "end": 10,
      "id": "question+options",
      "kind": "card",
-     "start": 3.6,
+     "start": 4.1,
      "text": "Which one is an eye stroke? Cherry-red spot Blood everywhere",
      "words": 10
     },
     {
-     "end": 9.5,
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 3.9,
+     "start": 4.4,
      "text": "Your pick?",
      "words": 2
     },
@@ -2779,7 +2779,7 @@
      "end": 14.5,
      "id": "answer-letter",
      "kind": "label",
-     "start": 10.15,
+     "start": 10.65,
      "text": "Answer A",
      "words": 2
     },
@@ -2787,7 +2787,7 @@
      "end": 14.5,
      "id": "sticker-1",
      "kind": "label",
-     "start": 10.45,
+     "start": 10.95,
      "text": "CRAO",
      "words": 1
     },
@@ -2795,7 +2795,7 @@
      "end": 14.5,
      "id": "sticker-2",
      "kind": "label",
-     "start": 10.65,
+     "start": 11.15,
      "text": "blood and thunder",
      "words": 3
     },
@@ -2803,7 +2803,7 @@
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.75,
      "text": "CRAO : stroke centre, right now",
      "words": 5
     },
@@ -2821,9 +2821,9 @@
    "T": 20,
    "cuts": [
     0,
-    3,
     3.5,
-    9.5,
+    4,
+    10,
     14.5,
     20
    ],
@@ -2853,26 +2853,26 @@
      "words": 2
     },
     {
-     "end": 2.9,
+     "end": 3.4,
      "id": "hook",
      "kind": "card",
      "start": 0.25,
-     "text": "OACR ou OVCR ?",
-     "words": 3
+     "text": "Art\u00e8re ou veine bouch\u00e9e ?",
+     "words": 4
     },
     {
-     "end": 9.5,
+     "end": 10,
      "id": "question+options",
      "kind": "card",
-     "start": 3.6,
+     "start": 4.1,
      "text": "Lequel est un AVC de l\u2019\u0153il ? Tache rouge cerise Sang partout",
      "words": 11
     },
     {
-     "end": 9.5,
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 3.9,
+     "start": 4.4,
      "text": "Ton choix ?",
      "words": 2
     },
@@ -2880,7 +2880,7 @@
      "end": 14.5,
      "id": "answer-letter",
      "kind": "label",
-     "start": 10.15,
+     "start": 10.65,
      "text": "R\u00e9ponse A",
      "words": 2
     },
@@ -2888,7 +2888,7 @@
      "end": 14.5,
      "id": "sticker-1",
      "kind": "label",
-     "start": 10.45,
+     "start": 10.95,
      "text": "OACR",
      "words": 1
     },
@@ -2896,7 +2896,7 @@
      "end": 14.5,
      "id": "sticker-2",
      "kind": "label",
-     "start": 10.65,
+     "start": 11.15,
      "text": "sang et tonnerre",
      "words": 3
     },
@@ -2904,7 +2904,7 @@
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.75,
      "text": "OACR : centre d\u2019AVC, tout de suite",
      "words": 6
     },
@@ -2966,7 +2966,7 @@
      "id": "question+options",
      "kind": "card",
      "start": 4.1,
-     "text": "Which one needs a fluoroquinolone? Lens wearer Non-wearer",
+     "text": "Which one needs a fluoroquinolone? Non-wearer Lens wearer",
      "words": 8
     },
     {
@@ -2982,7 +2982,7 @@
      "id": "answer-letter",
      "kind": "label",
      "start": 10.65,
-     "text": "Answer A",
+     "text": "Answer B",
      "words": 2
     },
     {
@@ -2990,15 +2990,15 @@
      "id": "sticker-1",
      "kind": "label",
      "start": 11.55,
-     "text": "never patch",
-     "words": 2
+     "text": "Pseudomonas",
+     "words": 1
     },
     {
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 10.45,
-     "text": "Pseudomonas : fluoroquinolone, never a patch",
+     "start": 10.75,
+     "text": "No patch; lens wearer: fluoroquinolone",
      "words": 5
     },
     {
@@ -3059,7 +3059,7 @@
      "id": "question+options",
      "kind": "card",
      "start": 3.6,
-     "text": "Lequel exige une fluoroquinolone ? Porteur de lentilles Non-porteur",
+     "text": "Lequel exige une fluoroquinolone ? Non-porteur Porteur de lentilles",
      "words": 8
     },
     {
@@ -3075,7 +3075,7 @@
      "id": "answer-letter",
      "kind": "label",
      "start": 10.15,
-     "text": "R\u00e9ponse A",
+     "text": "R\u00e9ponse B",
      "words": 2
     },
     {
@@ -3083,16 +3083,16 @@
      "id": "sticker-1",
      "kind": "label",
      "start": 11.05,
-     "text": "jamais de pansement",
-     "words": 3
+     "text": "Pseudomonas",
+     "words": 1
     },
     {
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 9.95,
-     "text": "Pseudomonas : fluoroquinolone, jamais de pansement",
-     "words": 5
+     "start": 10.25,
+     "text": "Aucun pansement ; lentilles : fluoroquinolone",
+     "words": 4
     },
     {
      "end": 20,
@@ -3108,9 +3108,9 @@
    "T": 20,
    "cuts": [
     0,
+    3,
     3.5,
-    4,
-    10,
+    9.5,
     14.5,
     20
    ],
@@ -3140,26 +3140,26 @@
      "words": 2
     },
     {
-     "end": 3.4,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
      "start": 0.25,
-     "text": "Uveitis or angle closure ?",
-     "words": 4
+     "text": "Uveitis or AACG ?",
+     "words": 3
     },
     {
-     "end": 10,
+     "end": 9.5,
      "id": "question+options",
      "kind": "card",
-     "start": 4.1,
+     "start": 3.6,
      "text": "Red eye, blurry vision. Which sign decides? The pupil The redness",
      "words": 11
     },
     {
-     "end": 10,
+     "end": 9.5,
      "id": "prompt",
      "kind": "label",
-     "start": 4.4,
+     "start": 3.9,
      "text": "Your pick?",
      "words": 2
     },
@@ -3167,7 +3167,7 @@
      "end": 14.5,
      "id": "answer-letter",
      "kind": "label",
-     "start": 10.65,
+     "start": 10.15,
      "text": "Answer A",
      "words": 2
     },
@@ -3175,7 +3175,7 @@
      "end": 14.5,
      "id": "sticker-1",
      "kind": "label",
-     "start": 10.95,
+     "start": 10.45,
      "text": "uveitis",
      "words": 1
     },
@@ -3183,7 +3183,7 @@
      "end": 14.5,
      "id": "sticker-2",
      "kind": "label",
-     "start": 11.05,
+     "start": 10.55,
      "text": "angle closure",
      "words": 2
     },
@@ -3191,9 +3191,9 @@
      "end": 14.5,
      "id": "tree",
      "kind": "card",
-     "start": 10.4,
-     "text": "Vision photophobia Conjunctivitis Pupil Uveitis Closure",
-     "words": 6
+     "start": 10.1,
+     "text": "Vision Conjunctivitis Pupil Keratitis lens Uveitis Angle closure",
+     "words": 8
     },
     {
      "end": 20,
@@ -3292,9 +3292,9 @@
      "end": 14.5,
      "id": "tree",
      "kind": "card",
-     "start": 9.9,
-     "text": "Vision photophobie Conjonctivite Pupille Uv\u00e9ite Crise",
-     "words": 6
+     "start": 10.1,
+     "text": "Vision Conjonctivite Pupille K\u00e9ratite lentille Uv\u00e9ite Crise",
+     "words": 7
     },
     {
      "end": 20,
@@ -3385,7 +3385,7 @@
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.25,
      "text": "RAPD : the lit pupil dilates",
      "words": 5
     },
@@ -3478,7 +3478,7 @@
      "end": 14.5,
      "id": "why",
      "kind": "card",
-     "start": 9.95,
+     "start": 10.25,
      "text": "DPAR : la pupille \u00e9clair\u00e9e se dilate",
      "words": 6
     },

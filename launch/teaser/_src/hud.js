@@ -149,8 +149,8 @@ var H = (function () {
       K.pop(ok, Q.rev + .2, 6, .5); H.reg('answer-letter', bv, Q.rev + .7, Q.end, 'label');
       // the answer: one card, diagnosis and action merged in one short line
       var dxt = H.t(cfg.dx);
-      var dx = K.div(S, 'left:72px;top:196px;width:876px;color:#fff;font-size:84px;z-index:20', '<div class="dsp">' + dxt + '</div>'); K.rise(dx, Q.dx, .45, 36);
-      H.reg('answer', dxt, Q.dx + .45, Q.end);
+      var dx = K.div(S, 'left:72px;top:196px;width:876px;color:#fff;font-size:84px;z-index:20', '<div class="dsp">' + dxt + '</div>'); K.rise(dx, Q.dx + .3, .45, 36);
+      H.reg('answer', dxt, Q.dx + .75, Q.end);
     } else { // answer tomorrow
       H.flash(S, Q.rev, .4);
       var dmt = H.t({ fr: 'Réponse demain', en: 'Answer tomorrow' }), dm = K.div(S, 'left:72px;top:440px;width:876px;text-align:center;font-size:104px;z-index:30', '<span class="sticker dk">' + dmt + '</span>');

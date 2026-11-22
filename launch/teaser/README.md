@@ -82,7 +82,9 @@ Each reel differentiates two look-alikes:
 5. One « pourquoi » line, then the end card.
 
 **Timing:**
-- Cuts: 0 (hook) · snap 3.0 s (3.5 s when the hook has 4 words: 12 in FR and EN, 15-EN, 16-EN) · timer at snap + 0.5 · reveal at snap + 6.5 · end card 14.5 · 20 s.
+- Cuts: 0 (hook) · snap 3.0 s (3.5 s when the hook has 4 words: 12 and 14 in FR and EN, 15-EN) · timer at snap + 0.5 · reveal at snap + 6.5 · end card 14.5 · 20 s.
+- The question card is fully out (0.25 s) before the answer line or the tree comes in (reveal + 0.3 s). The same clean cross-fade applies to the challenges 02, 04b, 06, 07b and 08.
+- **Answer positions:** A for 10, 12, 14 and 16; B for 11, 13, 15 and 17.
 - Exact cuts per file are in `videos/cuts.json`.
 - Drops land on the snap and on the reveal.
 
@@ -96,13 +98,13 @@ Each reel differentiates two look-alikes:
 | # | File (`ocelle-teaser-…-{fr,en}.mp4`) | X ou Y | The ONE sign revealed | « Pourquoi » line (FR / EN) | Source checked |
 |---|---|---|---|---|---|
 | 10 | `10-xy-episclerite-sclerite` | Épisclérite / sclérite | A phenylephrine drop: the superficial vessels blanch (episcleritis), the deep plexus stays red (scleritis) | « Sclérite : douleur profonde, bilan systémique » / "Scleritis: deep pain, systemic work-up" | [EyeWiki, Scleritis](https://eyewiki.aao.org/Scleritis): « conjunctival and superficial vessels may blanch with 2.5%–10% phenylephrine, but deep vessels are not affected »; boring pain that wakes the patient; systemic disease in up to 50 %. [EyeWiki, Episcleritis](https://eyewiki.aao.org/Episcleritis) gives 10 % for episcleral blanching (2.5 % for conjunctival). **No concentration is shown on screen.** |
-| 11 | `11-xy-herpes-zona` | Dendrite VHS / pseudodendrite VZV | Terminal bulbs (looped), vs no bulbs, raised, faint staining | « VHS : vrai ulcère, prend la fluorescéine » / "HSV: a true ulcer that stains" | [Moran CORE, VZV pseudodendrites](https://morancore.utah.edu/?p=24172): elevated, « stuck on », no terminal end bulbs, weaker fluorescein staining; [AAFP 2002, HZO](https://www.aafp.org/pubs/afp/issues/2002/1101/p1723.html) |
+| 11 | `11-xy-herpes-zona` | Dendrite VHS / pseudodendrite VZV (answer **B**) | Large terminal bulbs (looped) vs a raised line without bulbs that stains faintly | « VHS : vrai ulcère, prend la fluorescéine » / "HSV: a true ulcer that stains" | [Moran CORE, VZV pseudodendrites](https://morancore.utah.edu/?p=24172): elevated, « stuck on », no terminal end bulbs, weaker fluorescein staining; [AAFP 2002, HZO](https://www.aafp.org/pubs/afp/issues/2002/1101/p1723.html) |
 | 12 | `12-xy-dpv-dechirure` | DPV simple / DPV + déchirure | Shafer sign (« tobacco dust ») looped; the Weiss ring is present in both | « Signe de Shafer : rétine en urgence » / "Shafer sign: urgent retina referral" | [EyeWiki, Horseshoe tear](https://eyewiki.aao.org/Horseshoe_or_Flap_Tear): Shafer sign ≈ 90 % predictive of a tear; [EyeWiki, PVD](https://eyewiki.aao.org/Posterior_Vitreous_Detachment): pigment or hemorrhage → tear in 50–70 % |
-| 13 | `13-xy-anisocorie` | Grande / petite pupille | Bigger gap in the light → the large pupil fails to constrict (looped: « III · Adie · collyre ») | « À l'obscurité, c'est la petite : Horner » / "In the dark, the small one: Horner" | [Moran CORE, anisocoria](https://morancore.utah.edu/?p=25489); [MSD Manual, Anisocoria](https://www.msdmanuals.com/professional/eye-disorders/symptoms-of-ophthalmologic-disorders/anisocoria) |
-| 14 | `14-xy-oacr-ovcr` | OACR / OVCR | Cherry-red spot on a pale retina (looped) vs « sang et tonnerre » | « OACR : centre d'AVC, tout de suite » / "CRAO: stroke centre, right now" | [EyeWiki, Retinal artery occlusion](https://eyewiki.aao.org/Retinal_Artery_Occlusion): « immediate emergent referral to the nearest stroke center »; [EyeWiki, CRVO](https://eyewiki.aao.org/Central_Retinal_Vein_Occlusion) |
-| 15 | `15-xy-abrasion-lentille` | Abrasion with / without contact lenses | The lens wearer's abrasion: patch crossed out, antipseudomonal cover | « Pseudomonas : fluoroquinolone, jamais de pansement » / "Pseudomonas: fluoroquinolone, never a patch" | [AAFP 2004, corneal abrasion](https://aafp.org/pubs/afp/issues/2004/0701/p123.pdf): antipseudomonal antibiotic (ciprofloxacin, ofloxacin) for lens wearers, reassess at 24 h; patching is no longer recommended for any abrasion, so the question asks which one **needs a fluoroquinolone** |
-| 16 | `16-xy-uveite-crise` | Uvéite antérieure / crise d'angle | The pupil (small vs mid-dilated, hazy cornea) looped, then a mini tree: « Vision ↓, photophobie ? » ✗ → conjonctivite; ✓ → « Pupille ? » → uvéite / crise | (the tree is the « pourquoi ») | [AAFP 2010, Red eye](https://www.aafp.org/pubs/afp/issues/2010/0115/p137.html): conjunctivitis keeps vision and pupil normal; iritis has constricted, poorly reacting pupils, ciliary injection and photophobia; angle closure has marked vision loss and dilated, poorly reactive pupils |
-| 17 | `17-xy-dpar` | DPAR droit / gauche | The swinging light: both pupils widen when the light reaches the left eye (looped: « se dilate ») | « DPAR : la pupille éclairée se dilate » / "RAPD: the lit pupil dilates" | [Community Eye Health, How to test for a RAPD](https://pmc.ncbi.nlm.nih.gov/articles/PMC3588138/): « When the light is shone back into the abnormal eye, both pupils will get larger »; [EyeWiki, RAPD](https://eyewiki.aao.org/Relative_Afferent_Pupillary_Defect) |
+| 13 | `13-xy-anisocorie` | Grande / petite pupille (answer **B**) | The gap grows in the dark → the small pupil fails to dilate (looped in the dark panel: « ne se dilate pas ») | « Écart à l'obscurité : la petite, Horner » / "Bigger in the dark: small pupil, Horner" | [Moran CORE, anisocoria](https://morancore.utah.edu/?p=25489): « anisocoria greater in dark » = Horner, the smaller pupil is abnormal; [MSD Manual, Anisocoria](https://www.msdmanuals.com/professional/eye-disorders/symptoms-of-ophthalmologic-disorders/anisocoria) |
+| 14 | `14-xy-oacr-ovcr` | Artère ou veine bouchée ? (OACR / OVCR, answer A) | Cherry-red spot in a pale, whitened ischaemic retina with thin arteries (looped) vs « sang et tonnerre » (dilated tortuous veins, flame haemorrhages in 4 quadrants, cotton-wool spots, swollen disc), in the same peach fundus style as reels 05 and 07 | « OACR : centre d'AVC, tout de suite » / "CRAO: stroke centre, right now" | [EyeWiki, Retinal artery occlusion](https://eyewiki.aao.org/Retinal_Artery_Occlusion): retinal whitening with a cherry-red fovea; « immediate emergent referral to the nearest stroke center »; [EyeWiki, CRVO](https://eyewiki.aao.org/Central_Retinal_Vein_Occlusion) |
+| 15 | `15-xy-abrasion-lentille` | Abrasion with / without contact lenses (answer **B**) | Panel 1 shows a visible lens (edge plus a lens beside it) and a central defect; panel 2 shows linear scratch marks. Both patches are crossed out; the lens wearer gets antipseudomonal cover | « Aucun pansement ; lentilles : fluoroquinolone » / "No patch; lens wearer: fluoroquinolone" | [AAFP 2004, corneal abrasion](https://aafp.org/pubs/afp/issues/2004/0701/p123.pdf): patching is no longer recommended; antipseudomonal antibiotic (ciprofloxacin, ofloxacin) for lens wearers; reassess at 24 h |
+| 16 | `16-xy-uveite-crise` | Uvéite / crise d'angle (answer A) | The pupil (small with precipitates vs mid-dilated with a hazy cornea), looped. Then a mini tree: « Vision ↓ ? » ✗ → conjonctivite; ✓ → « Pupille ? » → normal + fluorescein stain → **kératite (lentille)**; small → uvéite; mid-dilated → crise | (the tree is the « pourquoi ») | [AAFP 2010, Red eye](https://www.aafp.org/pubs/afp/issues/2010/0115/p137.html): normal vision and pupil in conjunctivitis; constricted pupils, ciliary injection and photophobia in iritis; dilated, poorly reactive pupils and marked vision loss in angle closure; keratitis with corneal staining, in contact lens wearers |
+| 17 | `17-xy-dpar` | DPAR droit / gauche (answer **B**) | The swinging light: the halo stays around the eye and the lit pupil stays black. Both pupils widen when the light reaches the left eye (looped: « se dilate ») | « DPAR : la pupille éclairée se dilate » / "RAPD: the lit pupil dilates" | [Community Eye Health, How to test for a RAPD](https://pmc.ncbi.nlm.nih.gov/articles/PMC3588138/): « When the light is shone back into the abnormal eye, both pupils will get larger »; [EyeWiki, RAPD](https://eyewiki.aao.org/Relative_Afferent_Pupillary_Defect) |
 
 **Captions (drafts) and hashtags.** The caption may invite comments; the video never does. Common end: « Outil d'apprentissage, pas un avis médical. Site : décembre 2026. »
 - **10:**
@@ -118,16 +120,16 @@ Each reel differentiates two look-alikes:
   - EN: "New floaters: benign or a tear? One slit-lamp sign decides."
   - Hashtags: `#ophtalmologie #rétine #urgences #EDN #médecine #ophtalmo` · `#ophthalmology #retina #emergencymedicine #meded #medstudent #ophtho`
 - **13:**
-  - FR: « Anisocorie : la grande ou la petite ? Tout dépend de la lumière. »
-  - EN: "Anisocoria: the big one or the small one? It depends on the light."
+  - FR: « Anisocorie : la grande ou la petite ? Éteins la lumière pour le savoir. »
+  - EN: "Anisocoria: the big one or the small one? Turn off the lights to find out."
   - Hashtags: `#ophtalmologie #neuroophtalmologie #pupille #EDN #médecine #neurologie` · `#ophthalmology #neuroophthalmology #pupil #meded #medstudent #neurology`
 - **14:**
-  - FR: « Deux fonds d'œil, une seule urgence AVC. »
-  - EN: "Two fundi, only one stroke emergency."
+  - FR: « Même baisse de vision brutale : bouchon artériel ou veineux ? Un seul est un AVC. »
+  - EN: "Same sudden vision loss: artery or vein? Only one is a stroke."
   - Hashtags: `#ophtalmologie #rétine #AVC #urgences #EDN #médecine` · `#ophthalmology #retina #stroke #emergencymedicine #meded #medstudent`
 - **15:**
-  - FR: « Même abrasion, pas la même prise en charge. »
-  - EN: "Same abrasion, different treatment."
+  - FR: « Deux abrasions, une seule exige une fluoroquinolone. »
+  - EN: "Two abrasions, only one needs a fluoroquinolone."
   - Hashtags: `#ophtalmologie #cornée #lentilles #urgences #médecine #optométrie` · `#ophthalmology #cornea #contactlenses #emergencymedicine #meded #optometry`
 - **16:**
   - FR: « Œil rouge et flou : uvéite ou crise ? La pupille répond. »
@@ -176,7 +178,7 @@ Common end of every caption: FR « Outil d'apprentissage, pas un avis médical. 
 - FR: « Sur Ocelle, tu ne lis pas la réponse : tu touches le signe. Raté, le site te le dit. Touché, le marqueur l'entoure. Puis tu le nommes. Décembre. »
 - EN: « On Ocelle you don't read the answer: you tap the sign. Miss, and it tells you. Hit, and the marker circles it. Then you name it. December. »
 - Hashtags FR: `#ophtalmologie #externat #apprentissage #médecine #EDN #Québec` · EN: `#ophthalmology #meded #medstudent #edtech #medicalstudent #eyes`
-- Visuals: the site's real « Voir » screen (A5, retinal occlusions), captured with Playwright. The photo slot was fed our CRAO schematic and every other raster image was blanked, so the screen shows **no photo**. The credit line reads « Schéma · Ocelle ». The secondary dashed ring is hidden during the capture. A camera zooms onto the photo, then onto the choices. Large overlays (« pas ici », the chosen sign, the interface's own verdict « Exact ! » / « Nailed it! ») carry what must be read at ≥ 56 px.
+- Visuals: the site's real « Voir » screen (A5, retinal occlusions), captured with Playwright. The photo slot was fed our CRAO schematic and every other raster image was blanked, so the screen shows **no photo**. The credit line reads « Schéma · Ocelle ». The secondary dashed ring is hidden during the capture. A camera zooms onto the photo, then onto the choices. Large overlays (« pas ici », the chosen sign, the interface's own verdict « Exact ! » / « Nailed it! ») carry what must be read at ≥ 56 px. The capture was redone from the current site, so the header reads « L'ophtalmo en images ».
 
 **06 · Défi : décollement de rétine** (answered in the video)
 - FR: « Baisse de vision d'un œil : c'est le fond d'œil qui tranche. Tu l'avais avant la révélation ? »

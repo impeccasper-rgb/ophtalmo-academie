@@ -274,7 +274,7 @@ G.OPH.inv = [
       { fr: "Chiasma : hémianopsie bitemporale, qui respecte le méridien vertical.", en: "Chiasm: bitemporal hemianopia, respecting the vertical meridian." },
       { fr: "Rétrochiasmatique : hémianopsie homonyme; plus elle est congruente, plus la lésion est postérieure.", en: "Retrochiasmal: homonymous hemianopia; the more congruous, the more posterior the lesion." },
       { fr: "Cataracte ou petite pupille : déviation totale abaissée partout, déviation corrigée presque normale.", en: "Cataract or small pupil: total deviation depressed everywhere, pattern deviation nearly normal." },
-      { fr: "Stade (Hodapp-Parrish-Anderson) : MD > −6 dB débutant; −6 à −12 dB modéré; < −12 dB avancé.", en: "Stage (Hodapp-Parrish-Anderson): MD > −6 dB early; −6 to −12 dB moderate; < −12 dB advanced." },
+      { fr: "Stade (Hodapp-Parrish-Anderson, critère du MD) : > −6 dB débutant; −6 à −12 dB modéré; < −12 dB avancé. Le nombre de points atteints et la proximité de la fixation comptent aussi.", en: "Stage (Hodapp-Parrish-Anderson, MD criterion): > −6 dB early; −6 to −12 dB moderate; < −12 dB advanced. The number of depressed points and closeness to fixation count too." },
       { fr: "Structure-fonction : défaut supérieur ↔ atteinte inférieure de la papille et de la RNFL.", en: "Structure–function: superior defect ↔ inferior disc and RNFL damage." }
     ],
     pitfalls: [

@@ -40,6 +40,14 @@ var ART = (function () {
       s += vessels('#c23a2c', '#7a2230', 2.6, 4.2);
       s += disc(352, 197);
       s += '<circle cx="224" cy="214" r="18" fill="#9b3524" opacity=".7" filter="url(#' + b + 's)"/>';
+      if (o.kind === 'crvo') { // « blood and thunder »: dilated tortuous veins, flame haemorrhages in all quadrants, cotton-wool spots, swollen disc
+        var Rv = K.rng(31);
+        s += vessels('#c23a2c', '#5c1424', 2.2, 7);
+        for (var hq = 0; hq < 70; hq++) { var ang = Rv() * Math.PI * 2, rr = 40 + Rv() * 150, hx = 352 + Math.cos(ang) * rr * 1.25, hy = 197 + Math.sin(ang) * rr; if (hx > 430) hx = 352 - (hx - 352);
+          s += '<ellipse cx="' + hx.toFixed(0) + '" cy="' + hy.toFixed(0) + '" rx="' + (7 + Rv() * 9).toFixed(1) + '" ry="' + (2.5 + Rv() * 2.5).toFixed(1) + '" fill="' + (hq % 3 ? '#8c1414' : '#a51d1d') + '" transform="rotate(' + (ang * 180 / Math.PI).toFixed(0) + ' ' + hx.toFixed(0) + ' ' + hy.toFixed(0) + ')"/>'; }
+        [[300, 120], [270, 270], [210, 150], [320, 300], [190, 250]].forEach(function (c) { s += '<ellipse cx="' + c[0] + '" cy="' + c[1] + '" rx="12" ry="8" fill="#fbf3ea" opacity=".9" filter="url(#' + b + 's)"/>'; });
+        s += '<circle cx="352" cy="197" r="40" fill="#f1cf98" opacity=".75" filter="url(#' + b + 's)"/>';
+      }
       if (rd) {
         var det = 'M18,214 C14,120 80,36 196,10 L262,8 C244,52 226,96 186,130 C150,160 100,180 60,196 C44,204 30,210 18,214 Z';
         s += '<path d="' + det + '" fill="#d8d2cc" opacity=".92"/><path d="' + det + '" fill="none" stroke="#efe9e3" stroke-width="10" opacity=".5" filter="url(#' + b + 's)"/>';
@@ -86,10 +94,11 @@ var ART = (function () {
     if (cob) s += '<circle cx="450" cy="280" r="162" fill="#3a48ff" opacity=".12"/>';
     if (o.patch) s += '<path d="M392,236 C420,214 476,220 500,246 C516,268 498,300 470,306 C440,312 404,300 392,280 C384,266 384,248 392,236 Z" fill="#d8ff3a" opacity=".92" filter="url(#' + fl + ')"/>';
     if (o.dots) { var Rr = K.rng(5); for (var k = 0; k < 70; k++) { var aa = Rr() * Math.PI * 2, rr = Math.sqrt(Rr()) * 132; s += '<circle cx="' + (450 + Math.cos(aa) * rr).toFixed(1) + '" cy="' + (290 + Math.sin(aa) * rr * .9).toFixed(1) + '" r="' + (2.4 + Rr() * 2.2).toFixed(1) + '" fill="#d8ff3a" filter="url(#' + fl + ')"/>'; } }
-    if (o.pseudo) s += '<g opacity=".9"><path d="' + A.PSEUDO + '" fill="none" stroke="#d8ff3a" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity=".62"/><path d="' + A.PSEUDO + '" fill="none" stroke="#f4ffd1" stroke-width="5" stroke-linecap="round" transform="translate(-3,-6)" opacity=".7"/></g>';
+    if (o.pseudo) s += '<g opacity=".55"><path d="' + A.PSEUDO + '" fill="none" stroke="#d8ff3a" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity=".62"/><path d="' + A.PSEUDO + '" fill="none" stroke="#f4ffd1" stroke-width="5" stroke-linecap="round" transform="translate(-3,-6)" opacity=".7"/></g>';
     if (o.kp) { var Rk = K.rng(12); for (var q = 0; q < 26; q++) { var kx = 450 + (Rk() - .5) * 150 * (1 - q / 40), ky = 330 + Rk() * 80; s += '<circle cx="' + kx.toFixed(0) + '" cy="' + ky.toFixed(0) + '" r="' + (3 + Rk() * 3.5).toFixed(1) + '" fill="#e8e4d8" opacity=".9"/>'; } }
-    if (o.lensRing) s += '<circle cx="450" cy="280" r="196" fill="#9da5ff" fill-opacity=".08" stroke="#dfe3ff" stroke-width="4" stroke-opacity=".75"/>';
-    if (o.dendrite) s += '<g filter="url(#' + fl + ')"><path d="' + A.DENDRITE.d + '" fill="none" stroke="#d8ff3a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>' + A.DENDRITE.bulbs.map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="12" fill="#d8ff3a"/>'; }).join('') + '</g>';
+    if (o.lensRing) s += '<circle cx="450" cy="280" r="196" fill="#dfe3ff" fill-opacity=".14" stroke="#ffffff" stroke-width="9" stroke-opacity=".95"/><path d="M320,150 A196,196 0 0 1 560,120" stroke="#ffffff" stroke-width="5" fill="none" opacity=".8"/>';
+    if (o.scratch) s += '<path d="M372,190 L430,368 M402,182 L452,350 M470,200 L486,300" stroke="#d8ff3a" stroke-width="12" stroke-linecap="round" filter="url(#' + fl + ')"/>';
+    if (o.dendrite) s += '<g filter="url(#' + fl + ')"><path d="' + A.DENDRITE.d + '" fill="none" stroke="#d8ff3a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>' + A.DENDRITE.bulbs.map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="17" fill="#d8ff3a"/>'; }).join('') + '</g>';
     s += '<path d="M380,160 Q450,138 520,160" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round" opacity="' + (cob ? .35 : .75) + '"/></g>';
     s += '<path d="' + LID + '" fill="none" stroke="' + C.lid + '" stroke-width="16"/><path d="M30,280 Q450,-60 870,280" fill="none" stroke="' + (cob ? '#02030f' : '#2a1a14') + '" stroke-width="6"/>';
     return s + '</svg>';

@@ -341,3 +341,17 @@ Les mentions ont été remplacées par une formulation prudente dans les textes 
 - Préparations magistrales : chlorhexidine, PHMB, interféron et 5-FU topiques, EDTA disodique, citrate topique (« pharmacie d’hôpital », « selon le centre ») : offre réelle variable selon l’hôpital.
 - Couverture publique : CXL, MIGS et implants (« variable selon le centre », au lieu de « couverture RAMQ à vérifier ») ; cyclosporine et lifitégrast (« variable selon le régime ») ; vaccin Shingrix (« couverture selon le programme provincial ») ; test génétique des dystrophies (« selon l’accès local ») ; biologiques en rhumatologie (« prescrits par la rhumatologie »).
 - `r-dmla` : nouveaux traitements de l’atrophie géographique (« avis de l’ophtalmologiste ») ; statut canadien non vérifié.
+
+## G. Relecture du glaucome au niveau du spécialiste, 22 novembre 2026
+
+Portée : les 13 fiches de glaucome (lues en entier : mécanisme, arbre, traitement, perles, essentiels, triage), les modules Gonioscopie et Champ visuel des Investigations (lus en entier), les micro-fiches de glaucome du module A (anatomie et physiologie lues). Quiz et cas de glaucome : contrôle par mots-clés (classification, Shaffer, 24-2, MIGS, essais) et par doses, sans lecture item par item.
+
+Changements (FR et EN) :
+- **EAGLE.** Le chiffre « 10 fois plus de chances d'être sans gouttes à 3 ans » (section A) n'a pas pu être retrouvé à la source ; il est retiré de `g-fermeture` et de la question C du quiz. Texte retenu : à 3 ans, PIO mieux contrôlée, meilleure qualité de vie et moins de traitements additionnels qu'avec la LPI. Source : Azuara-Blanco A et al., *Lancet* 2016;388:1389-97 (résultats principaux) ; chiffres précis à confirmer avant de les réafficher.
+- **UKGTS ajouté** à la perle « Quelle PIO cible ? » de `g-gpao` : latanoprost contre placebo, progression du champ à 24 mois 15,2 % vs 25,6 % (Garway-Heath DF et al., *Lancet* 2015;385:1295-304 ; cité de mémoire, à contre-vérifier).
+- **MIGS** (`g-postop`) : « très sécuritaires » devient « profil de sécurité favorable ».
+- **Stade de Hodapp-Parrish-Anderson** (Investigations, champ visuel) : précisé « critère du MD » ; le nombre de points atteints et la proximité de la fixation comptent aussi (Hodapp E, Parrish RK, Anderson DR, *Clinical Decisions in Glaucoma*, 1993).
+
+Vérifié aujourd'hui à la source : **Règlement O-7, r. 11.1** (LégisQuébec, à jour au 1er juillet 2026, en vigueur) : art. 5, glaucome suspect, débutant ou cortisonique, avec les instruments requis, puis référence à l'ophtalmologiste pour le suivi médical ; art. 7, tout autre glaucome avec le consentement d'un médecin. Les encadrés Québec des fiches concordent.
+
+Relu sans changement : PACS (contact ≥ 180° selon l'AAO ; ISGEO d'origine ≥ 270°), PAC, PACG ; Shaffer 0–4 ; règle ISNT dite « imparfaite » ; 24-2 (54 points, maille de 6°) et 10-2 ; bloc pupillaire, iris plateau, cristallin, poussée postérieure ; LiGHT 6 ans, OHTS, EMGT, CNTGS, LoGTS, ZAP ; brimonidine contre-indiquée avant 2 ans ; timolol et asthme, MPOC, bradycardie, bloc AV ; effets des prostaglandines ; pilocarpine seulement après la baisse de PIO ; XEN (par l'intérieur ou à conjonctive ouverte) et PreserFlo (par l'extérieur avec MMC) séparés des MIGS trabéculaires. Non consultés pendant cette relecture : EGS 5e édition, Société canadienne du glaucome.
