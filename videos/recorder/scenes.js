@@ -25,8 +25,10 @@ async function cas(opts) {
   s.mark('reveal');
   await s.wait(3600);
   s.cue('Puis pourquoi chaque autre choix est faux', 'Then why each other choice is wrong');
-  await s.scrollTo('.feedback', P ? 'start' : 'center', top + 10, 1100);
-  await s.wait(3000);
+  await s.scrollTo('.opts', 'start', top + 10, 1000);
+  await s.wait(2200);
+  await s.scrollTo('.feedback', 'center', 0, 900);
+  await s.wait(1800);
   return s.stop();
 }
 
@@ -77,7 +79,7 @@ async function daily(opts) {
   s.cue('Une image par jour', 'One image a day');
   await s.wait(1600);
   await s.tap('.daily-card');
-  await s.wait(700); await pin(); await s.page.evaluate(() => Router.refresh()); await s.wait(300);
+  await s.wait(1000);
   s.cue('Regarde, devine, retourne la carte', 'Look, guess, flip the card');
   await s.scrollTo('[data-flip]', 'center', 0, 800);
   await s.wait(1400);
@@ -109,10 +111,10 @@ async function daily(opts) {
   await s.wait(700);
   await s.tap('[data-slide="0"] [data-act="voir-opt"][data-ok="1"]', 500);
   s.cue('Bien vu !', 'Nice catch!');
-  await s.wait(300);
-  await s.scrollTo('[data-slide="0"] .voir-media', 'start', top, 700);
+  await s.wait(900);
+  await s.scrollTo('[data-slide="0"] .voir-sign', 'center', 0, 800);
   s.mark('bienvu');
-  await s.wait(2600);
+  await s.wait(2400);
   return s.stop();
 }
 

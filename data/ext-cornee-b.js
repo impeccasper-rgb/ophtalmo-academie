@@ -336,7 +336,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Conjonctivite à Chlamydia ; chercher un pannus et des cicatrices"
     ],
     answer: 2,
-    explain: "**Ce que c’est** : la vernale est une allergie chronique sévère du jeune atopique (surtout le garçon) qui forme des papilles géantes en pavés sur le tarse supérieur. **Pourquoi c’est important** : les protéines toxiques des éosinophiles et le frottement des pavés créent l’ulcère en bouclier de la cornée supérieure, qui menace la vision. **Quoi faire** : éverser la paupière et colorer la cornée à chaque visite ; bouclier = traitement le jour même.",
+    explain: "Papilles géantes en pavés sur le tarse supérieur chez un jeune atopique, chaque printemps : kératoconjonctivite vernale. À chaque visite, chercher l’ulcère en bouclier de la cornée supérieure, qui menace la vision.",
+    deep: "**Ce que c’est** : la vernale est une allergie chronique sévère du jeune atopique (surtout le garçon) qui forme des papilles géantes en pavés sur le tarse supérieur. **Pourquoi c’est important** : les protéines toxiques des éosinophiles et le frottement des pavés créent l’ulcère en bouclier de la cornée supérieure, qui menace la vision. **Quoi faire** : éverser la paupière et colorer la cornée à chaque visite ; bouclier = traitement le jour même.",
     why: [
       "Les follicules viraux sont de petits dômes pâles du cul-de-sac inférieur, pas de gros pavés du tarse supérieur ; et l’adénovirus ne revient pas chaque printemps.",
       "Les papilles des lentilles peuvent ressembler, mais il n’y a pas de lentille ; le contexte saisonnier et atopique oriente vers la vernale.",
@@ -354,7 +355,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Valacyclovir oral 1 g TID pendant 7 jours, à commencer dès aujourd’hui"
     ],
     answer: 0,
-    explain: "**Ce que c’est** : une kératoconjonctivite adénovirale, très contagieuse (mains, instruments, tonomètres) pendant environ 2 semaines. **Pourquoi c’est important** : 1–2 semaines plus tard, des infiltrats sous-épithéliaux peuvent baisser la vision ; un stéroïde mal indiqué crée dépendance et rebond. **Quoi faire** : soutien, hygiène, désinfection du matériel ; revoir si douleur, photophobie ou vision qui baisse.",
+    explain: "Follicules, ganglion préauriculaire, deuxième œil atteint : adénovirus. Aucun antibiotique ni stéroïde : compresses froides, larmes et hygiène des mains. Très contagieux pendant environ 2 semaines.",
+    deep: "**Ce que c’est** : une kératoconjonctivite adénovirale, très contagieuse (mains, instruments, tonomètres) pendant environ 2 semaines. **Pourquoi c’est important** : 1–2 semaines plus tard, des infiltrats sous-épithéliaux peuvent baisser la vision ; un stéroïde mal indiqué crée dépendance et rebond. **Quoi faire** : soutien, hygiène, désinfection du matériel ; revoir si douleur, photophobie ou vision qui baisse.",
     why: [
       "Exact : adénovirus probable ; traitement de soutien et prévention de la transmission.",
       "L’antibiotique n’agit pas sur le virus et ajoute toxicité et coûts sans bénéfice.",
@@ -372,7 +374,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Pause des lentilles, puis jetables journalières et stabilisateur"
     ],
     answer: 3,
-    explain: "**Ce que c’est** : la conjonctivite gigantopapillaire est une réaction allergique et mécanique du tarse supérieur aux lentilles, à une prothèse oculaire ou à une suture exposée. **Pourquoi c’est important** : elle cause l’intolérance aux lentilles et ressemble à la vernale, mais sa cause se retire. **Quoi faire** : pause des lentilles, lentilles journalières ou entretien au peroxyde, stabilisateur des mastocytes ; stéroïde doux bref seulement si sévère, avec PIO.",
+    explain: "Papilles géantes du tarse supérieur chez un porteur de lentilles : conjonctivite gigantopapillaire, réaction aux dépôts et au frottement. On retire le déclencheur : pause, puis lentilles journalières et stabilisateur de mastocytes.",
+    deep: "**Ce que c’est** : la conjonctivite gigantopapillaire est une réaction allergique et mécanique du tarse supérieur aux lentilles, à une prothèse oculaire ou à une suture exposée. **Pourquoi c’est important** : elle cause l’intolérance aux lentilles et ressemble à la vernale, mais sa cause se retire. **Quoi faire** : pause des lentilles, lentilles journalières ou entretien au peroxyde, stabilisateur des mastocytes ; stéroïde doux bref seulement si sévère, avec PIO.",
     why: [
       "Rien n’évoque une kératite infectieuse (ni douleur vraie ni infiltrat) ; on traite la réaction tarsale.",
       "Un stéroïde prolongé expose à la hausse de PIO et à la cataracte, sans retirer la cause (dépôts sur la lentille).",
@@ -390,7 +393,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Antihistaminique-stabilisateur pour une conjonctivite allergique chronique"
     ],
     answer: 1,
-    explain: "**Ce que c’est** : Chlamydia trachomatis (sérotypes génitaux D à K) cause une conjonctivite folliculaire chronique chez l’adulte jeune, souvent avec une infection génitale peu symptomatique. **Pourquoi c’est important** : les gouttes seules échouent ; partenaires et autres ITSS doivent être pris en charge. **Quoi faire** : TAAN de la conjonctive, doxycycline 100 mg BID × 7 j ou azithromycine 1 g en dose unique, dépistage et déclaration selon le guide québécois.",
+    explain: "Conjonctivite folliculaire qui dure des semaines malgré les antibiotiques topiques, chez une jeune adulte avec un nouveau partenaire : Chlamydia. Les gouttes échouent : TAAN, traitement oral, partenaires et dépistage des ITSS.",
+    deep: "**Ce que c’est** : Chlamydia trachomatis (sérotypes génitaux D à K) cause une conjonctivite folliculaire chronique chez l’adulte jeune, souvent avec une infection génitale peu symptomatique. **Pourquoi c’est important** : les gouttes seules échouent ; partenaires et autres ITSS doivent être pris en charge. **Quoi faire** : TAAN de la conjonctive, doxycycline 100 mg BID × 7 j ou azithromycine 1 g en dose unique, dépistage et déclaration selon le guide québécois.",
     why: [
       "Le piège : une 3e goutte antibiotique ne traite ni l’infection génitale associée ni le partenaire.",
       "Exact : conjonctivite à inclusions de l’adulte probable ; traitement oral, partenaires, MADO.",
@@ -408,7 +412,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Dégénérescence pellucide : CXL en urgence avant la perforation"
     ],
     answer: 1,
-    explain: "**Ce que c’est** : la dégénérescence marginale de Terrien est un amincissement périphérique lent, non inflammatoire, souvent supérieur, avec vaisseaux fins et ligne de lipides au bord central. **Pourquoi c’est important** : on ne l’immunosupprime pas comme une PUK ; le risque est l’astigmatisme contre la règle et, rarement, la perforation après un choc. **Quoi faire** : topographie, lunettes ou lentille rigide ou sclérale, protection ; greffe lamellaire si amincissement extrême.",
+    explain: "Amincissement périphérique supérieur avec ligne de lipides et fins vaisseaux, épithélium intact, œil blanc et indolore : dégénérescence marginale de Terrien. Pas d’immunosuppression : topographie, correction optique, protection contre les chocs.",
+    deep: "**Ce que c’est** : la dégénérescence marginale de Terrien est un amincissement périphérique lent, non inflammatoire, souvent supérieur, avec vaisseaux fins et ligne de lipides au bord central. **Pourquoi c’est important** : on ne l’immunosupprime pas comme une PUK ; le risque est l’astigmatisme contre la règle et, rarement, la perforation après un choc. **Quoi faire** : topographie, lunettes ou lentille rigide ou sclérale, protection ; greffe lamellaire si amincissement extrême.",
     why: [
       "La PUK est douloureuse et rouge, avec défaut épithélial ; ici, œil calme et épithélium intact.",
       "Exact : amincissement supérieur avec ligne de lipides et fins vaisseaux, épithélium intact, œil blanc.",
@@ -426,7 +431,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Soins des paupières et stéroïde topique doux en cure courte"
     ],
     answer: 3,
-    explain: "**Ce que c’est** : la kératite marginale est une réaction immunitaire aux antigènes des staphylocoques du bord palpébral ; les complexes immuns se déposent là où la paupière touche la cornée. **Pourquoi c’est important** : l’intervalle clair la distingue de la PUK, collée au limbe, qui exige un bilan systémique. **Quoi faire** : compresses chaudes, nettoyage du bord libre, stéroïde doux quelques jours après avoir exclu une infection ; doxycycline si rosacée ou récidives.",
+    explain: "Infiltrats périphériques séparés du limbe par un intervalle clair, avec blépharite : kératite marginale, réaction immunitaire aux staphylocoques. Soins des paupières et stéroïde topique doux. La PUK, elle, touche le limbe et amincit.",
+    deep: "**Ce que c’est** : la kératite marginale est une réaction immunitaire aux antigènes des staphylocoques du bord palpébral ; les complexes immuns se déposent là où la paupière touche la cornée. **Pourquoi c’est important** : l’intervalle clair la distingue de la PUK, collée au limbe, qui exige un bilan systémique. **Quoi faire** : compresses chaudes, nettoyage du bord libre, stéroïde doux quelques jours après avoir exclu une infection ; doxycycline si rosacée ou récidives.",
     why: [
       "Réservé à la PUK, collée au limbe avec fonte stromale ; ici, intervalle clair et aucun amincissement.",
       "Petits infiltrats périphériques, chambre calme : critères 1-2-3 absents ; on revoit vite, mais l’infection n’est pas le premier diagnostic.",
@@ -444,7 +450,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Conjonctivite bactérienne : antibiotique topique QID pendant 7 jours"
     ],
     answer: 0,
-    explain: "**Ce que c’est** : la sclérite est une inflammation de la sclère, souvent liée à une maladie systémique (polyarthrite, vasculite) ; formes diffuse, nodulaire, nécrosante et postérieure. **Pourquoi c’est important** : douleur nocturne, teinte violacée et absence de blanchiment à la phényléphrine la distinguent de l’épisclérite ; la forme nécrosante peut perforer. **Quoi faire** : bilan systémique, AINS oraux si non nécrosante, sinon corticostéroïdes systémiques et immunosuppresseur.",
+    explain: "Douleur profonde qui réveille la nuit et nodule scléral aux vaisseaux profonds : sclérite, souvent liée à une maladie systémique. Bilan et AINS oraux d’abord. L’épisclérite est peu douloureuse.",
+    deep: "**Ce que c’est** : la sclérite est une inflammation de la sclère, souvent liée à une maladie systémique (polyarthrite, vasculite) ; formes diffuse, nodulaire, nécrosante et postérieure. **Pourquoi c’est important** : douleur nocturne, teinte violacée et absence de blanchiment à la phényléphrine la distinguent de l’épisclérite ; la forme nécrosante peut perforer. **Quoi faire** : bilan systémique, AINS oraux si non nécrosante, sinon corticostéroïdes systémiques et immunosuppresseur.",
     why: [
       "Exact : sclérite nodulaire (nodule scléral, vaisseaux profonds) ; forme non nécrosante, donc AINS oraux d’abord, avec bilan systémique.",
       "L’épisclérite blanchit à la phényléphrine et fait peu mal ; une douleur nocturne qui irradie oriente vers la sclérite.",
@@ -462,7 +469,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Coquille protectrice, sans pression sur l’œil"
     ],
     answer: 2,
-    explain: "**Ce que c’est** : la PUK fait fondre le stroma par des collagénases libérées autour de vaisseaux limbiques enflammés. **Pourquoi c’est important** : les AINS topiques peuvent favoriser la fonte cornéenne ; c’est un piège quand on veut soulager la douleur ou une sclérite associée. **Quoi faire** : traitement systémique avec la rhumatologie, lubrification, doxycycline, protection ; colle et lentille pansement si descémétocèle ou petite perforation.",
+    explain: "Les AINS topiques ont été associés à des fontes cornéennes, surtout sur une cornée déjà amincie. Dans une PUK, on soulage autrement : traitement systémique, lubrifiants, doxycycline, protection.",
+    deep: "**Ce que c’est** : la PUK fait fondre le stroma par des collagénases libérées autour de vaisseaux limbiques enflammés. **Pourquoi c’est important** : les AINS topiques peuvent favoriser la fonte cornéenne ; c’est un piège quand on veut soulager la douleur ou une sclérite associée. **Quoi faire** : traitement systémique avec la rhumatologie, lubrification, doxycycline, protection ; colle et lentille pansement si descémétocèle ou petite perforation.",
     why: [
       "Utile : inhibe les métalloprotéinases qui dissolvent le stroma.",
       "Utile : protège l’épithélium et dilue les médiateurs, sans la toxicité des agents de conservation.",

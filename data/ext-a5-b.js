@@ -359,8 +359,7 @@ G.OPH.photos = G.OPH.photos || {};
 
 /* ===== QCM A-211 à A-218 (topic a-retine) ===== */
 G.OPH.quiz = (G.OPH.quiz || []).concat([
-  {
-    id: "A-211", module: "A", topic: "a-retine", type: "image", level: 2, trap: false,
+  { id: "A-211", module: "A", topic: "a-retine", type: "image", level: 2, trap: false,
     stem: "Une femme de 76 ans suivie pour un glaucome primaire à angle ouvert (GPAO) a perdu brutalement et sans douleur la vision d’un œil il y a 2 heures. Depuis 3 semaines, elle a mal à la mâchoire quand elle mâche. Voici son fond d’œil. Quelle est la conduite la plus appropriée ?",
     figure: { type: "photo", id: "OPH-249" },
     options: [
@@ -370,16 +369,15 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Injection intravitréenne d’anti-VEGF pour prévenir un glaucome néovasculaire"
     ],
     answer: 1,
-    explain: "Rétine pâle et opaque d’une OACR, avec une zone plus foncée, de couleur plus normale, entre la papille et la macula (probablement le territoire d’une artère ciliorétinienne épargnée). Toute OACR aiguë part immédiatement à l’urgence pour un bilan d’AVC ; à 50 ans ou plus, l’artérite à cellules géantes doit être éliminée immédiatement (VS, CRP), et la claudication de la mâchoire justifie les stéroïdes sans attendre la biopsie.",
+    explain: "Rétine pâle d’une OACR : c’est un AVC rétinien, à envoyer à l’urgence. Après 50 ans, une claudication de la mâchoire impose VS, CRP et stéroïdes sans attendre : l’artérite à cellules géantes menace l’autre œil.",
+    deep: "Rétine pâle et opaque d’une OACR, avec une zone plus foncée, de couleur plus normale, entre la papille et la macula (probablement le territoire d’une artère ciliorétinienne épargnée). Toute OACR aiguë part immédiatement à l’urgence pour un bilan d’AVC ; à 50 ans ou plus, l’artérite à cellules géantes doit être éliminée immédiatement (VS, CRP), et la claudication de la mâchoire justifie les stéroïdes sans attendre la biopsie.",
     why: [
       "Le massage et la paracentèse n’ont pas d’efficacité prouvée, et une semaine de délai expose à un AVC et, si c’est une artérite, à la perte de l’autre œil.",
       "Exact : l’OACR est un AVC rétinien (bilan immédiat) et la claudication de la mâchoire après 50 ans impose de traiter l’artérite sans attendre.",
       "Le diagnostic est clinique (blanchiment rétinien) ; l’angiographie en externe retarde le bilan urgent sans changer la conduite.",
       "Les anti-VEGF ne traitent pas l’occlusion artérielle ; une néovascularisation peut survenir plus tard, mais ce n’est pas la priorité aujourd’hui."
-    ]
-  },
-  {
-    id: "A-212", module: "A", topic: "a-retine", type: "cat", level: 2, trap: false,
+    ] },
+  { id: "A-212", module: "A", topic: "a-retine", type: "cat", level: 2, trap: false,
     stem: "Un homme de 70 ans, glaucomateux, a fait il y a 3 semaines une OVCR ischémique (AV : compte les doigts, DPAR franc, nombreux nodules cotonneux). Il reçoit des anti-VEGF pour l’œdème maculaire. Quel examen est le plus important à chaque visite des premiers mois ?",
     figure: null,
     options: [
@@ -389,17 +387,16 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Gonioscopie et examen de l’iris avant dilatation"
     ],
     answer: 3,
-    explain: "Après une OVCR ischémique, le glaucome néovasculaire survient typiquement dans les 3 premiers mois (« glaucome des 90 jours »). Les néovaisseaux de l’angle peuvent apparaître avant ceux du bord pupillaire : on examine l’iris AVANT de dilater et on fait une gonioscopie à chaque visite. Les anti-VEGF peuvent masquer temporairement la néovascularisation, qui réapparaît quand leur effet s’estompe.",
+    explain: "Après une OVCR ischémique, le glaucome néovasculaire survient surtout dans les 3 premiers mois. Les néovaisseaux de l’angle peuvent précéder ceux de l’iris : gonioscopie et examen de l’iris avant de dilater, à chaque visite.",
+    deep: "Après une OVCR ischémique, le glaucome néovasculaire survient typiquement dans les 3 premiers mois (« glaucome des 90 jours »). Les néovaisseaux de l’angle peuvent apparaître avant ceux du bord pupillaire : on examine l’iris AVANT de dilater et on fait une gonioscopie à chaque visite. Les anti-VEGF peuvent masquer temporairement la néovascularisation, qui réapparaît quand leur effet s’estompe.",
     why: [
       "Le champ est déprimé par l’atteinte rétinienne de l’OVCR et ne détecte pas la néovascularisation de l’angle.",
       "L’OCT RNFL est faussé par l’œdème papillaire puis par l’atrophie ; il ne montre pas les néovaisseaux du segment antérieur.",
       "L’angiographie évalue la non-perfusion, mais ne remplace pas l’examen direct de l’iris et de l’angle, et n’est pas utile chaque mois.",
       "Exact : la gonioscopie non dilatée repère les NVA, parfois avant les NVI, et permet de traiter (PRP, anti-VEGF) avant que l’angle se ferme."
-    ]
-  },
-  {
-    id: "A-213", module: "A", topic: "a-retine", type: "image", level: 3, trap: false,
-    stem: "Un adulte a une petite pupille et une légère ptose du même côté depuis plusieurs mois, sans douleur. Ces photos documentent ses pupilles à la lumière et au noir avant un test pharmacologique. On instille de l’apraclonidine dans les deux yeux. Si elle a un syndrome de Horner, qu’observera-t-on après 30 à 60 minutes ?",
+    ] },
+  { id: "A-213", module: "A", topic: "a-retine", type: "image", level: 3, trap: false,
+    stem: "Un adulte a une petite pupille et une légère ptose du même côté depuis plusieurs mois, sans douleur. Ces photos documentent ses pupilles à la lumière et au noir avant un test pharmacologique. On instille de l’apraclonidine dans les deux yeux. S’il a un syndrome de Horner, qu’observera-t-on après 30 à 60 minutes ?",
     figure: { type: "photo", id: "OPH-282" },
     options: [
       "La petite pupille se dilate et l’anisocorie s’inverse",
@@ -408,16 +405,15 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Aucun changement, car l’apraclonidine n’a aucun effet sur l’iris"
     ],
     answer: 0,
-    explain: "Dans un syndrome de Horner, l’iris privé d’innervation sympathique devient hypersensible (hypersensibilité de dénervation). L’apraclonidine, agoniste alpha faible presque sans effet sur une pupille normale, dilate alors la petite pupille et relève la paupière : l’anisocorie s’inverse. Le test peut être faussement négatif dans un Horner très récent, et un Horner aigu douloureux impose une imagerie urgente sans attendre le test.",
+    explain: "Dans le Horner, l’iris privé d’innervation sympathique devient hypersensible. L’apraclonidine, agoniste alpha faible, dilate alors la petite pupille et relève la paupière : l’anisocorie s’inverse.",
+    deep: "Dans un syndrome de Horner, l’iris privé d’innervation sympathique devient hypersensible (hypersensibilité de dénervation). L’apraclonidine, agoniste alpha faible presque sans effet sur une pupille normale, dilate alors la petite pupille et relève la paupière : l’anisocorie s’inverse. Le test peut être faussement négatif dans un Horner très récent, et un Horner aigu douloureux impose une imagerie urgente sans attendre le test.",
     why: [
       "Exact : la pupille dénervée réagit à l’effet alpha faible de l’apraclonidine ; elle se dilate et la paupière remonte (muscle de Müller).",
       "Une dilatation égale des deux pupilles correspond plutôt à la cocaïne dans une anisocorie physiologique, pas à l’apraclonidine dans un Horner.",
       "Une constriction accrue n’est pas la réponse attendue d’une pupille dénervée hypersensible à un agoniste alpha.",
       "L’apraclonidine a peu d’effet sur une pupille normale, mais elle dilate la pupille hypersensible d’un Horner : c’est le principe même du test."
-    ]
-  },
-  {
-    id: "A-214", module: "A", topic: "a-retine", type: "image", level: 1, trap: false,
+    ] },
+  { id: "A-214", module: "A", topic: "a-retine", type: "image", level: 1, trap: false,
     stem: "Une femme de 27 ans a des céphalées depuis un mois et des épisodes où sa vue « s’éteint » quelques secondes quand elle se penche. AV 6/6 (20/20) aux deux yeux, TA normale. Voici le fond d’œil des deux yeux. Quelle est la prochaine étape ?",
     figure: { type: "photo", id: "OPH-219" },
     options: [
@@ -427,16 +423,15 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Champ visuel et OCT de contrôle dans 3 mois, puisque l’AV est normale"
     ],
     answer: 2,
-    explain: "Les deux papilles sont très gonflées, aux bords effacés, avec des hémorragies en flammèches : c’est un œdème papillaire bilatéral, donc une hypertension intracrânienne jusqu’à preuve du contraire. On fait une neuro-imagerie le jour même (IRM ou TDM avec veinographie) pour éliminer une masse ou une thrombose veineuse cérébrale, puis une ponction lombaire avec pression d’ouverture. L’AV préservée ne rassure pas.",
+    explain: "Deux papilles gonflées aux bords effacés : œdème papillaire, donc hypertension intracrânienne jusqu’à preuve du contraire. Imagerie le jour même pour éliminer une masse ou une thrombose veineuse, puis ponction lombaire.",
+    deep: "Les deux papilles sont très gonflées, aux bords effacés, avec des hémorragies en flammèches : c’est un œdème papillaire bilatéral, donc une hypertension intracrânienne jusqu’à preuve du contraire. On fait une neuro-imagerie le jour même (IRM ou TDM avec veinographie) pour éliminer une masse ou une thrombose veineuse cérébrale, puis une ponction lombaire avec pression d’ouverture. L’AV préservée ne rassure pas.",
     why: [
       "La ponction lombaire vient APRÈS l’imagerie : s’il y a une masse, elle peut causer un engagement cérébral.",
       "La névrite optique donne une baisse de vision douloureuse, souvent d’un seul œil, avec papille souvent normale ; ici l’AV est préservée et l’œdème bilatéral.",
       "Exact : un œdème papillaire bilatéral impose une neuro-imagerie urgente (masse, thrombose veineuse) avant la ponction lombaire.",
       "Une AV normale est typique au début : attendre 3 mois expose à une perte de vision et laisse passer une cause grave."
-    ]
-  },
-  {
-    id: "A-215", module: "A", topic: "a-retine", type: "image", level: 1, trap: false,
+    ] },
+  { id: "A-215", module: "A", topic: "a-retine", type: "image", level: 1, trap: false,
     stem: "Au fond d’œil dilaté d’un suivi de glaucome, tu découvres cette lésion pigmentée de la choroïde, qui n’est pas décrite dans les notes antérieures. Le patient n’a pas de symptôme. Quelle est la conduite la plus appropriée ?",
     figure: { type: "photo", id: "OPH-286" },
     options: [
@@ -446,16 +441,15 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Référence rapide en oncologie oculaire (échographie, OCT, photos)"
     ],
     answer: 3,
-    explain: "La photo montre une grande lésion gris-vert recouverte d’amas de pigment orange (lipofuscine). Selon la règle « To Find Small Ocular Melanoma Using Helpful Hints Daily », les facteurs de risque sont : épaisseur > 2 mm, liquide sous-rétinien, symptômes, pigment orange, bord à 3 mm ou moins de la papille, creux acoustique à l’échographie, absence de halo et absence de drusen. Une telle lésion se réfère rapidement en oncologie oculaire.",
+    explain: "Lésion pigmentée large, nouvelle, avec pigment orange en surface : ce n’est pas un nævus banal. Ces signes font craindre un mélanome choroïdien : référence rapide en oncologie oculaire.",
+    deep: "La photo montre une grande lésion gris-vert recouverte d’amas de pigment orange (lipofuscine). Selon la règle « To Find Small Ocular Melanoma Using Helpful Hints Daily », les facteurs de risque sont : épaisseur > 2 mm, liquide sous-rétinien, symptômes, pigment orange, bord à 3 mm ou moins de la papille, creux acoustique à l’échographie, absence de halo et absence de drusen. Une telle lésion se réfère rapidement en oncologie oculaire.",
     why: [
       "Un simple contrôle annuel convient à un petit nævus plat sans facteur de risque, pas à une grande lésion couverte de pigment orange.",
       "On ne traite pas une lésion pigmentée au laser en clinique : le diagnostic et le traitement relèvent de l’oncologie oculaire.",
       "C’est l’inverse : les drusen témoignent d’une lésion ancienne, alors que le pigment orange (lipofuscine) est un facteur de risque de mélanome.",
       "Exact : grande taille et pigment orange sont des signes inquiétants ; l’échographie (épaisseur, creux acoustique) et l’OCT (liquide) précisent le risque."
-    ]
-  },
-  {
-    id: "A-216", module: "A", topic: "a-retine", type: "image", level: 2, trap: false,
+    ] },
+  { id: "A-216", module: "A", topic: "a-retine", type: "image", level: 2, trap: false,
     stem: "Un patient suivi pour une uvéite antérieure récidivante a la pupille ci-dessous. Si ces adhérences s’étendaient à toute la circonférence de la pupille, quelle complication glaucomateuse craindrais-tu le plus ?",
     figure: { type: "photo", id: "OPH-277" },
     options: [
@@ -465,16 +459,15 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Glaucome pseudo-exfoliatif par dépôt de matériel fibrillaire"
     ],
     answer: 0,
-    explain: "La pupille est irrégulière et festonnée : l’iris reste collé au cristallin par des synéchies postérieures. Si elles font tout le tour (séclusion pupillaire), l’aqueuse produite derrière l’iris ne passe plus : l’iris bombe vers l’avant et ferme l’angle (iris bombé), ce qui se traite par iridotomie laser ou iridectomie. Le cycloplégique en phase aiguë prévient ces synéchies, et on surveille aussi la réponse cortisonique.",
+    explain: "Pupille festonnée : synéchies postérieures. Si elles font tout le tour, l’aqueuse reste bloquée derrière l’iris, qui bombe et ferme l’angle (iris bombé). Traitement : iridotomie.",
+    deep: "La pupille est irrégulière et festonnée : l’iris reste collé au cristallin par des synéchies postérieures. Si elles font tout le tour (séclusion pupillaire), l’aqueuse produite derrière l’iris ne passe plus : l’iris bombe vers l’avant et ferme l’angle (iris bombé), ce qui se traite par iridotomie laser ou iridectomie. Le cycloplégique en phase aiguë prévient ces synéchies, et on surveille aussi la réponse cortisonique.",
     why: [
       "Exact : la séclusion pupillaire bloque l’aqueuse derrière l’iris, qui bombe et ferme l’angle ; il faut créer un passage (iridotomie ou iridectomie).",
       "La dispersion pigmentaire touche le jeune myope à iris concave ; elle n’a pas de lien avec les synéchies inflammatoires.",
       "La récession de l’angle est une séquelle de traumatisme contondant, pas d’uvéite.",
       "La pseudo-exfoliation est une maladie liée à l’âge, avec dépôts sur le cristallin, sans lien avec les synéchies postérieures."
-    ]
-  },
-  {
-    id: "A-217", module: "A", topic: "a-retine", type: "cat", level: 3, trap: true,
+    ] },
+  { id: "A-217", module: "A", topic: "a-retine", type: "cat", level: 3, trap: true,
     stem: "Un homme de 42 ans opéré d’une greffe endothéliale (DMEK) il y a 4 mois utilise de l’acétate de prednisolone 1 % et un corticostéroïde inhalé pour son asthme. Depuis 10 jours, il voit les lignes droites ondulées d’un œil. L’OCT maculaire montre une bulle de liquide sous la rétine neurosensorielle, sans membrane ni trou. Quelle est la meilleure conduite ?",
     figure: null,
     options: [
@@ -484,33 +477,32 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Laser immédiat sur le point de fuite, sans angiographie préalable"
     ],
     answer: 1,
-    explain: "Liquide sous la rétine neurosensorielle maculaire chez un patient sous corticostéroïdes = choriorétinopathie séreuse centrale (CRSC) jusqu’à preuve du contraire. On fait l’inventaire de toutes les sources de stéroïdes (gouttes, inhalateurs, crèmes, vaporisateurs nasaux, injections), on réduit avec les prescripteurs ce qui peut l’être sans risque de rejet et on réfère en rétine si le liquide persiste. Piège : cesser brusquement le stéroïde d’une greffe.",
+    explain: "Liquide sous la rétine maculaire chez un patient sous stéroïdes : choriorétinopathie séreuse centrale. Toutes les voies comptent (gouttes, inhalateur). On réduit ce qui peut l’être sans risquer le rejet du greffon.",
+    deep: "Liquide sous la rétine neurosensorielle maculaire chez un patient sous corticostéroïdes = choriorétinopathie séreuse centrale (CRSC) jusqu’à preuve du contraire. On fait l’inventaire de toutes les sources de stéroïdes (gouttes, inhalateurs, crèmes, vaporisateurs nasaux, injections), on réduit avec les prescripteurs ce qui peut l’être sans risque de rejet et on réfère en rétine si le liquide persiste. Piège : cesser brusquement le stéroïde d’une greffe.",
     why: [
       "Arrêter brusquement la prednisolone expose la greffe au rejet : la réduction se planifie avec l’équipe de cornée.",
       "Exact : la CRSC est favorisée par les stéroïdes de toutes les voies ; on réduit ce qui peut l’être sans danger, et la plupart des cas se résorbent spontanément.",
       "Le liquide est SOUS la rétine (CRSC), pas dans la rétine (œdème maculaire cystoïde) ; augmenter le stéroïde aggraverait la situation.",
       "Un traitement laser d’une CRSC se discute en rétine après angiographie, surtout si le liquide persiste ; il ne se fait pas d’emblée."
-    ]
-  },
-  {
-    id: "A-218", module: "A", topic: "a-retine", type: "image", level: 1, trap: true,
-    stem: "Un homme de 69 ans suivi pour un GPAO débutant dit se cogner du côté gauche depuis 2 mois. Voici son nouveau champ visuel de Goldmann (un graphique par œil). Quelle est l’interprétation la plus juste ?",
+    ] },
+  { id: "A-218", module: "A", topic: "a-retine", type: "image", level: 1, trap: true,
+    stem: "Un homme de 69 ans suivi pour un GPAO débutant dit se cogner du côté gauche depuis 2 mois. Voici son nouveau champ visuel de Goldmann (un graphique par œil). Quelle est la conduite la plus appropriée ?",
     figure: { type: "photo", id: "OPH-283" },
     options: [
-      "Progression rapide du glaucome : il faut abaisser la PIO cible",
-      "Artéfact de lentille ou de paupière : il suffit de refaire le test",
-      "Atteinte rétrochiasmatique droite : imagerie cérébrale à demander",
-      "Compression du chiasma par une tumeur hypophysaire : IRM de la selle"
+      "Abaisser la PIO cible : le glaucome progresse vite",
+      "Refaire le test : artéfact de lentille ou de paupière",
+      "Imagerie cérébrale : ce défaut n’est pas glaucomateux",
+      "Ajouter un champ 10-2 pour préciser l’atteinte centrale"
     ],
     answer: 2,
-    explain: "Les deux graphiques montrent l’absence de la moitié gauche du champ, avec des isoptères qui s’arrêtent net sur le méridien vertical : c’est une hémianopsie homonyme gauche, due à une lésion des voies visuelles droites derrière le chiasma (ici, un AVC occipital). Il faut une imagerie cérébrale, aviser le médecin traitant et vérifier la norme de conduite de la SAAQ.",
+    explain: "La même moitié du champ manque aux deux yeux et le défaut s’arrête sur le méridien vertical : ce n’est pas du glaucome, qui respecte le méridien horizontal. Lésion derrière le chiasma : imagerie cérébrale.",
+    deep: "Les deux graphiques montrent l’absence de la moitié gauche du champ, avec des isoptères qui s’arrêtent net sur le méridien vertical : c’est une hémianopsie homonyme gauche, due à une lésion des voies visuelles droites derrière le chiasma (ici, un AVC occipital). Il faut une imagerie cérébrale, aviser le médecin traitant et vérifier la norme de conduite de la SAAQ.",
     why: [
       "Le glaucome respecte le méridien HORIZONTAL ; une perte de la même moitié dans les deux yeux, limitée par le méridien vertical, n’est pas glaucomateuse.",
       "Un artéfact de lentille donne un anneau périphérique et une ptose un défaut supérieur, pas une hémianopsie nette dans les deux yeux.",
-      "Exact : moitié gauche perdue dans les deux yeux, limitée par le méridien vertical = hémianopsie homonyme gauche, donc lésion rétrochiasmatique droite.",
-      "Une atteinte du chiasma donne typiquement une hémianopsie bitemporale (moitiés externes des deux champs), pas la perte de la même moitié."
-    ]
-  }
+      "Exact : même moitié perdue aux deux yeux, limite verticale = lésion derrière le chiasma, à imager.",
+      "Le 10-2 précise un défaut central ; il n’explique pas un défaut qui respecte le méridien vertical."
+    ] }
 ]);
 
 /* ===== Cas évolutif cas-a2 ===== */

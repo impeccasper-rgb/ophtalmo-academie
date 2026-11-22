@@ -444,8 +444,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Exact : DMLA néovasculaire probable, référence rapide pour anti-VEGF."
     ]
   },
-  {
-    id: "A-204", module: "A", topic: "a-retine", type: "image", level: 3, trap: false,
+  { id: "A-204", module: "A", topic: "a-retine", type: "image", level: 3, trap: false,
     stem: "Un patient très hypermétrope (environ +12 D) est envoyé en glaucome pour un angle étroit. La biométrie ultrasonique montre un œil très court et le B-scan montre ceci. Quel risque faut-il signaler au chirurgien avant toute chirurgie intraoculaire ?",
     figure: { type: "photo", id: "OPH-197" },
     options: [
@@ -455,14 +454,14 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Rupture capsulaire par zonules anormalement tendues"
     ],
     answer: 1,
-    explain: "Un œil très court à paroi sclérale épaisse évoque une nanophtalmie. La sclère épaisse gêne le drainage veineux et liquidien de la choroïde : risque d’effusion uvéale, spontanée ou pendant la chirurgie, et de fermeture de l’angle par un cristallin relativement gros dans un petit segment antérieur.",
+    explain: "Œil très court à paroi épaisse : nanophtalmie. La sclère épaisse gêne le drainage de la choroïde : risque d’effusion uvéale, spontanée ou pendant la chirurgie, et de fermeture de l’angle.",
+    deep: "Un œil très court à paroi sclérale épaisse évoque une nanophtalmie. La sclère épaisse gêne le drainage veineux et liquidien de la choroïde : risque d’effusion uvéale, spontanée ou pendant la chirurgie, et de fermeture de l’angle par un cristallin relativement gros dans un petit segment antérieur.",
     why: [
       "Le décollement du vitré n’est pas le risque propre à un œil court à sclère épaisse.",
       "Exact : nanophtalmie, avec risque d’effusion uvéale et de fermeture de l’angle.",
       "La nanophtalmie s’accompagne plutôt d’une petite cornée ; une grande cornée n’est pas en cause.",
       "Le risque caractéristique n’est pas zonulaire ; c’est l’effusion uvéale et la fermeture de l’angle."
-    ]
-  },
+    ] },
   {
     id: "A-205", module: "A", topic: "a-retine", type: "image", level: 2, trap: false,
     stem: "Quatre jours après une trabéculectomie, la PIO est à 3 mmHg, la chambre antérieure est peu profonde et le patient a peu de douleur. Le fond d’œil est mal vu ; le B-scan montre ceci. Quel est le diagnostic le plus probable ?",
@@ -482,27 +481,24 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "L’hémorragie donne un contenu échogène, une douleur brutale et une PIO plutôt élevée."
     ]
   },
-  {
-    id: "A-206", module: "A", topic: "a-retine", type: "diagnostic", level: 3, trap: true,
-    stem: "Un patient de 82 ans avec une cataracte blanche hypermature consulte pour un œil rouge et douloureux. PIO 46 mmHg, cornée œdémateuse, chambre antérieure profonde avec particules blanchâtres flottantes, angle ouvert à la gonioscopie, pas de précipités kératiques. Quel est le diagnostic le plus probable ?",
+  { id: "A-206", module: "A", topic: "a-retine", type: "diagnostic", level: 3, trap: true,
+    stem: "Une patiente de 80 ans a une cataracte blanche et gonflée à l’œil droit. Depuis hier : œil droit rouge et douloureux, PIO 50 mmHg, cornée œdémateuse. La chambre antérieure est très étroite à droite, mais profonde à gauche ; à la gonioscopie, l’angle est fermé à droite et grand ouvert à gauche. Quel est le diagnostic le plus probable ?",
     figure: null,
     options: [
-      "Glaucome phacomorphique par cristallin intumescent",
-      "Crise aiguë de fermeture primaire de l’angle",
       "Glaucome phacolytique par fuite de protéines",
-      "Uvéite antérieure hypertensive herpétique"
+      "Crise aiguë de fermeture primaire de l’angle",
+      "Glaucome phacomorphique par cristallin gonflé",
+      "Glaucome néovasculaire à angle fermé"
     ],
     answer: 2,
-    explain: "Dans le glaucome phacolytique, des protéines du cortex liquéfié fuient à travers une capsule intacte et les macrophages qui les captent bouchent le trabéculum. L’angle est ouvert et la chambre profonde, contrairement au glaucome phacomorphique. Conduite : baisser la PIO, contrôler l’inflammation, puis extraire le cristallin après un B-scan.",
+    explain: "Une cataracte gonflée pousse l’iris vers l’avant et ferme l’angle : glaucome phacomorphique. L’indice : la chambre est bien plus étroite que celle de l’autre œil. Dans la fermeture primaire, les deux yeux sont étroits.",
     why: [
-      "Piège : le phacomorphique ferme l’angle avec une chambre peu profonde ; ici l’angle est ouvert et la chambre profonde.",
-      "La crise de fermeture primaire exige un angle fermé à la gonioscopie.",
-      "Exact : cataracte hypermature, angle ouvert, particules blanchâtres en chambre antérieure.",
-      "L’uvéite herpétique donne souvent des précipités kératiques et une atteinte cornéenne ; elle n’explique pas ce tableau."
-    ]
-  },
-  {
-    id: "A-207", module: "A", topic: "a-retine", type: "image", level: 2, trap: false,
+      "Dans le phacolytique, l’angle est ouvert et la chambre profonde, avec des particules blanches ; ici l’angle est fermé.",
+      "Une fermeture primaire survient sur deux yeux courts : l’œil adelphe aurait aussi une chambre étroite.",
+      "Exact : cataracte gonflée, angle fermé d’un seul côté, œil adelphe profond.",
+      "Il faudrait des néovaisseaux sur l’iris et dans l’angle, avec une cause d’ischémie rétinienne."
+    ] },
+  { id: "A-207", module: "A", topic: "a-retine", type: "image", level: 2, trap: false,
     stem: "Un patient diabétique est adressé pour une PIO à 26 mmHg. Le fond d’œil montre ceci. Quelle combinaison décrit le mieux la trouvaille et la conduite ?",
     figure: { type: "photo", id: "OPH-259" },
     options: [
@@ -512,14 +508,14 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Néovaisseaux papillaires ; rétine rapidement et gonioscopie"
     ],
     answer: 3,
-    explain: "Le lacis de fins vaisseaux à la surface de la papille, avec des hémorragies rétiniennes, correspond à des néovaisseaux papillaires (NVD) : rétinopathie diabétique proliférante. Il faut une PRP et/ou des anti-VEGF rapidement, et une gonioscopie pour chercher des NVA, car la PIO élevée peut signaler un glaucome néovasculaire débutant.",
+    explain: "Un lacis de fins vaisseaux à la surface de la papille est une néovascularisation papillaire : rétinopathie diabétique proliférante. Référer vite en rétine et chercher des néovaisseaux de l’angle, car la PIO monte.",
+    deep: "Le lacis de fins vaisseaux à la surface de la papille, avec des hémorragies rétiniennes, correspond à des néovaisseaux papillaires (NVD) : rétinopathie diabétique proliférante. Il faut une PRP et/ou des anti-VEGF rapidement, et une gonioscopie pour chercher des NVA, car la PIO élevée peut signaler un glaucome néovasculaire débutant.",
     why: [
       "La papille est couverte de vaisseaux anormaux, pas excavée ; la cause de la PIO doit être cherchée avant d’ajouter des gouttes.",
       "L’œdème papillaire brouille les bords avec des hémorragies en flammèches, sans lacis néovasculaire à la surface.",
       "Les drusen papillaires sont des corps jaunâtres réfringents, sans néovaisseaux ni hémorragies rétiniennes dispersées.",
       "Exact : NVD (rétinopathie proliférante), traitement rapide de l’ischémie et recherche de NVA."
-    ]
-  },
+    ] },
   {
     id: "A-208", module: "A", topic: "a-retine", type: "cat", level: 1, trap: true,
     stem: "Un myope fort de 58 ans voit des éclairs et une pluie de mouches volantes depuis 2 jours, puis un voile qui monte du bas de son champ. AV 6/6. Au fond d’œil : décollement de rétine supérieur, bulleux, macula encore attachée, déchirure en fer à cheval à 12 h. Quelle conduite ?",

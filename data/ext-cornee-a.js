@@ -424,62 +424,77 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Une dystrophie ne s’accompagne pas de vaisseaux ; des vaisseaux orientent vers une cicatrice."
     ]
   },
-  {
-    id: "B-203", module: "B", topic: "c-dystrophies", type: "image", level: 3, trap: false,
-    stem: "Vision 6/24 aux deux yeux et photophobie depuis l’adolescence. Les parents, cousins germains, ont des cornées normales. Pachymétrie centrale : 470 µm. Voici sa cornée. Quelle combinaison décrit le mieux cette dystrophie ?",
+  { id: "B-203", module: "B", topic: "c-dystrophies", type: "image", level: 2, trap: false,
+    stem: "Vision 6/24 aux deux yeux et photophobie depuis l’adolescence. Les parents, cousins germains, ont des cornées normales. Pachymétrie centrale : 470 µm. Voici sa cornée. Quelle dystrophie est la plus probable ?",
     figure: { type: "photo", id: "OPH-374" },
-    options: ["TGFBI, dépôts hyalins, rouge au trichrome de Masson", "TGFBI, amyloïde, biréfringence au rouge Congo", "Gène TCF4, guttae, transmission dominante", "CHST6, mucopolysaccharides, bleu alcian positif"],
+    options: [
+      "Granulaire : dominante, grains nets, stroma clair entre eux",
+      "Grillagée : dominante, lignes ramifiées d’amyloïde",
+      "De Fuchs : guttae centrales, œdème pire au réveil",
+      "Maculaire : récessive, voile diffus jusqu’au limbe"
+    ],
     answer: 3,
-    explain: "Taches mal limitées sur un voile stromal diffus (qui atteint le limbe dans cette dystrophie), cornée mince, vision basse tôt, parents consanguins non atteints : dystrophie maculaire, autosomique récessive (gène CHST6). Les mucopolysaccharides (glycosaminoglycanes) prennent le bleu alcian : « Marilyn Monroe Always ».",
+    explain: "Taches floues sur un voile stromal diffus qui atteint le limbe, cornée mince, vision basse tôt, parents sains mais apparentés : dystrophie maculaire, de transmission récessive. Granulaire et grillagée sont dominantes.",
     why: [
-      "Granulaire : stroma clair entre les grains, dominante, épaisseur cornéenne normale.",
-      "Grillagée : lignes ramifiées et érosions, transmission dominante.",
-      "Fuchs : guttae et cornée épaissie par l’œdème après 50 ans, pas une cornée mince chez un jeune adulte.",
-      "Exact : récessive, voile jusqu’au limbe, cornée mince, bleu alcian."
-    ]
-  },
-  {
-    id: "B-204", module: "B", topic: "c-dystrophies", type: "cat", level: 2, trap: true,
+      "Dans la granulaire, les grains ont des bords nets et le stroma reste clair entre eux ; un parent est atteint.",
+      "La grillagée dessine des lignes fines et ramifiées, avec un parent atteint (dominante).",
+      "La dystrophie de Fuchs atteint l’endothélium (guttae) et se révèle bien plus tard dans la vie.",
+      "Exact : voile diffus jusqu’au limbe, cornée mince, transmission récessive."
+    ] },
+  { id: "B-204", module: "B", topic: "c-dystrophies", type: "cat", level: 3, trap: true,
     stem: "Homme de 29 ans, candidat au LASIK : myopie stable de −4,00 D, topographie normale. À la lampe, quelques petites opacités blanches en flocons et deux courtes lignes dans le stroma antérieur, aux deux yeux. Son père « a des taches sur les cornées ». Quelle est la meilleure conduite ?",
     figure: null,
-    options: ["LASIK permis, car la topographie est normale", "Pas de chirurgie réfractive ; test génétique TGFBI", "PKR avec mitomycine C plutôt que LASIK", "PTK préventive, puis LASIK dans trois mois"],
+    options: [
+      "LASIK permis, car la topographie est normale",
+      "Pas de chirurgie réfractive ; test génétique TGFBI",
+      "PKR avec mitomycine C plutôt que LASIK",
+      "PTK préventive, puis LASIK dans trois mois"
+    ],
     answer: 1,
-    explain: "Opacités en flocons et lignes, bilatérales et familiales : dystrophie d’Avellino (granulaire de type 2, TGFBI) à exclure. Le traumatisme du LASIK fait proliférer les dépôts à l’interface du volet et peut coûter beaucoup de vision : on confirme par test génétique et on déconseille la chirurgie réfractive cornéenne.",
+    explain: "Flocons et lignes du stroma, bilatéraux et familiaux : dystrophie liée à TGFBI (granulaire de type 2) à exclure. Le laser cornéen fait proliférer les dépôts : test génétique, pas de chirurgie réfractive cornéenne.",
+    deep: "Opacités en flocons et lignes, bilatérales et familiales : dystrophie d’Avellino (granulaire de type 2, TGFBI) à exclure. Le traumatisme du LASIK fait proliférer les dépôts à l’interface du volet et peut coûter beaucoup de vision : on confirme par test génétique et on déconseille la chirurgie réfractive cornéenne.",
     why: [
       "Piège : la topographie ne voit pas une dystrophie stromale ; le LASIK aggrave les dépôts TGFBI.",
       "Exact : confirmer la mutation et éviter le laser réfractif cornéen.",
       "Les dépôts peuvent aussi revenir après une ablation de surface ; la chirurgie réfractive reste déconseillée.",
       "La PTK retire des dépôts sans changer le gène ; le volet du LASIK reste à proscrire."
-    ]
-  },
-  {
-    id: "B-205", module: "B", topic: "c-depots", type: "image", level: 1, trap: false,
+    ] },
+  { id: "B-205", module: "B", topic: "c-depots", type: "image", level: 1, trap: false,
     stem: "Irritation et vision trouble des deux yeux depuis des mois. Jamais d’uvéite ni de chirurgie oculaire. Voici un de ses yeux. Quel bilan sanguin est le plus pertinent ?",
     figure: { type: "photo", id: "OPH-299" },
-    options: ["Bilan lipidique et glycémie à jeun", "Calcium, phosphore, PTH et créatinine", "Céruloplasmine et cuivre urinaire", "Sérologie syphilis et anticorps antinucléaires"],
+    options: [
+      "Bilan lipidique et glycémie à jeun",
+      "Calcium, phosphore, PTH et créatinine",
+      "Céruloplasmine et cuivre urinaire",
+      "Sérologie syphilis et anticorps antinucléaires"
+    ],
     answer: 1,
-    explain: "Plaque blanche crayeuse entre les paupières, percée de trous : kératopathie en bande (calcium dans la couche de Bowman). Sans cause oculaire (uvéite, phtise, huile de silicone), on cherche une hypercalcémie ou une hyperphosphatémie : calcium, phosphore, PTH et fonction rénale. Ici, le patient avait une hyperparathyroïdie.",
+    explain: "Plaque blanche crayeuse entre les paupières, percée de petits trous : kératopathie en bande (calcium). Sans cause oculaire, on cherche une hypercalcémie ou une atteinte rénale : calcium, phosphore, PTH, créatinine.",
+    deep: "Plaque blanche crayeuse entre les paupières, percée de trous : kératopathie en bande (calcium dans la couche de Bowman). Sans cause oculaire (uvéite, phtise, huile de silicone), on cherche une hypercalcémie ou une hyperphosphatémie : calcium, phosphore, PTH et fonction rénale. Ici, le patient avait une hyperparathyroïdie.",
     why: [
       "Lipides : arc gris-blanc périphérique ou dépôt jaune près de vaisseaux, pas une bande crayeuse.",
       "Exact : hyperparathyroïdie ou insuffisance rénale favorisent le dépôt de calcium.",
       "Cuivre : anneau brun-vert de la Descemet périphérique (Wilson), pas une bande blanche.",
       "Utile pour une kératite interstitielle ou un enfant avec uvéite ; ici, adulte sans uvéite."
-    ]
-  },
-  {
-    id: "B-206", module: "B", topic: "c-depots", type: "image", level: 1, trap: false,
+    ] },
+  { id: "B-206", module: "B", topic: "c-depots", type: "image", level: 1, trap: false,
     stem: "Vu pour une cataracte débutante. Vision 6/9, aucun symptôme cornéen. Voici sa cornée, éclairée contre la pupille dilatée. Quel médicament cherches-tu d’abord dans sa liste ?",
     figure: { type: "photo", id: "OPH-363" },
-    options: ["Tamsulosine", "Topiramate", "Éthambutol", "Amiodarone"],
+    options: [
+      "Tamsulosine",
+      "Topiramate",
+      "Éthambutol",
+      "Amiodarone"
+    ],
     answer: 3,
-    explain: "Fines lignes brun doré en tourbillon dans l’épithélium : cornée verticillée. L’amiodarone en est la cause classique (aussi hydroxychloroquine, maladie de Fabry). Elle gêne rarement la vision et n’oblige pas à cesser le médicament ; une baisse de vision ou une papille gonflée feraient plutôt penser à une neuropathie optique.",
+    explain: "Fines lignes brun doré en tourbillon dans l’épithélium : cornée verticillée. L’amiodarone en est la cause classique. Elle gêne rarement la vision et n’oblige pas à cesser le médicament.",
+    deep: "Fines lignes brun doré en tourbillon dans l’épithélium : cornée verticillée. L’amiodarone en est la cause classique (aussi hydroxychloroquine, maladie de Fabry). Elle gêne rarement la vision et n’oblige pas à cesser le médicament ; une baisse de vision ou une papille gonflée feraient plutôt penser à une neuropathie optique.",
     why: [
       "Tamsulosine : syndrome de l’iris flasque peropératoire (floppy iris), cornée normale.",
       "Topiramate : effusion ciliochoroïdienne et fermeture de l’angle bilatérale.",
       "Éthambutol : neuropathie optique toxique, cornée normale.",
       "Exact : dépôts épithéliaux en tourbillon, très fréquents sous amiodarone."
-    ]
-  },
+    ] },
   {
     id: "B-207", module: "B", topic: "c-depots", type: "image", level: 2, trap: false,
     stem: "Traité depuis 6 jours pour un ulcère bactérien avec des gouttes de ciprofloxacine aux heures. L’infiltrat ne grossit pas et la douleur diminue, mais une plaque blanche crayeuse est apparue dans le lit de l’ulcère. Voici l’œil, avec fluorescéine. Quelle est l’explication la plus probable ?",
@@ -494,20 +509,24 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Infection cristalline : cristaux ramifiés dans le stroma, souvent sous un épithélium intact, sur greffe."
     ]
   },
-  {
-    id: "B-208", module: "B", topic: "c-depots", type: "diagnostic", level: 2, trap: true,
+  { id: "B-208", module: "B", topic: "c-depots", type: "diagnostic", level: 2, trap: true,
     stem: "Étudiante de 19 ans dirigée pour « anneau de Fleischer bilatéral ». Elle a des tremblements récents et des enzymes hépatiques élevées. Topographie normale. À la lampe : anneau brun-vert à la périphérie de la cornée, plus marqué en haut et en bas. Où est le dépôt et de quoi est-il fait ?",
     figure: null,
-    options: ["Fer dans l’épithélium basal, autour d’un cône", "Calcium dans la couche de Bowman, entre les paupières", "Cuivre dans la membrane de Descemet périphérique", "Lipides dans le stroma périphérique, avec intervalle clair"],
+    options: [
+      "Fer dans l’épithélium basal, autour d’un cône",
+      "Calcium dans la couche de Bowman, entre les paupières",
+      "Cuivre dans la membrane de Descemet périphérique",
+      "Lipides dans le stroma périphérique, avec intervalle clair"
+    ],
     answer: 2,
-    explain: "Anneau brun-vert périphérique, tremblements et atteinte hépatique chez une jeune : anneau de Kayser-Fleischer, cuivre dans la Descemet périphérique (maladie de Wilson). L’anneau de Fleischer du kératocône est du fer épithélial autour du cône, avec une topographie anormale. On demande céruloplasmine et cuivre urinaire avec l’interniste ou l’hépatologue.",
+    explain: "Anneau brun-vert près du limbe, tremblements et atteinte du foie chez une jeune : anneau de Kayser-Fleischer, cuivre dans la Descemet (maladie de Wilson). L’anneau de Fleischer du kératocône est du fer épithélial autour d’un cône.",
+    deep: "Anneau brun-vert périphérique, tremblements et atteinte hépatique chez une jeune : anneau de Kayser-Fleischer, cuivre dans la Descemet périphérique (maladie de Wilson). L’anneau de Fleischer du kératocône est du fer épithélial autour du cône, avec une topographie anormale. On demande céruloplasmine et cuivre urinaire avec l’interniste ou l’hépatologue.",
     why: [
       "Piège : c’est l’anneau de Fleischer du kératocône ; topographie normale et contexte l’écartent.",
       "Calcium : bande blanche crayeuse horizontale, pas un anneau brun-vert.",
       "Exact : anneau de Kayser-Fleischer, maladie de Wilson.",
       "Lipides : arc cornéen gris-blanc, sans atteinte hépatique ni neurologique."
-    ]
-  }
+    ] }
 ]);
 
 G.OPH.glossary = G.OPH.glossary || {};

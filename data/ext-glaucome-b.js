@@ -169,62 +169,78 @@ G.OPH.photos = G.OPH.photos || {};
 
 /* ===== QCM C-211 à C-214 ===== */
 G.OPH.quiz = (G.OPH.quiz || []).concat([
-  {
-    id: "C-211", module: "C", topic: "g-dev", type: "image", level: 2, trap: false,
+  { id: "C-211", module: "C", topic: "g-dev", type: "image", level: 2, trap: false,
     stem: "Une femme de 42 ans consulte pour une vision floue le matin à un seul œil. La PIO est de 30 mmHg de ce côté et normale de l’autre ; l’œil adelphe est normal et il n’y a aucun antécédent familial. Voici l’iris de l’œil atteint. Quel diagnostic est le plus probable ?",
     figure: { type: "photo", id: "OPH-310" },
-    options: ["Syndrome d’Axenfeld-Rieger avec hypoplasie irienne", "Iridodialyse traumatique avec récession de l’angle", "Syndrome ICE, forme atrophie essentielle de l’iris", "Dystrophie polymorphe postérieure avec adhérences"],
+    options: [
+      "Syndrome d’Axenfeld-Rieger avec hypoplasie irienne",
+      "Iridodialyse traumatique avec récession de l’angle",
+      "Syndrome ICE, forme atrophie essentielle de l’iris",
+      "Dystrophie polymorphe postérieure avec adhérences"
+    ],
     answer: 2,
-    explain: "Femme d’âge moyen, atteinte d’un seul œil, sans histoire familiale : pupille ovale déplacée, stroma aminci et trous de l’iris (grande zone sombre en haut à gauche, petits trous à bord pigmenté en bas à droite). C’est l’atrophie essentielle de l’iris, une variante du syndrome ICE ; le flou matinal traduit l’œdème cornéen. Chercher l’endothélium en argent martelé, les synéchies hautes, et confirmer en microscopie spéculaire.",
+    explain: "Un seul œil, femme d’âge moyen, sans histoire familiale : pupille déplacée, stroma aminci et trous de l’iris. C’est un syndrome ICE (atrophie essentielle de l’iris). Axenfeld-Rieger est bilatéral et congénital.",
+    deep: "Femme d’âge moyen, atteinte d’un seul œil, sans histoire familiale : pupille ovale déplacée, stroma aminci et trous de l’iris (grande zone sombre en haut à gauche, petits trous à bord pigmenté en bas à droite). C’est l’atrophie essentielle de l’iris, une variante du syndrome ICE ; le flou matinal traduit l’œdème cornéen. Chercher l’endothélium en argent martelé, les synéchies hautes, et confirmer en microscopie spéculaire.",
     why: [
       "Axenfeld-Rieger est congénital, bilatéral et souvent familial, avec embryotoxon postérieur et brides vers Schwalbe.",
       "L’iridodialyse est une désinsertion de la racine de l’iris après un choc ; ici, aucun trauma et les trous siègent dans le stroma.",
       "Exact : unilatéral, acquis, femme d’âge moyen, corectopie et trous de l’iris.",
       "La dystrophie polymorphe postérieure est bilatérale et familiale, avec vésicules et bandes à la Descemet."
-    ]
-  },
-  {
-    id: "C-212", module: "C", topic: "g-dev", type: "image", level: 2, trap: true,
+    ] },
+  { id: "C-212", module: "C", topic: "g-dev", type: "image", level: 2, trap: true,
     stem: "Examen de routine chez un adulte asymptomatique : AV normale, PIO normale, papilles normales. À la lampe à fente, tu remarques ceci en périphérie de la cornée. Quelle est la conduite la plus appropriée ?",
     figure: { type: "photo", id: "OPH-317" },
-    options: ["Gonioscopie : chercher des brides d’iris attachées à cette ligne", "Microscopie spéculaire pour confirmer un syndrome ICE débutant", "Iridotomie périphérique au laser pour prévenir une fermeture", "Bilan lipidique sanguin pour un arc cornéen (arcus) précoce"],
+    options: [
+      "Gonioscopie : chercher des brides d’iris attachées à cette ligne",
+      "Microscopie spéculaire pour confirmer un syndrome ICE débutant",
+      "Iridotomie périphérique au laser pour prévenir une fermeture",
+      "Bilan lipidique sanguin pour un arc cornéen (arcus) précoce"
+    ],
     answer: 0,
-    explain: "La ligne blanc grisâtre, fine, nette et courbe, parallèle au limbe en périphérie de la cornée, est un embryotoxon postérieur : la ligne de Schwalbe (bord périphérique de la Descemet) épaissie et déplacée vers l’avant, assez saillante pour être vue sans gonioscopie. Seul, il est fréquent et bénin. Si des brides d’iris s’y attachent (avec corectopie, trous de l’iris, anomalies dentaires ou ombilicales), c’est le spectre d’Axenfeld-Rieger, où le risque de glaucome est élevé : la gonioscopie tranche.",
+    explain: "Ligne blanche fine, parallèle au limbe : embryotoxon postérieur, une ligne de Schwalbe saillante. Seul, il est bénin. La gonioscopie cherche des brides d’iris qui s’y attachent (Axenfeld-Rieger, risque de glaucome).",
+    deep: "La ligne blanc grisâtre, fine, nette et courbe, parallèle au limbe en périphérie de la cornée, est un embryotoxon postérieur : la ligne de Schwalbe (bord périphérique de la Descemet) épaissie et déplacée vers l’avant, assez saillante pour être vue sans gonioscopie. Seul, il est fréquent et bénin. Si des brides d’iris s’y attachent (avec corectopie, trous de l’iris, anomalies dentaires ou ombilicales), c’est le spectre d’Axenfeld-Rieger, où le risque de glaucome est élevé : la gonioscopie tranche.",
     why: [
       "Exact : la gonioscopie montre si l’embryotoxon est isolé (rien à faire) ou si des brides d’iris montent jusqu’à lui (Axenfeld-Rieger : PIO et papilles à suivre).",
       "Le syndrome ICE touche l’endothélium d’un seul œil (argent martelé, corectopie, œdème) ; une ligne de Schwalbe saillante n’en est pas un signe.",
       "Rien n’indique un angle étroit : l’embryotoxon siège à la ligne de Schwalbe et ne ferme pas l’angle.",
       "L’arc cornéen est une bande grisâtre floue dans le stroma, séparée du limbe par une zone claire ; ici, c’est une ligne fine et nette au niveau de la Descemet. Piège classique."
-    ]
-  },
-  {
-    id: "C-213", module: "C", topic: "g-dev", type: "cat", level: 1, trap: true,
+    ] },
+  { id: "C-213", module: "C", topic: "g-dev", type: "cat", level: 1, trap: true,
     stem: "Un nourrisson de 5 mois larmoie de l’œil droit depuis 2 mois. Ses parents notent qu’il ferme les yeux à la lumière vive et se frotte les yeux. La cornée droite paraît plus grande et légèrement bleutée par rapport à la gauche. Quelle est la conduite la plus appropriée ?",
     figure: null,
-    options: ["Massage du sac lacrymal et revoir à 12 mois si le larmoiement persiste", "Brimonidine en gouttes pour baisser la PIO en attendant la croissance", "Trabéculectomie avec mitomycine C dès la première intervention", "Examen sous anesthésie rapide, puis chirurgie de l’angle si confirmé"],
+    options: [
+      "Massage du sac lacrymal et revoir à 12 mois si le larmoiement persiste",
+      "Brimonidine en gouttes pour baisser la PIO en attendant la croissance",
+      "Trabéculectomie avec mitomycine C dès la première intervention",
+      "Examen sous anesthésie rapide, puis chirurgie de l’angle si confirmé"
+    ],
     answer: 3,
-    explain: "Larmoiement + photophobie + cornée large et bleutée = glaucome congénital primaire jusqu’à preuve du contraire. On réfère en urgence pour un examen sous anesthésie (PIO, diamètre cornéen, gonioscopie, papille, réfraction), suivi le plus souvent d’une goniotomie ou d’une trabéculotomie. Les gouttes ne servent que de pont.",
+    explain: "Larmoiement, photophobie et cornée grande, bleutée : glaucome congénital jusqu’à preuve du contraire. On confirme sous anesthésie, puis on ouvre l’angle (goniotomie ou trabéculotomie). Les gouttes ne sont qu’un pont.",
+    deep: "Larmoiement + photophobie + cornée large et bleutée = glaucome congénital primaire jusqu’à preuve du contraire. On réfère en urgence pour un examen sous anesthésie (PIO, diamètre cornéen, gonioscopie, papille, réfraction), suivi le plus souvent d’une goniotomie ou d’une trabéculotomie. Les gouttes ne servent que de pont.",
     why: [
       "L’obstruction lacrymonasale donne un larmoiement sans photophobie, avec une cornée claire et de taille normale ; attendre laisse s’installer amblyopie et neuropathie.",
       "Brimonidine contre-indiquée avant 2 ans (somnolence, hypotonie, apnée) ; et les gouttes ne sont qu’un pont.",
       "Chez le nourrisson, la trabéculectomie cicatrise vite et expose à vie aux risques de la bulle ; on la garde pour les échecs de la chirurgie de l’angle.",
       "Exact : confirmer sous anesthésie puis ouvrir l’angle (goniotomie ou trabéculotomie)."
-    ]
-  },
-  {
-    id: "C-214", module: "C", topic: "g-dev", type: "image", level: 3, trap: false,
+    ] },
+  { id: "C-214", module: "C", topic: "g-dev", type: "image", level: 3, trap: false,
     stem: "Photo peropératoire chez un jeune patient atteint de Sturge-Weber (angiome plan facial dans le territoire de V1), qui a un glaucome du même côté réfractaire aux gouttes. Une chirurgie filtrante est en cours. Quelle complication peropératoire faut-il surtout anticiper ?",
     figure: { type: "photo", id: "OPH-391" },
-    options: ["Fermeture aiguë de l’angle par bloc pupillaire", "Effusion ou hémorragie suprachoroïdienne à l’ouverture", "Hyphéma massif par rupture de néovaisseaux de l’angle", "Glaucome malin par rotation antérieure du corps ciliaire"],
+    options: [
+      "Fermeture aiguë de l’angle par bloc pupillaire",
+      "Effusion ou hémorragie suprachoroïdienne à l’ouverture",
+      "Hyphéma massif par rupture de néovaisseaux de l’angle",
+      "Glaucome malin par rotation antérieure du corps ciliaire"
+    ],
     answer: 1,
-    explain: "La photo montre, sous la conjonctive ouverte, un réseau dense de vaisseaux épiscléraux dilatés et tortueux : la pression veineuse épisclérale est élevée, et la PIO ne peut pas descendre sous elle par le trabéculum. Avec l’hémangiome choroïdien, la chute brutale de la PIO à l’entrée dans l’œil peut provoquer une effusion choroïdienne ou une hémorragie suprachoroïdienne (expulsive). Précautions : échographie B avant, baisse progressive de la PIO, fermeture étanche.",
+    explain: "Vaisseaux épiscléraux dilatés : la pression veineuse est haute. Avec l’hémangiome choroïdien, la chute brutale de PIO à l’ouverture de l’œil expose à une effusion ou à une hémorragie suprachoroïdienne.",
+    deep: "La photo montre, sous la conjonctive ouverte, un réseau dense de vaisseaux épiscléraux dilatés et tortueux : la pression veineuse épisclérale est élevée, et la PIO ne peut pas descendre sous elle par le trabéculum. Avec l’hémangiome choroïdien, la chute brutale de la PIO à l’entrée dans l’œil peut provoquer une effusion choroïdienne ou une hémorragie suprachoroïdienne (expulsive). Précautions : échographie B avant, baisse progressive de la PIO, fermeture étanche.",
     why: [
       "Le glaucome de Sturge-Weber est à angle ouvert (angle anormal ou pression veineuse élevée), pas un bloc pupillaire.",
       "Exact : hémangiome choroïdien et pression veineuse élevée exposent à l’effusion ou à l’hémorragie à la décompression.",
       "Les néovaisseaux de l’angle ne font pas partie du tableau ; le saignement redouté est choroïdien.",
       "Le glaucome malin survient surtout dans les yeux courts à angle fermé ; ce n’est pas le risque propre à Sturge-Weber."
-    ]
-  }
+    ] }
 ]);
 
 /* ===== Cas évolutif cas-c5 ===== */

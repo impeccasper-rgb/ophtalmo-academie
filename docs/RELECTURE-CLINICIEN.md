@@ -1,6 +1,6 @@
 # Ocelle — relecture par un ophtalmologiste (22 novembre 2026)
 
-Public du site : externes et R1 au Québec. Merci de cocher, corriger ou barrer. Sources abrégées : PPP = AAO Preferred Practice Pattern ; EW = EyeWiki ; GOC = guide optométrique canadien GPAO 2017 ; mono = monographie canadienne.
+Public du site : externes et R1 au Québec. Merci de cocher, corriger ou barrer. La colonne Source nomme la référence d'où vient l'énoncé ; pendant l'audit, seule la page EyeWiki des brûlures chimiques a été rouverte, le reste a été comparé aux sources déjà consignées dans docs/FACTS.md. Sources abrégées : PPP = AAO Preferred Practice Pattern ; EW = EyeWiki ; GOC = guide optométrique canadien GPAO 2017 ; mono = monographie canadienne.
 
 ## 1. Doses et délais de référence affichés
 
