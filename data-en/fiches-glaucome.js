@@ -250,7 +250,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "pearls": [
   {
    "q": "What target IOP?",
-   "a": "Individualized by stage, the IOP at which damage occurred, rate of progression, life expectancy and risk factors: starting point ≈ 20–30% below baseline, lower if advanced, revised at every visit. EMGT: each mmHg of reduction ≈ 10% less risk of progression. UKGTS (Lancet 2015), latanoprost vs placebo: field progression at 2 years 15.2% vs 25.6%."
+   "a": "Individualized by stage, the IOP at which damage occurred, rate of progression, life expectancy and risk factors: starting point ≈ 20–30% below baseline, lower if advanced, revised at every visit. EMGT: each mmHg of reduction ≈ 10% less risk of progression. UKGTS (Lancet 2015), latanoprost vs placebo: risk of field deterioration over 24 months more than halved (HR 0.44)."
   },
   {
    "q": "SLT or drops first?",
@@ -842,7 +842,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "name": "Lens extraction (phacoemulsification)",
    "how": "Cataract surgery, even on a clear lens: a thin IOL replaces the thick lens and the angle opens.",
    "why": "≥ 50 years with PAC and IOP ≥ 30 mmHg or PACG (EAGLE); cataract; plateau iris.",
-   "pros": "EAGLE (Lancet 2016): at 3 years, better IOP control, better quality of life and fewer additional treatments than LPI.",
+   "pros": "EAGLE (Lancet 2016): at 3 years, lower IOP (−1.18 mmHg), better quality of life and better cost-effectiveness than LPI.",
    "cons": "More difficult in a short eye.",
    "cx": "Posterior capsule rupture, corneal edema, aqueous misdirection (aqueous diverted into the vitreous, rare).",
    "dose": "Phacoemulsification with IOL, even on a clear lens.",

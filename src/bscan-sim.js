@@ -150,8 +150,9 @@
     '  float d = length(X); vec3 n = X / max(d, 0.001);',
     '  float inc = abs(dot(n, rd));',
     /* speckle lives in probe polar coordinates: it swims with the probe and widens with depth */
-    '  float sp = n2(vec2(r * 3.6 + uSeed * 7.0, al * 46.0 + uSeed * 3.0)) * 0.62 + n2(vec2(r * 8.5 - uSeed * 5.0, al * 110.0)) * 0.38;',
-    '  float spk = 20.0 * lg(sqrt(-2.0 * log(1.0 - clamp(sp, 0.03, 0.97))) / 1.18);',   /* Rayleigh-like, in dB: about -13 .. +7 */
+    '  float sp = n2(vec2(r * 3.3 + uSeed * 7.0, al * 44.0 + uSeed * 3.0)) * 0.55 + n2(vec2(r * 8.0 - uSeed * 5.0, al * 105.0)) * 0.45;',
+    '  sp = (sp - 0.5) * 1.55 + 0.5;',
+    '  float spk = 20.0 * lg(sqrt(-2.0 * log(1.0 - clamp(sp, 0.1, 0.97))) / 1.18);',   /* Rayleigh-like, in dB: about -13 .. +7 */
     '  float dB = -47.0 + h1(q * 9.0 + uSeed) * 9.0;',                                     /* electronic noise floor */
     '  float w = d - R, inner = R - d;',
     '  float lam = acos(clamp(-n.z, -1.0, 1.0)), az = atan(n.y, n.x);',
@@ -161,12 +162,12 @@
     '  float band = smoothstep(-0.25, 0.0, w) * (1.0 - smoothstep(0.8, 2.0, w));',
     '  dB = max(dB, mix(-60.0, wallA, band));',
     /* orbital fat, with the dark optic nerve */
-    '  float fat = smoothstep(1.0, 1.8, w) * smoothstep(6.0, 12.0, q.x);',
+    '  float fat = smoothstep(0.2, 1.0, w) * smoothstep(6.0, 12.0, q.x);',
     '  float nerve = (1.0 - smoothstep(1.6 + 0.05 * tt, 2.3 + 0.08 * tt, pr)) * step(0.0, tt);',
     '  dB = max(dB, mix(-60.0, mix(-1.5 - 0.6 * w + spk + 6.0 * (n2(vec2(r * 0.8, al * 20.0)) - 0.5), -40.0 + spk * 0.4, nerve), fat));',
     /* initial echo and probe-face reverberation */
-    '  dB = max(dB, mix(-60.0, 12.0, 1.0 - smoothstep(3.4, 5.6, r + spk * 0.06)));',
-    '  dB = max(dB, mix(-60.0, -14.0 - (r - 5.5) * 4.0 + 4.0 * sin(r * 5.5), step(5.5, r) * step(r, 10.0)));',
+    '  dB = max(dB, mix(-60.0, 12.0 - max(r - 4.0, 0.0) * 5.0, 1.0 - smoothstep(4.5, 7.5, r + spk * 0.1)));',
+    '  dB = max(dB, mix(-60.0, -12.0 - (r - 6.5) * 3.0 + 5.0 * sin(r * 5.0), step(6.5, r) * step(r, 12.0)));',
     /* lens capsule and iris (seen on axial and far-peripheral scans) */
     '  vec3 lq = (X - vec3(0.0, 0.0, 6.4)) / vec3(4.6, 4.6, 1.9); float le = length(lq) - 1.0;',
     '  float lin = abs(dot(normalize(lq / vec3(4.6, 4.6, 1.9)), rd));',
@@ -223,10 +224,10 @@
   function shell() {
     var seg = function (name, list, cur, label) { return '<div class="seg inv-seg bs3-seg" role="group" aria-label="' + E(label) + '">' + list.map(function (x) { return '<button type="button" data-' + name + '="' + x[0] + '" aria-pressed="' + (x[0] === cur) + '">' + E(x[1]) + '</button>'; }).join('') + '</div>'; };
     return '<div class="bs3-grid">' +
-      '<figure class="inv-fig bs3-fig"><div class="bs3-eye" data-eye><canvas data-c3 tabindex="0" role="application" aria-label="' + E(S('eye.aria', 'Œil droit en 3D. Flèches : déplacer la sonde. R : tourner. F : retourner le marqueur.', 'Right eye in 3D. Arrows: move the probe. R: rotate. F: flip the marker.')) + '"></canvas><div class="bs3-labs" data-labs aria-hidden="true"></div><button type="button" class="btn sm bs3-view" data-a="view">' + E(S('view', 'Changer de vue', 'Change view')) + '</button></div>' +
+      '<figure class="inv-fig bs3-fig"><div class="bs3-eye" data-eye><canvas data-c3 tabindex="0" role="application" aria-label="' + E(S('eye.aria', 'Œil droit en 3D. Flèches : déplacer la sonde. R : tourner. F : retourner le marqueur.', 'Right eye in 3D. Arrows: move the probe. R: rotate. F: flip the marker.')) + '"></canvas><div class="bs3-labs" data-labs aria-hidden="true"></div><span class="bs3-snap" data-snap aria-hidden="true"></span><button type="button" class="btn sm bs3-view" data-a="view">' + E(S('view', 'Changer de vue', 'Change view')) + '</button></div>' +
       '<figcaption><span>' + E(S('eye.cap', 'Œil droit, vu par l’examinateur. Trait fluo : marqueur.', 'Right eye, examiner’s view. Fluo stripe: marker.')) + '</span></figcaption></figure>' +
       '<figure class="inv-fig bs3-fig"><div class="bs3-img" data-img><canvas data-cb aria-label="' + E(S('img.aria', 'Image d’échographie B simulée', 'Simulated B-scan image')) + '" role="img"></canvas>' +
-      '<span class="bs3-top" aria-hidden="true">' + E(S('top', 'marqueur', 'marker')) + '</span><span class="bs3-sim">' + E(S('sim', 'Simulation pédagogique', 'Teaching simulation')) + '</span><span class="bs3-ring" data-ring hidden></span></div>' +
+      '<span class="bs3-top" aria-hidden="true">' + E(S('top', 'marqueur', 'marker')) + '</span><span class="bs3-hud mono" data-hud aria-hidden="true"></span><span class="bs3-mhz mono" aria-hidden="true">10 MHz · 40 mm</span><span class="bs3-sim">' + E(S('sim', 'Simulation pédagogique', 'Teaching simulation')) + '</span><span class="bs3-ring" data-ring hidden></span></div>' +
       '<figcaption><span class="inv-schema">' + E(S('simshort', 'simulation', 'simulation')) + '</span><span>' + E(S('img.cap', 'Sonde à gauche, profondeur vers la droite, côté du marqueur en haut.', 'Probe on the left, depth to the right, marker side on top.')) + '</span></figcaption></figure></div>' +
       '<p class="bs3-read small" data-read aria-live="polite"></p>' +
       '<div class="bs3-ctl">' +
@@ -245,12 +246,14 @@
   function mount(host) {
     var root = U.$('[data-bs3]', host); if (!root) return;
     var alive = true, st = { theta: 180 * DEG, phi: 32 * DEG, mode: 'T', axV: false, rot: 0, flip: false, gain: 76, step: 0, view: 0, answered: null, gaze: 0 };
-    var seen = { nerve: false, T: false, L: false, gLow: false, gHigh: false }, used = {}, kin = { on: false, t0: 0, dir: 1, still: false }, raf = 0, dirty = true;
+    var seen = { nerve: false, T: false, L: false, gLow: false, gHigh: false }, used = {}, kin = { on: false, t0: 0, dir: 1, still: false }, raf = 0, dirty = true, tgt = null, visible = true, pending = false, results = {}, score = null, io = null;
     var r3, rb, scene, cam, eye, probe, fan, edge, bmat, bscene, bcam, labs = [], disposables = [];
     function fail(msg) {
       root.innerHTML = '<div class="callout amber"><p class="small">' + E(msg) + '</p><p><a class="btn sm" href="#inv-bscan">' + E(S('fallback.go', 'Ouvrir l’outil 2D', 'Open the 2D tool')) + '</a></p></div>';
     }
     function curCase() { return st.step ? CASES[st.step - 1] : null; }
+    function dirOf(th, ph) { return [Math.sin(ph) * Math.sin(th), Math.sin(ph) * Math.cos(th), Math.cos(ph)]; }
+    function angle(a, b) { return Math.acos(clamp(dot(a, b), -1, 1)); }
     function plane() { return probePlane(st); }
     function globePlane(pl) { var g = st.gaze; return g ? { apex: rotX(pl.apex, g), a: rotX(pl.a, g), m: rotX(pl.m, g) } : pl; }
 
@@ -275,8 +278,21 @@
       nv.position.set(DISC[0] * R + NDIR[0] * 4.5, 0, DISC[2] * R + NDIR[2] * 4.5); nv.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), new T.Vector3(NDIR[0], NDIR[1], NDIR[2]));
       mesh(new T.SphereGeometry(0.7, 10, 8), new T.MeshBasicMaterial({ color: 0xb4552d })).position.set(0, 0, -R + 0.4);
       probe = new T.Group(); probe.matrixAutoUpdate = false; scene.add(probe);
-      mesh(new T.CylinderGeometry(3.0, 2.5, 20, 16), new T.MeshLambertMaterial({ color: 0x0a0f40 }), probe).position.y = 10;
-      mesh(new T.BoxGeometry(1.3, 9, 1.6), new T.MeshBasicMaterial({ color: 0xd8ff3a }), probe).position.set(2.75, 5, 0);
+      /* ophthalmic B probe (local y = body axis, tip at y = 0, +x = marker side): rounded transducer tip, cobalt collar,
+         slim light body with an ink outline, fluo marker line, cable */
+      var ink = new T.MeshLambertMaterial({ color: 0x0a0f40 }), shellM = new T.MeshLambertMaterial({ color: 0xf2f3fa }), fluo = new T.MeshBasicMaterial({ color: 0xd8ff3a }), cob = new T.MeshLambertMaterial({ color: 0x1f2cff }), rim = new T.MeshBasicMaterial({ color: 0x0a0f40, side: T.BackSide });
+      disposables.push(ink, shellM, fluo, cob, rim);
+      var part = function (geo, mat, y, x) { var m = new T.Mesh(geo, mat); m.position.set(x || 0, y, 0); probe.add(m); disposables.push(geo); return m; };
+      part(new T.SphereGeometry(2.2, 18, 12), ink, 2.2);
+      part(new T.CylinderGeometry(2.4, 2.4, 1.7, 20), cob, 4.1);
+      part(new T.CylinderGeometry(1.95, 2.3, 21, 20), shellM, 15.4);
+      part(new T.CylinderGeometry(2.2, 2.55, 21.3, 20), rim, 15.4);
+      part(new T.SphereGeometry(1.95, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2), shellM, 25.9);
+      part(new T.CylinderGeometry(0.65, 0.65, 8, 8), ink, 31.5);
+      part(new T.BoxGeometry(1.0, 19.5, 1.4), fluo, 15.2, 1.95);
+      part(new T.SphereGeometry(1.0, 10, 8), fluo, 4.1, 2.45);
+      /* standard contact points at the limbus (snap targets) */
+      for (var sh = 0; sh < 4; sh++) { var sd = dirOf(sh * 90 * DEG, 32 * DEG); mesh(new T.SphereGeometry(0.55, 10, 8), cob).position.set(sd[0] * R * 1.01, sd[1] * R * 1.01, sd[2] * R * 1.01); }
       var fg = new T.BufferGeometry(), N = 14; fg.setAttribute('position', new T.BufferAttribute(new Float32Array((N + 2) * 3), 3));
       var idx = []; for (var i = 1; i <= N; i++) idx.push(0, i, i + 1); fg.setIndex(idx);
       fan = new T.Mesh(fg, new T.MeshBasicMaterial({ color: 0x1f2cff, transparent: true, opacity: 0.26, side: T.DoubleSide, depthWrite: false })); fan.renderOrder = 4; fan.frustumCulled = false; scene.add(fan);
@@ -300,8 +316,8 @@
       setView(); dirty = true;
     }
     function setView() {
-      var v = [[10, 6, 60], [-60, 7, 18], [4, 64, 12]][st.view % 3], k = cam.aspect < 1.2 ? 1.15 : 1;
-      cam.position.set(v[0] * k, v[1] * k, v[2] * k); cam.up.set(0, st.view % 3 === 2 ? 0 : 1, st.view % 3 === 2 ? -1 : 0); cam.lookAt(0, st.view % 3 ? 0 : -2.5, 3); cam.updateProjectionMatrix();
+      var v = [[11, 5, 72], [-72, 6, 20], [4, 76, 14]][st.view % 3], k = cam.aspect < 1.2 ? 1.12 : 1;
+      cam.position.set(v[0] * k, v[1] * k, v[2] * k); cam.up.set(0, st.view % 3 === 2 ? 0 : 1, st.view % 3 === 2 ? -1 : 0); cam.lookAt(0, st.view % 3 ? 0 : -4.5, 4); cam.updateProjectionMatrix();
     }
     function kinState(now) {
       var c = curCase(), k = c ? c.kin : { amp: 0, tau: 1, f: 1 }, out = { gaze: 0, kin: 0, ph: 0, swirl: 0, done: true };
@@ -316,6 +332,12 @@
     function draw(now) {
       raf = 0; if (!alive) return;
       if (!root.isConnected) { dispose(); return; }
+      if (tgt) {
+        var cu = dirOf(st.theta, st.phi), tu = dirOf(tgt.theta, tgt.phi);
+        if (angle(cu, tu) < 0.6 * DEG || U.reduced()) { st.theta = tgt.theta; st.phi = tgt.phi; tgt = null; }
+        else { var nd = norm(add(mul(cu, 0.66), mul(tu, 0.34))); st.phi = Math.acos(clamp(nd[2], -1, 1)); st.theta = st.phi < 0.02 ? tgt.theta : Math.atan2(nd[0], nd[1]); }
+        dirty = true;
+      }
       var ks = kinState(now || performance.now());
       if (kin.on && ks.done) { kin.on = false; ks = kinState(now); }
       st.gaze = ks.gaze;
@@ -333,12 +355,13 @@
       labs.forEach(function (l) { var v = l.p.clone().applyMatrix4(eye.matrixWorld).project(cam); l.el.style.transform = 'translate(-50%,-50%) translate(' + ((v.x + 1) / 2 * bb.width).toFixed(1) + 'px,' + ((1 - v.y) / 2 * bb.height).toFixed(1) + 'px)'; });
       u.uP.value.set(gp.apex[0], gp.apex[1], gp.apex[2]); u.uA.value.set(gp.a[0], gp.a[1], gp.a[2]); u.uM.value.set(gp.m[0], gp.m[1], gp.m[2]);
       u.uGain.value = st.gain; u.uCase.value = c ? CASE_IX[c.id] : 0; u.uKin.value = ks.kin; u.uKinPh.value = ks.ph; u.uSwirl.value = ks.swirl;
-      u.uSeed.value = (kin.on && !U.reduced()) ? Math.floor((now || 0) / 110) % 13 : 0;
+      u.uSeed.value = ((kin.on || dragging) && !U.reduced()) ? Math.floor((now || 0) / 110) % 13 : 0;
       rb.render(bscene, bcam);
       if (dirty) { dirty = false; readout(pl); }
-      if (kin.on) invalidate();
+      if (kin.on || tgt) invalidate();
     }
-    function invalidate() { if (!raf && alive) raf = requestAnimationFrame(draw); }
+    function invalidate() { if (!alive) return; if (!visible || document.hidden) { pending = true; return; } if (!raf) raf = requestAnimationFrame(draw); }
+    function onVis() { if (!document.hidden && pending) { pending = false; invalidate(); } }
     function touch() { dirty = true; invalidate(); }
 
     /* ----- readout: says in words what the plane shows ----- */
@@ -360,6 +383,12 @@
       if (c.kind === 'A' && c.marker === 'nas') parts.push(E(S('r.hax', 'À l’écran : papille au-dessus de la macula.', 'On screen: disc above the macula.')));
       el.innerHTML = parts.join(' ');
       setP('mode', c.kind === 'A' ? 'A' : st.mode);
+      var u0 = dirOf(st.theta, st.phi), pre = '';
+      if (!st.flip && !st.rot && !st.axV) PRESETS.forEach(function (p) { if (angle(u0, dirOf(p[1] * DEG, p[2] * DEG)) < 1.2 * DEG && (p[2] === 0 ? c.kind === 'A' : c.kind === p[3])) pre = p[0]; });
+      setP('preset', pre);
+      var sl = U.$('[data-snap]', root), std = !!pre || (st.snapped && !st.flip && !st.rot && c.kind !== 'O');
+      sl.textContent = std ? (pre || c.label) + ' · ' + S('snap.std', 'position standard', 'standard position') : (c.label ? c.label + ' · ' : '') + S('snap.free', 'position libre', 'free position');
+      sl.classList.toggle('on', std);
       var d = toImage(globePlane(pl), mul(DISC, R)), was = seen.nerve && seen.T && seen.L;
       if (d.inside && d.off < 1.7) seen.nerve = true;
       if (c.kind === 'T') seen.T = true; if (c.kind === 'L') seen.L = true;
@@ -367,7 +396,7 @@
     }
     function setP(attr, val) { U.$$('[data-' + attr + ']', root).forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-' + attr) === val)); }); }
     function gainLabel() {
-      var g = st.gain; U.$('[data-gv]', root).textContent = g + ' dB · ' + (g < 66 ? S('g.low', 'bas', 'low') : g > 84 ? S('g.high', 'élevé', 'high') : S('g.mid', 'moyen', 'medium'));
+      var g = st.gain; U.$('[data-hud]', root).textContent = 'G ' + g + ' dB'; U.$('[data-gv]', root).textContent = g + ' dB · ' + (g < 66 ? S('g.low', 'bas', 'low') : g > 84 ? S('g.high', 'élevé', 'high') : S('g.mid', 'moyen', 'medium'));
       if (g < 64) seen.gLow = true; if (g > 88) seen.gHigh = true;
     }
 
@@ -379,10 +408,12 @@
     }
     function panel() {
       var el = U.$('[data-case]', root), c = curCase(), h;
+      root.classList.toggle('answered', !!c && st.answered != null);
       if (!c) {
-        h = '<div class="eyebrow">' + E(S('n.eye', 'Œil normal · repères', 'Normal eye · landmarks')) + '</div><ul class="bs3-ticks small" data-ticks></ul>' +
+        h = (score != null ? '<p class="bs3-score" role="status"><b>' + score + ' / ' + CASES.length + '</b> ' + E(S('n.score', 'Série terminée. Refais-la quand tu veux.', 'Series done. Run it again any time.')) + '</p>' : '') +
+          '<div class="eyebrow">' + E(S('n.eye', 'Œil normal · repères', 'Normal eye · landmarks')) + '</div><ul class="bs3-ticks small" data-ticks></ul>' +
           '<p class="small muted">' + E(S('n.norm', 'Vitré noir, paroi lisse et brillante, graisse orbitaire blanche, nerf optique sombre.', 'Black vitreous, smooth bright wall, white orbital fat, dark optic nerve.')) + '</p>' +
-          '<button type="button" class="btn primary" data-a="next">' + E(S('n.go', 'Commencer les cas', 'Start the cases')) + '</button>';
+          '<button type="button" class="btn primary" data-a="next">' + E(score != null ? S('n.again', 'Refaire les 5 cas', 'Run the 5 cases again') : S('n.go', 'Commencer les 5 cas', 'Start the 5 cases')) + '</button>';
         el.innerHTML = h; ticks(); return;
       }
       h = '<div class="run-head"><span class="eyebrow">' + E(S('c.case', 'Cas', 'Case')) + ' ' + st.step + ' / ' + CASES.length + '</span><span class="tag plain">' + E(S('c.od', 'Œil droit', 'Right eye')) + '</span></div><p class="bs3-stem">' + E(P(c.stem)) + '</p>';
@@ -398,7 +429,7 @@
           '<div class="callout bs3-rev"><div class="eyebrow">' + E(S('c.sign', 'Signe décisif', 'Decisive sign')) + '</div><p>' + E(P(c.reveal)) + '</p><p class="small">' + E(P(c.next)) + '</p>' +
           (c.val === 'disc' ? badge(S('val.disc', 'L’attache à la papille ne suffit pas seule : un DPV incomplet peut y rester attaché. La règle « attache, gain bas, mobilité » reste à confirmer.', 'Disc attachment alone is not enough: an incomplete PVD can stay attached there. The “attachment, low gain, mobility” rule still needs confirmation.')) : '') + '</div>' +
           '<p class="small bs3-gest">' + E(S('c.gest', 'Tes gestes :', 'Your moves:')) + ' <span class="tag ' + (used.gain ? 'plain ok' : 'plain') + '">' + E((used.gain ? '✓ ' : '○ ') + S('c.g1', 'gain modifié', 'gain changed')) + '</span> <span class="tag ' + (used.kin ? 'plain ok' : 'plain') + '">' + E((used.kin ? '✓ ' : '○ ') + S('c.g2', 'cinétique faite', 'kinetic done')) + '</span></p>' +
-          '<button type="button" class="btn primary" data-a="next">' + E(st.step < CASES.length ? S('c.next', 'Cas suivant', 'Next case') : S('c.end', 'Revenir à l’œil normal', 'Back to the normal eye')) + '</button>';
+          '<button type="button" class="btn primary" data-a="next">' + E(st.step < CASES.length ? S('c.next', 'Cas suivant', 'Next case') : S('c.end', 'Voir mon résultat', 'See my result')) + '</button>';
       }
       el.innerHTML = h;
     }
@@ -412,23 +443,32 @@
       if (!p) return;
       el.style.left = (p.x / RANGE * 100).toFixed(1) + '%'; el.style.top = ((0.5 - p.y / RANGE) * 100).toFixed(1) + '%'; el.hidden = false;
     }
-    function goView(v) { st.theta = v.theta * DEG; st.phi = v.phi * DEG; st.mode = v.mode; st.rot = 0; st.flip = false; st.axV = false; if (v.gain) { st.gain = v.gain; U.$('[data-gain]', root).value = v.gain; gainLabel(); } U.$('[data-a="flip"]', root).setAttribute('aria-pressed', 'false'); }
+    function goView(v, instant) { if (instant || U.reduced()) { tgt = null; st.theta = v.theta * DEG; st.phi = v.phi * DEG; } else tgt = { theta: v.theta * DEG, phi: v.phi * DEG }; st.snapped = true; st.mode = v.mode; st.rot = 0; st.flip = false; st.axV = false; if (v.gain) { st.gain = v.gain; U.$('[data-gain]', root).value = v.gain; gainLabel(); } U.$('[data-a="flip"]', root).setAttribute('aria-pressed', 'false'); }
+    function toStage() { try { if (root.getBoundingClientRect().top < 0) root.scrollIntoView({ block: 'start', behavior: 'auto' }); } catch (e) { } }
     function answer(id) {
       var c = curCase(); if (!c || st.answered != null) return;
-      st.answered = id; kin.on = false; kin.still = false;
+      st.answered = id; kin.on = false; kin.still = false; results[c.id] = id === c.id;
       try { if (W.Store && Store.p) { (Store.p.inv = Store.p.inv || {})['bs3-' + c.id] = { ok: id === c.id ? 1 : 0, conf: id === 'idk' ? 'idk' : 'sure', t: Date.now() }; Store.touch(); } } catch (e) { }
-      goView(c.view); panel(); dirty = true; draw(performance.now()); ring(true);
+      goView(c.view, true); panel(); dirty = true; draw(performance.now()); ring(true); toStage();
       var nb = U.$('[data-a="next"]', root); if (nb) nb.focus({ preventScroll: true });
     }
-    function nextStep() { st.step = st.step >= CASES.length ? 0 : st.step + 1; st.answered = null; used = {}; kin.on = false; kin.still = false; ring(false); goView({ theta: 180, phi: 32, mode: 'T', gain: 76 }); panel(); touch(); }
+    function nextStep() {
+      if (st.step >= CASES.length) { score = CASES.filter(function (x) { return results[x.id]; }).length; results = {}; st.step = 0; } else { st.step++; score = null; }
+      st.answered = null; used = {}; kin.on = false; kin.still = false; ring(false); goView({ theta: 180, phi: 32, mode: 'T', gain: 76 }, true); panel(); touch();
+      toStage();
+    }
 
     /* ----- input ----- */
     function pick(ev) {
       var bb = r3.domElement.getBoundingClientRect(), T = THREE;
       var v = new T.Vector3((ev.clientX - bb.left) / bb.width * 2 - 1, -((ev.clientY - bb.top) / bb.height * 2 - 1), 0.5).unproject(cam), o = cam.position, d = v.sub(o).normalize();
       var b = o.dot(d), cc = o.dot(o) - R * R, disc = b * b - cc, t = disc > 0 ? -b - Math.sqrt(disc) : -b, hit = [o.x + d.x * t, o.y + d.y * t, o.z + d.z * t], n = norm(hit);
-      st.phi = clamp(Math.acos(clamp(n[2], -1, 1)), 0, 66 * DEG); st.theta = Math.atan2(n[0], n[1]);
+      st.phi = clamp(Math.acos(clamp(n[2], -1, 1)), 0, 66 * DEG); st.theta = Math.atan2(n[0], n[1]); tgt = null;
       if (st.mode === 'A' && st.phi > 10 * DEG) st.mode = 'T';
+      var phL = (st.mode === 'L' ? 34 : 32) * DEG, cu = dirOf(st.theta, st.phi), best = null, bd = 7.5 * DEG, i, d;
+      for (i = 0; i < 5; i++) { d = angle(cu, i < 4 ? dirOf(i * 90 * DEG, phL) : [0, 0, 1]); if (d < bd) { bd = d; best = i < 4 ? { theta: i * 90 * DEG, phi: phL } : { theta: st.theta, phi: 0 }; } }
+      if (best) { st.theta = best.theta; st.phi = best.phi; if (!st.snapped) { try { if (navigator.vibrate) navigator.vibrate(8); } catch (e) { } } }
+      st.snapped = !!best;
       kin.still = false; ring(false); touch();
     }
     var dragging = false;
@@ -440,12 +480,12 @@
       if (k === 'ArrowLeft') st.theta -= 15 * DEG; else if (k === 'ArrowRight') st.theta += 15 * DEG;
       else if (k === 'ArrowUp') st.phi = clamp(st.phi - 4 * DEG, 0, 66 * DEG); else if (k === 'ArrowDown') st.phi = clamp(st.phi + 4 * DEG, 0, 66 * DEG);
       else if (k === 'r' || k === 'R') st.rot = (st.rot + (ev.shiftKey ? 345 : 15)) % 360; else if (k === 'f' || k === 'F') flip(); else done = false;
-      if (done) { ev.preventDefault(); ring(false); touch(); }
+      if (done) { ev.preventDefault(); tgt = null; st.snapped = false; ring(false); touch(); }
     }
     function flip() { if (st.phi < 9 * DEG) st.axV = !st.axV; else st.flip = !st.flip; U.$('[data-a="flip"]', root).setAttribute('aria-pressed', String(st.flip || st.axV)); }
     function onClick(ev) {
       var t = ev.target, b;
-      if ((b = t.closest('[data-mode]'))) { var m = b.getAttribute('data-mode'); st.rot = 0; st.flip = false; st.axV = false; if (m === 'A') { st.phi = 0; st.mode = 'A'; } else { st.mode = m; if (st.phi < 12 * DEG) st.phi = 32 * DEG; } U.$('[data-a="flip"]', root).setAttribute('aria-pressed', 'false'); ring(false); touch(); return; }
+      if ((b = t.closest('[data-mode]'))) { var m = b.getAttribute('data-mode'); st.rot = 0; st.flip = false; st.axV = false; tgt = null; if (m === 'A') { st.mode = 'A'; goView({ theta: st.theta / DEG, phi: 0, mode: 'A' }); } else { if (st.phi < 12 * DEG || st.snapped) goView({ theta: Math.round(st.theta / DEG / 90) * 90, phi: st.phi < 12 * DEG || st.snapped ? (m === 'L' ? 34 : 32) : st.phi / DEG, mode: m }); st.mode = m; } U.$('[data-a="flip"]', root).setAttribute('aria-pressed', 'false'); ring(false); touch(); return; }
       if ((b = t.closest('[data-preset]'))) { var p = PRESETS.filter(function (x) { return x[0] === b.getAttribute('data-preset'); })[0]; goView({ theta: p[1], phi: p[2], mode: p[3] }); ring(false); touch(); return; }
       if ((b = t.closest('[data-kin]'))) {
         if (st.answered == null) used.kin = true;
@@ -465,7 +505,8 @@
     function onLost(ev) { ev.preventDefault(); dispose(); fail(S('lost', 'L’affichage 3D s’est interrompu. Recharge la page pour relancer le simulateur.', '3D rendering stopped. Reload the page to restart the simulator.')); }
     function dispose() {
       if (!alive) return; alive = false; cancelAnimationFrame(raf);
-      W.removeEventListener('resize', onResize); W.removeEventListener('hashchange', onHash);
+      W.removeEventListener('resize', onResize); W.removeEventListener('hashchange', onHash); document.removeEventListener('visibilitychange', onVis);
+      try { if (io) io.disconnect(); } catch (e) { }
       disposables.forEach(function (d) { try { d.dispose(); } catch (e) { } });
       [r3, rb].forEach(function (r) { try { if (r) { r.dispose(); r.forceContextLoss(); } } catch (e) { } });
       if (W.__bs3 && W.__bs3.root === root) W.__bs3 = null;
@@ -480,13 +521,15 @@
       c3.addEventListener('pointerdown', onDown); c3.addEventListener('pointermove', onMove); c3.addEventListener('pointerup', onUp); c3.addEventListener('pointercancel', onUp); c3.addEventListener('keydown', onKey);
       c3.addEventListener('webglcontextlost', onLost); rb.domElement.addEventListener('webglcontextlost', onLost);
       root.addEventListener('click', onClick); root.addEventListener('input', onInput);
-      W.addEventListener('resize', onResize); W.addEventListener('hashchange', onHash);
+      W.addEventListener('resize', onResize); W.addEventListener('hashchange', onHash); document.addEventListener('visibilitychange', onVis);
+      /* no rendering while the stage is off-screen (battery): frames resume when it comes back */
+      if ('IntersectionObserver' in W) { io = new IntersectionObserver(function (es) { visible = es[es.length - 1].isIntersecting; if (visible && pending) { pending = false; invalidate(); } }); io.observe(U.$('.bs3-grid', root)); }
       resize(); gainLabel(); seen.gLow = seen.gHigh = false; panel(); draw(performance.now());
       /* test hook (tests/run.py): read back the B image */
       W.__bs3 = {
-        root: root, ready: true, state: st, classify: function () { return classify(st, plane()); }, kin: function () { return { on: kin.on, still: kin.still }; },
+        root: root, ready: true, state: st, paused: function () { return !visible; }, classify: function () { return classify(st, plane()); }, kin: function () { return { on: kin.on, still: kin.still }; },
         snapshot: function () {
-          draw(performance.now()); var gl = rb.getContext(), w = gl.drawingBufferWidth, h = gl.drawingBufferHeight, buf = new Uint8Array(w * h * 4), sum = 0, sig = '', i, j;
+          if (tgt) { st.theta = tgt.theta; st.phi = tgt.phi; tgt = null; } draw(performance.now()); var gl = rb.getContext(), w = gl.drawingBufferWidth, h = gl.drawingBufferHeight, buf = new Uint8Array(w * h * 4), sum = 0, sig = '', i, j;
           rb.render(bscene, bcam); gl.readPixels(0, 0, w, h, gl.RGBA, gl.UNSIGNED_BYTE, buf);
           for (i = 0; i < w * h; i++) sum += buf[i * 4];
           for (j = 0; j < 16; j++) for (i = 0; i < 16; i++) sig += (buf[(Math.floor((j + 0.5) * h / 16) * w + Math.floor((i + 0.5) * w / 16)) * 4] >> 4).toString(16);
