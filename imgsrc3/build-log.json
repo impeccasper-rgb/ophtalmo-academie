@@ -1,6 +1,6 @@
 {
- "built": "2026-11-21T20:19:08Z",
- "ok": 45,
+ "built": "2026-11-22T06:26:31Z",
+ "ok": 47,
  "skipped": 0,
  "log": [
   {
@@ -75,8 +75,8 @@
   },
   {
    "id": "IMG3-018",
-   "status": "ok",
-   "msg": "CC BY 2.0 600x718 <- https://pmc-oa-opendata.s3.amazonaws.com/PMC3931271.1/1471-2415-14-17-1.jpg"
+   "status": "kept-previous",
+   "msg": "Europe PMC full-text XML unavailable"
   },
   {
    "id": "IMG3-019",
@@ -180,8 +180,8 @@
   },
   {
    "id": "IMG3-044",
-   "status": "ok",
-   "msg": "CC BY 3.0 800x298 <- https://pmc-oa-opendata.s3.amazonaws.com/PMC6634274.1/cureus-0011-00000004660-i01.jpg"
+   "status": "kept-previous",
+   "msg": "Europe PMC full-text XML unavailable"
   },
   {
    "id": "IMG3-052",
@@ -227,6 +227,16 @@
    "id": "IMG3-060",
    "status": "ok",
    "msg": "CC BY-SA 2.5 762x587 <- https://upload.wikimedia.org/wikipedia/commons/e/e0/Hyphema_-_occupying_half_of_anterior_chamber_of_eye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-061",
+   "status": "ok",
+   "msg": "Public domain 975x621 <- https://upload.wikimedia.org/wikipedia/commons/3/3f/Fundus_photo_showing_scatter_laser_surgery_for_diabetic_retinopathy_EDA09.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "id": "IMG3-062",
+   "status": "ok",
+   "msg": "Public domain 1200x800 <- https://upload.wikimedia.org/wikipedia/commons/9/90/Fundus_photograph-CMV_retinitis_EDA07.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   }
  ]
 }

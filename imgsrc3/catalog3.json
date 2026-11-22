@@ -1528,5 +1528,71 @@
   "caption_basis": "Commons source description (read at build 2026-11-21)",
   "source_description": "Hyphema - occupying half of anterior chamber of eye",
   "credit": "Own work"
+ },
+ {
+  "id": "IMG3-061",
+  "file": "imgsrc3/web/IMG3-061.jpg",
+  "title": {
+   "fr": "Rétinopathie diabétique : cicatrices de laser panrétinien (NEI)",
+   "en": "Diabetic retinopathy: panretinal laser scars (NEI)"
+  },
+  "caption": {
+   "fr": "Fond d’œil après laser en dispersion (panrétinien) pour une rétinopathie diabétique (National Eye Institute, série EDA09).",
+   "en": "Fundus after scatter (panretinal) laser for diabetic retinopathy (National Eye Institute, series EDA09)."
+  },
+  "license": "Public domain",
+  "license_url": null,
+  "author": "National Eye Institute, National Institutes of Health",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Fundus_photo_showing_scatter_laser_surgery_for_diabetic_retinopathy_EDA09.JPG",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Fundus_photo_showing_scatter_laser_surgery_for_diabetic_retinopathy_EDA09.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "D",
+  "exam": "fondoeil",
+  "topics": [
+   "r-diabete"
+  ],
+  "w": 975,
+  "h": 621,
+  "bytes": 63247,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (NEI series EDA, expected public domain; Commons page not reachable from the container on 2026-11-22: licence read at build)",
+  "source_description": "Fundus photo showing scatter laser surgery for diabetic retinopathy.",
+  "credit": "http://www.nei.nih.gov/photo/eyedis/index.asp"
+ },
+ {
+  "id": "IMG3-062",
+  "file": "imgsrc3/web/IMG3-062.jpg",
+  "title": {
+   "fr": "Rétinite à cytomégalovirus (NEI)",
+   "en": "Cytomegalovirus retinitis (NEI)"
+  },
+  "caption": {
+   "fr": "Fond d’œil d’une rétinite à cytomégalovirus (National Eye Institute, série EDA07).",
+   "en": "Fundus photograph of cytomegalovirus retinitis (National Eye Institute, series EDA07)."
+  },
+  "license": "Public domain",
+  "license_url": null,
+  "author": "http://www.nei.nih.gov/photo/eyedis/index.asp",
+  "page_url": "https://commons.wikimedia.org/wiki/File:Fundus_photograph-CMV_retinitis_EDA07.JPG",
+  "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Fundus_photograph-CMV_retinitis_EDA07.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "source": "commons",
+  "doi": null,
+  "article": null,
+  "module": "D",
+  "exam": "fondoeil",
+  "topics": [
+   "bonus-D"
+  ],
+  "w": 1200,
+  "h": 800,
+  "bytes": 72731,
+  "modified": "resized/re-encoded only (max 1200 px, no crop)",
+  "share_alike": false,
+  "caption_basis": "file name only (NEI series EDA, expected public domain; Commons page not reachable from the container on 2026-11-22: licence read at build)",
+  "source_description": "Fundus, photograph-CMV retinitis Description: Fundus photograph-CMV retinitis Credit: National Eye Institute, National Institutes of Health Ref#: EDA07",
+  "credit": "http://www.nei.nih.gov/photo/eyedis/index.asp"
  }
 ]
