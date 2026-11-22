@@ -19,7 +19,7 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Ophthalmology \u00b7 clerks & R1s",
+     "text": "Coming soon \u00b7 Ocelle",
      "words": 3
     },
     {
@@ -81,8 +81,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Ophtalmo \u00b7 externes et R1",
-     "words": 4
+     "text": "Bient\u00f4t \u00b7 Ocelle",
+     "words": 2
     },
     {
      "end": 8,
@@ -152,8 +152,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #1 \u00b7 clerks & R1s",
-     "words": 4
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
     },
     {
      "end": 10,
@@ -231,8 +231,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #1 \u00b7 externes et R1",
-     "words": 5
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
     },
     {
      "end": 10,
@@ -432,8 +432,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #2 \u00b7 clerks & R1s",
-     "words": 4
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
     },
     {
      "end": 10,
@@ -503,8 +503,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #2 \u00b7 externes et R1",
-     "words": 5
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
     },
     {
      "end": 10,
@@ -572,8 +572,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #2 \u00b7 answer \u00b7 clerks & R1s",
-     "words": 5
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
     },
     {
      "end": 9.5,
@@ -649,8 +649,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #2 \u00b7 r\u00e9ponse \u00b7 externes et R1",
-     "words": 6
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
     },
     {
      "end": 9.5,
@@ -906,8 +906,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #3 \u00b7 clerks & R1s",
-     "words": 4
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
     },
     {
      "end": 10,
@@ -985,8 +985,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #3 \u00b7 externes et R1",
-     "words": 5
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
     },
     {
      "end": 10,
@@ -1064,8 +1064,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #4 \u00b7 clerks & R1s",
-     "words": 4
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
     },
     {
      "end": 10,
@@ -1135,8 +1135,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #4 \u00b7 externes et R1",
-     "words": 5
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
     },
     {
      "end": 10,
@@ -1204,8 +1204,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #4 \u00b7 answer \u00b7 clerks & R1s",
-     "words": 5
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
     },
     {
      "end": 9.5,
@@ -1281,8 +1281,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #4 \u00b7 r\u00e9ponse \u00b7 externes et R1",
-     "words": 6
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
     },
     {
      "end": 9.5,
@@ -1360,8 +1360,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #5 \u00b7 clerks & R1s",
-     "words": 4
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
     },
     {
      "end": 10,
@@ -1439,8 +1439,8 @@
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #5 \u00b7 externes et R1",
-     "words": 5
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
     },
     {
      "end": 10,
@@ -1919,6 +1919,1574 @@
      "id": "end",
      "kind": "card",
      "start": 10.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
+    }
+   ]
+  },
+  "ocelle-teaser-10-xy-episclerite-sclerite-en": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Episcleritis",
+     "words": 1
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Scleritis",
+     "words": 1
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Episcleritis or scleritis ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "What tells them apart? A drop of phenylephrine Fluorescein",
+     "words": 9
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Your pick?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "Answer A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 11.35,
+     "text": "blanches",
+     "words": 1
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 11.45,
+     "text": "stays red",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 9.95,
+     "text": "Scleritis : deep pain, systemic work-up",
+     "words": 5
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
+    }
+   ]
+  },
+  "ocelle-teaser-10-xy-episclerite-sclerite-fr": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "\u00c9piscl\u00e9rite",
+     "words": 1
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Scl\u00e9rite",
+     "words": 1
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "\u00c9piscl\u00e9rite ou scl\u00e9rite ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "Qu\u2019est-ce qui les d\u00e9partage ? Une goutte de ph\u00e9nyl\u00e9phrine La fluoresc\u00e9ine",
+     "words": 10
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Ton choix ?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "R\u00e9ponse A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 11.35,
+     "text": "blanchit",
+     "words": 1
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 11.45,
+     "text": "reste rouge",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 9.95,
+     "text": "Scl\u00e9rite : douleur profonde, bilan syst\u00e9mique",
+     "words": 5
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
+    }
+   ]
+  },
+  "ocelle-teaser-11-xy-herpes-zona-en": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Herpes (HSV)",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Shingles (VZV)",
+     "words": 2
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Herpes or shingles ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "Which sign gives HSV away? Terminal bulbs Raised lesion",
+     "words": 9
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Your pick?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "Answer A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 10.85,
+     "text": "bulbs",
+     "words": 1
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 10.95,
+     "text": "no bulbs",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 9.95,
+     "text": "HSV : a true ulcer that stains",
+     "words": 6
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
+    }
+   ]
+  },
+  "ocelle-teaser-11-xy-herpes-zona-fr": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Herp\u00e8s (VHS)",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Zona (VZV)",
+     "words": 2
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Herp\u00e8s ou zona ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "Quel signe trahit le VHS ? Bulbes terminaux L\u00e9sion sur\u00e9lev\u00e9e",
+     "words": 9
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Ton choix ?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "R\u00e9ponse A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 10.85,
+     "text": "bulbes",
+     "words": 1
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 10.95,
+     "text": "sans bulbes",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 9.95,
+     "text": "VHS : vrai ulc\u00e8re, prend la fluoresc\u00e9ine",
+     "words": 6
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
+    }
+   ]
+  },
+  "ocelle-teaser-12-xy-dpv-dechirure-en": {
+   "T": 20,
+   "cuts": [
+    0,
+    3.5,
+    4,
+    10,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Simple PVD",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "PVD + tear",
+     "words": 2
+    },
+    {
+     "end": 3.4,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Simple PVD or tear ?",
+     "words": 4
+    },
+    {
+     "end": 10,
+     "id": "question+options",
+     "kind": "card",
+     "start": 4.1,
+     "text": "Which sign points to the tear? Tobacco dust Weiss ring",
+     "words": 10
+    },
+    {
+     "end": 10,
+     "id": "prompt",
+     "kind": "label",
+     "start": 4.4,
+     "text": "Your pick?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.65,
+     "text": "Answer A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 10.95,
+     "text": "Shafer sign",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 11.15,
+     "text": "Weiss only",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 10.45,
+     "text": "Shafer sign : urgent retina referral",
+     "words": 5
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
+    }
+   ]
+  },
+  "ocelle-teaser-12-xy-dpv-dechirure-fr": {
+   "T": 20,
+   "cuts": [
+    0,
+    3.5,
+    4,
+    10,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "DPV simple",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "DPV + d\u00e9chirure",
+     "words": 2
+    },
+    {
+     "end": 3.4,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "DPV simple ou d\u00e9chirure ?",
+     "words": 4
+    },
+    {
+     "end": 10,
+     "id": "question+options",
+     "kind": "card",
+     "start": 4.1,
+     "text": "Quel signe annonce la d\u00e9chirure ? Poussi\u00e8re de tabac Anneau de Weiss",
+     "words": 11
+    },
+    {
+     "end": 10,
+     "id": "prompt",
+     "kind": "label",
+     "start": 4.4,
+     "text": "Ton choix ?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.65,
+     "text": "R\u00e9ponse A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 10.95,
+     "text": "signe de Shafer",
+     "words": 3
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 11.15,
+     "text": "Weiss seul",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 10.45,
+     "text": "Signe de Shafer : r\u00e9tine en urgence",
+     "words": 6
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
+    }
+   ]
+  },
+  "ocelle-teaser-13-xy-anisocorie-en": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Light",
+     "words": 1
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Dark",
+     "words": 1
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Large or small ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "Bigger gap in the light. Which is abnormal? Large pupil Small pupil",
+     "words": 12
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Your pick?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "Answer A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 10.45,
+     "text": "CN III \u00b7 Adie \u00b7 drops",
+     "words": 4
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 9.95,
+     "text": "In the dark, the small one: Horner",
+     "words": 7
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
+    }
+   ]
+  },
+  "ocelle-teaser-13-xy-anisocorie-fr": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Lumi\u00e8re",
+     "words": 1
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Obscurit\u00e9",
+     "words": 1
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Grande ou petite ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "L\u2019\u00e9cart grandit \u00e0 la lumi\u00e8re. Laquelle est anormale ? La grande La petite",
+     "words": 12
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Ton choix ?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "R\u00e9ponse A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 10.45,
+     "text": "III \u00b7 Adie \u00b7 collyre",
+     "words": 3
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 9.95,
+     "text": "\u00c0 l\u2019obscurit\u00e9, c\u2019est la petite : Horner",
+     "words": 6
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
+    }
+   ]
+  },
+  "ocelle-teaser-14-xy-oacr-ovcr-en": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Patient 1",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Patient 2",
+     "words": 2
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "CRAO or CRVO ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "Which one is an eye stroke? Cherry-red spot Blood everywhere",
+     "words": 10
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Your pick?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "Answer A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 10.45,
+     "text": "CRAO",
+     "words": 1
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 10.65,
+     "text": "blood and thunder",
+     "words": 3
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 9.95,
+     "text": "CRAO : stroke centre, right now",
+     "words": 5
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
+    }
+   ]
+  },
+  "ocelle-teaser-14-xy-oacr-ovcr-fr": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Patient 1",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Patient 2",
+     "words": 2
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "OACR ou OVCR ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "Lequel est un AVC de l\u2019\u0153il ? Tache rouge cerise Sang partout",
+     "words": 11
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Ton choix ?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "R\u00e9ponse A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 10.45,
+     "text": "OACR",
+     "words": 1
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 10.65,
+     "text": "sang et tonnerre",
+     "words": 3
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 9.95,
+     "text": "OACR : centre d\u2019AVC, tout de suite",
+     "words": 6
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
+    }
+   ]
+  },
+  "ocelle-teaser-15-xy-abrasion-lentille-en": {
+   "T": 20,
+   "cuts": [
+    0,
+    3.5,
+    4,
+    10,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Lens wearer",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "No lenses",
+     "words": 2
+    },
+    {
+     "end": 3.4,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Contact lens or not ?",
+     "words": 4
+    },
+    {
+     "end": 10,
+     "id": "question+options",
+     "kind": "card",
+     "start": 4.1,
+     "text": "Which one needs a fluoroquinolone? Lens wearer Non-wearer",
+     "words": 8
+    },
+    {
+     "end": 10,
+     "id": "prompt",
+     "kind": "label",
+     "start": 4.4,
+     "text": "Your pick?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.65,
+     "text": "Answer A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 11.55,
+     "text": "never patch",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 10.45,
+     "text": "Pseudomonas : fluoroquinolone, never a patch",
+     "words": 5
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
+    }
+   ]
+  },
+  "ocelle-teaser-15-xy-abrasion-lentille-fr": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Avec lentilles",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Sans lentilles",
+     "words": 2
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Lentille ou pas ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "Lequel exige une fluoroquinolone ? Porteur de lentilles Non-porteur",
+     "words": 8
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Ton choix ?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "R\u00e9ponse A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 11.05,
+     "text": "jamais de pansement",
+     "words": 3
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 9.95,
+     "text": "Pseudomonas : fluoroquinolone, jamais de pansement",
+     "words": 5
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
+    }
+   ]
+  },
+  "ocelle-teaser-16-xy-uveite-crise-en": {
+   "T": 20,
+   "cuts": [
+    0,
+    3.5,
+    4,
+    10,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Patient 1",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Patient 2",
+     "words": 2
+    },
+    {
+     "end": 3.4,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Uveitis or angle closure ?",
+     "words": 4
+    },
+    {
+     "end": 10,
+     "id": "question+options",
+     "kind": "card",
+     "start": 4.1,
+     "text": "Red eye, blurry vision. Which sign decides? The pupil The redness",
+     "words": 11
+    },
+    {
+     "end": 10,
+     "id": "prompt",
+     "kind": "label",
+     "start": 4.4,
+     "text": "Your pick?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.65,
+     "text": "Answer A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 10.95,
+     "text": "uveitis",
+     "words": 1
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 11.05,
+     "text": "angle closure",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "tree",
+     "kind": "card",
+     "start": 10.4,
+     "text": "Vision photophobia Conjunctivitis Pupil Uveitis Closure",
+     "words": 6
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
+    }
+   ]
+  },
+  "ocelle-teaser-16-xy-uveite-crise-fr": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Patient 1",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Patient 2",
+     "words": 2
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Uv\u00e9ite ou crise ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "\u0152il rouge, vision floue. Quel signe tranche ? La pupille La rougeur",
+     "words": 11
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Ton choix ?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "R\u00e9ponse A",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-1",
+     "kind": "label",
+     "start": 10.45,
+     "text": "uv\u00e9ite",
+     "words": 1
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 10.55,
+     "text": "crise d\u2019angle",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "tree",
+     "kind": "card",
+     "start": 9.9,
+     "text": "Vision photophobie Conjonctivite Pupille Uv\u00e9ite Crise",
+     "words": 6
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
+    }
+   ]
+  },
+  "ocelle-teaser-17-xy-dpar-en": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "Daily challenge \u00b7 Ocelle",
+     "words": 3
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Right eye",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "Left eye",
+     "words": 2
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Right or left ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "Swinging light: where is the RAPD? Right eye Left eye",
+     "words": 10
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Your pick?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "Answer B",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 10.65,
+     "text": "dilates",
+     "words": 1
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 9.95,
+     "text": "RAPD : the lit pupil dilates",
+     "words": 5
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
+    }
+   ]
+  },
+  "ocelle-teaser-17-xy-dpar-fr": {
+   "T": 20,
+   "cuts": [
+    0,
+    3,
+    3.5,
+    9.5,
+    14.5,
+    20
+   ],
+   "texts": [
+    {
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "D\u00e9fi du jour \u00b7 Ocelle",
+     "words": 4
+    },
+    {
+     "end": 14.3,
+     "id": "panel-1",
+     "kind": "label",
+     "start": 0.25,
+     "text": "\u0152il droit",
+     "words": 2
+    },
+    {
+     "end": 14.3,
+     "id": "panel-2",
+     "kind": "label",
+     "start": 0.25,
+     "text": "\u0152il gauche",
+     "words": 2
+    },
+    {
+     "end": 2.9,
+     "id": "hook",
+     "kind": "card",
+     "start": 0.25,
+     "text": "Droit ou gauche ?",
+     "words": 3
+    },
+    {
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.6,
+     "text": "Lumi\u00e8re qui balance : o\u00f9 est le DPAR ? \u0152il droit \u0152il gauche",
+     "words": 11
+    },
+    {
+     "end": 9.5,
+     "id": "prompt",
+     "kind": "label",
+     "start": 3.9,
+     "text": "Ton choix ?",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "answer-letter",
+     "kind": "label",
+     "start": 10.15,
+     "text": "R\u00e9ponse B",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "sticker-2",
+     "kind": "label",
+     "start": 10.65,
+     "text": "se dilate",
+     "words": 2
+    },
+    {
+     "end": 14.5,
+     "id": "why",
+     "kind": "card",
+     "start": 9.95,
+     "text": "DPAR : la pupille \u00e9clair\u00e9e se dilate",
+     "words": 6
+    },
+    {
+     "end": 20,
+     "id": "end",
+     "kind": "card",
+     "start": 15.3,
      "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
      "words": 7
     }

@@ -18,7 +18,9 @@
 
 ## Files
 
-### `videos/`: 14 reels × FR + EN = 28 MP4s, each with a `-poster.png`
+### `videos/`: 22 reels × FR + EN = 44 MP4s, each with a `-poster.png`
+- 01–09: the first series (table below).
+- 10–17: the « X ou Y ? » series (its own section further down).
 - Posters are half resolution (540×960). The exact cuts are in `cuts.json`.
 - Overview of the FR posters: `apercu-reels-fr.png`.
 
