@@ -4,12 +4,13 @@ G.OPH_EN = G.OPH_EN || {};
 G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
 "b-bases": {
  "title": "Cornea clinic essentials",
- "intro": "Before the fiches, here is a map of the territory: what you see in cornea clinic, the words to describe a cornea at the slit lamp, the major disease families, the tests and the treatment tools. Each concept is first stated in plain words, then refined. The module's fiches assume everything here is known.",
+ "intro": "A map of the territory before the fiches, which take it as known: what you see in cornea clinic, slit-lamp vocabulary, disease families, tests and treatments.",
  "sections": [
   {
    "title": "What we do in cornea clinic",
-   "text": "Cornea clinic deals with the ocular surface: cornea, conjunctiva, limbus, lids and tear film. You see three kinds of patients: acute infections or inflammation, chronic diseases that are followed (dry eye, keratoconus, Fuchs, graft patients) and patients preparing for surgery. The first reflex is triage: what threatens vision or the integrity of the globe in the coming hours or days? A cornea that is infected or thinning cannot wait; a cornea that is slowly clouding can wait for an elective appointment.",
+   "text": "Cornea clinic deals with the ocular surface: cornea, conjunctiva, limbus, lids and tear film. First reflex: triage. What threatens vision or the integrity of the globe in the coming hours or days? A cornea that is infected or thinning cannot wait; a cornea that is slowly clouding can wait for an elective appointment.",
    "bullets": [
+    "**Three kinds of patients**: acute infections or inflammation, chronic diseases that are followed (dry eye, keratoconus, Fuchs, graft patients) and patients preparing for surgery.",
     "**Typical complaints**: painful red eye, decreased vision, photophobia, foreign body sensation, tearing, fluctuating vision, halos.",
     "**Urgent (same day)**: infiltrate or ulcer (especially in a contact lens wearer), laceration or positive Seidel (aqueous humor leak), graft rejection, rapid thinning; **chemical burn: irrigate immediately**, before any examination.",
     "**Semi-urgent (a few days)**: epithelial defect that won't close, recurrence of known herpes, acute hydrops in keratoconus, recurrent erosion.",
@@ -29,8 +30,9 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "Reading a cornea at the slit lamp: the vocabulary",
-   "text": "Describing a cornea means saying **which layer** is involved and **how**. The epithelium, the surface \"skin\", protects against microbes; where it is missing, the area takes up fluorescein. Beneath it, the stroma makes up the transparent thickness: a white spot forming in it is made of white blood cells or scar. Posteriorly, the endothelium pumps water out; if it fails, the cornea swells and turns gray. Always record the size (mm), location (central or peripheral, at what clock hour), depth, fluorescein uptake and anterior chamber reaction.",
+   "text": "Describing a cornea means saying **which layer** is involved and **how**. Missing epithelium: the area takes up fluorescein. White spot in the stroma: white blood cells or scar. Failing endothelium: the cornea swells and turns gray. Always record the size (mm), location (central or peripheral, at what clock hour), depth, fluorescein uptake and anterior chamber reaction.",
    "bullets": [
+    "**The three layers**: the epithelium, the surface \"skin\", protects against microbes; the stroma makes up the transparent thickness; posteriorly, the endothelium pumps water out.",
     "**Epithelial defect**: area without epithelium, green with fluorescein under cobalt blue light.",
     "**Infiltrate**: white-gray opacity in the stroma = inflammatory cells; sterile or infectious.",
     "**Ulcer**: epithelial defect + infiltrate, with tissue loss; infectious until proven otherwise.",
@@ -58,7 +60,7 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "The families of corneal disease",
-   "text": "Almost all corneal diseases fall into a few large families. Classifying first helps ask the right question: is the surface poorly nourished? is there a microbe? is the immune system attacking? is the cornea too weak, opaque, swollen or injured? A single cornea can combine several families: herpes (infection) leaves an anesthetic cornea (surface), which ulcerates, then scars, and eventually needs a graft.",
+   "text": "Almost all corneal diseases fall into a few large families. Classifying them helps ask the right question: a poorly nourished surface? a microbe? an immune attack? a cornea too weak, opaque, swollen or injured? A single cornea can combine several families: herpes (infection) leaves an anesthetic cornea (surface), which ulcerates, then scars, and eventually needs a graft.",
    "bullets": [
     "**Surface and tear film**: insufficient or unstable tears (dry eye, meibomian gland dysfunction or MGD, exposure); neurotrophic keratitis = anesthetic cornea that heals poorly.",
     "**Infections** (infectious keratitis): bacteria, viruses (herpes simplex or HSV, zoster), fungi, Acanthamoeba (a water-borne ameba); contact lenses are the major risk factor.",
@@ -73,9 +75,10 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "Ancillary tests: which question each one answers",
-   "text": "Each test answers a specific question: choosing it means knowing what you are looking for. Fluorescein shows where the epithelium is missing; lissamine green stains damaged cells of the conjunctiva and cornea. Corneal scraping with cultures identifies the microbe, ideally before antibiotics. Topography measures the shape of the front surface; tomography measures both surfaces and the thickness everywhere. Specular microscopy counts endothelial cells; confocal microscopy shows cells and some microbes in the living cornea. AS-OCT gives a cross-section of the anterior segment.",
+   "text": "Each test answers one question: choosing it means knowing what you are looking for. Fluorescein: where the epithelium is missing. Scraping and cultures: which microbe, ideally before antibiotics. Topography: shape of the front surface; tomography: both surfaces and the thickness everywhere. Specular: endothelial cells. AS-OCT: cross-section of the anterior segment.",
    "bullets": [
     "**Fluorescein** (cobalt blue light): epithelial defect, punctate keratitis, dendrite, Seidel, TBUT (tear breakup time, normal > 10 s).",
+    "**Lissamine green**: stains damaged cells of the conjunctiva and cornea.",
     "**Scraping + cultures**: ulcer per the 1-2-3 rule (anterior chamber reaction ≥ 1+, infiltrate ≥ 2 mm or ≤ 3 mm from the center: one criterion is enough), atypical or refractory.",
     "**Smears and media**: Gram stain; blood agar, chocolate agar, Sabouraud (fungi); non-nutrient agar with an E. coli overlay for Acanthamoeba; PCR depending on the context.",
     "**Topography** (Placido) vs **tomography** (Scheimpflug, e.g. Pentacam): tomography also sees the posterior surface and the thinnest point, markers of ectasia.",
@@ -93,8 +96,9 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "Treatment principles",
-   "text": "Four rules guide almost every treatment. One: **treat the cause** (microbe, lid, contact lens, misdirected lash, exposure). Two: **protect the epithelium** and let it heal, because it blocks microbial entry and stromal melting; lubricate, stop toxic drops, cover or close the eye as needed. Three: **control inflammation**, which leaves scars and vessels, without feeding an infection. Four: **prevent complications** (perforation, glaucoma, central scar). The topical corticosteroid is both the most useful and the most dangerous tool in the clinic.",
+   "text": "Four rules guide almost every treatment: **treat the cause**; **protect the epithelium** and let it heal; **control inflammation** without feeding an infection; **prevent complications** (perforation, glaucoma, central scar). The topical corticosteroid is both the most useful and the most dangerous tool in the clinic.",
    "bullets": [
+    "**The four rules in detail**: the cause = microbe, lid, contact lens, misdirected lash, exposure; the epithelium blocks microbial entry and stromal melting (lubricate, stop toxic drops, cover or close the eye as needed); inflammation leaves scars and vessels.",
     "**Steroid dangerous**: unexplained epithelial defect, fungal keratitis, uncontrolled Acanthamoeba, epithelial herpes (dendrite), uncovered bacteria or Nocardia.",
     "**Steroid useful**: herpetic stromal keratitis (under antiviral cover), graft rejection, chemical burn (≤ 10–14 days), immune inflammation; always with monitoring.",
     "**Bacterial keratitis**: adjunctive steroid with no overall benefit (SCUT and SCUT II trials); possible benefit in a severe central ulcer, on an effective antibiotic; never with Nocardia.",
@@ -106,8 +110,9 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "Corneal transplants explained",
-   "text": "A corneal transplant (keratoplasty) replaces the diseased part with tissue from a deceased donor, prepared by an eye bank. The modern rule: **replace only the diseased layer**. If the full thickness is involved, a penetrating keratoplasty (PK) is done. If the front is diseased (keratoconus, scar) but the endothelium is healthy, the patient's own is kept (DALK): no endothelial rejection is possible. If only the endothelium fails (Fuchs, postsurgical edema), only the back is grafted (DSAEK or DMEK), pressed against the cornea by an air or gas bubble.",
+   "text": "A corneal transplant (keratoplasty) replaces the diseased part with donor tissue. Modern rule: **replace only the diseased layer**. Full thickness involved: penetrating keratoplasty (PK). Diseased front (keratoconus, scar) but healthy endothelium: DALK, with no possible endothelial rejection. Endothelium alone (Fuchs, postsurgical edema): DSAEK or DMEK, pressed in place by an air or gas bubble.",
    "bullets": [
+    "**Donor**: tissue from a deceased donor, prepared by an eye bank.",
     "**PK** (penetrating keratoplasty): full thickness, sutured; slow recovery, astigmatism, wound fragile for life, highest rejection risk.",
     "**DALK** (deep anterior lamellar keratoplasty): epithelium and stroma removed down to Descemet's membrane (\"big bubble\" technique); the patient's endothelium remains.",
     "**DSAEK** (Descemet stripping automated endothelial keratoplasty): endothelium + Descemet + a thin layer of stroma; easier to handle.",
@@ -129,8 +134,9 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "Québec specifics",
-   "text": "In Québec, severe corneal disease is often managed in tertiary centers. Fortified drops, concentrated antibiotics, are compounded by hospital pharmacies: a severe keratitis is therefore frequently referred to a center's ophthalmology emergency (CHUM, HMR, MUHC, Jewish General Hospital, CHU de Québec). Optometrists see many first visits (red eye, contact lenses, dry eye, foreign body) and refer to an ophthalmologist what is beyond their scope. A good referral specifies VA, size and location of the lesion, contact lens wear and drops already started.",
+   "text": "In Québec, severe corneal disease is often managed in tertiary centers: fortified drops, concentrated antibiotics, are compounded by hospital pharmacies. Optometrists see many first visits and refer to an ophthalmologist what is beyond their scope. A good referral specifies VA, size and location of the lesion, contact lens wear and drops already started.",
    "bullets": [
+    "**Where severe keratitis goes**: often to a center's ophthalmology emergency (CHUM, HMR, MUHC, Jewish General Hospital, CHU de Québec). First visits in optometry: red eye, contact lenses, dry eye, foreign body.",
     "**CNESST**: workplace injury (chemical burn, foreign body) → CNESST forms to complete.",
     "**CXL**: offered in specialized centers; public coverage variable, check locally.",
     "**Oxervate** (cenegermin 0.002%): approved by Health Canada for moderate or severe neurotrophic keratitis in adults.",
@@ -406,11 +412,11 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
 G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
 "c-bases": {
  "title": "Glaucoma essentials",
- "intro": "Glaucoma is not \"pressure that is too high\": it is a disease of the optic nerve in which pressure is the main modifiable risk factor. This capsule lays down the vocabulary, classification, workup and treatment ladder used by every fiche in the module. Each secondary form is defined here before it is treated.",
+ "intro": "Glaucoma is not \"pressure that is too high\": it is a disease of the optic nerve in which pressure is the main modifiable risk factor. Here: the vocabulary, classification, workup and treatment ladder used in the fiches.",
  "sections": [
   {
    "title": "What is glaucoma?",
-   "text": "Glaucoma is an optic neuropathy: the retinal ganglion cells gradually die, and their axons, which form the retinal nerve fiber layer (RNFL) and then the optic nerve, disappear. At the disc, this tissue loss enlarges the central hollow: this is cupping. The visual field is lost first in the periphery, in arcs, while central vision stays at 6/6 (20/20) for a long time. The patient feels nothing and notices nothing: the disease is silent. Lost cells do not grow back: treatment aims to **slow** the loss, not to restore vision.",
+   "text": "Glaucoma is an optic neuropathy: the retinal ganglion cells gradually die, and their axons (RNFL, then optic nerve) disappear. At the disc, cupping enlarges. The field is lost first in the periphery, in arcs; central vision stays at 6/6 for a long time. The disease is silent and lost cells do not grow back: treatment **slows** the loss, it does not restore vision.",
    "bullets": [
     "**Glaucomatous optic neuropathy**: progressive cupping + corresponding field loss; intraocular pressure (IOP) can be elevated or normal.",
     "**Why silent**: no pain (except in acute angle closure), central vision preserved, and the brain fills in one eye's gaps with the other eye.",
@@ -430,8 +436,9 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "IOP: production, drainage and target",
-   "text": "Aqueous humor is produced by the ciliary processes (flow F). It leaves mainly through the trabecular meshwork and then Schlemm's canal (conventional pathway, outflow facility C), and a little through the uveoscleral pathway (U), across the ciliary muscle. IOP balances according to the Goldmann equation: **IOP = (F − U) / C + Pv**, where Pv is episcleral venous pressure (≈ 8–10 mmHg). To lower IOP, you can produce less (↓ F), drain more via the uveoscleral pathway (↑ U) or the trabecular meshwork (↑ C), or bypass the whole system: filtering surgery escapes Pv.",
+   "text": "Aqueous humor is produced by the ciliary processes (F). It leaves mainly through the trabecular meshwork and Schlemm's canal (C), a little through the uveoscleral pathway (U). Goldmann equation: **IOP = (F − U) / C + Pv**, Pv ≈ 8–10 mmHg. To lower IOP: produce less, drain more, or bypass the system; filtering surgery escapes Pv.",
    "bullets": [
+    "**The levers**: ↓ F (produce less); ↑ U (uveoscleral pathway, across the ciliary muscle); ↑ C (trabecular meshwork then Schlemm's canal: conventional pathway, outflow facility).",
     "**\"Normal\" IOP**: 10–21 mmHg (mean ≈ 15–16), varying by 2–6 mmHg over 24 h; it is a statistical norm, not a safety threshold.",
     "**Normal IOP ≠ no glaucoma**: normal-tension glaucoma exists; conversely, many cases of ocular hypertension never progress to glaucoma.",
     "**Reading and the cornea**: thin cornea = IOP underestimated by Goldmann; thick cornea = overestimated; no mechanical correction formula.",
@@ -452,7 +459,7 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "Classifying glaucoma: angle, cause and suspicion",
-   "text": "Classify with two questions. **Is the angle open or closed?** On gonioscopy, if you see the trabecular meshwork, the angle is open; if the iris rests on it, it is closed. **Is the glaucoma primary or secondary?** Primary: no other disease explains the poor drainage. Secondary: another disease or a medication clogs or damages drainage, and treating that cause is part of the treatment. Before the disease, there are \"at-risk\" states: ocular hypertension and glaucoma suspect.",
+   "text": "Classify with two questions. **Is the angle open or closed?** On gonioscopy, meshwork visible = open; iris resting on it = closed. **Primary or secondary?** Primary: no other disease explains the poor drainage. Secondary: another disease or a medication clogs drainage, and treating that cause is part of the treatment. Before the disease: ocular hypertension and glaucoma suspect.",
    "bullets": [
     "**Primary open-angle (POAG)**: open angle of normal appearance, less efficient trabecular drainage with no visible cause; the most common form.",
     "**Normal-tension glaucoma (NTG)**: the same nerve damage with an IOP always ≤ 21 mmHg; vascular factors weigh more heavily.",
@@ -475,8 +482,9 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "The glaucoma workup in clinic",
-   "text": "A complete workup answers three questions: what is the pressure, what does the angle look like, and is the nerve damaged? Measure IOP (Goldmann tonometer) and corneal thickness (pachymetry). Gonioscopy classifies the angle, in a dark room with a small beam so as not to constrict the pupil. Examine the disc at the slit lamp with a 78 or 90 D lens: vertical C/D, neuroretinal rim, notch, hemorrhage. OCT (optical coherence tomography) measures the peripapillary RNFL and the macular ganglion cells (GCIPL). The Humphrey visual field (24-2: central 24°; ± 10-2: central 10°) measures function.",
+   "text": "The workup answers three questions: what pressure, what angle, is the nerve damaged? IOP with Goldmann and pachymetry; gonioscopy in a dark room; disc at the slit lamp (78 or 90 D lens); OCT of the RNFL and macular ganglion cells (GCIPL); Humphrey visual field 24-2, ± 10-2.",
    "bullets": [
+    "**Workup details**: on gonioscopy, a small beam so as not to constrict the pupil; at the disc, vertical C/D, neuroretinal rim, notch, hemorrhage; 24-2 = central 24°, 10-2 = central 10°.",
     "**Structure-function rule**: defects should match; inferior RNFL thinning gives a superior field defect, and vice versa.",
     "**Structure and function complement each other**: OCT often detects loss before the field does; at advanced stages, OCT bottoms out (floor effect) and the field takes over.",
     "**AAO 2026**: RNFL and macular OCT at baseline and follow-up; OCT + field combined are better than either alone.",
@@ -492,8 +500,9 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "Staging and progression",
-   "text": "The stage tells how much nerve is already lost; the rate tells what will remain. Stage with the visual field (Hodapp-Parrish-Anderson): early if MD > −6 dB, moderate from −6 to −12 dB, advanced if MD < −12 dB or if central points are involved. The more advanced the stage, the lower the target and the tighter the follow-up. Progression is judged on several reliable, comparable tests, by events (newly affected points) or by trend (slope of MD or VFI). A fast progressor loses 2 dB or more per year.",
+   "text": "The stage tells how much nerve is already lost; the rate tells what will remain. Stage with the visual field (Hodapp-Parrish-Anderson): early if MD > −6 dB, moderate from −6 to −12 dB, advanced if MD < −12 dB or central points involved. The more advanced the stage, the lower the target and the tighter the follow-up. Fast progressor: 2 dB or more lost per year.",
    "bullets": [
+    "**Judging progression**: on several reliable, comparable tests, by events (newly affected points) or by trend (slope of MD or VFI).",
     "**Clustered visual fields** (AAO 2026): ≈ 3 fields per year for 2 years at baseline (Chauhan 2008) to identify a fast progressor early.",
     "**Risk signs**: disc hemorrhage, poorly controlled or fluctuating IOP, low corneal hysteresis, low blood pressure, high PSD.",
     "**Age matters**: a young patient with moderate damage has more years to progress than an older patient with the same damage.",
@@ -509,8 +518,9 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "The treatment ladder: drops and laser",
-   "text": "All glaucoma treatments aim at a single proven target: IOP. You climb the ladder according to stage, rate of progression, tolerance and patient choice. **Drops**: noninvasive, but dependent on adherence and technique, with local and systemic effects; start with one class, then switch or add. **Laser**: an in-office procedure, without an incision. SLT (selective laser trabeculoplasty) is a valid first-line option in POAG (AAO 2026, LiGHT). In angle closure, laser peripheral iridotomy (LPI) treats the mechanism.",
+   "text": "All glaucoma treatments aim at a single proven target: IOP. You climb the ladder according to stage, rate of progression, tolerance and patient choice. **Drops**: start with one class, then switch or add. **Laser**: SLT is a valid first-line option in POAG (AAO 2026, LiGHT); in angle closure, laser peripheral iridotomy (LPI) treats the mechanism.",
    "bullets": [
+    "**Drops and laser, nuances**: drops are noninvasive but depend on adherence and technique, with local and systemic effects; laser (SLT, selective laser trabeculoplasty; LPI, laser peripheral iridotomy) is an in-office procedure, without an incision.",
     "**Drop classes**: prostaglandins (↑ U), beta-blockers (↓ F), carbonic anhydrase inhibitors (↓ F), alpha-2 agonists (↓ F, ↑ U), miotics (↑ C), Rho kinase inhibitors (↑ C, ↓ Pv).",
     "**LiGHT** (Laser in Glaucoma and Ocular Hypertension Trial): SLT first → 69.8% of eyes at target with no other treatment at 6 years, less progression (19.6% vs 26.8%) and fewer trabeculectomies.",
     "**Fixed combinations**: two molecules in one bottle = fewer drops and less preservative, better adherence.",
@@ -522,8 +532,9 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "The treatment ladder: surgery",
-   "text": "Surgery is needed when the target is not reached, when glaucoma progresses despite drops and laser, or when drops are not tolerated. Two strategies. **Enhance the natural pathway** (trabecular meshwork, Schlemm's canal): MIGS (minimally invasive glaucoma surgery) work from inside the eye, often with cataract surgery; safe and quick, their effect is modest and limited by Pv. **Create a new outflow route** under the conjunctiva: trabeculectomy, PreserFlo or XEN (a filtering bleb), or a tube to a plate; more powerful, they reach low IOPs, at the cost of more complications and follow-up.",
+   "text": "Surgery is needed when the target is not reached, when glaucoma progresses despite drops and laser, or when drops are not tolerated. Two strategies. **Enhance the natural pathway**: MIGS, safe and quick, with a modest effect. **Create a new outflow route** under the conjunctiva: trabeculectomy, PreserFlo, XEN or a tube; more powerful, at the cost of more complications and follow-up.",
    "bullets": [
+    "**MIGS or filtering surgery**: MIGS (minimally invasive glaucoma surgery) work from inside the eye (trabecular meshwork, Schlemm's canal), often with cataract surgery; their effect is limited by Pv. Trabeculectomy, PreserFlo and XEN create a filtering bleb; a tube drains to a plate; they reach low IOPs.",
     "**Trabecular MIGS**: iStent, Hydrus (implants in Schlemm's canal), goniotomy (KDB), GATT, OMNI: open or bypass the trabecular meshwork.",
     "**Filtering bleb**: reservoir of aqueous under the conjunctiva; mitomycin C slows the scarring that would close it.",
     "**Tubes**: Ahmed (valved, less early hypotony) or Baerveldt (nonvalved, ligated at first, lower IOP in the long term).",
@@ -539,8 +550,9 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "Québec specifics",
-   "text": "In Québec, a large share of screening and first-line follow-up is done in optometry. Since 2018 (Regulation O-7, r. 11.1), equipped optometrists may prescribe glaucoma medications for suspected, early or steroid-induced glaucoma, but must then refer to an ophthalmologist for medical follow-up; if an ophthalmologist follows the patient, they apply that plan. Other glaucomas require a physician's consent, and an inadequate response requires referral. Glaucoma also affects driving: the SAAQ has binocular visual field standards.",
+   "text": "In Québec, a large share of screening and first-line follow-up is done in optometry. Since 2018, equipped optometrists may prescribe glaucoma medications for suspected, early or steroid-induced glaucoma, but must then refer to an ophthalmologist for medical follow-up. Glaucoma also affects driving: the SAAQ has binocular visual field standards.",
    "bullets": [
+    "**Regulation O-7, r. 11.1 (2018)**: if an ophthalmologist follows the patient, the optometrist applies that plan; other glaucomas require a physician's consent, and an inadequate response requires referral.",
     "**SAAQ, class 5**: binocular VA ≥ 6/15 (20/50); continuous binocular field ≥ 100° horizontally (≥ 30° on each side), 10° above and 20° below fixation.",
     "**Heavy vehicles**: 6/9 and 150°. Field abnormality → the SAAQ requires a signed **binocular** field (Esterman or Goldmann III/4e).",
     "**Glaucoma and the licence**: no automatic suspension; a night-driving restriction is possible; the physician may recommend stopping.",

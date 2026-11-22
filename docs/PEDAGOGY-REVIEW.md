@@ -328,3 +328,60 @@ Définitions : 26–41 mots (plafond 45 du cycle 8).
 **Mini-QCM (MF-10)** : 6 items qui demandaient le diagnostic de la fiche ouverte deviennent des questions de conduite (même figure, même position de réponse, bonne réponse jamais la plus longue seule) : C-016 (g-crise : « que fais-tu en premier ? » → hypotenseurs + appel immédiat), C-012 (g-fermeture : conduite pour une PAC → LPI), C-051 et C-105 (g-pxf : bilan + zonules ; risque chirurgical), C-101 (g-gpao : diriger rapidement), C-057 (g-pigmentaire : que faire avant d’accepter un GPN). Fichiers : data/quiz-c.js, data/quiz-c2.js, data/quiz-photos.js, data-en/quiz.js (seulement ces 6 items). C-211 (variante d’ICE) et C-205/C-207 (sous-types de glaucome cristallinien) gardés : ils départagent des entités de la fiche sans en répéter le titre.
 
 Corrections du chef de projet : g-pxf, toute baisse de vision brusque après une cataracte = « le jour même » (endophtalmite, décollement de rétine, implant luxé avec PIO haute) ; g-crise, antiémétique nommé : dimenhydrinate (Gravol) 50 mg IV ou PO, ou ondansétron 4 mg IV. Doute restant : g-dev « dans les 24 h » pour le nourrisson, à valider par un clinicien.
+
+## Cycle 8 — module A et capsules (2026-11-21)
+
+Réponse à MF-1 (critique sévère) : chaque entrée du module A (A.physio, A.exam, A.recog) a maintenant une **micro-carte** d’un écran au niveau Fondamentaux, et chaque section de capsule tient sur un écran. Rien n’a été inventé : chaque phrase de carte condense une phrase déjà relue de la même entrée ; seuils et doses recopiés tels quels (ex. vancomycine 1 mg/0,1 mL + ceftazidime 2,25 mg/0,1 mL ; hydroxychloroquine ≤ 5 mg/kg/jour ; OHTS ≤ 555 µm vs > 588 µm ; K > 47,2 D, I-S > 1,4 D).
+
+**Champ `card`** (FR dans data/module-a.js, data/ext-a5-a.js, data/ext-a5-b.js ; EN dans data-en/module-a.js, même nombre de `keys`, même ordre) :
+- `card.lead` : 1–2 phrases, quoi + pourquoi (11–28 mots) ;
+- `card.keys` : 3–4 signes ou étapes, ≤ 12 mots chacun (un seul **gras** pour le signe décisif quand il y en a un) ;
+- `card.ask.q` : la question du patron (copie de `pearl`, raccourcie pour macula-chirurgicale et peripherie-vitre) ; `card.ask.a` : les premières phrases entières de la réponse (≤ 48 mots), à révéler au toucher.
+- Repliés (« Pour aller plus loin », niveaux 2–3) : les champs existants, inchangés — physio : `intro`, `numbers`, `points`, `pearl` ; examen : `why`, `how`, `normal`, `patho`, `pitfalls`, `pearl` ; A5 : `what`, `look`, `why`, `action`, `pitfalls`, `pearl.a`. Pas de champ `more` : le détail, c’est l’entrée elle-même.
+- Hors de mes fichiers et à garder hors de la carte : l’encadré High yield (`OPH.hy`, data/hy-module-a.js, 57–75 mots par entrée), le sous-titre `en` (jusqu’à 9 mots). Les doublons signalés sur `a-examen` (SAAQ classe 5 ×3, 6/12 = 20/40 = logMAR 0,3 ×2) viennent de `exam.av.normal` + HY + l’outil d’acuité : la carte n’en garde qu’une mention (SAAQ dans `lead`).
+
+Mots visibles par défaut, par entrée. « Avant » = champs affichés au niveau 1 par le moteur actuel (titre, intro/why/what, chiffres, normal/patho ou look, perle), entre parenthèses l’encadré HY qui s’y ajoutait. « Carte » = titre + `lead` + `keys` + `ask.q` (plafond 90). Comptage : mots contenant une lettre ou un chiffre, `**` retirés.
+
+| Page | Entrée | Avant (+HY) | Carte FR | Carte EN |
+|---|---|---|---|---|
+| a-physiologie | aqueuse | 126 (+75) | 76 | 70 |
+| a-physiologie | pio | 160 (+72) | 76 | 74 |
+| a-physiologie | film-lacrymal | 148 (+65) | 77 | 79 |
+| a-physiologie | transparence | 133 (+64) | 80 | 75 |
+| a-physiologie | refraction | 130 (+66) | 88 | 87 |
+| a-physiologie | pupille | 135 (+72) | 83 | 81 |
+| a-examen | av | 208 (+63) | 71 | 67 |
+| a-examen | pupilles | 289 (+73) | 75 | 78 |
+| a-examen | lampe | 215 (+67) | 62 | 61 |
+| a-examen | fluoresceine | 240 (+57) | 63 | 62 |
+| a-examen | tonometrie | 201 (+59) | 69 | 62 |
+| a-examen | gonioscopie | 236 (+64) | 59 | 63 |
+| a-examen | pachymetrie | 195 (+63) | 68 | 60 |
+| a-examen | papille | 204 (+71) | 68 | 59 |
+| a-imagerie | oct | 254 (+68) | 79 | 77 |
+| a-imagerie | topographie | 239 (+59) | 65 | 67 |
+| a-imagerie | champs-visuels | 248 (+62) | 70 | 66 |
+| a-imagerie | speculaire | 218 (+57) | 72 | 62 |
+| a-retine | cataracte-nucleaire | 178 (+62) | 78 | 80 |
+| a-retine | cataracte-corticale-scp | 178 (+62) | 77 | 78 |
+| a-retine | cataracte-mature | 174 (+58) | 76 | 75 |
+| a-retine | opacification-capsulaire | 135 (+63) | 78 | 75 |
+| a-retine | bscan | 222 (+63) | 82 | 85 |
+| a-retine | decollement-retine | 179 (+65) | 78 | 72 |
+| a-retine | decollement-choroidien | 189 (+67) | 81 | 81 |
+| a-retine | dmla | 212 (+71) | 80 | 78 |
+| a-retine | retinopathie-diabetique | 203 (+68) | 77 | 77 |
+| a-retine | occlusions-retiniennes | 238 (+62) | 73 | 70 |
+| a-retine | retinopathie-hypertensive | 167 (+59) | 76 | 74 |
+| a-retine | macula-chirurgicale | 220 (+73) | 79 | 77 |
+| a-retine | peripherie-vitre | 197 (+65) | 79 | 76 |
+| a-retine | inflammation-infection | 185 (+65) | 71 | 65 |
+| a-retine | papille-oedeme | 232 (+61) | 81 | 77 |
+| a-retine | pupilles-neuro | 217 (+65) | 79 | 73 |
+| a-retine | tumeurs-toxicite-trauma | 231 (+75) | 83 | 76 |
+
+Totaux par page (FR, hors HY) : a-physiologie 832 → 480 (max 160 → 88 par entrée) ; a-examen 1 788 → 535 (max 289 → 75) ; a-imagerie 959 → 286 (max 254 → 79) ; a-retine 3 357 → 1 328 (max 238 → 83). Avec l’encadré HY, l’« avant » était de 1 246, 2 305, 1 205 et 4 461 mots ; la critique en a mesuré 1 747, 3 227, 1 939 et 5 595 dans le DOM (titres, outils et légendes de photos compris). Le contenu complet reste dans les données (≈ 15 000 mots FR pour les 35 entrées), seulement replié.
+
+**Capsules** (data/capsules.js, data-en/capsules-cases.js, partie capsules seulement ; glossaire non touché) : une section = un écran (b-bases 7, c-bases 8, donc ≤ 8). Texte visible (titre + `text`) ramené de 72–108 à 51–74 mots FR (46–67 EN) ; les phrases sorties du texte deviennent la **première puce** de la section (ou la 2e pour la lissamine), donc au niveau 2 déjà replié (`data-dz="2"`). Puces : b-bases 52 → 58, c-bases 48 → 54, mêmes longueurs FR/EN. `intro` : 60 → 35 (b-bases) et 52 → 36 (c-bases) ; supprimés comme redondants : « Chaque notion est d’abord dite en mots simples, puis précisée » et « Chaque forme secondaire y est définie avant d’être traitée » (phrases sur la capsule elle-même, sans contenu). Retirés aussi parce que redondants : la phrase sur la confocale (déjà dans la puce « Microscopie confocale »), « (20/20) » après 6/6 et « Le patient ne sent rien » (puce « Pourquoi silencieux »). Total visible intro + sections : b-bases 705 → 464, c-bases 839 → 554 ; `toolbox` (accordéons fermés) et `vocab` (niveau 2) inchangés.
+
+Contrôles : node tools/validate.js OK (aucune erreur dans A ni dans les capsules) ; fusion EN simulée avec la logique de I18N._merge : les 35 cartes et les 15 sections passent en anglais, aucun tableau de longueur différente.

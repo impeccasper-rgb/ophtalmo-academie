@@ -7,12 +7,13 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
   module: "B",
   title: "Les bases de la clinique de cornée",
   en: "Cornea clinic essentials",
-  intro: "Avant les fiches, voici la carte du territoire : ce qu’on voit en clinique de cornée, les mots pour décrire une cornée à la lampe à fente, les grandes familles de maladies, les examens et les outils de traitement. Chaque notion est d’abord dite en mots simples, puis précisée. Les fiches du module tiennent pour acquis tout ce qui est ici.",
+  intro: "La carte du territoire avant les fiches, qui la tiennent pour acquise : ce qu’on voit en clinique de cornée, le vocabulaire de la lampe à fente, les familles de maladies, les examens et les traitements.",
   sections: [
     {
       title: "Ce qu’on fait en clinique de cornée",
-      text: "La clinique de cornée (cornea clinic) s’occupe de la surface de l’œil : cornée, conjonctive, limbe, paupières et film lacrymal. On y voit trois sortes de patients : des infections ou inflammations aiguës, des maladies chroniques qu’on suit (sécheresse, kératocône, Fuchs, greffés) et des patients qui se préparent à une chirurgie. Le premier réflexe est de trier (triage) : qu’est-ce qui menace la vision ou l’intégrité du globe dans les heures ou les jours qui viennent ? Une cornée qui s’infecte ou s’amincit n’attend pas ; une cornée qui s’embrouille lentement peut attendre un rendez-vous électif.",
+      text: "La clinique de cornée (cornea clinic) s’occupe de la surface de l’œil : cornée, conjonctive, limbe, paupières et film lacrymal. Premier réflexe : trier (triage). Qu’est-ce qui menace la vision ou le globe dans les heures ou les jours qui viennent ? Une cornée qui s’infecte ou s’amincit n’attend pas ; une cornée qui s’embrouille lentement peut attendre un rendez-vous électif.",
       bullets: [
+        "**Trois sortes de patients** : infections ou inflammations aiguës, maladies chroniques qu’on suit (sécheresse, kératocône, Fuchs, greffés) et patients qui se préparent à une chirurgie.",
         "**Motifs typiques** : œil rouge douloureux, baisse de vision, photophobie, sensation de corps étranger, larmoiement, vision fluctuante, halos.",
         "**Urgent (le jour même)** : infiltrat ou ulcère (surtout chez un porteur de lentilles), plaie ou Seidel positif (fuite d’humeur aqueuse), rejet de greffe, amincissement rapide ; **brûlure chimique : irriguer sur-le-champ**, avant tout examen.",
         "**Semi-urgent (quelques jours)** : défaut épithélial qui ne ferme pas, récidive d’herpès connu, hydrops aigu du kératocône, érosion récidivante.",
@@ -24,8 +25,9 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Lire une cornée à la lampe à fente : le vocabulaire",
-      text: "Décrire une cornée, c’est dire **quelle couche** est touchée et **comment**. L’épithélium, la « peau » de surface, protège contre les microbes ; quand il manque, la zone prend la fluorescéine. Sous lui, le stroma forme l’épaisseur transparente : une tache blanche qui s’y forme est faite de globules blancs ou de cicatrice. En arrière, l’endothélium pompe l’eau ; s’il flanche, la cornée gonfle et grisaille. On note toujours la taille (mm), la position (centrale ou périphérique, à quelle heure), la profondeur, la prise de fluorescéine et la réaction de la chambre antérieure.",
+      text: "Décrire une cornée, c’est dire **quelle couche** est touchée et **comment**. Épithélium absent : la zone prend la fluorescéine. Tache blanche dans le stroma : globules blancs ou cicatrice. Endothélium qui flanche : la cornée gonfle et grisaille. On note toujours la taille (mm), la position (centrale ou périphérique, à quelle heure), la profondeur, la prise de fluorescéine et la réaction de la chambre antérieure.",
       bullets: [
+        "**Les trois couches** : l’épithélium, la « peau » de surface, protège contre les microbes ; le stroma forme l’épaisseur transparente ; en arrière, l’endothélium pompe l’eau.",
         "**Défaut épithélial** (epithelial defect) : zone sans épithélium, verte à la fluorescéine sous lumière bleu cobalt.",
         "**Infiltrat** (infiltrate) : opacité blanc-gris dans le stroma = cellules inflammatoires ; stérile ou infectieux.",
         "**Ulcère** (ulcer) : défaut épithélial + infiltrat, avec perte de tissu ; infectieux jusqu’à preuve du contraire.",
@@ -42,7 +44,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Les familles de maladies cornéennes",
-      text: "Presque toutes les maladies de la cornée entrent dans quelques grandes familles. Les classer d’abord aide à poser la bonne question : la surface est-elle mal nourrie ? y a-t-il un microbe ? le système immunitaire attaque-t-il ? la cornée est-elle trop faible, opaque, gonflée ou blessée ? Une même cornée peut cumuler plusieurs familles : un herpès (infection) laisse une cornée insensible (surface), qui s’ulcère, puis une cicatrice qu’on finit par greffer.",
+      text: "Presque toutes les maladies de la cornée entrent dans quelques grandes familles. Les classer aide à poser la bonne question : surface mal nourrie ? microbe ? attaque immunitaire ? cornée trop faible, opaque, gonflée ou blessée ? Une même cornée peut cumuler plusieurs familles : un herpès (infection) laisse une cornée insensible (surface), qui s’ulcère, puis une cicatrice qu’on finit par greffer.",
       bullets: [
         "**Surface et film lacrymal** : larmes insuffisantes ou instables (sécheresse, dysfonction meibomienne ou MGD, exposition) ; kératite neurotrophique = cornée insensible qui guérit mal.",
         "**Infections** (infectious keratitis) : bactéries, virus (herpès simplex ou HSV, zona), champignons, Acanthamoeba (amibe de l’eau) ; les lentilles cornéennes sont le grand facteur de risque.",
@@ -57,9 +59,10 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Les examens complémentaires : quelle question chacun répond",
-      text: "Chaque examen répond à une question précise : le choisir, c’est savoir ce qu’on cherche. La fluorescéine montre où l’épithélium manque ; le vert de lissamine (lissamine green) colore les cellules abîmées de la conjonctive et de la cornée. Le grattage cornéen (corneal scraping) avec cultures identifie le microbe, idéalement avant les antibiotiques. La topographie mesure la forme de la face avant ; la tomographie mesure les deux faces et l’épaisseur partout. La microscopie spéculaire compte les cellules endothéliales ; la confocale montre les cellules et certains microbes dans la cornée vivante. L’AS-OCT fait une coupe du segment antérieur.",
+      text: "Chaque examen répond à une question : le choisir, c’est savoir ce qu’on cherche. Fluorescéine : où l’épithélium manque. Grattage et cultures : quel microbe, idéalement avant les antibiotiques. Topographie : forme de la face avant ; tomographie : les deux faces et l’épaisseur partout. Spéculaire : cellules endothéliales. AS-OCT : coupe du segment antérieur.",
       bullets: [
         "**Fluorescéine** (lumière bleu cobalt) : défaut épithélial, kératite ponctuée, dendrite, Seidel, TBUT (temps de rupture du film lacrymal, normal > 10 s).",
+        "**Vert de lissamine** (lissamine green) : colore les cellules abîmées de la conjonctive et de la cornée.",
         "**Grattage + cultures** : ulcère selon la règle 1-2-3 (réaction de chambre antérieure ≥ 1+, infiltrat ≥ 2 mm ou à ≤ 3 mm du centre : un critère suffit), atypique ou réfractaire.",
         "**Frottis et milieux** : coloration de Gram ; gélose au sang, chocolat, Sabouraud (champignons) ; gélose non nutritive ensemencée d’E. coli pour Acanthamoeba ; PCR selon le contexte.",
         "**Topographie** (Placido) vs **tomographie** (Scheimpflug, ex. Pentacam) : la tomographie voit aussi la face postérieure et le point le plus mince, marqueurs d’ectasie.",
@@ -74,8 +77,9 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Principes thérapeutiques",
-      text: "Quatre règles guident presque tous les traitements. Un : **traiter la cause** (microbe, paupière, lentille, cil mal orienté, exposition). Deux : **protéger l’épithélium** et le laisser guérir, car il bloque l’entrée des microbes et la fonte du stroma ; on lubrifie, on retire les gouttes toxiques, on couvre ou on ferme l’œil au besoin. Trois : **contrôler l’inflammation**, qui laisse cicatrices et vaisseaux, sans nourrir une infection. Quatre : **prévenir les complications** (perforation, glaucome, cicatrice centrale). Le corticostéroïde topique (topical corticosteroid) est à la fois l’outil le plus utile et le plus dangereux de la clinique.",
+      text: "Quatre règles guident presque tous les traitements : **traiter la cause** ; **protéger l’épithélium** et le laisser guérir ; **contrôler l’inflammation** sans nourrir une infection ; **prévenir les complications** (perforation, glaucome, cicatrice centrale). Le corticostéroïde topique (topical corticosteroid) est à la fois l’outil le plus utile et le plus dangereux de la clinique.",
       bullets: [
+        "**Les quatre règles en détail** : la cause = microbe, paupière, lentille, cil mal orienté, exposition ; l’épithélium bloque l’entrée des microbes et la fonte du stroma (lubrifier, retirer les gouttes toxiques, couvrir ou fermer l’œil au besoin) ; l’inflammation laisse cicatrices et vaisseaux.",
         "**Stéroïde dangereux** : défaut épithélial inexpliqué, kératite fongique, Acanthamoeba non contrôlée, herpès épithélial (dendrite), bactérie non couverte ou Nocardia.",
         "**Stéroïde utile** : kératite stromale herpétique (sous antiviral), rejet de greffe, brûlure chimique (≤ 10–14 jours), inflammation immune ; toujours sous surveillance.",
         "**Kératite bactérienne** : stéroïde adjuvant sans bénéfice global (essais SCUT et SCUT II) ; bénéfice possible si ulcère central sévère, sous antibiotique efficace ; jamais si Nocardia.",
@@ -87,8 +91,9 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Les greffes de cornée expliquées",
-      text: "Une greffe de cornée (keratoplasty) remplace la partie malade par le tissu d’un donneur décédé, préparé par une banque d’yeux. La règle moderne : **ne remplacer que la couche malade**. Si toute l’épaisseur est atteinte, on fait une greffe transfixiante (PK). Si l’avant est malade (kératocône, cicatrice) mais l’endothélium sain, on garde celui du patient (DALK) : aucun rejet endothélial possible. Si seul l’endothélium flanche (Fuchs, œdème après chirurgie), on ne greffe que l’arrière (DSAEK ou DMEK), plaqué contre la cornée par une bulle d’air ou de gaz.",
+      text: "Une greffe de cornée (keratoplasty) remplace la partie malade par le tissu d’un donneur. Règle moderne : **ne remplacer que la couche malade**. Toute l’épaisseur atteinte : greffe transfixiante (PK). Avant malade (kératocône, cicatrice) mais endothélium sain : DALK, sans rejet endothélial possible. Endothélium seul (Fuchs, œdème après chirurgie) : DSAEK ou DMEK, plaqué par une bulle d’air ou de gaz.",
       bullets: [
+        "**Donneur** : tissu d’un donneur décédé, préparé par une banque d’yeux.",
         "**PK** (kératoplastie transfixiante, penetrating keratoplasty) : toute l’épaisseur, suturée ; récupération lente, astigmatisme, plaie fragile à vie, risque de rejet le plus élevé.",
         "**DALK** (deep anterior lamellar keratoplasty) : épithélium et stroma retirés jusqu’à la Descemet (technique de la « big bubble ») ; l’endothélium du patient reste.",
         "**DSAEK** (Descemet stripping automated endothelial keratoplasty) : endothélium + Descemet + mince couche de stroma ; plus facile à manipuler.",
@@ -101,8 +106,9 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Particularités québécoises",
-      text: "Au Québec, la cornée sévère se gère souvent en centre. Les gouttes fortifiées (fortified drops), des antibiotiques concentrés, sont préparées par les pharmacies hospitalières : une kératite sévère est donc fréquemment dirigée vers l’urgence ophtalmologique d’un centre (CHUM, HMR, CUSM, Hôpital général juif, CHU de Québec). Les optométristes voient beaucoup de premières consultations (œil rouge, lentilles, sécheresse, corps étranger) et dirigent vers l’ophtalmologiste ce qui dépasse leur champ. Une bonne référence précise l’AV, la taille et la position de la lésion, le port de lentilles et les gouttes déjà commencées.",
+      text: "Au Québec, la cornée sévère se gère souvent en centre : les gouttes fortifiées (fortified drops), des antibiotiques concentrés, sont préparées par les pharmacies hospitalières. Les optométristes voient beaucoup de premières consultations et dirigent vers l’ophtalmologiste ce qui dépasse leur champ. Une bonne référence précise l’AV, la taille et la position de la lésion, le port de lentilles et les gouttes déjà commencées.",
       bullets: [
+        "**Où va la kératite sévère** : souvent à l’urgence ophtalmologique d’un centre (CHUM, HMR, CUSM, Hôpital général juif, CHU de Québec). Premières consultations en optométrie : œil rouge, lentilles, sécheresse, corps étranger.",
         "**CNESST** : accident de travail (brûlure chimique, corps étranger) → documents CNESST à remplir.",
         "**CXL** : offerte dans les centres spécialisés ; couverture publique variable, à vérifier localement.",
         "**Oxervate** (cénégermine 0,002 %) : approuvé par Santé Canada pour la kératite neurotrophique modérée ou sévère de l’adulte.",
@@ -240,11 +246,11 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
   module: "C",
   title: "Les bases du glaucome",
   en: "Glaucoma essentials",
-  intro: "Le glaucome n’est pas « une pression trop haute » : c’est une maladie du nerf optique dont la pression est le principal facteur de risque modifiable. Cette capsule pose le vocabulaire, la classification, le bilan et l’escalier thérapeutique que toutes les fiches du module utilisent. Chaque forme secondaire y est définie avant d’être traitée.",
+  intro: "Le glaucome n’est pas « une pression trop haute » : c’est une maladie du nerf optique dont la pression est le principal facteur de risque modifiable. Ici : le vocabulaire, la classification, le bilan et l’escalier thérapeutique des fiches.",
   sections: [
     {
       title: "Qu’est-ce que le glaucome ?",
-      text: "Le glaucome est une neuropathie optique (optic neuropathy) : les cellules ganglionnaires de la rétine meurent peu à peu, et leurs axones, qui forment la couche des fibres nerveuses rétiniennes (retinal nerve fiber layer, RNFL) puis le nerf optique, disparaissent. À la papille, cette perte de tissu agrandit le creux central : c’est l’excavation (cupping). Le champ visuel se perd d’abord en périphérie, en arcs, alors que la vision centrale reste longtemps à 6/6 (20/20). Le patient ne sent rien et ne remarque rien : la maladie est silencieuse. Les cellules perdues ne repoussent pas : le traitement vise à **freiner** la perte, pas à rendre la vision.",
+      text: "Le glaucome est une neuropathie optique (optic neuropathy) : les cellules ganglionnaires de la rétine meurent peu à peu, et leurs axones (RNFL, puis nerf optique) disparaissent. À la papille, l’excavation (cupping) s’agrandit. Le champ se perd d’abord en périphérie, en arcs ; la vision centrale reste longtemps à 6/6. La maladie est silencieuse et les cellules perdues ne repoussent pas : le traitement **freine** la perte, il ne rend pas la vision.",
       bullets: [
         "**Neuropathie optique glaucomateuse** : excavation qui progresse + perte de champ correspondante ; la pression intraoculaire (PIO, intraocular pressure) peut être élevée ou normale.",
         "**Pourquoi silencieux** : pas de douleur (sauf fermeture aiguë), vision centrale préservée, et le cerveau comble les trous d’un œil avec l’autre œil.",
@@ -257,8 +263,9 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "La PIO : fabrication, drainage et cible",
-      text: "L’humeur aqueuse (aqueous humor) est fabriquée par les procès ciliaires (débit F). Elle sort surtout par le trabéculum (trabecular meshwork) puis le canal de Schlemm (voie conventionnelle, facilité d’écoulement C), et un peu par la voie uvéosclérale (U), à travers le muscle ciliaire. La PIO s’équilibre selon l’équation de Goldmann : **PIO = (F − U) / C + Pv**, où Pv est la pression veineuse épisclérale (≈ 8–10 mmHg). Pour baisser la PIO, on peut fabriquer moins (↓ F), drainer plus par l’uvéosclérale (↑ U) ou par le trabéculum (↑ C), ou contourner tout le système : la chirurgie filtrante échappe à la Pv.",
+      text: "L’humeur aqueuse est fabriquée par les procès ciliaires (F). Elle sort surtout par le trabéculum et le canal de Schlemm (C), un peu par la voie uvéosclérale (U). Équation de Goldmann : **PIO = (F − U) / C + Pv**, Pv ≈ 8–10 mmHg. Pour baisser la PIO : fabriquer moins, drainer plus, ou contourner le système ; la chirurgie filtrante échappe à la Pv.",
       bullets: [
+        "**Les leviers** : ↓ F (fabriquer moins) ; ↑ U (voie uvéosclérale, à travers le muscle ciliaire) ; ↑ C (trabéculum puis canal de Schlemm : voie conventionnelle, facilité d’écoulement).",
         "**PIO « normale »** : 10–21 mmHg (moyenne ≈ 15–16), variation de 2–6 mmHg sur 24 h ; c’est une norme statistique, pas un seuil de sécurité.",
         "**PIO normale ≠ absence de glaucome** : le glaucome à pression normale existe ; à l’inverse, beaucoup d’hypertensions oculaires n’évoluent jamais vers un glaucome.",
         "**Lecture et cornée** : cornée mince = PIO sous-estimée au Goldmann ; cornée épaisse = surestimée ; pas de formule de correction mécanique.",
@@ -269,7 +276,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Classer un glaucome : angle, cause et suspicion",
-      text: "On classe avec deux questions. **L’angle est-il ouvert ou fermé ?** À la gonioscopie, si on voit le trabéculum, l’angle est ouvert ; si l’iris s’y appuie, il est fermé. **Le glaucome est-il primaire ou secondaire ?** Primaire : aucune autre maladie n’explique le mauvais drainage. Secondaire : une autre maladie ou un médicament bouche ou abîme le drainage, et traiter cette cause fait partie du traitement. Avant la maladie, il existe des états « à risque » : l’hypertension oculaire et le suspect de glaucome.",
+      text: "On classe avec deux questions. **L’angle est-il ouvert ou fermé ?** À la gonioscopie, trabéculum visible = ouvert ; iris appuyé dessus = fermé. **Primaire ou secondaire ?** Primaire : aucune autre maladie n’explique le mauvais drainage. Secondaire : une autre maladie ou un médicament bouche le drainage, et traiter cette cause fait partie du traitement. Avant la maladie : hypertension oculaire et suspect de glaucome.",
       bullets: [
         "**Primaire à angle ouvert (GPAO)** : angle ouvert d’aspect normal, drainage trabéculaire moins efficace sans cause visible ; la forme la plus fréquente.",
         "**Glaucome à pression normale (GPN)** : même atteinte du nerf avec une PIO toujours ≤ 21 mmHg ; les facteurs vasculaires y pèsent davantage.",
@@ -285,8 +292,9 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Le bilan glaucome en clinique",
-      text: "Un bilan complet répond à trois questions : quelle est la pression, comment est l’angle, et le nerf est-il atteint ? On mesure la PIO (tonomètre de Goldmann) et l’épaisseur cornéenne (pachymétrie). La gonioscopie (gonioscopy) classe l’angle, en pièce sombre avec un petit faisceau pour ne pas resserrer la pupille. On examine la papille à la lampe à fente avec une lentille de 78 ou 90 D : C/D vertical, bord neurorétinien, encoche, hémorragie. L’OCT (tomographie par cohérence optique) mesure la RNFL péripapillaire et les cellules ganglionnaires maculaires (GCIPL). Le champ visuel Humphrey (24-2 : 24° centraux ; ± 10-2 : 10° centraux) mesure la fonction.",
+      text: "Le bilan répond à trois questions : quelle pression, quel angle, le nerf est-il atteint ? PIO au Goldmann et pachymétrie ; gonioscopie en pièce sombre ; papille à la lampe à fente (lentille de 78 ou 90 D) ; OCT de la RNFL et des cellules ganglionnaires maculaires (GCIPL) ; champ visuel Humphrey 24-2, ± 10-2.",
       bullets: [
+        "**Détails du bilan** : à la gonioscopie, petit faisceau pour ne pas resserrer la pupille ; à la papille, C/D vertical, bord neurorétinien, encoche, hémorragie ; 24-2 = 24° centraux, 10-2 = 10° centraux.",
         "**Règle structure-fonction** : les défauts doivent concorder ; un amincissement RNFL inférieur donne un défaut de champ supérieur, et inversement.",
         "**Structure et fonction se complètent** : l’OCT voit souvent une perte avant le champ ; au stade avancé, l’OCT plafonne (effet plancher) et le champ prend le relais.",
         "**AAO 2026** : OCT RNFL et maculaire au départ et au suivi ; OCT + champ combinés valent mieux que chacun seul.",
@@ -299,8 +307,9 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Stades et progression",
-      text: "Le stade dit combien de nerf est déjà perdu ; la vitesse dit ce qui restera. On stade au champ visuel (Hodapp-Parrish-Anderson) : débutant si MD > −6 dB, modéré de −6 à −12 dB, avancé si MD < −12 dB ou si des points centraux sont touchés. Plus le stade est avancé, plus la cible est basse et le suivi serré. La progression se juge sur plusieurs examens fiables et comparables, par événements (nouveaux points atteints) ou par tendance (pente du MD ou du VFI). Un progresseur rapide perd 2 dB ou plus par année.",
+      text: "Le stade dit combien de nerf est déjà perdu ; la vitesse dit ce qui restera. Stade au champ visuel (Hodapp-Parrish-Anderson) : débutant si MD > −6 dB, modéré de −6 à −12 dB, avancé si MD < −12 dB ou points centraux touchés. Plus le stade est avancé, plus la cible est basse et le suivi serré. Progresseur rapide : 2 dB ou plus perdus par année.",
       bullets: [
+        "**Juger la progression** : sur plusieurs examens fiables et comparables, par événements (nouveaux points atteints) ou par tendance (pente du MD ou du VFI).",
         "**Champs visuels groupés** (clustered visual fields, AAO 2026) : ≈ 3 champs par an pendant 2 ans au départ (Chauhan 2008) pour repérer tôt un progresseur rapide.",
         "**Signes de risque** : hémorragie papillaire, PIO mal contrôlée ou fluctuante, hystérésis cornéenne basse, tension artérielle basse, PSD élevé.",
         "**L’âge compte** : un patient jeune avec atteinte modérée a plus d’années pour progresser qu’un patient âgé avec la même atteinte.",
@@ -311,8 +320,9 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "L’escalier thérapeutique : gouttes et laser",
-      text: "Tous les traitements du glaucome visent une seule cible prouvée : la PIO. On monte l’escalier selon le stade, la vitesse de progression, la tolérance et le choix du patient. **Gouttes** : non invasives, mais dépendantes de l’observance et de la technique, avec des effets locaux et systémiques ; on commence par une classe, puis on remplace ou on ajoute. **Laser** : un geste en clinique, sans incision. La SLT (trabéculoplastie sélective au laser, selective laser trabeculoplasty) est une première intention valable dans le GPAO (AAO 2026, LiGHT). En fermeture de l’angle, l’iridotomie périphérique au laser (laser peripheral iridotomy, LPI) traite le mécanisme.",
+      text: "Tous les traitements visent une seule cible prouvée : la PIO. On monte l’escalier selon le stade, la vitesse de progression, la tolérance et le choix du patient. **Gouttes** : on commence par une classe, puis on remplace ou on ajoute. **Laser** : la SLT est une première intention valable dans le GPAO (AAO 2026, LiGHT) ; en fermeture de l’angle, l’iridotomie au laser (LPI) traite le mécanisme.",
       bullets: [
+        "**Gouttes et laser, nuances** : les gouttes sont non invasives mais dépendent de l’observance et de la technique, avec des effets locaux et systémiques ; le laser (SLT, selective laser trabeculoplasty ; LPI, laser peripheral iridotomy) se fait en clinique, sans incision.",
         "**Classes de gouttes** : prostaglandines (↑ U), bêtabloquants (↓ F), inhibiteurs de l’anhydrase carbonique (↓ F), alpha-2 agonistes (↓ F, ↑ U), miotiques (↑ C), Rho kinase (↑ C, ↓ Pv).",
         "**LiGHT** (Laser in Glaucoma and Ocular Hypertension Trial) : SLT d’abord → 69,8 % des yeux à la cible sans autre traitement à 6 ans, moins de progression (19,6 % vs 26,8 %) et moins de trabéculectomies.",
         "**Combinaisons fixes** : deux molécules dans un flacon = moins de gouttes et d’agent de conservation, meilleure observance.",
@@ -324,8 +334,9 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "L’escalier thérapeutique : la chirurgie",
-      text: "La chirurgie s’impose quand la cible n’est pas atteinte, quand le glaucome progresse malgré gouttes et laser, ou quand les gouttes ne sont pas tolérées. Deux stratégies. **Améliorer la voie naturelle** (trabéculum, canal de Schlemm) : les MIGS (minimally invasive glaucoma surgery) passent par l’intérieur de l’œil, souvent avec la cataracte ; sûres et rapides, leur effet est modeste et limité par la Pv. **Créer une nouvelle sortie** sous la conjonctive : trabéculectomie, PreserFlo ou XEN (une bulle filtrante), ou tube vers une plaque ; plus puissants, ils atteignent des PIO basses, au prix de plus de complications et de suivi.",
+      text: "On opère quand la cible n’est pas atteinte, quand le glaucome progresse malgré gouttes et laser, ou quand les gouttes ne sont pas tolérées. Deux stratégies. **Améliorer la voie naturelle** : les MIGS, sûres et rapides, à l’effet modeste. **Créer une nouvelle sortie** sous la conjonctive : trabéculectomie, PreserFlo, XEN ou tube ; plus puissants, au prix de plus de complications et de suivi.",
       bullets: [
+        "**MIGS ou filtrante** : les MIGS (minimally invasive glaucoma surgery) passent par l’intérieur de l’œil (trabéculum, canal de Schlemm), souvent avec la cataracte ; leur effet est limité par la Pv. Trabéculectomie, PreserFlo et XEN créent une bulle filtrante ; le tube draine vers une plaque ; ils atteignent des PIO basses.",
         "**MIGS trabéculaires** : iStent, Hydrus (implants dans le canal de Schlemm), goniotomie (KDB), GATT, OMNI : ouvrent ou contournent le trabéculum.",
         "**Bulle filtrante** (bleb) : réservoir d’aqueuse sous la conjonctive ; la mitomycine C freine la cicatrisation qui la refermerait.",
         "**Tubes** : Ahmed (valve, moins d’hypotonie précoce) ou Baerveldt (sans valve, ligaturé au début, PIO plus basse à long terme).",
@@ -338,8 +349,9 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Particularités québécoises",
-      text: "Au Québec, une grande part du dépistage et du suivi de première ligne se fait en optométrie. Depuis 2018 (Règlement O-7, r. 11.1), les optométristes équipés peuvent prescrire des antiglaucomateux pour un glaucome suspect, débutant ou cortisonique, puis doivent diriger vers un ophtalmologiste pour le suivi médical ; si un ophtalmologiste suit le patient, ils appliquent son plan. Les autres glaucomes exigent le consentement d’un médecin, et une réponse inadéquate impose de diriger. Le glaucome touche aussi la conduite : la SAAQ a des normes de champ visuel binoculaire.",
+      text: "Au Québec, une grande part du dépistage et du suivi de première ligne se fait en optométrie. Depuis 2018, les optométristes équipés peuvent prescrire des antiglaucomateux pour un glaucome suspect, débutant ou cortisonique, puis doivent diriger vers un ophtalmologiste pour le suivi médical. Le glaucome touche aussi la conduite : la SAAQ a des normes de champ visuel binoculaire.",
       bullets: [
+        "**Règlement O-7, r. 11.1 (2018)** : si un ophtalmologiste suit le patient, l’optométriste applique son plan ; les autres glaucomes exigent le consentement d’un médecin, et une réponse inadéquate impose de diriger.",
         "**SAAQ, classe 5** : AV binoculaire ≥ 6/15 (20/50) ; champ binoculaire continu ≥ 100° à l’horizontale (≥ 30° de chaque côté), 10° au-dessus et 20° au-dessous de la fixation.",
         "**Véhicules lourds** : 6/9 et 150°. Anomalie du champ → la SAAQ exige un champ **binoculaire** (Esterman ou Goldmann III/4e) signé.",
         "**Glaucome et permis** : pas de suspension automatique ; restriction de conduite de nuit possible ; le médecin peut recommander l’arrêt.",
