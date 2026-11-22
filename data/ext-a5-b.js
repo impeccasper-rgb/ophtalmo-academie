@@ -6,12 +6,12 @@ G.OPH.A = G.OPH.A || {};
 G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   {
     id: "occlusions-retiniennes", order: 10, group: "retine",
-    card: {
-      lead: "Occlusion artérielle (OACR, OBAR) : AVC de l’œil, la rétine meurt en heures. Occlusion veineuse (OVCR, OBVR) : hémorragies, œdème maculaire, parfois ischémie.",
+    card: { nk: 2,
+      lead: "Occlusion artérielle : AVC de l’œil. Occlusion veineuse : hémorragies, œdème maculaire, parfois ischémie.",
       keys: [
-        "OACR : rétine pâle, **tache rouge cerise** : urgence AVC immédiate.",
-        "OACR à 50 ans ou plus : VS, CRP, plaquettes (artérite).",
-        "OVCR : hémorragies dans les 4 quadrants, veines dilatées, papille gonflée.",
+        "OACR : **tache rouge cerise** : urgence AVC.",
+        "OACR ≥ 50 ans : VS, CRP (artérite).",
+        "OVCR : hémorragies 4 quadrants, veines dilatées.",
         "OVCR ischémique : gonioscopie ≈ mensuelle (glaucome des 90 jours)."
       ],
       ask: { q: "Pourquoi la fovéa reste-t-elle rouge dans une OACR ?", a: "La fovéa n’a ni couches internes ni vaisseaux rétiniens : elle reste transparente et laisse voir la choroïde rouge, alors que la rétine interne autour, ischémique, blanchit." }
@@ -44,15 +44,15 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "retinopathie-hypertensive", order: 11, group: "retine",
-    card: {
-      lead: "L’hypertension chronique rétrécit les artérioles ; une poussée sévère fait fuir sang et lipides. Papille gonflée en plus : hypertension maligne, urgence médicale.",
+    card: { nk: 2,
+      lead: "L’HTA rétrécit les artérioles ; une poussée fait fuir sang et lipides. Papille gonflée : urgence.",
       keys: [
         "Artérioles fines, croisements artérioveineux pathologiques.",
         "Hémorragies en flammèches, nodules cotonneux, exsudats durs.",
         "Signes nouveaux : prendre la TA sur place.",
         "Œdème papillaire + TA très élevée : urgence immédiate, baisse graduelle."
       ],
-      ask: { q: "Devant des nodules cotonneux et des hémorragies en flammèches chez un homme de 45 ans, que fais-tu avant de parler de l’œil ?", a: "Je prends la TA et je regarde la papille : TA très élevée avec papille gonflée = hypertension maligne, envoi immédiat à l’urgence. Si la TA est normale, je cherche un diabète, un VIH ou une maladie systémique." }
+      ask: { q: "Nodules cotonneux à 45 ans : premier geste ?", a: "Je prends la TA et je regarde la papille : TA très élevée avec papille gonflée = hypertension maligne, envoi immédiat à l’urgence. Si la TA est normale, je cherche un diabète, un VIH ou une maladie systémique." }
     },
     title: "Rétinopathie hypertensive et hypertension maligne",
     en: "Hypertensive retinopathy / malignant hypertension",
@@ -80,15 +80,15 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "macula-chirurgicale", order: 12, group: "retine",
-    card: {
-      lead: "Macula plissée (membrane épirétinienne), percée (trou maculaire) ou soulevée par du liquide (CRSC) : vision centrale floue et déformée ; l’OCT tranche.",
+    card: { nk: 2,
+      lead: "Macula plissée, percée ou soulevée (CRSC) : vision centrale déformée ; l’OCT tranche.",
       keys: [
         "**Métamorphopsies** : grille d’Amsler, un œil à la fois.",
-        "Trou de pleine épaisseur récent : rétine en quelques semaines.",
-        "CRSC : inventaire de TOUS les stéroïdes (gouttes, crèmes, inhalateurs, nasal).",
+        "Trou maculaire récent : rétine en quelques semaines.",
+        "CRSC : chercher TOUS les stéroïdes.",
         "Membrane épirétinienne : fausse l’OCT des cellules ganglionnaires (green disease)."
       ],
-      ask: { q: "Homme de 40 ans sous prednisolone pour une kératite herpétique stromale : lignes ondulées d’un œil. Que suspectes-tu ?", a: "Une CRSC favorisée par le corticostéroïde : je la confirme à l’OCT maculaire (liquide sous la rétine), je planifie une réduction prudente du stéroïde sous couverture antivirale et je réfère en rétine si le liquide persiste. Je vérifie aussi la PIO (réponse cortisonique)." }
+      ask: { q: "Sous prednisolone, lignes ondulées d’un œil : ton hypothèse ?", a: "Une CRSC favorisée par le corticostéroïde : je la confirme à l’OCT maculaire (liquide sous la rétine), je planifie une réduction prudente du stéroïde sous couverture antivirale et je réfère en rétine si le liquide persiste. Je vérifie aussi la PIO (réponse cortisonique)." }
     },
     title: "Membrane épirétinienne, trous maculaires et CRSC",
     en: "Epiretinal membrane, macular holes, central serous chorioretinopathy",
@@ -117,15 +117,15 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "peripherie-vitre", order: 13, group: "retine",
-    card: {
-      lead: "Le vitré se décolle avec l’âge (DPV) et peut déchirer une rétine fragile. Palissade : zone à risque ; schisis et hyalose : bénins.",
+    card: { nk: 2,
+      lead: "Le vitré se décolle avec l’âge et peut déchirer une rétine fragile.",
       keys: [
         "**Anneau de Weiss** devant la papille : preuve d’un DPV.",
-        "Nouveaux flashs ou corps flottants : périphérie dilatée sans délai.",
+        "Nouveaux flashs ou mouches : périphérie dilatée.",
         "Flashs + rideau ou baisse de vision : rétine le jour même.",
         "Avant la pilocarpine chez un myope : examiner la périphérie."
       ],
-      ask: { q: "Pourquoi examiner la périphérie avant la pilocarpine chez un jeune myope ?", a: "La pilocarpine contracte le muscle ciliaire, qui tire sur la base du vitré et la rétine périphérique : une palissade ou une déchirure préexistante peut évoluer en décollement de rétine. Je dilate, j’examine la périphérie et j’enseigne les symptômes d’alarme (flashs, corps flottants, rideau)." }
+      ask: { q: "Jeune myope : pourquoi la périphérie avant la pilocarpine ?", a: "La pilocarpine contracte le muscle ciliaire, qui tire sur la base du vitré et la rétine périphérique : une palissade ou une déchirure préexistante peut évoluer en décollement de rétine. Je dilate, j’examine la périphérie et j’enseigne les symptômes d’alarme (flashs, corps flottants, rideau)." }
     },
     title: "Périphérie et vitré : palissade, rétinoschisis, anneau de Weiss, hyalose astéroïde",
     en: "Lattice degeneration, retinoschisis, Weiss ring (PVD), asteroid hyalosis",
@@ -154,12 +154,12 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "inflammation-infection", order: 14, group: "retine",
-    card: {
-      lead: "L’uvéite enflamme l’iris, le corps ciliaire ou la choroïde. Certaines infections, dont l’**endophtalmie**, détruisent la vision en heures : traitement le jour même.",
+    card: { nk: 2,
+      lead: "L’uvéite enflamme l’uvée. L’**endophtalmie** détruit la vision en heures : traitement le jour même.",
       keys: [
         "Uvéite antérieure : cellules et flare en CA, synéchies postérieures.",
-        "Cycloplégique + stéroïde topique, infection exclue ; PIO à chaque visite.",
-        "Endophtalmie : douleur, hypopion, vitrite ; ponction-injection le jour même.",
+        "Cycloplégique + stéroïde, infection exclue ; PIO.",
+        "Endophtalmie : douleur, hypopion : ponction le jour même.",
         "Vancomycine 1 mg/0,1 mL + ceftazidime 2,25 mg/0,1 mL intravitréennes."
       ],
       ask: { q: "Pourquoi donne-t-on un cycloplégique dans une uvéite antérieure ?", a: "Il relâche le muscle ciliaire (moins de douleur) et dilate la pupille, ce qui éloigne l’iris du cristallin et empêche les synéchies postérieures. Sans lui, des synéchies sur 360° peuvent créer un iris bombé et une fermeture secondaire de l’angle." }
@@ -192,14 +192,14 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   {
     id: "papille-oedeme", order: 15, group: "nerf",
     card: {
-      lead: "Une papille gonflée n’est jamais glaucomateuse. Distinguer vrai œdème et pseudo-œdème (drusen), puis repérer ce qui exige imagerie ou stéroïdes le jour même.",
+      lead: "Papille gonflée : jamais un glaucome. Vrai œdème ou drusen ? Puis imagerie ou stéroïdes le jour même.",
       keys: [
-        "Vrai œdème : vaisseaux voilés au bord, hémorragies en flammèches.",
-        "Bilatéral : TA, puis neuro-imagerie le jour même, avant la ponction lombaire.",
-        "NOIA à 50 ans ou plus : éliminer l’artérite (VS, CRP, plaquettes).",
+        "Vrai œdème : vaisseaux voilés au bord.",
+        "Bilatéral : TA, puis imagerie le jour même.",
+        "NOIA ≥ 50 ans : VS, CRP (artérite).",
         "Drusen papillaires : confirmer (autofluorescence, OCT, B-scan) avant de rassurer."
       ],
-      ask: { q: "Comment distingues-tu au fond d’œil un vrai œdème papillaire d’un pseudo-œdème ?", a: "Le vrai œdème voile les vaisseaux au bord de la papille et s’accompagne souvent d’hyperémie, d’hémorragies en flammèches et de nodules cotonneux. Le pseudo-œdème des drusen garde des vaisseaux nets, un contour bosselé avec des corps réfringents et pas d’hémorragie ; l’autofluorescence, l’OCT ou le B-scan le confirment." }
+      ask: { q: "Vrai œdème ou pseudo-œdème : comment trancher ?", a: "Le vrai œdème voile les vaisseaux au bord de la papille et s’accompagne souvent d’hyperémie, d’hémorragies en flammèches et de nodules cotonneux. Le pseudo-œdème des drusen garde des vaisseaux nets, un contour bosselé avec des corps réfringents et pas d’hémorragie ; l’autofluorescence, l’OCT ou le B-scan le confirment." }
     },
     title: "Papille gonflée : œdème papillaire, NOIA, drusen, neurorétinite",
     en: "Swollen optic disc: papilledema, NAION, optic disc drusen, neuroretinitis",
@@ -229,15 +229,15 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "pupilles-neuro", order: 16, group: "neuro",
-    card: {
-      lead: "Une anisocorie est souvent normale, mais peut révéler un Horner. Une hémianopsie homonyme signe une lésion cérébrale, pas un glaucome.",
+    card: { nk: 2,
+      lead: "Anisocorie souvent normale, parfois Horner. Hémianopsie homonyme : lésion cérébrale.",
       keys: [
-        "Plus marquée au noir : Horner ; à la lumière : grande pupille anormale.",
-        "Grande pupille + ptose ou diplopie : III par anévrisme, imagerie le jour même.",
-        "Horner aigu douloureux : dissection carotidienne, imagerie le jour même.",
+        "Pire au noir : Horner ; à la lumière : grande pupille.",
+        "Grande pupille + ptose : III, imagerie le jour même.",
+        "Horner douloureux : dissection, imagerie le jour même.",
         "Défaut limité par le méridien **vertical** : imagerie cérébrale urgente."
       ],
-      ask: { q: "Comment le test à l’apraclonidine confirme-t-il un syndrome de Horner ?", a: "La pupille privée de son innervation sympathique devient hypersensible (hypersensibilité de dénervation) : l’apraclonidine, agoniste alpha faible presque sans effet sur une pupille normale, la dilate. L’anisocorie s’inverse, la petite pupille devenant la plus grande, et la ptose diminue." }
+      ask: { q: "Horner : que montre l’apraclonidine ?", a: "La pupille privée de son innervation sympathique devient hypersensible (hypersensibilité de dénervation) : l’apraclonidine, agoniste alpha faible presque sans effet sur une pupille normale, la dilate. L’anisocorie s’inverse, la petite pupille devenant la plus grande, et la ptose diminue." }
     },
     title: "Pupilles et voies visuelles : anisocorie, Horner, hémianopsie homonyme",
     en: "Anisocoria, Horner syndrome, homonymous hemianopia",
@@ -266,15 +266,15 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "tumeurs-toxicite-trauma", order: 17, group: "retine",
-    card: {
-      lead: "Le nævus choroïdien est fréquent et bénin, mais il faut repérer le mélanome. À connaître aussi : toxicité de l’hydroxychloroquine et commotio retinae.",
+    card: { nk: 2,
+      lead: "Nævus choroïdien : fréquent, bénin, mais repère le mélanome.",
       keys: [
         "Nævus : gris ardoise, plat (< 2 mm), drusen en surface.",
-        "Mélanome : > 2 mm, liquide, symptômes, **pigment orange**, creux acoustique.",
-        "Hydroxychloroquine ≤ 5 mg/kg/jour (poids réel) ; dépistage annuel après 5 ans.",
+        "Mélanome : > 2 mm, liquide, **pigment orange**.",
+        "Hydroxychloroquine ≤ 5 mg/kg/j ; dépistage annuel après 5 ans.",
         "Après un coup : périphérie dilatée et gonioscopie (récession de l’angle)."
       ],
-      ask: { q: "Quels signes d’une lésion pigmentée de la choroïde te font penser mélanome plutôt que nævus ?", a: "Épaisseur > 2 mm, liquide sous-rétinien, symptômes, pigment orange, bord à 3 mm ou moins de la papille, creux acoustique à l’échographie, absence de halo et de drusen. Plus ces signes s’additionnent, plus le risque de croissance est grand : je réfère en oncologie oculaire." }
+      ask: { q: "Nævus ou mélanome : quels signes ?", a: "Épaisseur > 2 mm, liquide sous-rétinien, symptômes, pigment orange, bord à 3 mm ou moins de la papille, creux acoustique à l’échographie, absence de halo et de drusen. Plus ces signes s’additionnent, plus le risque de croissance est grand : je réfère en oncologie oculaire." }
     },
     title: "Nævus ou mélanome, toxicité de l’hydroxychloroquine, commotio retinae",
     en: "Choroidal nevus vs melanoma, hydroxychloroquine toxicity, commotio retinae",

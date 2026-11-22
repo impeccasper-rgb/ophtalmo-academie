@@ -185,7 +185,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-herpes": {
   ],
   cat: {
     algo: [
-      { q: "One-sided vesicular V1 rash?", yes: "Zoster: valacyclovir 1 g TID × 7 days; exam with IOP.", no: "", yesGo: 1, noGo: 1 },
+      { q: "One-sided vesicular V1 rash?", yes: "Zoster: valacyclovir 1 g TID × 7 days, as soon as possible (< 72 h).", no: "", yesGo: 1, noGo: 1 },
       { q: "Dendrite with terminal bulbs or geographic ulcer?", yes: "Epithelial HSV: antiviral ± debridement; stop any steroid.", no: "", yesGo: 3, noGo: 2 },
       { q: "Stromal haze, disciform edema or precipitates?", yes: "Immune form: slow steroid under oral antiviral.", no: "Watch; review if redness or vision loss.", yesGo: 3 },
       { q: "Recurrences, stromal disease or graft?", yes: "Long-term oral prophylaxis (HEDS); zoster: discuss valacyclovir 1 year.", no: "Treat each episode." }
@@ -227,11 +227,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-herpes": {
   ],
   treatment: {
     first: [
-      "**You (first line)**: dendrite: acyclovir 400 mg 5×/day or valacyclovir 500 mg TID; zoster: valacyclovir 1 g TID.",
+      "**You (first line)**: dendrite: acyclovir 400 mg 5×/day or valacyclovir 500 mg TID; zoster: valacyclovir 1 g TID × 7 days, ideally within 72 h of rash onset.",
       "**Ophthalmologist**: steroid under antiviral for stromal disease; prophylaxis (acyclovir 400 mg BID)."
     ],
     refer: ["Within 24 h for any herpetic keratitis — confirm the form and check IOP.", "Same day for zoster with a red eye, vision loss or Hutchinson sign."],
-    pitfall: ["Prednisolone on a dendrite: geographic ulcer.", "Trifluridine beyond 14–21 days: toxic to the epithelium."],
+    pitfall: ["Prednisolone on a dendrite: geographic ulcer.", "Zoster seen after 72 h: still treat if vesicles are recent or the eye is involved.", "Trifluridine beyond 14–21 days: toxic to the epithelium."],
     qc: ["Shingrix recommended from age 50 (NACI); public coverage to check."]
   },
   pearls: [
@@ -1059,7 +1059,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-brulure": {
     ],
     tests: [
       { test: "pH paper in the inferior fornix", when: "On arrival without delaying irrigation, then 5–10 min after it ends", read: "Target 7.0–7.5; otherwise resume irrigation and look for particles." },
-      { test: "Roper-Hall (or Dua) classification", when: "After irrigation", read: "I: clear cornea, no ischemia; II: iris visible, ischemia < 1/3 of the limbus; III: iris hazy, 1/3 to 1/2; IV: opaque cornea, > 1/2. Dua: clock hours of limbus and % of conjunctiva involved." },
+      { test: "Roper-Hall (or Dua) classification", when: "After irrigation", read: "I: clear cornea, no ischemia; II: iris visible, ischemia < 1/3 of the limbus; III: iris hazy, 1/3 to 1/2; IV: opaque cornea, > 1/2. Dua (I–VI): clock hours of limbus and % of conjunctiva involved; name the scale, the numbers differ." },
       { test: "Identification of the agent", when: "During irrigation", read: "Label, safety data sheet (SDS), Centre antipoison du Québec (poison control): alkali, acid, hydrofluoric." }
     ]
   },
@@ -1069,7 +1069,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-brulure": {
     { dx: "Associated penetrating injury", clue: "Positive Seidel (aqueous leak), flat chamber, distorted pupil: protect the globe." }
   ],
   redFlags: [
-    "White limbus or opaque cornea (grades III–IV): emergency ophthalmology",
+    "White limbus or hazy cornea (Roper-Hall II–IV): ophthalmology immediately",
     "pH that rises again: particles retained in the fornices",
     "Non-healing defect, thinning, raised intraocular pressure (IOP)"
   ],
@@ -1077,7 +1077,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-brulure": {
     algo: [
       { q: "Chemical exposure?", yes: "Irrigate at once, before history and acuity.", no: "Assess as a painful red eye.", yesGo: 1 },
       { q: "pH 7.0–7.5, 5–10 min after irrigation?", yes: "Exam: acuity, fluorescein, limbus, IOP, eversion.", no: "Irrigate more, remove particles, then examine.", yesGo: 2, noGo: 2 },
-      { q: "White limbus or opaque cornea (grade II–IV)?", yes: "Ophthalmology immediately: steroid, doxycycline, amniotic membrane.", no: "Grade I: antibiotic, lubricants; review in 1–2 days.", yesGo: 3 },
+      { q: "White limbus or hazy cornea (Roper-Hall ≥ II)?", yes: "Ophthalmology immediately: steroid, doxycycline, amniotic membrane.", no: "Grade I: antibiotic, lubricants; review in 1–2 days.", yesGo: 3 },
       { q: "Epithelium closed by day 10–14?", yes: "Taper the steroid quickly.", no: "Reduce the steroid; amniotic membrane, ± tarsorrhaphy." }
     ],
     phases: [
@@ -1528,7 +1528,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-depots": {
     title: "Normal cornea vs band keratopathy",
     normal: { caption: "Normal cornea: transparent, sharp iris detail." },
     patho: {
-      caption: "Band keratopathy; hyperparathyroidism per the source caption.",
+      caption: "Band keratopathy in hyperparathyroidism.",
       reveal: [
         "Horizontal white-gray band in the inferior half of the cornea, in front of the pupil",
         "Clear superior cornea, in the area covered by the lid",
@@ -1801,3 +1801,24 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-greffe": {
     }
   }
 } });
+
+// Tree vignettes (cat.vignette): one short case shown above the decision tree
+(function () {
+  var V = {
+    "c-secheresse": "A 58-year-old woman with burning, gritty eyes by evening, worse on screens. Thickened lid margins, fast tear break-up, inferior fluorescein dots.",
+    "c-bacterienne": "A 24-year-old man who sleeps in monthly contact lenses. Right eye red and painful since yesterday. A 3 mm white infiltrate, overlying epithelial defect, anterior chamber reaction.",
+    "c-atypiques": "A 31-year-old woman who rinses her lenses in tap water. Severe pain for 3 weeks despite moxifloxacin; ring infiltrate, negative bacterial cultures.",
+    "c-herpes": "A 45-year-old man with a red, watery left eye and mildly blurred vision. Fluorescein shows a branching lesion with terminal bulbs. Reduced corneal sensation, no skin rash.",
+    "c-keratocone": "A 15-year-old allergic boy who rubs his eyes a lot. His myopia and astigmatism change at every visit; glasses correct poorly. Topography: inferior steepening.",
+    "c-fuchs": "A 68-year-old woman: blurred vision in the morning, better in the afternoon, halos around lights. Central guttae in both eyes, slightly thick cornea on pachymetry.",
+    "c-erosion": "A 40-year-old man woken by sharp right-eye pain, for the third time this month. Scratched by his child’s fingernail 6 months ago.",
+    "c-pterygion": "A 52-year-old roofer with chronic right-eye irritation. A pink triangular nasal membrane extends 3 mm onto the cornea; new astigmatism.",
+    "c-greffe": "A 62-year-old woman, penetrating keratoplasty 14 months ago; she stopped her steroid drops. Redness, photophobia and falling vision for 3 days.",
+    "c-brulure": "A 35-year-old man splashed with drain cleaner in the left eye 10 minutes ago. He arrives at the ER with the eye shut, in severe pain, without having rinsed.",
+    "c-dystrophies": "A 34-year-old woman with gradually worsening glare in both eyes; her mother had a corneal graft. Small symmetric white stromal opacities, no vessels, a white painless eye.",
+    "c-depots": "A 28-year-old man followed for tremor and abnormal liver tests. A golden-brown ring at the periphery of both corneas, best seen at the slit lamp.",
+    "c-surface": "A 22-year-old student: red, watery right eye for 2 days, then the other eye. Her roommate had the same. Follicles, a preauricular node, normal vision.",
+    "c-peripherie": "A 66-year-old woman with rheumatoid arthritis. Very painful right eye, deep redness. A crescent ulcer hugging the limbus, thinned stroma, a staining defect."
+  };
+  Object.keys(V).forEach(function (id) { var f = G.OPH_EN.fiches[id] = G.OPH_EN.fiches[id] || {}; f.cat = f.cat || {}; f.cat.vignette = V[id]; });
+})();

@@ -71,6 +71,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Guttae et cataracte prévue : chercher l’œdème infraclinique avant d’opérer"
   ],
   cat: {
+    vignette: "Femme de 68 ans : vision floue le matin, meilleure l’après-midi, halos autour des lumières. Guttae centrales aux deux yeux, cornée un peu épaissie à la pachymétrie.",
     algo: [
       { q: "Guttae centrales aux deux yeux ?", yes: "Fuchs : spéculaire, pachymétrie, Scheimpflug.", no: "Autre œdème : chirurgie, PIO, endothélite, ICE.", yesGo: 1 },
       { q: "Cataracte significative ?", yes: "", no: "", yesGo: 2, noGo: 3 },
@@ -231,6 +232,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Lentilles ou végétal : risque de Pseudomonas ou de champignon"
   ],
   cat: {
+    vignette: "Homme de 40 ans réveillé par une douleur vive à l’œil droit, pour la 3e fois ce mois-ci. Égratigné par l’ongle de son enfant il y a 6 mois.",
     algo: [
       { q: "Infiltrat, hypopyon ou réaction de chambre ?", yes: "Kératite infectieuse : ophtalmologie le jour même.", no: "Abrasion : éverser, retirer tout corps étranger.", noGo: 1 },
       { q: "Projection rapide (meulage, marteau) ?", yes: "TDM pour exclure un corps intraoculaire, pas d’IRM.", no: "", yesGo: 2, noGo: 2 },
@@ -381,6 +383,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Siège atypique, patient jeune immunosupprimé, récidive rapide"
   ],
   cat: {
+    vignette: "Couvreur de 52 ans, irritation chronique de l’œil droit. Membrane rose triangulaire du côté nasal qui empiète de 3 mm sur la cornée ; astigmatisme récent.",
     algo: [
       { q: "Lésion qui franchit le limbe sur la cornée ?", yes: "", no: "Confinée à la conjonctive : pinguécula ; protection UV.", yesGo: 1 },
       { q: "Gélatineux, leucoplasie, vaisseaux nourriciers ou pigment ?", yes: "OSSN ou mélanome possible : biopsie, oncologie oculaire.", no: "Ptérygion : mesurer l’envahissement cornéen.", noGo: 2 },
@@ -534,6 +537,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Trauma d’une PK, PIO élevée ou greffon de DMEK décollé"
   ],
   cat: {
+    vignette: "Femme de 62 ans, greffe de cornée transfixiante il y a 14 mois ; elle a cessé ses gouttes de stéroïde. Rougeur, photophobie et vision qui baisse depuis 3 jours.",
     algo: [
       { q: "Greffé avec rougeur, photophobie, vision ↓ ou douleur ?", yes: "Ophtalmologiste le jour même.", no: "Suivi habituel ; gouttes prises tous les jours.", yesGo: 1 },
       { q: "Infiltrat ou défaut, surtout près d’une suture ?", yes: "Infection : cultures, antibiotiques, retrait de la suture.", no: "", noGo: 2 },
@@ -668,7 +672,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     tests: [
       { test: "Papier pH dans le cul-de-sac inférieur", when: "À l’arrivée sans retarder l’irrigation, puis 5–10 min après la fin", read: "Cible 7,0–7,5 ; sinon, reprendre l’irrigation et chercher des particules." },
-      { test: "Classification de Roper-Hall (ou de Dua)", when: "Après l’irrigation", read: "I : cornée claire, pas d’ischémie ; II : iris visible, ischémie < 1/3 du limbe ; III : iris flou, 1/3 à 1/2 ; IV : cornée opaque, > 1/2. Dua : heures de limbe et % de conjonctive atteints." },
+      { test: "Classification de Roper-Hall (ou de Dua)", when: "Après l’irrigation", read: "I : cornée claire, pas d’ischémie ; II : iris visible, ischémie < 1/3 du limbe ; III : iris flou, 1/3 à 1/2 ; IV : cornée opaque, > 1/2. Dua (I–VI) : heures de limbe et % de conjonctive atteints ; préciser l’échelle, car les numéros diffèrent." },
       { test: "Identification du produit", when: "Pendant l’irrigation", read: "Étiquette, fiche de données de sécurité (FDS), Centre antipoison du Québec : base, acide, fluorhydrique." }
     ]
   },
@@ -678,15 +682,16 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     { dx: "Plaie perforante associée", clue: "Seidel positif (fuite d’humeur aqueuse), chambre plate, pupille déformée : protéger le globe." }
   ],
   redFlags: [
-    "Limbe blanc ou cornée opaque (grades III–IV) : ophtalmologiste d’urgence",
+    "Limbe blanc ou cornée voilée (Roper-Hall II–IV) : ophtalmologiste immédiatement",
     "pH qui remonte : particules retenues dans les culs-de-sac",
     "Défaut qui ne ferme pas, amincissement, pression intraoculaire (PIO) élevée"
   ],
   cat: {
+    vignette: "Homme de 35 ans, éclaboussure de débouche-tuyaux dans l’œil gauche il y a 10 minutes. Il arrive à l’urgence l’œil fermé, très souffrant, sans avoir rincé.",
     algo: [
       { q: "Exposition chimique ?", yes: "Irriguer tout de suite, avant l’histoire et l’acuité.", no: "Évaluer comme un œil rouge douloureux.", yesGo: 1 },
       { q: "pH 7,0–7,5, 5–10 min après l’irrigation ?", yes: "Examen : acuité, fluorescéine, limbe, PIO, éversion.", no: "Irriguer encore, retirer les particules, puis examiner.", yesGo: 2, noGo: 2 },
-      { q: "Limbe blanc ou cornée opaque (grade II–IV) ?", yes: "Ophtalmologie immédiatement : stéroïde, doxycycline, membrane amniotique.", no: "Grade I : antibiotique, lubrifiants ; revoir en 1–2 jours.", yesGo: 3 },
+      { q: "Limbe blanc ou cornée voilée (Roper-Hall ≥ II) ?", yes: "Ophtalmologie immédiatement : stéroïde, doxycycline, membrane amniotique.", no: "Grade I : antibiotique, lubrifiants ; revoir en 1–2 jours.", yesGo: 3 },
       { q: "Épithélium refermé vers le jour 10–14 ?", yes: "Sevrer vite le stéroïde.", no: "Réduire le stéroïde ; membrane amniotique, ± tarsorraphie." }
     ],
     phases: [

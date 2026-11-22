@@ -988,3 +988,4 @@ a { text-underline-offset: .18em; }
 .mech-dots li.on { background: var(--cobalt); border-color: var(--cobalt); border-radius: 2px; transform: rotate(45deg); }
 @media (prefers-reduced-motion: no-preference) { html:not(.no-motion) .mech-s.mech-in { animation: mech-in .32s ease-out; } }
 @keyframes mech-in { from { opacity: .25; } to { opacity: 1; } }
+.mech-fo { font: 600 10.5px/1.2 var(--font-body); color: var(--ink); } .mech-pre { margin-bottom: 10px; }

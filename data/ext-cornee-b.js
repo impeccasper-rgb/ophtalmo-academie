@@ -79,6 +79,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Nouveau-né, ou ulcère en bouclier : traitement le jour même"
   ],
   cat: {
+    vignette: "Étudiante de 22 ans : œil droit rouge et larmoyant depuis 2 jours, puis l’autre œil. Sa colocataire avait la même chose. Follicules, ganglion préauriculaire, vision normale.",
     algo: [
       { q: "Douleur, photophobie, baisse de vision ou cornée atteinte ?", yes: "Fluorescéine ; ophtalmologie le jour même.", no: "", noGo: 1 },
       { q: "Nouveau-né, ou pus abondant en quelques heures ?", yes: "Gram, culture, TAAN ; ceftriaxone si gonocoque ; ophtalmo le jour même.", no: "", noGo: 2 },
@@ -237,6 +238,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Descémétocèle ou Seidel positif : coquille, aucune pression, aviser le patron"
   ],
   cat: {
+    vignette: "Femme de 66 ans atteinte de polyarthrite rhumatoïde. Œil droit très douloureux, rougeur profonde. Ulcère en croissant collé au limbe, stroma aminci, défaut qui prend la fluorescéine.",
     algo: [
       { q: "Croissant limbique avec défaut et amincissement ?", yes: "PUK : bilan, rhumatologie et ophtalmo le jour même.", no: "", yesGo: 1, noGo: 2 },
       { q: "Descémétocèle ou perforation ?", yes: "Coquille ; colle si ≤ 2–3 mm, sinon greffe tectonique.", no: "Corticostéroïdes systémiques ; bilan négatif et ulcère surplombant : Mooren." },
@@ -503,7 +505,7 @@ G.OPH.cases = (G.OPH.cases || []).concat([
           { label: "Kétorolac topique pour la sclérite et la douleur, revoir dans 2 semaines", correct: false, note: "AINS topique : risque de fonte cornéenne ; délai beaucoup trop long." },
           { label: "Larmes artificielles et compresses chaudes, revoir dans 4 semaines", correct: false, note: "Traitement de blépharite : la fonte progresserait." }
         ] },
-      { kind: "info", text: "Jour 5 : la douleur a diminué sous prednisone, mais l’amincissement progresse : il reste environ 20 % d’épaisseur sur 2 mm, avec une petite descémétocèle qui bombe ; Seidel négatif. La rhumatologue apprend que la patiente a cessé le méthotrexate depuis 3 mois, soupçonne une vasculite rhumatoïde et planifie un agent plus puissant. La photo montre un cas semblable chez un autre patient (selon la source : fonte périphérique avec inflammation sur polyarthrite rhumatoïde).", figure: { type: "photo", id: "OPH-377" } },
+      { kind: "info", text: "Jour 5 : la douleur a diminué sous prednisone, mais l’amincissement progresse : il reste environ 20 % d’épaisseur sur 2 mm, avec une petite descémétocèle qui bombe ; Seidel négatif. La rhumatologue apprend que la patiente a cessé le méthotrexate depuis 3 mois, soupçonne une vasculite rhumatoïde et planifie un agent plus puissant. La photo montre un cas semblable chez un autre patient (fonte périphérique avec inflammation sur polyarthrite rhumatoïde).", figure: { type: "photo", id: "OPH-377" } },
       { kind: "choice", prompt: "Que fais-tu pour la cornée aujourd’hui ?",
         options: [
           { label: "Pansement compressif 48 h pour aider l’épithélium à fermer", correct: false, note: "Toute pression sur une descémétocèle peut la perforer." },

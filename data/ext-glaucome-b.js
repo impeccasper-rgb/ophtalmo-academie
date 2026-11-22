@@ -79,6 +79,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Angiome plan de V1 : PIO et papilles dès la naissance, puis régulièrement"
   ],
   cat: {
+    vignette: "Nourrisson de 4 mois qui larmoie, fuit la lumière et plisse les yeux. Ses parents trouvent ses yeux « grands et beaux ». Cornées larges et un peu troubles.",
     algo: [
       { q: "Nourrisson ou jeune enfant ?", yes: "", no: "", yesGo: 1, noGo: 4 },
       { q: "Triade, cornée large ou trouble ?", yes: "Référer dans les 24 h : examen sous anesthésie ; gouttes en pont.", no: "Larmoiement, cornée claire : obstruction lacrymonasale probable.", yesGo: 2 },

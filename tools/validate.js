@@ -29,6 +29,7 @@ const PHASES = ['observation','medical','laser','chirurgie','suivi','escalade'];
 const QTYPES = ['anatomie','physiopathologie','diagnostic','image','cat'];
 
 const FIG = {
+  mechcap: { id: v => ['b-familles', 'qc-path', 'b-outils', 'c-outils', 'pio', 'pupille', 'av'].includes(v) }, // static schematics in src/figures-mech.js
   eye: { highlight: v => Array.isArray(v) && v.every(x => ANAT_IDS.includes(x)) },
   cornea: { highlight: v => Array.isArray(v) && v.every(x => CORNEA_LAYERS.includes(x)), edema: v => ['none','stromal','epithelial','both'].includes(v), guttae: b => typeof b === 'boolean', scar: b => typeof b === 'boolean' },
   gonio: { grade: v => Number.isInteger(v) && v >= 0 && v <= 4, pas: b => typeof b === 'boolean', pigment: v => ['light','heavy','sampaolesi'].includes(v), nv: b => typeof b === 'boolean', recession: b => typeof b === 'boolean' },

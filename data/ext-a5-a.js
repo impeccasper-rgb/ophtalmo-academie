@@ -6,15 +6,15 @@ G.OPH.A = G.OPH.A || {};
 G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   {
     id: "cataracte-nucleaire", order: 1, group: "cristallin",
-    card: {
-      lead: "Avec l’âge, le noyau du cristallin jaunit et durcit. Un noyau dur menace l’endothélium à la phaco, et le cristallin épaissi rétrécit l’angle.",
+    card: { nk: 2,
+      lead: "Le noyau jaunit et durcit avec l’âge ; le cristallin épaissi rétrécit l’angle.",
       keys: [
-        "Fente : noyau jaune puis brun, plus opaque que le cortex.",
+        "Noyau jaune puis brun à la fente.",
         "Myopisation : le presbyte relit sans lunettes (**seconde vue**).",
         "Reflet rouge terni ; contraste et couleurs diminués.",
         "On opère pour la gêne fonctionnelle, pas pour le grade."
       ],
-      ask: { q: "Pourquoi ton patient de 75 ans dit-il qu’il lit mieux sans lunettes depuis quelques mois ?", a: "La sclérose nucléaire augmente l’indice de réfraction du noyau : l’œil devient plus myope et le presbyte retrouve sa vision de près, la « seconde vue ». C’est un signe de cataracte nucléaire, pas une amélioration de l’œil." }
+      ask: { q: "Pourquoi lit-il mieux sans lunettes à 75 ans ?", a: "La sclérose nucléaire augmente l’indice de réfraction du noyau : l’œil devient plus myope et le presbyte retrouve sa vision de près, la « seconde vue ». C’est un signe de cataracte nucléaire, pas une amélioration de l’œil." }
     },
     title: "Sclérose nucléaire et cataracte nucléaire", en: "Nuclear sclerosis / nuclear cataract",
     urgency: "routine",
@@ -42,15 +42,15 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "cataracte-corticale-scp", order: 2, group: "cristallin",
-    card: {
-      lead: "La corticale forme des rayons blancs en périphérie ; la sous-capsulaire postérieure (SCP), petite plaque centrale, gêne beaucoup. La SCP est la cataracte des corticostéroïdes.",
+    card: { nk: 2,
+      lead: "Corticale : rayons blancs en périphérie. Sous-capsulaire postérieure (SCP) : plaque centrale, très gênante, typique des stéroïdes.",
       keys: [
-        "Voir en **rétroillumination** : opacités en ombre sur le reflet orangé.",
+        "Voir en **rétroillumination**.",
         "Corticale : rayons de la périphérie vers le centre.",
         "SCP : plaque granuleuse au centre de la face postérieure.",
         "SCP : chercher stéroïdes, diabète, uvéite ; mesurer la PIO."
       ],
-      ask: { q: "Pourquoi une SCP gêne-t-elle surtout de près et en plein soleil ?", a: "La plaque est centrale et postérieure. En lumière vive et pendant l’accommodation (myosis de la vision de près), la pupille se contracte et toute la lumière doit traverser la plaque." }
+      ask: { q: "Pourquoi une SCP gêne-t-elle en plein soleil ?", a: "La plaque est centrale et postérieure. En lumière vive et pendant l’accommodation (myosis de la vision de près), la pupille se contracte et toute la lumière doit traverser la plaque." }
     },
     title: "Cataractes corticale, sous-capsulaire postérieure, suturale et mixte", en: "Cortical, posterior subcapsular, sutural and mixed cataract",
     urgency: "routine",
@@ -114,14 +114,14 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   {
     id: "opacification-capsulaire", order: 4, group: "cristallin",
     card: {
-      lead: "Après une cataracte, des cellules repoussent et voilent la capsule derrière l’implant. Le laser YAG la traite en minutes, mais peut faire monter la PIO.",
+      lead: "La capsule se voile derrière l’implant. Le YAG la traite, mais peut monter la PIO.",
       keys: [
-        "Vision qui se voile des mois ou années après la chirurgie.",
-        "Rétroillumination : voile gris, fibrose ou perles d’Elschnig derrière l’implant.",
+        "Voile des mois ou années après chirurgie.",
+        "Rétroillumination : voile ou perles d’Elschnig.",
         "Exclure un œdème maculaire (OCT) avant la capsulotomie YAG.",
         "Glaucomateux : apraclonidine ou brimonidine, énergie minimale, PIO recontrôlée."
       ],
-      ask: { q: "Que fais-tu avant et après un YAG chez un patient avec glaucome avancé ?", a: "J’instille un alpha-agoniste avant ou juste après le laser, j’utilise l’énergie minimale et je remesure la PIO dans les heures qui suivent. Si un pic survient, j’ajuste le traitement et je revois le patient rapidement." }
+      ask: { q: "YAG et glaucome avancé : avant et après ?", a: "J’instille un alpha-agoniste avant ou juste après le laser, j’utilise l’énergie minimale et je remesure la PIO dans les heures qui suivent. Si un pic survient, j’ajuste le traitement et je revois le patient rapidement." }
     },
     title: "Opacification capsulaire postérieure", en: "Posterior capsule opacification (PCO)",
     urgency: "routine",
@@ -149,14 +149,14 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   {
     id: "bscan", order: 5, group: "echo",
     card: {
-      lead: "Échographie en coupe qui montre l’intérieur de l’œil quand le fond est invisible (cataracte blanche, hémorragie du vitré). Pas sur un globe ouvert.",
+      lead: "Échographie qui montre l’intérieur de l’œil quand le fond est invisible. Jamais sur globe ouvert.",
       keys: [
         "Sonde sur la paupière fermée ; marqueur = haut de l’image.",
-        "Gain élevé pour les échos faibles, bas pour comparer et mesurer.",
-        "Fine et très mobile = vitré ; épaisse, attachée au nerf = rétine.",
+        "Gain haut pour voir, bas pour comparer.",
+        "Fine, mobile = vitré ; attachée au nerf = rétine.",
         "Dôme lisse, épais, peu mobile = choroïde."
       ],
-      ask: { q: "Comment distingues-tu au B-scan un décollement postérieur du vitré, un décollement de rétine et un décollement choroïdien ?", a: "Le vitré décollé est fin, peu réfléchissant et très mobile. La rétine décollée est plus épaisse, très réfléchissante, attachée au nerf optique et à l’ora serrata, souvent en V. La choroïde décollée forme des dômes lisses et épais, peu mobiles, qui ne s’attachent pas au nerf optique." }
+      ask: { q: "Au B-scan : vitré, rétine ou choroïde décollés ?", a: "Le vitré décollé est fin, peu réfléchissant et très mobile. La rétine décollée est plus épaisse, très réfléchissante, attachée au nerf optique et à l’ora serrata, souvent en V. La choroïde décollée forme des dômes lisses et épais, peu mobiles, qui ne s’attachent pas au nerf optique." }
     },
     title: "Échographie B (B-scan) : technique et lecture", en: "B-scan ocular ultrasonography",
     urgency: "routine",
@@ -184,12 +184,12 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "decollement-retine", order: 6, group: "retine",
-    card: {
-      lead: "Une déchirure laisse passer le liquide sous la rétine (rhegmatogène), ou des membranes la tirent (tractionnel, diabète). Macula attachée : rétine le jour même.",
+    card: { nk: 2,
+      lead: "Une déchirure laisse passer le liquide sous la rétine. Macula attachée : rétine le jour même.",
       keys: [
-        "Éclairs, nouvelles mouches, puis rideau du côté opposé au décollement.",
+        "Éclairs, mouches, puis rideau.",
         "**Signe de Shafer** : poussière de tabac dans le vitré antérieur.",
-        "Rétine grise, soulevée, ondulée, mobile ; déchirure en fer à cheval.",
+        "Rétine grise, soulevée, mobile ; déchirure en fer à cheval.",
         "Macula décollée : AV effondrée ; référer aussi le jour même."
       ],
       ask: { q: "Qu’est-ce que le signe de Shafer et pourquoi le cherches-tu ?", a: "Ce sont des grains de pigment dans le vitré antérieur, vus à la fente derrière le cristallin. Ils viennent de l’épithélium pigmentaire libéré par une déchirure : chez un patient avec éclairs et mouches, ce signe impose de chercher une déchirure ou un décollement." }
@@ -220,15 +220,15 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "decollement-choroidien", order: 7, group: "retine",
-    card: {
-      lead: "Liquide ou sang entre choroïde et sclère, en gros dômes bruns. Complication typique après chirurgie du glaucome : séreux ou hémorragique change toute la conduite.",
+    card: { nk: 2,
+      lead: "Liquide ou sang sous la choroïde, après chirurgie du glaucome. Séreux ou hémorragique : tout change.",
       keys: [
-        "Dômes lisses, bruns, immobiles ; ora visible sans indentation.",
-        "Séreux : PIO basse, peu de douleur, après trabéculectomie ou fuite.",
-        "Hémorragique : douleur brutale, PIO haute, chambre plate : chirurgien d’urgence.",
+        "Dômes lisses, bruns, immobiles.",
+        "Séreux : PIO basse, peu de douleur.",
+        "Hémorragique : douleur brutale, PIO haute : urgence.",
         "B-scan : dômes non attachés au nerf ; noir = séreux, gris = sang."
       ],
-      ask: { q: "Après une trabéculectomie, PIO à 3 mmHg et dômes bruns en périphérie : séreux ou hémorragique ?", a: "PIO basse, peu de douleur et contenu anéchogène au B-scan évoquent un décollement séreux par hypotonie. Une hémorragie suprachoroïdienne donne plutôt une douleur brutale, une PIO élevée et un contenu échogène." }
+      ask: { q: "Post-trabéculectomie, PIO 3 mmHg, dômes bruns : séreux ?", a: "PIO basse, peu de douleur et contenu anéchogène au B-scan évoquent un décollement séreux par hypotonie. Une hémorragie suprachoroïdienne donne plutôt une douleur brutale, une PIO élevée et un contenu échogène." }
     },
     title: "Décollement choroïdien séreux et hémorragique", en: "Serous and hemorrhagic choroidal detachment",
     urgency: "urgent",
@@ -256,15 +256,15 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "dmla", order: 8, group: "retine",
-    card: {
-      lead: "Usure de la macula après 50 ans : drusen et atrophie (forme sèche) ou néovaisseaux qui saignent et fuient (forme humide) : la vision centrale peut chuter en quelques jours.",
+    card: { nk: 2,
+      lead: "Après 50 ans : drusen et atrophie (sèche) ou néovaisseaux qui fuient (humide), avec chute rapide.",
       keys: [
         "Drusen : points jaunes autour de la fovéa.",
-        "Humide : hémorragie ou liquide sous-rétinien, métamorphopsies récentes.",
+        "Humide : sang ou liquide sous la rétine.",
         "Métamorphopsie récente : rétine en quelques jours (anti-VEGF).",
         "Anti-VEGF répétés : surveiller la PIO du glaucomateux."
       ],
-      ask: { q: "Ton patient glaucomateux voit le cadre de sa porte ondulé depuis 4 jours. Que fais-tu ?", a: "Je teste chaque œil à la grille d’Amsler, je dilate et je fais un OCT maculaire. Une métamorphopsie récente évoque une DMLA néovasculaire : référence en rétine en quelques jours pour anti-VEGF, car le délai compte pour la vision finale." }
+      ask: { q: "Cadre de porte ondulé depuis 4 jours : que fais-tu ?", a: "Je teste chaque œil à la grille d’Amsler, je dilate et je fais un OCT maculaire. Une métamorphopsie récente évoque une DMLA néovasculaire : référence en rétine en quelques jours pour anti-VEGF, car le délai compte pour la vision finale." }
     },
     title: "Dégénérescence maculaire liée à l’âge (DMLA) sèche et néovasculaire", en: "Age-related macular degeneration (AMD), dry and neovascular",
     urgency: "rapide",
@@ -292,15 +292,15 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "retinopathie-diabetique", order: 9, group: "retine",
-    card: {
-      lead: "Les petits vaisseaux fuient et se bouchent ; l’ischémie libère du VEGF : néovaisseaux sur la rétine, l’iris et l’angle.",
+    card: { nk: 2,
+      lead: "Les capillaires fuient et se bouchent ; l’ischémie libère du VEGF : néovaisseaux.",
       keys: [
-        "Non proliférante : microanévrismes, hémorragies, exsudats durs, nodules cotonneux.",
-        "Sévère, règle **4-2-1** : hémorragies 4 quadrants, chapelet 2, IRMA 1.",
-        "Proliférante (NVD, NVE) : rétine en quelques jours (PRP, anti-VEGF).",
+        "Microanévrismes, hémorragies, exsudats, nodules cotonneux.",
+        "Sévère : règle **4-2-1**.",
+        "Proliférante : rétine en quelques jours.",
         "PIO élevée : iris avant dilatation et gonioscopie (néovaisseaux de l’angle)."
       ],
-      ask: { q: "Pourquoi fais-tu une gonioscopie chez un diabétique avec des NVD et une PIO à 26 mmHg ?", a: "Les néovaisseaux de l’angle peuvent apparaître avant ceux de l’iris visibles à la fente. Les voir tôt permet de traiter l’ischémie (PRP, anti-VEGF) avant que la membrane fibrovasculaire ne ferme l’angle de façon permanente." }
+      ask: { q: "NVD et PIO 26 mmHg : pourquoi la gonioscopie ?", a: "Les néovaisseaux de l’angle peuvent apparaître avant ceux de l’iris visibles à la fente. Les voir tôt permet de traiter l’ischémie (PRP, anti-VEGF) avant que la membrane fibrovasculaire ne ferme l’angle de façon permanente." }
     },
     title: "Rétinopathie diabétique et œdème maculaire diabétique", en: "Diabetic retinopathy and diabetic macular edema",
     urgency: "rapide",

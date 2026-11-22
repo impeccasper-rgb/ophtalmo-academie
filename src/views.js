@@ -297,11 +297,11 @@ function aItems(page) {
   return it;
 }
 /* default micro-fiche card (content editors: card = { lead, keys[3–4], ask: { q, a } }) */
-function aCardRest(card, scope) { var k = (card && card.keys || []).slice(3); return k.length ? '<ul class="blist">' + k.map(function (x) { return '<li>' + T(I18N.pick(x), scope) + '</li>'; }).join('') + '</ul>' : ''; }
+function aCardRest(card, scope) { var k = (card && card.keys || []).slice((card && card.nk) || 3); return k.length ? '<ul class="blist">' + k.map(function (x) { return '<li>' + T(I18N.pick(x), scope) + '</li>'; }).join('') + '</ul>' : ''; }
 function aCard(card, scope) {
   if (!card) return '';
   var c = I18N.pick(card.lead) ? card : card;
-  return '<p class="read a-lead">' + T(I18N.pick(c.lead), scope) + '</p>' + (c.keys && c.keys.length ? '<ul class="blist a-keys">' + c.keys.slice(0, 3).map(function (k) { return '<li>' + T(I18N.pick(k), scope) + '</li>'; }).join('') + '</ul>' : '') +
+  return '<p class="read a-lead">' + T(I18N.pick(c.lead), scope) + '</p>' + (c.keys && c.keys.length ? '<ul class="blist a-keys">' + c.keys.slice(0, c.nk || 3).map(function (k) { return '<li>' + T(I18N.pick(k), scope) + '</li>'; }).join('') + '</ul>' : '') +
     (c.ask && c.ask.q ? '<div class="pearls"><div class="pearl-card" role="button" tabindex="0" data-pearl="0" aria-expanded="false"><span class="who">' + t('f.asks') + '</span><span class="q">' + U.md(I18N.pick(c.ask.q)) + '</span><span class="hint">' + t('f.think') + '</span><span class="a" hidden>' + T(I18N.pick(c.ask.a), scope) + '</span></div></div>' : '');
 }
 function aThumb(page, it) {
@@ -344,6 +344,7 @@ function aItemView(page, id) {
 ['a-anatomie', 'a-physiologie', 'a-examen', 'a-imagerie', 'a-retine'].forEach(function (pg) { Views[pg] = aListView(pg); });
 
 /* ---------- capsules B0/C0 as cards (#b-bases/<n>) ---------- */
+function capFig(fig) { return fig ? '<div class="cap-media"><div class="cm-fig">' + Figures.render(fig) + '</div></div>' : ''; } // optional schematic on the toolbox / vocabulary cards
 function capsuleCards(c, m) {
   var cards = [];
   var scope0 = Gloss.scope(), h = HY.get(c.id);
@@ -355,9 +356,9 @@ function capsuleCards(c, m) {
     } });
   });
   if ((c.toolbox || []).length) cards.push({ title: t('caps.tools.h'), body: function (scope) { // compact chips: one tool open at a time
-    return '<p class="small muted">' + t('caps.tools.tap') + '</p><div class="chips tool-chips">' + c.toolbox.map(function (tl, k) { return '<button type="button" class="chip" data-tool="' + k + '" aria-pressed="false">' + U.esc(tl.name) + '</button>'; }).join('') + '</div>' +
+    return capFig(c.toolFig) + '<p class="small muted">' + t('caps.tools.tap') + '</p><div class="chips tool-chips">' + c.toolbox.map(function (tl, k) { return '<button type="button" class="chip" data-tool="' + k + '" aria-pressed="false">' + U.esc(tl.name) + '</button>'; }).join('') + '</div>' +
       c.toolbox.map(function (tl, k) { return '<div class="card tool-panel" data-toolp="' + k + '" hidden><b>' + U.esc(tl.name) + '</b><div class="kv"><span class="k">' + t('caps.what') + '</span><span>' + T(tl.what, scope) + '</span></div><div class="kv"><span class="k">' + t('caps.how') + '</span><span>' + T(tl.how, scope) + '</span></div><div class="kv"><span class="k">' + t('caps.when') + '</span><span>' + T(tl.when, scope) + '</span></div><div class="kv" data-dz="2"><span class="k">' + t('caps.cx') + '</span><span>' + T(tl.cx, scope) + '</span></div></div>'; }).join(''); } });
-  if ((c.vocab || []).length) cards.push({ title: t('caps.vocab'), body: function () { return '<details class="acc"><summary>' + t('caps.vocab') + ' (' + c.vocab.length + ')</summary><div class="tbl-wrap acc-b"><table class="tbl"><tbody>' + c.vocab.map(function (v) { return '<tr><td>' + U.esc(v.term) + '</td><td>' + U.md(v.def) + '</td></tr>'; }).join('') + '</tbody></table></div></details>' + (h ? '<div class="stack">' + trainBlock(c.id) + '</div>' : ''); } });
+  if ((c.vocab || []).length) cards.push({ title: t('caps.vocab'), body: function () { return capFig(c.vocabFig) + '<details class="acc"><summary>' + t('caps.vocab') + ' (' + c.vocab.length + ')</summary><div class="tbl-wrap acc-b"><table class="tbl"><tbody>' + c.vocab.map(function (v) { return '<tr><td>' + U.esc(v.term) + '</td><td>' + U.md(v.def) + '</td></tr>'; }).join('') + '</tbody></table></div></details>' + (h ? '<div class="stack">' + trainBlock(c.id) + '</div>' : ''); } });
   return cards;
 }
 function capsuleCardView(id, n) {
@@ -522,7 +523,7 @@ function txBlock(f, scope) {
   return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><p class="xs muted">' + t('f.tx.d') + '</p>' + txList(f, scope) + '</div>';
 }
 function algoHtml(f, scope) {
-  if (window.Tree && typeof Tree.render === 'function') { try { return '<div class="stack"><h2 class="h3">' + t('f.algo') + '</h2><div class="tree-wrap">' + Tree.render(f.cat.algo, { fmt: function (x) { return T(x, scope); }, title: t('f.algo') }) + '</div></div>'; } catch (e) { console.error('Tree.render', e); } }
+  if (window.Tree && typeof Tree.render === 'function') { try { return '<div class="stack"><h2 class="h3">' + t('f.algo') + '</h2><div class="tree-wrap">' + Tree.render(f.cat.algo, { fmt: function (x) { return T(x, scope); }, title: t('f.algo'), vignette: f.cat.vignette }) + '</div></div>'; } catch (e) { console.error('Tree.render', e); } }
   return '<div class="stack"><div class="row"><h2 class="h3" style="margin:0">' + t('f.algo') + '</h2><button class="btn sm" data-walk>' + t('f.walk') + '</button></div><div class="algo" data-algo>' +
     f.cat.algo.map(function (a, i) { return '<div class="anode" data-node="' + i + '"><div class="q">' + T(a.q, scope) + '</div><div class="yn"><div class="yes" data-yn="yes"><span class="lab">' + t('f.yes') + '</span><span>' + T(a.yes, scope) + '</span></div><div class="no" data-yn="no"><span class="lab">' + t('f.no') + '</span><span>' + T(a.no, scope) + '</span></div></div></div>'; }).join('') + '</div></div>';
 }

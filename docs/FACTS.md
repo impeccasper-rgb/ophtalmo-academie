@@ -243,3 +243,16 @@ Règles mnémotechniques couramment enseignées
 - Couverture RAMQ de la CXL, du netarsudil, des implants ou des MIGS.
 - Chiffres de PIO cible attribués à la COS.
 - Pourcentages de rejet précis par type de greffe (utiliser l’ordre qualitatif PK > DSAEK > DMEK).
+
+## E. Corrections cliniques, cycle 10 (critique passe 3, point 7), novembre 2026
+
+- **Brûlure chimique : une seule échelle, Roper-Hall.** Sources : Roper-Hall 1965 ; Dua et al., *Br J Ophthalmol* 2001 ; EyeWiki « Chemical (alkali and acid) injury of the conjunctiva and cornea ». Roper-Hall : I = épithélium seul, sans ischémie ; II = cornée voilée, iris visible, ischémie < 1/3 du limbe ; III = iris flou, 1/3 à 1/2 ; IV = cornée opaque, > 1/2. Dua compte de I à VI (heures de limbe, % de conjonctive) : les numéros ne se correspondent pas. Règle retenue dans `c-brulure` (drapeau rouge, arbre et levier) : **limbe blanc ou cornée voilée = Roper-Hall ≥ II = ophtalmologie immédiatement**. Toute brûlure par une base reste vue dans les 24 h.
+- **GPAO, bilan de base.** Le sigle « 4 P + G » est retiré. Il est remplacé par « 3 mesures, 2 images du nerf » : PIO répétée, pachymétrie, gonioscopie ; papille + OCT, champ visuel 24-2. L'arbre de `g-gpao` est réécrit pour l'externe : prostaglandine ou SLT, cible 20–30 % sous la base, chirurgie si progression. Source : AAO PPP GPAO 2026 (section A).
+- **Zona ophtalmique, fenêtre de 72 h.** Valacyclovir 1 g 3×/j × 7 j, **idéalement dans les 72 h suivant l'éruption**. Sources : AAFP 2002 (Shaikh et Ta, « les antiviraux sont plus efficaces pour prévenir l'atteinte oculaire s'ils sont commencés dans les 72 h ») ; AAO EyeNet « HZO pearls » ; StatPearls NBK557779 (« Initiation should not be delayed while awaiting … ophthalmology follow-up »).
+- **Crise aiguë, encadré Québec.** Acétazolamide orale (comprimés de 250 mg) largement disponible au Canada. **Acétazolamide IV en pénurie** : rapports de pénurie sur healthproductshortages.ca (n° 188809, 282580). La recommandation conjointe SCP, SCPH et SCO (2026) prévoit une rupture de mai au 31 juillet 2026, avec un seul produit IV commercialisé (Marcan 500 mg, DIN 02537893) ; elle conseille de passer à la forme orale lorsque c'est possible. Le parcours retenu : appeler l'ophtalmologiste de garde avant le transfert, et commencer les gouttes sur place.
+
+### À valider par un clinicien
+- `c-herpes` : « zona vu après 72 h : traiter quand même si vésicules récentes ou œil atteint ». C'est une pratique courante, mais aucune des sources consultées ne l'écrit explicitement (elles se limitent à « idéalement < 72 h »).
+- `g-crise` : la pénurie d'acétazolamide IV vaut pour 2026 ; à revérifier avant chaque mise à jour. La phrase « disponible partout » (forme orale) suppose une pharmacie d'hôpital ou communautaire ouverte.
+- `g-crise` : aucun hôpital précis n'est nommé, faute d'avoir pu vérifier quels centres ont une urgence ophtalmologique 24 h sur 24.
+- `c-brulure` : le seuil d'urgence « Roper-Hall ≥ II » est prudent. Certains auteurs réservent l'urgence chirurgicale aux grades III–IV, mais tous demandent un avis ophtalmologique le jour même dès qu'il y a une ischémie limbique.

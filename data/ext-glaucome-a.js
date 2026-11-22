@@ -77,6 +77,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "≥ 50 ans avec symptômes d’artérite : VS, CRP le jour même"
   ],
   cat: {
+    vignette: "Homme de 50 ans, vision qui baisse lentement à droite. Excavation 0,5 mais anneau pâle, PIO 16 mmHg. Champ visuel : défaut temporal qui s’arrête au méridien vertical.",
     algo: [
       { q: "Creux proportionné à la taille du disque ?", yes: "Grand disque, anneau normal : imitateur probable.", no: "Creux trop grand : suspect de glaucome.", yesGo: 1, noGo: 1 },
       { q: "Drapeau rouge présent ?", yes: "IRM ± VS, CRP (le jour même si artérite).", no: "Bilan de glaucome : PIO, pachymétrie, gonioscopie.", noGo: 2 },
@@ -226,6 +227,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Douleur après vitrectomie avec gaz : PIO immédiate"
   ],
   cat: {
+    vignette: "Femme de 81 ans avec une cataracte blanche à droite depuis des années. Œil rouge et douloureux depuis 2 jours, chambre antérieure peu profonde, PIO 45 mmHg.",
     algo: [
       { q: "Angle fermé (chambre plate, gonioscopie) ?", yes: "LPI si bloc, cycloplégique si cristallin en avant, puis chirurgie.", no: "Angle ouvert : chercher ce qui bouche.", noGo: 1 },
       { q: "Trauma récent avec sang ?", yes: "Protocole de l’hyphéma ; dépister la drépanocytose.", no: "", noGo: 2 },

@@ -73,6 +73,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Blépharite rebelle d’un seul côté : exclure un carcinome sébacé (cancer de la paupière)"
   ],
   cat: {
+    vignette: "Femme de 58 ans, yeux qui brûlent et sable en fin de journée, pire à l’écran. Bords de paupières épaissis, larmes qui se rompent vite, points de fluorescéine en bas.",
     algo: [
       { q: "Symptômes (OSDI-6 ≥ 4) et un signe objectif ?", yes: "", no: "Penser allergie, douleur neuropathique, autre cause.", yesGo: 1 },
       { q: "Glandes de Meibomius bouchées ou Demodex ?", yes: "Soins des paupières ; IPL si échec.", no: "Manque d’eau : larmes, bouchons, bilan de Sjögren.", yesGo: 2, noGo: 2 },
@@ -221,6 +222,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Aggravation après 48 h : bactérie résistante, champignon ou amibe"
   ],
   cat: {
+    vignette: "Homme de 24 ans qui dort avec ses lentilles mensuelles. Œil droit rouge et douloureux depuis hier. Infiltrat blanc de 3 mm, défaut épithélial au-dessus, réaction de chambre.",
     algo: [
       { q: "Défaut épithélial avec infiltrat stromal ?", yes: "Infectieux : retirer la lentille, la garder pour culture.", no: "Petit infiltrat sans défaut : stérile probable, revoir 24–48 h.", yesGo: 1 },
       { q: "Perforation ou descémétocèle ?", yes: "Coquille rigide, aucune pression ; ophtalmologie immédiatement.", no: "", noGo: 2 },
@@ -365,6 +367,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Plaque endothéliale, hypopyon, atteinte du limbe ou de la sclère : risque d’endophtalmie et de perforation"
   ],
   cat: {
+    vignette: "Femme de 31 ans qui rince ses lentilles à l’eau du robinet. Douleur intense depuis 3 semaines malgré la moxifloxacine ; infiltrat en anneau, cultures bactériennes négatives.",
     algo: [
       { q: "Contexte atypique ou ulcère qui ne répond pas ?", yes: "Arrêter les stéroïdes ; grattage, cultures spécifiques, PCR.", no: "Traiter comme bactérienne, revoir à 24–48 h.", yesGo: 1 },
       { q: "Kystes ou tableau d’amibe (lentilles + eau) ?", yes: "Biguanide ± diamidine aux heures, sur des mois.", no: "", yesGo: 3, noGo: 2 },
@@ -510,8 +513,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Zona avec Hutchinson, baisse de vision, PIO élevée ou paralysie oculomotrice : examen urgent"
   ],
   cat: {
+    vignette: "Homme de 45 ans, œil gauche rouge et larmoyant, vision un peu floue. À la fluorescéine : lésion ramifiée à bulbes terminaux. Sensibilité cornéenne diminuée, aucune éruption cutanée.",
     algo: [
-      { q: "Éruption vésiculaire V1 d’un seul côté ?", yes: "Zona : valacyclovir 1 g 3×/j × 7 j ; examen avec PIO.", no: "", yesGo: 1, noGo: 1 },
+      { q: "Éruption vésiculaire V1 d’un seul côté ?", yes: "Zona : valacyclovir 1 g 3×/j × 7 j, dès que possible (< 72 h).", no: "", yesGo: 1, noGo: 1 },
       { q: "Dendrite à bulbes terminaux ou ulcère géographique ?", yes: "HSV épithélial : antiviral ± débridement ; arrêter tout stéroïde.", no: "", yesGo: 3, noGo: 2 },
       { q: "Opacité stromale, œdème en disque ou précipités ?", yes: "Forme immune : stéroïde lent sous antiviral oral.", no: "Surveiller ; revoir si rougeur ou baisse de vision.", yesGo: 3 },
       { q: "Récidives, forme stromale ou greffe ?", yes: "Prophylaxie orale prolongée (HEDS) ; zona : discuter valacyclovir 1 an.", no: "Traiter chaque épisode." }
@@ -553,14 +557,14 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : dendrite : acyclovir 400 mg 5×/j ou valacyclovir 500 mg 3×/j ; zona : valacyclovir 1 g 3×/j.",
+      "**Externe / 1re ligne** : dendrite : acyclovir 400 mg 5×/j ou valacyclovir 500 mg 3×/j ; zona : valacyclovir 1 g 3×/j × 7 j, idéalement dans les 72 h suivant l’éruption.",
       "**Ophtalmologiste** : stéroïde sous antiviral pour la forme stromale ; prophylaxie (acyclovir 400 mg 2×/j)."
     ],
     refer: [
       "Dans les 24 h pour toute kératite herpétique — confirmer la forme et suivre la PIO.",
       "Le jour même si zona avec œil rouge, baisse de vision ou signe de Hutchinson."
     ],
-    pitfall: ["Prednisolone sur une dendrite : ulcère géographique.", "Trifluridine plus de 14–21 jours : toxique pour l’épithélium."],
+    pitfall: ["Prednisolone sur une dendrite : ulcère géographique.", "Zona vu après 72 h : traiter quand même si vésicules récentes ou œil atteint.", "Trifluridine plus de 14–21 jours : toxique pour l’épithélium."],
     qc: ["Shingrix recommandé dès 50 ans (CCNI) ; gratuité à vérifier."]
   },
   pearls: [
@@ -661,6 +665,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Tomographie anormale chez un candidat au LASIK : chirurgie contre-indiquée (risque d’ectasie)"
   ],
   cat: {
+    vignette: "Garçon de 15 ans, allergique, qui se frotte souvent les yeux. Sa myopie et son astigmatisme changent à chaque visite ; les lunettes corrigent mal. Topographie : bombement inférieur.",
     algo: [
       { q: "Astigmatisme irrégulier ou signe de kératocône ?", yes: "Tomographie de référence.", no: "Suivi habituel ; tomographie avant chirurgie réfractive.", yesGo: 1 },
       { q: "Enfant ou adolescent ?", yes: "CXL dès le diagnostic (consensus 2025).", no: "", yesGo: 3, noGo: 2 },

@@ -44,6 +44,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Les familles de maladies cornéennes",
+      figure: { type: "mechcap", id: "b-familles" },
       text: "Presque toutes les maladies de la cornée entrent dans quelques grandes familles. Les classer aide à poser la bonne question : surface mal nourrie ? microbe ? attaque immunitaire ? cornée trop faible, opaque, gonflée ou blessée ? Une même cornée peut cumuler plusieurs familles : un herpès (infection) laisse une cornée insensible (surface), qui s’ulcère, puis une cicatrice qu’on finit par greffer.",
       bullets: [
         "**Surface et film lacrymal** : larmes insuffisantes ou instables (sécheresse, dysfonction meibomienne ou MGD, exposition) ; kératite neurotrophique = cornée insensible qui guérit mal.",
@@ -106,6 +107,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Particularités québécoises",
+      figure: { type: "mechcap", id: "qc-path" },
       text: "Au Québec, la cornée sévère se gère souvent en centre : les gouttes fortifiées (fortified drops), des antibiotiques concentrés, sont préparées par les pharmacies hospitalières. Les optométristes voient beaucoup de premières consultations et dirigent vers l’ophtalmologiste ce qui dépasse leur champ. Une bonne référence précise l’AV, la taille et la position de la lésion, le port de lentilles et les gouttes déjà commencées.",
       bullets: [
         "**Où va la kératite sévère** : souvent à l’urgence ophtalmologique d’un centre (CHUM, HMR, CUSM, Hôpital général juif, CHU de Québec). Premières consultations en optométrie : œil rouge, lentilles, sécheresse, corps étranger.",
@@ -118,6 +120,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
       ]
     }
   ],
+  toolFig: { type: "mechcap", id: "b-outils" },
   toolbox: [
     { name: "Larmes artificielles (avec ou sans agent de conservation)", en: "Artificial tears (preserved or preservative-free)",
       what: "Gouttes lubrifiantes en vente libre (carboxyméthylcellulose, hyaluronate…), en flacon multidose avec agent de conservation ou en unidoses ou flacons spéciaux sans agent de conservation.",
@@ -210,6 +213,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
       when: "Exposition (paralysie faciale, lagophtalmie), kératite neurotrophique, défaut épithélial persistant malgré les autres mesures.",
       cx: "Aspect esthétique, champ visuel réduit, examen de la cornée plus difficile ; on rouvre une fois la surface guérie." }
   ],
+  vocabFig: { type: "cornea", highlight: ["epithelium", "bowman", "stroma", "descemet", "endothelium"], edema: "none", guttae: false, scar: false },
   vocab: [
     { term: "Épithélium cornéen", def: "Couche de surface (≈ 50 µm) renouvelée en environ 7 jours ; c’est la barrière contre les microbes." },
     { term: "Membrane de Bowman", def: "Couche sans cellules sous l’épithélium (8–12 µm) qui ne se régénère pas : une lésion qui l’atteint laisse une cicatrice." },
@@ -349,6 +353,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "Particularités québécoises",
+      figure: { type: "mechcap", id: "qc-path" },
       text: "Au Québec, une grande part du dépistage et du suivi de première ligne se fait en optométrie. Depuis 2018, les optométristes équipés peuvent prescrire des antiglaucomateux pour un glaucome suspect, débutant ou cortisonique, puis doivent diriger vers un ophtalmologiste pour le suivi médical. Le glaucome touche aussi la conduite : la SAAQ a des normes de champ visuel binoculaire.",
       bullets: [
         "**Règlement O-7, r. 11.1 (2018)** : si un ophtalmologiste suit le patient, l’optométriste applique son plan ; les autres glaucomes exigent le consentement d’un médecin, et une réponse inadéquate impose de diriger.",
@@ -362,6 +367,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
       ]
     }
   ],
+  toolFig: { type: "mechcap", id: "c-outils" },
   toolbox: [
     { name: "Analogues des prostaglandines (PGA)", en: "Prostaglandin analogues",
       what: "Gouttes une fois par jour, le soir : latanoprost, travoprost, bimatoprost, tafluprost (certaines sans agent de conservation).",
@@ -449,6 +455,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
       when: "Glaucome réfractaire, œil à faible potentiel visuel ou douloureux, patient trop fragile pour une chirurgie incisionnelle.",
       cx: "Inflammation, douleur, hypotonie et phtisie (œil qui s’atrophie), baisse de vision ; effet difficile à doser, retraitement fréquent." }
   ],
+  vocabFig: { type: "disc", cd: 0.6, notch: "inf", heme: true, ppa: true, pallor: false },
   vocab: [
     { term: "Cellules ganglionnaires", def: "Neurones de la rétine interne dont les axones forment le nerf optique ; ce sont elles qui meurent dans le glaucome." },
     { term: "RNFL", def: "Couche des fibres nerveuses rétiniennes (retinal nerve fiber layer), mesurée autour de la papille par l’OCT." },

@@ -137,25 +137,25 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "algo": [
    {
     "q": "Open angle, no secondary cause?",
-    "yes": "Baseline workup (4 Ps + G).",
-    "no": "Treat the closure or the cause.",
+    "yes": "Workup: IOP, pachymetry, gonioscopy, OCT, visual field.",
+    "no": "Closure or secondary cause: treat the cause.",
     "yesGo": 1
    },
    {
     "q": "Disc, OCT and field concordant?",
-    "yes": "Glaucoma: target ≈ 20–30% below baseline.",
-    "no": "Suspect: estimate the risk (OHT fiche).",
+    "yes": "Glaucoma: aim for IOP 20–30% below baseline.",
+    "no": "Glaucoma suspect: estimate the risk (OHT topic).",
     "yesGo": 2
    },
    {
-    "q": "Target met on PGA or SLT?",
-    "yes": "Follow with OCT and fields.",
-    "no": "Check adherence; switch, add a class, or SLT.",
+    "q": "Target met (prostaglandin or SLT laser)?",
+    "yes": "Regular follow-up: OCT and visual field.",
+    "no": "Check adherence, then add a drop or SLT.",
     "yesGo": 3
    },
    {
-    "q": "Progression despite target or maximal therapy?",
-    "yes": "Lower the target; MIGS if mild–moderate, filtering surgery if advanced.",
+    "q": "Progression despite the target IOP?",
+    "yes": "Lower the target; surgery (MIGS, trabeculectomy).",
     "no": "Continue; reassess the target at every visit."
    }
   ],
@@ -262,8 +262,8 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   }
  ],
  "mnemonic": {
-  "title": "Baseline workup: 4 P + G",
-  "text": "**P**ressure (repeated IOP), **P**achymetry, **P**apilla (disc photo + OCT), **P**erimetry (24-2 ± 10-2), + **G**onioscopy."
+  "title": "Baseline workup: 3 measurements, 2 views of the nerve",
+  "text": "**Measure**: IOP (several times), pachymetry (thin cornea = IOP underestimated), gonioscopy (open angle?). **See the nerve**: disc + OCT (structure), 24-2 visual field (function)."
  },
  "compare": {
   "title": "Normal disc vs POAG",
@@ -615,7 +615,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "**Pilocarpine**: useless before IOP falls; never for a lens cause or topiramate.",
    "**Acetazolamide**: check sulfa allergy, kidney, potassium, sickle cell."
   ],
-  "qc": "Quebec: often seen first in the ER for headache and vomiting: look at the eye."
+  "qc": ["Often seen first in the ER for headache and vomiting: look at the eye.", "Call the on-call ophthalmologist before any transfer; start the drops on site.", "Acetazolamide 250 mg PO: available everywhere; the IV form may run short (Canadian shortage, 2026)."]
  }
 }
 });
@@ -1472,7 +1472,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "caption": "Per the source: congenital anomaly (large disc, left), normal fellow disc on the right."
   },
   "patho": {
-   "caption": "Megalopapilla with severe glaucoma (per the source).",
+   "caption": "Megalopapilla with severe glaucoma.",
    "reveal": [
     "Very large disc, almost entirely pale and cupped",
     "Neuroretinal rim reduced to a thin sliver near where the vessels emerge",
@@ -3996,3 +3996,23 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  }
 }
 });
+
+// Tree vignettes (cat.vignette): one short case shown above the decision tree
+(function () {
+  var V = {
+    "g-gpao": "A 62-year-old Black man referred by his optometrist. IOP 26 and 27 mmHg, cup-to-disc 0.7 with an inferior notch on the right. No symptoms. Open angle on gonioscopy.",
+    "g-hto": "A 55-year-old woman with IOP of 25 mmHg in both eyes at three visits. Normal discs, OCT and visual fields. Thin corneas (510 µm), open angle.",
+    "g-gpn": "A 68-year-old woman with migraines and cold hands. IOP 15 mmHg. A small haemorrhage at the inferior margin of the right disc, a superior paracentral field defect.",
+    "g-fermeture": "A 64-year-old hyperopic woman at a routine exam. Van Herick grade 1 in both eyes, no symptoms, IOP 18 mmHg. Gonioscopy: meshwork not visible for 270°.",
+    "g-crise": "A 70-year-old hyperopic woman seen in the ER for headache and vomiting after an evening at the cinema. Red right eye, hazy cornea, fixed mid-dilated pupil, rock-hard eye.",
+    "g-pxf": "A 74-year-old man of Scandinavian descent. After dilation, whitish ring-shaped deposits on the lens capsule; IOP 32 mmHg right, 18 mmHg left.",
+    "g-pigmentaire": "A 32-year-old man, myopic at −5, with blur and halos after jogging. Krukenberg spindle, radial iris transillumination defects, a heavily pigmented angle.",
+    "g-neovasculaire": "A 58-year-old man with poorly followed diabetes. Painful left eye, counting-fingers vision. IOP 48 mmHg, tiny vessels at the pupil margin, retinal haemorrhages.",
+    "g-secondaires": "A 12-year-old boy treated for 2 months for allergic conjunctivitis with dexamethasone drops. Quiet eye, open angle, IOP 34 mmHg.",
+    "g-postop": "A 70-year-old man, left trabeculectomy 3 years ago. Since yesterday, a red, painful, discharging eye. Milky white bleb, cells in the anterior chamber.",
+    "g-papille": "A 50-year-old man with slowly falling vision on the right. Cup-to-disc 0.5 but a pale rim, IOP 16 mmHg. Field: a temporal defect that stops at the vertical meridian.",
+    "g-cristallin": "An 81-year-old woman with a white cataract on the right for years. Red, painful eye for 2 days, shallow anterior chamber, IOP 45 mmHg.",
+    "g-dev": "A 4-month-old infant with tearing, light avoidance and squinting. The parents find the eyes ‘big and beautiful’. Large, slightly hazy corneas."
+  };
+  Object.keys(V).forEach(function (id) { var f = G.OPH_EN.fiches[id] = G.OPH_EN.fiches[id] || {}; f.cat = f.cat || {}; f.cat.vignette = V[id]; });
+})();

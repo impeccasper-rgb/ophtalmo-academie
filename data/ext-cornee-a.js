@@ -77,6 +77,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Nourrisson aux cornées troubles : exclure un glaucome congénital"
   ],
   cat: {
+    vignette: "Femme de 34 ans, éblouissement progressif aux deux yeux ; sa mère a été greffée. Petites opacités blanches symétriques dans le stroma, sans vaisseaux, œil blanc et indolore.",
     algo: [
       { q: "Opacité unilatérale, rouge ou douloureuse ?", yes: "Pas une dystrophie : infection ou inflammation, ophtalmo.", no: "", noGo: 1 },
       { q: "Bilatéral, symétrique, sans vaisseaux, familial ?", yes: "", no: "Dégénérescence, dépôt ou cicatrice.", yesGo: 2 },
@@ -228,6 +229,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Bande chez un enfant : uvéite de l’AJI, souvent œil blanc"
   ],
   cat: {
+    vignette: "Homme de 28 ans suivi pour des tremblements et un bilan hépatique anormal. Anneau brun doré à la périphérie des deux cornées, mieux vu à la lampe à fente.",
     algo: [
       { q: "Rougeur, douleur, infiltrat ou cristaux sur greffe ?", yes: "Infection : cultures, ophtalmologie le jour même.", no: "", noGo: 1 },
       { q: "Blanc crayeux en bande dans la Bowman ?", yes: "Calcium : bilan phosphocalcique, PTH ; EDTA si gêne.", no: "", noGo: 2 },

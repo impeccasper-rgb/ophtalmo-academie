@@ -67,11 +67,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   redFlags: ["Pâleur > excavation ou AV ↓ précoce : IRM", "Défaut respectant le méridien vertical (chiasma)", "Perte ≥ 2 dB/an malgré une PIO à la cible"],
   cat: {
+    vignette: "Homme noir de 62 ans adressé par son optométriste. PIO 26 et 27 mmHg, excavation 0,7 avec encoche inférieure à droite. Aucun symptôme. Angle ouvert à la gonioscopie.",
     algo: [
-      { q: "Angle ouvert, sans cause secondaire ?", yes: "Bilan de base (4 P + G).", no: "Traiter la fermeture ou la cause.", yesGo: 1 },
-      { q: "Papille, OCT et champ concordants ?", yes: "Glaucome : cible ≈ 20–30 % sous la base.", no: "Suspect : estimer le risque (fiche HTO).", yesGo: 2 },
-      { q: "Cible atteinte sous PGA ou SLT ?", yes: "Suivi OCT et champ.", no: "Vérifier l’observance ; changer, ajouter une classe ou SLT.", yesGo: 3 },
-      { q: "Progression malgré cible ou traitement maximal ?", yes: "Baisser la cible ; MIGS si léger–modéré, filtrante si avancé.", no: "Poursuivre ; revoir la cible à chaque visite." }
+      { q: "Angle ouvert, sans cause secondaire ?", yes: "Bilan : PIO, pachymétrie, gonioscopie, OCT, champ visuel.", no: "Fermeture ou cause secondaire : traiter la cause.", yesGo: 1 },
+      { q: "Papille, OCT et champ concordants ?", yes: "Glaucome : viser une PIO 20–30 % sous la base.", no: "Suspect de glaucome : estimer le risque (fiche HTO).", yesGo: 2 },
+      { q: "Cible atteinte (prostaglandine ou laser SLT) ?", yes: "Suivi régulier : OCT et champ visuel.", no: "Vérifier l’observance, puis ajouter une goutte ou un SLT.", yesGo: 3 },
+      { q: "Progression malgré la PIO cible ?", yes: "Baisser la cible ; chirurgie (MIGS, trabéculectomie).", no: "Poursuivre ; revoir la cible à chaque visite." }
     ],
     phases: [
       {
@@ -115,7 +116,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     { q: "SLT ou gouttes en premier ?", a: "Les deux (AAO 2026). Essai LiGHT à 6 ans : 69,8 % des yeux SLT à la cible sans autre traitement ; progression 19,6 % vs 26,8 %." },
     { q: "Cible atteinte mais le champ progresse ?", a: "Confirmer (champs groupés, OCT), vérifier l’observance, puis baisser la cible." }
   ],
-  mnemonic: { title: "Bilan de base : 4 P + G", text: "**P**IO répétée, **P**achymétrie, **P**apille (photo + OCT), **P**érimétrie (24-2 ± 10-2), + **G**onioscopie." },
+  mnemonic: { title: "Bilan de base : 3 mesures, 2 images du nerf", text: "**Mesurer** : PIO (plusieurs fois), pachymétrie (cornée mince = PIO sous-estimée), gonioscopie (angle ouvert ?). **Voir le nerf** : papille + OCT (structure), champ visuel 24-2 (fonction)." },
   compare: {
     title: "Papille normale vs GPAO",
     normal: {
@@ -224,6 +225,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "PIO élevée d’un seul côté : chercher une cause secondaire"
   ],
   cat: {
+    vignette: "Femme de 55 ans, PIO à 25 mmHg aux deux yeux lors de trois visites. Papilles, OCT et champ visuel normaux. Cornées minces (510 µm), angle ouvert.",
     algo: [
       { q: "PIO > 21 confirmée ou papille suspecte ?", yes: "Bilan complet.", no: "Dépistage habituel.", yesGo: 1 },
       { q: "Angle ouvert, sans cause secondaire ?", yes: "HTO primaire ou suspect.", no: "Traiter la cause (fermeture, cortisone, uvéite).", yesGo: 2 },
@@ -366,6 +368,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "≥ 50 ans avec céphalée ou claudication de la mâchoire : VS, CRP (artérite)"
   ],
   cat: {
+    vignette: "Femme de 68 ans, migraineuse, aux mains froides. PIO 15 mmHg. Petite hémorragie au bord inférieur de la papille droite, défaut paracentral supérieur au champ visuel.",
     algo: [
       { q: "PIO vraiment ≤ 21 (courbe, cornée) ?", yes: "", no: "Glaucome à angle ouvert classique (fiche GPAO).", yesGo: 1 },
       { q: "Angle ouvert, sans cause secondaire ?", yes: "", no: "Fermeture ou glaucome secondaire : autre fiche.", yesGo: 2 },
@@ -519,6 +522,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Angle encore fermé malgré une iridotomie perméable"
   ],
   cat: {
+    vignette: "Femme hypermétrope de 64 ans, examen de routine. Van Herick grade 1 aux deux yeux, aucun symptôme, PIO 18 mmHg. Gonioscopie : trabéculum invisible sur 270°.",
     algo: [
       { q: "Van Herick ≤ 2 ou angle étroit suspecté ?", yes: "Gonioscopie dynamique en pièce sombre.", no: "Suivi habituel.", yesGo: 1 },
       { q: "Contact iridotrabéculaire ≥ 180° ?", yes: "Fermeture primaire : classer.", no: "Angle ouvert ; réévaluer avec l’âge.", yesGo: 2 },
@@ -671,6 +675,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Avant acétazolamide ou mannitol : allergie sulfa, rein, cœur, drépanocytose"
   ],
   cat: {
+    vignette: "Femme hypermétrope de 70 ans vue à l’urgence pour céphalée et vomissements après une soirée au cinéma. Œil droit rouge, cornée trouble, pupille mi-dilatée fixe, œil dur.",
     algo: [
       {
         q: "Œil rouge douloureux, PIO très haute, pupille mi-dilatée ?",
@@ -758,7 +763,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       "**Pilocarpine** : inutile avant la baisse de PIO ; jamais si cause cristallinienne ou topiramate.",
       "**Acétazolamide** : vérifier allergie sulfa, rein, potassium, drépanocytose."
     ],
-    qc: "Québec : souvent vu d’abord à l’urgence pour céphalée et vomissements : regarder l’œil."
+    qc: ["Souvent vu d’abord à l’urgence pour céphalée et vomissements : regarder l’œil.", "Appeler l’ophtalmologiste de garde avant tout transfert ; amorcer les gouttes sur place.", "Acétazolamide 250 mg PO : disponible partout ; la forme IV peut manquer (pénurie canadienne 2026)."]
   }
 },
 {
@@ -830,6 +835,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Baisse de vision soudaine des années après la cataracte : implant luxé dans son sac"
   ],
   cat: {
+    vignette: "Homme de 74 ans d’origine scandinave. Après dilatation, dépôts blanchâtres en anneau sur la capsule du cristallin ; PIO 32 mmHg à droite, 18 mmHg à gauche.",
     algo: [
       { q: "Dépôts capsulaires ou flocons au bord pupillaire ?", yes: "Pseudo-exfoliation : examiner l’autre œil.", no: "Autre glaucome à angle ouvert.", yesGo: 1 },
       { q: "Neuropathie (papille, OCT, champ) ?", yes: "Glaucome pseudo-exfoliatif : cible plus basse.", no: "Sans glaucome : PIO suivie de près.", yesGo: 2, noGo: 4 },
@@ -972,6 +978,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Dispersion d’un seul côté : chercher une cause secondaire (implant, trauma, tumeur)"
   ],
   cat: {
+    vignette: "Homme de 32 ans, myope de −5, vision floue et halos après le jogging. Fuseau de Krukenberg, fentes radiaires de l’iris en transillumination, angle très pigmenté.",
     algo: [
       { q: "Krukenberg, fentes radiaires et angle très pigmenté ?", yes: "Dispersion pigmentaire.", no: "Autre source de pigment (PXF, implant, uvéite).", yesGo: 1 },
       { q: "Neuropathie (papille, OCT, champ) ?", yes: "Glaucome pigmentaire : PIO cible.", no: "Sans glaucome : surveiller PIO et nerf.", yesGo: 2 },
@@ -1116,6 +1123,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Œil adelphe diabétique : examiner et traiter la rétinopathie"
   ],
   cat: {
+    vignette: "Homme diabétique de 58 ans, mal suivi. Œil gauche douloureux, vision à compter les doigts. PIO 48 mmHg, petits vaisseaux au bord de la pupille, hémorragies rétiniennes.",
     algo: [
       { q: "Néovaisseaux de l’iris ou de l’angle ?", yes: "Chercher la cause ischémique.", no: "OVCR ischémique, rétinopathie proliférante : gonioscopie non dilatée régulière.", yesGo: 1 },
       { q: "Cause rétinienne évidente (diabète, OVCR) ?", yes: "Coordonner rétine et médecin traitant (glycémie, tension).", no: "Syndrome ischémique oculaire : Doppler carotidien (risque d’AVC).", yesGo: 2, noGo: 2 },
@@ -1266,6 +1274,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Uvéite hypertensive unilatérale récidivante : penser herpès ou CMV, ne pas seulement augmenter le stéroïde"
   ],
   cat: {
+    vignette: "Garçon de 12 ans traité depuis 2 mois pour une conjonctivite allergique avec des gouttes de dexaméthasone. Œil calme, angle ouvert, PIO 34 mmHg.",
     algo: [
       { q: "PIO élevée sous stéroïde, œil calme, angle ouvert ?", yes: "Réponse cortisonique : réduire ou changer le stéroïde.", no: "Chercher inflammation, synéchies, néovaisseaux.", yesGo: 1, noGo: 2 },
       { q: "Dépôt ou implant de stéroïde en cause ?", yes: "Retirer le dépôt si possible ; sinon chirurgie filtrante.", no: "Hypotenseurs ; SLT si non contrôlé." },
@@ -1420,6 +1429,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Cristallin qui touche la cornée : reformer la chambre en urgence"
   ],
   cat: {
+    vignette: "Homme de 70 ans, trabéculectomie à gauche il y a 3 ans. Depuis hier, œil rouge, douloureux, qui coule. Bulle blanche et laiteuse, cellules en chambre antérieure.",
     algo: [
       {
         q: "Signes d’infection (bulle blanche, hypopyon, douleur) ?",
