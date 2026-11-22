@@ -253,9 +253,10 @@ function aItems(page) {
     (A.physio || []).forEach(function (p) {
       it.push({ id: p.id, title: I18N.title(p), en: p.en, body: function (scope) {
         var sim = PHYSIO_SIM[p.id], h = HY.get('phy-' + p.id), ess = (h && h.essentials) || [];
-        return (sim ? '<div data-sim="' + sim + '"></div>' : '') + '<p class="read">' + T(p.intro, scope) + '</p>' + hyList(ess.slice(0, 5), t('hy.title')) +
+        var main = '<p class="read">' + T(p.intro, scope) + '</p>' + hyList(ess.slice(0, 5), t('hy.title'));
+        return (sim ? '<div data-sim="' + sim + '"></div>' : '') + (p.card ? aCard(p.card, scope) : main) +
           levelBlocks([
-            { lvl: 1, title: t('f.more'), html: (p.numbers && p.numbers.length ? '<div class="grid3">' + p.numbers.map(function (n) { return '<div class="readout"><span class="u">' + U.esc(n.label) + '</span><span class="small mono" style="font-weight:700">' + U.esc(n.value) + '</span></div>'; }).join('') + '</div>' : '') + '<ul class="blist read">' + (p.points || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' + (p.pearl ? '<div class="callout amber"><span class="eyebrow">' + t('a.pearl') + '</span><span>' + T(p.pearl, scope) + '</span></div>' : '') },
+            { lvl: 1, title: t('f.more'), html: (p.card ? main : '') + (p.numbers && p.numbers.length ? '<div class="grid3">' + p.numbers.map(function (n) { return '<div class="readout"><span class="u">' + U.esc(n.label) + '</span><span class="small mono" style="font-weight:700">' + U.esc(n.value) + '</span></div>'; }).join('') + '</div>' : '') + '<ul class="blist read">' + (p.points || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' + (p.pearl ? '<div class="callout amber"><span class="eyebrow">' + t('a.pearl') + '</span><span>' + T(p.pearl, scope) + '</span></div>' : '') },
             { lvl: 2, title: t('a.train'), html: trainBlock('phy-' + p.id) }
           ]);
       } });
@@ -268,9 +269,10 @@ function aItems(page) {
       it.push({ id: p.id, title: I18N.title(p), en: p.en, thumb: ph[0] && ph[0].id, body: function (scope) {
         var tools = (EXAM_TOOL[p.id] || []).map(function (x) { var parts = x.split(':'); return parts[0] === 'patterns' ? '<div data-sim="patterns" data-kind="' + parts[1] + '"' + (parts[2] ? ' data-compare="1"' : '') + '></div>' : '<div data-sim="' + parts[0] + '"></div>'; }).join('');
         var h = HY.get('ex-' + p.id), ess = (h && h.essentials) || [];
-        return (tools || (ph.length ? Photo.carousel(ph, { voir: true }) : '')) + '<div class="callout"><span class="eyebrow">' + t('a.why') + '</span><span>' + T(p.why, scope) + '</span></div>' + hyList(ess.slice(0, 5), t('hy.title')) +
+        var main = '<div class="callout"><span class="eyebrow">' + t('a.why') + '</span><span>' + T(p.why, scope) + '</span></div>' + hyList(ess.slice(0, 5), t('hy.title'));
+        return (tools || (ph.length ? Photo.carousel(ph, { voir: true }) : '')) + (p.card ? aCard(p.card, scope) : main) +
           levelBlocks([
-            { lvl: 1, title: t('a.normpatho'), html: '<div class="twocol"><div class="panel-sunk stack"><h3 class="h4" style="color:var(--ok)">' + t('f.normal') + '</h3><ul class="blist ok">' + (p.normal || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="panel-sunk stack"><h3 class="h4" style="color:var(--urgent)">' + t('f.patho') + '</h3><ul class="blist red">' + (p.patho || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' + (tools && ph.length ? Photo.carousel(ph, { voir: true }) : '') },
+            { lvl: 1, title: p.card ? t('f.more') : t('a.normpatho'), html: (p.card ? main + '<h3 class="h4">' + t('a.normpatho') + '</h3>' : '') + '<div class="twocol"><div class="panel-sunk stack"><h3 class="h4" style="color:var(--ok)">' + t('f.normal') + '</h3><ul class="blist ok">' + (p.normal || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="panel-sunk stack"><h3 class="h4" style="color:var(--urgent)">' + t('f.patho') + '</h3><ul class="blist red">' + (p.patho || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' + (tools && ph.length ? Photo.carousel(ph, { voir: true }) : '') },
             { lvl: 2, title: t('a.howpit'), html: '<h3 class="h4">' + t('a.how') + '</h3><ol class="read">' + (p.how || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ol><h3 class="h4">' + t('a.pitfalls') + '</h3><ul class="blist red">' + (p.pitfalls || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' },
             { lvl: 2, title: t('a.asks.train'), html: (p.pearl ? '<div class="callout amber"><span class="eyebrow">' + t('a.asks') + '</span><span>' + T(p.pearl, scope) + '</span></div>' : '') + (HY.get('ex-' + p.id) ? trainBlock('ex-' + p.id) : '') }
           ]);
@@ -281,9 +283,10 @@ function aItems(page) {
       var ph = photosFor('a5-' + r.id), u = A5_URG[r.urgency] || A5_URG.routine;
       it.push({ id: r.id, title: I18N.title(r), en: r.en, thumb: ph[0] && ph[0].id, tag: '<span class="tag ' + u[0] + '">' + u[1] + '</span>', body: function (scope) {
         var h = HY.get('a5-' + r.id), ess = (h && h.essentials) || [];
-        return (ph.length ? Photo.carousel(ph, { voir: true }) : '') + '<div class="callout"><span class="eyebrow">' + t('caps.what') + '</span><span>' + T(r.what, scope) + '</span></div>' + hyList(ess.slice(0, 5), t('hy.title')) +
+        var main = '<div class="callout"><span class="eyebrow">' + t('caps.what') + '</span><span>' + T(r.what, scope) + '</span></div>' + hyList(ess.slice(0, 5), t('hy.title'));
+        return (ph.length ? Photo.carousel(ph, { voir: true }) : '') + (r.card ? aCard(r.card, scope) : main) +
           levelBlocks([
-            { lvl: 1, title: t('a5.lookact'), html: '<h3 class="h4">' + t('a.look') + '</h3><ul class="blist">' + (r.look || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><h3 class="h4">' + t('a5.action') + '</h3><ul class="blist">' + (r.action || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' },
+            { lvl: 1, title: r.card ? t('f.more') : t('a5.lookact'), html: (r.card ? main : '') + '<h3 class="h4">' + t('a.look') + '</h3><ul class="blist">' + (r.look || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><h3 class="h4">' + t('a5.action') + '</h3><ul class="blist">' + (r.action || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' },
             { lvl: 2, title: t('a5.pitwhy'), html: '<ul class="blist red">' + (r.pitfalls || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><div class="callout violet"><span class="eyebrow">' + t('a5.why') + '</span><span>' + T(r.why, scope) + '</span></div>' },
             { lvl: 2, title: t('a.asks.train'), html: (r.pearl ? '<p><b>' + U.md(r.pearl.q) + '</b></p><p>' + T(r.pearl.a, scope) + '</p>' : '') + (HY.get('a5-' + r.id) ? trainBlock('a5-' + r.id) : '') }
           ]);
@@ -291,6 +294,13 @@ function aItems(page) {
     });
   }
   return it;
+}
+/* default micro-fiche card (content editors: card = { lead, keys[3–4], ask: { q, a } }) */
+function aCard(card, scope) {
+  if (!card) return '';
+  var c = I18N.pick(card.lead) ? card : card;
+  return '<p class="read a-lead">' + T(I18N.pick(c.lead), scope) + '</p>' + (c.keys && c.keys.length ? '<ul class="blist a-keys">' + c.keys.map(function (k) { return '<li>' + T(I18N.pick(k), scope) + '</li>'; }).join('') + '</ul>' : '') +
+    (c.ask && c.ask.q ? '<div class="pearls"><div class="pearl-card" role="button" tabindex="0" data-pearl="0" aria-expanded="false"><span class="who">' + t('f.asks') + '</span><span class="q">' + U.md(I18N.pick(c.ask.q)) + '</span><span class="hint">' + t('f.think') + '</span><span class="a" hidden>' + T(I18N.pick(c.ask.a), scope) + '</span></div></div>' : '');
 }
 function aThumb(page, it) {
   var id = it.thumb || (page === 'a-retine' ? (photosFor('a5-' + it.id)[0] || {}).id : page === 'a-physiologie' ? null : (photosFor('a-' + it.id)[0] || {}).id);
@@ -321,10 +331,12 @@ function aItemView(page, id) {
   }, after: function (host) {
     mountMinis(host); mountTrainers(host);
     var go = function (sel) { var a = U.$(sel, host); if (a) location.hash = a.getAttribute('href').slice(1); };
-    var arrows = function (ev) { if (ev.defaultPrevented || ev.altKey || ev.ctrlKey || ev.metaKey || /input|select|textarea/i.test(ev.target.tagName || '')) return; if (U.$('#lightbox:not([hidden])') || U.$('#drawer:not([hidden])')) return; if (ev.key === 'ArrowRight') go('[data-fnext]'); else if (ev.key === 'ArrowLeft') go('[data-fprev]'); };
+    var arrows = function (ev) { var pc0 = ev.target.closest && ev.target.closest('[data-pearl]'); if (pc0 && (ev.key === 'Enter' || ev.key === ' ') && ev.target === pc0) { ev.preventDefault(); pc0.click(); return; } if (ev.defaultPrevented || ev.altKey || ev.ctrlKey || ev.metaKey || /input|select|textarea/i.test(ev.target.tagName || '')) return; if (U.$('#lightbox:not([hidden])') || U.$('#drawer:not([hidden])')) return; if (ev.key === 'ArrowRight') go('[data-fnext]'); else if (ev.key === 'ArrowLeft') go('[data-fprev]'); };
+    var pearl = function (ev) { var pc = !ev.target.closest('.gt, #gt-pop') && ev.target.closest('[data-pearl]'); if (!pc) return; var a = U.$('.a', pc), hint = U.$('.hint', pc); a.hidden = !a.hidden; if (hint) hint.hidden = !a.hidden; pc.setAttribute('aria-expanded', String(!a.hidden)); };
+    host.addEventListener('click', pearl);
     document.addEventListener('keydown', arrows);
     if (U.wordsDev()) console.info('[words] ' + page + '/' + id + ': ' + U.wordsVisible(U.$('[data-step-body]', host)) + ' visible words');
-    return function () { document.removeEventListener('keydown', arrows); };
+    return function () { document.removeEventListener('keydown', arrows); host.removeEventListener('click', pearl); };
   } };
 }
 ['a-anatomie', 'a-physiologie', 'a-examen', 'a-imagerie', 'a-retine'].forEach(function (pg) { Views[pg] = aListView(pg); });
@@ -333,11 +345,11 @@ function aItemView(page, id) {
 function capsuleCards(c, m) {
   var cards = [];
   var scope0 = Gloss.scope(), h = HY.get(c.id);
-  cards.push({ title: c.title, body: function (scope) { var ph = photosFor(c.id); return (ph.length ? Photo.carousel(ph, { voir: true }) : '') + '<p class="read">' + T(c.intro, scope) + '</p>' + hyList(((h && h.essentials) || []).slice(0, 5), t('caps.hy')); } });
+  cards.push({ title: c.title, body: function (scope) { var ph = photosFor(c.id); return (ph.length ? Photo.carousel(ph, { voir: true }) : '') + '<p class="read">' + T(c.intro, scope) + '</p>' + levelBlocks([{ lvl: 1, title: t('caps.hy'), html: hyList(((h && h.essentials) || []).slice(0, 5), t('caps.hy')) }]); } });
   (c.sections || []).forEach(function (s2) {
     cards.push({ title: s2.title, body: function (scope) {
       var media = (s2.figure ? '<div class="cm-fig">' + Figures.render(s2.figure) + '</div>' : '') + (s2.photo && D.cat(s2.photo) ? '<div class="cm-ph">' + Photo.card({ id: s2.photo, caption: D.cat(s2.photo).title, look: '', reveal: [] }) + '</div>' : '');
-      return (media ? '<div class="cap-media">' + media + '</div>' : '') + '<p class="read">' + T(s2.text, scope) + '</p>' + levelBlocks([{ lvl: 1, title: t('f.more'), html: s2.bullets && s2.bullets.length ? '<ul class="blist read">' + s2.bullets.map(function (b) { return '<li>' + T(b, scope) + '</li>'; }).join('') + '</ul>' : '' }]);
+      return (media ? '<div class="cap-media">' + media + '</div>' : '') + '<p class="read">' + T(s2.text, scope) + '</p>' + levelBlocks([{ lvl: 2, title: t('f.more'), html: s2.bullets && s2.bullets.length ? '<ul class="blist read">' + s2.bullets.map(function (b) { return '<li>' + T(b, scope) + '</li>'; }).join('') + '</ul>' : '' }]);
     } });
   });
   if ((c.toolbox || []).length) cards.push({ title: t('caps.tools.h'), body: function (scope) { return '<p class="small muted">' + t('caps.tools.d') + '</p>' + c.toolbox.map(function (tl) {

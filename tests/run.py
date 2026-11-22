@@ -222,11 +222,14 @@ try:
                 fid = page.evaluate("() => (OPH.fiches.find(f => (OPH.photos||{})[f.id]) || {}).id")
                 page.evaluate("h => { location.hash = h }", fid + '/decider'); page.wait_for_timeout(400)
                 def gating():
-                    # level 1: overflow content (signs, ddx, tests…) sits in a collapsed « Pour aller plus loin »
-                    op = page.evaluate("() => { const d = document.querySelector('#mv-dec details.more'); return d ? d.open : 'none-found' }")
-                    if op is not False: raise Exception('depth 1 should collapse « plus loin », got ' + str(op))
-                    page.click('#mv-dec details.more > summary')
-                    if not page.evaluate("() => document.querySelector('#mv-dec details.more').open"): raise Exception('« plus loin » did not open')
+                    # level 1: no level-2 blocks; level 2: extra blocks exist but stay collapsed (never auto-opened)
+                    if page.query_selector('#mv-dec details.lvl-2'): raise Exception('level-2 block shown at depth 1')
+                    page.evaluate("() => { Settings.set('depth', 2); Router.refresh(); }"); page.wait_for_timeout(300)
+                    st = page.evaluate("() => [...document.querySelectorAll('#mv-dec details.lvl-2')].map(d => d.open)")
+                    if not st or any(st): raise Exception('depth 2 blocks missing or auto-opened: ' + str(st))
+                    page.click('#mv-dec details.lvl-2 > summary >> nth=0')
+                    if not page.evaluate("() => document.querySelector('#mv-dec details.lvl-2').open"): raise Exception('block did not open')
+                    page.evaluate("() => { Settings.set('depth', 1); }")
                 step('depth gating', gating)
                 page.evaluate("h => { location.hash = h }", fid + '/voir'); page.wait_for_timeout(400)
                 if page.query_selector('[data-car-step]'):
