@@ -42,6 +42,20 @@ Les nouveaux médias sont définis dans `data/investigations.js` sous de **nouve
 2. p-ascan-4 : le schéma svg du rôle visuels étiquette les tracés **A** (haut) et **B** (bas) → texte remis en A/B.
 3. OPH-136/135 : la source ne donne pas la latéralité; l’image montre l’excavation qui atteint le rebord en bas à gauche et les vaisseaux qui émergent à droite → avec la légende « inferotemporal », c’est un OD. La question évite d’affirmer l’œil et guide par l’image (vaisseaux côté nasal = à droite).
 
+## Cycle 8 — cornée : arbres v2, Traitement pour l’externe, QCM sans fuite (2026-11-21)
+- **Arbres** (14 fiches, FR + EN) réécrits au modèle v2 (`yesGo`/`noGo`, `cont` retiré). Contrôle par script : graphe acyclique, tous les nœuds atteignables, chaque fin de branche porte une action, aucune feuille de remplissage (« question suivante », « continuer »), question ≤ 8 mots, branche ≤ 12 mots.
+  - c-herpes : la prophylaxie HEDS est atteinte depuis les chemins HSV épithélial et stromal; le zona y mène aussi (ZEDS « à discuter »).
+  - c-keratocone : la réhabilitation visuelle est atteinte après le CXL de l’enfant.
+  - c-bacterienne : la perforation est vue en 2e nœud, avant les cultures.
+- **Traitement** (`treatment` au niveau de la fiche, §9) :
+  - `first` sépare « Externe / 1re ligne » (générique, posologie) et « Ophtalmologiste ».
+  - `refer` donne le délai (immédiatement / le jour même / dans les 24–48 h / cette semaine / suivi régulier) et le motif.
+  - `pitfall` nomme le médicament ou le geste (ex. « Prednisolone sur une dendrite », « Kétorolac ou autre AINS topique sur une cornée amincie », « Pansement occlusif chez un porteur de lentilles »).
+  - Les `refer` par traitement, écrits du point de vue du spécialiste, sont retirés; « suivi de la PIO » de c-surface devient un piège (stéroïde sans suivi).
+- **Voir** : « En deux phrases » ≤ 45 mots, découpé par des `\n` en lignes de ≤ 125 caractères, soit environ 3 lignes sur téléphone. *Web : afficher les `\n` (`white-space: pre-line` sur la callout).*
+- **Mini-QCM** : 7 items demandaient le diagnostic de la fiche lue (B-008, B-015, B-019, B-023, B-025, B-103, B-104). Ils demandent maintenant la conduite, l’étape suivante ou la prévention (FR + overlay EN), sans changer l’index de la réponse; la bonne option n’est plus la plus longue.
+- **Mots visibles** (même script) : FR 5143 → 4942, EN 4998 → 4766; 0 écran hors plafond. Avant le cycle 7 : FR 6605, EN 6360.
+
 ## Cycle 7 — fiches cornée (module B) allégées, arbres et traitement (2026-11-21)
 Cadre : `docs/STYLE-PEDAGO.md` (budgets par écran au niveau « Fondamentaux »). Fichiers : `data/fiches-cornee.js`, `fiches-cornee-2.js`, `ext-cornee-a.js`, `ext-cornee-b.js`, `data/hy-cornee.js`, overlays `data-en/fiches-cornee.js` et `data-en/hy.js` (clés cornée seulement). Tableaux FR/EN gardés identiques en nombre et en ordre (vérifié par script).
 
@@ -275,3 +289,42 @@ Doutes cliniques à vérifier :
 - g-dev : timolol 0,25 % BID chez l’enfant (pratique courante, pas dans FACTS.md).
 - g-cristallin : « suivi rapproché les premiers jours » pour l’hyphéma, formulé sans fréquence.
 - Aucune affirmation de couverture RAMQ (FACTS.md D) ; aucun médicament d’exception cité.
+
+## Cycle 8 — glaucome (2026-11-21)
+
+Suite de docs/CRITIQUE-SEVERE.md (MF-6, MF-7, MF-10, MF-12) et de STYLE-PEDAGO §8–9. FR et EN synchronisés (0 écart : longueurs, `yesGo`/`noGo`, `urgent`, `treatment`).
+
+**Arbres v2** (`{q, yes, no, yesGo?, noGo?}`, `cont` retiré, `yes`/`no` vide seulement si la branche continue, `{t, urgent:true}` pour l’action urgente) :
+- g-crise : « Appeler l’ophtalmologiste de garde maintenant » sur la 1re réponse Oui (urgent), plus seulement en crise réfractaire ; réfractaire = « ophtalmologiste au chevet » (urgent).
+- g-dev : racine « Nourrisson ou jeune enfant ? » ; Non → question adulte (ICE, Axenfeld-Rieger, dystrophie polymorphe postérieure, glaucome juvénile). Le chemin du nourrisson finit sur le suivi, plus sur une question d’adulte.
+- g-secondaires : « Dépôt ou implant de stéroïde ? » placé sous la réponse cortisonique (Oui) ; uvéite → iris bombé (urgent) → PIO non contrôlée.
+- g-neovasculaire : la cause (rétine ou Doppler carotidien) est demandée à tous, juste après la découverte des néovaisseaux, avant la PIO et le potentiel visuel.
+- g-postop : plus de feuille « Question suivante » (PIO basse → chambre ; sinon PIO haute + chambre étroite ou profonde) ; infection = ophtalmologiste immédiatement (urgent).
+- g-pxf (sans glaucome → question cataracte), g-gpn (IRM normale → décision de traiter), g-papille (grand disque → drapeaux rouges quand même), g-pigmentaire (nœud « Pilocarpine envisagée ? » retiré ; piège gardé dans la carte), g-cristallin (chaîne des causes sans feuille vide).
+- tools/validate.js : contrôle v2 (renvoi vers un nœud plus loin, aucune feuille vide sans renvoi, tous les nœuds atteignables ; « Question suivante » = avertissement, présent dans 2 fiches cornée). src/tree.js doit encore lire `yesGo`/`noGo` (rôle exercices).
+
+**Bloc Traitement pour l’externe** (`treatment` de la fiche) : `first` = « **Toi** » (ce que fait l’externe ou le médecin de 1re ligne) puis « **Ophtalmologiste** » (LPI, phaco, tube, anti-VEGF… sortis de la 1re ligne) ; `refer` = « Référer en ophtalmologie : immédiatement / le jour même / dans les 24 h / cette semaine / en quelques semaines / suivi régulier — critère » (g-crise, g-postop : immédiatement ; g-neovasculaire, g-cristallin : le jour même ; g-dev : dans les 24 h) ; `pitfall` commence par le médicament ou le geste en gras. Les champs par traitement (`dose`, `refer`, `pitfall`, `qc`) restent pour le niveau 2.
+
+Mots visibles par défaut (outil tools/wordcount-fiches.js ; « Décider » = drapeaux + bloc Traitement, hors arbre). Les chiffres de la critique (186–196) comptent aussi les libellés rendus ; les deux mesures baissent dans la même proportion.
+
+| Fiche | Décider hors arbre (cycle 7 → 8) | EN | Arbre | Définition (mots) | Nœuds / feuilles qui continuent sur les deux branches |
+|---|---|---|---|---|---|
+| g-gpao | 121 → 97 | 98 | 75 → 74 | 41 | 4 / 0 |
+| g-hto | 95 → 89 | 86 | 70 → 70 | 34 | 4 / 0 |
+| g-gpn | 107 → 98 | 92 | 56 → 59 | 37 | 4 / 1 |
+| g-fermeture | 146 → 92 | 91 | 77 → 77 | 34 | 5 / 0 |
+| g-crise | 150 → 110 | 111 | 105 → 95 | 36 | 5 / 0 |
+| g-pxf | 128 → 112 | 98 | 80 → 75 | 34 | 5 / 3 |
+| g-pigmentaire | 109 → 92 | 81 | 76 → 63 | 36 | 4 / 1 |
+| g-neovasculaire | 123 → 89 | 86 | 92 → 89 | 37 | 5 / 1 |
+| g-secondaires | 150 → 94 | 93 | 86 → 86 | 35 | 5 / 2 |
+| g-postop | 131 → 91 | 86 | 67 → 72 | 40 | 5 / 1 |
+| g-dev | 134 → 113 | 100 | 82 → 79 | 30 | 5 / 2 |
+| g-papille | 121 → 97 | 92 | 61 → 66 | 26 | 4 / 2 |
+| g-cristallin | 144 → 99 | 105 | 70 → 66 | 29 | 5 / 0 |
+
+Définitions : 26–41 mots (plafond 45 du cycle 8).
+
+**Mini-QCM (MF-10)** : 6 items qui demandaient le diagnostic de la fiche ouverte deviennent des questions de conduite (même figure, même position de réponse, bonne réponse jamais la plus longue seule) : C-016 (g-crise : « que fais-tu en premier ? » → hypotenseurs + appel immédiat), C-012 (g-fermeture : conduite pour une PAC → LPI), C-051 et C-105 (g-pxf : bilan + zonules ; risque chirurgical), C-101 (g-gpao : diriger rapidement), C-057 (g-pigmentaire : que faire avant d’accepter un GPN). Fichiers : data/quiz-c.js, data/quiz-c2.js, data/quiz-photos.js, data-en/quiz.js (seulement ces 6 items). C-211 (variante d’ICE) et C-205/C-207 (sous-types de glaucome cristallinien) gardés : ils départagent des entités de la fiche sans en répéter le titre.
+
+Doutes cliniques ajoutés : délais de référence formulés pour l’externe (g-dev « dans les 24 h », g-pxf « cette semaine » si vision ↓ brusque chez un opéré) à valider par un clinicien ; antiémétique dans la crise (soutien usuel, sans molécule nommée).

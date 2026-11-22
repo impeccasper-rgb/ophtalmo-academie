@@ -139,19 +139,19 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "q": "Open angle, no secondary cause?",
     "yes": "Baseline workup (4 Ps + G).",
     "no": "Treat the closure or the cause.",
-    "cont": "yes"
+    "yesGo": 1
    },
    {
     "q": "Disc, OCT and field concordant?",
     "yes": "Glaucoma: target ≈ 20–30% below baseline.",
     "no": "Suspect: estimate the risk (OHT fiche).",
-    "cont": "yes"
+    "yesGo": 2
    },
    {
     "q": "Target met on PGA or SLT?",
     "yes": "Follow with OCT and fields.",
-    "no": "Check adherence, then switch, add a class, or SLT.",
-    "cont": "yes"
+    "no": "Check adherence; switch, add a class, or SLT.",
+    "yesGo": 3
    },
    {
     "q": "Progression despite target or maximal therapy?",
@@ -290,22 +290,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**PGAs**: Latanoprost 0.005%: 1 drop at bedtime (bimatoprost 0.01%, travoprost 0.004%).",
-   "**Timolol, CAIs, brimonidine**: Timolol 0.5% BID; dorzolamide 2% TID; brimonidine 0.2% BID–TID.",
-   "**SLT**: 360°, ≈ 100 non-overlapping spots, in clinic.",
-   "**Surgery**: MIGS with cataract surgery; trabeculectomy with MMC or tube if advanced."
+   "**You**: spot the suspicious disc and family history; refer.",
+   "**Ophthalmologist**: latanoprost 0.005% at bedtime or SLT; then add-on, MIGS or surgery."
   ],
-  "refer": [
-   "**PGAs**: Refer if IOP is off target or there is progression.",
-   "**Surgery**: Progression or target missed despite drops and laser."
-  ],
+  "refer": "Refer to ophthalmology: within a few weeks — suspicious disc, IOP > 21 mmHg or family history of glaucoma.",
   "pitfall": [
-   "**Timolol, CAIs, brimonidine**: Timolol is contraindicated in asthma, severe COPD or AV block.",
-   "**Surgery**: Bleb: a red, painful eye is infection until proven otherwise."
+   "**Timolol**: contraindicated in asthma, severe COPD or AV block, even as a drop.",
+   "**Latanoprost**: irreversible iris darkening; warn if only one eye is treated."
   ],
-  "qc": [
-   "Quebec: an equipped optometrist may start drops (suspect or early glaucoma), then must refer (O-7, r. 11.1)."
-  ]
+  "qc": "Quebec: an equipped optometrist may start drops (suspect or early glaucoma), then must refer (O-7, r. 11.1)."
  }
 }
 });
@@ -450,27 +443,33 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "algo": [
    {
     "q": "Painful red eye, very high IOP, mid-dilated pupil?",
-    "yes": "Attack: IOP-lowering drops and acetazolamide now.",
+    "yes": {
+     "t": "Call the on-call ophthalmologist now; drops and acetazolamide.",
+     "urgent": true
+    },
     "no": "Other painful red eye (uveitis, keratitis, neovascular).",
-    "cont": "yes"
+    "yesGo": 1
    },
    {
     "q": "Bilateral, acute myopia or topiramate?",
-    "yes": "Effusion: stop the drug, cycloplegic, steroid, IOP drops; no LPI, no pilocarpine.",
-    "no": "Examine the lens.",
-    "cont": "no"
+    "yes": "Effusion: stop the drug, cycloplegic, steroid; no LPI, no pilocarpine.",
+    "no": "",
+    "noGo": 2
    },
    {
     "q": "Swollen cataract or subluxated lens?",
     "yes": "No pilocarpine: lower IOP, then remove the lens.",
     "no": "Probable primary pupillary block.",
-    "cont": "no"
+    "noGo": 3
    },
    {
     "q": "IOP falling after 30–60 min?",
-    "yes": "Pilocarpine 1–2%, then bilateral LPI once the cornea clears.",
-    "no": "IV mannitol, indentation; urgent consult (paracentesis, laser, surgery).",
-    "cont": "yes"
+    "yes": "Pilocarpine 1–2%, then LPI in both eyes.",
+    "no": {
+     "t": "IV mannitol, indentation; ophthalmologist at the bedside.",
+     "urgent": true
+    },
+    "yesGo": 4
    },
    {
     "q": "Angle closed despite a patent LPI?",
@@ -608,23 +607,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**IOP-lowering drops and steroid**: Timolol 0.5%, brimonidine 0.2%, dorzolamide 2%: 1 drop of each; prednisolone acetate 1%.",
-   "**Acetazolamide and mannitol**: Acetazolamide 500 mg PO or IV; mannitol 20% 1–2 g/kg IV if refractory.",
-   "**Pilocarpine 1–2% and indentation**: Pilocarpine 1–2%: 1 drop, once IOP is lowered.",
-   "**Laser iridotomy**: YAG laser to both eyes, in clinic.",
-   "**Lens extraction**: Phacoemulsification with IOL."
+   "**You, now**: timolol 0.5%, brimonidine 0.2%, dorzolamide 2% (1 drop of each); acetazolamide 500 mg PO or IV; antiemetic.",
+   "**Ophthalmologist**: pilocarpine once IOP is lowered, mannitol if refractory, then LPI in both eyes."
   ],
-  "refer": [
-   "**IOP-lowering drops and steroid**: At diagnosis; on-call ophthalmologist the same day.",
-   "**Acetazolamide and mannitol**: Confirmed attack; mannitol if IOP unchanged after 1 h."
-  ],
+  "refer": "Refer to ophthalmology: immediately (on-call ophthalmologist) — the nerve and cornea are damaged within hours.",
   "pitfall": [
-   "**Pilocarpine 1–2% and indentation**: Never for a lens cause, effusion (topiramate) or misdirection.",
-   "**Acetazolamide and mannitol**: Check sulfa, kidney, potassium, sickle cell; mannitol: heart, kidney."
+   "**Pilocarpine**: useless before IOP falls; never for a lens cause or topiramate.",
+   "**Acetazolamide**: check sulfa allergy, kidney, potassium, sickle cell."
   ],
-  "qc": [
-   "Quebec: often seen first in the ER: start treatment, then refer the same day."
-  ]
+  "qc": "Quebec: often seen first in the ER for headache and vomiting: look at the eye."
  }
 }
 });
@@ -772,30 +763,30 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "q": "Van Herick ≤ 2 or narrow angle suspected?",
     "yes": "Dynamic gonioscopy in a dark room.",
     "no": "Routine follow-up.",
-    "cont": "yes"
+    "yesGo": 1
    },
    {
     "q": "Iridotrabecular contact ≥ 180°?",
     "yes": "Primary angle closure: stage it.",
     "no": "Open angle; reassess with age.",
-    "cont": "yes"
+    "yesGo": 2
    },
    {
     "q": "Raised IOP, PAS or neuropathy?",
     "yes": "PAC or PACG: treat.",
     "no": "PACS: shared decision (LPI or observation).",
-    "cont": "yes"
+    "yesGo": 3
    },
    {
     "q": "Age ≥ 50: PAC ≥ 30 mmHg, PACG or cataract?",
     "yes": "Lens extraction, even if clear (EAGLE).",
-    "no": "Iridotomy, then drops as needed.",
-    "cont": "no"
+    "no": "Laser iridotomy.",
+    "noGo": 4
    },
    {
     "q": "Angle closed despite a patent iridotomy?",
     "yes": "Plateau iris or lens: UBM, iridoplasty or extraction.",
-    "no": "Follow-up: gonioscopy, IOP, OCT, field."
+    "no": "Follow-up: gonioscopy, IOP, OCT; drops as needed."
    }
   ],
   "phases": [
@@ -922,22 +913,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**Laser peripheral iridotomy**: YAG laser in clinic, after pilocarpine 1–2% and apraclonidine.",
-   "**Lens extraction**: Phacoemulsification with IOL, even on a clear lens.",
-   "**Laser iridoplasty**: Thermal (argon) laser: large, gentle burns on the far-peripheral iris.",
-   "**Drops and glaucoma surgery**: IOP-lowering drops (PGA, timolol); trabeculectomy or goniosynechialysis if needed."
+   "**You**: spot the shallow chamber (Van Herick) and at-risk drugs; refer.",
+   "**Ophthalmologist**: gonioscopy, then laser iridotomy or lens extraction."
   ],
-  "refer": [
-   "**Laser peripheral iridotomy**: PAC, fellow eye of an attack, PACS by shared decision.",
-   "**Lens extraction**: Age ≥ 50 with PAC at IOP ≥ 30 mmHg or PACG (EAGLE); cataract."
-  ],
+  "refer": "Refer to ophthalmology: within a few weeks — suspected narrow angle; immediately if a painful red eye with halos.",
   "pitfall": [
-   "**Laser peripheral iridotomy**: An LPI does not open plateau iris: repeat gonioscopy afterwards.",
-   "**Drops and glaucoma surgery**: Drops do not reopen the angle: do not delay the LPI."
+   "**Anticholinergic or mydriatic** with a narrow angle: can trigger an attack.",
+   "**Topiramate**: acute bilateral myopia = effusion; no iridotomy."
   ],
-  "qc": [
-   "Quebec: routine gonioscopy in Inuit patients (Nunavik), who are at high risk."
-  ]
+  "qc": "Quebec: routine gonioscopy in Inuit patients (Nunavik), who are at high risk."
  }
 }
 });
@@ -1080,19 +1064,19 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "q": "Confirmed IOP > 21 or suspicious disc?",
     "yes": "Full workup.",
     "no": "Routine screening.",
-    "cont": "yes"
+    "yesGo": 1
    },
    {
     "q": "Open angle, no secondary cause?",
     "yes": "Primary OHT or suspect.",
     "no": "Treat the cause (closure, steroid, uveitis).",
-    "cont": "yes"
+    "yesGo": 2
    },
    {
     "q": "Proven neuropathy (OCT, reproducible field)?",
     "yes": "Glaucoma: see the POAG fiche.",
     "no": "Estimate 5-year risk (OHTS-EGPS calculator).",
-    "cont": "no"
+    "noGo": 3
    },
    {
     "q": "High risk, only eye, or IOP ≥ 30 mmHg?",
@@ -1208,20 +1192,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**Structured observation**: Visits every ≈ 6–24 months depending on risk: IOP, OCT, fields.",
-   "**Prostaglandin analogue**: Latanoprost 0.005%: 1 drop at bedtime.",
-   "**SLT**: 360°, ≈ 100 spots, in clinic."
+   "**You**: explain \"a risk, not a disease\"; make sure follow-up happens.",
+   "**Ophthalmologist**: OHTS-EGPS risk; observe, or latanoprost 0.005% at bedtime or SLT."
   ],
-  "refer": [
-   "**Structured observation**: Refer if new RNFL thinning, disc hemorrhage or field defect."
-  ],
+  "refer": "Refer to ophthalmology or optometry: regular follow-up — confirmed IOP > 21 mmHg; within a few weeks if ≥ 30 mmHg.",
   "pitfall": [
-   "**Prostaglandin analogue**: Do not treat a low risk for life: calculate it first.",
-   "**Structured observation**: Lost to follow-up = missed conversion: book the next visit."
+   "**Lifelong drops** for a low risk: calculate the risk first.",
+   "**Cancelled follow-up**: conversion goes unnoticed."
   ],
-  "qc": [
-   "Quebec: often co-managed by optometrist and ophthalmologist."
-  ]
+  "qc": "Quebec: often co-managed by optometrist and ophthalmologist."
  }
 }
 });
@@ -1381,26 +1360,28 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "algo": [
    {
     "q": "Cup in proportion to disc size?",
-    "yes": "Large disc, normal rim: probable mimic; document.",
+    "yes": "Large disc, normal rim: probable mimic.",
     "no": "Cup too large: glaucoma suspect.",
-    "cont": "no"
+    "yesGo": 1,
+    "noGo": 1
    },
    {
     "q": "Any red flag?",
-    "yes": "MRI ± ESR, CRP.",
+    "yes": "MRI ± ESR, CRP (same day if arteritis).",
     "no": "Glaucoma workup: IOP, pachymetry, gonioscopy.",
-    "cont": "no"
+    "noGo": 2
    },
    {
     "q": "OCT and field concordant?",
-    "yes": "Diagnosis made: target IOP.",
+    "yes": "Glaucoma: target IOP.",
     "no": "Repeat; look for an artifact or another cause.",
-    "cont": "yes"
+    "yesGo": 3,
+    "noGo": 3
    },
    {
     "q": "Documented change on follow-up?",
     "yes": "Treat or intensify.",
-    "no": "Stable anomaly: spaced follow-up, no drops."
+    "no": "Stable: spaced follow-up; no drops for a mimic."
    }
   ],
   "phases": [
@@ -1509,20 +1490,14 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**Serial OCT and fields**: RNFL and GCL OCT; 24-2 and 10-2 fields, serially.",
-   "**MRI and arteritis workup**: MRI with gadolinium; ESR, CRP, platelets ± temporal artery biopsy.",
-   "**IOP-lowering treatment**: Latanoprost 0.005% at bedtime, SLT or surgery depending on stage."
+   "**You**: VA, color vision, RAPD; note disc size and rim color.",
+   "**Ophthalmologist**: serial OCT and fields; MRI if red flag; treat confirmed glaucoma."
   ],
-  "refer": [
-   "**MRI and arteritis workup**: Red flag: prompt MRI; suspected arteritis: same day."
-  ],
+  "refer": "Refer to ophthalmology: within a few weeks — large C/D; same day if age ≥ 50 with headache or jaw claudication.",
   "pitfall": [
-   "**MRI and arteritis workup**: No drops before compression has been excluded.",
-   "**Serial OCT and fields**: Do not treat the printout: an atypical disc falls outside the normative database."
+   "**IOP-lowering drops** on a pale disc: compression missed (MRI first)."
   ],
-  "qc": [
-   "Quebec: name the red flag on the MRI request to get it prioritized."
-  ]
+  "qc": "Quebec: name the red flag on the MRI request to get it prioritized."
  }
 }
 });
@@ -1665,25 +1640,28 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "q": "Capsular deposits or flakes at the pupil margin?",
     "yes": "Pseudoexfoliation: examine the other eye.",
     "no": "Another open-angle glaucoma.",
-    "cont": "yes"
+    "yesGo": 1
    },
    {
     "q": "Neuropathy (disc, OCT, field)?",
-    "yes": "PXF glaucoma: treat, lower target.",
-    "no": "No glaucoma: follow closely; treat raised IOP early.",
-    "cont": "yes"
+    "yes": "PXF glaucoma: lower target.",
+    "no": "No glaucoma: close IOP follow-up.",
+    "yesGo": 2,
+    "noGo": 4
    },
    {
     "q": "Open, visible angle?",
     "yes": "SLT or prostaglandin analogue.",
     "no": "Associated closure: iridotomy or lens extraction.",
-    "cont": "yes"
+    "yesGo": 3,
+    "noGo": 3
    },
    {
     "q": "Progression or target not met?",
     "yes": "Add a class, then trabeculectomy or tube.",
     "no": "Close follow-up.",
-    "cont": "no"
+    "yesGo": 4,
+    "noGo": 4
    },
    {
     "q": "Cataract to operate?",
@@ -1814,21 +1792,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**IOP-lowering drops**: Latanoprost 0.005% at bedtime; add timolol 0.5% BID or dorzolamide 2% as needed.",
-   "**SLT**: 360° SLT in clinic.",
-   "**Filtering surgery**: Trabeculectomy with MMC or tube, in the OR.",
-   "**Adapted cataract surgery**: Phacoemulsification with capsular tension ring and hooks as needed."
+   "**You**: refer; write \"pseudoexfoliation\" for the cataract surgeon.",
+   "**Ophthalmologist**: latanoprost 0.005% at bedtime or SLT, lower target; earlier surgery."
   ],
-  "refer": [
-   "**IOP-lowering drops**: Refer promptly: aggressive glaucoma, fluctuating IOP."
-  ],
+  "refer": "Refer to ophthalmology: within a few weeks — whitish deposits on the lens; this week if sudden vision loss after cataract surgery.",
   "pitfall": [
-   "**IOP-lowering drops**: A normal clinic IOP can hide spikes: close follow-up.",
-   "**Adapted cataract surgery**: Weak zonules: warn the surgeon, risk of vitreous loss."
+   "**Cataract surgery** without planning for weak zonules: vitreous loss.",
+   "**SLT**: IOP spike more likely; recheck afterwards."
   ],
-  "qc": [
-   "Quebec: outside suspect, early or steroid-induced glaucoma, an optometrist treats only with a physician's consent (O-7)."
-  ]
+  "qc": "Quebec: outside suspect, early or steroid-induced glaucoma, an optometrist treats only with a physician's consent (O-7)."
  }
 }
 });
@@ -1980,25 +1952,20 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "q": "Krukenberg, radial defects and heavily pigmented angle?",
     "yes": "Pigment dispersion.",
     "no": "Other pigment source (PXF, IOL, uveitis).",
-    "cont": "yes"
+    "yesGo": 1
    },
    {
     "q": "Neuropathy (disc, OCT, field)?",
     "yes": "Pigmentary glaucoma: target IOP.",
     "no": "No glaucoma: monitor IOP and nerve.",
-    "cont": "yes"
+    "yesGo": 2
    },
    {
     "q": "Open angle, laser candidate?",
     "yes": "Low-energy SLT or prostaglandin analogue.",
-    "no": "Drops.",
-    "cont": "yes"
-   },
-   {
-    "q": "Considering pilocarpine?",
-    "yes": "Dilated fundus exam first; poorly tolerated in the young.",
-    "no": "Continue drops and laser.",
-    "cont": "no"
+    "no": "Prostaglandin analogue.",
+    "yesGo": 3,
+    "noGo": 3
    },
    {
     "q": "Progression despite everything?",
@@ -2128,21 +2095,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**Prostaglandin analogue**: Latanoprost 0.005%: 1 drop at bedtime.",
-   "**Low-energy SLT**: Reduced-energy SLT, sometimes over 180° only.",
-   "**Pilocarpine**: Pilocarpine drops, selected cases only.",
-   "**Laser iridotomy**: YAG laser: small hole in the peripheral iris."
+   "**You**: ask about flashes and floaters (myope); refer.",
+   "**Ophthalmologist**: latanoprost 0.005% at bedtime or low-energy SLT."
   ],
-  "refer": [
-   "**Prostaglandin analogue**: Established pigmentary glaucoma: followed by the ophthalmologist."
-  ],
+  "refer": "Refer to ophthalmology: within a few weeks — Krukenberg spindle or halos with exercise; same day if flashes or a curtain.",
   "pitfall": [
-   "**Pilocarpine**: Dilated fundus exam first: retinal detachment in myopes.",
-   "**Low-energy SLT**: Too much energy = marked IOP spike: check IOP afterwards."
+   "**Pilocarpine**: dilated fundus exam first (detachment in myopes).",
+   "**Full-energy SLT**: marked IOP spike."
   ],
-  "qc": [
-   "Quebec: dispersion without neuropathy is often followed in optometry (glaucoma suspect)."
-  ]
+  "qc": "Quebec: dispersion without neuropathy is often followed in optometry (glaucoma suspect)."
  }
 }
 });
@@ -2288,32 +2249,33 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "algo": [
    {
     "q": "Iris or angle neovessels?",
-    "yes": "Find the ischemic cause.",
+    "yes": "Look for the ischemic cause.",
     "no": "Ischemic CRVO, proliferative retinopathy: regular undilated gonioscopy.",
-    "cont": "yes"
+    "yesGo": 1
+   },
+   {
+    "q": "Obvious retinal cause (diabetes, CRVO)?",
+    "yes": "Coordinate retina and family physician (glucose, blood pressure).",
+    "no": "Ocular ischemic syndrome: carotid Doppler (stroke risk).",
+    "yesGo": 2,
+    "noGo": 2
    },
    {
     "q": "Raised IOP?",
     "yes": "NVG: anti-VEGF, PRP and urgent IOP lowering.",
     "no": "Neovessels only: prompt anti-VEGF and PRP to save the angle.",
-    "cont": "yes"
+    "yesGo": 3
    },
    {
     "q": "Angle closed by extensive synechiae?",
-    "yes": "Drops will not suffice: plan a tube.",
-    "no": "Angle still open: PRP can preserve it.",
-    "cont": "yes"
+    "yes": "Drops will not suffice.",
+    "no": "Angle still open: PRP and drops.",
+    "yesGo": 4
    },
    {
     "q": "Useful visual potential?",
     "yes": "Tube after anti-VEGF (less bleeding).",
-    "no": "Cyclophotocoagulation, atropine and steroid for comfort.",
-    "cont": "yes"
-   },
-   {
-    "q": "Obvious retinal cause?",
-    "yes": "Coordinate retina and family physician (glucose, blood pressure).",
-    "no": "Ocular ischemic syndrome: carotid Doppler (stroke risk)."
+    "no": "Cyclophotocoagulation, atropine and steroid for comfort."
    }
   ],
   "phases": [
@@ -2440,22 +2402,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**Intravitreal anti-VEGF**: Bevacizumab 1.25 mg/0.05 mL intravitreal (or ranibizumab 0.5 mg, aflibercept 2 mg).",
-   "**Panretinal photocoagulation**: Laser in clinic: ≈ 1200–1600 spots over 1–3 sessions.",
-   "**Glaucoma drainage tube**: Ahmed or Baerveldt, in the OR, after anti-VEGF.",
-   "**Cyclophotocoagulation**: Transscleral diode laser cyclophotocoagulation."
+   "**You**: glucose, blood pressure; with no retinal cause, carotid Doppler.",
+   "**Ophthalmologist**: bevacizumab 1.25 mg intravitreal, PRP, IOP lowering; tube or cyclophotocoagulation."
   ],
-  "refer": [
-   "**Intravitreal anti-VEGF**: At diagnosis: refer to retina the same day.",
-   "**Glaucoma drainage tube**: Uncontrolled IOP with visual potential."
-  ],
+  "refer": "Refer to ophthalmology: same day — the angle closes within days to weeks.",
   "pitfall": [
-   "**Intravitreal anti-VEGF**: Temporary effect: does not replace PRP.",
-   "**Panretinal photocoagulation**: Works over weeks: cover with anti-VEGF meanwhile."
+   "**Pilocarpine**: contraindicated (inflammation, synechiae).",
+   "**Anti-VEGF alone**: temporary effect; PRP is still essential."
   ],
-  "qc": [
-   "Quebec: injections and PRP in retina clinics; tubes in hospital centres."
-  ]
+  "qc": "Quebec: injections and PRP in retina clinics; tubes in hospital centres."
  }
 }
 });
@@ -2597,21 +2552,22 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "algo": [
    {
     "q": "IOP truly ≤ 21 (curve, cornea)?",
-    "yes": "Continue the exclusion.",
-    "no": "Classic open-angle glaucoma.",
-    "cont": "yes"
+    "yes": "",
+    "no": "Classic open-angle glaucoma (POAG fiche).",
+    "yesGo": 1
    },
    {
     "q": "Open angle, no secondary cause?",
-    "yes": "Continue.",
-    "no": "Angle closure or secondary glaucoma.",
-    "cont": "yes"
+    "yes": "",
+    "no": "Closure or secondary glaucoma: other fiche.",
+    "yesGo": 2
    },
    {
     "q": "Atypical sign (< 50, pallor, VA ↓, vertical defect)?",
-    "yes": "MRI ± ESR, CRP.",
+    "yes": "MRI ± ESR, CRP; if normal, NTG.",
     "no": "Probable NTG.",
-    "cont": "no"
+    "yesGo": 3,
+    "noGo": 3
    },
    {
     "q": "Threatened fixation or documented progression?",
@@ -2742,18 +2698,13 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**Prostaglandin analogue**: Latanoprost 0.005%: 1 drop at bedtime.",
-   "**Brimonidine**: Brimonidine 0.2% BID (LoGTS dose).",
-   "**Systemic factors**: Review bedtime antihypertensives with the family physician; screen for sleep apnea.",
-   "**SLT or trabeculectomy**: SLT in clinic; trabeculectomy with MMC in the OR."
+   "**You**: look for nocturnal hypotension and sleep apnea; discuss with the family physician.",
+   "**Ophthalmologist**: exclude mimics (MRI if atypical), then latanoprost 0.005% at bedtime, target −30%."
   ],
-  "refer": [
-   "**Prostaglandin analogue**: Threatened fixation or documented progression.",
-   "**SLT or trabeculectomy**: Progression despite drops: glaucoma specialist."
-  ],
+  "refer": "Refer to ophthalmology: within a few weeks — cupping with normal IOP; same day if age ≥ 50 with headache or jaw claudication.",
   "pitfall": [
-   "**Systemic factors**: Never change an antihypertensive without the family physician.",
-   "**Prostaglandin analogue**: IOP already low: −30% is hard; check adherence before escalating."
+   "**Bedtime antihypertensive**: do not change it without the family physician.",
+   "**NTG label** on a pale disc: compression missed without MRI."
   ]
  }
 }
@@ -2901,31 +2852,35 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "algo": [
    {
     "q": "High IOP on steroid, quiet eye, open angle?",
-    "yes": "Steroid response: reduce or switch the steroid, IOP drops.",
+    "yes": "Steroid response: reduce or switch the steroid.",
     "no": "Look for inflammation, synechiae, neovessels.",
-    "cont": "no"
+    "yesGo": 1,
+    "noGo": 2
+   },
+   {
+    "q": "Steroid depot or implant to blame?",
+    "yes": "Remove the depot if possible; otherwise filtering surgery.",
+    "no": "IOP drops; SLT if uncontrolled."
    },
    {
     "q": "Active uveitis (cells, KP)?",
     "yes": "Control inflammation (antiviral if HSV, CMV) + aqueous suppressants.",
     "no": "Post-uveitic: drops, then laser or surgery.",
-    "cont": "yes"
+    "yesGo": 3,
+    "noGo": 3
    },
    {
     "q": "Iris bombé?",
-    "yes": "Emergency: multiple iridotomies or surgical iridectomy.",
+    "yes": {
+     "t": "Emergency: multiple iridotomies or surgical iridectomy.",
+     "urgent": true
+    },
     "no": "Gonioscopy: extent of synechiae.",
-    "cont": "no"
-   },
-   {
-    "q": "Steroid depot or implant to blame?",
-    "yes": "Remove the depot if possible; otherwise filtering surgery.",
-    "no": "Keep adjusting.",
-    "cont": "no"
+    "noGo": 4
    },
    {
     "q": "IOP uncontrolled on drops?",
-    "yes": "Steroid: SLT; uveitic: tube under anti-inflammatory cover.",
+    "yes": "Tube under anti-inflammatory cover.",
     "no": "Close IOP follow-up."
    }
   ],
@@ -3058,23 +3013,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**Modify or stop the steroid**: Switch to loteprednol 0.5% or fluorometholone 0.1%, or taper; NSAID if possible.",
-   "**Drops that ↓ aqueous production**: Timolol 0.5% BID, dorzolamide 2% TID; acetazolamide 250 mg PO QID if needed.",
-   "**SLT**: 360° SLT in clinic.",
-   "**Iridotomy or iridectomy**: YAG laser (often several openings) or surgical iridectomy.",
-   "**Surgery**: Depot removal, tube (Ahmed, Baerveldt) or trabeculectomy with MMC."
+   "**You**: ask about every steroid (drops, inhaled, cream, injection); IOP if used long term.",
+   "**Ophthalmologist**: loteprednol or taper; timolol 0.5% BID, dorzolamide 2%; SLT, surgery."
   ],
-  "refer": [
-   "**Iridotomy or iridectomy**: Iris bombé: same-day emergency.",
-   "**Modify or stop the steroid**: Steroid response; recovery in weeks if the meshwork is intact."
-  ],
+  "refer": "Refer to ophthalmology: this week — high IOP on a steroid; immediately if a painful red eye.",
   "pitfall": [
-   "**Modify or stop the steroid**: Do not stop an essential steroid abruptly (uveitis, graft): rebound.",
-   "**SLT**: Avoid in active uveitis."
+   "**Prolonged topical steroid** without IOP checks: silent steroid glaucoma.",
+   "**Pilocarpine**: never in uveitis."
   ],
-  "qc": [
-   "Quebec: an equipped optometrist may treat steroid-induced glaucoma, then must refer (O-7)."
-  ]
+  "qc": "Quebec: an equipped optometrist may treat steroid-induced glaucoma, then must refer (O-7)."
  }
 }
 });
@@ -3243,30 +3190,30 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "q": "Closed angle (flat chamber, gonioscopy)?",
     "yes": "LPI if block, cycloplegic if lens forward, then surgery.",
     "no": "Open angle: find what is clogging it.",
-    "cont": "no"
-   },
-   {
-    "q": "Hypermature cataract, particles, deep chamber?",
-    "yes": "Phacolytic: lower IOP, steroid, prompt extraction.",
-    "no": "Continue.",
-    "cont": "no"
-   },
-   {
-    "q": "Pseudophakic, microhyphemas, transillumination?",
-    "yes": "UGH: UBM, reposition or exchange the IOL.",
-    "no": "Continue.",
-    "cont": "no"
+    "noGo": 1
    },
    {
     "q": "Recent trauma with blood?",
     "yes": "Hyphema protocol; screen for sickle cell.",
-    "no": "Old trauma: gonioscopy (recession).",
-    "cont": "no"
+    "no": "",
+    "noGo": 2
+   },
+   {
+    "q": "Hypermature cataract, particles, deep chamber?",
+    "yes": "Phacolytic: lower IOP, steroid, prompt extraction.",
+    "no": "",
+    "noGo": 3
+   },
+   {
+    "q": "Pseudophakic, microhyphemas, transillumination?",
+    "yes": "UGH: UBM, reposition or exchange the IOL.",
+    "no": "",
+    "noGo": 4
    },
    {
     "q": "Gas in the eye?",
     "yes": "IOP drops, positioning, ± partial gas removal.",
-    "no": "Other secondary cause."
+    "no": "Gonioscopy: recession from old trauma?"
    }
   ],
   "phases": [
@@ -3405,23 +3352,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**Lens extraction**: Phacoemulsification or extracapsular extraction.",
-   "**IOP-lowering and anti-inflammatory agents**: Timolol 0.5%, brimonidine 0.2%; prednisolone acetate 1% QID, cycloplegic.",
-   "**IOL repositioning or exchange**: IOL put back in the bag, captured, fixated or exchanged.",
-   "**Hyphema protocol**: Head of bed at 30–45°, shield, atropine 1%, prednisolone acetate 1%.",
-   "**Glaucoma drainage tube**: Ahmed or Baerveldt, in the OR."
+   "**You**: hyphema: head of bed at 30–45°, shield, no NSAIDs or aspirin.",
+   "**Ophthalmologist**: lower IOP, prednisolone acetate 1%, cycloplegic; remove or reposition the cause."
   ],
-  "refer": [
-   "**IOP-lowering and anti-inflammatory agents**: Always first; same-day referral.",
-   "**Hyphema protocol**: Any traumatic hyphema: close follow-up in the first days."
-  ],
+  "refer": "Refer to ophthalmology: same day — trauma with blood, white cataract with a painful eye, or a dislocated lens.",
   "pitfall": [
-   "**IOP-lowering and anti-inflammatory agents**: Sickle cell: avoid CAIs and hyperosmotics (sickling).",
-   "**Hyphema protocol**: No NSAIDs or aspirin; sickle cell: IOP ≥ 24 mmHg for over 24 h = washout."
+   "**Acetazolamide** in sickle cell: sickling in the hyphema.",
+   "**Pilocarpine**: never for a lens cause."
   ],
-  "qc": [
-   "Montreal: hemoglobin electrophoresis if Haitian, African, Caribbean, Mediterranean, Middle Eastern or Indian origin."
-  ]
+  "qc": "Montreal: hemoglobin electrophoresis if Haitian, African, Caribbean, Mediterranean, Middle Eastern or Indian origin."
  }
 }
 });
@@ -3580,33 +3519,37 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "cat": {
   "algo": [
    {
-    "q": "Triad, large or cloudy cornea (infant)?",
-    "yes": "Urgent referral: examination under anesthesia.",
-    "no": "Tearing, clear cornea: probable nasolacrimal duct obstruction.",
-    "cont": "yes"
+    "q": "Infant or young child?",
+    "yes": "",
+    "no": "",
+    "yesGo": 1,
+    "noGo": 4
    },
    {
-    "q": "Glaucoma confirmed?",
-    "yes": "Bridging drops, angle surgery promptly.",
-    "no": "Close monitoring.",
-    "cont": "yes"
+    "q": "Triad, large or cloudy cornea?",
+    "yes": {
+     "t": "Urgent referral: examination under anesthesia; bridging drops.",
+     "urgent": true
+    },
+    "no": "Tearing, clear cornea: probable nasolacrimal duct obstruction.",
+    "yesGo": 2
    },
    {
     "q": "Cornea clear enough to see the angle?",
     "yes": "Goniotomy or trabeculotomy.",
     "no": "External trabeculotomy.",
-    "cont": "yes"
+    "yesGo": 3,
+    "noGo": 3
    },
    {
     "q": "Angle surgery failed?",
     "yes": "Repeat, tube, trabeculectomy with MMC or cyclophotocoagulation.",
-    "no": "Follow-up: IOP, diameter, refraction, amblyopia.",
-    "cont": "no"
+    "no": "Follow-up: IOP, diameter, refraction, amblyopia."
    },
    {
     "q": "Adult: edema, corectopia, one-sided synechiae?",
     "yes": "ICE: specular microscopy, drops, tube if failure; DSAEK or DMEK for edema.",
-    "no": "Consider Axenfeld-Rieger or posterior polymorphous dystrophy."
+    "no": "Consider Axenfeld-Rieger, posterior polymorphous dystrophy or juvenile glaucoma."
    }
   ],
   "phases": [
@@ -3723,21 +3666,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**Goniotomy**: Under a gonioscopy lens: incision of the meshwork over ≈ 1/3 of the angle.",
-   "**Trabeculotomy**: Probe or 360° suture passed into Schlemm's canal.",
-   "**Drops as a bridge**: Timolol 0.25% BID, dorzolamide 2% TID, as a bridge before surgery.",
-   "**Drainage tube or trabeculectomy**: Tube and plate, or trabeculectomy with MMC."
+   "**You**: infant with tearing and photophobia: compare corneal size and clarity.",
+   "**Ophthalmologist**: examination under anesthesia, angle surgery; bridging drops (timolol 0.25%)."
   ],
-  "refer": [
-   "**Goniotomy**: Primary congenital with a clear cornea: tertiary pediatric centre, promptly."
-  ],
+  "refer": "Refer to ophthalmology: within 24 h — infant with the triad or a large or cloudy cornea.",
   "pitfall": [
-   "**Drops as a bridge**: Brimonidine contraindicated under age 2 (CNS depression); timolol: apnea.",
-   "**Goniotomy**: The angle must be visible: impossible if the cornea is cloudy."
+   "**Brimonidine**: contraindicated under age 2 (CNS depression).",
+   "**Tearing** blamed on the tear duct without looking at the cornea."
   ],
-  "qc": [
-   "Quebec: CHU Sainte-Justine, Montreal Children's Hospital, CHU de Québec; call the on-call attending."
-  ]
+  "qc": "Quebec: CHU Sainte-Justine, Montreal Children's Hospital, CHU de Québec; call the on-call attending."
  }
 }
 });
@@ -3892,21 +3829,30 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "algo": [
    {
     "q": "Signs of infection (white bleb, hypopyon, pain)?",
-    "yes": "Same day: blebitis = antibiotics; endophthalmitis = tap + injection.",
+    "yes": {
+     "t": "Ophthalmologist immediately: antibiotics; if endophthalmitis, tap and injection.",
+     "urgent": true
+    },
     "no": "Assess IOP and chamber.",
-    "cont": "no"
+    "noGo": 1
    },
    {
-    "q": "Low IOP, shallow chamber?",
+    "q": "Low IOP?",
+    "yes": "",
+    "no": "",
+    "yesGo": 2,
+    "noGo": 3
+   },
+   {
+    "q": "Shallow chamber (low IOP)?",
     "yes": "Seidel +: bandage lens, suture; Seidel −: atropine, observe.",
-    "no": "Next question.",
-    "cont": "no"
+    "no": "Formed chamber: Seidel, watch the macula."
    },
    {
-    "q": "High IOP, shallow chamber?",
+    "q": "High IOP and shallow chamber?",
     "yes": "Iridotomy if block; otherwise misdirection or suprachoroidal hemorrhage.",
-    "no": "Next question.",
-    "cont": "no"
+    "no": "",
+    "noGo": 4
    },
    {
     "q": "High IOP, deep chamber?",
@@ -4042,21 +3988,14 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**Trabeculectomy with mitomycin C**: In the OR, with mitomycin C; adjustable sutures in clinic (massage, laser lysis).",
-   "**PreserFlo MicroShunt and XEN**: Microtube to a bleb; ripcord sometimes removed in clinic.",
-   "**Tube**: Ahmed (valved) or Baerveldt (ligated until the capsule forms).",
-   "**MIGS**: iStent, Hydrus or KDB, often with cataract surgery."
+   "**You**: recognize the bleb (under the upper lid); red or painful operated eye = call.",
+   "**Ophthalmologist**: Seidel, IOP × chamber; intensive antibiotics, tap and injection if endophthalmitis."
   ],
-  "refer": [
-   "**Tube**: Failed trabeculectomy, neovascular or uveitic glaucoma."
-  ],
+  "refer": "Refer to ophthalmology: immediately — red, painful operated eye, white bleb or vision ↓.",
   "pitfall": [
-   "**Trabeculectomy with mitomycin C**: Bleb infection possible for life: red, painful eye = same-day visit.",
-   "**MIGS**: Modest lowering: not for a very low target IOP."
+   "**Treating \"conjunctivitis\"** in an operated eye: missed bleb infection."
   ],
-  "qc": [
-   "Quebec: mostly in hospital centres; RAMQ coverage of MIGS and implants to be checked."
-  ]
+  "qc": "Quebec: mostly in hospital centres; RAMQ coverage of MIGS and implants to be checked."
  }
 }
 });

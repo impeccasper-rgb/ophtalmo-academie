@@ -11,7 +11,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Fuchs endothelial corneal dystrophy and corneal edema",
     tags: ["frequent", "highyield"],
     oneLiner: "Femme de 50 ans et plus, vision floue au réveil qui s’éclaircit en journée : l’endothélium pompe mal, la cornée gonfle.",
-    definition: "Maladie héréditaire, bilatérale et asymétrique : les cellules endothéliales, qui pompent l’eau de la cornée, disparaissent et des guttae apparaissent. Quand il en reste trop peu, la cornée gonfle et se trouble, d’abord le matin.",
+    definition: "Maladie héréditaire, bilatérale et asymétrique.\nLes cellules qui pompent l’eau de la cornée disparaissent et des guttae apparaissent.\nTrop peu de cellules : la cornée gonfle et se trouble, d’abord le matin.",
     anatomy: {
       text: "L’endothélium est une seule couche de cellules hexagonales qui ne se divisent pas : ≈ 3000 cellules/mm² chez le jeune adulte, ≈ 2500 vers 60–70 ans. Ses pompes (Na⁺/K⁺-ATPase) sortent l’eau du stroma : cette déturgescence garde la cornée transparente, à ≈ 540 µm. Il repose sur la membrane de Descemet, qu’il fabrique ; la cornée décompense en général sous 400–500 cellules/mm².",
       figure: { type: "cornea", highlight: ["descemet", "endothelium"] }
@@ -69,9 +69,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Guttae centrales aux deux yeux ?", yes: "Fuchs : spéculaire, pachymétrie, Scheimpflug.", no: "Autre œdème : chirurgie, PIO, endothélite, ICE.", cont: "yes" },
-        { q: "Gêne malgré NaCl 5 % et séchoir ?", yes: "Greffe endothéliale, DMEK en premier choix.", no: "Traitement médical et suivi.", cont: "yes" },
-        { q: "Cataracte significative ?", yes: "Œdème même infraclinique : phaco + DMEK ; sinon phaco seule.", no: "DMEK seule.", cont: "no" },
+        { q: "Guttae centrales aux deux yeux ?", yes: "Fuchs : spéculaire, pachymétrie, Scheimpflug.", no: "Autre œdème : chirurgie, PIO, endothélite, ICE.", yesGo: 1 },
+        { q: "Cataracte significative ?", yes: "", no: "", yesGo: 2, noGo: 3 },
+        { q: "Œdème, même infraclinique ?", yes: "Phaco + DMEK en une chirurgie.", no: "Phaco seule, en protégeant l’endothélium." },
+        { q: "Gêne malgré NaCl 5 % et séchoir ?", yes: "", no: "Traitement médical et suivi.", yesGo: 4 },
         { q: "Cicatrice stromale ou œil complexe ?", yes: "PK si cicatrice ; DSAEK si œil complexe.", no: "DMEK." }
       ],
       phases: [
@@ -93,14 +94,14 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     },
     treatments: [
       { name: "NaCl 5 % et séchoir", dose: "NaCl 5 % goutte 4×/j ou onguent au coucher ; séchoir au réveil.", pitfall: "Effet modeste, surtout sur l’épithélium.", how: "Goutte ou onguent salé (hypertonique) qui attire par osmose l’eau de l’épithélium vers les larmes ; l’air tiède du séchoir accélère l’évaporation au réveil.", why: "Œdème épithélial léger, attente de greffe.", pros: "Simple, peu coûteux.", cons: "Agit peu sur le stroma ; effet modeste.", cx: "Brûlure, vision brouillée (onguent)." },
-      { name: "DMEK (Descemet membrane endothelial keratoplasty)", dose: "Greffon Descemet-endothélium plaqué par une bulle d’air.", refer: "Vision floue gênante ou œdème : référer en cornée.", pitfall: "Couché sur le dos les premiers jours.", how: "Chirurgie : on retire la Descemet malade (descemetorhexis), on injecte un rouleau de Descemet et d’endothélium de donneur (≈ 15 µm), puis on le déroule et le plaque avec une bulle d’air ou de gaz.", why: "Fuchs symptomatique : premier choix.", pros: "Meilleure vision, récupération rapide, rejet le plus rare.", cons: "Technique exigeante.", cx: "Décollement, échec primaire, rejet, PIO ↑ (bulle, stéroïdes), cataracte." },
+      { name: "DMEK (Descemet membrane endothelial keratoplasty)", dose: "Greffon Descemet-endothélium plaqué par une bulle d’air.", pitfall: "Couché sur le dos les premiers jours.", how: "Chirurgie : on retire la Descemet malade (descemetorhexis), on injecte un rouleau de Descemet et d’endothélium de donneur (≈ 15 µm), puis on le déroule et le plaque avec une bulle d’air ou de gaz.", why: "Fuchs symptomatique : premier choix.", pros: "Meilleure vision, récupération rapide, rejet le plus rare.", cons: "Technique exigeante.", cx: "Décollement, échec primaire, rejet, PIO ↑ (bulle, stéroïdes), cataracte." },
       { name: "DSAEK (Descemet stripping automated endothelial keratoplasty)", dose: "Greffon endothélial plus épais, plus facile à manipuler.", pitfall: "Vision un peu moins fine, virage hypermétropique.", how: "Même principe, avec une fine couche de stroma postérieur taillée par une lame motorisée : greffon plus épais, plus facile à manipuler.", why: "Œil complexe.", pros: "Plus stable dans l’œil complexe.", cons: "Vision un peu moins fine, virage hypermétropique plus marqué.", cx: "Décollement, rejet plus fréquent qu’après DMEK." },
       { name: "Kératoplastie transfixiante (PK, penetrating keratoplasty)", dose: "Greffe de pleine épaisseur, suturée.", pitfall: "Plaie fragile à vie, astigmatisme.", how: "On remplace un disque de cornée de pleine épaisseur, cousu par des points de suture.", why: "Cicatrice stromale, échecs de greffe endothéliale.", pros: "Remplace toutes les couches.", cons: "Récupération lente, astigmatisme, plaie fragile à vie.", cx: "Rejet (risque le plus élevé), sutures lâches, infection, glaucome." }
     ],
     treatment: {
-      first: ["NaCl 5 % goutte 4×/j ou onguent au coucher ; séchoir au réveil.", "**DMEK (Descemet membrane endothelial keratoplasty)** : greffon Descemet-endothélium plaqué par une bulle d’air.", "**DSAEK (Descemet stripping automated endothelial keratoplasty)** : greffon endothélial plus épais, plus facile à manipuler.", "**Kératoplastie transfixiante (PK, penetrating keratoplasty)** : greffe de pleine épaisseur, suturée."],
-      refer: ["Vision floue gênante ou œdème : référer en cornée."],
-      pitfall: ["Effet modeste, surtout sur l’épithélium.", "Couché sur le dos les premiers jours.", "Vision un peu moins fine, virage hypermétropique.", "Plaie fragile à vie, astigmatisme."]
+      first: ["**Externe / 1re ligne** : NaCl 5 % goutte 4×/j ou onguent au coucher ; séchoir au réveil.", "**Ophtalmologiste** : greffe endothéliale (DMEK), parfois avec la cataracte."],
+      refer: ["Cette semaine si œdème qui gêne la vision — greffe à discuter.", "Suivi régulier si guttae sans symptômes, et avant toute cataracte."],
+      pitfall: ["Dorzolamide ou brinzolamide en gouttes : freinent la pompe endothéliale."]
     },
     pearls: [
       { q: "Pourquoi la vision est-elle pire le matin ?", a: "Paupières fermées, l’eau ne s’évapore plus : la cornée se gorge d’eau la nuit. Le jour, l’évaporation la déshydrate et la vision s’éclaircit." },
@@ -130,7 +131,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Recurrent corneal erosion, corneal abrasion and epithelial basement membrane dystrophy",
     tags: ["frequent", "highyield", "piege"],
     oneLiner: "Douleur vive au réveil, en ouvrant les yeux, des semaines après une égratignure d’ongle : l’épithélium mal ancré s’arrache.",
-    definition: "L’abrasion est une égratignure qui enlève une partie de l’épithélium. L’érosion récidivante survient quand cet épithélium reste mal ancré (après une abrasion ou une EBMD) et s’arrache à répétition, typiquement au réveil.",
+    definition: "L’abrasion est une égratignure qui enlève une partie de l’épithélium.\nL’érosion récidivante survient quand l’épithélium reste mal ancré et s’arrache à répétition, surtout au réveil.",
     anatomy: {
       text: "L’épithélium est riveté à sa membrane basale par des hémidesmosomes (rivets moléculaires), eux-mêmes amarrés au stroma à travers la couche de Bowman. Après une abrasion, il recouvre la plaie en 1 à 3 jours, mais ces ancrages mettent des semaines à des mois à se reformer. La cornée, tissu le plus innervé du corps, fait très mal quand elle perd son épithélium.",
       figure: { type: "cornea", highlight: ["epithelium", "bowman"] }
@@ -187,10 +188,11 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Infiltrat, hypopyon ou réaction de chambre ?", yes: "Kératite infectieuse : cultures.", no: "Abrasion : éverser, retirer tout corps étranger.", cont: "no" },
-        { q: "Porteur de lentilles ?", yes: "Fluoroquinolone, pas de pansement, revoir à 24 h.", no: "Onguent d’érythromycine jusqu’à guérison.", cont: "no" },
-        { q: "Crises répétées au réveil ?", yes: "Érosion récidivante : NaCl 5 % au coucher 3–6 mois.", no: "Abrasion simple : guérit en 1–3 jours.", cont: "yes" },
-        { q: "Récidives malgré 2–3 mois de prévention ?", yes: "Doxycycline ± stéroïde, puis polissage, ponctions ou PTK.", no: "Poursuivre, puis sevrer lentement." }
+        { q: "Infiltrat, hypopyon ou réaction de chambre ?", yes: "Kératite infectieuse : ophtalmologie le jour même.", no: "Abrasion : éverser, retirer tout corps étranger.", noGo: 1 },
+        { q: "Projection rapide (meulage, marteau) ?", yes: "TDM pour exclure un corps intraoculaire, pas d’IRM.", no: "", yesGo: 2, noGo: 2 },
+        { q: "Porteur de lentilles ?", yes: "Fluoroquinolone, pas de pansement, revoir à 24 h.", no: "Onguent d’érythromycine jusqu’à guérison.", yesGo: 3, noGo: 3 },
+        { q: "Crises répétées au réveil, des semaines après ?", yes: "Érosion récidivante : NaCl 5 % au coucher 3–6 mois.", no: "Abrasion simple : guérit en 1–3 jours.", yesGo: 4 },
+        { q: "Récidives malgré 2–3 mois de prévention ?", yes: "Référer : doxycycline, polissage, ponctions ou PTK.", no: "Poursuivre, puis sevrer lentement." }
       ],
       phases: [
         { phase: "medical", items: [
@@ -209,16 +211,17 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       local: "Au Québec, beaucoup d’abrasions sont vues à l’urgence, en première ligne ou par l’optométriste ; diriger si infiltrat, non-guérison ou crises répétées. Blessure au travail : formulaires CNESST."
     },
     treatments: [
-      { name: "Abrasion : antibiotique, sans pansement", dose: "Érythromycine onguent 4×/j jusqu’à guérison.", refer: "Infiltrat ou non-guérison à 48 h : ophtalmologie.", pitfall: "Lentilles : fluoroquinolone, jamais de pansement.", how: "Onguent d’érythromycine ou goutte antibiotique 4 fois par jour jusqu’à guérison ; pas de pansement occlusif, qui n’aide pas à guérir.", why: "Prévenir l’infection pendant la repousse.", pros: "Guérison en 1–3 jours si petite.", cons: "Lentilles : fluoroquinolone, jamais de pansement.", cx: "Infection ; érosion récidivante plus tard." },
+      { name: "Abrasion : antibiotique, sans pansement", dose: "Érythromycine onguent 4×/j jusqu’à guérison.", pitfall: "Lentilles : fluoroquinolone, jamais de pansement.", how: "Onguent d’érythromycine ou goutte antibiotique 4 fois par jour jusqu’à guérison ; pas de pansement occlusif, qui n’aide pas à guérir.", why: "Prévenir l’infection pendant la repousse.", pros: "Guérison en 1–3 jours si petite.", cons: "Lentilles : fluoroquinolone, jamais de pansement.", cx: "Infection ; érosion récidivante plus tard." },
       { name: "Onguent NaCl 5 % au coucher", dose: "Onguent NaCl 5 % au coucher, 3–6 mois.", pitfall: "Récidive si arrêt trop tôt.", how: "Onguent hypertonique le soir pendant 3–6 mois : il lubrifie pour que l’épithélium ne colle pas à la paupière et en retire l’eau pour qu’il adhère mieux.", why: "Érosion récidivante ; abrasion à risque (ongle).", pros: "Peu coûteux, souvent suffisant.", cons: "Récidive si arrêt trop tôt.", cx: "Brûlure, vision brouillée au réveil." },
       { name: "Doxycycline orale ± stéroïde", dose: "Doxycycline 50 mg 2×/j × 2 mois ± stéroïde doux.", pitfall: "Pas avant 8 ans ni en grossesse.", how: "Doxycycline 50 mg BID pendant 2 mois, utilisée ici pour bloquer la MMP-9 qui dissout les ancrages, ± stéroïde doux 2–3 semaines.", why: "Érosions rebelles.", pros: "Oral, peu coûteux.", cons: "Effet en quelques semaines.", cx: "Photosensibilité, œsophagite ; pas en grossesse ni avant 8 ans." },
-      { name: "Polissage à la fraise diamantée", dose: "Fraise diamantée en clinique, sous anesthésie topique.", refer: "Érosions rebelles : référer en cornée.", pitfall: "EBMD avant cataracte : polir, puis refaire la biométrie.", how: "En clinique, sous anesthésie topique : on retire l’épithélium lâche et on polit la Bowman ; le nouvel épithélium s’ancre sur une surface propre.", why: "Érosions rebelles ; EBMD qui trouble la vision ou fausse la biométrie (mesures pour choisir la lentille de cataracte).", pros: "Simple, possible dans l’axe visuel.", cons: "Douleur 2–3 jours.", cx: "Infection, léger voile cicatriciel (haze)." },
+      { name: "Polissage à la fraise diamantée", dose: "Fraise diamantée en clinique, sous anesthésie topique.", pitfall: "EBMD avant cataracte : polir, puis refaire la biométrie.", how: "En clinique, sous anesthésie topique : on retire l’épithélium lâche et on polit la Bowman ; le nouvel épithélium s’ancre sur une surface propre.", why: "Érosions rebelles ; EBMD qui trouble la vision ou fausse la biométrie (mesures pour choisir la lentille de cataracte).", pros: "Simple, possible dans l’axe visuel.", cons: "Douleur 2–3 jours.", cx: "Infection, léger voile cicatriciel (haze)." },
       { name: "Ponctions stromales ou PTK", dose: "Ponctions stromales hors de l’axe ; PTK si atteinte centrale.", pitfall: "Laisse des opacités ; PTK coûteuse.", how: "Ponctions : piqûres superficielles à l’aiguille, dont les microcicatrices ancrent l’épithélium. PTK : laser excimer qui vaporise quelques microns de surface.", why: "Ponctions : hors de l’axe ; PTK : atteinte centrale.", pros: "Ponctions rapides ; PTK régulière.", cons: "Opacités ; PTK coûteuse.", cx: "Haze, infection." }
     ],
     treatment: {
-      first: ["**Abrasion : antibiotique, sans pansement** : érythromycine onguent 4×/j jusqu’à guérison.", "Onguent NaCl 5 % au coucher, 3–6 mois.", "Doxycycline 50 mg 2×/j × 2 mois ± stéroïde doux.", "**Polissage à la fraise diamantée** : fraise diamantée en clinique, sous anesthésie topique.", "Ponctions stromales hors de l’axe ; PTK si atteinte centrale."],
-      refer: ["Infiltrat ou non-guérison à 48 h : ophtalmologie.", "Érosions rebelles : référer en cornée."],
-      pitfall: ["Lentilles : fluoroquinolone, jamais de pansement.", "Récidive si arrêt trop tôt.", "Pas avant 8 ans ni en grossesse.", "EBMD avant cataracte : polir, puis refaire la biométrie.", "Laisse des opacités ; PTK coûteuse."]
+      first: ["**Externe / 1re ligne** : érythromycine onguent 4×/j ; lentilles : fluoroquinolone. Érosions : NaCl 5 % au coucher.", "**Ophtalmologiste** : polissage, ponctions stromales ou PTK si récidives."],
+      refer: ["Le jour même si infiltrat, hypopyon ou projection rapide — infection ou corps intraoculaire.", "Dans les 48 h si pas guéri — chercher une autre cause."],
+      pitfall: ["Anesthésique topique à la maison : ulcère, perforation.", "Pansement occlusif chez un porteur de lentilles : Pseudomonas."],
+      qc: ["Blessure au travail : formulaires CNESST."]
     },
     pearls: [
       { q: "Pourquoi l’érosion survient-elle au réveil ?", a: "La nuit, l’épithélium mal ancré colle à la paupière et s’arrache à l’ouverture brusque. D’où l’onguent au coucher et l’ouverture douce des yeux, après une goutte de lubrifiant." },
@@ -248,7 +251,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Pterygium and ocular surface lesions (pinguecula, OSSN)",
     tags: ["frequent", "highyield", "piege"],
     oneLiner: "Aile rosée qui avance du nasal vers la cornée après des années de soleil ; atypique : penser à une néoplasie.",
-    definition: "Repli de conjonctive épaissie et vascularisée, en aile, qui franchit le limbe et envahit la cornée, presque toujours en nasal, à cause des UV. À distinguer de la pinguécula et surtout d’une néoplasie de surface (OSSN).",
+    definition: "Repli de conjonctive épaissie, en aile, qui franchit le limbe et envahit la cornée, presque toujours en nasal (UV).\nÀ distinguer de la pinguécula et surtout d’une néoplasie de surface (OSSN).",
     anatomy: {
       text: "La conjonctive, muqueuse vascularisée qui recouvre la sclère, s’arrête au limbe, où vivent les cellules souches de l’épithélium cornéen. Le limbe fait barrière : il empêche la conjonctive et ses vaisseaux d’envahir la cornée, qui doit rester transparente. La cornée concentre la lumière venue du côté temporal sur le limbe nasal, d’où la localisation typique. La pinguécula est une bosse jaunâtre qui reste sur la conjonctive ; l’OSSN est un cancer de l’épithélium qui peut imiter un ptérygion.",
       figure: { type: "eye", highlight: ["conjonctive", "limbe", "cornee"] }
@@ -305,9 +308,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Lésion nasale triangulaire qui franchit le limbe ?", yes: "Ptérygion : mesurer l’envahissement cornéen.", no: "Confinée à la conjonctive : pinguécula.", cont: "yes" },
-        { q: "Gélatineux, leucoplasie, vaisseaux nourriciers ou pigment ?", yes: "OSSN ou mélanome possible : biopsie, oncologie oculaire.", no: "Prise en charge selon la gêne.", cont: "no" },
-        { q: "Axe menacé, astigmatisme, gêne ou cataracte prévue ?", yes: "Exérèse + autogreffe conjonctivale.", no: "Lubrifiants, protection UV, photos au suivi.", cont: "yes" },
+        { q: "Lésion qui franchit le limbe sur la cornée ?", yes: "", no: "Confinée à la conjonctive : pinguécula ; protection UV.", yesGo: 1 },
+        { q: "Gélatineux, leucoplasie, vaisseaux nourriciers ou pigment ?", yes: "OSSN ou mélanome possible : biopsie, oncologie oculaire.", no: "Ptérygion : mesurer l’envahissement cornéen.", noGo: 2 },
+        { q: "Axe menacé, astigmatisme, gêne ou cataracte prévue ?", yes: "Exérèse + autogreffe conjonctivale.", no: "Lubrifiants, protection UV, photos au suivi.", yesGo: 3 },
         { q: "Récidive, ou lésion charnue chez un jeune ?", yes: "Ajouter mitomycine C ou membrane amniotique.", no: "Autogreffe seule." }
       ],
       phases: [
@@ -327,15 +330,14 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     },
     treatments: [
       { name: "Traitement conservateur", dose: "Lunettes anti-UV, larmes ; stéroïde doux quelques jours si poussée.", pitfall: "Ne fait pas régresser la lésion.", how: "Protection UV, larmes artificielles et, en poussée, stéroïde doux quelques jours : on protège et on calme la surface.", why: "Petit ptérygion, pinguécula, poussée inflammatoire.", pros: "Sans chirurgie.", cons: "Ne fait pas régresser la lésion.", cx: "Stéroïde : PIO ↑." },
-      { name: "Exérèse + autogreffe conjonctivale", dose: "Exérèse + autogreffe conjonctivale, collée ou suturée.", refer: "Axe menacé, astigmatisme, gêne ou cataracte prévue.", pitfall: "Sclère nue seule : récidive bien plus fréquente.", how: "Chirurgie : on dissèque la tête, on enlève le tissu fibrovasculaire, puis on couvre la sclère nue avec un greffon mince de conjonctive prélevé sous la paupière supérieure, collé ou suturé.", why: "Axe menacé, astigmatisme, irritation, restriction, avant cataracte, esthétique.", pros: "Récidive bien plus faible qu’avec la sclère nue (bare sclera : exérèse sans couverture) ; colle : chirurgie plus courte, moins d’inconfort.", cons: "Plus longue ; site donneur.", cx: "Récidive, granulome, dellen (creux cornéen par mauvais mouillage)." },
+      { name: "Exérèse + autogreffe conjonctivale", dose: "Exérèse + autogreffe conjonctivale, collée ou suturée.", pitfall: "Sclère nue seule : récidive bien plus fréquente.", how: "Chirurgie : on dissèque la tête, on enlève le tissu fibrovasculaire, puis on couvre la sclère nue avec un greffon mince de conjonctive prélevé sous la paupière supérieure, collé ou suturé.", why: "Axe menacé, astigmatisme, irritation, restriction, avant cataracte, esthétique.", pros: "Récidive bien plus faible qu’avec la sclère nue (bare sclera : exérèse sans couverture) ; colle : chirurgie plus courte, moins d’inconfort.", cons: "Plus longue ; site donneur.", cx: "Récidive, granulome, dellen (creux cornéen par mauvais mouillage)." },
       { name: "Mitomycine C ou membrane amniotique", dose: "Mitomycine C peropératoire ou membrane amniotique.", pitfall: "Mitomycine : toxique si dose excessive.", how: "Mitomycine C appliquée quelques minutes sur la sclère avec une éponge ; membrane amniotique (couche interne du placenta) posée sur la zone, anti-inflammatoire.", why: "Récidive, grande lésion, conjonctive à épargner pour une future chirurgie de glaucome.", pros: "Moins de récidive.", cons: "Mitomycine : toxique si dose excessive.", cx: "Fonte de la sclère, retard de cicatrisation." },
-      { name: "Traitement de l’OSSN", dose: "Chimiothérapie topique en cures, ou exérèse « sans toucher » + cryothérapie.", refer: "Lésion atypique : biopsie, oncologie oculaire.", qc: "Interféron, 5-FU : préparations magistrales.", how: "Gouttes de chimiothérapie en cures, ou exérèse sans toucher avec marges saines et cryothérapie (congélation) des bords.", why: "OSSN confirmée ou très suspecte.", pros: "Gouttes : traitent toute la surface.", cons: "Suivi prolongé, récidives.", cx: "Toxicité de surface ; insuffisance limbique si exérèse étendue." }
+      { name: "Traitement de l’OSSN", dose: "Chimiothérapie topique en cures, ou exérèse « sans toucher » + cryothérapie.", qc: "Interféron, 5-FU : préparations magistrales.", how: "Gouttes de chimiothérapie en cures, ou exérèse sans toucher avec marges saines et cryothérapie (congélation) des bords.", why: "OSSN confirmée ou très suspecte.", pros: "Gouttes : traitent toute la surface.", cons: "Suivi prolongé, récidives.", cx: "Toxicité de surface ; insuffisance limbique si exérèse étendue." }
     ],
     treatment: {
-      first: ["**Traitement conservateur** : lunettes anti-UV, larmes ; stéroïde doux quelques jours si poussée.", "Exérèse + autogreffe conjonctivale, collée ou suturée.", "Mitomycine C peropératoire ou membrane amniotique.", "**Traitement de l’OSSN** : chimiothérapie topique en cures, ou exérèse « sans toucher » + cryothérapie."],
-      refer: ["Axe menacé, astigmatisme, gêne ou cataracte prévue.", "Lésion atypique : biopsie, oncologie oculaire."],
-      pitfall: ["Ne fait pas régresser la lésion.", "Sclère nue seule : récidive bien plus fréquente.", "Mitomycine : toxique si dose excessive."],
-      qc: ["Interféron, 5-FU : préparations magistrales."]
+      first: ["**Externe / 1re ligne** : lunettes anti-UV, larmes ; fluorométholone quelques jours si poussée.", "**Ophtalmologiste** : exérèse avec autogreffe conjonctivale ; biopsie si lésion atypique."],
+      refer: ["Cette semaine si lésion gélatineuse, blanche, pigmentée ou qui grossit vite — cancer possible.", "Suivi régulier sinon, plus tôt si l’axe visuel est menacé."],
+      pitfall: ["Exérèse à sclère nue sans greffe : récidive fréquente."]
     },
     pearls: [
       { q: "Ptérygion ou pseudoptérygion ?", a: "Le pseudoptérygion suit une agression (brûlure, trauma, ulcère périphérique), siège dans tout méridien et n’adhère que par sa tête : la sonde passe sous le col. Le vrai, lié aux UV, est nasal et adhérent partout." },
@@ -364,7 +366,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Corneal transplantation: graft rejection and complications (PK, DSAEK, DMEK)",
     tags: ["urgent", "highyield", "piege"],
     oneLiner: "Greffé de cornée avec œil rouge, photophobie, vision ↓ ou douleur : rejet jusqu’à preuve du contraire, stéroïdes intensifs le jour même.",
-    definition: "La greffe de cornée remplace la partie malade par celle d’un donneur décédé, sur toute l’épaisseur ou seulement la couche atteinte. Le rejet, attaque immunitaire du greffon, est souvent réversible s’il est traité tôt.",
+    definition: "La greffe de cornée remplace la partie malade par celle d’un donneur, sur toute l’épaisseur ou une seule couche.\nLe rejet, attaque immunitaire du greffon, est souvent réversible s’il est traité tôt.",
     anatomy: {
       text: "La cornée a un privilège immunitaire (immune privilege) : ni vaisseaux sanguins ni lymphatiques, et une chambre antérieure qui atténue l’immunité ; les néovaisseaux (vaisseaux anormaux venus du limbe) le font perdre. Selon la couche malade, on greffe toute l’épaisseur (PK, penetrating keratoplasty), le stroma seulement en gardant l’endothélium du patient (DALK, deep anterior lamellar keratoplasty), ou l’endothélium et la Descemet, avec une fine couche de stroma (DSAEK) ou sans (DMEK). Le rejet reste une grande cause d’échec de greffe.",
       figure: { type: "cornea", highlight: ["stroma", "descemet", "endothelium"] }
@@ -426,9 +428,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Infiltrat ou défaut épithélial, surtout près d’une suture ?", yes: "Infection : cultures, antibiotiques, retrait de la suture.", no: "Chercher un rejet.", cont: "no" },
-        { q: "Ligne, infiltrats, KP ou œdème du greffon ?", yes: "Rejet : stéroïdes intensifs le jour même + cycloplégique.", no: "PIO, herpès, suture, sécheresse, échec tardif ?", cont: "yes" },
-        { q: "Rejet endothélial sévère ou greffe à haut risque ?", yes: "Ajouter stéroïde périoculaire ou oral ; revoir aux 2–3 jours.", no: "Topique seul.", cont: "yes" },
+        { q: "Greffé avec rougeur, photophobie, vision ↓ ou douleur ?", yes: "Ophtalmologiste le jour même.", no: "Suivi habituel ; gouttes prises tous les jours.", yesGo: 1 },
+        { q: "Infiltrat ou défaut, surtout près d’une suture ?", yes: "Infection : cultures, antibiotiques, retrait de la suture.", no: "", noGo: 2 },
+        { q: "Ligne, infiltrats, KP ou œdème du greffon ?", yes: "Rejet : prednisolone 1 % aux heures + cycloplégique.", no: "PIO, herpès, suture lâche, sécheresse ?", yesGo: 3 },
+        { q: "Rejet endothélial sévère ou haut risque ?", yes: "Ajouter stéroïde périoculaire ou oral.", no: "", yesGo: 4, noGo: 4 },
         { q: "Greffon encore œdémateux après quelques semaines ?", yes: "Échec : regreffe (souvent DMEK ou DSAEK).", no: "Sevrage lent, puis dose d’entretien." }
       ],
       phases: [
@@ -448,15 +451,16 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       local: "Au Québec, les greffons proviennent du don de tissus après le décès, avec le consentement de la personne ou de ses proches ; un greffé doit pouvoir être vu le jour même pour tout RSVP."
     },
     treatments: [
-      { name: "Stéroïdes topiques intensifs", dose: "Prednisolone 1 % aux heures, puis sevrage lent.", refer: "RSVP chez un greffé : vu le jour même.", pitfall: "Exclure une infection avant de monter la dose.", how: "Gouttes d’acétate de prednisolone 1 % aux heures (± onguent la nuit), puis diminution lente : elles bloquent l’attaque des lymphocytes contre le greffon.", why: "Tout rejet, dès les premiers signes.", pros: "Souvent réversible si traité tôt.", cons: "Exclure d’abord une infection.", cx: "PIO ↑, cataracte, herpès réactivé, infection." },
+      { name: "Stéroïdes topiques intensifs", dose: "Prednisolone 1 % aux heures, puis sevrage lent.", pitfall: "Exclure une infection avant de monter la dose.", how: "Gouttes d’acétate de prednisolone 1 % aux heures (± onguent la nuit), puis diminution lente : elles bloquent l’attaque des lymphocytes contre le greffon.", why: "Tout rejet, dès les premiers signes.", pros: "Souvent réversible si traité tôt.", cons: "Exclure d’abord une infection.", cx: "PIO ↑, cataracte, herpès réactivé, infection." },
       { name: "Stéroïdes périoculaires ou oraux", dose: "Triamcinolone sous-ténonienne ou prednisone orale courte.", pitfall: "Injection impossible à retirer.", how: "Injection de triamcinolone sous la capsule de Tenon, ou prednisone orale en courte cure, en plus des gouttes.", why: "Rejet endothélial sévère, haut risque, observance difficile.", pros: "Effet plus puissant et soutenu.", cons: "Injection impossible à retirer.", cx: "PIO ↑ prolongée ; glycémie, humeur, estomac." },
       { name: "Retrait de sutures (PK)", dose: "Retrait à la lampe à fente, sous anesthésie topique.", pitfall: "Trop tôt : la plaie peut s’ouvrir.", how: "À la lampe à fente, sous anesthésie topique : on coupe le point avec une aiguille fine et on le retire à la pince.", why: "Suture lâche ou cassée ; astigmatisme (méridien le plus cambré).", pros: "Moins d’astigmatisme et de déclencheurs de rejet.", cons: "Trop tôt : plaie qui s’ouvre.", cx: "Infection, rejet, fuite." },
-      { name: "Réinjection d’air (rebubbling)", dose: "Nouvelle bulle d’air ou de SF6, patient couché sur le dos.", refer: "Greffon de DMEK décollé : référer rapidement.", pitfall: "Parfois à répéter.", how: "Nouvelle bulle d’air ou de gaz (SF6, qui dure plus longtemps) injectée dans la chambre antérieure pour replaquer le greffon ; patient couché sur le dos.", why: "Greffon de DMEK ou DSAEK décollé au centre.", pros: "Simple, souvent efficace.", cons: "Parfois à répéter.", cx: "PIO ↑ (bulle qui bloque la pupille), perte endothéliale." }
+      { name: "Réinjection d’air (rebubbling)", dose: "Nouvelle bulle d’air ou de SF6, patient couché sur le dos.", pitfall: "Parfois à répéter.", how: "Nouvelle bulle d’air ou de gaz (SF6, qui dure plus longtemps) injectée dans la chambre antérieure pour replaquer le greffon ; patient couché sur le dos.", why: "Greffon de DMEK ou DSAEK décollé au centre.", pros: "Simple, souvent efficace.", cons: "Parfois à répéter.", cx: "PIO ↑ (bulle qui bloque la pupille), perte endothéliale." }
     ],
     treatment: {
-      first: ["**Stéroïdes topiques intensifs** : prednisolone 1 % aux heures, puis sevrage lent.", "**Stéroïdes périoculaires ou oraux** : triamcinolone sous-ténonienne ou prednisone orale courte.", "Retrait à la lampe à fente, sous anesthésie topique.", "**Réinjection d’air (rebubbling)** : nouvelle bulle d’air ou de SF6, patient couché sur le dos."],
-      refer: ["RSVP chez un greffé : vu le jour même.", "Greffon de DMEK décollé : référer rapidement."],
-      pitfall: ["Exclure une infection avant de monter la dose.", "Injection impossible à retirer.", "Trop tôt : la plaie peut s’ouvrir.", "Parfois à répéter."]
+      first: ["**Externe / 1re ligne** : vérifier que les gouttes de stéroïde sont prises ; ne jamais les arrêter.", "**Ophtalmologiste** : prednisolone 1 % aux heures si rejet ; cultures si infiltrat."],
+      refer: ["Le jour même pour tout greffé avec RSVP — le rejet traité tôt est réversible.", "Immédiatement après un coup sur une PK — la plaie peut s’ouvrir."],
+      pitfall: ["Monter la prednisolone sur un infiltrat non cultivé : infection masquée."],
+      qc: ["Greffons issus du don de tissus après le décès."]
     },
     pearls: [
       { q: "Classe les greffes selon le risque de rejet.", a: "PK > DSAEK > DMEK : plus de tissu étranger, plus de risque. La DALK garde l’endothélium du receveur : **pas de rejet endothélial**, mais un rejet épithélial ou stromal reste possible." },
@@ -486,7 +490,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Chemical eye injury",
     tags: ["urgent", "highyield", "piege"],
     oneLiner: "Produit chimique dans l’œil : irriguer immédiatement, avant l’histoire et l’examen, jusqu’à pH 7,0–7,5 ; les bases sont les pires.",
-    definition: "Lésion de la surface oculaire par une base ou un acide, au travail ou à la maison. Les bases pénètrent et peuvent détruire les cellules souches du limbe : l’irrigation immédiate sauve la vision.",
+    definition: "Lésion de la surface oculaire par une base ou un acide, au travail ou à la maison.\nLes bases pénètrent et peuvent détruire les cellules souches du limbe : l’irrigation immédiate sauve la vision.",
     anatomy: {
       text: "Le limbe abrite les cellules souches qui renouvellent l’épithélium cornéen ; il fait barrière contre la conjonctive et il est nourri par les arcades vasculaires limbiques. La conjonctive tapisse aussi l’intérieur des paupières et forme des culs-de-sac (fornix) où des particules se cachent. Une base peut atteindre la chambre antérieure en quelques secondes à minutes. Séquelle d’une brûlure grave : cornée opaque et vascularisée.",
       figure: { type: "eye", highlight: ["limbe", "conjonctive", "cornee", "chambre-anterieure"] }
@@ -543,9 +547,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Exposition chimique ?", yes: "Irriguer tout de suite, avant l’histoire et l’acuité.", no: "Évaluer comme un œil rouge douloureux.", cont: "yes" },
-        { q: "pH 7,0–7,5, 5–10 min après l’irrigation ?", yes: "Examen : acuité, fluorescéine, limbe, PIO, éversion.", no: "Irriguer encore, retirer les particules des culs-de-sac.", cont: "yes" },
-        { q: "Ischémie limbique ou opacité (grade II–IV) ?", yes: "Traitement intensif + membrane amniotique précoce.", no: "Grade I : antibiotique, lubrifiants ; revoir en 1–2 jours.", cont: "yes" },
+        { q: "Exposition chimique ?", yes: "Irriguer tout de suite, avant l’histoire et l’acuité.", no: "Évaluer comme un œil rouge douloureux.", yesGo: 1 },
+        { q: "pH 7,0–7,5, 5–10 min après l’irrigation ?", yes: "Examen : acuité, fluorescéine, limbe, PIO, éversion.", no: "Irriguer encore, retirer les particules, puis examiner.", yesGo: 2, noGo: 2 },
+        { q: "Limbe blanc ou cornée opaque (grade II–IV) ?", yes: "Ophtalmologie immédiatement : stéroïde, doxycycline, membrane amniotique.", no: "Grade I : antibiotique, lubrifiants ; revoir en 1–2 jours.", yesGo: 3 },
         { q: "Épithélium refermé vers le jour 10–14 ?", yes: "Sevrer vite le stéroïde.", no: "Réduire le stéroïde ; membrane amniotique, ± tarsorraphie." }
       ],
       phases: [
@@ -562,17 +566,17 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       local: "Au Québec, une brûlure au travail exige les formulaires de la CNESST ; le Centre antipoison du Québec aide à identifier le produit et sa toxicité."
     },
     treatments: [
-      { name: "Irrigation abondante", dose: "NaCl 0,9 % ou lactate Ringer ≥ 30 min, jusqu’à pH 7,0–7,5.", refer: "Limbe blanc ou cornée opaque : ophtalmologie d’urgence.", pitfall: "Recontrôler le pH 5–10 min après l’arrêt.", qc: "Au travail : CNESST ; Centre antipoison du Québec.", how: "Rinçage au soluté (NaCl 0,9 % ou lactate Ringer) par tubulure, lentille d’irrigation ou sous blépharostat, ≥ 30 min, paupières retournées, jusqu’à pH 7,0–7,5 : dilue et emporte le produit.", why: "Toute brûlure, sur place puis à l’urgence.", pros: "Le geste le plus efficace.", cons: "Inconfortable.", cx: "Chémosis (œdème de la conjonctive)." },
+      { name: "Irrigation abondante", dose: "NaCl 0,9 % ou lactate Ringer ≥ 30 min, jusqu’à pH 7,0–7,5.", pitfall: "Recontrôler le pH 5–10 min après l’arrêt.", qc: "Au travail : CNESST ; Centre antipoison du Québec.", how: "Rinçage au soluté (NaCl 0,9 % ou lactate Ringer) par tubulure, lentille d’irrigation ou sous blépharostat, ≥ 30 min, paupières retournées, jusqu’à pH 7,0–7,5 : dilue et emporte le produit.", why: "Toute brûlure, sur place puis à l’urgence.", pros: "Le geste le plus efficace.", cons: "Inconfortable.", cx: "Chémosis (œdème de la conjonctive)." },
       { name: "Stéroïde topique court", dose: "Prednisolone 1 %, de 4×/j aux heures, ≤ 10–14 jours.", pitfall: "Prolongé, il favorise la fonte.", how: "Acétate de prednisolone 1 % (de 4 fois par jour à toutes les heures) au plus 10–14 jours, puis sevrage rapide : freine les neutrophiles et l’inflammation.", why: "Grades II–IV.", pros: "Moins d’inflammation et de néovaisseaux.", cons: "Prolongé, il favorise la fonte.", cx: "Fonte, perforation, PIO ↑." },
       { name: "Doxycycline et ascorbate oraux", dose: "Doxycycline 100 mg 2×/j + vitamine C 1–2 g/j.", pitfall: "Doxycycline : pas en grossesse ni avant 8 ans.", how: "Doxycycline 100 mg BID : inhibe les collagénases ; vitamine C 1–2 g/j : nécessaire à la fabrication du collagène, effondrée dans l’aqueuse après une base.", why: "Grades II–IV, défaut persistant.", pros: "Oral, peu coûteux.", cons: "Doxycycline : pas en grossesse ni avant 8 ans.", cx: "Photosensibilité ; calculs rénaux (vitamine C)." },
       { name: "Membrane amniotique", dose: "Membrane amniotique tôt, collée, suturée ou sur anneau.", pitfall: "Ne remplace pas les cellules souches.", how: "Couche interne du placenta de donneuse, collée, suturée ou montée sur un anneau : pansement biologique anti-inflammatoire.", why: "Grades II–IV, tôt ; défaut persistant.", pros: "Fermeture plus rapide, moins de douleur.", cons: "Ne remplace pas les cellules souches.", cx: "Infection, déplacement." },
-      { name: "Greffe de cellules souches limbiques", dose: "CLAU, SLET ou KLAL selon l’état de l’autre œil.", refer: "Insuffisance limbique chronique : centre spécialisé.", pitfall: "KLAL : immunosuppression systémique.", how: "Apport de limbe sain : CLAU (autogreffe conjonctivo-limbique de l’autre œil), SLET (petits fragments de limbe sur membrane amniotique) ou KLAL (allogreffe de limbe de donneur).", why: "Insuffisance limbique chronique.", pros: "Surface stable, puis greffe de cornée possible.", cons: "CLAU, SLET : œil adelphe sain requis ; KLAL : immunosuppression.", cx: "Rejet, échec, atteinte de l’œil donneur." }
+      { name: "Greffe de cellules souches limbiques", dose: "CLAU, SLET ou KLAL selon l’état de l’autre œil.", pitfall: "KLAL : immunosuppression systémique.", how: "Apport de limbe sain : CLAU (autogreffe conjonctivo-limbique de l’autre œil), SLET (petits fragments de limbe sur membrane amniotique) ou KLAL (allogreffe de limbe de donneur).", why: "Insuffisance limbique chronique.", pros: "Surface stable, puis greffe de cornée possible.", cons: "CLAU, SLET : œil adelphe sain requis ; KLAL : immunosuppression.", cx: "Rejet, échec, atteinte de l’œil donneur." }
     ],
     treatment: {
-      first: ["**Irrigation abondante** : naCl 0,9 % ou lactate Ringer ≥ 30 min, jusqu’à pH 7,0–7,5.", "**Stéroïde topique court** : prednisolone 1 %, de 4×/j aux heures, ≤ 10–14 jours.", "Doxycycline 100 mg 2×/j + vitamine C 1–2 g/j.", "Membrane amniotique tôt, collée, suturée ou sur anneau.", "**Greffe de cellules souches limbiques** : CLAU, SLET ou KLAL selon l’état de l’autre œil."],
-      refer: ["Limbe blanc ou cornée opaque : ophtalmologie d’urgence.", "Insuffisance limbique chronique : centre spécialisé."],
-      pitfall: ["Recontrôler le pH 5–10 min après l’arrêt.", "Prolongé, il favorise la fonte.", "Doxycycline : pas en grossesse ni avant 8 ans.", "Ne remplace pas les cellules souches.", "KLAL : immunosuppression systémique."],
-      qc: ["Au travail : CNESST ; Centre antipoison du Québec."]
+      first: ["**Externe / 1re ligne** : irriguer au NaCl 0,9 % ≥ 30 min jusqu’à pH 7,0–7,5, paupières retournées.", "**Ophtalmologiste** : stéroïde court, doxycycline + vitamine C, membrane amniotique."],
+      refer: ["Immédiatement si limbe blanc, cornée opaque ou pH qui remonte — perte de la vision.", "Dans les 24 h pour toute brûlure par une base, même légère."],
+      pitfall: ["Attendre l’acuité ou le produit avant d’irriguer : minutes perdues.", "Prednisolone au-delà de 10–14 jours : fonte de la cornée."],
+      qc: ["Au travail : CNESST ; Centre antipoison du Québec pour le produit."]
     },
     pearls: [
       { q: "Que fais-tu en premier ?", a: "**J’irrigue**, avant l’histoire, l’acuité et l’examen ; seul le papier pH peut précéder. Au moins 30 min, jusqu’à pH 7,0–7,5 recontrôlé 5–10 min après, avec double éversion." },

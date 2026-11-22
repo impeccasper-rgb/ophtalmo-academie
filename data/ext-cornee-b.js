@@ -14,7 +14,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Conjunctivitis and ocular surface inflammation",
     tags: ["frequent", "highyield", "piege"],
     oneLiner: "Œil rouge : lire d’abord la conjonctive (relief, sécrétions, ganglion, limbe), puis toujours vérifier la cornée à la fluorescéine.",
-    definition: "Inflammation de la conjonctive (fine muqueuse des paupières et du blanc de l’œil) par un virus, une bactérie, une allergie ou un frottement. Souvent bénigne, elle menace la vision quand elle atteint la cornée.",
+    definition: "Inflammation de la conjonctive par un virus, une bactérie, une allergie ou un frottement.\nSouvent bénigne, elle menace la vision quand elle atteint la cornée.",
     anatomy: {
       text: "La conjonctive palpébrale (sur le tarse) et bulbaire (sur la sclère) contient du tissu lymphoïde, des mastocytes (cellules de l’allergie) et des cellules caliciformes (mucus). Au limbe vivent les cellules souches de l’épithélium cornéen : une inflammation limbique peut donc abîmer la cornée, comme dans la kératoconjonctivite vernale (vernal keratoconjunctivitis), la kératoconjonctivite limbique supérieure ou KLS (superior limbic keratoconjunctivitis) et la rosacée. Formes qui atteignent la cornée : vernale, atopique, rosacée, gonocoque.",
       figure: { type: "eye", highlight: ["conjonctive", "limbe", "cornee"] }
@@ -77,10 +77,11 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Douleur, photophobie, baisse de vision ou cornée atteinte ?", yes: "Fluorescéine, infiltrat, uvéite, sclérite ? Avis le jour même.", no: "Lire la conjonctive.", cont: "no" },
-        { q: "Purulence hyperaiguë ?", yes: "Gram, culture, TAAN ; ceftriaxone systémique.", no: "Continuer.", cont: "no" },
-        { q: "Follicules, ganglion, contagion ?", yes: "Adénovirus : soutien, pas d’antibiotique ; > 3–4 sem. : Chlamydia.", no: "Évaluer l’allergie.", cont: "no" },
-        { q: "Démangeaison et papilles ?", yes: "Antihistaminique-stabilisateur ; papilles géantes : vernale, atopique, lentilles.", no: "Rosacée, KLS, pinguéculite ?" }
+        { q: "Douleur, photophobie, baisse de vision ou cornée atteinte ?", yes: "Fluorescéine ; ophtalmologie le jour même.", no: "", noGo: 1 },
+        { q: "Nouveau-né, ou pus abondant en quelques heures ?", yes: "Gram, culture, TAAN ; ceftriaxone si gonocoque ; ophtalmo le jour même.", no: "", noGo: 2 },
+        { q: "Follicules, ganglion préauriculaire, contagion ?", yes: "Adénovirus : soutien, hygiène, pas d’antibiotique.", no: "", yesGo: 3, noGo: 4 },
+        { q: "Persiste plus de 3–4 semaines ?", yes: "TAAN pour Chlamydia ; traiter les partenaires.", no: "Guérison spontanée en 1–3 semaines." },
+        { q: "Démangeaison et papilles ?", yes: "Antihistaminique-stabilisateur ; papilles géantes : vernale, atopique, lentilles.", no: "Rosacée, KLS, conjonctivite bactérienne ?" }
       ],
       phases: [
         { phase: "observation", items: [
@@ -106,14 +107,14 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       { name: "Compresses froides et larmes artificielles", dose: "Compresses froides, larmes réfrigérées 4–6×/j.", pitfall: "Ne raccourcit pas l’infection virale.", how: "Le froid resserre les vaisseaux ; les larmes réfrigérées rincent virus et allergènes.", why: "Adénovirus, allergie légère.", pros: "Sans risque.", cons: "Ne raccourcit pas l’infection virale.", cx: "Aucune." },
       { name: "Antihistaminique-stabilisateur des mastocytes (olopatadine, kétotifène)", dose: "Olopatadine 0,1 % ou kétotifène 0,025 %, 1 goutte 2×/j.", pitfall: "Insuffisant seul si vernale sévère.", how: "Bloque le récepteur H1 (démangeaison) et freine la libération des médiateurs (prévention).", why: "Allergie, vernale, atopique, gigantopapillaire.", pros: "Bien toléré au long cours.", cons: "Insuffisant seul si vernale sévère.", cx: "Brûlure." },
       { name: "Cyclosporine ou tacrolimus topiques", dose: "Cyclosporine ou tacrolimus topiques, sur ordonnance spécialisée.", pitfall: "Effet en semaines.", qc: "Formulations : disponibilité canadienne à vérifier.", how: "Bloquent la calcineurine, donc l’activation des lymphocytes T.", why: "Vernale, atopique, rosacée, KLS.", pros: "Épargne les stéroïdes.", cons: "Effet en semaines ; formulations et disponibilité canadienne à vérifier.", cx: "Brûlure ; prudence si herpès." },
-      { name: "Stéroïde topique court (fluorométholone, prednisolone)", dose: "Fluorométholone 0,1 % 4×/j, cure courte.", refer: "Au-delà de quelques jours : suivi de la PIO.", pitfall: "Exclure un herpès épithélial avant.", how: "Éteint l’inflammation lymphocytaire et éosinophilique.", why: "Bouclier, pseudomembranes, infiltrats gênants.", pros: "Effet rapide.", cons: "Rebond à l’arrêt (adénovirus) ; contre-indiqué si herpès épithélial.", cx: "Hausse de PIO, cataracte, surinfection." },
+      { name: "Stéroïde topique court (fluorométholone, prednisolone)", dose: "Fluorométholone 0,1 % 4×/j, cure courte.", pitfall: "Exclure un herpès épithélial avant.", how: "Éteint l’inflammation lymphocytaire et éosinophilique.", why: "Bouclier, pseudomembranes, infiltrats gênants.", pros: "Effet rapide.", cons: "Rebond à l’arrêt (adénovirus) ; contre-indiqué si herpès épithélial.", cx: "Hausse de PIO, cataracte, surinfection." },
       { name: "Hygiène palpébrale, doxycycline ou azithromycine", dose: "Hygiène palpébrale 1–2×/j ; doxycycline faible dose.", pitfall: "Doxycycline : pas avant 8 ans ni en grossesse.", qc: "Chlamydia, gonocoque : MADO au Québec.", how: "Compresses chaudes et nettoyage du bord libre (bactéries, Demodex) ; doxycycline faible dose anti-collagénase.", why: "Rosacée, blépharokératoconjonctivite.", pros: "Traite la cause.", cons: "Doxycycline : pas avant 8 ans ni pendant la grossesse.", cx: "Photosensibilité, œsophagite." }
     ],
     treatment: {
-      first: ["Compresses froides, larmes réfrigérées 4–6×/j.", "**Antihistaminique-stabilisateur des mastocytes (olopatadine, kétotifène)** : olopatadine 0,1 % ou kétotifène 0,025 %, 1 goutte 2×/j.", "Cyclosporine ou tacrolimus topiques, sur ordonnance spécialisée.", "**Stéroïde topique court (fluorométholone, prednisolone)** : fluorométholone 0,1 % 4×/j, cure courte.", "Hygiène palpébrale 1–2×/j ; doxycycline faible dose."],
-      refer: ["Au-delà de quelques jours : suivi de la PIO."],
-      pitfall: ["Ne raccourcit pas l’infection virale.", "Insuffisant seul si vernale sévère.", "Effet en semaines.", "Exclure un herpès épithélial avant.", "Doxycycline : pas avant 8 ans ni en grossesse."],
-      qc: ["Formulations : disponibilité canadienne à vérifier.", "Chlamydia, gonocoque : MADO au Québec."]
+      first: ["**Externe / 1re ligne** : virale : compresses froides, larmes, hygiène ; allergique : olopatadine 0,1 % 2×/j.", "**Ophtalmologiste** : stéroïde court, cyclosporine ou tacrolimus pour vernale et atopique."],
+      refer: ["Le jour même si douleur, photophobie, baisse de vision, nouveau-né ou pus abondant — cornée menacée.", "Cette semaine si vernale, atopique ou plus de 3–4 semaines."],
+      pitfall: ["Fluorométholone ou prednisolone sans suivi : PIO élevée, herpès aggravé.", "Antibiotique pour une conjonctivite virale : inutile."],
+      qc: ["Chlamydia et gonocoque : MADO au Québec."]
     },
     pearls: [
       { q: "Antibiotique ou stéroïde dans une conjonctivite adénovirale ?", a: "Antibiotique : non. Stéroïde : seulement si pseudomembranes ou infiltrats sous-épithéliaux qui baissent la vision ; il peut prolonger l’excrétion virale et causer un **rebond à l’arrêt** : sevrage lent, PIO." },
@@ -143,7 +144,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Peripheral ulcerative keratitis, Terrien degeneration and scleritis",
     tags: ["urgent", "highyield", "piege"],
     oneLiner: "Cornée périphérique qui s’amincit : intervalle clair et blépharite = kératite marginale ; croissant collé au limbe avec défaut épithélial = PUK, bilan systémique urgent.",
-    definition: "La cornée périphérique, près du limbe vascularisé, est le siège de maladies inflammatoires (kératite marginale, PUK, Mooren), dégénératives (Terrien) ou mécaniques. La PUK fait fondre le stroma et peut révéler une vasculite grave.",
+    definition: "La cornée périphérique, près du limbe, a ses propres maladies.\nInflammatoires : kératite marginale, PUK, Mooren ; dégénérative : Terrien.\nLa PUK fait fondre le stroma et peut révéler une vasculite grave.",
     anatomy: {
       text: "La cornée périphérique est nourrie par les arcades vasculaires du limbe : complément et complexes immuns (anticorps liés à leur cible) s’y déposent, et les cellules inflammatoires y libèrent des collagénases qui dissolvent le stroma. La sclère partage le même collagène et les mêmes vaisseaux : PUK et sclérite vont souvent ensemble. Une sclérite est souvent associée ; la dellen est une cause mécanique.",
       figure: { type: "eye", highlight: ["limbe", "cornee", "sclere", "conjonctive"] }
@@ -208,11 +209,11 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Intervalle clair, blépharite, peu d’amincissement ?", yes: "Kératite marginale : paupières + stéroïde doux court.", no: "Penser PUK, infection, Mooren ou Terrien.", cont: "no" },
-        { q: "Croissant limbique avec défaut et amincissement ?", yes: "PUK : bilan, rhumatologie le jour même, corticostéroïdes systémiques.", no: "Œil blanc, gouttière, lipides : Terrien.", cont: "yes" },
-        { q: "Bilan négatif, ulcère très douloureux surplombant ?", yes: "Mooren : immunosuppression ± résection conjonctivale.", no: "Traiter la maladie trouvée.", cont: "no" },
-        { q: "Rougeur profonde qui ne blanchit pas ?", yes: "Sclérite : AINS oraux ; nécrosante : immunosuppression.", no: "Épisclérite : larmes froides ± AINS oral court.", cont: "yes" },
-        { q: "Descémétocèle ou perforation ?", yes: "Colle si ≤ 2–3 mm, sinon greffe tectonique.", no: "Suivi rapproché de l’épaisseur." }
+        { q: "Croissant limbique avec défaut et amincissement ?", yes: "PUK : bilan, rhumatologie et ophtalmo le jour même.", no: "", yesGo: 1, noGo: 2 },
+        { q: "Descémétocèle ou perforation ?", yes: "Coquille ; colle si ≤ 2–3 mm, sinon greffe tectonique.", no: "Corticostéroïdes systémiques ; bilan négatif et ulcère surplombant : Mooren." },
+        { q: "Intervalle clair, blépharite, peu d’amincissement ?", yes: "Kératite marginale : paupières + stéroïde doux court.", no: "", noGo: 3 },
+        { q: "Œil blanc indolore, gouttière bordée de lipides ?", yes: "Terrien : topographie, correction optique, suivi.", no: "", noGo: 4 },
+        { q: "Rougeur profonde qui ne blanchit pas ?", yes: "Sclérite : AINS oraux ; nécrosante : immunosuppression.", no: "Épisclérite : larmes froides ± AINS oral court." }
       ],
       phases: [
         { phase: "medical", items: [
@@ -236,16 +237,16 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     },
     treatments: [
       { name: "Soins des paupières + stéroïde topique court", dose: "Hygiène palpébrale + stéroïde doux 1–2 semaines.", pitfall: "Exclure d’abord l’infection.", how: "Nettoyer le bord libre réduit l’antigène ; le stéroïde éteint la réaction.", why: "Kératite marginale.", pros: "Résolution en quelques jours.", cons: "Récidives ; exclure d’abord l’infection.", cx: "Hausse de PIO, surinfection." },
-      { name: "Corticostéroïdes systémiques et immunosuppresseurs", dose: "Prednisone orale, puis immunosuppresseur choisi par la rhumatologie.", refer: "PUK, sclérite nécrosante : rhumatologie le jour même.", qc: "Accès aux biologiques à vérifier.", how: "Freinent la vasculite à la source : prednisone rapide, puis méthotrexate, mycophénolate, cyclophosphamide ou rituximab.", why: "PUK, sclérite nécrosante, Mooren, sclérite résistante aux AINS.", pros: "Sauve l’œil, parfois la vie.", cons: "Choix et suivi par la rhumatologie.", cx: "Infections, diabète, ostéoporose, cytopénies." },
+      { name: "Corticostéroïdes systémiques et immunosuppresseurs", dose: "Prednisone orale, puis immunosuppresseur choisi par la rhumatologie.", qc: "Accès aux biologiques à vérifier.", how: "Freinent la vasculite à la source : prednisone rapide, puis méthotrexate, mycophénolate, cyclophosphamide ou rituximab.", why: "PUK, sclérite nécrosante, Mooren, sclérite résistante aux AINS.", pros: "Sauve l’œil, parfois la vie.", cons: "Choix et suivi par la rhumatologie.", cx: "Infections, diabète, ostéoporose, cytopénies." },
       { name: "Doxycycline orale et lubrification", dose: "Doxycycline 100 mg 2×/j + lubrifiants sans agent de conservation.", pitfall: "Appoint seulement.", how: "Doxycycline : inhibe les métalloprotéinases ; lubrifiants sans agent de conservation : protègent l’épithélium.", why: "PUK, fonte cornéenne, rosacée.", pros: "Oral, peu coûteux.", cons: "Appoint ; pas avant 8 ans ni en grossesse.", cx: "Photosensibilité, œsophagite." },
       { name: "AINS oraux", dose: "AINS oral (ibuprofène, naproxène) à dose anti-inflammatoire.", pitfall: "Pas d’AINS topiques sur une cornée amincie.", how: "Bloquent la cyclo-oxygénase (prostaglandines).", why: "Sclérite diffuse ou nodulaire, épisclérite tenace.", pros: "Souvent suffisants.", cons: "Insuffisants si nécrosante ; AINS topiques à éviter sur une cornée amincie.", cx: "Ulcère gastrique, atteinte rénale." },
-      { name: "Colle cyanoacrylate, lentille pansement, greffe tectonique", dose: "Colle si trou ≤ 2–3 mm, sinon greffe tectonique.", refer: "Descémétocèle ou perforation : urgence.", pitfall: "Nouvelle fonte si la maladie est active.", how: "La colle bouche le trou et freine les neutrophiles ; la greffe remplace le tissu fondu.", why: "Descémétocèle, perforation ≤ 2–3 mm (colle) ou plus grande (greffe).", pros: "Referme vite le globe.", cons: "Nouvelle fonte si maladie active.", cx: "Colle décollée, rejet." }
+      { name: "Colle cyanoacrylate, lentille pansement, greffe tectonique", dose: "Colle si trou ≤ 2–3 mm, sinon greffe tectonique.", pitfall: "Nouvelle fonte si la maladie est active.", how: "La colle bouche le trou et freine les neutrophiles ; la greffe remplace le tissu fondu.", why: "Descémétocèle, perforation ≤ 2–3 mm (colle) ou plus grande (greffe).", pros: "Referme vite le globe.", cons: "Nouvelle fonte si maladie active.", cx: "Colle décollée, rejet." }
     ],
     treatment: {
-      first: ["**Soins des paupières + stéroïde topique court** : hygiène palpébrale + stéroïde doux 1–2 semaines.", "**Corticostéroïdes systémiques et immunosuppresseurs** : prednisone orale, puis immunosuppresseur choisi par la rhumatologie.", "Doxycycline 100 mg 2×/j + lubrifiants sans agent de conservation.", "AINS oral (ibuprofène, naproxène) à dose anti-inflammatoire.", "Colle si trou ≤ 2–3 mm, sinon greffe tectonique."],
-      refer: ["PUK, sclérite nécrosante : rhumatologie le jour même.", "Descémétocèle ou perforation : urgence."],
-      pitfall: ["Exclure d’abord l’infection.", "Appoint seulement.", "Pas d’AINS topiques sur une cornée amincie.", "Nouvelle fonte si la maladie est active."],
-      qc: ["Accès aux biologiques à vérifier."]
+      first: ["**Externe / 1re ligne** : kératite marginale : hygiène palpébrale ; sclérite : ibuprofène ou naproxène oral.", "**Ophtalmologiste** : stéroïde doux, corticostéroïdes systémiques avec la rhumatologie, colle si perforation."],
+      refer: ["Le jour même si croissant qui s’amincit, sclérite douloureuse ou plage blanche — PUK ou nécrose.", "Immédiatement si descémétocèle ou Seidel positif — globe ouvert."],
+      pitfall: ["Kétorolac ou autre AINS topique sur une cornée amincie : fonte."],
+      qc: ["PUK et sclérite nécrosante : rhumatologie du centre le jour même."]
     },
     pearls: [
       { q: "Kératite marginale ou PUK : quel signe regardes-tu en premier ?", a: "L’**intervalle clair** : bande transparente entre l’infiltrat et le limbe dans la kératite marginale. La PUK, collée au limbe, creuse le stroma et commande un **bilan systémique urgent**." },

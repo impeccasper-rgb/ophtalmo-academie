@@ -19,7 +19,7 @@ function merge(a, b) { // same rule as I18N.applyContent : deep merge, arrays re
   if (Array.isArray(b) || typeof b !== 'object' || b === null) return b;
   const o = Object.assign({}, a); for (const k of Object.keys(b)) o[k] = (a && typeof a[k] === 'object' && !Array.isArray(a[k])) ? merge(a[k], b[k]) : b[k]; return o;
 }
-const W = s => String(s || '').replace(/\*\*/g, '').split(/\s+/).filter(x => /[\p{L}\p{N}]/u.test(x)).length; // ponctuation seule (« ? », « : », « ≥ ») non comptée
+const W = s => String((s && typeof s === 'object') ? s.t : (s || '')).replace(/\*\*/g, '').split(/\s+/).filter(x => /[\p{L}\p{N}]/u.test(x)).length; // ponctuation seule (« ? », « : », « ≥ ») non comptée
 const sum = a => a.reduce((n, s) => n + W(s), 0);
 const rows = [];
 for (let f of OPH.fiches.filter(x => x.module === MOD).sort((a, b) => a.order - b.order)) {

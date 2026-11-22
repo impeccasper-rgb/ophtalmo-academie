@@ -78,10 +78,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Creux proportionné à la taille du disque ?", yes: "Grand disque, anneau normal : imitateur probable ; documenter.", no: "Creux trop grand : suspect de glaucome.", cont: "no" },
-      { q: "Drapeau rouge présent ?", yes: "IRM ± VS, CRP.", no: "Bilan de glaucome : PIO, pachymétrie, gonioscopie.", cont: "no" },
-      { q: "OCT et champ concordent ?", yes: "Diagnostic posé : PIO cible.", no: "Refaire ; chercher un artefact ou une autre cause.", cont: "yes" },
-      { q: "Changement documenté au suivi ?", yes: "Traiter ou intensifier.", no: "Anomalie stable : suivi espacé, sans gouttes." }
+      { q: "Creux proportionné à la taille du disque ?", yes: "Grand disque, anneau normal : imitateur probable.", no: "Creux trop grand : suspect de glaucome.", yesGo: 1, noGo: 1 },
+      { q: "Drapeau rouge présent ?", yes: "IRM ± VS, CRP (le jour même si artérite).", no: "Bilan de glaucome : PIO, pachymétrie, gonioscopie.", noGo: 2 },
+      { q: "OCT et champ concordent ?", yes: "Glaucome : PIO cible.", no: "Refaire ; chercher un artefact ou une autre cause.", yesGo: 3, noGo: 3 },
+      { q: "Changement documenté au suivi ?", yes: "Traiter ou intensifier.", no: "Stable : suivi espacé ; pas de gouttes si imitateur." }
     ],
     phases: [
       {
@@ -140,16 +140,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**OCT et champs en série** : OCT RNFL et GCL ; champs 24-2 et 10-2, en série.",
-      "**IRM et bilan d’artérite** : IRM avec gadolinium ; VS, CRP, plaquettes ± biopsie de l’artère temporale.",
-      "**Traitement hypotenseur** : Latanoprost 0,005 % au coucher, SLT ou chirurgie selon le stade."
+      "**Toi** : AV, couleurs, DPAR ; noter la taille du disque et la couleur de l’anneau.",
+      "**Ophtalmologiste** : OCT et champs en série ; IRM si drapeau rouge ; traiter un glaucome confirmé."
     ],
-    refer: ["**IRM et bilan d’artérite** : Drapeau rouge : IRM rapide ; artérite suspectée : le jour même."],
-    pitfall: [
-      "**IRM et bilan d’artérite** : Pas de gouttes avant d’avoir exclu une compression.",
-      "**OCT et champs en série** : Ne pas traiter l’imprimé : un disque atypique sort de la base normative."
-    ],
-    qc: ["Québec : nommer le drapeau rouge sur la requête d’IRM pour la prioriser."]
+    refer: "Référer en ophtalmologie : en quelques semaines — C/D élevé ; le jour même si ≥ 50 ans avec céphalée ou claudication de la mâchoire.",
+    pitfall: ["**Gouttes hypotensives** sur une papille pâle : compression manquée (IRM d’abord)."],
+    qc: "Québec : nommer le drapeau rouge sur la requête d’IRM pour la prioriser."
   }
 },
 {
@@ -231,11 +227,11 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Angle fermé (chambre plate, gonioscopie) ?", yes: "LPI si bloc, cycloplégique si cristallin en avant, puis chirurgie.", no: "Angle ouvert : chercher ce qui bouche.", cont: "no" },
-      { q: "Cataracte hypermûre, particules, chambre profonde ?", yes: "Phacolytique : baisser la PIO, stéroïde, extraction rapide.", no: "Continuer.", cont: "no" },
-      { q: "Pseudophaque, microhyphémas, transillumination ?", yes: "UGH : UBM, repositionner ou échanger l’implant.", no: "Continuer.", cont: "no" },
-      { q: "Trauma récent avec sang ?", yes: "Protocole de l’hyphéma ; dépister la drépanocytose.", no: "Trauma ancien : gonioscopie (récession).", cont: "no" },
-      { q: "Gaz dans l’œil ?", yes: "Hypotenseurs, positionnement, ± retrait partiel du gaz.", no: "Autre cause secondaire." }
+      { q: "Angle fermé (chambre plate, gonioscopie) ?", yes: "LPI si bloc, cycloplégique si cristallin en avant, puis chirurgie.", no: "Angle ouvert : chercher ce qui bouche.", noGo: 1 },
+      { q: "Trauma récent avec sang ?", yes: "Protocole de l’hyphéma ; dépister la drépanocytose.", no: "", noGo: 2 },
+      { q: "Cataracte hypermûre, particules, chambre profonde ?", yes: "Phacolytique : baisser la PIO, stéroïde, extraction rapide.", no: "", noGo: 3 },
+      { q: "Pseudophaque, microhyphémas, transillumination ?", yes: "UGH : UBM, repositionner ou échanger l’implant.", no: "", noGo: 4 },
+      { q: "Gaz dans l’œil ?", yes: "Hypotenseurs, positionnement, ± retrait partiel du gaz.", no: "Gonioscopie : récession d’un trauma ancien ?" }
     ],
     phases: [
       {
@@ -303,21 +299,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Extraction du cristallin** : Phacoémulsification ou extraction extracapsulaire.",
-      "**Hypotenseurs et anti-inflammatoires** : Timolol 0,5 %, brimonidine 0,2 % ; prednisolone acétate 1 % QID, cycloplégique.",
-      "**Repositionnement ou échange d’implant** : Implant replacé dans le sac, capturé, fixé ou échangé.",
-      "**Protocole de l’hyphéma** : Tête du lit à 30–45°, coque, atropine 1 %, prednisolone acétate 1 %.",
-      "**Tube de drainage** : Ahmed ou Baerveldt, au bloc."
+      "**Toi** : hyphéma : tête du lit à 30–45°, coque, pas d’AINS ni d’aspirine.",
+      "**Ophtalmologiste** : baisser la PIO, prednisolone acétate 1 %, cycloplégique ; retirer ou replacer la cause."
     ],
-    refer: [
-      "**Hypotenseurs et anti-inflammatoires** : Toujours en premier ; diriger le jour même.",
-      "**Protocole de l’hyphéma** : Tout hyphéma traumatique : suivi rapproché les premiers jours."
-    ],
-    pitfall: [
-      "**Hypotenseurs et anti-inflammatoires** : Drépanocytose : éviter IAC et hyperosmotiques (falciformation).",
-      "**Protocole de l’hyphéma** : Pas d’AINS ni d’aspirine ; drépanocytose : PIO ≥ 24 mmHg plus de 24 h = lavage."
-    ],
-    qc: ["Montréal : électrophorèse de l’hémoglobine si origine haïtienne, africaine, antillaise, méditerranéenne, moyen-orientale ou indienne."]
+    refer: "Référer en ophtalmologie : le jour même — trauma avec sang, cataracte blanche et œil douloureux, ou cristallin luxé.",
+    pitfall: ["**Acétazolamide** en drépanocytose : falciformation dans l’hyphéma.", "**Pilocarpine** : jamais si la cause est cristallinienne."],
+    qc: "Montréal : électrophorèse de l’hémoglobine si origine haïtienne, africaine, antillaise, méditerranéenne, moyen-orientale ou indienne."
   }
 }
 ]);

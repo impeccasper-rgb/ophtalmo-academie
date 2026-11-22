@@ -20,6 +20,9 @@
 - Note : des commits d’autres rôles (ac7a1d3, aca1488) ont inclus une partie de ces modifications en cours de route; le reste est dans l’arbre de travail, non commité, non poussé.
 - À faire par un autre rôle : `docs/FACTS.md` l. 154 (même attribution ISGEO ≥ 180° à corriger).
 
+### Cycle 8 (21 nov. 2026) — cornée
+- Arbres v2 (yesGo/noGo) ×14, cartes Traitement « externe » (first/refer/pitfall/qc), définitions ≤ 45 mots en lignes courtes (\n), 7 QCM de fiche réécrits (conduite au lieu du diagnostic). Validé : chargement node, validate.js, build_web, rendu Playwright (arbre v2 + 4 cartes, 0 erreur JS). Mots visibles FR 4942 / EN 4766. Non commité, non poussé.
+
 ### Cycle 7 (21 nov. 2026) — fiches cornée allégées
 - 14 fiches du module B : définitions de 2 phrases (≤ 60 mots à l’écran Voir); arbres réécrits avec `cont`; cartes Traitement (`treatment: {first, refer, pitfall, qc}`) générées depuis les nouveaux champs par traitement `dose/refer/pitfall/qc`; ≤ 3 drapeaux rouges; 4–5 points essentiels (doublons retirés); moyens mnémotechniques raccourcis; les détails déplacés vont dans `anatomy.text` (Pour aller plus loin).
 - Mots visibles par défaut : FR 6605 → 5143 (−22 %), EN 6360 → 4998 (−21 %); 0 écran au-dessus des plafonds (détail dans PEDAGOGY-REVIEW.md, Cycle 7).
@@ -71,3 +74,7 @@ for(const lg of ['fr','en']){ const R=rows.filter(r=>r.lg===lg); console.log(lg,
 - 13 fiches C + surcouche EN : définitions en 2 phrases, arbres avec `cont`, drapeaux ≤ 3, cartes Traitement (`treatment` + `dose/refer/pitfall/qc` par traitement). Chiffres avant/après : docs/PEDAGOGY-REVIEW.md « Cycle 7 — glaucome ». Outil : tools/wordcount-fiches.js.
 - 2e passe : essentiels hy-glaucome (g-*, c-bases) ≤ 14 mots FR + EN (data-en/hy.js : seules ces clés) ; Comprendre ≤ 120 partout.
 - Reste : rendu des champs par traitement au niveau 2 (rôle web).
+
+## Cycle 8 — glaucome (fait)
+- 13 arbres en v2 (yesGo/noGo), 4 erreurs de logique de la critique corrigées ; bloc Traitement de fiche pour l’externe (Toi / Ophtalmologiste, délai, piège nommé) ; 6 mini-QCM de diagnostic → conduite ; validate.js contrôle v2. Détails : docs/PEDAGOGY-REVIEW.md « Cycle 8 — glaucome ».
+- Reste : src/tree.js doit lire yesGo/noGo (sinon les branches apparaissent comme des fins).

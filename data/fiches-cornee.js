@@ -13,7 +13,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Dry eye disease and meibomian gland dysfunction",
     tags: ["frequent", "highyield"],
     oneLiner: "Brûlure, sable, vision qui fluctue au clignement : chercher un film instable, des glandes de Meibomius bouchées ou une goutte toxique.",
-    definition: "Film de larmes instable et trop salé (hyperosmolaire), qui irrite et enflamme la surface. Le plus souvent, ce n’est pas un manque de larmes : l’huile des glandes de Meibomius est de mauvaise qualité.",
+    definition: "Film de larmes instable et trop salé, qui irrite et enflamme la surface.\nLe plus souvent, l’huile des glandes de Meibomius est de mauvaise qualité : ce n’est pas un manque de larmes.",
     anatomy: {
       text: "Le film lacrymal (tear film) comprend une couche d’huile des glandes de Meibomius, qui freine l’évaporation, posée sur une phase muco-aqueuse : l’eau de la glande lacrymale mêlée au mucus des cellules caliciformes, qui rend l’épithélium mouillable. Le clignement étale le film et vide les glandes de leur huile.",
       figure: { type: "cornea", highlight: ["film", "epithelium"] }
@@ -71,9 +71,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Symptômes (OSDI-6 ≥ 4) et un signe objectif ?", yes: "Sécheresse confirmée : chercher la cause dominante.", no: "Penser allergie, douleur neuropathique, autre cause.", cont: "yes" },
-        { q: "Glandes de Meibomius bouchées ou Demodex ?", yes: "Soins des paupières ; IPL si échec.", no: "Manque d’eau : larmes, bouchons, bilan de Sjögren.", cont: "yes" },
-        { q: "Encore symptomatique après 1–2 mois ?", yes: "Ajouter cyclosporine ou lifitégrast.", no: "Poursuivre et espacer le suivi." }
+        { q: "Symptômes (OSDI-6 ≥ 4) et un signe objectif ?", yes: "", no: "Penser allergie, douleur neuropathique, autre cause.", yesGo: 1 },
+        { q: "Glandes de Meibomius bouchées ou Demodex ?", yes: "Soins des paupières ; IPL si échec.", no: "Manque d’eau : larmes, bouchons, bilan de Sjögren.", yesGo: 2, noGo: 2 },
+        { q: "Encore symptomatique après 1–2 mois ?", yes: "Ajouter cyclosporine ou lifitégrast ; référer si sévère.", no: "Poursuivre et espacer le suivi." }
       ],
       phases: [
         { phase: "medical", items: [
@@ -92,13 +92,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     treatments: [
       { name: "Larmes artificielles sans agent de conservation", dose: "1 goutte 4–6 fois par jour, plus au besoin.", pitfall: "Flacon avec BAK + usage fréquent = toxicité.", how: "Gouttes lubrifiantes en unidoses ou flacon spécial : ajoutent du liquide et diluent les sels ; les émulsions renforcent la couche d’huile.", why: "Toute sécheresse ; premier palier.", pros: "Sûres, sans ordonnance, soulagement immédiat.", cons: "Effet bref ; le BAK devient toxique si usage fréquent.", cx: "Vision brouillée avec gels et onguents." },
       { name: "Soins des paupières, IPL", dose: "Compresses chaudes 5–10 min + massage, 1–2 fois par jour.", pitfall: "Arrêter les soins = rechute.", qc: "IPL surtout offerte au privé.", how: "Compresses chaudes et massage à la maison ; en clinique, IPL ou thermopulsation (appareil qui chauffe et presse les paupières) : la chaleur fond l’huile figée, la pression vide les glandes.", why: "Dysfonction meibomienne, cause la plus fréquente.", pros: "Traite la cause ; effet de l’IPL sur des mois.", cons: "Demande de la constance ; IPL coûteuse.", cx: "Brûlure cutanée ; yeux protégés pendant l’IPL." },
-      { name: "Cyclosporine ou lifitégrast", dose: "Cyclosporine 0,05–0,09 % ou lifitégrast 5 %, 1 goutte 2 fois par jour.", refer: "Sévère, Sjögren ou échec : ophtalmologie.", pitfall: "Effet après plusieurs semaines : ne pas arrêter trop tôt.", qc: "Remboursement à vérifier.", how: "Gouttes anti-inflammatoires sur ordonnance, 2 fois par jour : la cyclosporine bloque l’activation des lymphocytes T, le lifitégrast bloque leur arrimage (LFA-1/ICAM-1).", why: "Inflammation qui persiste malgré les larmes.", pros: "Pas de hausse de pression ni de cataracte au long cours, contrairement aux stéroïdes.", cons: "Effet après plusieurs semaines ; coût.", cx: "Brûlure à l’instillation ; goût métallique (lifitégrast)." }
+      { name: "Cyclosporine ou lifitégrast", dose: "Cyclosporine 0,05–0,09 % ou lifitégrast 5 %, 1 goutte 2 fois par jour.", pitfall: "Effet après plusieurs semaines : ne pas arrêter trop tôt.", qc: "Remboursement à vérifier.", how: "Gouttes anti-inflammatoires sur ordonnance, 2 fois par jour : la cyclosporine bloque l’activation des lymphocytes T, le lifitégrast bloque leur arrimage (LFA-1/ICAM-1).", why: "Inflammation qui persiste malgré les larmes.", pros: "Pas de hausse de pression ni de cataracte au long cours, contrairement aux stéroïdes.", cons: "Effet après plusieurs semaines ; coût.", cx: "Brûlure à l’instillation ; goût métallique (lifitégrast)." }
     ],
     treatment: {
-      first: ["**Larmes artificielles sans agent de conservation** : 1 goutte 4–6 fois par jour, plus au besoin.", "**Soins des paupières, IPL** : compresses chaudes 5–10 min + massage, 1–2 fois par jour.", "Cyclosporine 0,05–0,09 % ou lifitégrast 5 %, 1 goutte 2 fois par jour."],
-      refer: ["Sévère, Sjögren ou échec : ophtalmologie."],
-      pitfall: ["Flacon avec BAK + usage fréquent = toxicité.", "Arrêter les soins = rechute.", "Effet après plusieurs semaines : ne pas arrêter trop tôt."],
-      qc: ["IPL surtout offerte au privé.", "Remboursement à vérifier."]
+      first: ["**Externe / 1re ligne** : larmes sans agent de conservation 4–6×/j, compresses chaudes 1–2×/j.", "**Ophtalmologiste** : cyclosporine ou lifitégrast, bouchons, IPL."],
+      refer: ["Cette semaine si ulcère, amincissement ou bouche sèche (Sjögren) — la cornée est menacée.", "Suivi régulier sinon — maladie chronique traitée par paliers."],
+      pitfall: ["Larmes avec BAK plus de 4×/j : toxiques pour la surface."],
+      qc: ["L’optométriste traite la plupart des cas ; IPL surtout au privé."]
     },
     pearls: [
       { q: "Quels sont les critères diagnostiques de TFOS DEWS III ?", a: "OSDI-6 ≥ 4 plus un signe : NIBUT < 10 s, osmolarité ≥ 308 mOsm/L (ou écart > 8 entre les yeux), > 5 points cornéens à la fluorescéine ou > 9 points conjonctivaux au vert de lissamine (colorant des cellules abîmées). **Sans symptômes, pas de sécheresse.**" },
@@ -128,7 +128,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Bacterial keratitis",
     tags: ["urgent", "frequent", "highyield"],
     oneLiner: "Œil rouge douloureux, infiltrat blanc sous un défaut épithélial, surtout chez un porteur de lentilles : gratter, cultiver, traiter aux heures.",
-    definition: "Infection du stroma par une bactérie entrée par une brèche de l’épithélium : un abcès blanc (infiltrat). C’est une urgence : Pseudomonas peut perforer la cornée en quelques jours.",
+    definition: "Infection du stroma par une bactérie entrée par une brèche de l’épithélium : un abcès blanc (infiltrat).\nC’est une urgence : Pseudomonas peut perforer la cornée en quelques jours.",
     anatomy: {
       text: "Un épithélium intact et les larmes (lysozyme, anticorps) bloquent presque toutes les bactéries ; exception classique : Neisseria gonorrhoeae le traverse. Le stroma, sans vaisseaux, reçoit les globules blancs par les larmes et le limbe (jonction cornée-sclère) ; leurs enzymes peuvent fondre le collagène.",
       figure: { type: "cornea", highlight: ["epithelium", "stroma"] }
@@ -183,10 +183,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Défaut épithélial avec infiltrat stromal ?", yes: "Infectieux : retirer la lentille, la garder pour culture.", no: "Petit infiltrat sans défaut : stérile probable, revoir 24–48 h.", cont: "yes" },
-        { q: "Critère 1-2-3, ulcère atypique ou chronique ?", yes: "Grattage, Gram, cultures, puis gouttes fortifiées aux heures.", no: "Moxifloxacine 0,5 % aux heures, culture facultative.", cont: "yes" },
-        { q: "Branche, lentilles + eau, douleur énorme ?", yes: "Champignon ou amibe : milieux spéciaux, PCR.", no: "Poursuivre le traitement empirique.", cont: "no" },
-        { q: "Perforation ?", yes: "≤ 2–3 mm : colle + lentille pansement ; sinon greffe tectonique.", no: "Suivi jusqu’à fermeture de l’épithélium." }
+        { q: "Défaut épithélial avec infiltrat stromal ?", yes: "Infectieux : retirer la lentille, la garder pour culture.", no: "Petit infiltrat sans défaut : stérile probable, revoir 24–48 h.", yesGo: 1 },
+        { q: "Perforation ou descémétocèle ?", yes: "Coquille rigide, aucune pression ; ophtalmologie immédiatement.", no: "", noGo: 2 },
+        { q: "Critère 1-2-3, ulcère atypique ou chronique ?", yes: "Cultures, gouttes fortifiées aux heures ; ophtalmo le jour même.", no: "Moxifloxacine 0,5 % aux heures ; revoir à 24–48 h.", yesGo: 3, noGo: 3 },
+        { q: "Pire après 48 h, lentilles + eau ou végétal ?", yes: "Penser champignon ou amibe : prélèvements spécifiques.", no: "Poursuivre jusqu’à fermeture de l’épithélium." }
       ],
       phases: [
         { phase: "medical", items: [
@@ -210,15 +210,15 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       local: "Les gouttes fortifiées viennent des pharmacies d’hôpital : un ulcère menaçant est dirigé le jour même vers l’urgence ophtalmologique d’un centre (CHUM, HMR, CUSM, Hôpital général juif, CHU de Québec)."
     },
     treatments: [
-      { name: "Moxifloxacine 0,5 % (fluoroquinolone de 4e génération)", dose: "Moxifloxacine 0,5 %, 1 goutte aux heures jour et nuit au début.", refer: "Critère 1-2-3 : ophtalmologie le jour même.", pitfall: "Jamais de pansement occlusif.", how: "Gouttes du commerce : bloquent l’ADN gyrase et la topo-isomérase IV, enzymes qui permettent à la bactérie de copier son ADN.", why: "Petit ulcère périphérique sans critère de gravité.", pros: "En pharmacie, large spectre, bonne pénétration.", cons: "Résistances croissantes (SARM : staphylocoque doré résistant à la méthicilline) ; moins sûre seule pour les gros ulcères.", cx: "Toxicité épithéliale si usage prolongé." },
+      { name: "Moxifloxacine 0,5 % (fluoroquinolone de 4e génération)", dose: "Moxifloxacine 0,5 %, 1 goutte aux heures jour et nuit au début.", pitfall: "Jamais de pansement occlusif.", how: "Gouttes du commerce : bloquent l’ADN gyrase et la topo-isomérase IV, enzymes qui permettent à la bactérie de copier son ADN.", why: "Petit ulcère périphérique sans critère de gravité.", pros: "En pharmacie, large spectre, bonne pénétration.", cons: "Résistances croissantes (SARM : staphylocoque doré résistant à la méthicilline) ; moins sûre seule pour les gros ulcères.", cx: "Toxicité épithéliale si usage prolongé." },
       { name: "Gouttes fortifiées", dose: "Vancomycine (ou céfazoline) + tobramycine, alternées aux heures.", pitfall: "Gouttes la nuit aussi ; flacons au réfrigérateur.", qc: "Préparées par les pharmacies d’hôpital : diriger vers un centre.", how: "Antibiotiques injectables dilués en gouttes très concentrées par la pharmacie d’hôpital : vancomycine ou céfazoline (Gram +), tobramycine (Gram −, dont Pseudomonas).", why: "Ulcère menaçant (règle 1-2-3) ou échec de la moxifloxacine.", pros: "Concentrations très élevées ; la vancomycine couvre le SARM.", cons: "Préparation hospitalière, à réfrigérer ; gouttes la nuit.", cx: "Toxicité épithéliale, brûlure." },
-      { name: "Colle de cyanoacrylate, greffe tectonique", dose: "Colle cyanoacrylate + lentille pansement si trou ≤ 2–3 mm.", refer: "Perforation : coquille rigide, ophtalmologie d’urgence.", pitfall: "Aucune pression sur un œil perforé.", how: "Goutte de colle chirurgicale déposée sur le trou après grattage de l’épithélium, puis lentille pansement ; si le trou est grand, on coud une pièce de cornée de donneur.", why: "Descémétocèle ou perforation.", pros: "Referme vite le globe ; la colle freine aussi les bactéries.", cons: "Colle réservée aux petits trous ; greffe sur œil infecté (« à chaud ») : rejet et récidive fréquents.", cx: "Colle qui se décolle ; rejet, glaucome." }
+      { name: "Colle de cyanoacrylate, greffe tectonique", dose: "Colle cyanoacrylate + lentille pansement si trou ≤ 2–3 mm.", pitfall: "Aucune pression sur un œil perforé.", how: "Goutte de colle chirurgicale déposée sur le trou après grattage de l’épithélium, puis lentille pansement ; si le trou est grand, on coud une pièce de cornée de donneur.", why: "Descémétocèle ou perforation.", pros: "Referme vite le globe ; la colle freine aussi les bactéries.", cons: "Colle réservée aux petits trous ; greffe sur œil infecté (« à chaud ») : rejet et récidive fréquents.", cx: "Colle qui se décolle ; rejet, glaucome." }
     ],
     treatment: {
-      first: ["Moxifloxacine 0,5 %, 1 goutte aux heures jour et nuit au début.", "**Gouttes fortifiées** : vancomycine (ou céfazoline) + tobramycine, alternées aux heures.", "Colle cyanoacrylate + lentille pansement si trou ≤ 2–3 mm."],
-      refer: ["Critère 1-2-3 : ophtalmologie le jour même.", "Perforation : coquille rigide, ophtalmologie d’urgence."],
-      pitfall: ["Jamais de pansement occlusif.", "Gouttes la nuit aussi ; flacons au réfrigérateur.", "Aucune pression sur un œil perforé."],
-      qc: ["Préparées par les pharmacies d’hôpital : diriger vers un centre."]
+      first: ["**Externe / 1re ligne** : retirer la lentille, moxifloxacine 0,5 % aux heures si petit ulcère périphérique.", "**Ophtalmologiste** : grattage, cultures, gouttes fortifiées aux heures."],
+      refer: ["Le jour même pour tout ulcère — il peut perforer en quelques jours.", "Immédiatement si perforation ou descémétocèle — globe ouvert."],
+      pitfall: ["Pansement occlusif chez un porteur de lentilles : favorise Pseudomonas.", "Stéroïde topique avant les cultures : aggrave l’infection."],
+      qc: ["Gouttes fortifiées préparées par les pharmacies d’hôpital : diriger vers un centre."]
     },
     pearls: [
       { q: "Quand faut-il gratter et cultiver avant de traiter ?", a: "AAO PPP 2023 : infiltrat central, grand ou profond, chronique, multiple, atypique, après chirurgie cornéenne ou sans réponse. En pratique : **règle 1-2-3**." },
@@ -247,7 +247,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Acanthamoeba and fungal keratitis",
     tags: ["urgent", "highyield", "piege"],
     oneLiner: "Ulcère qui ne guérit pas sous antibiotiques : penser amibe (lentilles + eau, douleur énorme) ou champignon (branche, bords plumeux). Jamais de stéroïde.",
-    definition: "Kératites à organismes lents et résistants : amibe d’eau douce (Acanthamoeba) ou champignon (Fusarium, Aspergillus, Candida). Souvent prises pour un herpès ou une bactérie, elles exigent des prélèvements et un traitement spécifique prolongé.",
+    definition: "Kératites à organismes lents et résistants : amibe (Acanthamoeba) ou champignon (Fusarium, Aspergillus, Candida).\nSouvent prises pour un herpès ou une bactérie, elles exigent des prélèvements et un traitement prolongé.",
     anatomy: {
       text: "Ces organismes ne traversent pas un épithélium sain : ils profitent d’une microlésion (lentille, branche, terre). Les nerfs cornéens partent du limbe vers le centre dans le stroma ; l’amibe les suit, d’où une douleur extrême. Les filaments des champignons peuvent traverser Descemet.",
       figure: { type: "cornea", highlight: ["epithelium", "stroma", "descemet"] }
@@ -303,9 +303,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Contexte atypique ou ulcère qui ne répond pas ?", yes: "Arrêter les stéroïdes ; grattage profond, cultures spécifiques, PCR.", no: "Traiter comme bactérienne, revoir à 24–48 h.", cont: "yes" },
-        { q: "Amibe (kystes ou tableau typique) ?", yes: "Biguanide ± diamidine aux heures, sevrage sur des mois.", no: "Chercher un champignon.", cont: "no" },
-        { q: "Champignon (hyphes, bords plumeux, satellites) ?", yes: "Natamycine 5 % si filamenteux ; voriconazole si levure.", no: "Bactérie résistante, Nocardia, mycobactérie, herpès ?", cont: "yes" },
+        { q: "Contexte atypique ou ulcère qui ne répond pas ?", yes: "Arrêter les stéroïdes ; grattage, cultures spécifiques, PCR.", no: "Traiter comme bactérienne, revoir à 24–48 h.", yesGo: 1 },
+        { q: "Kystes ou tableau d’amibe (lentilles + eau) ?", yes: "Biguanide ± diamidine aux heures, sur des mois.", no: "", yesGo: 3, noGo: 2 },
+        { q: "Hyphes, bords plumeux ou satellites ?", yes: "Natamycine 5 % si filamenteux ; voriconazole si levure.", no: "Bactérie résistante, Nocardia, mycobactérie, herpès ?", yesGo: 3 },
         { q: "Progression profonde ou perforation ?", yes: "Greffe thérapeutique ; voriconazole intrastromal à discuter.", no: "Poursuivre, suivi rapproché." }
       ],
       phases: [
@@ -328,15 +328,15 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       local: "Au Canada, PHMB, chlorhexidine et propamidine sont des préparations magistrales de pharmacie d’hôpital ; Akantior (polihexanide 0,08 %, approuvé en Europe en 2024) et natamycine : disponibilité canadienne à vérifier. Confocale et PCR : seulement dans certains centres universitaires."
     },
     treatments: [
-      { name: "Biguanide ± diamidine (amibe)", dose: "PHMB ou chlorhexidine 0,02 % aux heures ± propamidine, sur des mois.", refer: "Suspicion d’amibe : centre de cornée.", pitfall: "Souvent prise pour un herpès au début.", qc: "Préparations magistrales de pharmacie d’hôpital.", how: "Gouttes antiseptiques préparées par la pharmacie (PHMB ou chlorhexidine 0,02 %), aux heures jour et nuit au début, souvent avec propamidine : le biguanide perce la membrane de l’amibe et traverse la paroi des kystes.", why: "Toute kératite à Acanthamoeba, dès la suspicion forte.", pros: "Seule classe active sur les kystes ; polihexanide 0,08 % validé en monothérapie en Europe.", cons: "Plusieurs mois de traitement ; préparations magistrales.", cx: "Toxicité épithéliale, retard de cicatrisation." },
+      { name: "Biguanide ± diamidine (amibe)", dose: "PHMB ou chlorhexidine 0,02 % aux heures ± propamidine, sur des mois.", pitfall: "Souvent prise pour un herpès au début.", qc: "Préparations magistrales de pharmacie d’hôpital.", how: "Gouttes antiseptiques préparées par la pharmacie (PHMB ou chlorhexidine 0,02 %), aux heures jour et nuit au début, souvent avec propamidine : le biguanide perce la membrane de l’amibe et traverse la paroi des kystes.", why: "Toute kératite à Acanthamoeba, dès la suspicion forte.", pros: "Seule classe active sur les kystes ; polihexanide 0,08 % validé en monothérapie en Europe.", cons: "Plusieurs mois de traitement ; préparations magistrales.", cx: "Toxicité épithéliale, retard de cicatrisation." },
       { name: "Natamycine 5 % (champignon filamenteux)", dose: "Natamycine 5 %, 1 goutte aux heures.", pitfall: "Pénètre mal : atteinte profonde = autre option.", qc: "Disponibilité canadienne à vérifier.", how: "Suspension antifongique en gouttes, aux heures : se fixe à l’ergostérol (constituant de la membrane du champignon) et bloque sa croissance.", why: "Fusarium ou Aspergillus : premier choix.", pros: "MUTT I : meilleure vision et moins de perforations qu’avec le voriconazole, surtout pour Fusarium.", cons: "Pénètre mal en profondeur.", cx: "Irritation, dépôts blancs." },
       { name: "Voriconazole", dose: "Voriconazole 1 % aux heures ; intrastromal si profond.", pitfall: "Inférieur à la natamycine pour Fusarium (MUTT I).", how: "Antifongique (azolé) en gouttes à 1 %, en injection dans le stroma ou la chambre antérieure, ou en comprimés : empêche le champignon de fabriquer l’ergostérol.", why: "Levures (Candida), infection profonde ou échec de la natamycine.", pros: "Bonne pénétration, large spectre.", cons: "Inférieur à la natamycine pour Fusarium (MUTT I) ; oral sans bénéfice ajouté (MUTT II).", cx: "Oral : troubles visuels passagers, atteinte du foie." }
     ],
     treatment: {
-      first: ["**Biguanide ± diamidine (amibe)** : PHMB ou chlorhexidine 0,02 % aux heures ± propamidine, sur des mois.", "Natamycine 5 %, 1 goutte aux heures.", "Voriconazole 1 % aux heures ; intrastromal si profond."],
-      refer: ["Suspicion d’amibe : centre de cornée."],
-      pitfall: ["Souvent prise pour un herpès au début.", "Pénètre mal : atteinte profonde = autre option.", "Inférieur à la natamycine pour Fusarium (MUTT I)."],
-      qc: ["Préparations magistrales de pharmacie d’hôpital.", "Disponibilité canadienne à vérifier."]
+      first: ["**Externe / 1re ligne** : retirer la lentille, aucun stéroïde, adresser le jour même.", "**Ophtalmologiste** : prélèvements spécifiques ; biguanide (amibe) ou natamycine 5 % (champignon)."],
+      refer: ["Le jour même — traitement spécifique, souvent en centre de cornée."],
+      pitfall: ["Prednisolone ou autre stéroïde : fait flamber le champignon.", "Anesthésique topique pour la douleur de l’amibe : jamais."],
+      qc: ["Biguanides en préparation magistrale d’hôpital."]
     },
     pearls: [
       { q: "Pourquoi l’amibe est-elle souvent prise pour un herpès ?", a: "Elle donne des pseudodendrites et résiste aux antibiotiques. Indices : porteur de lentilles exposé à l’eau, **douleur hors de proportion**, périnévrite radiaire, pas de bulbes terminaux, échec de l’antiviral." },
@@ -366,7 +366,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Herpes simplex keratitis and herpes zoster ophthalmicus",
     tags: ["frequent", "highyield", "piege"],
     oneLiner: "Dendrite à bulbes terminaux et cornée moins sensible : herpès ; éruption du front avec signe de Hutchinson : zona. Jamais de stéroïde sans antiviral.",
-    definition: "Le virus de l’herpès simplex (HSV-1) dort dans le ganglion du trijumeau et se réveille en surface (dendrite) ou en profondeur (réaction immunitaire). Le zona ophtalmique est le réveil du VZV dans la branche V1.",
+    definition: "Le virus herpès simplex dort dans le ganglion du trijumeau.\nIl se réveille en surface (dendrite) ou en profondeur (réaction immunitaire).\nLe zona ophtalmique est le réveil du VZV dans la branche V1.",
     anatomy: {
       text: "La cornée est innervée par le nerf ophtalmique (V1, branche nasociliaire) : le virus descend le long de ces nerfs depuis le ganglion. Ces nerfs assurent aussi la sensibilité et la cicatrisation ; détruits, ils laissent une cornée insensible qui guérit mal. Le nasociliaire innerve aussi le bout du nez. Zona : éruption du front, atteinte possible de tout l’œil.",
       figure: { type: "eye", highlight: ["cornee", "nerfs-ciliaires-longs"] }
@@ -422,10 +422,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Dendrite à bulbes terminaux ou ulcère géographique ?", yes: "HSV épithélial : antiviral ± débridement ; arrêter tout stéroïde.", no: "Question suivante.", cont: "no" },
-        { q: "Opacité stromale, œdème en disque ou précipités ?", yes: "Forme immune : stéroïde lent sous antiviral oral.", no: "Question suivante.", cont: "no" },
-        { q: "Éruption V1 d’un seul côté ?", yes: "Zona : valacyclovir 1 g 3×/j × 7 j ; examen avec PIO.", no: "Revoir le diagnostic.", cont: "yes" },
-        { q: "Récidives, forme stromale ou greffe ?", yes: "Prophylaxie orale prolongée (HEDS).", no: "Traiter chaque épisode." }
+        { q: "Éruption vésiculaire V1 d’un seul côté ?", yes: "Zona : valacyclovir 1 g 3×/j × 7 j ; examen avec PIO.", no: "", yesGo: 1, noGo: 1 },
+        { q: "Dendrite à bulbes terminaux ou ulcère géographique ?", yes: "HSV épithélial : antiviral ± débridement ; arrêter tout stéroïde.", no: "", yesGo: 3, noGo: 2 },
+        { q: "Opacité stromale, œdème en disque ou précipités ?", yes: "Forme immune : stéroïde lent sous antiviral oral.", no: "Surveiller ; revoir si rougeur ou baisse de vision.", yesGo: 3 },
+        { q: "Récidives, forme stromale ou greffe ?", yes: "Prophylaxie orale prolongée (HEDS) ; zona : discuter valacyclovir 1 an.", no: "Traiter chaque épisode." }
       ],
       phases: [
         { phase: "medical", items: [
@@ -451,12 +451,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     treatments: [
       { name: "Antiviraux oraux (acyclovir, valacyclovir)", dose: "Acyclovir 400 mg 5×/j ou valacyclovir 500 mg 3×/j ; prévention : acyclovir 400 mg 2×/j.", pitfall: "Ajuster la dose à la fonction rénale.", how: "Comprimés activés par une enzyme du virus (thymidine kinase), qui bloquent ensuite la copie de l’ADN viral, seulement dans les cellules infectées.", why: "Kératite épithéliale, couverture des stéroïdes, prévention des récidives, zona.", pros: "Aucune toxicité pour la surface ; prophylaxie efficace (HEDS).", cons: "Dose à ajuster au rein ; sans effet sur la réaction immunitaire.", cx: "Nausées ; confusion ou atteinte rénale si surdosage chez l’âgé." },
       { name: "Trifluridine 1 % et débridement", dose: "Trifluridine 1 %, 9 fois par jour ± débridement.", pitfall: "Toxique pour l’épithélium : au plus 14–21 jours.", how: "Goutte antivirale 9 fois par jour, avec grattage doux de la dendrite au coton-tige pour retirer les cellules infectées.", why: "Kératite épithéliale, alternative aux comprimés.", pros: "Agit directement sur la cornée ; le débridement réduit vite la charge virale.", cons: "Toxique pour l’épithélium : au plus 14–21 jours.", cx: "Kératite ponctuée toxique, rétrécissement des points lacrymaux." },
-      { name: "Stéroïde topique sous antiviral", dose: "Prednisolone 1 % sous antiviral oral, sevrage sur des semaines à des mois.", refer: "Toujours sous suivi ophtalmologique.", pitfall: "Jamais sur une dendrite active ; rebond si arrêt rapide.", how: "Gouttes de prednisolone 1 % diminuées sur des semaines à des mois, toujours avec antiviral oral : calment l’attaque immunitaire contre les antigènes viraux.", why: "Kératite stromale immune, endothéliite, uvéite ; jamais sur une dendrite active.", pros: "HEDS : guérison plus rapide de la kératite stromale.", cons: "Ne tue pas le virus ; rebond si arrêt rapide.", cx: "Ulcère géographique sans antiviral, hausse de pression, cataracte." }
+      { name: "Stéroïde topique sous antiviral", dose: "Prednisolone 1 % sous antiviral oral, sevrage sur des semaines à des mois.", pitfall: "Jamais sur une dendrite active ; rebond si arrêt rapide.", how: "Gouttes de prednisolone 1 % diminuées sur des semaines à des mois, toujours avec antiviral oral : calment l’attaque immunitaire contre les antigènes viraux.", why: "Kératite stromale immune, endothéliite, uvéite ; jamais sur une dendrite active.", pros: "HEDS : guérison plus rapide de la kératite stromale.", cons: "Ne tue pas le virus ; rebond si arrêt rapide.", cx: "Ulcère géographique sans antiviral, hausse de pression, cataracte." }
     ],
     treatment: {
-      first: ["**Antiviraux oraux (acyclovir, valacyclovir)** : acyclovir 400 mg 5×/j ou valacyclovir 500 mg 3×/j ; prévention : acyclovir 400 mg 2×/j.", "Trifluridine 1 %, 9 fois par jour ± débridement.", "**Stéroïde topique sous antiviral** : prednisolone 1 % sous antiviral oral, sevrage sur des semaines à des mois."],
-      refer: ["Toujours sous suivi ophtalmologique."],
-      pitfall: ["Ajuster la dose à la fonction rénale.", "Toxique pour l’épithélium : au plus 14–21 jours.", "Jamais sur une dendrite active ; rebond si arrêt rapide."]
+      first: ["**Externe / 1re ligne** : dendrite : acyclovir 400 mg 5×/j ou valacyclovir 500 mg 3×/j ; zona : valacyclovir 1 g 3×/j.", "**Ophtalmologiste** : stéroïde sous antiviral pour la forme stromale ; prophylaxie (acyclovir 400 mg 2×/j)."],
+      refer: ["Dans les 24 h pour toute kératite herpétique — confirmer la forme et suivre la PIO.", "Le jour même si zona avec œil rouge, baisse de vision ou signe de Hutchinson."],
+      pitfall: ["Prednisolone sur une dendrite : ulcère géographique.", "Trifluridine plus de 14–21 jours : toxique pour l’épithélium."],
+      qc: ["Shingrix recommandé dès 50 ans (CCNI) ; gratuité à vérifier."]
     },
     pearls: [
       { q: "Pourquoi tester la sensibilité cornéenne avant l’anesthésique ?", a: "Diminuée, elle oriente vers HSV ou VZV et annonce une kératite neurotrophique ; après l’anesthésique, le test ne vaut plus rien." },
@@ -486,7 +487,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     en: "Keratoconus",
     tags: ["frequent", "highyield"],
     oneLiner: "Jeune qui se frotte les yeux, astigmatisme irrégulier qui augmente : tomographie, puis crosslinking si progression, et dès le diagnostic chez l’enfant.",
-    definition: "La cornée s’amincit et se bombe en cône, ce qui déforme la vision (astigmatisme irrégulier, myopie). Elle débute à l’adolescence, touche les deux yeux de façon asymétrique et progresse surtout jusqu’à 30 ans.",
+    definition: "La cornée s’amincit et se bombe en cône, ce qui déforme la vision (astigmatisme irrégulier).\nElle débute à l’adolescence, aux deux yeux de façon asymétrique, et progresse surtout jusqu’à 30 ans.",
     anatomy: {
       text: "La solidité de la cornée vient des lamelles de collagène du stroma, reliées par des ponts chimiques (liaisons croisées). Sa face avant fournit environ les deux tiers de la puissance de l’œil (≈ 43 D) : une petite déformation brouille beaucoup la vision. Épaisseur centrale normale ≈ 540–550 µm. Signes du kératocône : Munson (paupière en V au regard en bas), Rizzuti (reflet conique nasal), Fleischer (anneau de fer), Vogt (stries qui disparaissent à la pression), reflet en ciseaux et goutte d’huile.",
       figure: { type: "cornea", highlight: ["bowman", "stroma"] }
@@ -542,10 +543,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     cat: {
       algo: [
-        { q: "Astigmatisme irrégulier ou signe de kératocône ?", yes: "Tomographie de référence.", no: "Suivi habituel ; tomographie avant chirurgie réfractive.", cont: "yes" },
-        { q: "Enfant ou adolescent ?", yes: "CXL dès le diagnostic (consensus 2025).", no: "Répéter la tomographie pour documenter la progression.", cont: "no" },
-        { q: "Progression documentée ?", yes: "CXL, sans attendre l’arrêt du frottement.", no: "Surveillance, pas de CXL préventive.", cont: "yes" },
-        { q: "Stroma ≥ 400 µm sans épithélium ?", yes: "CXL standard epi-off.", no: "Protocole adapté en centre spécialisé.", cont: "yes" },
+        { q: "Astigmatisme irrégulier ou signe de kératocône ?", yes: "Tomographie de référence.", no: "Suivi habituel ; tomographie avant chirurgie réfractive.", yesGo: 1 },
+        { q: "Enfant ou adolescent ?", yes: "CXL dès le diagnostic (consensus 2025).", no: "", yesGo: 3, noGo: 2 },
+        { q: "Progression documentée sur la tomographie ?", yes: "CXL, sans attendre l’arrêt du frottement.", no: "Surveiller par tomographie, pas de CXL préventive.", yesGo: 3, noGo: 4 },
+        { q: "Stroma ≥ 400 µm sans épithélium ?", yes: "CXL standard epi-off.", no: "Protocole adapté en centre spécialisé.", yesGo: 4, noGo: 4 },
         { q: "Vision suffisante en lunettes ?", yes: "Lunettes.", no: "Lentilles rigides ou sclérales ; greffe si cicatrice." }
       ],
       phases: [
@@ -569,15 +570,15 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       local: "Au Québec, la CXL est offerte dans des centres spécialisés (couverture publique variable, à vérifier localement) ; l’optométriste dépiste souvent le kératocône et adapte les lentilles. Epioxa (epi-on, FDA 2025) : disponibilité canadienne à vérifier."
     },
     treatments: [
-      { name: "Crosslinking du collagène (CXL)", dose: "Riboflavine 0,1 % + UVA, après retrait de l’épithélium.", refer: "Progression ou enfant : référer en cornée sans délai.", pitfall: "Freine la maladie, ne rend pas la vision perdue.", qc: "Couverture publique variable, à vérifier.", how: "On retire l’épithélium (epi-off), on imbibe le stroma de riboflavine (vitamine B2) 0,1 %, puis on l’éclaire aux UVA : la riboflavine excitée libère des radicaux d’oxygène qui soudent les fibres de collagène.", why: "Kératocône qui progresse ; enfant dès le diagnostic.", pros: "Arrête la progression dans la plupart des cas ; répétable.", cons: "Ne rend pas la vision perdue ; douleur quelques jours ; stroma ≥ 400 µm requis pour protéger l’endothélium des UV.", cx: "Infection, voile stromal (haze) souvent passager, réactivation herpétique, rarement cicatrice." },
+      { name: "Crosslinking du collagène (CXL)", dose: "Riboflavine 0,1 % + UVA, après retrait de l’épithélium.", pitfall: "Freine la maladie, ne rend pas la vision perdue.", qc: "Couverture publique variable, à vérifier.", how: "On retire l’épithélium (epi-off), on imbibe le stroma de riboflavine (vitamine B2) 0,1 %, puis on l’éclaire aux UVA : la riboflavine excitée libère des radicaux d’oxygène qui soudent les fibres de collagène.", why: "Kératocône qui progresse ; enfant dès le diagnostic.", pros: "Arrête la progression dans la plupart des cas ; répétable.", cons: "Ne rend pas la vision perdue ; douleur quelques jours ; stroma ≥ 400 µm requis pour protéger l’endothélium des UV.", cx: "Infection, voile stromal (haze) souvent passager, réactivation herpétique, rarement cicatrice." },
       { name: "Lentilles rigides et sclérales", dose: "Lentilles rigides perméables ou sclérales, adaptées par l’optométriste.", pitfall: "N’arrête pas la progression : suivre la tomographie.", how: "Les larmes, ou le liquide du réservoir de la sclérale, comblent les irrégularités : la face lisse de la lentille devient la nouvelle surface optique.", why: "Vision insuffisante en lunettes.", pros: "Bien meilleure vision qu’en lunettes ; sans chirurgie.", cons: "Adaptation longue, coût ; n’arrête pas la progression.", cx: "Abrasion, infection, cicatrice au sommet du cône." },
-      { name: "Greffe de cornée (DALK ou PK)", dose: "DALK de préférence ; PK si la Descemet est atteinte.", refer: "Cicatrice centrale ou intolérance aux lentilles.", pitfall: "Récupération sur un an ou plus.", how: "DALK : stroma malade retiré jusqu’à Descemet et remplacé, endothélium du patient conservé ; PK : toute l’épaisseur remplacée, cousue.", why: "Cicatrice centrale, intolérance aux lentilles.", pros: "Très bon pronostic ; DALK : pas de rejet endothélial, globe plus solide.", cons: "Récupération sur un an ou plus, astigmatisme ; DALK difficile (conversion en PK si Descemet perce).", cx: "PK : rejet, glaucome, ouverture de la plaie au moindre choc, toute la vie." }
+      { name: "Greffe de cornée (DALK ou PK)", dose: "DALK de préférence ; PK si la Descemet est atteinte.", pitfall: "Récupération sur un an ou plus.", how: "DALK : stroma malade retiré jusqu’à Descemet et remplacé, endothélium du patient conservé ; PK : toute l’épaisseur remplacée, cousue.", why: "Cicatrice centrale, intolérance aux lentilles.", pros: "Très bon pronostic ; DALK : pas de rejet endothélial, globe plus solide.", cons: "Récupération sur un an ou plus, astigmatisme ; DALK difficile (conversion en PK si Descemet perce).", cx: "PK : rejet, glaucome, ouverture de la plaie au moindre choc, toute la vie." }
     ],
     treatment: {
-      first: ["**Crosslinking du collagène (CXL)** : riboflavine 0,1 % + UVA, après retrait de l’épithélium.", "Lentilles rigides perméables ou sclérales, adaptées par l’optométriste.", "**Greffe de cornée (DALK ou PK)** : DALK de préférence ; PK si la Descemet est atteinte."],
-      refer: ["Progression ou enfant : référer en cornée sans délai.", "Cicatrice centrale ou intolérance aux lentilles."],
-      pitfall: ["Freine la maladie, ne rend pas la vision perdue.", "N’arrête pas la progression : suivre la tomographie.", "Récupération sur un an ou plus."],
-      qc: ["Couverture publique variable, à vérifier."]
+      first: ["**Externe / 1re ligne** : faire cesser le frottement, traiter l’allergie, demander une tomographie.", "**Ophtalmologiste** : crosslinking (riboflavine + UVA) ; lentilles rigides, greffe si cicatrice."],
+      refer: ["Immédiatement si baisse brutale avec cornée blanche — hydrops aigu.", "Cette semaine pour un jeune qui progresse — le CXL freine la maladie."],
+      pitfall: ["LASIK sur une tomographie anormale : risque d’ectasie."],
+      qc: ["CXL : couverture publique variable selon le centre."]
     },
     pearls: [
       { q: "Quand fait-on une CXL ?", a: "Quand il y a progression : au moins 2 de bombement antérieur, bombement postérieur, amincissement (consensus 2015) ; le consensus 2025 reconnaît l’élévation postérieure et le point le plus mince. **Chez l’enfant : dès le diagnostic.**" },

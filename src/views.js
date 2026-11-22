@@ -241,6 +241,133 @@ Views['a-retine'] = {
   }, after: function (host) { mountMinis(host); mountTrainers(host); }
 };
 
+/* ---------- Module A as micro-fiches: one screen per entry, list page + stepper (#a-<section>/<entry>) ---------- */
+function aItems(page) {
+  var A = OPH.A || {}, it = [];
+  if (page === 'a-anatomie') {
+    [['globe', 'a1.s1', 'a1.p1', 'anatomy'], ['cornee', 'a1.s2', 'a1.p2', 'corneaLayers'], ['angle', 'a1.s3', 'a1.p3', 'angleExplorer'], ['papille', 'a1.s4', null, 'discAnatomy'], ['annexes', 'a1.s5', null, 'annexes']].forEach(function (x) {
+      it.push({ id: x[0], title: t(x[1]), body: function () { return (x[2] ? '<p class="read">' + t(x[2]) + '</p>' : '') + '<div data-sim="' + x[3] + '"></div>'; } });
+    });
+    var ph = photosFor('a-anatomie'); if (ph.length) it.push({ id: 'photos', title: t('a.photos'), thumb: ph[0].id, body: function () { return Photo.carousel(ph, { voir: true }); } });
+  } else if (page === 'a-physiologie') {
+    (A.physio || []).forEach(function (p) {
+      it.push({ id: p.id, title: I18N.title(p), en: p.en, body: function (scope) {
+        var sim = PHYSIO_SIM[p.id], h = HY.get('phy-' + p.id), ess = (h && h.essentials) || [];
+        return (sim ? '<div data-sim="' + sim + '"></div>' : '') + '<p class="read">' + T(p.intro, scope) + '</p>' + hyList(ess.slice(0, 5), t('hy.title')) +
+          levelBlocks([
+            { lvl: 1, title: t('f.more'), html: (p.numbers && p.numbers.length ? '<div class="grid3">' + p.numbers.map(function (n) { return '<div class="readout"><span class="u">' + U.esc(n.label) + '</span><span class="small mono" style="font-weight:700">' + U.esc(n.value) + '</span></div>'; }).join('') + '</div>' : '') + '<ul class="blist read">' + (p.points || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' + (p.pearl ? '<div class="callout amber"><span class="eyebrow">' + t('a.pearl') + '</span><span>' + T(p.pearl, scope) + '</span></div>' : '') },
+            { lvl: 2, title: t('a.train'), html: trainBlock('phy-' + p.id) }
+          ]);
+      } });
+    });
+  } else if (page === 'a-examen' || page === 'a-imagerie') {
+    var ids = page === 'a-examen' ? EXAM_CLIN : EXAM_IMG;
+    if (page === 'a-imagerie') it.push({ id: 'structure', title: t('a4.sfchip'), body: function () { return '<p class="read">' + t('a4.sfp') + '</p><div data-sim="structure"></div>'; } });
+    (A.exam || []).filter(function (p) { return ids.indexOf(p.id) >= 0; }).forEach(function (p) {
+      var ph = photosFor('a-' + p.id);
+      it.push({ id: p.id, title: I18N.title(p), en: p.en, thumb: ph[0] && ph[0].id, body: function (scope) {
+        var tools = (EXAM_TOOL[p.id] || []).map(function (x) { var parts = x.split(':'); return parts[0] === 'patterns' ? '<div data-sim="patterns" data-kind="' + parts[1] + '"' + (parts[2] ? ' data-compare="1"' : '') + '></div>' : '<div data-sim="' + parts[0] + '"></div>'; }).join('');
+        var h = HY.get('ex-' + p.id), ess = (h && h.essentials) || [];
+        return (tools || (ph.length ? Photo.carousel(ph, { voir: true }) : '')) + '<div class="callout"><span class="eyebrow">' + t('a.why') + '</span><span>' + T(p.why, scope) + '</span></div>' + hyList(ess.slice(0, 5), t('hy.title')) +
+          levelBlocks([
+            { lvl: 1, title: t('a.normpatho'), html: '<div class="twocol"><div class="panel-sunk stack"><h3 class="h4" style="color:var(--ok)">' + t('f.normal') + '</h3><ul class="blist ok">' + (p.normal || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="panel-sunk stack"><h3 class="h4" style="color:var(--urgent)">' + t('f.patho') + '</h3><ul class="blist red">' + (p.patho || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' + (tools && ph.length ? Photo.carousel(ph, { voir: true }) : '') },
+            { lvl: 2, title: t('a.howpit'), html: '<h3 class="h4">' + t('a.how') + '</h3><ol class="read">' + (p.how || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ol><h3 class="h4">' + t('a.pitfalls') + '</h3><ul class="blist red">' + (p.pitfalls || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' },
+            { lvl: 2, title: t('a.asks.train'), html: (p.pearl ? '<div class="callout amber"><span class="eyebrow">' + t('a.asks') + '</span><span>' + T(p.pearl, scope) + '</span></div>' : '') + (HY.get('ex-' + p.id) ? trainBlock('ex-' + p.id) : '') }
+          ]);
+      } });
+    });
+  } else if (page === 'a-retine') {
+    ((A.recog || []).slice().sort(function (a, b) { return (a.order || 99) - (b.order || 99); })).forEach(function (r) {
+      var ph = photosFor('a5-' + r.id), u = A5_URG[r.urgency] || A5_URG.routine;
+      it.push({ id: r.id, title: I18N.title(r), en: r.en, thumb: ph[0] && ph[0].id, tag: '<span class="tag ' + u[0] + '">' + u[1] + '</span>', body: function (scope) {
+        var h = HY.get('a5-' + r.id), ess = (h && h.essentials) || [];
+        return (ph.length ? Photo.carousel(ph, { voir: true }) : '') + '<div class="callout"><span class="eyebrow">' + t('caps.what') + '</span><span>' + T(r.what, scope) + '</span></div>' + hyList(ess.slice(0, 5), t('hy.title')) +
+          levelBlocks([
+            { lvl: 1, title: t('a5.lookact'), html: '<h3 class="h4">' + t('a.look') + '</h3><ul class="blist">' + (r.look || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><h3 class="h4">' + t('a5.action') + '</h3><ul class="blist">' + (r.action || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' },
+            { lvl: 2, title: t('a5.pitwhy'), html: '<ul class="blist red">' + (r.pitfalls || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><div class="callout violet"><span class="eyebrow">' + t('a5.why') + '</span><span>' + T(r.why, scope) + '</span></div>' },
+            { lvl: 2, title: t('a.asks.train'), html: (r.pearl ? '<p><b>' + U.md(r.pearl.q) + '</b></p><p>' + T(r.pearl.a, scope) + '</p>' : '') + (HY.get('a5-' + r.id) ? trainBlock('a5-' + r.id) : '') }
+          ]);
+      } });
+    });
+  }
+  return it;
+}
+function aThumb(page, it) {
+  var id = it.thumb || (page === 'a-retine' ? (photosFor('a5-' + it.id)[0] || {}).id : page === 'a-physiologie' ? null : (photosFor('a-' + it.id)[0] || {}).id);
+  var R = window.OPH_RESTRICTED || {};
+  return id && D.cat(id) && !R[id] ? '<img loading="lazy" src="' + Photo.src(id) + '" alt="">' : '<span class="a-ico" aria-hidden="true">' + U.esc((it.title || '?').charAt(0)) + '</span>';
+}
+function aListView(page) {
+  return { title: (A_SECTIONS.filter(function (x) { return x.id === page; })[0] || {}).title, render: function () {
+    var items = aItems(page), q = quizIds(function (x) { return x.topic === page; });
+    return '<div class="page">' + aHead(page) + '<div class="a-list">' + items.map(function (it, i) {
+      return '<a class="lrow" href="#' + page + '/' + it.id + '"><span class="lthumb">' + aThumb(page, it) + '</span><span class="stack" style="gap:2px;min-width:0"><span class="xs mono muted">' + (A_SECTIONS.filter(function (x) { return x.id === page; })[0] || {}).n + '.' + (i + 1) + '</span><b>' + U.esc(it.title) + '</b>' + (it.tag || '') + '</span></a>';
+    }).join('') + '</div>' + miniQuiz(page, q, t('a.mini', { t: (A_SECTIONS.filter(function (x) { return x.id === page; })[0] || {}).title })) + aNav(page) + '</div>';
+  }, after: function (host) { mountMinis(host); } };
+}
+function aItemView(page, id) {
+  var sec = A_SECTIONS.filter(function (x) { return x.id === page; })[0] || { n: 'A', title: page };
+  return { title: sec.title, trackId: page, render: function () {
+    var items = aItems(page), i = items.map(function (x) { return x.id; }).indexOf(id), it = items[i];
+    if (!it) return '<div class="page"><div class="empty">' + t('view.notfound') + '</div><a class="btn primary" href="#' + page + '">' + U.esc(sec.title) + '</a></div>';
+    var scope = Gloss.scope([it.title, it.en]), prev = items[i - 1], next = items[i + 1], dpt = Settings.get().depth;
+    var nextSec = A_SECTIONS[A_SECTIONS.map(function (x) { return x.id; }).indexOf(page) + 1];
+    return '<div class="page fiche-page a-item">' + crumbs([[t('nav.home'), 'accueil'], ['Module A', 'module-a'], [sec.n, page], [sec.n + '.' + (i + 1), null]]) +
+      '<div class="fiche-bar"><div class="fb-top"><a class="eyebrow" href="#' + page + '">' + sec.n + ' · ' + U.esc(sec.title) + '</a>' + (it.tag || '') + '<span class="xs mono muted">' + (i + 1) + ' / ' + items.length + '</span><button type="button" class="chip lvl-chip" data-act="lvl-open" aria-expanded="false" aria-controls="lvl-pop">' + t('f.level.chip', { l: DEPTHS[dpt].t }) + '</button></div>' +
+      '<h1 class="fb-title">' + U.esc(it.title) + '</h1><div class="lvl-pop" id="lvl-pop" hidden><span class="xs muted">' + t('f.level') + '</span>' + depthSeg(true) + '</div>' +
+      '<div class="a-dots" aria-hidden="true">' + items.map(function (x, k) { return '<i class="' + (k === i ? 'on' : k < i ? 'done' : '') + '"></i>'; }).join('') + '</div></div>' +
+      '<section class="mv fstep-body" data-step-body="' + U.esc(id) + '">' + it.body(scope) + '</section>' +
+      '<nav class="row fstep-nav" aria-label="' + U.esc(sec.title) + '"><a class="btn ghost" data-fprev href="#' + (prev ? page + '/' + prev.id : page) + '">← ' + U.esc(prev ? prev.title : t('a.list')) + '</a><a class="btn primary" data-fnext href="#' + (next ? page + '/' + next.id : (nextSec ? nextSec.id : 'module-b')) + '">' + U.esc(next ? next.title : (nextSec ? nextSec.title : t('nav.module', { m: 'B', name: L.modules.B }))) + ' →</a></nav></div>';
+  }, after: function (host) {
+    mountMinis(host); mountTrainers(host);
+    var go = function (sel) { var a = U.$(sel, host); if (a) location.hash = a.getAttribute('href').slice(1); };
+    var arrows = function (ev) { if (ev.defaultPrevented || ev.altKey || ev.ctrlKey || ev.metaKey || /input|select|textarea/i.test(ev.target.tagName || '')) return; if (U.$('#lightbox:not([hidden])') || U.$('#drawer:not([hidden])')) return; if (ev.key === 'ArrowRight') go('[data-fnext]'); else if (ev.key === 'ArrowLeft') go('[data-fprev]'); };
+    document.addEventListener('keydown', arrows);
+    if (U.wordsDev()) console.info('[words] ' + page + '/' + id + ': ' + U.wordsVisible(U.$('[data-step-body]', host)) + ' visible words');
+    return function () { document.removeEventListener('keydown', arrows); };
+  } };
+}
+['a-anatomie', 'a-physiologie', 'a-examen', 'a-imagerie', 'a-retine'].forEach(function (pg) { Views[pg] = aListView(pg); });
+
+/* ---------- capsules B0/C0 as cards (#b-bases/<n>) ---------- */
+function capsuleCards(c, m) {
+  var cards = [];
+  var scope0 = Gloss.scope(), h = HY.get(c.id);
+  cards.push({ title: c.title, body: function (scope) { var ph = photosFor(c.id); return (ph.length ? Photo.carousel(ph, { voir: true }) : '') + '<p class="read">' + T(c.intro, scope) + '</p>' + hyList(((h && h.essentials) || []).slice(0, 5), t('caps.hy')); } });
+  (c.sections || []).forEach(function (s2) {
+    cards.push({ title: s2.title, body: function (scope) {
+      var media = (s2.figure ? '<div class="cm-fig">' + Figures.render(s2.figure) + '</div>' : '') + (s2.photo && D.cat(s2.photo) ? '<div class="cm-ph">' + Photo.card({ id: s2.photo, caption: D.cat(s2.photo).title, look: '', reveal: [] }) + '</div>' : '');
+      return (media ? '<div class="cap-media">' + media + '</div>' : '') + '<p class="read">' + T(s2.text, scope) + '</p>' + levelBlocks([{ lvl: 1, title: t('f.more'), html: s2.bullets && s2.bullets.length ? '<ul class="blist read">' + s2.bullets.map(function (b) { return '<li>' + T(b, scope) + '</li>'; }).join('') + '</ul>' : '' }]);
+    } });
+  });
+  if ((c.toolbox || []).length) cards.push({ title: t('caps.tools.h'), body: function (scope) { return '<p class="small muted">' + t('caps.tools.d') + '</p>' + c.toolbox.map(function (tl) {
+    return '<details class="acc"><summary>' + U.esc(tl.name) + (I18N.lang === 'en' ? '' : ' <span class="small muted" style="font-weight:400"><i>' + U.esc(tl.en) + '</i></span>') + '</summary><div class="acc-b"><div class="kv"><span class="k">' + t('caps.what') + '</span><span>' + T(tl.what, scope) + '</span></div><div class="kv"><span class="k">' + t('caps.how') + '</span><span>' + T(tl.how, scope) + '</span></div><div class="kv"><span class="k">' + t('caps.when') + '</span><span>' + T(tl.when, scope) + '</span></div><div class="kv"><span class="k">' + t('caps.cx') + '</span><span>' + T(tl.cx, scope) + '</span></div></div></details>'; }).join(''); } });
+  if ((c.vocab || []).length) cards.push({ title: t('caps.vocab'), body: function () { return '<details class="acc"><summary>' + t('caps.vocab') + ' (' + c.vocab.length + ')</summary><div class="tbl-wrap acc-b"><table class="tbl"><tbody>' + c.vocab.map(function (v) { return '<tr><td>' + U.esc(v.term) + '</td><td>' + U.md(v.def) + '</td></tr>'; }).join('') + '</tbody></table></div></details>' + (h ? '<div class="stack">' + trainBlock(c.id) + '</div>' : ''); } });
+  return cards;
+}
+function capsuleCardView(id, n) {
+  var m = id === 'b-bases' ? 'B' : 'C';
+  return { title: t('nav.foundations'), trackId: id, render: function () {
+    var c = D.capsule(id); if (!c) return '<div class="page">' + missing(t('caps.this')) + '</div>';
+    var cards = capsuleCards(c, m), i = Math.max(0, Math.min(cards.length - 1, (n || 1) - 1)), cd = cards[i], scope = Gloss.scope(), first = D.ordered(m)[0], dpt = Settings.get().depth;
+    var href = function (k) { return '#' + id + (k > 0 ? '/' + (k + 1) : ''); };
+    return '<div class="page fiche-page mv">' + crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m, 'module-' + m.toLowerCase()], [m + '0', null]]) +
+      '<div class="fiche-bar"><div class="fb-top"><span class="eyebrow">' + t('caps.eyebrow', { m: m }) + '</span><span class="xs mono muted">' + (i + 1) + ' / ' + cards.length + '</span><button type="button" class="chip lvl-chip" data-act="lvl-open" aria-expanded="false" aria-controls="lvl-pop">' + t('f.level.chip', { l: DEPTHS[dpt].t }) + '</button></div>' +
+      '<h1 class="fb-title">' + U.esc(i === 0 ? c.title : cd.title) + (i === 0 && window.I18N ? I18N.badge(c) : '') + '</h1><div class="lvl-pop" id="lvl-pop" hidden><span class="xs muted">' + t('f.level') + '</span>' + depthSeg(true) + '</div>' +
+      '<div class="a-dots" aria-hidden="true">' + cards.map(function (x, k) { return '<i class="' + (k === i ? 'on' : k < i ? 'done' : '') + '"></i>'; }).join('') + '</div></div>' +
+      '<section class="fstep-body" data-step-body="' + (i + 1) + '">' + cd.body(scope) + '</section>' +
+      (i === cards.length - 1 ? '<details class="acc src-acc"><summary>' + t('aside.reviewreport') + '</summary><div style="padding:0 14px 14px">' + reviewMeta(id) + '</div></details><div class="row">' + readBtn(id) + '</div>' : '') +
+      '<nav class="row fstep-nav"><a class="btn ghost" data-fprev href="' + (i > 0 ? href(i - 1) : '#module-' + m.toLowerCase()) + '">← ' + U.esc(i > 0 ? (i - 1 === 0 ? c.title : cards[i - 1].title) : 'Module ' + m) + '</a><a class="btn primary" data-fnext href="' + (i < cards.length - 1 ? href(i + 1) : (first ? '#' + first.id + '/voir' : '#module-' + m.toLowerCase())) + '">' + U.esc(i < cards.length - 1 ? cards[i + 1].title : (first ? I18N.title(first) : 'Module ' + m)) + ' →</a></nav></div>';
+  }, after: function (host) {
+    mountTrainers(host);
+    var go = function (sel) { var a = U.$(sel, host); if (a) location.hash = a.getAttribute('href').slice(1); };
+    var arrows = function (ev) { if (ev.defaultPrevented || ev.altKey || ev.ctrlKey || ev.metaKey || /input|select|textarea/i.test(ev.target.tagName || '')) return; if (U.$('#lightbox:not([hidden])') || U.$('#drawer:not([hidden])')) return; if (ev.key === 'ArrowRight') go('[data-fnext]'); else if (ev.key === 'ArrowLeft') go('[data-fprev]'); };
+    document.addEventListener('keydown', arrows);
+    if (U.wordsDev()) console.info('[words] ' + id + '/' + (n || 1) + ': ' + U.wordsVisible(U.$('[data-step-body]', host)) + ' visible words');
+    return function () { document.removeEventListener('keydown', arrows); };
+  } };
+}
+
 /* ---------- Modules B and C ---------- */
 var COMPARE = {
   B: { title: 'Kératites infectieuses : les distinguer d’un coup d’œil', note: 'Toute kératite chez un porteur de lentilles est infectieuse jusqu’à preuve du contraire. Ce tableau se lit après les fiches B3 à B5.',
@@ -300,16 +427,17 @@ function moduleView(m) {
       var dateK = m === 'B' ? 'cornee' : 'glaucome';
       var cards = list.map(function (f, i) {
         var st = Prog.ficheDone(f.id) ? t('st.read') : Prog.ficheSeen(f.id) ? t('st.started') : '';
-        return '<a class="card link fcard" href="#' + f.id + '"><span class="fcard-img">' + thumbFor(f.id) + '</span><span class="eyebrow">' + m + (i + 1) + (st ? ' · ' + st : '') + '</span><h3>' + U.esc(f.title) + '</h3><span class="en small muted"><i>' + U.esc(f.en) + '</i></span><span class="row tight">' + (f.tags || []).map(L.tag).join('') + '</span><span class="small">' + U.md(f.oneLiner) + '</span></a>';
+        return '<a class="card link fcard" href="#' + f.id + '"><span class="fcard-img">' + thumbFor(f.id) + '</span><span class="eyebrow">' + m + (i + 1) + (st ? ' · ' + st : '') + '</span><h3>' + U.esc(I18N.title(f)) + '</h3><span class="row tight">' + (f.tags || []).filter(function (x) { return x === 'urgent' || x === 'frequent'; }).slice(0, 1).map(L.tag).join('') + '</span></a>'; // micro-card: photo + title + one tag
       }).join('');
       var bonus = (OPH.bonus[m] || []).map(function (b) { return '<div class="card stack"><h3 class="h4">' + U.esc(I18N.title(b)) + '</h3>' + (I18N.lang === 'en' ? '' : '<span class="small muted"><i>' + U.esc(b.en) + '</i></span>') + '<span class="small"><b>' + t('mod.clue') + '</b>' + U.md(b.clue) + '</span><span class="small"><b>' + t('mod.action') + '</b>' + U.md(b.action) + '</span></div>'; }).join('');
       var bph = photosFor('bonus-' + m);
       return '<div class="page">' + crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m, null]]) +
-        '<div class="phead"><div class="eyebrow">' + U.esc(Dates.custom() ? t('mod.eyebrow', { m: m, d: Dates.fmt(Dates.get(dateK)), r: Dates.rel(Dates.get(dateK)) }) : 'Module ' + m) + '</div><h1>' + L.modules[m] + '</h1><p class="muted" style="max-width:62ch">' + t('mod.lead', { r: readRange(m), lvl: DEPTHS[Settings.get().depth].t }) + '</p></div>' +
+        '<div class="phead"><div class="eyebrow">' + U.esc(Dates.custom() ? t('mod.eyebrow', { m: m, d: Dates.fmt(Dates.get(dateK)), r: Dates.rel(Dates.get(dateK)) }) : 'Module ' + m) + '</div><h1>' + L.modules[m] + '</h1><p class="muted" style="max-width:62ch">' + t('mod.lead2') + '</p></div>' +
         (unl ? '' : lockHtml(m)) +
-        '<a class="card link" href="#' + cap + '" style="border-color:var(--cobalt)"><span class="eyebrow">' + t('mod.first', { m: m }) + (Prog.ficheDone(cap) ? ' · ' + t('st.read') : '') + '</span><h3>' + U.esc(capD ? capD.title : t('nav.foundations')) + '</h3><span class="small muted">' + U.esc(capD ? capD.intro : t('mod.caps.d')) + '</span></a>' +
-        TAG_LEGEND + '<div class="grid2">' + (cards || missing(t('mod.fiches'))) + '</div>' + compareTable(m) +
-        (bonus ? '<div class="sec">' + secH('+', t('mod.bonus')) + '<div class="grid3">' + bonus + '</div>' + (bph.length ? '<details class="acc"><summary>' + t('mod.realimg', { n: bph.length }) + '</summary><div style="padding:0 14px 14px">' + Photo.gallery(bph) + '</div></details>' : '') + '</div>' : '') +
+        '<a class="card link" href="#' + cap + '" style="border-color:var(--cobalt)"><span class="eyebrow">' + t('mod.first', { m: m }) + (Prog.ficheDone(cap) ? ' · ' + t('st.read') : '') + '</span><h3>' + U.esc(capD ? capD.title : t('nav.foundations')) + '</h3><span class="small muted">' + t('mod.caps.d') + '</span></a>' +
+        '<div class="grid2 micro-grid">' + (cards || missing(t('mod.fiches'))) + '</div>' +
+        (COMPARE[m] ? '<details class="acc"><summary>' + U.esc(((I18N.lang === 'en' && COMPARE_EN[m]) || COMPARE[m]).title) + '</summary><div class="acc-b">' + compareTable(m) + '</div></details>' : '') +
+        (bonus ? '<details class="acc"><summary>' + t('mod.bonus') + '</summary><div class="acc-b stack"><div class="grid3">' + bonus + '</div>' + (bph.length ? Photo.gallery(bph) : '') + '</div></details>' : '') +
         '<div class="row"><button class="btn primary" data-act="quiz-module" data-m="' + m + '">' + t('mod.quiz', { m: m }) + '</button><a class="btn" href="#express-' + m.toLowerCase() + '">' + t('mod.express') + '</a><a class="btn" href="#cas">' + t('mod.cases') + '</a></div></div>';
     }
   };
@@ -342,8 +470,8 @@ function capsuleView(id) {
     }, after: function (host) { mountTrainers(host); }
   };
 }
-Views['b-bases'] = capsuleView('b-bases');
-Views['c-bases'] = capsuleView('c-bases');
+Views['b-bases'] = capsuleCardView('b-bases', 1);
+Views['c-bases'] = capsuleCardView('c-bases', 1);
 
 /* ---------- fiche ---------- */
 /* ---------- fiche: 4 screens (Voir → Comprendre → Décider → S'entraîner), one per route #<id>/<step> ---------- */
@@ -351,6 +479,12 @@ var FSTEPS = ['voir', 'comprendre', 'decider', 'entrainer'];
 var FSTEP_KEY = { voir: 'f.see', comprendre: 'f.understand', decider: 'f.decide', entrainer: 'f.train' };
 function ficheStep(id) { var s = (Store.p.fstep || {})[id]; return s && FSTEPS.indexOf(s.s) >= 0 ? s.s : 'voir'; }
 /* collapsed overflow block (open by default from level 2) */
+Actions['lvl-open'] = function (el) { var pop = U.$('#lvl-pop'); if (!pop) return; pop.hidden = !pop.hidden; el.setAttribute('aria-expanded', String(!pop.hidden)); };
+/* level-tagged collapsed blocks: level 1 ≤ 1 block, level 2 adds ≤ 2, level 3 adds the rest; never opened automatically */
+function levelBlocks(list) {
+  var d = Settings.get().depth;
+  return list.filter(function (b) { return b.html && b.lvl <= d; }).map(function (b) { return '<details class="acc more lvl-' + b.lvl + '"><summary>' + U.esc(b.title) + (b.lvl > 1 ? ' <span class="tag plain">' + t('f.lvl.tag', { n: b.lvl }) + '</span>' : '') + '</summary><div class="acc-b stack">' + b.html + '</div></details>'; }).join('');
+}
 function moreBlock(html) { return html ? '<details class="acc more"' + (Settings.get().depth >= 2 ? ' open' : '') + '><summary>' + t('f.more') + '</summary><div class="acc-b stack">' + html + '</div></details>' : ''; }
 function hyList(items, title) { return items && items.length ? '<div class="hy-box"><div class="hy-h"><span class="hy-badge">High yield</span><b>' + U.esc(title) + '</b></div><ul class="hy-list">' + items.map(function (s) { return '<li>' + U.md(s) + '</li>'; }).join('') + '</ul></div>' : ''; }
 function txList(f, scope) {
@@ -365,9 +499,8 @@ function txBlock(f, scope) {
   var c = f.treatment || f.txCard || null;
   if (c && (c.first || c.refer || c.pitfall || c.trap)) {
     var card = function (k, cls, v) { return v ? '<div class="tx-card ' + cls + '"><span class="eyebrow">' + t(k) + '</span><div>' + (Array.isArray(v) ? '<ul class="blist">' + v.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' : T(v, scope)) + '</div></div>' : ''; };
-    var list = txList(f, scope);
     return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><div class="tx-grid">' + card('tx.first', 'first', c.first) + card('tx.refer', 'refer', c.refer) + card('tx.trap', 'trap', c.pitfall || c.trap) + card('tx.qc', 'qc', c.qc || c.quebec) + '</div>' +
-      (list ? '<details class="acc more tx-more"' + (Settings.get().depth >= 2 ? ' open' : '') + '><summary>' + t('f.tx.more') + '</summary><div class="acc-b stack">' + list + '</div></details>' : '') + '</div>';
+      '</div>'; // the full list is offered from level 2, in the Décider level blocks
   }
   return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><p class="xs muted">' + t('f.tx.d') + '</p>' + txList(f, scope) + '</div>';
 }
@@ -388,49 +521,60 @@ function ficheView(f, step) {
       var pre = (PREREQ[f.id] || []).map(function (p) { return '<a href="#' + p + '">' + U.esc(D.title(p)) + (Prog.ficheDone(p) ? ' ✓' : '') + '</a>'; }).join('');
       var h = [];
       h.push(crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m + ' · ' + L.modules[m], 'module-' + m.toLowerCase()], [m + (idx + 1), null]]));
-      h.push('<div class="phead fiche-head"><div class="eyebrow">' + m + (idx + 1) + ' · ' + L.modules[m] + ' · ' + t('f.min', { n: readMinAt(f, dpt) }) + '</div><h1>' + U.esc(I18N.title(f)) + (window.I18N ? I18N.badge(f) : '') + '</h1>' + enSub(f.en) +
-        (si === 0 ? '<div class="row tight">' + (f.tags || []).map(L.tag).join('') + '</div>' : '') +
-        '<div class="row depth-row"><span class="xs muted">' + t('f.level') + '</span>' + depthSeg(true) + '</div></div>');
-      // 4-pip progress
-      h.push('<nav class="fsteps" aria-label="' + t('f.steps.aria') + '"><ol>' + FSTEPS.map(function (s, k) { return '<li class="' + (k === si ? 'on' : k < si ? 'done' : '') + '"><a href="#' + f.id + '/' + s + '"' + (k === si ? ' aria-current="step"' : '') + '><span class="pip" aria-hidden="true">' + (k + 1) + '</span><span class="lab">' + t(FSTEP_KEY[s]) + '</span></a></li>'; }).join('') + '</ol></nav>');
+      // compact header (≤ 25 % of a phone screen): module code + one tag + level chip, one-line title, 4 pips
+      var tag1 = si === 0 ? ((f.tags || []).filter(function (x) { return x === 'urgent'; })[0] || (f.tags || []).filter(function (x) { return x === 'frequent'; })[0] || '') : '';
+      h.push('<div class="fiche-bar"><div class="fb-top"><span class="eyebrow">' + m + (idx + 1) + ' · ' + L.modules[m] + '</span>' + (tag1 ? L.tag(tag1) : '') + '<button type="button" class="chip lvl-chip" data-act="lvl-open" aria-expanded="false" aria-controls="lvl-pop">' + t('f.level.chip', { l: DEPTHS[dpt].t }) + '</button></div>' +
+        '<h1 class="fb-title" title="' + U.esc(I18N.title(f)) + '">' + U.esc(I18N.title(f)) + (window.I18N ? I18N.badge(f) : '') + '</h1>' +
+        '<div class="lvl-pop" id="lvl-pop" hidden><span class="xs muted">' + t('f.level') + '</span>' + depthSeg(true) + '</div>' +
+        '<nav class="fsteps" aria-label="' + t('f.steps.aria') + '"><ol>' + FSTEPS.map(function (s2, k) { return '<li class="' + (k === si ? 'on' : k < si ? 'done' : '') + '"><a href="#' + f.id + '/' + s2 + '"' + (k === si ? ' aria-current="step"' : '') + '><span class="pip" aria-hidden="true">' + (k + 1) + '</span><span class="lab">' + t(FSTEP_KEY[s2]) + '</span></a></li>'; }).join('') + '</ol></nav></div>');
       var body = '';
+      var cmpFig = function () { // normal vs pathological schematic, with the learner revealing the abnormalities
+        if (!f.compare) return f.anatomy && f.anatomy.figure ? '<div class="mech-fig">' + Figures.render(f.anatomy.figure) + '</div>' : '';
+        return '<div class="stack mech-fig"><div class="pair"><div><div class="lab n">' + t('f.normal') + '</div>' + Figures.render(f.compare.normal.figure, { caption: f.compare.normal.caption }) + '</div><div><div class="lab p">' + t('f.patho') + '</div><div data-cmp>' + Figures.render(f.compare.patho.figure, { caption: f.compare.patho.caption }) + '</div></div></div>' +
+          '<div><button class="btn sm" data-cmpreveal aria-expanded="false">' + t('f.revealanom') + '</button><ul class="reveal-list" data-cmplist hidden>' + f.compare.patho.reveal.map(function (r) { return '<li>' + T(r, scope) + '</li>'; }).join('') + '</ul></div></div>';
+      };
       if (step === 'voir') {
-        var cmp = f.compare ? '<div class="stack"><h2 class="h3">' + U.esc(f.compare.title) + '</h2><div class="pair"><div><div class="lab n">' + t('f.normal') + '</div>' + Figures.render(f.compare.normal.figure, { caption: f.compare.normal.caption }) + '</div><div><div class="lab p">' + t('f.patho') + '</div><div data-cmp>' + Figures.render(f.compare.patho.figure, { caption: f.compare.patho.caption }) + '</div></div></div>' +
-          '<div><button class="btn sm" data-cmpreveal aria-expanded="false">' + t('f.revealanom') + '</button><ul class="reveal-list" data-cmplist hidden>' + f.compare.patho.reveal.map(function (r) { return '<li>' + T(r, scope) + '</li>'; }).join('') + '</ul></div></div>' : '';
-        var two = '<div class="callout"><span class="eyebrow">' + t('f.twosent') + '</span><span>' + T(f.definition, scope) + '</span></div>';
-        body = (ph.length ? '<div class="voir-grid"><div class="stack">' + Photo.carousel(ph, { brief: true }) + '</div><div class="stack voir-side">' + two + '</div></div>' : (cmp || (f.anatomy.figure ? '<div style="max-width:680px">' + Figures.render(f.anatomy.figure) + '</div>' : '')) + two) +
-          moreBlock((f.oneLiner ? '<p class="oneliner">' + T(f.oneLiner, scope) + '</p>' : '') + (ph.length ? '<p class="small muted">' + t('f.observe') + '</p>' + cmp : '') +
-            (pairs.length ? '<div class="stack"><h3 class="h4">' + t('f.pairs') + '</h3>' + pairs.map(pairHtml).join('') + '</div>' : '') +
-            '<div class="stack"><h3 class="h4">' + t('f.anat') + '</h3><p class="read">' + T(f.anatomy.text, scope) + '</p>' + (f.anatomy.figure && (ph.length || cmp) ? '<div style="max-width:680px">' + Figures.render(f.anatomy.figure) + '</div>' : '') + '</div>' +
-            (pre ? '<div class="prereq"><span class="small muted">' + t('f.prereq') + '</span>' + pre + '</div>' : ''));
+        var two = '<div class="callout"><span class="eyebrow">' + t('f.twosent') + '</span><span class="def-text">' + T(f.definition, scope) + '</span></div>';
+        body = (ph.length ? '<div class="voir-grid"><div class="stack">' + Photo.carousel(ph, { voir: true }) + '</div><div class="stack voir-side">' + two + '</div></div>' : cmpFig() + two) +
+          levelBlocks([
+            { lvl: 1, title: t('f.more'), html: (enSub(f.en)) + (f.oneLiner ? '<p class="oneliner">' + T(f.oneLiner, scope) + '</p>' : '') + (pre ? '<div class="prereq"><span class="small muted">' + t('f.prereq') + '</span>' + pre + '</div>' : '') },
+            { lvl: 2, title: t('f.pairs'), html: pairs.length ? pairs.map(pairHtml).join('') : '' },
+            { lvl: 2, title: t('f.anat'), html: '<p class="read">' + T(f.anatomy.text, scope) + '</p>' + (f.anatomy.figure && f.compare ? '<div style="max-width:680px">' + Figures.render(f.anatomy.figure) + '</div>' : '') }
+          ]);
       } else if (step === 'comprendre') {
         var ess = (hy && hy.essentials) || [];
         var steps = f.causal.steps;
-        body = hyList(ess.slice(0, 5), t('f.hy')) +
+        var nEss = f.compare ? 4 : 5; // the mechanism figure takes the room of one key point (≤ 120 words)
+        body = cmpFig() + hyList(ess.slice(0, nEss), t('f.hy')) +
           '<div class="stack"><h2 class="h3">' + U.esc(t('f.mech', { t: f.causal.title })) + '</h2>' +
-          '<div class="chain paced" data-chain data-shown="1">' + steps.map(function (s, i) { return '<div class="cstep k-' + s.kind + (i > 0 ? ' pending' : '') + '" data-step="' + i + '"><div class="node">' + (i + 1) + '</div><div class="body"><span class="k">' + (L.kinds[s.kind] || s.kind) + '</span><b>' + U.md(s.label) + '</b><span class="small" data-dz="2">' + T(s.detail, scope) + '</span><div class="cutslot"></div></div></div>'; }).join('') + '</div>' +
+          '<div class="chain paced" data-chain data-shown="1">' + steps.map(function (s, i) { return '<div class="cstep k-' + s.kind + (i > 0 ? ' pending' : '') + '" data-step="' + i + '"><div class="node">' + (i + 1) + '</div><div class="body"><span class="k">' + (L.kinds[s.kind] || s.kind) + '</span><b>' + U.md(s.label) + '</b><span class="small" data-dz="3">' + T(s.detail, scope) + '</span><div class="cutslot"></div></div></div>'; }).join('') + '</div>' +
           '<div class="row"><button type="button" class="btn primary sm" data-causal="next">' + t('f.next.link', { i: 2, n: steps.length }) + '</button><button type="button" class="btn ghost sm" data-causal="all">' + t('f.all.links') + '</button></div>' +
           '<div class="stack" data-levers hidden><span class="small muted">' + t('f.levers') + '</span><div class="chips">' + f.causal.levers.map(function (l, i) { return '<button class="chip" data-lever="' + i + '" aria-pressed="false">' + U.esc(l.label) + '</button>'; }).join('') + '</div></div></div>' +
-          moreBlock(hyList(ess.slice(5), t('f.hy.more')) +
-            (f.mnemonic ? '<div class="callout green"><span class="eyebrow">' + U.esc(t('f.mnemo', { t: f.mnemonic.title })) + '</span><span>' + T(f.mnemonic.text, scope) + '</span></div>' : '') +
-            '<div class="twocol"><div class="stack"><h3 class="h4">' + t('f.risk') + '</h3><ul class="blist">' + f.risk.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="stack"><h3 class="h4">' + t('f.pres') + '</h3><ul class="blist">' + f.presentation.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>');
+          levelBlocks([
+            { lvl: 1, title: t('f.more'), html: hyList(ess.slice(nEss), t('f.hy.more')) + (f.mnemonic ? '<div class="callout green"><span class="eyebrow">' + U.esc(t('f.mnemo', { t: f.mnemonic.title })) + '</span><span>' + T(f.mnemonic.text, scope) + '</span></div>' : '') },
+            { lvl: 2, title: t('f.riskpres'), html: '<div class="twocol"><div class="stack"><h3 class="h4">' + t('f.risk') + '</h3><ul class="blist">' + f.risk.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="stack"><h3 class="h4">' + t('f.pres') + '</h3><ul class="blist">' + f.presentation.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' }
+          ]);
       } else if (step === 'decider') {
         var rf = f.redFlags || [];
+        var tbl = function (head, rows) { return '<div class="tbl-wrap"><table class="tbl"><thead><tr>' + head.map(function (x) { return '<th>' + x + '</th>'; }).join('') + '</tr></thead><tbody>' + rows.map(function (r) { return '<tr>' + r.map(function (x) { return '<td>' + T(x, scope) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>'; };
         body = '<div class="callout red"><span class="eyebrow">' + t('f.redflags') + '</span><ul class="blist red">' + rf.slice(0, 3).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>' +
           algoHtml(f, scope) + txBlock(f, scope) +
-          moreBlock((rf.length > 3 ? '<div class="stack"><h3 class="h4">' + t('f.redflags.more') + '</h3><ul class="blist red">' + rf.slice(3).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>' : '') +
-            '<div class="stack"><h3 class="h4">' + t('f.signs') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.sign') + '</th><th>' + t('f.signwhy') + '</th></tr></thead><tbody>' + f.exam.signs.map(function (x) { return '<tr><td>' + T(x.sign, scope) + '</td><td>' + T(x.why, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>' +
-            '<div class="stack"><h3 class="h4">' + t('f.tests') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.test') + '</th><th>' + t('f.when') + '</th><th>' + t('f.read') + '</th></tr></thead><tbody>' + f.exam.tests.map(function (x) { return '<tr><td>' + T(x.test, scope) + '</td><td>' + T(x.when, scope) + '</td><td>' + T(x.read, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>' +
-            '<div class="stack"><h3 class="h4">' + t('f.ddx') + '</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + t('f.dx') + '</th><th>' + t('f.clue') + '</th></tr></thead><tbody>' + f.ddx.map(function (d) { return '<tr><td>' + T(d.dx, scope) + '</td><td>' + T(d.clue, scope) + '</td></tr>'; }).join('') + '</tbody></table></div></div>' +
-            '<div class="stack"><h3 class="h4">' + t('f.phases') + '</h3><div class="phases">' + f.cat.phases.map(function (p) { return '<div class="phase p-' + p.phase + '"><div class="ph"><i></i>' + (L.phases[p.phase] || p.phase) + '</div><ul class="blist">' + p.items.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div></div>' +
-            (f.cat.local ? '<div class="callout violet"><span class="eyebrow">' + t('f.local') + '</span><span>' + T(f.cat.local, scope) + '</span></div>' : ''));
+          levelBlocks([
+            { lvl: 1, title: t('f.redflags.more'), html: rf.length > 3 ? '<ul class="blist red">' + rf.slice(3).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' : '' },
+            { lvl: 2, title: t('f.examddx'), html: '<h3 class="h4">' + t('f.signs') + '</h3>' + tbl([t('f.sign'), t('f.signwhy')], f.exam.signs.map(function (x) { return [x.sign, x.why]; })) + '<h3 class="h4">' + t('f.tests') + '</h3>' + tbl([t('f.test'), t('f.when'), t('f.read')], f.exam.tests.map(function (x) { return [x.test, x.when, x.read]; })) + '<h3 class="h4">' + t('f.ddx') + '</h3>' + tbl([t('f.dx'), t('f.clue')], f.ddx.map(function (d) { return [d.dx, d.clue]; })) },
+            { lvl: 2, title: t('f.tx.more'), html: (f.treatment || f.txCard) ? txList(f, scope) : '' },
+            { lvl: 3, title: t('f.phases.qc'), html: '<div class="phases">' + f.cat.phases.map(function (p) { return '<div class="phase p-' + p.phase + '"><div class="ph"><i></i>' + (L.phases[p.phase] || p.phase) + '</div><ul class="blist">' + p.items.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' + (f.cat.local ? '<div class="callout violet"><span class="eyebrow">' + t('f.local') + '</span><span>' + T(f.cat.local, scope) + '</span></div>' : '') }
+          ]);
       } else {
         var qids = quizIds(function (q) { return q.topic === f.id; }), pearls = f.pearls || [];
         var pcard = function (p, i) { return '<div class="pearl-card" role="button" tabindex="0" data-pearl="' + i + '" aria-expanded="false"><span class="who">' + t('f.asks') + '</span><span class="q">' + U.md(p.q) + '</span><span class="hint">' + t('f.think') + '</span><span class="a" hidden>' + T(p.a, scope) + '</span></div>'; };
         var game = qids.length ? miniQuiz(f.id, qids, t('mini.fiche')) : trainBlock(f.id);
         var links = (OPH.images && OPH.images[f.id]) || [];
         body = '<div class="stack"><h2 class="h3">' + t('f.pearls') + '</h2><div class="pearls">' + pearls.slice(0, 3).map(pcard).join('') + '</div></div>' + game +
-          moreBlock((pearls.length > 3 ? '<div class="pearls">' + pearls.slice(3).map(function (p, i) { return pcard(p, i + 3); }).join('') + '</div>' : '') + (qids.length ? trainBlock(f.id) : '')) +
+          levelBlocks([
+            { lvl: 1, title: t('f.more'), html: pearls.length > 3 ? '<div class="pearls">' + pearls.slice(3).map(function (p, i) { return pcard(p, i + 3); }).join('') + '</div>' : '' },
+            { lvl: 2, title: t('f.othergame'), html: qids.length ? trainBlock(f.id) : '' }
+          ]) +
           '<details class="acc src-acc"><summary>' + t('f.sources') + '</summary><div style="padding:0 14px 14px">' + (links.length ? '<ul class="src-list">' + links.map(function (l) { return '<li><a href="' + U.esc(l.url) + '" target="_blank" rel="noopener">' + U.esc(l.title) + '</a> <span class="muted">· ' + U.esc(l.site) + '</span><div class="small muted">' + U.md(l.look) + '</div></li>'; }).join('') + '</ul>' : '') +
           '<ul class="src-list">' + f.sources.map(function (x) { return '<li class="small">' + U.md(x) + '</li>'; }).join('') + '</ul>' + reviewMeta(f.id) + '</div></details>' +
           '<div class="row">' + readBtn(f.id) + '</div>';
@@ -698,6 +842,11 @@ Views.recherche = {
 /* ---------- resolver ---------- */
 Views.resolve = function (name) {
   if (Views[name] && typeof Views[name] === 'object' && Views[name].render) return Views[name];
+  if (!Views._f) Views._f = {};
+  var am = /^(a-anatomie|a-physiologie|a-examen|a-imagerie|a-retine)\/([^/]+)$/.exec(name);
+  if (am) return (Views._f[name] = Views._f[name] || aItemView(am[1], am[2]));
+  var cm = /^(b-bases|c-bases)\/(\d+)$/.exec(name);
+  if (cm) return (Views._f[name] = Views._f[name] || capsuleCardView(cm[1], +cm[2]));
   var fm = /^([^/]+)\/(voir|comprendre|decider|entrainer)$/.exec(name), f = D.fiche(fm ? fm[1] : name);
   if (f) {
     var stp = fm ? fm[2] : 'voir', key = f.id + '/' + stp;

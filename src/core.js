@@ -272,7 +272,8 @@ var Photo = {
   },
   card: function (p, opts) {
     opts = opts || {}; var e = D.cat(p.id); if (!e) return '';
-    if (opts.brief && p.look) p = Object.assign({}, p, { look: '', reveal: [p.look].concat(p.reveal || []) }); // brief (fiche « Voir »): the observation prompt sits behind « Révéler »
+    if (opts.brief && p.look) p = Object.assign({}, p, { look: '', reveal: [p.look].concat(p.reveal || []) }); // brief: the observation prompt sits behind « Révéler »
+    if (opts.voir) return Photo.voirCard(p, e);
     var rid = 'rv-' + p.id + '-' + Math.floor(Math.random() * 1e6);
     // in English, an untranslated photo caption falls back to the translated catalogue title
     var cap = (window.I18N && I18N.lang === 'en' && p.caption && !p._en && e._en) ? e.title : (p.caption || e.title);
@@ -284,6 +285,21 @@ var Photo = {
       (p.reveal && p.reveal.length ? '<div><button type="button" class="btn sm" data-act="reveal" data-target="' + rid + '" aria-expanded="false">' + t('photo.reveal') + '</button>' +
         '<ul class="reveal-list" id="' + rid + '" hidden>' + p.reveal.map(function (r) { return '<li>' + U.md(r) + '</li>'; }).join('') + '</ul></div>' : '') +
       Photo.credit(e, opts.quiz) + '</figcaption></figure>';
+  },
+  /* fiche « Voir »: Observe → Réponds → Révèle. Caption (diagnosis) hidden until the reveal, which shows the decisive sign
+     in ≤ 25 words with a sticker (Motion), loops the hotspots when the photo has any, and keeps the rest collapsed. */
+  voirCard: function (p, e) {
+    var cap = (window.I18N && I18N.lang === 'en' && p.caption && !p._en && e._en) ? e.title : (p.caption || e.title);
+    var rev = (p.reveal || []).slice(), sign = p.sign || rev.shift() || p.look || cap, rest = [p.look].concat(rev).filter(function (x) { return x && x !== sign; });
+    var w = String(sign).split(/\s+/); if (w.length > 25) { rest.unshift(sign); sign = w.slice(0, 25).join(' ') + '…'; }
+    var hots = (p.hotspots || []).map(function (h) { return '<span class="inv-hot' + (h.decisive === false ? ' minor' : ' dec') + '" style="left:' + h.x + '%;top:' + h.y + '%;--r:' + (h.r || 8) + '%"><span class="inv-hot-l">' + U.esc(I18N.pick(h.label) || '') + '</span></span>'; }).join('');
+    return '<figure class="ph-card voir-card" style="margin:0" data-voir>' +
+      '<div class="voir-media' + (hots ? ' inv-media' : '') + '"><button type="button" class="ph-img" data-act="lightbox" data-id="' + e.id + '" data-cap="" data-quiz="1" aria-label="' + U.esc(t('img.hiddencap')) + '">' +
+      '<img loading="lazy" decoding="async" src="' + Photo.src(e.id) + '" width="' + (e.tw || 440) + '" height="' + (e.th || 300) + '" alt="' + U.esc(t('img.toid')) + '"></button>' + (hots ? '<div class="inv-hots" hidden>' + hots + '</div>' : '') + '</div>' +
+      '<figcaption class="ph-b"><div class="voir-ask"><span class="eyebrow">' + t('voir.observe') + '</span><span>' + t('voir.q') + '</span><button type="button" class="btn primary sm" data-act="ph-reveal">' + t('voir.reveal') + '</button></div>' +
+      '<div class="voir-ans" hidden><div class="cap">' + U.md(cap) + '</div><div class="feedback ok voir-sign" role="status"><div class="verdict">' + t('voir.sign') + '</div><div>' + U.md(sign) + '</div></div>' +
+      (rest.length ? '<details class="acc"><summary>' + t('voir.more') + '</summary><ul class="reveal-list">' + rest.map(function (r) { return '<li>' + U.md(r) + '</li>'; }).join('') + '</ul></details>' : '') + '</div>' +
+      Photo.credit(e, true) + '</figcaption></figure>';
   },
   gallery: function (list, opts) { if (!list || !list.length) return ''; return '<div class="gallery">' + list.map(function (p) { return Photo.card(p, opts); }).join('') + '</div>'; },
   opener: null,
@@ -462,6 +478,7 @@ document.addEventListener('click', function (ev) {
   if (act === 'close-drawer') { Shell.close(); return; }
   if (act === 'lightbox') { Photo.open(el.getAttribute('data-id'), el.getAttribute('data-cap'), el.getAttribute('data-quiz') === '1'); return; }
   if (act === 'lb-close') { Photo.close(); return; }
+  if (act === 'ph-reveal') { var vc = el.closest('[data-voir]'); if (vc) { var ask = U.$('.voir-ask', vc), ans = U.$('.voir-ans', vc), hw = U.$('.inv-hots', vc); if (ask) ask.hidden = true; if (ans) ans.hidden = false; if (hw) { hw.hidden = false; hw.parentNode.classList.add('revealed'); } var lb = U.$('[data-act="lightbox"]', vc); if (lb) { lb.removeAttribute('data-quiz'); var cp = U.$('.cap', vc); lb.setAttribute('data-cap', cp ? cp.textContent : ''); } } return; }
   if (act === 'figzoom') { Photo.openFig(el.closest('figure')); return; }
   if (act === 'lb-zoom') { var lbx = U.$('#lightbox'); Photo.zoom((+lbx.getAttribute('data-z') || 1) + (+el.getAttribute('data-z')) * 0.5); return; }
   if (act === 'reveal') { var tg = document.getElementById(el.getAttribute('data-target')); if (tg) { tg.hidden = !tg.hidden; el.setAttribute('aria-expanded', String(!tg.hidden)); el.textContent = tg.hidden ? I18N.t('photo.reveal') : I18N.t('photo.hide'); } return; }

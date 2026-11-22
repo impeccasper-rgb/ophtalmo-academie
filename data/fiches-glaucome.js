@@ -68,9 +68,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   redFlags: ["Pâleur > excavation ou AV ↓ précoce : IRM", "Défaut respectant le méridien vertical (chiasma)", "Perte ≥ 2 dB/an malgré une PIO à la cible"],
   cat: {
     algo: [
-      { q: "Angle ouvert, sans cause secondaire ?", yes: "Bilan de base (4 P + G).", no: "Traiter la fermeture ou la cause.", cont: "yes" },
-      { q: "Papille, OCT et champ concordants ?", yes: "Glaucome : cible ≈ 20–30 % sous la base.", no: "Suspect : estimer le risque (fiche HTO).", cont: "yes" },
-      { q: "Cible atteinte sous PGA ou SLT ?", yes: "Suivi OCT et champ.", no: "Vérifier l’observance, puis changer, ajouter une classe ou SLT.", cont: "yes" },
+      { q: "Angle ouvert, sans cause secondaire ?", yes: "Bilan de base (4 P + G).", no: "Traiter la fermeture ou la cause.", yesGo: 1 },
+      { q: "Papille, OCT et champ concordants ?", yes: "Glaucome : cible ≈ 20–30 % sous la base.", no: "Suspect : estimer le risque (fiche HTO).", yesGo: 2 },
+      { q: "Cible atteinte sous PGA ou SLT ?", yes: "Suivi OCT et champ.", no: "Vérifier l’observance ; changer, ajouter une classe ou SLT.", yesGo: 3 },
       { q: "Progression malgré cible ou traitement maximal ?", yes: "Baisser la cible ; MIGS si léger–modéré, filtrante si avancé.", no: "Poursuivre ; revoir la cible à chaque visite." }
     ],
     phases: [
@@ -143,17 +143,15 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**PGA** : Latanoprost 0,005 % : 1 goutte au coucher (bimatoprost 0,01 %, travoprost 0,004 %).",
-      "**Timolol, IAC, brimonidine** : Timolol 0,5 % BID ; dorzolamide 2 % TID ; brimonidine 0,2 % BID–TID.",
-      "**SLT** : 360°, ≈ 100 impacts non chevauchants, en clinique.",
-      "**Chirurgie** : MIGS avec la cataracte ; trabéculectomie avec MMC ou tube si avancé."
+      "**Toi** : repérer la papille suspecte et le glaucome familial ; diriger.",
+      "**Ophtalmologiste** : latanoprost 0,005 % au coucher ou SLT ; puis ajout, MIGS ou chirurgie."
     ],
-    refer: ["**PGA** : Référer si PIO hors cible ou progression.", "**Chirurgie** : Progression ou cible non atteinte malgré gouttes et laser."],
+    refer: "Référer en ophtalmologie : en quelques semaines — papille suspecte, PIO > 21 mmHg ou glaucome familial.",
     pitfall: [
-      "**Timolol, IAC, brimonidine** : Timolol contre-indiqué si asthme, MPOC sévère ou bloc AV.",
-      "**Chirurgie** : Bulle : œil rouge douloureux = infection jusqu’à preuve du contraire."
+      "**Timolol** : contre-indiqué si asthme, MPOC sévère ou bloc AV, même en goutte.",
+      "**Latanoprost** : iris foncé irréversible ; prévenir si un seul œil est traité."
     ],
-    qc: ["Québec : l’optométriste équipé peut amorcer les gouttes (glaucome suspect ou débutant), puis doit diriger (O-7, r. 11.1)."]
+    qc: "Québec : l’optométriste équipé peut amorcer les gouttes (glaucome suspect ou débutant), puis doit diriger (O-7, r. 11.1)."
   }
 },
 {
@@ -227,9 +225,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "PIO > 21 confirmée ou papille suspecte ?", yes: "Bilan complet.", no: "Dépistage habituel.", cont: "yes" },
-      { q: "Angle ouvert, sans cause secondaire ?", yes: "HTO primaire ou suspect.", no: "Traiter la cause (fermeture, cortisone, uvéite).", cont: "yes" },
-      { q: "Neuropathie démontrée (OCT, champ reproductible) ?", yes: "Glaucome : voir la fiche GPAO.", no: "Estimer le risque à 5 ans (calculateur OHTS-EGPS).", cont: "no" },
+      { q: "PIO > 21 confirmée ou papille suspecte ?", yes: "Bilan complet.", no: "Dépistage habituel.", yesGo: 1 },
+      { q: "Angle ouvert, sans cause secondaire ?", yes: "HTO primaire ou suspect.", no: "Traiter la cause (fermeture, cortisone, uvéite).", yesGo: 2 },
+      { q: "Neuropathie démontrée (OCT, champ reproductible) ?", yes: "Glaucome : voir la fiche GPAO.", no: "Estimer le risque à 5 ans (calculateur OHTS-EGPS).", noGo: 3 },
       { q: "Risque élevé, œil unique ou PIO ≥ 30 mmHg ?", yes: "Traiter si longue espérance de vie : PGA ou SLT, cible −20 %.", no: "Observer : OCT et champ réguliers ; revoir le risque." }
     ],
     phases: [
@@ -289,16 +287,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Observation structurée** : Visites aux ≈ 6–24 mois selon le risque : PIO, OCT, champ.",
-      "**Analogue des prostaglandines** : Latanoprost 0,005 % : 1 goutte au coucher.",
-      "**SLT** : 360°, ≈ 100 impacts, en clinique."
+      "**Toi** : expliquer « un risque, pas une maladie » ; s’assurer que le suivi a lieu.",
+      "**Ophtalmologiste** : risque OHTS-EGPS ; observer, ou latanoprost 0,005 % au coucher ou SLT."
     ],
-    refer: ["**Observation structurée** : Diriger si nouvel amincissement RNFL, hémorragie papillaire ou défaut de champ."],
-    pitfall: [
-      "**Analogue des prostaglandines** : Ne pas traiter à vie un risque faible : calculer d’abord.",
-      "**Observation structurée** : Perdu au suivi = conversion manquée : fixer le prochain rendez-vous."
-    ],
-    qc: ["Québec : souvent suivi en cogestion optométriste–ophtalmologiste."]
+    refer: "Référer en ophtalmologie ou optométrie : suivi régulier — PIO > 21 mmHg confirmée ; en quelques semaines si ≥ 30 mmHg.",
+    pitfall: ["**Gouttes à vie** pour un risque faible : calculer le risque d’abord.", "**Suivi annulé** : la conversion passe inaperçue."],
+    qc: "Québec : souvent suivie en cogestion optométriste–ophtalmologiste."
   }
 },
 {
@@ -373,9 +367,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "PIO vraiment ≤ 21 (courbe, cornée) ?", yes: "Poursuivre l’exclusion.", no: "Glaucome à angle ouvert classique.", cont: "yes" },
-      { q: "Angle ouvert, sans cause secondaire ?", yes: "Continuer.", no: "Fermeture d’angle ou glaucome secondaire.", cont: "yes" },
-      { q: "Signe atypique (< 50 ans, pâleur, AV ↓, défaut vertical) ?", yes: "IRM ± VS, CRP.", no: "GPN probable.", cont: "no" },
+      { q: "PIO vraiment ≤ 21 (courbe, cornée) ?", yes: "", no: "Glaucome à angle ouvert classique (fiche GPAO).", yesGo: 1 },
+      { q: "Angle ouvert, sans cause secondaire ?", yes: "", no: "Fermeture ou glaucome secondaire : autre fiche.", yesGo: 2 },
+      { q: "Signe atypique (< 50 ans, pâleur, AV ↓, défaut vertical) ?", yes: "IRM ± VS, CRP ; si normaux, GPN.", no: "GPN probable.", yesGo: 3, noGo: 3 },
       { q: "Fixation menacée ou progression documentée ?", yes: "Traiter : cible ≈ 30 % sous la base.", no: "Observer : ≈ 3 champs par an pour mesurer le rythme." }
     ],
     phases: [
@@ -445,18 +439,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Analogue des prostaglandines** : Latanoprost 0,005 % : 1 goutte au coucher.",
-      "**Brimonidine** : Brimonidine 0,2 % BID (dose de LoGTS).",
-      "**Facteurs systémiques** : Revoir avec le médecin traitant les antihypertenseurs du coucher ; dépister l’apnée.",
-      "**SLT ou trabéculectomie** : SLT en clinique ; trabéculectomie avec MMC au bloc."
+      "**Toi** : chercher hypotension nocturne et apnée du sommeil ; en parler au médecin traitant.",
+      "**Ophtalmologiste** : exclure les imitateurs (IRM si atypique), puis latanoprost 0,005 % au coucher, cible −30 %."
     ],
-    refer: [
-      "**Analogue des prostaglandines** : Fixation menacée ou progression documentée.",
-      "**SLT ou trabéculectomie** : Progression malgré les gouttes : glaucomatologue."
-    ],
+    refer: "Référer en ophtalmologie : en quelques semaines — excavation avec PIO normale ; le jour même si ≥ 50 ans avec céphalée ou claudication de la mâchoire.",
     pitfall: [
-      "**Facteurs systémiques** : Ne jamais modifier un antihypertenseur sans le médecin traitant.",
-      "**Analogue des prostaglandines** : PIO déjà basse : −30 % est difficile ; vérifier l’observance avant d’escalader."
+      "**Antihypertenseur du coucher** : ne pas le modifier sans le médecin traitant.",
+      "**Étiquette GPN** sur une papille pâle : compression manquée sans IRM."
     ]
   }
 },
@@ -531,11 +520,11 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Van Herick ≤ 2 ou angle étroit suspecté ?", yes: "Gonioscopie dynamique en pièce sombre.", no: "Suivi habituel.", cont: "yes" },
-      { q: "Contact iridotrabéculaire ≥ 180° ?", yes: "Fermeture primaire : classer.", no: "Angle ouvert ; réévaluer avec l’âge.", cont: "yes" },
-      { q: "PIO élevée, PAS ou neuropathie ?", yes: "PAC ou PACG : traiter.", no: "PACS : décision partagée (LPI ou observation).", cont: "yes" },
-      { q: "≥ 50 ans : PAC ≥ 30 mmHg, PACG ou cataracte ?", yes: "Extraction du cristallin, même clair (EAGLE).", no: "Iridotomie, puis gouttes au besoin.", cont: "no" },
-      { q: "Angle fermé malgré iridotomie perméable ?", yes: "Iris plateau ou cristallin : UBM, iridoplastie ou extraction.", no: "Suivi : gonioscopie, PIO, OCT, champ." }
+      { q: "Van Herick ≤ 2 ou angle étroit suspecté ?", yes: "Gonioscopie dynamique en pièce sombre.", no: "Suivi habituel.", yesGo: 1 },
+      { q: "Contact iridotrabéculaire ≥ 180° ?", yes: "Fermeture primaire : classer.", no: "Angle ouvert ; réévaluer avec l’âge.", yesGo: 2 },
+      { q: "PIO élevée, PAS ou neuropathie ?", yes: "PAC ou PACG : traiter.", no: "PACS : décision partagée (LPI ou observation).", yesGo: 3 },
+      { q: "≥ 50 ans : PAC ≥ 30 mmHg, PACG ou cataracte ?", yes: "Extraction du cristallin, même clair (EAGLE).", no: "Iridotomie au laser.", noGo: 4 },
+      { q: "Angle fermé malgré iridotomie perméable ?", yes: "Iris plateau ou cristallin : UBM, iridoplastie ou extraction.", no: "Suivi : gonioscopie, PIO, OCT ; gouttes au besoin." }
     ],
     phases: [
       {
@@ -601,20 +590,15 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Iridotomie périphérique au laser** : Laser YAG en clinique, après pilocarpine 1–2 % et apraclonidine.",
-      "**Extraction du cristallin** : Phacoémulsification avec implant, même sur cristallin clair.",
-      "**Iridoplastie au laser** : Laser thermique (argon) : brûlures larges et douces sur l’iris très périphérique.",
-      "**Gouttes et chirurgie de glaucome** : Gouttes hypotensives (PGA, timolol) ; trabéculectomie ou goniosynéchialyse au besoin."
+      "**Toi** : repérer la chambre étroite (Van Herick) et les médicaments à risque ; diriger.",
+      "**Ophtalmologiste** : gonioscopie, puis iridotomie au laser ou extraction du cristallin."
     ],
-    refer: [
-      "**Iridotomie périphérique au laser** : PAC, œil adelphe d’une crise, PACS en décision partagée.",
-      "**Extraction du cristallin** : ≥ 50 ans avec PAC à PIO ≥ 30 mmHg ou PACG (EAGLE) ; cataracte."
-    ],
+    refer: "Référer en ophtalmologie : en quelques semaines — angle étroit suspecté ; immédiatement si œil rouge douloureux avec halos.",
     pitfall: [
-      "**Iridotomie périphérique au laser** : Une LPI n’ouvre pas un iris plateau : refaire la gonioscopie après.",
-      "**Gouttes et chirurgie de glaucome** : Les gouttes ne rouvrent pas l’angle : ne pas retarder la LPI."
+      "**Anticholinergique ou mydriatique** sur angle étroit : peut déclencher une crise.",
+      "**Topiramate** : myopie aiguë bilatérale = effusion ; pas d’iridotomie."
     ],
-    qc: ["Québec : gonioscopie systématique chez les patients inuits (Nunavik), à risque élevé."]
+    qc: "Québec : gonioscopie systématique chez les patients inuits (Nunavik), à risque élevé."
   }
 },
 {
@@ -688,10 +672,20 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Œil rouge douloureux, PIO très haute, pupille mi-dilatée ?", yes: "Crise : gouttes hypotensives et acétazolamide sans délai.", no: "Autre œil rouge douloureux (uvéite, kératite, néovasculaire).", cont: "yes" },
-      { q: "Bilatérale, myopie aiguë ou topiramate ?", yes: "Effusion : cesser le médicament, cycloplégique, stéroïde, hypotenseurs ; pas de LPI ni pilocarpine.", no: "Examiner le cristallin.", cont: "no" },
-      { q: "Cataracte gonflée ou cristallin subluxé ?", yes: "Pas de pilocarpine : baisser la PIO, puis extraire le cristallin.", no: "Bloc pupillaire primaire probable.", cont: "no" },
-      { q: "PIO en baisse après 30–60 min ?", yes: "Pilocarpine 1–2 %, puis LPI des deux yeux dès la cornée claire.", no: "Mannitol IV, indentation ; avis urgent (paracentèse, laser, chirurgie).", cont: "yes" },
+      {
+        q: "Œil rouge douloureux, PIO très haute, pupille mi-dilatée ?",
+        yes: { t: "Appeler l’ophtalmologiste de garde maintenant ; gouttes et acétazolamide.", urgent: true },
+        no: "Autre œil rouge douloureux (uvéite, kératite, néovasculaire).",
+        yesGo: 1
+      },
+      { q: "Bilatérale, myopie aiguë ou topiramate ?", yes: "Effusion : cesser le médicament, cycloplégique, stéroïde ; ni LPI ni pilocarpine.", no: "", noGo: 2 },
+      { q: "Cataracte gonflée ou cristallin subluxé ?", yes: "Pas de pilocarpine : baisser la PIO, puis extraire le cristallin.", no: "Bloc pupillaire primaire probable.", noGo: 3 },
+      {
+        q: "PIO en baisse après 30–60 min ?",
+        yes: "Pilocarpine 1–2 %, puis LPI des deux yeux.",
+        no: { t: "Mannitol IV, indentation ; ophtalmologiste au chevet.", urgent: true },
+        yesGo: 4
+      },
       { q: "Angle fermé malgré LPI perméable ?", yes: "Iris plateau ou cristallin : UBM, iridoplastie ou extraction.", no: "Suivi : PIO, gonioscopie, nerf optique, endothélium." }
     ],
     phases: [
@@ -756,21 +750,15 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Gouttes hypotensives et stéroïde** : Timolol 0,5 %, brimonidine 0,2 %, dorzolamide 2 % : 1 goutte de chaque ; prednisolone acétate 1 %.",
-      "**Acétazolamide et mannitol** : Acétazolamide 500 mg PO ou IV ; mannitol 20 % 1–2 g/kg IV si réfractaire.",
-      "**Pilocarpine 1–2 % et indentation** : Pilocarpine 1–2 % : 1 goutte, une fois la PIO abaissée.",
-      "**Iridotomie au laser** : Laser YAG des deux yeux, en clinique.",
-      "**Extraction du cristallin** : Phacoémulsification avec implant."
+      "**Toi, maintenant** : timolol 0,5 %, brimonidine 0,2 %, dorzolamide 2 % (1 goutte de chaque) ; acétazolamide 500 mg PO ou IV ; antiémétique.",
+      "**Ophtalmologiste** : pilocarpine une fois la PIO abaissée, mannitol si réfractaire, puis LPI des deux yeux."
     ],
-    refer: [
-      "**Gouttes hypotensives et stéroïde** : Dès le diagnostic ; ophtalmologiste de garde le jour même.",
-      "**Acétazolamide et mannitol** : Crise avérée ; mannitol si PIO inchangée après 1 h."
-    ],
+    refer: "Référer en ophtalmologie : immédiatement (ophtalmologiste de garde) — le nerf et la cornée s’abîment en quelques heures.",
     pitfall: [
-      "**Pilocarpine 1–2 % et indentation** : Jamais si cause cristallinienne, effusion (topiramate) ou mal-direction.",
-      "**Acétazolamide et mannitol** : Vérifier sulfa, rein, potassium, drépanocytose ; mannitol : cœur, rein."
+      "**Pilocarpine** : inutile avant la baisse de PIO ; jamais si cause cristallinienne ou topiramate.",
+      "**Acétazolamide** : vérifier allergie sulfa, rein, potassium, drépanocytose."
     ],
-    qc: ["Québec : souvent vu d’abord à l’urgence : amorcer, puis diriger le jour même."]
+    qc: "Québec : souvent vu d’abord à l’urgence pour céphalée et vomissements : regarder l’œil."
   }
 },
 {
@@ -843,10 +831,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Dépôts capsulaires ou flocons au bord pupillaire ?", yes: "Pseudo-exfoliation : examiner l’autre œil.", no: "Autre glaucome à angle ouvert.", cont: "yes" },
-      { q: "Neuropathie (papille, OCT, champ) ?", yes: "Glaucome pseudo-exfoliatif : traiter, cible plus basse.", no: "Sans glaucome : suivre de près ; traiter tôt une PIO élevée.", cont: "yes" },
-      { q: "Angle ouvert et visible ?", yes: "SLT ou analogue des prostaglandines.", no: "Fermeture associée : iridotomie ou extraction du cristallin.", cont: "yes" },
-      { q: "Progression ou cible non atteinte ?", yes: "Ajouter une classe, puis trabéculectomie ou tube.", no: "Suivi rapproché.", cont: "no" },
+      { q: "Dépôts capsulaires ou flocons au bord pupillaire ?", yes: "Pseudo-exfoliation : examiner l’autre œil.", no: "Autre glaucome à angle ouvert.", yesGo: 1 },
+      { q: "Neuropathie (papille, OCT, champ) ?", yes: "Glaucome pseudo-exfoliatif : cible plus basse.", no: "Sans glaucome : PIO suivie de près.", yesGo: 2, noGo: 4 },
+      { q: "Angle ouvert et visible ?", yes: "SLT ou analogue des prostaglandines.", no: "Fermeture associée : iridotomie ou extraction du cristallin.", yesGo: 3, noGo: 3 },
+      { q: "Progression ou cible non atteinte ?", yes: "Ajouter une classe, puis trabéculectomie ou tube.", no: "Suivi rapproché.", yesGo: 4, noGo: 4 },
       { q: "Cataracte à opérer ?", yes: "Zonules faibles : anneau de tension capsulaire, crochets.", no: "Réévaluer à chaque visite." }
     ],
     phases: [
@@ -905,17 +893,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Gouttes hypotensives** : Latanoprost 0,005 % au coucher ; ajouter timolol 0,5 % BID ou dorzolamide 2 % au besoin.",
-      "**SLT** : SLT 360° en clinique.",
-      "**Chirurgie filtrante** : Trabéculectomie avec MMC ou tube, au bloc.",
-      "**Chirurgie de cataracte adaptée** : Phacoémulsification avec anneau de tension capsulaire et crochets au besoin."
+      "**Toi** : diriger ; noter « pseudo-exfoliation » pour le chirurgien de cataracte.",
+      "**Ophtalmologiste** : latanoprost 0,005 % au coucher ou SLT, cible plus basse ; chirurgie plus tôt."
     ],
-    refer: ["**Gouttes hypotensives** : Diriger rapidement : glaucome agressif, PIO qui fluctue."],
-    pitfall: [
-      "**Gouttes hypotensives** : Une PIO normale en clinique peut cacher des pics : suivi rapproché.",
-      "**Chirurgie de cataracte adaptée** : Zonules faibles : prévenir le chirurgien, risque d’issue de vitré."
-    ],
-    qc: ["Québec : hors glaucome suspect, débutant ou cortisonique, l’optométriste traite seulement avec le consentement d’un médecin (O-7)."]
+    refer: "Référer en ophtalmologie : en quelques semaines — dépôts blanchâtres sur le cristallin ; cette semaine si vision ↓ brusque chez un opéré de cataracte.",
+    pitfall: ["**Chirurgie de cataracte** sans prévoir les zonules faibles : issue de vitré.", "**SLT** : pic de PIO plus probable ; recontrôler après."],
+    qc: "Québec : hors glaucome suspect, débutant ou cortisonique, l’optométriste traite seulement avec le consentement d’un médecin (O-7)."
   }
 },
 {
@@ -990,10 +973,9 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Krukenberg, fentes radiaires et angle très pigmenté ?", yes: "Dispersion pigmentaire.", no: "Autre source de pigment (PXF, implant, uvéite).", cont: "yes" },
-      { q: "Neuropathie (papille, OCT, champ) ?", yes: "Glaucome pigmentaire : PIO cible.", no: "Sans glaucome : surveiller PIO et nerf.", cont: "yes" },
-      { q: "Angle ouvert, candidat au laser ?", yes: "SLT à énergie basse ou analogue des prostaglandines.", no: "Gouttes.", cont: "yes" },
-      { q: "Pilocarpine envisagée ?", yes: "Fond d’œil dilaté d’abord ; mal tolérée chez le jeune.", no: "Poursuivre gouttes et laser.", cont: "no" },
+      { q: "Krukenberg, fentes radiaires et angle très pigmenté ?", yes: "Dispersion pigmentaire.", no: "Autre source de pigment (PXF, implant, uvéite).", yesGo: 1 },
+      { q: "Neuropathie (papille, OCT, champ) ?", yes: "Glaucome pigmentaire : PIO cible.", no: "Sans glaucome : surveiller PIO et nerf.", yesGo: 2 },
+      { q: "Angle ouvert, candidat au laser ?", yes: "SLT à énergie basse ou analogue des prostaglandines.", no: "Analogue des prostaglandines.", yesGo: 3, noGo: 3 },
       { q: "Progression malgré tout ?", yes: "Trabéculectomie ou tube ; jeune myope : risque de maculopathie d’hypotonie.", no: "Suivi ; espacer si phase éteinte." }
     ],
     phases: [
@@ -1058,18 +1040,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Michelessi M, Lindsley K. Peripheral iridotomy for pigmentary glaucoma (Cochrane Database Syst Rev 2016)"
   ],
   treatment: {
-    first: [
-      "**Analogue des prostaglandines** : Latanoprost 0,005 % : 1 goutte au coucher.",
-      "**SLT à énergie basse** : SLT à énergie réduite, parfois sur 180° seulement.",
-      "**Pilocarpine** : Pilocarpine en goutte, cas choisis seulement.",
-      "**Iridotomie au laser** : Laser YAG : petit trou dans l’iris périphérique."
-    ],
-    refer: ["**Analogue des prostaglandines** : Glaucome pigmentaire établi : suivi par l’ophtalmologiste."],
-    pitfall: [
-      "**Pilocarpine** : Fond d’œil dilaté avant : décollement de rétine chez le myope.",
-      "**SLT à énergie basse** : Trop d’énergie = pic de PIO marqué : mesurer la PIO après."
-    ],
-    qc: ["Québec : la dispersion sans neuropathie est souvent suivie en optométrie (glaucome suspect)."]
+    first: ["**Toi** : demander éclairs et corps flottants (myope) ; diriger.", "**Ophtalmologiste** : latanoprost 0,005 % au coucher ou SLT à énergie basse."],
+    refer: "Référer en ophtalmologie : en quelques semaines — fuseau de Krukenberg ou halos à l’effort ; le jour même si éclairs ou voile.",
+    pitfall: ["**Pilocarpine** : fond d’œil dilaté avant (décollement chez le myope).", "**SLT à pleine énergie** : pic de PIO marqué."],
+    qc: "Québec : la dispersion sans neuropathie est souvent suivie en optométrie (glaucome suspect)."
   }
 },
 {
@@ -1143,11 +1117,11 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Néovaisseaux de l’iris ou de l’angle ?", yes: "Trouver la cause ischémique.", no: "OVCR ischémique, rétinopathie proliférante : gonioscopie non dilatée régulière.", cont: "yes" },
-      { q: "PIO élevée ?", yes: "GNV : anti-VEGF, PRP et baisse de PIO en urgence.", no: "Néovaisseaux seuls : anti-VEGF et PRP rapides pour sauver l’angle.", cont: "yes" },
-      { q: "Angle fermé par synéchies étendues ?", yes: "Les gouttes ne suffiront pas : prévoir un tube.", no: "Angle encore ouvert : la PRP peut le préserver.", cont: "yes" },
-      { q: "Potentiel visuel utile ?", yes: "Tube après anti-VEGF (moins de saignement).", no: "Cyclophotocoagulation, atropine et stéroïde pour le confort.", cont: "yes" },
-      { q: "Cause rétinienne évidente ?", yes: "Coordonner rétine et médecin traitant (glycémie, tension).", no: "Syndrome ischémique oculaire : Doppler carotidien (risque d’AVC)." }
+      { q: "Néovaisseaux de l’iris ou de l’angle ?", yes: "Chercher la cause ischémique.", no: "OVCR ischémique, rétinopathie proliférante : gonioscopie non dilatée régulière.", yesGo: 1 },
+      { q: "Cause rétinienne évidente (diabète, OVCR) ?", yes: "Coordonner rétine et médecin traitant (glycémie, tension).", no: "Syndrome ischémique oculaire : Doppler carotidien (risque d’AVC).", yesGo: 2, noGo: 2 },
+      { q: "PIO élevée ?", yes: "GNV : anti-VEGF, PRP et baisse de PIO en urgence.", no: "Néovaisseaux seuls : anti-VEGF et PRP rapides pour sauver l’angle.", yesGo: 3 },
+      { q: "Angle fermé par synéchies étendues ?", yes: "Les gouttes ne suffiront pas.", no: "Angle encore ouvert : PRP et gouttes.", yesGo: 4 },
+      { q: "Potentiel visuel utile ?", yes: "Tube après anti-VEGF (moins de saignement).", no: "Cyclophotocoagulation, atropine et stéroïde pour le confort." }
     ],
     phases: [
       {
@@ -1214,17 +1188,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Anti-VEGF intravitréen** : Bévacizumab 1,25 mg/0,05 mL intravitréen (ou ranibizumab 0,5 mg, aflibercept 2 mg).",
-      "**Panphotocoagulation rétinienne** : Laser en clinique : ≈ 1200–1600 impacts en 1–3 séances.",
-      "**Tube de drainage** : Ahmed ou Baerveldt, au bloc, après anti-VEGF.",
-      "**Cyclophotocoagulation** : Cyclophotocoagulation transsclérale au laser diode."
+      "**Toi** : glycémie, tension ; sans cause rétinienne, Doppler carotidien.",
+      "**Ophtalmologiste** : bévacizumab 1,25 mg intravitréen, PRP, baisse de PIO ; tube ou cyclophotocoagulation."
     ],
-    refer: ["**Anti-VEGF intravitréen** : Dès le diagnostic : diriger en rétine le jour même.", "**Tube de drainage** : PIO non contrôlée avec potentiel visuel."],
-    pitfall: [
-      "**Anti-VEGF intravitréen** : Effet temporaire : ne remplace pas la PRP.",
-      "**Panphotocoagulation rétinienne** : Agit en quelques semaines : couvrir par anti-VEGF entre-temps."
-    ],
-    qc: ["Québec : injections et PRP en clinique de rétine ; tubes en centre hospitalier."]
+    refer: "Référer en ophtalmologie : le jour même — l’angle se ferme en jours ou semaines.",
+    pitfall: ["**Pilocarpine** : contre-indiquée (inflammation, synéchies).", "**Anti-VEGF seul** : effet temporaire ; la PRP reste indispensable."],
+    qc: "Québec : injections et PRP en clinique de rétine ; tubes en centre hospitalier."
   }
 },
 {
@@ -1298,11 +1267,16 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "PIO élevée sous stéroïde, œil calme, angle ouvert ?", yes: "Réponse cortisonique : réduire ou changer le stéroïde, hypotenseurs.", no: "Chercher inflammation, synéchies, néovaisseaux.", cont: "no" },
-      { q: "Uvéite active (cellules, précipités) ?", yes: "Contrôler l’inflammation (antiviral si herpès, CMV) + gouttes qui ↓ la production.", no: "Post-uvéitique : gouttes, puis laser ou chirurgie.", cont: "yes" },
-      { q: "Iris bombé ?", yes: "Urgence : iridotomies multiples ou iridectomie chirurgicale.", no: "Gonioscopie : étendue des synéchies.", cont: "no" },
-      { q: "Dépôt ou implant de stéroïde en cause ?", yes: "Retirer le dépôt si possible ; sinon chirurgie filtrante.", no: "Poursuivre l’ajustement.", cont: "no" },
-      { q: "PIO non contrôlée par les gouttes ?", yes: "Cortisonique : SLT ; uvéitique : tube sous anti-inflammatoires.", no: "Suivi rapproché de la PIO." }
+      { q: "PIO élevée sous stéroïde, œil calme, angle ouvert ?", yes: "Réponse cortisonique : réduire ou changer le stéroïde.", no: "Chercher inflammation, synéchies, néovaisseaux.", yesGo: 1, noGo: 2 },
+      { q: "Dépôt ou implant de stéroïde en cause ?", yes: "Retirer le dépôt si possible ; sinon chirurgie filtrante.", no: "Hypotenseurs ; SLT si non contrôlé." },
+      { q: "Uvéite active (cellules, précipités) ?", yes: "Contrôler l’inflammation (antiviral si herpès, CMV) + gouttes qui ↓ la production.", no: "Post-uvéitique : gouttes, puis laser ou chirurgie.", yesGo: 3, noGo: 3 },
+      {
+        q: "Iris bombé ?",
+        yes: { t: "Urgence : iridotomies multiples ou iridectomie chirurgicale.", urgent: true },
+        no: "Gonioscopie : étendue des synéchies.",
+        noGo: 4
+      },
+      { q: "PIO non contrôlée par les gouttes ?", yes: "Tube sous couverture anti-inflammatoire.", no: "Suivi rapproché de la PIO." }
     ],
     phases: [
       {
@@ -1365,21 +1339,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Modifier ou cesser le stéroïde** : Passer à loteprednol 0,5 % ou fluorométholone 0,1 %, ou espacer ; AINS si possible.",
-      "**Gouttes qui ↓ la production d’aqueuse** : Timolol 0,5 % BID, dorzolamide 2 % TID ; acétazolamide 250 mg PO QID au besoin.",
-      "**SLT** : SLT 360° en clinique.",
-      "**Iridotomie ou iridectomie** : Laser YAG (souvent plusieurs ouvertures) ou iridectomie chirurgicale.",
-      "**Chirurgie** : Retrait du dépôt, tube (Ahmed, Baerveldt) ou trabéculectomie avec MMC."
+      "**Toi** : demander tout stéroïde (gouttes, inhalé, crème, injection) ; PIO si usage prolongé.",
+      "**Ophtalmologiste** : loteprednol ou espacer ; timolol 0,5 % BID, dorzolamide 2 % ; SLT, chirurgie."
     ],
-    refer: [
-      "**Iridotomie ou iridectomie** : Iris bombé : urgence le jour même.",
-      "**Modifier ou cesser le stéroïde** : Réponse cortisonique ; récupération en semaines si le trabéculum est intact."
-    ],
-    pitfall: [
-      "**Modifier ou cesser le stéroïde** : Ne pas cesser brusquement un stéroïde indispensable (uvéite, greffe) : rebond.",
-      "**SLT** : À éviter en uvéite active."
-    ],
-    qc: ["Québec : l’optométriste outillé peut traiter un glaucome cortisonique, puis doit diriger (O-7)."]
+    refer: "Référer en ophtalmologie : cette semaine — PIO élevée sous stéroïde ; immédiatement si œil rouge douloureux.",
+    pitfall: ["**Stéroïde topique prolongé** sans mesure de PIO : glaucome cortisonique silencieux.", "**Pilocarpine** : jamais en uvéite."],
+    qc: "Québec : l’optométriste outillé peut traiter un glaucome cortisonique, puis doit diriger (O-7)."
   }
 },
 {
@@ -1456,9 +1421,15 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Signes d’infection (bulle blanche, hypopyon, douleur) ?", yes: "Le jour même : blébite = antibiotiques ; endophtalmite = ponction + injection.", no: "Évaluer PIO et chambre.", cont: "no" },
-      { q: "PIO basse, chambre étroite ?", yes: "Seidel + : lentille, suture ; Seidel − : atropine, surveiller.", no: "Question suivante.", cont: "no" },
-      { q: "PIO haute, chambre étroite ?", yes: "Iridotomie si bloc ; sinon mal-direction ou hémorragie suprachoroïdienne.", no: "Question suivante.", cont: "no" },
+      {
+        q: "Signes d’infection (bulle blanche, hypopyon, douleur) ?",
+        yes: { t: "Ophtalmologiste immédiatement : antibiotiques ; si endophtalmite, ponction et injection.", urgent: true },
+        no: "Évaluer PIO et chambre.",
+        noGo: 1
+      },
+      { q: "PIO basse ?", yes: "", no: "", yesGo: 2, noGo: 3 },
+      { q: "Chambre étroite (PIO basse) ?", yes: "Seidel + : lentille, suture ; Seidel − : atropine, surveiller.", no: "Chambre formée : Seidel, surveiller la macula." },
+      { q: "PIO haute et chambre étroite ?", yes: "Iridotomie si bloc ; sinon mal-direction ou hémorragie suprachoroïdienne.", no: "", noGo: 4 },
       { q: "PIO haute, chambre profonde ?", yes: "Massage, lyse de sutures ou retrait du ripcord ; needling si encapsulée.", no: "PIO à la cible : sevrage lent du stéroïde." }
     ],
     phases: [
@@ -1529,17 +1500,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Trabéculectomie avec mitomycine C** : Au bloc, avec mitomycine C ; sutures ajustables en clinique (massage, lyse au laser).",
-      "**PreserFlo MicroShunt et XEN** : Microtube vers une bulle ; ripcord parfois retiré en clinique.",
-      "**Tube** : Ahmed (valve) ou Baerveldt (ligaturé jusqu’à la formation de la capsule).",
-      "**MIGS** : iStent, Hydrus ou KDB, souvent avec la cataracte."
+      "**Toi** : reconnaître la bulle (sous la paupière supérieure) ; œil opéré rouge ou douloureux = appeler.",
+      "**Ophtalmologiste** : Seidel, PIO × chambre ; antibiotiques intensifs, ponction et injection si endophtalmite."
     ],
-    refer: ["**Tube** : Échec de trabéculectomie, glaucome néovasculaire ou uvéitique."],
-    pitfall: [
-      "**Trabéculectomie avec mitomycine C** : Infection de bulle possible à vie : œil rouge et douloureux = consulter le jour même.",
-      "**MIGS** : Baisse modeste : ne vise pas une PIO cible très basse."
-    ],
-    qc: ["Québec : surtout en centre hospitalier ; couverture RAMQ des MIGS et des implants à vérifier."]
+    refer: "Référer en ophtalmologie : immédiatement — œil opéré rouge, douloureux, bulle blanche ou vision ↓.",
+    pitfall: ["**Traiter une « conjonctivite »** sur un œil opéré : infection de bulle manquée."],
+    qc: "Québec : surtout en centre hospitalier ; couverture RAMQ des MIGS et des implants à vérifier."
   }
 }
 ]);

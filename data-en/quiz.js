@@ -709,19 +709,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "B-008": {
-    stem: "A 29-year-old woman who rinses her soft contact lenses with tap water and swims with them in. Intense pain for 3 weeks despite a topical antiviral prescribed for \"herpetic keratitis\". Slit lamp: subtle irregular epithelium and linear infiltrates along the corneal nerves; the pain seems out of proportion to the exam. Which diagnosis should be considered first?",
+    stem: "A 29-year-old woman who rinses her soft contact lenses with tap water and swims with them in. Intense pain for 3 weeks despite a topical antiviral prescribed for \"herpetic keratitis\". Slit lamp: subtle irregular epithelium and linear infiltrates along the corneal nerves; the pain seems out of proportion to the exam. What is the most appropriate management now?",
     options: [
-      "Acyclovir-resistant HSV epithelial keratitis",
-      "Acanthamoeba keratitis",
-      "Early Pseudomonas bacterial keratitis",
-      "Post-herpetic neurotrophic keratopathy"
+      "Add oral acyclovir and review in a week",
+      "Scrape for culture and PCR, then a compounded biguanide",
+      "Hourly fluoroquinolone and a pressure patch for 24 h",
+      "Topical anesthetic for the pain, then hourly artificial tears"
     ],
     explain: "**What it is**: Acanthamoeba is a water-borne ameba (tap water, pools, lakes) that infects the cornea mainly in contact lens wearers; infiltrates along the nerves (radial keratoneuritis or perineuritis) are typical. **Why it matters**: pain **out of proportion** to the exam is the warning sign, and the diagnosis is often delayed because it is first mistaken for herpes. **What to do**: scraping for culture and PCR (a test that detects the organism's DNA), ± confocal microscopy (a microscope that shows cysts within the cornea without a biopsy), compounded biguanides (antiseptics such as PHMB or chlorhexidine), and never prescribe topical anesthetics for the pain.",
     why: [
-      "HSV epithelial keratitis forms a dendrite (a branching ulcer with swellings at the ends of the branches) and reduces corneal sensation; it does not explain infiltrates along the nerves with disproportionate pain.",
-      "Correct: lenses and water, disproportionate pain and radial keratoneuritis.",
-      "Pseudomonas (an aggressive bacterium in contact lens wearers) gives a suppurative infiltrate that enlarges within 24 to 48 h, not subtle involvement over 3 weeks.",
-      "Neurotrophic keratopathy (a cornea that has lost its innervation and heals poorly) is not very painful, precisely because the cornea is insensate."
+      "Nerve infiltrates and disproportionate pain in a lens wearer point to ameba, not resistant herpes.",
+      "Correct: lenses + water, disproportionate pain and radial keratoneuritis = Acanthamoeba; sample, then start a biguanide.",
+      "A patch is contraindicated in a lens wearer, and a fluoroquinolone doesn’t treat ameba.",
+      "Never send home a topical anesthetic: it delays healing and can lead to perforation."
     ]
   },
   "B-009": {
@@ -823,19 +823,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "B-015": {
-    stem: "A 16-year-old with eczema and seasonal allergies who often rubs his eyes and does not wear contact lenses. His myopia and astigmatism increase at each visit and his corrected VA is declining. This topography diagram shows his axial curvature map. What is the most likely diagnosis?",
+    stem: "A 16-year-old with eczema and seasonal allergies who often rubs his eyes and does not wear contact lenses. His myopia and astigmatism increase at each visit and his corrected VA is declining. This topography diagram shows his axial curvature map. What is the best next step?",
     options: [
-      "Regular with-the-rule astigmatism",
-      "Pellucid marginal degeneration",
-      "Rigid lens-induced corneal warpage",
-      "Progressive keratoconus"
+      "Rigid lenses and yearly follow-up, no other test",
+      "LASIK to correct the myopia and astigmatism",
+      "Topical antihistamine alone and review in a year",
+      "Tomography and prompt referral for crosslinking"
     ],
     explain: "**What it is**: keratoconus is progressive thinning of the cornea, which bulges into a cone, usually below the center; on the axial curvature map (warm colors = steeper zone), there is inferior steepening with an asymmetric bowtie and skewed axes. **Why it matters**: young age, eye rubbing, atopy and increasing astigmatism with loss of corrected VA are typical, and early diagnosis allows the cornea to be stabilized before significant vision loss. **What to do**: tomography (Scheimpflug: anterior and posterior elevation, pachymetry map, thinnest point), stop the rubbing and refer without delay for corneal cross-linking (CXL).",
     why: [
-      "Regular with-the-rule astigmatism gives a symmetric vertical bowtie, without isolated inferior steepening.",
-      "Pellucid marginal degeneration (band-shaped thinning 1–2 mm from the inferior limbus) gives a \"crab-claw\" pattern with against-the-rule astigmatism.",
-      "Rigid lens warpage (a cornea molded by a poorly fitted lens) requires lens wear and regresses when lenses are stopped; this young man does not wear any.",
-      "Correct: asymmetric inferior steepening in a young atopic patient who rubs his eyes."
+      "Lenses improve vision but don’t stop progression; a progressing teenager needs tomography and CXL.",
+      "Refractive surgery is contraindicated: it worsens ectasia.",
+      "Treating allergy helps stop rubbing, but isn’t enough when the disease progresses.",
+      "Correct: atopic teenager with progressing inferior steepening: tomography and crosslinking without delay."
     ]
   },
   "B-016": {
@@ -887,19 +887,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "B-019": {
-    stem: "A 67-year-old woman with no prior eye surgery, blurred vision with halos on waking that clears by the end of the day; her mother had a corneal transplant. This cross-sectional corneal diagram shows what is seen in her deep layers at the slit lamp. What is the most likely diagnosis?",
+    stem: "A 67-year-old woman with no prior eye surgery, blurred vision with halos on waking that clears by the end of the day; her mother had a corneal transplant. This cross-sectional corneal diagram shows what is seen in her deep layers at the slit lamp. Which treatment should be offered first?",
     options: [
-      "Epithelial basement membrane dystrophy (map-dot-fingerprint)",
-      "Pseudophakic bullous keratopathy",
-      "Fuchs endothelial corneal dystrophy",
-      "Lattice corneal dystrophy"
+      "Prednisolone 1% QID for a whole month",
+      "Penetrating keratoplasty (PK) right away",
+      "5% NaCl, then DMEK if symptoms persist",
+      "Rigid lens to smooth the surface"
     ],
     explain: "**What it is**: Fuchs dystrophy is an inherited disease in which the endothelium (the single cell layer that pumps water out of the cornea) becomes sparse and deposits excrescences, guttae, on Descemet, which appear as dark droplets. **Why it matters**: when too few cells remain (generally fewer than 400–500 cells/mm²), the pump can no longer keep up and the stroma swells, especially on waking; specular microscopy shows guttae as dark areas and pachymetry tracks the thickening. **What to do**: hypertonic 5 % saline at first, then endothelial keratoplasty (DMEK, which replaces only Descemet and the endothelium) when vision becomes limiting.",
     why: [
-      "Epithelial basement membrane dystrophy affects the surface (maps, dots, fingerprints) and causes erosions, not guttae or stromal edema.",
-      "Pseudophakic bullous keratopathy (corneal edema after cataract surgery that damaged the endothelium) requires prior surgery, absent here.",
-      "Correct: guttae and stromal edema worse on waking, with a family history.",
-      "Lattice dystrophy (amyloid deposits in branching lines in the stroma) causes erosions and stromal opacities, not guttae."
+      "There is no inflammation: a steroid doesn’t help the endothelial pump and risks raised IOP.",
+      "PK is for stromal scars; an endothelial graft (DMEK) restores better vision faster.",
+      "Correct: guttae and edema worse on waking (Fuchs): 5% NaCl first, DMEK once vision is limiting.",
+      "A rigid lens doesn’t fix endothelial edema and is poorly tolerated on a swollen cornea."
     ]
   },
 });
@@ -953,19 +953,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "B-023": {
-    stem: "A 35-year-old woman woken several times this month by sharp pain on opening her eyes, with tearing for a few hours. Four months ago, her baby scratched her cornea with a fingernail. This morning: small area of irregular epithelium taking up fluorescein in the inferior third. What is the most likely diagnosis?",
+    stem: "A 35-year-old woman woken several times this month by sharp pain on opening her eyes, with tearing for a few hours. Four months ago, her baby scratched her cornea with a fingernail. This morning: small area of irregular epithelium taking up fluorescein in the inferior third. What prevention should be offered after the acute episode?",
     options: [
-      "Recurrent herpes simplex epithelial keratitis",
-      "Dry eye from meibomian gland dysfunction",
-      "Early-stage Acanthamoeba keratitis",
-      "Post-traumatic recurrent corneal erosion"
+      "Oral acyclovir 400 mg BID for a year",
+      "Punctal plugs and preservative-free tears",
+      "A topical anesthetic to keep at home for attacks",
+      "5% NaCl ointment at bedtime for 3 to 6 months"
     ],
     explain: "**What it is**: in recurrent corneal erosion, the epithelium adheres poorly to its basement membrane after sharp trauma (fingernail, paper, branch) or basement membrane dystrophy; at night, the lid sticks to the epithelium and tears it off when the eyes open. **Why it matters**: the typical history (pain on waking, fingernail scratch weeks or months earlier) makes the diagnosis, even if the exam is almost normal later in the day. **What to do**: lubricating ointment at bedtime for several months (often hypertonic, NaCl 5 %), treat the acute episode like an abrasion, then, if recurrences persist, a bandage contact lens, anterior stromal puncture, debridement or phototherapeutic keratectomy (PTK, a laser that smooths the surface).",
     why: [
-      "Herpetic keratitis forms a dendrite (a branching ulcer with terminal bulbs) and is related neither to waking nor to fingernail trauma.",
-      "Dry eye causes burning and grittiness, worse at the end of the day, not sharp pain on waking after trauma.",
-      "Acanthamoeba keratitis (a water-borne ameba) affects mainly contact lens wearers, with continuous, increasing pain.",
-      "Correct: pain on waking after a fingernail scratch."
+      "Acyclovir prevents herpes; here the problem is epithelial anchoring.",
+      "Plugs treat aqueous deficiency; they don’t stop the epithelium tearing off on waking.",
+      "Never a home anesthetic: misuse blocks healing and can cause ulcer and perforation.",
+      "Correct: recurrent erosion after a fingernail scratch: hypertonic ointment at bedtime keeps the lid from tearing off the epithelium."
     ]
   },
   "B-024": {
@@ -985,19 +985,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "B-025": {
-    stem: "A 48-year-old fisherman from the Îles-de-la-Madeleine with a fleshy triangular lesion of the nasal conjunctiva whose apex extends 2 mm onto the cornea. What is the most likely diagnosis?",
+    stem: "A 48-year-old fisherman from the Îles-de-la-Madeleine with a fleshy triangular lesion of the nasal conjunctiva whose apex extends 2 mm onto the cornea. He asks whether he needs surgery. Which answer is most accurate?",
     options: [
-      "Inflamed pinguecula",
-      "Nasal pterygium",
-      "Ocular surface squamous neoplasia (OSSN)",
-      "Pseudopterygium after a burn"
+      "Yes, now: simple excision leaving bare sclera",
+      "Not yet: UV protection; operate if it nears the visual axis",
+      "No: these lesions regress on their own after 50",
+      "Yes: topical chemotherapy, as for a neoplasia"
     ],
     explain: "**What it is**: a pterygium is a triangular fibrovascular growth of the conjunctiva, almost always nasal, that **crosses the limbus** and advances onto the cornea; it is related to ultraviolet light (outdoor work, reflection off water). **Why it matters**: it can induce astigmatism and threaten the visual axis, whereas a pinguecula (a small yellowish elevation of the conjunctiva, with the same cause) stays on the conjunctiva. **What to do**: UV protection (sunglasses, hat), artificial tears for irritation, and surgery if it advances toward the visual axis, induces astigmatism, limits eye movements or is very bothersome.",
     why: [
-      "A pinguecula does not cross the limbus; it stays on the conjunctiva and can become inflamed (pingueculitis).",
-      "Correct: a triangular nasal lesion crossing the limbus in a UV-exposed worker.",
-      "OSSN (ocular surface squamous neoplasia, an epithelial tumor) is rather gelatinous or whitish with large feeder vessels, and grows faster.",
-      "A pseudopterygium (a fold of conjunctiva stuck onto an already damaged cornea) follows a burn, ulcer or trauma, can occur anywhere, and a probe passes under its neck."
+      "Bare sclera recurs often, and a 2 mm apex without symptoms doesn’t yet justify surgery.",
+      "Correct: a 2 mm pterygium sparing the axis: UV protection, tears and follow-up; excision with autograft if it progresses, induces astigmatism or bothers him.",
+      "A pterygium can progress, especially with continued UV exposure.",
+      "Topical chemotherapy treats surface neoplasia (OSSN), not a typical pterygium."
     ]
   },
   "B-026": {
@@ -1363,19 +1363,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-012": {
-    stem: "A 62-year-old man from Nunavik, referred to Montréal for narrow angles. IOP 27 mmHg OD; healthy OD disc (C/D 0.3), normal RNFL OCT and visual field. The diagram shows gonioscopy of his OD after indentation (pressing the lens on the cornea). How do you classify the OD?",
+    stem: "A 62-year-old man from Nunavik, referred to Montréal for narrow angles. IOP 27 mmHg OD; healthy OD disc (C/D 0.3), normal RNFL OCT and visual field; clear lens. The diagram shows gonioscopy of his OD after indentation (pressing the lens on the cornea). What is the most appropriate management for the OD?",
     options: [
-      "Primary angle-closure suspect (PACS)",
-      "Primary angle closure (PAC)",
-      "Primary angle-closure glaucoma (PACG)",
-      "Primary open-angle glaucoma (POAG)"
+      "Observe without treatment, gonioscopy in a year",
+      "Laser iridotomy, drops as needed",
+      "Prostaglandin analogue alone, nothing done to the angle",
+      "Trabeculectomy right away given the IOP of 27 mmHg"
     ],
-    explain: "**What the diagram shows:** only Schwalbe line (at best with the anterior, non-pigmented meshwork) is visible (Shaffer 1); the pigmented meshwork and the spur are hidden and the iris stays stuck to the filter despite indentation: these are peripheral anterior synechiae (PAS: permanent adhesions between iris and trabecular meshwork). **Why this stage:** the ISGEO classification, as adopted by the AAO PPP, distinguishes PACS (iridotrabecular contact over ≥ 180° per the AAO PPP — the original ISGEO required ≥ 270° — with normal IOP, no PAS and no nerve damage), PAC (contact with PAS and/or elevated IOP, healthy nerve) and PACG (PAC with glaucomatous optic neuropathy); here, PAS and IOP of 27 mmHg with a healthy nerve = PAC. The Inuit of Nunavik have some of the highest rates of primary angle closure in the world. **What to do:** open the angle with a laser iridotomy (LPI: a small hole in the peripheral iris), or with lens extraction if ≥ 50 years with IOP ≥ 30 mmHg (EAGLE); drops if IOP remains elevated; follow gonioscopy, OCT and field.",
+    explain: "**What the diagram shows:** only Schwalbe line (at best with the anterior, non-pigmented meshwork) is visible (Shaffer 1); the pigmented meshwork and the spur are hidden and the iris stays stuck to the filter despite indentation: these are peripheral anterior synechiae (PAS). **The stage:** PAS and elevated IOP with a healthy nerve = primary angle closure (PAC) per ISGEO and the AAO PPP. **What to do:** open the angle; here laser iridotomy (LPI) first, because IOP is < 30 mmHg and there is no neuropathy (EAGLE criteria for clear-lens extraction not met); drops if IOP stays high; follow gonioscopy, OCT and field. The Inuit of Nunavik have some of the highest rates of primary angle closure in the world.",
     why: [
-      "PACS requires normal IOP, without PAS; here, PAS and elevated IOP move the case to the next stage.",
-      "Correct: PAS and elevated IOP, but normal optic nerve and visual field.",
-      "PACG requires glaucomatous optic neuropathy (cupping, RNFL loss, field defect); the nerve is healthy here.",
-      "POAG requires an open angle, with the scleral spur visible over 360°; here the angle is closed and stuck."
+      "False: PAS and elevated IOP go beyond a mere suspect (PACS); observing lets the angle close.",
+      "Correct: PAC with IOP < 30 mmHg and no neuropathy: LPI first, drops as needed.",
+      "False: drops lower IOP but do not reopen the angle, which keeps closing.",
+      "False: filtering surgery comes after failure of angle opening and drops."
     ]
   },
   "C-013": {
@@ -1427,19 +1427,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-016": {
-    stem: "A 72-year-old hyperopic man presents with intense pain in the OS that began last night at the movies, with blurred vision and nausea. The diagram shows his OS anterior segment at the slit lamp. What is the most likely diagnosis?",
+    stem: "A 72-year-old hyperopic man comes to the ER with intense pain in the OS that began last night at the movies, with blurred vision and nausea. The diagram shows his OS anterior segment at the slit lamp. You are the clerk: what do you do first?",
     options: [
-      "Acute angle-closure attack",
-      "Acute anterior uveitis with ocular hypertension",
-      "Neovascular glaucoma from a vein occlusion",
-      "Bacterial keratitis with a chamber reaction"
+      "IOP-lowering drops and acetazolamide, then call ophthalmology immediately",
+      "Dilate the pupil to get a good view of the fundus",
+      "Pilocarpine 2% alone, then see the patient again tomorrow",
+      "Topical steroid and a clinic appointment this week"
     ],
-    explain: "**What the diagram shows:** a congested eye with redness around the limbus (ciliary flush), a cornea hazy from edema and an oval, mid-dilated pupil; the shallow chamber, not visible on this frontal view, is confirmed with a thin slit (Van Herick). **Why it is an attack:** the very high IOP overwhelms the corneal endothelial pump (hence the edema, halos and blur) and deprives the iris sphincter of blood (fixed pupil); the dim light of the movie theater put the pupil in mid-dilation, a position that favors angle block in a short eye. **What to do:** measure IOP, examine the fellow eye, lower IOP without delay (pressure-lowering drops and acetazolamide), then laser iridotomy in both eyes.",
+    explain: "**What the diagram shows:** a congested eye with redness around the limbus (ciliary flush), a cornea hazy from edema and an oval, mid-dilated pupil: an acute angle-closure attack in a hyperope, triggered by dim light. **What to do:** measure IOP, then without delay timolol, brimonidine and dorzolamide (1 drop of each) and acetazolamide 500 mg PO or IV, and call the on-call ophthalmologist immediately: the nerve and cornea are damaged within hours. Pilocarpine comes only after IOP has fallen; laser iridotomy in both eyes follows.",
     why: [
-      "Correct: corneal edema, mid-dilated pupil, ciliary flush and pain after time in dim light, in a hyperope.",
-      "Anterior uveitis (inflammation of the iris and ciliary body) rather gives a small pupil, cells and precipitates on the endothelium, with a chamber of normal depth.",
-      "Neovascular glaucoma (an angle closed by abnormal vessels, after diabetes or a retinal vein occlusion) shows new vessels on the iris and sets in less abruptly.",
-      "Bacterial keratitis (infection of the cornea) gives a white infiltrate with an ulcer that takes up fluorescein, often in a contact lens wearer."
+      "Correct: lower IOP right away and get the ophthalmologist in; every hour counts.",
+      "False: dilating the pupil worsens pupillary block and closes the angle further.",
+      "False: while IOP is very high, the ischemic sphincter does not respond to pilocarpine, and waiting until tomorrow lets the nerve be damaged.",
+      "False: a steroid calms inflammation but does not lower IOP; an attack cannot wait a week."
     ]
   },
 });
@@ -1509,19 +1509,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-051": {
-    stem: "A 74-year-old woman of Scandinavian origin seen for progressive vision loss OS. Before dilation, whitish flakes are noted at the pupillary margin; after dilation, the anterior lens capsule is photographed (photo). IOP 27 mmHg OS, 16 mmHg OD. What is the most likely diagnosis?",
+    stem: "A 74-year-old woman of Scandinavian origin seen for progressive vision loss OS. Before dilation, whitish flakes are noted at the pupillary margin; after dilation, the anterior lens capsule is photographed (photo). IOP 27 mmHg OS, 16 mmHg OD. What is the most appropriate management?",
     options: [
-      "True exfoliation of the capsule, heat-related (glassblowers)",
-      "Pseudoexfoliation syndrome (PXF) with probable secondary glaucoma",
-      "Pigment dispersion syndrome with pigment deposited on the lens",
-      "Congenital anterior polar cataract, unrelated to IOP"
+      "Reassure: benign deposits, a routine eye check in two years",
+      "Gonioscopy, disc, OCT and field; note the weak zonules",
+      "Pilocarpine to reduce iris rubbing on the zonules",
+      "Operate the cataract promptly, like an ordinary cataract"
     ],
-    explain: "**What it is:** pseudoexfoliation (PXF) is an age-related disease in which whitish fibrillar material deposits on the lens capsule, the zonules (fibers that suspend the lens), the iris and the trabecular meshwork (the angle's filter). **Why it matters:** on the capsule, it forms a target (bull's-eye) — a central disc, a clear ring where the iris rubs, and a granular peripheral band often visible only after dilation — and it clogs the meshwork: it is a common cause of secondary open-angle glaucoma, often asymmetric as here. **What to do:** gonioscopy (irregular pigment, Sampaolesi line), disc exam, OCT and visual field, then note in the chart the zonular fragility for future cataract surgery.",
+    explain: "**What the photo shows:** the typical target of pseudoexfoliation (PXF) on the capsule — a central disc, a clear ring where the iris rubs, a granular peripheral band seen after dilation. This fibrillar material also clogs the meshwork: the asymmetric IOP of 27 mmHg raises concern for secondary glaucoma, often aggressive. **What to do:** gonioscopy (irregular pigment, Sampaolesi line), disc exam, OCT and visual field to look for neuropathy; note the zonular fragility in the chart for future cataract surgery (capsular tension ring, hooks, experienced surgeon).",
     why: [
-      "True exfoliation is a splitting of the capsule into thin sheets after long exposure to infrared heat; it is rare and does not form a three-zone target.",
-      "Correct: a target on the capsule, flakes at the pupillary margin, asymmetric IOP and typical age.",
-      "Pigment dispersion mainly affects young myopes; pigment deposits at the zonule–posterior capsule junction (Scheie line), not as a whitish target on the anterior capsule.",
-      "An anterior polar cataract is a small central opacity present from childhood; it has no peripheral band and does not explain an elevated IOP."
+      "False: an IOP of 27 mmHg with PXF is not benign; this glaucoma progresses faster than POAG.",
+      "Correct: look for neuropathy and plan the cataract surgery, which is riskier here.",
+      "False: pilocarpine targets the iris–zonule rubbing of pigment dispersion; in PXF it constricts a pupil that already dilates poorly.",
+      "False: weak zonules and a small pupil risk zonular rupture and vitreous loss if nothing is planned."
     ]
   },
   "C-052": {
@@ -1607,19 +1607,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-057": {
-    stem: "A 66-year-old man, myopic at −5.00 D, referred for \"normal-tension glaucoma\": cupping and field defects in both eyes, untreated IOP of 15 to 17 mmHg at each visit. He remembers halos after sports in his thirties. The photo shows his cornea at the slit lamp. What is the most accurate interpretation?",
+    stem: "A 66-year-old man, myopic at −5.00 D, referred for \"normal-tension glaucoma\": cupping and field defects in both eyes, untreated IOP of 15 to 17 mmHg at each visit. He remembers halos after sports in his thirties. The photo shows his cornea at the slit lamp. What do you do before accepting the diagnosis?",
     options: [
-      "Typical normal-tension glaucoma: brain MRI right away",
-      "Pseudoexfoliation glaucoma: look for deposits on the anterior capsule",
-      "Old steroid-induced glaucoma: ask about drops he has received",
-      "\"Burned-out\" pigmentary glaucoma: IOP formerly high, signs attenuated"
+      "Accept NTG and order a brain MRI right away",
+      "Look for target-shaped deposits on the anterior capsule",
+      "Ask about steroid drops, then conclude",
+      "Gonioscopy and iris transillumination, then measure progression"
     ],
-    explain: "**What the photo shows:** a fine vertical deposit of pigment on the central corneal endothelium, the Krukenberg spindle, a trace of old pigment dispersion. **Why it is a trap:** with age, the lens grows and pushes the iris forward, iris–zonule rubbing decreases, the meshwork partly clears and IOP normalizes; in this \"burned-out\" phase, the damage comes from past IOP spikes and mimics normal-tension glaucoma (NTG: glaucomatous damage with an always-normal IOP). **What to do:** before concluding NTG, perform gonioscopy (residual trabecular pigment), look for transillumination defects, then document progression to set a target IOP.",
+    explain: "**What the photo shows:** a fine vertical deposit of pigment on the central corneal endothelium, the Krukenberg spindle, a trace of old pigment dispersion. **Why it is a trap:** with age, the lens grows and pushes the iris forward, iris–zonule rubbing decreases, the meshwork partly clears and IOP normalizes; in this \"burned-out\" phase, the damage comes from past IOP spikes and mimics normal-tension glaucoma (NTG). **What to do:** gonioscopy (residual trabecular pigment), look for transillumination defects, then document progression to set a target IOP.",
     why: [
-      "Trap: IOP is normal today, but the spindle and halos with exercise point to pigment dispersion; MRI is reserved for atypical features (pallor more marked than cupping, a defect respecting the vertical meridian).",
-      "PXF can deposit pigment on the cornea, but it mainly gives a whitish target on the capsule and high IOPs; halos with exercise in a young myope point elsewhere.",
-      "Steroid-induced glaucoma requires steroid exposure; it explains neither the pigment spindle nor the halos with exercise.",
-      "Correct: signs of pigment dispersion and a normalized IOP = burned-out pigmentary glaucoma, not to be labeled NTG."
+      "Trap: the spindle and halos with exercise point to pigment dispersion; MRI is reserved for atypical features (pallor more marked than cupping, a defect respecting the vertical meridian).",
+      "PXF can deposit pigment on the cornea, but halos with exercise in a former young myope point to pigment dispersion.",
+      "Steroids should be asked about, but they explain neither the pigment spindle nor the halos with exercise.",
+      "Correct: confirm old pigment dispersion (angle pigment, iris defects), then follow progression to set the target."
     ]
   },
   "C-058": {
@@ -1837,35 +1837,35 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "B-103": {
-    stem: "Soft contact lens wearer; intense pain that persists despite a week of antibiotic drops. Slit lamp, diffuse illumination. Which diagnosis should this corneal appearance bring to mind first?",
+    stem: "Soft contact lens wearer; intense pain that persists despite a week of antibiotic drops. Slit lamp, diffuse illumination. What management does this appearance call for first?",
     options: [
-      "Pseudomonas bacterial keratitis",
-      "Dendritic herpetic epithelial keratitis",
-      "Acanthamoeba keratitis",
-      "Subepithelial infiltrates of adenoviral keratoconjunctivitis"
+      "Add a topical corticosteroid to settle the inflammation",
+      "Switch fluoroquinolone and review in a week",
+      "Scrape for culture and PCR, hourly biguanide",
+      "Oral valacyclovir and stop the lenses"
     ],
     explain: "The paracentral stromal ring surrounding a clearer zone is the ring infiltrate typical of Acanthamoeba keratitis, an infection by a free-living ameba found in water, mainly in contact lens wearers. The diagnosis is confirmed by scraping (culture, PCR) or by confocal microscopy, as in this patient according to the source.",
     why: [
-      "False: Pseudomonas can form an immune ring, but mainly a dense, suppurative abscess that progresses quickly; a ring in a minimally suppurative eye, despite antibiotics, points to the ameba.",
-      "False: the herpetic dendrite is a branching epithelial ulcer with terminal bulbs, not a ring in the stroma.",
-      "Correct: paracentral ring infiltrate, classic for the stromal stage of amebic keratitis.",
-      "False: adenoviral infiltrates are multiple, small and round, just beneath the epithelium, after contagious conjunctivitis."
+      "Wrong: an early steroid worsens amebic or fungal keratitis.",
+      "Wrong: a stromal ring despite a week of antibiotics points to ameba; switching antibiotics delays the diagnosis.",
+      "Correct: a ring infiltrate in a lens wearer not responding to antibiotics: Acanthamoeba until proven otherwise; sample, then a biguanide.",
+      "Wrong: herpes gives an epithelial dendrite, not a stromal ring in a lens wearer."
     ]
   },
   "B-104": {
-    stem: "Patient on long-term topical corticosteroids after a corneal graft, with a red, watery eye. Here is the cornea after fluorescein, under cobalt blue light. What is the most likely diagnosis?",
+    stem: "Patient on long-term topical corticosteroids after a corneal graft, with a red, watery eye. Here is the cornea after fluorescein, under cobalt blue light. What is the most appropriate management?",
     options: [
-      "A healing corneal abrasion",
-      "Zoster (VZV) pseudodendrites",
-      "Early Acanthamoeba keratitis",
-      "Herpes simplex (HSV) epithelial keratitis"
+      "Increase the corticosteroid to protect the graft",
+      "Stop all corticosteroids abruptly, with no other treatment",
+      "Topical antibiotic and a 24-hour patch",
+      "Oral antiviral and a careful steroid taper"
     ],
     explain: "A branching lesion whose base retains fluorescein, with swellings at the ends of the branches (terminal bulbs): this is a herpes simplex virus (HSV) dendritic ulcer, with broad branches; on corticosteroids, these dendrites can coalesce into a geographic ulcer. Treatment: an antiviral, for example valacyclovir 500 mg PO TID or acyclovir 400 mg PO 5 times daily for 7–10 days, and a careful reassessment of the corticosteroids (after a graft, do not stop them abruptly: risk of rejection).",
     why: [
-      "False: a closing abrasion can leave a healing line, but without branches ending in terminal bulbs.",
-      "False: zoster (varicella-zoster virus) pseudodendrites are elevated, stain poorly and have no terminal bulbs.",
-      "False: the ameba can produce pseudodendrites early on, but not a frank, well-stained ulcer with terminal bulbs.",
-      "Correct: a stained branching ulcer with terminal bulbs, promoted by topical corticosteroids."
+      "Wrong: raising the steroid pushes the dendrite toward a geographic ulcer.",
+      "Wrong: after a graft, an abrupt stop risks rejection; treat the virus and adjust the steroid carefully.",
+      "Wrong: a dendrite with terminal bulbs is viral; a patch has no place.",
+      "Correct: an HSV dendrite favored by steroids: valacyclovir 500 mg TID or acyclovir 400 mg 5×/day, then a careful steroid taper."
     ]
   },
   "B-105": {
@@ -1951,19 +1951,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-101": {
-    stem: "A 71-year-old woman, fundus photographs of both eyes. What is the most likely diagnosis?",
+    stem: "A 71-year-old woman with no eye follow-up, fundus photographs of both eyes taken at screening. What is the most appropriate management?",
     options: [
-      "Old anterior ischemic optic neuropathy",
-      "Bilateral optic disc edema",
-      "Advanced glaucoma in both eyes",
-      "Compressive optic atrophy"
+      "Urgent brain MRI: these discs suggest compression",
+      "Repeat the photos in a year to compare",
+      "Refer promptly to ophthalmology: IOP, gonioscopy, visual field",
+      "Reassure: large physiological discs, no follow-up needed"
     ],
-    explain: "Both discs are almost entirely cupped, the rim has nearly disappeared and the vessels dive into the cup and reappear at its floor (bayoneting): this is advanced glaucoma, here open-angle according to the source. Deep cupping points to glaucoma; pallor more extensive than the cupping would prompt a search for another cause.",
+    explain: "Both discs are almost entirely cupped, the rim has nearly disappeared and the vessels dive into the cup and reappear at its floor (bayoneting): this is advanced glaucoma in both eyes, untreated. Central vision can drop quickly at this stage: refer promptly to measure IOP, see the angle (gonioscopy), do a visual field and start lowering IOP. Pallor more extensive than the cupping would instead prompt a search for compression.",
     why: [
-      "False: ischemic optic neuropathy (infarction of the optic nerve head) leaves pallor, often sectoral, without such deep cupping.",
-      "False: disc edema gives blurred, elevated margins with obscured vessels, the opposite of cupping.",
-      "Correct: near-total cupping, vanished rim, bayoneting vessels and peripapillary atrophy.",
-      "False: compressive atrophy (a nerve compressed by a mass) mainly gives pallor, with little cupping."
+      "False: compression mainly gives pallor with little cupping; here the cupping is deep and the remaining rim is not pale.",
+      "False: at this stage, waiting a year can cost central vision.",
+      "Correct: untreated advanced bilateral glaucoma: workup and treatment without waiting.",
+      "False: a large physiological disc keeps a normal rim; here the rim has nearly disappeared."
     ]
   },
   "C-102": {
@@ -2015,19 +2015,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-105": {
-    stem: "Dilated pupil, slit lamp. Which diagnosis does this appearance of the anterior lens capsule suggest?",
+    stem: "Dilated pupil, slit lamp, before cataract surgery. This appearance of the anterior capsule is found. What risk should the surgeon plan for?",
     options: [
-      "Pigment dispersion syndrome",
-      "Glaukomflecken after an angle-closure attack",
-      "Pseudoexfoliation syndrome",
-      "Congenital anterior polar cataract"
+      "A retinal detachment during the surgery",
+      "An angle-closure attack when the pupil is dilated",
+      "Weak zonules and a pupil that dilates poorly",
+      "A higher rate of infection of the wound"
     ],
-    explain: "A central disc with a scalloped edge, a clear zone, then material in the periphery: this is the typical target of pseudoexfoliation syndrome, an age-related deposit of fibrillar material (LOXL1 gene). It predisposes to secondary open-angle glaucoma, weak zonules and poor dilation during cataract surgery.",
+    explain: "A central disc with a scalloped edge, a clear zone, then material in the periphery: this is the typical target of pseudoexfoliation syndrome, an age-related fibrillar deposit (LOXL1 gene). The same material weakens the zonules and stiffens the iris: a pupil that dilates poorly, a risk of zonular rupture, vitreous loss and, later, in-the-bag IOL dislocation. Plan a pupil expander, a capsular tension ring and an experienced surgeon; also look for secondary glaucoma.",
     why: [
-      "False: pigment dispersion deposits pigment (Krukenberg spindle, Scheie line), not a target-shaped deposit on the capsule.",
-      "False: glaukomflecken (necrosis of the lens epithelium after an attack) are small scattered white spots, without a disc or ring.",
-      "Correct: a target-shaped deposit on the anterior capsule, the key sign of pseudoexfoliation.",
-      "False: anterior polar cataract is a small, well-defined central opacity, with no peripheral ring."
+      "False: the main intraoperative risk concerns the zonules and capsule, not the retina.",
+      "False: pseudoexfoliation mainly causes open-angle glaucoma; dilation for surgery is not the danger at stake here.",
+      "Correct: weak zonules and poor dilation, to plan for before operating.",
+      "False: the capsular deposit does not increase the risk of wound infection."
     ]
   },
   "C-106": {

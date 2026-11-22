@@ -428,12 +428,21 @@ Views.progression = {
 /* ---------- apprendre hub (all modules, visual) ---------- */
 var COVER = { A: 'OPH-192', B: 'OPH-001', C: 'OPH-298' };
 var THUMB_ALIAS = { 'a-physiologie': 'a-gonioscopie', 'a-examen': 'a-lampe', 'a-imagerie': 'a-oct', 'a-retine': 'a5-retinopathie-diabetique' };
-function thumbFor(key) { var p = photosFor(key)[0] || (THUMB_ALIAS[key] && photosFor(THUMB_ALIAS[key])[0]); return p && D.cat(p.id) ? '<img loading="lazy" src="' + Photo.src(p.id) + '" alt="">' : '<span class="nothumb" aria-hidden="true"></span>'; }
+function thumbFor(key) {
+  // real photo first (fiche photos, alias, a photo question on this topic), then the fiche's own schematic; never an empty tile
+  var R = window.OPH_RESTRICTED || {}, ok = function (id) { return id && D.cat(id) && !R[id] ? id : null; };
+  var p = photosFor(key)[0] || (THUMB_ALIAS[key] && photosFor(THUMB_ALIAS[key])[0]), id = p && ok(p.id);
+  if (!id) { var q = OPH.quiz.filter(function (x) { return x.topic === key && x.figure && x.figure.type === 'photo' && ok(x.figure.id); })[0]; id = q && q.figure.id; }
+  if (id) return '<img loading="lazy" src="' + Photo.src(id) + '" alt="">';
+  var f = D.fiche(key), fig = f && ((f.compare && f.compare.patho && f.compare.patho.figure) || (f.anatomy && f.anatomy.figure));
+  if (fig && typeof Figures[fig.type] === 'function') { try { return '<span class="thumb-svg" aria-hidden="true">' + Figures[fig.type](fig, {}).svg.replace(/ role="(img|group)"/, '').replace(/ aria-label="[^"]*"/, '') + '</span>'; } catch (e) { } }
+  return '<span class="nothumb" aria-hidden="true"></span>';
+}
 Views.apprendre = {
   title: t('nav.learn'), render: function () {
     var row = function (id, n, title, sub) { var dot = Prog.ficheDone(id) ? 'done' : (Prog.ficheSeen(id) ? 'seen' : ''); return '<a class="lrow" href="#' + id + '"><span class="lthumb">' + thumbFor(id) + '</span><span class="stack" style="gap:2px;min-width:0"><span class="xs mono muted">' + n + '</span><b>' + U.esc(title) + '</b>' + (sub ? '<span class="xs muted">' + U.esc(sub) + '</span>' : '') + '</span>' + Prog.dot(dot) + '</a>'; };
     var A = A_SECTIONS.map(function (s) { return row(s.id, s.n, s.title, s.blurb); }).join('');
-    var mod = function (m) { var cap = m === 'B' ? 'b-bases' : 'c-bases'; return row(cap, m + '0', t('nav.foundations'), t('learn.first')) + D.ordered(m).map(function (f, i) { return row(f.id, m + (i + 1), f.title, f.en); }).join(''); };
+    var mod = function (m) { var cap = m === 'B' ? 'b-bases' : 'c-bases'; return row(cap, m + '0', t('nav.foundations'), t('learn.first')) + D.ordered(m).map(function (f, i) { return row(f.id, m + (i + 1), I18N.title(f), ''); }).join(''); };
     var col = function (m, title, html) { var s = Prog.stat(m); return '<section class="lcol"><div class="lcover" style="background-image:url(' + Photo.src(COVER[m]) + ')"><span class="eyebrow">Module ' + m + '</span><b>' + title + '</b><span class="xs">' + t('learn.mastered', { a: s.mastered, b: s.total }) + '</span></div><div class="stack" style="gap:6px">' + html + '</div></section>'; };
     return '<div class="page">' + crumbs([[t('nav.home'), 'accueil'], [t('nav.learn'), null]]) + '<div class="phead"><div class="eyebrow">' + t('learn.eyebrow') + '</div><h1>' + t('learn.h1') + '</h1><p class="muted">' + t('learn.lead') + '</p>' + depthSeg() + '</div>' +
       (Views.investigations ? '<a class="card link inv-banner" href="#investigations"><span class="eyebrow">' + t('brand.method') + '</span><h3>' + t('nav.inv') + '</h3><span class="small muted">' + t('learn.inv.d') + '</span></a>' : '') + '<div class="lgrid">' + col('A', L.modules.A, A) + col('B', L.modules.B, mod('B')) + col('C', L.modules.C, mod('C')) + '</div></div>';

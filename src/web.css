@@ -78,3 +78,33 @@ details.more > summary { font-weight: 700; }
 .tx-card.first { border-color: var(--cobalt); }
 .tx-card.refer { border-color: var(--urgent, #c0392b); }
 .tx-card.trap { border-color: var(--hy, #d4a017); }
+
+/* ---------- cycle 8: compact fiche header (≤ 25 % of a phone screen) ---------- */
+.fiche-page { gap: 14px; }
+.fiche-bar { display: grid; gap: 6px; }
+.fb-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.fb-top .lvl-chip { margin-left: auto; font-size: var(--fs-xs, .78rem); padding: 4px 10px; min-height: 32px; }
+.fb-title { font-size: clamp(1.15rem, 4.6vw, 1.4rem) !important; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0; }
+.lvl-pop { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.lvl-pop[hidden] { display: none; }
+.fiche-bar .fsteps a { padding: 2px; min-height: 0; gap: 2px; }
+.fiche-bar .fsteps .pip { width: 24px; height: 24px; font-size: .78rem; }
+@media (max-width: 600px) { .fiche-page > .crumbs { display: none; } }
+/* « Voir »: Observe → Réponds → Révèle on the photo */
+.voir-card .voir-media { position: relative; }
+.voir-ask { display: grid; gap: 6px; justify-items: start; }
+.voir-sign { position: relative; }
+.mech-fig .pair { gap: 10px; }
+details.more .tag.plain { font-size: .68rem; margin-left: 6px; }
+.thumb-svg { display: block; width: 100%; height: 100%; background: var(--surface); }
+.thumb-svg svg { width: 100%; height: 100%; display: block; }
+/* module A micro-fiches, capsule cards, module micro-cards */
+.a-list { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+.a-ico { display: grid; place-items: center; width: 100%; height: 100%; background: var(--cobalt-wash); color: var(--cobalt-ink); font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; }
+.a-dots { display: flex; flex-wrap: wrap; gap: 4px; }
+.a-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.a-dots i.done { background: var(--cobalt-wash); outline: 1px solid var(--cobalt); }
+.a-dots i.on { background: var(--cobalt); }
+.micro-grid .fcard h3 { font-size: var(--fs-md, 1rem); }
+/* content line breaks (\n) authored by the editors (definitions ≤ 125 characters per line) */
+.def-text, .hy-list li, .voir-sign, .fstep-body p.read, .fstep-body .callout > span:not(.eyebrow) { white-space: pre-line; }

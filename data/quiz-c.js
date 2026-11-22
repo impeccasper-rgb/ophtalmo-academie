@@ -214,22 +214,27 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ]
   },
   {
-    id: "C-012", module: "C", topic: "g-fermeture", type: "image", level: 2, trap: false,
-    stem: "Homme de 62 ans originaire du Nunavik, dirigé à Montréal pour des angles étroits. PIO 27 mmHg OD ; papille OD saine (C/D 0,3), OCT de la RNFL et champ visuel normaux. Le schéma montre la gonioscopie de son OD après indentation (pression de la lentille sur la cornée). Comment classes-tu l’OD ?",
+    id: "C-012",
+    module: "C",
+    topic: "g-fermeture",
+    type: "image",
+    level: 2,
+    trap: false,
+    stem: "Homme de 62 ans originaire du Nunavik, dirigé à Montréal pour des angles étroits. PIO 27 mmHg OD ; papille OD saine (C/D 0,3), OCT de la RNFL et champ visuel normaux ; cristallin clair. Le schéma montre la gonioscopie de son OD après indentation (pression de la lentille sur la cornée). Quelle conduite est la plus juste pour l’OD ?",
     figure: { type: "gonio", grade: 1, pas: true, pigment: "light", nv: false, recession: false },
     options: [
-      "Suspect de fermeture primaire de l’angle (PACS)",
-      "Fermeture primaire de l’angle (PAC)",
-      "Glaucome par fermeture primaire de l’angle (PACG)",
-      "Glaucome primaire à angle ouvert (GPAO)"
+      "Observer sans traitement, gonioscopie dans un an",
+      "Iridotomie au laser, gouttes au besoin",
+      "Analogue des prostaglandines seul, sans geste sur l’angle",
+      "Trabéculectomie d’emblée vu la PIO à 27 mmHg"
     ],
     answer: 1,
-    explain: "**Ce que montre le schéma :** seule la ligne de Schwalbe (au mieux avec le trabéculum antérieur, non pigmenté) est visible (Shaffer 1) ; le trabéculum pigmenté et l’éperon sont cachés et l’iris reste collé au filtre malgré l’indentation : ce sont des synéchies antérieures périphériques (PAS : adhérences permanentes entre l’iris et le trabéculum). **Pourquoi ce stade :** la classification ISGEO, reprise par le PPP de l’AAO, distingue le PACS (contact iris-trabéculum sur ≥ 180° selon le PPP de l’AAO — l’ISGEO initiale exigeait ≥ 270° —, PIO normale, sans PAS ni atteinte du nerf), le PAC (contact avec PAS et/ou PIO élevée, nerf sain) et le PACG (PAC avec neuropathie optique glaucomateuse) ; ici, PAS et PIO de 27 mmHg avec un nerf sain = PAC. Les Inuits du Nunavik ont parmi les plus hauts taux de fermeture primaire au monde. **Quoi faire :** ouvrir l’angle par une iridotomie au laser (LPI : petit trou dans l’iris périphérique), ou par extraction du cristallin si ≥ 50 ans avec PIO ≥ 30 mmHg (EAGLE) ; gouttes si la PIO reste élevée ; suivre gonioscopie, OCT et champ.",
+    explain: "**Ce que montre le schéma :** seule la ligne de Schwalbe (au mieux avec le trabéculum antérieur, non pigmenté) est visible (Shaffer 1) ; le trabéculum pigmenté et l’éperon sont cachés et l’iris reste collé au filtre malgré l’indentation : ce sont des synéchies antérieures périphériques (PAS). **Le stade :** PAS et PIO élevée avec un nerf sain = fermeture primaire de l’angle (PAC) selon l’ISGEO et le PPP de l’AAO. **Quoi faire :** ouvrir l’angle ; ici l’iridotomie au laser (LPI) en premier, car la PIO est < 30 mmHg et il n’y a pas de neuropathie (critères d’EAGLE pour l’extraction du cristallin clair non remplis) ; gouttes si la PIO reste élevée ; suivre gonioscopie, OCT et champ. Les Inuits du Nunavik ont parmi les plus hauts taux de fermeture primaire au monde.",
     why: [
-      "Le PACS exige une PIO normale, sans PAS ; ici, PAS et PIO élevée font passer au stade suivant.",
-      "Exact : PAS et PIO élevée, mais nerf optique et champ visuel normaux.",
-      "Le PACG exige une neuropathie optique glaucomateuse (excavation, perte de RNFL, défaut du champ) ; le nerf est sain ici.",
-      "Le GPAO exige un angle ouvert, avec l’éperon scléral visible sur 360° ; ici l’angle est fermé et collé."
+      "Faux : PAS et PIO élevée dépassent le stade de simple suspect (PACS) ; observer laisse l’angle se fermer.",
+      "Exact : PAC à PIO < 30 mmHg sans neuropathie : LPI d’abord, gouttes au besoin.",
+      "Faux : les gouttes baissent la PIO mais ne rouvrent pas l’angle, qui continue de se fermer.",
+      "Faux : la chirurgie filtrante vient après l’échec de l’ouverture de l’angle et des gouttes."
     ]
   },
   {
@@ -290,22 +295,27 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ]
   },
   {
-    id: "C-016", module: "C", topic: "g-crise", type: "image", level: 1, trap: false,
-    stem: "Homme de 72 ans, hypermétrope, qui consulte pour une douleur intense à l’OS apparue hier soir au cinéma, avec vision floue et nausées. Le schéma montre son segment antérieur OS à la lampe à fente. Quel est le diagnostic le plus probable ?",
+    id: "C-016",
+    module: "C",
+    topic: "g-crise",
+    type: "image",
+    level: 1,
+    trap: false,
+    stem: "Homme de 72 ans, hypermétrope, qui consulte à l’urgence pour une douleur intense à l’OS apparue hier soir au cinéma, avec vision floue et nausées. Le schéma montre son segment antérieur OS à la lampe à fente. Tu es l’externe : que fais-tu en premier ?",
     figure: { type: "slit", pattern: "aacc" },
     options: [
-      "Crise aiguë de fermeture de l’angle",
-      "Uvéite antérieure aiguë avec hypertonie",
-      "Glaucome néovasculaire sur occlusion veineuse",
-      "Kératite bactérienne avec réaction de chambre"
+      "Hypotenseurs et acétazolamide, puis appel immédiat en ophtalmologie",
+      "Dilater la pupille pour bien voir le fond d’œil",
+      "Pilocarpine 2 % seule, puis revoir le patient demain",
+      "Stéroïde topique et rendez-vous en clinique cette semaine"
     ],
     answer: 0,
-    explain: "**Ce que montre le schéma :** un œil congestif avec une rougeur autour du limbe (rougeur ciliaire), une cornée dépolie par l’œdème et une pupille mi-dilatée, ovale ; la chambre étroite, invisible sur cette vue de face, se confirme en fente fine (Van Herick). **Pourquoi c’est une crise :** la PIO très haute dépasse la pompe de l’endothélium cornéen (d’où l’œdème, les halos et le flou) et prive le sphincter de l’iris de sang (pupille fixe) ; la pénombre du cinéma a mis la pupille en mi-dilatation, position qui favorise le bloc de l’angle dans un œil court. **Quoi faire :** mesurer la PIO, examiner l’œil adelphe, baisser la PIO sans délai (gouttes hypotensives et acétazolamide), puis iridotomie au laser des deux yeux.",
+    explain: "**Ce que montre le schéma :** un œil congestif avec une rougeur autour du limbe (rougeur ciliaire), une cornée dépolie par l’œdème et une pupille mi-dilatée, ovale : une crise aiguë de fermeture de l’angle chez un hypermétrope, déclenchée par la pénombre. **Quoi faire :** mesurer la PIO, puis sans délai timolol, brimonidine et dorzolamide (1 goutte de chaque) et acétazolamide 500 mg PO ou IV, et appeler l’ophtalmologiste de garde immédiatement : le nerf et la cornée s’abîment en quelques heures. La pilocarpine vient seulement après la baisse de PIO ; l’iridotomie au laser des deux yeux suit.",
     why: [
-      "Exact : œdème cornéen, pupille mi-dilatée, rougeur ciliaire et douleur après un séjour dans la pénombre, chez un hypermétrope.",
-      "L’uvéite antérieure (inflammation de l’iris et du corps ciliaire) donne plutôt une pupille petite, des cellules et des précipités sur l’endothélium, avec une chambre de profondeur normale.",
-      "Le glaucome néovasculaire (angle fermé par des vaisseaux anormaux, après un diabète ou une occlusion de veine rétinienne) montre des néovaisseaux sur l’iris et s’installe moins brutalement.",
-      "La kératite bactérienne (infection de la cornée) donne un infiltrat blanc avec un ulcère qui prend la fluorescéine, souvent chez un porteur de lentilles."
+      "Exact : baisser la PIO tout de suite et faire venir l’ophtalmologiste ; chaque heure compte.",
+      "Faux : dilater la pupille aggrave le bloc pupillaire et ferme davantage l’angle.",
+      "Faux : tant que la PIO est très haute, le sphincter ischémique ne répond pas à la pilocarpine, et attendre au lendemain laisse le nerf s’abîmer.",
+      "Faux : le stéroïde calme l’inflammation mais ne baisse pas la PIO ; une crise ne peut pas attendre une semaine."
     ]
   },
   {

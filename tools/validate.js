@@ -102,7 +102,21 @@ function checkFiches(list, OPH) {
     if (arr(ctx, f.ddx, 3, 6, 'ddx')) f.ddx.forEach((d, i) => { if (!isStr(d.dx) || !isStr(d.clue)) E(ctx, `ddx ${i}`); });
     if (arr(ctx, f.redFlags, 2, 5, 'redFlags')) f.redFlags.forEach((d, i) => { if (!isStr(d)) E(ctx, `redFlags ${i}`); });
     if (!f.cat) E(ctx, 'cat missing'); else {
-      if (arr(ctx, f.cat.algo, 3, 6, 'cat.algo')) f.cat.algo.forEach((a, i) => { if (!isStr(a.q) || !isStr(a.yes) || !isStr(a.no)) E(ctx, `cat.algo ${i}`); });
+      if (arr(ctx, f.cat.algo, 3, 6, 'cat.algo')) {
+        // tree v2 (STYLE-PEDAGO §8): yes/no = text, '' (only if the branch goes on) or {t, urgent}; yesGo/noGo = index of a LATER node (acyclic)
+        const al = f.cat.algo, txt = v => (v && typeof v === 'object') ? v.t : v, reach = new Set([0]);
+        al.forEach((a, i) => {
+          if (!isStr(a.q)) E(ctx, `cat.algo ${i} q`);
+          for (const [b, g] of [['yes', 'yesGo'], ['no', 'noGo']]) {
+            const has = a[g] != null || (a.cont === b && i < al.length - 1);
+            if (a[g] != null && (!Number.isInteger(a[g]) || a[g] <= i || a[g] >= al.length)) E(ctx, `cat.algo ${i} ${g} must point to a later node`);
+            if (!isStr(txt(a[b])) && !has) E(ctx, `cat.algo ${i} ${b}: empty leaf (needs text or ${g})`);
+            if (/^(question suivante|continuer|next question|continue)\.?$/i.test(String(txt(a[b]) || '').trim())) W(ctx, `cat.algo ${i} ${b}: filler leaf`);
+            if (reach.has(i) && has) reach.add(a[g] != null ? a[g] : i + 1);
+          }
+        });
+        al.forEach((a, i) => { if (!reach.has(i)) E(ctx, `cat.algo ${i} unreachable from the root`); });
+      }
       if (arr(ctx, f.cat.phases, 2, 6, 'cat.phases')) { let last = -1; f.cat.phases.forEach((p, i) => { const k = PHASES.indexOf(p.phase); if (k < 0) E(ctx, `phase ${i} invalid ${p.phase}`); else { if (k <= last) E(ctx, 'phases out of order or duplicated'); last = k; } if (!Array.isArray(p.items) || !p.items.length || !p.items.every(isStr)) E(ctx, `phase ${p.phase} items`); }); }
       if (!isStr(f.cat.local)) E(ctx, 'cat.local missing');
     }

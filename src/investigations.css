@@ -165,3 +165,29 @@
   .inv-hot b, .inv-hot em { animation: inv-fade .3s calc(.45s + var(--d, 0s)) both, inv-stk .5s cubic-bezier(.34, 1.56, .64, 1) calc(.45s + var(--d, 0s)) both; }
 }
 @keyframes inv-stk { 0% { scale: .3; rotate: -30deg; } 60% { scale: 1.12; } 100% { scale: 1; } }
+
+/* cycle 8: exam page = tool + practice first, reference text folded below; hub thumbnails */
+.inv-page2 { gap: 18px; }
+.inv-phead { gap: 2px; }
+.inv-phead h1 { font-size: var(--fs-xl); }
+.inv-sec { gap: 10px; }
+.inv-ref { display: grid; gap: 8px; }
+.inv-ref-h { font-size: var(--fs-md); margin: 0; }
+.inv-folds { display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-start; }
+.inv-fold { flex: 0 1 auto; }
+.inv-fold[open] { flex: 1 1 100%; order: 9; }
+.inv-fold summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 6px 12px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); font-size: var(--fs-sm); font-weight: 600; }
+.inv-fold summary::-webkit-details-marker { display: none; }
+.inv-fold summary::after { content: "+"; font-family: var(--font-mono); color: var(--ink-3); }
+.inv-fold[open] summary { background: var(--cobalt-wash); border-color: var(--cobalt); color: var(--cobalt-ink); }
+.inv-fold[open] summary::after { content: "−"; }
+.inv-fold.key summary { border-left: 3px solid var(--cobalt); }
+.inv-fold.trap summary { border-left: 3px solid var(--trap); }
+.inv-fold-b { margin-top: 8px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.inv-fold-b ul, .inv-fold-b ol { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; }
+.inv-fold-b p { margin: 0; }
+.inv-thumb { position: relative; margin: -18px -18px 4px; height: 118px; overflow: hidden; border-radius: var(--radius) var(--radius) 0 0; background: #000; border-bottom: 1px solid var(--line); }
+.inv-thumb svg { display: block; width: 100%; height: 100%; }
+.inv-thumb .inv-schema { position: absolute; right: 8px; bottom: 8px; background: var(--surface); }
+.inv-thumb-cv { background: #fff; }
+.inv-card .small.muted { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }

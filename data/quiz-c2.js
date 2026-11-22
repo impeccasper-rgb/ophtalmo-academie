@@ -2,22 +2,27 @@ var G = (typeof window !== 'undefined') ? window : globalThis;
 G.OPH = G.OPH || {};
 G.OPH.quiz = (G.OPH.quiz || []).concat([
   {
-    id: "C-051", module: "C", topic: "g-pxf", type: "image", level: 1, trap: false,
-    stem: "Femme de 74 ans, d’origine scandinave, vue pour une baisse de vision progressive à l’OS. Avant la dilatation, on note des flocons blanchâtres au rebord de la pupille ; après la dilatation, on photographie la capsule antérieure du cristallin (photo). PIO 27 mmHg à l’OS, 16 mmHg à l’OD. Quel est le diagnostic le plus probable ?",
+    id: "C-051",
+    module: "C",
+    topic: "g-pxf",
+    type: "image",
+    level: 1,
+    trap: false,
+    stem: "Femme de 74 ans, d’origine scandinave, vue pour une baisse de vision progressive à l’OS. Avant la dilatation, on note des flocons blanchâtres au rebord de la pupille ; après la dilatation, on photographie la capsule antérieure du cristallin (photo). PIO 27 mmHg à l’OS, 16 mmHg à l’OD. Quelle conduite est la plus juste ?",
     figure: { type: "photo", id: "OPH-155" },
     options: [
-      "Exfoliation vraie de la capsule, liée à la chaleur (souffleurs de verre)",
-      "Syndrome de pseudo-exfoliation (PXF) avec glaucome secondaire probable",
-      "Syndrome de dispersion pigmentaire avec pigment déposé sur le cristallin",
-      "Cataracte polaire antérieure congénitale, sans lien avec la PIO"
+      "Rassurer : dépôts bénins, simple contrôle de la vue dans deux ans",
+      "Gonioscopie, papille, OCT et champ ; noter les zonules fragiles",
+      "Pilocarpine pour réduire le frottement de l’iris sur les zonules",
+      "Opérer la cataracte rapidement, comme une cataracte habituelle"
     ],
     answer: 1,
-    explain: "**Ce que c’est :** la pseudo-exfoliation (pseudoexfoliation, PXF) est une maladie liée à l’âge où un matériel fibrillaire blanchâtre se dépose sur la capsule du cristallin, les zonules (fibres qui suspendent le cristallin), l’iris et le trabéculum (le filtre de l’angle). **Pourquoi c’est important :** sur la capsule, il dessine une cible (bull’s-eye) — disque central, anneau clair là où l’iris frotte, bande granuleuse périphérique souvent visible seulement après dilatation — et il bouche le trabéculum : c’est une cause fréquente de glaucome secondaire à angle ouvert, souvent asymétrique comme ici. **Quoi faire :** gonioscopie (pigment irrégulier, ligne de Sampaolesi), examen de la papille, OCT et champ visuel, puis noter au dossier la fragilité des zonules en vue d’une future chirurgie de cataracte.",
+    explain: "**Ce que montre la photo :** la cible typique de la pseudo-exfoliation (PXF) sur la capsule — disque central, anneau clair là où l’iris frotte, bande granuleuse périphérique visible après dilatation. Ce matériel fibrillaire bouche aussi le trabéculum : la PIO asymétrique à 27 mmHg fait craindre un glaucome secondaire, souvent agressif. **Quoi faire :** gonioscopie (pigment irrégulier, ligne de Sampaolesi), examen de la papille, OCT et champ visuel pour chercher une neuropathie ; inscrire au dossier la fragilité des zonules pour la future chirurgie de cataracte (anneau de tension capsulaire, crochets, chirurgien aguerri).",
     why: [
-      "L’exfoliation vraie (true exfoliation) est un clivage de la capsule en fines feuilles après une longue exposition à la chaleur infrarouge ; elle est rare et ne dessine pas de cible à trois zones.",
-      "Exact : cible sur la capsule, flocons au rebord pupillaire, PIO asymétrique et âge typique.",
-      "La dispersion pigmentaire touche surtout le jeune myope ; le pigment se dépose à la jonction zonules–capsule postérieure (ligne de Scheie), pas en cible blanchâtre sur la capsule antérieure.",
-      "Une cataracte polaire antérieure est une petite opacité centrale présente dès l’enfance ; elle n’a pas de bande périphérique et n’explique pas une PIO élevée."
+      "Faux : une PIO de 27 mmHg avec PXF n’est pas bénigne ; ce glaucome progresse plus vite que le GPAO.",
+      "Exact : chercher la neuropathie et préparer la chirurgie de cataracte, plus risquée ici.",
+      "Faux : la pilocarpine vise le frottement iris–zonules de la dispersion pigmentaire ; dans la PXF, elle rétrécit une pupille qui dilate déjà mal.",
+      "Faux : zonules faibles et pupille étroite exposent à la rupture zonulaire et à l’issue de vitré si rien n’est prévu."
     ]
   },
   {
@@ -116,22 +121,27 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ]
   },
   {
-    id: "C-057", module: "C", topic: "g-pigmentaire", type: "image", level: 3, trap: true,
-    stem: "Homme de 66 ans, myope de −5,00 D, dirigé pour « glaucome à pression normale » : excavation et défauts du champ aux deux yeux, PIO non traitée de 15 à 17 mmHg à chaque visite. Il se souvient de halos après le sport dans la trentaine. La photo montre sa cornée à la lampe à fente. Quelle est l’interprétation la plus juste ?",
+    id: "C-057",
+    module: "C",
+    topic: "g-pigmentaire",
+    type: "image",
+    level: 3,
+    trap: true,
+    stem: "Homme de 66 ans, myope de −5,00 D, dirigé pour « glaucome à pression normale » : excavation et défauts du champ aux deux yeux, PIO non traitée de 15 à 17 mmHg à chaque visite. Il se souvient de halos après le sport dans la trentaine. La photo montre sa cornée à la lampe à fente. Que fais-tu avant d’accepter le diagnostic ?",
     figure: { type: "photo", id: "OPH-158" },
     options: [
-      "Glaucome à pression normale typique : IRM cérébrale d’emblée",
-      "Glaucome pseudo-exfoliatif : chercher des dépôts sur la capsule antérieure",
-      "Glaucome cortisonique ancien : questionner sur les gouttes reçues",
-      "Glaucome pigmentaire « éteint » : PIO autrefois haute, signes atténués"
+      "Accepter le GPN et demander une IRM cérébrale d’emblée",
+      "Chercher des dépôts en cible sur la capsule antérieure",
+      "Questionner sur les gouttes de cortisone, puis conclure",
+      "Gonioscopie, transillumination de l’iris, puis suivre la progression"
     ],
     answer: 3,
-    explain: "**Ce que montre la photo :** un fin dépôt vertical de pigment sur l’endothélium de la cornée centrale, le fuseau de Krukenberg, trace d’une dispersion pigmentaire ancienne. **Pourquoi c’est un piège :** avec l’âge, le cristallin grossit et repousse l’iris vers l’avant, le frottement iris–zonules diminue, le trabéculum se nettoie en partie et la PIO se normalise ; dans cette phase « éteinte » (burned-out), les dommages viennent des pics de PIO passés et imitent un glaucome à pression normale (GPN : atteinte glaucomateuse avec une PIO toujours normale). **Quoi faire :** avant de conclure à un GPN, faire une gonioscopie (pigment trabéculaire résiduel), chercher des défauts de transillumination, puis documenter la progression pour fixer une PIO cible.",
+    explain: "**Ce que montre la photo :** un fin dépôt vertical de pigment sur l’endothélium de la cornée centrale, le fuseau de Krukenberg, trace d’une dispersion pigmentaire ancienne. **Pourquoi c’est un piège :** avec l’âge, le cristallin grossit et repousse l’iris vers l’avant, le frottement iris–zonules diminue, le trabéculum se nettoie en partie et la PIO se normalise ; dans cette phase « éteinte » (burned-out), les dommages viennent des pics de PIO passés et imitent un glaucome à pression normale (GPN). **Quoi faire :** gonioscopie (pigment trabéculaire résiduel), recherche de défauts de transillumination, puis documenter la progression pour fixer une PIO cible.",
     why: [
-      "Piège : la PIO est normale aujourd’hui, mais le fuseau et les halos à l’effort orientent vers une dispersion pigmentaire ; l’IRM se réserve aux atypies (pâleur plus marquée que l’excavation, défaut qui respecte le méridien vertical).",
-      "La PXF peut déposer du pigment sur la cornée, mais elle donne surtout une cible blanchâtre sur la capsule et des PIO élevées ; des halos à l’effort chez un jeune myope orientent ailleurs.",
-      "Un glaucome cortisonique exige une exposition aux stéroïdes ; il n’explique ni le fuseau pigmentaire ni les halos à l’effort.",
-      "Exact : signes de dispersion pigmentaire et PIO normalisée = glaucome pigmentaire éteint, à ne pas étiqueter GPN."
+      "Piège : le fuseau et les halos à l’effort orientent vers une dispersion pigmentaire ; l’IRM se réserve aux atypies (pâleur plus marquée que l’excavation, défaut qui respecte le méridien vertical).",
+      "La PXF peut déposer du pigment sur la cornée, mais des halos à l’effort chez un ancien jeune myope orientent vers la dispersion pigmentaire.",
+      "Les stéroïdes sont à demander, mais ils n’expliquent ni le fuseau pigmentaire ni les halos à l’effort.",
+      "Exact : confirmer la dispersion pigmentaire ancienne (pigment de l’angle, fentes iriennes), puis suivre la progression pour fixer la cible."
     ]
   },
   {

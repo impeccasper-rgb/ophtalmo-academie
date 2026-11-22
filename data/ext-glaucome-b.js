@@ -80,11 +80,16 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   cat: {
     algo: [
-      { q: "Triade, cornée large ou trouble (nourrisson) ?", yes: "Référence urgente : examen sous anesthésie.", no: "Larmoiement, cornée claire : obstruction lacrymonasale probable.", cont: "yes" },
-      { q: "Glaucome confirmé ?", yes: "Gouttes en pont, chirurgie de l’angle rapidement.", no: "Surveillance rapprochée.", cont: "yes" },
-      { q: "Cornée assez claire pour voir l’angle ?", yes: "Goniotomie ou trabéculotomie.", no: "Trabéculotomie par voie externe.", cont: "yes" },
-      { q: "Échec de la chirurgie de l’angle ?", yes: "Reprise, tube, trabéculectomie avec MMC ou cyclophotocoagulation.", no: "Suivi : PIO, diamètre, réfraction, amblyopie.", cont: "no" },
-      { q: "Adulte : œdème, corectopie, synéchies d’un côté ?", yes: "ICE : spéculaire, gouttes, tube si échec ; DSAEK ou DMEK si œdème.", no: "Penser Axenfeld-Rieger ou dystrophie polymorphe postérieure." }
+      { q: "Nourrisson ou jeune enfant ?", yes: "", no: "", yesGo: 1, noGo: 4 },
+      {
+        q: "Triade, cornée large ou trouble ?",
+        yes: { t: "Référence urgente : examen sous anesthésie ; gouttes en pont.", urgent: true },
+        no: "Larmoiement, cornée claire : obstruction lacrymonasale probable.",
+        yesGo: 2
+      },
+      { q: "Cornée assez claire pour voir l’angle ?", yes: "Goniotomie ou trabéculotomie.", no: "Trabéculotomie par voie externe.", yesGo: 3, noGo: 3 },
+      { q: "Échec de la chirurgie de l’angle ?", yes: "Reprise, tube, trabéculectomie avec MMC ou cyclophotocoagulation.", no: "Suivi : PIO, diamètre, réfraction, amblyopie." },
+      { q: "Adulte : œdème, corectopie, synéchies d’un côté ?", yes: "ICE : spéculaire, gouttes, tube si échec ; DSAEK ou DMEK si œdème.", no: "Penser Axenfeld-Rieger, dystrophie polymorphe postérieure ou glaucome juvénile." }
     ],
     phases: [
       {
@@ -143,17 +148,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Goniotomie** : Sous lentille de gonioscopie : incision du trabéculum sur ≈ 1/3 de l’angle.",
-      "**Trabéculotomie** : Sonde ou fil sur 360° passé dans le canal de Schlemm.",
-      "**Gouttes en pont** : Timolol 0,25 % BID, dorzolamide 2 % TID, en pont avant la chirurgie.",
-      "**Tube de drainage ou trabéculectomie** : Tube et plaque, ou trabéculectomie avec MMC."
+      "**Toi** : nourrisson qui larmoie et fuit la lumière : comparer la taille et la clarté des cornées.",
+      "**Ophtalmologiste** : examen sous anesthésie, chirurgie de l’angle ; gouttes en pont (timolol 0,25 %)."
     ],
-    refer: ["**Goniotomie** : Congénital primaire à cornée claire : centre pédiatrique tertiaire, rapidement."],
-    pitfall: [
-      "**Gouttes en pont** : Brimonidine contre-indiquée avant 2 ans (dépression du SNC) ; timolol : apnée.",
-      "**Goniotomie** : Il faut voir l’angle : impossible si la cornée est trouble."
-    ],
-    qc: ["Québec : CHU Sainte-Justine, Hôpital de Montréal pour enfants, CHU de Québec ; appeler le patron de garde."]
+    refer: "Référer en ophtalmologie : dans les 24 h — nourrisson avec triade ou cornée large ou trouble.",
+    pitfall: ["**Brimonidine** : contre-indiquée avant 2 ans (dépression du SNC).", "**Larmoiement** mis sur le compte du canal lacrymal sans regarder la cornée."],
+    qc: "Québec : CHU Sainte-Justine, Hôpital de Montréal pour enfants, CHU de Québec ; appeler le patron de garde."
   }
 }
 ]);

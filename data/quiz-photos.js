@@ -42,39 +42,39 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ] },
 
   { id: "B-103", module: "B", topic: "c-atypiques", type: "image", level: 2, trap: false,
-    stem: "Porteur de lentilles cornéennes souples; douleur intense qui persiste malgré une semaine de gouttes antibiotiques. Lampe à fente, éclairage diffus. Quel diagnostic cet aspect de la cornée doit-il faire évoquer en premier ?",
+    stem: "Porteur de lentilles cornéennes souples; douleur intense qui persiste malgré une semaine de gouttes antibiotiques. Lampe à fente, éclairage diffus. Quelle conduite cet aspect impose-t-il en premier ?",
     figure: { type: "photo", id: "OPH-067" },
     options: [
-      "Kératite bactérienne à Pseudomonas",
-      "Kératite herpétique épithéliale dendritique",
-      "Kératite à Acanthamoeba",
-      "Infiltrats sous-épithéliaux d’une kératoconjonctivite adénovirale"
+      "Ajouter un corticostéroïde topique pour calmer l’inflammation",
+      "Changer de fluoroquinolone et revoir dans une semaine",
+      "Grattage pour culture et PCR, biguanide aux heures",
+      "Valacyclovir oral et arrêt des lentilles"
     ],
     answer: 2,
     explain: "L’anneau stromal paracentral qui entoure une zone plus claire est l’infiltrat annulaire (ring infiltrate) typique de la kératite à Acanthamoeba, une infection par une amibe libre présente dans l’eau, surtout chez les porteurs de lentilles. Le diagnostic se confirme par grattage (culture, PCR) ou par microscopie confocale, comme chez ce patient selon la source.",
     why: [
-      "Faux : le Pseudomonas peut former un anneau immunitaire, mais surtout un abcès dense et suppuré qui évolue vite; un anneau dans un œil peu suppuré, malgré les antibiotiques, oriente vers l’amibe.",
-      "Faux : la dendrite herpétique est un ulcère épithélial ramifié avec bulbes terminaux, pas un anneau dans le stroma.",
-      "Exact : infiltrat annulaire paracentral, classique du stade stromal de la kératite amibienne.",
-      "Faux : les infiltrats adénoviraux sont multiples, petits et ronds, juste sous l’épithélium, après une conjonctivite contagieuse."
+      "Faux : un stéroïde au début aggrave une kératite amibienne ou fongique.",
+      "Faux : un anneau stromal malgré une semaine d’antibiotiques oriente vers l’amibe; changer d’antibiotique retarde le diagnostic.",
+      "Exact : infiltrat annulaire chez un porteur de lentilles qui ne répond pas aux antibiotiques : Acanthamoeba jusqu’à preuve du contraire; prélever, puis biguanide.",
+      "Faux : l’herpès donne une dendrite épithéliale, pas un anneau stromal chez un porteur de lentilles."
     ] },
 
   { id: "B-104", module: "B", topic: "c-herpes", type: "image", level: 1, trap: false,
-    stem: "Patient sous corticostéroïdes topiques au long cours après une greffe de cornée, œil rouge et larmoyant. Voici la cornée après fluorescéine, en lumière bleu cobalt. Quel est le diagnostic le plus probable ?",
+    stem: "Patient sous corticostéroïdes topiques au long cours après une greffe de cornée, œil rouge et larmoyant. Voici la cornée après fluorescéine, en lumière bleu cobalt. Quelle est la conduite la plus appropriée ?",
     figure: { type: "photo", id: "OPH-059" },
     options: [
-      "Abrasion cornéenne en cours de cicatrisation",
-      "Pseudodendrites du zona (VZV)",
-      "Kératite à Acanthamoeba débutante",
-      "Kératite épithéliale à herpès simplex (HSV)"
+      "Augmenter le corticostéroïde pour protéger la greffe",
+      "Arrêter brusquement tous les corticostéroïdes, sans autre traitement",
+      "Antibiotique topique et pansement 24 h",
+      "Antiviral oral et sevrage prudent du stéroïde"
     ],
     answer: 3,
     explain: "Lésion ramifiée dont le fond retient la fluorescéine, avec des renflements au bout des branches (bulbes terminaux) : c’est un ulcère dendritique du virus herpès simplex (HSV), aux branches larges; sous corticostéroïdes, ces dendrites peuvent confluer en ulcère géographique. Traitement : antiviral, par exemple valacyclovir 500 mg PO TID ou acyclovir 400 mg PO 5 fois par jour pendant 7–10 jours, et réévaluation prudente des corticostéroïdes (après une greffe, ne pas les arrêter brusquement : risque de rejet).",
     why: [
-      "Faux : une abrasion qui se referme peut laisser une ligne de fermeture, mais sans branches à bulbes terminaux.",
-      "Faux : les pseudodendrites du zona (virus varicelle-zona) sont surélevées, peu colorées et sans bulbes terminaux.",
-      "Faux : l’amibe peut donner des pseudodendrites au début, mais pas un ulcère franc aussi coloré avec bulbes terminaux.",
-      "Exact : ulcère ramifié coloré avec bulbes terminaux, favorisé par les corticostéroïdes topiques."
+      "Faux : monter le stéroïde fait progresser la dendrite vers un ulcère géographique.",
+      "Faux : après une greffe, un arrêt brusque expose au rejet; on traite le virus et on ajuste le stéroïde prudemment.",
+      "Faux : une dendrite à bulbes terminaux est virale; le pansement n’a pas sa place.",
+      "Exact : dendrite HSV favorisée par les stéroïdes : valacyclovir 500 mg 3×/j ou acyclovir 400 mg 5×/j, puis réduction prudente du stéroïde."
     ] },
 
   { id: "B-105", module: "B", topic: "c-keratocone", type: "image", level: 1, trap: false,
@@ -166,23 +166,30 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Faux : aucun infiltrat blanc localisé autour d’un fil n’est visible; la ligne traverse le greffon."
     ] },
 
-  { id: "C-101", module: "C", topic: "g-gpao", type: "image", level: 1, trap: false,
-    stem: "Femme de 71 ans, rétinophotographies des deux yeux. Quel est le diagnostic le plus probable ?",
+  {
+    id: "C-101",
+    module: "C",
+    topic: "g-gpao",
+    type: "image",
+    level: 1,
+    trap: false,
+    stem: "Femme de 71 ans, sans suivi ophtalmologique, rétinophotographies des deux yeux prises lors d’un dépistage. Quelle est la conduite la plus juste ?",
     figure: { type: "photo", id: "OPH-131" },
     options: [
-      "Neuropathie optique ischémique antérieure ancienne",
-      "Œdème papillaire bilatéral",
-      "Glaucome avancé aux deux yeux",
-      "Atrophie optique compressive"
+      "IRM cérébrale urgente : ces papilles évoquent une compression",
+      "Refaire les photos dans un an pour comparer",
+      "Diriger rapidement en ophtalmologie : PIO, gonioscopie, champ visuel",
+      "Rassurer : grandes papilles physiologiques, sans suivi nécessaire"
     ],
     answer: 2,
-    explain: "Les deux papilles sont presque entièrement excavées, le rebord a presque disparu et les vaisseaux plongent dans l’excavation puis réapparaissent au fond (vaisseaux en baïonnette, bayoneting) : c’est un glaucome avancé, ici à angle ouvert selon la source. Une excavation profonde oriente vers le glaucome; une pâleur plus étendue que l’excavation ferait chercher une autre cause.",
+    explain: "Les deux papilles sont presque entièrement excavées, le rebord a presque disparu et les vaisseaux plongent dans l’excavation puis réapparaissent au fond (vaisseaux en baïonnette, bayoneting) : c’est un glaucome avancé aux deux yeux, sans traitement. La vision centrale peut tomber vite à ce stade : il faut diriger rapidement pour mesurer la PIO, voir l’angle (gonioscopie), faire le champ visuel et commencer à baisser la PIO. Une pâleur plus étendue que l’excavation, elle, ferait chercher une compression.",
     why: [
-      "Faux : la neuropathie optique ischémique (infarctus de la tête du nerf optique) laisse une pâleur, souvent sectorielle, sans excavation aussi profonde.",
-      "Faux : l’œdème papillaire donne des bords flous et surélevés avec des vaisseaux masqués, l’inverse d’une excavation.",
-      "Exact : excavation presque totale, rebord disparu, vaisseaux en baïonnette et atrophie péripapillaire.",
-      "Faux : l’atrophie compressive (nerf comprimé par une masse) donne surtout une pâleur, avec peu d’excavation."
-    ] },
+      "Faux : la compression donne surtout une pâleur avec peu d’excavation ; ici, l’excavation est profonde et l’anneau restant n’est pas pâle.",
+      "Faux : à ce stade, attendre un an peut coûter la vision centrale.",
+      "Exact : glaucome avancé bilatéral non traité : bilan et traitement sans attendre.",
+      "Faux : une grande papille physiologique garde un anneau normal ; ici, l’anneau a presque disparu."
+    ]
+  },
 
   { id: "C-102", module: "C", topic: "g-gpao", type: "image", level: 2, trap: true,
     stem: "Rétinophotographie de l’œil gauche d’un patient suivi pour un glaucome à angle ouvert. Quel déficit du champ visuel s’attend-on à trouver ?",
@@ -238,23 +245,30 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Faux : le stéroïde calme l’inflammation mais ne baisse pas la PIO; attendre fait perdre le nerf optique."
     ] },
 
-  { id: "C-105", module: "C", topic: "g-pxf", type: "image", level: 1, trap: false,
-    stem: "Pupille dilatée, lampe à fente. Quel diagnostic cet aspect de la capsule antérieure du cristallin évoque-t-il ?",
+  {
+    id: "C-105",
+    module: "C",
+    topic: "g-pxf",
+    type: "image",
+    level: 1,
+    trap: false,
+    stem: "Pupille dilatée, lampe à fente, avant une chirurgie de cataracte. Cet aspect de la capsule antérieure est découvert. Quel risque le chirurgien doit-il prévoir ?",
     figure: { type: "photo", id: "OPH-153" },
     options: [
-      "Syndrome de dispersion pigmentaire",
-      "Glaukomflecken après une crise de fermeture",
-      "Syndrome pseudoexfoliatif",
-      "Cataracte polaire antérieure congénitale"
+      "Un décollement de rétine pendant la chirurgie",
+      "Une crise de fermeture de l’angle à la dilatation",
+      "Des zonules fragiles et une pupille qui dilate mal",
+      "Une infection plus fréquente de la plaie"
     ],
     answer: 2,
-    explain: "Disque central à bord festonné, zone claire, puis matériel en périphérie : c’est la cible typique du syndrome pseudoexfoliatif, un dépôt de matériel fibrillaire lié à l’âge (gène LOXL1). Il expose à un glaucome secondaire à angle ouvert, à des zonules fragiles et à une dilatation médiocre lors de la chirurgie de cataracte.",
+    explain: "Disque central à bord festonné, zone claire, puis matériel en périphérie : c’est la cible typique du syndrome pseudoexfoliatif, un dépôt fibrillaire lié à l’âge (gène LOXL1). Le même matériel affaiblit les zonules et rigidifie l’iris : pupille qui dilate mal, risque de rupture zonulaire, d’issue de vitré et, plus tard, de luxation de l’implant dans son sac. Prévoir dilatateur de pupille, anneau de tension capsulaire et chirurgien aguerri ; chercher aussi un glaucome secondaire.",
     why: [
-      "Faux : la dispersion pigmentaire dépose du pigment (fuseau de Krukenberg, ligne de Scheie), pas un dépôt en cible sur la capsule.",
-      "Faux : les glaukomflecken (nécrose de l’épithélium du cristallin après une crise) sont de petites taches blanches dispersées, sans disque ni anneau.",
-      "Exact : dépôt en cible sur la capsule antérieure, signe clé de la pseudoexfoliation.",
-      "Faux : la cataracte polaire antérieure est une petite opacité centrale bien limitée, sans anneau périphérique."
-    ] },
+      "Faux : le risque peropératoire principal touche les zonules et la capsule, pas la rétine.",
+      "Faux : la pseudoexfoliation donne surtout un glaucome à angle ouvert ; la dilatation pour la chirurgie n’est pas le danger visé ici.",
+      "Exact : zonules fragiles et mauvaise dilatation, à prévoir avant d’opérer.",
+      "Faux : le dépôt capsulaire n’augmente pas le risque d’infection de la plaie."
+    ]
+  },
 
   { id: "C-106", module: "C", topic: "g-neovasculaire", type: "image", level: 2, trap: false,
     stem: "Homme de 57 ans, diabète de type 2 mal équilibré, rétinopathie diabétique proliférante, PIO à 32 mmHg à l’œil gauche (photo); angle ouvert à la gonioscopie avec néovaisseaux sur 360°. Quelle est la priorité thérapeutique ?",

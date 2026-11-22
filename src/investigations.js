@@ -598,6 +598,8 @@
     } else {
       var g = (m.kind === 'gen' || m.gen) ? genFrom(m.gen) : null;
       body = svgNamed(g ? g.svg : (m.svg || ''), revealed && m.alt ? pick(m.alt) : S('media.hiddensch', 'Schéma d’examen (légende masquée)', 'Investigation schematic (caption hidden)'));
+      // labels that answer the question stay hidden until the reveal (the « schéma » mark is kept)
+      if (!revealed && m.labelsAnswer) body = body.replace(/<text\b[^>]*>([\s\S]*?)<\/text>/gi, function (all, inner) { return /sch[ée]ma|schematic/i.test(inner) ? all : ''; });
       if ((!hots || !hots.length) && g) hots = g.hot;
       foot = '<div class="credit">' + schemaBadge() + ' ' + (m.credit ? PE(m.credit) : E(S('media.orig', 'Schéma pédagogique original — pas une image de patient', 'Original teaching schematic — not a patient image'))) + '</div>';
     }
@@ -1272,6 +1274,16 @@
   function crumbsH(items) { return typeof W.crumbs === 'function' ? W.crumbs(items) : '<div class="crumbs">' + items.map(function (it, i) { return (i ? '<span aria-hidden="true">›</span>' : '') + (it[1] ? '<a href="#' + it[1] + '">' + E(it[0]) + '</a>' : '<span>' + E(it[0]) + '</span>'); }).join('') + '</div>'; }
   function secHead(k, title) { return '<div class="section-h"><span class="k">' + E(k) + '</span><h2>' + E(title) + '</h2></div>'; }
 
+  function hubThumb(id) {
+    var g = null;
+    try {
+      g = id === 'bscan' ? Gen.bscan({ path: 'rd', ori: 'axial' }) : id === 'ascan' ? Gen.ascan({ eye: 'normal' }) : id === 'oct' ? Gen.oct({ fluid: 'srf', crop: true }) :
+        id === 'gonio' ? Gen.gonio({ grade: 3 }) : id === 'fondoeil' ? Gen.fundus({ ov: { cup: true } }) : id === 'cv' ? Gen.vf({ case: 'arcuate' }) : null;
+    } catch (e) { g = null; }
+    if (!g) return '';
+    var svg = g.svg.replace(/<svg\b([^>]*)>/i, function (all, a) { return '<svg' + a.replace(/\s(role|aria-label)="[^"]*"/g, '') + ' aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid slice">'; });
+    return '<div class="inv-thumb inv-thumb-' + id + '">' + svg + '<span class="inv-schema">' + E(S('schema', 'schéma', 'schematic')) + '</span></div>';
+  }
   function hubHtml() {
     var list = invList();
     return '<div class="page inv-page">' + crumbsH([[S('home', 'Accueil', 'Home'), 'accueil'], [S('hub', 'Investigations', 'Investigations'), null]]) +
@@ -1280,7 +1292,7 @@
       (usingFixture() ? '<div class="callout amber small">' + E(S('fixture', 'Contenu de démonstration (le contenu pédagogique complet arrive bientôt).', 'Demo content (full teaching content coming soon).')) + '</div>' : '') +
       '<div class="inv-hub">' + list.map(function (inv) {
         var p = progressFor(inv), pct = p.n ? Math.round(100 * p.ok / p.n) : 0;
-        return '<a class="card link inv-card" href="#inv-' + E(inv.id) + '"><div class="inv-card-top"><svg viewBox="0 0 32 32" class="inv-ic" aria-hidden="true">' + (ICONS[inv.id] || ICONS.oct) + '</svg><span class="mono xs muted">' + E(inv.n || '') + '</span></div>' +
+        return '<a class="card link inv-card" href="#inv-' + E(inv.id) + '">' + hubThumb(inv.id) + '<div class="inv-card-top"><svg viewBox="0 0 32 32" class="inv-ic" aria-hidden="true">' + (ICONS[inv.id] || ICONS.oct) + '</svg><span class="mono xs muted">' + E(inv.n || '') + '</span></div>' +
           '<b class="inv-card-t">' + PE(inv.title) + '</b>' + (inv.en_term && lang() !== 'en' ? '<span class="xs muted"><i>' + E(inv.en_term) + '</i></span>' : '') +
           '<span class="small muted">' + PE(inv.why) + '</span>' +
           '<span class="row tight">' + (inv.tool && TOOL_NAMES[inv.tool] ? '<span class="tag plain">' + PE(TOOL_NAMES[inv.tool]) + '</span>' : '') + '<span class="tag plain">' + p.n + ' ' + E(S('hub.imgs', 'images', 'images')) + '</span></span>' +
@@ -1295,16 +1307,23 @@
     var inv = invById(id);
     if (!inv) return '<div class="page"><div class="empty">' + E(S('missing', 'Cet examen n’existe pas.', 'This test does not exist.')) + '</div><a class="btn primary" href="#investigations">' + E(S('back', 'Retour aux investigations', 'Back to investigations')) + '</a></div>';
     var list = invList(), ix = list.indexOf(inv), prev = list[ix - 1], next = list[ix + 1], items = practiceFor(inv);
-    var how = (inv.how || []).length ? '<div class="card inv-blk"><div class="eyebrow">' + E(S('how', 'Comment faire et lire', 'How to do and read it')) + '</div><ol class="small">' + inv.how.map(function (x) { return '<li>' + PM(x) + '</li>'; }).join('') + '</ol></div>' : '';
-    return '<div class="page inv-page">' + crumbsH([[S('home', 'Accueil', 'Home'), 'accueil'], [S('hub', 'Investigations', 'Investigations'), 'investigations'], [pick(inv.title), null]]) +
-      '<div class="phead"><div class="eyebrow">' + E(S('page.eye', 'Investigation', 'Investigation')) + ' · ' + E(inv.n || '') + '</div><h1>' + PE(inv.title) + '</h1>' + (inv.en_term && lang() !== 'en' ? '<div class="en">' + E(inv.en_term) + '</div>' : '') + '</div>' +
+    // MUST-FIX 2: tool and practice first; reference text folded into compact chips below
+    function chip(key, title, arr, ordered, extra) {
+      if (!arr || (Array.isArray(arr) && !arr.length)) return '';
+      var body = Array.isArray(arr) ? '<' + (ordered ? 'ol' : 'ul') + ' class="small">' + arr.map(function (x) { return '<li>' + PM(x) + '</li>'; }).join('') + '</' + (ordered ? 'ol' : 'ul') + '>' : '<p class="small">' + PM(arr) + '</p>';
+      return '<details class="inv-fold' + (extra ? ' ' + extra : '') + '" data-fold="' + key + '"><summary>' + E(title) + '</summary><div class="inv-fold-b">' + body + '</div></details>';
+    }
+    var hasTool = inv.tool && tools[inv.tool];
+    return '<div class="page inv-page inv-page2">' + crumbsH([[S('hub', 'Investigations', 'Investigations'), 'investigations'], [pick(inv.title), null]]) +
+      '<div class="phead inv-phead"><h1>' + PE(inv.title) + '</h1>' + (inv.en_term && lang() !== 'en' ? '<div class="en">' + E(inv.en_term) + '</div>' : '') + '</div>' +
       (usingFixture() ? '<div class="callout amber small">' + E(S('fixture', 'Contenu de démonstration (le contenu pédagogique complet arrive bientôt).', 'Demo content (full teaching content coming soon).')) + '</div>' : '') +
-      (inv.why ? '<div class="callout"><div class="eyebrow">' + E(S('why', 'À quoi ça sert', 'What it is for')) + '</div><div>' + PM(inv.why) + '</div></div>' : '') +
-      '<div class="grid2">' + how + listBlock(S('normal', 'Repères normaux', 'Normal landmarks'), inv.normal) + listBlock(S('keys', 'Signes clés', 'Key signs'), inv.keys, 'key') + listBlock(S('pitfalls', 'Pièges', 'Pitfalls'), inv.pitfalls, 'trap') + '</div>' +
-      (inv.tool && tools[inv.tool] ? '<section class="stack" id="inv-tool">' + secHead(S('k.tool', 'Outil', 'Tool'), pick(TOOL_NAMES[inv.tool]) || S('tool', 'Outil interactif', 'Interactive tool')) + '<div data-invtool="' + E(inv.tool) + '"></div></section>' : '') +
-      '<section class="stack" id="inv-practice">' + secHead(S('k.practice', 'Pratique', 'Practice'), S('practice.h', 'Observe, réponds, révèle', 'Observe, answer, reveal')) +
-      '<p class="small muted">' + E(S('practice.lead', 'Raccourcis : 1–9 pour répondre, 0 pour « Je ne sais pas ».', 'Shortcuts: 1–9 to answer, 0 for “I don’t know”.')) + ' · ' + items.length + ' ' + E(S('hub.imgs', 'images', 'images')) + '</p><div data-invpractice></div></section>' +
-      '<nav class="row inv-nav" aria-label="' + E(S('nav', 'Autres examens', 'Other tests')) + '">' + (prev ? '<a class="btn" href="#inv-' + E(prev.id) + '">← ' + PE(prev.title) + '</a>' : '') + '<a class="btn ghost" href="#investigations">' + E(S('allinv', 'Toutes les investigations', 'All investigations')) + '</a>' + (next ? '<a class="btn" href="#inv-' + E(next.id) + '">' + PE(next.title) + ' →</a>' : '') + '</nav></div>';
+      (hasTool ? '<section class="stack inv-sec" id="inv-tool" aria-label="' + E(pick(TOOL_NAMES[inv.tool]) || S('tool', 'Outil interactif', 'Interactive tool')) + '"><h2 class="sr-only">' + E(pick(TOOL_NAMES[inv.tool]) || S('tool', 'Outil interactif', 'Interactive tool')) + '</h2><div data-invtool="' + E(inv.tool) + '"></div></section>' : '') +
+      '<section class="stack inv-sec" id="inv-practice">' + secHead(S('k.practice', 'Pratique', 'Practice'), S('practice.h', 'Observe, réponds, révèle', 'Observe, answer, reveal') + ' · ' + items.length) + '<div data-invpractice></div></section>' +
+      '<section class="inv-ref" aria-label="' + E(S('ref', 'Fiche de l’examen', 'Test summary')) + '"><h2 class="inv-ref-h">' + E(S('ref', 'Fiche de l’examen', 'Test summary')) + '</h2><div class="inv-folds">' +
+      chip('why', S('why', 'À quoi ça sert', 'What it is for'), inv.why) + chip('how', S('how', 'Comment faire et lire', 'How to do and read it'), inv.how, true) +
+      chip('normal', S('normal', 'Repères normaux', 'Normal landmarks'), inv.normal) + chip('keys', S('keys', 'Signes clés', 'Key signs'), inv.keys, false, 'key') + chip('pitfalls', S('pitfalls', 'Pièges', 'Pitfalls'), inv.pitfalls, false, 'trap') +
+      '</div></section>' +
+      '<nav class="row inv-nav" aria-label="' + E(S('nav', 'Autres examens', 'Other tests')) + '">' + (prev ? '<a class="btn sm" href="#inv-' + E(prev.id) + '">← ' + PE(prev.title) + '</a>' : '') + (next ? '<a class="btn sm" href="#inv-' + E(next.id) + '">' + PE(next.title) + ' →</a>' : '') + '</nav></div>';
   }
   function mount(host, id) {
     var inv = invById(id), clean = [];
@@ -1313,6 +1332,9 @@
     if (th && tools[inv.tool]) { try { clean.push(tools[inv.tool](th)); } catch (e) { console.error('inv tool ' + inv.tool, e); th.innerHTML = '<div class="callout red small">' + E(S('toolerr', 'Cet outil n’a pas pu démarrer.', 'This tool could not start.')) + '</div>'; } }
     var ph = U.$('[data-invpractice]', host);
     if (ph) clean.push(practice(ph, practiceFor(inv), { title: S('pr.title', 'Pratique', 'Practice') + ' · ' + pick(inv.title) }));
+    var folds = U.$$('.inv-fold', host), onToggle = function (ev) { var d = ev.target; if (d.open) folds.forEach(function (o) { if (o !== d) o.open = false; }); };
+    folds.forEach(function (d) { d.addEventListener('toggle', onToggle); });
+    clean.push(function () { folds.forEach(function (d) { d.removeEventListener('toggle', onToggle); }); });
     return function () { clean.forEach(function (f) { try { if (f) f(); } catch (e) { } }); };
   }
 

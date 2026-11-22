@@ -137,22 +137,22 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ]
   },
   {
-    id: "B-008", module: "B", topic: "c-atypiques", type: "diagnostic", level: 2, trap: true,
-    stem: "Femme de 29 ans, lentilles souples rincées à l’eau du robinet, se baigne avec ses lentilles. Douleur intense depuis 3 semaines malgré un antiviral topique prescrit pour une « kératite herpétique ». Lampe à fente : épithélium irrégulier discret et infiltrats linéaires le long des nerfs cornéens; la douleur paraît hors de proportion avec l’examen. Quel diagnostic évoquer en priorité?",
+    id: "B-008", module: "B", topic: "c-atypiques", type: "cat", level: 2, trap: true,
+    stem: "Femme de 29 ans, lentilles souples rincées à l’eau du robinet, se baigne avec ses lentilles. Douleur intense depuis 3 semaines malgré un antiviral topique prescrit pour une « kératite herpétique ». Lampe à fente : épithélium irrégulier discret et infiltrats linéaires le long des nerfs cornéens; la douleur paraît hors de proportion avec l’examen. Quelle est la conduite la plus appropriée maintenant?",
     figure: null,
     options: [
-      "Kératite épithéliale à HSV résistante à l’acyclovir",
-      "Kératite à Acanthamoeba (Acanthamoeba keratitis)",
-      "Kératite bactérienne débutante à Pseudomonas",
-      "Kératopathie neurotrophique post-herpétique"
+      "Ajouter de l’acyclovir oral et revoir dans une semaine",
+      "Grattage pour culture et PCR, puis biguanide en préparation magistrale",
+      "Fluoroquinolone aux heures et pansement compressif pour 24 h",
+      "Anesthésique topique pour la douleur, puis larmes artificielles aux heures"
     ],
     answer: 1,
     explain: "**Ce que c’est** : Acanthamoeba est une amibe de l’eau (robinet, piscine, lac) qui infecte la cornée surtout chez les porteurs de lentilles; des infiltrats le long des nerfs (kératonévrite ou périnévrite radiaire, radial keratoneuritis) sont typiques. **Pourquoi c’est important** : une douleur **hors de proportion** avec l’examen est le signal d’alarme, et le diagnostic est souvent retardé parce qu’on la prend d’abord pour un herpès. **Quoi faire** : grattage pour culture et PCR (test qui détecte l’ADN du germe), ± microscopie confocale (microscope qui montre les kystes dans la cornée sans biopsie), biguanides (antiseptiques comme le PHMB ou la chlorhexidine) en préparation magistrale, et ne jamais prescrire d’anesthésique topique pour la douleur.",
     why: [
-      "La kératite épithéliale à HSV forme une dendrite (ulcère ramifié avec renflements au bout des branches) et diminue la sensibilité cornéenne; elle n’explique pas des infiltrats le long des nerfs avec douleur disproportionnée.",
-      "Exact : lentilles et eau, douleur disproportionnée et kératonévrite radiaire.",
-      "Pseudomonas (bactérie agressive des porteurs de lentilles) donne un infiltrat suppuré qui grossit en 24 à 48 h, pas une atteinte discrète sur 3 semaines.",
-      "La kératopathie neurotrophique (cornée qui a perdu son innervation et cicatrise mal) est peu douloureuse, justement parce que la cornée est insensible."
+      "Les infiltrats le long des nerfs et la douleur disproportionnée chez une porteuse de lentilles orientent vers l’amibe, pas vers un herpès résistant.",
+      "Exact : lentilles + eau, douleur disproportionnée et kératonévrite radiaire = Acanthamoeba; prélever puis débuter un biguanide.",
+      "Le pansement est contre-indiqué chez une porteuse de lentilles, et la fluoroquinolone ne traite pas l’amibe.",
+      "Jamais d’anesthésique topique à domicile : il retarde la guérison et peut mener à la perforation."
     ]
   },
   {
@@ -271,21 +271,21 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
   },
   {
     id: "B-015", module: "B", topic: "c-keratocone", type: "image", level: 1, trap: false,
-    stem: "Adolescent de 16 ans, eczéma et allergies saisonnières, qui se frotte souvent les yeux et ne porte pas de lentilles. Sa myopie et son astigmatisme augmentent à chaque visite et son AV corrigée baisse. Ce schéma de topographie montre sa carte de courbure axiale. Quel diagnostic est le plus probable?",
+    stem: "Adolescent de 16 ans, eczéma et allergies saisonnières, qui se frotte souvent les yeux et ne porte pas de lentilles. Sa myopie et son astigmatisme augmentent à chaque visite et son AV corrigée baisse. Ce schéma de topographie montre sa carte de courbure axiale. Quelle est la meilleure prochaine étape?",
     figure: { type: "topo", pattern: "kc-inferior" },
     options: [
-      "Astigmatisme direct régulier (with-the-rule astigmatism)",
-      "Dégénérescence marginale pellucide (pellucid marginal degeneration)",
-      "Déformation par lentilles rigides (corneal warpage)",
-      "Kératocône évolutif (progressive keratoconus)"
+      "Lentilles rigides et suivi annuel, sans autre examen ni carte",
+      "LASIK pour corriger la myopie et l’astigmatisme",
+      "Antihistaminique topique seul et revoir dans un an",
+      "Tomographie et orientation rapide vers un crosslinking"
     ],
     answer: 3,
     explain: "**Ce que c’est** : le kératocône est un amincissement progressif de la cornée qui se bombe en cône, habituellement sous le centre; sur la carte de courbure axiale (couleurs chaudes = zone plus cambrée), on voit une cambrure inférieure avec un nœud papillon asymétrique aux axes déviés. **Pourquoi c’est important** : jeune âge, frottement des yeux, atopie et astigmatisme croissant avec perte d’AV corrigée sont typiques, et un diagnostic précoce permet de stabiliser la cornée avant une perte visuelle importante. **Quoi faire** : tomographie (Scheimpflug : élévations antérieure et postérieure, carte pachymétrique, point le plus mince), arrêt du frottement et orientation sans délai vers la réticulation du collagène (CXL).",
     why: [
-      "L’astigmatisme direct régulier donne un nœud papillon vertical symétrique, sans cambrure inférieure isolée.",
-      "La dégénérescence marginale pellucide (amincissement en bande à 1–2 mm du limbe inférieur) donne une image en « pince de crabe » avec astigmatisme inverse.",
-      "La déformation par lentilles rigides (cornée moulée par une lentille mal ajustée) suppose le port de lentilles et régresse à leur arrêt; ce jeune n’en porte pas.",
-      "Exact : cambrure inférieure asymétrique chez un jeune atopique qui se frotte les yeux."
+      "Les lentilles améliorent la vision mais n’arrêtent pas la progression; un jeune qui progresse a besoin d’une tomographie et d’un CXL.",
+      "La chirurgie réfractive est contre-indiquée : elle aggrave l’ectasie.",
+      "Traiter l’allergie aide à cesser le frottement, mais ne suffit pas devant une progression.",
+      "Exact : jeune atopique, cambrure inférieure qui progresse : tomographie et crosslinking sans délai."
     ]
   },
   {
@@ -347,21 +347,21 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
   },
   {
     id: "B-019", module: "B", topic: "c-fuchs", type: "image", level: 1, trap: false,
-    stem: "Femme de 67 ans, sans chirurgie oculaire antérieure, vision brouillée avec halos au réveil qui s’éclaircit en fin de journée; sa mère a eu une greffe de cornée. Ce schéma en coupe de la cornée montre ce que l’on voit dans ses couches profondes à la lampe à fente. Quel diagnostic est le plus probable?",
+    stem: "Femme de 67 ans, sans chirurgie oculaire antérieure, vision brouillée avec halos au réveil qui s’éclaircit en fin de journée; sa mère a eu une greffe de cornée. Ce schéma en coupe de la cornée montre ce que l’on voit dans ses couches profondes à la lampe à fente. Quel traitement proposer en premier?",
     figure: { type: "cornea", highlight: ["descemet", "endothelium"], edema: "stromal", guttae: true, scar: false },
     options: [
-      "Dystrophie de la membrane basale épithéliale (map-dot-fingerprint)",
-      "Kératopathie bulleuse pseudophaque (pseudophakic bullous keratopathy)",
-      "Dystrophie endothéliale de Fuchs (Fuchs endothelial corneal dystrophy)",
-      "Dystrophie grillagée du stroma (lattice corneal dystrophy)"
+      "Prednisolone 1 % 4×/j pendant un mois entier",
+      "Greffe transfixiante (PK) d’emblée",
+      "NaCl 5 %, puis DMEK si la gêne persiste",
+      "Lentille rigide pour lisser la surface"
     ],
     answer: 2,
     explain: "**Ce que c’est** : la dystrophie de Fuchs est une maladie héréditaire où l’endothélium (monocouche de cellules qui pompe l’eau hors de la cornée) se raréfie et dépose sur la Descemet des excroissances, les guttae, qui apparaissent comme des gouttelettes sombres. **Pourquoi c’est important** : quand il reste trop peu de cellules (en général moins de 400–500 cellules/mm²), la pompe ne suffit plus et le stroma gonfle, surtout au réveil; la microscopie spéculaire montre les guttae comme des zones noires et la pachymétrie suit l’épaississement. **Quoi faire** : solution salée hypertonique 5 % au début, puis greffe endothéliale (DMEK, qui remplace seulement la Descemet et l’endothélium) quand la vision devient limitante.",
     why: [
-      "La dystrophie de la membrane basale épithéliale touche la surface (cartes, points, empreintes) et cause des érosions, pas des guttae ni un œdème stromal.",
-      "La kératopathie bulleuse pseudophaque (œdème cornéen après une chirurgie de cataracte qui a abîmé l’endothélium) suppose une chirurgie antérieure, absente ici.",
-      "Exact : guttae et œdème stromal pires au réveil, avec histoire familiale.",
-      "La dystrophie grillagée (dépôts d’amyloïde en lignes ramifiées dans le stroma) cause des érosions et des opacités stromales, pas des guttae."
+      "Il n’y a pas d’inflammation : un stéroïde n’aide pas la pompe endothéliale et expose à une PIO élevée.",
+      "La PK est réservée aux cicatrices du stroma; la greffe endothéliale (DMEK) rend une meilleure vision plus vite.",
+      "Exact : guttae et œdème pires au réveil (Fuchs) : NaCl 5 % d’abord, DMEK quand la vision devient limitante.",
+      "Une lentille rigide ne corrige pas un œdème endothélial et est mal tolérée sur une cornée œdémateuse."
     ]
   },
   {
@@ -422,22 +422,22 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ]
   },
   {
-    id: "B-023", module: "B", topic: "c-erosion", type: "diagnostic", level: 1, trap: false,
-    stem: "Femme de 35 ans réveillée plusieurs fois ce mois-ci par une douleur aiguë à l’ouverture des yeux, avec larmoiement pendant quelques heures. Il y a 4 mois, son bébé lui a égratigné la cornée avec un ongle. Ce matin : petite zone d’épithélium irrégulier qui prend la fluorescéine dans le tiers inférieur. Quel est le diagnostic le plus probable?",
+    id: "B-023", module: "B", topic: "c-erosion", type: "cat", level: 1, trap: false,
+    stem: "Femme de 35 ans réveillée plusieurs fois ce mois-ci par une douleur aiguë à l’ouverture des yeux, avec larmoiement pendant quelques heures. Il y a 4 mois, son bébé lui a égratigné la cornée avec un ongle. Ce matin : petite zone d’épithélium irrégulier qui prend la fluorescéine dans le tiers inférieur. Quelle prévention proposer après l’épisode aigu?",
     figure: null,
     options: [
-      "Kératite épithéliale à herpès simplex récidivante",
-      "Sécheresse oculaire par dysfonction meibomienne",
-      "Kératite à Acanthamoeba à un stade débutant",
-      "Érosion cornéenne récidivante post-traumatique"
+      "Acyclovir oral 400 mg 2×/j pendant un an",
+      "Bouchons méatiques et larmes sans agent de conservation",
+      "Anesthésique topique à garder à la maison pour les crises",
+      "Onguent NaCl 5 % au coucher pendant 3 à 6 mois"
     ],
     answer: 3,
     explain: "**Ce que c’est** : dans l’érosion cornéenne récidivante (recurrent corneal erosion), l’épithélium adhère mal à sa membrane basale après un traumatisme tranchant (ongle, papier, branche) ou une dystrophie de la membrane basale; la nuit, la paupière colle à l’épithélium et l’arrache à l’ouverture des yeux. **Pourquoi c’est important** : l’histoire typique (douleur au réveil, égratignure par un ongle des semaines ou des mois avant) fait le diagnostic, même si l’examen est presque normal plus tard dans la journée. **Quoi faire** : onguent lubrifiant au coucher pendant plusieurs mois (souvent hypertonique, NaCl 5 %), traiter l’épisode aigu comme une abrasion, puis, si les récidives persistent, lentille pansement, ponction stromale antérieure, débridement ou photokératectomie thérapeutique (PTK, laser qui lisse la surface).",
     why: [
-      "La kératite herpétique forme une dendrite (ulcère ramifié avec bulbes terminaux) et n’est liée ni au réveil ni à un traumatisme par ongle.",
-      "La sécheresse cause brûlure et sable, pires en fin de journée, pas une douleur aiguë au réveil après un traumatisme.",
-      "La kératite à Acanthamoeba (amibe de l’eau) touche surtout les porteurs de lentilles, avec une douleur continue et croissante.",
-      "Exact : douleur au réveil après une égratignure par un ongle."
+      "L’acyclovir prévient l’herpès; ici, c’est l’ancrage de l’épithélium qui est en cause.",
+      "Les bouchons traitent un manque d’eau; ils ne règlent pas l’arrachement au réveil.",
+      "Jamais d’anesthésique à domicile : l’abus bloque la guérison et peut causer ulcère et perforation.",
+      "Exact : érosion récidivante après une égratignure d’ongle : l’onguent hypertonique au coucher évite que la paupière arrache l’épithélium."
     ]
   },
   {
@@ -460,22 +460,22 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ]
   },
   {
-    id: "B-025", module: "B", topic: "c-pterygion", type: "diagnostic", level: 1, trap: false,
-    stem: "Homme de 48 ans, pêcheur aux Îles-de-la-Madeleine, avec une lésion charnue triangulaire de la conjonctive nasale dont la pointe s’avance de 2 mm sur la cornée. Quel diagnostic est le plus probable?",
+    id: "B-025", module: "B", topic: "c-pterygion", type: "cat", level: 1, trap: false,
+    stem: "Homme de 48 ans, pêcheur aux Îles-de-la-Madeleine, avec une lésion charnue triangulaire de la conjonctive nasale dont la pointe s’avance de 2 mm sur la cornée. Il demande s’il doit être opéré. Quelle réponse est la plus juste?",
     figure: null,
     options: [
-      "Pinguécula (pinguecula) enflammée",
-      "Ptérygion (pterygium) nasal",
-      "Néoplasie squameuse de surface (OSSN)",
-      "Pseudoptérygion après une brûlure"
+      "Oui, tout de suite : exérèse simple en laissant la sclère nue",
+      "Pas encore : protection UV; opérer s’il approche l’axe visuel",
+      "Non : ces lésions régressent seules après 50 ans",
+      "Oui : chimiothérapie topique, comme pour une néoplasie"
     ],
     answer: 1,
     explain: "**Ce que c’est** : le ptérygion est une prolifération fibrovasculaire triangulaire de la conjonctive, presque toujours nasale, qui **franchit le limbe** et avance sur la cornée; il est lié aux ultraviolets (travail à l’extérieur, réflexion sur l’eau). **Pourquoi c’est important** : il peut induire un astigmatisme et menacer l’axe visuel, alors que la pinguécula (petite élévation jaunâtre de la conjonctive, de même cause) reste sur la conjonctive. **Quoi faire** : protection UV (lunettes de soleil, chapeau), larmes artificielles si irritation, et chirurgie s’il avance vers l’axe visuel, induit un astigmatisme, limite les mouvements de l’œil ou gêne beaucoup.",
     why: [
-      "Une pinguécula ne franchit pas le limbe; elle reste sur la conjonctive et peut s’enflammer (pingueculite).",
-      "Exact : lésion triangulaire nasale qui franchit le limbe chez un travailleur exposé aux UV.",
-      "L’OSSN (néoplasie squameuse de la surface oculaire, tumeur de l’épithélium) est plutôt gélatineuse ou blanchâtre avec gros vaisseaux nourriciers, et croît plus vite.",
-      "Le pseudoptérygion (repli de conjonctive collé sur une cornée déjà lésée) suit une brûlure, un ulcère ou un traumatisme, peut siéger n’importe où, et une sonde passe sous son col."
+      "La sclère nue récidive souvent, et une pointe de 2 mm sans gêne ne justifie pas encore la chirurgie.",
+      "Exact : ptérygion de 2 mm sans atteinte de l’axe : protection UV, larmes et suivi; exérèse avec autogreffe s’il progresse, induit un astigmatisme ou gêne.",
+      "Le ptérygion peut progresser, surtout si l’exposition aux UV continue.",
+      "La chimiothérapie topique traite une néoplasie de surface (OSSN), pas un ptérygion typique."
     ]
   },
   {
