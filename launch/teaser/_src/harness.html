@@ -60,7 +60,7 @@ html, body { margin: 0; padding: 0; background: #000; }
     else if (p[0] === 'car') out = CAR.slide(S, p[1], +p[2]);
     else if (p[0] === 'kit') out = KIT.make(S, p[1]);
     else out = REELS[p[0]](S);
-    window.OUT = { T: K.T, cuts: out && out.cuts, w: S.offsetWidth, h: S.offsetHeight };
+    window.OUT = { T: K.T, cuts: out && out.cuts, texts: H.texts, w: S.offsetWidth, h: S.offsetHeight };
     if (Q.get('guides')) K.guides();
     K.seek(+(Q.get('t') || 0));
     window.READY = true;

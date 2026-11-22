@@ -29,8 +29,8 @@ REELS = [  # (file stem, harness r)
     ('09-compte-a-rebours-j7', 'countdown:7'),
     ('09-compte-a-rebours-j1', 'countdown:1'),
 ]
-POSTER = {'brand': 4.6, 'quiz:angle:same': 14.6, 'mech': 3.9, 'quiz:dendrite:demain': 8.0, 'quiz:dendrite:recap': 13.6, 'ui': 7.0, 'quiz:rd:same': 14.6,
-          'quiz:crao:demain': 8.0, 'quiz:crao:recap': 13.6, 'quiz:hypopyon:same': 14.6, 'countdown:30': 4.4, 'countdown:14': 4.4, 'countdown:7': 4.4, 'countdown:1': 4.4}
+POSTER = {'brand': 8.5, 'quiz:angle:same': 16.5, 'mech': 11.0, 'quiz:dendrite:demain': 9.0, 'quiz:dendrite:recap': 16.5, 'ui': 10.0, 'quiz:rd:same': 16.5,
+          'quiz:crao:demain': 9.0, 'quiz:crao:recap': 16.5, 'quiz:hypopyon:same': 16.5, 'countdown:30': 6.5, 'countdown:14': 6.5, 'countdown:7': 6.5, 'countdown:1': 6.5}
 
 
 def serve():
@@ -97,7 +97,7 @@ def main():
                     out = video(pg, os.path.join(TEASER, 'videos', name + '.mp4'))
                     grab(pg, POSTER[r], os.path.join(TEASER, 'videos', name + '-poster.png'))
                     pg.close()
-                    meta[name] = {'T': out['T'], 'cuts': out['cuts']}
+                    meta[name] = {'T': out['T'], 'cuts': out['cuts'], 'texts': out['texts']}
                     json.dump(meta, open(meta_path, 'w'), indent=1, sort_keys=True)
                     print('done', name, out['T'], flush=True)
         elif a[0] == 'stills':
