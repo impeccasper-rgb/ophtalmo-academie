@@ -500,7 +500,7 @@ G.OPH.cases = (G.OPH.cases || []).concat([
       "Baisse médicale par étapes : timolol, brimonidine, dorzolamide, acétazolamide 500 mg (sulfamides, rein, potassium), stéroïde ; pilocarpine 1–2 % seulement quand la PIO a baissé ; mannitol si réfractaire.",
       "LPI aux **deux** yeux : environ la moitié des yeux adelphes font une crise en 5 ans sans LPI ; confirmer la perméabilité et mesurer la PIO 30 min à 2 h après.",
       "Angle encore fermé malgré une LPI perméable → penser iris plateau (UBM, double dos d’âne) ou composante cristallinienne → extraction du cristallin (EAGLE) ou iridoplastie.",
-      "Gonioscopie dynamique en pièce sombre, petit faisceau : base du diagnostic et du suivi (AAO 2026)."
+      "Gonioscopie dynamique en pièce sombre, petit faisceau : base du diagnostic et du suivi (AAO, Preferred Practice Pattern)."
     ]
   },
   {
@@ -516,7 +516,7 @@ G.OPH.cases = (G.OPH.cases || []).concat([
         pick: 3,
         options: [
           { label: "Pachymétrie cornéenne centrale", result: "512 µm OD et 515 µm OS.", value: 1, note: "La pachymétrie mesure l’épaisseur de la cornée. Une cornée mince fait sous-estimer la PIO au Goldmann et constitue un facteur de risque en soi (essai OHTS, Ocular Hypertension Treatment Study) ; on en tient compte sans corriger la PIO par une formule." },
-          { label: "Débuter le timolol 0,5 % 2 fois par jour (BID) aujourd’hui et compléter le bilan plus tard", result: "PIO 20 mmHg au contrôle, mais aucun champ ni OCT de référence pour juger plus tard de la progression.", value: -1, note: "Traiter avant le bilan de base prive de point de comparaison. De plus, le timolol n’est pas la première ligne (AAO 2026 : SLT ou analogue des prostaglandines) et exige de vérifier l’asthme, la MPOC (maladie pulmonaire obstructive chronique) et la bradycardie." },
+          { label: "Débuter le timolol 0,5 % 2 fois par jour (BID) aujourd’hui et compléter le bilan plus tard", result: "PIO 20 mmHg au contrôle, mais aucun champ ni OCT de référence pour juger plus tard de la progression.", value: -1, note: "Traiter avant le bilan de base prive de point de comparaison. De plus, le timolol n’est pas la première ligne (AAO, Preferred Practice Pattern : SLT ou analogue des prostaglandines) et exige de vérifier l’asthme, la MPOC (maladie pulmonaire obstructive chronique) et la bradycardie." },
           { label: "Champ visuel Humphrey 24-2 SITA Standard", result: "OD : défaut arciforme supérieur avec ressaut nasal, respectant le méridien horizontal ; MD −4,5 dB, PSD élevé, GHT hors des limites normales. OS : normal. Fiabilité bonne (faux positifs 3 %).", value: 2, note: "Le 24-2 teste les 24° centraux. Un défaut arciforme supérieur (en arc au-dessus de la fixation) traduit une perte des fibres du pôle inférieur de la papille. MD (déficit moyen) > −6 dB = stade débutant (Hodapp-Parrish-Anderson) ; le PSD mesure les pertes localisées et le GHT compare les moitiés supérieure et inférieure. Plus de 15 % de faux positifs = test non fiable." },
           { label: "OCT : RNFL péripapillaire et cellules ganglionnaires maculaires (GCIPL)", result: "OD : amincissement de la RNFL inférotemporale, concordant avec l’encoche ; GCIPL aminci en inférieur. OS : dans les limites normales.", value: 2, note: "L’OCT mesure l’épaisseur des fibres nerveuses autour de la papille (RNFL) et des cellules ganglionnaires de la macula (GCIPL). L’AAO (2026) recommande les deux au départ et au suivi : OCT et champ combinés valent mieux que chacun seul. Atteinte inférieure à l’OCT + défaut supérieur au champ = concordance structure-fonction." },
           { label: "IRM cérébrale", result: "Normale.", value: 0, note: "L’IRM (imagerie par résonance magnétique) n’est pas indiquée : papille sans pâleur, défaut qui respecte le méridien horizontal et concorde avec l’OCT. On la réserve aux drapeaux rouges (pâleur > excavation, défaut aligné sur le méridien vertical, AV basse inexpliquée)." },
@@ -581,8 +581,8 @@ G.OPH.cases = (G.OPH.cases || []).concat([
     ],
     debrief: [
       "PIO élevée + encoche inférieure + RNFL inférotemporale amincie + arciforme supérieur concordant = GPAO ; origine africaine et antécédent familial au premier degré augmentent le risque.",
-      "Bilan de base avant de traiter : gonioscopie, pachymétrie, OCT RNFL **et** GCIPL, champ 24-2 (± 10-2) ; OCT et champ combinés valent mieux que chacun seul (AAO 2026).",
-      "Cible individualisée : point de départ 20–30 % sous la PIO de base ; SLT en première intention de plus en plus appuyée (LiGHT 6 ans : 69,8 % à la cible sans gouttes ; AAO 2026).",
+      "Bilan de base avant de traiter : gonioscopie, pachymétrie, OCT RNFL **et** GCIPL, champ 24-2 (± 10-2) ; OCT et champ combinés valent mieux que chacun seul (AAO, Preferred Practice Pattern).",
+      "Cible individualisée : point de départ 20–30 % sous la PIO de base ; SLT en première intention de plus en plus appuyée (LiGHT 6 ans : 69,8 % à la cible sans gouttes ; AAO, Preferred Practice Pattern).",
       "Toujours chercher asthme, MPOC et bradycardie avant un bêtabloquant topique ; analogue des prostaglandines en alternative.",
       "Conduite : pas de suspension automatique ; la SAAQ juge l’AV binoculaire (≥ 6/15) et le champ binoculaire (≥ 100° à l’horizontale), exigé en cas d’anomalie. Champs regroupés au début pour repérer les progresseurs rapides."
     ]

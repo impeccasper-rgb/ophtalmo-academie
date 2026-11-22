@@ -487,7 +487,7 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
     "**Workup details**: on gonioscopy, a small beam so as not to constrict the pupil; at the disc, vertical C/D, neuroretinal rim, notch, hemorrhage; 24-2 = central 24°, 10-2 = central 10°.",
     "**Structure-function rule**: defects should match; inferior RNFL thinning gives a superior field defect, and vice versa.",
     "**Structure and function complement each other**: OCT often detects loss before the field does; at advanced stages, OCT bottoms out (floor effect) and the field takes over.",
-    "**AAO 2026**: RNFL and macular OCT at baseline and follow-up; OCT + field combined are better than either alone.",
+    "**AAO, Preferred Practice Pattern**: RNFL and macular OCT at baseline and follow-up; OCT + field combined are better than either alone.",
     "**Field indices**: MD (global loss), PSD (localized loss), VFI (% of remaining function), GHT (superior-inferior asymmetry).",
     "**Reliability**: false positives > 15% = unreliable test; the first field is often worse (learning effect), so repeat it.",
     "**Pitfalls**: pallor > cupping = think of another cause (compression, ischemia); \"red disease\" = OCT false positive (high myopia, tilted disc)."
@@ -503,7 +503,7 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
    "text": "The stage tells how much nerve is already lost; the rate tells what will remain. Stage with the visual field (Hodapp-Parrish-Anderson): early if MD > −6 dB, moderate from −6 to −12 dB, advanced if MD < −12 dB or central points involved. The more advanced the stage, the lower the target and the tighter the follow-up. Fast progressor: 2 dB or more lost per year.",
    "bullets": [
     "**Judging progression**: on several reliable, comparable tests, by events (newly affected points) or by trend (slope of MD or VFI).",
-    "**Clustered visual fields** (AAO 2026): ≈ 3 fields per year for 2 years at baseline (Chauhan 2008) to identify a fast progressor early.",
+    "**Clustered visual fields** (AAO, Preferred Practice Pattern): ≈ 3 fields per year for 2 years at baseline (Chauhan 2008) to identify a fast progressor early.",
     "**Risk signs**: disc hemorrhage, poorly controlled or fluctuating IOP, low corneal hysteresis, low blood pressure, high PSD.",
     "**Age matters**: a young patient with moderate damage has more years to progress than an older patient with the same damage.",
     "**Compare like with like**: same strategy (SITA Standard), same OCT device; confirm a new abnormality before changing treatment."
@@ -518,14 +518,14 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   },
   {
    "title": "The treatment ladder: drops and laser",
-   "text": "All glaucoma treatments aim at a single proven target: IOP. You climb the ladder according to stage, rate of progression, tolerance and patient choice. **Drops**: start with one class, then switch or add. **Laser**: SLT is a valid first-line option in POAG (AAO 2026, LiGHT); in angle closure, laser peripheral iridotomy (LPI) treats the mechanism.",
+   "text": "All glaucoma treatments aim at a single proven target: IOP. You climb the ladder according to stage, rate of progression, tolerance and patient choice. **Drops**: start with one class, then switch or add. **Laser**: SLT is a valid first-line option in POAG (AAO, Preferred Practice Pattern, LiGHT); in angle closure, laser peripheral iridotomy (LPI) treats the mechanism.",
    "bullets": [
     "**Drops and laser, nuances**: drops are noninvasive but depend on adherence and technique, with local and systemic effects; laser (SLT, selective laser trabeculoplasty; LPI, laser peripheral iridotomy) is an in-office procedure, without an incision.",
     "**Drop classes**: prostaglandins (↑ U), beta-blockers (↓ F), carbonic anhydrase inhibitors (↓ F), alpha-2 agonists (↓ F, ↑ U), miotics (↑ C), Rho kinase inhibitors (↑ C, ↓ Pv).",
     "**LiGHT** (Laser in Glaucoma and Ocular Hypertension Trial): SLT first → 69.8% of eyes at target with no other treatment at 6 years, less progression (19.6% vs 26.8%) and fewer trabeculectomies.",
     "**Fixed combinations**: two molecules in one bottle = fewer drops and less preservative, better adherence.",
     "**Before escalating**: check adherence and instillation technique; \"progression\" may hide a bottle that was never opened.",
-    "**Pregnancy or breastfeeding**: punctal occlusion (pressure on the inner corner of the eye) after each drop to limit systemic absorption (AAO 2026).",
+    "**Pregnancy or breastfeeding**: punctal occlusion (pressure on the inner corner of the eye) after each drop to limit systemic absorption (AAO, Preferred Practice Pattern).",
     "**Angle closure**: first **open the angle** (LPI; lens extraction, superior to LPI in the EAGLE trial if ≥ 50 years with PAC and IOP ≥ 30 mmHg or PACG)."
    ],
    "photo": "OPH-146"
@@ -570,7 +570,7 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
    "what": "Once-daily drops, at bedtime: latanoprost, travoprost, bimatoprost, tafluprost (some preservative-free).",
    "how": "Remodel the ciliary muscle matrix: ↑ U (uveoscleral outflow); the largest IOP reduction among drops.",
    "when": "First-line medical therapy for POAG, NTG and OHT requiring treatment; a single daily drop helps adherence.",
-   "cx": "Hyperemia, lengthened lashes, iris darkening (irreversible), skin pigmentation, periorbitopathy (orbital fat atrophy); caution with uveitis, herpes or macular edema. Intracameral PGA implants (approved in the US): endothelial cell loss with repeated doses (AAO 2026)."
+   "cx": "Hyperemia, lengthened lashes, iris darkening (irreversible), skin pigmentation, periorbitopathy (orbital fat atrophy); caution with uveitis, herpes or macular edema. Intracameral PGA implants (approved in the US): endothelial cell loss with repeated doses (AAO, Preferred Practice Pattern)."
   },
   {
    "name": "Latanoprostene bunod",
@@ -641,7 +641,7 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
    "en": "Selective laser trabeculoplasty",
    "what": "In-office laser: through a gonioscopy lens, about a hundred low-energy spots on the pigmented trabecular meshwork, in a few minutes, without an incision.",
    "how": "The frequency-doubled Nd:YAG laser (532 nm) targets only pigmented cells; the biological reaction that follows remodels the trabecular meshwork: ↑ C.",
-   "when": "First-line or adjunct in POAG and OHT (AAO 2026, LiGHT); also PXF and pigmentary, with less energy.",
+   "when": "First-line or adjunct in POAG and OHT (AAO, Preferred Practice Pattern, LiGHT); also PXF and pigmentary, with less energy.",
    "cx": "IOP spike (measure after the laser), mild transient inflammation; effect wanes over the years, repeatable; useless if the angle is closed."
   },
   {
@@ -1193,7 +1193,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
   "Stepwise medical lowering: timolol, brimonidine, dorzolamide, acetazolamide 500 mg (sulfonamides, kidneys, potassium), steroid; pilocarpine 1–2% only once IOP has come down; mannitol if refractory.",
   "LPI in **both** eyes: about half of fellow eyes have an attack within 5 years without LPI; confirm patency and measure IOP 30 min to 2 h afterward.",
   "Angle still closed despite a patent LPI → think plateau iris (UBM, double hump sign) or a lens component → lens extraction (EAGLE) or iridoplasty.",
-  "Dynamic gonioscopy in a dark room, small beam: the cornerstone of diagnosis and follow-up (AAO 2026)."
+  "Dynamic gonioscopy in a dark room, small beam: the cornerstone of diagnosis and follow-up (AAO, Preferred Practice Pattern)."
  ]
 }
 });
@@ -1218,7 +1218,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "label": "Start timolol 0.5% twice daily (BID) today and complete the workup later",
      "result": "IOP 20 mmHg at follow-up, but no baseline field or OCT to judge progression later.",
      "value": -1,
-     "note": "Treating before the baseline workup removes any point of comparison. Moreover, timolol is not first-line (AAO 2026: SLT or prostaglandin analog) and requires checking for asthma, COPD (chronic obstructive pulmonary disease) and bradycardia."
+     "note": "Treating before the baseline workup removes any point of comparison. Moreover, timolol is not first-line (AAO, Preferred Practice Pattern: SLT or prostaglandin analog) and requires checking for asthma, COPD (chronic obstructive pulmonary disease) and bradycardia."
     },
     {
      "label": "Humphrey visual field 24-2 SITA Standard",
@@ -1382,8 +1382,8 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
  ],
  "debrief": [
   "Elevated IOP + inferior notch + thinned inferotemporal RNFL + concordant superior arcuate defect = POAG; African ancestry and a first-degree family history increase the risk.",
-  "Baseline workup before treating: gonioscopy, pachymetry, RNFL **and** GCIPL OCT, 24-2 field (± 10-2); OCT and field combined are better than either alone (AAO 2026).",
-  "Individualized target: starting point 20–30% below baseline IOP; SLT as first-line increasingly supported (LiGHT 6 years: 69.8% at target without drops; AAO 2026).",
+  "Baseline workup before treating: gonioscopy, pachymetry, RNFL **and** GCIPL OCT, 24-2 field (± 10-2); OCT and field combined are better than either alone (AAO, Preferred Practice Pattern).",
+  "Individualized target: starting point 20–30% below baseline IOP; SLT as first-line increasingly supported (LiGHT 6 years: 69.8% at target without drops; AAO, Preferred Practice Pattern).",
   "Always look for asthma, COPD and bradycardia before a topical beta-blocker; prostaglandin analog as the alternative.",
   "Driving: no automatic suspension; the SAAQ judges binocular VA (≥ 6/15) and binocular field (≥ 100° horizontally), required if abnormal. Cluster fields at the start to identify fast progressors."
  ]

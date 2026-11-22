@@ -102,7 +102,7 @@ Object.assign(G.OPH_EN.glossary, {
   "PSD": { term: "PSD", def: "Pattern standard deviation: indicates whether field loss is localized rather than diffuse; elevated in glaucoma." },
   "VFI": { term: "VFI", def: "Visual field index: percentage of remaining visual function (100% = normal), weighted toward the center; handy for following the trend." },
   "ressaut nasal": { term: "nasal step", def: "Visual field defect that stops sharply at the horizontal meridian, on the nasal side; typical of glaucoma." },
-  "champs visuels groupés": { term: "clustered visual fields", def: "Several visual fields close together at baseline (≈ 3 per year for 2 years) to detect a fast progressor early (AAO 2026)." },
+  "champs visuels groupés": { term: "clustered visual fields", def: "Several visual fields close together at baseline (≈ 3 per year for 2 years) to detect a fast progressor early (AAO, Preferred Practice Pattern)." },
   "gonioscopie": { term: "gonioscopy", def: "Examination of the iridocorneal angle with a mirrored lens; tells whether the angle is open or closed and shows synechiae, new vessels, pigment." },
   "indentation": { term: "indentation gonioscopy", def: "Gentle pressure of the gonioscopy lens (4-mirror) that opens a merely appositional angle; synechiae (PAS) stay stuck." },
   "Shaffer": { term: "Shaffer", def: "Grading of angle width from 0 (closed) to 4 (wide, ciliary body band visible) according to the most posterior visible structure." },

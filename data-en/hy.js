@@ -826,8 +826,8 @@ Object.assign(G.OPH_EN.hy, {
       "Normal IOP **10–21 mmHg** (mean ≈ 15–16): 21 is a statistical limit, not a danger threshold.",
       "IOP is the only **modifiable risk factor** whose lowering slows glaucoma.",
       "24-hour variation: **2–6 mmHg**, more in glaucoma; the peak is often nocturnal or early morning.",
-      "**Low corneal hysteresis** = increased risk of progression (key factor in AAO 2026).",
-      "**Low blood pressure** = reduced optic nerve perfusion: a risk factor (AAO 2026)."
+      "**Low corneal hysteresis** = increased risk of progression (key factor in AAO, Preferred Practice Pattern).",
+      "**Low blood pressure** = reduced optic nerve perfusion: a risk factor (AAO, Preferred Practice Pattern)."
     ],
     cloze: [
       "IOP > 21 mmHg without optic nerve or visual field damage: [[ocular hypertension|OHT]].",
@@ -1184,7 +1184,7 @@ Object.assign(G.OPH_EN.hy, {
 
   "ex-oct": {
     essentials: [
-      "AAO 2026 recommends **peripapillary RNFL and macular GCIPL**, at baseline and at follow-up.",
+      "AAO, Preferred Practice Pattern recommends **peripapillary RNFL and macular GCIPL**, at baseline and at follow-up.",
       "Check **scan quality** (signal, centering, segmentation) before reading the colors.",
       "Most common thinning: **inferotemporal**, which corresponds to a superior field defect.",
       "**Floor effect**: the RNFL no longer drops below ≈ 50–60 µm; then follow fields and GCIPL.",
@@ -1579,7 +1579,7 @@ Object.assign(G.OPH_EN.hy, {
       "A cotton-wool spot is an [[infarct|infarction]] of the nerve fiber layer.",
       "Hypertension is the main risk factor for [[BRVO|branch retinal vein occlusion]].",
       "Hard exudate: bright yellow with sharp edges; cotton-wool spot: [[fluffy]] white with blurred edges.",
-      "AAO 2026 adds [[low]] BP as a risk factor for glaucoma."
+      "AAO, Preferred Practice Pattern adds [[low]] BP as a risk factor for glaucoma."
     ],
     triage: [
       { s: "Narrow arterioles and pathological crossings, BP 150/90, no symptoms.", u: "routine", why: "Chronic signs: record the BP in the chart and notify the family physician." },

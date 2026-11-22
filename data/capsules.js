@@ -301,7 +301,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
         "**Détails du bilan** : à la gonioscopie, petit faisceau pour ne pas resserrer la pupille ; à la papille, C/D vertical, bord neurorétinien, encoche, hémorragie ; 24-2 = 24° centraux, 10-2 = 10° centraux.",
         "**Règle structure-fonction** : les défauts doivent concorder ; un amincissement RNFL inférieur donne un défaut de champ supérieur, et inversement.",
         "**Structure et fonction se complètent** : l’OCT voit souvent une perte avant le champ ; au stade avancé, l’OCT plafonne (effet plancher) et le champ prend le relais.",
-        "**AAO 2026** : OCT RNFL et maculaire au départ et au suivi ; OCT + champ combinés valent mieux que chacun seul.",
+        "**AAO, Preferred Practice Pattern** : OCT RNFL et maculaire au départ et au suivi ; OCT + champ combinés valent mieux que chacun seul.",
         "**Indices du champ** : MD (perte globale), PSD (perte localisée), VFI (% de fonction restante), GHT (asymétrie haut-bas).",
         "**Fiabilité** : faux positifs > 15 % = test non fiable ; le premier champ est souvent moins bon (apprentissage), on le répète.",
         "**Pièges** : pâleur > excavation = penser à une autre cause (compression, ischémie) ; « red disease » = faux positif de l’OCT (myopie forte, papille inclinée)."
@@ -314,7 +314,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
       text: "Le stade dit combien de nerf est déjà perdu ; la vitesse dit ce qui restera. Stade au champ visuel (Hodapp-Parrish-Anderson) : débutant si MD > −6 dB, modéré de −6 à −12 dB, avancé si MD < −12 dB ou points centraux touchés. Plus le stade est avancé, plus la cible est basse et le suivi serré. Progresseur rapide : 2 dB ou plus perdus par année.",
       bullets: [
         "**Juger la progression** : sur plusieurs examens fiables et comparables, par événements (nouveaux points atteints) ou par tendance (pente du MD ou du VFI).",
-        "**Champs visuels groupés** (clustered visual fields, AAO 2026) : ≈ 3 champs par an pendant 2 ans au départ (Chauhan 2008) pour repérer tôt un progresseur rapide.",
+        "**Champs visuels groupés** (clustered visual fields, AAO, Preferred Practice Pattern) : ≈ 3 champs par an pendant 2 ans au départ (Chauhan 2008) pour repérer tôt un progresseur rapide.",
         "**Signes de risque** : hémorragie papillaire, PIO mal contrôlée ou fluctuante, hystérésis cornéenne basse, tension artérielle basse, PSD élevé.",
         "**L’âge compte** : un patient jeune avec atteinte modérée a plus d’années pour progresser qu’un patient âgé avec la même atteinte.",
         "**Comparer le comparable** : même stratégie (SITA Standard), même appareil d’OCT ; confirmer une nouvelle anomalie avant de changer le traitement."
@@ -324,14 +324,14 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     },
     {
       title: "L’escalier thérapeutique : gouttes et laser",
-      text: "Tous les traitements visent une seule cible prouvée : la PIO. On monte l’escalier selon le stade, la vitesse de progression, la tolérance et le choix du patient. **Gouttes** : on commence par une classe, puis on remplace ou on ajoute. **Laser** : la SLT est une première intention valable dans le GPAO (AAO 2026, LiGHT) ; en fermeture de l’angle, l’iridotomie au laser (LPI) traite le mécanisme.",
+      text: "Tous les traitements visent une seule cible prouvée : la PIO. On monte l’escalier selon le stade, la vitesse de progression, la tolérance et le choix du patient. **Gouttes** : on commence par une classe, puis on remplace ou on ajoute. **Laser** : la SLT est une première intention valable dans le GPAO (AAO, Preferred Practice Pattern, LiGHT) ; en fermeture de l’angle, l’iridotomie au laser (LPI) traite le mécanisme.",
       bullets: [
         "**Gouttes et laser, nuances** : les gouttes sont non invasives mais dépendent de l’observance et de la technique, avec des effets locaux et systémiques ; le laser (SLT, selective laser trabeculoplasty ; LPI, laser peripheral iridotomy) se fait en clinique, sans incision.",
         "**Classes de gouttes** : prostaglandines (↑ U), bêtabloquants (↓ F), inhibiteurs de l’anhydrase carbonique (↓ F), alpha-2 agonistes (↓ F, ↑ U), miotiques (↑ C), Rho kinase (↑ C, ↓ Pv).",
         "**LiGHT** (Laser in Glaucoma and Ocular Hypertension Trial) : SLT d’abord → 69,8 % des yeux à la cible sans autre traitement à 6 ans, moins de progression (19,6 % vs 26,8 %) et moins de trabéculectomies.",
         "**Combinaisons fixes** : deux molécules dans un flacon = moins de gouttes et d’agent de conservation, meilleure observance.",
         "**Avant d’escalader** : vérifier l’observance et la technique d’instillation ; une « progression » peut cacher un flacon jamais ouvert.",
-        "**Grossesse ou allaitement** : occlusion ponctuelle (pression sur le coin interne de l’œil) après chaque goutte pour limiter le passage systémique (AAO 2026).",
+        "**Grossesse ou allaitement** : occlusion ponctuelle (pression sur le coin interne de l’œil) après chaque goutte pour limiter le passage systémique (AAO, Preferred Practice Pattern).",
         "**Fermeture de l’angle** : d’abord **ouvrir l’angle** (LPI ; extraction du cristallin, supérieure à la LPI dans l’essai EAGLE si ≥ 50 ans avec PAC à PIO ≥ 30 mmHg ou PACG)."
       ],
       photo: "OPH-146"
@@ -373,7 +373,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
       what: "Gouttes une fois par jour, le soir : latanoprost, travoprost, bimatoprost, tafluprost (certaines sans agent de conservation).",
       how: "Remodèlent la matrice du muscle ciliaire : ↑ U (écoulement uvéoscléral) ; la baisse de PIO la plus forte parmi les gouttes.",
       when: "Première intention médicale du GPAO, du GPN et de l’HTO à traiter ; une seule goutte par jour aide l’observance.",
-      cx: "Hyperhémie, cils allongés, assombrissement irien (irréversible), pigmentation de la peau, périorbitopathie (fonte de la graisse orbitaire) ; prudence si uvéite, herpès ou œdème maculaire. Implants intracamérulaires de PGA (approuvés aux É.-U.) : perte endothéliale si doses répétées (AAO 2026)." },
+      cx: "Hyperhémie, cils allongés, assombrissement irien (irréversible), pigmentation de la peau, périorbitopathie (fonte de la graisse orbitaire) ; prudence si uvéite, herpès ou œdème maculaire. Implants intracamérulaires de PGA (approuvés aux É.-U.) : perte endothéliale si doses répétées (AAO, Preferred Practice Pattern)." },
     { name: "Latanoprostène bunod", en: "Latanoprostene bunod",
       what: "Goutte une fois par jour (0,024 %, Vyzulta), approuvée par Santé Canada en 2019.",
       how: "Se scinde en latanoprost (↑ U) et en donneur d’oxyde nitrique qui détend le trabéculum (↑ C) : double voie d’écoulement.",
@@ -417,7 +417,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     { name: "SLT (trabéculoplastie sélective au laser)", en: "Selective laser trabeculoplasty",
       what: "Laser en clinique : à travers une lentille de gonioscopie, environ une centaine d’impacts de faible énergie sur le trabéculum pigmenté, en quelques minutes, sans incision.",
       how: "Le laser Nd:YAG doublé (532 nm) ne cible que les cellules pigmentées ; la réaction biologique qui suit remodèle le trabéculum : ↑ C.",
-      when: "Première intention ou appoint dans le GPAO et l’HTO (AAO 2026, LiGHT) ; aussi PXF et pigmentaire, avec moins d’énergie.",
+      when: "Première intention ou appoint dans le GPAO et l’HTO (AAO, Preferred Practice Pattern, LiGHT) ; aussi PXF et pigmentaire, avec moins d’énergie.",
       cx: "Pic de PIO (mesurer après le laser), inflammation légère passagère ; effet qui s’estompe avec les années, répétable ; inutile si l’angle est fermé." },
     { name: "Iridotomie périphérique au laser (LPI)", en: "Laser peripheral iridotomy",
       what: "Petit trou fait au laser Nd:YAG (± argon) dans l’iris périphérique, sous la paupière supérieure ou en temporal, en clinique.",
@@ -595,7 +595,7 @@ G.OPH.glossary = Object.assign(G.OPH.glossary || {}, {
   "PSD": "Pattern standard deviation : indique si la perte du champ est localisée plutôt que diffuse ; élevée dans le glaucome.",
   "VFI": "Visual field index : pourcentage de fonction visuelle restante (100 % = normal), pondéré vers le centre ; pratique pour suivre la tendance.",
   "ressaut nasal": "Défaut du champ visuel qui s’arrête net au méridien horizontal, du côté nasal ; typique du glaucome.",
-  "champs visuels groupés": "Plusieurs champs visuels rapprochés au départ (≈ 3 par an pendant 2 ans) pour repérer tôt un progresseur rapide (AAO 2026).",
+  "champs visuels groupés": "Plusieurs champs visuels rapprochés au départ (≈ 3 par an pendant 2 ans) pour repérer tôt un progresseur rapide (AAO, Preferred Practice Pattern).",
   // Angle
   "gonioscopie": "Examen de l’angle iridocornéen avec une lentille à miroir ; dit si l’angle est ouvert ou fermé et montre synéchies, néovaisseaux, pigment.",
   "indentation": "Pression douce de la lentille de gonioscopie (4 miroirs) qui ouvre un angle simplement apposé ; les synéchies (PAS) restent collées.",

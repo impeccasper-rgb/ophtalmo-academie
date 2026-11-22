@@ -39,8 +39,8 @@ Object.assign(G.OPH.hy, {
       "PIO normale **10–21 mmHg** (moyenne ≈ 15–16) : 21 est une limite statistique, pas un seuil de danger.",
       "La PIO est le seul **facteur de risque modifiable** dont la baisse freine le glaucome.",
       "Variation sur 24 h : **2–6 mmHg**, plus en glaucome ; le pic est souvent nocturne ou matinal.",
-      "**Hystérésis cornéenne basse** = risque accru de progression (facteur clé de l’AAO 2026).",
-      "**Tension artérielle basse** = perfusion du nerf optique diminuée : facteur de risque (AAO 2026)."
+      "**Hystérésis cornéenne basse** = risque accru de progression (facteur clé de l’AAO, Preferred Practice Pattern).",
+      "**Tension artérielle basse** = perfusion du nerf optique diminuée : facteur de risque (AAO, Preferred Practice Pattern)."
     ],
     cloze: [
       "PIO > 21 mmHg sans atteinte du nerf optique ni du champ visuel : [[hypertension oculaire]].",
@@ -399,7 +399,7 @@ Object.assign(G.OPH.hy, {
 
   "ex-oct": {
     essentials: [
-      "L’AAO 2026 recommande **RNFL péripapillaire et GCIPL maculaire**, au départ et au suivi.",
+      "L’AAO, Preferred Practice Pattern recommande **RNFL péripapillaire et GCIPL maculaire**, au départ et au suivi.",
       "Vérifier la **qualité du scan** (signal, centrage, segmentation) avant de lire les couleurs.",
       "Amincissement le plus fréquent : **inférotemporal**, qui correspond à un défaut du champ supérieur.",
       "**Effet plancher** : la RNFL ne descend plus sous ≈ 50–60 µm ; suivre alors champ et GCIPL.",
@@ -796,7 +796,7 @@ Object.assign(G.OPH.hy, {
       "Le nodule cotonneux est un [[infarctus]] de la couche des fibres nerveuses.",
       "L’hypertension est le principal facteur de risque d’[[OBVR|occlusion de branche veineuse]].",
       "Exsudat dur : jaune brillant à bords nets ; nodule cotonneux : blanc [[duveteux]] à bords flous.",
-      "L’AAO 2026 ajoute la TA [[basse|bas]] comme facteur de risque de glaucome."
+      "L’AAO, Preferred Practice Pattern ajoute la TA [[basse|bas]] comme facteur de risque de glaucome."
     ],
     triage: [
       { s: "Artérioles fines et croisements pathologiques, TA à 150/90, aucun symptôme.", u: "routine", why: "Signes chroniques : noter la TA au dossier et aviser le médecin de famille." },

@@ -53,11 +53,11 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       { sign: "Taille du disque (en premier)", why: "Hauteur du faisceau ajustée au disque × facteur de la lentille (approximatif, selon le fabricant : ≈ 1,1 à 78 D, ≈ 1,3 à 90 D) : petit < ≈ 1,5 mm, grand > ≈ 2 mm. Le C/D attendu suit la taille." },
       { sign: "Anneau : épaisseur (ISNT) et couleur", why: "Encoche ou amincissement aux pôles = glaucome ; anneau pâle = cause non glaucomateuse probable." },
       { sign: "Excavation ou pâleur ?", why: "Relief (cassure des petits vaisseaux) contre couleur ; une pâleur qui déborde le creux est un drapeau rouge." },
-      { sign: "Vaisseaux, hémorragie, APP", why: "Baïonnette et vaisseau dénudé suivent l’excavation ; hémorragie de Drance = facteur de risque de progression (AAO 2026) ; vaisseaux optociliaires = gêne chronique au retour veineux." },
+      { sign: "Vaisseaux, hémorragie, APP", why: "Baïonnette et vaisseau dénudé suivent l’excavation ; hémorragie de Drance = facteur de risque de progression (AAO, Preferred Practice Pattern) ; vaisseaux optociliaires = gêne chronique au retour veineux." },
       { sign: "AV, couleurs, DPAR", why: "Épargnés longtemps par le glaucome ; leur atteinte précoce oriente vers le nerf." }
     ],
     tests: [
-      { test: "OCT RNFL et couche des cellules ganglionnaires maculaires (GCL)", when: "Tout suspect, au départ et au suivi (AAO 2026)", read: "Perte inféro- ou supérotemporale concordante = glaucome ; perte maculaire nasale qui respecte le méridien vertical = chiasma." },
+      { test: "OCT RNFL et couche des cellules ganglionnaires maculaires (GCL)", when: "Tout suspect, au départ et au suivi (AAO, Preferred Practice Pattern)", read: "Perte inféro- ou supérotemporale concordante = glaucome ; perte maculaire nasale qui respecte le méridien vertical = chiasma." },
       { test: "Champs 24-2 et 10-2", when: "Au départ (guide canadien), puis en série", read: "Méridien horizontal = glaucome ; vertical = chiasma ou voies optiques → IRM." },
       { test: "IRM cérébrale et orbitaire avec gadolinium", when: "Drapeau rouge", read: "Adénome hypophysaire, méningiome, anévrisme." },
       { test: "VS, CRP, plaquettes", when: "≥ 50 ans avec symptômes d’artérite ou perte visuelle aiguë passée", read: "Artérite à cellules géantes : stéroïdes sans attendre la biopsie." }
@@ -95,7 +95,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       },
       {
         phase: "suivi",
-        items: ["OCT et champ ensemble (AAO 2026) ; noter chaque hémorragie papillaire"]
+        items: ["OCT et champ ensemble (AAO, Preferred Practice Pattern) ; noter chaque hémorragie papillaire"]
       },
       {
         phase: "escalade",

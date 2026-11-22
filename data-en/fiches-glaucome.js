@@ -61,7 +61,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "Affected first-degree relative; myopia",
   "Elevated IOP (the only proven modifiable factor)",
   "Thin cornea; low corneal hysteresis (cornea that dampens poorly)",
-  "AAO 2026: larger C/D (cup-to-disc ratio), disc hemorrhage, high PSD (localized field defect), low blood pressure"
+  "AAO, Preferred Practice Pattern: larger C/D (cup-to-disc ratio), disc hemorrhage, high PSD (localized field defect), low blood pressure"
  ],
  "presentation": [
   "No symptoms until an advanced stage; found on screening",
@@ -254,7 +254,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   },
   {
    "q": "SLT or drops first?",
-   "a": "Either (AAO 2026). LiGHT trial at 6 years: 69.8% of SLT eyes at target with no other treatment; progression 19.6% vs 26.8%."
+   "a": "Either (AAO, Preferred Practice Pattern). LiGHT trial at 6 years: 69.8% of SLT eyes at target with no other treatment; progression 19.6% vs 26.8%."
   },
   {
    "q": "Target reached but the field is progressing?",
@@ -574,7 +574,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   },
   {
    "q": "What do you do for the fellow eye?",
-   "a": "Gonioscopy and prophylactic LPI: about half of fellow eyes have an attack within 5 years without LPI (AAO 2026)."
+   "a": "Gonioscopy and prophylactic LPI: about half of fellow eyes have an attack within 5 years without LPI (AAO, Preferred Practice Pattern)."
   },
   {
    "q": "Headache and vomiting in the ED: the trap?",
@@ -682,7 +682,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  },
  "risk": [
   "Inuit (Nunavik) or East Asian ancestry; female; age > 50",
-  "Hyperopia, short axial length, small cornea (AAO 2026)",
+  "Hyperopia, short axial length, small cornea (AAO, Preferred Practice Pattern)",
   "Shallow anterior chamber, thick lens",
   "Family history of angle closure",
   "Dilating medications (anticholinergics, sympathomimetics); topiramate and sulfonamides (effusion)"
@@ -714,7 +714,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "tests": [
    {
     "test": "Dynamic gonioscopy in a dark room, small beam",
-    "when": "Any narrow angle; cornerstone of diagnosis and follow-up (AAO 2026)",
+    "when": "Any narrow angle; cornerstone of diagnosis and follow-up (AAO, Preferred Practice Pattern)",
     "read": "Pigmented trabecular meshwork hidden over ≥ 180° = contact; indentation opens appositional closure, not PAS. Record the Shaffer grade and extent of PAS (in clock hours) by quadrant."
    },
    {
@@ -879,7 +879,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   },
   {
    "q": "Do you do an iridotomy for every PACS?",
-   "a": "No. ZAP: LPI roughly halves the risk, but the incidence is very low; shared decision based on access to care, family history and dilating medications (AAO 2026)."
+   "a": "No. ZAP: LPI roughly halves the risk, but the incidence is very low; shared decision based on access to care, family history and dilating medications (AAO, Preferred Practice Pattern)."
   },
   {
    "q": "Acute myopia and bilateral closed angles on topiramate: LPI?",
@@ -1295,7 +1295,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    },
    {
     "sign": "Vessels, hemorrhage, PPA",
-    "why": "Bayoneting and bared vessels follow the cup; Drance hemorrhage = risk factor for progression (AAO 2026); optociliary shunt vessels = chronic impairment of venous outflow."
+    "why": "Bayoneting and bared vessels follow the cup; Drance hemorrhage = risk factor for progression (AAO, Preferred Practice Pattern); optociliary shunt vessels = chronic impairment of venous outflow."
    },
    {
     "sign": "VA, color vision, RAPD",
@@ -1305,7 +1305,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "tests": [
    {
     "test": "RNFL OCT and macular ganglion cell layer (GCL)",
-    "when": "Every suspect, at baseline and follow-up (AAO 2026)",
+    "when": "Every suspect, at baseline and follow-up (AAO, Preferred Practice Pattern)",
     "read": "Concordant inferotemporal or superotemporal loss = glaucoma; nasal macular loss respecting the vertical meridian = chiasm."
    },
    {
@@ -1400,7 +1400,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "phase": "suivi",
     "items": [
-     "OCT and field together (AAO 2026); record every disc hemorrhage"
+     "OCT and field together (AAO, Preferred Practice Pattern); record every disc hemorrhage"
     ]
    },
    {

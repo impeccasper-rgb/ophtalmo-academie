@@ -445,7 +445,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Dark room, short beam off the pupil; on indentation, apposition opens and synechiae remain"
     ],
     explain: "Light in the pupil causes miosis, which falsely opens the angle: dark room, short beam kept off the pupil. On indentation, appositional closure opens; synechiae stay stuck.",
-    deep: "Reasoning: 1) light entering the pupil causes miosis: the iris tightens and pulls away from the angle, which looks falsely open; so you work in a dark room, with a small short beam placed off the pupil (AAO 2026: dynamic gonioscopy in a dark room, small beam); 2) indentation pushes aqueous toward the periphery and displaces the iris posteriorly; 3) an iris that is merely apposed lifts away and reveals the trabecular meshwork, whereas a synechia, being stuck, stays in place. The distinction matters: synechiae (or elevated IOP) move a case from simple iridotrabecular contact (PACS) to established angle closure (PAC).",
+    deep: "Reasoning: 1) light entering the pupil causes miosis: the iris tightens and pulls away from the angle, which looks falsely open; so you work in a dark room, with a small short beam placed off the pupil (AAO, Preferred Practice Pattern: dynamic gonioscopy in a dark room, small beam); 2) indentation pushes aqueous toward the periphery and displaces the iris posteriorly; 3) an iris that is merely apposed lifts away and reveals the trabecular meshwork, whereas a synechia, being stuck, stays in place. The distinction matters: synechiae (or elevated IOP) move a case from simple iridotrabecular contact (PACS) to established angle closure (PAC).",
     why: [
       "Right lighting technique, but the interpretation is reversed: it is the adherent synechiae that stay closed.",
       "Trap: bright light causes miosis, which falsely opens the angle; that is exactly the error of the first exam.",
@@ -530,7 +530,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Inferior pallor and disc edema; superior altitudinal defect"
     ],
     explain: "The image is inverted on the retina: a notch at the inferior pole of the disc gives a superior arcuate defect. A disc hemorrhage at the same spot signals a risk of progression.",
-    deep: "Reasoning: 1) a notch is a localized thinning of the neuroretinal rim, here at the inferior pole; a disc hemorrhage (Drance hemorrhage) is a small flame-shaped hemorrhage on the disc margin; 2) fibers passing through the inferior pole of the disc come from the inferior retina, which sees the superior field (the image is inverted on the retina): a superior arcuate defect is expected; 3) a disc hemorrhage is a risk factor for progression (AAO 2026): it warrants closer follow-up and a review of the target IOP.",
+    deep: "Reasoning: 1) a notch is a localized thinning of the neuroretinal rim, here at the inferior pole; a disc hemorrhage (Drance hemorrhage) is a small flame-shaped hemorrhage on the disc margin; 2) fibers passing through the inferior pole of the disc come from the inferior retina, which sees the superior field (the image is inverted on the retina): a superior arcuate defect is expected; 3) a disc hemorrhage is a risk factor for progression (AAO, Preferred Practice Pattern): it warrants closer follow-up and a review of the target IOP.",
     why: [
       "Correct: inferior notch and hemorrhage → superior arcuate defect; the hemorrhage signals a risk of progression.",
       "Wrong pole: the signs are inferior, and inferior damage gives a superior defect.",
@@ -1533,7 +1533,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Prophylactic laser iridotomy of the left eye without delay"
     ],
     explain: "The fellow eye has the same anatomy. Without iridotomy, about half of these eyes have an attack within 5 years: prophylactic iridotomy without delay.",
-    deep: "**What it is:** the fellow eye of an attack almost always has the same anatomy: short eye, thick lens, narrow angle. **Why it matters:** without iridotomy, about half of fellow eyes have an attack within 5 years (AAO 2026), with the same risks for the nerve, cornea and iris. **What to do:** offer an LPI (a small laser hole in the peripheral iris so aqueous bypasses the pupil), then check that the opening is patent and measure IOP 30 minutes to 2 hours afterward, then follow both eyes with gonioscopy.",
+    deep: "**What it is:** the fellow eye of an attack almost always has the same anatomy: short eye, thick lens, narrow angle. **Why it matters:** without iridotomy, about half of fellow eyes have an attack within 5 years (AAO, Preferred Practice Pattern), with the same risks for the nerve, cornea and iris. **What to do:** offer an LPI (a small laser hole in the peripheral iris so aqueous bypasses the pupil), then check that the opening is patent and measure IOP 30 minutes to 2 hours afterward, then follow both eyes with gonioscopy.",
     why: [
       "Waiting exposes the eye to an attack in about half of cases within 5 years; this risk is much higher than in a simple angle-closure suspect.",
       "Long-term pilocarpine (a drop that constricts the pupil) is poorly tolerated and does not protect reliably; it does not replace iridotomy.",

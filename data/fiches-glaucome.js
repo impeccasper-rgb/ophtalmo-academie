@@ -38,7 +38,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Parent du premier degré atteint ; myopie",
     "PIO élevée (seul facteur modifiable prouvé)",
     "Cornée mince ; hystérésis cornéenne basse (cornée qui amortit mal)",
-    "AAO 2026 : C/D (excavation/disque) plus grand, hémorragie papillaire, PSD élevé (défaut localisé du champ), tension artérielle basse"
+    "AAO, Preferred Practice Pattern : C/D (excavation/disque) plus grand, hémorragie papillaire, PSD élevé (défaut localisé du champ), tension artérielle basse"
   ],
   presentation: [
     "Aucun symptôme avant un stade avancé ; découverte au dépistage",
@@ -113,7 +113,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   pearls: [
     { q: "Quelle PIO cible ?", a: "Individualisée selon le stade, la PIO à laquelle le dommage est survenu, la vitesse de progression, l’espérance de vie et les facteurs de risque : point de départ ≈ 20–30 % sous la base, plus basse si avancé, révisée à chaque visite. EMGT : chaque mmHg de baisse ≈ 10 % moins de risque de progression. UKGTS (Lancet 2015), latanoprost contre placebo : risque de détérioration du champ sur 24 mois réduit de plus de moitié (HR 0,44)." },
-    { q: "SLT ou gouttes en premier ?", a: "Les deux (AAO 2026). Essai LiGHT à 6 ans : 69,8 % des yeux SLT à la cible sans autre traitement ; progression 19,6 % vs 26,8 %." },
+    { q: "SLT ou gouttes en premier ?", a: "Les deux (AAO, Preferred Practice Pattern). Essai LiGHT à 6 ans : 69,8 % des yeux SLT à la cible sans autre traitement ; progression 19,6 % vs 26,8 %." },
     { q: "Cible atteinte mais le champ progresse ?", a: "Confirmer (champs groupés, OCT), vérifier l’observance, puis baisser la cible." }
   ],
   mnemonic: { title: "Bilan de base : 3 mesures, 2 images du nerf", text: "**Mesurer** : PIO (plusieurs fois), pachymétrie (cornée mince = PIO sous-estimée), gonioscopie (angle ouvert ?). **Voir le nerf** : papille + OCT (structure), champ visuel 24-2 (fonction)." },
@@ -486,7 +486,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   },
   risk: [
     "Origine inuite (Nunavik) ou est-asiatique ; femme ; âge > 50 ans",
-    "Hypermétropie, longueur axiale courte, petite cornée (AAO 2026)",
+    "Hypermétropie, longueur axiale courte, petite cornée (AAO, Preferred Practice Pattern)",
     "Chambre antérieure peu profonde, cristallin épais",
     "Antécédents familiaux de fermeture",
     "Médicaments qui dilatent (anticholinergiques, sympathomimétiques) ; topiramate et sulfamidés (effusion)"
@@ -504,7 +504,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       { sign: "Taches de Vogt (glaukomflecken), atrophie irienne sectorielle", why: "Cicatrices d’une crise aiguë passée." }
     ],
     tests: [
-      { test: "Gonioscopie dynamique en pièce sombre, petit faisceau", when: "Tout angle étroit ; base du diagnostic et du suivi (AAO 2026)", read: "Trabéculum pigmenté caché sur ≥ 180° = contact ; l’indentation ouvre une apposition, pas les PAS. Noter par quadrant le grade de Shaffer et l’étendue des PAS (en heures)." },
+      { test: "Gonioscopie dynamique en pièce sombre, petit faisceau", when: "Tout angle étroit ; base du diagnostic et du suivi (AAO, Preferred Practice Pattern)", read: "Trabéculum pigmenté caché sur ≥ 180° = contact ; l’indentation ouvre une apposition, pas les PAS. Noter par quadrant le grade de Shaffer et l’étendue des PAS (en heures)." },
       { test: "AS-OCT (OCT du segment antérieur) ou UBM (échographie haute fréquence)", when: "Angle douteux ; UBM si iris plateau suspecté", read: "Contact à l’AS-OCT malgré une gonioscopie ouverte : risque de fermeture ; l’UBM montre les procès ciliaires." },
       { test: "OCT RNFL et champ visuel", when: "Au diagnostic", read: "Neuropathie = PACG ; sinon PACS ou PAC." },
       { test: "Microscopie spéculaire (comptage des cellules endothéliales)", when: "Après une crise, avant chirurgie", read: "Densité souvent ↓ après crise ou PACG." }
@@ -565,7 +565,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   pearls: [
     { q: "Quels sont les mécanismes de fermeture ?", a: "Iris (bloc pupillaire, le plus fréquent), corps ciliaire (iris plateau), cristallin (épais ou gonflé) et poussée postérieure (effusion, mal-direction). L’iridotomie ne corrige que le bloc pupillaire." },
-    { q: "Fais-tu une iridotomie à tout PACS ?", a: "Non. ZAP : la LPI réduit d’environ moitié le risque, mais l’incidence est très faible ; décision partagée selon l’accès aux soins, les antécédents familiaux et les médicaments dilatateurs (AAO 2026)." },
+    { q: "Fais-tu une iridotomie à tout PACS ?", a: "Non. ZAP : la LPI réduit d’environ moitié le risque, mais l’incidence est très faible ; décision partagée selon l’accès aux soins, les antécédents familiaux et les médicaments dilatateurs (AAO, Preferred Practice Pattern)." },
     { q: "Myopie aiguë et angles fermés des deux côtés sous topiramate : LPI ?", a: "Non : l’effusion ciliochoroïdienne pousse iris et cristallin vers l’avant. Cesser le topiramate avec le prescripteur, cycloplégique, stéroïde et hypotenseurs ; jamais de pilocarpine." }
   ],
   mnemonic: { title: "Angle : « I Can’t See Til Schwalbe »", text: "De l’arrière vers l’avant : **I**ris (racine), **C**iliaire (bande), **S**cléral (éperon), **T**rabéculum, **S**chwalbe. Shaffer 4 = bande ciliaire visible ; 1 = Schwalbe seulement." },
@@ -727,7 +727,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   pearls: [
     { q: "Pourquoi la pilocarpine seulement après la baisse de PIO ?", a: "Le sphincter ischémique ne répond pas tant que la PIO est très haute. Et si le cristallin est en cause (gonflé, subluxé) ou en cas d’effusion, la pilocarpine avance le cristallin et aggrave la fermeture." },
-    { q: "Que fais-tu pour l’œil adelphe ?", a: "Gonioscopie et LPI prophylactique : environ la moitié des yeux adelphes font une crise en 5 ans sans LPI (AAO 2026)." },
+    { q: "Que fais-tu pour l’œil adelphe ?", a: "Gonioscopie et LPI prophylactique : environ la moitié des yeux adelphes font une crise en 5 ans sans LPI (AAO, Preferred Practice Pattern)." },
     { q: "Céphalée et vomissements à l’urgence : piège ?", a: "La crise imite une migraine ou un problème digestif : regarder la cornée et la pupille, mesurer la PIO avant le scan cérébral." }
   ],
   mnemonic: { title: "Crise : « Baisser, Myosis, Percer »", text: "**Baisser** la PIO (gouttes, acétazolamide ± mannitol), **Myosis** à la pilocarpine une fois la PIO abaissée, **Percer** l’iris (LPI) des **deux** yeux." },

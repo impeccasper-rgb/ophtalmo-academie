@@ -25,8 +25,17 @@ def sim_smoke(p):
     site = os.path.join(ROOT, 'site')
     if not os.path.exists(os.path.join(site, 'js', 'bscan-sim.js')):
         problems.append('[sim] site/ is not built with the simulator (run python3 tools/build_web.py)'); return
-    port = PORT + 1
-    srv2 = subprocess.Popen([sys.executable, '-m', 'http.server', str(port), '--directory', site], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # other agents rebuild site/ and run this file in parallel: test a private snapshot (without img/) on a free port
+    import shutil, socket, tempfile
+    snapdir = tempfile.mkdtemp(prefix='ocelle-sim-')
+    for attempt in range(4):
+        shutil.rmtree(snapdir, ignore_errors=True)
+        try: shutil.copytree(site, snapdir, ignore=shutil.ignore_patterns('img'))
+        except Exception: pass
+        if all(os.path.exists(os.path.join(snapdir, f)) for f in ('index.html', 'app.css', 'js/bscan-sim.js', 'js/web.js', 'vendor/three-0.159.0/three.module.min.js')): break
+        time.sleep(2)
+    sk = socket.socket(); sk.bind(('127.0.0.1', 0)); port = sk.getsockname()[1]; sk.close()
+    srv2 = subprocess.Popen([sys.executable, '-m', 'http.server', str(port), '--bind', '127.0.0.1', '--directory', snapdir], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     time.sleep(0.8)
     snap = "() => window.__bs3.snapshot()"
     gain = "v => { const g = document.querySelector('[data-gain]'); g.value = v; g.dispatchEvent(new Event('input', { bubbles: true })); }"
@@ -44,7 +53,7 @@ def sim_smoke(p):
                 page.goto('http://127.0.0.1:%d/index.html?lang=%s#inv-bscan-sim' % (port, lang), wait_until='domcontentloaded', timeout=30000)
                 try: page.wait_for_function('window.__bs3 && window.__bs3.ready', timeout=45000)
                 except Exception:
-                    problems.append(tag + 'simulator did not start: ' + ' | '.join(errs[:3]) + ' | ' + page.inner_text('#view')[:100].replace('\n', ' ')); continue
+                    problems.append(tag + 'simulator did not start: ' + ' | '.join(errs[:3]) + ' | ' + page.inner_text('[data-bs3]')[:160].replace('\n', ' ')); continue
                 box = page.eval_on_selector('[data-c3]', "c => { const r = c.getBoundingClientRect(); return [r.left, r.top, r.width, r.height, c.width, c.height]; }")
                 if box[2] < 150 or box[3] < 120 or box[4] < 150: problems.append(tag + '3D canvas too small: %s' % box)
                 if phone:
@@ -73,12 +82,6 @@ def sim_smoke(p):
                 # a standard position is announced by the snap label and its button
                 page.click('[data-preset="T3"]'); page.evaluate(snap)
                 if 'T3' not in page.inner_text('[data-snap]') or page.get_attribute('[data-preset="T3"]', 'aria-pressed') != 'true': problems.append(tag + 'standard position not labelled: ' + page.inner_text('[data-snap]'))
-                # rendering pauses when the stage is off-screen
-                if phone:
-                    page.evaluate("() => window.scrollTo(0, document.documentElement.scrollHeight)"); page.wait_for_timeout(250)
-                    if not page.evaluate("() => window.__bs3.paused()"): problems.append(tag + 'rendering not paused off-screen')
-                    page.evaluate("() => window.scrollTo(0, 0)"); page.wait_for_timeout(250)
-                    if page.evaluate("() => window.__bs3.paused()"): problems.append(tag + 'rendering still paused back on screen')
                 # case 1 (PVD): the kinetic button displaces the membrane, then it comes back to rest
                 page.click('[data-a="next"]'); page.click('[data-preset="T12"]'); page.evaluate(gain, 90)
                 rest = page.evaluate(snap)
@@ -89,6 +92,14 @@ def sim_smoke(p):
                 if not rm:
                     page.wait_for_timeout(3400)
                     if page.evaluate(snap)['sig'] != rest['sig']: problems.append(tag + 'membrane did not come back to rest')
+                # rendering pauses when the stage is scrolled off-screen (the case page is tall enough on the phone)
+                if phone:
+                    page.evaluate("() => window.scrollTo(0, document.documentElement.scrollHeight)"); page.wait_for_timeout(300)
+                    off = page.evaluate("() => document.querySelector('.bs3-grid').getBoundingClientRect().bottom < 0")
+                    if off and not page.evaluate("() => window.__bs3.paused()"): problems.append(tag + 'rendering not paused off-screen')
+                    if not off: log('  ' + tag + 'stage still on screen at the bottom of the page: pause not checked')
+                    page.evaluate("() => window.scrollTo(0, 0)"); page.wait_for_timeout(300)
+                    if page.evaluate("() => window.__bs3.paused()"): problems.append(tag + 'rendering still paused back on screen')
                 # the 5 cases, end to end: answer, decisive sign, next ... result, then the series can start again
                 ids = page.evaluate("() => window.BscanSim.cases.map(c => c.id)")
                 for k, cid in enumerate(ids):
@@ -114,6 +125,7 @@ def sim_smoke(p):
         log('  simulator smoke test done (desktop FR light, phone EN dark with touch, reduced motion)')
     finally:
         srv2.terminate()
+        shutil.rmtree(snapdir, ignore_errors=True)
 
 try:
     with sync_playwright() as p:

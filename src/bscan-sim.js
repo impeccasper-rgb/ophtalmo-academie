@@ -529,7 +529,7 @@
       W.__bs3 = {
         root: root, ready: true, state: st, paused: function () { return !visible; }, classify: function () { return classify(st, plane()); }, kin: function () { return { on: kin.on, still: kin.still }; },
         snapshot: function () {
-          if (tgt) { st.theta = tgt.theta; st.phi = tgt.phi; tgt = null; } draw(performance.now()); var gl = rb.getContext(), w = gl.drawingBufferWidth, h = gl.drawingBufferHeight, buf = new Uint8Array(w * h * 4), sum = 0, sig = '', i, j;
+          if (tgt) { st.theta = tgt.theta; st.phi = tgt.phi; tgt = null; } dirty = true; draw(performance.now()); var gl = rb.getContext(), w = gl.drawingBufferWidth, h = gl.drawingBufferHeight, buf = new Uint8Array(w * h * 4), sum = 0, sig = '', i, j;
           rb.render(bscene, bcam); gl.readPixels(0, 0, w, h, gl.RGBA, gl.UNSIGNED_BYTE, buf);
           for (i = 0; i < w * h; i++) sum += buf[i * 4];
           for (j = 0; j < 16; j++) for (i = 0; i < 16; i++) sig += (buf[(Math.floor((j + 0.5) * h / 16) * w + Math.floor((i + 0.5) * w / 16)) * 4] >> 4).toString(16);
@@ -542,7 +542,9 @@
     load().then(function (mod) { THREE = mod; root.removeAttribute('aria-busy'); start(); }, function () { alive = false; fail(S('noload', 'Le simulateur 3D n’a pas pu se charger ici. L’outil 2D reste disponible.', 'The 3D simulator could not load here. The 2D tool is still available.')); });
     return dispose;
   }
-  function hasWebGL() { try { var c = document.createElement('canvas'), g = c.getContext('webgl2') || c.getContext('webgl'); if (!g) return false; var x = g.getExtension('WEBGL_lose_context'); if (x) x.loseContext(); return true; } catch (e) { return false; } }
+  var _gl = null;
+  function hasWebGL() { if (_gl != null) return _gl; return (_gl = probeGL()); }
+  function probeGL() { try { var c = document.createElement('canvas'), g = c.getContext('webgl2') || c.getContext('webgl'); if (!g) return false; var x = g.getExtension('WEBGL_lose_context'); if (x) x.loseContext(); return true; } catch (e) { return false; } }
   var _mod = null;
   function load() { if (!_mod) { _mod = import(new URL(VENDOR, document.baseURI).href); _mod.catch(function () { _mod = null; }); } return _mod; }
 

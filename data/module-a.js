@@ -254,7 +254,7 @@ G.OPH.A = {
     "vessels": {
       t: "Vaisseaux de la papille", en: "Optic disc vessels",
       d: "L’artère et la veine centrales de la rétine émergent sur le versant nasal de l’excavation, longent le bord de l’anneau puis se divisent en arcades supérieure et inférieure. Normalement, elles passent sur l’anneau sans cassure brutale.",
-      c: "Signes glaucomateux : vaisseaux nasalisés (repoussés en nasal par l’excavation qui grandit) ; baïonnette (bayoneting : le vaisseau plonge à pic dans une excavation profonde puis repart à angle droit) ; vaisseau circumlinéaire dénudé (il longe un anneau disparu). L’hémorragie papillaire de Drance (petite hémorragie en flammèche qui croise le bord du disque, souvent inférotemporale) signale une perte axonale active et un risque accru de progression (AAO 2026) ; plus fréquente dans le glaucome à pression normale (atteinte glaucomateuse avec PIO toujours ≤ 21 mmHg), elle disparaît en quelques semaines à quelques mois, d’où la recherche à chaque visite."
+      c: "Signes glaucomateux : vaisseaux nasalisés (repoussés en nasal par l’excavation qui grandit) ; baïonnette (bayoneting : le vaisseau plonge à pic dans une excavation profonde puis repart à angle droit) ; vaisseau circumlinéaire dénudé (il longe un anneau disparu). L’hémorragie papillaire de Drance (petite hémorragie en flammèche qui croise le bord du disque, souvent inférotemporale) signale une perte axonale active et un risque accru de progression (AAO, Preferred Practice Pattern) ; plus fréquente dans le glaucome à pression normale (atteinte glaucomateuse avec PIO toujours ≤ 21 mmHg), elle disparaît en quelques semaines à quelques mois, d’où la recherche à chaque visite."
     },
     "ppa": {
       t: "Atrophie péripapillaire", en: "Peripapillary atrophy",
@@ -292,7 +292,7 @@ G.OPH.A = {
     "points-lacrymaux": {
       t: "Points lacrymaux", en: "Lacrimal puncta",
       d: "Deux petits orifices (≈ 0,3 mm) au sommet des papilles lacrymales, sur le bord libre médial des paupières supérieure et inférieure. Normalement tournés vers le globe, ils plongent dans le lac lacrymal et aspirent les larmes à chaque clignement.",
-      c: "Les bouchons méatiques (punctal plugs : petits bouchons qui ferment les points) gardent les larmes plus longtemps sur l’œil dans le déficit aqueux. Appuyer sur le point lacrymal ou fermer les yeux quelques minutes après une goutte (occlusion ponctuelle) réduit l’absorption systémique et prolonge l’effet local ; l’AAO 2026 la recommande chez la femme enceinte ou qui allaite sous gouttes antiglaucomateuses. Un point éversé (ectropion : paupière tournée vers l’extérieur) cause un larmoiement."
+      c: "Les bouchons méatiques (punctal plugs : petits bouchons qui ferment les points) gardent les larmes plus longtemps sur l’œil dans le déficit aqueux. Appuyer sur le point lacrymal ou fermer les yeux quelques minutes après une goutte (occlusion ponctuelle) réduit l’absorption systémique et prolonge l’effet local ; l’AAO, Preferred Practice Pattern la recommande chez la femme enceinte ou qui allaite sous gouttes antiglaucomateuses. Un point éversé (ectropion : paupière tournée vers l’extérieur) cause un larmoiement."
     },
     "canalicules": {
       t: "Canalicules lacrymaux", en: "Lacrimal canaliculi",
@@ -363,8 +363,8 @@ G.OPH.A = {
         "**Valeurs** : normale 10–21 mmHg (moyenne ≈ 15–16). 21 mmHg est une limite statistique (≈ moyenne + 2 écarts-types), pas un seuil de danger : il existe un glaucome à pression normale (atteinte glaucomateuse avec PIO toujours ≤ 21 mmHg) et une hypertension oculaire (PIO > 21 mmHg sans atteinte du nerf ni du champ).",
         "**Variation nycthémérale** (sur 24 h) : 2–6 mmHg chez le sujet normal, davantage en glaucome ; le pic survient souvent la nuit ou tôt le matin, en partie à cause de la position couchée (la pression veineuse épisclérale monte). Une seule mesure en clinique peut manquer le pic.",
         "**Mesure et cornée** : le tonomètre de Goldmann est calibré pour une cornée d’≈ 520 µm. Cornée mince → la cornée se laisse aplanir plus facilement → PIO sous-estimée ; cornée épaisse → surestimée. Œdème cornéen ou cornée amincie par LASIK (chirurgie réfractive au laser qui retire du stroma) → sous-estimée (l’œdème épaissit la cornée mais la ramollit). Ne pas corriger mécaniquement par une formule.",
-        "**Hystérésis cornéenne** (capacité de la cornée à amortir une déformation, mesurée par un jet d’air dynamique) : une hystérésis basse s’associe à un risque plus élevé de progression du glaucome ; c’est un facteur clé de la mise à jour AAO 2026, utile en appoint.",
-        "**Pression de perfusion oculaire** (ocular perfusion pressure) ≈ pression artérielle − PIO. Une tension artérielle basse diminue la perfusion de la tête du nerf optique : facteur de risque mis de l’avant par l’AAO 2026 ; on se méfie aussi de l’hypotension nocturne (antihypertenseur pris le soir), souvent évoquée dans le glaucome à pression normale.",
+        "**Hystérésis cornéenne** (capacité de la cornée à amortir une déformation, mesurée par un jet d’air dynamique) : une hystérésis basse s’associe à un risque plus élevé de progression du glaucome ; c’est un facteur clé de la mise à jour AAO, Preferred Practice Pattern, utile en appoint.",
+        "**Pression de perfusion oculaire** (ocular perfusion pressure) ≈ pression artérielle − PIO. Une tension artérielle basse diminue la perfusion de la tête du nerf optique : facteur de risque mis de l’avant par l’AAO, Preferred Practice Pattern ; on se méfie aussi de l’hypotension nocturne (antihypertenseur pris le soir), souvent évoquée dans le glaucome à pression normale.",
         "**Ce qui fait monter la PIO** : position couchée, Valsalva, apnée, paupières serrées, cravate serrée, corticostéroïdes chez les « répondeurs » (réponse cortisonique : hausse de PIO sous corticoïdes, surtout topiques). L’exercice aérobique la baisse transitoirement."
       ],
       numbers: [
@@ -734,7 +734,7 @@ G.OPH.A = {
       en: "Gonioscopy",
       why: "C’est le seul examen qui montre directement l’angle : il distingue angle ouvert, étroit ou fermé, apposition ou synéchies, et repère les causes secondaires (PXF, récession, néovaisseaux) avant tout traitement du glaucome.",
       how: [
-        "Pièce sombre et petit faisceau court (≈ 1 mm) qui n’entre pas dans la pupille (AAO 2026) : la lumière fait contracter la pupille, ce qui tend l’iris et ouvre faussement l’angle.",
+        "Pièce sombre et petit faisceau court (≈ 1 mm) qui n’entre pas dans la pupille (AAO, Preferred Practice Pattern) : la lumière fait contracter la pupille, ce qui tend l’iris et ouvre faussement l’angle.",
         "Verre à 4 miroirs (Zeiss, Posner, Sussman : sans gel, permet l’indentation) ou verre de Goldmann à 3 miroirs (gel, image stable).",
         "Examiner les 4 quadrants (commencer par l’inférieur, le plus large et le plus pigmenté) ; le miroir montre l’angle situé en face (miroir à 12 h → angle de 6 h ; image inversée de haut en bas, mais pas de gauche à droite).",
         "Trouver la ligne de Schwalbe au coin cornéen (où les deux reflets de la fente se rejoignent), puis descendre : « I Can’t See Til Schwalbe » = Iris, Ciliary body band, Scleral spur, Trabecular meshwork, Schwalbe (du postérieur vers l’antérieur).",
@@ -832,7 +832,7 @@ G.OPH.A = {
       patho: [
         "C/D vertical > 0,6 ou asymétrie ≥ 0,2 → suspect (à interpréter selon la taille du disque).",
         "Encoche inféro- ou supérotemporale, anneau qui viole ISNT, excavation ovale verticale → perte axonale glaucomateuse aux pôles.",
-        "Hémorragie de Drance (petite flammèche qui croise le bord du disque) → maladie active, risque de progression (AAO 2026).",
+        "Hémorragie de Drance (petite flammèche qui croise le bord du disque) → maladie active, risque de progression (AAO, Preferred Practice Pattern).",
         "APP zone bêta, vaisseaux en baïonnette ou nasalisés, vaisseau circumlinéaire dénudé, pores de la lame criblée visibles → signes associés au glaucome.",
         "**Pâleur > excavation**, pâleur en bande, papille œdémateuse → penser cause non glaucomateuse (compression, ischémie, inflammation) → investigation, souvent imagerie."
       ],
@@ -858,7 +858,7 @@ G.OPH.A = {
       },
       title: "OCT : RNFL, cellules ganglionnaires et segment antérieur",
       en: "Optical coherence tomography (OCT)",
-      why: "L’OCT mesure de façon objective la RNFL et les cellules ganglionnaires maculaires : l’AAO 2026 recommande les deux au départ et au suivi, combinés au champ visuel ; l’OCT du segment antérieur (AS-OCT) évalue l’angle et la cornée.",
+      why: "L’OCT mesure de façon objective la RNFL et les cellules ganglionnaires maculaires : l’AAO, Preferred Practice Pattern recommande les deux au départ et au suivi, combinés au champ visuel ; l’OCT du segment antérieur (AS-OCT) évalue l’angle et la cornée.",
       how: [
         "Patient qui fixe la cible interne ; dilater si la pupille est petite ou la cataracte dense ; vérifier la qualité (force du signal, centrage, segmentation) avant de lire les couleurs.",
         "RNFL péripapillaire : cercle de mesure autour de la papille → épaisseur moyenne, par quadrant et par secteur horaire, courbe TSNIT, comparées à une base normative (vert, jaune, rouge).",
@@ -877,7 +877,7 @@ G.OPH.A = {
         "Effet plancher : la RNFL ne descend plus sous ≈ 50–60 µm (vaisseaux et tissu de soutien) → au stade avancé, suivre le champ visuel et le GCIPL.",
         "« Red disease » (rouge sans maladie, faux positif) : myopie forte, papille petite ou inclinée, erreur de segmentation, signal faible.",
         "« Green disease » (vert malgré la maladie, faux négatif) : atteinte débutante, œdème papillaire, membrane épirétinienne qui épaissit artificiellement la mesure.",
-        "AS-OCT : un contact iridotrabéculaire, même si la gonioscopie paraît ouverte, peut prédire une fermeture (AAO 2026) ; l’UBM est supérieure pour l’iris plateau."
+        "AS-OCT : un contact iridotrabéculaire, même si la gonioscopie paraît ouverte, peut prédire une fermeture (AAO, Preferred Practice Pattern) ; l’UBM est supérieure pour l’iris plateau."
       ],
       pitfalls: [
         "Lire les couleurs sans vérifier la qualité du scan et la segmentation.",
@@ -989,7 +989,7 @@ G.OPH.A = {
       },
       title: "Microscopie spéculaire",
       en: "Specular microscopy",
-      why: "Elle compte et décrit les cellules endothéliales : elle aide à décider et planifier la chirurgie chez le patient avec Fuchs, surveille les greffes, les tubes et implants, et l’œil après une crise de fermeture de l’angle (AAO 2026).",
+      why: "Elle compte et décrit les cellules endothéliales : elle aide à décider et planifier la chirurgie chez le patient avec Fuchs, surveille les greffes, les tubes et implants, et l’œil après une crise de fermeture de l’angle (AAO, Preferred Practice Pattern).",
       how: [
         "Appareil le plus souvent sans contact : la lumière réfléchie par l’interface endothélium–humeur aqueuse dessine la mosaïque des cellules.",
         "Mesurer au centre (± en périphérie ou près d’un tube) et comparer les deux yeux.",
@@ -1005,7 +1005,7 @@ G.OPH.A = {
         "Guttae = zones noires (excroissances de Descemet qui ne renvoient pas la lumière) → dystrophie de Fuchs ; confluentes, elles rendent le comptage difficile.",
         "Densité basse : cornée fragile, risque de décompensation après une chirurgie ; décompensation en général < 400–500 cellules/mm².",
         "CV ↑ (tailles inégales) et hexagones ↓ → endothélium stressé (lentilles, chirurgie, PIO élevée), parfois avant la chute de densité.",
-        "Densité ↓ après une crise de fermeture et dans le glaucome par fermeture de l’angle, après des chirurgies répétées, avec un tube trop près de la cornée ou des implants intracamérulaires répétés (mise en garde AAO 2026)."
+        "Densité ↓ après une crise de fermeture et dans le glaucome par fermeture de l’angle, après des chirurgies répétées, avec un tube trop près de la cornée ou des implants intracamérulaires répétés (mise en garde AAO, Preferred Practice Pattern)."
       ],
       pitfalls: [
         "Comptage automatique sur une image floue ou pleine de guttae : densité faussement haute ou basse → vérifier les cellules comptées.",

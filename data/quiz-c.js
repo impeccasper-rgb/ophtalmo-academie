@@ -302,7 +302,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ],
     answer: 3,
     explain: "L’œil adelphe a la même anatomie. Sans iridotomie, environ la moitié de ces yeux font une crise dans les 5 ans : iridotomie prophylactique sans tarder.",
-    deep: "**Ce que c’est :** l’œil adelphe (l’autre œil) d’une crise a presque toujours la même anatomie : œil court, cristallin épais, angle étroit. **Pourquoi c’est important :** sans iridotomie, environ la moitié des yeux adelphes font une crise dans les 5 ans (AAO 2026), avec les mêmes risques pour le nerf, la cornée et l’iris. **Quoi faire :** proposer une LPI (petit trou percé au laser dans l’iris périphérique pour que l’aqueuse contourne la pupille), vérifier ensuite que le trou est perméable et mesurer la PIO 30 minutes à 2 heures après, puis suivre les deux yeux par gonioscopie.",
+    deep: "**Ce que c’est :** l’œil adelphe (l’autre œil) d’une crise a presque toujours la même anatomie : œil court, cristallin épais, angle étroit. **Pourquoi c’est important :** sans iridotomie, environ la moitié des yeux adelphes font une crise dans les 5 ans (AAO, Preferred Practice Pattern), avec les mêmes risques pour le nerf, la cornée et l’iris. **Quoi faire :** proposer une LPI (petit trou percé au laser dans l’iris périphérique pour que l’aqueuse contourne la pupille), vérifier ensuite que le trou est perméable et mesurer la PIO 30 minutes à 2 heures après, puis suivre les deux yeux par gonioscopie.",
     why: [
       "Attendre expose à une crise dans environ la moitié des cas en 5 ans ; ce risque est bien plus élevé que chez un simple suspect de fermeture.",
       "La pilocarpine (goutte qui contracte la pupille) au long cours est mal tolérée et ne protège pas de façon fiable ; elle ne remplace pas l’iridotomie.",
