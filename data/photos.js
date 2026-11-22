@@ -11,7 +11,7 @@ G.OPH.photos = {
       look: "Décris la taille, le nombre et la répartition des points verts sur la cornée.",
       reveal: [
         "Fins points verts sur toute la cornée, centre compris : érosions épithéliales ponctuées (punctate epithelial erosions), cellules manquantes qui retiennent la fluorescéine.",
-        "Atteinte diffuse, pas seulement au tiers inférieur : sécheresse importante (kératoconjonctivite sèche selon la source).",
+        "Atteinte diffuse, pas seulement au tiers inférieur : sécheresse importante (kératoconjonctivite sèche).",
         "TFOS DEWS III : plus de 5 points cornéens est un des signes diagnostiques, si le questionnaire OSDI-6 est ≥ 4.",
         "Chez le patient glaucomateux, penser aussi à la toxicité des gouttes avec agent de conservation."
       ] },
@@ -87,7 +87,7 @@ G.OPH.photos = {
       reveal: [
         "Anneau blanc-gris paracentral qui entoure une zone centrale plus claire : infiltrat annulaire (ring infiltrate), stade stromal de la kératite amibienne.",
         "Conjonctive injectée et paupières gonflées : œil inflammatoire, souvent très douloureux.",
-        "Diagnostic confirmé par microscopie confocale chez ce patient (selon la source).",
+        "Diagnostic confirmé par microscopie confocale chez ce patient.",
         "Autres causes d’anneau stromal : HSV (anneau immunitaire), champignon, bactérie; le port de lentilles oriente vers l’amibe."
       ] },
     { id: "OPH-065", caption: "Kératite fongique récidivante sur greffe transfixiante : infiltrat et hypopyon (éclairage diffus)",
@@ -116,7 +116,7 @@ G.OPH.photos = {
       look: "Repère les petites structures rondes et très brillantes dispersées dans le champ.",
       reveal: [
         "Multiples points ronds hyperréflectifs, isolés ou en petits amas, partout dans l’image : kystes, la forme résistante de l’amibe.",
-        "Formes plus irrégulières et moins nettes : trophozoïtes, la forme active (selon la source).",
+        "Formes plus irrégulières et moins nettes : trophozoïtes, la forme active.",
         "Examen rapide et non invasif, en complément du grattage (culture, PCR)."
       ] },
     { id: "OPH-129", caption: "Confocale chez un porteur de lentilles : Acanthamoeba et éléments fongiques (panneaux A à C)",
@@ -196,9 +196,9 @@ G.OPH.photos = {
     { id: "OPH-039", caption: "Anneau de Fleischer autour de la base du cône (kératocône avancé, lampe à fente)",
       look: "Repère la cicatrice près du centre, puis cherche l’anneau qui entoure la base du cône.",
       reveal: [
-        "Selon la source, anneau de Fleischer (Fleischer ring) bien visible qui encercle la base du cône : dépôt de fer dans l’épithélium basal, brun-jaune en lumière blanche.",
+        "Anneau de Fleischer (Fleischer ring) bien visible qui encercle la base du cône : dépôt de fer dans l’épithélium basal, brun-jaune en lumière blanche.",
         "Pour ne pas le confondre avec le bord de l’iris derrière lui, le localiser en fente fine : l’anneau est dans la cornée, en avant de la chambre antérieure.",
-        "Traînée blanchâtre au centre, un peu à gauche : cicatrice stromale de l’apex, séquelle d’épisodes d’hydrops selon la source.",
+        "Traînée blanchâtre au centre, un peu à gauche : cicatrice stromale de l’apex, séquelle d’épisodes d’hydrops.",
         "Le bleu cobalt rend l’anneau plus visible (il paraît sombre); des stries de Vogt au centre du cône sont décrites par la source.",
         "À ne pas confondre avec l’anneau de Kayser-Fleischer (cuivre dans la Descemet périphérique, maladie de Wilson)."
       ] },
@@ -244,7 +244,7 @@ G.OPH.photos = {
     { id: "OPH-050", caption: "Fuchs après chirurgie de cataracte : voile cornéen par œdème et cicatrice (lampe à fente)",
       look: "Regarde la cornée juste à côté du reflet lumineux le plus brillant.",
       reveal: [
-        "Voile blanchâtre diffus dans la cornée, à droite du reflet : dégénérescence endothéliale, œdème et cicatrice (selon la source).",
+        "Voile blanchâtre diffus dans la cornée, à droite du reflet : dégénérescence endothéliale, œdème et cicatrice.",
         "Technique : superposer la fente et le reflet du filament de la lampe fait ressortir la surface endothéliale à côté de la tache brillante.",
         "La chirurgie de cataracte peut décompenser un endothélium de Fuchs déjà fragile : mesurer l’épaisseur cornéenne et compter les cellules avant l’opération."
       ] },
@@ -339,7 +339,7 @@ G.OPH.photos = {
       look: "Repère la ligne de petits dépôts qui traverse le greffon et compare la cornée de part et d’autre.",
       reveal: [
         "Ligne festonnée de précipités blanchâtres qui traverse le greffon au centre : ligne de Khodadoust (Khodadoust line), front de cellules immunitaires qui attaquent l’endothélium.",
-        "Progression du bas vers le haut selon la source : la cornée déjà franchie par la ligne est atteinte.",
+        "Progression du bas vers le haut : la cornée déjà franchie par la ligne est atteinte.",
         "Urgence : corticostéroïde topique intensif; rappel RSVP (rougeur, sensibilité à la lumière, vision diminuée, douleur) = consultation le jour même."
       ] },
     { id: "OPH-105", caption: "Même patient : stroma œdémateux et plis de la Descemet derrière la ligne de rejet",
@@ -347,7 +347,7 @@ G.OPH.photos = {
       reveal: [
         "Cornée trouble et grisâtre à gauche de l’image, avec fines stries : œdème et plis de la Descemet par dysfonction endothéliale aiguë.",
         "Précipités blanchâtres en bordure de la zone atteinte, au centre : front de rejet.",
-        "La partie non touchée reste compacte et claire (selon la source) : le rejet est encore réversible s’il est traité tôt."
+        "La partie non touchée reste compacte et claire : le rejet est encore réversible s’il est traité tôt."
       ] },
     { id: "OPH-107", caption: "Liquide d’interface après un rejet de greffe endothéliale DSAEK (lampe à fente)",
       look: "Observe la transparence de la cornée et la zone ronde plus foncée au centre.",
@@ -398,7 +398,7 @@ G.OPH.photos = {
     { id: "OPH-112", caption: "Déficit en cellules souches limbiques : épithélium en tourbillon (lampe à fente)",
       look: "Dans la zone de la pupille, cherche un motif de lignes courbes en spirale.",
       reveal: [
-        "Lignes grisâtres en spirale près du centre de la cornée, devant la pupille : épithélium en tourbillon (whorl), venu du limbe supérieur selon la source.",
+        "Lignes grisâtres en spirale près du centre de la cornée, devant la pupille : épithélium en tourbillon (whorl), venu du limbe supérieur.",
         "Sans cellules souches limbiques (limbal stem cell deficiency), l’épithélium se renouvelle mal; la conjonctive et des vaisseaux peuvent recouvrir la cornée.",
         "Cause non précisée par la source; la brûlure chimique en est une cause classique, avec les lentilles et l’aniridie."
       ] },
@@ -456,7 +456,7 @@ G.OPH.photos = {
       look: "Regarde le fond de l’excavation et le bord inférotemporal du rebord.",
       reveal: [
         "Petits trous sombres ovalaires au fond de l’excavation pâle (au centre) : pores de la lame criblée (lamina cribrosa), exposés quand le tissu neural a disparu.",
-        "Encoche du rebord en bas à gauche, du côté inférotemporal selon la source : atteinte glaucomateuse focale.",
+        "Encoche du rebord en bas à gauche, du côté inférotemporal : atteinte glaucomateuse focale.",
         "Trait sombre courbe au bord inférotemporal, non décrit par la source : ne pas le prendre d’emblée pour une hémorragie, qui serait rouge et en flammèche.",
         "Agrandissement d’OPH-135 (même patient, vue d’ensemble)."
       ] }
@@ -483,7 +483,7 @@ G.OPH.photos = {
       reveal: [
         "Bande gris ardoise en croissant au bord temporal du disque (à gauche) : pigment dans le tissu papillaire périphérique (croissant gris, gray crescent).",
         "En incluant ce croissant dans le disque, le rebord temporal est sain : il n’est pas aminci.",
-        "OCT RNFL normal dans tous les quadrants chez ce patient (source).",
+        "OCT RNFL normal dans tous les quadrants chez ce patient.",
         "Plus fréquent chez les patients d’ascendance africaine; n’augmente pas le risque de glaucome."
       ] }
   ],
@@ -494,7 +494,7 @@ G.OPH.photos = {
       reveal: [
         "Petite hémorragie rouge foncé en flammèche au bord inférieur de la papille, du côté de la macula (en bas à gauche du disque) : hémorragie papillaire (disc hemorrhage, Drance).",
         "Grande excavation pâle et anneau clair autour du disque : atrophie péripapillaire.",
-        "Facteur de risque de progression; ici, signe d’un contrôle insuffisant de la PIO malgré des pressions dans la normale (source)."
+        "Facteur de risque de progression; ici, signe d’un contrôle insuffisant de la PIO malgré des pressions dans la normale."
       ] },
     { id: "OPH-138", caption: "Même patient en gros plan : hémorragie en flammèche qui franchit le bord papillaire",
       look: "Observe la forme de l’hémorragie et sa position par rapport au bord du disque.",
@@ -527,7 +527,7 @@ G.OPH.photos = {
       reveal: [
         "Iris poussé vers l’avant de chaque côté (traits blancs obliques à gauche et à droite), plaqué jusqu’à la face postérieure de la cornée : contact iridocornéen, angles fermés.",
         "Fermeture secondaire : le gaz (SF6) injecté pour la DMEK, passé derrière l’iris, l’a poussé vers l’avant (bloc pupillaire par le gaz).",
-        "Après repositionnement du patient, le gaz est revenu en chambre antérieure par l’iridotomie ou la pupille : chambre profonde et PIO normale (source).",
+        "Après repositionnement du patient, le gaz est revenu en chambre antérieure par l’iridotomie ou la pupille : chambre profonde et PIO normale.",
         "Même signe OCT que dans une fermeture primaire : contact iridotrabéculaire."
       ] },
     { id: "OPH-146", caption: "Iridotomie périphérique au laser en position temporale (éclairage diffus)",
@@ -543,7 +543,7 @@ G.OPH.photos = {
     { id: "OPH-140", caption: "Crise aiguë de fermeture de l’angle à l’œil droit : rougeur et cornée trouble",
       look: "Compare les deux yeux : rougeur, transparence de la cornée et taille de la pupille.",
       reveal: [
-        "Œil droit (à gauche de l’image) rouge, avec une cornée grisâtre et trouble : œdème cornéen par PIO très élevée (plus de 70 mmHg selon la source).",
+        "Œil droit (à gauche de l’image) rouge, avec une cornée grisâtre et trouble : œdème cornéen par PIO très élevée (plus de 70 mmHg).",
         "Pupille de l’œil droit mal visible derrière la cornée œdémateuse; œil gauche (à droite de l’image) blanc et clair.",
         "Symptômes rapportés : douleur intense, céphalée, nausées et baisse de vision au réveil, chez un hypermétrope.",
         "L’œil adelphe avait un angle étroit fermé à la gonioscopie : iridotomie au laser aux deux yeux."
@@ -613,7 +613,7 @@ G.OPH.photos = {
       reveal: [
         "Bord courbe net qui traverse l’aire pupillaire de haut en bas : bord de l’implant ou du sac capsulaire, décentré.",
         "Matériel blanc opaque en bas à gauche de la pupille : capsule fibrosée ou dépôts (non précisé par la source).",
-        "Selon la source, ces déplacements peuvent survenir des années après la chirurgie : les zonules fragiles ne retiennent plus le sac capsulaire."
+        "Ces déplacements peuvent survenir des années après la chirurgie : les zonules fragiles ne retiennent plus le sac capsulaire."
       ] },
     { id: "OPH-152", caption: "Autre vue du même cas : implant déplacé visible dans la pupille",
       look: "Situe l’implant par rapport au centre de la pupille.",
@@ -644,19 +644,19 @@ G.OPH.photos = {
       reveal: [
         "Ligne de points noirs le long du bord gauche du cristallin, sur fond orangé : pigment déposé là où s’insèrent les zonules (ligne de Scheie, Scheie stripe).",
         "Visible seulement pupille dilatée, en rétroillumination.",
-        "Même patient qu’OPH-160 : homme myope de 29 ans avec PIO élevée aux deux yeux (source)."
+        "Même patient qu’OPH-160 : homme myope de 29 ans avec PIO élevée aux deux yeux."
       ] },
     { id: "OPH-160", caption: "Ligne de Scheie, pupille dilatée : trait pigmenté à la périphérie du cristallin",
       look: "Repère le trait brun à la périphérie du cristallin dans la pupille dilatée.",
       reveal: [
         "Trait pigmenté brun qui longe la périphérie gauche du cristallin : pigment à l’insertion des zonules.",
-        "Profil typique de la dispersion pigmentaire : homme jeune et myope (source).",
+        "Profil typique de la dispersion pigmentaire : homme jeune et myope.",
         "Le glaucome n’est pas certain : environ 10 % à 5 ans et 15 % à 15 ans (Siddiqui 2003)."
       ] },
     { id: "OPH-159", caption: "Pigment sur la capsule du cristallin en rétroillumination (dispersion pigmentaire)",
       look: "Cherche des amas irréguliers à la périphérie du cristallin.",
       reveal: [
-        "Amas irréguliers le long de la périphérie droite du cristallin, en rétroillumination : pigment sur la capsule (ligne de Scheie selon la source).",
+        "Amas irréguliers le long de la périphérie droite du cristallin, en rétroillumination : pigment sur la capsule (ligne de Scheie).",
         "Même signification que la ligne de Scheie : pigment libéré par le frottement de l’iris."
       ] }
   ],
@@ -667,14 +667,14 @@ G.OPH.photos = {
       reveal: [
         "Fins vaisseaux rouges irréguliers à la surface de l’iris, surtout en haut et autour de la pupille : néovaisseaux (rubéose irienne, rubeosis iridis).",
         "Vaisseaux tortueux et ramifiés en surface : différents des vaisseaux normaux, profonds et radiaires, parfois visibles sur un iris clair.",
-        "Contexte (source) : rétinopathie diabétique proliférante, PIO 32 mmHg à cet œil, angle ouvert avec néovaisseaux sur 360°.",
+        "Contexte : rétinopathie diabétique proliférante, PIO 32 mmHg à cet œil, angle ouvert avec néovaisseaux sur 360°.",
         "Même patient qu’OPH-163 et OPH-164 (œil droit)."
       ] },
     { id: "OPH-164", caption: "Même patient, œil droit : vaisseaux irréguliers à la surface de l’iris",
       look: "Cherche les vaisseaux rouges sur l’iris, surtout dans la moitié supérieure.",
       reveal: [
         "Fins vaisseaux rouges ramifiés sur la moitié supérieure de l’iris : néovaisseaux, moins étendus qu’à l’œil gauche.",
-        "PIO de 11 mmHg à cet œil (source) : la PIO peut rester normale tant que l’angle n’est pas obstrué.",
+        "PIO de 11 mmHg à cet œil : la PIO peut rester normale tant que l’angle n’est pas obstrué.",
         "Toujours faire la gonioscopie : les néovaisseaux de l’angle peuvent précéder ceux de l’iris."
       ] },
     { id: "OPH-163", caption: "Même patient, œil droit : néovaisseaux discrets sur l’iris (lampe à fente)",
@@ -720,7 +720,7 @@ G.OPH.photos = {
       reveal: [
         "Fente lumineuse sur la cornée à gauche, très proche de l’iris en périphérie : chambre antérieure périphérique étroite.",
         "Pupille irrégulière au centre : adhérences possibles entre l’iris et le cristallin.",
-        "Dans ce cas (source), l’iris bombé venait obstruer un tube de drainage placé en bas."
+        "Dans ce cas, l’iris bombé venait obstruer un tube de drainage placé en bas."
       ] },
     { id: "OPH-177", caption: "Précipités pigmentés sur le trabéculum (syndrome de Grant) en gonioscopie",
       look: "Dans le miroir de gonioscopie, examine la bande du trabéculum.",
@@ -742,10 +742,10 @@ G.OPH.photos = {
     { id: "OPH-182", caption: "Décollements choroïdiens « kissing » une semaine après un tube d’Ahmed (lampe à fente)",
       look: "Regarde, à travers la pupille irrégulière, ce qui occupe le centre de l’œil.",
       reveal: [
-        "Deux dômes brunâtres qui se touchent au centre, derrière la pupille (ligne verticale de contact) : décollements choroïdiens qui se rejoignent (kissing choroidals); œil aphake selon la source.",
-        "Pupille irrégulière : pupilloplastie faite pendant la chirurgie (source).",
+        "Deux dômes brunâtres qui se touchent au centre, derrière la pupille (ligne verticale de contact) : décollements choroïdiens qui se rejoignent (kissing choroidals); œil aphake.",
+        "Pupille irrégulière : pupilloplastie faite pendant la chirurgie.",
         "Contexte : chambre antérieure plate et PIO à 7 mmHg par surfiltration du tube; à distinguer d’une hémorragie suprachoroïdienne (douleur, PIO élevée).",
-        "Traitement ici : ligature du tube; PIO revenue et décollements disparus dès le lendemain (source)."
+        "Traitement ici : ligature du tube; PIO revenue et décollements disparus dès le lendemain."
       ] }
   ],
 
@@ -755,7 +755,7 @@ G.OPH.photos = {
       reveal: [
         "Fil unique en zigzag qui fait le tour du greffon : suture continue (running suture).",
         "Bord circulaire du greffon visible juste en dedans des points d’entrée du fil.",
-        "Indication selon la source : cicatrice d’ulcère; ce n’est pas le même patient qu’OPH-101 (quatre patients différents sur la page)."
+        "Indication : cicatrice d’ulcère; ce n’est pas le même patient qu’OPH-101 (quatre patients différents sur la page)."
       ] },
     { id: "OPH-101", caption: "Greffe transfixiante avec points séparés (éclairage diffus)",
       look: "Compte les points de suture et regarde s’ils sont réguliers.",
@@ -782,7 +782,7 @@ G.OPH.photos = {
       look: "Repère le matériau blanchâtre irrégulier collé sur la cornée.",
       reveal: [
         "Plaque blanchâtre irrégulière et brillante à droite de la pupille, vers 2 h : colle cyanoacrylate qui obture la perforation.",
-        "Indication : perforation de 2–3 mm au plus; la colle est aussi antibactérienne (source).",
+        "Indication : perforation de 2–3 mm au plus; la colle est aussi antibactérienne.",
         "Contexte : polyarthrite rhumatoïde mal contrôlée, amincissement progressif malgré le traitement; prednisone et doxycycline orales ajoutées.",
         "On la recouvre en général d’une lentille pansement pour le confort."
       ] },
@@ -799,7 +799,7 @@ G.OPH.photos = {
     { id: "OPH-187", caption: "Estimer le rapport C/D : quatre papilles de 0,2 à 0,9 (rétinophotographies)",
       look: "Pour chaque papille, compare la hauteur de l’excavation à la hauteur du disque.",
       reveal: [
-        "C/D vertical selon la source : 0,2 (A), 0,5 (B), 0,7 (C) et 0,9 (D).",
+        "C/D vertical : 0,2 (A), 0,5 (B), 0,7 (C) et 0,9 (D).",
         "On mesure verticalement, du bord de l’excavation (là où les vaisseaux plongent) au bord du disque.",
         "Toujours tenir compte de la taille du disque et comparer les deux yeux."
       ] },
@@ -829,7 +829,7 @@ G.OPH.photos = {
       look: "Compare les paupières supérieures et la profondeur du sillon au-dessus de chaque œil.",
       reveal: [
         "Sillon palpébral supérieur plus creux du côté gauche de la patiente (à droite de l’image) : atrophie de la graisse orbitaire (prostaglandin-associated periorbitopathy).",
-        "Cause : analogue des prostaglandines utilisé plusieurs années à cet œil, pour un glaucome par récession de l’angle (source).",
+        "Cause : analogue des prostaglandines utilisé plusieurs années à cet œil, pour un glaucome par récession de l’angle.",
         "Autres effets locaux connus des prostaglandines : rougeur, cils plus longs, assombrissement de l’iris et de la peau des paupières."
       ] },
     { id: "OPH-184", caption: "Même patiente un an après l’arrêt de la prostaglandine : nette amélioration",
@@ -845,8 +845,8 @@ G.OPH.photos = {
       look: "Décris la forme de l’ulcère et l’aspect de ses bords.",
       reveal: [
         "Défaut épithélial ovale au centre de la cornée, avec un rebord grisâtre épaissi : bords surélevés typiques de l’ulcère neurotrophique.",
-        "Selon la source, recrutement de globules blancs autour de l’ulcère et léger œdème cornéen : surveiller une surinfection.",
-        "Cause : paralysie du V (cornée insensible) et du VII (fermeture incomplète) après l’exérèse d’un méningiome (source).",
+        "Recrutement de globules blancs autour de l’ulcère et léger œdème cornéen : surveiller une surinfection.",
+        "Cause : paralysie du V (cornée insensible) et du VII (fermeture incomplète) après l’exérèse d’un méningiome.",
         "Même patient qu’OPH-080 et OPH-081."
       ] },
     { id: "OPH-083", caption: "Kératite ulcérative périphérique : fonte cornéenne près du limbe supérieur (éclairage diffus)",
@@ -854,7 +854,7 @@ G.OPH.photos = {
       reveal: [
         "Croissant blanchâtre le long du limbe, dans la moitié supérieure : infiltrat et fonte stromale en périphérie de la cornée.",
         "Injection intense des vaisseaux conjonctivaux et épiscléraux voisins (en haut à droite) : inflammation sévère.",
-        "Cause ici : granulomatose avec polyangéite (anciennement Wegener), découverte au bilan (source); la polyarthrite rhumatoïde est la cause la plus fréquente.",
+        "Cause ici : granulomatose avec polyangéite (anciennement Wegener), découverte au bilan; la polyarthrite rhumatoïde est la cause la plus fréquente.",
         "Urgence systémique : bilan rhumatologique et immunosuppression, en plus des soins locaux."
       ] },
     { id: "OPH-075", caption: "Kératoconjonctivite adénovirale : infiltrats sous-épithéliaux multiples dans l’axe visuel",
@@ -884,7 +884,7 @@ G.OPH.photos = {
       reveal: [
         "Zone où la coupe cornéenne s’amincit brutalement au milieu de la fente : seule la Descemet persiste (descémétocèle, descemetocele).",
         "Petit dôme arrondi en relief à côté de la fente : la Descemet amincie bombe sous la pression intraoculaire.",
-        "Cause ici : fonte cornéenne stérile sur rosacée oculaire (source).",
+        "Cause ici : fonte cornéenne stérile sur rosacée oculaire.",
         "Risque imminent de perforation : colle ou greffe tectonique; éviter toute pression sur le globe."
       ] }
   ],
@@ -910,7 +910,7 @@ G.OPH.photos = {
       reveal: [
         "Bande ciliaire brune très large et irrégulière, au centre : récession de l’angle (angle recession), déchirure dans le corps ciliaire.",
         "Bande blanche en bas à droite, entre corps ciliaire et éperon : fente de cyclodialyse (cyclodialysis cleft), corps ciliaire décollé de la sclère.",
-        "Impact d’une balle de racquetball (source); la récession expose à un glaucome tardif, la cyclodialyse à une hypotonie.",
+        "Impact d’une balle de racquetball; la récession expose à un glaucome tardif, la cyclodialyse à une hypotonie.",
         "Suivre la PIO à long terme après tout traumatisme contusif avec récession."
       ] },
     { id: "OPH-178", caption: "Syndrome ICE : synéchie antérieure périphérique haute jusqu’à la ligne de Schwalbe (gonioscopie)",
@@ -1002,7 +1002,7 @@ G.OPH.photos = {
     { id: "OPH-056", caption: "Rétroillumination sur le reflet rouge : irrégularités épithéliales en relief",
       look: "Contre le reflet rouge, cherche des ombres, des points ou des lignes.",
       reveal: [
-        "Fines ponctuations et irrégularités sur tout le reflet rouge : modifications épithéliales (dystrophie de la membrane basale selon la source).",
+        "Fines ponctuations et irrégularités sur tout le reflet rouge : modifications épithéliales (dystrophie de la membrane basale).",
         "Tache blanche au centre-droit : reflet de la lampe, pas une lésion.",
         "La rétroillumination éclaire par l’arrière : les fines opacités apparaissent comme des ombres sur le fond rouge."
       ] },
@@ -1033,7 +1033,7 @@ G.OPH.photos = {
     { id: "OPH-020", caption: "Film lacrymal fluorescéiné après le clignement (bleu cobalt)",
       look: "Regarde si le film vert recouvre uniformément la cornée.",
       reveal: [
-        "Film vert-bleu qui recouvre la cornée, avec fines ponctuations dispersées : érosions ponctuées (source).",
+        "Film vert-bleu qui recouvre la cornée, avec fines ponctuations dispersées : érosions ponctuées.",
         "Ménisque lacrymal inférieur vert vif le long de la paupière : réserve de larmes.",
         "Même patient qu’OPH-022, où des lignes sombres de rupture du film sont visibles."
       ] },
@@ -1119,7 +1119,7 @@ G.OPH.photos = {
     { id: "OPH-187", caption: "Rapport C/D vertical de 0,2 à 0,9 sur quatre papilles (rétinophotographies)",
       look: "Classe les papilles de la plus petite à la plus grande excavation.",
       reveal: [
-        "C/D selon la source : A 0,2; B 0,5; C 0,7; D 0,9.",
+        "C/D : A 0,2; B 0,5; C 0,7; D 0,9.",
         "L’excavation se repère au coude des vaisseaux qui plongent, pas seulement à la pâleur.",
         "Pâleur plus étendue que l’excavation : penser à une cause non glaucomateuse."
       ] },
@@ -1135,7 +1135,7 @@ G.OPH.photos = {
       reveal: [
         "Petits pores sombres ovalaires dans le fond pâle de l’excavation : lame criblée, traversée par les axones.",
         "Pores visibles = perte importante du tissu neural qui les recouvrait.",
-        "Encoche inférotemporale associée (en bas à gauche, selon la source)."
+        "Encoche inférotemporale associée (en bas à gauche)."
       ] },
     { id: "OPH-139", caption: "Piège papillaire : croissant gris temporal qui simule un rebord aminci",
       look: "Où se trouve le vrai bord du disque du côté temporal ?",
@@ -1189,7 +1189,7 @@ G.OPH.photos = {
       reveal: [
         "Fine ligne séparée de la face postérieure de la cornée sur les quatre coupes, surtout dans la moitié gauche de chacune : greffon DMEK décollé.",
         "Repères « Orientation » au-dessus de chaque coupe : la queue de la flèche correspond au côté gauche de l’image.",
-        "Selon la source, le greffon a adhéré après une nouvelle bulle d’air en chambre antérieure."
+        "Le greffon a adhéré après une nouvelle bulle d’air en chambre antérieure."
       ] }
   ],
 
@@ -1234,7 +1234,7 @@ G.OPH.photos = {
       look: "Suis l’arc de la cornée et compare son épaisseur au centre et sur les côtés.",
       reveal: [
         "Arc cornéen projeté vers l’avant en cône, au centre de la coupe : ectasie.",
-        "Cornée plus mince au sommet que sur les côtés : amincissement central (source).",
+        "Cornée plus mince au sommet que sur les côtés : amincissement central.",
         "La caméra Scheimpflug (Pentacam) reconstruit les faces antérieure et postérieure : elle détecte l’élévation postérieure, un marqueur précoce."
       ] }
   ],
@@ -1266,7 +1266,7 @@ G.OPH.photos = {
       look: "Compare la forme des isoptères internes avec un champ normal (OPH-014).",
       reveal: [
         "Isoptères internes (bleu, gris, rouge) déformés et rétrécis du côté droit du centre : déficit relatif.",
-        "Selon la source, dépression des isoptères I4e, I3e et I2e dans la région des fibres myélinisées (OPH-008, même patient).",
+        "Dépression des isoptères I4e, I3e et I2e dans la région des fibres myélinisées (OPH-008, même patient).",
         "Un déficit du champ n’est pas toujours glaucomateux : corréler avec la papille et la rétine."
       ] }
   ],

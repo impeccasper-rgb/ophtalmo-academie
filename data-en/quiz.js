@@ -1844,7 +1844,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Scrape for culture and PCR, hourly biguanide",
       "Oral valacyclovir and stop the lenses"
     ],
-    explain: "The paracentral stromal ring surrounding a clearer zone is the ring infiltrate typical of Acanthamoeba keratitis, an infection by a free-living ameba found in water, mainly in contact lens wearers. The diagnosis is confirmed by scraping (culture, PCR) or by confocal microscopy, as in this patient according to the source.",
+    explain: "The paracentral stromal ring surrounding a clearer zone is the ring infiltrate typical of Acanthamoeba keratitis, an infection by a free-living ameba found in water, mainly in contact lens wearers. The diagnosis is confirmed by scraping (culture, PCR) or by confocal microscopy, as in this patient.",
     why: [
       "Wrong: an early steroid worsens amebic or fungal keratitis.",
       "Wrong: a stromal ring despite a week of antibiotics points to ameba; switching antibiotics delays the diagnosis.",
@@ -2006,7 +2006,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Prescribe a topical antibiotic for conjunctivitis",
       "Prescribe a topical corticosteroid alone and recheck in a week"
     ],
-    explain: "A red right eye with a hazy cornea in a symptomatic hyperope: this is an acute angle-closure attack (IOP over 70 mmHg according to the source). Lower IOP medically (topical beta-blocker, alpha-agonist and carbonic anhydrase inhibitor, acetazolamide 500 mg PO or IV), add pilocarpine once IOP has come down, then perform a laser peripheral iridotomy (a small opening in the iris), in both eyes.",
+    explain: "A red right eye with a hazy cornea in a symptomatic hyperope: this is an acute angle-closure attack (IOP over 70 mmHg). Lower IOP medically (topical beta-blocker, alpha-agonist and carbonic anhydrase inhibitor, acetazolamide 500 mg PO or IV), add pilocarpine once IOP has come down, then perform a laser peripheral iridotomy (a small opening in the iris), in both eyes.",
     why: [
       "Correct: a sight-threatening emergency; medical lowering of IOP then iridotomy, and examination of the fellow eye.",
       "False: dilating the pupil can worsen or trigger angle closure.",
@@ -2056,7 +2056,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Iris bombé from pupillary block",
       "Aqueous misdirection (malignant glaucoma)"
     ],
-    explain: "Two brownish domes meet behind the pupil, on either side of a vertical line of contact: these are serous \"kissing\" choroidal detachments (kissing choroidals), due to overfiltration through the tube (hypotony, flat chamber). Suprachoroidal hemorrhage is the main diagnosis to rule out: sudden pain and often elevated IOP. Here, the tube was ligated for fear of such a hemorrhage, and the detachments had resolved by the next day (source).",
+    explain: "Two brownish domes meet behind the pupil, on either side of a vertical line of contact: these are serous \"kissing\" choroidal detachments (kissing choroidals), due to overfiltration through the tube (hypotony, flat chamber). Suprachoroidal hemorrhage is the main diagnosis to rule out: sudden pain and often elevated IOP. Here, the tube was ligated for fear of such a hemorrhage, and the detachments had resolved by the next day.",
     why: [
       "False: suprachoroidal hemorrhage (bleeding between choroid and sclera) typically gives sudden pain and elevated IOP, with dark red domes; here, IOP is low (7 mmHg).",
       "Correct: hypotony and a flat chamber after a tube, with choroidal detachments meeting centrally.",
@@ -2072,7 +2072,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Beta-zone peripapillary atrophy",
       "Tilted disc of high myopia"
     ],
-    explain: "The slate-grey band at the temporal margin of the disc is a gray crescent: pigment in the peripheral disc tissue. If the true disc margin is traced outside the crescent, the temporal rim is healthy, as confirmed by the normal OCT (the source caption \"severe thinning of the temporal neuroretinal rim\" describes the misleading impression, not the diagnosis). More common in patients of African ancestry, it does not increase the risk of glaucoma according to the source: recognizing it avoids a false glaucoma-suspect diagnosis and unnecessary treatment.",
+    explain: "The slate-grey band at the temporal margin of the disc is a gray crescent: pigment in the peripheral disc tissue. If the true disc margin is traced outside the crescent, the temporal rim is healthy, as confirmed by the normal OCT (the source caption \"severe thinning of the temporal neuroretinal rim\" describes the misleading impression, not the diagnosis). More common in patients of African ancestry, it does not increase the risk of glaucoma: recognizing it avoids a false glaucoma-suspect diagnosis and unnecessary treatment.",
     why: [
       "Correct: a classic trap; the pigment suggests a thin rim when the neural tissue is present.",
       "False: a falsely normal OCT (green disease) exists, but here the pigment explains the whole appearance and the OCT is normal in all quadrants.",
@@ -2898,7 +2898,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Repeat a Humphrey 24-2, because Goldmann is unreliable",
       "Order brain imaging and a neurological assessment"
     ],
-    explain: "Both fields lose the same (left) half and the defect stops sharply at the vertical meridian: this is a left homonymous hemianopia, hence a right retrochiasmal lesion (here, according to the source, an occipital stroke). Glaucoma respects the horizontal meridian, not the vertical one. Brain imaging and a neurological assessment are needed, not pressure-lowering treatment.",
+    explain: "Both fields lose the same (left) half and the defect stops sharply at the vertical meridian: this is a left homonymous hemianopia, hence a right retrochiasmal lesion (here, an occipital stroke). Glaucoma respects the horizontal meridian, not the vertical one. Brain imaging and a neurological assessment are needed, not pressure-lowering treatment.",
     why: [
       "False: lowering IOP does not treat a brain lesion and delays the diagnosis of a stroke or tumor.",
       "False: gonioscopy is part of a glaucoma workup, but this homonymous defect is not glaucomatous.",
@@ -2914,7 +2914,7 @@ Object.assign(G.OPH_EN.quiz, {
       "No need to scrape: cover bacteria and fungi right away without sampling",
       "Wait for confocal microscopy before any treatment or sampling"
     ],
-    explain: "Satellite infiltrates (small foci separate from the main ulcer) classically suggest a fungus, but have also been described with bacteria (including Pseudomonas), Acanthamoeba and atypical mycobacteria. In this case, according to the source, it was a bacterial keratitis with Gram-negative bacilli, cultures negative. A central ulcer larger than 2 mm requires scraping for smears and cultures (bacterial and fungal) before settling on treatment.",
+    explain: "Satellite infiltrates (small foci separate from the main ulcer) classically suggest a fungus, but have also been described with bacteria (including Pseudomonas), Acanthamoeba and atypical mycobacteria. In this case, it was a bacterial keratitis with Gram-negative bacilli, cultures negative. A central ulcer larger than 2 mm requires scraping for smears and cultures (bacterial and fungal) before settling on treatment.",
     why: [
       "False: a classic trap. Satellites are suggestive, not pathognomonic; here the source reports a bacterial keratitis.",
       "Correct: scraping (Gram stain, bacterial and fungal cultures) guides treatment; fortified drops are then started and adjusted.",
@@ -2948,7 +2948,7 @@ Object.assign(G.OPH_EN.quiz, {
       "An interface infection, resistant to drops: surgery may be needed",
       "A surface infection that heals within a few days of topical antifungal"
     ],
-    explain: "The small creamy white spots at the periphery of the graft correspond, in this context, to Candida colonies in the interface between the DSAEK graft and the recipient cornea. This closed pocket is poorly reached by drops: according to the source, the infection resisted medical treatment, recurred after a repeat DSAEK and intracameral voriconazole, and only a penetrating keratoplasty eradicated it.",
+    explain: "The small creamy white spots at the periphery of the graft correspond, in this context, to Candida colonies in the interface between the DSAEK graft and the recipient cornea. This closed pocket is poorly reached by drops: the infection resisted medical treatment, recurred after a repeat DSAEK and intracameral voriconazole, and only a penetrating keratoplasty eradicated it.",
     why: [
       "False: Kaye dots are fine epithelial dots in front of the sutures of a penetrating graft, without a deep white infiltrate.",
       "False: endothelial rejection gives precipitates on the graft, a rejection line and edema; steroids alone would worsen a fungal infection.",
@@ -2980,7 +2980,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Inflamed pinguecula (pingueculitis)",
       "Benign amelanotic conjunctival nevus"
     ],
-    explain: "A greyish, elevated, gelatinous mass straddling the limbus, invading the cornea with an irregular front and tortuous feeder vessels: this is the appearance of ocular surface squamous neoplasia (OSSN), here a squamous cell carcinoma according to the source. The main risk factor is UV exposure (also HIV, HPV, immunosuppression). Management: referral to cornea or ocular oncology for excisional biopsy or topical treatment.",
+    explain: "A greyish, elevated, gelatinous mass straddling the limbus, invading the cornea with an irregular front and tortuous feeder vessels: this is the appearance of ocular surface squamous neoplasia (OSSN), here a squamous cell carcinoma. The main risk factor is UV exposure (also HIV, HPV, immunosuppression). Management: referral to cornea or ocular oncology for excisional biopsy or topical treatment.",
     why: [
       "False: a pterygium is a fleshy triangle with a flat head that advances regularly; a gelatinous lesion with an irregular front requires ruling out a neoplasia.",
       "Correct: gelatinous appearance, feeder vessels and recent growth; biopsy will confirm.",
@@ -2996,7 +2996,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Prescribe sodium chloride 5 % and observe the edema",
       "Plan a DMEK right away without touching the implant"
     ],
-    explain: "The white rod in the inferior anterior chamber is an intravitreal dexamethasone implant (Ozurdex) that has migrated forward, for lack of a capsular barrier in this aphakic eye. In contact with the endothelium, it sustains corneal edema that can become permanent: according to the source, it was removed urgently. Also according to the source, the manufacturer's labeling contraindicates it in aphakia and in the presence of an anterior chamber IOL without an intact posterior capsule.",
+    explain: "The white rod in the inferior anterior chamber is an intravitreal dexamethasone implant (Ozurdex) that has migrated forward, for lack of a capsular barrier in this aphakic eye. In contact with the endothelium, it sustains corneal edema that can become permanent: it was removed urgently. Also the manufacturer's labeling contraindicates it in aphakia and in the presence of an anterior chamber IOL without an intact posterior capsule.",
     why: [
       "Correct: prompt surgical removal to limit endothelial decompensation.",
       "False: waiting leaves the implant in contact with the endothelium and worsens the decompensation.",
@@ -3028,7 +3028,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Pilocarpine 2 % to open the angle and a recheck in six months",
       "Gonioscopy, anti-VEGF and panretinal photocoagulation"
     ],
-    explain: "The fine, lacy vessels on the surface of the iris, near the pupillary margin, are iris neovascularization. After a central retinal artery occlusion, the ischemic retina releases VEGF; according to the source, neovascularization and neovascular glaucoma appeared at about 3 months and were treated with intravitreal bevacizumab. Gonioscopy (angle new vessels), treatment of the ischemia (anti-VEGF, panretinal photocoagulation) and IOP control are needed.",
+    explain: "The fine, lacy vessels on the surface of the iris, near the pupillary margin, are iris neovascularization. After a central retinal artery occlusion, the ischemic retina releases VEGF; neovascularization and neovascular glaucoma appeared at about 3 months and were treated with intravitreal bevacizumab. Gonioscopy (angle new vessels), treatment of the ischemia (anti-VEGF, panretinal photocoagulation) and IOP control are needed.",
     why: [
       "False: neovascular closure is synechial (a fibrovascular membrane), not pupillary block; iridotomy does not open it.",
       "False: SLT is ineffective when the meshwork is covered with new vessels and can worsen inflammation.",
@@ -3044,7 +3044,7 @@ Object.assign(G.OPH_EN.quiz, {
       "A persistent pupillary membrane that will hamper the capsulorhexis",
       "A posterior synechia that will prevent good dilation"
     ],
-    explain: "The upper edge of the lens crosses the dilated pupil: the lens has slipped downward. According to the source, this is a spontaneous subluxation with superior zonular dehiscence and dialysis, the zonules being covered with white fibrillar material. Pseudoexfoliation weakens the zonules: plan a high-risk surgery (capsular support devices, or even extraction and fixation of an IOL outside the bag).",
+    explain: "The upper edge of the lens crosses the dilated pupil: the lens has slipped downward. this is a spontaneous subluxation with superior zonular dehiscence and dialysis, the zonules being covered with white fibrillar material. Pseudoexfoliation weakens the zonules: plan a high-risk surgery (capsular support devices, or even extraction and fixation of an IOL outside the bag).",
     why: [
       "False: nuclear density matters, but the lens displacement is the finding that changes the technique and equipment.",
       "Correct: zonules ruptured superiorly; plan a tension ring, capsular hooks or another strategy.",
@@ -3060,7 +3060,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Posner-Schlossman syndrome, with no further workup needed",
       "A toxic reaction to preserved glaucoma drops"
     ],
-    explain: "These numerous, rounded, yellowish keratic precipitates, larger than fine precipitates, are, according to the source, mutton-fat keratic precipitates. They indicate granulomatous uveitis: look for sarcoidosis, tuberculosis, syphilis, herpetic uveitis (HSV/VZV) or Vogt-Koyanagi-Harada. The workup guides treatment, because corticosteroids without adequate cover can worsen an infection.",
+    explain: "These numerous, rounded, yellowish keratic precipitates, larger than fine precipitates, are, mutton-fat keratic precipitates. They indicate granulomatous uveitis: look for sarcoidosis, tuberculosis, syphilis, herpetic uveitis (HSV/VZV) or Vogt-Koyanagi-Harada. The workup guides treatment, because corticosteroids without adequate cover can worsen an infection.",
     why: [
       "Correct: mutton fat = granulomatous uveitis; a targeted workup before prolonged corticosteroids.",
       "False: HLA-B27 uveitis is typically acute, unilateral and highly inflammatory, with fine precipitates, fibrin or hypopyon.",
@@ -3076,7 +3076,7 @@ Object.assign(G.OPH_EN.quiz, {
       "IOP rise and corneal blood staining",
       "Acanthamoeba keratitis related to the procedure"
     ],
-    explain: "The dark red clot in the anterior chamber is a hyphema, here retracting two weeks after an iStent attempt aborted because of bleeding (according to the source). Red cells clog the trabecular meshwork and raise IOP; a prolonged elevated IOP with a lot of blood can stain the cornea (corneal blood staining). Monitor IOP, head elevated, cycloplegic and topical corticosteroid; surgical washout if IOP stays uncontrolled or if the cornea begins to stain.",
+    explain: "The dark red clot in the anterior chamber is a hyphema, here retracting two weeks after an iStent attempt aborted because of bleeding. Red cells clog the trabecular meshwork and raise IOP; a prolonged elevated IOP with a lot of blood can stain the cornea (corneal blood staining). Monitor IOP, head elevated, cycloplegic and topical corticosteroid; surgical washout if IOP stays uncontrolled or if the cornea begins to stain.",
     why: [
       "False: blood is not a sign of infection; endophthalmitis gives increasing pain, hypopyon and vitritis.",
       "False: the iStent does not create a filtering bleb; it diverts aqueous into Schlemm canal.",

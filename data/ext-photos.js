@@ -42,7 +42,7 @@ G.OPH.photos = G.OPH.photos || {};
       look: "Repère la jonction entre la périphérie de l’iris et les bandes claires de l’angle, en haut de l’image.",
       reveal: [
         "En haut, dans le miroir : angle ouvert, avec plusieurs bandes visibles au-dessus de la racine de l’iris.",
-        "En haut au centre, fins filaments bruns en dentelle qui partent de la périphérie de l’iris et montent sur la première bande claire de l’angle : procès iriens (iris processes) selon la source.",
+        "En haut au centre, fins filaments bruns en dentelle qui partent de la périphérie de l’iris et montent sur la première bande claire de l’angle : procès iriens (iris processes).",
         "Variante normale, plus fréquente chez les iris foncés : fins et ajourés, ils laissent voir les structures derrière eux et ne bloquent pas l’angle.",
         "À distinguer des synéchies antérieures périphériques (larges, opaques, persistent à l’indentation) et des néovaisseaux (rouges, ramifiés, franchissent l’éperon)."
       ] }
@@ -68,7 +68,7 @@ G.OPH.photos = G.OPH.photos || {};
   ],
 
   "a-papille": [
-    { id: "OPH-202", caption: "Papille normale : rapport C/D 0,3 selon la source, anneau rose épais",
+    { id: "OPH-202", caption: "Papille normale : rapport C/D 0,3, anneau rose épais",
       look: "Évalue l’épaisseur et la couleur de l’anneau neurorétinien autour de l’excavation.",
       reveal: [
         "Petite excavation centrale claire; anneau neurorétinien (neuroretinal rim) rose orangé, épais et régulier tout autour.",
@@ -76,7 +76,7 @@ G.OPH.photos = G.OPH.photos || {};
         "Vaisseaux qui émergent au centre et sortent sans se couder au bord du disque; pas d’hémorragie ni d’encoche visibles.",
         "Le C/D dépend de la taille du disque : juger l’anneau (épaisseur, couleur, règle ISNT) plutôt que le chiffre seul."
       ] },
-    { id: "OPH-203", caption: "Papille glaucomateuse : rapport C/D 0,9 selon la source, anneau presque disparu",
+    { id: "OPH-203", caption: "Papille glaucomateuse : rapport C/D 0,9, anneau presque disparu",
       look: "Cherche ce qui reste de l’anneau neurorétinien et observe le trajet des vaisseaux au bord du disque.",
       reveal: [
         "Excavation blanche qui occupe presque tout le disque : C/D de 0,9 documenté par la source.",
@@ -108,7 +108,7 @@ G.OPH.photos = G.OPH.photos || {};
       reveal: [
         "Contour de l’ulcère central bien découpé, avec des anneaux concentriques à l’intérieur.",
         "Infiltrats ronds plus petits autour de l’ulcère, bien séparés de lui (le côté droit est en partie masqué par le reflet lumineux).",
-        "Selon la source, des satellites ont aussi été décrits avec l’Acanthamoeba, les mycobactéries atypiques et des bactéries comme le Pseudomonas.",
+        "Des satellites ont aussi été décrits avec l’Acanthamoeba, les mycobactéries atypiques et des bactéries comme le Pseudomonas.",
         "Conduite inchangée : grattage pour coloration de Gram et cultures (bactéries et champignons), puis antibiotiques fortifiés ajustés aux résultats."
       ] }
   ],
@@ -132,7 +132,7 @@ G.OPH.photos = G.OPH.photos || {};
     { id: "OPH-335", caption: "Candida dans l’interface d’une DSAEK, trois mois après la greffe (lampe à fente)",
       look: "Repère l’opacité blanche sur le trajet de la fente et sa position dans la cornée.",
       reveal: [
-        "Petite opacité blanche duveteuse à gauche, sur le trajet de la fente, en périphérie moyenne de la cornée; selon la source, elle siège dans l’interface greffon-receveur.",
+        "Petite opacité blanche duveteuse à gauche, sur le trajet de la fente, en périphérie moyenne de la cornée; elle siège dans l’interface greffon-receveur.",
         "Selon la source : DSAEK pour une dystrophie de Fuchs; la culture de la collerette du donneur a poussé Candida albicans, et l’infection est apparue trois mois plus tard malgré un antifongique préventif.",
         "L’interface est une poche fermée, mal atteinte par les gouttes : échec du traitement médical, récidive après une nouvelle DSAEK et du voriconazole intracamérulaire, guérison par greffe transfixiante.",
         "Leçon : une culture positive de la collerette impose un suivi rapproché; une infiltration blanche de l’interface exige un avis de cornée rapide."
@@ -142,7 +142,7 @@ G.OPH.photos = G.OPH.photos || {};
       reveal: [
         "Greffe transfixiante avec une couronne de sutures séparées encore en place.",
         "Opacité blanche duveteuse aux fins branchements, comme des cristaux, dans le stroma paracentral en bas à gauche du greffon.",
-        "Injection conjonctivale légère selon la source : infection indolente, typiquement peu inflammatoire, chez une greffe sous corticostéroïdes chroniques.",
+        "Injection conjonctivale légère : infection indolente, typiquement peu inflammatoire, chez une greffe sous corticostéroïdes chroniques.",
         "Selon la source : souvent un streptocoque alpha-hémolytique (viridans), parfois Candida, à partir d’un trajet de suture; le grattage peut être négatif, d’où parfois une biopsie."
       ] }
   ],
@@ -152,7 +152,7 @@ G.OPH.photos = G.OPH.photos || {};
       look: "Décris la forme des deux opacités et demande-toi si elles sont actives.",
       reveal: [
         "Deux opacités grisâtres ramifiées, en étoile, dans la cornée devant l’iris éclairé (une en haut, l’autre plus bas, au centre de l’image).",
-        "Contours flous, sans bulbes terminaux nets; selon la source, infiltration et cicatrice sous-épithéliales résiduelles à l’endroit d’anciens ulcères dendritiques (ghost dendrites).",
+        "Contours flous, sans bulbes terminaux nets; infiltration et cicatrice sous-épithéliales résiduelles à l’endroit d’anciens ulcères dendritiques (ghost dendrites).",
         "Une cicatrice ne prend pas la fluorescéine, alors qu’une dendrite active se colore : toujours vérifier avec le colorant avant de conclure.",
         "Pas d’antiviral curatif pour une cicatrice; on discute la prophylaxie (acyclovir 400 mg BID) si les récidives sont fréquentes."
       ] },
@@ -200,8 +200,8 @@ G.OPH.photos = G.OPH.photos || {};
       look: "Compare les quatre vues : où se trouve le liquide, quel dessin forme-t-il et que montre la fluorescéine ?",
       reveal: [
         "A, OCT du segment antérieur : petites cavités noires alignées juste sous l’épithélium (liquide sous-épithélial).",
-        "B et C, lampe à fente : selon la source, œdème diffus en mailles, comme un nid d’abeilles (honeycomb), bien visible en B.",
-        "D, fluorescéine : ponctuations dans une bande horizontale de la fente palpébrale, là où des bulles sous-épithéliales se sont rompues (selon la source).",
+        "B et C, lampe à fente : œdème diffus en mailles, comme un nid d’abeilles (honeycomb), bien visible en B.",
+        "D, fluorescéine : ponctuations dans une bande horizontale de la fente palpébrale, là où des bulles sous-épithéliales se sont rompues.",
         "Selon la source : œil greffé (DSAEK) avec glaucome avancé et tube d’Ahmed; œdème apparu environ 10 mois après le début du netarsudil, qui a été cessé. Ce type d’œdème survient surtout sur une cornée déjà fragile. Disponibilité canadienne du netarsudil à vérifier."
       ] },
     { id: "OPH-354", caption: "Implant de dexaméthasone (Ozurdex) migré en chambre antérieure chez un œil aphaque",
@@ -274,7 +274,7 @@ G.OPH.photos = G.OPH.photos || {};
       reveal: [
         "Contour rond et festonné au centre de la pupille : bord d’un disque central de matériel exfoliatif sur la capsule antérieure.",
         "Second contour, plus périphérique, visible surtout à droite, avec de fines stries radiaires.",
-        "Petits points et flocons blancs épars sur la capsule (selon la source, dépôt de matériel exfoliatif).",
+        "Petits points et flocons blancs épars sur la capsule (dépôt de matériel exfoliatif).",
         "Aspect classique : disque central, zone intermédiaire claire frottée par l’iris et bande périphérique granuleuse; chercher aussi la ligne de Sampaolesi en gonioscopie."
       ] }
   ],
@@ -292,7 +292,7 @@ G.OPH.photos = G.OPH.photos || {};
       look: "Compare la taille et l’aspect de ces précipités avec des précipités fins.",
       reveal: [
         "Nombreux dépôts ronds et jaunâtres, de taille moyenne à grosse, groupés dans la moitié inférieure de la cornée, devant la pupille et l’iris éclairé.",
-        "Taille variable, les plus gros en bas; selon la source, précipités en graisse de mouton : répartition inférieure typique (triangle d’Arlt), liée aux courants de convection de l’humeur aqueuse.",
+        "Taille variable, les plus gros en bas; précipités en graisse de mouton : répartition inférieure typique (triangle d’Arlt), liée aux courants de convection de l’humeur aqueuse.",
         "Précipités en graisse de mouton (mutton-fat) = uvéite granulomateuse : sarcoïdose, tuberculose, syphilis, herpès (HSV/VZV), Vogt-Koyanagi-Harada, entre autres.",
         "Glaucome uvéitique : traiter l’inflammation et la PIO; un bilan étiologique s’impose avant une corticothérapie prolongée."
       ] }
@@ -381,7 +381,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Demander une imagerie cérébrale et une évaluation neurologique"
     ],
     answer: 3,
-    explain: "Les deux champs perdent la même moitié (gauche) et le défaut s’arrête net sur le méridien vertical : c’est une hémianopsie homonyme gauche, donc une lésion rétrochiasmatique droite (ici, selon la source, un AVC occipital). Le glaucome respecte le méridien horizontal, pas le vertical. Il faut une imagerie cérébrale et une évaluation neurologique, pas un traitement hypotenseur.",
+    explain: "Les deux champs perdent la même moitié (gauche) et le défaut s’arrête net sur le méridien vertical : c’est une hémianopsie homonyme gauche, donc une lésion rétrochiasmatique droite (ici, un AVC occipital). Le glaucome respecte le méridien horizontal, pas le vertical. Il faut une imagerie cérébrale et une évaluation neurologique, pas un traitement hypotenseur.",
     why: [
       "Faux : baisser la PIO ne traite pas une lésion cérébrale et retarde le diagnostic d’un AVC ou d’une tumeur.",
       "Faux : la gonioscopie fait partie du bilan d’un glaucome, mais ce défaut homonyme n’est pas glaucomateux.",
@@ -399,7 +399,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Attendre une microscopie confocale avant tout traitement ou prélèvement"
     ],
     answer: 1,
-    explain: "Les infiltrats satellites (petits foyers séparés de l’ulcère principal) évoquent classiquement un champignon, mais ont aussi été décrits avec des bactéries (dont le Pseudomonas), l’Acanthamoeba et des mycobactéries atypiques. Dans ce dossier, selon la source, il s’agissait d’une kératite bactérienne à bacilles Gram négatif, cultures négatives. Un ulcère central de plus de 2 mm impose un grattage pour frottis et cultures (bactéries et champignons) avant de fixer le traitement.",
+    explain: "Les infiltrats satellites (petits foyers séparés de l’ulcère principal) évoquent classiquement un champignon, mais ont aussi été décrits avec des bactéries (dont le Pseudomonas), l’Acanthamoeba et des mycobactéries atypiques. Dans ce dossier, il s’agissait d’une kératite bactérienne à bacilles Gram négatif, cultures négatives. Un ulcère central de plus de 2 mm impose un grattage pour frottis et cultures (bactéries et champignons) avant de fixer le traitement.",
     why: [
       "Faux : piège classique. Les satellites sont suggestifs, pas pathognomoniques; ici la source rapporte une kératite bactérienne.",
       "Exact : le grattage (Gram, cultures bactériennes et fongiques) guide le traitement; on débute ensuite les fortifiés et on ajuste.",
@@ -435,7 +435,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Une infection de surface qui guérit en quelques jours d’antifongique topique"
     ],
     answer: 2,
-    explain: "Les petites taches blanches crémeuses en périphérie de la greffe correspondent, dans ce contexte, à des colonies de Candida dans l’interface entre le greffon DSAEK et la cornée du receveur. Cette poche fermée est mal atteinte par les gouttes : selon la source, l’infection a résisté au traitement médical, a récidivé après une nouvelle DSAEK et du voriconazole intracamérulaire, et seule une greffe transfixiante l’a éradiquée.",
+    explain: "Les petites taches blanches crémeuses en périphérie de la greffe correspondent, dans ce contexte, à des colonies de Candida dans l’interface entre le greffon DSAEK et la cornée du receveur. Cette poche fermée est mal atteinte par les gouttes : l’infection a résisté au traitement médical, a récidivé après une nouvelle DSAEK et du voriconazole intracamérulaire, et seule une greffe transfixiante l’a éradiquée.",
     why: [
       "Faux : les points de Kaye sont de fins points épithéliaux en avant des sutures d’une greffe transfixiante, sans infiltrat blanc profond.",
       "Faux : le rejet endothélial donne des précipités sur le greffon, une ligne de rejet et un œdème; des stéroïdes seuls aggraveraient une infection fongique.",
@@ -471,7 +471,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Nævus conjonctival amélanotique bénin"
     ],
     answer: 1,
-    explain: "Masse gélatineuse grisâtre, surélevée, à cheval sur le limbe, qui envahit la cornée avec un front irrégulier et des vaisseaux nourriciers tortueux : c’est l’aspect d’une néoplasie épidermoïde de la surface oculaire (ocular surface squamous neoplasia, OSSN), ici un carcinome épidermoïde selon la source. Le principal facteur de risque est l’exposition aux UV (aussi VIH, VPH, immunosuppression). Conduite : référence en cornée ou oncologie oculaire pour biopsie-exérèse ou traitement topique.",
+    explain: "Masse gélatineuse grisâtre, surélevée, à cheval sur le limbe, qui envahit la cornée avec un front irrégulier et des vaisseaux nourriciers tortueux : c’est l’aspect d’une néoplasie épidermoïde de la surface oculaire (ocular surface squamous neoplasia, OSSN), ici un carcinome épidermoïde. Le principal facteur de risque est l’exposition aux UV (aussi VIH, VPH, immunosuppression). Conduite : référence en cornée ou oncologie oculaire pour biopsie-exérèse ou traitement topique.",
     why: [
       "Faux : le ptérygion est un triangle charnu à tête plate qui avance régulièrement; une lésion gélatineuse à front irrégulier impose d’éliminer une néoplasie.",
       "Exact : aspect gélatineux, vaisseaux nourriciers et croissance récente; la biopsie confirmera.",
@@ -489,7 +489,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Planifier d’emblée une DMEK sans toucher à l’implant"
     ],
     answer: 0,
-    explain: "Le bâtonnet blanc dans la chambre antérieure inférieure est un implant intravitréen de dexaméthasone (Ozurdex) qui a migré vers l’avant, faute de barrière capsulaire chez cet œil aphaque. Au contact de l’endothélium, il entretient un œdème cornéen qui peut devenir permanent : selon la source, il a été retiré d’urgence. Toujours selon la source, la notice du fabricant le contre-indique chez l’aphaque et en présence d’un implant de chambre antérieure sans capsule postérieure intacte.",
+    explain: "Le bâtonnet blanc dans la chambre antérieure inférieure est un implant intravitréen de dexaméthasone (Ozurdex) qui a migré vers l’avant, faute de barrière capsulaire chez cet œil aphaque. Au contact de l’endothélium, il entretient un œdème cornéen qui peut devenir permanent : il a été retiré d’urgence. Toujours la notice du fabricant le contre-indique chez l’aphaque et en présence d’un implant de chambre antérieure sans capsule postérieure intacte.",
     why: [
       "Exact : retrait chirurgical rapide pour limiter la décompensation endothéliale.",
       "Faux : attendre laisse l’implant au contact de l’endothélium et aggrave la décompensation.",
@@ -525,7 +525,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Gonioscopie, anti-VEGF et photocoagulation panrétinienne"
     ],
     answer: 3,
-    explain: "Les fins vaisseaux en dentelle à la surface de l’iris, près de la marge pupillaire, sont une néovascularisation irienne. Après une occlusion de l’artère centrale de la rétine, la rétine ischémique libère du VEGF; selon la source, la néovascularisation et le glaucome néovasculaire sont apparus vers 3 mois et ont été traités par bévacizumab intravitréen. Il faut une gonioscopie (néovaisseaux de l’angle), le traitement de l’ischémie (anti-VEGF, photocoagulation panrétinienne) et le contrôle de la PIO.",
+    explain: "Les fins vaisseaux en dentelle à la surface de l’iris, près de la marge pupillaire, sont une néovascularisation irienne. Après une occlusion de l’artère centrale de la rétine, la rétine ischémique libère du VEGF; la néovascularisation et le glaucome néovasculaire sont apparus vers 3 mois et ont été traités par bévacizumab intravitréen. Il faut une gonioscopie (néovaisseaux de l’angle), le traitement de l’ischémie (anti-VEGF, photocoagulation panrétinienne) et le contrôle de la PIO.",
     why: [
       "Faux : la fermeture néovasculaire est synéchiale (membrane fibrovasculaire), pas un blocage pupillaire; l’iridotomie ne l’ouvre pas.",
       "Faux : la SLT est inefficace quand le trabéculum est couvert de néovaisseaux et peut aggraver l’inflammation.",
@@ -543,7 +543,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Une synéchie postérieure qui empêchera une bonne dilatation"
     ],
     answer: 1,
-    explain: "Le bord supérieur du cristallin traverse la pupille dilatée : le cristallin a glissé vers le bas. Selon la source, il s’agit d’une luxation spontanée avec déhiscence et désinsertion zonulaires supérieures, les zonules étant couvertes de matériel fibrillaire blanc. La pseudo-exfoliation fragilise les zonules : il faut prévoir une chirurgie à risque (dispositifs de soutien capsulaire, voire extraction et fixation d’une lentille hors du sac).",
+    explain: "Le bord supérieur du cristallin traverse la pupille dilatée : le cristallin a glissé vers le bas. il s’agit d’une luxation spontanée avec déhiscence et désinsertion zonulaires supérieures, les zonules étant couvertes de matériel fibrillaire blanc. La pseudo-exfoliation fragilise les zonules : il faut prévoir une chirurgie à risque (dispositifs de soutien capsulaire, voire extraction et fixation d’une lentille hors du sac).",
     why: [
       "Faux : la densité du noyau compte, mais le déplacement du cristallin est la trouvaille qui change la technique et le matériel.",
       "Exact : zonules rompues en haut; prévoir anneau de tension, crochets capsulaires ou une autre stratégie.",
@@ -561,7 +561,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Une réaction toxique aux gouttes antiglaucomateuses avec agent de conservation"
     ],
     answer: 0,
-    explain: "Ces précipités rétrocornéens nombreux, arrondis, jaunâtres et plus gros que des précipités fins sont, selon la source, des précipités en graisse de mouton (mutton-fat keratic precipitates). Ils signent une uvéite granulomateuse : chercher sarcoïdose, tuberculose, syphilis, uvéite herpétique (HSV/VZV) ou Vogt-Koyanagi-Harada. Le bilan oriente le traitement, car une corticothérapie sans couverture adéquate peut aggraver une infection.",
+    explain: "Ces précipités rétrocornéens nombreux, arrondis, jaunâtres et plus gros que des précipités fins sont, des précipités en graisse de mouton (mutton-fat keratic precipitates). Ils signent une uvéite granulomateuse : chercher sarcoïdose, tuberculose, syphilis, uvéite herpétique (HSV/VZV) ou Vogt-Koyanagi-Harada. Le bilan oriente le traitement, car une corticothérapie sans couverture adéquate peut aggraver une infection.",
     why: [
       "Exact : graisse de mouton = uvéite granulomateuse; bilan ciblé avant une corticothérapie prolongée.",
       "Faux : l’uvéite HLA-B27 est typiquement aiguë, unilatérale et très inflammatoire, avec précipités fins, fibrine ou hypopyon.",
@@ -579,7 +579,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Une kératite à Acanthamoeba liée au geste chirurgical"
     ],
     answer: 2,
-    explain: "Le caillot rouge foncé dans la chambre antérieure est un hyphéma, ici en voie de rétraction deux semaines après une tentative d’iStent interrompue à cause du saignement (selon la source). Les globules rouges bouchent le trabéculum et font monter la PIO; une PIO élevée prolongée avec beaucoup de sang peut teinter la cornée (imprégnation hématique). Surveillance de la PIO, tête surélevée, cycloplégique et corticostéroïde topique; lavage chirurgical si la PIO reste incontrôlée ou si la cornée commence à se teinter.",
+    explain: "Le caillot rouge foncé dans la chambre antérieure est un hyphéma, ici en voie de rétraction deux semaines après une tentative d’iStent interrompue à cause du saignement. Les globules rouges bouchent le trabéculum et font monter la PIO; une PIO élevée prolongée avec beaucoup de sang peut teinter la cornée (imprégnation hématique). Surveillance de la PIO, tête surélevée, cycloplégique et corticostéroïde topique; lavage chirurgical si la PIO reste incontrôlée ou si la cornée commence à se teinter.",
     why: [
       "Faux : le sang n’est pas un signe d’infection; l’endophtalmite donne douleur croissante, hypopyon et vitrite.",
       "Faux : l’iStent ne crée pas de bulle de filtration; il dérive l’humeur aqueuse vers le canal de Schlemm.",

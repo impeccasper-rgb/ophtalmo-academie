@@ -158,11 +158,11 @@ G.OPH.photos = G.OPH.photos || {};
 (function (add) { Object.keys(add).forEach(function (k) { G.OPH.photos[k] = (G.OPH.photos[k] || []).concat(add[k]); }); })({
   "g-dev": [
     { id: "OPH-325", caption: "Glaucome congénital primaire : lignes dans la cornée, à la fente", look: "Suis les flèches dans le faisceau lumineux : que montrent-elles dans la cornée ?", reveal: ["Fines lignes blanchâtres dans la cornée, pointées par quatre flèches, dans le faisceau de la fente", "Aspect compatible avec des stries de Haab (ruptures de la Descemet), selon le diagnostic source", "Stries de Haab : horizontales ou concentriques au limbe ; stries des forceps : verticales ou obliques", "Elles persistent après la baisse de PIO et causent de l’astigmatisme"] },
-    { id: "OPH-317", caption: "Embryotoxon postérieur : ligne de Schwalbe saillante et déplacée en avant", look: "Regarde la cornée périphérique, juste en dedans du limbe.", reveal: ["Ligne blanc grisâtre, courbe, parallèle au limbe, dans la cornée périphérique (côté droit de l’image)", "C’est la ligne de Schwalbe épaissie et avancée : visible sans gonioscopie", "Fréquente seule (environ 10 à 15 % de la population selon la source) et sans conséquence ; avec des brides iriennes qui s’y attachent : spectre d’Axenfeld-Rieger → gonioscopie"] },
+    { id: "OPH-317", caption: "Embryotoxon postérieur : ligne de Schwalbe saillante et déplacée en avant", look: "Regarde la cornée périphérique, juste en dedans du limbe.", reveal: ["Ligne blanc grisâtre, courbe, parallèle au limbe, dans la cornée périphérique (côté droit de l’image)", "C’est la ligne de Schwalbe épaissie et avancée : visible sans gonioscopie", "Fréquente seule (environ 10 à 15 % de la population) et sans conséquence ; avec des brides iriennes qui s’y attachent : spectre d’Axenfeld-Rieger → gonioscopie"] },
     { id: "OPH-389", caption: "Syndrome ICE précoce : endothélium d’aspect argent martelé", look: "Observe l’endothélium dans le reflet spéculaire : est-il lisse ?", reveal: ["Endothélium finement granuleux et brillant, comme du métal martelé, au bord du reflet lumineux", "Cellules endothéliales anormales du syndrome ICE", "Rappelle les guttae de Fuchs, mais l’ICE touche un seul œil", "Confirmer en microscopie spéculaire"] },
     { id: "OPH-387", caption: "Atrophie essentielle de l’iris : corectopie ovale horizontale", look: "Regarde la forme de la pupille et l’aspect du stroma irien.", reveal: ["Pupille ovale, étirée à l’horizontale (corectopie)", "Atrophie de l’iris, selon la légende source", "La membrane endothéliale qui recouvre l’angle se contracte et tire l’iris", "À faire : gonioscopie (synéchies hautes) et PIO"] },
     { id: "OPH-318", caption: "Syndrome de Sturge-Weber : angiome plan (tache de vin) du visage", look: "Observe la peau du front et des joues : couleur, relief, limites.", reveal: ["Coloration rouge rosé, plane, du front et des joues", "Plus marquée d’un côté du front, avec une limite nette près de la ligne médiane", "Atteinte du territoire de V1 (front, paupière supérieure) : risque de glaucome du même côté", "Mesurer la PIO et examiner les papilles régulièrement"] },
-    { id: "OPH-390", caption: "Sturge-Weber : hémangiome choroïdien diffus (OD selon la source) et œil adelphe", look: "Compare la couleur du fond d’œil sur les deux photos.", reveal: ["Photo de gauche (OD selon la légende) : fond rouge foncé et uniforme, dessin choroïdien masqué", "Photo de droite (œil adelphe) : fond orangé, vaisseaux choroïdiens visibles", "Aspect de fond « sauce tomate » (tomato ketchup) de l’hémangiome choroïdien diffus", "Risque d’effusion ou d’hémorragie suprachoroïdienne en chirurgie filtrante"] }
+    { id: "OPH-390", caption: "Sturge-Weber : hémangiome choroïdien diffus (OD) et œil adelphe", look: "Compare la couleur du fond d’œil sur les deux photos.", reveal: ["Photo de gauche (OD selon la légende) : fond rouge foncé et uniforme, dessin choroïdien masqué", "Photo de droite (œil adelphe) : fond orangé, vaisseaux choroïdiens visibles", "Aspect de fond « sauce tomate » (tomato ketchup) de l’hémangiome choroïdien diffus", "Risque d’effusion ou d’hémorragie suprachoroïdienne en chirurgie filtrante"] }
   ]
 });
 
@@ -251,7 +251,7 @@ G.OPH.cases = (G.OPH.cases || []).concat([
       },
       {
         kind: "info",
-        text: "Synthèse : pseudophaque avec implant monobloc dans le sulcus, épisodes de brouillard avec PIO élevée, microhyphéma, inflammation légère, angle ouvert sans néovaisseaux et défauts de transillumination qui suivent le contour de l’implant. Photo d’exemple en rétro-illumination infrarouge : défauts radiaires, et défauts en arc qui reprennent la forme des haptiques, selon la source.",
+        text: "Synthèse : pseudophaque avec implant monobloc dans le sulcus, épisodes de brouillard avec PIO élevée, microhyphéma, inflammation légère, angle ouvert sans néovaisseaux et défauts de transillumination qui suivent le contour de l’implant. Photo d’exemple en rétro-illumination infrarouge : défauts radiaires, et défauts en arc qui reprennent la forme des haptiques,.",
         figure: { type: "photo", id: "OPH-301" }
       },
       {
@@ -267,7 +267,7 @@ G.OPH.cases = (G.OPH.cases || []).concat([
       },
       {
         kind: "info",
-        text: "L’UBM confirme le contact. Image d’exemple (autre patient atteint d’UGH, selon la source) : l’optique de l’implant, double ligne blanche horizontale au centre, appuie contre la face postérieure de l’iris.",
+        text: "L’UBM confirme le contact. Image d’exemple (autre patient atteint d’UGH) : l’optique de l’implant, double ligne blanche horizontale au centre, appuie contre la face postérieure de l’iris.",
         figure: { type: "photo", id: "OPH-303" }
       },
       {

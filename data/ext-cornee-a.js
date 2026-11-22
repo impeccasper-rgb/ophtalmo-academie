@@ -334,7 +334,7 @@ G.OPH.photos = G.OPH.photos || {};
       "Aucun vaisseau",
       "Contraste avec la granulaire (stroma clair entre les grains) ; dans la maculaire, le voile atteint le limbe"
     ] },
-    { id: "OPH-379", caption: "Dystrophie de Reis-Bücklers ; érosions récidivantes chroniques selon la source", look: "Décris le motif de l’opacité et son étendue.", reveal: [
+    { id: "OPH-379", caption: "Dystrophie de Reis-Bücklers ; érosions récidivantes chroniques", look: "Décris le motif de l’opacité et son étendue.", reveal: [
       "Voile gris irrégulier, à motif réticulé, sur toute la cornée centrale",
       "Dans cette dystrophie, l’opacité siège dans la couche de Bowman, juste sous l’épithélium",
       "Légende source : syndrome d’érosions récidivantes chroniques",
@@ -343,7 +343,7 @@ G.OPH.photos = G.OPH.photos || {};
     { id: "OPH-358", caption: "Dystrophie polymorphe postérieure en rétroillumination", look: "Sur le reflet rouge du fond d’œil, cherche une petite lésion qui se découpe.", reveal: [
       "Petite lésion translucide près du centre du reflet rouge",
       "Le reste de la cornée paraît clair",
-      "Selon la source, lésion typique de DPP, à la face postérieure de la cornée",
+      "Lésion typique de DPP, à la face postérieure de la cornée",
       "La rétroillumination révèle des lésions presque invisibles en éclairage direct"
     ] },
     { id: "OPH-342", caption: "Dystrophie polymorphe postérieure en microscopie spéculaire", look: "Repère la mosaïque de cellules endothéliales, puis ce qui l’interrompt.", reveal: [
@@ -384,7 +384,7 @@ G.OPH.photos = G.OPH.photos || {};
       "Œil rouge sur la vue de gauche",
       "L’éclaircissement se fait lentement, de la périphérie vers le centre"
     ] },
-    { id: "OPH-372", caption: "Maladie de Wilson : cataracte en tournesol selon la source", look: "Au-delà de la cornée, regarde le cristallin derrière la pupille dilatée.", reveal: [
+    { id: "OPH-372", caption: "Maladie de Wilson : cataracte en tournesol", look: "Au-delà de la cornée, regarde le cristallin derrière la pupille dilatée.", reveal: [
       "Disque central gris-vert dans le cristallin",
       "Opacités en pétales qui rayonnent du centre : aspect de tournesol",
       "Ce dépôt de cuivre sous la capsule antérieure accompagne habituellement l’anneau de Kayser-Fleischer",

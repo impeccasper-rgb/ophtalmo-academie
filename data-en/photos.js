@@ -13,7 +13,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Describe the size, number and distribution of the green dots on the cornea.",
       "reveal": [
         "Fine green dots over the entire cornea, center included: punctate epithelial erosions, missing cells that retain fluorescein.",
-        "Diffuse involvement, not just the inferior third: significant dryness (keratoconjunctivitis sicca, according to the source).",
+        "Diffuse involvement, not just the inferior third: significant dryness (keratoconjunctivitis sicca).",
         "TFOS DEWS III: more than 5 corneal spots is one of the diagnostic signs, if the OSDI-6 questionnaire is ≥ 4.",
         "In a glaucoma patient, also think of toxicity from preserved drops."
       ]
@@ -113,7 +113,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Sharply outlined central ulcer, with concentric rings inside.",
         "Smaller round infiltrates around the ulcer, well separated from it (the right side is partly hidden by the light reflex).",
-        "According to the source, satellites have also been described with Acanthamoeba, atypical mycobacteria and bacteria such as Pseudomonas.",
+        "Satellites have also been described with Acanthamoeba, atypical mycobacteria and bacteria such as Pseudomonas.",
         "Management unchanged: scraping for Gram stain and cultures (bacteria and fungi), then fortified antibiotics adjusted to the results."
       ]
     }
@@ -125,7 +125,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Paracentral gray-white ring surrounding a clearer central zone: ring infiltrate, the stromal stage of Acanthamoeba keratitis.",
         "Injected conjunctiva and swollen lids: an inflamed eye, often very painful.",
-        "Diagnosis confirmed by confocal microscopy in this patient (according to the source).",
+        "Diagnosis confirmed by confocal microscopy in this patient.",
         "Other causes of a stromal ring: HSV (immune ring), fungus, bacteria; contact lens wear points to Acanthamoeba."
       ]
     },
@@ -162,7 +162,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Locate the small, round, very bright structures scattered across the field.",
       "reveal": [
         "Multiple round hyperreflective dots, isolated or in small clusters, throughout the image: cysts, the resistant form of the amoeba.",
-        "More irregular, less distinct forms: trophozoites, the active form (according to the source).",
+        "More irregular, less distinct forms: trophozoites, the active form.",
         "A quick, noninvasive test that complements scraping (culture, PCR)."
       ]
     },
@@ -240,7 +240,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Describe the shape of the two opacities and ask yourself whether they are active.",
       "reveal": [
         "Two grayish, branching, star-shaped opacities in the cornea in front of the illuminated iris (one at the top, the other lower down, in the center of the image).",
-        "Blurred outlines, without distinct terminal bulbs; according to the source, residual subepithelial infiltration and scarring at the site of old dendritic ulcers (ghost dendrites).",
+        "Blurred outlines, without distinct terminal bulbs; residual subepithelial infiltration and scarring at the site of old dendritic ulcers (ghost dendrites).",
         "A scar does not take up fluorescein, whereas an active dendrite stains: always check with the dye before concluding.",
         "No curative antiviral for a scar; prophylaxis (acyclovir 400 mg BID) is discussed if recurrences are frequent."
       ]
@@ -280,9 +280,9 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "Fleischer ring around the base of the cone (advanced keratoconus, slit lamp)",
       "look": "Locate the scar near the center, then look for the ring around the base of the cone.",
       "reveal": [
-        "According to the source, a clearly visible Fleischer ring encircling the base of the cone: iron deposit in the basal epithelium, yellow-brown in white light.",
+        "A clearly visible Fleischer ring encircling the base of the cone: iron deposit in the basal epithelium, yellow-brown in white light.",
         "To avoid confusing it with the iris margin behind it, localize it with a thin slit: the ring is in the cornea, in front of the anterior chamber.",
-        "Whitish streak in the center, slightly to the left: stromal scar at the apex, a sequela of hydrops episodes according to the source.",
+        "Whitish streak in the center, slightly to the left: stromal scar at the apex, a sequela of hydrops episodes.",
         "Cobalt blue makes the ring more visible (it looks dark); Vogt striae in the center of the cone are described by the source.",
         "Not to be confused with the Kayser-Fleischer ring (copper in peripheral Descemet membrane, Wilson disease)."
       ]
@@ -349,7 +349,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "Fuchs after cataract surgery: corneal haze from edema and scarring (slit lamp)",
       "look": "Look at the cornea just beside the brightest light reflex.",
       "reveal": [
-        "Diffuse whitish haze in the cornea, to the right of the reflex: endothelial degeneration, edema and scarring (according to the source).",
+        "Diffuse whitish haze in the cornea, to the right of the reflex: endothelial degeneration, edema and scarring.",
         "Technique: superimposing the slit on the reflex of the lamp filament highlights the endothelial surface next to the bright spot.",
         "Cataract surgery can decompensate an already fragile Fuchs endothelium: measure corneal thickness and count cells before surgery."
       ]
@@ -386,8 +386,8 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Compare the four views: where is the fluid, what pattern does it form and what does fluorescein show?",
       "reveal": [
         "A, anterior segment OCT: small black cavities lined up just beneath the epithelium (subepithelial fluid).",
-        "B and C, slit lamp: according to the source, diffuse reticular edema, like a honeycomb, clearly seen in B.",
-        "D, fluorescein: punctate staining in a horizontal band across the palpebral fissure, where subepithelial bullae have ruptured (according to the source).",
+        "B and C, slit lamp: diffuse reticular edema, like a honeycomb, clearly seen in B.",
+        "D, fluorescein: punctate staining in a horizontal band across the palpebral fissure, where subepithelial bullae have ruptured.",
         "According to the source: grafted eye (DSAEK) with advanced glaucoma and an Ahmed tube; edema appeared about 10 months after netarsudil was started, and it was stopped. This type of edema occurs mainly on an already fragile cornea. Canadian availability of netarsudil to be checked."
       ]
     },
@@ -504,7 +504,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Locate the line of small deposits crossing the graft and compare the cornea on either side.",
       "reveal": [
         "Scalloped line of whitish precipitates crossing the center of the graft: Khodadoust line, a front of immune cells attacking the endothelium.",
-        "Progression from bottom to top according to the source: the cornea already crossed by the line is affected.",
+        "Progression from bottom to top: the cornea already crossed by the line is affected.",
         "Emergency: intensive topical corticosteroid; RSVP reminder (redness, sensitivity to light, vision loss, pain) = same-day visit."
       ]
     },
@@ -514,7 +514,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Hazy, grayish cornea on the left of the image, with fine striae: edema and Descemet folds from acute endothelial dysfunction.",
         "Whitish precipitates at the edge of the affected zone, in the center: rejection front.",
-        "The unaffected part stays compact and clear (according to the source): rejection is still reversible if treated early."
+        "The unaffected part stays compact and clear: rejection is still reversible if treated early."
       ]
     },
     "OPH-107": {
@@ -576,7 +576,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "Candida in a DSAEK interface, three months after the graft (slit lamp)",
       "look": "Locate the white opacity along the path of the slit and its position in the cornea.",
       "reveal": [
-        "Small, fluffy white opacity on the left, along the path of the slit, in the corneal mid-periphery; according to the source, it lies in the graft-host interface.",
+        "Small, fluffy white opacity on the left, along the path of the slit, in the corneal mid-periphery; it lies in the graft-host interface.",
         "According to the source: DSAEK for Fuchs dystrophy; culture of the donor rim grew Candida albicans, and the infection appeared three months later despite preventive antifungal treatment.",
         "The interface is a closed pocket, poorly reached by drops: failure of medical treatment, recurrence after a repeat DSAEK and intracameral voriconazole, cure by penetrating keratoplasty.",
         "Lesson: a positive rim culture calls for close follow-up; a white interface infiltrate requires a prompt cornea consult."
@@ -588,7 +588,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Penetrating keratoplasty with a ring of interrupted sutures still in place.",
         "Fluffy white opacity with fine, crystal-like branching in the paracentral stroma at the lower left of the graft.",
-        "Mild conjunctival injection according to the source: indolent infection, typically with little inflammation, in a graft on chronic corticosteroids.",
+        "Mild conjunctival injection: indolent infection, typically with little inflammation, in a graft on chronic corticosteroids.",
         "According to the source: often an alpha-hemolytic (viridans) streptococcus, sometimes Candida, entering along a suture track; scraping can be negative, hence a biopsy in some cases."
       ]
     }
@@ -617,7 +617,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "Limbal stem cell deficiency: whorled epithelium (slit lamp)",
       "look": "In the pupil area, look for a pattern of curved lines in a spiral.",
       "reveal": [
-        "Grayish spiral lines near the center of the cornea, in front of the pupil: whorl epithelium, coming from the superior limbus according to the source.",
+        "Grayish spiral lines near the center of the cornea, in front of the pupil: whorl epithelium, coming from the superior limbus.",
         "Without limbal stem cells (limbal stem cell deficiency), the epithelium renews poorly; conjunctiva and vessels can cover the cornea.",
         "Cause not specified by the source; chemical burn is a classic cause, along with contact lenses and aniridia."
       ]
@@ -688,7 +688,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Look at the floor of the cup and at the inferotemporal edge of the rim.",
       "reveal": [
         "Small, dark oval holes at the floor of the pale cup (center): pores of the lamina cribrosa, exposed once the neural tissue has gone.",
-        "Rim notch at the lower left, inferotemporally according to the source: focal glaucomatous damage.",
+        "Rim notch at the lower left, inferotemporally: focal glaucomatous damage.",
         "Curved dark line at the inferotemporal edge, not described by the source: do not assume it is a hemorrhage, which would be red and flame-shaped.",
         "Enlargement of OPH-135 (same patient, overview)."
       ]
@@ -720,7 +720,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Slate-gray crescent-shaped band at the temporal edge of the disc (left): pigment in the peripheral disc tissue (gray crescent).",
         "Once this crescent is included in the disc, the temporal rim is healthy: it is not thinned.",
-        "OCT RNFL normal in all quadrants in this patient (source).",
+        "OCT RNFL normal in all quadrants in this patient.",
         "More common in patients of African descent; does not increase glaucoma risk."
       ]
     }
@@ -732,7 +732,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Small, dark red flame-shaped hemorrhage at the inferior edge of the disc, on the macular side (lower left of the disc): disc hemorrhage (Drance).",
         "Large pale cup and pale ring around the disc: peripapillary atrophy.",
-        "Risk factor for progression; here, a sign of inadequate IOP control despite pressures in the normal range (source)."
+        "Risk factor for progression; here, a sign of inadequate IOP control despite pressures in the normal range."
       ]
     },
     "OPH-138": {
@@ -802,7 +802,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Iris pushed forward on each side (oblique white lines on the left and right), pressed up against the posterior surface of the cornea: iridocorneal contact, closed angles.",
         "Secondary closure: the gas (SF6) injected for DMEK, having passed behind the iris, pushed it forward (gas-induced pupillary block).",
-        "After the patient was repositioned, the gas returned to the anterior chamber through the iridotomy or the pupil: deep chamber and normal IOP (source).",
+        "After the patient was repositioned, the gas returned to the anterior chamber through the iridotomy or the pupil: deep chamber and normal IOP.",
         "Same OCT sign as in primary angle closure: iridotrabecular contact."
       ]
     },
@@ -821,7 +821,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "Acute angle-closure attack in the right eye: redness and hazy cornea",
       "look": "Compare the two eyes: redness, corneal clarity and pupil size.",
       "reveal": [
-        "Right eye (left of the image) red, with a grayish, hazy cornea: corneal edema from very high IOP (over 70 mmHg according to the source).",
+        "Right eye (left of the image) red, with a grayish, hazy cornea: corneal edema from very high IOP (over 70 mmHg).",
         "Pupil of the right eye poorly seen behind the edematous cornea; left eye (right of the image) white and clear.",
         "Reported symptoms: severe pain, headache, nausea and decreased vision on waking, in a hyperope.",
         "The fellow eye had a narrow angle that was closed on gonioscopy: laser iridotomy in both eyes."
@@ -908,7 +908,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Sharp curved edge crossing the pupillary area from top to bottom: edge of the IOL or capsular bag, decentered.",
         "Opaque white material at the lower left of the pupil: fibrosed capsule or deposits (not specified by the source).",
-        "According to the source, such displacements can occur years after surgery: the weak zonules no longer hold the capsular bag."
+        "Such displacements can occur years after surgery: the weak zonules no longer hold the capsular bag."
       ]
     },
     "OPH-152": {
@@ -936,7 +936,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Round, scalloped outline in the center of the pupil: edge of a central disc of exfoliative material on the anterior capsule.",
         "A second, more peripheral outline, visible mainly on the right, with fine radial striations.",
-        "Small white dots and flakes scattered on the capsule (according to the source, deposits of exfoliative material).",
+        "Small white dots and flakes scattered on the capsule (deposits of exfoliative material).",
         "Classic appearance: central disc, clear intermediate zone rubbed by the iris and granular peripheral band; also look for the Sampaolesi line on gonioscopy."
       ]
     }
@@ -966,7 +966,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Line of black dots along the left edge of the lens, on an orange background: pigment deposited where the zonules insert (Scheie stripe).",
         "Visible only with the pupil dilated, on retroillumination.",
-        "Same patient as OPH-160: 29-year-old myopic man with high IOP in both eyes (source)."
+        "Same patient as OPH-160: 29-year-old myopic man with high IOP in both eyes."
       ]
     },
     "OPH-160": {
@@ -974,7 +974,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Locate the brown line at the periphery of the lens in the dilated pupil.",
       "reveal": [
         "Brown pigmented line running along the left periphery of the lens: pigment at the zonular insertion.",
-        "Typical profile of pigment dispersion: young myopic man (source).",
+        "Typical profile of pigment dispersion: young myopic man.",
         "Glaucoma is not a certainty: about 10% at 5 years and 15% at 15 years (Siddiqui 2003)."
       ]
     },
@@ -982,7 +982,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "Pigment on the lens capsule on retroillumination (pigment dispersion)",
       "look": "Look for irregular clumps at the periphery of the lens.",
       "reveal": [
-        "Irregular clumps along the right periphery of the lens, on retroillumination: pigment on the capsule (Scheie stripe according to the source).",
+        "Irregular clumps along the right periphery of the lens, on retroillumination: pigment on the capsule (Scheie stripe).",
         "Same meaning as the Scheie stripe: pigment released by iris rubbing."
       ]
     }
@@ -994,7 +994,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Fine, irregular red vessels on the surface of the iris, especially superiorly and around the pupil: new vessels (rubeosis iridis).",
         "Tortuous, branching surface vessels: different from normal vessels, which are deep and radial and sometimes visible in a light-colored iris.",
-        "Context (source): proliferative diabetic retinopathy, IOP 32 mmHg in this eye, open angle with 360° neovascularization.",
+        "Context: proliferative diabetic retinopathy, IOP 32 mmHg in this eye, open angle with 360° neovascularization.",
         "Same patient as OPH-163 and OPH-164 (right eye)."
       ]
     },
@@ -1003,7 +1003,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Look for the red vessels on the iris, especially in the upper half.",
       "reveal": [
         "Fine, branching red vessels on the upper half of the iris: new vessels, less extensive than in the left eye.",
-        "IOP of 11 mmHg in this eye (source): IOP can stay normal as long as the angle is not obstructed.",
+        "IOP of 11 mmHg in this eye: IOP can stay normal as long as the angle is not obstructed.",
         "Always do gonioscopy: angle neovascularization can precede iris neovascularization."
       ]
     },
@@ -1080,7 +1080,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Light slit on the cornea on the left, very close to the iris in the periphery: shallow peripheral anterior chamber.",
         "Irregular pupil in the center: possible adhesions between the iris and the lens.",
-        "In this case (source), the bowed iris was obstructing a drainage tube placed inferiorly."
+        "In this case, the bowed iris was obstructing a drainage tube placed inferiorly."
       ]
     },
     "OPH-177": {
@@ -1107,7 +1107,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Compare the size and appearance of these precipitates with fine precipitates.",
       "reveal": [
         "Numerous round, yellowish deposits, medium to large, grouped in the lower half of the cornea, in front of the pupil and the illuminated iris.",
-        "Variable size, the largest at the bottom; according to the source, mutton-fat precipitates: typical inferior distribution (Arlt triangle), related to convection currents in the aqueous humor.",
+        "Variable size, the largest at the bottom; mutton-fat precipitates: typical inferior distribution (Arlt triangle), related to convection currents in the aqueous humor.",
         "Mutton-fat precipitates = granulomatous uveitis: sarcoidosis, tuberculosis, syphilis, herpes (HSV/VZV), Vogt-Koyanagi-Harada, among others.",
         "Uveitic glaucoma: treat the inflammation and the IOP; an etiologic workup is required before prolonged corticosteroid therapy."
       ]
@@ -1127,10 +1127,10 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "\"Kissing\" choroidal detachments one week after an Ahmed tube (slit lamp)",
       "look": "Through the irregular pupil, look at what fills the center of the eye.",
       "reveal": [
-        "Two brownish domes touching in the center, behind the pupil (vertical line of contact): choroidal detachments meeting each other (kissing choroidals); aphakic eye according to the source.",
-        "Irregular pupil: pupilloplasty performed during surgery (source).",
+        "Two brownish domes touching in the center, behind the pupil (vertical line of contact): choroidal detachments meeting each other (kissing choroidals); aphakic eye.",
+        "Irregular pupil: pupilloplasty performed during surgery.",
         "Context: flat anterior chamber and IOP of 7 mmHg from tube overfiltration; to be distinguished from suprachoroidal hemorrhage (pain, high IOP).",
-        "Treatment here: tube ligation; IOP recovered and detachments resolved by the next day (source)."
+        "Treatment here: tube ligation; IOP recovered and detachments resolved by the next day."
       ]
     },
     "OPH-315": {
@@ -1160,7 +1160,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Single zigzag suture running around the graft: running suture.",
         "Circular edge of the graft visible just inside the suture entry points.",
-        "Indication according to the source: ulcer scar; this is not the same patient as OPH-101 (four different patients on the page)."
+        "Indication: ulcer scar; this is not the same patient as OPH-101 (four different patients on the page)."
       ]
     },
     "OPH-101": {
@@ -1195,7 +1195,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Locate the irregular whitish material stuck on the cornea.",
       "reveal": [
         "Irregular, shiny whitish plaque to the right of the pupil, at about 2 o'clock: cyanoacrylate glue sealing the perforation.",
-        "Indication: perforation of 2–3 mm at most; the glue is also antibacterial (source).",
+        "Indication: perforation of 2–3 mm at most; the glue is also antibacterial.",
         "Context: poorly controlled rheumatoid arthritis, progressive thinning despite treatment; oral prednisone and doxycycline added.",
         "It is usually covered with a bandage contact lens for comfort."
       ]
@@ -1215,7 +1215,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "Estimating the C/D ratio: four discs from 0.2 to 0.9 (fundus photographs)",
       "look": "For each disc, compare the height of the cup with the height of the disc.",
       "reveal": [
-        "Vertical C/D according to the source: 0.2 (A), 0.5 (B), 0.7 (C) and 0.9 (D).",
+        "Vertical C/D: 0.2 (A), 0.5 (B), 0.7 (C) and 0.9 (D).",
         "Measure vertically, from the edge of the cup (where the vessels dive) to the edge of the disc.",
         "Always take disc size into account and compare the two eyes."
       ]
@@ -1253,7 +1253,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Compare the upper lids and the depth of the sulcus above each eye.",
       "reveal": [
         "Deeper upper lid sulcus on the patient's left side (right of the image): orbital fat atrophy (prostaglandin-associated periorbitopathy).",
-        "Cause: prostaglandin analogue used for several years in this eye, for angle-recession glaucoma (source).",
+        "Cause: prostaglandin analogue used for several years in this eye, for angle-recession glaucoma.",
         "Other known local effects of prostaglandins: redness, longer lashes, darkening of the iris and of the eyelid skin."
       ]
     },
@@ -1272,8 +1272,8 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Describe the shape of the ulcer and the appearance of its edges.",
       "reveal": [
         "Oval epithelial defect in the center of the cornea, with a thickened grayish rim: raised edges typical of a neurotrophic ulcer.",
-        "According to the source, recruitment of white blood cells around the ulcer and mild corneal edema: watch for superinfection.",
-        "Cause: palsy of CN V (insensate cornea) and CN VII (incomplete closure) after resection of a meningioma (source).",
+        "Recruitment of white blood cells around the ulcer and mild corneal edema: watch for superinfection.",
+        "Cause: palsy of CN V (insensate cornea) and CN VII (incomplete closure) after resection of a meningioma.",
         "Same patient as OPH-080 and OPH-081."
       ]
     },
@@ -1283,7 +1283,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Whitish crescent along the limbus, in the upper half: infiltrate and stromal melt in the corneal periphery.",
         "Intense injection of the adjacent conjunctival and episcleral vessels (top right): severe inflammation.",
-        "Cause here: granulomatosis with polyangiitis (formerly Wegener), discovered on workup (source); rheumatoid arthritis is the most frequent cause.",
+        "Cause here: granulomatosis with polyangiitis (formerly Wegener), discovered on workup; rheumatoid arthritis is the most frequent cause.",
         "Systemic emergency: rheumatology workup and immunosuppression, in addition to local care."
       ]
     },
@@ -1321,7 +1321,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Zone where the corneal section thins abruptly in the middle of the slit: only Descemet membrane remains (descemetocele).",
         "Small, raised round dome beside the slit: the thinned Descemet membrane bulges under intraocular pressure.",
-        "Cause here: sterile corneal melt from ocular rosacea (source).",
+        "Cause here: sterile corneal melt from ocular rosacea.",
         "Imminent risk of perforation: glue or tectonic graft; avoid any pressure on the globe."
       ]
     }
@@ -1352,7 +1352,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Very wide, irregular brown ciliary body band, in the center: angle recession, a tear in the ciliary body.",
         "White band at the lower right, between the ciliary body and the scleral spur: cyclodialysis cleft, ciliary body detached from the sclera.",
-        "Impact from a racquetball (source); recession predisposes to late glaucoma, cyclodialysis to hypotony.",
+        "Impact from a racquetball; recession predisposes to late glaucoma, cyclodialysis to hypotony.",
         "Follow IOP long term after any blunt trauma with recession."
       ]
     },
@@ -1476,7 +1476,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "Retroillumination against the red reflex: raised epithelial irregularities",
       "look": "Against the red reflex, look for shadows, dots or lines.",
       "reveal": [
-        "Fine dots and irregularities across the whole red reflex: epithelial changes (basement membrane dystrophy according to the source).",
+        "Fine dots and irregularities across the whole red reflex: epithelial changes (basement membrane dystrophy).",
         "White spot center-right: lamp reflex, not a lesion.",
         "Retroillumination lights from behind: fine opacities appear as shadows on the red background."
       ]
@@ -1514,7 +1514,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "Fluorescein-stained tear film after a blink (cobalt blue)",
       "look": "See whether the green film covers the cornea uniformly.",
       "reveal": [
-        "Blue-green film covering the cornea, with fine scattered dots: punctate erosions (source).",
+        "Blue-green film covering the cornea, with fine scattered dots: punctate erosions.",
         "Bright green inferior tear meniscus along the lid: tear reservoir.",
         "Same patient as OPH-022, where dark lines of tear film breakup are visible."
       ]
@@ -1638,7 +1638,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Locate the junction between the iris periphery and the pale bands of the angle, at the top of the image.",
       "reveal": [
         "At the top, in the mirror: open angle, with several bands visible above the iris root.",
-        "Top center, fine lacy brown strands arising from the iris periphery and climbing onto the first pale band of the angle: iris processes according to the source.",
+        "Top center, fine lacy brown strands arising from the iris periphery and climbing onto the first pale band of the angle: iris processes.",
         "Normal variant, more common in dark irides: fine and open-meshed, they let the structures behind them show through and do not block the angle.",
         "To be distinguished from peripheral anterior synechiae (broad, opaque, persist on indentation) and from new vessels (red, branching, cross the scleral spur)."
       ]
@@ -1649,7 +1649,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "Vertical C/D ratio from 0.2 to 0.9 on four discs (fundus photographs)",
       "look": "Rank the discs from the smallest to the largest cup.",
       "reveal": [
-        "C/D according to the source: A 0.2; B 0.5; C 0.7; D 0.9.",
+        "C/D: A 0.2; B 0.5; C 0.7; D 0.9.",
         "The cup is identified by the bend of the vessels as they dive, not just by pallor.",
         "Pallor more extensive than the cup: think of a nonglaucomatous cause."
       ]
@@ -1669,7 +1669,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Small, dark oval pores in the pale floor of the cup: lamina cribrosa, traversed by the axons.",
         "Visible pores = substantial loss of the neural tissue that covered them.",
-        "Associated inferotemporal notch (lower left, according to the source)."
+        "Associated inferotemporal notch (lower left)."
       ]
     },
     "OPH-139": {
@@ -1691,7 +1691,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       ]
     },
     "OPH-202": {
-      "caption": "Normal disc: C/D ratio 0.3 according to the source, thick pink rim",
+      "caption": "Normal disc: C/D ratio 0.3, thick pink rim",
       "look": "Assess the thickness and color of the neuroretinal rim around the cup.",
       "reveal": [
         "Small, pale central cup; orange-pink neuroretinal rim, thick and even all the way around.",
@@ -1701,7 +1701,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       ]
     },
     "OPH-203": {
-      "caption": "Glaucomatous disc: C/D ratio 0.9 according to the source, rim nearly gone",
+      "caption": "Glaucomatous disc: C/D ratio 0.9, rim nearly gone",
       "look": "Look for what remains of the neuroretinal rim and observe the course of the vessels at the disc margin.",
       "reveal": [
         "White cup occupying almost the entire disc: C/D of 0.9 documented by the source.",
@@ -1766,7 +1766,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Thin line separated from the posterior corneal surface on all four scans, especially in the left half of each: detached DMEK graft.",
         "'Orientation' markers above each scan: the tail of the arrow corresponds to the left side of the image.",
-        "According to the source, the graft attached after a new air bubble was injected into the anterior chamber."
+        "The graft attached after a new air bubble was injected into the anterior chamber."
       ]
     }
   });
@@ -1822,7 +1822,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Follow the arc of the cornea and compare its thickness in the center and at the sides.",
       "reveal": [
         "Corneal arc projecting forward into a cone, in the center of the scan: ectasia.",
-        "Cornea thinner at the apex than at the sides: central thinning (source).",
+        "Cornea thinner at the apex than at the sides: central thinning.",
         "The Scheimpflug camera (Pentacam) reconstructs the anterior and posterior surfaces: it detects posterior elevation, an early marker."
       ]
     }
@@ -1861,7 +1861,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Compare the shape of the inner isopters with a normal field (OPH-014).",
       "reveal": [
         "Inner isopters (blue, gray, red) distorted and constricted on the right side of center: relative defect.",
-        "According to the source, depression of the I4e, I3e and I2e isopters in the region of the myelinated fibers (OPH-008, same patient).",
+        "Depression of the I4e, I3e and I2e isopters in the region of the myelinated fibers (OPH-008, same patient).",
         "A field defect is not always glaucomatous: correlate with the disc and the retina."
       ]
     },

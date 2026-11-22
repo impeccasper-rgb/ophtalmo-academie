@@ -51,7 +51,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Valacyclovir oral et arrêt des lentilles"
     ],
     answer: 2,
-    explain: "L’anneau stromal paracentral qui entoure une zone plus claire est l’infiltrat annulaire (ring infiltrate) typique de la kératite à Acanthamoeba, une infection par une amibe libre présente dans l’eau, surtout chez les porteurs de lentilles. Le diagnostic se confirme par grattage (culture, PCR) ou par microscopie confocale, comme chez ce patient selon la source.",
+    explain: "L’anneau stromal paracentral qui entoure une zone plus claire est l’infiltrat annulaire (ring infiltrate) typique de la kératite à Acanthamoeba, une infection par une amibe libre présente dans l’eau, surtout chez les porteurs de lentilles. Le diagnostic se confirme par grattage (culture, PCR) ou par microscopie confocale, comme chez ce patient.",
     why: [
       "Faux : un stéroïde au début aggrave une kératite amibienne ou fongique.",
       "Faux : un anneau stromal malgré une semaine d’antibiotiques oriente vers l’amibe; changer d’antibiotique retarde le diagnostic.",
@@ -237,7 +237,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Prescrire un corticostéroïde topique seul et revoir dans une semaine"
     ],
     answer: 0,
-    explain: "Œil droit rouge avec une cornée trouble chez un hypermétrope symptomatique : c’est une crise aiguë de fermeture de l’angle (PIO de plus de 70 mmHg selon la source). On baisse la PIO médicalement (bêtabloquant, alpha-agoniste et inhibiteur de l’anhydrase carbonique topiques, acétazolamide 500 mg PO ou IV), on ajoute la pilocarpine une fois la PIO abaissée, puis on fait une iridotomie périphérique au laser (petit orifice dans l’iris), aux deux yeux.",
+    explain: "Œil droit rouge avec une cornée trouble chez un hypermétrope symptomatique : c’est une crise aiguë de fermeture de l’angle (PIO de plus de 70 mmHg). On baisse la PIO médicalement (bêtabloquant, alpha-agoniste et inhibiteur de l’anhydrase carbonique topiques, acétazolamide 500 mg PO ou IV), on ajoute la pilocarpine une fois la PIO abaissée, puis on fait une iridotomie périphérique au laser (petit orifice dans l’iris), aux deux yeux.",
     why: [
       "Exact : urgence qui menace la vision; baisse médicale de la PIO puis iridotomie, et examen de l’œil adelphe.",
       "Faux : dilater la pupille peut aggraver ou déclencher une fermeture de l’angle.",
@@ -298,7 +298,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Une mal-direction de l’humeur aqueuse (glaucome malin)"
     ],
     answer: 1,
-    explain: "Deux dômes brunâtres se rejoignent derrière la pupille, de part et d’autre d’une ligne verticale de contact : ce sont des décollements choroïdiens séreux dits « kissing » (kissing choroidals), dus à une surfiltration du tube (hypotonie, chambre plate). L’hémorragie suprachoroïdienne est le principal diagnostic à éliminer : douleur brutale et PIO souvent élevée. Ici, le tube a été ligaturé par crainte d’une telle hémorragie, et les décollements avaient disparu dès le lendemain (source).",
+    explain: "Deux dômes brunâtres se rejoignent derrière la pupille, de part et d’autre d’une ligne verticale de contact : ce sont des décollements choroïdiens séreux dits « kissing » (kissing choroidals), dus à une surfiltration du tube (hypotonie, chambre plate). L’hémorragie suprachoroïdienne est le principal diagnostic à éliminer : douleur brutale et PIO souvent élevée. Ici, le tube a été ligaturé par crainte d’une telle hémorragie, et les décollements avaient disparu dès le lendemain.",
     why: [
       "Faux : l’hémorragie suprachoroïdienne (saignement entre choroïde et sclère) donne typiquement une douleur brutale et une PIO élevée, avec des dômes rouge sombre; ici, la PIO est basse (7 mmHg).",
       "Exact : hypotonie et chambre plate après un tube, avec décollements choroïdiens qui se rejoignent au centre.",
@@ -316,7 +316,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Papille inclinée de myope fort"
     ],
     answer: 0,
-    explain: "La bande gris ardoise au bord temporal du disque est un croissant gris (gray crescent) : du pigment dans le tissu papillaire périphérique. Si l’on trace le vrai bord du disque en dehors du croissant, le rebord temporal est sain, ce que confirme l’OCT normal (la légende source « severe thinning of the temporal neuroretinal rim » décrit l’impression trompeuse, pas le diagnostic). Plus fréquent chez les patients d’ascendance africaine, il n’augmente pas le risque de glaucome selon la source : le reconnaître évite un faux diagnostic de suspect et des traitements inutiles.",
+    explain: "La bande gris ardoise au bord temporal du disque est un croissant gris (gray crescent) : du pigment dans le tissu papillaire périphérique. Si l’on trace le vrai bord du disque en dehors du croissant, le rebord temporal est sain, ce que confirme l’OCT normal (la légende source « severe thinning of the temporal neuroretinal rim » décrit l’impression trompeuse, pas le diagnostic). Plus fréquent chez les patients d’ascendance africaine, il n’augmente pas le risque de glaucome : le reconnaître évite un faux diagnostic de suspect et des traitements inutiles.",
     why: [
       "Exact : piège classique; le pigment fait croire à un rebord mince alors que le tissu neural est présent.",
       "Faux : un OCT faussement normal (green disease) existe, mais ici le pigment explique tout l’aspect et l’OCT est normal dans tous les quadrants.",

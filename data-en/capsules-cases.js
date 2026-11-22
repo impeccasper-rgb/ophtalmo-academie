@@ -882,7 +882,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
   },
   {
    "kind": "info",
-   "text": "Summary: pseudophakic patient with a single-piece IOL in the sulcus, episodes of blurring with elevated IOP, microhyphema, mild inflammation, open angle without neovessels and transillumination defects following the IOL outline. Example infrared retroillumination photo: radial defects, and arcuate defects reproducing the shape of the haptics, per the source.",
+   "text": "Summary: pseudophakic patient with a single-piece IOL in the sulcus, episodes of blurring with elevated IOP, microhyphema, mild inflammation, open angle without neovessels and transillumination defects following the IOL outline. Example infrared retroillumination photo: radial defects, and arcuate defects reproducing the shape of the haptics,.",
    "figure": {
     "type": "photo",
     "id": "OPH-301"
@@ -921,7 +921,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
   },
   {
    "kind": "info",
-   "text": "UBM confirms the contact. Example image (another patient with UGH, per the source): the IOL optic, a horizontal white double line in the center, presses against the posterior surface of the iris.",
+   "text": "UBM confirms the contact. Example image (another patient with UGH): the IOL optic, a horizontal white double line in the center, presses against the posterior surface of the iris.",
    "figure": {
     "type": "photo",
     "id": "OPH-303"

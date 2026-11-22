@@ -351,8 +351,8 @@ G.OPH.openCases = [
     "en": "Lattice is a thin, latticed area; here there is a horseshoe break."
    },
    {
-    "fr": "Juste : la rétine présente un défaut en fer à cheval (source). Décollement rhegmatogène : avis rétine urgent, surtout si la macula est encore à plat.",
-    "en": "Correct: the retina has a horseshoe-shaped defect (source). Rhegmatogenous detachment: urgent retina referral, especially if the macula is still on."
+    "fr": "Juste : la rétine présente un défaut en fer à cheval. Décollement rhegmatogène : avis rétine urgent, surtout si la macula est encore à plat.",
+    "en": "Correct: the retina has a horseshoe-shaped defect. Rhegmatogenous detachment: urgent retina referral, especially if the macula is still on."
    },
    {
     "fr": "Un trou maculaire est central, pas en périphérie.",
@@ -559,8 +559,8 @@ G.OPH.openCases = [
     "en": "Guttae are endothelial excrescences of Fuchs dystrophy."
    },
    {
-    "fr": "Juste (source) : cornée opaque fondue et vascularisée, stade évolué. D’où l’intérêt d’y penser tôt devant une douleur disproportionnée chez un porteur de lentilles.",
-    "en": "Correct (source): opaque, melting, vascularised cornea, an advanced stage. Hence thinking of it early when pain is out of proportion in a lens wearer."
+    "fr": "Juste : cornée opaque fondue et vascularisée, stade évolué. D’où l’intérêt d’y penser tôt devant une douleur disproportionnée chez un porteur de lentilles.",
+    "en": "Correct: opaque, melting, vascularised cornea, an advanced stage. Hence thinking of it early when pain is out of proportion in a lens wearer."
    },
    {
     "fr": "L’anneau est le signe classique, mais il n’est pas décrit sur cette image (source : fonte et vascularisation).",
@@ -671,8 +671,8 @@ G.OPH.openCases = [
     "en": "Trachomatous pannus invades from above, with tarsal scarring."
    },
    {
-    "fr": "Juste : aile fibrovasculaire qui franchit le limbe; ici sévère, jusqu’à la pupille (source). Exérèse avec autogreffe conjonctivale, protection UV.",
-    "en": "Correct: a fibrovascular wing crossing the limbus; here severe, reaching the pupil (source). Excision with conjunctival autograft, UV protection."
+    "fr": "Juste : aile fibrovasculaire qui franchit le limbe; ici sévère, jusqu’à la pupille. Exérèse avec autogreffe conjonctivale, protection UV.",
+    "en": "Correct: a fibrovascular wing crossing the limbus; here severe, reaching the pupil. Excision with conjunctival autograft, UV protection."
    }
   ],
   "reveal": {
@@ -767,8 +767,8 @@ G.OPH.openCases = [
     "en": "The Hudson-Stähli line is a horizontal epithelial iron line in the lower third."
    },
    {
-    "fr": "Juste : cellules pigmentées de l’iris déposées en fuseau vertical sur l’endothélium (source). Chercher défects de transillumination irienne et trabéculum très pigmenté en gonioscopie.",
-    "en": "Correct: pigmented iris cells deposited as a vertical spindle on the endothelium (source). Look for iris transillumination defects and a heavily pigmented meshwork on gonioscopy."
+    "fr": "Juste : cellules pigmentées de l’iris déposées en fuseau vertical sur l’endothélium. Chercher défects de transillumination irienne et trabéculum très pigmenté en gonioscopie.",
+    "en": "Correct: pigmented iris cells deposited as a vertical spindle on the endothelium. Look for iris transillumination defects and a heavily pigmented meshwork on gonioscopy."
    },
    {
     "fr": "Les précipités sont des amas blanchâtres « en graisse de mouton », souvent en triangle inférieur.",
@@ -815,8 +815,8 @@ G.OPH.openCases = [
   "answer": 0,
   "why": [
    {
-    "fr": "Juste : œil rouge, pupille en semi-mydriase aréactive (source), PIO 42. Baisser la PIO en urgence puis iridotomie laser des deux yeux.",
-    "en": "Correct: red eye, mid-dilated unreactive pupil (source), IOP 42. Lower the IOP urgently, then laser iridotomy in both eyes."
+    "fr": "Juste : œil rouge, pupille en semi-mydriase aréactive, PIO 42. Baisser la PIO en urgence puis iridotomie laser des deux yeux.",
+    "en": "Correct: red eye, mid-dilated unreactive pupil, IOP 42. Lower the IOP urgently, then laser iridotomy in both eyes."
    },
    {
     "fr": "Une conjonctivite ne donne ni PIO à 42 ni pupille aréactive.",
@@ -1023,8 +1023,8 @@ G.OPH.openCases = [
   "answer": 0,
   "why": [
    {
-    "fr": "Juste : ici, tropicamide instillé dans l’œil droit (source). Un blocage pharmacologique empêche la constriction même à la pilocarpine 1 %, alors qu’une paralysie du III répond.",
-    "en": "Correct: here, tropicamide was instilled in the right eye (source). Pharmacological blockade prevents constriction even with pilocarpine 1%, whereas a third-nerve palsy responds."
+    "fr": "Juste : ici, tropicamide instillé dans l’œil droit. Un blocage pharmacologique empêche la constriction même à la pilocarpine 1 %, alors qu’une paralysie du III répond.",
+    "en": "Correct: here, tropicamide was instilled in the right eye. Pharmacological blockade prevents constriction even with pilocarpine 1%, whereas a third-nerve palsy responds."
    },
    {
     "fr": "La constriction à la pilocarpine diluée évoque une pupille d’Adie (hypersensibilité de dénervation).",
@@ -1087,8 +1087,8 @@ G.OPH.openCases = [
     "en": "Iridodialysis is a disinsertion of the iris root (D-shaped pupil)."
    },
    {
-    "fr": "Juste : sang dans la moitié de la chambre antérieure (source). Mesurer la PIO, repos tête surélevée, coque, éviter AINS/anticoagulants; dépister la drépanocytose.",
-    "en": "Correct: blood filling half of the anterior chamber (source). Check IOP, rest with head raised, shield, avoid NSAIDs/anticoagulants; screen for sickle cell disease."
+    "fr": "Juste : sang dans la moitié de la chambre antérieure. Mesurer la PIO, repos tête surélevée, coque, éviter AINS/anticoagulants; dépister la drépanocytose.",
+    "en": "Correct: blood filling half of the anterior chamber. Check IOP, rest with head raised, shield, avoid NSAIDs/anticoagulants; screen for sickle cell disease."
    }
   ],
   "reveal": {
