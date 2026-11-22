@@ -20,3 +20,4 @@ videos/recorder/rec/
 videos/recorder/out/
 videos/recorder/*.png
 videos/ttf/
+*.tmp.mp4
