@@ -9,7 +9,8 @@ DIST = os.path.join(ROOT, 'dist')
 SHOTS = os.path.join(ROOT, 'tests', 'shots')
 os.makedirs(SHOTS, exist_ok=True)
 take_shots = '--shots' in sys.argv
-PORT = 8765
+import socket
+_sk = socket.socket(); _sk.bind(('127.0.0.1', 0)); PORT = _sk.getsockname()[1]; _sk.close()   # free port: several agents run this file at the same time
 srv = subprocess.Popen([sys.executable, '-m', 'http.server', str(PORT), '--directory', DIST], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 time.sleep(0.8)
 BASE = 'http://127.0.0.1:%d/preview.html' % PORT
@@ -51,7 +52,7 @@ def sim_smoke(p):
             page.on('console', lambda m: errs.append('console.' + m.type + ': ' + m.text) if m.type == 'error' and 'Failed to load resource' not in m.text else None)
             try:
                 page.goto('http://127.0.0.1:%d/index.html?lang=%s#inv-bscan-sim' % (port, lang), wait_until='domcontentloaded', timeout=30000)
-                try: page.wait_for_function('window.__bs3 && window.__bs3.ready', timeout=45000)
+                try: page.wait_for_function('() => window.__bs3 && window.__bs3.ready', timeout=45000)
                 except Exception:
                     problems.append(tag + 'simulator did not start: ' + ' | '.join(errs[:3]) + ' | ' + page.inner_text('[data-bs3]')[:160].replace('\n', ' ')); continue
                 box = page.eval_on_selector('[data-c3]', "c => { const r = c.getBoundingClientRect(); return [r.left, r.top, r.width, r.height, c.width, c.height]; }")
@@ -97,11 +98,11 @@ def sim_smoke(p):
                     page.evaluate("() => window.scrollTo(0, document.documentElement.scrollHeight)"); page.wait_for_timeout(300)
                     off = page.evaluate("() => document.querySelector('.bs3-grid').getBoundingClientRect().bottom < 0")
                     if off:
-                        try: page.wait_for_function('window.__bs3.paused()', timeout=4000)   # IntersectionObserver is asynchronous
+                        try: page.wait_for_function('() => window.__bs3.paused()', timeout=4000)   # IntersectionObserver is asynchronous
                         except Exception: problems.append(tag + 'rendering not paused off-screen')
                     if not off: log('  ' + tag + 'stage still on screen at the bottom of the page: pause not checked')
                     page.evaluate("() => window.scrollTo(0, 0)")
-                    try: page.wait_for_function('!window.__bs3.paused()', timeout=4000)
+                    try: page.wait_for_function('() => !window.__bs3.paused()', timeout=4000)
                     except Exception: problems.append(tag + 'rendering still paused back on screen')
                 # the 5 cases, end to end: answer, decisive sign, next ... result, then the series can start again
                 ids = page.evaluate("() => window.BscanSim.cases.map(c => c.id)")
