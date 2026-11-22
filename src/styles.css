@@ -300,6 +300,7 @@ select, input[type="date"], input[type="number"], input[type="text"] { font: inh
 .chart-line.l1 .opto { font-size: clamp(2.6rem, 8vw, 4.6rem); }
 .chart-line.l2 .opto { font-size: clamp(1.9rem, 5.6vw, 3.1rem); }
 .chart-line.l3 .opto { font-size: clamp(1.4rem, 4vw, 2.2rem); }
+.chart-line.l4 .opto { font-size: clamp(1.1rem, 3.2vw, 1.7rem); }
 .chart-foot { border-top: 1px dashed var(--line); margin-top: 6px; padding-top: 10px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: var(--fs-sm); }
 .acuity-big { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-2xl); line-height: 1; color: var(--cobalt-ink); }
 .countdown { display: flex; gap: 10px; flex-wrap: wrap; }

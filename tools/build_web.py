@@ -9,11 +9,18 @@ import ast, glob, hashlib, json, os, re, shutil, struct, zlib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC, DATA, DATA_EN, BRAND = (os.path.join(ROOT, d) for d in ('src', 'data', 'data-en', 'brand'))
-OUT = os.path.join(ROOT, 'site')
+import sys as _sys
+COMMERCIAL_SAFE = '--commercial-safe' in _sys.argv  # local study build only, written to site-commercial-safe/ (never deployed)
+OUT = os.path.join(ROOT, 'site-commercial-safe' if COMMERCIAL_SAFE else 'site')
 SITE_URL = os.environ.get('SITE_URL', '').rstrip('/') + ('/' if os.environ.get('SITE_URL') else '')
 SITE_BASE = os.environ.get('SITE_BASE', '')
 
 RESTRICTED_IDS = ['OPH-%03d' % i for i in list(range(12, 16)) + list(range(114, 131)) + list(range(187, 192)) + list(range(200, 210)) + [211, 212, 213, 215, 216, 227, 292, 293]]
+# Content-Security-Policy (meta): everything is local; the only third parties are GoatCounter (off until GOATCOUNTER_CODE is set
+# in src/privacy.js) and the Google Fonts fallback (used only when fonts/ is missing).
+CSP_POLICY = ("default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+              "font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; "
+              "media-src 'self' data: blob:; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'")
 RIGHTS_FILTER_JS = r"""(function () {
   var G = window, O = G.OPH || {}, R = {}; __IDS__.forEach(function (id) { R[id] = 1; });
   var KEYS = /^(id|photo|img|image|normal|patho|figure|src|pic)$/;
@@ -33,12 +40,14 @@ RIGHTS_FILTER_JS = r"""(function () {
   G.OPH_RESTRICTED = R;
   [O, G.OPH_EN].forEach(function (root) { if (root) walk(root, 0); });
   if (O.invMedia) { Object.keys(O.invMedia).forEach(function (k) { var m = O.invMedia[k]; if (m && (R[m.photo] || m.restricted)) delete O.invMedia[k]; }); }
+  if (O.imageCasesMedia) { var cm = O.imageCasesMedia; Object.keys(cm).forEach(function (k) { var m = cm[k]; if (m && (R[m.photo] || m.restricted)) delete cm[k]; });
+    ['imageCases', 'openCases'].forEach(function (n) { if (O[n]) O[n] = O[n].filter(function (c) { return !c.media || cm[c.media] || (O.invMedia && O.invMedia[c.media]); }); }); }
   if (O.invPractice && O.invMedia) { O.invPractice = O.invPractice.filter(function (p) { return !p.media || O.invMedia[p.media]; });
     var ok = {}; O.invPractice.forEach(function (p) { ok[p.id] = 1; });
     (O.inv || []).forEach(function (e) { if (e.practice) e.practice = e.practice.filter(function (id) { return ok[id]; }); }); }
 })();
 """
-SRC_ORDER = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'motion', 'tree', 'figures-mech', 'views', 'web']
+SRC_ORDER = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'motion', 'tree', 'figures-mech', 'figures-retine', 'privacy', 'views', 'web']
 CSS_ORDER = ['styles', 'investigations', 'tree', 'web']
 THEME_LIGHT, THEME_DARK, COBALT, BRAND_BG = '#1f2cff', '#1a23d9', '#1f2cff', '#1F2CFF'
 TITLE = {'fr': 'Ocelle · ophtalmologie pour externes et R1', 'en': 'Ocelle · ophthalmology for clerks and R1s'}
@@ -71,7 +80,21 @@ def catalog():
             if not e.get('cc'): d['cc'] = False
             slim.append(d)
     slim += catalog3(ROOT)
+    for e in slim: e['lc'] = licence_class(e)
     return slim
+
+
+NC_RE = re.compile(r'(^|[^A-Z])NC([^A-Z]|$)|NON-?COMMERCIAL|NONCOMMERCIAL', re.I)
+OPEN_RE = re.compile(r'^(CC0|PUBLIC DOMAIN|PD|CC BY(-SA)? \d(\.\d)?)', re.I)
+
+
+def licence_class(e):
+    """Licence class of a catalog image: 'nc' (EyeRounds CC BY-NC-ND or any NC licence) or 'open' (CC0, public domain, CC BY, CC BY-SA).
+    Original SVG schematics are class 'own' (inline in src/figures-*.js and data/*media*.js, never in the catalog)."""
+    if e.get('src') in ('imgsrc', 'imgsrc2'): return 'nc'  # EyeRounds / University of Iowa (docs/RIGHTS.md)
+    lic = str(e.get('license') or '').strip()
+    if lic and not NC_RE.search(lic) and OPEN_RE.match(lic): return 'open'
+    return 'nc'  # unknown or NC: treat as non-commercial (safe side)
 
 
 def jpeg_size(path):
@@ -209,6 +232,7 @@ def main():
     slim = catalog()
     # Rights (docs/RIGHTS.md): images without a CC licence stay out of the public site/app until EyeRounds grants written permission
     restricted = {e['id'] for e in slim if e.get('cc') is False} | set(RESTRICTED_IDS)
+    if COMMERCIAL_SAFE: restricted |= {e['id'] for e in slim if e['lc'] == 'nc'}  # --commercial-safe: NEVER deploy (docs/COMMERCIAL-SAFE.md)
     slim = [e for e in slim if e['id'] not in restricted]
 
     # ---- JS: data FR → data-en overlays → src (PLATFORM.md order); one file each (keeps 'use strict' per file and isolates load errors) ----
@@ -243,12 +267,14 @@ def main():
     # Google Fonts only when fonts/ is missing (self-hosted fonts work offline and inside the iOS app)
     fonts = '' if font_files else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">')
     preload = ''.join('<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' % f for f in font_files if f.endswith('-latin-wght-normal.woff2') and 'mono' not in f)
+    CSP = '<meta http-equiv="Content-Security-Policy" content="%s">' % CSP_POLICY
     esc = lambda s: s.replace('&', '&amp;').replace('"', '&quot;').replace('<', '&lt;')
     head = f'''<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+{CSP}
 <title>{esc(TITLE['fr'])}</title>
 <meta name="description" content="{esc(DESC['fr'])}" data-en="{esc(DESC['en'])}">
 <meta name="theme-color" content="{THEME_LIGHT}" media="(prefers-color-scheme: light)">
@@ -328,6 +354,7 @@ const cacheFirst = (req, name) => caches.open(name).then(c => c.match(req).then(
 self.addEventListener('fetch', e => {
   const req = e.request; if (req.method !== 'GET') return;
   const u = new URL(req.url);
+  if (u.hostname === 'gc.zgo.at' || u.hostname.endsWith('.goatcounter.com')) return; // audience counter: never cached, fails silently offline
   if (u.origin === location.origin) {
     if (req.mode === 'navigate' || u.pathname.endsWith('/') || u.pathname.endsWith('index.html')) {
       e.respondWith(fetch(req).then(r => { const cp = r.clone(); caches.open(CORE).then(c => c.put('index.html', cp)); return r; }).catch(() => caches.match('index.html', { ignoreSearch: true })));
@@ -357,10 +384,52 @@ self.addEventListener('fetch', e => {
 
     size = sum(os.path.getsize(os.path.join(jsdir, f)) for f in os.listdir(jsdir))
     imgbytes = sum(os.path.getsize(os.path.join(img, f)) for f in os.listdir(img))
-    print('site/ js %d files %.0f KB · app.css %.0f KB · images %d (%.1f MB) · data-en %d file(s) · missing: %s%s' % (
+    print(os.path.basename(OUT) + '/ js %d files %.0f KB · app.css %.0f KB · images %d (%.1f MB) · data-en %d file(s) · missing: %s%s' % (
         len(files), size / 1024, os.path.getsize(os.path.join(OUT, 'app.css')) / 1024, nimg, imgbytes / 1e6, len(en_files), ', '.join(missing) or 'none',
         (' · images absent: ' + ', '.join(absent[:8])) if absent else ''))
 
 
+def commercial_safe_report():
+    """docs/COMMERCIAL-SAFE.md: images per licence class and what a build without 'nc' would lose (nothing is removed from the site)."""
+    import subprocess, datetime
+    slim = catalog()
+    restricted = sorted({e['id'] for e in slim if e.get('cc') is False} | set(RESTRICTED_IDS))
+    payload = json.dumps({'catalog': [{'id': e['id'], 'lc': e['lc']} for e in slim], 'restricted': restricted, 'data_order': data_order()})
+    r = subprocess.run(['node', os.path.join(ROOT, 'tools', 'licence_classes.js')], input=payload, capture_output=True, text=True, check=True)
+    if r.stderr.strip(): print(r.stderr.strip())
+    d = json.loads(r.stdout)
+    K = {'fiche': 'Fiches', 'photo-set': 'Pages du module A et séries de photos', 'capsule': 'Capsules', 'quiz': 'QCM avec photo', 'case': 'Cas cliniques',
+         'image-case': 'Cas en images', 'inv-practice': 'Investigations (items de pratique)', 'screen': 'Écrans fixes'}
+    lose, norep = d['lose'], set(d['noRepl'])
+    L = ['# Build « commercial-safe » — ce qui disparaîtrait sans les images NC', '',
+         'Généré par `python3 tools/build_web.py --commercial-safe-report` le %s. **Rien n’est retiré du site en ligne** : ce rapport sert seulement à chiffrer un éventuel passage payant (politique : site gratuit avec le plus d’images possible, EyeRounds CC BY-NC-ND compris ; retrait des images NC seulement si le site devient payant).' % datetime.date.today().isoformat(), '',
+         '## Classes de licence', '',
+         '| Classe | Définition | Images au catalogue publié | Images réellement utilisées |', '|---|---|---|---|',
+         '| `nc` | EyeRounds CC BY-NC-ND 3.0, ou toute licence NC | %d | %d |' % (d['catalog'].get('nc', 0), d['count'].get('nc', 0)),
+         '| `open` | CC0, domaine public, CC BY, CC BY-SA (imgsrc3) | %d | %d |' % (d['catalog'].get('open', 0), d['count'].get('open', 0)),
+         '| `own` | Schéma SVG original (figures des fiches, mécanismes dessinés, arbres, médias SVG des investigations et des cas) | — | %d médias SVG + les schémas, mécanismes et arbres des %d fiches |' % (d['svgMedia'], d['fiches']), '',
+         'Où est la classe : champ `lc` de chaque entrée de `OPH.catalog` (calculé par `licence_class()` dans `tools/build_web.py` : `imgsrc`/`imgsrc2` = EyeRounds → `nc` ; `imgsrc3` → `open` si la licence est CC0/PD/CC BY/CC BY-SA sans NC, sinon `nc`). Les médias `kind: \'svg\'` et les figures dessinées sont `own`.', '',
+         '## Retirer les images NC à peu de frais', '',
+         '`python3 tools/build_web.py --commercial-safe` construit dans `site-commercial-safe/` (ignoré par git, **jamais déployé**) en ajoutant toutes les images `nc` à la liste exclue du filtre de droits existant (`rights-filter.js`) : les photos disparaissent des carrousels, et les QCM, cas et items qui en dépendent sont retirés automatiquement.', '',
+         '## Ce qui perdrait au moins une image (%d éléments, dont %d sans remplaçant)' % (len(lose), len(norep)), '',
+         '« Sans remplaçant » = il ne resterait ni image `open` ni schéma `own` : l’élément disparaît (QCM, cas, item) ou l’écran n’a plus d’image.', '']
+    for k in K:
+        us = [u for u in lose if u['kind'] == k]
+        if not us: continue
+        nr = sum(1 for u in us if (u['kind'] + ':' + u['id']) in norep)
+        L += ['### %s — %d touché(s), %d sans remplaçant' % (K[k], len(us), nr), '', '| Élément | Titre | Images `nc` perdues | Reste `open` | Schéma `own` | Remplaçant ? |', '|---|---|---|---|---|---|']
+        for u in us:
+            t = u['title'].replace('|', '/').replace('\n', ' ')
+            L.append('| `%s` | %s | %s | %d | %s | %s |' % (u['id'], t, ', '.join(u['nc']), len(u['open']), 'oui' if u['own'] else 'non', '**non**' if (u['kind'] + ':' + u['id']) in norep else 'oui'))
+        L.append('')
+        if k == 'fiche': L += ['Les fiches gardent leurs schémas, leur mécanisme dessiné et leur arbre ; l’écran **Voir** retombe sur le schéma comparatif, mais l’exercice « touche le signe » (photos + zones `voirHotspots`) disparaît. Pour le garder : une photo `open` ou un schéma avec zones par fiche.', '']
+        if k == 'photo-set': L += ['« Sans remplaçant » ici = plus aucune photo dans le carrousel ; le texte et les éventuels schémas de la page restent.', '']
+    L += ['## Sans remplaçant, en bref', '', ', '.join('`%s`' % x for x in sorted(norep)) or 'aucun', '']
+    out = os.path.join(ROOT, 'docs', 'COMMERCIAL-SAFE.md'); open(out, 'w', encoding='utf-8').write('\n'.join(L))
+    print('docs/COMMERCIAL-SAFE.md · nc %d / open %d used · %d elements lose an image · %d without replacement' % (d['count'].get('nc', 0), d['count'].get('open', 0), len(lose), len(norep)))
+
+
 if __name__ == '__main__':
-    main()
+    import sys
+    if '--commercial-safe-report' in sys.argv: commercial_safe_report()
+    else: main()

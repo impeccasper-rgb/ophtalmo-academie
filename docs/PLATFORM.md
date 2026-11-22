@@ -83,3 +83,14 @@ Liens de campagne : `https://<pages>/?lang=fr#<route>` (ex. le cas vedette).
 - Exactitude clinique : rien d’inventé ; en cas de doute, ne pas écrire ou signaler dans docs/progress.
 - Sobriété en tokens : lis seulement ce qu’il te faut (node -e pour extraire une entrée), pas de relecture complète des gros fichiers.
 - Recherches web : consigne tes sources dans market/SOURCES.md (date, URL, ce qui a été vu) pour éviter les doublons.
+
+## Confidentialité et mesure d’audience (GoatCounter)
+- Page `#confidentialite` (FR/EN, `src/privacy.js`) : liée au pied de page de l’accueil, au menu « Plus », au cas vedette et à Progression → Affichage ; présente aussi dans l’app iOS (même `site/`). Date d’entrée en vigueur : `PRIVACY_DATE` ; responsable : `PRIVACY_OFFICER` (courriel à fournir).
+- **Activer la mesure d’audience** (le propriétaire crée lui-même le compte sur https://www.goatcounter.com, aucun compte n’est créé par les agents) :
+  1. Créer le site GoatCounter, par ex. le code `ocelle` → tableau de bord `https://ocelle.goatcounter.com`.
+  2. En haut de `src/privacy.js`, mettre `var GOATCOUNTER_CODE = 'ocelle';` (seul réglage ; vide = aucun script chargé, aucune requête).
+  3. `python3 tools/build_web.py`, puis `python3 tools/push.py "Mesure d’audience activée"`.
+  4. Option : `GOATCOUNTER_IN_NATIVE_APP = true` pour compter aussi dans l’app iOS (désactivé par défaut ; à déclarer alors dans la fiche de confidentialité App Store).
+- Fonctionnement : charge `https://gc.zgo.at/count.js` (équivaut à `//gc.zgo.at/count.js`, en https explicite parce que l’app iOS sert la page en `capacitor://`) avec `data-goatcounter="https://<code>.goatcounter.com/count"` et `no_onload`. Chaque route SPA est comptée à la main (`hashchange`) : chemin = la route seule (`/c-herpes/voir`), plus `?lang=` s’il figure dans l’URL ; aucun autre paramètre, aucune donnée personnelle ; référent envoyé seulement à la première vue.
+- Rien n’est compté si : `GOATCOUNTER_CODE` est vide ; Do Not Track ou Global Privacy Control est actif ; l’utilisateur a refusé (bouton dans Progression → Affichage et dans la page, `localStorage['oph-no-stats'] = '1'`) ; coquille native iOS sans le drapeau ; hors ligne (aucune tentative, échec silencieux du script).
+- CSP (meta dans `index.html`, `CSP_POLICY` de `tools/build_web.py`) : tout en `'self'`, plus `gc.zgo.at` (script) et `*.goatcounter.com` (connect/img). Le service worker ne met jamais ces requêtes en cache (elles passent au réseau et échouent sans bruit hors ligne).

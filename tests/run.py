@@ -34,6 +34,7 @@ try:
               const r = ['accueil','module-a','a-anatomie','a-physiologie','a-examen','a-imagerie','a-retine','module-b','b-bases'];
               (window.ORDER ? ORDER.B : []).forEach(x => r.push(x));
               r.push('module-c','c-bases'); (window.ORDER ? ORDER.C : []).forEach(x => r.push(x));
+              if (window.D && D.ordered('D').length) { r.push('module-d','express-d'); D.ordered('D').forEach(f => ['voir','comprendre','decider','entrainer'].forEach(s => r.push(f.id + '/' + s))); }
               r.push('express-b','express-c','recherche','quiz','cas'); (OPH.cases||[]).forEach(c => r.push(c.id)); r.push('atlas','sources','nimporte');
               return r; }""")
             for r in routes:

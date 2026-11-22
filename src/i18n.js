@@ -207,7 +207,7 @@ function G_OPH() { return (window.OPH = window.OPH || {}); }
     'kind.cause': ['Cause', 'Cause'], 'kind.mecanisme': ['Mécanisme', 'Mechanism'], 'kind.lesion': ['Lésion', 'Lesion'], 'kind.signe': ['Signe', 'Sign'], 'kind.complication': ['Complication', 'Complication'],
     'phase.observation': ['Observation', 'Observation'], 'phase.medical': ['Médical', 'Medical'], 'phase.laser': ['Laser', 'Laser'], 'phase.chirurgie': ['Chirurgie', 'Surgery'], 'phase.suivi': ['Suivi', 'Follow-up'], 'phase.escalade': ['Escalade', 'Escalation'],
     'qtype.anatomie': ['Anatomie', 'Anatomy'], 'qtype.physiopathologie': ['Physiopathologie', 'Pathophysiology'], 'qtype.diagnostic': ['Diagnostic', 'Diagnosis'], 'qtype.image': ['Interprétation d’image', 'Image interpretation'], 'qtype.cat': ['Conduite à tenir', 'Management'],
-    'mod.A': ['Ophtalmologie générale', 'General ophthalmology'], 'mod.B': ['Cornée', 'Cornea'], 'mod.C': ['Glaucome', 'Glaucoma'],
+    'mod.A': ['Ophtalmologie générale', 'General ophthalmology'], 'mod.B': ['Cornée', 'Cornea'], 'mod.C': ['Glaucome', 'Glaucoma'], 'mod.D': ['Rétine', 'Retina'],
     'asec.a-anatomie': ['Coupe de l’œil zoomable, couches de la cornée, angle, papille, annexes.', 'Zoomable eye cross-section, corneal layers, angle, optic disc, adnexa.'],
     'asec.a-physiologie': ['Humeur aqueuse et PIO, film lacrymal, transparence cornéenne, réfraction, pupille.', 'Aqueous humour and IOP, tear film, corneal transparency, refraction, pupil.'],
     'asec.a-examen': ['AV, pupilles et RAPD, lampe à fente, fluorescéine, tonométrie, gonioscopie…', 'VA, pupils and RAPD, slit lamp, fluorescein, tonometry, gonioscopy…'],
@@ -303,7 +303,7 @@ function G_OPH() { return (window.OPH = window.OPH || {}); }
     'rep.copy': ['Copier mes signalements', 'Copy my reports'], 'rep.copied': ['Signalements copiés dans le presse-papiers.', 'Reports copied to the clipboard.'], 'rep.copyfail': ['Copie impossible : sélectionne le texte à la main.', 'Could not copy: select the text manually.'],
     'meta.review': ['<b>Dernière révision :</b> 1er novembre 2026 · <b>Relecture :</b> contrôle indépendant par un second agent d’IA (exactitude, clés de réponse, concordance photo-légende). <b>Pas encore validé par un ophtalmologiste</b> : en cas de doute, l’avis de ton patron et les lignes directrices l’emportent.',
       '<b>Last revised:</b> November 1, 2026 · <b>Review:</b> independent check by a second AI agent (accuracy, answer keys, photo–caption match). <b>Not yet validated by an ophthalmologist</b>: when in doubt, your attending and the guidelines prevail.'],
-    'modseg.all': ['Tout', 'All'], 'modseg.A': ['A · Général', 'A · General'], 'modseg.B': ['B · Cornée', 'B · Cornea'], 'modseg.C': ['C · Glaucome', 'C · Glaucoma'],
+    'modseg.all': ['Tout', 'All'], 'modseg.A': ['A · Général', 'A · General'], 'modseg.B': ['B · Cornée', 'B · Cornea'], 'modseg.C': ['C · Glaucome', 'C · Glaucoma'], 'modseg.D': ['D · Rétine', 'D · Retina'],
     'rev.wrong': ['Mes erreurs et hésitations', 'My mistakes and hesitations'],
     'rev.wrong.d': ['Les QCM ratés ou répondus en hésitant reviennent ici', 'MCQs you missed or answered with hesitation come back here'],
     'rev.nq': [['{n} question', '{n} questions'], ['{n} question', '{n} questions']],
@@ -1046,7 +1046,7 @@ var fx = window.fx = function (s) { return I18N.lang === 'en' && I18N.fx[s] != n
     Object.keys(L.kinds).forEach(function (k) { L.kinds[k] = t('kind.' + k); });
     Object.keys(L.phases).forEach(function (k) { L.phases[k] = t('phase.' + k); });
     Object.keys(L.qtypes).forEach(function (k) { L.qtypes[k] = t('qtype.' + k); });
-    ['A', 'B', 'C'].forEach(function (m) { L.modules[m] = t('mod.' + m); });
+    ['A', 'B', 'C', 'D'].forEach(function (m) { L.modules[m] = t('mod.' + m); });
   }
   if (I18N.lang === 'en' && typeof A_SECTIONS !== 'undefined') A_SECTIONS.forEach(function (s) { s.fr = s.title; s.title = s.en || s.title; s.blurb = t('asec.' + s.id); });
   try { I18N.applyContent(); } catch (e) { if (window.console) console.warn('i18n overlay', e); }

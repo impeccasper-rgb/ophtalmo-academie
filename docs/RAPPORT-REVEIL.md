@@ -48,7 +48,7 @@ Capacitor 8, compilée et auto-testée sur simulateur iPhone par GitHub Actions 
    - le zona vu après 72 h ;
    - les centres ouverts 24/7 pour la crise d'angle.
 4. **Marque « Ocelle »**. Il faut vérifier la disponibilité (OPIC, USPTO) et choisir un nom de domaine.
-5. **Loi 25**. Il faut une politique de confidentialité et décider si on mesure l'audience (GoatCounter ou rien).
+5. **Loi 25 — courriel du responsable**. La page `#confidentialite` (FR/EN, liée au pied de page, au menu « Plus » et à Progression → Affichage) est en ligne. Il reste à fournir le **courriel du responsable de la protection des renseignements personnels** : remplacer « [courriel à confirmer] » dans `PRIVACY_OFFICER` (en haut de `src/privacy.js`), puis changer `PRIVACY_DATE`. Mesure d’audience : GoatCounter est prêt mais **désactivé** ; pour l’activer, crée toi-même le compte GoatCounter puis renseigne `GOATCOUNTER_CODE` (voir `docs/PLATFORM.md`, « Mesure d’audience »).
 6. **Historique git**. Les 44 images sans licence CC ont été retirées, mais elles restent dans l'historique. La purge exige une poussée forcée : c'est ta décision.
 7. **Comptes sociaux** à créer, et approbation de chaque message avant tout envoi.
 

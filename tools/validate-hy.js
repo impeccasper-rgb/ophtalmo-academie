@@ -13,7 +13,7 @@ let n = { keys: 0, ess: 0, cloze: 0, triage: 0, cues: 0 };
 for (const [k, v] of Object.entries(HY)) {
   n.keys++;
   const c = 'hy.' + k;
-  if (!/^(c-|g-|a5-|phy-|ex-|b-bases|c-bases)/.test(k)) errors.push(c + ': unexpected key');
+  if (!/^(c-|g-|r-|a5-|phy-|ex-|b-bases|c-bases)/.test(k)) errors.push(c + ': unexpected key');
   if (!Array.isArray(v.essentials) || v.essentials.length < 3 || v.essentials.length > 5) errors.push(c + ': essentials 3–5');
   else v.essentials.forEach((s, i) => { if (!isStr(s)) errors.push(`${c}.essentials[${i}] empty`); else if (words(s) > 22) warns.push(`${c}.essentials[${i}] > 22 words`); if (/\[\[/.test(s)) errors.push(`${c}.essentials[${i}] contains [[ ]]`); });
   if (!Array.isArray(v.cloze) || v.cloze.length < 4 || v.cloze.length > 6) errors.push(c + ': cloze 4–6');

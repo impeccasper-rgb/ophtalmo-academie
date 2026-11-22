@@ -15,3 +15,8 @@ ios-evidence/
 __pycache__/
 *.pyc
 ios-evidence/
+site-commercial-safe/
+videos/recorder/rec/
+videos/recorder/out/
+videos/recorder/*.png
+videos/ttf/

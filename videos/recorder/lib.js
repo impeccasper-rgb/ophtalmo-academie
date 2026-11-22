@@ -10,7 +10,7 @@ const FONT_CSS = `
 @font-face{font-family:"Atkinson Hyperlegible Mono";font-weight:600;font-display:block;src:url(https://fonts.gstatic.com/x/atkinson-hyperlegible-mono-latin-600-normal.woff2) format("woff2")}`;
 
 const FORMATS = {
-  '9x16': { css: { width: 540, height: 800 }, dsf: 2, canvas: [1080, 1920], at: [0, 320] },
+  '9x16': { css: { width: 432, height: 640 }, dsf: 2.5, canvas: [1080, 1920], at: [0, 320] },
   '16x9': { css: { width: 1280, height: 720 }, dsf: 1.2, canvas: [1920, 1080], at: [192, 36] },
 };
 
@@ -68,8 +68,17 @@ async function session(opts) {
       await page.evaluate(() => { document.body.style.outline = '0px solid transparent'; });
       await page.waitForTimeout(300);
       t0 = Date.now() / 1000;
+      if (opts.guard !== false) { const tick = async () => { if (!api._stop) { await api.guard(); setTimeout(tick, 120); } }; tick(); }
     },
     now() { return Date.now() / 1000 - t0; },
+    rasters: new Set(),
+    async guard() { // every visible raster image or CSS background-image in the viewport (frame-source check)
+      const seen = await page.evaluate(() => { const out = []; const vis = el => { const r = el.getBoundingClientRect(); return r.width > 8 && r.height > 8 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth && getComputedStyle(el).visibility !== 'hidden' && el.offsetParent !== null; };
+        document.querySelectorAll('img').forEach(i => { if (vis(i) && !/\.svg(\?|$)|^data:image\/svg/.test(i.currentSrc || i.src)) out.push((i.currentSrc || i.src).split('/').pop()); });
+        document.querySelectorAll('#view *').forEach(e => { const bg = getComputedStyle(e).backgroundImage; if (bg && bg.includes('url(') && !bg.includes('svg') && vis(e)) out.push('bg:' + bg.slice(0, 80)); });
+        return out; }).catch(() => []);
+      seen.forEach(x => api.rasters.add(x));
+    },
     cue(fr, en) { cues.push({ t: api.now(), text: opts.lang === 'en' ? en : fr }); },
     mark(name) { cues.push({ t: api.now(), mark: name }); },
     wait(ms) { return page.waitForTimeout(ms); },
@@ -94,7 +103,7 @@ async function session(opts) {
     },
     async jump(sel, offset = 0) { await page.evaluate(([sel, offset]) => { const el = document.querySelector(sel); if (el) window.scrollTo(0, window.scrollY + el.getBoundingClientRect().top - offset); }, [sel, offset]); await page.waitForTimeout(250); },
     async stop() {
-      const tEnd = Date.now() / 1000; await page.waitForTimeout(100);
+      const tEnd = Date.now() / 1000; api._stop = true; await page.waitForTimeout(150);
       await cdp.send('Page.stopScreencast'); await Promise.all(pending);
       // concat list: frames relative to t0, last held to tEnd
       const fr = frames.filter(f => f.t <= tEnd).sort((a, b) => a.t - b.t);
@@ -106,7 +115,7 @@ async function session(opts) {
       }
       lines.push(`file '${use[use.length - 1].file}'`);
       fs.writeFileSync(path.join(out, 'list.txt'), lines.join('\n') + '\n');
-      const meta = { name: opts.name, lang: opts.lang, fmt: opts.fmt, duration: tEnd - t0, cues, frames: use.length, errs };
+      const meta = { name: opts.name, lang: opts.lang, fmt: opts.fmt, duration: tEnd - t0, cues, frames: use.length, errs, rasters: [...api.rasters] };
       fs.writeFileSync(path.join(out, 'meta.json'), JSON.stringify(meta, null, 1));
       await b.close();
       return meta;

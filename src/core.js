@@ -45,15 +45,18 @@ var L = {
   kinds: { cause: 'Cause', mecanisme: 'Mécanisme', lesion: 'Lésion', signe: 'Signe', complication: 'Complication' },
   phases: { observation: 'Observation', medical: 'Médical', laser: 'Laser', chirurgie: 'Chirurgie', suivi: 'Suivi', escalade: 'Escalade' },
   qtypes: { anatomie: 'Anatomie', physiopathologie: 'Physiopathologie', diagnostic: 'Diagnostic', image: 'Interprétation d’image', cat: 'Conduite à tenir' },
-  modules: { A: 'Ophtalmologie générale', B: 'Cornée', C: 'Glaucome' },
+  modules: { A: 'Ophtalmologie générale', B: 'Cornée', C: 'Glaucome', D: 'Rétine' },
   tag: function (t) { return '<span class="tag ' + t + '">' + (L.tags[t] || t) + '</span>'; }
 };
 
 /* Pedagogical order (never skip steps): foundations first, then simple → complex */
 var ORDER = {
   B: ['c-secheresse', 'c-surface', 'c-erosion', 'c-bacterienne', 'c-atypiques', 'c-herpes', 'c-peripherie', 'c-pterygion', 'c-depots', 'c-keratocone', 'c-dystrophies', 'c-fuchs', 'c-greffe', 'c-brulure'],
-  C: ['g-gpao', 'g-hto', 'g-gpn', 'g-papille', 'g-fermeture', 'g-crise', 'g-pxf', 'g-pigmentaire', 'g-neovasculaire', 'g-secondaires', 'g-cristallin', 'g-dev', 'g-postop']
+  C: ['g-gpao', 'g-hto', 'g-gpn', 'g-papille', 'g-fermeture', 'g-crise', 'g-pxf', 'g-pigmentaire', 'g-neovasculaire', 'g-secondaires', 'g-cristallin', 'g-dev', 'g-postop'],
+  D: ['r-dpv', 'r-decollement', 'r-oacr', 'r-ovr', 'r-diabete', 'r-hta', 'r-dmla', 'r-cscr', 'r-hcq', 'r-endophtalmie']
 };
+/* Foundations capsule of each module (module D, retina, has none: its first fiche goes back to the module page) */
+var CAPS = { B: 'b-bases', C: 'c-bases' };
 var PREREQ = {
   'c-secheresse': ['b-bases', 'a-physiologie'], 'c-erosion': ['b-bases', 'c-secheresse'], 'c-bacterienne': ['b-bases', 'c-erosion'],
   'c-atypiques': ['c-bacterienne'], 'c-herpes': ['c-bacterienne'], 'c-pterygion': ['b-bases'], 'c-keratocone': ['b-bases', 'a-examen'],
@@ -62,7 +65,9 @@ var PREREQ = {
   'g-crise': ['g-fermeture'], 'g-pxf': ['g-gpao'], 'g-pigmentaire': ['g-gpao'], 'g-neovasculaire': ['g-gpao', 'g-fermeture'],
   'g-secondaires': ['g-gpao'], 'g-postop': ['c-bases', 'g-gpao'],
   'c-surface': ['b-bases', 'c-secheresse'], 'c-peripherie': ['c-bacterienne', 'c-herpes'], 'c-depots': ['b-bases', 'a-examen'], 'c-dystrophies': ['c-erosion', 'c-fuchs'],
-  'g-papille': ['g-gpao', 'a-imagerie'], 'g-cristallin': ['g-fermeture', 'g-secondaires', 'a-retine'], 'g-dev': ['g-gpao', 'g-fermeture']
+  'g-papille': ['g-gpao', 'a-imagerie'], 'g-cristallin': ['g-fermeture', 'g-secondaires', 'a-retine'], 'g-dev': ['g-gpao', 'g-fermeture'],
+  'r-dpv': ['a-retine'], 'r-decollement': ['a-retine', 'r-dpv'], 'r-oacr': ['a-retine'], 'r-ovr': ['r-oacr', 'a-imagerie'], 'r-diabete': ['a-retine', 'a-imagerie'], 'r-hta': ['r-ovr'], 'r-dmla': ['a-retine', 'a-imagerie'],
+  'r-cscr': ['r-dmla'], 'r-hcq': ['r-dmla', 'a-imagerie'], 'r-endophtalmie': ['a-retine']
 };
 var A_SECTIONS = [
   { id: 'a-anatomie', n: 'A1', title: 'Anatomie interactive', en: 'Ocular anatomy', blurb: 'Coupe de l’œil zoomable, couches de la cornée, angle, papille, annexes.' },
@@ -475,16 +480,17 @@ var Shell = {
     h += '<details class="grp"' + (inA ? ' open' : '') + '><summary class="grp-h">' + t('nav.module', { m: 'A', name: L.modules.A }) + '</summary>';
     A_SECTIONS.forEach(function (x) { h += a(x.id, x.title, null, x.n); });
     h += '</details>';
-    ['B', 'C'].forEach(function (m) {
-      var unl = Prog.unlocked(m), cap = m === 'B' ? 'b-bases' : 'c-bases', list = D.ordered(m);
+    ['B', 'C', 'D'].forEach(function (m) {
+      var unl = Prog.unlocked(m), cap = CAPS[m], list = D.ordered(m);
+      if (!list.length) return;
       var inM = cur === cap || cur === 'module-' + m.toLowerCase() || list.some(function (f) { return f.id === cur; });
       h += '<details class="grp"' + (inM ? ' open' : '') + '><summary class="grp-h">' + t('nav.module', { m: m, name: L.modules[m] }) + '</summary>' + (unl ? '' : '<div class="xs muted" style="padding:0 8px 4px">' + t('nav.locked', { p: m === 'B' ? 'A' : 'B' }) + '</div>');
       h += a('module-' + m.toLowerCase(), t('nav.overview'), ' ');
-      h += a(cap, t('nav.foundations'), null, m + '0');
+      if (cap) h += a(cap, t('nav.foundations'), null, m + '0');
       list.forEach(function (f, i) { h += a(f.id, f.title, null, m + (i + 1)); });
       h += '</details>';
     });
-    h += '<details class="grp"><summary class="grp-h">' + t('nav.more') + '</summary>' + a('atlas', t('nav.atlas'), ' ') + a('recherche', t('nav.search'), ' ') + a('express-b', t('nav.expressB'), ' ') + a('express-c', t('nav.expressC'), ' ') + a('image-du-jour', t('daily.title'), ' ') + a('sources', t('nav.sources'), ' ') + '</details>';
+    h += '<details class="grp"><summary class="grp-h">' + t('nav.more') + '</summary>' + a('atlas', t('nav.atlas'), ' ') + a('recherche', t('nav.search'), ' ') + a('express-b', t('nav.expressB'), ' ') + a('express-c', t('nav.expressC'), ' ') + a('image-du-jour', t('daily.title'), ' ') + a('sources', t('nav.sources'), ' ') + a('confidentialite', t('nav.privacy'), ' ') + '</details>';
     h += '</nav>';
     h += '<div class="syncnote" id="syncnote"></div>';
     if (window.I18N) h += '<div class="lang-row">' + I18N.switchHtml() + '</div>';

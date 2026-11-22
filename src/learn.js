@@ -61,7 +61,7 @@ var HY = {
     return D.title(id);
   },
   href: function (id) { if (/^a5-/.test(id)) return 'a-retine'; if (/^phy-/.test(id)) return 'a-physiologie'; if (/^ex-/.test(id)) { var x = id.slice(3); return ['oct', 'topographie', 'champs-visuels', 'speculaire'].indexOf(x) >= 0 ? 'a-imagerie' : 'a-examen'; } return id; },
-  mod: function (id) { if (/^(a5|phy|ex)-/.test(id)) return 'A'; if (id === 'b-bases' || /^c-/.test(id) && id !== 'c-bases') return 'B'; return 'C'; },
+  mod: function (id) { if (/^(a5|phy|ex)-/.test(id)) return 'A'; if (/^r-/.test(id)) return 'D'; if (id === 'b-bases' || /^c-/.test(id) && id !== 'c-bases') return 'B'; return 'C'; },
   recog: function (rid) { return ((OPH.A && OPH.A.recog) || []).filter(function (r) { return r.id === rid; })[0] || null; },
   keys: function (mod) { return Object.keys(OPH.hy || {}).filter(function (k) { return !mod || HY.mod(k) === mod; }); },
   essentials: function (id, title) {
@@ -325,7 +325,7 @@ function reviewMeta(where) {
 }
 
 /* ---------- views: réviser hub and game routes ---------- */
-function modSeg(cur) { return '<div class="seg" data-modseg role="radiogroup" aria-label="Module">' + [['', t('modseg.all')], ['A', t('modseg.A')], ['B', t('modseg.B')], ['C', t('modseg.C')]].map(function (x) { return '<button type="button" data-act="setmod" data-v="' + x[0] + '" aria-pressed="' + (cur === x[0]) + '">' + x[1] + '</button>'; }).join('') + '</div>'; }
+function modSeg(cur) { return '<div class="seg" data-modseg role="radiogroup" aria-label="Module">' + [['', t('modseg.all')], ['A', t('modseg.A')], ['B', t('modseg.B')], ['C', t('modseg.C')]].concat(D.ordered('D').length ? [['D', t('modseg.D')]] : []).map(function (x) { return '<button type="button" data-act="setmod" data-v="' + x[0] + '" aria-pressed="' + (cur === x[0]) + '">' + x[1] + '</button>'; }).join('') + '</div>'; }
 Actions['quiz-wrong'] = function () { var mod = Settings.get().mod; Quiz.start(mod ? { modules: [mod], wrong: true } : { wrong: true }, t('rev.wrong')); };
 Actions.setmod = function (el) { Settings.set('mod', el.getAttribute('data-v')); Router.refresh(true); };
 var DAILY = ['patron', 'images', 'drapeaux', 'essentiel'];
@@ -401,8 +401,8 @@ document.addEventListener('click', function (ev) {
 Views.progression = {
   title: t('nav.progress'), render: function () {
     var all = Prog.stat(), ac = Prog.acuity(all.mastery), s = Settings.get();
-    var lines = [['A', 'l1', L.modules.A, 'module-a'], ['B', 'l2', L.modules.B, 'module-b'], ['C', 'l3', L.modules.C, 'module-c']].map(function (l) {
-      var st = Prog.stat(l[0]), a = Prog.acuity(st.mastery), opto = l[0] === 'A' ? 'A' : l[0] === 'B' ? 'B&nbsp;F' : 'C&nbsp;P&nbsp;Z';
+    var lines = [['A', 'l1', L.modules.A, 'module-a'], ['B', 'l2', L.modules.B, 'module-b'], ['C', 'l3', L.modules.C, 'module-c']].concat(D.ordered('D').length ? [['D', 'l4', L.modules.D, 'module-d']] : []).map(function (l) {
+      var st = Prog.stat(l[0]), a = Prog.acuity(st.mastery), opto = l[0] === 'A' ? 'A' : l[0] === 'B' ? 'B&nbsp;F' : l[0] === 'C' ? 'C&nbsp;P&nbsp;Z' : 'D&nbsp;E&nbsp;F&nbsp;P';
       return '<a class="chart-line ' + l[1] + '" href="#' + l[3] + '"><span class="opto">' + opto + '<small>Module ' + l[0] + ' · ' + l[2] + '</small></span><span class="acu">' + a.m + '<br><span class="xs">' + t('prog.line', { a: st.mastered, b: st.shaky, c: st.wrong }) + '</span></span></a>';
     }).join('');
     var c = SRS.counts(Object.keys(SRS.decks), ''), cl = Store.p.cloze || {}, clN = Object.keys(cl).length, clOk = Object.keys(cl).filter(function (k) { return cl[k].ok; }).length;
@@ -419,7 +419,7 @@ Views.progression = {
       '<div class="row"><span class="small" style="min-width:9rem">' + t('depth.aria') + '</span>' + depthSeg(true) + '</div>' +
       '<div class="row"><span class="small" style="min-width:9rem">' + t('prog.size') + '</span><div class="seg sm">' + opt('size', 's', 'A−', s.size) + opt('size', 'm', 'A', s.size) + opt('size', 'l', 'A+', s.size) + opt('size', 'xl', 'A++', s.size) + '</div></div>' +
       '<div class="row"><span class="small" style="min-width:9rem">' + t('prog.theme') + '</span><div class="seg sm">' + opt('theme', 'auto', t('prog.auto'), s.theme) + opt('theme', 'light', t('prog.light'), s.theme) + opt('theme', 'dark', t('prog.dark'), s.theme) + '</div></div>' +
-      '<div class="row"><span class="small" style="min-width:9rem">' + t('prog.motion') + '</span><div class="seg sm">' + opt('motion', 'on', t('prog.on'), s.motion ? 'on' : 'off') + opt('motion', 'off', t('prog.off'), s.motion ? 'on' : 'off') + '</div></div></div>' +
+      '<div class="row"><span class="small" style="min-width:9rem">' + t('prog.motion') + '</span><div class="seg sm">' + opt('motion', 'on', t('prog.on'), s.motion ? 'on' : 'off') + opt('motion', 'off', t('prog.off'), s.motion ? 'on' : 'off') + '</div></div>' + (window.Privacy ? Privacy.settingsRow() : '') + '</div>' +
       '<div class="card stack"><div class="eyebrow">' + t('prog.dates') + '</div><p class="small muted">' + t('prog.dates.d') + '</p><div class="row"><label class="small" for="d-c">' + t('prog.dateC') + '</label><input type="date" id="d-c" value="' + Dates.get('cornee') + '"><label class="small" for="d-g">' + t('prog.dateG') + '</label><input type="date" id="d-g" value="' + Dates.get('glaucome') + '"><button class="btn" data-act="save-dates">' + t('prog.savedates') + '</button></div>' +
       '<div class="row"><button class="btn" data-act="reset-ask">' + t('prog.reset') + '</button><span data-reset></span></div></div>' +
       (reps.length ? '<div class="card stack"><div class="eyebrow">' + t('prog.reports', { n: reps.length }) + '</div><ul class="blist small">' + reps.slice(0, 10).map(function (r) { return '<li><b>' + U.esc(HY.title(r.where) || r.where) + '</b> : ' + U.esc(r.text) + '</li>'; }).join('') + '</ul><span class="xs muted">' + t('prog.reports.d') + '</span><div class="row"><button type="button" class="btn sm" data-act="reports-copy">' + t('rep.copy') + '</button></div></div>' : '') +
@@ -428,7 +428,7 @@ Views.progression = {
 };
 
 /* ---------- apprendre hub (all modules, visual) ---------- */
-var COVER = { A: 'OPH-192', B: 'OPH-001', C: 'OPH-131' }; // C: a real optic disc photo (not an OCT print under the title)
+var COVER = { A: 'OPH-192', B: 'OPH-001', C: 'OPH-131', D: 'IMG3-034' }; // D: openly licensed (CC BY-SA 4.0) retinal detachment // C: a real optic disc photo (not an OCT print under the title)
 var THUMB_ALIAS = { 'a-physiologie': 'a-gonioscopie', 'a-examen': 'a-lampe', 'a-imagerie': 'a-oct', 'a-retine': 'a5-retinopathie-diabetique' };
 function thumbFor(key) {
   // real photo first (fiche photos, alias, a photo question on this topic), then the fiche's own schematic; never an empty tile
@@ -444,10 +444,10 @@ Views.apprendre = {
   title: t('nav.learn'), render: function () {
     var row = function (id, n, title, sub) { var dot = Prog.ficheDone(id) ? 'done' : (Prog.ficheSeen(id) ? 'seen' : ''); return '<a class="lrow" href="#' + id + '"><span class="lthumb">' + thumbFor(id) + '</span><span class="stack" style="gap:2px;min-width:0"><span class="xs mono muted">' + n + '</span><b>' + U.esc(title) + '</b>' + (sub ? '<span class="xs muted">' + U.esc(sub) + '</span>' : '') + '</span>' + Prog.dot(dot) + '</a>'; };
     var A = A_SECTIONS.map(function (s) { return row(s.id, s.n, s.title, s.blurb); }).join('');
-    var mod = function (m) { var cap = m === 'B' ? 'b-bases' : 'c-bases'; return row(cap, m + '0', t('nav.foundations'), t('learn.first')) + D.ordered(m).map(function (f, i) { return row(f.id, m + (i + 1), I18N.title(f), ''); }).join(''); };
+    var mod = function (m) { var cap = CAPS[m]; return (cap ? row(cap, m + '0', t('nav.foundations'), t('learn.first')) : '') + D.ordered(m).map(function (f, i) { return row(f.id, m + (i + 1), I18N.title(f), ''); }).join(''); };
     var col = function (m, title, html) { var s = Prog.stat(m); return '<section class="lcol"><div class="lcover" style="background-image:url(' + Photo.src(COVER[m]) + ')"><span class="eyebrow">Module ' + m + '</span><b>' + title + '</b><span class="xs">' + t('learn.mastered', { a: s.mastered, b: s.total }) + '</span></div><div class="stack" style="gap:6px">' + html + '</div></section>'; };
     return '<div class="page">' + crumbs([[t('nav.home'), 'accueil'], [t('nav.learn'), null]]) + '<div class="phead"><div class="eyebrow">' + t('learn.eyebrow') + '</div><h1>' + t('learn.h1') + '</h1><p class="muted">' + t('learn.lead') + '</p>' + depthSeg() + '</div>' +
-      (Views.investigations ? '<a class="card link inv-banner" href="#investigations"><span class="eyebrow">' + t('brand.method') + '</span><h3>' + t('nav.inv') + '</h3><span class="small muted">' + t('learn.inv.d') + '</span></a>' : '') + '<div class="lgrid">' + col('A', L.modules.A, A) + col('B', L.modules.B, mod('B')) + col('C', L.modules.C, mod('C')) + '</div></div>';
+      (Views.investigations ? '<a class="card link inv-banner" href="#investigations"><span class="eyebrow">' + t('brand.method') + '</span><h3>' + t('nav.inv') + '</h3><span class="small muted">' + t('learn.inv.d') + '</span></a>' : '') + '<div class="lgrid">' + col('A', L.modules.A, A) + col('B', L.modules.B, mod('B')) + col('C', L.modules.C, mod('C')) + (D.ordered('D').length ? col('D', L.modules.D, mod('D')) : '') + '</div></div>';
   }
 };
 
@@ -542,7 +542,7 @@ Views['cas-vedette'] = {
     return '<div class="page featured">' + '<div class="phead"><div class="eyebrow">' + t('feat.title') + ' · ' + t('brand.name') + '</div><h1>' + t('feat.h1') + '</h1><p class="muted">' + t('brand.method') + ' ' + t('feat.lead') + '</p></div>' +
       (it && window.Inv ? '<div data-feat></div>' : '<div class="empty">' + t('daily.none') + '</div>') +
       '<div class="card stack feat-cta"><b>' + t('brand.tagline') + '</b><span class="small muted">' + t('feat.cta.d') + '</span><div class="row"><a class="btn primary" href="#investigations">' + t('feat.more') + '</a><a class="btn" href="#cas">' + t('cas.title') + '</a><a class="btn ghost" href="#accueil">' + t('feat.home') + '</a></div></div>' +
-      '<p class="xs muted">' + t('disclaimer') + '</p></div>';
+      '<p class="xs muted">' + t('disclaimer') + ' · <a href="#confidentialite">' + t('nav.privacy') + '</a></p></div>';
   },
   after: function (host) {
     document.documentElement.classList.add('focus-view');

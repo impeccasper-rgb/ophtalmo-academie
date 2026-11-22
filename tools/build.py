@@ -57,9 +57,9 @@ slim += catalog3(ROOT)
 with open(os.path.join(DATA, 'catalog.js'), 'w', encoding='utf-8') as f:
     f.write("var G = (typeof window !== 'undefined') ? window : globalThis;\nG.OPH = G.OPH || {};\nG.OPH.catalog = " + json.dumps([{k: v for k, v in e.items() if k != 'src'} for e in slim], ensure_ascii=False) + ";\n")
 
-data_order = ['catalog', 'module-a', 'capsules', 'fiches-cornee', 'fiches-cornee-2', 'fiches-glaucome', 'quiz-a', 'quiz-b', 'quiz-c', 'quiz-c2', 'quiz-photos', 'cases', 'photos', 'images',
-              'ext-a5-a', 'ext-a5-b', 'ext-cornee-a', 'ext-cornee-b', 'ext-glaucome-a', 'ext-glaucome-b', 'ext-photos', 'ext-links', 'hy-module-a', 'hy-cornee', 'hy-glaucome', 'investigations', 'inv-media', 'cases-images', 'cases-open', 'voir-hotspots']
-src_order = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'motion', 'tree', 'figures-mech', 'views']
+data_order = ['catalog', 'module-a', 'capsules', 'fiches-cornee', 'fiches-cornee-2', 'fiches-glaucome', 'fiches-retine', 'quiz-a', 'quiz-b', 'quiz-c', 'quiz-c2', 'quiz-d', 'quiz-photos', 'cases', 'photos', 'images',
+              'ext-a5-a', 'ext-a5-b', 'ext-cornee-a', 'ext-cornee-b', 'ext-glaucome-a', 'ext-glaucome-b', 'ext-photos', 'ext-retine', 'ext-links', 'hy-module-a', 'hy-cornee', 'hy-glaucome', 'hy-retine', 'investigations', 'inv-media', 'cases-images', 'cases-open', 'voir-hotspots']
+src_order = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'motion', 'tree', 'figures-mech', 'figures-retine', 'privacy', 'views']
 
 def js(path):
     s = open(path, encoding='utf-8').read()

@@ -9,6 +9,7 @@ const vm = require('vm');
 const FICHE_IDS = {
   B: ['c-secheresse','c-bacterienne','c-atypiques','c-herpes','c-keratocone','c-fuchs','c-erosion','c-pterygion','c-greffe','c-brulure','c-surface','c-peripherie','c-depots','c-dystrophies'],
   C: ['g-gpao','g-hto','g-gpn','g-fermeture','g-crise','g-pxf','g-pigmentaire','g-neovasculaire','g-secondaires','g-postop','g-papille','g-cristallin','g-dev'],
+  D: ['r-decollement','r-oacr','r-ovr'], // module D (rétine): fiches present so far, in the order they were written
 };
 const A_TOPICS = ['a-anatomie','a-physiologie','a-examen','a-imagerie','a-retine'];
 const ANAT_IDS = ['cornee','limbe','sclere','conjonctive','chambre-anterieure','angle','trabeculum','schlemm','iris','pupille','corps-ciliaire','proces-ciliaires','chambre-posterieure','zonules','cristallin','vitre','retine','macula','fovea','papille','nerf-optique','choroide','ora-serrata','acr','vcr','arteres-ciliaires-post','arteres-ciliaires-ant','veines-vortiqueuses','nerfs-ciliaires-longs','nerfs-ciliaires-courts','lame-criblee','muscles-droits'];
@@ -80,7 +81,7 @@ function checkFiches(list, OPH) {
     const ctx = `fiche ${f && f.id}`;
     if (!f || typeof f !== 'object') { E('fiche', 'not an object'); continue; }
     if (seen.has(f.id)) E(ctx, 'duplicate id'); seen.add(f.id);
-    if (!['B','C'].includes(f.module)) E(ctx, 'module must be B or C');
+    if (!['B','C','D'].includes(f.module)) E(ctx, 'module must be B, C or D');
     else if (!FICHE_IDS[f.module].includes(f.id)) E(ctx, 'id not in imposed list for module ' + f.module);
     if (!Number.isInteger(f.order) || f.order < 1 || f.order > 20) E(ctx, 'order must be 1..20');
     for (const k of ['title','en','oneLiner','definition']) if (!isStr(f[k])) E(ctx, `missing ${k}`);
@@ -136,7 +137,7 @@ function checkFiches(list, OPH) {
     if (visible < 380) W(ctx, `short fiche: ~${visible} words`);
   }
   if (PARTIAL) return;
-  for (const m of ['B','C']) {
+  for (const m of ['B','C','D']) {
     const present = list.filter(f => f.module === m).map(f => f.id);
     if (present.length) for (const id of FICHE_IDS[m]) if (!present.includes(id)) E('fiches ' + m, 'missing fiche ' + id);
     if (present.length) {
@@ -152,11 +153,11 @@ function checkQuiz(list) {
   for (const q of list) {
     const ctx = `quiz ${q && q.id}`;
     if (seen.has(q.id)) E(ctx, 'duplicate id'); seen.add(q.id);
-    if (!/^[ABC]-\d{3}$/.test(q.id || '')) E(ctx, 'id format must be X-000');
-    if (!['A','B','C'].includes(q.module)) E(ctx, 'module'); else if (!q.id.startsWith(q.module + '-')) E(ctx, 'id prefix != module');
+    if (!/^[ABCD]-\d{3}$/.test(q.id || '')) E(ctx, 'id format must be X-000');
+    if (!['A','B','C','D'].includes(q.module)) E(ctx, 'module'); else if (!q.id.startsWith(q.module + '-')) E(ctx, 'id prefix != module');
     byMod[q.module] = (byMod[q.module] || 0) + 1;
     if (q.module === 'A' && !A_TOPICS.includes(q.topic)) E(ctx, 'topic must be one of ' + A_TOPICS.join(','));
-    if ((q.module === 'B' || q.module === 'C') && !(FICHE_IDS[q.module].includes(q.topic) || q.topic === (q.module === 'B' ? 'c-bonus' : 'g-bonus'))) E(ctx, 'topic must be a fiche id of its module (or c-bonus/g-bonus)');
+    if ((q.module === 'B' || q.module === 'C' || q.module === 'D') && !(FICHE_IDS[q.module].includes(q.topic) || q.topic === ({ B: 'c-bonus', C: 'g-bonus', D: 'r-bonus' })[q.module])) E(ctx, 'topic must be a fiche id of its module (or c-bonus/g-bonus/r-bonus)');
     if (!QTYPES.includes(q.type)) E(ctx, 'type invalid');
     if (![1,2,3].includes(q.level)) E(ctx, 'level invalid'); else lv[q.level]++;
     if (typeof q.trap !== 'boolean') E(ctx, 'trap must be boolean'); else if (q.trap) traps++;
@@ -265,7 +266,7 @@ function checkGlossary(g) {
   for (const [k, v] of Object.entries(g)) { if (!isStr(k) || !isStr(v)) E('glossary', 'bad entry ' + k); else if (words(v) > 40) W('glossary', `long definition for ${k}`); if (k.length < 2) E('glossary', 'term too short ' + k); }
 }
 function checkPhotos(P, pairs) {
-  const keys = [...FICHE_IDS.B, ...FICHE_IDS.C, ...PHOTO_KEYS_EXTRA];
+  const keys = [...FICHE_IDS.B, ...FICHE_IDS.C, ...FICHE_IDS.D, ...PHOTO_KEYS_EXTRA, 'bonus-D'];
   const used = new Set();
   for (const [k, list] of Object.entries(P)) {
     if (!keys.includes(k) && !(/^a5-[a-z0-9-]+$/.test(k))) E('photos', 'unknown key ' + k);

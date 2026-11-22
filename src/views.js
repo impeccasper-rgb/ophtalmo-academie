@@ -117,7 +117,7 @@ Views.accueil = {
     var q = SRS.queue(DAILY, '', 15), nx = Plan.next();
     var nxt = nx ? (function () { var id = nx.ids.filter(function (x) { return !Prog.ficheDone(x); })[0] || (nx.quiz ? 'quiz' : nx.cases ? 'cas' : 'reviser'); return '<a class="next-step" href="#' + id + '"><span class="eyebrow">' + t('home.next') + '</span><b>' + U.esc(nx.t) + '</b><span class="small">' + U.esc(t('home.open', { t: D.title(id) || t('nav.review') })) + '</span></a>'; })() : '<div class="next-step"><span class="eyebrow">' + t('home.plan') + '</span><b>' + t('home.plandone') + '</b></div>';
     var levels = [1, 2, 3].map(function (k) { return '<button type="button" class="level-card' + (d === k ? ' on' : '') + '" data-act="depth" data-v="' + k + '" aria-pressed="' + (d === k) + '"><span class="lvl-n">' + k + '</span><b>' + DEPTHS[k].t + '</b><span class="xs muted">' + DEPTHS[k].en + '</span><span class="small">' + U.esc(DEPTHS[k].d) + '</span></button>'; }).join('');
-    var mods = [['A', 'module-a', L.modules.A, t('home.modA.d')], ['B', 'module-b', L.modules.B, (Dates.custom() ? t('home.mod.d', { n: D.ordered('B').length, d: Dates.fmt(dc) }) : t('home.mod.d0', { n: D.ordered('B').length }))], ['C', 'module-c', L.modules.C, (Dates.custom() ? t('home.mod.d', { n: D.ordered('C').length, d: Dates.fmt(dg) }) : t('home.mod.d0', { n: D.ordered('C').length }))]].map(function (x) {
+    var mods = [['A', 'module-a', L.modules.A, t('home.modA.d')], ['B', 'module-b', L.modules.B, (Dates.custom() ? t('home.mod.d', { n: D.ordered('B').length, d: Dates.fmt(dc) }) : t('home.mod.d0', { n: D.ordered('B').length }))], ['C', 'module-c', L.modules.C, (Dates.custom() ? t('home.mod.d', { n: D.ordered('C').length, d: Dates.fmt(dg) }) : t('home.mod.d0', { n: D.ordered('C').length }))]].concat(D.ordered('D').length ? [['D', 'module-d', L.modules.D, t('home.mod.d0', { n: D.ordered('D').length })]] : []).map(function (x) {
       var st = Prog.stat(x[0]), unl = Prog.unlocked(x[0]);
       return '<a class="mod-card" href="#' + x[1] + '"><span class="mod-img" style="background-image:url(' + Photo.src(COVER[x[0]]) + ')"></span><span class="stack" style="gap:4px;padding:12px 14px 14px"><span class="eyebrow">Module ' + x[0] + (unl ? '' : t('home.tounlock')) + '</span><b class="mod-t">' + x[2] + '</b><span class="small muted">' + x[3] + '</span><span class="pbar"><i style="width:' + (100 * st.mastery).toFixed(0) + '%"></i></span><span class="xs mono">' + t('learn.mastered', { a: st.mastered, b: st.total }) + '</span></span></a>';
     }).join('');
@@ -127,7 +127,7 @@ Views.accueil = {
       // level choice lives in Progression and the « Niveau » chip (home ≤ 2.5 screens)
       '<div class="today-grid">' + Daily.card() + nxt + (Views.investigations ? '<a class="next-step alt2" href="#investigations"><span class="eyebrow">' + t('brand.method') + '</span><b>' + t('nav.inv') + '</b><span class="small">' + t('home.inv.d', { n: ((window.OPH && OPH.invPractice) || []).length }) + '</span></a>' : '<a class="next-step alt2" href="#jeu-images"><span class="eyebrow">' + t('home.game') + '</span><b>' + t('game.img') + '</b><span class="small">' + t('home.game.d', { n: ImgGame.pool('').length }) + '</span></a>') + '</div>' +
       '<div class="sec"><div class="section-h"><span class="k">1</span><h2>' + t('home.mod.h') + '</h2></div><div class="mod-grid">' + mods + '</div></div>' +
-      '<p class="xs muted disclaimer">' + t('disclaimer') + ' · <a href="#sources">' + t('nav.sources') + '</a></p></div>';
+      '<p class="xs muted disclaimer">' + t('disclaimer') + ' · <a href="#sources">' + t('nav.sources') + '</a> · <a href="#confidentialite">' + t('nav.privacy') + '</a></p></div>';
   }
 };
 Actions['save-dates'] = function () { var c = U.$('#d-c').value, g = U.$('#d-g').value; if (!c || !g) { U.toast(t('dates.invalid')); return; } Store.p.settings = Object.assign({}, Store.p.settings || {}, { cornee: c, glaucome: g, t: Date.now() }); Store.touch(); Router.refresh(); U.toast(t('dates.saved')); };
@@ -441,7 +441,7 @@ var TAG_LEGEND = '<div class="row tight small">' + L.tag('urgent') + '<span clas
 function moduleView(m) {
   return {
     title: L.modules[m], render: function () {
-      var unl = Prog.unlocked(m), list = D.ordered(m), cap = m === 'B' ? 'b-bases' : 'c-bases', capD = D.capsule(cap);
+      var unl = Prog.unlocked(m), list = D.ordered(m), cap = CAPS[m], capD = cap ? D.capsule(cap) : null;
       var dateK = m === 'B' ? 'cornee' : 'glaucome';
       var cards = list.map(function (f, i) {
         var st = Prog.ficheDone(f.id) ? t('st.read') : Prog.ficheSeen(f.id) ? t('st.started') : '';
@@ -452,7 +452,7 @@ function moduleView(m) {
       return '<div class="page">' + crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m, null]]) +
         '<div class="phead"><div class="eyebrow">' + U.esc(Dates.custom() ? t('mod.eyebrow', { m: m, d: Dates.fmt(Dates.get(dateK)), r: Dates.rel(Dates.get(dateK)) }) : 'Module ' + m) + '</div><h1>' + L.modules[m] + '</h1><p class="muted" style="max-width:62ch">' + t('mod.lead2') + '</p></div>' +
         (unl ? '' : lockHtml(m)) +
-        '<a class="card link" href="#' + cap + '" style="border-color:var(--cobalt)"><span class="eyebrow">' + t('mod.first', { m: m }) + (Prog.ficheDone(cap) ? ' · ' + t('st.read') : '') + '</span><h3>' + U.esc(capD ? capD.title : t('nav.foundations')) + '</h3><span class="small muted">' + t('mod.caps.d') + '</span></a>' +
+        (cap ? '<a class="card link" href="#' + cap + '" style="border-color:var(--cobalt)"><span class="eyebrow">' + t('mod.first', { m: m }) + (Prog.ficheDone(cap) ? ' · ' + t('st.read') : '') + '</span><h3>' + U.esc(capD ? capD.title : t('nav.foundations')) + '</h3><span class="small muted">' + t('mod.caps.d') + '</span></a>' : '') +
         '<div class="grid2 micro-grid">' + (cards || missing(t('mod.fiches'))) + '</div>' +
         (COMPARE[m] ? '<details class="acc"><summary>' + U.esc(((I18N.lang === 'en' && COMPARE_EN[m]) || COMPARE[m]).title) + '</summary><div class="acc-b">' + compareTable(m) + '</div></details>' : '') +
         (bonus ? '<details class="acc"><summary>' + t('mod.bonus') + '</summary><div class="acc-b stack"><div class="grid3">' + bonus + '</div>' + (bph.length ? Photo.gallery(bph) : '') + '</div></details>' : '') +
@@ -462,6 +462,7 @@ function moduleView(m) {
 }
 Views['module-b'] = moduleView('B');
 Views['module-c'] = moduleView('C');
+Views['module-d'] = moduleView('D');
 
 /* ---------- capsules ---------- */
 function capsuleView(id) {
@@ -604,8 +605,8 @@ function ficheView(f, step) {
       var ids = { voir: 'mv-voir', comprendre: 'mv-comp', decider: 'mv-dec', entrainer: 'mv-train' };
       h.push('<section class="mv fstep-body" id="' + ids[step] + '" data-step-body="' + step + '">' + body + '</section>');
       // previous / next
-      var prevHref = si > 0 ? '#' + f.id + '/' + FSTEPS[si - 1] : (prev ? '#' + prev.id + '/' + 'entrainer' : '#' + (m === 'B' ? 'b-bases' : 'c-bases'));
-      var prevLab = si > 0 ? t(FSTEP_KEY[FSTEPS[si - 1]]) : (prev ? I18N.title(prev) : t('nav.foundations'));
+      var prevHref = si > 0 ? '#' + f.id + '/' + FSTEPS[si - 1] : (prev ? '#' + prev.id + '/' + 'entrainer' : '#' + (CAPS[m] || 'module-' + m.toLowerCase()));
+      var prevLab = si > 0 ? t(FSTEP_KEY[FSTEPS[si - 1]]) : (prev ? I18N.title(prev) : CAPS[m] ? t('nav.foundations') : 'Module ' + m);
       var nextHref = si < 3 ? '#' + f.id + '/' + FSTEPS[si + 1] : (next ? '#' + next.id + '/voir' : '#module-' + m.toLowerCase());
       var nextLab = si < 3 ? t(FSTEP_KEY[FSTEPS[si + 1]]) : (next ? I18N.title(next) : t('f.backmod'));
       h.push('<nav class="row fstep-nav" aria-label="' + t('f.steps.aria') + '"><a class="btn ghost" data-fprev href="' + prevHref + '">← ' + U.esc(prevLab) + '</a><a class="btn' + (si === 3 ? '' : ' primary') + '" data-fnext' + (si === 3 ? ' data-markread="' + f.id + '"' : '') + ' href="' + nextHref + '">' + U.esc(nextLab) + ' →</a></nav>');
@@ -843,6 +844,7 @@ function expressView(m) {
 }
 Views['express-b'] = expressView('B');
 Views['express-c'] = expressView('C');
+Views['express-d'] = expressView('D');
 
 /* ---------- search ---------- */
 Views.recherche = {
