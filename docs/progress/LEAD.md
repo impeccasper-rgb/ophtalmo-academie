@@ -53,3 +53,7 @@
 - Web : récompense Voir méritée (rayons, aire ≤ 8 %, centre ≠ succès), vrais distracteurs du repli, héros d'accueil, boucle placée autour du signe, #reviser en grille.
 - Mécanismes (nouvel agent) : figure de mécanisme dessinée pour les 27 fiches, écrans sans figure, micro-fiches ≤ 1,5 écran, corrections cliniques (c-brulure, g-gpao, g-crise Québec, c-herpes), vignettes d'arbre 27/27.
 - Puis critique passe 4 ; cible ≥ 8/10.
+
+## Cycles 10–11 — faits (9b2451c, 9e0d9ef, 7a9b5cc)
+- Critique passe 4 = 8/10. Comprendre à un seul pas-à-pas, Voir mérité + « Trouvé avec l'indice », biais des choix corrigé, « selon la source » retiré, restes cliniques sourcés, vignettes ≤ 25 mots.
+- Rapport de réveil : docs/RAPPORT-REVEIL.md.
