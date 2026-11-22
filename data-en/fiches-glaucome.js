@@ -607,7 +607,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "treatment": {
   "first": [
-   "**You, now**: timolol 0.5%, brimonidine 0.2%, dorzolamide 2% (1 drop of each); acetazolamide 500 mg PO or IV; antiemetic.",
+   "**You, now**: timolol 0.5%, brimonidine 0.2%, dorzolamide 2% (1 drop of each); acetazolamide 500 mg PO or IV; dimenhydrinate (Gravol) 50 mg IV or PO, or ondansetron 4 mg IV.",
    "**Ophthalmologist**: pilocarpine once IOP is lowered, mannitol if refractory, then LPI in both eyes."
   ],
   "refer": "Refer to ophthalmology: immediately (on-call ophthalmologist) — the nerve and cornea are damaged within hours.",
@@ -1795,7 +1795,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "**You**: refer; write \"pseudoexfoliation\" for the cataract surgeon.",
    "**Ophthalmologist**: latanoprost 0.005% at bedtime or SLT, lower target; earlier surgery."
   ],
-  "refer": "Refer to ophthalmology: within a few weeks — whitish deposits on the lens; this week if sudden vision loss after cataract surgery.",
+  "refer": "Refer to ophthalmology: within a few weeks — whitish deposits on the lens; same day if sudden vision loss after cataract surgery (endophthalmitis, detachment, dislocated IOL with high IOP).",
   "pitfall": [
    "**Cataract surgery** without planning for weak zonules: vitreous loss.",
    "**SLT**: IOP spike more likely; recheck afterwards."

@@ -1288,14 +1288,13 @@
     var list = invList();
     return '<div class="page inv-page">' + crumbsH([[S('home', 'Accueil', 'Home'), 'accueil'], [S('hub', 'Investigations', 'Investigations'), null]]) +
       '<div class="phead"><div class="eyebrow">' + E(S('hub.eye', 'Investigations · observe, réponds, révèle', 'Investigations · observe, answer, reveal')) + '</div><h1>' + E(S('hub.h1', 'Lire les examens en ophtalmologie', 'Reading eye investigations')) + '</h1>' +
-      '<p class="muted" style="max-width:62ch">' + E(S('hub.lead', 'Pour chaque examen : à quoi il sert, comment le lire, un outil à manipuler, puis des images où tu trouves toi-même le signe décisif.', 'For each test: what it is for, how to read it, a hands-on tool, then images where you find the decisive sign yourself.')) + '</p></div>' +
+      '<p class="muted" style="max-width:62ch">' + E(S('hub.lead2', 'Un outil à manipuler, puis des images où tu trouves le signe.', 'A hands-on tool, then images where you find the sign.')) + '</p></div>' +
       (usingFixture() ? '<div class="callout amber small">' + E(S('fixture', 'Contenu de démonstration (le contenu pédagogique complet arrive bientôt).', 'Demo content (full teaching content coming soon).')) + '</div>' : '') +
       '<div class="inv-hub">' + list.map(function (inv) {
         var p = progressFor(inv), pct = p.n ? Math.round(100 * p.ok / p.n) : 0;
         return '<a class="card link inv-card" href="#inv-' + E(inv.id) + '">' + hubThumb(inv.id) + '<div class="inv-card-top"><svg viewBox="0 0 32 32" class="inv-ic" aria-hidden="true">' + (ICONS[inv.id] || ICONS.oct) + '</svg><span class="mono xs muted">' + E(inv.n || '') + '</span></div>' +
-          '<b class="inv-card-t">' + PE(inv.title) + '</b>' + (inv.en_term && lang() !== 'en' ? '<span class="xs muted"><i>' + E(inv.en_term) + '</i></span>' : '') +
-          '<span class="small muted">' + PE(inv.why) + '</span>' +
-          '<span class="row tight">' + (inv.tool && TOOL_NAMES[inv.tool] ? '<span class="tag plain">' + PE(TOOL_NAMES[inv.tool]) + '</span>' : '') + '<span class="tag plain">' + p.n + ' ' + E(S('hub.imgs', 'images', 'images')) + '</span></span>' +
+          '<b class="inv-card-t">' + PE(inv.title) + '</b>' + // one line per card (hub ≤ 120 words); the purpose is on the exam page
+          '<span class="row tight"><span class="tag plain">' + p.n + ' ' + E(S('hub.imgs', 'images', 'images')) + '</span></span>' +
           (p.n ? '<span class="pbar' + (pct >= 60 ? ' ok' : '') + '" aria-label="' + E(p.ok + ' / ' + p.n) + '"><i style="width:' + pct + '%"></i></span>' : '') + '</a>';
       }).join('') + '</div>' + icHubCard() + '</div>';
   }

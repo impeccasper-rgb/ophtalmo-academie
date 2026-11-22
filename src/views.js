@@ -505,7 +505,7 @@ function txBlock(f, scope) {
   return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><p class="xs muted">' + t('f.tx.d') + '</p>' + txList(f, scope) + '</div>';
 }
 function algoHtml(f, scope) {
-  if (window.Tree && typeof Tree.render === 'function') { try { return '<div class="stack"><h2 class="h3">' + t('f.algo') + '</h2><div class="tree-wrap">' + Tree.render(f.cat.algo, { fmt: function (x) { return T(x, scope); }, title: t('f.algo'), mode: 'overview' }) + '</div></div>'; } catch (e) { console.error('Tree.render', e); } }
+  if (window.Tree && typeof Tree.render === 'function') { try { return '<div class="stack"><h2 class="h3">' + t('f.algo') + '</h2><div class="tree-wrap">' + Tree.render(f.cat.algo, { fmt: function (x) { return T(x, scope); }, title: t('f.algo') }) + '</div></div>'; } catch (e) { console.error('Tree.render', e); } }
   return '<div class="stack"><div class="row"><h2 class="h3" style="margin:0">' + t('f.algo') + '</h2><button class="btn sm" data-walk>' + t('f.walk') + '</button></div><div class="algo" data-algo>' +
     f.cat.algo.map(function (a, i) { return '<div class="anode" data-node="' + i + '"><div class="q">' + T(a.q, scope) + '</div><div class="yn"><div class="yes" data-yn="yes"><span class="lab">' + t('f.yes') + '</span><span>' + T(a.yes, scope) + '</span></div><div class="no" data-yn="no"><span class="lab">' + t('f.no') + '</span><span>' + T(a.no, scope) + '</span></div></div></div>'; }).join('') + '</div></div>';
 }

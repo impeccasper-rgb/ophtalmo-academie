@@ -750,7 +750,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Toi, maintenant** : timolol 0,5 %, brimonidine 0,2 %, dorzolamide 2 % (1 goutte de chaque) ; acétazolamide 500 mg PO ou IV ; antiémétique.",
+      "**Toi, maintenant** : timolol 0,5 %, brimonidine 0,2 %, dorzolamide 2 % (1 goutte de chaque) ; acétazolamide 500 mg PO ou IV ; dimenhydrinate (Gravol) 50 mg IV ou PO, ou ondansétron 4 mg IV.",
       "**Ophtalmologiste** : pilocarpine une fois la PIO abaissée, mannitol si réfractaire, puis LPI des deux yeux."
     ],
     refer: "Référer en ophtalmologie : immédiatement (ophtalmologiste de garde) — le nerf et la cornée s’abîment en quelques heures.",
@@ -896,7 +896,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       "**Toi** : diriger ; noter « pseudo-exfoliation » pour le chirurgien de cataracte.",
       "**Ophtalmologiste** : latanoprost 0,005 % au coucher ou SLT, cible plus basse ; chirurgie plus tôt."
     ],
-    refer: "Référer en ophtalmologie : en quelques semaines — dépôts blanchâtres sur le cristallin ; cette semaine si vision ↓ brusque chez un opéré de cataracte.",
+    refer: "Référer en ophtalmologie : en quelques semaines — dépôts blanchâtres sur le cristallin ; le jour même si vision ↓ brusque après une cataracte (endophtalmite, décollement, implant luxé avec PIO haute).",
     pitfall: ["**Chirurgie de cataracte** sans prévoir les zonules faibles : issue de vitré.", "**SLT** : pic de PIO plus probable ; recontrôler après."],
     qc: "Québec : hors glaucome suspect, débutant ou cortisonique, l’optométriste traite seulement avec le consentement d’un médecin (O-7)."
   }
