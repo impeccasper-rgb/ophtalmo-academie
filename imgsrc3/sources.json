@@ -1341,6 +1341,62 @@
    ],
    "area": "general",
    "caption_basis": "Commons source description (read at build 2026-11-21)"
+  },
+  {
+   "id": "IMG3-061",
+   "source": "commons",
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fundus_photo_showing_scatter_laser_surgery_for_diabetic_retinopathy_EDA09.JPG",
+   "resolve": {
+    "commons_file": "Fundus photo showing scatter laser surgery for diabetic retinopathy EDA09.JPG"
+   },
+   "page_url": "https://commons.wikimedia.org/wiki/File:Fundus_photo_showing_scatter_laser_surgery_for_diabetic_retinopathy_EDA09.JPG",
+   "title": {
+    "fr": "Rétinopathie diabétique : cicatrices de laser panrétinien (NEI)",
+    "en": "Diabetic retinopathy: panretinal laser scars (NEI)"
+   },
+   "caption": {
+    "fr": "Fond d’œil après laser en dispersion (panrétinien) pour une rétinopathie diabétique (National Eye Institute, série EDA09).",
+    "en": "Fundus after scatter (panretinal) laser for diabetic retinopathy (National Eye Institute, series EDA09)."
+   },
+   "license": "verify-at-build",
+   "license_url": null,
+   "licence_check": "build",
+   "author": "verify-at-build",
+   "module": "D",
+   "exam": "fondoeil",
+   "topics": [
+    "r-diabete"
+   ],
+   "area": "fondoeil",
+   "caption_basis": "file name only (NEI series EDA, expected public domain; Commons page not reachable from the container on 2026-11-22: licence read at build)"
+  },
+  {
+   "id": "IMG3-062",
+   "source": "commons",
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fundus_photograph-CMV_retinitis_EDA07.JPG",
+   "resolve": {
+    "commons_file": "Fundus photograph-CMV retinitis EDA07.JPG"
+   },
+   "page_url": "https://commons.wikimedia.org/wiki/File:Fundus_photograph-CMV_retinitis_EDA07.JPG",
+   "title": {
+    "fr": "Rétinite à cytomégalovirus (NEI)",
+    "en": "Cytomegalovirus retinitis (NEI)"
+   },
+   "caption": {
+    "fr": "Fond d’œil d’une rétinite à cytomégalovirus (National Eye Institute, série EDA07).",
+    "en": "Fundus photograph of cytomegalovirus retinitis (National Eye Institute, series EDA07)."
+   },
+   "license": "verify-at-build",
+   "license_url": null,
+   "licence_check": "build",
+   "author": "verify-at-build",
+   "module": "D",
+   "exam": "fondoeil",
+   "topics": [
+    "bonus-D"
+   ],
+   "area": "fondoeil",
+   "caption_basis": "file name only (NEI series EDA, expected public domain; Commons page not reachable from the container on 2026-11-22: licence read at build)"
   }
  ],
  "excluded": {
