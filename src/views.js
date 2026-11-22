@@ -450,7 +450,7 @@ function moduleView(m) {
       var bonus = (OPH.bonus[m] || []).map(function (b) { return '<div class="card stack"><h3 class="h4">' + U.esc(I18N.title(b)) + '</h3>' + (I18N.lang === 'en' ? '' : '<span class="small muted"><i>' + U.esc(b.en) + '</i></span>') + '<span class="small"><b>' + t('mod.clue') + '</b>' + U.md(b.clue) + '</span><span class="small"><b>' + t('mod.action') + '</b>' + U.md(b.action) + '</span></div>'; }).join('');
       var bph = photosFor('bonus-' + m);
       return '<div class="page">' + crumbs([[t('nav.learn'), 'apprendre'], ['Module ' + m, null]]) +
-        '<div class="phead"><div class="eyebrow">' + U.esc(Dates.custom() ? t('mod.eyebrow', { m: m, d: Dates.fmt(Dates.get(dateK)), r: Dates.rel(Dates.get(dateK)) }) : 'Module ' + m) + '</div><h1>' + L.modules[m] + '</h1><p class="muted" style="max-width:62ch">' + t('mod.lead2') + '</p></div>' +
+        '<div class="phead"><div class="eyebrow">' + U.esc(Dates.custom() ? t('mod.eyebrow', { m: m, d: Dates.fmt(Dates.get(dateK)), r: Dates.rel(Dates.get(dateK)) }) : 'Module ' + m) + '</div><h1>' + L.modules[m] + '</h1><p class="muted" style="max-width:62ch">' + (CAPS[m] ? t('mod.lead2') : t('mod.lead.nocap')) + '</p></div>' +
         (unl ? '' : lockHtml(m)) +
         (cap ? '<a class="card link" href="#' + cap + '" style="border-color:var(--cobalt)"><span class="eyebrow">' + t('mod.first', { m: m }) + (Prog.ficheDone(cap) ? ' · ' + t('st.read') : '') + '</span><h3>' + U.esc(capD ? capD.title : t('nav.foundations')) + '</h3><span class="small muted">' + t('mod.caps.d') + '</span></a>' : '') +
         '<div class="grid2 micro-grid">' + (cards || missing(t('mod.fiches'))) + '</div>' +

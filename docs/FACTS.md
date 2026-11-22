@@ -296,6 +296,9 @@ Sources consultées le 22 nov. 2026 (WebFetch / PubMed), citées dans les fiches
 - **AHA, Management of Elevated BP in the Acute Care Setting** (2024 ; résumé AFP 2026;113:100-101) : urgence hypertensive = TAS > 180 et/ou TAD > 110 avec atteinte d’organe nouvelle ou qui s’aggrave (cerveau, artères, rétine, rein, cœur) ; atteinte rétinienne : baisse immédiate de la TAM de 15 % ; TA très haute sans atteinte d’organe : pas de traitement aigu, ajustement en externe.
 - **Hypertension Canada 2025, guide de première ligne** (Goupil R, Hundemer G et al., *CMAJ* 2025;197:E549) : diagnostic dès 130/80 ; cible **TAS < 130 mmHg** si tolérée ; ne traite pas de l’urgence hypertensive ni de la rétinopathie.
 
+- **Endophthalmitis Vitrectomy Study** (EVS Group, *Arch Ophthalmol* 1995;113:1479-96, PubMed 7487614 ; NLM Clinical Alert) : 420 patients, endophtalmie dans les **6 semaines** après une cataracte ; vision « mouvements de la main » ou mieux : vitrectomie = ponction-injection ; **perception lumineuse seulement** : vitrectomie → 20/40 **33 % vs 11 %**, 20/100 56 % vs 30 %, perte sévère 20 % vs 47 % ; **antibiotiques IV sans bénéfice**. Doses intravitréennes (section C) : vancomycine 1 mg/0,1 mL, ceftazidime 2,25 mg/0,1 mL.
+- EyeWiki *Postoperative Endophthalmitis* : page non lue (demande d’accès expirée le 22 nov. 2026). TASS (12–48 h, cornée trouble d’un limbe à l’autre, peu de douleur), povidone iodée 5 % avant injection et antibiotique intracamérulaire : repères classiques non relus ici.
+
 Conventions retenues pour l’externe (délais) :
 - Éclairs ou corps flottants isolés : examen dilaté **dans les 24 h** ; rideau, baisse de vision, nuée de corps flottants : **le jour même**.
 - OACR / amaurose fugace : **immédiatement**, urgence d’un centre de l’AVC (pas une clinique externe).
@@ -312,6 +315,9 @@ Conventions retenues pour l’externe (délais) :
 - `r-dmla` : traitements de l’atrophie géographique (pegcetacoplan, avacincaptad pegol) : « disponibilité canadienne à vérifier » ; réadaptation en déficience visuelle « du réseau public (CISSS ou CIUSSS) » : organisation québécoise non vérifiée centre par centre.
 - `r-hta` : « une baisse trop rapide peut causer une ischémie du nerf optique » et « éviter la nifédipine sublinguale » : enseignement classique, non relu dans les sources de cette section (EyeWiki parle seulement d’ischémie des organes cibles).
 - `r-hta` : seuil « TA ≥ 180/110 » retenu de l’énoncé AHA 2024 ; d’autres textes utilisent 180/120.
+- `r-dpv` : « DPV souvent entre 50 et 70 ans » et « l’autre œil dans les mois ou années suivantes » (EyeWiki : 6 mois à 2 ans) ; « sans symptôme, pas de laser systématique des palissades » (AAO PPP, non relu en détail ici).
+- `r-endophtalmie` : TASS, povidone iodée 5 %, antibiotique intracamérulaire, flore palpébrale (staphylocoques à coagulase négative) : enseignement classique, page EyeWiki non lue (accès expiré).
+- Images : 2 photos NEI ajoutées à `imgsrc3/sources.json` (IMG3-061 laser panrétinien, IMG3-062 rétinite à CMV) ; licence relue au build par l’API Commons (pages Commons inaccessibles depuis le conteneur et via WebFetch le 22 nov. 2026).
 - Photos : OPH-249 (zone rouge entre papille et macula décrite comme « évoquant » une artère ciliorétinienne épargnée : interprétation de l’image, non écrite par la source) ; IMG3-034 (couleurs « photo grand champ à balayage laser » : déduites de l’aspect).
 
 ## H. Audit des exercices (QCM, cas en images, cas cliniques), 22 novembre 2026
