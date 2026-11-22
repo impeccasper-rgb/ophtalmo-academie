@@ -954,7 +954,7 @@ Object.assign(G.OPH_EN.quiz, {
   options: ["Ocular massage and an ophthalmology appointment tomorrow", "Aspirin, home, and an outpatient MRI", "Emergency immediately, like a stroke; ESR and CRP", "IOP-lowering drops and a check in one week"],
   explain: "Sudden, painless vision loss with a cherry-red spot: CRAO, a stroke of the eye. Emergency: immediately (the same day), like a stroke; ESR, CRP and platelets from age 50.",
   deep: "**What it is:** central retinal artery occlusion, i.e., a stroke of the eye. **Why the urgency:** brain-stroke risk is high in the following days; the work-up (diffusion MRI, carotids, heart rhythm, echocardiography) is done immediately, and thrombolysis is discussed at a stroke centre if onset was under 4.5 h ago. **Over 50:** ESR, CRP and platelets to rule out giant cell arteritis.",
-  why: ["Massage has no proven benefit and the delay misses the urgent stroke work-up.", "An outpatient work-up misses the window when stroke risk is highest.", "Correct: it is a stroke; same-day work-up and arteritis to rule out.", "IOP-lowering drops have shown no benefit and delay the work-up."]
+  why: ["Massage has no proven benefit and the delay misses the urgent stroke work-up.", "An outpatient work-up misses the window when stroke risk is highest.", "Correct: it is a stroke; immediate emergency, like a stroke, and arteritis to rule out.", "IOP-lowering drops have shown no benefit and delay the work-up."]
  },
  "D-005": {
   stem: "In central retinal artery occlusion, why does the fovea look cherry red in the middle of a white retina?",

@@ -79,7 +79,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     why: [
       "Le massage n’a aucun bénéfice prouvé et le délai fait manquer le bilan d’AVC urgent.",
       "Un bilan en externe laisse passer la fenêtre où le risque d’AVC est le plus élevé.",
-      "Exact : c’est un AVC ; bilan le jour même et artérite à éliminer.",
+      "Exact : c’est un AVC ; urgence immédiate, comme un AVC, et artérite à éliminer.",
       "Les gouttes hypotensives n’ont pas montré de bénéfice et retardent le bilan."
     ]
   },
