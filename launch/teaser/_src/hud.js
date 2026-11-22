@@ -78,10 +78,11 @@ var H = (function () {
 
   /* ---------- the quiz reel (A+E) ----------
      cfg: { num, spec, hook, q, opts[3], ok, sign, stk:[x,y], dx, why, prompt }   mode: 'same' | 'demain' | 'recap' */
+  /* 18 s = 36 beats at 120 BPM; calm hold on question + options, then an 8-s answer window (7 s on the recap) */
   H.QUIZ_T = {
-    same: { snap: 2, btn: [2.5, 3, 3.5], tm: 4, tmd: 4, rev: 8, dx: 9, end: 11, T: 13.5 },
-    demain: { snap: 2, btn: [2.5, 3, 3.5], tm: 4, tmd: 4, rev: 8, dx: null, end: 9.5, T: 12 },
-    recap: { snap: 2, btn: [2.25, 2.5, 2.75], tm: 3, tmd: 1.5, rev: 4.5, dx: 5.5, end: 8, T: 10.5 }
+    same: { snap: 2, btn: [2.5, 3, 3.5], tm: 5, tmd: 8, rev: 13, dx: 14, end: 15.5, T: 18 },
+    demain: { snap: 2, btn: [2.5, 3, 3.5], tm: 5, tmd: 8, rev: 13, dx: null, end: 15.5, T: 18 },
+    recap: { snap: 2, btn: [2.5, 3, 3.5], tm: 5, tmd: 7, rev: 12, dx: 13, end: 15.5, T: 18 }
   };
   H.quiz = function (S, cfg, mode) {
     var Q = H.QUIZ_T[mode]; K.T = Q.T; H.scene(S);

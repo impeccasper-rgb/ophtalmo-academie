@@ -29,8 +29,8 @@ REELS = [  # (file stem, harness r)
     ('09-compte-a-rebours-j7', 'countdown:7'),
     ('09-compte-a-rebours-j1', 'countdown:1'),
 ]
-POSTER = {'brand': 4.6, 'quiz:angle:same': 9.6, 'mech': 3.9, 'quiz:dendrite:demain': 6.0, 'quiz:dendrite:recap': 6.2, 'ui': 7.0, 'quiz:rd:same': 9.6,
-          'quiz:crao:demain': 6.0, 'quiz:crao:recap': 6.2, 'quiz:hypopyon:same': 9.6, 'countdown:30': 4.4, 'countdown:14': 4.4, 'countdown:7': 4.4, 'countdown:1': 4.4}
+POSTER = {'brand': 4.6, 'quiz:angle:same': 14.6, 'mech': 3.9, 'quiz:dendrite:demain': 8.0, 'quiz:dendrite:recap': 13.6, 'ui': 7.0, 'quiz:rd:same': 14.6,
+          'quiz:crao:demain': 8.0, 'quiz:crao:recap': 13.6, 'quiz:hypopyon:same': 14.6, 'countdown:30': 4.4, 'countdown:14': 4.4, 'countdown:7': 4.4, 'countdown:1': 4.4}
 
 
 def serve():

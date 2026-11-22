@@ -39,33 +39,33 @@
    ]
   },
   "ocelle-teaser-02-defi-angle-ferme-en": {
-   "T": 13.5,
+   "T": 18,
    "cuts": [
     0,
     2,
     2.5,
     3,
     3.5,
-    4,
-    8,
-    9,
-    11,
-    13.5
+    5,
+    13,
+    14,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-02-defi-angle-ferme-fr": {
-   "T": 13.5,
+   "T": 18,
    "cuts": [
     0,
     2,
     2.5,
     3,
     3.5,
-    4,
-    8,
-    9,
-    11,
-    13.5
+    5,
+    13,
+    14,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-03-mecanisme-crise-angle-en": {
@@ -97,61 +97,61 @@
    ]
   },
   "ocelle-teaser-04-defi-dendrite-reponse-demain-en": {
-   "T": 12,
+   "T": 18,
    "cuts": [
     0,
     2,
     2.5,
     3,
     3.5,
-    4,
-    8,
-    9.5,
-    12
+    5,
+    13,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-04-defi-dendrite-reponse-demain-fr": {
-   "T": 12,
+   "T": 18,
    "cuts": [
     0,
     2,
     2.5,
     3,
     3.5,
-    4,
-    8,
-    9.5,
-    12
+    5,
+    13,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-04b-defi-dendrite-reponse-en": {
-   "T": 10.5,
+   "T": 18,
    "cuts": [
     0,
     2,
-    2.25,
     2.5,
-    2.75,
     3,
-    4.5,
-    5.5,
-    8,
-    10.5
+    3.5,
+    5,
+    12,
+    13,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-04b-defi-dendrite-reponse-fr": {
-   "T": 10.5,
+   "T": 18,
    "cuts": [
     0,
     2,
-    2.25,
     2.5,
-    2.75,
     3,
-    4.5,
-    5.5,
-    8,
-    10.5
+    3.5,
+    5,
+    12,
+    13,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-05-touche-le-signe-en": {
@@ -181,121 +181,121 @@
    ]
   },
   "ocelle-teaser-06-defi-decollement-retine-en": {
-   "T": 13.5,
+   "T": 18,
    "cuts": [
     0,
     2,
     2.5,
     3,
     3.5,
-    4,
-    8,
-    9,
-    11,
-    13.5
+    5,
+    13,
+    14,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-06-defi-decollement-retine-fr": {
-   "T": 13.5,
+   "T": 18,
    "cuts": [
     0,
     2,
     2.5,
     3,
     3.5,
-    4,
-    8,
-    9,
-    11,
-    13.5
+    5,
+    13,
+    14,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-07-defi-oacr-reponse-demain-en": {
-   "T": 12,
+   "T": 18,
    "cuts": [
     0,
     2,
     2.5,
     3,
     3.5,
-    4,
-    8,
-    9.5,
-    12
+    5,
+    13,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-07-defi-oacr-reponse-demain-fr": {
-   "T": 12,
+   "T": 18,
    "cuts": [
     0,
     2,
     2.5,
     3,
     3.5,
-    4,
-    8,
-    9.5,
-    12
+    5,
+    13,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-07b-defi-oacr-reponse-en": {
-   "T": 10.5,
+   "T": 18,
    "cuts": [
     0,
     2,
-    2.25,
     2.5,
-    2.75,
     3,
-    4.5,
-    5.5,
-    8,
-    10.5
+    3.5,
+    5,
+    12,
+    13,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-07b-defi-oacr-reponse-fr": {
-   "T": 10.5,
+   "T": 18,
    "cuts": [
     0,
     2,
-    2.25,
     2.5,
-    2.75,
     3,
-    4.5,
-    5.5,
-    8,
-    10.5
+    3.5,
+    5,
+    12,
+    13,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-08-defi-hypopion-en": {
-   "T": 13.5,
+   "T": 18,
    "cuts": [
     0,
     2,
     2.5,
     3,
     3.5,
-    4,
-    8,
-    9,
-    11,
-    13.5
+    5,
+    13,
+    14,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-08-defi-hypopion-fr": {
-   "T": 13.5,
+   "T": 18,
    "cuts": [
     0,
     2,
     2.5,
     3,
     3.5,
-    4,
-    8,
-    9,
-    11,
-    13.5
+    5,
+    13,
+    14,
+    15.5,
+    18
    ]
   },
   "ocelle-teaser-09-compte-a-rebours-j1-en": {
