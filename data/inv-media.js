@@ -82,8 +82,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "y": 50,
     "r": 5,
     "label": {
-     "fr": "Sonde (côté temporal, 9 h)",
-     "en": "Probe (temporal side, 9 o’clock)"
+     "fr": "Sonde : posée en nasal (3 h), regard en temporal",
+     "en": "Probe: placed nasally (3 o’clock), gaze temporal"
     }
    }
   ],
