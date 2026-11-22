@@ -204,6 +204,18 @@ function checkQuizBias(list) {
   }
 }
 
+// Same rule for the clinical cases (choice steps) and the image cases: the right option is the single longest in ≤ 35 % of the items.
+function checkCaseBias(O) {
+  const report = (name, n, k) => { if (!n) return; console.log(`${name}: right option is the single longest in ${k}/${n} (${Math.round(100 * k / n)} %, max 35 %)`); if (k / n > 0.35) E(name, `right option is the single longest in ${Math.round(100 * k / n)} % of the items (> 35 %)`); };
+  const single = (len, a) => { const mx = Math.max(...len); return len[a] === mx && len.filter(v => v === mx).length === 1; };
+  let n = 0, k = 0;
+  for (const c of O.cases || []) for (const s of c.steps || []) { if (s.kind !== 'choice' || !Array.isArray(s.options)) continue; const a = s.options.findIndex(o => o.correct === true); if (a < 0) continue; n++; if (single(s.options.map(o => String(o.label).length), a)) k++; }
+  report('Clinical cases FR', n, k);
+  for (const L of ['fr', 'en']) { n = 0; k = 0;
+    for (const x of O.imageCases || []) { if (!Array.isArray(x.options) || !Number.isInteger(x.answer)) continue; n++; if (single(x.options.map(o => String((o && o[L]) || '').length), x.answer)) k++; }
+    report('Image cases ' + L.toUpperCase(), n, k); }
+}
+
 function checkCases(list) {
   const seen = new Set();
   for (const c of list) {
@@ -362,6 +374,7 @@ const OPH = sandbox.OPH || {};
 if (OPH.fiches) checkFiches(OPH.fiches, OPH);
 let qs = null; if (OPH.quiz) qs = checkQuiz(OPH.quiz);
 if (OPH.quiz) checkQuizBias(OPH.quiz);
+checkCaseBias(OPH);
 if (OPH.cases) checkCases(OPH.cases);
 if (OPH.A) checkModuleA(OPH.A);
 if (OPH.images) checkImages(OPH.images);

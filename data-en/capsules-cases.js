@@ -908,7 +908,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "Young myope, bilateral involvement, mid-peripheral slits unrelated to an IOL; here: 71 years old, one eye, pseudophakic."
     },
     {
-     "label": "IOL-induced UGH (uveitis-glaucoma-hyphema) syndrome",
+     "label": "UGH (uveitis-glaucoma-hyphema) syndrome",
      "correct": true,
      "note": "The IOL chafes the iris and ciliary body: inflammation (uveitis), bleeding (hyphema or microhyphema) and released pigment that clogs the trabecular meshwork (elevated IOP). The \"red\" blurring episodes are typical. The single-piece acrylic IOL, with thick square-edged haptics, is not designed for the sulcus."
     },
@@ -1108,7 +1108,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "The edematous cornea and inflammation make the laser difficult and risky: lower the IOP first to clear the cornea, then do the laser."
     },
     {
-     "label": "Stepwise medical lowering: timolol, brimonidine and dorzolamide drops, acetazolamide 500 mg, prednisolone 1%; pilocarpine only once IOP has come down",
+     "label": "Timolol, brimonidine, dorzolamide, acetazolamide 500 mg, prednisolone; pilocarpine once IOP is down",
      "correct": true,
      "note": "Complete regimen: timolol 0.5%, brimonidine (or apraclonidine) and dorzolamide drops; acetazolamide 500 mg by mouth (PO) or intravenously (IV), after checking for sulfonamide allergy, renal function, potassium and absence of sickle cell disease; prednisolone acetate 1%; IOP rechecked every 30–60 min; pilocarpine 1–2% once IOP has come down; IV mannitol 1–2 g/kg if IOP is refractory. First turn off the tap: timolol (beta-blocker), brimonidine (alpha-2 agonist), dorzolamide and acetazolamide (carbonic anhydrase inhibitors) reduce aqueous production; the steroid settles the inflammation. Pilocarpine (a miotic: it constricts the pupil and pulls the iris away from the angle) only works once IOP has come down, because an ischemic sphincter does not respond. IV mannitol dehydrates the vitreous if nothing else is enough (caution in heart or renal failure)."
     },
@@ -1124,7 +1124,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
    "prompt": "Two hours later, IOP OD is 22 mmHg, the cornea is clearing and the pupil responds to pilocarpine. What do you plan?",
    "options": [
     {
-     "label": "Laser peripheral iridotomy (LPI) in both eyes, OD as soon as the cornea allows; IOP checked after each laser",
+     "label": "Laser iridotomy (LPI) in both eyes, OD as soon as the cornea allows",
      "correct": true,
      "note": "LPI makes a small hole in the peripheral iris: aqueous humor bypasses the pupil, the iris flattens and the angle opens. The fellow eye has the same anatomy: about half of fellow eyes have an attack within 5 years without LPI. Confirm the opening is patent (flow or pigment visible) and measure IOP 30 min to 2 h afterward, since it can rise after the laser."
     },
@@ -1309,7 +1309,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "POAG with confirmed damage is treated, even without symptoms (the central field remains intact for a long time): each mmHg of reduction lowers the risk of progression by about 10% (EMGT, Early Manifest Glaucoma Trial), and his risk profile is high."
     },
     {
-     "label": "Target of about 18–20 mmHg (20–30% below baseline); selective laser trabeculoplasty (SLT) or prostaglandin analogue, by shared decision",
+     "label": "Target of about 18–20 mmHg (20–30% below baseline); SLT or a prostaglandin, by shared decision",
      "correct": true,
      "note": "Target IOP is the pressure below which you expect to slow progression: individualized, with a starting point about 20–30% below baseline IOP, lower if damage is advanced. SLT applies low-energy laser to the pigmented trabecular meshwork to stimulate aqueous outflow, without burning the tissue; the target is revised according to the course. In the LiGHT trial (Laser in Glaucoma and Ocular Hypertension) at 6 years, 69.8% of SLT-treated eyes remained at target with no other treatment, with less progression (19.6% vs 26.8%) and about 3 times fewer trabeculectomies; the AAO (2026) more strongly supports SLT as first-line."
     }
@@ -1324,7 +1324,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
    "prompt": "What treatment do you add?",
    "options": [
     {
-     "label": "A prostaglandin analogue (latanoprost 0.005% at bedtime), avoiding any beta-blocker, even as drops",
+     "label": "Latanoprost at bedtime; no beta-blocker, even as drops",
      "correct": true,
      "note": "Drops drain into the nose through the lacrimal duct and enter the bloodstream: a topical beta-blocker like timolol can trigger severe bronchospasm in an asthmatic (or worsen COPD, chronic obstructive pulmonary disease, bradycardia, heart block). Latanoprost increases uveoscleral outflow of aqueous humor, with one drop a day. Effects to explain: redness, longer lashes, iris darkening, loss of fat around the eye."
     },
@@ -1360,7 +1360,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "The 24-2 tests the central 24° of a single eye; the SAAQ requires an extended binocular field (Esterman or Goldmann III/4e) to check the horizontal extent."
     },
     {
-     "label": "No automatic suspension: VA and field are judged with both eyes together; if the field is abnormal, the SAAQ requires a signed binocular field",
+     "label": "No automatic suspension; if the field is abnormal, the SAAQ requires a binocular field",
      "correct": true,
      "note": "A defect in one eye, with the other normal, usually meets the standards; explain this to him and document it. The binocular field requested is an Esterman (automated test done with both eyes open) or Goldmann perimetry (III/4e target), which measure the field out to the periphery. SAAQ class 5 standards: binocular VA ≥ 6/15 (20/50) and a continuous binocular field of 10° above and 20° below fixation, at least 100° horizontally, including 30° on each side of the vertical meridian. Both eyes are tested open, because one eye compensates for the other's defects. The physician may recommend stopping, or a restriction such as no night driving, if the field deteriorates."
     },
@@ -1472,7 +1472,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "You would see cells and precipitates in a deep chamber, without vessels crossing the spur."
     },
     {
-     "label": "Neovascular glaucoma OD secondary to ischemic CRVO, progressing to synechial closure",
+     "label": "Neovascular glaucoma after ischemic CRVO, with early synechiae",
      "correct": true,
      "note": "This is a secondary glaucoma: the oxygen-starved retina secretes VEGF, neovessels invade the iris and the angle, then block aqueous outflow. Main causes: proliferative diabetic retinopathy, ischemic CRVO, ocular ischemic syndrome (carotid narrowing)."
     }
@@ -1633,7 +1633,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "Sudden bleeding under the choroid: intense pain, often elevated IOP, dark domes full of echoes on ultrasound."
     },
     {
-     "label": "Overfiltration through the scleral flap, with secondary serous choroidal detachments",
+     "label": "Overfiltration through the flap, with serous choroidal detachments",
      "correct": true,
      "note": "The scleral flap lets out more aqueous humor than the eye produces: IOP falls, the chamber shallows and the choroid detaches under the low pressure. The negative Seidel and the elevated bleb rule out a leak. This is common in the first days, especially with MMC, and often transient."
     },
@@ -1659,7 +1659,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "Massage increases filtration and worsens the hypotony."
     },
     {
-     "label": "Atropine 1%, continue antibiotic and steroid, avoid exertion and straining while holding the breath (Valsalva), review in 24–48 h",
+     "label": "Atropine 1%, continue antibiotic and steroid, no straining, review in 24–48 h",
      "correct": true,
      "note": "Atropine paralyzes the ciliary muscle: it pulls the lens back, deepens the chamber and settles inflammation. Most overfiltration corrects itself within a few days, as the flap heals. Intervene (viscoelastic injected into the chamber, choroidal drainage, flap resuturing) only if there is lens–cornea contact, kissing choroidals or persistent hypotony with maculopathy."
     },
@@ -1699,7 +1699,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "On the contrary, the steroid slows the scarring that threatens the bleb: continue it, sometimes even more often. A steroid response (IOP rise caused by the steroid) remains possible later, but a flat bleb with an open sclerostomy points first to a flap that is too tight."
     },
     {
-     "label": "Trial of digital bleb massage, then laser suture lysis of a flap suture if the bleb does not rise",
+     "label": "Digital bleb massage, then laser suture lysis if the bleb stays flat",
      "correct": true,
      "note": "Open sclerostomy + flat bleb = flap probably too tight. Massage (gentle pressure on the lower lid while the patient looks up) forces aqueous humor under the flap. Suture lysis uses laser to cut a nylon suture through the conjunctiva, with a compression lens (e.g. Hoskins): the flap opens a little more and the bleb rises. MMC extends the window during which this lysis remains effective."
     }
@@ -1718,7 +1718,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
    "prompt": "What diagnosis and management do you choose?",
    "options": [
     {
-     "label": "Blebitis (infection limited to the bleb): intensive hourly topical antibiotics, culture, review in 12–24 h; intravitreal injection if the vitreous becomes involved",
+     "label": "Blebitis: hourly topical antibiotics, culture, review in 12–24 h; intravitreal if the vitreous is involved",
      "correct": true,
      "note": "Hourly antibiotics: 4th-generation fluoroquinolone or fortified drops, after a surface culture; tap and intravitreal injection at the slightest sign of vitreous involvement. In blebitis, bacteria infect the bleb and sometimes the anterior chamber, without reaching the vitreous; intensive topical treatment is often enough, provided the patient is seen again very soon. A thin, cystic or leaking bleb is the main risk factor, even years after surgery. Red flags for endophthalmitis (infection inside the eye): marked drop in VA, hypopyon, cells or haze in the vitreous, increasing pain. Once the infection has cleared, the leak is repaired (bleb revision), because a thin, leaking bleb carries an ongoing risk of infection."
     },
@@ -1830,7 +1830,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "NAION is an \"infarct\" of the optic nerve head: sudden, painless vision loss, swollen disc, then sectoral pallor and an altitudinal defect (upper or lower half of the field). It is usually unilateral, neither bitemporal nor progressive over months."
     },
     {
-     "label": "Compressive optic neuropathy at the level of the optic chiasm",
+     "label": "Compressive optic neuropathy at the optic chiasm",
      "correct": true,
      "note": "The chiasm is the crossroads where fibers from the nasal retinas (which see the temporal field) cross to the opposite side. Chiasmal compression affects these crossing fibers → bitemporal defect respecting the vertical meridian, pallor and dyschromatopsia. Superior predominance suggests a mass pushing from below, such as the pituitary."
     },
@@ -1866,7 +1866,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "Repeating a field is useful if it is unreliable or isolated. Here, it is reliable and matches the pallor and the RAPD → act now; waiting delays the diagnosis of a compressive lesion."
     },
     {
-     "label": "Brain MRI with gadolinium centered on the sella turcica within a few days, with a pituitary hormone workup",
+     "label": "Brain MRI with gadolinium (sella) within a few days, plus pituitary hormone workup",
      "correct": true,
      "note": "MRI (magnetic resonance imaging) with gadolinium (contrast agent) and thin cuts centered on the sella turcica, the bony housing of the pituitary located below the chiasm, shows this region best. The hormone workup (prolactin, cortisol, thyroid, sex hormones…) screens for hormone excess or deficiency → it guides treatment, because a prolactinoma is treated first with medication, and cortisol deficiency must be corrected before any surgery."
     }
@@ -1886,7 +1886,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "Cabergoline shrinks **prolactinomas** (adenomas that secrete a lot of prolactin, with very high levels): it is then the first treatment, even with visual field involvement. Here, prolactin remains barely elevated after dilution: this is a stalk effect from a nonfunctioning adenoma, which will not regress on cabergoline."
     },
     {
-     "label": "Transsphenoidal surgery arranged promptly with neurosurgery and endocrinology, after a baseline visual field and OCT",
+     "label": "Prompt transsphenoidal surgery with neurosurgery and endocrinology; baseline field and OCT first",
      "correct": true,
      "note": "Transsphenoidal surgery removes the adenoma through the nose and sphenoid sinus, without opening the skull. Nonfunctioning adenoma (one that secretes no hormone) + visual involvement → surgical decompression first-line; the baseline field and OCT will be used to measure recovery. The mild prolactin elevation comes from the stalk effect: the mass compresses the pituitary stalk and removes dopamine's brake on prolactin. While awaiting surgery, he is taught the signs of **pituitary apoplexy** (sudden hemorrhage or infarction within the adenoma): sudden headache, vomiting, double vision, drop in vision → same-day emergency (intravenous corticosteroids, neurosurgical consult)."
     },
@@ -1934,7 +1934,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "SLT (low-energy laser applied to the trabecular meshwork) lowers IOP, which protects the nerve in glaucoma. Nothing here shows glaucoma, and lowering an already normal IOP does not protect against a recurrent compression."
     },
     {
-     "label": "No drops: cupping and pallor are stable sequelae; new baseline field and OCT, then shared follow-up with neurosurgery (surveillance MRI)",
+     "label": "No drops: stable sequelae; baseline field and OCT, shared follow-up with neurosurgery",
      "correct": true,
      "note": "In adults, cupping caused by axonal loss does not regress after decompression: it reflects the past, not active disease. The preoperative tests no longer serve as a baseline; repeat them (24-2 field, RNFL and GCIPL OCT) to compare going forward. At follow-up, the pattern of a new defect is a guide: if it respects the **vertical** meridian (with nasal GCIPL thinning), think recurrence → MRI; if it is arcuate and respects the **horizontal** meridian, with focal rim thinning or a disc hemorrhage, think superimposed glaucoma, which would then be treated."
     }
@@ -2015,7 +2015,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "An immune reaction, not an infection, to bacterial toxins: small peripheral infiltrates, mildly painful, epithelium nearly intact, little AC reaction. It is a diagnosis of exclusion: a central infiltrate larger than 2 mm with hypopyon is infectious until proven otherwise."
     },
     {
-     "label": "Contact lens–related bacterial keratitis, most likely Pseudomonas aeruginosa",
+     "label": "Contact lens–related bacterial keratitis, probably Pseudomonas",
      "correct": true,
      "note": "Bacterial keratitis is an infection of the corneal stroma by bacteria that entered through a break in the epithelium. Pseudomonas, a gram-negative bacillus that lives in water and lens cases, adheres to contact lenses; its enzymes (proteases) digest the stroma and can perforate the cornea within days. Sleeping in lenses is the main risk factor; water (swimming, tap water) is another. Culture and antibiogram will confirm the organism."
     },
@@ -2056,7 +2056,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "Oral antibiotics do not reach an adequate concentration in the cornea. They are reserved for special situations (scleral involvement, impending perforation), always in addition to topical treatment."
     },
     {
-     "label": "Fortified vancomycin and tobramycin drops alternating hourly day and night, cycloplegic, stop contact lenses, no patch",
+     "label": "Fortified vancomycin and tobramycin alternating hourly, cycloplegic, no patch",
      "correct": true,
      "note": "Doses: vancomycin 25 mg/mL and tobramycin 14 mg/mL, alternating hourly day and night, after a loading dose (frequent drops in the first hour); the patient is seen again in 24 h. Fortified drops are antibiotics much more concentrated than commercial products, compounded by the hospital pharmacy; in Québec, these patients are often referred to a center's ophthalmology emergency (CHUM, HMR, MUHC, Jewish General Hospital, CHU de Québec…). Vancomycin covers gram-positives and tobramycin gram-negatives such as Pseudomonas, while awaiting the antibiogram. The cycloplegic (e.g. cyclopentolate) paralyzes the ciliary muscle: less pain from spasm and fewer iris adhesions (synechiae)."
     }
@@ -2067,7 +2067,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
    "prompt": "At 72 h, culture confirms a Pseudomonas susceptible to tobramycin and fluoroquinolones. The pain is decreasing, the infiltrate is better demarcated and the epithelial defect is shrinking. A colleague suggests adding a topical corticosteroid \"to limit the scar\". What do you answer?",
    "options": [
     {
-     "label": "No routine steroid: tailor the antibiotic to the antibiogram, taper the drops according to response and reassess",
+     "label": "No routine steroid: antibiotic per sensitivities, taper drops by response",
      "correct": true,
      "note": "The antibiogram allows stopping vancomycin, useless against this gram-negative, and keeping tobramycin or a fluoroquinolone. For the steroid, two randomized trials guide the decision. **SCUT** (2012): adjunctive topical steroid brings no overall benefit; possible benefit only if the central ulcer is severe and the steroid is started early, and to be avoided with Nocardia (a filamentous bacterium). **SCUT II** (2026): adding difluprednate (a potent topical corticosteroid), with or without cross-linking (CXL: stiffening of collagen with riboflavin and UV-A), to moxifloxacin brought no benefit for VA or scar size at 6 and 12 months (analysis possibly underpowered at 12 months). So no routine steroid; if considered, it is case by case, by a cornea specialist, once the organism is identified and controlled."
     },
@@ -2117,7 +2117,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "Steroids slow epithelial and stromal healing and reduce defenses: on a melting cornea, they increase the risk of perforation."
     },
     {
-     "label": "Cyanoacrylate glue on the thinned area and a bandage contact lens, continuing the antibiotic; tectonic graft if the glue fails",
+     "label": "Cyanoacrylate glue and bandage lens, continue antibiotic; graft if it fails",
      "correct": true,
      "note": "Cyanoacrylate glue is a medical adhesive applied to the thinned, dried area: it seals the defect and slows the melt by blocking the influx of white blood cells. The bandage contact lens (a therapeutic soft lens) holds it in place and relieves discomfort. Continue the antibiotic while reducing the drops that are toxic to the epithelium, and protect the eye with a shield. Glue is suitable for small areas (on the order of 2–3 mm or less); beyond that, or if it fails, a tectonic graft is done, i.e. a corneal graft used to close the globe, not to restore vision."
     },
@@ -2241,7 +2241,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "Natamycin is the antifungal of choice against filamentous fungi (MUTT I trial); it does not act on Acanthamoeba."
     },
     {
-     "label": "Stop valacyclovir and contact lenses; biguanide (PHMB or chlorhexidine 0.02%) ± propamidine hourly, then taper over months; cycloplegic",
+     "label": "Stop valacyclovir and lenses; hourly biguanide ± propamidine, then slow taper; cycloplegic",
      "correct": true,
      "note": "Biguanides (PHMB, polyhexamethylene biguanide, or chlorhexidine, at 0.02%) destroy the ameba's membrane and are the usual agents effective against cysts (cysticidal): they form the basis of treatment. They are given hourly day and night for the first days, then tapered gradually over several months, with close follow-up in a cornea center. Diamidines, such as propamidine, are often added, but they are more toxic to the epithelium. In Canada, these drops are compounded preparations (availability to be confirmed); polihexanide 0.08% (Akantior) has been approved in Europe since 2024, as monotherapy. Treatment lasts months, because cysts survive a long time and can reactivate. The cycloplegic (a drop that paralyzes the ciliary muscle, e.g. cyclopentolate) relieves the painful spasm."
     },
@@ -2272,7 +2272,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "**Trap**: the steroid relieves pain, but it weakens defense against the ameba and prolongs the disease. It never replaces an amebicidal agent."
     },
     {
-     "label": "Oral nonsteroidal anti-inflammatory drug (NSAID), cycloplegic, cold compresses, a stronger analgesic for a few days as needed",
+     "label": "Oral NSAID, cycloplegic, cold compresses, a stronger analgesic if needed",
      "correct": true,
      "note": "The pain comes mainly from inflammation around the corneal nerves. A regularly taken oral NSAID (e.g. naproxen, in the absence of contraindications: peptic ulcer, renal failure, NSAID-exacerbated asthma) reduces it without harming the cornea, and the cycloplegic settles the ciliary muscle spasm. Amebicidal treatment continues unchanged. Reassess pain at every visit: increasing pain can signal progression."
     },
@@ -2292,7 +2292,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
    "prompt": "What do you do?",
    "options": [
     {
-     "label": "Continue the amebicide and treat the scleritis systemically (oral NSAIDs, immunosuppression in a tertiary center if severe); graft only if perforation",
+     "label": "Continue the amebicide, treat the scleritis systemically; graft only if perforation",
      "correct": true,
      "note": "Amebic scleritis is mainly immune-mediated: the ameba rarely invades the sclera. So the inflammation is settled systemically while continuing to kill the ameba in the cornea (biguanide ± diamidine), with close follow-up. A graft done in the active phase carries a high risk of recurrent infection in the graft: it is reserved for perforation, and a graft for vision is discussed after months of a quiet eye."
     },
@@ -2468,7 +2468,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "This would create a large refractive difference with the other eye (anisometropia), poorly tolerated, unless monovision has been discussed in advance."
     },
     {
-     "label": "Slight myopia (about −0.5 to −1.0 D), because DMEK causes a slight hyperopic shift",
+     "label": "Slight myopia (−0.5 to −1.0 D): DMEK causes a hyperopic shift",
      "correct": true,
      "note": "As the cornea deswells, the curvature of its posterior surface changes, which slightly reduces its total power: the eye becomes slightly more hyperopic than calculated. This shift is more marked after DSAEK (Descemet stripping automated endothelial keratoplasty: a graft that also carries a thin layer of donor stroma), whose graft, thicker peripherally than centrally, acts like a small minus lens. Aiming slightly myopic offsets this shift and avoids bothersome residual hyperopia."
     }
@@ -2498,7 +2498,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "A small peripheral detachment, outside the visual axis, can be observed. This one is extensive and central: without a new bubble, the graft is at risk of failing."
     },
     {
-     "label": "Rebubbling: reinject air (or SF6) into the anterior chamber, supine positioning, then IOP check",
+     "label": "Rebubbling: reinject air or gas, supine positioning, then IOP check",
      "correct": true,
      "note": "Rebubbling (a new bubble of air, or of SF6: sulfur hexafluoride, a gas that resorbs more slowly than air) presses the graft back into place; it is done under topical anesthesia, at the slit lamp or in the OR: the bubble pushes the graft against the stroma while the endothelium resumes pumping. An extensive or central detachment rarely reattaches on its own. Measure IOP in the following hours, because a large bubble can cause pupillary block; an inferior iridotomy made during surgery prevents this block."
     },
@@ -2616,7 +2616,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
    "prompt": "What do you recommend?",
    "options": [
     {
-     "label": "CXL (corneal collagen cross-linking) in the OD now, without waiting for documented progression; stop the rubbing",
+     "label": "CXL in the right eye now, without waiting for documented progression; stop rubbing",
      "correct": true,
      "note": "CXL stiffens the cornea: the epithelium is removed (epi-off), riboflavin 0.1% (vitamin B2) is instilled, then UV-A irradiation creates bonds between the collagen fibers. Common protocols: Dresden (3 mW/cm² × 30 min) or accelerated (9 mW/cm² × 10 min). The 2nd global consensus (2025) recommends CXL in children at diagnosis, because the disease progresses quickly at this age; stopping eye rubbing helps, but must never delay CXL. Then plan the OS, which already shows tomographic signs, and treat the allergy to curb the urge to rub. In Québec, CXL is offered in specialized centers; public coverage varies (check locally)."
     },
@@ -2661,7 +2661,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "On an edematous, inflamed cornea, grafting is riskier and often unnecessary: many eyes regain vision correctable with contact lenses after resolution."
     },
     {
-     "label": "Conservative treatment: hypertonic saline 5%, cycloplegic, topical steroid, shield against rubbing; discuss an injection of gas into the anterior chamber",
+     "label": "Conservative: hypertonic saline, cycloplegic, topical steroid, shield; consider intracameral gas",
      "correct": true,
      "note": "The topical steroid settles inflammation and improves comfort; the shield prevents rubbing. Hydrops resolves on its own within a few weeks to a few months, as the endothelium covers the tear; it often leaves a scar. Hypertonic saline draws water out of the epithelium; the cycloplegic (a drop that paralyzes the ciliary muscle) relieves pain. An intracameral injection of air or gas (e.g. SF6, C3F8) tamponades Descemet's membrane and shortens the duration of the edema."
     },
@@ -3004,7 +3004,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "Does not treat the vasculitis and can worsen melting when used alone; follow-up must be close."
     },
     {
-     "label": "Rheumatology the same day, oral prednisone, doxycycline, lubricants",
+     "label": "Same-day rheumatology, oral prednisone, doxycycline, lubricants",
      "correct": true,
      "note": "Correct: PUK is treated systemically (dose decided with rheumatology); doxycycline and preservative-free lubricants protect the stroma; stop ibuprofen if prednisone is started."
     },
@@ -3048,7 +3048,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
      "note": "A topical steroid slows stromal repair; the melt is controlled systemically."
     },
     {
-     "label": "Cyanoacrylate glue, bandage contact lens and a shield",
+     "label": "Cyanoacrylate glue, bandage lens and a shield",
      "correct": true,
      "note": "Correct: reinforces the area, curbs the influx of neutrophils and protects; systemic immunosuppression continues."
     }

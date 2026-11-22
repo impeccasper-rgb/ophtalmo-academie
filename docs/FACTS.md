@@ -274,3 +274,30 @@ Corrections faites (FR et surcouche EN) :
 Relu sans changement, concordant avec les sources déjà consignées dans ce fichier ou dans la fiche (entre parenthèses ; seules la page EyeWiki des brûlures chimiques et les sections A à E ont été rouvertes aujourd'hui) : doses antivirales et fenêtre de 72 h (section C et E) ; fortifiés et règle 1-2-3 (AAO PPP 2023) ; crise aiguë (guide optométrique canadien, AAO PPP PACD 2026) ; endophtalmite (vancomycine 1 mg/0,1 mL, ceftazidime 2,25 mg/0,1 mL, EVS) ; hyphéma et drépanocytose (PIO ≥ 24 mmHg plus de 24 h) ; brimonidine contre-indiquée avant 2 ans (monographie) ; hydroxychloroquine ≤ 5 mg/kg/j de poids réel (AAO 2016) ; anti-VEGF (bévacizumab 1,25 mg/0,05 mL) ; chlamydia (doxycycline 100 mg BID × 7 j ou azithromycine 1 g).
 
 Non vérifié à la source dans cet audit (repris de la section A) : « EAGLE : 10 fois plus de chances d'être sans gouttes à 3 ans ». Voir docs/RELECTURE-CLINICIEN.md pour la liste des doutes ouverts.
+
+## G. Module D · Rétine (fiches `r-*`), novembre 2026
+
+Sources consultées le 22 nov. 2026 (WebFetch / PubMed), citées dans les fiches :
+- **AAO Summary Benchmarks for PPP Guidelines (déc. 2023), section Rétine** (aao.org, PDF « ppp-summary-benchmarks-23-retina ») : RAO aiguë symptomatique (OAO, OACR, OABR embolique) = « immediate referral to the nearest stroke center » ; envisager d’abord l’ACG à partir de 50 ans, corticostéroïdes systémiques urgents si suspectée. OVR : anti-VEGF efficaces pour l’œdème maculaire ; laser encore valable pour la branche ; PRP sectorielle si néovaisseaux avec hémorragie du vitré ou rubéose ; **suivi mensuel pendant 6 mois** (veine centrale, et forme ischémique après arrêt des anti-VEGF) avec examen non dilaté de l’iris et gonioscopie. Déchirure symptomatique en fer à cheval : « treat promptly ». DMLA néovasculaire : aflibercept 2,0 mg, bévacizumab 1,25 mg (hors indication), brolucizumab 6,0 mg, ranibizumab 0,5 mg ; signaler vite toute métamorphopsie nouvelle. RD : intervalles 12 mois (normal ou légère), 6–12 (modérée), 3–4 (sévère, PDR non à haut risque), 2–4 (PDR à haut risque) ; œdème central : 1 mois ; anti-VEGF pour l’œdème maculaire central ; PRP recommandée pour la PDR à haut risque, anti-VEGF parfois.
+- PPP complets cités : Flaxel CJ et al., *Ophthalmology* 2020 (PVD/déchirures/palissades ; Retinal and Ophthalmic Artery Occlusions ; Retinal Vein Occlusions ; Diabetic Retinopathy ; AMD), versions 2019 publiées en janvier 2020.
+- **Hollands H et al., JAMA 2009;302:2243-9** (PubMed 19934426, doi:10.1001/jama.2009.1714) : déchirure chez **14 %** (IC 95 % 12–16) des patients avec éclairs ou corps flottants aigus ; baisse de vision subjective RV 5,0 ; hémorragie du vitré RV 10 ; absence de pigment dans le vitré RV négatif 0,23 ; DPV simple → **3,4 %** de déchirure dans les 6 semaines ; ≥ 10 corps flottants nouveaux RV 8,1–36.
+- EyeWiki *Posterior Vitreous Detachment* (photopsies ≈ 50 % ; hémorragie du vitré → déchirure 50–70 %) ; EyeWiki *Macula-on Rhegmatogenous Retinal Detachment* (chirurgie « as early as possible », surtout décollement supérieur bulleux ; options : barrage laser, rétinopexie pneumatique, cerclage, vitrectomie).
+- **PIVOT** (Hillier RJ et al., *Ophthalmology* 2019) : rétinopexie pneumatique → meilleure acuité à 1 an que la vitrectomie, succès primaire plus faible (plus de réinterventions).
+- **AHA, CRAO** : communiqué AHA (Mac Grory B et al., *Stroke* 2021) : forme d’AVC ischémique ; patient vu en clinique → « immediately sent to a hospital emergency department » ; moins de 20 % retrouvent une vision fonctionnelle ; tPA « within 4.5 hours » si utilisé.
+- **THEIA** (Préterre C et al., *Lancet Neurol* 2025;24:909-919) : alteplase IV vs aspirine < 4,5 h, 70 patients ; amélioration ≥ 0,3 logMAR 66 % vs 48 %, **non significatif** ; pas d’hémorragie symptomatique.
+- **TenCRAOS** (*N Engl J Med* 2026;394:442-450, PubMed 41604638) : ténectéplase 0,25 mg/kg vs aspirine < 4,5 h, 78 patients ; récupération 20 % vs 24 % (p = 0,69) ; plus d’effets indésirables, une hémorragie intracrânienne mortelle.
+- EyeWiki *Central Retinal Artery Occlusion* : VS, CRP, FSC avec plaquettes si > 50 ans ; corticostéroïdes immédiatement ; **biopsie temporale dans les 2 semaines** ; ciliorétinienne → acuité ≥ 20/50 dans plus de 80 % ; acuité habituelle entre 20/200 et mouvements de la main ; mesures conservatrices sans bénéfice (méta-analyse : résultats possiblement pires).
+- **SCORE2** (Scott IU et al., *JAMA* 2017) : bévacizumab non inférieur à l’aflibercept pour l’œdème de la veine centrale (cité comme repère, non relu ici).
+
+Conventions retenues pour l’externe (délais) :
+- Éclairs ou corps flottants isolés : examen dilaté **dans les 24 h** ; rideau, baisse de vision, nuée de corps flottants : **le jour même**.
+- OACR / amaurose fugace : **immédiatement**, urgence d’un centre de l’AVC (pas une clinique externe).
+- Occlusion veineuse : ophtalmologie **dans la semaine** ; le jour même si œil rouge douloureux avec PIO haute (glaucome néovasculaire).
+
+### À valider par un clinicien (module D)
+- `r-oacr`, doses de corticostéroïdes pour l’ACG (prednisone 40–60 mg/j ; méthylprednisolone IV 250–1000 mg/j × 3 j si perte visuelle) : reprises des recommandations EULAR 2018 de mémoire, non relues à la source ici ; la fiche précise « selon l’équipe ».
+- `r-oacr`, encadré Québec : « urgence d’un hôpital qui traite les AVC » ; aucun centre n’est nommé (désignations régionales non vérifiées).
+- `r-decollement`, encadré Québec : rôle de l’optométriste pour l’examen dilaté initial (pratique courante ; pas de texte réglementaire consulté).
+- `r-ovr`, délai « dans la semaine » : consensus pratique ; l’AAO ne fixe pas de délai de référence.
+- `r-ovr` : « glaucome des 90 jours » = enseignement classique ; l’AAO parle de suivi mensuel pendant 6 mois.
+- Photos : OPH-249 (zone rouge entre papille et macula décrite comme « évoquant » une artère ciliorétinienne épargnée : interprétation de l’image, non écrite par la source) ; IMG3-034 (couleurs « photo grand champ à balayage laser » : déduites de l’aspect).
