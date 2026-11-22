@@ -48,3 +48,8 @@
 - tests/run.py 0 problème ; test_site --quick 85 contrôles, 2 échecs connus (images hors ligne non mises en cache : g-gpao, reviser).
 - Reste : 23/42 micro-fiches > 1,5 écran (max 2,07 a-physiologie/transparence).
 - Critique sévère passe 3 lancée.
+
+## Critique passe 3 = 7/10 (55d49d2) → cycle 10 lancé
+- Web : récompense Voir méritée (rayons, aire ≤ 8 %, centre ≠ succès), vrais distracteurs du repli, héros d'accueil, boucle placée autour du signe, #reviser en grille.
+- Mécanismes (nouvel agent) : figure de mécanisme dessinée pour les 27 fiches, écrans sans figure, micro-fiches ≤ 1,5 écran, corrections cliniques (c-brulure, g-gpao, g-crise Québec, c-herpes), vignettes d'arbre 27/27.
+- Puis critique passe 4 ; cible ≥ 8/10.
