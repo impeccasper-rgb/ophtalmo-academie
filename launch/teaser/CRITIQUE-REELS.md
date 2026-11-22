@@ -133,3 +133,82 @@ Fichiers de travail (hors dépôt), dans le dossier `reels/` du critique :
 - `ocr/` : texte reconnu ;
 - `analysis.json` : durées par ligne ;
 - `sheets/` : planches contact.
+
+---
+
+# Passe 2 : série « X ou Y ? » (10–17) et re-contrôle des défis (22 novembre 2026)
+
+Fichiers testés : commit bd30052, soit 16 MP4 de la série et les défis re-rendus 02, 04, 04b, 05, 06, 07, 07b et 08, en FR et en EN. Même méthode qu'en passe 1 :
+- **2 556 images** extraites toutes les 0,25 s et lues par OCR (fra / eng) ;
+- règle de lecture du propriétaire, zones sûres, contraste ;
+- planches contact et recadrages pleine résolution au moment de la révélation ;
+- **taille des pupilles mesurée image par image** dans le 17.
+
+**Contrôles** : `_src/check_reading.py` 44/44 OK ; `node tools/validate.js` OK.
+
+## Note de la série « X ou Y ? » : 7 / 10
+
+Le format est bon :
+- les deux dessins sont visibles dès la 1re image et l'accroche « X ou Y ? » est claire ;
+- une seule révélation, avec la boucle au feutre ;
+- la phrase « pourquoi » fait 4–6 mots ;
+- les faits sont justes et sourcés dans le README.
+
+Il manque un point par défaut ci-dessous :
+- **7 réponses sur 8 sont A**, ce qui rend le défi prévisible ;
+- **trois dessins ne montrent pas le signe qu'ils enseignent** : 14, 17 et 15 ;
+- **dans le 13, la phrase « pourquoi » contredit à première vue la réponse affichée** ;
+- **l'arbre du 16 oublie la kératite**.
+
+## Mesures
+
+| Contrôle | Résultat |
+|---|---|
+| Durée de lecture (registre) | 44/44 conformes. Marge minimale : +0,10 s (17-FR). |
+| Durée de lecture (pixels) | Aucun texte sous la règle. Les cas signalés par l'OCR sont tous des artefacts : mot fluo, faisceau sur l'accroche, autocollant incliné. |
+| Superposition à la révélation | **Pendant ≤ 0,25–0,5 s, le titre de réponse (ou l'arbre) apparaît par-dessus la carte question qui s'efface.** Vu sur 10–17 à 9,5 s (FR) et sur 02, 04b et 08 à 10,0 s ; 06 et 07b utilisent le même gabarit. Cela tombe juste sur le « drop » de la révélation. |
+| Zones sûres | 0 mot hors zone sur 2 556 images. |
+| Taille | Questions et options : 44 px (≈ 16 pt). Nœuds de l'arbre du 16 : ≈ 36–40 px, lisibles. Étiquettes de panneaux (« Patient 1 », « Lumière ») : ≈ 28 px de haut. |
+| Contraste | Même palette qu'en passe 1 (≥ 11,7:1). |
+| Rythme | Question et options : 5,9 s, pour 3,25–5,35 s de lecture requise, soit 0,5 à 2,6 s pour réfléchir. Le 16-EN est serré : il faut lire l'arbre, deux autocollants et deux yeux en 4,1 s. |
+| Droits | Que du SVG original. Aucune URL, aucune photo. |
+
+## Exactitude clinique et « aha » pour un externe ou un R1
+
+| Reel | Signe et « pourquoi » | Juste ? | Le « aha » porte-t-il ? |
+|---|---|---|---|
+| 10 Épisclérite / sclérite | La phényléphrine blanchit les vaisseaux superficiels ; le plexus profond reste rouge. « Sclérite : douleur profonde, bilan systémique » | Oui (EyeWiki ; 10 % pour l'épisclère) | **Moyen.** Le distracteur « La fluorescéine » est gratuit et donne la réponse ; pour un R1, « la douleur qui réveille la nuit » trancherait mieux. L'animation du blanchiment est réussie. |
+| 11 Dendrite VHS / pseudodendrite VZV | Bulbes terminaux contre ligne sans bulbes. « VHS : vrai ulcère, prend la fluorescéine » | Oui (Moran CORE) | **Bon**, mais les bulbes font ≈ 10 px sur téléphone. La pseudodendrite est aussi brillante que la dendrite ; elle devrait prendre faiblement la fluorescéine. |
+| 12 DPV / DPV avec déchirure | « Poussière de tabac » (signe de Shafer) dans le vitré antérieur. « Signe de Shafer : rétine en urgence » | Oui, anatomie correcte | **R1 surtout** : l'externe ne fait pas l'examen du vitré antérieur. « DPV » n'est pas développé dans l'accroche. |
+| 13 Anisocorie | Écart plus grand à la lumière : la grande pupille est anormale (III, Adie, collyre). Le dessin est juste (écart à la lumière, presque égal à l'obscurité). | Oui (Moran, MSD) | **Brouillé.** La phrase « pourquoi », « À l'obscurité, c'est la petite : Horner », décrit le cas **opposé**, juste à côté de « Réponse A : la grande ». « III » seul est obscur en FR. Il manque l'alerte : grande pupille avec ptose ou diplopie = imagerie urgente (anévrisme). |
+| 14 OACR / OVCR | Tache rouge cerise contre « sang et tonnerre ». « OACR : centre d'AVC, tout de suite » | Message juste | **Faible.** Le fond d'œil OACR est en traits sur fond marine, **sans rétine pâle** : la tache rouge cerise n'a de sens que par contraste avec une rétine blanche ischémique. Ici, on dirait une fovéa normale. Le style diffère aussi du fond pêche des reels 05 et 07. |
+| 15 Abrasion avec / sans lentilles | Porteur de lentilles : fluoroquinolone antipseudomonas, jamais de pansement | Oui (AAFP 2004) | **Bon pour l'externe**, mais les **deux dessins sont identiques** : ce n'est pas un défi visuel. L'autocollant « jamais de pansement », posé sur le seul porteur, laisse croire qu'on peut panser le non-porteur, alors que le pansement n'est plus recommandé pour aucune abrasion. |
+| 16 Uvéite / crise d'angle | Petite pupille avec précipités, contre pupille mi-dilatée et cornée trouble, puis arbre « Vision ↓, photophobie ? → Pupille ? » | Les deux branches sont justes (AAFP 2010) | **Bon**, mais l'arbre envoie toute baisse de vision avec photophobie vers uvéite ou crise. **Il oublie la kératite** (cornée qui prend la fluorescéine, ulcère du porteur de lentilles), qui est fréquente et menace la vision. EN : « Closure » est vague ; écrire « Angle closure ». |
+| 17 DPAR | Lampe qui balance. Mesure : lumière sur l'OD → la pupille de l'OS se contracte (≈ 2 500 px²) ; lumière sur l'OS → la pupille de l'OD se dilate (≈ 4 800 px²). DPAR gauche juste. « DPAR : la pupille éclairée se dilate » | Oui (CEH, EyeWiki) | **Bon s'il est visible.** Mais la pupille éclairée est **délavée par le halo** (gris pâle sur beige) : le signe décisif ne se voit que par l'œil adelphe. Sous la lampe, une vraie pupille reste noire. |
+
+## Re-contrôle des défis (eyebrow « Défi du jour · Ocelle »)
+
+| MUST-FIX de la passe 1 | Statut |
+|---|---|
+| Dendrite et corticoïde | **Corrigé.** 04b : « Kératite herpétique : antiviral, pas de corticoïde ». Carrousel 2, diapo 3 : « Antiviral ; aucun corticoïde sur une dendrite ». Diapo 6 : « Antiviral, et aucun corticoïde ». EN : « no steroids ». |
+| Accroches | **Corrigé.** Le dessin est visible dès la 1re image, et chaque défi a sa propre accroche (« Ouvert ou fermé ? », « Ce niveau blanc ? », « Soudain, plus rien »…). Le 02 étiquette maintenant cornée, iris et cristallin. |
+| Reel 05 | **Corrigé.** Zoom de la caméra, grandes étiquettes « pas ici » et « Tache rouge cerise », cercle secondaire retiré. Reste : l'en-tête capturé affiche encore « Ophtalmo · externat et R1 », alors que le reste du site a retiré cette mention de public. |
+| 07b titre, carte de fin, révélation à 9,5 s | **Corrigé** (« …de la rétine », « L'ophtalmo en images »). |
+
+## MUST-FIX (série « X ou Y ? »)
+
+1. **Position de la bonne réponse : A dans 7 cas sur 8** (10–16 ; seul le 17 répond B). Alterner A et B, par exemple 4 et 4.
+2. **13-anisocorie FR/EN, 9,95–14,5 s** : la phrase « pourquoi » décrit le cas opposé à la réponse affichée. Écrire plutôt « Écart à la lumière : la grande ne se contracte pas » / "Bigger in light: the large pupil can't constrict". Garder Horner pour le sous-titre, ou pour un autre reel.
+3. **14-oacr-ovcr FR/EN, 0–14,5 s, panneau Patient 1** : dessiner la rétine pâle et ischémique autour de la tache rouge cerise, avec des artères grêles. Idéalement, reprendre le fond pêche du site, comme dans les reels 05 et 07.
+4. **16-uveite-crise FR/EN, 9,9–14,5 s (EN 10,4–14,5)** : ajouter dans l'arbre « pupille normale → fluorescéine → kératite », sinon l'arbre exclut une urgence fréquente. EN : « Angle closure ».
+5. **17-dpar FR/EN, 0–14,5 s** : garder la pupille éclairée noire (le halo autour, pas dessus), pour que l'on voie la pupille gauche s'agrandir sous la lumière.
+6. **15-abrasion-lentille FR/EN, 0–14,5 s** : les deux panneaux sont identiques. Dessiner la lentille (bord, ou lentille posée à côté) sur le panneau 1. Préciser « aucune abrasion ne se panse ; lentilles : fluoroquinolone ».
+7. **Superposition à la révélation** (≈ 0,25 s) : 10–17 à 9,5 s ; 02, 04b et 08 à 10,0 s ; 06 et 07b, même gabarit. Faire disparaître la carte question avant que le titre de réponse n'entre.
+
+## SHOULD-FIX
+- **10** : remplacer le distracteur « La fluorescéine » par « La douleur qui réveille la nuit », ce qui force à réfléchir.
+- **11** : grossir les bulbes, et faire briller plus faiblement la pseudodendrite.
+- **12** : développer « DPV » dans l'accroche, ou écrire « Corps flottants : banal ou déchirure ? ».
+- **13** : « nerf III » au lieu de « III ». Mentionner l'urgence III + ptose.
+- **05** : retirer « externat et R1 » de l'en-tête capturé.
+- **16-EN** : 4,1 s pour l'arbre, deux autocollants et deux yeux ; ajouter 0,5 s ou alléger.
