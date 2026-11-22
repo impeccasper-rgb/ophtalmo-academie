@@ -260,3 +260,17 @@ Règles mnémotechniques couramment enseignées
 - `g-crise` : la pénurie d'acétazolamide IV est datée (mai–juillet 2026, rapport 282580) ; vérifier sur le site des pénuries avant chaque mise à jour.
 - `g-crise` : aucun hôpital précis n'est nommé, faute d'avoir pu vérifier quels centres ont une urgence ophtalmologique 24 h sur 24.
 - `c-brulure` : le seuil d'urgence « Roper-Hall ≥ II » est prudent. Certains auteurs réservent l'urgence chirurgicale aux grades III–IV, mais tous demandent un avis ophtalmologique le jour même dès qu'il y a une ischémie limbique.
+
+## F. Audit d'exactitude clinique, 22 novembre 2026
+
+Portée : les 27 fiches (drapeaux rouges, arbres, bloc Traitement, doses, perles, essentiels, textes à trous, triage) lues en entier ; module A (anatomie, physiologie) lu ; reconnaissance A5, capsules, cas et Investigations : toutes les doses et tous les délais passés au crible, sans lecture ligne à ligne du reste. `tools/check-delays.js` : 0 incohérence FR et EN. Les doses sont identiques d'un fichier à l'autre (fiches, capsules, cas, quiz).
+
+Corrections faites (FR et surcouche EN) :
+- **`c-brulure`, arbre, nœud « Épithélium refermé vers le jour 10–14 ? ».** Avant : « Oui : sevrer vite le stéroïde ». Le risque de fonte vient du stéroïde poursuivi sur un défaut épithélial persistant, pas d'un épithélium fermé. Maintenant : Oui → sevrer selon l'inflammation, PIO surveillée ; Non → défaut persistant : réduire le stéroïde, membrane amniotique, ± tarsorraphie. Source : EyeWiki « Chemical (Alkali and Acid) Injury of the Conjunctiva and Cornea » (consulté le 22 nov. 2026 : sevrage planifié après ≈ 7–10 jours selon l'inflammation et l'épithélium ; défaut persistant à 10–14 jours = réévaluation par le spécialiste).
+- **`c-keratocone`, carte « Quand référer ».** Avant : « Immédiatement » pour l'hydrops, alors que le triage de la même fiche le classe semi-urgent. Maintenant : « Dans les 24 h — hydrops aigu ; exclure infection et perforation ». Source : EyeWiki « Corneal Hydrops » (prise en charge conservatrice, pas une perforation).
+- **`c-bacterienne`, arbre.** « Revoir à 24–48 h » devient « revoir à 24 h », comme la phase de suivi (« revoir chaque jour au début »). Source : AAO PPP Bacterial Keratitis 2023 (réévaluation quotidienne au début).
+- **`c-atypiques`, arbre.** Levures : « amphotéricine B ou voriconazole » (avant : voriconazole seul). Source : EyeWiki « Fungal Keratitis » ; AAO BCSC (amphotéricine B 0,15 % pour Candida).
+
+Vérifié sans changement (source entre parenthèses) : doses antivirales et fenêtre de 72 h (section C et E) ; fortifiés et règle 1-2-3 (AAO PPP 2023) ; crise aiguë (guide optométrique canadien, AAO PPP PACD 2026) ; endophtalmite (vancomycine 1 mg/0,1 mL, ceftazidime 2,25 mg/0,1 mL, EVS) ; hyphéma et drépanocytose (PIO ≥ 24 mmHg plus de 24 h) ; brimonidine contre-indiquée avant 2 ans (monographie) ; hydroxychloroquine ≤ 5 mg/kg/j de poids réel (AAO 2016) ; anti-VEGF (bévacizumab 1,25 mg/0,05 mL) ; chlamydia (doxycycline 100 mg BID × 7 j ou azithromycine 1 g).
+
+Non vérifié à la source dans cet audit (repris de la section A) : « EAGLE : 10 fois plus de chances d'être sans gouttes à 3 ans ». Voir docs/RELECTURE-CLINICIEN.md pour la liste des doutes ouverts.

@@ -120,11 +120,7 @@ async function daily(opts) {
 async function social(opts) {
   const s = await session(opts); const P = phone(opts.fmt), top = TOP(P);
   await s.goto('c-herpes/comprendre');
-  await s.jump('.fstep-nav, [data-cmpreveal]', 0);
-  await s.jump('#view .page', 0);
-  await s.page.evaluate(() => window.scrollTo(0, 0));
-  const cmpTop = await s.page.evaluate(() => { const b = document.querySelector('[data-cmpreveal]'); const fig = b && b.closest('.stack, .sec, div'); return 0; });
-  await s.jump('.cmp, .compare, [data-cmpreveal]', P ? 250 : 330);
+  await s.page.evaluate(() => window.scrollTo(0, 0)); await s.wait(300);
   await s.start();
   s.cue('Tu vois le signe ?', 'Can you spot the sign?');
   s.mark('observe');
@@ -144,7 +140,8 @@ async function social(opts) {
   await s.jump('[data-tmode]', top + 4);
   s.cue('Puis décide :\\Nl’arbre décisionnel', 'Then decide:\\Nthe decision tree');
   await s.wait(1400);
-  const ans = await s.page.evaluate(() => { const v = D.fiche('c-herpes').cat.vignette; const a = v && v.answers; return Array.isArray(a) ? a : a ? Object.keys(a).sort((x, y) => x - y).map(k => a[k]) : []; });
+  // the vignette (45-year-old man, branching lesion with terminal bulbs, no rash): Q1 V1 rash? no → Q2 dendrite with terminal bulbs? yes
+  const ans = ['no', 'yes'];
   for (let i = 0; i < Math.min(ans.length, 3); i++) {
     const sel = await s.page.evaluate(k => { const bs = [...document.querySelectorAll('[data-tyn="' + k + '"]')].filter(b => !b.disabled && b.offsetParent); const b = bs[bs.length - 1]; if (!b) return null; b.setAttribute('data-rec', 'tyn'); document.querySelectorAll('[data-rec]').forEach(x => { if (x !== b) x.removeAttribute('data-rec'); }); return '[data-rec="tyn"]'; }, ans[i]);
     if (!sel) break;

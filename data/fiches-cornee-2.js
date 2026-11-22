@@ -692,7 +692,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       { q: "Exposition chimique ?", yes: "Irriguer tout de suite, avant l’histoire et l’acuité.", no: "Évaluer comme un œil rouge douloureux.", yesGo: 1 },
       { q: "pH 7,0–7,5, 5–10 min après l’irrigation ?", yes: "Examen : acuité, fluorescéine, limbe, PIO, éversion.", no: "Irriguer encore, retirer les particules, puis examiner.", yesGo: 2, noGo: 2 },
       { q: "Limbe blanc ou cornée voilée (Roper-Hall ≥ II) ?", yes: "Ophtalmologie immédiatement : stéroïde, doxycycline, membrane amniotique.", no: "Grade I : antibiotique, lubrifiants ; revoir en 1–2 jours.", yesGo: 3 },
-      { q: "Épithélium refermé vers le jour 10–14 ?", yes: "Sevrer vite le stéroïde.", no: "Réduire le stéroïde ; membrane amniotique, ± tarsorraphie." }
+      { q: "Épithélium refermé vers le jour 10–14 ?", yes: "Sevrer le stéroïde selon l’inflammation ; PIO surveillée.", no: "Défaut persistant : réduire le stéroïde ; membrane amniotique, ± tarsorraphie." }
     ],
     phases: [
       {

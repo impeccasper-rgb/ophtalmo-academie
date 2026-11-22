@@ -15,7 +15,7 @@ const T = {
 const V = { cas: { fr: ['Essaie le cas vedette', '?lang=fr#cas-vedette'], en: ['Try the featured case', '?lang=en#cas-vedette'] },
   ascan: { fr: ['Essaie le simulateur A-scan', '?lang=fr#inv-ascan'], en: ['Try the A-scan simulator', '?lang=en#inv-ascan'] },
   daily: { fr: ['Ton image du jour t’attend', '?lang=fr#image-du-jour'], en: ['Your image of the day is waiting', '?lang=en#image-du-jour'] },
-  social: { fr: ['Essaie un cas en images', '?lang=fr#cas-images'], en: ['Try an image case', '?lang=en#cas-images'] } };
+  social: { fr: ['Comprends, puis décide', '?lang=fr#c-herpes/comprendre'], en: ['Understand, then decide', '?lang=en#c-herpes/comprendre'] } };
 (async () => {
   const b = await chromium.launch({ args: ['--force-device-scale-factor=1'] });
   const p = await b.newPage();

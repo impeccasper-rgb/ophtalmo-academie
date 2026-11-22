@@ -62,7 +62,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-bacterienne": {
     algo: [
       { q: "Epithelial defect with stromal infiltrate?", yes: "Infectious: remove the lens, keep it for culture.", no: "Small infiltrate, no defect: probably sterile, review in 24–48 h.", yesGo: 1 },
       { q: "Perforation or descemetocele?", yes: "Rigid shield, no pressure; ophthalmology immediately.", no: "", noGo: 2 },
-      { q: "1-2-3 criterion, atypical or chronic ulcer?", yes: "Cultures, hourly fortified drops; ophthalmology the same day.", no: "Moxifloxacin 0.5% hourly; review at 24–48 h.", yesGo: 3, noGo: 3 },
+      { q: "1-2-3 criterion, atypical or chronic ulcer?", yes: "Cultures, hourly fortified drops; ophthalmology the same day.", no: "Moxifloxacin 0.5% hourly; review at 24 h.", yesGo: 3, noGo: 3 },
       { q: "Worse at 48 h, lenses + water, plants?", yes: "Think fungus or ameba: specific sampling.", no: "Continue until the epithelium closes." }
     ],
     phases: [
@@ -741,7 +741,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-keratocone": {
       "**You (first line)**: stop eye rubbing, treat allergy, order tomography.",
       "**Ophthalmologist**: crosslinking (riboflavin + UVA); rigid lenses, graft if scarred."
     ],
-    refer: ["Immediately for sudden vision loss with a white cornea — acute hydrops.", "This week for a young patient who progresses — CXL halts the disease."],
+    refer: ["Within 24 h for sudden vision loss with a white cornea — acute hydrops; rule out infection and perforation.", "This week for a young patient who progresses — CXL halts the disease."],
     pitfall: ["LASIK with abnormal tomography: risk of ectasia."],
     qc: ["CXL: public coverage varies by centre."]
   },
@@ -952,7 +952,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-atypiques": {
     algo: [
       { q: "Atypical setting or ulcer not responding?", yes: "Stop steroids; scraping, specific cultures, PCR.", no: "Treat as bacterial, review in 24–48 h.", yesGo: 1 },
       { q: "Cysts or an ameba picture (lenses + water)?", yes: "Biguanide ± diamidine hourly, over months.", no: "", yesGo: 3, noGo: 2 },
-      { q: "Hyphae, feathery edges or satellites?", yes: "Natamycin 5% if filamentous; voriconazole if yeast.", no: "Resistant bacterium, Nocardia, mycobacteria, herpes?", yesGo: 3 },
+      { q: "Hyphae, feathery edges or satellites?", yes: "Natamycin 5% if filamentous; amphotericin B or voriconazole if yeast.", no: "Resistant bacterium, Nocardia, mycobacteria, herpes?", yesGo: 3 },
       { q: "Deep progression or perforation?", yes: "Therapeutic graft; consider intrastromal voriconazole.", no: "Continue, close follow-up." }
     ],
     phases: [
@@ -1078,7 +1078,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-brulure": {
       { q: "Chemical exposure?", yes: "Irrigate at once, before history and acuity.", no: "Assess as a painful red eye.", yesGo: 1 },
       { q: "pH 7.0–7.5, 5–10 min after irrigation?", yes: "Exam: acuity, fluorescein, limbus, IOP, eversion.", no: "Irrigate more, remove particles, then examine.", yesGo: 2, noGo: 2 },
       { q: "White limbus or hazy cornea (Roper-Hall ≥ II)?", yes: "Ophthalmology immediately: steroid, doxycycline, amniotic membrane.", no: "Grade I: antibiotic, lubricants; review in 1–2 days.", yesGo: 3 },
-      { q: "Epithelium closed by day 10–14?", yes: "Taper the steroid quickly.", no: "Reduce the steroid; amniotic membrane, ± tarsorrhaphy." }
+      { q: "Epithelium closed by day 10–14?", yes: "Taper the steroid as inflammation settles; watch IOP.", no: "Persistent defect: cut the steroid; amniotic membrane, ± tarsorrhaphy." }
     ],
     phases: [
       {

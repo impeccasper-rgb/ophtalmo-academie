@@ -226,7 +226,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     algo: [
       { q: "Défaut épithélial avec infiltrat stromal ?", yes: "Infectieux : retirer la lentille, la garder pour culture.", no: "Petit infiltrat sans défaut : stérile probable, revoir 24–48 h.", yesGo: 1 },
       { q: "Perforation ou descémétocèle ?", yes: "Coquille rigide, aucune pression ; ophtalmologie immédiatement.", no: "", noGo: 2 },
-      { q: "Critère 1-2-3, ulcère atypique ou chronique ?", yes: "Cultures, gouttes fortifiées aux heures ; ophtalmo le jour même.", no: "Moxifloxacine 0,5 % aux heures ; revoir à 24–48 h.", yesGo: 3, noGo: 3 },
+      { q: "Critère 1-2-3, ulcère atypique ou chronique ?", yes: "Cultures, gouttes fortifiées aux heures ; ophtalmo le jour même.", no: "Moxifloxacine 0,5 % aux heures ; revoir à 24 h.", yesGo: 3, noGo: 3 },
       { q: "Pire après 48 h, lentilles + eau ou végétal ?", yes: "Penser champignon ou amibe : prélèvements spécifiques.", no: "Poursuivre jusqu’à fermeture de l’épithélium." }
     ],
     phases: [
@@ -371,7 +371,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     algo: [
       { q: "Contexte atypique ou ulcère qui ne répond pas ?", yes: "Arrêter les stéroïdes ; grattage, cultures spécifiques, PCR.", no: "Traiter comme bactérienne, revoir à 24–48 h.", yesGo: 1 },
       { q: "Kystes ou tableau d’amibe (lentilles + eau) ?", yes: "Biguanide ± diamidine aux heures, sur des mois.", no: "", yesGo: 3, noGo: 2 },
-      { q: "Hyphes, bords plumeux ou satellites ?", yes: "Natamycine 5 % si filamenteux ; voriconazole si levure.", no: "Bactérie résistante, Nocardia, mycobactérie, herpès ?", yesGo: 3 },
+      { q: "Hyphes, bords plumeux ou satellites ?", yes: "Natamycine 5 % si filamenteux ; amphotéricine B ou voriconazole si levure.", no: "Bactérie résistante, Nocardia, mycobactérie, herpès ?", yesGo: 3 },
       { q: "Progression profonde ou perforation ?", yes: "Greffe thérapeutique ; voriconazole intrastromal à discuter.", no: "Poursuivre, suivi rapproché." }
     ],
     phases: [
@@ -712,7 +712,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       "**Externe / 1re ligne** : faire cesser le frottement, traiter l’allergie, demander une tomographie.",
       "**Ophtalmologiste** : crosslinking (riboflavine + UVA) ; lentilles rigides, greffe si cicatrice."
     ],
-    refer: ["Immédiatement si baisse brutale avec cornée blanche — hydrops aigu.", "Cette semaine pour un jeune qui progresse — le CXL freine la maladie."],
+    refer: ["Dans les 24 h si baisse brutale avec cornée blanche — hydrops aigu ; exclure infection et perforation.", "Cette semaine pour un jeune qui progresse — le CXL freine la maladie."],
     pitfall: ["LASIK sur une tomographie anormale : risque d’ectasie."],
     qc: ["CXL : couverture publique variable selon le centre."]
   },
