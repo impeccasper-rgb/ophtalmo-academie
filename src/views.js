@@ -562,11 +562,11 @@ function ficheView(f, step) {
         var ess = (hy && hy.essentials) || [];
         var steps = f.causal.steps;
         var nEss = f.compare ? 4 : 5; // the mechanism figure takes the room of one key point (≤ 120 words)
-        body = cmpFig() + hyList(ess.slice(0, nEss), t('f.hy')) +
-          '<div class="stack"><h2 class="h3">' + U.esc(t('f.mech', { t: f.causal.title })) + '</h2>' +
+        body = cmpFig() +
+          '<div class="stack mech-chain"><h2 class="h3">' + U.esc(t('f.mech', { t: f.causal.title })) + '</h2>' +
           '<div class="chain paced" data-chain data-shown="1">' + steps.map(function (s, i) { return '<div class="cstep k-' + s.kind + (i > 0 ? ' pending' : '') + '" data-step="' + i + '"><div class="node">' + (i + 1) + '</div><div class="body"><span class="k">' + (L.kinds[s.kind] || s.kind) + '</span><b>' + U.md(s.label) + '</b><span class="small" data-dz="3">' + T(s.detail, scope) + '</span><div class="cutslot"></div></div></div>'; }).join('') + '</div>' +
           '<div class="row"><button type="button" class="btn primary sm" data-causal="next">' + t('f.next.link', { i: 2, n: steps.length }) + '</button><button type="button" class="btn ghost sm" data-causal="all">' + t('f.all.links') + '</button></div>' +
-          '<div class="stack" data-levers hidden><span class="small muted">' + t('f.levers') + '</span><div class="chips">' + f.causal.levers.map(function (l, i) { return '<button class="chip" data-lever="' + i + '" aria-pressed="false">' + U.esc(l.label) + '</button>'; }).join('') + '</div></div></div>' +
+          '<div class="stack" data-levers hidden><span class="small muted">' + t('f.levers') + '</span><div class="chips">' + f.causal.levers.map(function (l, i) { return '<button class="chip" data-lever="' + i + '" aria-pressed="false">' + U.esc(l.label) + '</button>'; }).join('') + '</div></div></div>' + hyList(ess.slice(0, nEss), t('f.hy')) +
           levelBlocks([
             { lvl: 1, title: t('f.more'), html: hyList(ess.slice(nEss), t('f.hy.more')) + (f.mnemonic ? '<div class="callout green"><span class="eyebrow">' + U.esc(t('f.mnemo', { t: f.mnemonic.title })) + '</span><span>' + T(f.mnemonic.text, scope) + '</span></div>' : '') },
             { lvl: 2, title: t('f.riskpres'), html: '<div class="twocol"><div class="stack"><h3 class="h4">' + t('f.risk') + '</h3><ul class="blist">' + f.risk.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="stack"><h3 class="h4">' + t('f.pres') + '</h3><ul class="blist">' + f.presentation.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' }

@@ -235,3 +235,8 @@ html.no-motion .voir-miss { animation: none; }
   .a-item .fstep-nav > * { flex: 1 1 0; min-width: 0; font-size: .78rem; padding: 6px 10px; line-height: 1.2; }
   .a-item .pearl-card { padding: 10px 12px; }
 }
+@media (max-width: 600px) {
+  .a-item [data-sim="structure"] .grid2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .a-item [data-sim="structure"] .grid2 .slider { font-size: .72rem; }
+  .a-item [data-sim="structure"] .grid2 .fig-cap { font-size: .62rem; }
+}
