@@ -373,6 +373,16 @@ Route `#inv-bscan-sim`, liée depuis le hub Investigations et depuis la page Éc
 | Tests | `tests/run.py`, fonction `sim_smoke` : la route charge, les canevas s’affichent, le glisser (souris et tactile 390 × 844) change l’image, le gain agit, la cinétique déplace la membrane puis revient au repos, mouvement réduit respecté |
 | Repli | Sans WebGL : message et lien vers l’outil 2D |
 
+Passe de finition (2026-11-22, pour la démonstration sur téléphone) :
+
+- Sonde redessinée : corps clair et fin, embout arrondi, bague cobalt, trait de marqueur fluo sur toute la longueur, câble.
+- Téléphone (390 × 844) : œil et image B empilés et dimensionnés selon la hauteur d’écran, visibles ensemble ; le glisser ne fait pas défiler la page ; cibles tactiles d’au moins 44 px.
+- Aimantation sur les positions standard (12 h, 3 h, 6 h, 9 h au limbe, et axiale), avec étiquette « T12 · position standard » et bouton correspondant allumé.
+- Image : tavelure à grains allongés latéralement (loi de type Rayleigh), orbite brillante contre la paroi puis atténuée, ombre du nerf optique évasée, écho initial élargi, affichage « G 76 dB » et « 10 MHz · 40 mm ».
+- Performance : rendu à la demande, ratio de pixels plafonné à 2, image B en 256 px sur téléphone, aucun rendu quand la scène est hors écran ou l’onglet masqué ; three.js chargé seulement sur cette route.
+- Parcours : après la réponse, la carte du cas remonte sous l’image ; résultat « n / 5 » à la fin, puis la série peut être relancée.
+- Test `sim_smoke` étendu : parcours complet des 5 cas en français clair (ordinateur) et en anglais sombre (téléphone tactile), cibles de 44 px, absence de défilement pendant le glisser, pause hors écran, mouvement réduit.
+
 Écarts par rapport à la spécification, à connaître avant la revue par l’expert :
 
 1. **Visée du faisceau.** Au limbe, le faisceau vise la papille (« on commence par le nerf optique »), puis balaie vers la périphérie quand la sonde glisse vers le fornix. C’est un choix de simulation : la spécification prévoyait un faisceau passant par le centre du globe, qui ne montrait pas le nerf au limbe.

@@ -96,10 +96,13 @@ def sim_smoke(p):
                 if phone:
                     page.evaluate("() => window.scrollTo(0, document.documentElement.scrollHeight)"); page.wait_for_timeout(300)
                     off = page.evaluate("() => document.querySelector('.bs3-grid').getBoundingClientRect().bottom < 0")
-                    if off and not page.evaluate("() => window.__bs3.paused()"): problems.append(tag + 'rendering not paused off-screen')
+                    if off:
+                        try: page.wait_for_function('window.__bs3.paused()', timeout=4000)   # IntersectionObserver is asynchronous
+                        except Exception: problems.append(tag + 'rendering not paused off-screen')
                     if not off: log('  ' + tag + 'stage still on screen at the bottom of the page: pause not checked')
-                    page.evaluate("() => window.scrollTo(0, 0)"); page.wait_for_timeout(300)
-                    if page.evaluate("() => window.__bs3.paused()"): problems.append(tag + 'rendering still paused back on screen')
+                    page.evaluate("() => window.scrollTo(0, 0)")
+                    try: page.wait_for_function('!window.__bs3.paused()', timeout=4000)
+                    except Exception: problems.append(tag + 'rendering still paused back on screen')
                 # the 5 cases, end to end: answer, decisive sign, next ... result, then the series can start again
                 ids = page.evaluate("() => window.BscanSim.cases.map(c => c.id)")
                 for k, cid in enumerate(ids):
