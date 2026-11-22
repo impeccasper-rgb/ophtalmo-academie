@@ -21,6 +21,14 @@ Results: <out>/results.json, <out>/shots/*.png (failures + reference shots).
 import argparse, functools, http.server, json, os, re, shutil, socketserver, subprocess, sys, tempfile, threading, time, traceback
 from playwright.sync_api import sync_playwright
 
+def _ready(loc):
+    """Click the legacy 'ready' button only if it exists (practice now opens on the options)."""
+    try:
+        if loc.count(): loc.first.click()
+    except Exception:
+        pass
+
+
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ap = argparse.ArgumentParser()
 ap.add_argument('--no-build', action='store_true')
@@ -273,7 +281,7 @@ def run_flows(browser):
             go(page, 'inv-oct', 500)
             ph = page.locator('[data-invpractice]')
             assert ph.count() == 1, 'no [data-invpractice] on #inv-oct'
-            ph.locator('[data-ip="ready"]').first.click()
+            _ready(ph.locator('[data-ip="ready"]'))
             page.wait_for_timeout(150)
             assert ph.locator('.opt.idk').count() == 1, 'no "Je ne sais pas" option'
             ph.locator('.opt.idk').click(); page.wait_for_timeout(250)
@@ -283,7 +291,7 @@ def run_flows(browser):
             inv = p.get('inv') or {}
             assert any(v.get('conf') == 'idk' for v in inv.values()), 'IDK not stored in localStorage inv: %s' % inv
             ph.locator('[data-ip="next"]').click(); page.wait_for_timeout(200)
-            ph.locator('[data-ip="ready"]').click(); page.wait_for_timeout(150)
+            _ready(ph.locator('[data-ip="ready"]')); page.wait_for_timeout(150)
             ph.locator('[data-ic="unsure"]').click()
             ph.locator('.opt[data-k]:not(.idk)').first.click(); page.wait_for_timeout(400)
             assert ph.locator('.feedback').count() == 1, 'no feedback after answer'
@@ -310,8 +318,8 @@ def run_flows(browser):
                 n = 0
                 for _ in range(20):
                     ready = page.locator('[data-invpractice] [data-ip="ready"]')
-                    if ready.count() == 0: break
-                    ready.click(); page.wait_for_timeout(60)
+                    if ready.count(): ready.click(); page.wait_for_timeout(60)
+                    if page.locator('[data-invpractice] .opt[data-k]:not(.idk):not([disabled])').count() == 0: break
                     if page.locator('[data-invpractice] .inv-media.empty').count(): rec('flows', 'practice-media-missing', False, 'inv-%s item %d shows "Image à venir"' % (i, n + 1), combo)
                     page.locator('[data-invpractice] .opt[data-k]:not(.idk)').first.click(); page.wait_for_timeout(60)
                     broken = page.evaluate("() => [...document.querySelectorAll('[data-invpractice] img')].filter(i => i.complete && i.naturalWidth === 0).map(i => i.src)")
@@ -331,7 +339,7 @@ def run_flows(browser):
             assert img_ok is not False, 'featured image broken'
             item = page.evaluate("() => FEATURED.item ? { id: FEATURED.item.id, answer: FEATURED.item.answer } : null")
             assert item, 'no featured item'
-            page.locator('[data-feat] [data-ip="ready"]').click(); page.wait_for_timeout(150)
+            _ready(page.locator('[data-feat] [data-ip="ready"]')); page.wait_for_timeout(150)
             page.locator('[data-feat] .opt[data-k="%d"]' % item['answer']).click(); page.wait_for_timeout(400)
             assert page.locator('[data-feat] .feedback.ok').count() == 1, 'correct answer not marked ok'
             nh = page.locator('[data-feat] .inv-hot').count()
@@ -490,7 +498,8 @@ def run_flows(browser):
             if not ring: rec('flows', 'focus-ring-visible', False, 'focused .opt has no outline/box-shadow', combo)
             # practice engine via keyboard
             go(page, 'inv-gonio', 400)
-            page.locator('[data-invpractice] [data-ip="ready"]').focus(); page.keyboard.press('Enter'); page.wait_for_timeout(200)
+            _ready(page.locator('[data-invpractice] [data-ip="ready"]')); page.wait_for_timeout(200)
+            page.locator('[data-invpractice] .opt[data-k]:not(.idk)').first.focus(); page.wait_for_timeout(100)
             on_opt = page.evaluate("() => !!(document.activeElement && document.activeElement.matches('.opt'))")
             page.keyboard.press('Enter'); page.wait_for_timeout(300)
             assert page.locator('[data-invpractice] .feedback').count() == 1, 'practice: Enter on focused option did not answer'
@@ -544,7 +553,7 @@ def run_flows(browser):
         def f_motion(page, st):
             # positive control: with motion on, the reveal rings animate
             go(page, 'cas-vedette', 400)
-            page.locator('[data-feat] [data-ip="ready"]').click(); page.wait_for_timeout(100)
+            _ready(page.locator('[data-feat] [data-ip="ready"]')); page.wait_for_timeout(100)
             page.locator('[data-feat] .opt[data-k]:not(.idk)').first.click(); page.wait_for_timeout(100)
             on = page.evaluate("() => [...document.querySelectorAll('.inv-hot i')].map(e => getComputedStyle(e).animationName).filter(a => a && a !== 'none').length")
             go(page, 'progression', 300)
@@ -552,7 +561,7 @@ def run_flows(browser):
             nm = page.evaluate("() => document.documentElement.classList.contains('no-motion')")
             assert nm, 'html.no-motion not set by in-app toggle'
             go(page, 'cas-vedette', 400)
-            page.locator('[data-feat] [data-ip="ready"]').click(); page.wait_for_timeout(100)
+            _ready(page.locator('[data-feat] [data-ip="ready"]')); page.wait_for_timeout(100)
             page.locator('[data-feat] .opt[data-k]:not(.idk)').first.click(); page.wait_for_timeout(200)
             anim = page.evaluate("() => [...document.querySelectorAll('.inv-hot i, .inv-hot b, .inv-hot em, .reveal-hotspot, .reveal-pulse, .ok-pop, .no-shake, .page-enter, #view > *')].map(e => getComputedStyle(e).animationName).filter(a => a && a !== 'none')")
             assert not anim, 'animations still running with motion off: %s' % anim[:5]
@@ -567,7 +576,7 @@ def run_flows(browser):
     ctx = new_ctx(browser, 390, 844, 'light', 'fr', reduced='reduce'); page = ctx.new_page(); st = attach(page); boot(page)
     try:
         go(page, 'cas-vedette', 400)
-        page.locator('[data-feat] [data-ip="ready"]').click(); page.wait_for_timeout(100)
+        _ready(page.locator('[data-feat] [data-ip="ready"]')); page.wait_for_timeout(100)
         page.locator('[data-feat] .opt[data-k]:not(.idk)').first.click(); page.wait_for_timeout(200)
         anim = page.evaluate("() => [...document.querySelectorAll('*')].map(e => [e.className && e.className.baseVal === undefined ? e.className : '', getComputedStyle(e).animationName, getComputedStyle(e).transitionDuration]).filter(a => a[1] && a[1] !== 'none').slice(0, 8)")
         rec('flows', 'reduced-motion-os', not anim, 'running animations: %s' % anim, '390-light-fr-reduce')
@@ -605,7 +614,7 @@ def run_offline(browser):
             if info['broken']: rec('offline', 'offline-images-not-cached', False, '%s: %d/%d images broken offline (only visited images are cached)' % (r, info['broken'], info['imgs']), combo, r, 'minor')
         # practice still answerable offline
         go(page, 'inv-oct', 300)
-        page.locator('[data-invpractice] [data-ip="ready"]').click(); page.locator('[data-invpractice] .opt.idk').click(); page.wait_for_timeout(200)
+        _ready(page.locator('[data-invpractice] [data-ip="ready"]')); page.locator('[data-invpractice] .opt.idk').click(); page.wait_for_timeout(200)
         rec('offline', 'practice-offline', page.locator('[data-invpractice] .feedback').count() == 1, '', combo)
         fonts = page.evaluate("() => [...document.fonts].filter(f => f.status === 'loaded').map(f => f.family).slice(0, 5)")
         fam = page.evaluate("() => getComputedStyle(document.querySelector('h1') || document.body).fontFamily")
@@ -634,7 +643,7 @@ def run_axe(browser):
             else:
                 go(page, r, 500)
                 if mode == 'practice':
-                    page.locator('[data-invpractice] [data-ip="ready"]').click(); page.wait_for_timeout(150)
+                    _ready(page.locator('[data-invpractice] [data-ip="ready"]')); page.wait_for_timeout(150)
                 if mode == 'cards':
                     page.locator('[data-game] [data-flip]').first.click(); page.wait_for_timeout(200)
                 if mode == 'ic':

@@ -201,3 +201,37 @@ html.no-motion .voir-miss { animation: none; }
   .mech-fig .pair .fig-body .row.small { font-size: .7rem; gap: 4px; margin-top: 2px; }
   .mech-fig .pair .fig-body .row.small input[type="range"] { min-width: 0; width: 100%; }
 }
+@media (max-width: 600px) {
+  .mech-fig .pair .fig-body .row.small { padding: 2px 4px !important; gap: 0 6px !important; font-size: .62rem; line-height: 1.25; }
+  .mech-fig .pair .ph-img img { max-height: 118px; width: 100%; object-fit: contain; background: #000; }
+  .mech-fig .pair .ph-b { padding: 4px 6px; gap: 2px; }
+  .mech-fig .pair .ph-b .cap { display: none; } /* the caption is in the image's alt / « Agrandir » */
+  .mech-fig .pair .ph-b .credit { font-size: .58rem; line-height: 1.25; overflow-wrap: anywhere; }
+}
+@media (max-width: 600px) {
+  .mech-fig .pair > div:first-child .fig-cap [data-act="figzoom"] { display: none; } /* one « Agrandir » per pair (pathological side) */
+  .mech-fig .pair .fig-cap-r { gap: 4px; }
+  .mech-fig .pair [data-figtype="topo"] .fig-body > div:first-child { max-width: 112px !important; }
+}
+/* micro-fiches on phones: sim chip groups and multi-printout grids scroll sideways instead of stacking (≤ 1.5 screens) */
+@media (max-width: 600px) {
+  .a-item [data-sim] .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 2px; mask-image: linear-gradient(90deg, #000 88%, transparent); }
+  .a-item [data-sim] .chips::-webkit-scrollbar { display: none; }
+  .a-item [data-sim] .chips .chip { flex: none; }
+  .a-item [data-sim] .grid3 { display: grid; grid-auto-flow: column; grid-auto-columns: 78%; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory; gap: 8px; }
+  .a-item [data-sim] .grid3 > * { scroll-snap-align: start; min-width: 0; }
+  .a-item [data-sim] .grid2 { gap: 6px; }
+  .a-item [data-sim] .slider { gap: 2px; }
+  .a-item .a-keys { gap: 4px; }
+  .a-item .a-lead { margin: 0; }
+}
+@media (max-width: 600px) {
+  .a-item [data-sim] svg, .a-item [data-sim] canvas { max-height: 170px; }
+  .a-item [data-sim] .readout .v { font-size: 1rem; }
+  .a-item [data-sim] .readout .u { font-size: .68rem; }
+  .a-item [data-sim] .slider { padding: 0; }
+  .a-item [data-sim] .stack { gap: 6px; }
+  .a-item .fstep-nav { flex-wrap: nowrap; gap: 8px; }
+  .a-item .fstep-nav > * { flex: 1 1 0; min-width: 0; font-size: .78rem; padding: 6px 10px; line-height: 1.2; }
+  .a-item .pearl-card { padding: 10px 12px; }
+}

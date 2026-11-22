@@ -256,7 +256,7 @@ function aItems(page) {
         var main = '<p class="read">' + T(p.intro, scope) + '</p>' + hyList(ess.slice(0, 5), t('hy.title'));
         return (sim ? '<div data-sim="' + sim + '"></div>' : '') + (p.card ? aCard(p.card, scope) : main) +
           levelBlocks([
-            { lvl: 1, title: t('f.more'), html: (p.card ? main : '') + (p.numbers && p.numbers.length ? '<div class="grid3">' + p.numbers.map(function (n) { return '<div class="readout"><span class="u">' + U.esc(n.label) + '</span><span class="small mono" style="font-weight:700">' + U.esc(n.value) + '</span></div>'; }).join('') + '</div>' : '') + '<ul class="blist read">' + (p.points || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' + (p.pearl ? '<div class="callout amber"><span class="eyebrow">' + t('a.pearl') + '</span><span>' + T(p.pearl, scope) + '</span></div>' : '') },
+            { lvl: 1, title: t('f.more'), html: (p.card ? aCardRest(p.card, scope) + main : '') + (p.numbers && p.numbers.length ? '<div class="grid3">' + p.numbers.map(function (n) { return '<div class="readout"><span class="u">' + U.esc(n.label) + '</span><span class="small mono" style="font-weight:700">' + U.esc(n.value) + '</span></div>'; }).join('') + '</div>' : '') + '<ul class="blist read">' + (p.points || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' + (p.pearl ? '<div class="callout amber"><span class="eyebrow">' + t('a.pearl') + '</span><span>' + T(p.pearl, scope) + '</span></div>' : '') },
             { lvl: 2, title: t('a.train'), html: trainBlock('phy-' + p.id) }
           ]);
       } });
@@ -267,12 +267,13 @@ function aItems(page) {
     (A.exam || []).filter(function (p) { return ids.indexOf(p.id) >= 0; }).forEach(function (p) {
       var ph = photosFor('a-' + p.id);
       it.push({ id: p.id, title: I18N.title(p), en: p.en, thumb: ph[0] && ph[0].id, body: function (scope) {
-        var tools = (EXAM_TOOL[p.id] || []).map(function (x) { var parts = x.split(':'); return parts[0] === 'patterns' ? '<div data-sim="patterns" data-kind="' + parts[1] + '"' + (parts[2] ? ' data-compare="1"' : '') + '></div>' : '<div data-sim="' + parts[0] + '"></div>'; }).join('');
+        var toolL = (EXAM_TOOL[p.id] || []).map(function (x) { var parts = x.split(':'); return parts[0] === 'patterns' ? '<div data-sim="patterns" data-kind="' + parts[1] + '"' + (parts[2] ? ' data-compare="1"' : '') + '></div>' : '<div data-sim="' + parts[0] + '"></div>'; });
+        var tools = toolL.slice(0, 1).join(''), extra = p.card ? toolL.slice(1).join('') : ''; if (!p.card) tools = toolL.join('');
         var h = HY.get('ex-' + p.id), ess = (h && h.essentials) || [];
         var main = '<div class="callout"><span class="eyebrow">' + t('a.why') + '</span><span>' + T(p.why, scope) + '</span></div>' + hyList(ess.slice(0, 5), t('hy.title'));
         return (tools || (ph.length ? Photo.carousel(ph, { voir: 'a-' + p.id }) : '')) + (p.card ? aCard(p.card, scope) : main) +
           levelBlocks([
-            { lvl: 1, title: p.card ? t('f.more') : t('a.normpatho'), html: (p.card ? main + '<h3 class="h4">' + t('a.normpatho') + '</h3>' : '') + '<div class="twocol"><div class="panel-sunk stack"><h3 class="h4" style="color:var(--ok)">' + t('f.normal') + '</h3><ul class="blist ok">' + (p.normal || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="panel-sunk stack"><h3 class="h4" style="color:var(--urgent)">' + t('f.patho') + '</h3><ul class="blist red">' + (p.patho || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' + (tools && ph.length ? Photo.carousel(ph, { voir: 'a-' + p.id }) : '') },
+            { lvl: 1, title: p.card ? t('f.more') : t('a.normpatho'), html: (p.card ? aCardRest(p.card, scope) + extra + main + '<h3 class="h4">' + t('a.normpatho') + '</h3>' : '') + '<div class="twocol"><div class="panel-sunk stack"><h3 class="h4" style="color:var(--ok)">' + t('f.normal') + '</h3><ul class="blist ok">' + (p.normal || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="panel-sunk stack"><h3 class="h4" style="color:var(--urgent)">' + t('f.patho') + '</h3><ul class="blist red">' + (p.patho || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' + (tools && ph.length ? Photo.carousel(ph, { voir: 'a-' + p.id }) : '') },
             { lvl: 2, title: t('a.howpit'), html: '<h3 class="h4">' + t('a.how') + '</h3><ol class="read">' + (p.how || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ol><h3 class="h4">' + t('a.pitfalls') + '</h3><ul class="blist red">' + (p.pitfalls || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' },
             { lvl: 2, title: t('a.asks.train'), html: (p.pearl ? '<div class="callout amber"><span class="eyebrow">' + t('a.asks') + '</span><span>' + T(p.pearl, scope) + '</span></div>' : '') + (HY.get('ex-' + p.id) ? trainBlock('ex-' + p.id) : '') }
           ]);
@@ -286,7 +287,7 @@ function aItems(page) {
         var main = '<div class="callout"><span class="eyebrow">' + t('caps.what') + '</span><span>' + T(r.what, scope) + '</span></div>' + hyList(ess.slice(0, 5), t('hy.title'));
         return (ph.length ? Photo.carousel(ph, { voir: r.id }) : '') + (r.card ? aCard(r.card, scope) : main) +
           levelBlocks([
-            { lvl: 1, title: r.card ? t('f.more') : t('a5.lookact'), html: (r.card ? main : '') + '<h3 class="h4">' + t('a.look') + '</h3><ul class="blist">' + (r.look || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><h3 class="h4">' + t('a5.action') + '</h3><ul class="blist">' + (r.action || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' },
+            { lvl: 1, title: r.card ? t('f.more') : t('a5.lookact'), html: (r.card ? aCardRest(r.card, scope) + main : '') + '<h3 class="h4">' + t('a.look') + '</h3><ul class="blist">' + (r.look || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><h3 class="h4">' + t('a5.action') + '</h3><ul class="blist">' + (r.action || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' },
             { lvl: 2, title: t('a5.pitwhy'), html: '<ul class="blist red">' + (r.pitfalls || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><div class="callout violet"><span class="eyebrow">' + t('a5.why') + '</span><span>' + T(r.why, scope) + '</span></div>' },
             { lvl: 2, title: t('a.asks.train'), html: (r.pearl ? '<p><b>' + U.md(r.pearl.q) + '</b></p><p>' + T(r.pearl.a, scope) + '</p>' : '') + (HY.get('a5-' + r.id) ? trainBlock('a5-' + r.id) : '') }
           ]);
@@ -296,10 +297,11 @@ function aItems(page) {
   return it;
 }
 /* default micro-fiche card (content editors: card = { lead, keys[3–4], ask: { q, a } }) */
+function aCardRest(card, scope) { var k = (card && card.keys || []).slice(3); return k.length ? '<ul class="blist">' + k.map(function (x) { return '<li>' + T(I18N.pick(x), scope) + '</li>'; }).join('') + '</ul>' : ''; }
 function aCard(card, scope) {
   if (!card) return '';
   var c = I18N.pick(card.lead) ? card : card;
-  return '<p class="read a-lead">' + T(I18N.pick(c.lead), scope) + '</p>' + (c.keys && c.keys.length ? '<ul class="blist a-keys">' + c.keys.map(function (k) { return '<li>' + T(I18N.pick(k), scope) + '</li>'; }).join('') + '</ul>' : '') +
+  return '<p class="read a-lead">' + T(I18N.pick(c.lead), scope) + '</p>' + (c.keys && c.keys.length ? '<ul class="blist a-keys">' + c.keys.slice(0, 3).map(function (k) { return '<li>' + T(I18N.pick(k), scope) + '</li>'; }).join('') + '</ul>' : '') +
     (c.ask && c.ask.q ? '<div class="pearls"><div class="pearl-card" role="button" tabindex="0" data-pearl="0" aria-expanded="false"><span class="who">' + t('f.asks') + '</span><span class="q">' + U.md(I18N.pick(c.ask.q)) + '</span><span class="hint">' + t('f.think') + '</span><span class="a" hidden>' + T(I18N.pick(c.ask.a), scope) + '</span></div></div>' : '');
 }
 function aThumb(page, it) {
