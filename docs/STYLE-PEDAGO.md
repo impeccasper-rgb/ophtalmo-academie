@@ -31,3 +31,15 @@ Identité v2 « Fluorescéine » (brand/BRAND.md) partout : surfaces d’étude 
 
 ## 7. Contrôle (le critique applique ces chiffres)
 Mots visibles par écran, ratio figures/écran, nombre de tableaux, interactions sans valeur, animations auto-rythmées, cohérence visuelle. Un écran qui dépasse un plafond = défaut à corriger, pas une remarque.
+
+## 8. Modèle d'arbre décisionnel v2 (cycle 8)
+Chaque nœud de `cat.algo` : `{ q, yes, no, yesGo?, noGo? }`.
+- `yes` / `no` : texte de l'action (ou `{t, urgent:true}`), ≤ 12 mots ; peut être vide si la branche mène directement à une autre question.
+- `yesGo` / `noGo` : index (0-based) de la question suivante sur cette branche, ou absent = fin de branche. Les DEUX branches peuvent continuer (arbre/graphe acyclique), ce qui corrige les erreurs de logique d'une chaîne à branche unique.
+- Ancien `cont: 'yes'|'no'` = équivalent de `yesGo/noGo = i+1` sur cette branche (toujours supporté).
+- Plus de feuille vide « Question suivante » : une flèche étiquetée suffit.
+
+## 9. Bloc Traitement pour l'externe (cycle 8)
+- `treatment.refer` au niveau de la fiche, formulé pour un externe/omnipraticien : « Référer en ophtalmologie : immédiatement / dans les 24 h / cette semaine / suivi régulier — parce que… ».
+- `treatment.first` = ce que fait l'externe ou le médecin de première ligne (et ce que fera l'ophtalmologiste, séparé).
+- `treatment.pitfall` nomme le médicament ou le geste en cause.
