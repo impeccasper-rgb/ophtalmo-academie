@@ -71,7 +71,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Guttae et cataracte prévue : chercher l’œdème infraclinique avant d’opérer"
   ],
   cat: {
-    vignette: "Femme de 68 ans : vision floue le matin, meilleure l’après-midi, halos autour des lumières. Guttae centrales aux deux yeux, cornée un peu épaissie à la pachymétrie.",
+    vignette: "Femme de 68 ans : vision floue le matin, meilleure l’après-midi, halos. Guttae centrales aux deux yeux, cornée épaissie.",
     algo: [
       { q: "Guttae centrales aux deux yeux ?", yes: "Fuchs : spéculaire, pachymétrie, Scheimpflug.", no: "Autre œdème : chirurgie, PIO, endothélite, ICE.", yesGo: 1 },
       { q: "Cataracte significative ?", yes: "", no: "", yesGo: 2, noGo: 3 },
@@ -232,7 +232,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Lentilles ou végétal : risque de Pseudomonas ou de champignon"
   ],
   cat: {
-    vignette: "Homme de 40 ans réveillé par une douleur vive à l’œil droit, pour la 3e fois ce mois-ci. Égratigné par l’ongle de son enfant il y a 6 mois.",
+    vignette: "Homme de 40 ans réveillé par une douleur vive à l’œil droit, 3e fois ce mois-ci. Égratigné par un ongle il y a 6 mois.",
     algo: [
       { q: "Infiltrat, hypopyon ou réaction de chambre ?", yes: "Kératite infectieuse : ophtalmologie le jour même.", no: "Abrasion : éverser, retirer tout corps étranger.", noGo: 1 },
       { q: "Projection rapide (meulage, marteau) ?", yes: "TDM pour exclure un corps intraoculaire, pas d’IRM.", no: "", yesGo: 2, noGo: 2 },
@@ -383,7 +383,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Siège atypique, patient jeune immunosupprimé, récidive rapide"
   ],
   cat: {
-    vignette: "Couvreur de 52 ans, irritation chronique de l’œil droit. Membrane rose triangulaire du côté nasal qui empiète de 3 mm sur la cornée ; astigmatisme récent.",
+    vignette: "Couvreur de 52 ans, œil droit irrité. Membrane rose triangulaire nasale qui empiète de 3 mm sur la cornée ; astigmatisme récent.",
     algo: [
       { q: "Lésion qui franchit le limbe sur la cornée ?", yes: "", no: "Confinée à la conjonctive : pinguécula ; protection UV.", yesGo: 1 },
       { q: "Gélatineux, leucoplasie, vaisseaux nourriciers ou pigment ?", yes: "OSSN ou mélanome possible : biopsie, oncologie oculaire.", no: "Ptérygion : mesurer l’envahissement cornéen.", noGo: 2 },
@@ -537,7 +537,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Trauma d’une PK, PIO élevée ou greffon de DMEK décollé"
   ],
   cat: {
-    vignette: "Femme de 62 ans, greffe de cornée transfixiante il y a 14 mois ; elle a cessé ses gouttes de stéroïde. Rougeur, photophobie et vision qui baisse depuis 3 jours.",
+    vignette: "Femme de 62 ans, greffe de cornée il y a 14 mois, gouttes de stéroïde cessées. Rougeur, photophobie, vision qui baisse depuis 3 jours.",
     algo: [
       { q: "Greffé avec rougeur, photophobie, vision ↓ ou douleur ?", yes: "Ophtalmologiste le jour même.", no: "Suivi habituel ; gouttes prises tous les jours.", yesGo: 1 },
       { q: "Infiltrat ou défaut, surtout près d’une suture ?", yes: "Infection : cultures, antibiotiques, retrait de la suture.", no: "", noGo: 2 },
@@ -687,7 +687,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Défaut qui ne ferme pas, amincissement, pression intraoculaire (PIO) élevée"
   ],
   cat: {
-    vignette: "Homme de 35 ans, éclaboussure de débouche-tuyaux dans l’œil gauche il y a 10 minutes. Il arrive à l’urgence l’œil fermé, très souffrant, sans avoir rincé.",
+    vignette: "Homme de 35 ans : débouche-tuyaux dans l’œil gauche il y a 10 minutes. Il arrive à l’urgence, très souffrant, sans avoir rincé.",
     algo: [
       { q: "Exposition chimique ?", yes: "Irriguer tout de suite, avant l’histoire et l’acuité.", no: "Évaluer comme un œil rouge douloureux.", yesGo: 1 },
       { q: "pH 7,0–7,5, 5–10 min après l’irrigation ?", yes: "Examen : acuité, fluorescéine, limbe, PIO, éversion.", no: "Irriguer encore, retirer les particules, puis examiner.", yesGo: 2, noGo: 2 },
@@ -731,7 +731,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       "**Externe / 1re ligne** : irriguer au NaCl 0,9 % ≥ 30 min jusqu’à pH 7,0–7,5, paupières retournées.",
       "**Ophtalmologiste** : stéroïde court, doxycycline + vitamine C, membrane amniotique."
     ],
-    refer: ["Immédiatement si limbe blanc, cornée opaque ou pH qui remonte — perte de la vision.", "Dans les 24 h pour toute brûlure par une base, même légère."],
+    refer: ["Immédiatement si limbe blanc, cornée voilée (Roper-Hall ≥ II) ou pH qui remonte — perte de la vision.", "Dans les 24 h pour toute brûlure par une base, même légère."],
     pitfall: ["Attendre l’acuité ou le produit avant d’irriguer : minutes perdues.", "Prednisolone au-delà de 10–14 jours : fonte de la cornée."],
     qc: ["Au travail : CNESST ; Centre antipoison du Québec pour le produit."]
   },

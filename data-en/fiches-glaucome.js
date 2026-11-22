@@ -615,7 +615,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "**Pilocarpine**: useless before IOP falls; never for a lens cause or topiramate.",
    "**Acetazolamide**: check sulfa allergy, kidney, potassium, sickle cell."
   ],
-  "qc": ["Often seen first in the ER for headache and vomiting: look at the eye.", "Call the on-call ophthalmologist before any transfer; start the drops on site.", "Acetazolamide 250 mg PO: available everywhere; the IV form may run short (Canadian shortage, 2026)."]
+  "qc": ["Often seen first in the ER for headache and vomiting: look at the eye.", "Call the on-call ophthalmologist before any transfer; start the drops on site.", "Acetazolamide 250 mg PO: available everywhere. The IV form has a single Canadian supplier (shortage announced May–July 2026, Drug Shortages Canada report 282580): if it runs out, give it PO."]
  }
 }
 });
@@ -1469,7 +1469,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "compare": {
   "title": "Large disc: physiologic or glaucomatous?",
   "normal": {
-   "caption": "Per the source: congenital anomaly (large disc, left), normal fellow disc on the right."
+   "caption": "Congenital anomaly (large disc, left), normal fellow disc on the right."
   },
   "patho": {
    "caption": "Megalopapilla with severe glaucoma.",
@@ -3553,7 +3553,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "phase": "medical",
     "items": [
-     "As a bridge: timolol 0.25%, dorzolamide, prostaglandin analogue",
+     "As a bridge: dorzolamide, prostaglandin analogue; timolol 0.25% only with great caution (apnoea, bradycardia in infants), on the ophthalmologist’s decision",
      "**Brimonidine contraindicated under age 2** (drowsiness, hypotonia, apnea)"
     ]
    },
@@ -3609,7 +3609,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "cx": "Timolol: apnea, bradycardia, bronchospasm; brimonidine: central nervous system depression.",
    "dose": "Timolol 0.25% BID, dorzolamide 2% TID, as a bridge before surgery.",
    "refer": "Before surgery or as an adjunct.",
-   "pitfall": "Brimonidine contraindicated under age 2 (CNS depression); timolol: apnea."
+   "pitfall": "Brimonidine contraindicated under age 2 (CNS depression); timolol: apnoea and bradycardia in infants, avoid or use with great caution."
   },
   {
    "name": "Drainage tube or trabeculectomy",
@@ -3664,7 +3664,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "treatment": {
   "first": [
    "**You**: infant with tearing and photophobia: compare corneal size and clarity.",
-   "**Ophthalmologist**: examination under anesthesia, angle surgery; bridging drops (timolol 0.25%)."
+   "**Ophthalmologist**: examination under anesthesia, angle surgery; bridging drops; timolol 0.25% only with great caution (apnoea, bradycardia in infants)."
   ],
   "refer": "Refer to ophthalmology: within 24 h — infant with the triad or a large or cloudy cornea.",
   "pitfall": [
@@ -4000,19 +4000,19 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 // Tree vignettes (cat.vignette): one short case shown above the decision tree
 (function () {
   var V = {
-    "g-gpao": "A 62-year-old Black man referred by his optometrist. IOP 26 and 27 mmHg, cup-to-disc 0.7 with an inferior notch on the right. No symptoms. Open angle on gonioscopy.",
-    "g-hto": "A 55-year-old woman with IOP of 25 mmHg in both eyes at three visits. Normal discs, OCT and visual fields. Thin corneas (510 µm), open angle.",
-    "g-gpn": "A 68-year-old woman with migraines and cold hands. IOP 15 mmHg. A small haemorrhage at the inferior margin of the right disc, a superior paracentral field defect.",
-    "g-fermeture": "A 64-year-old hyperopic woman at a routine exam. Van Herick grade 1 in both eyes, no symptoms, IOP 18 mmHg. Gonioscopy: meshwork not visible for 270°.",
-    "g-crise": "A 70-year-old hyperopic woman seen in the ER for headache and vomiting after an evening at the cinema. Red right eye, hazy cornea, fixed mid-dilated pupil, rock-hard eye.",
-    "g-pxf": "A 74-year-old man of Scandinavian descent. After dilation, whitish ring-shaped deposits on the lens capsule; IOP 32 mmHg right, 18 mmHg left.",
-    "g-pigmentaire": "A 32-year-old man, myopic at −5, with blur and halos after jogging. Krukenberg spindle, radial iris transillumination defects, a heavily pigmented angle.",
-    "g-neovasculaire": "A 58-year-old man with poorly followed diabetes. Painful left eye, counting-fingers vision. IOP 48 mmHg, tiny vessels at the pupil margin, retinal haemorrhages.",
-    "g-secondaires": "A 12-year-old boy treated for 2 months for allergic conjunctivitis with dexamethasone drops. Quiet eye, open angle, IOP 34 mmHg.",
-    "g-postop": "A 70-year-old man, left trabeculectomy 3 years ago. Since yesterday, a red, painful, discharging eye. Milky white bleb, cells in the anterior chamber.",
-    "g-papille": "A 50-year-old man with slowly falling vision on the right. Cup-to-disc 0.5 but a pale rim, IOP 16 mmHg. Field: a temporal defect that stops at the vertical meridian.",
-    "g-cristallin": "An 81-year-old woman with a white cataract on the right for years. Red, painful eye for 2 days, shallow anterior chamber, IOP 45 mmHg.",
-    "g-dev": "A 4-month-old infant with tearing, light avoidance and squinting. The parents find the eyes ‘big and beautiful’. Large, slightly hazy corneas."
+    "g-gpao": "A 62-year-old Black man, no symptoms. IOP 26 and 27 mmHg, cup-to-disc 0.7 with an inferior notch on the right, open angle.",
+    "g-hto": "A 55-year-old woman: IOP 25 mmHg in both eyes, three times. Normal discs, OCT and fields. Thin corneas (510 µm), open angle.",
+    "g-gpn": "A 68-year-old woman with migraines and cold hands. IOP 15 mmHg; haemorrhage at the right disc margin, superior paracentral defect.",
+    "g-fermeture": "A 64-year-old hyperopic woman, no symptoms. Van Herick grade 1, IOP 18 mmHg; meshwork hidden for 270° on gonioscopy.",
+    "g-crise": "A 70-year-old hyperopic woman in the ER: headache and vomiting after the cinema. Red right eye, hazy cornea, fixed mid-dilated pupil.",
+    "g-pxf": "A 74-year-old man of Scandinavian descent: whitish ring-shaped deposits on the lens after dilation. IOP 32 mmHg right, 18 left.",
+    "g-pigmentaire": "A 32-year-old myopic man: blur and halos after jogging. Krukenberg spindle, radial iris defects, heavily pigmented angle.",
+    "g-neovasculaire": "A 58-year-old with poorly followed diabetes. Painful left eye, counting fingers; IOP 48 mmHg, vessels at the pupil margin.",
+    "g-secondaires": "A 12-year-old boy on dexamethasone drops for 2 months for allergy. Quiet eye, open angle, IOP 34 mmHg.",
+    "g-postop": "A 70-year-old man, left trabeculectomy 3 years ago. Since yesterday: red, painful eye, milky white bleb, cells in the chamber.",
+    "g-papille": "A 50-year-old man, slowly falling right vision. Cup-to-disc 0.5 but a pale rim; temporal field defect stopping at the vertical meridian.",
+    "g-cristallin": "An 81-year-old woman, white cataract on the right for years. Red, painful eye for 2 days, shallow chamber, IOP 45 mmHg.",
+    "g-dev": "A 4-month-old infant with tearing and light avoidance. The parents find the eyes ‘big and beautiful’. Large, slightly hazy corneas."
   };
   Object.keys(V).forEach(function (id) { var f = G.OPH_EN.fiches[id] = G.OPH_EN.fiches[id] || {}; f.cat = f.cat || {}; f.cat.vignette = V[id]; });
 })();

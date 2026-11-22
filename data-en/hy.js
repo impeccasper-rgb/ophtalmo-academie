@@ -278,7 +278,7 @@ Object.assign(G.OPH_EN.hy, {
   "c-keratocone": {
     essentials: [
       "Young eye rubber, increasing irregular astigmatism: **tomography** is the reference test.",
-      "Child: **CXL at diagnosis** (2025 consensus), without waiting for documented progression.",
+      "Child: **CXL at diagnosis** (2nd global consensus, ESCRS 2025), without waiting for documented progression.",
       "Adult: CXL for **documented progression**, without delaying it to get the patient to stop rubbing.",
       "Standard epi-off CXL: stroma **≥ 400 µm** to protect the endothelium from UV.",
       "Abnormal tomography in a LASIK candidate: **surgery contraindicated** (risk of ectasia)."
@@ -1227,7 +1227,7 @@ Object.assign(G.OPH_EN.hy, {
       "Progression per Gomes 2015: at least [[2 criteria|two criteria|2]] among anterior steepening, posterior steepening and thinning."
     ],
     triage: [
-      { s: "14-year-old adolescent: newly diagnosed keratoconus, no documented progression.", u: "rapide", why: "2025 consensus: CXL at diagnosis in children, without waiting for progression." },
+      { s: "14-year-old adolescent: newly diagnosed keratoconus, no documented progression.", u: "rapide", why: "2nd global consensus (2025): CXL at diagnosis in children, without waiting for progression." },
       { s: "LASIK candidate: near-normal anterior topography, abnormal posterior elevation.", u: "routine", why: "Forme fruste: LASIK contraindicated (risk of ectasia)." },
       { s: "Rigid contact lens wearer: irregular map suggesting a cone.", u: "routine", why: "Possible lens-induced warpage: stop the lenses long enough, then repeat the map." }
     ],

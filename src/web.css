@@ -288,3 +288,8 @@ html.no-motion .voir-miss { animation: none; }
 }
 .hero2 .eyebrow { hyphens: manual; -webkit-hyphens: manual; }
 .voir-media .inv-hot.dec > i { inset: -40%; } /* fallback ring (no Motion): around the sign, not on it */
+/* cycle 11: one stepper in Comprendre — the chain item mapped onto each drawn step */
+.mech-sub { margin: 4px 0 0; color: var(--ink-2); line-height: 1.4; }
+.mech-sub .k { display: inline-block; font: 700 .66rem/1.4 var(--font-mono, monospace); text-transform: uppercase; letter-spacing: .06em; color: var(--cobalt-ink); margin-right: 4px; }
+.mech-chain [data-levnote] { margin-top: 6px; }
+.chain-list { padding-left: 1.2em; }

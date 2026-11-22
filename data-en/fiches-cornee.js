@@ -697,7 +697,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-keratocone": {
   cat: {
     algo: [
       { q: "Irregular astigmatism or a keratoconus sign?", yes: "Baseline tomography.", no: "Routine follow-up; tomography before refractive surgery.", yesGo: 1 },
-      { q: "Child or adolescent?", yes: "CXL at diagnosis (2025 consensus).", no: "", yesGo: 3, noGo: 2 },
+      { q: "Child or adolescent?", yes: "CXL at diagnosis (2nd global consensus, ESCRS 2025).", no: "", yesGo: 3, noGo: 2 },
       { q: "Documented progression on tomography?", yes: "CXL, without waiting for rubbing to stop.", no: "Monitor with tomography; no preventive CXL.", yesGo: 3, noGo: 4 },
       { q: "Stroma ≥ 400 µm without epithelium?", yes: "Standard epi-off CXL.", no: "Adapted protocol in a specialized centre.", yesGo: 4, noGo: 4 },
       { q: "Good enough vision with glasses?", yes: "Glasses.", no: "Rigid or scleral lenses; graft if scarred." }
@@ -746,7 +746,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-keratocone": {
     qc: ["CXL: public coverage varies by centre."]
   },
   pearls: [
-    { q: "When do you do CXL?", a: "When there is progression: at least 2 of anterior steepening, posterior steepening, thinning (2015 consensus); the 2025 consensus recognizes posterior elevation and the thinnest point. **In children: at diagnosis.**" },
+    { q: "When do you do CXL?", a: "When there is progression: at least 2 of anterior steepening, posterior steepening, thinning (global consensus, Gomes et al., 2015); the 2nd global consensus (ESCRS 2025) recognizes posterior elevation and the thinnest point. **In children: at diagnosis.**" },
     { q: "Why DALK rather than PK in keratoconus?", a: "The disease affects the stroma, not the endothelium: DALK keeps the patient’s endothelium, so **no endothelial rejection**, less cell loss and a sturdier globe." },
     { q: "Dresden, accelerated, epi-on: what is the difference?", a: "Dresden (3 mW/cm² × 30 min) and accelerated (9 mW/cm² × 10 min) deliver the same total energy. Epi-on keeps the epithelium (less pain and infection) but lets less riboflavin and oxygen through; Epioxa (FDA 2025)." }
   ],
@@ -1117,7 +1117,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-brulure": {
       "**You (first line)**: irrigate with 0.9% saline ≥ 30 min to pH 7.0–7.5, lids everted.",
       "**Ophthalmologist**: short steroid, doxycycline + vitamin C, amniotic membrane."
     ],
-    refer: ["Immediately if white limbus, opaque cornea or rising pH — sight-threatening.", "Within 24 h for any alkali burn, even mild."],
+    refer: ["Immediately if white limbus, hazy cornea (Roper-Hall ≥ II) or rising pH — sight-threatening.", "Within 24 h for any alkali burn, even mild."],
     pitfall: ["Waiting for acuity or the product name before irrigating: minutes lost.", "Prednisolone beyond 10–14 days: corneal melting."],
     qc: ["At work: CNESST; Québec Poison Control Centre for the product."]
   },
@@ -1390,12 +1390,12 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-peripherie": {
     title: "Normal vs Terrien (cornea in profile)",
     normal: { caption: "Normal cornea in profile: regular curve, uniform thickness." },
     patho: {
-      caption: "Terrien degeneration in profile (source).",
+      caption: "Terrien degeneration in profile.",
       reveal: [
         "At the superior edge, the corneal curve becomes irregular and opaque: thinned zone",
         "White-yellowish deposit at the leading edge of the lesion: lipid line",
         "White eye, no redness: noninflammatory disease",
-        "According to the source: intact epithelium and pannus over the thinned zone"
+        "Intact epithelium and pannus over the thinned zone"
       ]
     }
   }
@@ -1658,7 +1658,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-dystrophies": {
     title: "Normal cornea vs granular dystrophy",
     normal: { caption: "Transparent cornea, no deposit." },
     patho: {
-      caption: "Granular dystrophy: breadcrumb opacities (source: EyeRounds).",
+      caption: "Granular dystrophy: breadcrumb opacities (EyeRounds).",
       reveal: [
         "Sharply demarcated white-gray opacities, as grains or small rings, in front of the pupil",
         "Some lesions aligned in streaks in the inferior half",
@@ -1805,20 +1805,20 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-greffe": {
 // Tree vignettes (cat.vignette): one short case shown above the decision tree
 (function () {
   var V = {
-    "c-secheresse": "A 58-year-old woman with burning, gritty eyes by evening, worse on screens. Thickened lid margins, fast tear break-up, inferior fluorescein dots.",
-    "c-bacterienne": "A 24-year-old man who sleeps in monthly contact lenses. Right eye red and painful since yesterday. A 3 mm white infiltrate, overlying epithelial defect, anterior chamber reaction.",
-    "c-atypiques": "A 31-year-old woman who rinses her lenses in tap water. Severe pain for 3 weeks despite moxifloxacin; ring infiltrate, negative bacterial cultures.",
-    "c-herpes": "A 45-year-old man with a red, watery left eye and mildly blurred vision. Fluorescein shows a branching lesion with terminal bulbs. Reduced corneal sensation, no skin rash.",
-    "c-keratocone": "A 15-year-old allergic boy who rubs his eyes a lot. His myopia and astigmatism change at every visit; glasses correct poorly. Topography: inferior steepening.",
-    "c-fuchs": "A 68-year-old woman: blurred vision in the morning, better in the afternoon, halos around lights. Central guttae in both eyes, slightly thick cornea on pachymetry.",
-    "c-erosion": "A 40-year-old man woken by sharp right-eye pain, for the third time this month. Scratched by his child’s fingernail 6 months ago.",
-    "c-pterygion": "A 52-year-old roofer with chronic right-eye irritation. A pink triangular nasal membrane extends 3 mm onto the cornea; new astigmatism.",
-    "c-greffe": "A 62-year-old woman, penetrating keratoplasty 14 months ago; she stopped her steroid drops. Redness, photophobia and falling vision for 3 days.",
-    "c-brulure": "A 35-year-old man splashed with drain cleaner in the left eye 10 minutes ago. He arrives at the ER with the eye shut, in severe pain, without having rinsed.",
-    "c-dystrophies": "A 34-year-old woman with gradually worsening glare in both eyes; her mother had a corneal graft. Small symmetric white stromal opacities, no vessels, a white painless eye.",
-    "c-depots": "A 28-year-old man followed for tremor and abnormal liver tests. A golden-brown ring at the periphery of both corneas, best seen at the slit lamp.",
-    "c-surface": "A 22-year-old student: red, watery right eye for 2 days, then the other eye. Her roommate had the same. Follicles, a preauricular node, normal vision.",
-    "c-peripherie": "A 66-year-old woman with rheumatoid arthritis. Very painful right eye, deep redness. A crescent ulcer hugging the limbus, thinned stroma, a staining defect."
+    "c-secheresse": "A 58-year-old woman: burning eyes by evening, worse on screens. Thick lid margins, unstable tears, inferior fluorescein dots.",
+    "c-bacterienne": "A 24-year-old man who sleeps in his contact lenses. Red, painful eye since yesterday; 3 mm white infiltrate under an epithelial defect.",
+    "c-atypiques": "A 31-year-old woman who rinses her lenses in tap water. Severe pain for 3 weeks despite moxifloxacin; ring infiltrate.",
+    "c-herpes": "A 45-year-old man with a red, watery left eye. Branching lesion with terminal bulbs on fluorescein, reduced corneal sensation, no rash.",
+    "c-keratocone": "An allergic 15-year-old boy who rubs his eyes. His astigmatism changes at every visit. Topography: inferior steepening.",
+    "c-fuchs": "A 68-year-old woman: blurred vision in the morning, better by afternoon, halos. Central guttae in both eyes, thick cornea.",
+    "c-erosion": "A 40-year-old man woken by sharp right-eye pain, the third time this month. Scratched by a fingernail 6 months ago.",
+    "c-pterygion": "A 52-year-old roofer with an irritated right eye. Pink triangular nasal membrane 3 mm onto the cornea; new astigmatism.",
+    "c-greffe": "A 62-year-old woman, corneal graft 14 months ago, steroid drops stopped. Redness, photophobia and falling vision for 3 days.",
+    "c-brulure": "A 35-year-old man: drain cleaner in the left eye 10 minutes ago. He arrives at the ER in severe pain, without rinsing.",
+    "c-dystrophies": "A 34-year-old woman with glare in both eyes; her mother had a graft. Symmetric white stromal opacities, no vessels, quiet eye.",
+    "c-depots": "A 28-year-old man followed for tremor and abnormal liver tests. Golden-brown ring at the periphery of both corneas.",
+    "c-surface": "A 22-year-old student: red, watery right eye, then the other. Her roommate too. Follicles, preauricular node, normal vision.",
+    "c-peripherie": "A 66-year-old woman with rheumatoid arthritis. Very painful right eye; crescent ulcer hugging the limbus, thinned stroma."
   };
   Object.keys(V).forEach(function (id) { var f = G.OPH_EN.fiches[id] = G.OPH_EN.fiches[id] || {}; f.cat = f.cat || {}; f.cat.vignette = V[id]; });
 })();

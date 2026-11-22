@@ -77,7 +77,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Nourrisson aux cornées troubles : exclure un glaucome congénital"
   ],
   cat: {
-    vignette: "Femme de 34 ans, éblouissement progressif aux deux yeux ; sa mère a été greffée. Petites opacités blanches symétriques dans le stroma, sans vaisseaux, œil blanc et indolore.",
+    vignette: "Femme de 34 ans, éblouissement aux deux yeux ; sa mère a été greffée. Opacités stromales blanches symétriques, sans vaisseaux, œil calme.",
     algo: [
       { q: "Opacité unilatérale, rouge ou douloureuse ?", yes: "Pas une dystrophie : infection ou inflammation, ophtalmo.", no: "", noGo: 1 },
       { q: "Bilatéral, symétrique, sans vaisseaux, familial ?", yes: "", no: "Dégénérescence, dépôt ou cicatrice.", yesGo: 2 },
@@ -137,7 +137,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     },
     patho: {
       figure: { type: "photo", id: "OPH-344" },
-      caption: "Dystrophie granulaire : opacités en miettes de pain (source EyeRounds).",
+      caption: "Dystrophie granulaire : opacités en miettes de pain.",
       reveal: [
         "Opacités blanc-gris nettes, en grains ou en petits anneaux, devant la pupille",
         "Certaines lésions alignées en traînées dans la moitié inférieure",
@@ -229,7 +229,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Bande chez un enfant : uvéite de l’AJI, souvent œil blanc"
   ],
   cat: {
-    vignette: "Homme de 28 ans suivi pour des tremblements et un bilan hépatique anormal. Anneau brun doré à la périphérie des deux cornées, mieux vu à la lampe à fente.",
+    vignette: "Homme de 28 ans suivi pour tremblements et bilan hépatique anormal. Anneau brun doré à la périphérie des deux cornées.",
     algo: [
       { q: "Rougeur, douleur, infiltrat ou cristaux sur greffe ?", yes: "Infection : cultures, ophtalmologie le jour même.", no: "", noGo: 1 },
       { q: "Blanc crayeux en bande dans la Bowman ?", yes: "Calcium : bilan phosphocalcique, PTH ; EDTA si gêne.", no: "", noGo: 2 },
@@ -297,7 +297,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     },
     patho: {
       figure: { type: "photo", id: "OPH-326" },
-      caption: "Kératopathie en bande ; hyperparathyroïdie selon la légende source.",
+      caption: "Kératopathie en bande ; hyperparathyroïdie.",
       reveal: [
         "Bande blanc-gris horizontale dans la moitié inférieure de la cornée, devant la pupille",
         "Cornée supérieure claire, dans la zone couverte par la paupière",
@@ -339,7 +339,7 @@ G.OPH.photos = G.OPH.photos || {};
     { id: "OPH-379", caption: "Dystrophie de Reis-Bücklers ; érosions récidivantes chroniques", look: "Décris le motif de l’opacité et son étendue.", reveal: [
       "Voile gris irrégulier, à motif réticulé, sur toute la cornée centrale",
       "Dans cette dystrophie, l’opacité siège dans la couche de Bowman, juste sous l’épithélium",
-      "Légende source : syndrome d’érosions récidivantes chroniques",
+      "Syndrome d’érosions récidivantes chroniques",
       "PTK possible, mais récidive fréquente"
     ] },
     { id: "OPH-358", caption: "Dystrophie polymorphe postérieure en rétroillumination", look: "Sur le reflet rouge du fond d’œil, cherche une petite lésion qui se découpe.", reveal: [
@@ -351,7 +351,7 @@ G.OPH.photos = G.OPH.photos || {};
     { id: "OPH-342", caption: "Dystrophie polymorphe postérieure en microscopie spéculaire", look: "Repère la mosaïque de cellules endothéliales, puis ce qui l’interrompt.", reveal: [
       "Mosaïque grise de cellules endothéliales en arrière-plan",
       "Zones plus sombres, arrondies ou en bande, qui interrompent la mosaïque",
-      "Selon la source : aspect classique des lésions de DPP",
+      "Aspect classique des lésions de DPP",
       "En spéculaire, tout ce qui n’est pas une cellule saine paraît sombre, comme les guttae"
     ] }
   ],
@@ -372,12 +372,12 @@ G.OPH.photos = G.OPH.photos || {};
       "Dépôt jaune crème dense près du bord de la pupille, en haut à droite sur la photo",
       "Voile blanchâtre autour du dépôt",
       "Vaisseaux nourriciers peu visibles ici : les chercher en fente fine",
-      "Contexte source : zona ophtalmique chronique, qui vascularise la cornée"
+      "Contexte : zona ophtalmique chronique, qui vascularise la cornée"
     ] },
     { id: "OPH-370", caption: "Kératopathie cristalline infectieuse dans une greffe transfixiante", look: "Repère le type de chirurgie, puis décris l’opacité blanche.", reveal: [
       "Points de suture radiaires tout autour du greffon : greffe transfixiante",
       "Opacité blanche ramifiée, d’aspect plumeux, en bas à gauche dans le greffon (sur la photo)",
-      "Rougeur légère seulement, selon la légende source",
+      "Rougeur légère seulement",
       "Streptocoques viridans le plus souvent : culture et antibiotiques prolongés"
     ] },
     { id: "OPH-365", caption: "Imprégnation hématique après un hyphéma important et prolongé", look: "Compare la couleur de la cornée avec celle d’une cornée normale.", reveal: [
@@ -458,7 +458,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     figure: { type: "photo", id: "OPH-299" },
     options: ["Bilan lipidique et glycémie à jeun", "Calcium, phosphore, PTH et créatinine", "Céruloplasmine et cuivre urinaire", "Sérologie syphilis et anticorps antinucléaires"],
     answer: 1,
-    explain: "Plaque blanche crayeuse entre les paupières, percée de trous : kératopathie en bande (calcium dans la couche de Bowman). Sans cause oculaire (uvéite, phtise, huile de silicone), on cherche une hypercalcémie ou une hyperphosphatémie : calcium, phosphore, PTH et fonction rénale. La source de cette photo mentionne une hyperparathyroïdie.",
+    explain: "Plaque blanche crayeuse entre les paupières, percée de trous : kératopathie en bande (calcium dans la couche de Bowman). Sans cause oculaire (uvéite, phtise, huile de silicone), on cherche une hypercalcémie ou une hyperphosphatémie : calcium, phosphore, PTH et fonction rénale. Ici, le patient avait une hyperparathyroïdie.",
     why: [
       "Lipides : arc gris-blanc périphérique ou dépôt jaune près de vaisseaux, pas une bande crayeuse.",
       "Exact : hyperparathyroïdie ou insuffisance rénale favorisent le dépôt de calcium.",

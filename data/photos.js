@@ -134,7 +134,7 @@ G.OPH.photos = {
       reveal: [
         "Lésion verte ramifiée au centre de la cornée : ulcère épithélial dendritique, dont le fond retient la fluorescéine.",
         "Renflements au bout des branches : bulbes terminaux (terminal bulbs), typiques du virus herpès simplex (HSV).",
-        "Branches larges qui confluent au centre : sous corticostéroïdes topiques au long cours (cas de la source, après une greffe endothéliale DLEK), une dendrite peut s’élargir en ulcère géographique.",
+        "Branches larges qui confluent au centre : sous corticostéroïdes topiques au long cours (ici, après une greffe endothéliale DLEK), une dendrite peut s’élargir en ulcère géographique.",
         "Même patient qu’OPH-058 (même visite) et OPH-060 (après guérison)."
       ] },
     { id: "OPH-057", caption: "Dendrite herpétique en lumière blanche : bulbes terminaux, fort grossissement (lampe à fente)",
@@ -158,7 +158,7 @@ G.OPH.photos = {
         "Bande lumineuse au limbe, à droite : dispersion sclérale (sclerotic scatter), la lumière diffuse dans la cornée et fait ressortir les opacités.",
         "Contour irrégulier grisâtre au centre, devant la pupille : ulcère dendritique herpétique aux branches larges (le même ulcère qu’OPH-059).",
         "Anneau rouge intense autour du limbe : injection ciliaire, signe d’inflammation cornéenne ou intraoculaire.",
-        "Arc fin en périphérie inférieure et gauche : probablement le bord de la greffe endothéliale (DLEK) mentionnée par la source."
+        "Arc fin en périphérie inférieure et gauche : probablement le bord de la greffe endothéliale (DLEK)."
       ] },
     { id: "OPH-060", caption: "Même patient après guérison : cicatrice « fantôme » sous l’ancien ulcère (lampe à fente)",
       look: "Compare la zone centrale éclairée par la fente avec l’ulcère actif d’OPH-059.",
@@ -183,7 +183,7 @@ G.OPH.photos = {
       reveal: [
         "Cornée projetée vers l’avant en pointe (à gauche de l’image) : ectasie conique, la cornée s’amincit et bombe au lieu de garder une courbure régulière.",
         "La vue de profil, patient regardant de côté, est la façon la plus simple de voir un cône avancé.",
-        "Même série de la source qu’OPH-035, probablement le même patient (signe de Munson au regard vers le bas)."
+        "Même série qu’OPH-035, probablement le même patient (signe de Munson au regard vers le bas)."
       ] },
     { id: "OPH-120", caption: "Kératocône au Pentacam : courbure, élévations antérieure et postérieure, pachymétrie (quatre cartes)",
       look: "Pour chaque carte, cherche la zone la plus chaude et compare le haut et le bas.",
@@ -199,7 +199,7 @@ G.OPH.photos = {
         "Anneau de Fleischer (Fleischer ring) bien visible qui encercle la base du cône : dépôt de fer dans l’épithélium basal, brun-jaune en lumière blanche.",
         "Pour ne pas le confondre avec le bord de l’iris derrière lui, le localiser en fente fine : l’anneau est dans la cornée, en avant de la chambre antérieure.",
         "Traînée blanchâtre au centre, un peu à gauche : cicatrice stromale de l’apex, séquelle d’épisodes d’hydrops.",
-        "Le bleu cobalt rend l’anneau plus visible (il paraît sombre); des stries de Vogt au centre du cône sont décrites par la source.",
+        "Le bleu cobalt rend l’anneau plus visible (il paraît sombre); des stries de Vogt au centre du cône sont rapportées.",
         "À ne pas confondre avec l’anneau de Kayser-Fleischer (cuivre dans la Descemet périphérique, maladie de Wilson)."
       ] },
     { id: "OPH-041", caption: "Stries de Vogt : fines lignes parallèles dans le stroma profond du cône (gros plan)",
@@ -207,14 +207,14 @@ G.OPH.photos = {
       reveal: [
         "Faisceau de lignes blanchâtres fines, parallèles et obliques dans la moitié droite de la zone éclairée : stries de Vogt (Vogt striae), plis du stroma profond et de la Descemet sous tension.",
         "Elles s’effacent temporairement quand on appuie doucement sur le globe; leur orientation suit l’axe le plus cambré.",
-        "Bande verte horizontale en bas : reflet ou coloration non décrits par la source, ce n’est pas le signe recherché."
+        "Bande verte horizontale en bas : reflet ou coloration, ce n’est pas le signe recherché."
       ] },
     { id: "OPH-035", caption: "Signe de Munson : paupière inférieure déformée par le cône au regard vers le bas",
       look: "Le patient regarde vers le bas : observe la forme du bord de la paupière inférieure.",
       reveal: [
         "Bord de la paupière inférieure soulevé et bombé (en V) là où passe la cornée, au centre en bas : signe de Munson (Munson sign).",
         "Il traduit un cône avancé qui repousse la paupière : signe tardif, inutile pour un diagnostic précoce.",
-        "Même série de la source qu’OPH-034, probablement le même patient (cône vu de profil)."
+        "Même série qu’OPH-034, probablement le même patient (cône vu de profil)."
       ] },
     { id: "OPH-043", caption: "Hydrops aigu : œdème cornéen apical blanc-bleuté (lampe à fente, vue oblique)",
       look: "Repère la zone opaque de la cornée et sa position par rapport à la pupille.",
@@ -393,14 +393,14 @@ G.OPH.photos = {
       reveal: [
         "Cornée opaque et grisâtre, surtout au centre et en haut : cicatrice stromale.",
         "Conjonctive bulbaire inférieure très vascularisée et rouge : inflammation chronique de la surface.",
-        "La source décrit aussi des symblépharons (adhérences entre la paupière et le globe), séquelle des brûlures sévères."
+        "Il y a aussi des symblépharons (adhérences entre la paupière et le globe), séquelle des brûlures sévères."
       ] },
     { id: "OPH-112", caption: "Déficit en cellules souches limbiques : épithélium en tourbillon (lampe à fente)",
       look: "Dans la zone de la pupille, cherche un motif de lignes courbes en spirale.",
       reveal: [
         "Lignes grisâtres en spirale près du centre de la cornée, devant la pupille : épithélium en tourbillon (whorl), venu du limbe supérieur.",
         "Sans cellules souches limbiques (limbal stem cell deficiency), l’épithélium se renouvelle mal; la conjonctive et des vaisseaux peuvent recouvrir la cornée.",
-        "Cause non précisée par la source; la brûlure chimique en est une cause classique, avec les lentilles et l’aniridie."
+        "Cause non précisée ; la brûlure chimique en est une cause classique, avec les lentilles et l’aniridie."
       ] },
     { id: "OPH-113", caption: "Déficit limbique : motif épithélial tourbillonnaire (lampe à fente)",
       look: "Repère le dessin de lignes au centre de la cornée.",
@@ -457,7 +457,7 @@ G.OPH.photos = {
       reveal: [
         "Petits trous sombres ovalaires au fond de l’excavation pâle (au centre) : pores de la lame criblée (lamina cribrosa), exposés quand le tissu neural a disparu.",
         "Encoche du rebord en bas à gauche, du côté inférotemporal : atteinte glaucomateuse focale.",
-        "Trait sombre courbe au bord inférotemporal, non décrit par la source : ne pas le prendre d’emblée pour une hémorragie, qui serait rouge et en flammèche.",
+        "Trait sombre courbe au bord inférotemporal : ne pas le prendre d’emblée pour une hémorragie, qui serait rouge et en flammèche.",
         "Agrandissement d’OPH-135 (même patient, vue d’ensemble)."
       ] }
   ],
@@ -474,7 +474,7 @@ G.OPH.photos = {
     { id: "OPH-187", caption: "Rapports C/D de 0,2 à 0,9 sur quatre papilles différentes (rétinophotographies)",
       look: "Classe les quatre papilles selon la taille de l’excavation par rapport au disque.",
       reveal: [
-        "Selon la source : A = 0,2, B = 0,5, C = 0,7, D = 0,9.",
+        "A = 0,2, B = 0,5, C = 0,7, D = 0,9.",
         "En D, rebord presque absent et excavation pâle et profonde : aspect d’atteinte avancée.",
         "Seuils de suspicion : C/D vertical > 0,6 ou asymétrie ≥ 0,2, à interpréter selon la taille du disque (un grand disque a une grande excavation physiologique)."
       ] },
@@ -534,7 +534,7 @@ G.OPH.photos = {
       look: "Cherche un petit orifice sombre dans la périphérie de l’iris.",
       reveal: [
         "Petit trou noir arrondi dans l’iris périphérique, à 9 h sur l’image : iridotomie périphérique au laser (laser peripheral iridotomy).",
-        "Position temporale : moins de reflets et de halos qu’une iridotomie supérieure, selon un essai randomisé cité par la source.",
+        "Position temporale : moins de reflets et de halos qu’une iridotomie supérieure, selon un essai randomisé.",
         "Après l’iridotomie : confirmer qu’elle est perméable en voyant directement l’orifice et mesurer la PIO 30 min à 2 h après."
       ] }
   ],
@@ -612,7 +612,7 @@ G.OPH.photos = {
       look: "Dans la pupille, repère le bord de l’implant et sa position.",
       reveal: [
         "Bord courbe net qui traverse l’aire pupillaire de haut en bas : bord de l’implant ou du sac capsulaire, décentré.",
-        "Matériel blanc opaque en bas à gauche de la pupille : capsule fibrosée ou dépôts (non précisé par la source).",
+        "Matériel blanc opaque en bas à gauche de la pupille : capsule fibrosée ou dépôts (non précisé).",
         "Ces déplacements peuvent survenir des années après la chirurgie : les zonules fragiles ne retiennent plus le sac capsulaire."
       ] },
     { id: "OPH-152", caption: "Autre vue du même cas : implant déplacé visible dans la pupille",
@@ -620,7 +620,7 @@ G.OPH.photos = {
       reveal: [
         "Optique de l’implant et sac capsulaire décalés, avec un bord visible dans la pupille : implant subluxé.",
         "Œil calme : la subluxation peut être progressive et peu bruyante (vision fluctuante, diplopie monoculaire).",
-        "Même cas qu’OPH-151 (images numérotées 1 et 2 dans la source)."
+        "Même cas qu’OPH-151."
       ] }
   ],
 
@@ -687,14 +687,14 @@ G.OPH.photos = {
       look: "Observe la densité et le trajet des vaisseaux sur l’iris.",
       reveal: [
         "Réseau dense de vaisseaux rouges tortueux sur tout l’iris visible : rubéose étendue.",
-        "Selon la source : maladie ischémique sévère de l’œil gauche avec glaucome néovasculaire; cause exacte non précisée.",
+        "Maladie ischémique sévère de l’œil gauche avec glaucome néovasculaire; cause exacte non précisée.",
         "Stade avancé : la membrane fibrovasculaire ferme l’angle par synéchies et la PIO devient difficile à contrôler."
       ] },
     { id: "OPH-166", caption: "Même œil en gros plan : vaisseaux tortueux sur l’iris et pupille voilée",
       look: "Suis un vaisseau depuis la périphérie jusqu’au bord pupillaire.",
       reveal: [
         "Vaisseaux rouges ramifiés qui courent sur l’iris jusqu’au bord de la pupille (moitié gauche) : néovaisseaux.",
-        "Aire pupillaire grisâtre et terne (en haut à droite) : cornée œdémateuse ou cristallin opaque, non précisé par la source.",
+        "Aire pupillaire grisâtre et terne (en haut à droite) : cornée œdémateuse ou cristallin opaque, impossible à préciser ici.",
         "Traiter l’ischémie et la PIO sans tarder; les néovaisseaux fragiles peuvent saigner (hyphéma)."
       ] }
   ],
@@ -704,7 +704,7 @@ G.OPH.photos = {
       look: "Regarde la pupille, puis la périphérie supérieure de l’iris.",
       reveal: [
         "Pupille petite et grisâtre au centre : synéchies postérieures (iris collé au cristallin) qui bloquent le passage de l’humeur aqueuse.",
-        "Deux petites taches pâles en périphérie supérieure de l’iris : probables iridotomies; la source rapporte plusieurs iridotomies sans succès.",
+        "Deux petites taches pâles en périphérie supérieure de l’iris : probables iridotomies; plusieurs iridotomies avaient échoué.",
         "Mécanisme : l’aqueuse s’accumule derrière l’iris, qui bombe vers l’avant et ferme l’angle (iris bombé, iris bombe).",
         "Même patient qu’OPH-148 (iridocyclite chronique)."
       ] },
@@ -776,7 +776,7 @@ G.OPH.photos = {
       reveal: [
         "Fine ligne circulaire en périphérie de la cornée : jonction entre le greffon et la cornée receveuse.",
         "Cornée claire : la DALK remplace le stroma mais garde l’endothélium du patient, donc pas de rejet endothélial.",
-        "Indication de la source : kératocône."
+        "Indication : kératocône."
       ] },
     { id: "OPH-092", caption: "Colle cyanoacrylate sur une perforation par kératite ulcérative périphérique (éclairage diffus)",
       look: "Repère le matériau blanchâtre irrégulier collé sur la cornée.",
@@ -862,7 +862,7 @@ G.OPH.photos = {
       reveal: [
         "Multiples petites opacités rondes blanc-gris, au centre et en périphérie moyenne : infiltrats sous-épithéliaux (subepithelial infiltrates) immuns.",
         "Elles touchent l’axe visuel : baisse de vision et éblouissement possibles pendant des semaines.",
-        "Contexte de la source : femme de 29 ans, œil rouge, larmoiement et ganglion prétragien depuis 10 jours.",
+        "Contexte : femme de 29 ans, œil rouge, larmoiement et ganglion prétragien depuis 10 jours.",
         "Très contagieux : hygiène des mains, désinfection des instruments et du tonomètre."
       ] },
     { id: "OPH-077", caption: "Kératite ponctuée de Thygeson : petites opacités épithéliales sur un œil blanc",
@@ -877,7 +877,7 @@ G.OPH.photos = {
       reveal: [
         "Îlots blanc nacré, en gouttes et en traînées, sous la pupille et à droite : nids d’épithélium qui ont poussé sous le volet (epithelial ingrowth).",
         "Ils s’approchent de l’axe visuel : indication de soulever le volet et de gratter l’interface.",
-        "Contexte de la source : LASIK au microkératome suivi de plusieurs retouches, facteurs de risque."
+        "Contexte : LASIK au microkératome suivi de plusieurs retouches, facteurs de risque."
       ] },
     { id: "OPH-089", caption: "Descémétocèle : cornée amincie jusqu’à la Descemet, en fente fine (lampe à fente)",
       look: "Suis la coupe cornéenne et cherche l’endroit où elle devient très mince ou bombe.",
@@ -1028,7 +1028,7 @@ G.OPH.photos = {
       reveal: [
         "Ponctuations vertes confluentes dans la moitié inférieure de la cornée : zone découverte quand la fermeture palpébrale est incomplète.",
         "Moitié supérieure presque épargnée, protégée par la paupière supérieure.",
-        "Cause de la source : chirurgies palpébrales multiples (kératopathie d’exposition); autres causes d’atteinte inférieure : blépharite, trichiasis, toxicité des gouttes."
+        "Cause : chirurgies palpébrales multiples (kératopathie d’exposition); autres causes d’atteinte inférieure : blépharite, trichiasis, toxicité des gouttes."
       ] },
     { id: "OPH-020", caption: "Film lacrymal fluorescéiné après le clignement (bleu cobalt)",
       look: "Regarde si le film vert recouvre uniformément la cornée.",
@@ -1103,7 +1103,7 @@ G.OPH.photos = {
       look: "Dans l’image de droite, regarde ce que pointent les flèches blanches.",
       reveal: [
         "Flèches blanches (image de droite) : bande blanche profonde à la place de la bande ciliaire, corps ciliaire décollé de l’éperon (cyclodialyse).",
-        "Contexte de la source : femme de 65 ans en hypotonie (PIO 1–2 mmHg) après chirurgie de cataracte.",
+        "Contexte : femme de 65 ans en hypotonie (PIO 1–2 mmHg) après chirurgie de cataracte.",
         "L’aqueuse s’écoule directement vers l’espace suprachoroïdien : PIO très basse, plis maculaires possibles."
       ] },
     { id: "OPH-176", caption: "Gonioscopie : sang dans le canal de Schlemm (ligne rouge sur le trabéculum)",
@@ -1314,7 +1314,7 @@ G.OPH.photos = {
       reveal: [
         "Près du centre : épaisseur totale de 525 µm et lit stromal résiduel de 321 µm.",
         "Plus en périphérie (à −2,80 mm et +2,10 mm) : lit résiduel de 399 et 377 µm.",
-        "Avant une retouche, un lit résiduel de moins de 300 µm la contre-indique dans le centre de la source.",
+        "Avant une retouche, un lit résiduel de moins de 300 µm la contre-indique dans certains centres.",
         "Après LASIK, la cornée amincie fait sous-estimer la PIO."
       ] },
     { id: "OPH-045", caption: "Hydrops au Pentacam : carte pachymétrique très épaissie par l’œdème",

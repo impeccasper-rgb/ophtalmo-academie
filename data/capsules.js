@@ -200,7 +200,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
     { name: "CXL (réticulation du collagène cornéen)", en: "Corneal cross-linking",
       what: "Gouttes de riboflavine (vitamine B2) sur la cornée, puis exposition aux ultraviolets A ; epi-off (on retire l’épithélium) ou epi-on.",
       how: "Crée de nouveaux ponts entre les fibres de collagène du stroma : la cornée se rigidifie et cesse de bomber.",
-      when: "Kératocône ou ectasie qui progresse ; chez l’enfant dès le diagnostic (consensus 2025) ; protocoles Dresde (3 mW/cm² × 30 min) ou accéléré (9 mW/cm² × 10 min).",
+      when: "Kératocône ou ectasie qui progresse ; chez l’enfant dès le diagnostic (2e consensus mondial, ESCRS 2025) ; protocoles Dresde (3 mW/cm² × 30 min) ou accéléré (9 mW/cm² × 10 min).",
       cx: "Douleur et risque d’infection les premiers jours (epi-off), voile stromal (haze), réactivation herpétique ; stroma < 400 µm sans épithélium : protocole adapté (protéger l’endothélium des UV) ; stabilise le cône sans l’effacer." },
     { name: "Greffe de cornée (renvoi)", en: "Keratoplasty",
       what: "Remplacement de la couche malade par un tissu de donneur : PK, DALK, DSAEK ou DMEK (voir la section sur les greffes).",

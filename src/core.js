@@ -99,7 +99,7 @@ var Store = {
   },
   merge: function (a, b) {
     var out = JSON.parse(JSON.stringify(a));
-    ['answers', 'visited', 'read', 'cases', 'srs', 'cloze', 'games', 'inv', 'fstep'].forEach(function (k) {
+    ['answers', 'visited', 'read', 'cases', 'srs', 'cloze', 'games', 'inv', 'fstep', 'voir'].forEach(function (k) {
       var src = b[k] || {}; out[k] = out[k] || {};
       Object.keys(src).forEach(function (id) {
         var x = out[k][id], y = src[id];
@@ -320,12 +320,15 @@ var Photo = {
   },
   /* reveal: ok = answered right (the sticker « Bien vu ! » is the only praise), otherwise no reward */
   voirReveal: function (vc, ok) {
-    if (!vc || vc.getAttribute('data-done')) return; vc.setAttribute('data-done', ok ? 'ok' : 'shown');
+    if (!vc || vc.getAttribute('data-done')) return;
+    var part = ok && vc.getAttribute('data-hinted') === '1'; if (part) ok = false; // found only after the hint: neutral verdict, partial credit, no sticker
+    vc.setAttribute('data-done', ok ? 'ok' : part ? 'hint' : 'shown');
+    try { var sv = Store.p.voir = Store.p.voir || {}, pk = vc.getAttribute('data-photo'), sc = ok ? 1 : part ? .5 : 0; if (!sv[pk] || sv[pk].s < sc || !ok) sv[pk] = { s: Math.max(sc, (sv[pk] && sv[pk].s) || 0), last: sc, t: Date.now() }; Store.saveLocal(); } catch (e) { }
     var ask = U.$('.voir-ask', vc), ans = U.$('.voir-ans', vc), hw = U.$('.inv-hots', vc), sg = U.$('.voir-sign', vc);
     U.$$('[data-act="voir-opt"], [data-act="voir-idk"]', vc).forEach(function (b) { b.disabled = true; });
     if (ask && !U.$('.opts', ask)) ask.hidden = true;
     if (ans) ans.hidden = false;
-    if (sg) { sg.className = 'voir-sign feedback ' + (ok ? 'ok' : 'neutral'); var vd = U.$('.verdict', sg); vd.textContent = ok ? '' : t('voir.shown'); vd.hidden = !!ok; }
+    if (sg) { sg.className = 'voir-sign feedback ' + (ok ? 'ok' : 'neutral'); var vd = U.$('.verdict', sg); vd.textContent = ok ? '' : part ? t('voir.withhint') : t('voir.shown'); vd.hidden = !!ok; }
     U.$$('.voir-hint, .voir-miss, .voir-found', vc).forEach(function (x) { x.remove(); });
     if (hw) { hw.hidden = false; hw.parentNode.classList.add('revealed'); }
     var m = U.$('.voir-media', vc); if (m) { m.removeAttribute('role'); m.removeAttribute('tabindex'); m.removeAttribute('data-act'); }
@@ -356,6 +359,7 @@ var Photo = {
     var n = (+vc.getAttribute('data-miss') || 0) + 1; vc.setAttribute('data-miss', n);
     var mk = document.createElement('span'); mk.className = 'voir-miss'; mk.setAttribute('aria-hidden', 'true'); mk.textContent = t('voir.miss'); mk.style.left = px + '%'; mk.style.top = py + '%';
     U.$$('.voir-miss', media).forEach(function (x) { x.remove(); }); media.appendChild(mk);
+    if (n === 2) vc.setAttribute('data-hinted', '1');
     if (n === 2 && !U.$('.voir-hint', media)) { var z0 = zs[0], hr = Math.max(z0.r * 2.5, 12), off = (U.hash(vc.getAttribute('data-photo')) % 2 ? 1 : -1) * z0.r * .8; var hc = document.createElement('span'); hc.className = 'voir-hint'; hc.setAttribute('aria-hidden', 'true'); hc.style.left = Math.min(92, Math.max(8, z0.x + off)) + '%'; hc.style.top = Math.min(90, Math.max(10, z0.y - off / 2)) + '%'; hc.style.setProperty('--r', hr); media.appendChild(hc); U.toast(t('voir.hint')); }
     if (n >= 3) Photo.voirReveal(vc, false);
   },

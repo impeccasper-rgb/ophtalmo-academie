@@ -79,7 +79,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Angiome plan de V1 : PIO et papilles dès la naissance, puis régulièrement"
   ],
   cat: {
-    vignette: "Nourrisson de 4 mois qui larmoie, fuit la lumière et plisse les yeux. Ses parents trouvent ses yeux « grands et beaux ». Cornées larges et un peu troubles.",
+    vignette: "Nourrisson de 4 mois qui larmoie et fuit la lumière. Ses parents trouvent ses yeux « grands et beaux ». Cornées larges, un peu troubles.",
     algo: [
       { q: "Nourrisson ou jeune enfant ?", yes: "", no: "", yesGo: 1, noGo: 4 },
       { q: "Triade, cornée large ou trouble ?", yes: "Référer dans les 24 h : examen sous anesthésie ; gouttes en pont.", no: "Larmoiement, cornée claire : obstruction lacrymonasale probable.", yesGo: 2 },
@@ -90,7 +90,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     phases: [
       {
         phase: "medical",
-        items: ["En pont : timolol 0,25 %, dorzolamide, analogue des prostaglandines", "**Brimonidine contre-indiquée avant 2 ans** (somnolence, hypotonie, apnée)"]
+        items: ["En pont : dorzolamide, analogue des prostaglandines ; timolol 0,25 % seulement avec grande prudence (apnée, bradycardie chez le nourrisson), sur décision de l’ophtalmologiste", "**Brimonidine contre-indiquée avant 2 ans** (somnolence, hypotonie, apnée)"]
       },
       {
         phase: "chirurgie",
@@ -111,7 +111,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   treatments: [
     { name: "Goniotomie", how: "Sous lentille de gonioscopie, une lame incise le trabéculum immature sur environ un tiers de l’angle.", why: "Congénital primaire, cornée claire.", pros: "Aucune cicatrice conjonctivale ; répétable.", cons: "Il faut voir l’angle.", cx: "Hyphéma, lésion de l’iris ou du cristallin.", dose: "Sous lentille de gonioscopie : incision du trabéculum sur ≈ 1/3 de l’angle.", refer: "Congénital primaire à cornée claire : centre pédiatrique tertiaire, rapidement.", pitfall: "Il faut voir l’angle : impossible si la cornée est trouble.", qc: "Québec : CHU Sainte-Justine, Hôpital de Montréal pour enfants, CHU de Québec ; appeler le patron de garde." },
     { name: "Trabéculotomie", how: "Par voie externe, une sonde, ou un fil sur 360°, passé dans le canal de Schlemm déchire sa paroi interne et le trabéculum.", why: "Congénital primaire, même avec une cornée trouble.", pros: "Possible malgré l’œdème ; 360° en une séance.", cons: "Canal parfois introuvable.", cx: "Hyphéma transitoire, fausse route.", dose: "Sonde ou fil sur 360° passé dans le canal de Schlemm.", refer: "Congénital primaire, même avec une cornée trouble.", pitfall: "Canal parfois introuvable : fausse route possible." },
-    { name: "Gouttes en pont", how: "Réduisent la production d’humeur aqueuse ou augmentent son écoulement.", why: "Avant la chirurgie ou en appoint.", pros: "Éclaircissent la cornée pour l’EUA.", cons: "Rarement suffisantes seules.", cx: "Timolol : apnée, bradycardie, bronchospasme ; brimonidine : dépression du système nerveux central.", dose: "Timolol 0,25 % BID, dorzolamide 2 % TID, en pont avant la chirurgie.", refer: "Avant la chirurgie ou en appoint.", pitfall: "Brimonidine contre-indiquée avant 2 ans (dépression du SNC) ; timolol : apnée." },
+    { name: "Gouttes en pont", how: "Réduisent la production d’humeur aqueuse ou augmentent son écoulement.", why: "Avant la chirurgie ou en appoint.", pros: "Éclaircissent la cornée pour l’EUA.", cons: "Rarement suffisantes seules.", cx: "Timolol : apnée, bradycardie, bronchospasme ; brimonidine : dépression du système nerveux central.", dose: "Timolol 0,25 % BID, dorzolamide 2 % TID, en pont avant la chirurgie.", refer: "Avant la chirurgie ou en appoint.", pitfall: "Brimonidine contre-indiquée avant 2 ans (dépression du SNC) ; timolol : apnée et bradycardie chez le nourrisson, à éviter ou avec grande prudence." },
     { name: "Tube de drainage ou trabéculectomie", how: "Dérivent l’aqueuse sous la conjonctive (tube et plaque, ou volet scléral).", why: "Échec de la chirurgie de l’angle, glaucomes secondaires, ICE.", pros: "Baisse forte de la PIO.", cons: "Cicatrisation vigoureuse de l’enfant.", cx: "Hypotonie, infection, tube bouché (ICE), effusion (Sturge-Weber).", dose: "Tube et plaque, ou trabéculectomie avec MMC.", refer: "Échec de la chirurgie de l’angle, glaucomes secondaires, ICE.", pitfall: "Cicatrisation vigoureuse de l’enfant : échec plus fréquent." }
   ],
   pearls: [
@@ -145,7 +145,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   treatment: {
     first: [
       "**Toi** : nourrisson qui larmoie et fuit la lumière : comparer la taille et la clarté des cornées.",
-      "**Ophtalmologiste** : examen sous anesthésie, chirurgie de l’angle ; gouttes en pont (timolol 0,25 %)."
+      "**Ophtalmologiste** : examen sous anesthésie, chirurgie de l’angle ; gouttes en pont ; timolol 0,25 % seulement avec grande prudence (apnée, bradycardie chez le nourrisson)."
     ],
     refer: "Référer en ophtalmologie : dans les 24 h — nourrisson avec triade ou cornée large ou trouble.",
     pitfall: ["**Brimonidine** : contre-indiquée avant 2 ans (dépression du SNC).", "**Larmoiement** mis sur le compte du canal lacrymal sans regarder la cornée."],
@@ -161,9 +161,9 @@ G.OPH.photos = G.OPH.photos || {};
     { id: "OPH-325", caption: "Glaucome congénital primaire : lignes dans la cornée, à la fente", look: "Suis les flèches dans le faisceau lumineux : que montrent-elles dans la cornée ?", reveal: ["Fines lignes blanchâtres dans la cornée, pointées par quatre flèches, dans le faisceau de la fente", "Aspect compatible avec des stries de Haab (ruptures de la Descemet), selon le diagnostic source", "Stries de Haab : horizontales ou concentriques au limbe ; stries des forceps : verticales ou obliques", "Elles persistent après la baisse de PIO et causent de l’astigmatisme"] },
     { id: "OPH-317", caption: "Embryotoxon postérieur : ligne de Schwalbe saillante et déplacée en avant", look: "Regarde la cornée périphérique, juste en dedans du limbe.", reveal: ["Ligne blanc grisâtre, courbe, parallèle au limbe, dans la cornée périphérique (côté droit de l’image)", "C’est la ligne de Schwalbe épaissie et avancée : visible sans gonioscopie", "Fréquente seule (environ 10 à 15 % de la population) et sans conséquence ; avec des brides iriennes qui s’y attachent : spectre d’Axenfeld-Rieger → gonioscopie"] },
     { id: "OPH-389", caption: "Syndrome ICE précoce : endothélium d’aspect argent martelé", look: "Observe l’endothélium dans le reflet spéculaire : est-il lisse ?", reveal: ["Endothélium finement granuleux et brillant, comme du métal martelé, au bord du reflet lumineux", "Cellules endothéliales anormales du syndrome ICE", "Rappelle les guttae de Fuchs, mais l’ICE touche un seul œil", "Confirmer en microscopie spéculaire"] },
-    { id: "OPH-387", caption: "Atrophie essentielle de l’iris : corectopie ovale horizontale", look: "Regarde la forme de la pupille et l’aspect du stroma irien.", reveal: ["Pupille ovale, étirée à l’horizontale (corectopie)", "Atrophie de l’iris, selon la légende source", "La membrane endothéliale qui recouvre l’angle se contracte et tire l’iris", "À faire : gonioscopie (synéchies hautes) et PIO"] },
+    { id: "OPH-387", caption: "Atrophie essentielle de l’iris : corectopie ovale horizontale", look: "Regarde la forme de la pupille et l’aspect du stroma irien.", reveal: ["Pupille ovale, étirée à l’horizontale (corectopie)", "Atrophie de l’iris", "La membrane endothéliale qui recouvre l’angle se contracte et tire l’iris", "À faire : gonioscopie (synéchies hautes) et PIO"] },
     { id: "OPH-318", caption: "Syndrome de Sturge-Weber : angiome plan (tache de vin) du visage", look: "Observe la peau du front et des joues : couleur, relief, limites.", reveal: ["Coloration rouge rosé, plane, du front et des joues", "Plus marquée d’un côté du front, avec une limite nette près de la ligne médiane", "Atteinte du territoire de V1 (front, paupière supérieure) : risque de glaucome du même côté", "Mesurer la PIO et examiner les papilles régulièrement"] },
-    { id: "OPH-390", caption: "Sturge-Weber : hémangiome choroïdien diffus (OD) et œil adelphe", look: "Compare la couleur du fond d’œil sur les deux photos.", reveal: ["Photo de gauche (OD selon la légende) : fond rouge foncé et uniforme, dessin choroïdien masqué", "Photo de droite (œil adelphe) : fond orangé, vaisseaux choroïdiens visibles", "Aspect de fond « sauce tomate » (tomato ketchup) de l’hémangiome choroïdien diffus", "Risque d’effusion ou d’hémorragie suprachoroïdienne en chirurgie filtrante"] }
+    { id: "OPH-390", caption: "Sturge-Weber : hémangiome choroïdien diffus (OD) et œil adelphe", look: "Compare la couleur du fond d’œil sur les deux photos.", reveal: ["Photo de gauche (OD) : fond rouge foncé et uniforme, dessin choroïdien masqué", "Photo de droite (œil adelphe) : fond orangé, vaisseaux choroïdiens visibles", "Aspect de fond « sauce tomate » (tomato ketchup) de l’hémangiome choroïdien diffus", "Risque d’effusion ou d’hémorragie suprachoroïdienne en chirurgie filtrante"] }
   ]
 });
 

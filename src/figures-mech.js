@@ -728,13 +728,15 @@ var Mech = (function () {
   else try { var psv; Object.defineProperty(W, 'PHYSIO_SIM', { configurable: true, enumerable: true, get: function () { return psv; }, set: function (v) { psv = patchPS(v); } }); } catch (e) { }
 
   /* ---------- rendering + learner-paced stepping ---------- */
-  function html(id) {
+  /* opts.sub: optional HTML caption per step (e.g. the causal-chain detail mapped onto this step), shown with its step */
+  function html(id, opts) {
     var m = G.OPH.mech[id]; if (!m || !m.steps || !m.steps.length) return '';
-    var n = m.steps.length;
+    var n = m.steps.length, sub = (opts && opts.sub) || [];
     return '<figure class="fig mech" data-mech="' + esc(id) + '" data-i="0" style="margin:0">' +
       '<div class="mech-stage" role="button" tabindex="0" data-mech-next aria-label="' + esc(fx0('Mécanisme dessiné, étape {i} sur {n}. Touche pour avancer.').replace('{i}', 1).replace('{n}', n)) + '">' +
       m.steps.map(function (s, i) { return '<div class="mech-s" data-s="' + i + '"' + (i ? ' hidden' : '') + '>' + s.svg + '</div>'; }).join('') + '</div>' +
       '<figcaption class="mech-cap"><p class="mech-lab" aria-live="polite"><span class="mech-n">1/' + n + '</span> <span data-mech-lab>' + esc(fx0(m.steps[0].label)) + '</span></p>' +
+      (sub.length ? m.steps.map(function (_, i) { return sub[i] ? '<p class="mech-sub small" data-sub="' + i + '"' + (i ? ' hidden' : '') + '>' + sub[i] + '</p>' : ''; }).join('') : '') +
       '<div class="mech-row"><ol class="mech-dots" aria-hidden="true">' + m.steps.map(function (_, i) { return '<li' + (i ? '' : ' class="on"') + '></li>'; }).join('') + '</ol>' +
       '<span class="schema-badge">' + esc(fx0('Schéma')) + '</span><button type="button" class="btn sm" data-mech-next>' + esc(fx0('Étape suivante')) + ' →</button></div></figcaption></figure>';
   }
@@ -747,6 +749,8 @@ var Mech = (function () {
     var nn = fig.querySelector('.mech-n'); if (nn) nn.textContent = (i + 1) + '/' + n;
     var st = fig.querySelector('.mech-stage'); if (st) st.setAttribute('aria-label', fx0('Mécanisme dessiné, étape {i} sur {n}. Touche pour avancer.').replace('{i}', i + 1).replace('{n}', n));
     var b = fig.querySelector('button[data-mech-next]'); if (b) b.textContent = (i === n - 1 ? fx0('Recommencer') : fx0('Étape suivante')) + (i === n - 1 ? ' ↺' : ' →');
+    Array.prototype.forEach.call(fig.querySelectorAll('[data-sub]'), function (el) { el.hidden = +el.getAttribute('data-sub') !== i; });
+    try { fig.dispatchEvent(new CustomEvent('mech:step', { bubbles: true, detail: { i: i, n: n } })); } catch (e) { }
   }
   function advance(el) { var fig = el.closest('[data-mech]'); if (fig) go(fig, (+fig.getAttribute('data-i') || 0) + 1); }
   if (typeof document !== 'undefined') {

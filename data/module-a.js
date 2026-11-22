@@ -442,7 +442,7 @@ G.OPH.A = {
     },
     {
       id: "refraction",
-      card: {
+      card: { nk: 2,
         lead: "L’œil (≈ 60 D) doit focaliser l’image sur la rétine. Une erreur de réfraction survient quand sa longueur ne correspond pas à sa puissance.",
         keys: [
           "Cornée ≈ 43 D (≈ 2/3 du total) ; cristallin ≈ 20 D.",
@@ -508,7 +508,7 @@ G.OPH.A = {
   exam: [
     {
       id: "av",
-      card: {
+      card: { nk: 2,
         lead: "Le signe vital de l’œil : elle mesure la vision centrale, oriente l’urgence et sert de référence légale pour la conduite (SAAQ).",
         keys: [
           "Chaque œil séparément, avec la correction de loin, à 6 m.",
@@ -846,7 +846,7 @@ G.OPH.A = {
     },
     {
       id: "oct",
-      card: {
+      card: { nk: 2,
         lead: "L’OCT mesure la RNFL et les cellules ganglionnaires, au départ et au suivi.",
         keys: [
           "Vérifier signal et segmentation avant les couleurs.",
@@ -977,7 +977,7 @@ G.OPH.A = {
     },
     {
       id: "speculaire",
-      card: {
+      card: { nk: 2,
         lead: "Elle compte les cellules endothéliales : avant une chirurgie (Fuchs), après greffe ou crise.",
         keys: [
           "≈ 3000 cellules/mm² jeune, ≈ 2500 à 70 ans.",

@@ -279,7 +279,7 @@ Object.assign(G.OPH.hy, {
   "c-keratocone": {
     essentials: [
       "Jeune qui se frotte les yeux, astigmatisme irrégulier qui augmente : **tomographie** de référence.",
-      "Enfant : **CXL dès le diagnostic** (consensus 2025), sans attendre de progression documentée.",
+      "Enfant : **CXL dès le diagnostic** (2e consensus mondial, ESCRS 2025), sans attendre de progression documentée.",
       "Adulte : CXL si **progression documentée**, sans la retarder pour faire cesser le frottement.",
       "CXL epi-off standard : stroma **≥ 400 µm** pour protéger l’endothélium des UV.",
       "Tomographie anormale chez un candidat au LASIK : **chirurgie contre-indiquée** (risque d’ectasie)."

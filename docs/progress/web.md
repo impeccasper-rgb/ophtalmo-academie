@@ -95,3 +95,8 @@ _Dernière mise à jour : 2026-11-21, cycle 2 (rôle web)._
 - motion.js: loop around the sign (≥ 1.3 r + 6 px, default 2.1 r × 1.8 r) and clamped inside the frame; .voir-media clips.
 - tools/validate.js `checkVoirHotspots`: area ≤ 8 %, centre tap must miss unless `central` (+ choices), options ≤ 6 words, banned wording (source/légende/photo de gauche); reads data/catalog.js sizes.
 - Home hero: photo 160 px on phones beside the title, credit behind an « i » button, sticker below-left of the photo. #reviser: tile grid (2 cols phone, auto-fill desktop), cobalt/ink/fluo only, urgent for the error tile.
+
+## Cycle 11 — critique pass 4 polish
+- Comprendre: one stepper. The drawn mechanism (Mech.html) is the only « suivant » on all 27 fiches (figure + one caption per step); the paced text chain is rendered only when no mech exists and otherwise moves to « Pour aller plus loin » as a static list. Levers open when the mechanism reaches its last step (`mech:step` event from figures-mech.js `go()`), and the cut is told under the figure. `Mech.html(id, { sub })` can carry per-step extra captions (unused: index mapping mislabelled steps).
+- Voir: a hit after the hint (2nd miss), or naming after the hint, gives the neutral verdict « Trouvé avec l’indice » (no sticker); progress stored in `Store.p.voir[photo] = { s: 1 | .5 | 0 }` (merged like other maps).
+- tests/run.py walks the mechanism instead of the text chain.

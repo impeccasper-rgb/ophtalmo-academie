@@ -848,7 +848,7 @@ Object.assign(G.OPH_EN.quiz, {
     ],
     explain: "**What it is**: corneal cross-linking (CXL) combines riboflavin and UVA light to create bonds between collagen fibers and stiffen the cornea, which slows progression. **Why it matters**: in children, keratoconus often progresses quickly; the 2nd Global Consensus (2025) recommends CXL **at diagnosis, without waiting for documented progression**, and specifies that eye rubbing must stop but that this must **never delay CXL**. **What to do**: refer to a center that offers CXL (Dresden protocol 3 mW/cm² × 30 min or accelerated 9 mW/cm² × 10 min); in Québec, access and public coverage vary and should be checked locally.",
     why: [
-      "Waiting for progression is precisely the approach to avoid in children: the 2025 consensus recommends CXL at diagnosis.",
+      "Waiting for progression is precisely the approach to avoid in children: the 2nd global consensus (ESCRS 2025) recommends CXL at diagnosis.",
       "Supplements (vitamin D, etc.) are only adjuncts according to the consensus; they neither replace nor delay CXL.",
       "Correct: CXL without delay, with cessation of rubbing in parallel.",
       "The consensus advises against prophylactic epi-on CXL (done without removing the epithelium) without progression, even more so on an eye without keratoconus."
@@ -1974,7 +1974,7 @@ Object.assign(G.OPH_EN.quiz, {
       "A bitemporal hemianopia",
       "An isolated central scotoma"
     ],
-    explain: "The disc shows an inferior notch of the rim, from which a band lacking the nerve fiber reflex extends temporally (a defect described by the source, clearer on OCT). The inferior retina sees the superior field: inferior damage to the disc therefore gives a superior arcuate defect, often with a nasal step. This patient's field did show a superior arcuate scotoma.",
+    explain: "The disc shows an inferior notch of the rim, from which a band lacking the nerve fiber reflex extends temporally (a defect clearer on OCT). The inferior retina sees the superior field: inferior damage to the disc therefore gives a superior arcuate defect, often with a nasal step. This patient's field did show a superior arcuate scotoma.",
     why: [
       "False: a common trap; the damage is inferior on the disc, so the defect is superior in the field.",
       "Correct: inferior notch → superior arcuate defect.",
@@ -1990,7 +1990,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Refer urgently for ischemic optic neuropathy",
       "Treat it as a sign of insufficient control: revisit the target and bring fields and OCT closer together"
     ],
-    explain: "A flame-shaped disc hemorrhage is seen at the inferotemporal margin (bottom left). More common in normal-tension glaucoma, it is a risk factor for progression; the source describes it as a sign of insufficient IOP control. Document it, schedule visual fields and OCT more frequently, and consider lowering the target.",
+    explain: "A flame-shaped disc hemorrhage is seen at the inferotemporal margin (bottom left). More common in normal-tension glaucoma, it is a risk factor for progression; it often signals insufficient IOP control. Document it, schedule visual fields and OCT more frequently, and consider lowering the target.",
     why: [
       "False: the hemorrhage is real and significant; it resorbs within a few weeks to a few months, hence the importance of recording it.",
       "False: in normal-tension glaucoma, lowering IOP slows progression (CNTGS), even when it is called normal.",
@@ -2072,7 +2072,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Beta-zone peripapillary atrophy",
       "Tilted disc of high myopia"
     ],
-    explain: "The slate-grey band at the temporal margin of the disc is a gray crescent: pigment in the peripheral disc tissue. If the true disc margin is traced outside the crescent, the temporal rim is healthy, as confirmed by the normal OCT (the source caption \"severe thinning of the temporal neuroretinal rim\" describes the misleading impression, not the diagnosis). More common in patients of African ancestry, it does not increase the risk of glaucoma: recognizing it avoids a false glaucoma-suspect diagnosis and unnecessary treatment.",
+    explain: "The slate-grey band at the temporal margin of the disc is a gray crescent: pigment in the peripheral disc tissue. If the true disc margin is traced outside the crescent, the temporal rim is healthy, as confirmed by the normal OCT (the look of temporal rim thinning is misleading, not a diagnosis). More common in patients of African ancestry, it does not increase the risk of glaucoma: recognizing it avoids a false glaucoma-suspect diagnosis and unnecessary treatment.",
     why: [
       "Correct: a classic trap; the pigment suggests a thin rim when the neural tissue is present.",
       "False: a falsely normal OCT (green disease) exists, but here the pigment explains the whole appearance and the OCT is normal in all quadrants.",
@@ -2396,7 +2396,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Right retrochiasmal lesion: order brain imaging",
       "Chiasmal compression by a pituitary tumor: MRI of the sella"
     ],
-    explain: "Both plots show loss of the left half of the field, with isopters stopping sharply at the vertical meridian: this is a left homonymous hemianopia, due to a lesion of the right visual pathways behind the chiasm (the source describes an occipital stroke). Brain imaging is needed, the treating physician should be notified, and the SAAQ driving standard should be checked.",
+    explain: "Both plots show loss of the left half of the field, with isopters stopping sharply at the vertical meridian: this is a left homonymous hemianopia, due to a lesion of the right visual pathways behind the chiasm (here, an occipital stroke). Brain imaging is needed, the treating physician should be notified, and the SAAQ driving standard should be checked.",
     why: [
       "Glaucoma respects the HORIZONTAL meridian; loss of the same half in both eyes, bounded by the vertical meridian, is not glaucomatous.",
       "A lens artifact gives a peripheral ring and ptosis a superior defect, not a clean hemianopia in both eyes.",
@@ -2478,7 +2478,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Ceruloplasmin and urinary copper",
       "Syphilis serology and antinuclear antibodies"
     ],
-    explain: "A chalky white interpalpebral plaque with holes: band keratopathy (calcium in Bowman layer). Without an ocular cause (uveitis, phthisis, silicone oil), look for hypercalcemia or hyperphosphatemia: calcium, phosphorus, PTH and renal function. The source of this photo mentions hyperparathyroidism.",
+    explain: "A chalky white interpalpebral plaque with holes: band keratopathy (calcium in Bowman layer). Without an ocular cause (uveitis, phthisis, silicone oil), look for hypercalcemia or hyperphosphatemia: calcium, phosphorus, PTH and renal function. Here, the patient had hyperparathyroidism.",
     why: [
       "Lipids: a peripheral grey-white arc or a yellow deposit near vessels, not a chalky band.",
       "Correct: hyperparathyroidism or renal failure promote calcium deposition.",
@@ -2916,7 +2916,7 @@ Object.assign(G.OPH_EN.quiz, {
     ],
     explain: "Satellite infiltrates (small foci separate from the main ulcer) classically suggest a fungus, but have also been described with bacteria (including Pseudomonas), Acanthamoeba and atypical mycobacteria. In this case, it was a bacterial keratitis with Gram-negative bacilli, cultures negative. A central ulcer larger than 2 mm requires scraping for smears and cultures (bacterial and fungal) before settling on treatment.",
     why: [
-      "False: a classic trap. Satellites are suggestive, not pathognomonic; here the source reports a bacterial keratitis.",
+      "False: a classic trap. Satellites are suggestive, not pathognomonic; here, it was a bacterial keratitis.",
       "Correct: scraping (Gram stain, bacterial and fungal cultures) guides treatment; fortified drops are then started and adjusted.",
       "False: without samples, treatment cannot be adjusted if the ulcer worsens; the 1-2-3 rule requires cultures.",
       "False: confocal microscopy helps for Acanthamoeba or fungi, but is not available everywhere and must delay neither scraping nor treatment."
@@ -3021,7 +3021,7 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-302": {
-    stem: "Three months after a central retinal artery occlusion, IOP is rising. Here is the iris under diffuse illumination (the circle was drawn by the source). What is the most appropriate management?",
+    stem: "Three months after a central retinal artery occlusion, IOP is rising. Here is the iris under diffuse illumination (circle already drawn on the photo). What is the most appropriate management?",
     options: [
       "Laser peripheral iridotomy to reopen the angle",
       "Selective laser trabeculoplasty as first-line treatment",

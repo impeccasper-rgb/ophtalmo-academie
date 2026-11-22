@@ -77,7 +77,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "≥ 50 ans avec symptômes d’artérite : VS, CRP le jour même"
   ],
   cat: {
-    vignette: "Homme de 50 ans, vision qui baisse lentement à droite. Excavation 0,5 mais anneau pâle, PIO 16 mmHg. Champ visuel : défaut temporal qui s’arrête au méridien vertical.",
+    vignette: "Homme de 50 ans, vision droite qui baisse lentement. Excavation 0,5 mais anneau pâle ; défaut temporal qui s’arrête au méridien vertical.",
     algo: [
       { q: "Creux proportionné à la taille du disque ?", yes: "Grand disque, anneau normal : imitateur probable.", no: "Creux trop grand : suspect de glaucome.", yesGo: 1, noGo: 1 },
       { q: "Drapeau rouge présent ?", yes: "IRM ± VS, CRP (le jour même si artérite).", no: "Bilan de glaucome : PIO, pachymétrie, gonioscopie.", noGo: 2 },
@@ -119,7 +119,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     title: "Grande papille : physiologique ou glaucomateuse ?",
     normal: {
       figure: { type: "photo", id: "OPH-228" },
-      caption: "Selon la source : anomalie congénitale (grand disque, à gauche), papille adelphe normale à droite."
+      caption: "Anomalie congénitale (grand disque, à gauche), papille adelphe normale à droite."
     },
     patho: {
       figure: { type: "photo", id: "OPH-309" },
@@ -227,7 +227,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Douleur après vitrectomie avec gaz : PIO immédiate"
   ],
   cat: {
-    vignette: "Femme de 81 ans avec une cataracte blanche à droite depuis des années. Œil rouge et douloureux depuis 2 jours, chambre antérieure peu profonde, PIO 45 mmHg.",
+    vignette: "Femme de 81 ans, cataracte blanche à droite depuis des années. Œil rouge et douloureux depuis 2 jours, chambre peu profonde, PIO 45 mmHg.",
     algo: [
       { q: "Angle fermé (chambre plate, gonioscopie) ?", yes: "LPI si bloc, cycloplégique si cristallin en avant, puis chirurgie.", no: "Angle ouvert : chercher ce qui bouche.", noGo: 1 },
       { q: "Trauma récent avec sang ?", yes: "Protocole de l’hyphéma ; dépister la drépanocytose.", no: "", noGo: 2 },
@@ -472,17 +472,17 @@ G.OPH.photos = G.OPH.photos || {};
     { id: "OPH-228", caption: "Mégalopapille : grand disque congénital, papille adelphe normale", look: "Compare la taille des deux disques avant de juger le creux.", reveal: ["Disque de gauche nettement plus grand que celui de droite", "Grande zone centrale pâle dans ce grand disque, traversée par les vaisseaux", "Zone claire péripapillaire autour du grand disque", "Papille de droite de taille et d’aspect habituels"] },
     { id: "OPH-309", caption: "Mégalopapille avec glaucome sévère", look: "Cherche ce qui reste du bord neurorétinien dans ce grand disque.", reveal: ["Disque très grand, presque entièrement pâle et creusé", "Anneau réduit à un liseré près de l’émergence des vaisseaux", "Vaisseaux coudés au bord du creux (baïonnette)"] },
     { id: "OPH-225", caption: "Atrophie optique dominante : pâleur temporale", look: "Compare la couleur du côté maculaire du disque à celle du côté opposé.", reveal: ["Pâleur marquée du côté temporal, vers la macula (à gauche de l’image)", "Côté nasal du disque plus rosé", "Pâleur plus étendue que l’excavation"] },
-    { id: "OPH-227", caption: "Atrophie optique en bande d’origine compressive", look: "Regarde la couleur des deux disques et où se situe la pâleur.", reveal: ["Deux disques pâles, avec gros plans en médaillon", "Selon la source : atrophie diffuse sévère OD, atrophie en bande OS", "Pâleur plus marquée que le creux : aspect non glaucomateux"] },
+    { id: "OPH-227", caption: "Atrophie optique en bande d’origine compressive", look: "Regarde la couleur des deux disques et où se situe la pâleur.", reveal: ["Deux disques pâles, avec gros plans en médaillon", "Atrophie diffuse sévère OD, atrophie en bande OS", "Pâleur plus marquée que le creux : aspect non glaucomateux"] },
     { id: "OPH-230", caption: "Hypoplasie segmentaire supérieure du nerf optique", look: "Observe le contour du disque et l’endroit d’où sortent les vaisseaux.", reveal: ["Croissant clair qui borde une partie du disque (double contour)", "Émergence des vaisseaux décentrée vers le haut du disque", "Disque petit, sans grand creux central"] },
     { id: "OPH-232", caption: "Vaisseaux optociliaires sur la papille", look: "Suis les vaisseaux posés sur le disque : où commencent-ils et où finissent-ils ?", reveal: ["Plusieurs vaisseaux tortueux, en boucles, à la surface du disque", "Ils naissent et disparaissent au bord du disque", "Disque pâle"] }
   ],
   "g-cristallin": [
     { id: "OPH-238", caption: "Cataracte mature blanche", look: "Cherche s’il reste un reflet rouge à travers la pupille.", reveal: ["Cristallin blanc opaque qui remplit la pupille dilatée", "Opacités corticales en rayons", "Aucun reflet rouge du fond d’œil"] },
     { id: "OPH-321", caption: "Luxation spontanée du cristallin en pseudo-exfoliation", look: "Repère la ligne courbe qui traverse la pupille dilatée.", reveal: ["Bord du cristallin visible en travers de la pupille", "Partie supérieure de la pupille plus noire, sans cristallin", "Cristallin déplacé vers le bas : zonule rompue"] },
-    { id: "OPH-301", caption: "Syndrome UGH : transillumination infrarouge de l’iris", look: "Cherche les zones où la lumière traverse l’iris.", reveal: ["Nombreux défauts de transillumination (zones blanches) dans l’iris", "Selon la source : défauts radiaires et défauts en arc qui épousent les anses de l’implant", "Signe d’un iris frotté par l’implant"] },
-    { id: "OPH-303", caption: "UBM : optique d’implant contre la face postérieure de l’iris", look: "Repère la double ligne très brillante et ce qui la touche.", reveal: ["Optique de l’implant : double ligne horizontale très échogène", "Iris appuyé sur l’implant, sans espace", "Selon la source : autre patient atteint de syndrome UGH"] },
+    { id: "OPH-301", caption: "Syndrome UGH : transillumination infrarouge de l’iris", look: "Cherche les zones où la lumière traverse l’iris.", reveal: ["Nombreux défauts de transillumination (zones blanches) dans l’iris", "Défauts radiaires et défauts en arc qui épousent les anses de l’implant", "Signe d’un iris frotté par l’implant"] },
+    { id: "OPH-303", caption: "UBM : optique d’implant contre la face postérieure de l’iris", look: "Repère la double ligne très brillante et ce qui la touche.", reveal: ["Optique de l’implant : double ligne horizontale très échogène", "Iris appuyé sur l’implant, sans espace", "Autre patient atteint de syndrome UGH"] },
     { id: "OPH-346", caption: "Hyphéma traumatique", look: "Regarde le bas de la chambre antérieure.", reveal: ["Niveau de sang rouge au bas de la chambre antérieure", "Hauteur bien inférieure au tiers de la chambre : grade I", "Hémorragie sous-conjonctivale en bas"] },
-    { id: "OPH-314", caption: "Fermeture de l’angle après expansion d’un gaz intraoculaire", look: "Évalue la rougeur de l’œil et le contenu de la chambre antérieure.", reveal: ["Œil très injecté", "Niveau de sang au bas de la chambre antérieure", "Chambre antérieure peu profonde dans le faisceau de la fente", "Selon la source : fermeture de l’angle après l’expansion d’un gaz intraoculaire"] }
+    { id: "OPH-314", caption: "Fermeture de l’angle après expansion d’un gaz intraoculaire", look: "Évalue la rougeur de l’œil et le contenu de la chambre antérieure.", reveal: ["Œil très injecté", "Niveau de sang au bas de la chambre antérieure", "Chambre antérieure peu profonde dans le faisceau de la fente", "Fermeture de l’angle après l’expansion d’un gaz intraoculaire"] }
   ]
 });
 

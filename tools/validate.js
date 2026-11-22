@@ -306,6 +306,25 @@ function checkVoirHotspots(H) {
   console.log(`Voir hotspots: ${stats.n} entries · ${stats.hot} tap targets (max area ${(stats.maxArea * 100).toFixed(1)} %) · centre tap wins on ${stats.centreWins} (all central → named 2nd) · ${stats.choiceOnly} name-only`);
 }
 
+// Choice bias (critique passe 4, N3): the right option (choices[0]) must not be the longest in more than ~1/3 of the sets
+// (error above 40 %), and must not be the only option sharing a significant word with the fiche / A5 entry title.
+function checkChoiceBias(H, O) {
+  const STOP = new Set(['avec', 'dans', 'pour', 'entre', 'autres', 'leurs', 'chez', 'selon', 'apres', 'aprés', 'sans']);
+  const stems = s => new Set(String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').split(/[^a-z]+/).filter(w => w.length >= 5 && !STOP.has(w)).map(w => w.slice(0, 6)));
+  const title = k => { const f = (O.fiches || []).find(x => x.id === k); if (f) return f.title; const r = ((O.A && O.A.recog) || []).find(x => x.id === k); return r ? r.title : ''; };
+  const n = { sets: 0, fr: 0, en: 0 };
+  for (const [k, h] of Object.entries(H)) {
+    const c = h.choices; if (!Array.isArray(c) || c.length !== 3) continue; n.sets++;
+    for (const L of ['fr', 'en']) { const len = c.map(o => String(o && o[L] || '').length); if (len[0] > len[1] && len[0] > len[2]) n[L]++; }
+    const T = stems(title(k)), hit = o => [...stems(o && o.fr)].some(w => T.has(w));
+    if (T.size && hit(c[0]) && !hit(c[1]) && !hit(c[2])) E('voirHotspots.' + k, `right choice « ${c[0].fr} » repeats a word of the title « ${title(k)} »`);
+  }
+  if (!n.sets) return;
+  const pct = L => Math.round(100 * n[L] / n.sets);
+  console.log(`Voir choices: right option is the longest in ${n.fr}/${n.sets} sets FR (${pct('fr')} %), ${n.en}/${n.sets} EN (${pct('en')} %) · target ≤ 1/3`);
+  for (const L of ['fr', 'en']) if (n[L] / n.sets > 0.4) E('voirHotspots', `right option is the longest in ${pct(L)} % of ${L.toUpperCase()} choice sets (> 40 %): rebalance lengths`);
+}
+
 const PARTIAL = process.argv.includes('--partial');
 const ARGS = process.argv.slice(2).filter(a => a !== '--partial');
 const files = ARGS.length ? ARGS : fs.readdirSync(path.join(__dirname, '..', 'data')).filter(f => f.endsWith('.js')).sort((a, b) => (a.startsWith('ext-') - b.startsWith('ext-')) || a.localeCompare(b)).map(f => path.join('data', f));
@@ -325,6 +344,7 @@ if (OPH.capsules) checkCapsules(OPH.capsules);
 if (OPH.glossary) checkGlossary(OPH.glossary);
 if (OPH.photos) checkPhotos(OPH.photos, OPH.photoPairs);
 if (OPH.voirHotspots) checkVoirHotspots(OPH.voirHotspots);
+if (OPH.voirHotspots) checkChoiceBias(OPH.voirHotspots, OPH);
 
 console.log('Files:', files.join(', '));
 if (OPH.fiches) console.log('Fiches:', OPH.fiches.length);

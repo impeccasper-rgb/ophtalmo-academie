@@ -562,15 +562,19 @@ function ficheView(f, step) {
       } else if (step === 'comprendre') {
         var ess = (hy && hy.essentials) || [];
         var steps = f.causal.steps;
-        var mech = window.Mech ? Mech.html(f.id) : ''; // drawn, tap-paced mechanism (src/figures-mech.js)
+        // ONE stepper: the drawn mechanism (src/figures-mech.js) is the causal chain on screen (figure + one caption per step,
+        // one tap advances); the text chain moves to « Pour aller plus loin » (index mapping mislabels steps whose order differs)
+        var sub = [];
+        var mech = window.Mech ? Mech.html(f.id, { sub: sub }) : '';
+        var chainTxt = '<ol class="blist chain-list">' + steps.map(function (s0) { return '<li><b>' + U.md(s0.label) + '</b> : ' + T(s0.detail, scope) + '</li>'; }).join('') + '</ol>';
         var nEss = (f.compare ? 4 : 5) - (mech ? 1 : 0); // each figure takes the room of one key point (≤ 120 words)
         body = cmpFig() +
           '<div class="stack mech-chain"><h2 class="h3">' + U.esc(t('f.mech', { t: f.causal.title })) + '</h2>' + mech +
-          '<div class="chain paced" data-chain data-shown="1">' + steps.map(function (s, i) { return '<div class="cstep k-' + s.kind + (i > 0 ? ' pending' : '') + '" data-step="' + i + '"><div class="node">' + (i + 1) + '</div><div class="body"><span class="k">' + (L.kinds[s.kind] || s.kind) + '</span><b>' + U.md(s.label) + '</b><span class="small" data-dz="3">' + T(s.detail, scope) + '</span><div class="cutslot"></div></div></div>'; }).join('') + '</div>' +
-          '<div class="row"><button type="button" class="btn primary sm" data-causal="next">' + t('f.next.link', { i: 2, n: steps.length }) + '</button><button type="button" class="btn ghost sm" data-causal="all">' + t('f.all.links') + '</button></div>' +
-          '<div class="stack" data-levers hidden><span class="small muted">' + t('f.levers') + '</span><div class="chips">' + f.causal.levers.map(function (l, i) { return '<button class="chip" data-lever="' + i + '" aria-pressed="false">' + U.esc(l.label) + '</button>'; }).join('') + '</div></div></div>' + hyList(ess.slice(0, nEss), t('f.hy')) +
+          (mech ? '' : '<div class="chain paced" data-chain data-shown="1">' + steps.map(function (s, i) { return '<div class="cstep k-' + s.kind + (i > 0 ? ' pending' : '') + '" data-step="' + i + '"><div class="node">' + (i + 1) + '</div><div class="body"><span class="k">' + (L.kinds[s.kind] || s.kind) + '</span><b>' + U.md(s.label) + '</b><span class="small" data-dz="3">' + T(s.detail, scope) + '</span><div class="cutslot"></div></div></div>'; }).join('') + '</div>' +
+          '<div class="row"><button type="button" class="btn primary sm" data-causal="next">' + t('f.next.link', { i: 2, n: steps.length }) + '</button><button type="button" class="btn ghost sm" data-causal="all">' + t('f.all.links') + '</button></div>') +
+          '<div class="stack" data-levers hidden><span class="small muted">' + t('f.levers') + '</span><div class="chips">' + f.causal.levers.map(function (l, i) { return '<button class="chip" data-lever="' + i + '" aria-pressed="false">' + U.esc(l.label) + '</button>'; }).join('') + '</div>' + (mech ? '<div class="cutnote" data-levnote hidden></div>' : '') + '</div></div>' + hyList(ess.slice(0, nEss), t('f.hy')) +
           levelBlocks([
-            { lvl: 1, title: t('f.more'), html: hyList(ess.slice(nEss), t('f.hy.more')) + (f.mnemonic ? '<div class="callout green"><span class="eyebrow">' + U.esc(t('f.mnemo', { t: f.mnemonic.title })) + '</span><span>' + T(f.mnemonic.text, scope) + '</span></div>' : '') },
+            { lvl: 1, title: t('f.more'), html: (mech ? '<h3 class="h4">' + U.esc(f.causal.title) + '</h3>' + chainTxt : '') + hyList(ess.slice(nEss), t('f.hy.more')) + (f.mnemonic ? '<div class="callout green"><span class="eyebrow">' + U.esc(t('f.mnemo', { t: f.mnemonic.title })) + '</span><span>' + T(f.mnemonic.text, scope) + '</span></div>' : '') },
             { lvl: 2, title: t('f.riskpres'), html: '<div class="twocol"><div class="stack"><h3 class="h4">' + t('f.risk') + '</h3><ul class="blist">' + f.risk.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="stack"><h3 class="h4">' + t('f.pres') + '</h3><ul class="blist">' + f.presentation.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' }
           ]);
       } else if (step === 'decider') {
@@ -630,10 +634,12 @@ function ficheView(f, step) {
         if (lv) {
           var li = +lv.getAttribute('data-lever'), L2 = f.causal.levers[li], on = lv.getAttribute('aria-pressed') !== 'true';
           U.$$('[data-lever]', host).forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-          U.$$('[data-step]', host).forEach(function (s) { s.classList.remove('cut', 'after', 'on'); U.$('.cutslot', s).innerHTML = ''; });
+          U.$$('[data-chain] [data-step]', host).forEach(function (s) { s.classList.remove('cut', 'after', 'on'); U.$('.cutslot', s).innerHTML = ''; });
+          var ln = U.$('[data-levnote]', host); // drawn mechanism: the cut is told under the figure
+          if (ln) { ln.hidden = !on; if (on) { var at = f.causal.steps[L2.at]; lv.setAttribute('aria-pressed', 'true'); ln.innerHTML = '<b>' + U.esc(L2.label) + '</b> ' + I18N.t('f.cutat') + (at ? '« ' + U.esc(at.label) + ' » : ' : '') + U.md(L2.detail); } return; }
           if (on) {
             lv.setAttribute('aria-pressed', 'true');
-            U.$$('[data-step]', host).forEach(function (s, k) { if (k === L2.at) { s.classList.add('cut'); U.$('.cutslot', s).innerHTML = '<div class="cutnote"><b>' + U.esc(L2.label) + '</b> ' + I18N.t('f.cutat') + U.md(L2.detail) + '</div>'; } else if (k > L2.at) s.classList.add('after'); });
+            U.$$('[data-chain] [data-step]', host).forEach(function (s, k) { if (k === L2.at) { s.classList.add('cut'); U.$('.cutslot', s).innerHTML = '<div class="cutnote"><b>' + U.esc(L2.label) + '</b> ' + I18N.t('f.cutat') + U.md(L2.detail) + '</div>'; } else if (k > L2.at) s.classList.add('after'); });
           }
           return;
         }
@@ -666,10 +672,12 @@ function ficheView(f, step) {
       var x0 = null, y0 = 0;
       var ts = function (ev) { if (ev.touches.length !== 1 || ev.target.closest('.carousel, .zoomwrap, input, .tbl-wrap, svg')) { x0 = null; return; } x0 = ev.touches[0].clientX; y0 = ev.touches[0].clientY; };
       var te = function (ev) { if (x0 == null) return; var dx = ev.changedTouches[0].clientX - x0, dy = ev.changedTouches[0].clientY - y0; x0 = null; if (Math.abs(dx) > 70 && Math.abs(dy) < 45) go(dx < 0 ? '[data-fnext]' : '[data-fprev]'); };
+      var onMech = function (ev) { var lv1 = U.$('[data-levers]', host); if (lv1 && ev.detail && ev.detail.i === ev.detail.n - 1) lv1.hidden = false; }; // levers open once the drawn mechanism has been walked through
+      host.addEventListener('mech:step', onMech);
       host.addEventListener('click', onClick); host.addEventListener('keydown', kd); document.addEventListener('keydown', arrows);
       host.addEventListener('touchstart', ts, { passive: true }); host.addEventListener('touchend', te, { passive: true });
       if (U.wordsDev()) console.info('[words] ' + f.id + '/' + step + ': ' + U.wordsVisible(U.$('[data-step-body]', host)) + ' visible words');
-      return function () { if (typeof treeClean === 'function') { try { treeClean(); } catch (e) { } } host.removeEventListener('click', onClick); host.removeEventListener('keydown', kd); document.removeEventListener('keydown', arrows); host.removeEventListener('touchstart', ts); host.removeEventListener('touchend', te); };
+      return function () { if (typeof treeClean === 'function') { try { treeClean(); } catch (e) { } } host.removeEventListener('mech:step', onMech); host.removeEventListener('click', onClick); host.removeEventListener('keydown', kd); document.removeEventListener('keydown', arrows); host.removeEventListener('touchstart', ts); host.removeEventListener('touchend', te); };
     }
   };
 }

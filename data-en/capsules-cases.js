@@ -272,7 +272,7 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
    "en": "Corneal cross-linking",
    "what": "Riboflavin (vitamin B2) drops on the cornea, then ultraviolet A exposure; epi-off (epithelium removed) or epi-on.",
    "how": "Creates new bonds between the stromal collagen fibers: the cornea stiffens and stops bulging.",
-   "when": "Progressing keratoconus or ectasia; in children from diagnosis (2025 consensus); Dresden protocol (3 mW/cm² × 30 min) or accelerated (9 mW/cm² × 10 min).",
+   "when": "Progressing keratoconus or ectasia; in children from diagnosis (2nd global consensus, ESCRS 2025); Dresden protocol (3 mW/cm² × 30 min) or accelerated (9 mW/cm² × 10 min).",
    "cx": "Pain and risk of infection in the first days (epi-off), stromal haze, herpetic reactivation; stroma < 400 µm without epithelium: adapted protocol (protect the endothelium from UV); stabilizes the cone without reversing it."
   },
   {
@@ -3022,7 +3022,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
   },
   {
    "kind": "info",
-   "text": "Day 5: pain has decreased on prednisone, but the thinning is progressing: about 20 % thickness remains over 2 mm, with a small bulging descemetocele; negative Seidel. The rheumatologist learns that the patient stopped methotrexate 3 months ago, suspects rheumatoid vasculitis and plans a stronger agent. The photo shows a similar case in another patient (according to the source: peripheral melt with inflammation in rheumatoid arthritis).",
+   "text": "Day 5: pain has decreased on prednisone, but the thinning is progressing: about 20 % thickness remains over 2 mm, with a small bulging descemetocele; negative Seidel. The rheumatologist learns that the patient stopped methotrexate 3 months ago, suspects rheumatoid vasculitis and plans a stronger agent. The photo shows a similar case in another patient (peripheral melt with inflammation in rheumatoid arthritis).",
    "figure": {
     "type": "photo",
     "id": "OPH-377"

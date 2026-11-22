@@ -73,7 +73,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Blépharite rebelle d’un seul côté : exclure un carcinome sébacé (cancer de la paupière)"
   ],
   cat: {
-    vignette: "Femme de 58 ans, yeux qui brûlent et sable en fin de journée, pire à l’écran. Bords de paupières épaissis, larmes qui se rompent vite, points de fluorescéine en bas.",
+    vignette: "Femme de 58 ans : yeux qui brûlent le soir, pire à l’écran. Paupières épaissies, larmes instables, points de fluorescéine en bas.",
     algo: [
       { q: "Symptômes (OSDI-6 ≥ 4) et un signe objectif ?", yes: "", no: "Penser allergie, douleur neuropathique, autre cause.", yesGo: 1 },
       { q: "Glandes de Meibomius bouchées ou Demodex ?", yes: "Soins des paupières ; IPL si échec.", no: "Manque d’eau : larmes, bouchons, bilan de Sjögren.", yesGo: 2, noGo: 2 },
@@ -222,7 +222,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Aggravation après 48 h : bactérie résistante, champignon ou amibe"
   ],
   cat: {
-    vignette: "Homme de 24 ans qui dort avec ses lentilles mensuelles. Œil droit rouge et douloureux depuis hier. Infiltrat blanc de 3 mm, défaut épithélial au-dessus, réaction de chambre.",
+    vignette: "Homme de 24 ans qui dort avec ses lentilles. Œil rouge et douloureux depuis hier ; infiltrat blanc de 3 mm sous un défaut épithélial.",
     algo: [
       { q: "Défaut épithélial avec infiltrat stromal ?", yes: "Infectieux : retirer la lentille, la garder pour culture.", no: "Petit infiltrat sans défaut : stérile probable, revoir 24–48 h.", yesGo: 1 },
       { q: "Perforation ou descémétocèle ?", yes: "Coquille rigide, aucune pression ; ophtalmologie immédiatement.", no: "", noGo: 2 },
@@ -367,7 +367,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Plaque endothéliale, hypopyon, atteinte du limbe ou de la sclère : risque d’endophtalmie et de perforation"
   ],
   cat: {
-    vignette: "Femme de 31 ans qui rince ses lentilles à l’eau du robinet. Douleur intense depuis 3 semaines malgré la moxifloxacine ; infiltrat en anneau, cultures bactériennes négatives.",
+    vignette: "Femme de 31 ans qui rince ses lentilles à l’eau du robinet. Douleur intense depuis 3 semaines malgré la moxifloxacine ; infiltrat en anneau.",
     algo: [
       { q: "Contexte atypique ou ulcère qui ne répond pas ?", yes: "Arrêter les stéroïdes ; grattage, cultures spécifiques, PCR.", no: "Traiter comme bactérienne, revoir à 24–48 h.", yesGo: 1 },
       { q: "Kystes ou tableau d’amibe (lentilles + eau) ?", yes: "Biguanide ± diamidine aux heures, sur des mois.", no: "", yesGo: 3, noGo: 2 },
@@ -513,7 +513,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Zona avec Hutchinson, baisse de vision, PIO élevée ou paralysie oculomotrice : examen urgent"
   ],
   cat: {
-    vignette: "Homme de 45 ans, œil gauche rouge et larmoyant, vision un peu floue. À la fluorescéine : lésion ramifiée à bulbes terminaux. Sensibilité cornéenne diminuée, aucune éruption cutanée.",
+    vignette: "Homme de 45 ans, œil gauche rouge et larmoyant. Lésion ramifiée à bulbes terminaux à la fluorescéine, cornée moins sensible, pas d’éruption.",
     algo: [
       { q: "Éruption vésiculaire V1 d’un seul côté ?", yes: "Zona : valacyclovir 1 g 3×/j × 7 j, dès que possible (< 72 h).", no: "", yesGo: 1, noGo: 1 },
       { q: "Dendrite à bulbes terminaux ou ulcère géographique ?", yes: "HSV épithélial : antiviral ± débridement ; arrêter tout stéroïde.", no: "", yesGo: 3, noGo: 2 },
@@ -665,10 +665,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Tomographie anormale chez un candidat au LASIK : chirurgie contre-indiquée (risque d’ectasie)"
   ],
   cat: {
-    vignette: "Garçon de 15 ans, allergique, qui se frotte souvent les yeux. Sa myopie et son astigmatisme changent à chaque visite ; les lunettes corrigent mal. Topographie : bombement inférieur.",
+    vignette: "Garçon allergique de 15 ans qui se frotte les yeux. Son astigmatisme change à chaque visite. Topographie : bombement inférieur.",
     algo: [
       { q: "Astigmatisme irrégulier ou signe de kératocône ?", yes: "Tomographie de référence.", no: "Suivi habituel ; tomographie avant chirurgie réfractive.", yesGo: 1 },
-      { q: "Enfant ou adolescent ?", yes: "CXL dès le diagnostic (consensus 2025).", no: "", yesGo: 3, noGo: 2 },
+      { q: "Enfant ou adolescent ?", yes: "CXL dès le diagnostic (2e consensus mondial, ESCRS 2025).", no: "", yesGo: 3, noGo: 2 },
       { q: "Progression documentée sur la tomographie ?", yes: "CXL, sans attendre l’arrêt du frottement.", no: "Surveiller par tomographie, pas de CXL préventive.", yesGo: 3, noGo: 4 },
       { q: "Stroma ≥ 400 µm sans épithélium ?", yes: "CXL standard epi-off.", no: "Protocole adapté en centre spécialisé.", yesGo: 4, noGo: 4 },
       { q: "Vision suffisante en lunettes ?", yes: "Lunettes.", no: "Lentilles rigides ou sclérales ; greffe si cicatrice." }
@@ -717,7 +717,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     qc: ["CXL : couverture publique variable selon le centre."]
   },
   pearls: [
-    { q: "Quand fait-on une CXL ?", a: "Quand il y a progression : au moins 2 de bombement antérieur, bombement postérieur, amincissement (consensus 2015) ; le consensus 2025 reconnaît l’élévation postérieure et le point le plus mince. **Chez l’enfant : dès le diagnostic.**" },
+    { q: "Quand fait-on une CXL ?", a: "Quand il y a progression : au moins 2 de bombement antérieur, bombement postérieur, amincissement (consensus mondial, Gomes et al., 2015) ; le 2e consensus mondial (ESCRS 2025) reconnaît l’élévation postérieure et le point le plus mince. **Chez l’enfant : dès le diagnostic.**" },
     { q: "Pourquoi la DALK plutôt que la PK dans le kératocône ?", a: "La maladie touche le stroma, pas l’endothélium : la DALK garde l’endothélium du patient, donc **pas de rejet endothélial**, moins de perte cellulaire et un globe plus résistant." },
     { q: "Dresde, accéléré, epi-on : quelle différence ?", a: "Dresde (3 mW/cm² × 30 min) et accéléré (9 mW/cm² × 10 min) donnent la même énergie totale. L’epi-on garde l’épithélium (moins de douleur et d’infection) mais laisse moins passer riboflavine et oxygène ; Epioxa (FDA 2025)." }
   ],

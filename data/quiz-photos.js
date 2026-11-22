@@ -201,7 +201,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Un scotome central isolé"
     ],
     answer: 1,
-    explain: "La papille présente une encoche (notch) inférieure du rebord, d’où part en direction temporale une bande où le reflet des fibres manque (défaut décrit par la source, plus net à l’OCT). La rétine inférieure voit le champ supérieur : une atteinte inférieure de la papille donne donc un déficit arciforme supérieur, souvent avec un ressaut nasal. Le champ de ce patient montrait bien un scotome arciforme supérieur.",
+    explain: "La papille présente une encoche (notch) inférieure du rebord, d’où part en direction temporale une bande où le reflet des fibres manque (défaut plus net à l’OCT). La rétine inférieure voit le champ supérieur : une atteinte inférieure de la papille donne donc un déficit arciforme supérieur, souvent avec un ressaut nasal. Le champ de ce patient montrait bien un scotome arciforme supérieur.",
     why: [
       "Faux : piège fréquent; l’atteinte est inférieure sur la papille, donc le déficit est supérieur dans le champ.",
       "Exact : encoche inférieure → déficit arciforme supérieur.",
@@ -219,7 +219,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Y voir un signe de contrôle insuffisant : revoir la cible et rapprocher champs et OCT"
     ],
     answer: 3,
-    explain: "On voit une hémorragie papillaire (disc hemorrhage) en flammèche au bord inférotemporal (en bas à gauche). Plus fréquente dans le glaucome à pression normale, elle est un facteur de risque de progression; la source la décrit comme un signe de contrôle insuffisant de la PIO. On la documente, on rapproche champs visuels et OCT, et on envisage d’abaisser la cible.",
+    explain: "On voit une hémorragie papillaire (disc hemorrhage) en flammèche au bord inférotemporal (en bas à gauche). Plus fréquente dans le glaucome à pression normale, elle est un facteur de risque de progression; elle signale souvent un contrôle insuffisant de la PIO. On la documente, on rapproche champs visuels et OCT, et on envisage d’abaisser la cible.",
     why: [
       "Faux : l’hémorragie est réelle et significative; elle se résorbe en quelques semaines à quelques mois, d’où l’importance de la noter.",
       "Faux : dans le glaucome à pression normale, baisser la PIO ralentit la progression (CNTGS), même si elle est dite normale.",
@@ -316,7 +316,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Papille inclinée de myope fort"
     ],
     answer: 0,
-    explain: "La bande gris ardoise au bord temporal du disque est un croissant gris (gray crescent) : du pigment dans le tissu papillaire périphérique. Si l’on trace le vrai bord du disque en dehors du croissant, le rebord temporal est sain, ce que confirme l’OCT normal (la légende source « severe thinning of the temporal neuroretinal rim » décrit l’impression trompeuse, pas le diagnostic). Plus fréquent chez les patients d’ascendance africaine, il n’augmente pas le risque de glaucome : le reconnaître évite un faux diagnostic de suspect et des traitements inutiles.",
+    explain: "La bande gris ardoise au bord temporal du disque est un croissant gris (gray crescent) : du pigment dans le tissu papillaire périphérique. Si l’on trace le vrai bord du disque en dehors du croissant, le rebord temporal est sain, ce que confirme l’OCT normal (l’aspect d’amincissement temporal est trompeur, pas un diagnostic). Plus fréquent chez les patients d’ascendance africaine, il n’augmente pas le risque de glaucome : le reconnaître évite un faux diagnostic de suspect et des traitements inutiles.",
     why: [
       "Exact : piège classique; le pigment fait croire à un rebord mince alors que le tissu neural est présent.",
       "Faux : un OCT faussement normal (green disease) existe, mais ici le pigment explique tout l’aspect et l’OCT est normal dans tous les quadrants.",

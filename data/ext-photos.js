@@ -62,7 +62,7 @@ G.OPH.photos = G.OPH.photos || {};
       reveal: [
         "Deux champs cinétiques de Goldmann, un par œil : les isoptères (lignes bleue, rouge et rose) n’occupent que la moitié droite de chaque champ.",
         "La perte de la moitié gauche, dans les deux yeux, s’arrête net sur le méridien vertical : hémianopsie homonyme gauche (left homonymous hemianopsia).",
-        "Selon la source : accident vasculaire cérébral occipital; une lésion rétrochiasmatique droite donne un défaut homonyme gauche.",
+        "Accident vasculaire cérébral occipital; une lésion rétrochiasmatique droite donne un défaut homonyme gauche.",
         "Un défaut qui respecte le méridien vertical n’est pas glaucomateux : imagerie cérébrale et évaluation neurologique."
       ] }
   ],
@@ -72,14 +72,14 @@ G.OPH.photos = G.OPH.photos || {};
       look: "Évalue l’épaisseur et la couleur de l’anneau neurorétinien autour de l’excavation.",
       reveal: [
         "Petite excavation centrale claire; anneau neurorétinien (neuroretinal rim) rose orangé, épais et régulier tout autour.",
-        "Rapport C/D de 0,3 documenté par la source.",
+        "Rapport C/D de 0,3 documenté.",
         "Vaisseaux qui émergent au centre et sortent sans se couder au bord du disque; pas d’hémorragie ni d’encoche visibles.",
         "Le C/D dépend de la taille du disque : juger l’anneau (épaisseur, couleur, règle ISNT) plutôt que le chiffre seul."
       ] },
     { id: "OPH-203", caption: "Papille glaucomateuse : rapport C/D 0,9, anneau presque disparu",
       look: "Cherche ce qui reste de l’anneau neurorétinien et observe le trajet des vaisseaux au bord du disque.",
       reveal: [
-        "Excavation blanche qui occupe presque tout le disque : C/D de 0,9 documenté par la source.",
+        "Excavation blanche qui occupe presque tout le disque : C/D de 0,9 documenté.",
         "Anneau neurorétinien réduit à un mince liseré, y compris aux pôles supérieur et inférieur.",
         "Vaisseaux qui se coudent au bord du disque en plongeant dans l’excavation (aspect en baïonnette).",
         "Halo jaune-blanc autour du disque, surtout à gauche et en bas sur l’image : atrophie péripapillaire."
@@ -101,7 +101,7 @@ G.OPH.photos = G.OPH.photos || {};
         "Grand ulcère central blanc et dense qui occupe la majeure partie de la cornée, cornée opalescente tout autour.",
         "Multiples petits infiltrats blancs arrondis, séparés de la lésion principale (en haut à droite, à gauche et en bas) : infiltrats satellites.",
         "Forte injection conjonctivale, surtout à droite de l’image.",
-        "Selon la source : kératite bactérienne à bacilles Gram négatif, cultures négatives. Les satellites évoquent d’abord un champignon, mais ne le prouvent pas."
+        "Kératite bactérienne à bacilles Gram négatif, cultures négatives. Les satellites évoquent d’abord un champignon, mais ne le prouvent pas."
       ] },
     { id: "OPH-334", caption: "Même dossier, autre éclairage : ulcère central entouré d’infiltrats satellites arrondis",
       look: "Avec cet éclairage, compte les foyers arrondis autour de l’ulcère et note s’ils touchent la lésion centrale.",
@@ -126,14 +126,14 @@ G.OPH.photos = G.OPH.photos || {};
       reveal: [
         "Greffe transfixiante avec sutures séparées (fils noirs) qui croisent la jonction greffon-receveur, en haut et à droite de l’image.",
         "Multitude de fins points blancs brillants dans l’épithélium, en arc juste en dedans de la ligne de sutures : points de Kaye (Kaye dots).",
-        "Selon la source : cellules épithéliales en dégénérescence, sans effet sur la vision et sans portée clinique.",
+        "Cellules épithéliales en dégénérescence, sans effet sur la vision et sans portée clinique.",
         "Ne pas les confondre avec un rejet : ici, ni ligne de rejet, ni œdème, ni précipités sur l’endothélium du greffon."
       ] },
     { id: "OPH-335", caption: "Candida dans l’interface d’une DSAEK, trois mois après la greffe (lampe à fente)",
       look: "Repère l’opacité blanche sur le trajet de la fente et sa position dans la cornée.",
       reveal: [
         "Petite opacité blanche duveteuse à gauche, sur le trajet de la fente, en périphérie moyenne de la cornée; elle siège dans l’interface greffon-receveur.",
-        "Selon la source : DSAEK pour une dystrophie de Fuchs; la culture de la collerette du donneur a poussé Candida albicans, et l’infection est apparue trois mois plus tard malgré un antifongique préventif.",
+        "DSAEK pour une dystrophie de Fuchs; la culture de la collerette du donneur a poussé Candida albicans, et l’infection est apparue trois mois plus tard malgré un antifongique préventif.",
         "L’interface est une poche fermée, mal atteinte par les gouttes : échec du traitement médical, récidive après une nouvelle DSAEK et du voriconazole intracamérulaire, guérison par greffe transfixiante.",
         "Leçon : une culture positive de la collerette impose un suivi rapproché; une infiltration blanche de l’interface exige un avis de cornée rapide."
       ] },
@@ -143,7 +143,7 @@ G.OPH.photos = G.OPH.photos || {};
         "Greffe transfixiante avec une couronne de sutures séparées encore en place.",
         "Opacité blanche duveteuse aux fins branchements, comme des cristaux, dans le stroma paracentral en bas à gauche du greffon.",
         "Injection conjonctivale légère : infection indolente, typiquement peu inflammatoire, chez une greffe sous corticostéroïdes chroniques.",
-        "Selon la source : souvent un streptocoque alpha-hémolytique (viridans), parfois Candida, à partir d’un trajet de suture; le grattage peut être négatif, d’où parfois une biopsie."
+        "Souvent un streptocoque alpha-hémolytique (viridans), parfois Candida, à partir d’un trajet de suture; le grattage peut être négatif, d’où parfois une biopsie."
       ] }
   ],
 
@@ -202,13 +202,13 @@ G.OPH.photos = G.OPH.photos || {};
         "A, OCT du segment antérieur : petites cavités noires alignées juste sous l’épithélium (liquide sous-épithélial).",
         "B et C, lampe à fente : œdème diffus en mailles, comme un nid d’abeilles (honeycomb), bien visible en B.",
         "D, fluorescéine : ponctuations dans une bande horizontale de la fente palpébrale, là où des bulles sous-épithéliales se sont rompues.",
-        "Selon la source : œil greffé (DSAEK) avec glaucome avancé et tube d’Ahmed; œdème apparu environ 10 mois après le début du netarsudil, qui a été cessé. Ce type d’œdème survient surtout sur une cornée déjà fragile. Disponibilité canadienne du netarsudil à vérifier."
+        "Œil greffé (DSAEK) avec glaucome avancé et tube d’Ahmed; œdème apparu environ 10 mois après le début du netarsudil, qui a été cessé. Ce type d’œdème survient surtout sur une cornée déjà fragile. Disponibilité canadienne du netarsudil à vérifier."
       ] },
     { id: "OPH-354", caption: "Implant de dexaméthasone (Ozurdex) migré en chambre antérieure chez un œil aphaque",
       look: "Repère le corps étranger dans la chambre antérieure et sa position par rapport à l’iris.",
       reveal: [
         "Bâtonnet blanc, mince et un peu courbé, posé dans la partie inférieure de la chambre antérieure, devant l’iris : implant intravitréen de dexaméthasone.",
-        "Selon la source : œil aphaque (ancien traumatisme perforant) et vitrectomisé; œdème cornéen marqué un mois après l’injection; implant visible seulement après quelques minutes la tête penchée vers le bas.",
+        "Œil aphaque (ancien traumatisme perforant) et vitrectomisé; œdème cornéen marqué un mois après l’injection; implant visible seulement après quelques minutes la tête penchée vers le bas.",
         "Au contact de l’endothélium inférieur, l’implant aggrave l’œdème : il a été retiré d’urgence pour limiter la décompensation endothéliale.",
         "Œdème cornéen inférieur après une injection intravitréenne chez un œil aphaque ou sans capsule postérieure intacte : chercher l’implant, au besoin en gonioscopie."
       ] }
@@ -220,15 +220,15 @@ G.OPH.photos = G.OPH.photos || {};
       reveal: [
         "Excavation pâle et large qui occupe la majeure partie du disque; on devine les pores de la lame criblée au fond.",
         "Anneau neurorétinien aminci en haut et en bas, mieux conservé du côté où émergent les vaisseaux (à droite).",
-        "Selon le dossier source : C/D de 0,7 et 0,8 aux deux yeux, avec encoches supérieures et inférieures.",
-        "Selon la source : PIO de 12 à 20 mmHg sur une courbe diurne, angles ouverts et maladie de Raynaud (vasospasme), facteur de risque classique du GPN."
+        "C/D de 0,7 et 0,8 aux deux yeux, avec encoches supérieures et inférieures.",
+        "PIO de 12 à 20 mmHg sur une courbe diurne, angles ouverts et maladie de Raynaud (vasospasme), facteur de risque classique du GPN."
       ] },
     { id: "OPH-296", caption: "Même dossier : champ Humphrey avec défauts denses près de la fixation",
       look: "Repère la tache aveugle pour savoir de quel œil il s’agit, puis situe les plages noires par rapport aux méridiens.",
       reveal: [
         "Petit bloc noir à gauche du centre, juste sous le méridien horizontal : tache aveugle, donc champ d’un œil gauche.",
         "Plage noire dense juste sous le méridien horizontal, de près du point de fixation jusqu’au bord nasal (à droite) : déficit arciforme inférieur.",
-        "Marches noires au bord nasal, au-dessus et au-dessous du méridien horizontal : ressauts nasaux supérieur et inférieur (description de la source pour l’œil gauche).",
+        "Marches noires au bord nasal, au-dessus et au-dessous du méridien horizontal : ressauts nasaux supérieur et inférieur (œil gauche).",
         "Les défauts proches de la fixation sont fréquents dans le GPN et menacent la lecture : un champ 10-2 complète le 24-2."
       ] },
     { id: "OPH-298", caption: "Même dossier : OCT des fibres nerveuses, amincissement aux deux yeux, surtout à gauche",
@@ -245,9 +245,9 @@ G.OPH.photos = G.OPH.photos || {};
     { id: "OPH-319", caption: "Néovascularisation irienne discrète trois mois après une occlusion de l’artère centrale",
       look: "Examine la surface de l’iris dans le cercle, près du bord de la pupille.",
       reveal: [
-        "Dans le cercle tracé par la source : fins vaisseaux rouges en dentelle à la surface de l’iris, à partir de la marge pupillaire.",
+        "Dans le cercle : fins vaisseaux rouges en dentelle à la surface de l’iris, à partir de la marge pupillaire.",
         "Vaisseaux sinueux et irréguliers qui ne suivent pas les plis radiaires normaux du stroma irien.",
-        "Selon la source : néovascularisation irienne (NVI) et glaucome néovasculaire environ trois mois après une occlusion de l’artère centrale de la rétine, traités par bévacizumab intravitréen.",
+        "Néovascularisation irienne (NVI) et glaucome néovasculaire environ trois mois après une occlusion de l’artère centrale de la rétine, traités par bévacizumab intravitréen.",
         "Examiner la marge pupillaire avant de dilater et faire une gonioscopie : les néovaisseaux de l’angle peuvent accompagner ou précéder ceux de la pupille."
       ] },
     { id: "OPH-320", caption: "Néovaisseaux iriens à fort grossissement : flèches sur leur front périphérique",
@@ -266,7 +266,7 @@ G.OPH.photos = G.OPH.photos || {};
       reveal: [
         "Bord supérieur du cristallin, en arc, qui traverse la pupille dilatée : le cristallin est descendu.",
         "Au-dessus de ce bord, la pupille est plus noire, sans cristallin; quelques fins filaments y sont visibles.",
-        "Selon la source : glaucome pseudo-exfoliatif connu, œil gauche; luxation spontanée vers le bas avec déhiscence et désinsertion zonulaires supérieures, zonules couvertes de matériel fibrillaire blanc.",
+        "Glaucome pseudo-exfoliatif connu, œil gauche; luxation spontanée vers le bas avec déhiscence et désinsertion zonulaires supérieures, zonules couvertes de matériel fibrillaire blanc.",
         "La PXF affaiblit les zonules : toute chirurgie de cataracte se planifie comme à risque (dilatation pauvre, phacodonésis, anneau de tension capsulaire)."
       ] },
     { id: "OPH-324", caption: "Pseudo-exfoliation en rétro-illumination : dépôts sur la capsule antérieure du cristallin",
@@ -285,7 +285,7 @@ G.OPH.photos = G.OPH.photos || {};
       reveal: [
         "Nombreux petits points blancs ronds sur l’endothélium, surtout dans la moitié inférieure de la fente : précipités rétrocornéens (keratic precipitates).",
         "Petits et nets, non graisseux : aspect non granulomateux, habituel dans l’uvéite de l’arthrite juvénile idiopathique (AJI).",
-        "Selon la source : réactivation d’une uvéite antérieure associée à l’AJI.",
+        "Réactivation d’une uvéite antérieure associée à l’AJI.",
         "L’uvéite de l’AJI est souvent indolore, œil blanc : dépistage régulier à la lampe à fente; surveiller la PIO (inflammation et corticostéroïdes), la cataracte et la kératopathie en bande."
       ] },
     { id: "OPH-351", caption: "Précipités rétrocornéens en graisse de mouton : gros dépôts arrondis dans la cornée inférieure",
@@ -303,7 +303,7 @@ G.OPH.photos = G.OPH.photos || {};
       look: "Décris la couleur, la forme et la position du sang dans l’œil.",
       reveal: [
         "Caillot rouge foncé au centre de la chambre antérieure, devant la pupille, bordé à gauche et en bas d’une zone brun orangé.",
-        "Selon la source : chirurgie interrompue à cause d’un hyphéma et d’une mauvaise visibilité; un hyphéma franc est rare avec l’iStent, alors qu’un micro-hyphéma vu en gonioscopie est plus fréquent.",
+        "Chirurgie interrompue à cause d’un hyphéma et d’une mauvaise visibilité; un hyphéma franc est rare avec l’iStent, alors qu’un micro-hyphéma vu en gonioscopie est plus fréquent.",
         "Surveiller la PIO (le sang bouche le trabéculum) et l’imprégnation hématique de la cornée; tête surélevée, éviter les AINS et l’aspirine si l’indication le permet."
       ] },
     { id: "OPH-340", caption: "Réaction fibrineuse dense en chambre antérieure au lendemain d’un tube de drainage",
@@ -311,7 +311,7 @@ G.OPH.photos = G.OPH.photos || {};
       reveal: [
         "Toile de filaments blanchâtres tendue devant la pupille : fibrine dans la chambre antérieure.",
         "Forte injection conjonctivale; petits fils de suture visibles en périphérie de la cornée.",
-        "Selon la source : premier jour après une chirurgie de tube pour glaucome non contrôlé, avec inflammation intraoculaire importante.",
+        "Premier jour après une chirurgie de tube pour glaucome non contrôlé, avec inflammation intraoculaire importante.",
         "Fibrine n’égale pas endophtalmite : elle répond aux corticostéroïdes topiques intensifs; douleur croissante, hypopyon, vitrite ou baisse brutale de vision imposent d’éliminer une endophtalmite."
       ] }
   ],
@@ -321,7 +321,7 @@ G.OPH.photos = G.OPH.photos || {};
       look: "Suis les flèches et décris les lignes qu’elles montrent dans la cornée.",
       reveal: [
         "Lignes fines, parallèles et un peu courbes dans la cornée, en haut à droite de la fente (flèches).",
-        "Selon la source : stries de Haab, ruptures de la membrane de Descemet causées par l’étirement de la cornée sous une PIO élevée chez le jeune enfant.",
+        "Stries de Haab, ruptures de la membrane de Descemet causées par l’étirement de la cornée sous une PIO élevée chez le jeune enfant.",
         "Signes d’appel : larmoiement, photophobie, blépharospasme, cornée grande et trouble (buphtalmie).",
         "Référer d’urgence en glaucome pédiatrique : le traitement est surtout chirurgical (goniotomie, trabéculotomie)."
       ] }
@@ -330,7 +330,7 @@ G.OPH.photos = G.OPH.photos || {};
 
 G.OPH.photoPairs = (G.OPH.photoPairs || []).concat([
   { key: "a-papille", normal: "OPH-202", patho: "OPH-203",
-    note: "Même source (guide du glaucome EyeRounds) et même examen : rétinophotographie couleur centrée sur la papille, cadrage semblable. C/D documentés par la source : 0,3 (OPH-202) contre 0,9 (OPH-203). Comparer l’épaisseur de l’anneau neurorétinien et l’étendue de l’excavation pâle; patients et tailles de disque différents." }
+    note: "Même source (guide du glaucome EyeRounds) et même examen : rétinophotographie couleur centrée sur la papille, cadrage semblable. C/D documentés : 0,3 (OPH-202) contre 0,9 (OPH-203). Comparer l’épaisseur de l’anneau neurorétinien et l’étendue de l’excavation pâle; patients et tailles de disque différents." }
 ]);
 
 G.OPH.quiz = (G.OPH.quiz || []).concat([
@@ -401,7 +401,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     answer: 1,
     explain: "Les infiltrats satellites (petits foyers séparés de l’ulcère principal) évoquent classiquement un champignon, mais ont aussi été décrits avec des bactéries (dont le Pseudomonas), l’Acanthamoeba et des mycobactéries atypiques. Dans ce dossier, il s’agissait d’une kératite bactérienne à bacilles Gram négatif, cultures négatives. Un ulcère central de plus de 2 mm impose un grattage pour frottis et cultures (bactéries et champignons) avant de fixer le traitement.",
     why: [
-      "Faux : piège classique. Les satellites sont suggestifs, pas pathognomoniques; ici la source rapporte une kératite bactérienne.",
+      "Faux : piège classique. Les satellites sont suggestifs, pas pathognomoniques; ici, c’était une kératite bactérienne.",
       "Exact : le grattage (Gram, cultures bactériennes et fongiques) guide le traitement; on débute ensuite les fortifiés et on ajuste.",
       "Faux : sans prélèvement, on ne pourra pas ajuster le traitement si l’ulcère s’aggrave; la règle 1-2-3 impose les cultures.",
       "Faux : la confocale aide pour l’Acanthamoeba ou les champignons, mais n’est pas offerte partout et ne doit retarder ni le grattage ni le traitement."
@@ -516,7 +516,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ] },
 
   { id: "C-302", module: "C", topic: "g-neovasculaire", type: "image", level: 1, trap: false,
-    stem: "Trois mois après une occlusion de l’artère centrale de la rétine, la PIO monte. Voici l’iris en éclairage diffus (le cercle a été tracé par la source). Quelle est la conduite la plus appropriée ?",
+    stem: "Trois mois après une occlusion de l’artère centrale de la rétine, la PIO monte. Voici l’iris en éclairage diffus (cercle déjà tracé sur la photo). Quelle est la conduite la plus appropriée ?",
     figure: { type: "photo", id: "OPH-319" },
     options: [
       "Iridotomie périphérique au laser pour rouvrir l’angle",

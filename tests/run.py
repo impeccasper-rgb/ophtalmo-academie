@@ -130,7 +130,10 @@ try:
                     if page.query_selector('[data-act="lightbox"]'):
                         step('lightbox', lambda: (page.click('[data-act="lightbox"]:visible >> nth=0'), page.wait_for_selector('#lightbox:not([hidden])', timeout=1500), page.click('[data-act="lb-close"]')))
                     go_('comprendre')
-                    step('causal step', lambda: (page.click('[data-causal="next"]'), page.click('[data-causal="all"]')))
+                    if page.query_selector('[data-mech]'):  # one stepper: the drawn mechanism; levers open at its last step
+                        step('mechanism steps', lambda: [page.click('#view button[data-mech-next]') for _ in range(page.evaluate("document.querySelectorAll('#view .mech-s').length") - 1)])
+                    else:
+                        step('causal step', lambda: (page.click('[data-causal="next"]'), page.click('[data-causal="all"]')))
                     step('lever', lambda: page.click('[data-lever="0"]'))
                     go_('decider')
                     if page.locator('.gt:visible').count():
