@@ -136,7 +136,7 @@ Object.assign(G.OPH_EN.A.recog, {
     what: "After cataract surgery, the IOL sits in the capsular bag; lens cells left behind regrow and haze the posterior capsule behind the IOL: this is **posterior capsule opacification**, sometimes called a \"secondary cataract\". It is treated with a laser in a few minutes.",
     look: [
       "Months or years after surgery: vision that slowly clouds and glare, like a cataract that \"comes back\".",
-      "Slit lamp and retroillumination: grey-white haze, fibrotic plaques or small bubbles (Elschnig pearls) behind the IOL optic.",
+      "Slit lamp and retroillumination: gray-white haze, fibrotic plaques or small bubbles (Elschnig pearls) behind the IOL optic.",
       "Irregular red reflex, blurred fundus view even though the IOL itself is clear and well centered.",
       "Note whether the capsule is already open and whether the IOL is stable: this changes management."
     ],
@@ -200,7 +200,7 @@ Object.assign(G.OPH_EN.A.recog, {
       keys: [
         "Flashes, floaters, then a curtain.",
         "**Shafer sign**: tobacco dust in the anterior vitreous.",
-        "Grey, elevated, mobile retina; horseshoe tear.",
+        "Gray, elevated, mobile retina; horseshoe tear.",
         "Macula off: VA collapsed; also refer the same day."
       ],
       ask: { q: "What is the Shafer sign and why do you look for it?", a: "It is pigment granules in the anterior vitreous, seen with the slit behind the lens. They come from pigment epithelium released through a tear: in a patient with flashes and floaters, this sign means you must look for a tear or a detachment." }
@@ -210,7 +210,7 @@ Object.assign(G.OPH_EN.A.recog, {
     look: [
       "Symptoms: flashes (photopsias), new floaters, then an advancing shadow or curtain; the shadow is on the side opposite the detachment (superior detachment = shadow below).",
       "**Shafer sign**: fine pigment granules, like tobacco dust, in the anterior vitreous behind the lens; strongly associated with a tear.",
-      "Dilated fundus exam: greyish, elevated, undulating retina that moves with the eye; a horseshoe tear, often in the superior periphery.",
+      "Dilated fundus exam: grayish, elevated, undulating retina that moves with the eye; a horseshoe tear, often in the superior periphery.",
       "Macula-on: central VA preserved; macula-off: central VA collapsed, often very low.",
       "Tractional: white-yellow membranes along the vascular arcades, retina tented up, concave and minimally mobile, in a poorly controlled diabetic."
     ],
@@ -235,11 +235,11 @@ Object.assign(G.OPH_EN.A.recog, {
 Object.assign(G.OPH_EN.A.recog, {
   "decollement-choroidien": {
     card: {
-      lead: "Fluid or blood under the choroid after glaucoma surgery. Serous or haemorrhagic: everything changes.",
+      lead: "Fluid or blood under the choroid after glaucoma surgery. Serous or hemorrhagic: everything changes.",
       keys: [
         "Smooth, brown, immobile domes.",
         "Serous: low IOP, little pain.",
-        "Haemorrhagic: sudden pain, high IOP: emergency.",
+        "Hemorrhagic: sudden pain, high IOP: emergency.",
         "B-scan: domes not attached to the nerve; black = serous, gray = blood."
       ],
       ask: { q: "Post-trabeculectomy, IOP 3 mmHg, brown domes: serous?", a: "Low IOP, little pain and anechoic content on B-scan suggest a serous detachment from hypotony. A suprachoroidal hemorrhage instead gives sudden pain, high IOP and echogenic content." }
@@ -247,10 +247,10 @@ Object.assign(G.OPH_EN.A.recog, {
     title: "Serous and hemorrhagic choroidal detachment",
     what: "A **choroidal detachment** is an elevation of the choroid by fluid (serous form, or effusion) or blood (hemorrhagic form) accumulated between the choroid and the sclera. It forms large, smooth brown domes in the periphery; when two domes touch centrally, they are said to be \"kissing\" (kissing choroidals).",
     look: [
-      "Fundus: smooth, firm brown or grey-orange domes that do not move with the eye; often several lobes; the ora serrata is visible without scleral depression.",
+      "Fundus: smooth, firm brown or gray-orange domes that do not move with the eye; often several lobes; the ora serrata is visible without scleral depression.",
       "Serous setting: low IOP (hypotony) after trabeculectomy, a tube or a wound leak; inflammation; posterior scleritis; drug-induced ciliochoroidal effusion.",
       "Hemorrhagic setting (**suprachoroidal hemorrhage**): sudden, severe pain, often elevated IOP, flat anterior chamber, vision loss, during or shortly after surgery.",
-      "B-scan: thick, convex, dome-shaped membranes, minimally mobile, not attached to the optic nerve; anechoic (black) content if serous, echogenic (grey, clot) if hemorrhagic.",
+      "B-scan: thick, convex, dome-shaped membranes, minimally mobile, not attached to the optic nerve; anechoic (black) content if serous, echogenic (gray, clot) if hemorrhagic.",
       "Shallow anterior chamber from forward shift of the iris-lens diaphragm: think of choroidal detachment in any flat postoperative chamber."
     ],
     why: "It is a typical complication in patients after glaucoma surgery (see the fiche \"Postoperative patient: trabeculectomy, tubes, MIGS\"): overfiltration or a leak, hypotony, then choroidal effusion. Distinguishing serous (low IOP, little pain) from hemorrhagic (pain, high IOP) changes the whole management. Risk factors for hemorrhage: anticoagulants, systemic hypertension, high myopia, glaucoma, prior vitreoretinal surgery.",
@@ -286,7 +286,7 @@ Object.assign(G.OPH_EN.A.recog, {
     look: [
       "**Drusen**: yellow dots or spots around the fovea; small and few (early form) or large, numerous, sometimes confluent (intermediate form).",
       "**Geographic atrophy**: a sharply demarcated pale area through which large choroidal vessels are visible; drusenoid pigment epithelial detachment (drusenoid PED): a large yellow elevation formed by confluent drusen.",
-      "Neovascular form: dark red subretinal hemorrhage, subretinal fluid, exudates, greyish elevation of the macula; recent metamorphopsia (straight lines look bent).",
+      "Neovascular form: dark red subretinal hemorrhage, subretinal fluid, exudates, grayish elevation of the macula; recent metamorphopsia (straight lines look bent).",
       "**Amsler grid**, one eye at a time: wavy lines or a missing central area.",
       "Macular OCT: drusen = bumps under the pigment epithelium; atrophy = thinned outer retina and signal penetrating deeper into the choroid; new vessels = intraretinal or subretinal fluid."
     ],
@@ -309,9 +309,9 @@ Object.assign(G.OPH_EN.A.recog, {
   },
   "retinopathie-diabetique": {
     card: {
-      lead: "Capillaries leak and close; ischaemia releases VEGF: new vessels.",
+      lead: "Capillaries leak and close; ischemia releases VEGF: new vessels.",
       keys: [
-        "Microaneurysms, haemorrhages, exudates, cotton-wool spots.",
+        "Microaneurysms, hemorrhages, exudates, cotton-wool spots.",
         "Severe: the **4-2-1** rule.",
         "Proliferative: retina within days.",
         "High IOP: iris before dilation and gonioscopy (angle new vessels)."
@@ -348,11 +348,11 @@ Object.assign(G.OPH_EN.A.recog, {
 Object.assign(G.OPH_EN.A.recog, {
   "occlusions-retiniennes": {
     card: {
-      lead: "Arterial occlusion: a stroke of the eye. Venous occlusion: haemorrhages, macular oedema, sometimes ischaemia.",
+      lead: "Arterial occlusion: a stroke of the eye. Venous occlusion: hemorrhages, macular edema, sometimes ischemia.",
       keys: [
         "CRAO: **cherry-red spot**: stroke emergency.",
         "CRAO ≥ 50: ESR, CRP (arteritis).",
-        "CRVO: haemorrhages in 4 quadrants, dilated veins.",
+        "CRVO: hemorrhages in 4 quadrants, dilated veins.",
         "Ischemic CRVO: gonioscopy ≈ monthly (90-day glaucoma)."
       ],
       ask: { q: "Why does the fovea stay red in a CRAO?", a: "The fovea has no inner layers and no retinal vessels: it stays transparent and lets the red choroid show through, while the ischemic inner retina around it whitens." }
@@ -473,7 +473,7 @@ Object.assign(G.OPH_EN.A.recog, {
     title: "Periphery and vitreous: lattice, retinoschisis, Weiss ring, asteroid hyalosis",
     what: "With age, the vitreous (the gel that fills the eye) liquefies and detaches from the retina: this is **PVD** (posterior vitreous detachment), which can tear a fragile peripheral retina and cause a retinal detachment. Some peripheral findings are areas at risk (**lattice degeneration**), others are benign but misleading (**retinoschisis**, **asteroid hyalosis**).",
     look: [
-      "**Weiss ring**: a greyish ring floating in front of the disc, the trace of the vitreous that has detached from the optic nerve: proof of a PVD.",
+      "**Weiss ring**: a grayish ring floating in front of the disc, the trace of the vitreous that has detached from the optic nerve: proof of a PVD.",
       "Lattice degeneration: bands of thinned retina in the periphery, parallel to the ora serrata, with crisscrossing white lines (sclerosed vessels), pigment and sometimes small holes.",
       "Retinoschisis (splitting of the retina into two layers): a smooth, transparent, immobile dome, often inferotemporal and bilateral.",
       "Retinal detachment, by comparison: an undulating, mobile elevation, pigment in the vitreous (\"tobacco dust\"), a tear to look for.",
@@ -535,14 +535,14 @@ Object.assign(G.OPH_EN.A.recog, {
   },
   "papille-oedeme": {
     card: {
-      lead: "A swollen disc is never glaucoma. True oedema or drusen? Then same-day imaging or steroids.",
+      lead: "A swollen disc is never glaucoma. True edema or drusen? Then same-day imaging or steroids.",
       keys: [
-        "True oedema: vessels obscured at the margin.",
+        "True edema: vessels obscured at the margin.",
         "Bilateral: BP, then same-day imaging.",
         "AION ≥ 50: ESR, CRP (arteritis).",
         "Disc drusen: confirm (autofluorescence, OCT, B-scan) before reassuring."
       ],
-      ask: { q: "True oedema or pseudo-oedema: how do you decide?", a: "True edema obscures the vessels at the disc margin and is often accompanied by hyperemia, flame hemorrhages and cotton-wool spots. The pseudo-edema of drusen keeps crisp vessels, a lumpy contour with refractile bodies and no hemorrhage; autofluorescence, OCT or B-scan confirm it." }
+      ask: { q: "True edema or pseudo-edema: how do you decide?", a: "True edema obscures the vessels at the disc margin and is often accompanied by hyperemia, flame hemorrhages and cotton-wool spots. The pseudo-edema of drusen keeps crisp vessels, a lumpy contour with refractile bodies and no hemorrhage; autofluorescence, OCT or B-scan confirm it." }
     },
     title: "Swollen disc: papilledema, AION, drusen, neuroretinitis",
     what: "A swollen disc (blurred, elevated margins) can come from raised intracranial pressure (**papilledema** in the strict sense), an infarct of the nerve (**AION**, anterior ischemic optic neuropathy), inflammation (**neuroretinitis**) or a false swelling (pseudo-edema) such as **optic disc drusen**. First distinguish true edema from pseudo-edema, then spot the cases that require same-day imaging or steroids.",
@@ -612,23 +612,23 @@ Object.assign(G.OPH_EN.A.recog, {
   },
   "tumeurs-toxicite-trauma": {
     card: {
-      lead: "Choroidal naevus: common and benign, but spot melanoma.",
+      lead: "Choroidal nevus: common and benign, but spot melanoma.",
       keys: [
         "Nevus: slate gray, flat (< 2 mm), surface drusen.",
         "Melanoma: > 2 mm, fluid, **orange pigment**.",
         "Hydroxychloroquine ≤ 5 mg/kg/day; yearly screening after 5 years.",
         "After blunt trauma: dilated periphery and gonioscopy (angle recession)."
       ],
-      ask: { q: "Naevus or melanoma: which signs?", a: "Thickness > 2 mm, subretinal fluid, symptoms, orange pigment, a margin 3 mm or less from the disc, acoustic hollowness on ultrasound, absence of halo and of drusen. The more these signs add up, the greater the risk of growth: I refer to ocular oncology." }
+      ask: { q: "Nevus or melanoma: which signs?", a: "Thickness > 2 mm, subretinal fluid, symptoms, orange pigment, a margin 3 mm or less from the disc, acoustic hollowness on ultrasound, absence of halo and of drusen. The more these signs add up, the greater the risk of growth: I refer to ocular oncology." }
     },
     title: "Nevus or melanoma, hydroxychloroquine toxicity, commotio retinae",
     what: "A **choroidal nevus** (a flat \"mole\" under the retina) is common and benign, but the signs of **choroidal melanoma**, the most common primary intraocular malignancy in adults, must be recognized. Two other macular findings to know: retinal toxicity from antimalarials (hydroxychloroquine, chloroquine) and **commotio retinae** (retinal whitening after a blow).",
     look: [
-      "Nevus: slate-grey lesion, flat (less than 2 mm thick), often with surface drusen or a pale halo around it, without fluid or orange pigment.",
+      "Nevus: slate-gray lesion, flat (less than 2 mm thick), often with surface drusen or a pale halo around it, without fluid or orange pigment.",
       "Melanoma, the \"To Find Small Ocular Melanoma Using Helpful Hints Daily\" rule (Shields): Thickness > 2 mm, subretinal Fluid, Symptoms, **Orange pigment**, Margin ≤ 3 mm from the disc, Ultrasound Hollowness, absence of Halo, absence of Drusen.",
       "Shields' imaging-based update (2019, \"To Find Small Ocular Melanoma Doing IMaging\"): thickness > 2 mm, subretinal fluid, symptoms, orange pigment, acoustic hollowness and diameter > 5 mm.",
       "Hydroxychloroquine or chloroquine toxicity: invisible early on; OCT first shows parafoveal thinning of the outer layers; late, a \"bull's-eye\" maculopathy.",
-      "Commotio retinae: greyish whitening of the outer retina after blunt trauma (Berlin edema at the posterior pole), sometimes with hemorrhages; resolves within days or weeks."
+      "Commotio retinae: grayish whitening of the outer retina after blunt trauma (Berlin edema at the posterior pole), sometimes with hemorrhages; resolves within days or weeks."
     ],
     why: "These findings turn up on routine dilated fundus exams in glaucoma clinic or in the preoperative cataract workup. The paracentral 10-2 defects and macular thinning of hydroxychloroquine toxicity can be mistaken for glaucoma (and vice versa), and the blow that causes commotio retinae can also cause a hyphema and angle recession, hence glaucoma years later.",
     action: [
@@ -712,7 +712,7 @@ Object.assign(G.OPH_EN.A.exam, {
       "If there is an RAPD: grade it or measure it with neutral density filters; if the light reaction is weak, test the near reaction (convergence)."
     ],
     normal: [
-      "Round pupils, ≈ 2–4 mm in the light; physiologic anisocoria ≤ 1 mm (≈ 20 % of people), roughly the same in dark and light.",
+      "Round pupils, ≈ 2–4 mm in the light; physiologic anisocoria ≤ 1 mm (≈ 20% of people), roughly the same in dark and light.",
       "Equal direct and consensual reflexes.",
       "On the swinging flashlight test, each pupil constricts (or stays stable) when the light reaches its eye."
     ],
@@ -806,7 +806,7 @@ Object.assign(G.OPH_EN.A.exam, {
       "Abrasion with sharp edges; vertical linear staining → foreign body under the upper lid (evert it).",
       "**Positive Seidel** (stream) → wound or filtering bleb leak: risk of hypotony and infection.",
       "**Negative staining** (dark area on a green background) → an elevation lifting the film: basement membrane dystrophy (map-like lines), nodule, raised scar.",
-      "Lissamine: > 9 conjunctival spots or lid margin staining ≥ 2 mm long and ≥ 25 % wide (lid wiper) = signs of dry eye per DEWS III; > 5 corneal fluorescein spots too."
+      "Lissamine: > 9 conjunctival spots or lid margin staining ≥ 2 mm long and ≥ 25% wide (lid wiper) = signs of dry eye per DEWS III; > 5 corneal fluorescein spots too."
     ],
     pitfalls: [
       "Too much dye or late reading: skewed TBUT, fine lesions masked, stromal diffusion.",
@@ -983,7 +983,7 @@ Object.assign(G.OPH_EN.A.exam, {
     card: {
       lead: "OCT measures the RNFL and ganglion cells, at baseline and follow-up.",
       keys: [
-        "Check signal and segmentation before colours.",
+        "Check signal and segmentation before colors.",
         "Inferotemporal thinning first ↔ superior field defect.",
         "Floor effect ≈ 50–60 µm in advanced disease.",
         "**Red disease**: false red (high myopia, tilted disc, segmentation)."
@@ -1022,7 +1022,7 @@ Object.assign(G.OPH_EN.A.exam, {
   },
   "topographie": {
     card: {
-      lead: "They detect and follow keratoconus: the basis for crosslinking and pre-LASIK screening.",
+      lead: "They detect and follow keratoconus: the basis for cross-linking and pre-LASIK screening.",
       keys: [
         "4 maps: curvature, elevations, pachymetry.",
         "Keratoconus: inferior steepening, asymmetric bow tie.",
@@ -1082,13 +1082,13 @@ Object.assign(G.OPH_EN.A.exam, {
       "Correlate with the disc and OCT; for progression, the same strategy, ≥ 2 baseline exams and clustered fields."
     ],
     normal: [
-      "FP ≤ 15 %; MD close to 0 dB; low PSD; VFI ≈ 100 %; GHT \"within normal limits\".",
+      "FP ≤ 15%; MD close to 0 dB; low PSD; VFI ≈ 100%; GHT \"within normal limits\".",
       "Physiologic blind spot ≈ 15° temporal to fixation.",
       "TD and PD without clusters of significant points."
     ],
     patho: [
       "Glaucomatous defects (nasal step, arcuate, paracentral) that respect the **horizontal** meridian; superior defect ↔ inferior disc and RNFL.",
-      "Minimal glaucomatous defect (Anderson criteria): GHT outside normal limits, or PSD at p < 5 %, or ≥ 3 contiguous non-edge points at p < 5 % on the PD, one of them at p < 1 %; to be confirmed on a second exam.",
+      "Minimal glaucomatous defect (Anderson criteria): GHT outside normal limits, or PSD at p < 5%, or ≥ 3 contiguous non-edge points at p < 5% on the PD, one of them at p < 1%; to be confirmed on a second exam.",
       "A defect respecting the **vertical** meridian (bitemporal = chiasm; homonymous = retrochiasmal pathways) → neuroimaging.",
       "TD depressed everywhere but normal PD → generalized depression (cataract, small pupil, poor correction), not a localized glaucomatous defect.",
       "Hodapp-Parrish-Anderson stages: early MD > −6 dB; moderate −6 to −12 dB; advanced < −12 dB.",
@@ -1096,8 +1096,8 @@ Object.assign(G.OPH_EN.A.exam, {
       "SAAQ class 5: binocular field ≥ 100° horizontally (≥ 30° on each side), continuous 10° above and 20° below fixation; if abnormal, a signed binocular field (Esterman or Goldmann III/4e)."
     ],
     pitfalls: [
-      "FP > 15 % = unreliable test: the patient presses too often (\"trigger-happy\") → a falsely good field, MD too good.",
-      "Fixation losses > 20 % with unstable gaze tracking = doubtful reliability; high false negatives = fatigue or inattention, but also common in an already badly damaged field.",
+      "FP > 15% = unreliable test: the patient presses too often (\"trigger-happy\") → a falsely good field, MD too good.",
+      "Fixation losses > 20% with unstable gaze tracking = doubtful reliability; high false negatives = fatigue or inattention, but also common in an already badly damaged field.",
       "Learning effect: a first abnormal field must be confirmed before concluding.",
       "Ptosis, spectacle frame, poor correction or small pupil → artifactual defects (superior, ring-shaped).",
       "Mixing strategies (SITA Standard vs Fast) in a series: progression analysis uninterpretable."
@@ -1124,8 +1124,8 @@ Object.assign(G.OPH_EN.A.exam, {
       "Repeat over time on the same device."
     ],
     normal: [
-      "Density ≈ 3000–3500 cells/mm² in young adults, ≈ 2500 around age 60–70 (loss ≈ 0.6 %/year).",
-      "Regular cells of similar size, mostly hexagonal: CV ≈ 0.30 or less and ≈ 60 % hexagons or more (usual landmarks, varying with the device).",
+      "Density ≈ 3000–3500 cells/mm² in young adults, ≈ 2500 around age 60–70 (loss ≈ 0.6%/year).",
+      "Regular cells of similar size, mostly hexagonal: CV ≈ 0.30 or less and ≈ 60% hexagons or more (usual landmarks, varying with the device).",
       "No guttae."
     ],
     patho: [
@@ -1161,7 +1161,7 @@ Object.assign(G.OPH_EN.A.physio, {
       "**Production**: the non-pigmented epithelium of the ciliary processes secretes aqueous by active transport (Na⁺/K⁺-ATPase, carbonic anhydrase) from plasma filtered into the ciliary stroma; ≈ 2.5 µL/min during the day, less at night.",
       "**Pathway**: posterior chamber → pupil → anterior chamber → trabecular meshwork → Schlemm canal → collector channels → aqueous and episcleral veins. In the anterior chamber, vertical convection currents explain the deposit of pigment as a vertical spindle on the endothelium (Krukenberg spindle) in pigment dispersion (pigment released by iris rubbing on the zonules).",
       "**Conventional (trabecular) outflow**: passive and pressure-dependent, it carries most of the outflow. Resistance lies mainly in the juxtacanalicular trabecular meshwork; in open-angle glaucoma, this resistance increases → aqueous drains less well → IOP rises.",
-      "**Uveoscleral (unconventional) outflow**: aqueous crosses the ciliary body band and the ciliary muscle toward the suprachoroidal space; 5–30 % of outflow, less with age, largely pressure-independent. Prostaglandins (latanoprost) increase it; pilocarpine decreases it by contracting the ciliary muscle.",
+      "**Uveoscleral (unconventional) outflow**: aqueous crosses the ciliary body band and the ciliary muscle toward the suprachoroidal space; 5–30% of outflow, less with age, largely pressure-independent. Prostaglandins (latanoprost) increase it; pilocarpine decreases it by contracting the ciliary muscle.",
       "**Goldmann equation**: IOP = (F − U) / C + Pv. F = production, U = uveoscleral outflow, C = trabecular outflow facility, Pv = episcleral venous pressure. Example: (2.5 − 0.5) / 0.25 + 9 = 17 mmHg.",
       "**Treatment levers**: ↓ F (beta-blockers, carbonic anhydrase inhibitors, alpha-2 agonists); ↑ U (prostaglandins, alpha-2 agonists in part); ↑ C (pilocarpine, SLT = a laser that stimulates the trabecular meshwork, trabecular MIGS = small surgeries on the meshwork and Schlemm canal). Through the trabecular pathway, IOP cannot fall below Pv; filtering surgery (trabeculectomy, tube or subconjunctival implant such as XEN or PreserFlo: a new outflow route to the space under the conjunctiva) bypasses Pv, hence its role when the IOP target is very low."
     ],
@@ -1169,7 +1169,7 @@ Object.assign(G.OPH_EN.A.physio, {
       { label: "Aqueous production", value: "≈ 2–3 µL/min (≈ 2.5 during the day), ↓ at night" },
       { label: "Outflow facility (C)", value: "≈ 0.2–0.3 µL/min/mmHg" },
       { label: "Episcleral venous pressure (Pv)", value: "≈ 8–10 mmHg" },
-      { label: "Uveoscleral outflow", value: "5–30 % of outflow (↓ with age)" },
+      { label: "Uveoscleral outflow", value: "5–30% of outflow (↓ with age)" },
       { label: "Anterior / posterior chamber volume", value: "≈ 250 µL / ≈ 60 µL" }
     ],
     pearl: "Attending: \"Why does timolol lower IOP little at night, while prostaglandins remain effective?\" Timolol reduces aqueous production, which is already low during sleep (less sympathetic tone); prostaglandins increase uveoscleral outflow, which works day and night."
@@ -1242,23 +1242,23 @@ Object.assign(G.OPH_EN.A.physio, {
       keys: [
         "“Pump-leak” endothelium: stroma at ≈ 78% water.",
         "Stromal edema: thickened, grayish cornea, Descemet folds.",
-        "Epithelial oedema: bullae, coloured halos.",
+        "Epithelial edema: bullae, colored halos.",
         "IOP nearing 50–60 mmHg (angle-closure attack): hazy epithelium, healthy endothelium."
       ],
       ask: { q: "Angle-closure attack: why does the cornea fog up?", a: "Because IOP exceeds the stromal swelling pressure: water is pushed forward and the epithelium becomes edematous (colored halos). The cornea clears when IOP is lowered; specular microscopy afterward is useful, because the attack causes endothelial cell loss." }
     },
     title: "Corneal transparency",
-    intro: "The cornea is transparent because its collagen fibers are arranged with perfect regularity and because the endothelium keeps it permanently dehydrated (corneal deturgescence). If either mechanism weakens, the cornea swells and turns greyish.",
+    intro: "The cornea is transparent because its collagen fibers are arranged with perfect regularity and because the endothelium keeps it permanently dehydrated (corneal deturgescence). If either mechanism weakens, the cornea swells and turns grayish.",
     points: [
       "**Architecture**: fine collagen fibrils (≈ 30 nm), of uniform diameter and regularly spaced, at a distance smaller than the wavelength of light → light scattered by each fibril cancels out by interference → light passes through. Added to this: no vessels, unmyelinated nerves and a regular epithelium.",
-      "**Deturgescence (pump-leak)**: the stroma attracts water (proteoglycans, swelling pressure ≈ 50–60 mmHg). The endothelium lets a little aqueous in (a deliberately \"leaky\" barrier that nourishes the cornea) and actively pumps the excess back into the anterior chamber (Na⁺/K⁺-ATPase, bicarbonate transport) → stroma stable at ≈ 78 % water.",
-      "**Stromal edema**: the endothelium fails (Fuchs dystrophy = an inherited endothelial disease with guttae; surgical trauma; graft rejection) → water accumulates between the fibrils → spacing becomes irregular → a thickened, greyish cornea, Descemet folds. Vision drops moderately.",
+      "**Deturgescence (pump-leak)**: the stroma attracts water (proteoglycans, swelling pressure ≈ 50–60 mmHg). The endothelium lets a little aqueous in (a deliberately \"leaky\" barrier that nourishes the cornea) and actively pumps the excess back into the anterior chamber (Na⁺/K⁺-ATPase, bicarbonate transport) → stroma stable at ≈ 78% water.",
+      "**Stromal edema**: the endothelium fails (Fuchs dystrophy = an inherited endothelial disease with guttae; surgical trauma; graft rejection) → water accumulates between the fibrils → spacing becomes irregular → a thickened, grayish cornea, Descemet folds. Vision drops moderately.",
       "**Epithelial edema**: water passes through to the epithelium (microcysts, bullae) → irregular surface → marked vision loss, colored halos around lights; if a bulla ruptures, pain (bullous keratopathy). The epithelium swells when IOP exceeds the stromal swelling pressure: water is pushed forward.",
       "**Acute angle-closure attack**: very high IOP (often > 40 mmHg, sometimes 60–80) → when it approaches or exceeds the stromal swelling pressure (≈ 50–60 mmHg), water is pushed toward the epithelium → epithelial edema even if the endothelium is healthy → a \"steamy\" cornea and halos. The edema regresses when IOP falls; conversely, in a patient with a fragile endothelium, lowering IOP helps the cornea dehydrate.",
       "**Fuchs in the morning**: lids closed at night → no evaporation → tears become less concentrated and the cornea swells → vision worse on waking, improving over the day. Hypertonic saline drops or ointments draw water out of the epithelium (supportive treatment); endothelial keratoplasty (DMEK, DSAEK) replaces the diseased endothelium."
     ],
     numbers: [
-      { label: "Water in the stroma", value: "≈ 78 %" },
+      { label: "Water in the stroma", value: "≈ 78%" },
       { label: "Normal central thickness", value: "≈ 540–550 µm" },
       { label: "Endothelial density (young adult)", value: "≈ 3000–3500 cells/mm²" },
       { label: "Decompensation threshold", value: "generally < 400–500 cells/mm²" },
@@ -1319,7 +1319,7 @@ Object.assign(G.OPH_EN.A.physio, {
     ],
     numbers: [
       { label: "Pupil size", value: "≈ 2–4 mm in light; ≈ 4–8 mm in the dark" },
-      { label: "Physiologic anisocoria", value: "≤ 1 mm, in ≈ 20 % of people" },
+      { label: "Physiologic anisocoria", value: "≤ 1 mm, in ≈ 20% of people" },
       { label: "Sympathetic pathway", value: "3 neurons (C8–T2 relay, then superior cervical ganglion)" },
       { label: "Parasympathetic pathway", value: "synapse in the ciliary ganglion" }
     ],
@@ -1334,15 +1334,15 @@ G.OPH_EN.A.cornea = Object.assign(G.OPH_EN.A.cornea || {}, {
   "film": { t: "Tear film", en: "", d: "Thin layer (≈ 3 µm) covering the epithelium and forming the eye's first optical surface. Three components: lipids on the surface (meibomian glands, slow evaporation), a muco-aqueous phase (main lacrimal gland and the accessory glands of Krause and Wolfring; MUC5AC mucin from goblet cells) and the epithelial glycocalyx (membrane mucins MUC1/4/16), which makes the cornea wettable. It normally breaks up after more than 10 s (TBUT, tear breakup time).", c: "An unstable film gives vision that fluctuates with blinking and skews keratometry, topography and biometry. The surface is therefore treated (artificial tears, meibomian gland dysfunction) before measuring: before cataract surgery or to follow a keratoconus (a cornea that thins and bulges into a cone)." },
   "epithelium": { t: "Epithelium", en: "", d: "Non-keratinized stratified squamous epithelium of ≈ 50 µm (5–7 cell layers), entirely renewed in ≈ 7 days from limbal stem cells. Its tight junctions make it a barrier against water and microbes; its basement membrane and hemidesmosomes anchor it to Bowman layer.", c: "It heals quickly and without a trace: an abrasion (traumatic loss of epithelium) closes in 24–72 h and stains with fluorescein. When poorly anchored (basement membrane dystrophy, an old fingernail scratch), it peels off on waking: recurrent erosion (sharp pain on opening the eyes). If it swells (microcysts, bullae), water is crossing the cornea: very high IOP (angle-closure attack) or a failing endothelium." },
   "bowman": { t: "Bowman layer", en: "", d: "Acellular 8–12 µm layer of packed collagen fibrils, just beneath the epithelial basement membrane. It does not regenerate: once breached, it is replaced by scar tissue.", c: "A lesion limited to the epithelium heals without a trace; a lesion that breaches Bowman (infectious ulcer, deep foreign body, surface surgery) leaves a permanent opacity (nebula or leukoma depending on its density). When central, it reduces visual acuity (VA): one reason to treat bacterial keratitis quickly, before the ulcer deepens." },
-  "stroma": { t: "Stroma", en: "", d: "≈ 90 % of corneal thickness (≈ 450–500 µm): type I collagen fibrils of uniform diameter, arranged in very regular parallel lamellae, between which the keratocytes live; ≈ 78 % water. Transparency depends on this regular spacing, maintained by proteoglycans and by the endothelium, which pumps water out of the stroma.", c: "If it takes on water (stromal edema), the spacing becomes irregular → light scatters → a thickened, greyish cornea. It heals in a disorganized way (opacity). It is the layer infiltrated in keratitis, thinned in keratoconus and reinforced by cross-linking (CXL: riboflavin + UVA, which create bonds between collagen fibers to slow ectasia, i.e. progressive bulging)." },
+  "stroma": { t: "Stroma", en: "", d: "≈ 90% of corneal thickness (≈ 450–500 µm): type I collagen fibrils of uniform diameter, arranged in very regular parallel lamellae, between which the keratocytes live; ≈ 78% water. Transparency depends on this regular spacing, maintained by proteoglycans and by the endothelium, which pumps water out of the stroma.", c: "If it takes on water (stromal edema), the spacing becomes irregular → light scatters → a thickened, grayish cornea. It heals in a disorganized way (opacity). It is the layer infiltrated in keratitis, thinned in keratoconus and reinforced by cross-linking (CXL: riboflavin + UVA, which create bonds between collagen fibers to slow ectasia, i.e. progressive bulging)." },
   "dua": { t: "Dua layer (pre-Descemet layer)", en: "", d: "Very strong acellular layer of ≈ 10–15 µm, between the posterior stroma and Descemet membrane, described in 2013. It resists air injected under pressure, which distinguishes it from the stroma.", c: "In DALK (deep anterior lamellar keratoplasty: the diseased stroma is replaced, for example in keratoconus, while keeping the patient's Descemet and endothelium, hence no risk of endothelial rejection), the surgeon injects a big air bubble that separates the stroma at the plane of this layer." },
   "descemet": { t: "Descemet membrane", en: "", d: "Elastic basement membrane of the endothelium that thickens throughout life (≈ 3 µm at birth → 10–15 µm in adults). Once detached, it curls up on itself: this is the \"scroll\" of a DMEK graft.", c: "Descemet folds (striae) = edematous stroma or a hypotonous eye (IOP too low, e.g. after filtering surgery). Breaks: Haab striae in congenital glaucoma (cornea stretched by IOP), acute hydrops in keratoconus (water suddenly enters the stroma). Guttae = excrescences of Descemet secreted by a diseased endothelium (Fuchs dystrophy). DMEK (endothelial keratoplasty that replaces only Descemet + endothelium) treats Fuchs dystrophy and other endothelial failures." },
-  "endothelium": { t: "Endothelium", en: "", d: "Monolayer of hexagonal cells (≈ 5 µm) lining the posterior surface of the cornea that does not divide in humans. Density ≈ 3000–3500 cells/mm² in young adults, ≈ 2500 around age 60–70 (loss ≈ 0.6 %/year); when a cell dies, its neighbors spread out to cover the gap. It keeps the cornea dehydrated (deturgescence) through its barrier and its Na⁺/K⁺-ATPase pump.", c: "Below ≈ 400–500 cells/mm², the pump can no longer keep up: stromal then epithelial edema (decompensation). In Fuchs dystrophy (an inherited endothelial disease with guttae and progressive cell loss), vision is worse on waking: lids closed → no evaporation → the cornea swells overnight. Repeated surgeries, an angle-closure attack, a drainage tube too close to the cornea or repeated intracameral implants (sustained-release drug in the anterior chamber) can also exhaust it: it is measured by specular microscopy." }
+  "endothelium": { t: "Endothelium", en: "", d: "Monolayer of hexagonal cells (≈ 5 µm) lining the posterior surface of the cornea that does not divide in humans. Density ≈ 3000–3500 cells/mm² in young adults, ≈ 2500 around age 60–70 (loss ≈ 0.6%/year); when a cell dies, its neighbors spread out to cover the gap. It keeps the cornea dehydrated (deturgescence) through its barrier and its Na⁺/K⁺-ATPase pump.", c: "Below ≈ 400–500 cells/mm², the pump can no longer keep up: stromal then epithelial edema (decompensation). In Fuchs dystrophy (an inherited endothelial disease with guttae and progressive cell loss), vision is worse on waking: lids closed → no evaporation → the cornea swells overnight. Repeated surgeries, an angle-closure attack, a drainage tube too close to the cornea or repeated intracameral implants (sustained-release drug in the anterior chamber) can also exhaust it: it is measured by specular microscopy." }
 });
 
 G.OPH_EN.A.angle = Object.assign(G.OPH_EN.A.angle || {}, {
   "iris-racine": { t: "Iris root", en: "", d: "The most posterior structure of the angle: the insertion of the iris on the ciliary body. It does not filter anything, but its position and profile (flat, bowed, concave, plateau) determine whether the angle is open.", c: "Bowed profile = pupillary block; concave = pigment dispersion (the hollowed iris rubs on the zonules and loses its pigment); plateau = root lifted by the ciliary processes. Iris processes (fine, normal lacework) must not be confused with peripheral anterior synechiae (PAS: broad, permanent adhesions of the iris to the angle that persist on indentation)." },
-  "bande-ciliaire": { t: "Ciliary body band", en: "", d: "Grey-brown band between the iris root and the scleral spur: the anterior face of the ciliary muscle. Seeing it means a wide-open angle (Shaffer 4, ≈ 35–45°); aqueous in the uveoscleral pathway passes between its fibers.", c: "An abnormally wide ciliary body band, especially compared with the fellow eye, with torn iris processes = angle recession (a tear in the ciliary muscle after a blow): glaucoma can appear years later, hence lifelong follow-up. A dark cleft between the ciliary body band and the sclera = cyclodialysis (ciliary body detached from the spur → very low IOP)." },
+  "bande-ciliaire": { t: "Ciliary body band", en: "", d: "Gray-brown band between the iris root and the scleral spur: the anterior face of the ciliary muscle. Seeing it means a wide-open angle (Shaffer 4, ≈ 35–45°); aqueous in the uveoscleral pathway passes between its fibers.", c: "An abnormally wide ciliary body band, especially compared with the fellow eye, with torn iris processes = angle recession (a tear in the ciliary muscle after a blow): glaucoma can appear years later, hence lifelong follow-up. A dark cleft between the ciliary body band and the sclera = cyclodialysis (ciliary body detached from the spur → very low IOP)." },
   "eperon": { t: "Scleral spur", en: "", d: "White line between the ciliary body band and the pigmented trabecular meshwork: a projection of sclera where the longitudinal ciliary muscle inserts. A key landmark: if the spur is visible, the angle is open in that quadrant (Shaffer ≥ 3, ≈ 20–35° or more).", c: "Pilocarpine contracts the ciliary muscle, which pulls on the spur and opens the meshes of the trabecular meshwork (↑ outflow). Vessels that cross the spur and arborize over the trabecular meshwork = angle new vessels (NVA, abnormal vessels driven by retinal ischemia): an emergency. On AS-OCT (anterior segment tomography), the spur is the reference point for measuring angle opening." },
   "trab-pig": { t: "Pigmented (posterior) trabecular meshwork", en: "", d: "Brownish band just anterior to the spur, lying over Schlemm canal: the part that actually filters aqueous. Its pigment increases with age and predominates inferiorly.", c: "Dense, homogeneous 360° pigment = pigment dispersion (pigment rubbed off the iris against the zonules); irregular, patchy pigment = pseudoexfoliation (age-related fibrillar deposits that also clog the meshwork). It is the target of SLT (selective laser trabeculoplasty): the more pigmented it is, the more energy it absorbs, so the energy is reduced to avoid an IOP spike after the laser." },
   "trab-nonpig": { t: "Non-pigmented (anterior) trabecular meshwork", en: "", d: "Whitish, translucent band between the pigmented trabecular meshwork and Schwalbe line. It filters little; if the trabecular meshwork is the most posterior visible structure (spur hidden), the angle is narrow (Shaffer 2, ≈ 20°).", c: "In young patients, the lightly pigmented angle makes the meshwork hard to locate: first find Schwalbe line with the corneal wedge technique, then move down. If the spur stays hidden in several quadrants: a narrow angle at risk of closure; indent to look for PAS." },
@@ -1355,7 +1355,7 @@ G.OPH_EN.A.disc = Object.assign(G.OPH_EN.A.disc || {}, {
   "cup": { t: "Cup", en: "", d: "Central depression of the disc, devoid of axons; its height is compared with that of the disc: the vertical cup-to-disc ratio (C/D). Its size follows that of the disc: for the same number of axons, a large disc has a large cup. It is outlined by the bend of the small vessels at its edge (contour), not by the pale area, which is often smaller.", c: "Suspicious: vertical C/D > 0.6 or an asymmetry ≥ 0.2 between the two eyes, interpreted according to disc size. Glaucomatous signs: a cup that elongates vertically (loss at the poles), that deepens until the lamina cribrosa pores show, or that enlarges from one visit to the next; a documented change (photos, OCT) is worth more than an isolated measurement." },
   "vessels": { t: "Optic disc vessels", en: "", d: "The central retinal artery and vein emerge on the nasal side of the cup, run along the edge of the rim and then divide into superior and inferior arcades. Normally they cross the rim without an abrupt bend.", c: "Glaucomatous signs: nasalized vessels (pushed nasally by the enlarging cup); bayoneting (the vessel dives steeply into a deep cup and then turns at a right angle); a bared circumlinear vessel (it runs along a vanished rim). A Drance disc hemorrhage (a small flame-shaped hemorrhage crossing the disc margin, often inferotemporal) signals active axonal loss and an increased risk of progression (AAO 2026); more common in normal-tension glaucoma (glaucomatous damage with IOP always ≤ 21 mmHg), it disappears within a few weeks to a few months, hence looking for it at every visit." },
   "ppa": { t: "Peripapillary atrophy", en: "", d: "Pale crescent around the disc, in two zones. Alpha zone, peripherally: irregular pigmentation, common in normal subjects. Beta zone, against the disc margin: sclera and large choroidal vessels visible, because the pigment epithelium and choriocapillaris have disappeared.", c: "The beta zone is more frequent and wider in glaucoma; it often lies opposite the thinned rim and is associated with progression. In high myopes, the tilted disc and the large peripapillary crescent (different from the beta zone) make the exam and OCT misleading (false positives, \"red disease\")." },
-  "lame-criblee": { t: "Lamina cribrosa", en: "", d: "At the floor of a wide, deep cup, its pores appear as grey dots (laminar dot sign). Normally it is barely visible, hidden by the rim and supporting tissue.", c: "Visible, vertically elongated pores indicate that the axons covering it have disappeared and that the lamina has bowed backward (glaucomatous remodeling). The sign is not specific (a large physiologic disc): it prompts confirmation with OCT and the visual field." },
+  "lame-criblee": { t: "Lamina cribrosa", en: "", d: "At the floor of a wide, deep cup, its pores appear as gray dots (laminar dot sign). Normally it is barely visible, hidden by the rim and supporting tissue.", c: "Visible, vertically elongated pores indicate that the axons covering it have disappeared and that the lamina has bowed backward (glaucomatous remodeling). The sign is not specific (a large physiologic disc): it prompts confirmation with OCT and the visual field." },
   "rnfl": { t: "Retinal nerve fiber layer (RNFL)", en: "", d: "Ganglion cell axons on their way to the disc, visible as bright striations in red-free light (green filter). Temporal fibers arc around the macula and meet, without crossing, at the horizontal raphe; the thickest bundles arrive at the inferotemporal and superotemporal poles (\"double-hump\" curve on OCT). Average peripapillary thickness ≈ 90–100 µm in adults (varies with the device).", c: "Wedge defect: a dark arcuate band starting at the disc, often inferotemporal, wider than a vessel, reflecting the loss of a bundle of axons. Because the fibers do not cross the raphe, the corresponding field defect stops sharply at the horizontal meridian (nasal step) and lies in the opposite hemifield: inferior RNFL damage = superior arcuate field defect." }
 });
 
@@ -1376,7 +1376,7 @@ G.OPH_EN.A.anatomy = Object.assign(G.OPH_EN.A.anatomy || {}, {
   "conjonctive": { t: "Conjunctiva", en: "", d: "Transparent mucous membrane lining the inside of the lids (tarsal conjunctiva), the fornices and the sclera (bulbar conjunctiva) up to the limbus. Its non-keratinized epithelium contains goblet cells (tear film mucus); its stroma is vascularized and rich in immune cells.", c: "A trabeculectomy creates a filtering bleb (a reservoir of aqueous humor under the conjunctiva) that fails if the conjunctiva scars too much. Years of preserved drops (benzalkonium chloride, BAK) inflame the conjunctiva → more fibrosis → a less durable bleb." },
   "chambre-anterieure": { t: "Anterior chamber", en: "", d: "Space between the corneal endothelium and the iris/lens, filled with aqueous humor (≈ 250 µL). Its central depth (≈ 3 mm) decreases in hyperopes (short eye) and with age (the lens thickens).", c: "Look here for cells and flare (proteins that scatter light: inflammation), a hypopyon (a level of white blood cells: severe keratitis, endophthalmitis = infection inside the eye) and shallow depth (risk of angle closure: the iris comes to block the trabecular meshwork). After a trabeculectomy, a flat chamber suggests overfiltration (too much aqueous drained through the bleb), a bleb leak or aqueous misdirection (aqueous diverted into the vitreous)." },
   "angle": { t: "Iridocorneal angle", en: "", d: "Peripheral recess of the anterior chamber, between the cornea and the iris root, where aqueous humor leaves the eye through the trabecular meshwork. It cannot be seen directly (light coming from it undergoes total internal reflection at the corneal surface, at the tear–air interface): a gonioscopy lens, which eliminates this interface, is needed.", c: "Open-angle glaucoma (a progressive optic neuropathy, often IOP-related, in which the angle is open but filters poorly) is diagnosed only after gonioscopy, to rule out a closed angle or a secondary cause: pseudoexfoliation (age-related whitish fibrillar deposits), angle recession (a tear in the ciliary body after a blow) or angle new vessels (abnormal vessels driven by retinal ischemia)." },
-  "trabeculum": { t: "Trabecular meshwork", en: "", d: "Spongy filter of collagen lamellae lined by trabecular cells, in three layers: uveal, corneoscleral and juxtacanalicular. The juxtacanalicular layer, adjacent to the inner wall of Schlemm canal, provides most of the outflow resistance; this conventional pathway drains ≈ 70–95 % of aqueous humor.", c: "It is the target of pilocarpine (which pulls on the scleral spur and opens the meshes), SLT (selective laser trabeculoplasty, which stimulates the meshwork) and trabecular MIGS (small implants or incisions that bypass the resistance). It becomes clogged with pigment or pseudoexfoliation material → ↑ resistance → ↑ IOP: secondary open-angle glaucomas." },
+  "trabeculum": { t: "Trabecular meshwork", en: "", d: "Spongy filter of collagen lamellae lined by trabecular cells, in three layers: uveal, corneoscleral and juxtacanalicular. The juxtacanalicular layer, adjacent to the inner wall of Schlemm canal, provides most of the outflow resistance; this conventional pathway drains ≈ 70–95% of aqueous humor.", c: "It is the target of pilocarpine (which pulls on the scleral spur and opens the meshes), SLT (selective laser trabeculoplasty, which stimulates the meshwork) and trabecular MIGS (small implants or incisions that bypass the resistance). It becomes clogged with pigment or pseudoexfoliation material → ↑ resistance → ↑ IOP: secondary open-angle glaucomas." },
   "schlemm": { t: "Schlemm canal", en: "", d: "Endothelium-lined circular canal (≈ 36 mm in circumference), located behind the pigmented trabecular meshwork, just anterior to the scleral spur. It drains through ≈ 25–35 collector channels into the aqueous and then episcleral veins, whose pressure (≈ 8–10 mmHg) sets a floor for IOP.", c: "Blood in the canal on gonioscopy often comes from lens pressure on the episcleral veins (reflux), but can signal elevated episcleral venous pressure: carotid-cavernous fistula (an abnormal communication between the carotid and the cavernous sinus) or Sturge-Weber syndrome (a congenital facial angioma). Canal-based MIGS (minimally invasive surgeries: stent, dilation or opening of the canal) act here." },
   "iris": { t: "Iris", en: "", d: "Colored diaphragm made of a stroma, two muscles (sphincter: parasympathetic; dilator: sympathetic) and a posterior pigment epithelium. Its very thin root inserts on the ciliary body: it is the root that comes to close the angle.", c: "An iris bowed forward suggests pupillary block (aqueous passes poorly between iris and lens and pushes the iris). Radial midperipheral transillumination defects suggest pigment dispersion (the iris rubs on the zonules and loses its pigment); new vessels at the pupillary margin = rubeosis (neovascularization from retinal ischemia)." },
   "pupille": { t: "Pupil", en: "", d: "Central opening of the iris (≈ 2–4 mm in light, wider in the dark and in young people). The sphincter, driven by the parasympathetic system (CN III, ciliary ganglion), constricts it; the dilator, driven by the sympathetic system, enlarges it.", c: "Mid-dilated pupil (moderately dilated, ≈ 4–6 mm), oval and poorly reactive + painful red eye + edematous cornea = acute angle-closure attack (the very high IOP makes the sphincter ischemic). In mid-dilation, pupillary block is maximal and the relaxed peripheral iris thickens in the angle: that is why dilation can trigger an attack in a narrow angle." },
@@ -1385,7 +1385,7 @@ G.OPH_EN.A.anatomy = Object.assign(G.OPH_EN.A.anatomy || {}, {
   "chambre-posterieure": { t: "Posterior chamber", en: "", d: "Small space (≈ 60 µL) between the posterior surface of the iris and the lens, where aqueous humor is produced before passing through the pupil. The ciliary sulcus (the groove between iris and ciliary body) can hold an intraocular lens or a drainage tube.", c: "In pupillary block, aqueous accumulates here → its pressure exceeds that of the anterior chamber → the peripheral iris bows forward and closes the angle. Laser iridotomy (LPI: a small hole in the peripheral iris) opens a bypass and equalizes the pressures." },
   "zonules": { t: "Zonules (of Zinn)", en: "", d: "Fibrillin fibers connecting the ciliary body to the lens equator and keeping the lens centered. When the ciliary muscle contracts, they relax and the lens becomes rounder (accommodation).", c: "Pseudoexfoliation (age-related fibrillar deposits) weakens the zonules: a trembling lens (phacodonesis), riskier cataract surgery and sometimes angle closure from a forward-displaced lens. In pigment dispersion, it is iris rubbing against the zonules that releases the pigment." },
   "cristallin": { t: "Crystalline lens", en: "", d: "Avascular biconvex lens (≈ 20 D), suspended by the zonules, that thickens throughout life (≈ 3.5–4 mm in young adults → ≈ 4.5–5 mm in the elderly). Its loss of flexibility causes presbyopia around age 40–45, its opacification cataract.", c: "As it grows, the lens pushes the iris forward and narrows the angle: a major driver of primary angle closure. The EAGLE study showed that removing a clear lens controls IOP better than iridotomy (primary angle closure with IOP ≥ 30 mmHg or angle-closure glaucoma, patients ≥ 50 years)." },
-  "vitre": { t: "Vitreous", en: "", d: "Transparent gel (≈ 4 mL, ≈ 99 % water, collagen and hyaluronic acid) occupying ≈ 80 % of the volume of the globe. It adheres firmly at the vitreous base (near the ora serrata), the disc, the macula and along the vessels.", c: "In aqueous misdirection, aqueous is diverted into the vitreous → the vitreous swells → it pushes the lens and iris forward. Result: an anterior chamber flat centrally as well as peripherally and high IOP despite a patent iridotomy, typically after filtering surgery." }
+  "vitre": { t: "Vitreous", en: "", d: "Transparent gel (≈ 4 mL, ≈ 99% water, collagen and hyaluronic acid) occupying ≈ 80% of the volume of the globe. It adheres firmly at the vitreous base (near the ora serrata), the disc, the macula and along the vessels.", c: "In aqueous misdirection, aqueous is diverted into the vitreous → the vitreous swells → it pushes the lens and iris forward. Result: an anterior chamber flat centrally as well as peripherally and high IOP despite a patent iridotomy, typically after filtering surgery." }
 });
 
 Object.assign(G.OPH_EN.A.anatomy, {
@@ -1402,7 +1402,7 @@ Object.assign(G.OPH_EN.A.anatomy, {
   "arteres-ciliaires-ant": { t: "Anterior ciliary arteries", en: "", d: "Arising from the muscular arteries of the rectus muscles (2 per muscle except the lateral rectus, 1), they pierce the sclera near the limbus. They supply the anterior segment and the major arterial circle of the iris, and form the perilimbal episcleral network.", c: "Their dilation produces ciliary flush (violaceous redness maximal around the limbus, a perikeratic ring): it signals disease of the cornea or of the inside of the eye: keratitis, uveitis (inflammation of the iris, ciliary body or choroid) or angle-closure attack. Conjunctivitis rather gives redness maximal in the periphery, in the fornices." },
   "veines-vortiqueuses": { t: "Vortex veins", en: "", d: "Usually 4 to 7 veins (at least 1 per quadrant) that drain the choroid, ciliary body and iris. They cross the sclera obliquely behind the equator and join the superior and inferior ophthalmic veins.", c: "In nanophthalmos (a very small eye with thick sclera), the sclera compresses the vortex veins → choroidal blood drains poorly → fluid accumulates under the choroid (uveal effusion) → the ciliary body rotates and closes the angle. These eyes are also at high risk of surgical complications." },
   "nerfs-ciliaires-longs": { t: "Long ciliary nerves", en: "", d: "Two branches of the nasociliary nerve (V1) running at 3 and 9 o'clock between choroid and sclera. They carry sensation from the cornea, iris and ciliary body, and the sympathetic fibers destined for the iris dilator muscle (these fibers do not synapse in the ciliary ganglion).", c: "Zoster vesicles on the tip of the nose (Hutchinson sign) signal involvement of the nasociliary nerve, hence a high risk of corneal and ocular involvement. In transscleral cyclophotocoagulation (laser applied through the sclera to destroy part of the ciliary body), 3 and 9 o'clock are spared so as not to burn these nerves and the long ciliary arteries." },
-  "nerfs-ciliaires-courts": { t: "Short ciliary nerves", en: "", d: "6 to 10 nerves arising from the ciliary ganglion (in the orbit, behind the globe). They carry the postganglionic parasympathetic fibers (from the Edinger-Westphal nucleus via CN III, synapsing in the ganglion) to the iris sphincter and ciliary muscle, as well as sensory and vasomotor fibers.", c: "Damage to the ganglion or the short ciliary nerves produces the Adie tonic pupil: a dilated pupil that reacts poorly to light but better to accommodation (light-near dissociation), and constricts with dilute pilocarpine (≈ 0.1 %) through denervation hypersensitivity." },
+  "nerfs-ciliaires-courts": { t: "Short ciliary nerves", en: "", d: "6 to 10 nerves arising from the ciliary ganglion (in the orbit, behind the globe). They carry the postganglionic parasympathetic fibers (from the Edinger-Westphal nucleus via CN III, synapsing in the ganglion) to the iris sphincter and ciliary muscle, as well as sensory and vasomotor fibers.", c: "Damage to the ganglion or the short ciliary nerves produces the Adie tonic pupil: a dilated pupil that reacts poorly to light but better to accommodation (light-near dissociation), and constricts with dilute pilocarpine (≈ 0.1%) through denervation hypersensitivity." },
   "lame-criblee": { t: "Lamina cribrosa", en: "", d: "Perforated collagen plates that extend the sclera across the back of the disc and through which the axons and central vessels pass. Its pores are larger and its supporting tissue thinner at the superior and inferior poles.", c: "Under an IOP too high for that eye, the lamina deforms backward → the pores deform and compress the axons → axonal transport is blocked → the ganglion cell dies. The poles give way first, hence the inferior/superior rim notches and the arcuate visual field defects." },
   "muscles-droits": { t: "Rectus muscles", en: "", d: "Four muscles (medial, inferior, lateral, superior) that insert on the sclera progressively farther from the limbus (spiral of Tillaux ≈ 5.5; 6.5; 6.9; 7.7 mm). CN III innervates the medial, inferior and superior recti, CN VI the lateral rectus.", c: "The plate of drainage tubes (devices that divert aqueous to a reservoir behind the equator, e.g. Ahmed, Baerveldt) is fixed between two rectus muscles, often superotemporally: diplopia (double vision) is a known complication. The sclera, very thin behind the insertions, is easily perforated." }
 });

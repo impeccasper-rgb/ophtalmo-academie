@@ -17,11 +17,11 @@ G.OPH.openCases = [
   "options": [
    {
     "fr": "Un nævus choroïdien suspect à photographier",
-    "en": "A suspicious choroidal naevus to photograph"
+    "en": "A suspicious choroidal nevus to photograph"
    },
    {
     "fr": "Un signe d’œdème papillaire",
-    "en": "A sign of optic disc oedema"
+    "en": "A sign of optic disc edema"
    },
    {
     "fr": "Une atrophie glaucomateuse",
@@ -36,11 +36,11 @@ G.OPH.openCases = [
   "why": [
    {
     "fr": "Un nævus est une lésion choroïdienne grise, à distance ou au contact de la papille; ce croissant épouse le bord du disque.",
-    "en": "A naevus is a grey choroidal lesion; this crescent hugs the disc margin."
+    "en": "A nevus is a gray choroidal lesion; this crescent hugs the disc margin."
    },
    {
     "fr": "L’œdème papillaire efface les bords et voile les vaisseaux; ici les bords sont nets.",
-    "en": "Disc oedema blurs the margins and obscures the vessels; here the margins are sharp."
+    "en": "Disc edema blurs the margins and obscures the vessels; here the margins are sharp."
    },
    {
     "fr": "L’atrophie glaucomateuse s’apprécie sur l’anneau neurorétinien et l’excavation, pas sur un liseré pigmenté.",
@@ -48,12 +48,12 @@ G.OPH.openCases = [
    },
    {
     "fr": "Juste : c’est non pathologique. Le reste est normal : macula au centre, veines plus sombres et un peu plus larges que les artères.",
-    "en": "Correct: it is non-pathological. The rest is normal: macula in the centre, veins darker and slightly wider than arteries."
+    "en": "Correct: it is non-pathological. The rest is normal: macula in the center, veins darker and slightly wider than arteries."
    }
   ],
   "reveal": {
    "fr": "Fond d’œil normal : papille à bords nets, croissant pigmenté temporal physiologique, macula centrée.",
-   "en": "Normal fundus: sharp disc margins, physiological temporal pigment crescent, centred macula."
+   "en": "Normal fundus: sharp disc margins, physiological temporal pigment crescent, centered macula."
   },
   "open": true
  },
@@ -77,7 +77,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Œdème papillaire",
-    "en": "Disc oedema"
+    "en": "Disc edema"
    },
    {
     "fr": "Papille normale",
@@ -96,7 +96,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Juste : papille gonflée (papilloedème par hypertension intracrânienne). Le mot « papilloedème » est réservé à l’œdème par HTIC : examen neurologique et imagerie cérébrale en urgence.",
-    "en": "Correct: swollen disc (papilledema from raised intracranial pressure). “Papilledema” means disc oedema from raised ICP: urgent neurological exam and brain imaging."
+    "en": "Correct: swollen disc (papilledema from raised intracranial pressure). “Papilledema” means disc edema from raised ICP: urgent neurological exam and brain imaging."
    },
    {
     "fr": "Les bords ne sont pas nets et les vaisseaux sont masqués au bord du disque.",
@@ -105,7 +105,7 @@ G.OPH.openCases = [
   ],
   "reveal": {
    "fr": "Papille gonflée, bords effacés, hémorragies péripapillaires : papilloedème.",
-   "en": "Swollen disc, effaced margins, peripapillary haemorrhages: papilledema."
+   "en": "Swollen disc, effaced margins, peripapillary hemorrhages: papilledema."
   },
   "open": true
  },
@@ -148,7 +148,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "L’OVCR donne des hémorragies dans les quatre quadrants et des veines dilatées, absentes ici.",
-    "en": "CRVO gives four-quadrant haemorrhages and dilated veins, absent here."
+    "en": "CRVO gives four-quadrant hemorrhages and dilated veins, absent here."
    },
    {
     "fr": "La DMLA exsudative donne liquide, hémorragie ou exsudats maculaires, pas une rétine blanchie.",
@@ -192,24 +192,24 @@ G.OPH.openCases = [
   "why": [
    {
     "fr": "Juste : hémorragies intrarétiniennes dans tout le fond d’œil (a); en angiographie, ces hémorragies masquent la fluorescence choroïdienne (taches sombres, b). Surveiller la néovascularisation de l’iris (glaucome néovasculaire).",
-    "en": "Correct: intraretinal haemorrhages throughout the fundus (a); on angiography they block the choroidal fluorescence (dark spots, b). Watch for iris neovascularisation (neovascular glaucoma)."
+    "en": "Correct: intraretinal hemorrhages throughout the fundus (a); on angiography they block the choroidal fluorescence (dark spots, b). Watch for iris neovascularization (neovascular glaucoma)."
    },
    {
     "fr": "La RD a des hémorragies plus éparses avec microanévrismes et exsudats, pas ce semis diffus autour de la papille.",
-    "en": "Diabetic retinopathy has scattered haemorrhages with microaneurysms and exudates, not this diffuse spread around the disc."
+    "en": "Diabetic retinopathy has scattered hemorrhages with microaneurysms and exudates, not this diffuse spread around the disc."
    },
    {
     "fr": "L’OACR blanchit la rétine sans hémorragies diffuses.",
-    "en": "CRAO whitens the retina without diffuse haemorrhages."
+    "en": "CRAO whitens the retina without diffuse hemorrhages."
    },
    {
     "fr": "La rétinopathie de Valsalva donne une hémorragie prérétinienne localisée, souvent maculaire.",
-    "en": "Valsalva retinopathy gives a localised, often macular, preretinal haemorrhage."
+    "en": "Valsalva retinopathy gives a localized, often macular, preretinal hemorrhage."
    }
   ],
   "reveal": {
    "fr": "Hémorragies intrarétiniennes diffuses; masquage de la fluorescence en angiographie : OVCR.",
-   "en": "Diffuse intraretinal haemorrhages; blocked fluorescence on angiography: CRVO."
+   "en": "Diffuse intraretinal hemorrhages; blocked fluorescence on angiography: CRVO."
   },
   "open": true
  },
@@ -229,7 +229,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Un œdème papillaire",
-    "en": "Disc oedema"
+    "en": "Disc edema"
    },
    {
     "fr": "Des collatérales optociliaires",
@@ -244,11 +244,11 @@ G.OPH.openCases = [
   "why": [
    {
     "fr": "Le réseau fin et anarchique qui couvre la papille n’existe pas normalement.",
-    "en": "The fine, disorganised network covering the disc is not normal."
+    "en": "The fine, disorganized network covering the disc is not normal."
    },
    {
     "fr": "L’œdème papillaire gonfle le disque et efface ses bords sans créer de lacis vasculaire.",
-    "en": "Disc oedema swells the disc without a vascular tuft."
+    "en": "Disc edema swells the disc without a vascular tuft."
    },
    {
     "fr": "Les collatérales optociliaires sont quelques gros vaisseaux qui plongent au bord du disque, pas un réseau fin.",
@@ -256,7 +256,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Juste : néovaisseaux et tissu fibreux à la surface de la rétine. Risque d’hémorragie du vitré et de décollement tractionnel : panphotocoagulation et/ou anti-VEGF rapidement.",
-    "en": "Correct: new vessels and fibrous tissue on the retinal surface. Risk of vitreous haemorrhage and tractional detachment: prompt panretinal photocoagulation and/or anti-VEGF."
+    "en": "Correct: new vessels and fibrous tissue on the retinal surface. Risk of vitreous hemorrhage and tractional detachment: prompt panretinal photocoagulation and/or anti-VEGF."
    }
   ],
   "reveal": {
@@ -272,7 +272,7 @@ G.OPH.openCases = [
   "level": 2,
   "q": {
    "fr": "Diabétique, vision centrale floue. Photo avant traitement. Les dépôts jaunes autour du centre sont :",
-   "en": "Diabetic patient with blurred central vision. Pre-treatment photo. The yellow deposits around the centre are:"
+   "en": "Diabetic patient with blurred central vision. Pre-treatment photo. The yellow deposits around the center are:"
   },
   "options": [
    {
@@ -300,11 +300,11 @@ G.OPH.openCases = [
    },
    {
     "fr": "La photo est étiquetée « avant traitement » : il n’y a pas encore de laser.",
-    "en": "The photo is labelled “pretreatment”: no laser yet."
+    "en": "The photo is labeled “pretreatment”: no laser yet."
    },
    {
     "fr": "Juste (œdème maculaire diabétique, NEI) : les exsudats marquent la fuite de liquide autour de la fovéa; l’OCT quantifie l’œdème, le traitement de première ligne est l’anti-VEGF intravitréen.",
-    "en": "Correct (diabetic macular oedema, NEI): exudates mark leakage around the fovea; OCT measures the oedema; first-line treatment is intravitreal anti-VEGF."
+    "en": "Correct (diabetic macular edema, NEI): exudates mark leakage around the fovea; OCT measures the edema; first-line treatment is intravitreal anti-VEGF."
    },
    {
     "fr": "Les drusen sont des dépôts ronds sous l’EPR de la DMLA, sans contexte diabétique.",
@@ -313,7 +313,7 @@ G.OPH.openCases = [
   ],
   "reveal": {
    "fr": "Dépôts jaunes groupés autour du centre : exsudats d’un œdème maculaire diabétique.",
-   "en": "Yellow deposits clustered around the centre: exudates of diabetic macular oedema."
+   "en": "Yellow deposits clustered around the center: exudates of diabetic macular edema."
   },
   "open": true
  },
@@ -385,7 +385,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Œdème maculaire",
-    "en": "Macular oedema"
+    "en": "Macular edema"
    },
    {
     "fr": "Trou maculaire",
@@ -541,7 +541,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Une fonte cornéenne vascularisée",
-    "en": "Vascularised corneal melt"
+    "en": "Vascularized corneal melt"
    },
    {
     "fr": "Un infiltrat en anneau",
@@ -560,11 +560,11 @@ G.OPH.openCases = [
    },
    {
     "fr": "Juste : cornée opaque fondue et vascularisée, stade évolué. D’où l’intérêt d’y penser tôt devant une douleur disproportionnée chez un porteur de lentilles.",
-    "en": "Correct: opaque, melting, vascularised cornea, an advanced stage. Hence thinking of it early when pain is out of proportion in a lens wearer."
+    "en": "Correct: opaque, melting, vascularized cornea, an advanced stage. Hence thinking of it early when pain is out of proportion in a lens wearer."
    },
    {
     "fr": "L’anneau est le signe classique, mais il n’est pas décrit sur cette image (fonte et vascularisation).",
-    "en": "The ring is the classic sign, but it is not described on this image (melting and vascularisation)."
+    "en": "The ring is the classic sign, but it is not described on this image (melting and vascularization)."
    },
    {
     "fr": "Une dendrite est une lésion épithéliale fine et ramifiée.",
@@ -573,7 +573,7 @@ G.OPH.openCases = [
   ],
   "reveal": {
    "fr": "Kératite à Acanthamoeba évoluée : fonte cornéenne et vascularisation.",
-   "en": "Advanced Acanthamoeba keratitis: corneal melting and vascularisation."
+   "en": "Advanced Acanthamoeba keratitis: corneal melting and vascularization."
   },
   "open": true
  },
@@ -616,11 +616,11 @@ G.OPH.openCases = [
    },
    {
     "fr": "Après chirurgie myopique, le centre est aplati (bleu), pas bombé.",
-    "en": "After myopic surgery the centre is flattened (blue), not steep."
+    "en": "After myopic surgery the center is flattened (blue), not steep."
    },
    {
     "fr": "Fuchs épaissit la cornée (œdème), il ne crée pas de cône.",
-    "en": "Fuchs thickens the cornea (oedema); it does not create a cone."
+    "en": "Fuchs thickens the cornea (edema); it does not create a cone."
    }
   ],
   "reveal": {
@@ -720,7 +720,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Juste : dépôt de calcium sous-épithélial, plaque granuleuse percée de petits trous. Chercher une uvéite chronique ou une hypercalcémie; traitement par EDTA.",
-    "en": "Correct: subepithelial calcium, a granular plaque with small holes. Look for chronic uveitis or hypercalcaemia; treated with EDTA chelation."
+    "en": "Correct: subepithelial calcium, a granular plaque with small holes. Look for chronic uveitis or hypercalcemia; treated with EDTA chelation."
    },
    {
     "fr": "La fente lumineuse montre que l’opacité est dans la cornée, en avant de l’iris.",
@@ -792,7 +792,7 @@ G.OPH.openCases = [
   "level": 1,
   "q": {
    "fr": "Douleur brutale de l’œil droit, vision trouble, halos, nausées. PIO OD 42 mmHg. Diagnostic?",
-   "en": "Sudden right eye pain, blurred vision, haloes, nausea. Right IOP 42 mmHg. Diagnosis?"
+   "en": "Sudden right eye pain, blurred vision, halos, nausea. Right IOP 42 mmHg. Diagnosis?"
   },
   "options": [
    {
@@ -828,7 +828,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Le glaucome néovasculaire suppose des néovaisseaux de l’iris sur une rétine ischémique.",
-    "en": "Neovascular glaucoma requires iris new vessels from an ischaemic retina."
+    "en": "Neovascular glaucoma requires iris new vessels from an ischemic retina."
    }
   ],
   "reveal": {
@@ -853,11 +853,11 @@ G.OPH.openCases = [
    },
    {
     "fr": "Œdème papillaire",
-    "en": "Disc oedema"
+    "en": "Disc edema"
    },
    {
     "fr": "Neuropathie optique ischémique aiguë",
-    "en": "Acute ischaemic optic neuropathy"
+    "en": "Acute ischemic optic neuropathy"
    },
    {
     "fr": "Glaucome avancé",
@@ -872,7 +872,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "L’œdème surélève la papille et efface ses bords.",
-    "en": "Oedema elevates the disc and blurs its margins."
+    "en": "Edema elevates the disc and blurs its margins."
    },
    {
     "fr": "La NOIA aiguë donne un œdème papillaire, pas une excavation.",
@@ -901,7 +901,7 @@ G.OPH.openCases = [
   "options": [
    {
     "fr": "Des néovaisseaux de l’angle",
-    "en": "Angle neovascularisation"
+    "en": "Angle neovascularization"
    },
    {
     "fr": "Une fermeture de l’angle",
@@ -1061,7 +1061,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Hémorragie sous-conjonctivale",
-    "en": "Subconjunctival haemorrhage"
+    "en": "Subconjunctival hemorrhage"
    },
    {
     "fr": "Iridodialyse",
@@ -1080,7 +1080,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "L’hémorragie sous-conjonctivale est en dehors du globe, sur la sclère.",
-    "en": "Subconjunctival haemorrhage is outside the globe, over the sclera."
+    "en": "Subconjunctival hemorrhage is outside the globe, over the sclera."
    },
    {
     "fr": "L’iridodialyse est une désinsertion de la racine de l’iris (pupille en « D »).",
@@ -1165,7 +1165,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Hémorragie du vitré",
-    "en": "Vitreous haemorrhage"
+    "en": "Vitreous hemorrhage"
    },
    {
     "fr": "Un corps étranger intraoculaire",
@@ -1180,11 +1180,11 @@ G.OPH.openCases = [
   "why": [
    {
     "fr": "L’article décrit une atteinte du globe et une hémorragie du vitré.",
-    "en": "The article describes a globe injury and vitreous haemorrhage."
+    "en": "The article describes a globe injury and vitreous hemorrhage."
    },
    {
     "fr": "Juste (tableau de l’article) : globe diminué de taille avec hémorragie du vitré déposée en membrane en bas; le scanner évoque une atteinte du globe. Devant un traumatisme suspect de plaie du globe : pas de pression sur l’œil, scanner, avis ophtalmologique urgent.",
-    "en": "Correct (article table): smaller globe with vitreous haemorrhage settled as a membrane at the bottom; CT suggests globe injury. When an open globe is possible: no pressure on the eye, CT, urgent ophthalmology review."
+    "en": "Correct (article table): smaller globe with vitreous hemorrhage settled as a membrane at the bottom; CT suggests globe injury. When an open globe is possible: no pressure on the eye, CT, urgent ophthalmology review."
    },
    {
     "fr": "Un corps étranger est très échogène avec une ombre acoustique postérieure (voir cas suivant).",
@@ -1197,7 +1197,7 @@ G.OPH.openCases = [
   ],
   "reveal": {
    "fr": "Couche échogène déclive (flèches) : hémorragie du vitré après traumatisme.",
-   "en": "Dependent echogenic layer (arrows): vitreous haemorrhage after trauma."
+   "en": "Dependent echogenic layer (arrows): vitreous hemorrhage after trauma."
   },
   "open": true
  },
@@ -1240,7 +1240,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Les drusen papillaires sont à la tête du nerf optique, pas dispersés dans un globe traumatisé.",
-    "en": "Disc drusen sit at the optic nerve head, not scattered in a traumatised globe."
+    "en": "Disc drusen sit at the optic nerve head, not scattered in a traumatized globe."
    },
    {
     "fr": "L’ombre acoustique et le scanner confirment des objets réels.",
@@ -1269,7 +1269,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Une hémorragie du vitré",
-    "en": "A vitreous haemorrhage"
+    "en": "A vitreous hemorrhage"
    },
    {
     "fr": "Un décollement postérieur du vitré",
@@ -1288,7 +1288,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "L’hémorragie du vitré donne des échos diffus ou une couche déclive, pas des dômes.",
-    "en": "Vitreous haemorrhage gives diffuse echoes or a dependent layer, not domes."
+    "en": "Vitreous hemorrhage gives diffuse echoes or a dependent layer, not domes."
    },
    {
     "fr": "Le vitré décollé est fin, très mobile, et ne forme pas de dômes épais.",
@@ -1321,7 +1321,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Hémorragie suprachoroïdienne",
-    "en": "Suprachoroidal haemorrhage"
+    "en": "Suprachoroidal hemorrhage"
    },
    {
     "fr": "Décollements choroïdiens (hypotonie)",
@@ -1336,11 +1336,11 @@ G.OPH.openCases = [
   "why": [
    {
     "fr": "Une tumeur ne disparaît pas en 2 mois; ici tout se résout (E).",
-    "en": "A tumour does not vanish in 2 months; here everything resolves (E)."
+    "en": "A tumor does not vanish in 2 months; here everything resolves (E)."
    },
    {
     "fr": "L’hémorragie suprachoroïdienne survient brutalement, très douloureuse, souvent en peropératoire, avec PIO élevée.",
-    "en": "Suprachoroidal haemorrhage is sudden, very painful, often intraoperative, with raised IOP."
+    "en": "Suprachoroidal hemorrhage is sudden, very painful, often intraoperative, with raised IOP."
    },
    {
     "fr": "Juste : décollement choroïdien avec PIO à 4 mmHg; pli choriorétinien à l’OCT (maculopathie d’hypotonie). Résolution complète à 2 mois (D–F) sous atropine et corticoïdes.",
@@ -1392,7 +1392,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Juste (article) : hémorragie sous-hyaloïdienne et intrarétinienne après éternuements, rétine à plat confirmée le lendemain. La bande croisait le nerf optique, ce qui écarte un décollement de rétine.",
-    "en": "Correct (article): subhyaloid and intraretinal haemorrhage after sneezing, retina confirmed flat the next day. The band crossed the optic nerve, which argues against a retinal detachment."
+    "en": "Correct (article): subhyaloid and intraretinal hemorrhage after sneezing, retina confirmed flat the next day. The band crossed the optic nerve, which argues against a retinal detachment."
    },
    {
     "fr": "Piège : un décollement de rétine respecte la papille (il s’y attache) et ne la croise pas.",
@@ -1405,7 +1405,7 @@ G.OPH.openCases = [
   ],
   "reveal": {
    "fr": "Bande hyperéchogène qui croise le nerf optique, sang en arrière : hémorragie prérétinienne, pas un DR.",
-   "en": "Hyperechoic band crossing the optic nerve, blood behind: preretinal haemorrhage, not RD."
+   "en": "Hyperechoic band crossing the optic nerve, blood behind: preretinal hemorrhage, not RD."
   },
   "open": true
  },
@@ -1425,7 +1425,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Hémorragie du vitré",
-    "en": "Vitreous haemorrhage"
+    "en": "Vitreous hemorrhage"
    },
    {
     "fr": "Endophtalmie débutante",
@@ -1440,11 +1440,11 @@ G.OPH.openCases = [
   "why": [
    {
     "fr": "Juste : particules échogènes distinctes flottant librement (^). Condition bénigne, sans urgence; à ne pas confondre avec une hémorragie du vitré.",
-    "en": "Correct: discrete free-floating echogenic particles (^). Benign, not urgent; not to be confused with vitreous haemorrhage."
+    "en": "Correct: discrete free-floating echogenic particles (^). Benign, not urgent; not to be confused with vitreous hemorrhage."
    },
    {
     "fr": "L’hémorragie donne des échos plus diffus, « fluides », qui se déposent en bas et ondulent avec les mouvements.",
-    "en": "Haemorrhage gives more diffuse, fluid echoes that settle inferiorly and swirl with eye movements."
+    "en": "Hemorrhage gives more diffuse, fluid echoes that settle inferiorly and swirl with eye movements."
    },
    {
     "fr": "L’endophtalmie donne des débris denses cloisonnés dans un œil rouge et douloureux.",
@@ -1473,7 +1473,7 @@ G.OPH.openCases = [
   "options": [
    {
     "fr": "Un œdème maculaire cystoïde isolé",
-    "en": "Isolated cystoid macular oedema"
+    "en": "Isolated cystoid macular edema"
    },
    {
     "fr": "Un décollement séreux rétinien",
@@ -1509,7 +1509,7 @@ G.OPH.openCases = [
   ],
   "reveal": {
    "fr": "b : rupture de pleine épaisseur au centre : trou maculaire transfixiant (fermé ensuite).",
-   "en": "b: full-thickness break at the centre: macular hole (later closed)."
+   "en": "b: full-thickness break at the center: macular hole (later closed)."
   },
   "open": true
  },
@@ -1552,7 +1552,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Juste : angle ouvert à trabéculum hyperpigmenté; Humphrey 30-2 avec constriction sévère (MD −30,81 dB); OCT avec perte diffuse des fibres (moyenne 38 µm, en rouge).",
-    "en": "Correct: open angle with a hyperpigmented meshwork; Humphrey 30-2 with severe constriction (MD −30.81 dB); OCT with diffuse fibre loss (average 38 µm, in red)."
+    "en": "Correct: open angle with a hyperpigmented meshwork; Humphrey 30-2 with severe constriction (MD −30.81 dB); OCT with diffuse fiber loss (average 38 µm, in red)."
    },
    {
     "fr": "Les structures de l’angle sont visibles (angle ouvert) et le champ est très atteint.",
@@ -1577,7 +1577,7 @@ G.OPH.openCases = [
   "options": [
    {
     "fr": "Hémorragie du vitré",
-    "en": "Vitreous haemorrhage"
+    "en": "Vitreous hemorrhage"
    },
    {
     "fr": "Masse choroïdienne : mélanome",
@@ -1600,7 +1600,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Juste : liquide sous-rétinien séreux et masse choroïdienne; mélanome confirmé. Un décollement « exsudatif » doit faire chercher une tumeur.",
-    "en": "Correct: serous subretinal fluid and a choroidal mass; melanoma confirmed. An exudative detachment should prompt a search for a tumour."
+    "en": "Correct: serous subretinal fluid and a choroidal mass; melanoma confirmed. An exudative detachment should prompt a search for a tumor."
    },
    {
     "fr": "Il y a du liquide sous-rétinien, mais aussi une masse choroïdienne sous-jacente (flèche).",
@@ -1648,7 +1648,7 @@ G.OPH.openCases = [
   "why": [
    {
     "fr": "Juste : implant luxé (flèche), structure curviligne hyperéchogène; pas de décollement de rétine ni d’hémorragie du vitré dans ce cas. Réparation chirurgicale.",
-    "en": "Correct: dislocated lens implant (arrow), a hyperechoic curvilinear structure; no retinal detachment or vitreous haemorrhage in this case. Surgical repair."
+    "en": "Correct: dislocated lens implant (arrow), a hyperechoic curvilinear structure; no retinal detachment or vitreous hemorrhage in this case. Surgical repair."
    },
    {
     "fr": "Une rétine décollée s’attache à la papille; l’article note l’absence de décollement.",
@@ -1685,7 +1685,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Une tumeur de la glande lacrymale",
-    "en": "A lacrimal gland tumour"
+    "en": "A lacrimal gland tumor"
    },
    {
     "fr": "Un globe et une orbite normaux",
@@ -1793,7 +1793,7 @@ G.OPH.openCases = [
    },
    {
     "fr": "Une hémorragie du vitré",
-    "en": "A vitreous haemorrhage"
+    "en": "A vitreous hemorrhage"
    },
    {
     "fr": "Une hyalite astéroïde",
@@ -1832,7 +1832,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "photo": "IMG3-024",
   "alt": {
    "fr": "Fond d’œil gauche normal : papille à gauche de l’image, macula au centre.",
-   "en": "Normal left fundus: disc on the left of the image, macula in the centre."
+   "en": "Normal left fundus: disc on the left of the image, macula in the center."
   },
   "hotspots": [
    {
@@ -1898,7 +1898,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "decisive": false,
     "label": {
      "fr": "Hémorragies en flammèche péripapillaires",
-     "en": "Peripapillary flame haemorrhages"
+     "en": "Peripapillary flame hemorrhages"
     }
    }
   ],
@@ -1960,7 +1960,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "decisive": true,
     "label": {
      "fr": "Hémorragies intrarétiniennes diffuses",
-     "en": "Diffuse intraretinal haemorrhages"
+     "en": "Diffuse intraretinal hemorrhages"
     }
    },
    {
@@ -2022,7 +2022,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "photo": "IMG3-033",
   "alt": {
    "fr": "Œdème maculaire diabétique avant traitement (NEI).",
-   "en": "Diabetic macular oedema before treatment (NEI)."
+   "en": "Diabetic macular edema before treatment (NEI)."
   },
   "hotspots": [
    {
@@ -2584,7 +2584,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "photo": "IMG3-007",
   "alt": {
    "fr": "Échographie et scanner : hémorragie du vitré traumatique.",
-   "en": "Ultrasound and CT: traumatic vitreous haemorrhage."
+   "en": "Ultrasound and CT: traumatic vitreous hemorrhage."
   },
   "hotspots": [
    {
@@ -2594,7 +2594,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "decisive": true,
     "label": {
      "fr": "Flèche rouge : hémorragie déposée en bas (A)",
-     "en": "Red arrow: haemorrhage settled at the bottom (A)"
+     "en": "Red arrow: hemorrhage settled at the bottom (A)"
     }
    },
    {

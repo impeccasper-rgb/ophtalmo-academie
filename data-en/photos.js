@@ -161,7 +161,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "caption": "Confocal microscopy: Acanthamoeba cysts as very bright round dots",
       "look": "Locate the small, round, very bright structures scattered across the field.",
       "reveal": [
-        "Multiple round hyperreflective dots, isolated or in small clusters, throughout the image: cysts, the resistant form of the amoeba.",
+        "Multiple round hyperreflective dots, isolated or in small clusters, throughout the image: cysts, the resistant form of the ameba.",
         "More irregular, less distinct forms: trophozoites, the active form.",
         "A quick, noninvasive test that complements scraping (culture, PCR)."
       ]
@@ -1253,7 +1253,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "look": "Compare the upper lids and the depth of the sulcus above each eye.",
       "reveal": [
         "Deeper upper lid sulcus on the patient's left side (right of the image): orbital fat atrophy (prostaglandin-associated periorbitopathy).",
-        "Cause: prostaglandin analogue used for several years in this eye, for angle-recession glaucoma.",
+        "Cause: prostaglandin analog used for several years in this eye, for angle-recession glaucoma.",
         "Other known local effects of prostaglandins: redness, longer lashes, darkening of the iris and of the eyelid skin."
       ]
     },
@@ -1268,7 +1268,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
   });
   add("bonus-B", {
     "OPH-082": {
-      "caption": "Neurotrophic ulcer: oval defect with raised greyish edges (diffuse illumination)",
+      "caption": "Neurotrophic ulcer: oval defect with raised grayish edges (diffuse illumination)",
       "look": "Describe the shape of the ulcer and the appearance of its edges.",
       "reveal": [
         "Oval epithelial defect in the center of the cornea, with a thickened grayish rim: raised edges typical of a neurotrophic ulcer.",
@@ -1939,7 +1939,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
       "reveal": [
         "Near the center: total thickness of 525 µm and residual stromal bed of 321 µm.",
         "Farther out (at −2.80 mm and +2.10 mm): residual bed of 399 and 377 µm.",
-        "Before an enhancement, a residual bed of less than 300 µm contraindicates it in some centres.",
+        "Before an enhancement, a residual bed of less than 300 µm contraindicates it in some centers.",
         "After LASIK, the thinned cornea leads to underestimating IOP."
       ]
     },

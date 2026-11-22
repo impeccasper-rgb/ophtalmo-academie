@@ -11,7 +11,7 @@ var GOATCOUNTER_CODE = '';
 var GOATCOUNTER_IN_NATIVE_APP = false;
 
 var PRIVACY_DATE = '2026-11-22'; // date d'entrée en vigueur de la politique (à changer à chaque modification)
-var PRIVACY_OFFICER = 'Taha Amkadou, M.D. — [courriel à confirmer]'; // TODO : courriel à fournir par le responsable (docs/RAPPORT-REVEIL.md)
+var PRIVACY_OFFICER = 'Ocelle — [courriel à confirmer · email to be confirmed]'; // TODO : nom volontairement non publié pour l'instant (choix du propriétaire, 2026-11-22) ; courriel de contact à fournir
 
 /* ---------- mesure d'audience ---------- */
 var Stats = (function () {

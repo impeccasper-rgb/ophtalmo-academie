@@ -9,22 +9,22 @@ Object.assign(G.OPH_EN.quiz, {
   "A-001": {
     stem: "You are doing ultrasound pachymetry (measuring corneal thickness with a small probe) on a healthy 24-year-old student. Your attending asks which layer makes up most of the corneal thickness and what central value you expect to read.",
     options: [
-      "The stroma (≈ 90 % of the thickness); center ≈ 540–550 µm",
-      "The epithelium (≈ 50 % of the thickness); center ≈ 540–550 µm",
-      "The stroma (≈ 90 % of the thickness); center ≈ 650–700 µm",
-      "Descemet membrane (≈ 30 %); center ≈ 450 µm"
+      "The stroma (≈ 90% of the thickness); center ≈ 540–550 µm",
+      "The epithelium (≈ 50% of the thickness); center ≈ 540–550 µm",
+      "The stroma (≈ 90% of the thickness); center ≈ 650–700 µm",
+      "Descemet membrane (≈ 30%); center ≈ 450 µm"
     ],
     explain: "The stroma makes up ≈ 90% of corneal thickness. The center measures ≈ 540–550 µm and the periphery ≈ 650–700 µm; the central value is the one used to interpret IOP.",
-    deep: "Reasoning: 1) from front to back, the cornea has the epithelium (≈ 50 µm), Bowman layer (8–12 µm), the stroma, Dua layer, Descemet membrane and the endothelium (a single cell layer); 2) all these layers are thin except the stroma, made of type I collagen lamellae and about 78 % water, which therefore makes up ≈ 90 % of the thickness; 3) the cornea is thinner centrally (≈ 540–550 µm) than peripherally (≈ 650–700 µm), and the central value is the one we measure, because it is used to interpret IOP.",
+    deep: "Reasoning: 1) from front to back, the cornea has the epithelium (≈ 50 µm), Bowman layer (8–12 µm), the stroma, Dua layer, Descemet membrane and the endothelium (a single cell layer); 2) all these layers are thin except the stroma, made of type I collagen lamellae and about 78% water, which therefore makes up ≈ 90% of the thickness; 3) the cornea is thinner centrally (≈ 540–550 µm) than peripherally (≈ 650–700 µm), and the central value is the one we measure, because it is used to interpret IOP.",
     why: [
-      "Correct: the stroma makes up ≈ 90 % of the thickness, and the center measures ≈ 540–550 µm in adults.",
-      "The epithelium is only ≈ 50 µm (5–7 cell layers), about 10 % of the thickness, not half.",
+      "Correct: the stroma makes up ≈ 90% of the thickness, and the center measures ≈ 540–550 µm in adults.",
+      "The epithelium is only ≈ 50 µm (5–7 cell layers), about 10% of the thickness, not half.",
       "Right layer, but 650–700 µm is the peripheral value; the center is thinner.",
       "Descemet (the endothelial basement membrane) is only 10–15 µm in adults; 450 µm would be a markedly thin cornea."
     ]
   },
   "A-002": {
-    stem: "On gonioscopy (examining the iridocorneal angle with a mirrored lens placed on the cornea) of a wide-open angle, you describe from the iris root toward the cornea: a grey-brown band, a whitish line, then a pigmented band. Your attending points to the pigmented band: what structure is it?",
+    stem: "On gonioscopy (examining the iridocorneal angle with a mirrored lens placed on the cornea) of a wide-open angle, you describe from the iris root toward the cornea: a gray-brown band, a whitish line, then a pigmented band. Your attending points to the pigmented band: what structure is it?",
     options: [
       "The ciliary body band, the anterior face of the ciliary body",
       "Schwalbe line, the termination of Descemet membrane",
@@ -32,9 +32,9 @@ Object.assign(G.OPH_EN.quiz, {
       "Schlemm canal, visible when it fills with blood"
     ],
     explain: "From iris to cornea: ciliary body band (gray-brown), scleral spur (white line), then pigmented trabecular meshwork. The pigmented band just in front of the white line is the meshwork, the part that filters.",
-    deep: "Reasoning: 1) structures are named from posterior to anterior with \"I Can't See Til Schwalbe\": Iris root, Ciliary body band (grey-brown), Scleral spur (white line), Trabecular meshwork, Schwalbe line; 2) the pigmented band following the white line (the spur) is therefore the pigmented trabecular meshwork; 3) it is the filtering portion, located in front of Schlemm canal, and pigment deposits there precisely because aqueous flows through it.",
+    deep: "Reasoning: 1) structures are named from posterior to anterior with \"I Can't See Til Schwalbe\": Iris root, Ciliary body band (gray-brown), Scleral spur (white line), Trabecular meshwork, Schwalbe line; 2) the pigmented band following the white line (the spur) is therefore the pigmented trabecular meshwork; 3) it is the filtering portion, located in front of Schlemm canal, and pigment deposits there precisely because aqueous flows through it.",
     why: [
-      "The ciliary body band is the most posterior grey-brown band: the anterior face of the ciliary body, between the iris root and the spur.",
+      "The ciliary body band is the most posterior gray-brown band: the anterior face of the ciliary body, between the iris root and the spur.",
       "Schwalbe line is the most anterior structure, a thin whitish ridge: the end of Descemet membrane, beyond the trabecular meshwork.",
       "Correct: just anterior to the scleral spur, this is the zone that filters aqueous toward Schlemm canal.",
       "Schlemm canal is normally not visible; it appears as a red line only if blood refluxes into it (lens compressing the episcleral veins or elevated episcleral venous pressure)."
@@ -204,7 +204,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Pilocarpine increases it; its share of outflow increases with age"
     ],
     explain: "Pilocarpine contracts the ciliary muscle: it opens the meshwork but tightens the spaces of the uveoscleral route, which it reduces. That route also matters less with age.",
-    deep: "Reasoning: 1) aqueous exits by two pathways: the trabecular pathway (meshwork → Schlemm canal → episcleral veins), which is pressure-dependent, and the uveoscleral pathway, which passes posteriorly between the ciliary muscle fibers and is largely pressure-independent; 2) pilocarpine contracts the ciliary muscle: its fibers pull on the scleral spur and open the meshwork (C increases), but they also tighten and close the uveoscleral spaces (U decreases); 3) the uveoscleral pathway accounts for 5–30 % of outflow and decreases with age. In theory, pilocarpine therefore partly opposes latanoprost, which relies precisely on this pathway.",
+    deep: "Reasoning: 1) aqueous exits by two pathways: the trabecular pathway (meshwork → Schlemm canal → episcleral veins), which is pressure-dependent, and the uveoscleral pathway, which passes posteriorly between the ciliary muscle fibers and is largely pressure-independent; 2) pilocarpine contracts the ciliary muscle: its fibers pull on the scleral spur and open the meshwork (C increases), but they also tighten and close the uveoscleral spaces (U decreases); 3) the uveoscleral pathway accounts for 5–30% of outflow and decreases with age. In theory, pilocarpine therefore partly opposes latanoprost, which relies precisely on this pathway.",
     why: [
       "Correct: more trabecular outflow, less uveoscleral outflow; and this pathway loses importance with age.",
       "Trap: pilocarpine opens the trabecular meshwork, but closes the uveoscleral pathway by contracting the ciliary muscle.",
@@ -221,12 +221,12 @@ Object.assign(G.OPH_EN.quiz, {
       "The endothelium, a barrier and Na⁺/K⁺-ATPase pump that removes water from the stroma"
     ],
     explain: "The endothelium is a barrier and a pump (Na⁺/K⁺-ATPase) that removes water from the stroma. At 600 cells/mm² its reserve is low: surgical stress is enough to make the cornea swell.",
-    deep: "Reasoning: 1) the stroma contains glycosaminoglycans that attract water: left to itself, it swells, its collagen fibers lose their regular spacing and light scatters; 2) the endothelium, a single layer of hexagonal cells, lets a little aqueous in (an imperfect barrier) but pumps ions into the anterior chamber via Na⁺/K⁺-ATPase, and water follows: this is deturgescence; 3) these cells do not divide in adults (≈ 3000–3500 cells/mm² in young adults, loss ≈ 0.6 %/year); below ≈ 400–500 cells/mm², the pump can no longer keep up and the cornea swells (stromal edema, Descemet folds), especially after the stress of surgery.",
+    deep: "Reasoning: 1) the stroma contains glycosaminoglycans that attract water: left to itself, it swells, its collagen fibers lose their regular spacing and light scatters; 2) the endothelium, a single layer of hexagonal cells, lets a little aqueous in (an imperfect barrier) but pumps ions into the anterior chamber via Na⁺/K⁺-ATPase, and water follows: this is deturgescence; 3) these cells do not divide in adults (≈ 3000–3500 cells/mm² in young adults, loss ≈ 0.6%/year); below ≈ 400–500 cells/mm², the pump can no longer keep up and the cornea swells (stromal edema, Descemet folds), especially after the stress of surgery.",
     why: [
       "The epithelium mainly serves as a barrier against tears; its pump role is minor compared with that of the endothelium.",
       "Keratocytes make and maintain the collagen; they do not remove water from the stroma.",
       "Bowman layer is an acellular collagen layer in front of the stroma; it does not contact the aqueous.",
-      "Correct: the endothelial pump, together with its barrier, keeps the stroma at about 78 % water."
+      "Correct: the endothelial pump, together with its barrier, keeps the stroma at about 78% water."
     ]
   },
 });
@@ -508,7 +508,7 @@ Object.assign(G.OPH_EN.quiz, {
     stem: "This visual field diagram (grayscale, OD) belongs to a 52-year-old man referred for \"normal-tension glaucoma\" (glaucomatous damage despite normal IOP): IOP 15 mmHg, somewhat pale discs. The left eye's field shows a similar, mirror-image defect. What do you conclude?",
     options: [
       "Normal-tension glaucoma: the defect respects the horizontal meridian",
-      "Advanced normal-tension glaucoma: lower IOP by about 30 %",
+      "Advanced normal-tension glaucoma: lower IOP by about 30%",
       "Corrective lens artifact: repeat the field before concluding",
       "Chiasmal lesion: the defect respects the vertical meridian, order an MRI"
     ],
@@ -539,7 +539,7 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "A-032": {
-    stem: "This peripapillary retinal nerve fiber layer OCT diagram (RNFL: TSNIT curve and sectors) belongs to the OD of a 59-year-old glaucoma suspect. His 24-2 field is normal. Your attending asks where the damage is and which test to add.",
+    stem: "This peripapillary retinal nerve fiber layer OCT diagram (RNFL: TSNIT curve and sectors) belongs to the right eye of a 59-year-old glaucoma suspect. His 24-2 field is normal. Your attending asks where the damage is and which test to add.",
     options: [
       "Superior thinning; repeat the same 24-2 in a year, with no other test",
       "Inferior thinning; add a 30-2 field, wider in the periphery",
@@ -606,7 +606,7 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "A-036": {
-    stem: "This gonioscopy diagram belongs to the OD of a 76-year-old woman in whom the slit lamp shows whitish \"target-pattern\" deposits on the anterior lens capsule; IOP 28 mmHg. What sign do you see in the angle?",
+    stem: "This gonioscopy diagram belongs to the right eye of a 76-year-old woman in whom the slit lamp shows whitish \"target-pattern\" deposits on the anterior lens capsule; IOP 28 mmHg. What sign do you see in the angle?",
     options: [
       "Sampaolesi line: wavy pigment deposited anterior to Schwalbe line",
       "Angle new vessels: fine red vessels crossing the scleral spur",
@@ -677,7 +677,7 @@ Object.assign(G.OPH_EN.quiz, {
   "B-004": {
     stem: "A 24-year-old man who wears soft contact lenses overnight, pain and photophobia for 2 days; VA 6/30. White 3 mm infiltrate located 2 mm from the center, anterior chamber reaction 2+. This fluorescein diagram under cobalt blue light shows the appearance of the lesion. What is the appropriate management?",
     options: [
-      "Moxifloxacin 0.5 % four times daily, stop the lenses and recheck in one week",
+      "Moxifloxacin 0.5% four times daily, stop the lenses and recheck in one week",
       "Scraping for smears and cultures, then fortified drops alternating hourly",
       "Tobramycin-dexamethasone right away to limit scarring",
       "Remove the lenses, preservative-free artificial tears, recheck as needed"
@@ -700,7 +700,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Start a topical steroid while waiting for a place at a center, to limit stromal melting"
     ],
     explain: "Central ulcer with hypopyon: severe keratitis. Treat at once (hourly moxifloxacin) and send the same day to a hospital center: fortified drops are made by hospital pharmacies.",
-    deep: "**What it is**: a central ulcer with a hypopyon (white blood cells layered at the bottom of the anterior chamber) is severe bacterial keratitis. **Why it matters**: it requires fortified drops (custom-compounded concentrated antibiotics) and daily follow-up; in Québec, these drops come from hospital pharmacies, hence transfer to the ophthalmology emergency service of a center (CHUM, HMR, MUHC, Jewish General Hospital, CHU de Québec…). **What to do**: take samples if possible, start a fourth-generation fluoroquinolone (a broad-spectrum antibiotic, such as moxifloxacin 0.5 %) hourly without delay, with a loading dose (one drop every 5–15 min for the first hour), and refer the same day.",
+    deep: "**What it is**: a central ulcer with a hypopyon (white blood cells layered at the bottom of the anterior chamber) is severe bacterial keratitis. **Why it matters**: it requires fortified drops (custom-compounded concentrated antibiotics) and daily follow-up; in Quebec, these drops come from hospital pharmacies, hence transfer to the ophthalmology emergency service of a center (CHUM, HMR, MUHC, Jewish General Hospital, CHU de Québec…). **What to do**: take samples if possible, start a fourth-generation fluoroquinolone (a broad-spectrum antibiotic, such as moxifloxacin 0.5%) hourly without delay, with a loading dose (one drop every 5–15 min for the first hour), and refer the same day.",
     why: [
       "Correct: immediate treatment and same-day transfer to a center that compounds fortified drops.",
       "Fortified drops are compounded in hospital pharmacies, and one-week follow-up is dangerous for a severe ulcer.",
@@ -728,7 +728,7 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "B-007": {
-    stem: "A 50-year-old man with culture-positive central bacterial keratitis, improving on moxifloxacin 0.5 % after 72 h. A colleague suggests adding difluprednate (a potent topical steroid) and corneal cross-linking (CXL) to reduce scarring. What did the SCUT and SCUT II trials show?",
+    stem: "A 50-year-old man with culture-positive central bacterial keratitis, improving on moxifloxacin 0.5% after 72 h. A colleague suggests adding difluprednate (a potent topical steroid) and corneal cross-linking (CXL) to reduce scarring. What did the SCUT and SCUT II trials show?",
     options: [
       "SCUT: clear overall benefit of topical steroids on final VA, for all ulcers",
       "SCUT II: added CXL clearly reduced scar size at 12 months",
@@ -736,7 +736,7 @@ Object.assign(G.OPH_EN.quiz, {
       "SCUT: steroids especially useful when the organism isolated is Nocardia"
     ],
     explain: "SCUT II: adding difluprednate, with or without CXL, to moxifloxacin improved neither acuity nor scar size. SCUT: no overall benefit from steroids; avoid them with Nocardia.",
-    deep: "**What it is**: SCUT (2012) and SCUT II (2026) are randomized trials that tested, in bacterial keratitis, adding a topical steroid to the antibiotic, and in SCUT II adding CXL (riboflavin activated by UVA that stiffens the collagen). **Why it matters**: SCUT II showed **no benefit** of difluprednate 0.05 %, alone or with CXL, on VA and scarring at 6 and 12 months (analysis possibly underpowered at 12 months), and SCUT had shown no overall benefit, except perhaps for a severe central ulcer treated early. **What to do**: the antibiotic remains the treatment; a steroid is considered only once the infection is controlled, and never with Nocardia.",
+    deep: "**What it is**: SCUT (2012) and SCUT II (2026) are randomized trials that tested, in bacterial keratitis, adding a topical steroid to the antibiotic, and in SCUT II adding CXL (riboflavin activated by UVA that stiffens the collagen). **Why it matters**: SCUT II showed **no benefit** of difluprednate 0.05%, alone or with CXL, on VA and scarring at 6 and 12 months (analysis possibly underpowered at 12 months), and SCUT had shown no overall benefit, except perhaps for a severe central ulcer treated early. **What to do**: the antibiotic remains the treatment; a steroid is considered only once the infection is controlled, and never with Nocardia.",
     why: [
       "SCUT showed no overall benefit; a possible effect was limited to severe central ulcers treated early.",
       "In SCUT II, added CXL neither reduced scarring nor improved VA.",
@@ -747,7 +747,7 @@ Object.assign(G.OPH_EN.quiz, {
   "B-008": {
     stem: "A 29-year-old woman who rinses her soft contact lenses with tap water and swims with them in. Intense pain for 3 weeks despite a topical antiviral prescribed for \"herpetic keratitis\". Slit lamp: subtle irregular epithelium and linear infiltrates along the corneal nerves; the pain seems out of proportion to the exam. What is the most appropriate management now?",
     options: [
-      "Add oral acyclovir and review in a week",
+      "Add oral acyclovir and recheck in a week",
       "Scrape for culture and PCR, then a compounded biguanide",
       "Hourly fluoroquinolone and a pressure patch for 24 h",
       "Topical anesthetic for the pain, then hourly artificial tears"
@@ -762,15 +762,15 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "B-009": {
-    stem: "A 54-year-old farmer from Montérégie scratched his eye on a branch 10 days ago. A walk-in clinic prescribed tobramycin-dexamethasone (an antibiotic plus a steroid). Greyish infiltrate with feathery edges surrounded by small satellite lesions. What is the most appropriate management?",
+    stem: "A 54-year-old farmer from Montérégie scratched his eye on a branch 10 days ago. A walk-in clinic prescribed tobramycin-dexamethasone (an antibiotic plus a steroid). Grayish infiltrate with feathery edges surrounded by small satellite lesions. What is the most appropriate management?",
     options: [
       "Continue the steroid to limit scarring and add oral voriconazole",
-      "Switch to topical voriconazole 1 %, superior to natamycin for Fusarium",
+      "Switch to topical voriconazole 1%, superior to natamycin for Fusarium",
       "Double the frequency of tobramycin-dexamethasone and recheck in a week",
-      "Stop the steroid, scrape for fungal cultures and start natamycin 5 %"
+      "Stop the steroid, scrape for fungal cultures and start natamycin 5%"
     ],
     explain: "Plant trauma, feathery edges, satellite lesions: fungal keratitis. Steroids let the fungus go deeper: stop them, scrape, then natamycin 5% (better than voriconazole for Fusarium, MUTT I trial).",
-    deep: "**What it is**: vegetative trauma followed by an infiltrate with feathery edges and satellite lesions suggests filamentous fungal keratitis, often due to Fusarium. **Why it matters**: the steroid weakens local immune defense and lets the fungus grow deeper; it must be **stopped**. **What to do**: scraping for smears and fungal cultures, then natamycin 5 % (a topical antifungal), which outperformed voriconazole 1 % in the randomized MUTT I trial, especially for Fusarium; MUTT II showed no benefit of adding oral voriconazole.",
+    deep: "**What it is**: vegetative trauma followed by an infiltrate with feathery edges and satellite lesions suggests filamentous fungal keratitis, often due to Fusarium. **Why it matters**: the steroid weakens local immune defense and lets the fungus grow deeper; it must be **stopped**. **What to do**: scraping for smears and fungal cultures, then natamycin 5% (a topical antifungal), which outperformed voriconazole 1% in the randomized MUTT I trial, especially for Fusarium; MUTT II showed no benefit of adding oral voriconazole.",
     why: [
       "The steroid worsens fungal keratitis, and adding oral voriconazole (an azole antifungal) showed no benefit in MUTT II.",
       "MUTT I showed the reverse: natamycin does better than topical voriconazole, especially for Fusarium.",
@@ -782,12 +782,12 @@ Object.assign(G.OPH_EN.quiz, {
     stem: "PCR of a corneal scraping confirms Acanthamoeba keratitis in a 31-year-old contact lens wearer. Which first-line topical treatment is appropriate, and how is it usually obtained in Canada?",
     options: [
       "Biguanide (PHMB 0.02% or chlorhexidine 0.02%) ± propamidine, compounded",
-      "Commercial natamycin 5 % hourly, the reference antifungal in atypical keratitis",
-      "Moxifloxacin 0.5 % hourly, since the ameba is sensitive to fluoroquinolones",
+      "Commercial natamycin 5% hourly, the reference antifungal in atypical keratitis",
+      "Moxifloxacin 0.5% hourly, since the ameba is sensitive to fluoroquinolones",
       "Oral acyclovir 400 mg 5 times daily for 10 days, then a preventive dose"
     ],
     explain: "Biguanides (PHMB or chlorhexidine 0.02%) kill the ameba and its cysts. In Canada they are compounded by a pharmacy, sometimes together with propamidine.",
-    deep: "**What it is**: biguanides (PHMB, or polyhexamethylene biguanide, and chlorhexidine) are antiseptics that kill the active form of the ameba and its cysts, a highly resistant dormant form. **Why it matters**: in Canada, they are made in pharmacies (compounded preparations), sometimes with propamidine (another antiseptic active against the ameba); polihexanide 0.08 % (Akantior), approved by the European Commission in 2024 as monotherapy, has Canadian availability that should be checked. **What to do**: intensive then prolonged treatment, often over several months, with close follow-up at a cornea center and pain control without topical anesthetics.",
+    deep: "**What it is**: biguanides (PHMB, or polyhexamethylene biguanide, and chlorhexidine) are antiseptics that kill the active form of the ameba and its cysts, a highly resistant dormant form. **Why it matters**: in Canada, they are made in pharmacies (compounded preparations), sometimes with propamidine (another antiseptic active against the ameba); polihexanide 0.08% (Akantior), approved by the European Commission in 2024 as monotherapy, has Canadian availability that should be checked. **What to do**: intensive then prolonged treatment, often over several months, with close follow-up at a cornea center and pain control without topical anesthetics.",
     why: [
       "Correct: compounded biguanide, ± propamidine.",
       "Natamycin is an antifungal, useful against filamentous fungi; it does not treat the ameba.",
@@ -804,7 +804,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Artificial tears alone and recheck in a month, because the lesion heals on its own"
     ],
     explain: "A dendrite with terminal bulbs is HSV epithelial keratitis: the virus is replicating. A steroid alone makes it worse (geographic ulcer). Stop it and give an oral antiviral at treatment dose.",
-    deep: "**What it is**: a dendrite is a branching epithelial ulcer, with swellings at the ends of the branches (terminal bulbs), that takes up fluorescein; it is HSV (herpes simplex virus) epithelial keratitis, hence active viral replication. **Why it matters**: steroids stimulate replication and can turn the dendrite into a geographic ulcer (a large ulcer with scalloped edges), hence the danger of prednisolone here. **What to do**: stop the steroid and give an antiviral for 7 to 10 days (acyclovir 400 mg PO 5×/day or valacyclovir 500 mg PO TID; or trifluridine 1 % drops 9×/day, toxic to the epithelium if prolonged), ± debridement (gentle removal of the infected epithelium), then check corneal sensation, often decreased after recurrences.",
+    deep: "**What it is**: a dendrite is a branching epithelial ulcer, with swellings at the ends of the branches (terminal bulbs), that takes up fluorescein; it is HSV (herpes simplex virus) epithelial keratitis, hence active viral replication. **Why it matters**: steroids stimulate replication and can turn the dendrite into a geographic ulcer (a large ulcer with scalloped edges), hence the danger of prednisolone here. **What to do**: stop the steroid and give an antiviral for 7 to 10 days (acyclovir 400 mg PO 5×/day or valacyclovir 500 mg PO TID; or trifluridine 1% drops 9×/day, toxic to the epithelium if prolonged), ± debridement (gentle removal of the infected epithelium), then check corneal sensation, often decreased after recurrences.",
     why: [
       "Steroids are contraindicated in active epithelial disease: even with an antiviral, they promote a geographic ulcer.",
       "Correct: stop the steroid and give a treatment-dose antiviral for 7 to 10 days.",
@@ -840,7 +840,7 @@ Object.assign(G.OPH_EN.quiz, {
       "The steroid regenerates corneal nerves destroyed by previous herpetic recurrences"
     ],
     explain: "A dendrite is an active infection of the epithelium. Stromal keratitis with intact epithelium is mainly an immune reaction: a topical steroid settles it, always under antiviral cover.",
-    deep: "**What it is**: HSV immune stromal keratitis is inflammation of the stroma triggered by viral antigens remaining in the cornea, whereas the dendrite is an active infection of the epithelium. **Why it matters**: the HEDS trial (Herpetic Eye Disease Study) showed that a topical steroid, given with an antiviral, speeds resolution of stromal disease; without an antiviral, it can reactivate an epithelial infection. **What to do**: prednisolone acetate 1 % with a slow taper, under oral antiviral cover (for example acyclovir 400 mg BID or valacyclovir 500 mg daily), and monitor IOP, because steroids can raise the pressure in the eye.",
+    deep: "**What it is**: HSV immune stromal keratitis is inflammation of the stroma triggered by viral antigens remaining in the cornea, whereas the dendrite is an active infection of the epithelium. **Why it matters**: the HEDS trial (Herpetic Eye Disease Study) showed that a topical steroid, given with an antiviral, speeds resolution of stromal disease; without an antiviral, it can reactivate an epithelial infection. **What to do**: prednisolone acetate 1% with a slow taper, under oral antiviral cover (for example acyclovir 400 mg BID or valacyclovir 500 mg daily), and monitor IOP, because steroids can raise the pressure in the eye.",
     why: [
       "Correct: an immune mechanism, hence the steroid, always with an antiviral.",
       "Steroids do not kill the virus; they calm inflammation and may even promote replication if the antiviral is omitted.",
@@ -854,10 +854,10 @@ Object.assign(G.OPH_EN.quiz, {
       "A significant benefit on the primary outcome from 12 months, with valacyclovir 1 g TID",
       "Primary outcome not significant at 12 months, but less eye disease at 18 months",
       "No effect on flares or neuropathic pain, hence abandonment of suppression",
-      "Acyclovir 400 mg BID for 12 months reduces ocular zoster recurrences by about 45 %"
+      "Acyclovir 400 mg BID for 12 months reduces ocular zoster recurrences by about 45%"
     ],
     explain: "ZEDS: valacyclovir 1 g daily for 1 year after herpes zoster ophthalmicus. The primary outcome at 12 months was not significant, but there was less new or worsening eye disease at 18 months. Individualize.",
-    deep: "**What it is**: ZEDS compared valacyclovir **1 g daily for 1 year** with placebo after herpes zoster ophthalmicus. **Why it matters**: the primary outcome at 12 months was not significant (HR 0.77; p = 0.09), but at 18 months there was 27 % less new or worsening eye disease (HR 0.73; p = 0.03), fewer multiple flares and less use of medication for neuropathic pain (nerve pain that persists after shingles). **What to do**: the authors recommend adding this suppression; it is individualized according to renal function and adherence.",
+    deep: "**What it is**: ZEDS compared valacyclovir **1 g daily for 1 year** with placebo after herpes zoster ophthalmicus. **Why it matters**: the primary outcome at 12 months was not significant (HR 0.77; p = 0.09), but at 18 months there was 27% less new or worsening eye disease (HR 0.73; p = 0.03), fewer multiple flares and less use of medication for neuropathic pain (nerve pain that persists after shingles). **What to do**: the authors recommend adding this suppression; it is individualized according to renal function and adherence.",
     why: [
       "The primary outcome at 12 months did not reach significance (p = 0.09), and the dose studied was 1 g once daily, not TID.",
       "Correct: ZEDS results at 12 and 18 months.",
@@ -870,8 +870,8 @@ Object.assign(G.OPH_EN.quiz, {
     options: [
       "Rigid lenses and yearly follow-up, no other test",
       "LASIK to correct the myopia and astigmatism",
-      "Topical antihistamine alone and review in a year",
-      "Tomography and prompt referral for crosslinking"
+      "Topical antihistamine alone and recheck in a year",
+      "Tomography and prompt referral for cross-linking"
     ],
     explain: "Inferior steepening and an asymmetric bow tie in a young atopic patient who rubs his eyes: progressing keratoconus. Confirm with tomography and refer promptly for cross-linking (CXL).",
     deep: "**What it is**: keratoconus is progressive thinning of the cornea, which bulges into a cone, usually below the center; on the axial curvature map (warm colors = steeper zone), there is inferior steepening with an asymmetric bowtie and skewed axes. **Why it matters**: young age, eye rubbing, atopy and increasing astigmatism with loss of corrected VA are typical, and early diagnosis allows the cornea to be stabilized before significant vision loss. **What to do**: tomography (Scheimpflug: anterior and posterior elevation, pachymetry map, thinnest point), stop the rubbing and refer without delay for corneal cross-linking (CXL).",
@@ -879,7 +879,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Lenses improve vision but don’t stop progression; a progressing teenager needs tomography and CXL.",
       "Refractive surgery is contraindicated: it worsens ectasia.",
       "Treating allergy helps stop rubbing, but isn’t enough when the disease progresses.",
-      "Correct: atopic teenager with progressing inferior steepening: tomography and crosslinking without delay."
+      "Correct: atopic teenager with progressing inferior steepening: tomography and cross-linking without delay."
     ]
   },
   "B-016": {
@@ -891,7 +891,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Perform prophylactic epi-on CXL on the left eye, even without keratoconus"
     ],
     explain: "In children, keratoconus progresses fast. The 2nd global consensus (2025) recommends cross-linking at diagnosis, without waiting for documented progression. Stopping eye rubbing is still needed but does not replace CXL.",
-    deep: "**What it is**: corneal cross-linking (CXL) combines riboflavin and UVA light to create bonds between collagen fibers and stiffen the cornea, which slows progression. **Why it matters**: in children, keratoconus often progresses quickly; the 2nd Global Consensus (2025) recommends CXL **at diagnosis, without waiting for documented progression**, and specifies that eye rubbing must stop but that this must **never delay CXL**. **What to do**: refer to a center that offers CXL (Dresden protocol 3 mW/cm² × 30 min or accelerated 9 mW/cm² × 10 min); in Québec, access and public coverage vary and should be checked locally.",
+    deep: "**What it is**: corneal cross-linking (CXL) combines riboflavin and UVA light to create bonds between collagen fibers and stiffen the cornea, which slows progression. **Why it matters**: in children, keratoconus often progresses quickly; the 2nd Global Consensus (2025) recommends CXL **at diagnosis, without waiting for documented progression**, and specifies that eye rubbing must stop but that this must **never delay CXL**. **What to do**: refer to a center that offers CXL (Dresden protocol 3 mW/cm² × 30 min or accelerated 9 mW/cm² × 10 min); in Quebec, access and public coverage vary and should be checked locally.",
     why: [
       "Waiting for progression is precisely the approach to avoid in children: the 2nd global consensus (ESCRS 2025) recommends CXL at diagnosis.",
       "Supplements (vitamin D, etc.) are only adjuncts according to the consensus; they neither replace nor delay CXL.",
@@ -925,7 +925,7 @@ Object.assign(G.OPH_EN.quiz, {
       "An associated Fuchs dystrophy suddenly decompensates the central endothelium"
     ],
     explain: "Acute hydrops: the stretched Descemet membrane tears and aqueous soaks the stroma, which turns white within hours. It is neither infection nor perforation: no infiltrate, normal chamber depth.",
-    deep: "**What it is**: acute corneal hydrops occurs when Descemet membrane, stretched at the apex of the cone, tears; aqueous humor enters the stroma, which swells and turns white within hours. **Why it matters**: it is dramatic, but it is not a perforation (the Seidel test, in which concentrated fluorescein reveals an aqueous leak, is negative), and the edema usually regresses over a few weeks to a few months, leaving a scar. **What to do**: conservative treatment (hypertonic 5 % saline, cycloplegic for pain, ± topical steroid, protection against rubbing), intracameral gas injection to be discussed at a center to speed resorption, then a contact lens or graft depending on the scar.",
+    deep: "**What it is**: acute corneal hydrops occurs when Descemet membrane, stretched at the apex of the cone, tears; aqueous humor enters the stroma, which swells and turns white within hours. **Why it matters**: it is dramatic, but it is not a perforation (the Seidel test, in which concentrated fluorescein reveals an aqueous leak, is negative), and the edema usually regresses over a few weeks to a few months, leaving a scar. **What to do**: conservative treatment (hypertonic 5% saline, cycloplegic for pain, ± topical steroid, protection against rubbing), intracameral gas injection to be discussed at a center to speed resorption, then a contact lens or graft depending on the scar.",
     why: [
       "Correct: rupture of Descemet and soaking of the stroma (hydrops).",
       "An infection would give an infiltrate, an anterior chamber reaction and often discharge, absent here.",
@@ -942,7 +942,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Rigid lens to smooth the surface"
     ],
     explain: "Guttae, edema worse on waking, a mother with a graft: Fuchs dystrophy. Start with 5% NaCl, which draws water out of the cornea; when vision is limiting, endothelial keratoplasty (DMEK) replaces the diseased layer.",
-    deep: "**What it is**: Fuchs dystrophy is an inherited disease in which the endothelium (the single cell layer that pumps water out of the cornea) becomes sparse and deposits excrescences, guttae, on Descemet, which appear as dark droplets. **Why it matters**: when too few cells remain (generally fewer than 400–500 cells/mm²), the pump can no longer keep up and the stroma swells, especially on waking; specular microscopy shows guttae as dark areas and pachymetry tracks the thickening. **What to do**: hypertonic 5 % saline at first, then endothelial keratoplasty (DMEK, which replaces only Descemet and the endothelium) when vision becomes limiting.",
+    deep: "**What it is**: Fuchs dystrophy is an inherited disease in which the endothelium (the single cell layer that pumps water out of the cornea) becomes sparse and deposits excrescences, guttae, on Descemet, which appear as dark droplets. **Why it matters**: when too few cells remain (generally fewer than 400–500 cells/mm²), the pump can no longer keep up and the stroma swells, especially on waking; specular microscopy shows guttae as dark areas and pachymetry tracks the thickening. **What to do**: hypertonic 5% saline at first, then endothelial keratoplasty (DMEK, which replaces only Descemet and the endothelium) when vision becomes limiting.",
     why: [
       "There is no inflammation: a steroid doesn’t help the endothelial pump and risks raised IOP.",
       "PK is for stromal scars; an endothelial graft (DMEK) restores better vision faster.",
@@ -961,7 +961,7 @@ Object.assign(G.OPH_EN.quiz, {
       "With the lids closed, tears no longer evaporate: the cornea retains more water"
     ],
     explain: "By day, tear evaporation draws water out of the cornea. With the lids closed it stops, and an already weak endothelial pump cannot keep up. Edema peaks on waking, then decreases.",
-    deep: "**What it is**: the cornea stays clear thanks to the endothelial pump (Na⁺/K⁺-ATPase) and to evaporation of the tear film, which makes tears slightly hypertonic and draws water out of the cornea. **Why it matters**: with the lids closed at night, evaporation stops; an already deficient pump can no longer keep up, so edema is maximal on waking and then decreases as the film evaporates. **What to do**: hypertonic saline (NaCl 5 %) drops or ointment, or warm air from a hair dryer held at arm's length in the morning; morning symptoms that last longer and longer point toward endothelial keratoplasty.",
+    deep: "**What it is**: the cornea stays clear thanks to the endothelial pump (Na⁺/K⁺-ATPase) and to evaporation of the tear film, which makes tears slightly hypertonic and draws water out of the cornea. **Why it matters**: with the lids closed at night, evaporation stops; an already deficient pump can no longer keep up, so edema is maximal on waking and then decreases as the film evaporates. **What to do**: hypertonic saline (NaCl 5%) drops or ointment, or warm air from a hair dryer held at arm's length in the morning; morning symptoms that last longer and longer point toward endothelial keratoplasty.",
     why: [
       "IOP varies a little at night, but this is not the cause of the morning edema of Fuchs (a very high IOP can, however, worsen edema).",
       "Guttae are excrescences of Descemet; they do not fill with water.",
@@ -1012,7 +1012,7 @@ Object.assign(G.OPH_EN.quiz, {
       "5% NaCl ointment at bedtime for 3 to 6 months"
     ],
     explain: "Pain on waking, months after a fingernail scratch: recurrent erosion. At night the lid sticks to poorly anchored epithelium and tears it off. Hypertonic ointment at bedtime for 3 to 6 months lets it re-anchor.",
-    deep: "**What it is**: in recurrent corneal erosion, the epithelium adheres poorly to its basement membrane after sharp trauma (fingernail, paper, branch) or basement membrane dystrophy; at night, the lid sticks to the epithelium and tears it off when the eyes open. **Why it matters**: the typical history (pain on waking, fingernail scratch weeks or months earlier) makes the diagnosis, even if the exam is almost normal later in the day. **What to do**: lubricating ointment at bedtime for several months (often hypertonic, NaCl 5 %), treat the acute episode like an abrasion, then, if recurrences persist, a bandage contact lens, anterior stromal puncture, debridement or phototherapeutic keratectomy (PTK, a laser that smooths the surface).",
+    deep: "**What it is**: in recurrent corneal erosion, the epithelium adheres poorly to its basement membrane after sharp trauma (fingernail, paper, branch) or basement membrane dystrophy; at night, the lid sticks to the epithelium and tears it off when the eyes open. **Why it matters**: the typical history (pain on waking, fingernail scratch weeks or months earlier) makes the diagnosis, even if the exam is almost normal later in the day. **What to do**: lubricating ointment at bedtime for several months (often hypertonic, NaCl 5%), treat the acute episode like an abrasion, then, if recurrences persist, a bandage contact lens, anterior stromal puncture, debridement or phototherapeutic keratectomy (PTK, a laser that smooths the surface).",
     why: [
       "Acyclovir prevents herpes; here the problem is epithelial anchoring.",
       "Plugs treat aqueous deficiency; they don’t stop the epithelium tearing off on waking.",
@@ -1095,11 +1095,11 @@ Object.assign(G.OPH_EN.quiz, {
     options: [
       "Artificial tears and recheck at the usual appointment in 3 months",
       "Oral antiviral alone, because any redness after a graft is herpetic",
-      "Intensive topical steroid (prednisolone 1 % hourly) the same day",
+      "Intensive topical steroid (prednisolone 1% hourly) the same day",
       "Urgent repeat penetrating keratoplasty before the end of the week"
     ],
     explain: "Keratic precipitates on a graft after stopping the drops: endothelial rejection. Each episode destroys cells that do not regenerate. Intensive topical steroid the same day.",
-    deep: "**What it is**: endothelial rejection is an immune attack on the donor endothelium; it shows as keratic precipitates (clumps of white blood cells stuck on the endothelium), sometimes lined up as a Khodadoust line, and graft edema. **Why it matters**: each episode destroys endothelial cells that do not regenerate, and rejection treated late leads to graft failure; **RSVP** symptoms (Redness, Sensitivity to light, Vision loss, Pain) require a same-day visit. **What to do**: prednisolone acetate 1 % hourly ± periocular or oral steroid depending on severity, IOP check, then a very slow taper; remind the patient never to stop the drops without advice.",
+    deep: "**What it is**: endothelial rejection is an immune attack on the donor endothelium; it shows as keratic precipitates (clumps of white blood cells stuck on the endothelium), sometimes lined up as a Khodadoust line, and graft edema. **Why it matters**: each episode destroys endothelial cells that do not regenerate, and rejection treated late leads to graft failure; **RSVP** symptoms (Redness, Sensitivity to light, Vision loss, Pain) require a same-day visit. **What to do**: prednisolone acetate 1% hourly ± periocular or oral steroid depending on severity, IOP check, then a very slow taper; remind the patient never to stop the drops without advice.",
     why: [
       "Untreated rejection destroys the graft endothelium; RSVP symptoms require same-day treatment.",
       "Herpes can cause redness after a graft, especially if it was done for herpetic keratitis; here, keratic precipitates after stopping the steroid point to rejection.",
@@ -1127,7 +1127,7 @@ Object.assign(G.OPH_EN.quiz, {
   "B-030": {
     stem: "A 72-year-old woman, DMEK for Fuchs 7 days ago. The cornea has cleared superiorly, but stromal edema persists in the inferior third; the air bubble has resorbed. No keratic precipitates or significant inflammatory reaction. Anterior segment OCT shows a fluid space between the graft and the stroma inferiorly. What is the diagnosis and next step?",
     options: [
-      "Early endothelial rejection: prednisolone 1 % hourly and recheck in a week",
+      "Early endothelial rejection: prednisolone 1% hourly and recheck in a week",
       "Partial graft detachment: reinjection of air or gas (rebubbling)",
       "Primary graft failure: immediate repeat DMEK with another donor",
       "Reactivated herpetic keratitis: oral valacyclovir and stop the steroid"
@@ -1197,9 +1197,9 @@ Object.assign(G.OPH_EN.quiz, {
   "B-034": {
     stem: "A 69-year-old man, herpes zoster ophthalmicus one year ago. Central epithelial defect with smooth, rolled edges for 4 weeks, without infiltrate, despite preservative-free tears; corneal sensation is absent. Which option is appropriate at this stage?",
     options: [
-      "Cenegermin 0.002 % (Oxervate), 1 drop 6 times daily every 2 h for 8 weeks",
+      "Cenegermin 0.002% (Oxervate), 1 drop 6 times daily every 2 h for 8 weeks",
       "Tetracaine drops as needed to relieve discomfort during healing",
-      "Prednisolone 1 % hourly to speed closure of the epithelial defect",
+      "Prednisolone 1% hourly to speed closure of the epithelial defect",
       "Hourly moxifloxacin day and night, then fortified drops if no response"
     ],
     explain: "Absent sensation and a persistent epithelial defect with rolled edges: moderate neurotrophic keratopathy. Cenegermin is approved at this stage. Never repeated topical anesthetic: it blocks healing.",
@@ -1248,7 +1248,7 @@ Object.assign(G.OPH_EN.quiz, {
 
   // ---- data/quiz-c.js ----
   "C-001": {
-    stem: "A 58-year-old man, IOP 24 mmHg OD, open angle on gonioscopy. The diagram shows the peripapillary retinal nerve fiber layer (RNFL) OCT of the OD, with the TSNIT curve and sectors. Which visual field defect is most consistent with this damage?",
+    stem: "A 58-year-old man, IOP 24 mmHg OD, open angle on gonioscopy. The diagram shows the peripapillary retinal nerve fiber layer (RNFL) OCT of the right eye, with the TSNIT curve and sectors. Which visual field defect is most consistent with this damage?",
     options: [
       "Inferior arcuate defect or inferior nasal step",
       "Bitemporal hemianopia respecting the vertical meridian",
@@ -1268,23 +1268,23 @@ Object.assign(G.OPH_EN.quiz, {
     stem: "A 63-year-old asthmatic woman referred by her optometrist. Diagnosis of early primary open-angle glaucoma (POAG) OD: IOP 26 mmHg, inferior notch of the disc, superior nasal step on the visual field, open angle on gonioscopy. She would prefer to avoid daily drops. According to the AAO POAG Preferred Practice Pattern (PPP) published in 2026, what is the best first option?",
     options: [
       "Selective laser trabeculoplasty (SLT) as first-line treatment",
-      "Timolol 0.5 %, inexpensive and well tolerated on the ocular surface",
+      "Timolol 0.5%, inexpensive and well tolerated on the ocular surface",
       "Trabeculectomy right away to avoid any long-term medication",
       "Observation without treatment until progression is documented"
     ],
     explain: "The 2026 AAO PPP supports SLT as first-line treatment: effective, with no daily drops or systemic effects. Timolol should be avoided in a patient with asthma.",
-    deep: "**Reminder:** POAG is a slow, painless optic nerve disease with an open drainage angle, often related to an IOP too high for that nerve. **What it is:** SLT (selective laser trabeculoplasty) is a gentle laser done in clinic, through a lens, on the trabecular meshwork (the angle's filter); it triggers remodeling of the filter, whose layer adjacent to Schlemm canal (juxtacanalicular tissue) is the main site of outflow resistance in POAG. **Why first:** the 2026 PPP more strongly supports first-line SLT on the basis of the LiGHT trial (SLT vs drops as first-line therapy): at 6 years, 69.8 % of SLT-treated eyes were at target without further treatment, with less progression (19.6 % vs 26.8 %) and about 3 times fewer trabeculectomies. **What to do:** set an individualized target IOP (starting point ≈ 20–30 % below baseline IOP), perform SLT, then check IOP and follow OCT and visual fields.",
+    deep: "**Reminder:** POAG is a slow, painless optic nerve disease with an open drainage angle, often related to an IOP too high for that nerve. **What it is:** SLT (selective laser trabeculoplasty) is a gentle laser done in clinic, through a lens, on the trabecular meshwork (the angle's filter); it triggers remodeling of the filter, whose layer adjacent to Schlemm canal (juxtacanalicular tissue) is the main site of outflow resistance in POAG. **Why first:** the 2026 PPP more strongly supports first-line SLT on the basis of the LiGHT trial (SLT vs drops as first-line therapy): at 6 years, 69.8% of SLT-treated eyes were at target without further treatment, with less progression (19.6% vs 26.8%) and about 3 times fewer trabeculectomies. **What to do:** set an individualized target IOP (starting point ≈ 20–30% below baseline IOP), perform SLT, then check IOP and follow OCT and visual fields.",
     why: [
       "Correct: effective, with no daily drops or systemic side effects, ideal for this asthmatic patient.",
       "Timolol (a beta-blocker drop that reduces aqueous production) enters the circulation and can trigger bronchospasm (sudden narrowing of the airways): it is contraindicated in asthma.",
       "Trabeculectomy (surgery that creates a fistula to a pocket under the conjunctiva, the bleb) carries more risk; it is reserved for failure of laser and drops or for advanced disease.",
-      "Glaucoma with disc and field damage is treated: in EMGT (Early Manifest Glaucoma Trial), treatment reduced progression (45 % vs 62 %)."
+      "Glaucoma with disc and field damage is treated: in EMGT (Early Manifest Glaucoma Trial), treatment reduced progression (45% vs 62%)."
     ]
   },
 });
 Object.assign(G.OPH_EN.quiz, {
   "C-003": {
-    stem: "A 74-year-old man with POAG stable for 6 years (IOP 14–15 mmHg on latanoprost). He complains of glare at night and his VA has dropped from 6/7.5 (20/25) to 6/15 (20/50); the MD (mean deviation) of the 24-2 field has fallen by 3 dB in one year. The diagram shows the total deviation map of the OD; the pattern deviation map is unchanged from previous exams. What is the most accurate interpretation?",
+    stem: "A 74-year-old man with POAG stable for 6 years (IOP 14–15 mmHg on latanoprost). He complains of glare at night and his VA has dropped from 6/7.5 (20/25) to 6/15 (20/50); the MD (mean deviation) of the 24-2 field has fallen by 3 dB in one year. The diagram shows the total deviation map of the right eye; the pattern deviation map is unchanged from previous exams. What is the most accurate interpretation?",
     options: [
       "Rapid glaucomatous progression: add a second medication",
       "Diffuse neurological damage: order a brain MRI",
@@ -1301,9 +1301,9 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-004": {
-    stem: "A 71-year-old man with advanced POAG in both eyes, VA 6/7.5 (20/25) in each eye. The diagram shows the pattern deviation map of the 24-2 field of his OD; the OS shows a similar but less extensive defect. He asks whether he can keep driving his car (class 5 licence). What is the most appropriate course of action?",
+    stem: "A 71-year-old man with advanced POAG in both eyes, VA 6/7.5 (20/25) in each eye. The diagram shows the pattern deviation map of the 24-2 field of his OD; the left eye shows a similar but less extensive defect. He asks whether he can keep driving his car (class 5 license). What is the most appropriate course of action?",
     options: [
-      "Tell him to stop driving: advanced glaucoma automatically suspends the licence",
+      "Tell him to stop driving: advanced glaucoma automatically suspends the license",
       "Do a binocular field (Esterman) and compare it with SAAQ standards",
       "Reassure him: with VA of 6/7.5 in both eyes, he meets the standards",
       "Rely on the 24-2 field of each eye, which is enough to complete the SAAQ report"
@@ -1326,7 +1326,7 @@ Object.assign(G.OPH_EN.quiz, {
       "His IOP must be corrected with a fixed formula and treated according to that number"
     ],
     explain: "Goldmann assumes a cornea of average thickness. A thin cornea flattens more easily: the reading is too low. In OHTS, a thin cornea is also a risk factor for conversion to glaucoma.",
-    deep: "**What it is:** the central cornea measures 540–550 µm on average; the Goldmann tonometer flattens the cornea assuming an average thickness. **Why it matters:** a thin cornea flattens more easily, so the IOP read is lower than the true IOP; moreover, in the Ocular Hypertension Treatment Study (OHTS), a cornea ≤ 555 µm carried about 3 times the risk of conversion to glaucoma compared with a cornea > 588 µm. **What to do:** do not apply a correction formula mechanically, but integrate the thin cornea into the overall risk; in this ocular hypertensive (elevated IOP without nerve damage), treatment is offered, which reduced 5-year conversion from 9.5 % to 4.4 % in OHTS.",
+    deep: "**What it is:** the central cornea measures 540–550 µm on average; the Goldmann tonometer flattens the cornea assuming an average thickness. **Why it matters:** a thin cornea flattens more easily, so the IOP read is lower than the true IOP; moreover, in the Ocular Hypertension Treatment Study (OHTS), a cornea ≤ 555 µm carried about 3 times the risk of conversion to glaucoma compared with a cornea > 588 µm. **What to do:** do not apply a correction formula mechanically, but integrate the thin cornea into the overall risk; in this ocular hypertensive (elevated IOP without nerve damage), treatment is offered, which reduced 5-year conversion from 9.5% to 4.4% in OHTS.",
     why: [
       "It is the reverse: a thick cornea causes IOP to be overestimated, a thin cornea causes it to be underestimated.",
       "Correct: the true IOP is probably higher than 27 mmHg and the risk of conversion is higher (OHTS).",
@@ -1352,7 +1352,7 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-007": {
-    stem: "An optometrist from Laval calls you: she is following a 56-year-old woman who is a glaucoma suspect (IOP 25 mmHg, questionable discs, normal visual field) and started latanoprost 2 months ago; IOP is now 18 mmHg. Under the Québec regulation governing optometrists' prescription of these drops (Regulation O-7, r. 11.1), what is the expected next step?",
+    stem: "An optometrist from Laval calls you: she is following a 56-year-old woman who is a glaucoma suspect (IOP 25 mmHg, questionable discs, normal visual field) and started latanoprost 2 months ago; IOP is now 18 mmHg. Under the Quebec regulation governing optometrists' prescription of these drops (Regulation O-7, r. 11.1), what is the expected next step?",
     options: [
       "She can follow the patient on her own long term, since IOP is controlled",
       "She should have referred the patient before starting any drop",
@@ -1360,7 +1360,7 @@ Object.assign(G.OPH_EN.quiz, {
       "She must refer the patient to an ophthalmologist for medical follow-up"
     ],
     explain: "In Quebec, a properly equipped optometrist may start drops for suspect, early or steroid-induced glaucoma. The regulation then requires referral to an ophthalmologist for medical follow-up.",
-    deep: "**What it is:** in Québec, an optometrist who has the required instruments may initiate glaucoma treatment for a glaucoma suspect (a questionable finding, without proof of nerve damage), early glaucoma or steroid-induced glaucoma (caused by corticosteroids). **Why:** the regulation then requires her to refer the patient to an ophthalmologist for medical follow-up, and then to comply with the ophthalmologist's plan; for other glaucomas, she needs a physician's consent, and she must refer the patient if the response is inadequate. **What to do:** accept the consultation request, do the full workup (gonioscopy, pachymetry, OCT, visual field) and agree on a clear shared follow-up plan.",
+    deep: "**What it is:** in Quebec, an optometrist who has the required instruments may initiate glaucoma treatment for a glaucoma suspect (a questionable finding, without proof of nerve damage), early glaucoma or steroid-induced glaucoma (caused by corticosteroids). **Why:** the regulation then requires her to refer the patient to an ophthalmologist for medical follow-up, and then to comply with the ophthalmologist's plan; for other glaucomas, she needs a physician's consent, and she must refer the patient if the response is inadequate. **What to do:** accept the consultation request, do the full workup (gonioscopy, pachymetry, OCT, visual field) and agree on a clear shared follow-up plan.",
     why: [
       "The regulation requires referral to the ophthalmologist for medical follow-up, even if IOP is well controlled.",
       "False: for a glaucoma suspect or early glaucoma, an equipped optometrist may initiate treatment before referring.",
@@ -1389,7 +1389,7 @@ Object.assign(G.OPH_EN.quiz, {
     options: [
       "A 10-2 visual field, which finely tests the central 10°",
       "A Goldmann kinetic field focused on the far periphery",
-      "An Esterman binocular field, as for a driver's licence",
+      "An Esterman binocular field, as for a driver's license",
       "A brain MRI to rule out damage to the optic chiasm"
     ],
     explain: "A superior paracentral scotoma, very close to fixation. The 24-2 grid has only a few points in that area: the 10-2 tests it in detail and tracks damage that threatens central vision.",
@@ -1438,11 +1438,11 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-012": {
-    stem: "A 62-year-old man from Nunavik, referred to Montréal for narrow angles. IOP 27 mmHg OD; healthy OD disc (C/D 0.3), normal RNFL OCT and visual field; clear lens. The diagram shows gonioscopy of his OD after indentation (pressing the lens on the cornea). What is the most appropriate management for the OD?",
+    stem: "A 62-year-old man from Nunavik, referred to Montréal for narrow angles. IOP 27 mmHg OD; healthy OD disc (C/D 0.3), normal RNFL OCT and visual field; clear lens. The diagram shows gonioscopy of his OD after indentation (pressing the lens on the cornea). What is the most appropriate management for the right eye?",
     options: [
       "Observe without treatment, gonioscopy in a year",
       "Laser iridotomy, drops as needed",
-      "Prostaglandin analogue alone, nothing done to the angle",
+      "Prostaglandin analog alone, nothing done to the angle",
       "Trabeculectomy right away given the IOP of 27 mmHg"
     ],
     explain: "The iris stays stuck despite indentation: synechiae. Synechiae and raised IOP with a healthy nerve = primary angle closure. First relieve pupillary block with iridotomy, then drops if IOP stays high.",
@@ -1458,7 +1458,7 @@ Object.assign(G.OPH_EN.quiz, {
     stem: "A 34-year-old woman, normally emmetropic, who started topiramate for migraines 10 days ago. Since yesterday, blurred vision in both eyes and a dull ache. VA 6/30 (20/100) OU, improving to 6/7.5 (20/25) with −4.00 D; IOP 44 mmHg OD and 42 mmHg OS; anterior chambers very shallow centrally as well as peripherally. What is the best management?",
     options: [
       "Laser iridotomy in both eyes the same day",
-      "Pilocarpine 2 % QID to pull the iris out of the angle",
+      "Pilocarpine 2% QID to pull the iris out of the angle",
       "Urgent clear lens extraction in both eyes",
       "Stop topiramate; cycloplegic, steroid and IOP-lowering drops"
     ],
@@ -1476,7 +1476,7 @@ Object.assign(G.OPH_EN.quiz, {
     options: [
       "Laser iridotomy in both eyes, then drops as needed",
       "Clear lens extraction with an intraocular lens",
-      "Long-term pilocarpine 2 % to keep the angle open",
+      "Long-term pilocarpine 2% to keep the angle open",
       "Trabeculectomy right away to aim for a very low IOP"
     ],
     explain: "EAGLE: at age 50 or older, with primary angle closure and IOP of 30 mmHg or more, clear lens extraction controls IOP better than iridotomy. The lens is the anatomic cause.",
@@ -1489,15 +1489,15 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-015": {
-    stem: "A 67-year-old woman in the ED with headache, vomiting and colored halos for 3 hours. OD: red eye, hazy cornea, non-reactive mid-dilated pupil, IOP 60 mmHg; OS: shallow anterior chamber, IOP 16 mmHg. No asthma or sulfa allergy, normal renal function. The ED physician has already ordered pilocarpine 2 % every 5 minutes. What is the best immediate management?",
+    stem: "A 67-year-old woman in the ED with headache, vomiting and colored halos for 3 hours. OD: red eye, hazy cornea, non-reactive mid-dilated pupil, IOP 60 mmHg; OS: shallow anterior chamber, IOP 16 mmHg. No asthma or sulfa allergy, normal renal function. The ED physician has already ordered pilocarpine 2% every 5 minutes. What is the best immediate management?",
     options: [
-      "Continue pilocarpine 2 % every 5 minutes until the angle opens",
+      "Continue pilocarpine 2% every 5 minutes until the angle opens",
       "Timolol, brimonidine, dorzolamide and acetazolamide 500 mg",
       "Immediate laser iridotomy despite the edematous cornea",
       "Head CT before any ocular treatment"
     ],
     explain: "At 60 mmHg the iris sphincter is ischemic: pilocarpine does not work yet. Lower IOP first (timolol, brimonidine, dorzolamide, acetazolamide); pilocarpine and iridotomy come afterward.",
-    deep: "**What it is:** an acute angle-closure attack: the iris suddenly blocks the entire angle filter, IOP soars, the cornea swells (halos, blur) and the iris sphincter, deprived of blood, stops reacting (fixed mid-dilated pupil). **Why not pilocarpine first:** at 60 mmHg, this ischemic sphincter does not respond to pilocarpine (a drop that constricts the pupil); repeating doses does not open the angle and delays the real treatment. **What to do:** first lower IOP with timolol 0.5 % (beta-blocker), brimonidine (alpha-agonist) and dorzolamide (carbonic anhydrase inhibitor), which reduce aqueous production, plus acetazolamide 500 mg PO or IV; add prednisolone acetate 1 %; IV mannitol if IOP does not fall; pilocarpine 1–2 % once IOP has come down, then laser iridotomy in both eyes.",
+    deep: "**What it is:** an acute angle-closure attack: the iris suddenly blocks the entire angle filter, IOP soars, the cornea swells (halos, blur) and the iris sphincter, deprived of blood, stops reacting (fixed mid-dilated pupil). **Why not pilocarpine first:** at 60 mmHg, this ischemic sphincter does not respond to pilocarpine (a drop that constricts the pupil); repeating doses does not open the angle and delays the real treatment. **What to do:** first lower IOP with timolol 0.5% (beta-blocker), brimonidine (alpha-agonist) and dorzolamide (carbonic anhydrase inhibitor), which reduce aqueous production, plus acetazolamide 500 mg PO or IV; add prednisolone acetate 1%; IV mannitol if IOP does not fall; pilocarpine 1–2% once IOP has come down, then laser iridotomy in both eyes.",
     why: [
       "Trap: the iris sphincter, ischemic at an IOP of 60 mmHg, does not respond; pilocarpine is given once IOP has been lowered.",
       "Correct: reduce aqueous production through several pathways, then pilocarpine and laser iridotomy follow.",
@@ -1506,7 +1506,7 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-016": {
-    stem: "A 72-year-old hyperopic man comes to the ER with intense pain in the OS that began last night at the movies, with blurred vision and nausea. The diagram shows his OS anterior segment at the slit lamp. You are the clerk: what do you do first?",
+    stem: "A 72-year-old hyperopic man comes to the ED with intense pain in the left eye that began last night at the movies, with blurred vision and nausea. The diagram shows his OS anterior segment at the slit lamp. You are the clerk: what do you do first?",
     options: [
       "IOP-lowering drops and acetazolamide, then call ophthalmology now",
       "Dilate the pupil to get a good view of the fundus",
@@ -1525,12 +1525,12 @@ Object.assign(G.OPH_EN.quiz, {
 });
 Object.assign(G.OPH_EN.quiz, {
   "C-017": {
-    stem: "One week after an acute angle-closure attack OD treated with drops, acetazolamide and then laser peripheral iridotomy (LPI), IOP OD is 14 mmHg. The OS is asymptomatic: IOP 15 mmHg, but on gonioscopy the iris touches the trabecular meshwork over 270°. What do you propose for the OS?",
+    stem: "One week after an acute angle-closure attack OD treated with drops, acetazolamide and then laser peripheral iridotomy (LPI), IOP OD is 14 mmHg. The left eye is asymptomatic: IOP 15 mmHg, but on gonioscopy the iris touches the trabecular meshwork over 270°. What do you propose for the left eye?",
     options: [
-      "Simple observation, since the OS has never had an attack",
-      "Long-term pilocarpine 2 % to keep the pupil small",
-      "Preventive timolol 0.5 % to keep IOP low",
-      "Prophylactic laser iridotomy of the OS without delay"
+      "Simple observation, since the left eye has never had an attack",
+      "Long-term pilocarpine 2% to keep the pupil small",
+      "Preventive timolol 0.5% to keep IOP low",
+      "Prophylactic laser iridotomy of the left eye without delay"
     ],
     explain: "The fellow eye has the same anatomy. Without iridotomy, about half of these eyes have an attack within 5 years: prophylactic iridotomy without delay.",
     deep: "**What it is:** the fellow eye of an attack almost always has the same anatomy: short eye, thick lens, narrow angle. **Why it matters:** without iridotomy, about half of fellow eyes have an attack within 5 years (AAO 2026), with the same risks for the nerve, cornea and iris. **What to do:** offer an LPI (a small laser hole in the peripheral iris so aqueous bypasses the pupil), then check that the opening is patent and measure IOP 30 minutes to 2 hours afterward, then follow both eyes with gonioscopy.",
@@ -1542,7 +1542,7 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-018": {
-    stem: "A 4-month-old infant brought in by his parents: he tears a lot, shuts his eyes in light and rubs his eyes. The corneas look large and slightly bluish; with a penlight, you see curved lines deep in the cornea of the OD. Which diagnosis should you consider first?",
+    stem: "A 4-month-old infant brought in by his parents: he tears a lot, shuts his eyes in light and rubs his eyes. The corneas look large and slightly bluish; with a penlight, you see curved lines deep in the cornea of the right eye. Which diagnosis should you consider first?",
     options: [
       "Congenital nasolacrimal duct obstruction",
       "Neonatal Chlamydia conjunctivitis",
@@ -1669,7 +1669,7 @@ Object.assign(G.OPH_EN.quiz, {
       "The anterior surface of the iris touching the central corneal endothelium"
     ],
     explain: "In a young myope the midperipheral iris is concave: its posterior surface rubs on the zonules. The pigment that is shed leaves radial slits and clogs the meshwork, especially with exercise.",
-    deep: "**What it is:** in pigment dispersion syndrome, typical of young myopic men, the midperipheral iris bows backward (reverse pupillary block: aqueous trapped in front pushes the iris back) and its pigment epithelium rubs against the zonular bundles. **Why it matters:** the rubbed areas lose their pigment and let light through as midperipheral spokes (transillumination defects); the released pigment deposits as a vertical spindle on the endothelium (Krukenberg spindle) and as a dense, homogeneous band in the trabecular meshwork, and exercise releases clouds of it that clog the filter and drive IOP up. **What to do:** baseline gonioscopy, OCT and visual field, regular follow-up (per Siddiqui 2003, about 10 % progress to glaucoma at 5 years and 15 % at 15 years) and examination of the peripheral retina, since these myopes have more lattice degeneration (thin areas of retina that can tear).",
+    deep: "**What it is:** in pigment dispersion syndrome, typical of young myopic men, the midperipheral iris bows backward (reverse pupillary block: aqueous trapped in front pushes the iris back) and its pigment epithelium rubs against the zonular bundles. **Why it matters:** the rubbed areas lose their pigment and let light through as midperipheral spokes (transillumination defects); the released pigment deposits as a vertical spindle on the endothelium (Krukenberg spindle) and as a dense, homogeneous band in the trabecular meshwork, and exercise releases clouds of it that clog the filter and drive IOP up. **What to do:** baseline gonioscopy, OCT and visual field, regular follow-up (per Siddiqui 2003, about 10% progress to glaucoma at 5 years and 15% at 15 years) and examination of the peripheral retina, since these myopes have more lattice degeneration (thin areas of retina that can tear).",
     why: [
       "That is the mechanism of PXF, in an older person, with defects around the pupil rather than midperipheral spokes.",
       "That is the iridotrabecular contact of angle closure, in a hyperope with a shallow chamber; here, the iris is concave and the angle wide.",
@@ -1683,7 +1683,7 @@ Object.assign(G.OPH_EN.quiz, {
       "360° SLT at the usual energy, since the pigment guides the laser well",
       "SLT at reduced energy, sometimes over 180°, with an IOP check afterward",
       "Laser iridotomy to flatten the iris and prevent progression",
-      "Pilocarpine 2 % QID to lift the iris off the zonules, with no further exam"
+      "Pilocarpine 2% QID to lift the iris off the zonules, with no further exam"
     ],
     explain: "SLT energy is absorbed by pigment. A heavily pigmented meshwork absorbs far more: the usual energy can cause an IOP spike. Reduce the energy, sometimes treat 180°, and recheck IOP.",
     deep: "**What it is:** SLT delivers energy that is absorbed by the pigment of the trabecular meshwork; in pigmentary glaucoma, the dense, homogeneous 360° band of pigment absorbs much more than usual. **Why it is a trap:** the usual energy can cause a marked, sometimes prolonged IOP spike and inflammation in an already damaged eye. **What to do:** start at lower energy (sometimes over 180° only), give an alpha-agonist (apraclonidine or brimonidine: a drop that slows aqueous production) before the laser, measure IOP within the following hour and judge the effect after a few weeks.",
@@ -1719,7 +1719,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Hyperemia from anterior uveitis: topical steroid and recheck in 1 week",
       "Pseudoexfoliation deposits: look for a Sampaolesi line on gonioscopy"
     ],
-    explain: "Fine, tortuous red vessels on the iris surface up to the pupil margin: neovessels (rubeosis). Look at the iris before dilating, do gonioscopy and refer promptly to retina to treat the ischemia.",
+    explain: "Fine, tortuous red vessels on the iris surface up to the pupil margin: new vessels (rubeosis). Look at the iris before dilating, do gonioscopy and refer promptly to retina to treat the ischemia.",
     deep: "**What the photo shows:** fine, tortuous, irregular red vessels on the surface of the iris, up to the pupillary margin: these are iris new vessels (neovascularization of the iris, NVI, or rubeosis iridis). **Why it matters:** a retina starved of oxygen (here, untreated proliferative diabetic retinopathy) releases VEGF (a factor that makes abnormal vessels grow); these vessels reach the angle, where they clog and then close the filter: this is neovascular glaucoma. **What to do:** examine the iris before dilating (dilation hides the pupillary margin), perform gonioscopy to look for angle new vessels (NVA), examine the fundus and refer promptly to retina for an anti-VEGF injection (a drug injected into the vitreous that blocks VEGF) and panretinal photocoagulation (PRP: laser to the ischemic peripheral retina that reduces VEGF production).",
     why: [
       "Correct: rubeosis iridis in an untreated diabetic, to be confirmed on gonioscopy and treated promptly.",
@@ -1736,7 +1736,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Pupillary block caused by a pupil stuck to the lens",
       "Blood in Schlemm canal from elevated venous pressure"
     ],
-    explain: "Vessels that cross the scleral spur are neovessels. They come with a fibrovascular membrane that coats the meshwork: the angle is still open, a reversible stage. The membrane later contracts and closes it.",
+    explain: "Vessels that cross the scleral spur are new vessels. They come with a fibrovascular membrane that coats the meshwork: the angle is still open, a reversible stage. The membrane later contracts and closes it.",
     deep: "**What the diagram shows:** the angle is open, but fine vessels cross the scleral spur and arborize over the trabecular meshwork: these are angle new vessels (neovascularization of the angle, NVA), whereas normal angle vessels do not cross the spur. **Why it matters:** the ischemic retina releases VEGF; the new vessels are accompanied by a fibrovascular membrane (tissue made of vessels and scar) that lines the filter and blocks outflow while the angle is still open; the membrane then contracts and pulls the iris onto the meshwork (synechiae), closing the angle irreversibly, often about 3 months after an ischemic CRVO (\"90-day glaucoma\"). **What to do:** treat quickly during this open, still reversible stage: intravitreal anti-VEGF, panretinal photocoagulation and pressure-lowering drops.",
     why: [
       "That is the next, synechial stage: on the diagram, the angle is still open and no synechiae are seen.",
@@ -1748,7 +1748,7 @@ Object.assign(G.OPH_EN.quiz, {
   "C-060": {
     stem: "A 68-year-old man with an ischemic CRVO OS 3 months ago. Red, painful eye, cornea steamy from edema, IOP 46 mmHg, iris and angle new vessels, synechiae over 180°; VA 6/60 (20/200). What is the best initial management?",
     options: [
-      "Pilocarpine 2 % to open the angle, then laser iridotomy",
+      "Pilocarpine 2% to open the angle, then laser iridotomy",
       "Urgent trabeculectomy with mitomycin C, with no other treatment",
       "Anti-VEGF, pressure-lowering drops, atropine and steroid, then PRP",
       "Cyclophotocoagulation alone, since vision is already compromised"
@@ -1765,7 +1765,7 @@ Object.assign(G.OPH_EN.quiz, {
 });
 Object.assign(G.OPH_EN.quiz, {
   "C-061": {
-    stem: "A 27-year-old man with severe allergic keratoconjunctivitis treated with prednisolone acetate 1 % QID for 4 weeks. IOP 33 mmHg OD, versus 15 mmHg before treatment; quiet anterior chamber, open angle. What is the most appropriate management?",
+    stem: "A 27-year-old man with severe allergic keratoconjunctivitis treated with prednisolone acetate 1% QID for 4 weeks. IOP 33 mmHg OD, versus 15 mmHg before treatment; quiet anterior chamber, open angle. What is the most appropriate management?",
     options: [
       "Switch to loteprednol or taper the steroid, and add an IOP-lowering drop",
       "Replace prednisolone with difluprednate, a steroid that raises IOP less",
@@ -1784,7 +1784,7 @@ Object.assign(G.OPH_EN.quiz, {
   "C-062": {
     stem: "A 45-year-old man with chronic recurrent anterior uveitis (inflammation of the iris and ciliary body). The iris is stuck to the lens around the entire pupil (360° posterior synechiae); IOP 44 mmHg, chamber deep centrally but very shallow peripherally. The photo shows the eye at the slit lamp. Which treatment addresses the mechanism?",
     options: [
-      "Pilocarpine 2 % to pull the iris centrally and open the angle",
+      "Pilocarpine 2% to pull the iris centrally and open the angle",
       "A prostaglandin analog alone, as first line",
       "360° SLT to increase trabecular outflow",
       "Laser iridotomy or surgical iridectomy"
@@ -1799,7 +1799,7 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-063": {
-    stem: "A 32-year-old HLA-B27-positive man (a genetic marker linked to spondyloarthritis) with acute anterior uveitis: on day 1, anterior chamber cells 3+ and IOP 7 mmHg. After 10 days of prednisolone acetate 1 % (hourly, then QID): cells 0.5+ and IOP 30 mmHg; open angle, no synechiae. What is the most likely explanation?",
+    stem: "A 32-year-old HLA-B27-positive man (a genetic marker linked to spondyloarthritis) with acute anterior uveitis: on day 1, anterior chamber cells 3+ and IOP 7 mmHg. After 10 days of prednisolone acetate 1% (hourly, then QID): cells 0.5+ and IOP 30 mmHg; open angle, no synechiae. What is the most likely explanation?",
     options: [
       "A definite steroid response, requiring the steroid to be stopped at once",
       "The ciliary body resumes secretion while the trabecular meshwork is still affected",
@@ -2035,7 +2035,7 @@ Object.assign(G.OPH_EN.quiz, {
     deep: "Guttae are excrescences of Descemet membrane produced by a diseased endothelium; they appear as fine dots on the posterior surface of the cornea, with a beaten-metal look when they coalesce. Central guttae and morning blur (edema that accumulates overnight, with the lids closed) suggest Fuchs endothelial dystrophy.",
     why: [
       "False: erosions are on the surface and show up mainly with fluorescein.",
-      "False: subepithelial infiltrates are larger, grey-white, located just beneath the epithelium.",
+      "False: subepithelial infiltrates are larger, gray-white, located just beneath the epithelium.",
       "False: pseudoexfoliation (a deposit of fibrillar material) is seen on the lens, behind the pupil, not in the cornea.",
       "Correct: endothelial guttae, a sign of Fuchs dystrophy."
     ]
@@ -2080,14 +2080,14 @@ Object.assign(G.OPH_EN.quiz, {
       "Disc edema with blurred margins",
       "An inferior notch of the neuroretinal rim",
       "Diffuse pallor without cupping",
-      "A net of neovessels on the surface of the disc"
+      "A net of new vessels on the surface of the disc"
     ],
     explain: "The neuroretinal rim is missing at the inferior pole: a notch. A dark band runs temporally from it: nerve fibers are missing there. Together they predict an arcuate defect in the superior field.",
     why: [
       "Disc edema elevates the disc and blurs its margins; here they are sharp and the disc is cupped.",
       "Correct: localized thinning of the rim inferiorly, with a nerve fiber defect along the same axis.",
       "The remaining rim is pink; cupping dominates, not pallor.",
-      "Neovessels form a fine, irregular net on the surface; only normal vessels are seen here."
+      "New vessels form a fine, irregular net on the surface; only normal vessels are seen here."
     ]
   },
   "C-103": {
@@ -2151,9 +2151,9 @@ Object.assign(G.OPH_EN.quiz, {
     explain: "A retina starved of oxygen releases VEGF. It reaches the front of the eye and makes vessels grow on the iris, then in the angle. That is why the retina is treated (laser, anti-VEGF), not just the IOP.",
     why: [
       "Uveitis dilates existing radial vessels; here the vessels are new, fine and irregular, in a patient with diabetes.",
-      "It is the other way around: neovessels and their membrane block the angle and raise IOP.",
+      "It is the other way around: new vessels and their membrane block the angle and raise IOP.",
       "Prostaglandins darken the iris and lengthen the lashes; they do not create vessels.",
-      "Correct: retinal ischemia, VEGF, then neovessels on the iris and in the angle."
+      "Correct: retinal ischemia, VEGF, then new vessels on the iris and in the angle."
     ]
   },
 });
@@ -2184,12 +2184,12 @@ Object.assign(G.OPH_EN.quiz, {
       "Tilted disc of high myopia"
     ],
     explain: "The slate-gray band at the temporal margin is a gray crescent: pigment within disc tissue. The true disc edge lies outside the crescent; the rim is healthy, as the normal OCT confirms.",
-    deep: "The slate-grey band at the temporal margin of the disc is a gray crescent: pigment in the peripheral disc tissue. If the true disc margin is traced outside the crescent, the temporal rim is healthy, as confirmed by the normal OCT (the look of temporal rim thinning is misleading, not a diagnosis). More common in patients of African ancestry, it does not increase the risk of glaucoma: recognizing it avoids a false glaucoma-suspect diagnosis and unnecessary treatment.",
+    deep: "The slate-gray band at the temporal margin of the disc is a gray crescent: pigment in the peripheral disc tissue. If the true disc margin is traced outside the crescent, the temporal rim is healthy, as confirmed by the normal OCT (the look of temporal rim thinning is misleading, not a diagnosis). More common in patients of African ancestry, it does not increase the risk of glaucoma: recognizing it avoids a false glaucoma-suspect diagnosis and unnecessary treatment.",
     why: [
       "Correct: a classic trap; the pigment suggests a thin rim when the neural tissue is present.",
       "False: a falsely normal OCT (green disease) exists, but here the pigment explains the whole appearance and the OCT is normal in all quadrants.",
       "False: peripapillary atrophy lies outside the disc margin and exposes white sclera or large choroidal vessels.",
-      "False: the tilted disc of a myope is oval and oblique, with a white scleral crescent, not a grey band within the disc."
+      "False: the tilted disc of a myope is oval and oblique, with a white scleral crescent, not a gray band within the disc."
     ]
   },
   "C-109": {
@@ -2211,15 +2211,15 @@ Object.assign(G.OPH_EN.quiz, {
   "A-101": {
     stem: "Annotated Humphrey 24-2 (SITA Standard) visual field report in a 23-year-old subject. Which conclusion is correct?",
     options: [
-      "Unreliable test, because false negatives are 0 %",
+      "Unreliable test, because false negatives are 0%",
       "Early defect, because the PSD is 1.21 dB",
       "Generalized depression, because the fovea is 36 dB",
       "Reliable test and normal field"
     ],
     explain: "Read reliability first: fixation losses, false positives and false negatives are all low. Then the indices: normal GHT, MD near 0, low PSD. A reliable test and a normal field.",
-    deep: "Reliability is good (fixation losses 1/13, false positives 1 %, false negatives 0 %); the GHT (glaucoma hemifield test) is within normal limits, VFI 100 %, MD +0.28 dB and PSD 1.21 dB, with no cluster of significant points on the probability maps. Always read reliability before the indices: false positives above 15 % make a test unreliable.",
+    deep: "Reliability is good (fixation losses 1/13, false positives 1%, false negatives 0%); the GHT (glaucoma hemifield test) is within normal limits, VFI 100%, MD +0.28 dB and PSD 1.21 dB, with no cluster of significant points on the probability maps. Always read reliability before the indices: false positives above 15% make a test unreliable.",
     why: [
-      "False: few false negatives is a good sign; a test becomes questionable mainly with more than 15 % false positives or many fixation losses.",
+      "False: few false negatives is a good sign; a test becomes questionable mainly with more than 15% false positives or many fixation losses.",
       "False: a PSD of 1.21 dB is normal; a localized defect raises it markedly.",
       "False: 36 dB at the fovea is normal sensitivity, and the MD is positive.",
       "Correct: good reliability indices, normal GHT, normal MD and PSD."
@@ -2338,7 +2338,7 @@ Object.assign(G.OPH_EN.quiz, {
       "In phacolytic glaucoma the angle is open and the chamber deep, with white particles; here the angle is closed.",
       "Primary angle closure occurs in two short eyes: the fellow eye would also have a shallow chamber.",
       "Correct: swollen cataract, angle closed on one side only, deep fellow eye.",
-      "That would require neovessels on the iris and in the angle, with a cause of retinal ischemia."
+      "That would require new vessels on the iris and in the angle, with a cause of retinal ischemia."
     ]
   },
   "A-207": {
@@ -2349,7 +2349,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Optic disc drusen; reassure the patient and do autofluorescence",
       "Disc new vessels; retina promptly and gonioscopy"
     ],
-    explain: "A net of fine vessels on the surface of the disc is neovascularization of the disc: proliferative diabetic retinopathy. Refer promptly to retina and look for angle neovessels, since IOP is rising.",
+    explain: "A net of fine vessels on the surface of the disc is neovascularization of the disc: proliferative diabetic retinopathy. Refer promptly to retina and look for angle new vessels, since IOP is rising.",
     deep: "The network of fine vessels on the surface of the disc, with retinal hemorrhages, corresponds to neovascularization of the disc (NVD): proliferative diabetic retinopathy. PRP and/or anti-VEGF are needed promptly, along with gonioscopy to look for NVA, because the elevated IOP may signal early neovascular glaucoma.",
     why: [
       "The disc is covered with abnormal vessels, not cupped; the cause of the IOP must be found before adding drops.",
@@ -2382,7 +2382,7 @@ Object.assign(G.OPH_EN.quiz, {
       "YAG capsulotomy with prophylaxis and an IOP check",
       "Trabeculectomy first, capsular laser afterward"
     ],
-    explain: "The grey-white plaques behind the IOL are posterior capsule opacification. Nd:YAG laser capsulotomy treats it but can raise IOP: in an advanced glaucoma patient, give an alpha-agonist as prophylaxis and remeasure IOP afterward.",
+    explain: "The gray-white plaques behind the IOL are posterior capsule opacification. Nd:YAG laser capsulotomy treats it but can raise IOP: in an advanced glaucoma patient, give an alpha-agonist as prophylaxis and remeasure IOP afterward.",
     why: [
       "The IOL is clear and centered; it is the capsule behind it that is opaque.",
       "The problem is not the angle; an iridotomy does not clear the visual axis.",
@@ -2417,7 +2417,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Fluorescein angiography repeated every month",
       "Gonioscopy and iris examination before dilation"
     ],
-    explain: "After ischemic CRVO, neovascular glaucoma mostly appears within the first 3 months. Angle neovessels can precede iris neovessels: gonioscopy and iris examination before dilating, at every visit.",
+    explain: "After ischemic CRVO, neovascular glaucoma mostly appears within the first 3 months. Angle new vessels can precede iris new vessels: gonioscopy and iris examination before dilating, at every visit.",
     deep: "After an ischemic CRVO, neovascular glaucoma typically occurs within the first 3 months (\"90-day glaucoma\"). Angle new vessels can appear before those at the pupillary margin: examine the iris BEFORE dilating and perform gonioscopy at every visit. Anti-VEGF can temporarily mask neovascularization, which reappears as its effect wears off.",
     why: [
       "The field is depressed by the retinal damage of the CRVO and does not detect angle neovascularization.",
@@ -2469,7 +2469,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Prompt referral to ocular oncology (ultrasound, OCT, photos)"
     ],
     explain: "A large, new pigmented lesion with orange pigment on its surface is not a simple nevus. These features raise concern for choroidal melanoma: prompt referral to ocular oncology.",
-    deep: "The photo shows a large grey-green lesion covered with clumps of orange pigment (lipofuscin). According to the mnemonic \"To Find Small Ocular Melanoma Using Helpful Hints Daily\", the risk factors are: thickness > 2 mm, subretinal fluid, symptoms, orange pigment, margin 3 mm or less from the disc, ultrasound hollowness, absence of halo and absence of drusen. Such a lesion is referred promptly to ocular oncology.",
+    deep: "The photo shows a large gray-green lesion covered with clumps of orange pigment (lipofuscin). According to the mnemonic \"To Find Small Ocular Melanoma Using Helpful Hints Daily\", the risk factors are: thickness > 2 mm, subretinal fluid, symptoms, orange pigment, margin 3 mm or less from the disc, ultrasound hollowness, absence of halo and absence of drusen. Such a lesion is referred promptly to ocular oncology.",
     why: [
       "A simple annual check suits a small flat nevus without risk factors, not a large lesion covered with orange pigment.",
       "A pigmented lesion is not treated with laser in clinic: diagnosis and treatment belong to ocular oncology.",
@@ -2495,7 +2495,7 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "A-217": {
-    stem: "A 42-year-old man who had endothelial keratoplasty (DMEK) 4 months ago uses prednisolone acetate 1 % and an inhaled corticosteroid for his asthma. For 10 days, he has seen straight lines as wavy in one eye. Macular OCT shows a blister of fluid under the neurosensory retina, with no membrane or hole. What is the best management?",
+    stem: "A 42-year-old man who had endothelial keratoplasty (DMEK) 4 months ago uses prednisolone acetate 1% and an inhaled corticosteroid for his asthma. For 10 days, he has seen straight lines as wavy in one eye. Macular OCT shows a blister of fluid under the neurosensory retina, with no membrane or hole. What is the best management?",
     options: [
       "Stop all steroids immediately, including those for the graft",
       "Cautiously reduce the steroids with the prescribers and follow the OCT",
@@ -2606,7 +2606,7 @@ Object.assign(G.OPH_EN.quiz, {
     explain: "A chalky white plaque between the lids, dotted with small holes: band keratopathy (calcium). With no ocular cause, look for hypercalcemia or kidney disease: calcium, phosphate, PTH, creatinine.",
     deep: "A chalky white interpalpebral plaque with holes: band keratopathy (calcium in Bowman layer). Without an ocular cause (uveitis, phthisis, silicone oil), look for hypercalcemia or hyperphosphatemia: calcium, phosphorus, PTH and renal function. Here, the patient had hyperparathyroidism.",
     why: [
-      "Lipids: a peripheral grey-white arc or a yellow deposit near vessels, not a chalky band.",
+      "Lipids: a peripheral gray-white arc or a yellow deposit near vessels, not a chalky band.",
       "Correct: hyperparathyroidism or renal failure promote calcium deposition.",
       "Copper: a brown-green ring in peripheral Descemet (Wilson), not a white band.",
       "Useful for interstitial keratitis or a child with uveitis; here, an adult without uveitis."
@@ -2640,7 +2640,7 @@ Object.assign(G.OPH_EN.quiz, {
     explain: "Frequent topical ciprofloxacin can precipitate as a superficial chalky white plaque in the epithelial defect; it delays closure without indicating worsening. If the infiltrate and reaction are not progressing, switch antibiotics; at the slightest doubt, reculture.",
     why: [
       "Correct: a drug deposit, with a stable infiltrate and decreasing pain.",
-      "Fungus: a grey infiltrate with feathery edges, satellite lesions, progression despite the antibiotic.",
+      "Fungus: a gray infiltrate with feathery edges, satellite lesions, progression despite the antibiotic.",
       "Calcific band usually forms over months, in Bowman layer between the lids, not in an ulcer bed on ciprofloxacin.",
       "Crystalline infection: branching crystals in the stroma, often under an intact epithelium, in a graft."
     ]
@@ -2659,7 +2659,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Trap: that is the Fleischer ring of keratoconus; normal topography and the context rule it out.",
       "Calcium: a horizontal chalky white band, not a brown-green ring.",
       "Correct: Kayser-Fleischer ring, Wilson disease.",
-      "Lipids: grey-white corneal arcus, with no liver or neurological involvement."
+      "Lipids: gray-white corneal arcus, with no liver or neurological involvement."
     ]
   },
   "B-211": {
@@ -2683,7 +2683,7 @@ Object.assign(G.OPH_EN.quiz, {
     stem: "A 34-year-old nurse: red, watery right eye for 3 days, the left eye is starting. Gritty sensation, no real pain, VA 6/6 (20/20). Follicles in the inferior fornix, tender preauricular node, clear cornea. What is the most appropriate management?",
     options: [
       "Cold compresses, tears, hand hygiene, time off work as needed",
-      "Moxifloxacin 0.5 % QID for 7 days to prevent bacterial superinfection",
+      "Moxifloxacin 0.5% QID for 7 days to prevent bacterial superinfection",
       "Tobramycin-dexamethasone QID to shorten the infection and reduce redness",
       "Oral valacyclovir 1 g TID for 7 days, starting today"
     ],
@@ -2724,7 +2724,7 @@ Object.assign(G.OPH_EN.quiz, {
       "An antihistamine-stabilizer for chronic allergic conjunctivitis"
     ],
     explain: "Follicular conjunctivitis lasting weeks despite topical antibiotics in a young adult with a new partner: Chlamydia. Drops fail: NAAT, oral treatment, partners and STI screening.",
-    deep: "**What it is**: Chlamydia trachomatis (genital serotypes D to K) causes chronic follicular conjunctivitis in young adults, often with a minimally symptomatic genital infection. **Why it matters**: drops alone fail; partners and other STBBIs (sexually transmitted and blood-borne infections) must be managed. **What to do**: conjunctival NAAT, doxycycline 100 mg BID × 7 days or azithromycin 1 g as a single dose, screening and reporting according to the Québec guide.",
+    deep: "**What it is**: Chlamydia trachomatis (genital serotypes D to K) causes chronic follicular conjunctivitis in young adults, often with a minimally symptomatic genital infection. **Why it matters**: drops alone fail; partners and other STBBIs (sexually transmitted and blood-borne infections) must be managed. **What to do**: conjunctival NAAT, doxycycline 100 mg BID × 7 days or azithromycin 1 g as a single dose, screening and reporting according to the Quebec guide.",
     why: [
       "The trap: a third antibiotic drop treats neither the associated genital infection nor the partner.",
       "Correct: probable adult inclusion conjunctivitis; oral treatment, partners, reportable disease (MADO).",
@@ -2885,9 +2885,9 @@ Object.assign(G.OPH_EN.quiz, {
   "C-206": {
     stem: "A 19-year-old man is hit in the left eye by a hockey puck. Grade II hyphema, IOP 34 mmHg. Electrophoresis confirms sickle cell trait. Which medication should you avoid?",
     options: [
-      "Timolol 0.5 % drops",
-      "Prednisolone acetate 1 %",
-      "Atropine 1 % drops",
+      "Timolol 0.5% drops",
+      "Prednisolone acetate 1%",
+      "Atropine 1% drops",
       "Oral acetazolamide 500 mg"
     ],
     explain: "In sickle cell disease (even the trait), sickled red cells pass poorly through the meshwork and the nerve tolerates IOP poorly. CAIs (especially oral) and hyperosmotics are avoided, and the threshold for surgical washout is lower (IOP ≥ 24 mmHg for more than 24 h).",
@@ -2956,12 +2956,12 @@ Object.assign(G.OPH_EN.quiz, {
       "Blood lipid panel for early corneal arcus"
     ],
     explain: "A fine white line parallel to the limbus: posterior embryotoxon, a prominent Schwalbe line. Alone it is benign. Gonioscopy looks for iris strands attached to it (Axenfeld-Rieger, glaucoma risk).",
-    deep: "The fine, sharp, curved grey-white line parallel to the limbus at the corneal periphery is a posterior embryotoxon: Schwalbe line (the peripheral edge of Descemet) thickened and displaced anteriorly, prominent enough to be seen without gonioscopy. On its own, it is common and benign. If iris strands attach to it (with corectopia, iris holes, dental or umbilical anomalies), this is the Axenfeld-Rieger spectrum, where the risk of glaucoma is high: gonioscopy settles it.",
+    deep: "The fine, sharp, curved gray-white line parallel to the limbus at the corneal periphery is a posterior embryotoxon: Schwalbe line (the peripheral edge of Descemet) thickened and displaced anteriorly, prominent enough to be seen without gonioscopy. On its own, it is common and benign. If iris strands attach to it (with corectopia, iris holes, dental or umbilical anomalies), this is the Axenfeld-Rieger spectrum, where the risk of glaucoma is high: gonioscopy settles it.",
     why: [
       "Correct: gonioscopy shows whether the embryotoxon is isolated (nothing to do) or whether iris strands reach it (Axenfeld-Rieger: IOP and discs to follow).",
       "ICE syndrome affects the endothelium of one eye (hammered silver, corectopia, edema); a prominent Schwalbe line is not one of its signs.",
       "Nothing indicates a narrow angle: the embryotoxon sits at Schwalbe line and does not close the angle.",
-      "Corneal arcus is a hazy greyish band in the stroma, separated from the limbus by a clear zone; here, it is a fine, sharp line at the level of Descemet. A classic trap."
+      "Corneal arcus is a hazy grayish band in the stroma, separated from the limbus by a clear zone; here, it is a fine, sharp line at the level of Descemet. A classic trap."
     ]
   },
   "C-213": {
@@ -3072,11 +3072,11 @@ Object.assign(G.OPH_EN.quiz, {
     options: [
       "Reassure: inactive scars; prophylaxis if recurrences are frequent",
       "Valacyclovir 500 mg TID for 7 to 10 days for an epithelial recurrence",
-      "Debridement of the lesions, then trifluridine 1 % nine times daily",
-      "Prednisolone 1 % every 2 hours for active immune stromal keratitis"
+      "Debridement of the lesions, then trifluridine 1% nine times daily",
+      "Prednisolone 1% every 2 hours for active immune stromal keratitis"
     ],
     explain: "Gray branching opacities with no fluorescein staining in a quiet eye: ghost dendrites, scars of old ulcers. This is not active infection. Oral prophylaxis depends on how often recurrences occur.",
-    deep: "These branching greyish opacities, without fluorescein uptake in a quiet eye, are ghost dendrites: residual subepithelial infiltration and scarring where old dendritic ulcers were. This is not an active infection. Document, monitor and discuss oral prophylaxis (acyclovir 400 mg BID, HEDS) if recurrences are frequent.",
+    deep: "These branching grayish opacities, without fluorescein uptake in a quiet eye, are ghost dendrites: residual subepithelial infiltration and scarring where old dendritic ulcers were. This is not an active infection. Document, monitor and discuss oral prophylaxis (acyclovir 400 mg BID, HEDS) if recurrences are frequent.",
     why: [
       "Correct: an inactive scar; prophylaxis depends on the number of recurrences, not on the scar itself.",
       "False: an active dendrite takes up fluorescein (a branching ulcer with terminal bulbs); here nothing stains.",
@@ -3127,7 +3127,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Benign amelanotic conjunctival nevus"
     ],
     explain: "A grayish gelatinous mass straddling the limbus, an irregular edge on the cornea, tortuous feeder vessels, recent growth: ocular surface neoplasia. A pterygium is triangular, fleshy and slow.",
-    deep: "A greyish, elevated, gelatinous mass straddling the limbus, invading the cornea with an irregular front and tortuous feeder vessels: this is the appearance of ocular surface squamous neoplasia (OSSN), here a squamous cell carcinoma. The main risk factor is UV exposure (also HIV, HPV, immunosuppression). Management: referral to cornea or ocular oncology for excisional biopsy or topical treatment.",
+    deep: "A grayish, elevated, gelatinous mass straddling the limbus, invading the cornea with an irregular front and tortuous feeder vessels: this is the appearance of ocular surface squamous neoplasia (OSSN), here a squamous cell carcinoma. The main risk factor is UV exposure (also HIV, HPV, immunosuppression). Management: referral to cornea or ocular oncology for excisional biopsy or topical treatment.",
     why: [
       "False: a pterygium is a fleshy triangle with a flat head that advances regularly; a gelatinous lesion with an irregular front requires ruling out a neoplasia.",
       "Correct: gelatinous appearance, feeder vessels and recent growth; biopsy will confirm.",
@@ -3140,7 +3140,7 @@ Object.assign(G.OPH_EN.quiz, {
     options: [
       "Promptly remove the implant from the anterior chamber",
       "Reassure and recheck in a month, the edema will regress",
-      "Prescribe sodium chloride 5 % and observe the edema",
+      "Prescribe sodium chloride 5% and observe the edema",
       "Plan a DMEK right away without touching the implant"
     ],
     explain: "The white rod in the anterior chamber is the dexamethasone implant, which moved forward because there is no capsule. Touching the endothelium, it sustains edema that can become permanent: prompt removal.",
@@ -3157,11 +3157,11 @@ Object.assign(G.OPH_EN.quiz, {
     options: [
       "Aim for an IOP below 21 mmHg, the statistical threshold of normal",
       "No pressure-lowering treatment, since IOP is already normal",
-      "Lower IOP by about 30 % below baseline",
+      "Lower IOP by about 30% below baseline",
       "Replace the drops with an oral calcium channel blocker"
     ],
     explain: "Even when IOP is “normal,” lowering it protects the nerve. In CNTGS, a 30% reduction cut progression from about 35% to 12%. A stable patient can be observed; if there is progression, aim for −30%.",
-    deep: "The OCT shows nerve fiber layer thinning in both eyes (average 74 µm on the right and 62 µm on the left). In NTG, IOP still matters: in CNTGS, a 30 % reduction in IOP reduced progression from about 35 % to 12 % (per-protocol analysis). Since many untreated patients do not progress, a stable patient can be observed, but documented progression justifies treatment.",
+    deep: "The OCT shows nerve fiber layer thinning in both eyes (average 74 µm on the right and 62 µm on the left). In NTG, IOP still matters: in CNTGS, a 30% reduction in IOP reduced progression from about 35% to 12% (per-protocol analysis). Since many untreated patients do not progress, a stable patient can be observed, but documented progression justifies treatment.",
     why: [
       "False: IOP is already below 21 mmHg; the target is set as a percentage reduction from baseline.",
       "False: IOP contributes even when it is \"normal\"; CNTGS shows the benefit of lowering it in those who progress.",
@@ -3174,7 +3174,7 @@ Object.assign(G.OPH_EN.quiz, {
     options: [
       "Laser peripheral iridotomy to reopen the angle",
       "Selective laser trabeculoplasty as first-line treatment",
-      "Pilocarpine 2 % to open the angle and a recheck in six months",
+      "Pilocarpine 2% to open the angle and a recheck in six months",
       "Gonioscopy, anti-VEGF and panretinal photocoagulation"
     ],
     explain: "Fine lacy vessels near the pupil margin: iris neovascularization caused by retinal ischemia. Assess the angle with gonioscopy, block VEGF and treat the ischemia with laser.",

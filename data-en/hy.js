@@ -90,25 +90,25 @@ Object.assign(G.OPH_EN.hy, {
     essentials: [
       "Sharp pain **on waking**, weeks after a fingernail scratch: poorly anchored epithelium that tears off.",
       "**Never topical anesthetic** at home: abuse blocks healing and can perforate.",
-      "Recurrent erosion: **NaCl 5 %** ointment at bedtime for 3–6 months.",
+      "Recurrent erosion: **NaCl 5%** ointment at bedtime for 3–6 months.",
       "EBMD before cataract surgery: **polish first**, then repeat biometry on a stable cornea."
     ],
     cloze: [
       "Vertical linear staining superiorly: look for a [[foreign body|FB]] under the lid.",
       "In EBMD, elevated areas give [[negative]] fluorescein staining.",
-      "The grey dots of EBMD are [[Cogan]] microcysts.",
+      "The gray dots of EBMD are [[Cogan]] microcysts.",
       "Refractory erosions: oral doxycycline blocks [[MMP-9|MMP9|MMP|matrix metalloproteinase|metalloproteinase]], which dissolves the anchoring fibrils.",
       "Refractory central disease: excimer laser ablation of the surface, [[PTK|phototherapeutic keratectomy]].",
       "High-velocity metal projectile: CT scan, never [[MRI]]."
     ],
     triage: [
-      { s: "Third episode of pain on waking since a scratch from a baby's fingernail; eye quiet between episodes.", u: "rapide", why: "Recurrent erosion, semi-urgent: NaCl 5 % ointment at bedtime for 3–6 months; doxycycline or polishing if refractory." },
+      { s: "Third episode of pain on waking since a scratch from a baby's fingernail; eye quiet between episodes.", u: "rapide", why: "Recurrent erosion, semi-urgent: NaCl 5% ointment at bedtime for 3–6 months; doxycycline or polishing if refractory." },
       { s: "Contact lens wearer, abrasion 48 h ago: increasing pain and a new white infiltrate.", u: "urgent", why: "Infectious keratitis until proven otherwise (Pseudomonas): cultures and treatment the same day." },
-      { s: "60-year-old woman, map lines and grey dots without pain; cataract surgery planned.", u: "routine", why: "EBMD: polish first, then repeat biometry, otherwise wrong IOL power." }
+      { s: "60-year-old woman, map lines and gray dots without pain; cataract surgery planned.", u: "routine", why: "EBMD: polish first, then repeat biometry, otherwise wrong IOL power." }
     ],
     cues: [
       "Sharp pain on waking, when opening the eyes",
-      "Map lines, grey dots, fingerprints",
+      "Map lines, gray dots, fingerprints",
       "Fingernail scratch a few weeks earlier"
     ]
   },
@@ -123,7 +123,7 @@ Object.assign(G.OPH_EN.hy, {
     cloze: [
       "In a contact lens wearer, the antibiotic must always cover [[Pseudomonas]].",
       "Fortified drops: vancomycin 25 mg/mL (or cefazolin) alternating with [[tobramycin]] 14 mg/mL.",
-      "Small peripheral ulcer without severity criteria: [[moxifloxacin|fluoroquinolone]] 0.5 % hourly.",
+      "Small peripheral ulcer without severity criteria: [[moxifloxacin|fluoroquinolone]] 0.5% hourly.",
       "In bacterial keratitis, the hypopyon is usually [[sterile]].",
       "Concentrated fluorescein diluted into a bright green stream: positive [[Seidel]] test (perforation).",
       "Perforation of 2–3 mm or less: [[glue|cyanoacrylate|cyanoacrylate glue|tissue glue]] and a bandage contact lens."
@@ -145,7 +145,7 @@ Object.assign(G.OPH_EN.hy, {
       "Contact lenses + water + **pain out of proportion** = Acanthamoeba until proven otherwise.",
       "Ulcer not responding after **48–72 h** of antibiotics: stop steroids, revisit the diagnosis, resample.",
       "**Never steroid**: it suppresses the neutrophils that contain the fungus.",
-      "MUTT I: **natamycin 5 %** superior to voriconazole for filamentous fungi, especially Fusarium."
+      "MUTT I: **natamycin 5%** superior to voriconazole for filamentous fungi, especially Fusarium."
     ],
     cloze: [
       "Early on, the ameba tracks along corneal nerves: [[radial perineuritis|radial keratoneuritis|perineuritis]].",
@@ -157,7 +157,7 @@ Object.assign(G.OPH_EN.hy, {
     ],
     triage: [
       { s: "Contact lens wearer who swims in a lake: pain out of proportion, pseudodendrites, ring infiltrate.", u: "urgent", why: "Probable ameba: stop all steroids; deep scraping, specific cultures, PCR, then hourly biguanide." },
-      { s: "Farmer scratched by a branch 10 days ago: grey infiltrate with feathery margins, satellites.", u: "urgent", why: "Filamentous fungus: scraping, Sabouraud, natamycin 5 % hourly, no steroid." },
+      { s: "Farmer scratched by a branch 10 days ago: gray infiltrate with feathery margins, satellites.", u: "urgent", why: "Filamentous fungus: scraping, Sabouraud, natamycin 5% hourly, no steroid." },
       { s: "Ulcer worsening after 72 h of fortified drops; bacterial cultures negative.", u: "urgent", why: "Failure at 48–72 h: think fungus or ameba; resample (PCR, confocal), stop steroids." }
     ],
     cues: [
@@ -180,7 +180,7 @@ Object.assign(G.OPH_EN.hy, {
       "[[Decreased|Reduced|Diminished]] corneal sensation points to HSV or VZV and heralds neurotrophic keratitis.",
       "Epithelial HSV: acyclovir [[400 mg|400]] PO 5 times daily for 7–10 days.",
       "Herpes zoster ophthalmicus: valacyclovir [[1 g|1g|1000 mg]] TID × 7 days, ideally within 72 h.",
-      "Valacyclovir 1 g daily for 1 year after herpes zoster ophthalmicus: the [[ZEDS]] trial, 27 % less disease at 18 months.",
+      "Valacyclovir 1 g daily for 1 year after herpes zoster ophthalmicus: the [[ZEDS]] trial, 27% less disease at 18 months.",
       "The Shingrix vaccine is recommended from age [[50|50 years]], even after an episode of shingles."
     ],
     triage: [
@@ -199,7 +199,7 @@ Object.assign(G.OPH_EN.hy, {
     essentials: [
       "**Clear interval** + blepharitis = marginal keratitis; crescent hugging the limbus = PUK.",
       "Melting cornea: **no topical NSAIDs**, which promote melting; oral doxycycline.",
-      "**Phenylephrine 2.5 %**: episcleritis blanches, scleritis (deep plexus) persists.",
+      "**Phenylephrine 2.5%**: episcleritis blanches, scleritis (deep plexus) persists.",
       "Terrien: **painless white eye**, superior gutter lined with lipid, against-the-rule astigmatism."
     ],
     cloze: [
@@ -265,7 +265,7 @@ Object.assign(G.OPH_EN.hy, {
     ],
     triage: [
       { s: "Graft recipient on steroids: branching white crystals in the graft, little redness.", u: "urgent", why: "Infectious crystalline keratopathy (viridans) until proven otherwise: cultures, intensive antibiotic." },
-      { s: "38-year-old man: peripheral grey-white ring with a lucid interval, normal vision.", u: "routine", why: "Early arcus: lipid panel, letter to the family physician (familial hypercholesterolemia)." },
+      { s: "38-year-old man: peripheral gray-white ring with a lucid interval, normal vision.", u: "routine", why: "Early arcus: lipid panel, letter to the family physician (familial hypercholesterolemia)." },
       { s: "Patient on amiodarone: golden-brown whorl lines below the pupil, normal vision.", u: "routine", why: "Cornea verticillata: reassure and document; vision rarely affected." }
     ],
     cues: [
@@ -293,7 +293,7 @@ Object.assign(G.OPH_EN.hy, {
     ],
     triage: [
       { s: "14-year-old boy: keratoconus found on tomography, good vision with glasses.", u: "rapide", why: "Child: rapid progression; CXL at diagnosis, without waiting for progression." },
-      { s: "Known keratoconus: sudden vision loss, white thickened cornea, negative Seidel.", u: "rapide", why: "Acute hydrops, semi-urgent (not a perforation): cycloplegic, NaCl 5 %, steroid; resolves over a few months." },
+      { s: "Known keratoconus: sudden vision loss, white thickened cornea, negative Seidel.", u: "rapide", why: "Acute hydrops, semi-urgent (not a perforation): cycloplegic, NaCl 5%, steroid; resolves over a few months." },
       { s: "32-year-old woman: keratoconus stable on two tomographies, well corrected with rigid lenses.", u: "routine", why: "No progression: monitoring; no preventive epi-on CXL." }
     ],
     cues: [
@@ -341,12 +341,12 @@ Object.assign(G.OPH_EN.hy, {
       "On specular microscopy, guttae appear as [[dark|black]] areas.",
       "Fuchs: expansion of CTG18.1 repeats in the [[TCF4]] gene.",
       "Triple procedure: aim for slight myopia, because DMEK induces a [[hyperopic]] shift.",
-      "Mild epithelial edema: NaCl 5 % and a [[hair dryer|hairdryer|blow dryer]] on waking.",
+      "Mild epithelial edema: NaCl 5% and a [[hair dryer|hairdryer|blow dryer]] on waking.",
       "Detached DMEK graft: new bubble by reinjecting [[air|air or gas|gas]] (rebubbling).",
       "Endothelial keratoplasty in a complex eye (vitrectomized, tube, anterior chamber IOL): prefer [[DSAEK|DSEK]]."
     ],
     triage: [
-      { s: "65-year-old woman: central guttae, mild morning blur, no significant cataract.", u: "routine", why: "Early Fuchs, elective: NaCl 5 %, hair dryer; specular and pachymetry at follow-up." },
+      { s: "65-year-old woman: central guttae, mild morning blur, no significant cataract.", u: "routine", why: "Early Fuchs, elective: NaCl 5%, hair dryer; specular and pachymetry at follow-up." },
       { s: "Advanced Fuchs: ruptured bulla, pain and a new white infiltrate.", u: "urgent", why: "Infectious keratitis over a ruptured bulla: cultures and antibiotics the same day." },
       { s: "Central guttae and a bothersome cataract; surgery being considered.", u: "routine", why: "Elective workup: specular and Scheimpflug; any edema, even subclinical: triple procedure." }
     ],
@@ -362,7 +362,7 @@ Object.assign(G.OPH_EN.hy, {
       "Rejection risk: **PK > DSAEK > DMEK**; DALK has no endothelial rejection.",
       "**Khodadoust line**: advancing KP with edematous graft behind it; endothelial rejection, the most serious.",
       "Infiltrate on the graft or near a suture: **culture before** increasing steroids.",
-      "Rejection: **prednisolone 1 % hourly** + cycloplegic; antiviral if history of herpes."
+      "Rejection: **prednisolone 1% hourly** + cycloplegic; antiviral if history of herpes."
     ],
     cloze: [
       "Stromal rejection: subepithelial infiltrates confined to the graft, [[Krachmer]] spots.",
@@ -373,7 +373,7 @@ Object.assign(G.OPH_EN.hy, {
       "Severe endothelial rejection: add sub-Tenon [[triamcinolone]] or oral prednisone."
     ],
     triage: [
-      { s: "PK 8 months ago: red eye, photophobia and vision ↓ since stopping the drops.", u: "urgent", why: "RSVP: probable rejection; prednisolone 1 % hourly and a cycloplegic the same day." },
+      { s: "PK 8 months ago: red eye, photophobia and vision ↓ since stopping the drops.", u: "urgent", why: "RSVP: probable rejection; prednisolone 1% hourly and a cycloplegic the same day." },
       { s: "PK: loose suture surrounded by a white infiltrate with an epithelial defect.", u: "urgent", why: "Infection until proven otherwise: culture, antibiotics, suture removal." },
       { s: "DMEK 3 years ago: quiet eye, stable vision, 1 steroid drop daily.", u: "routine", why: "Routine follow-up: IOP at every visit; never let the patient stop the steroid on their own." }
     ],
@@ -443,8 +443,8 @@ Object.assign(G.OPH_EN.hy, {
     essentials: [
       "**Painless** optic neuropathy: peripheral field goes silently, central vision last.",
       "**Gonioscopy** at diagnosis: open angle = scleral spur visible over 360°, no synechiae.",
-      "The only proven lever is **IOP**: target ≈ 20–30 % below baseline.",
-      "**SLT** first line: 69.8 % at target with no other treatment (LiGHT).",
+      "The only proven lever is **IOP**: target ≈ 20–30% below baseline.",
+      "**SLT** first line: 69.8% at target with no other treatment (LiGHT).",
       "Pallor > cupping, early VA ↓, vertical defect: red flag, **MRI**."
     ],
     cloze: [
@@ -469,10 +469,10 @@ Object.assign(G.OPH_EN.hy, {
   "g-hto": {
     essentials: [
       "**OHT**: IOP > 21, open angle, normal nerve and field; a risk, not a disease.",
-      "**OHTS**: IOP −20 % → 5-year conversion 4.4 % vs 9.5 %.",
+      "**OHTS**: IOP −20% → 5-year conversion 4.4% vs 9.5%.",
       "**Thin cornea**: IOP is underestimated AND the risk of conversion rises.",
       "Do not treat every OHT: estimate the **risk** (age, IOP, cornea, C/D, PSD).",
-      "Treat if IOP **≥ 30 mmHg**, only eye or high risk: target −20 %."
+      "Treat if IOP **≥ 30 mmHg**, only eye or high risk: target −20%."
     ],
     cloze: [
       "OHTS: a cornea ≤ 555 µm converts ≈ [[3 times|three times|3]] more often than a cornea > 588 µm.",
@@ -484,7 +484,7 @@ Object.assign(G.OPH_EN.hy, {
     ],
     triage: [
       { s: "72-year-old man: IOP 23 mmHg in both eyes, thick corneas, normal discs, OCT and field.", u: "routine", why: "Low-risk OHT: structured observation, OCT and field compared with baseline." },
-      { s: "45-year-old woman: IOP 31 mmHg, 520 µm cornea, normal nerve, OCT and field.", u: "rapide", why: "IOP ≥ 30 mmHg, young, thin cornea: treatment generally offered (PGA or SLT, target ≈ 20 % below baseline)." },
+      { s: "45-year-old woman: IOP 31 mmHg, 520 µm cornea, normal nerve, OCT and field.", u: "rapide", why: "IOP ≥ 30 mmHg, young, thin cornea: treatment generally offered (PGA or SLT, target ≈ 20% below baseline)." },
       { s: "OHT followed for 3 years: new disc hemorrhage and inferior RNFL thinning, field still normal.", u: "rapide", why: "Probable conversion: confirm, then tighten follow-up or treat." }
     ],
     cues: [
@@ -498,7 +498,7 @@ Object.assign(G.OPH_EN.hy, {
       "**NTG**: open-angle glaucomatous neuropathy, IOP always ≤ 21 mmHg; diagnosis of exclusion.",
       "Before calling it NTG, rule out \"**PACI**\": missed IOP, intermittent closure, compression, ischemia.",
       "**MRI** if < 50, pallor > cupping, VA or color vision ↓, vertical defect.",
-      "**CNTGS**: IOP −30 % → less progression (≈ 12 % vs 35 %, per protocol).",
+      "**CNTGS**: IOP −30% → less progression (≈ 12% vs 35%, per protocol).",
       "Early **paracentral** defects missed by the 24-2: add a 10-2."
     ],
     cloze: [
@@ -511,7 +511,7 @@ Object.assign(G.OPH_EN.hy, {
     ],
     triage: [
       { s: "42-year-old man: IOP 15 mmHg, pallor more extensive than cupping, decreased color vision.", u: "rapide", why: "Atypical for NTG (age < 50, pallor): prioritized MRI to rule out compression." },
-      { s: "70-year-old woman with known NTG: new paracentral scotoma threatening fixation.", u: "rapide", why: "Fixation threatened: treat without waiting, target ≈ 30 % below baseline." },
+      { s: "70-year-old woman with known NTG: new paracentral scotoma threatening fixation.", u: "rapide", why: "Fixation threatened: treat without waiting, target ≈ 30% below baseline." },
       { s: "66-year-old woman, early NTG: defect far from fixation, stable over several fields.", u: "routine", why: "Many NTG cases do not progress (CNTGS): observe and measure the rate, ≈ 3 fields a year." }
     ],
     cues: [
@@ -799,7 +799,7 @@ Object.assign(G.OPH_EN.hy, {
       "Aqueous is actively secreted by the **non-pigmented epithelium** of the ciliary processes, ≈ 2.5 µL/min during the day.",
       "**IOP = (F − U) / C + Pv**: production, uveoscleral outflow, outflow facility, episcleral venous pressure.",
       "The **trabecular pathway** carries most of the outflow; its resistance increases in open-angle glaucoma.",
-      "**Prostaglandins** increase the uveoscleral pathway (5–30 % of outflow), which works day and night.",
+      "**Prostaglandins** increase the uveoscleral pathway (5–30% of outflow), which works day and night.",
       "Through the trabecular pathway, IOP cannot fall below Pv: **filtering surgery** bypasses it."
     ],
     cloze: [
@@ -816,7 +816,7 @@ Object.assign(G.OPH_EN.hy, {
     ],
     cues: [
       "Ciliary processes and carbonic anhydrase",
-      "Uveoscleral pathway: 5–30 % of outflow",
+      "Uveoscleral pathway: 5–30% of outflow",
       "Trabecular meshwork, then Schlemm canal"
     ]
   },
@@ -879,8 +879,8 @@ Object.assign(G.OPH_EN.hy, {
   "phy-transparence": {
     essentials: [
       "Transparency: regular **collagen fibrils**, spaced less than one wavelength apart; scattering cancels out.",
-      "**Deturgescence**: the endothelium pumps water back out (Na⁺/K⁺-ATPase) and keeps the stroma at ≈ 78 % water.",
-      "**Stromal edema**: thickened, greyish cornea, Descemet folds, moderate vision loss.",
+      "**Deturgescence**: the endothelium pumps water back out (Na⁺/K⁺-ATPase) and keeps the stroma at ≈ 78% water.",
+      "**Stromal edema**: thickened, grayish cornea, Descemet folds, moderate vision loss.",
       "**Epithelial edema**: microcysts, bullae, colored halos and marked vision loss.",
       "In an angle-closure attack, IOP > stromal **swelling pressure** (≈ 50–60 mmHg): steamy epithelium."
     ],
@@ -898,7 +898,7 @@ Object.assign(G.OPH_EN.hy, {
     ],
     cues: [
       "Regularly spaced fibrils of ≈ 30 nm",
-      "Stroma at ≈ 78 % water",
+      "Stroma at ≈ 78% water",
       "Swelling pressure ≈ 50–60 mmHg"
     ]
   },
@@ -949,7 +949,7 @@ Object.assign(G.OPH_EN.hy, {
     ],
     triage: [
       { s: "Left RAPD and a dense left cataract, cataract surgery planned.", u: "rapide", why: "Cataract does not cause an RAPD: look for optic neuropathy or retinal disease before operating." },
-      { s: "Anisocoria of 0.5 mm, the same in dark and light, no ptosis.", u: "routine", why: "Physiologic anisocoria (≤ 1 mm, ≈ 20 % of people)." },
+      { s: "Anisocoria of 0.5 mm, the same in dark and light, no ptosis.", u: "routine", why: "Physiologic anisocoria (≤ 1 mm, ≈ 20% of people)." },
       { s: "Small pupil and mild ptosis since yesterday, with neck pain.", u: "urgent", why: "Recent painful Horner: rule out carotid dissection with urgent imaging." }
     ],
     cues: [
@@ -1240,7 +1240,7 @@ Object.assign(G.OPH_EN.hy, {
 
   "ex-champs-visuels": {
     essentials: [
-      "Read **reliability** first: false positives > 15 % = unreliable test.",
+      "Read **reliability** first: false positives > 15% = unreliable test.",
       "Glaucoma respects the **horizontal meridian**; the chiasm and retrochiasmal pathways, the vertical.",
       "**Depressed TD, normal PD** = diffuse depression (cataract, small pupil), not a glaucomatous defect.",
       "Stages: early **MD > −6 dB**, moderate −6 to −12, advanced < −12 dB.",
@@ -1255,14 +1255,14 @@ Object.assign(G.OPH_EN.hy, {
       "Bitemporal defect = [[chiasm|chiasmal]] lesion → neuroimaging."
     ],
     triage: [
-      { s: "Visual field with 25 % false positives and an excellent MD.", u: "routine", why: "Unreliable test (\"trigger-happy\"): repeat it before concluding." },
+      { s: "Visual field with 25% false positives and an excellent MD.", u: "routine", why: "Unreliable test (\"trigger-happy\"): repeat it before concluding." },
       { s: "Reliable fields: MD falling by −2.5 dB per year.", u: "rapide", why: "Fast progressor (≥ −2 dB/year): review the target and treatment without delay." },
       { s: "Known glaucoma patient: new right homonymous defect respecting the vertical meridian.", u: "urgent", why: "Not glaucoma progression: stroke or mass, urgent brain imaging." }
     ],
     cues: [
       "MD, PSD, VFI and GHT",
       "Nasal step on the 24-2",
-      "False positives > 15 %"
+      "False positives > 15%"
     ]
   },
 
@@ -1377,7 +1377,7 @@ Object.assign(G.OPH_EN.hy, {
   "a5-opacification-capsulaire": {
     essentials: [
       "Residual lens cells haze the **posterior capsule** behind the IOL.",
-      "Retroillumination: grey haze, fibrosis or **Elschnig pearls** behind a clear, centered IOL.",
+      "Retroillumination: gray haze, fibrosis or **Elschnig pearls** behind a clear, centered IOL.",
       "Before **YAG capsulotomy**, rule out macular edema on OCT.",
       "Glaucoma patient: **alpha-agonist** before or after the YAG, minimal energy, IOP rechecked within hours.",
       "After a YAG, return urgently for **flashes, floaters or a curtain** (retinal detachment)."
@@ -1397,7 +1397,7 @@ Object.assign(G.OPH_EN.hy, {
     cues: [
       "Elschnig pearls behind the IOL",
       "Haze that returns years later",
-      "Clear IOL, grey haze behind it"
+      "Clear IOL, gray haze behind it"
     ]
   },
 
@@ -1641,7 +1641,7 @@ Object.assign(G.OPH_EN.hy, {
       { s: "Asymptomatic lattice found in a myope on a routine fundus exam.", u: "routine", why: "Surveillance and teaching of warning symptoms." }
     ],
     cues: [
-      "Greyish ring floating in front of the disc",
+      "Grayish ring floating in front of the disc",
       "Crisscrossing white lines parallel to the ora",
       "Bright suspended particles, normal vision"
     ]
@@ -1733,7 +1733,7 @@ Object.assign(G.OPH_EN.hy, {
 
   "a5-tumeurs-toxicite-trauma": {
     essentials: [
-      "**Nevus**: slate grey, flat (< 2 mm), drusen or halo, no fluid or orange pigment.",
+      "**Nevus**: slate gray, flat (< 2 mm), drusen or halo, no fluid or orange pigment.",
       "**Melanoma**: thickness > 2 mm, subretinal fluid, symptoms, orange pigment, acoustic hollowness.",
       "Always a **baseline photo**: without comparison, it is impossible to prove a nevus has not grown.",
       "**Hydroxychloroquine**: ≤ 5 mg/kg/day of real body weight; annual 10-2 and OCT after 5 years, earlier if high risk.",

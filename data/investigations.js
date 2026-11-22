@@ -164,7 +164,7 @@ G.OPH.inv = [
       { fr: "Lentille à 4 miroirs (Posner, Zeiss) : sans gel, permet l’indentation. Goldmann 3 miroirs : gel, image stable. Le miroir montre l’angle opposé.",
         en: "4-mirror lens (Posner, Zeiss): no gel, allows indentation. Goldmann 3-mirror: gel, stable view. The mirror shows the opposite angle." },
       { fr: "Identifier les structures de postérieur vers antérieur : racine de l’iris, bande ciliaire, éperon scléral, trabéculum, ligne de Schwalbe (« I Can’t See Til Schwalbe »).",
-        en: "Identify structures from posterior to anterior: iris root, ciliary body band, scleral spur, trabecular meshwork, Schwalbe’s line (“I Can’t See Til Schwalbe”)." },
+        en: "Identify structures from posterior to anterior: iris root, ciliary body band, scleral spur, trabecular meshwork, Schwalbe line (“I Can’t See Til Schwalbe”)." },
       { fr: "Grader chaque quadrant (Shaffer) et noter pigmentation, synéchies et vaisseaux.",
         en: "Grade each quadrant (Shaffer) and note pigment, synechiae and vessels." },
       { fr: "Indentation (dynamic gonioscopy) : appuyer doucement. L’angle s’ouvre si la fermeture est appositionnelle; il reste fermé s’il y a des synéchies (PAS).",
@@ -181,13 +181,13 @@ G.OPH.inv = [
       { fr: "Contact appositionnel : l’angle fermé s’ouvre à l’indentation.", en: "Appositional contact: the closed angle opens with indentation." },
       { fr: "Récession de l’angle (angle recession) : bande ciliaire anormalement large après un trauma contusif → glaucome possible des années plus tard.", en: "Angle recession: abnormally wide ciliary body band after blunt trauma → glaucoma possible years later." },
       { fr: "Fente de cyclodialyse (cyclodialysis cleft) : bande blanche profonde (sclère) sous l’éperon → hypotonie.", en: "Cyclodialysis cleft: deep white band (bare sclera) below the spur → hypotony." },
-      { fr: "Ligne de Sampaolesi : pigment en avant de la ligne de Schwalbe, classique en pseudoexfoliation.", en: "Sampaolesi line: pigment anterior to Schwalbe’s line, classic in pseudoexfoliation." },
+      { fr: "Ligne de Sampaolesi : pigment en avant de la ligne de Schwalbe, classique en pseudoexfoliation.", en: "Sampaolesi line: pigment anterior to Schwalbe line, classic in pseudoexfoliation." },
       { fr: "Néovaisseaux de l’angle (NVA) : vaisseaux qui franchissent l’éperon scléral.", en: "Angle neovascularization (NVA): vessels crossing the scleral spur." }
     ],
     pitfalls: [
       { fr: "Trop de lumière dans la pupille → myosis → angle faussement ouvert.", en: "Too much light in the pupil → miosis → falsely open angle." },
       { fr: "Pression involontaire avec la lentille 4 miroirs → angle faussement ouvert.", en: "Inadvertent pressure with the 4-mirror lens → falsely open angle." },
-      { fr: "Prendre une ligne de Schwalbe pigmentée (Sampaolesi) pour le trabéculum → angle surestimé. Le « coin cornéen » (corneal wedge) localise Schwalbe.", en: "Mistaking a pigmented Schwalbe’s line (Sampaolesi) for the meshwork → angle overestimated. The corneal wedge locates Schwalbe’s line." },
+      { fr: "Prendre une ligne de Schwalbe pigmentée (Sampaolesi) pour le trabéculum → angle surestimé. Le « coin cornéen » (corneal wedge) localise Schwalbe.", en: "Mistaking a pigmented Schwalbe line (Sampaolesi) for the meshwork → angle overestimated. The corneal wedge locates Schwalbe line." },
       { fr: "Oublier que le miroir montre l’angle opposé.", en: "Forgetting that the mirror shows the opposite angle." }
     ],
     tool: "gonio-grader",
@@ -485,7 +485,7 @@ G.OPH.invPractice = [
       { fr: "Un pic bas en escalier = faisceau oblique ou hors fovéa (ex. sur le nerf optique) : mesure fausse.", en: "A low stair-stepped spike = oblique or off-fovea beam (e.g., on the optic nerve): unreliable." },
       { fr: "Moyenner une mauvaise mesure introduit l’erreur dans le calcul.", en: "Averaging in a bad reading puts its error into the calculation." },
       { fr: "On choisit sur la qualité du tracé, pas sur la valeur.", en: "Choose by trace quality, not by the number." },
-      { fr: "Juste : un pic haut et vertical signifie un faisceau perpendiculaire, centré sur la fovéa.", en: "Correct: a tall vertical spike means a perpendicular beam centred on the fovea." }
+      { fr: "Juste : un pic haut et vertical signifie un faisceau perpendiculaire, centré sur la fovéa.", en: "Correct: a tall vertical spike means a perpendicular beam centered on the fovea." }
     ],
     reveal: { fr: "On juge une mesure à la forme du pic rétinien : haut et vertical = faisceau perpendiculaire sur la fovéa.", en: "Judge a reading by the retinal spike: tall and vertical = perpendicular beam on the fovea." }
   },
@@ -591,12 +591,12 @@ G.OPH.invPractice = [
     ],
     answer: 1,
     why: [
-      { fr: "Un trou est une perte de tissu au centre; la fovéa serait creusée, pas épaissie à 531 µm.", en: "A hole is tissue loss at the centre; the fovea would be dug out, not thickened to 531 µm." },
+      { fr: "Un trou est une perte de tissu au centre; la fovéa serait creusée, pas épaissie à 531 µm.", en: "A hole is tissue loss at the center; the fovea would be dug out, not thickened to 531 µm." },
       { fr: "Juste : une membrane à la surface contracte la rétine, efface le creux fovéolaire et l’épaissit.", en: "Correct: a membrane on the surface contracts the retina, flattens the foveal pit and thickens it." },
       { fr: "La coupe confirme l’épaississement et la perte du creux : ce n’est pas un artéfact.", en: "The scan confirms the thickening and the lost pit: it’s not an artifact." },
       { fr: "Le liquide sous-rétinien serait un espace noir entre la rétine et l’EPR; il n’y en a pas.", en: "Subretinal fluid would be a black space between retina and RPE; there is none." }
     ],
-    reveal: { fr: "Carte rouge-blanc centrée sur la fovéa (531 µm) et creux fovéolaire effacé sous une surface plissée : membrane épirétinienne.", en: "Red-white map centred on the fovea (531 µm) and a flattened pit under a wrinkled surface: epiretinal membrane." }
+    reveal: { fr: "Carte rouge-blanc centrée sur la fovéa (531 µm) et creux fovéolaire effacé sous une surface plissée : membrane épirétinienne.", en: "Red-white map centered on the fovea (531 µm) and a flattened pit under a wrinkled surface: epiretinal membrane." }
   },
   {
     id: "p-oct-4", inv: "oct", media: "m-oct-4", level: 1,
@@ -650,7 +650,7 @@ G.OPH.invPractice = [
       { fr: "Juste : un grand disque peut avoir un grand C/D sans maladie, mais la RNFL tranche. Ici elle est effondrée, proche du plancher (≈ 50 µm) : suivre surtout le champ visuel.", en: "Correct: a large disc can have a large C/D without disease, but the RNFL decides. Here it has collapsed, near the floor (~50 µm): follow mainly the visual field." },
       { fr: "Le piège est réel, mais une mégalopapille physiologique garde une RNFL normale.", en: "The trap is real, but a physiologic megalopapilla keeps a normal RNFL." }
     ],
-    reveal: { fr: "RNFL moyenne rouge aux deux yeux (51 et 40 µm) malgré de grands disques : ce n’est pas la taille du disque, c’est une perte de fibres.", en: "Red average RNFL in both eyes (51 and 40 µm) despite large discs: it’s not the disc size, it’s fibre loss." }
+    reveal: { fr: "RNFL moyenne rouge aux deux yeux (51 et 40 µm) malgré de grands disques : ce n’est pas la taille du disque, c’est une perte de fibres.", en: "Red average RNFL in both eyes (51 and 40 µm) despite large discs: it’s not the disc size, it’s fiber loss." }
   },
   {
     id: "p-oct-7", inv: "oct", media: "m-oct-7", level: 3,
@@ -668,7 +668,7 @@ G.OPH.invPractice = [
       { fr: "1,71 vs 1,87 mm² : différence modeste, qui n’empêche pas l’interprétation.", en: "1.71 vs 1.87 mm²: a modest difference that doesn’t prevent interpretation." },
       { fr: "« Green disease » : la moyenne dilue un défaut focal.", en: "“Green disease”: the average dilutes a focal defect." }
     ],
-    reveal: { fr: "Défaut focal : bande rouge inférotemporale sur la carte de déviation OG et bord inférieur effondré, alors que la moyenne reste verte.", en: "Focal defect: a red inferotemporal band on the OS deviation map and a collapsed inferior rim, while the average stays green." }
+    reveal: { fr: "Défaut focal : bande rouge inférotemporale sur la carte de déviation OG et bord inférieur effondré, alors que la moyenne reste verte.", en: "Focal defect: a red inferotemporal band on the left eye deviation map and a collapsed inferior rim, while the average stays green." }
   },
   {
     id: "p-oct-8", inv: "oct", media: "m-oct-8", level: 2,
@@ -729,10 +729,10 @@ G.OPH.invPractice = [
     id: "p-gonio-2", inv: "gonio", media: "m-gonio-2", level: 1,
     q: { fr: "Schéma d’un angle ouvert. De postérieur vers antérieur, quel ordre est juste?", en: "Schematic of an open angle. From posterior to anterior, which order is right?" },
     options: [
-      { fr: "Racine de l’iris → éperon scléral → bande ciliaire → ligne de Schwalbe → trabéculum", en: "Iris root → scleral spur → ciliary body band → Schwalbe’s line → trabecular meshwork" },
-      { fr: "Racine de l’iris → bande ciliaire → éperon scléral → trabéculum → ligne de Schwalbe", en: "Iris root → ciliary body band → scleral spur → trabecular meshwork → Schwalbe’s line" },
-      { fr: "Racine de l’iris → trabéculum → éperon scléral → bande ciliaire → ligne de Schwalbe", en: "Iris root → trabecular meshwork → scleral spur → ciliary body band → Schwalbe’s line" },
-      { fr: "Racine de l’iris → ligne de Schwalbe → trabéculum → éperon scléral → bande ciliaire", en: "Iris root → Schwalbe’s line → trabecular meshwork → scleral spur → ciliary body band" }
+      { fr: "Racine de l’iris → éperon scléral → bande ciliaire → ligne de Schwalbe → trabéculum", en: "Iris root → scleral spur → ciliary body band → Schwalbe line → trabecular meshwork" },
+      { fr: "Racine de l’iris → bande ciliaire → éperon scléral → trabéculum → ligne de Schwalbe", en: "Iris root → ciliary body band → scleral spur → trabecular meshwork → Schwalbe line" },
+      { fr: "Racine de l’iris → trabéculum → éperon scléral → bande ciliaire → ligne de Schwalbe", en: "Iris root → trabecular meshwork → scleral spur → ciliary body band → Schwalbe line" },
+      { fr: "Racine de l’iris → ligne de Schwalbe → trabéculum → éperon scléral → bande ciliaire", en: "Iris root → Schwalbe line → trabecular meshwork → scleral spur → ciliary body band" }
     ],
     answer: 1,
     why: [
@@ -741,11 +741,11 @@ G.OPH.invPractice = [
       { fr: "Le trabéculum est en avant de l’éperon.", en: "The meshwork is anterior to the spur." },
       { fr: "C’est l’ordre inversé (antérieur vers postérieur).", en: "That’s the reverse order (anterior to posterior)." }
     ],
-    reveal: { fr: "« I Can’t See Til Schwalbe » : la ligne de Schwalbe marque la fin de la cornée (Descemet), donc la limite antérieure de l’angle.", en: "“I Can’t See Til Schwalbe”: Schwalbe’s line marks the end of Descemet’s membrane — the anterior limit of the angle." }
+    reveal: { fr: "« I Can’t See Til Schwalbe » : la ligne de Schwalbe marque la fin de la cornée (Descemet), donc la limite antérieure de l’angle.", en: "“I Can’t See Til Schwalbe”: Schwalbe line marks the end of Descemet membrane — the anterior limit of the angle." }
   },
   {
     id: "p-gonio-3", inv: "gonio", media: "m-gonio-3", level: 2,
-    q: { fr: "Sans indentation, seule la ligne de Schwalbe est visible. À l’indentation, l’angle s’ouvre et l’éperon scléral apparaît, sans adhérence. Conclusion?", en: "Without indentation, only Schwalbe’s line is visible. With indentation, the angle opens and the scleral spur appears, with no adhesions. Conclusion?" },
+    q: { fr: "Sans indentation, seule la ligne de Schwalbe est visible. À l’indentation, l’angle s’ouvre et l’éperon scléral apparaît, sans adhérence. Conclusion?", en: "Without indentation, only Schwalbe line is visible. With indentation, the angle opens and the scleral spur appears, with no adhesions. Conclusion?" },
     options: [
       { fr: "Fermeture appositionnelle (Shaffer 1), sans synéchies", en: "Appositional closure (Shaffer 1), no synechiae" },
       { fr: "Récession de l’angle", en: "Angle recession" },
@@ -757,7 +757,7 @@ G.OPH.invPractice = [
       { fr: "Juste : un angle étroit qui s’ouvre à l’indentation = contact appositionnel. La conduite (iridotomie au laser ou non) dépend du contexte (ISGEO).", en: "Correct: a narrow angle that opens with indentation = appositional contact. Management (laser iridotomy or not) depends on the context (ISGEO)." },
       { fr: "La récession donne au contraire un angle très profond avec une bande ciliaire large.", en: "Recession gives the opposite: a very deep angle with a wide ciliary band." },
       { fr: "Des synéchies resteraient collées pendant l’indentation.", en: "Synechiae would stay stuck during indentation." },
-      { fr: "On grade l’angle sans indentation : seule la ligne de Schwalbe visible n’est pas un angle ouvert.", en: "The angle is graded without indentation: seeing only Schwalbe’s line isn’t an open angle." }
+      { fr: "On grade l’angle sans indentation : seule la ligne de Schwalbe visible n’est pas un angle ouvert.", en: "The angle is graded without indentation: seeing only Schwalbe line isn’t an open angle." }
     ],
     reveal: { fr: "L’angle qui s’ouvre à l’indentation = apposition, pas synéchie : c’est l’indentation qui fait la différence.", en: "An angle that opens with indentation = apposition, not synechiae — indentation makes the call." }
   },
@@ -792,8 +792,8 @@ G.OPH.invPractice = [
     why: [
       { fr: "Une synéchie est du tissu irien collé, pas une fine ligne de pigment.", en: "A synechia is adherent iris tissue, not a thin pigment line." },
       { fr: "La bande ciliaire est la structure la plus postérieure, juste devant la racine de l’iris.", en: "The ciliary body band is the most posterior structure, just in front of the iris root." },
-      { fr: "Juste : pigment déposé en avant de la ligne de Schwalbe; classique en pseudoexfoliation.", en: "Correct: pigment deposited anterior to Schwalbe’s line; classic in pseudoexfoliation." },
-      { fr: "Le trabéculum est en arrière de la ligne de Schwalbe. Le confondre avec Sampaolesi fait surestimer l’ouverture de l’angle.", en: "The meshwork is posterior to Schwalbe’s line. Confusing the two overestimates how open the angle is." }
+      { fr: "Juste : pigment déposé en avant de la ligne de Schwalbe; classique en pseudoexfoliation.", en: "Correct: pigment deposited anterior to Schwalbe line; classic in pseudoexfoliation." },
+      { fr: "Le trabéculum est en arrière de la ligne de Schwalbe. Le confondre avec Sampaolesi fait surestimer l’ouverture de l’angle.", en: "The meshwork is posterior to Schwalbe line. Confusing the two overestimates how open the angle is." }
     ],
     reveal: { fr: "Ligne de pigment ondulée en avant de Schwalbe : ligne de Sampaolesi, pensez pseudoexfoliation.", en: "A wavy pigment line anterior to Schwalbe: Sampaolesi line — think pseudoexfoliation." }
   },
@@ -809,7 +809,7 @@ G.OPH.invPractice = [
     answer: 1,
     why: [
       { fr: "Un angle normal a une bande ciliaire étroite et régulière, sans bande blanche profonde.", en: "A normal angle has a narrow, regular ciliary band and no deep white band." },
-      { fr: "Juste : récession = déchirure entre les fibres longitudinales et circulaires du muscle ciliaire, d’où une bande ciliaire large (risque de glaucome des années plus tard, suivi à vie). La bande blanche = sclère exposée par une cyclodialyse.", en: "Correct: recession = a tear between the longitudinal and circular ciliary muscle fibres, hence a wide ciliary band (risk of glaucoma years later; lifelong follow-up). The white band = sclera bared by a cyclodialysis cleft." },
+      { fr: "Juste : récession = déchirure entre les fibres longitudinales et circulaires du muscle ciliaire, d’où une bande ciliaire large (risque de glaucome des années plus tard, suivi à vie). La bande blanche = sclère exposée par une cyclodialyse.", en: "Correct: recession = a tear between the longitudinal and circular ciliary muscle fibers, hence a wide ciliary band (risk of glaucoma years later; lifelong follow-up). The white band = sclera bared by a cyclodialysis cleft." },
       { fr: "Ici l’angle est plus profond, pas fermé par l’iris.", en: "Here the angle is deeper, not closed by iris." },
       { fr: "Aucun vaisseau ne franchit l’éperon.", en: "No vessels cross the spur." }
     ],
@@ -820,7 +820,7 @@ G.OPH.invPractice = [
     q: { fr: "Hypotonie (PIO 1–2 mmHg) après une chirurgie de cataracte. Gonioscopie de l’angle nasal : que montrent les flèches blanches?", en: "Hypotony (IOP 1–2 mmHg) after cataract surgery. Gonioscopy of the nasal angle: what do the white arrows show?" },
     options: [
       { fr: "Une fente de cyclodialyse", en: "A cyclodialysis cleft" },
-      { fr: "Un embryotoxon postérieur (ligne de Schwalbe proéminente)", en: "Posterior embryotoxon (prominent Schwalbe’s line)" },
+      { fr: "Un embryotoxon postérieur (ligne de Schwalbe proéminente)", en: "Posterior embryotoxon (prominent Schwalbe line)" },
       { fr: "Une récession de l’angle simple", en: "Simple angle recession" },
       { fr: "Un trabéculum très pigmenté", en: "Heavily pigmented meshwork" }
     ],
@@ -911,7 +911,7 @@ G.OPH.invPractice = [
     q: { fr: "Homme de 61 ans qui consulte pour de nouvelles mouches volantes. Fond d’œil ci-contre. Quelle est la priorité?", en: "A 61-year-old man presents with new floaters. Fundus shown. What’s the priority?" },
     options: [
       { fr: "Glaucome avancé : débuter des gouttes hypotensives", en: "Advanced glaucoma: start pressure-lowering drops" },
-      { fr: "Drusen papillaires : rassurer et revoir dans un an avec photos", en: "Disc drusen: reassure and review in a year with photos" },
+      { fr: "Drusen papillaires : rassurer et revoir dans un an avec photos", en: "Disc drusen: reassure and recheck in a year with photos" },
       { fr: "Décollement postérieur du vitré simple : rassurer", en: "Simple posterior vitreous detachment: reassure" },
       { fr: "Œdème papillaire : TA et imagerie cérébrale urgente", en: "Disc swelling: check BP, urgent brain imaging" }
     ],
@@ -937,7 +937,7 @@ G.OPH.invPractice = [
     why: [
       { fr: "La papille n’est pas soulevée.", en: "The disc isn’t elevated." },
       { fr: "La rétine est pâle mais à plat, sans plis ni bord de soulèvement.", en: "The retina is pale but flat, with no folds or detachment edge." },
-      { fr: "Juste : la rétine interne ischémique blanchit; la fovéa, mince, laisse voir la choroïde rouge. Nodules cotonneux associés. C’est un AVC de l’œil : évaluation urgente en centre d’AVC et, après 50 ans, éliminer l’artérite à cellules géantes (VS, CRP).", en: "Correct: the ischemic inner retina turns white; the thin fovea lets the red choroid show through. Cotton-wool spots too. This is an eye stroke: urgent stroke-centre workup and, over 50, rule out giant cell arteritis (ESR, CRP)." },
+      { fr: "Juste : la rétine interne ischémique blanchit; la fovéa, mince, laisse voir la choroïde rouge. Nodules cotonneux associés. C’est un AVC de l’œil : évaluation urgente en centre d’AVC et, après 50 ans, éliminer l’artérite à cellules géantes (VS, CRP).", en: "Correct: the ischemic inner retina turns white; the thin fovea lets the red choroid show through. Cotton-wool spots too. This is an eye stroke: urgent stroke-center workup and, over 50, rule out giant cell arteritis (ESR, CRP)." },
       { fr: "Il y a peu d’hémorragies; les veines ne sont pas tortueuses.", en: "There are few hemorrhages; the veins aren’t tortuous." }
     ],
     reveal: { fr: "Fovéa rouge sombre au centre d’une rétine pâle et œdémateuse : tache rouge cerise = OACR, une urgence (AVC oculaire).", en: "Dark red fovea in a pale, edematous retina: cherry-red spot = CRAO, an emergency (eye stroke)." }
@@ -1027,11 +1027,11 @@ G.OPH.invPractice = [
     answer: 1,
     why: [
       { fr: "La cataracte donne une baisse diffuse, pas un arc localisé.", en: "Cataract gives a diffuse loss, not a localized arc." },
-      { fr: "Juste : scotome arciforme supérieur qui s’arrête au méridien horizontal; les fibres arciformes ne croisent pas le raphé. Champ supérieur = rétine et papille inférieures.", en: "Correct: a superior arcuate scotoma stopping at the horizontal meridian; arcuate fibres don’t cross the raphe. Superior field = inferior retina and disc." },
+      { fr: "Juste : scotome arciforme supérieur qui s’arrête au méridien horizontal; les fibres arciformes ne croisent pas le raphé. Champ supérieur = rétine et papille inférieures.", en: "Correct: a superior arcuate scotoma stopping at the horizontal meridian; arcuate fibers don’t cross the raphe. Superior field = inferior retina and disc." },
       { fr: "Le défaut s’arrête sur l’horizontale, pas sur la verticale.", en: "The defect stops at the horizontal, not the vertical." },
       { fr: "C’est inversé : l’optique de l’œil inverse l’image; un défaut supérieur vient d’en bas.", en: "It’s reversed: the eye’s optics invert the image; a superior defect comes from below." }
     ],
-    reveal: { fr: "Arc de points déprimés dans l’hémichamp supérieur, arrêté par le méridien horizontal : glaucome, fibres inférieures atteintes.", en: "An arc of depressed points in the superior hemifield, stopped by the horizontal meridian: glaucoma, inferior fibres damaged." }
+    reveal: { fr: "Arc de points déprimés dans l’hémichamp supérieur, arrêté par le méridien horizontal : glaucome, fibres inférieures atteintes.", en: "An arc of depressed points in the superior hemifield, stopped by the horizontal meridian: glaucoma, inferior fibers damaged." }
   },
   {
     id: "p-cv-4", inv: "cv", media: "m-cv-4g", level: 1,
@@ -1082,10 +1082,10 @@ G.OPH.invPractice = [
     why: [
       { fr: "Une lésion occipitale donne une hémianopsie homonyme (même côté aux deux yeux).", en: "An occipital lesion gives a homonymous hemianopia (same side in both eyes)." },
       { fr: "Le glaucome respecte l’horizontale, pas la verticale.", en: "Glaucoma respects the horizontal, not the vertical." },
-      { fr: "Juste : au chiasma croisent les fibres de la rétine nasale, qui voient le champ temporal.", en: "Correct: fibres from the nasal retina, which see the temporal field, cross at the chiasm." },
+      { fr: "Juste : au chiasma croisent les fibres de la rétine nasale, qui voient le champ temporal.", en: "Correct: fibers from the nasal retina, which see the temporal field, cross at the chiasm." },
       { fr: "Un nerf optique atteint donne un défaut d’un seul œil.", en: "An optic nerve lesion gives a defect in one eye only." }
     ],
-    reveal: { fr: "Deux hémichamps temporaux perdus, limités par le méridien vertical : fibres croisées touchées au chiasma.", en: "Both temporal hemifields lost, bounded by the vertical meridian: crossing fibres hit at the chiasm." }
+    reveal: { fr: "Deux hémichamps temporaux perdus, limités par le méridien vertical : fibres croisées touchées au chiasma.", en: "Both temporal hemifields lost, bounded by the vertical meridian: crossing fibers hit at the chiasm." }
   },
   {
     id: "p-cv-7", inv: "cv", media: "m-cv-7", level: 2,

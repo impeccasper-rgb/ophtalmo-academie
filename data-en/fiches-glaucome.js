@@ -7,14 +7,14 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "oneLiner": "Chronic, painless optic neuropathy with an open angle: the disc cups and peripheral field is lost silently.",
  "definition": "A chronic optic neuropathy, mainly from IOP too high for the nerve. The field is lost painlessly.",
  "anatomy": {
-  "text": "Aqueous humor, made by the ciliary processes, leaves mainly through the trabecular meshwork (the angle's filter) and Schlemm's canal, and partly between the ciliary muscle fibers (uveoscleral outflow); IOP reflects this balance. Retinal ganglion cell axons leave the eye through the lamina cribrosa, a vulnerable collagen sieve."
+  "text": "Aqueous humor, made by the ciliary processes, leaves mainly through the trabecular meshwork (the angle's filter) and Schlemm canal, and partly between the ciliary muscle fibers (uveoscleral outflow); IOP reflects this balance. Retinal ganglion cell axons leave the eye through the lamina cribrosa, a vulnerable collagen sieve."
  },
  "causal": {
   "title": "From a clogged filter to field loss",
   "steps": [
    {
     "label": "Stiffened trabecular meshwork",
-    "detail": "With age and genetics, the filter layer adjacent to Schlemm's canal clogs: aqueous drains less well.",
+    "detail": "With age and genetics, the filter layer adjacent to Schlemm canal clogs: aqueous drains less well.",
     "kind": "cause"
    },
    {
@@ -47,7 +47,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "at": 1,
     "label": "Drops",
-    "detail": "Prostaglandin analogues (PGAs) open the uveoscleral pathway; beta-blockers, carbonic anhydrase inhibitors (CAIs) and brimonidine ↓ aqueous production."
+    "detail": "Prostaglandin analogs (PGAs) open the uveoscleral pathway; beta-blockers, carbonic anhydrase inhibitors (CAIs) and brimonidine ↓ aqueous production."
    },
    {
     "at": 1,
@@ -87,7 +87,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "test": "Gonioscopy (mirrored lens that shows the angle)",
     "when": "At diagnosis",
-    "read": "Scleral spur visible over 360°, no synechiae: open angle; look for dense pigment, recession or neovessels (secondary glaucoma)."
+    "read": "Scleral spur visible over 360°, no synechiae: open angle; look for dense pigment, recession or new vessels (secondary glaucoma)."
    },
    {
     "test": "Pachymetry (corneal thickness)",
@@ -198,7 +198,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     ]
    }
   ],
-  "local": "Québec: an equipped optometrist may treat suspected or early glaucoma but must then refer to an ophthalmologist (O-7, r. 11.1). SAAQ class 5: binocular VA ≥ 6/15 (20/50) and binocular field ≥ 100° horizontally (≥ 30° on each side), 10° above and 20° below fixation; if a defect is present, a signed binocular field is required (Esterman or Goldmann III/4e)."
+  "local": "Quebec: an equipped optometrist may treat suspected or early glaucoma but must then refer to an ophthalmologist (O-7, r. 11.1). SAAQ class 5: binocular VA ≥ 6/15 (20/50) and binocular field ≥ 100° horizontally (≥ 30° on each side), 10° above and 20° below fixation; if a defect is present, a signed binocular field is required (Esterman or Goldmann III/4e)."
  },
  "treatments": [
   {
@@ -415,7 +415,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "ddx": [
   {
    "dx": "Neovascular glaucoma",
-   "clue": "Neovessels on the iris, diabetes or vein occlusion; fellow eye open."
+   "clue": "New vessels on the iris, diabetes or vein occlusion; fellow eye open."
   },
   {
    "dx": "Hypertensive uveitis (herpes; Posner-Schlossman: IOP spikes with few cells)",
@@ -507,7 +507,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     ]
    }
   ],
-  "local": "In Québec, these patients often present first to the ED for headache and vomiting, or to the optometrist: start treatment and refer the same day to the on-call ophthalmologist. The Canadian optometric guideline describes the same sequence, up to bilateral LPI."
+  "local": "In Quebec, these patients often present first to the ED for headache and vomiting, or to the optometrist: start treatment and refer the same day to the on-call ophthalmologist. The Canadian optometric guideline describes the same sequence, up to bilateral LPI."
  },
  "treatments": [
   {
@@ -520,7 +520,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "dose": "Timolol 0.5%, brimonidine 0.2%, dorzolamide 2%: 1 drop of each; prednisolone acetate 1%.",
    "refer": "At diagnosis; on-call ophthalmologist the same day.",
    "pitfall": "Timolol: check for asthma, COPD, bradycardia before the drop.",
-   "qc": "Quebec: often seen first in the ER: start treatment, then refer the same day."
+   "qc": "Quebec: often seen first in the ED: start treatment, then refer the same day."
   },
   {
    "name": "Acetazolamide and mannitol",
@@ -615,7 +615,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "**Pilocarpine**: useless before IOP falls; never for a lens cause or topiramate.",
    "**Acetazolamide**: check sulfa allergy, kidney, potassium, sickle cell."
   ],
-  "qc": ["Often seen first in the ER for headache and vomiting: look at the eye.", "Call the on-call ophthalmologist before any transfer; start the drops on site.", "Acetazolamide 250 mg PO: available everywhere. The IV form has a single Canadian supplier (shortage announced May–July 2026, Drug Shortages Canada report 282580): if it runs out, give it PO."]
+  "qc": ["Often seen first in the ED for headache and vomiting: look at the eye.", "Call the on-call ophthalmologist before any transfer; start the drops on site.", "Acetazolamide 250 mg PO: available everywhere. The IV form has a single Canadian supplier (shortage announced May–July 2026, Drug Shortages Canada report 282580): if it runs out, give it PO."]
  }
 }
 });
@@ -626,7 +626,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "oneLiner": "The peripheral iris blocks the angle's filter: detect it on gonioscopy, classify as PACS, PAC or PACG, then open the angle according to risk.",
  "definition": "The iris blocks the filter of a short eye. Stages: contact (PACS), IOP or synechiae (PAC), nerve damage (PACG).",
  "anatomy": {
-  "text": "The iridocorneal angle contains the trabecular meshwork; on gonioscopy (examination of the angle with a mirrored lens), you see from posterior to anterior: iris root, ciliary body band, scleral spur, trabecular meshwork, Schwalbe's line. Aqueous passes from the posterior to the anterior chamber by sliding between iris and lens; a short eye with a thick lens has a narrow angle."
+  "text": "The iridocorneal angle contains the trabecular meshwork; on gonioscopy (examination of the angle with a mirrored lens), you see from posterior to anterior: iris root, ciliary body band, scleral spur, trabecular meshwork, Schwalbe line. Aqueous passes from the posterior to the anterior chamber by sliding between iris and lens; a short eye with a thick lens has a narrow angle."
  },
  "causal": {
   "title": "From pupillary block to neuropathy",
@@ -749,7 +749,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   },
   {
    "dx": "Secondary angle closure",
-   "clue": "Neovessels, posterior synechiae (uveitis), abnormal iris on one side."
+   "clue": "New vessels, posterior synechiae (uveitis), abnormal iris on one side."
   }
  ],
  "redFlags": [
@@ -888,7 +888,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "mnemonic": {
   "title": "Angle: \"I Can't See Til Schwalbe\"",
-  "text": "From posterior to anterior: **I**ris (root), **C**iliary (body band), **S**cleral (spur), **T**rabecular meshwork, **S**chwalbe. Shaffer 4 = ciliary body band visible; 1 = Schwalbe's line only."
+  "text": "From posterior to anterior: **I**ris (root), **C**iliary (body band), **S**cleral (spur), **T**rabecular meshwork, **S**chwalbe. Shaffer 4 = ciliary body band visible; 1 = Schwalbe line only."
  },
  "compare": {
   "title": "Open angle vs closed angle",
@@ -898,7 +898,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "patho": {
    "caption": "Shaffer 1 with peripheral anterior synechiae.",
    "reveal": [
-    "Only Schwalbe's line (± nonpigmented anterior trabecular meshwork) visible",
+    "Only Schwalbe line (± nonpigmented anterior trabecular meshwork) visible",
     "Pigmented trabecular meshwork and spur hidden by the iris",
     "PAS: indentation does not release them",
     "PAC stage if the nerve is healthy"
@@ -1095,7 +1095,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "phase": "medical",
     "items": [
-     "If treating: prostaglandin analogue (PGA) at bedtime, target ≈ 20% below baseline"
+     "If treating: prostaglandin analog (PGA) at bedtime, target ≈ 20% below baseline"
     ]
    },
    {
@@ -1112,7 +1112,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     ]
    }
   ],
-  "local": "In Québec, an equipped optometrist may treat suspected glaucoma, but must then refer to an ophthalmologist for medical follow-up (O-7, r. 11.1); many OHT patients are followed under co-management. Without a field defect or VA loss, OHT does not affect the driver's licence (SAAQ)."
+  "local": "In Quebec, an equipped optometrist may treat suspected glaucoma, but must then refer to an ophthalmologist for medical follow-up (O-7, r. 11.1); many OHT patients are followed under co-management. Without a field defect or VA loss, OHT does not affect the driver's license (SAAQ)."
  },
  "treatments": [
   {
@@ -1128,7 +1128,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "qc": "Quebec: often co-managed by optometrist and ophthalmologist."
   },
   {
-   "name": "Prostaglandin analogue (PGA)",
+   "name": "Prostaglandin analog (PGA)",
    "how": "Bedtime drop that relaxes the ciliary muscle matrix and opens the uveoscleral pathway.",
    "why": "High risk or patient preference.",
    "pros": "1 drop a day, few systemic effects.",
@@ -1410,7 +1410,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     ]
    }
   ],
-  "local": "In Québec, many \"high C/D\" referrals come from optometry; the optometrist may treat suspected or early glaucoma but must refer to an ophthalmologist for follow-up (Regulation O-7, r. 11.1). On the MRI requisition, name the red flag."
+  "local": "In Quebec, many \"high C/D\" referrals come from optometry; the optometrist may treat suspected or early glaucoma but must refer to an ophthalmologist for follow-up (Regulation O-7, r. 11.1). On the MRI requisition, name the red flag."
  },
  "treatments": [
   {
@@ -1553,7 +1553,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "at": 4,
     "label": "Drops",
-    "detail": "Prostaglandin analogue (bypasses the filter via the uveoscleral pathway) and aqueous suppressants."
+    "detail": "Prostaglandin analog (bypasses the filter via the uveoscleral pathway) and aqueous suppressants."
    },
    {
     "at": 3,
@@ -1602,7 +1602,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "test": "Gonioscopy (mirrored lens that shows the angle)",
     "when": "At diagnosis",
-    "read": "Patchy trabecular pigment, Sampaolesi line (pigment anterior to Schwalbe's line); angle sometimes narrow."
+    "read": "Patchy trabecular pigment, Sampaolesi line (pigment anterior to Schwalbe line); angle sometimes narrow."
    },
    {
     "test": "IOP at several times of day, OCT, visual field",
@@ -1651,7 +1651,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    },
    {
     "q": "Open, visible angle?",
-    "yes": "SLT or prostaglandin analogue.",
+    "yes": "SLT or prostaglandin analog.",
     "no": "Associated closure: iridotomy or lens extraction.",
     "yesGo": 3,
     "noGo": 3
@@ -1679,7 +1679,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "phase": "medical",
     "items": [
-     "Prostaglandin analogue (PGA), then combinations; often several classes"
+     "Prostaglandin analog (PGA), then combinations; often several classes"
     ]
    },
    {
@@ -1707,7 +1707,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "treatments": [
   {
    "name": "IOP-lowering drops",
-   "how": "Daily drops: prostaglandin analogue (↑ uveoscleral outflow), then beta-blocker, carbonic anhydrase inhibitor or brimonidine (↓ production).",
+   "how": "Daily drops: prostaglandin analog (↑ uveoscleral outflow), then beta-blocker, carbonic anhydrase inhibitor or brimonidine (↓ production).",
    "why": "First-line, often in combination.",
    "pros": "Simple, no procedure.",
    "cons": "Control fluctuations less well; several classes often needed.",
@@ -1851,7 +1851,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "at": 4,
     "label": "Drops and SLT",
-    "detail": "The prostaglandin analogue bypasses the saturated filter; SLT (gentle laser, low energy) restores outflow."
+    "detail": "The prostaglandin analog bypasses the saturated filter; SLT (gentle laser, low energy) restores outflow."
    },
    {
     "at": 1,
@@ -1962,8 +1962,8 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    },
    {
     "q": "Open angle, laser candidate?",
-    "yes": "Low-energy SLT or prostaglandin analogue.",
-    "no": "Prostaglandin analogue.",
+    "yes": "Low-energy SLT or prostaglandin analog.",
+    "no": "Prostaglandin analog.",
     "yesGo": 3,
     "noGo": 3
    },
@@ -1983,7 +1983,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "phase": "medical",
     "items": [
-     "Prostaglandin analogue (PGA) first-line; add a class as needed"
+     "Prostaglandin analog (PGA) first-line; add a class as needed"
     ]
    },
    {
@@ -2006,11 +2006,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     ]
    }
   ],
-  "local": "In Québec, pigment dispersion without neuropathy is often followed in optometry as a glaucoma suspect; once pigmentary glaucoma is established, refer to an ophthalmologist for medical follow-up (O-7, r. 11.1)."
+  "local": "In Quebec, pigment dispersion without neuropathy is often followed in optometry as a glaucoma suspect; once pigmentary glaucoma is established, refer to an ophthalmologist for medical follow-up (O-7, r. 11.1)."
  },
  "treatments": [
   {
-   "name": "Prostaglandin analogue (PGA)",
+   "name": "Prostaglandin analog (PGA)",
    "how": "Bedtime drop that relaxes the ciliary muscle matrix: aqueous leaves via the uveoscleral pathway, bypassing the saturated filter.",
    "why": "First-line.",
    "pros": "Effective, once daily.",
@@ -2111,7 +2111,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-neovasculaire": {
  "title": "Neovascular glaucoma",
- "oneLiner": "Ischemic retina (vein occlusion, diabetes, carotid), neovessels on the iris and in the angle, very high IOP: urgent anti-VEGF and panretinal photocoagulation.",
+ "oneLiner": "Ischemic retina (vein occlusion, diabetes, carotid), new vessels on the iris and in the angle, very high IOP: urgent anti-VEGF and panretinal photocoagulation.",
  "definition": "An ischemic retina releases VEGF. New vessels close the angle and IOP rises.",
  "anatomy": {
   "text": "The inner retina is supplied by the central retinal artery and drained by the central retinal vein; if this network becomes occluded or depleted, the retina becomes ischemic. VEGF diffuses into the vitreous and then the aqueous, reaching the iris and angle. Normally, no vessel crosses the scleral spur to branch over the trabecular meshwork."
@@ -2130,7 +2130,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "kind": "mecanisme"
    },
    {
-    "label": "Iris and angle neovessels",
+    "label": "Iris and angle new vessels",
     "detail": "Fine vessels first at the pupillary margin (NVI), then in the angle (NVA), crossing the scleral spur.",
     "kind": "signe"
    },
@@ -2154,7 +2154,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "at": 1,
     "label": "Intravitreal anti-VEGF",
-    "detail": "Injection into the vitreous of an antibody that neutralizes VEGF: neovessels regress within days, but the effect is temporary."
+    "detail": "Injection into the vitreous of an antibody that neutralizes VEGF: new vessels regress within days, but the effect is temporary."
    },
    {
     "at": 0,
@@ -2177,13 +2177,13 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  "presentation": [
   "Pain, redness, blurred vision or halos; vision often already reduced by the retinal disease",
-  "Early stage asymptomatic: neovessels found on careful examination of the iris",
+  "Early stage asymptomatic: new vessels found on careful examination of the iris",
   "Very high IOP, corneal edema, sometimes hyphema"
  ],
  "exam": {
   "signs": [
    {
-    "sign": "Neovessels at the pupillary margin (NVI)",
+    "sign": "New vessels at the pupillary margin (NVI)",
     "why": "Usual first site; examine the iris BEFORE dilation, which hides them."
    },
    {
@@ -2195,7 +2195,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "why": "Traction from the contracting membrane: advanced synechial stage."
    },
    {
-    "sign": "Fundus: diffuse hemorrhages, retinal neovessels",
+    "sign": "Fundus: diffuse hemorrhages, retinal new vessels",
     "why": "Identifies the cause: CRVO, diabetic retinopathy, carotid ischemia."
    }
   ],
@@ -2225,7 +2225,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "ddx": [
   {
    "dx": "Acute primary angle-closure crisis",
-   "clue": "No neovessels; fellow eye with a narrow angle."
+   "clue": "No new vessels; fellow eye with a narrow angle."
   },
   {
    "dx": "Hypertensive uveitis",
@@ -2237,7 +2237,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   },
   {
    "dx": "Ghost cell glaucoma",
-   "clue": "After vitreous hemorrhage: khaki cells in the chamber, open angle without neovessels."
+   "clue": "After vitreous hemorrhage: khaki cells in the chamber, open angle without new vessels."
   }
  ],
  "redFlags": [
@@ -2248,7 +2248,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "cat": {
   "algo": [
    {
-    "q": "Iris or angle neovessels?",
+    "q": "Iris or angle new vessels?",
     "yes": "Look for the ischemic cause.",
     "no": "Ischemic CRVO, proliferative retinopathy: regular undilated gonioscopy.",
     "yesGo": 1
@@ -2263,7 +2263,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "q": "Raised IOP?",
     "yes": "NVG: anti-VEGF, PRP and IOP lowering the same day.",
-    "no": "Neovessels only: prompt anti-VEGF and PRP to save the angle.",
+    "no": "New vessels only: prompt anti-VEGF and PRP to save the angle.",
     "yesGo": 3
    },
    {
@@ -2302,7 +2302,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "phase": "suivi",
     "items": [
-     "Regression of neovessels, gonioscopy, IOP, fellow eye; repeat anti-VEGF as needed"
+     "Regression of new vessels, gonioscopy, IOP, fellow eye; repeat anti-VEGF as needed"
     ]
    },
    {
@@ -2312,12 +2312,12 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     ]
    }
   ],
-  "local": "In Québec, injections and PRP are done in retina clinics and tubes in hospital centers: refer the same day and coordinate retina and glaucoma. Diabetic retinopathy screening, often done by optometrists, remains the best prevention."
+  "local": "In Quebec, injections and PRP are done in retina clinics and tubes in hospital centers: refer the same day and coordinate retina and glaucoma. Diabetic retinopathy screening, often done by optometrists, remains the best prevention."
  },
  "treatments": [
   {
    "name": "Intravitreal anti-VEGF (bevacizumab, ranibizumab, aflibercept)",
-   "how": "In-office injection of an antibody into the vitreous: it neutralizes VEGF and the neovessels regress within days.",
+   "how": "In-office injection of an antibody into the vitreous: it neutralizes VEGF and the new vessels regress within days.",
    "why": "At diagnosis; before surgery (less bleeding).",
    "pros": "Rapid effect.",
    "cons": "Temporary: does not replace PRP.",
@@ -2325,7 +2325,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "dose": "Bevacizumab 1.25 mg/0.05 mL intravitreal (or ranibizumab 0.5 mg, aflibercept 2 mg).",
    "refer": "At diagnosis: refer to retina the same day.",
    "pitfall": "Temporary effect: does not replace PRP.",
-   "qc": "Quebec: injections and PRP in retina clinics; tubes in hospital centres."
+   "qc": "Quebec: injections and PRP in retina clinics; tubes in hospital centers."
   },
   {
    "name": "Panretinal photocoagulation (PRP)",
@@ -2364,14 +2364,14 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "pearls": [
   {
    "q": "Anti-VEGF or PRP?",
-   "a": "Both: anti-VEGF makes the neovessels regress within days but temporarily; PRP durably removes the source of VEGF. Anti-VEGF is the bridge, PRP the definitive treatment."
+   "a": "Both: anti-VEGF makes the new vessels regress within days but temporarily; PRP durably removes the source of VEGF. Anti-VEGF is the bridge, PRP the definitive treatment."
   },
   {
    "q": "Why no pilocarpine?",
    "a": "It increases inflammation and vascular permeability, promotes synechiae and cannot open an angle closed by a fibrovascular membrane. Atropine and steroid are preferred."
   },
   {
-   "q": "When should you look for neovessels after a CRVO?",
+   "q": "When should you look for new vessels after a CRVO?",
    "a": "Especially in the first 3 months of an ischemic occlusion (\"90-day glaucoma\"): iris exam before dilation and gonioscopy at every visit; PRP as soon as they appear (CVOS), rather than routine prophylaxis."
   }
  ],
@@ -2380,7 +2380,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "text": "Causes: **D**iabetes (proliferative retinopathy), **C**RVO (central vein occlusion), **C**arotid (ocular ischemic syndrome). Treatment: **I**nject (anti-VEGF), **B**urn (PRP), **L**ower (IOP), **D**rain (tube)."
  },
  "compare": {
-  "title": "Normal angle vs angle neovessels",
+  "title": "Normal angle vs angle new vessels",
   "normal": {
    "caption": "Open angle, no vessels on the trabecular meshwork."
   },
@@ -2410,7 +2410,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "**Pilocarpine**: contraindicated (inflammation, synechiae).",
    "**Anti-VEGF alone**: temporary effect; PRP is still essential."
   ],
-  "qc": "Quebec: injections and PRP in retina clinics; tubes in hospital centres."
+  "qc": "Quebec: injections and PRP in retina clinics; tubes in hospital centers."
  }
 }
 });
@@ -2586,7 +2586,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "phase": "medical",
     "items": [
-     "Prostaglandin analogue (PGA) at bedtime; brimonidine as an option (LoGTS)",
+     "Prostaglandin analog (PGA) at bedtime; brimonidine as an option (LoGTS)",
      "Nocturnal hypotension and apnea: review with the family physician (24-h blood pressure monitoring if progressing)"
     ]
    },
@@ -2609,11 +2609,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     ]
    }
   ],
-  "local": "In Québec, an optometrist may start treatment for early glaucoma but must refer to an ophthalmologist (O-7, r. 11.1); NTG warrants a medical assessment to rule out mimics. Prioritize MRI for atypical cases, given access delays."
+  "local": "In Quebec, an optometrist may start treatment for early glaucoma but must refer to an ophthalmologist (O-7, r. 11.1); NTG warrants a medical assessment to rule out mimics. Prioritize MRI for atypical cases, given access delays."
  },
  "treatments": [
   {
-   "name": "Prostaglandin analogue (PGA)",
+   "name": "Prostaglandin analog (PGA)",
    "how": "Bedtime drop that relaxes the ciliary muscle matrix: ↑ uveoscleral outflow, even when IOP is already normal.",
    "why": "First-line once the decision to treat is made.",
    "pros": "1 drop a day; effective at night.",
@@ -2811,7 +2811,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "test": "Gonioscopy (mirrored lens that shows the angle)",
     "when": "Any hypertensive uveitis",
-    "read": "Debris, peripheral anterior synechiae (PAS) or neovessels."
+    "read": "Debris, peripheral anterior synechiae (PAS) or new vessels."
    },
    {
     "test": "Anterior chamber tap (PCR for HSV, VZV, CMV)",
@@ -2840,7 +2840,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   },
   {
    "dx": "Neovascular glaucoma",
-   "clue": "Iris or angle neovessels, ischemic retinal cause."
+   "clue": "Iris or angle new vessels, ischemic retinal cause."
   }
  ],
  "redFlags": [
@@ -2853,7 +2853,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "q": "High IOP on steroid, quiet eye, open angle?",
     "yes": "Steroid response: reduce or switch the steroid.",
-    "no": "Look for inflammation, synechiae, neovessels.",
+    "no": "Look for inflammation, synechiae, new vessels.",
     "yesGo": 1,
     "noGo": 2
    },
@@ -2889,7 +2889,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "phase": "medical",
     "items": [
      "Adjust the steroid (see treatments); immunosuppressant with the uveitis specialist",
-     "Drops that ↓ production ± acetazolamide; prostaglandin analogue with caution in active uveitis; never pilocarpine"
+     "Drops that ↓ production ± acetazolamide; prostaglandin analog with caution in active uveitis; never pilocarpine"
     ]
    },
    {
@@ -2912,7 +2912,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     ]
    }
   ],
-  "local": "In Québec, an equipped optometrist may treat steroid-induced glaucoma, but must then refer to an ophthalmologist for medical follow-up (O-7, r. 11.1). Complex uveitis: shared follow-up with uveitis and rheumatology clinics."
+  "local": "In Quebec, an equipped optometrist may treat steroid-induced glaucoma, but must then refer to an ophthalmologist for medical follow-up (O-7, r. 11.1). Complex uveitis: shared follow-up with uveitis and rheumatology clinics."
  },
  "treatments": [
   {
@@ -2932,7 +2932,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "how": "Timolol, dorzolamide, brimonidine; oral acetazolamide as needed.",
    "why": "First line in both glaucomas.",
    "pros": "Do not worsen inflammation.",
-   "cons": "Prostaglandin analogue with caution (inflammation, herpes).",
+   "cons": "Prostaglandin analog with caution (inflammation, herpes).",
    "cx": "Timolol: bronchospasm; brimonidine: allergy.",
    "dose": "Timolol 0.5% BID, dorzolamide 2% TID; acetazolamide 250 mg PO QID if needed.",
    "refer": "First line in both glaucomas.",
@@ -3009,7 +3009,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "Jones R, Rhee DJ. Corticosteroid-induced ocular hypertension and glaucoma (Curr Opin Ophthalmol 2006)",
   "Armaly MF (Arch Ophthalmol 1963) and Becker B (Invest Ophthalmol 1965): steroid response",
   "Siddique SS et al. Glaucoma and uveitis (Surv Ophthalmol 2013)",
-  "Regulation respecting the medications an optometrist may administer or prescribe (O-7, r. 11.1, Québec 2018)"
+  "Regulation respecting the medications an optometrist may administer or prescribe (O-7, r. 11.1, Quebec 2018)"
  ],
  "treatment": {
   "first": [
@@ -3168,7 +3168,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   },
   {
    "dx": "Neovascular glaucoma",
-   "clue": "Iris and angle neovessels, ischemic retinopathy."
+   "clue": "Iris and angle new vessels, ischemic retinopathy."
   },
   {
    "dx": "Ghost cell glaucoma",
@@ -3371,7 +3371,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "oneLiner": "Infant with tearing, light avoidance and squeezed lids, large or hazy cornea: congenital glaucoma until proven otherwise.",
  "definition": "An angle malformed from birth, or an ICE membrane in adults. Before age 3, IOP stretches the whole eye.",
  "anatomy": {
-  "text": "The angle forms during fetal life from the neural crest, which gives rise to the trabecular meshwork (spongy filter), Schwalbe's line (the edge of Descemet's membrane) and the iris stroma. Arrested development leaves an immature trabecular meshwork or iris strands stretched up to Schwalbe's line."
+  "text": "The angle forms during fetal life from the neural crest, which gives rise to the trabecular meshwork (spongy filter), Schwalbe line (the edge of Descemet membrane) and the iris stroma. Arrested development leaves an immature trabecular meshwork or iris strands stretched up to Schwalbe line."
  },
  "causal": {
   "title": "From the abnormal angle to the damaged eye",
@@ -3392,7 +3392,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     "kind": "lesion"
    },
    {
-    "label": "Ruptured Descemet's, edematous cornea",
+    "label": "Ruptured Descemet, edematous cornea",
     "detail": "Water enters through the breaks (Haab striae): hazy cornea, tearing, photophobia.",
     "kind": "signe"
    },
@@ -3433,7 +3433,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "Juvenile open-angle glaucoma (later in childhood): silent, no enlargement of the eye",
   "Sturge-Weber: glaucoma on the side of the port-wine stain, early (abnormal angle) or late (episcleral venous pressure)",
   "ICE syndrome: blurred vision in the morning (corneal edema), distorted pupil, unilateral elevated IOP",
-  "Cornea that suddenly turns hazy: rupture of Descemet's membrane"
+  "Cornea that suddenly turns hazy: rupture of Descemet membrane"
  ],
  "exam": {
   "signs": [
@@ -3443,15 +3443,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    },
    {
     "sign": "Haab striae",
-    "why": "Breaks in Descemet's membrane, horizontal or concentric to the limbus; forceps breaks are vertical or oblique."
+    "why": "Breaks in Descemet membrane, horizontal or concentric to the limbus; forceps breaks are vertical or oblique."
    },
    {
     "sign": "Posterior embryotoxon with iris strands",
-    "why": "Alone (prominent, anteriorly displaced Schwalbe's line): common and benign. With strands, corectopia, polycoria, dental or umbilical anomalies: Axenfeld-Rieger."
+    "why": "Alone (prominent, anteriorly displaced Schwalbe line): common and benign. With strands, corectopia, polycoria, dental or umbilical anomalies: Axenfeld-Rieger."
    },
    {
     "sign": "Hammered-silver endothelium, high synechiae",
-    "why": "ICE syndrome, unilateral: synechiae often beyond Schwalbe's line, corectopia, iris holes and nodules."
+    "why": "ICE syndrome, unilateral: synechiae often beyond Schwalbe line, corectopia, iris holes and nodules."
    },
    {
     "sign": "Iris processes or synechiae?",
@@ -3476,7 +3476,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "test": "Gonioscopy",
     "when": "Any anterior segment anomaly",
-    "read": "Congenital: high iris insertion. ICE: synechiae beyond Schwalbe's line. Aniridia: iris stump."
+    "read": "Congenital: high iris insertion. ICE: synechiae beyond Schwalbe line. Aniridia: iris stump."
    },
    {
     "test": "Specular microscopy",
@@ -3504,7 +3504,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   },
   {
    "dx": "Posterior polymorphous dystrophy (vs ICE)",
-   "clue": "Bilateral, familial; vesicles and \"railroad track\" bands at Descemet's."
+   "clue": "Bilateral, familial; vesicles and \"railroad track\" bands at Descemet."
   },
   {
    "dx": "Axenfeld-Rieger (vs ICE)",
@@ -3553,7 +3553,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    {
     "phase": "medical",
     "items": [
-     "As a bridge: dorzolamide, prostaglandin analogue; timolol 0.25% only with great caution (apnoea, bradycardia in infants), on the ophthalmologist’s decision",
+     "As a bridge: dorzolamide, prostaglandin analog; timolol 0.25% only with great caution (apnea, bradycardia in infants), on the ophthalmologist’s decision",
      "**Brimonidine contraindicated under age 2** (drowsiness, hypotonia, apnea)"
     ]
    },
@@ -3574,7 +3574,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     ]
    }
   ],
-  "local": "In Québec: tertiary pediatric centers (e.g. CHU Sainte-Justine, Montreal Children's Hospital, CHU de Québec); if you suspect it, call the on-call attending."
+  "local": "In Quebec: tertiary pediatric centers (e.g. CHU Sainte-Justine, Montreal Children's Hospital, CHU de Québec); if you suspect it, call the on-call attending."
  },
  "treatments": [
   {
@@ -3585,18 +3585,18 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "cons": "The angle must be visible.",
    "cx": "Hyphema, iris or lens injury.",
    "dose": "Under a gonioscopy lens: incision of the meshwork over ≈ 1/3 of the angle.",
-   "refer": "Primary congenital with a clear cornea: tertiary pediatric centre, promptly.",
+   "refer": "Primary congenital with a clear cornea: tertiary pediatric center, promptly.",
    "pitfall": "The angle must be visible: impossible if the cornea is cloudy.",
    "qc": "Quebec: CHU Sainte-Justine, Montreal Children's Hospital, CHU de Québec; call the on-call attending."
   },
   {
    "name": "Trabeculotomy",
-   "how": "From the outside, a probe, or a 360° suture, passed into Schlemm's canal tears its inner wall and the trabecular meshwork.",
+   "how": "From the outside, a probe, or a 360° suture, passed into Schlemm canal tears its inner wall and the trabecular meshwork.",
    "why": "Primary congenital, even with a hazy cornea.",
    "pros": "Feasible despite edema; 360° in one session.",
    "cons": "Canal sometimes cannot be found.",
    "cx": "Transient hyphema, false passage.",
-   "dose": "Probe or 360° suture passed into Schlemm's canal.",
+   "dose": "Probe or 360° suture passed into Schlemm canal.",
    "refer": "Primary congenital, even with a cloudy cornea.",
    "pitfall": "Canal sometimes not found: false passage possible."
   },
@@ -3609,7 +3609,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "cx": "Timolol: apnea, bradycardia, bronchospasm; brimonidine: central nervous system depression.",
    "dose": "Timolol 0.25% BID, dorzolamide 2% TID, as a bridge before surgery.",
    "refer": "Before surgery or as an adjunct.",
-   "pitfall": "Brimonidine contraindicated under age 2 (CNS depression); timolol: apnoea and bradycardia in infants, avoid or use with great caution."
+   "pitfall": "Brimonidine contraindicated under age 2 (CNS depression); timolol: apnea and bradycardia in infants, avoid or use with great caution."
   },
   {
    "name": "Drainage tube or trabeculectomy",
@@ -3644,13 +3644,13 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "compare": {
   "title": "Normal angle vs peripheral anterior synechiae",
   "normal": {
-   "caption": "Open angle: ciliary body band, spur, trabecular meshwork and Schwalbe's line visible."
+   "caption": "Open angle: ciliary body band, spur, trabecular meshwork and Schwalbe line visible."
   },
   "patho": {
    "caption": "Peripheral anterior synechiae: the iris adheres and hides the trabecular meshwork.",
    "reveal": [
     "Broad, tented adhesions hiding the trabecular meshwork",
-    "In ICE, they often extend beyond Schwalbe's line",
+    "In ICE, they often extend beyond Schwalbe line",
     "They do not open with indentation",
     "Iris processes, by contrast, are fine and leave the angle visible"
    ]
@@ -3659,12 +3659,12 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  "sources": [
   "World Glaucoma Association. Childhood Glaucoma, Consensus Series 9 (Weinreb RN, Grajewski A, Papadopoulos M, Grigg J, Freedman S, eds. Kugler 2013)",
   "American Academy of Ophthalmology. Basic and Clinical Science Course, Section 10: Glaucoma",
-  "Shields MB. Progressive essential iris atrophy, Chandler's syndrome, and the iris nevus (Cogan-Reese) syndrome: a spectrum of disease (Surv Ophthalmol 1979)"
+  "Shields MB. Progressive essential iris atrophy, Chandler syndrome, and the iris nevus (Cogan-Reese) syndrome: a spectrum of disease (Surv Ophthalmol 1979)"
  ],
  "treatment": {
   "first": [
    "**You**: infant with tearing and photophobia: compare corneal size and clarity.",
-   "**Ophthalmologist**: examination under anesthesia, angle surgery; bridging drops; timolol 0.25% only with great caution (apnoea, bradycardia in infants)."
+   "**Ophthalmologist**: examination under anesthesia, angle surgery; bridging drops; timolol 0.25% only with great caution (apnea, bradycardia in infants)."
   ],
   "refer": "Refer to ophthalmology: within 24 h — infant with the triad or a large or cloudy cornea.",
   "pitfall": [
@@ -3680,7 +3680,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-postop": {
  "title": "The postoperative patient: trabeculectomy, tubes, MIGS",
  "oneLiner": "After filtering surgery, read IOP × chamber depth, look for a leak (Seidel) and never miss a bleb infection.",
- "definition": "Surgery opens an exit for aqueous: bleb, tube or Schlemm's canal. Bleb infection is an emergency.",
+ "definition": "Surgery opens an exit for aqueous: bleb, tube or Schlemm canal. Bleb infection is an emergency.",
  "anatomy": {
   "text": "In trabeculectomy, aqueous passes through a fistula created under a scleral flap, then collects under the conjunctiva where the vessels absorb it: this is the filtering bleb. Scarring is the main enemy; mitomycin C (MMC, an antifibrotic) slows it. MIGS stay within the natural pathway: IOP cannot go below episcleral venous pressure (≈ 8–10 mmHg)."
  },
@@ -3894,7 +3894,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
     ]
    }
   ],
-  "local": "In Québec, these surgeries are done mainly in hospital centers; RAMQ coverage of MIGS and implants should be checked."
+  "local": "In Quebec, these surgeries are done mainly in hospital centers; RAMQ coverage of MIGS and implants should be checked."
  },
  "treatments": [
   {
@@ -3932,7 +3932,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   },
   {
    "name": "MIGS: iStent, Hydrus, KDB",
-   "how": "In the OR, often with cataract surgery, ab interno: micro-implant into Schlemm's canal (iStent, Hydrus) or excision of a strip of trabecular meshwork (KDB).",
+   "how": "In the OR, often with cataract surgery, ab interno: micro-implant into Schlemm canal (iStent, Hydrus) or excision of a strip of trabecular meshwork (KDB).",
    "why": "Mild to moderate glaucoma.",
    "pros": "Very safe, no bleb.",
    "cons": "Modest reduction (episcleral floor).",
@@ -3940,7 +3940,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "dose": "iStent, Hydrus or KDB, often with cataract surgery.",
    "refer": "Mild to moderate glaucoma.",
    "pitfall": "Modest lowering: not for a very low target IOP.",
-   "qc": "Quebec: mostly in hospital centres; RAMQ coverage of MIGS and implants to be checked."
+   "qc": "Quebec: mostly in hospital centers; RAMQ coverage of MIGS and implants to be checked."
   }
  ],
  "pearls": [
@@ -3992,7 +3992,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "pitfall": [
    "**Treating \"conjunctivitis\"** in an operated eye: missed bleb infection."
   ],
-  "qc": "Quebec: mostly in hospital centres; RAMQ coverage of MIGS and implants to be checked."
+  "qc": "Quebec: mostly in hospital centers; RAMQ coverage of MIGS and implants to be checked."
  }
 }
 });
@@ -4002,9 +4002,9 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   var V = {
     "g-gpao": "A 62-year-old Black man, no symptoms. IOP 26 and 27 mmHg, cup-to-disc 0.7 with an inferior notch on the right, open angle.",
     "g-hto": "A 55-year-old woman: IOP 25 mmHg in both eyes, three times. Normal discs, OCT and fields. Thin corneas (510 µm), open angle.",
-    "g-gpn": "A 68-year-old woman with migraines and cold hands. IOP 15 mmHg; haemorrhage at the right disc margin, superior paracentral defect.",
+    "g-gpn": "A 68-year-old woman with migraines and cold hands. IOP 15 mmHg; hemorrhage at the right disc margin, superior paracentral defect.",
     "g-fermeture": "A 64-year-old hyperopic woman, no symptoms. Van Herick grade 1, IOP 18 mmHg; meshwork hidden for 270° on gonioscopy.",
-    "g-crise": "A 70-year-old hyperopic woman in the ER: headache and vomiting after the cinema. Red right eye, hazy cornea, fixed mid-dilated pupil.",
+    "g-crise": "A 70-year-old hyperopic woman in the ED: headache and vomiting after the cinema. Red right eye, hazy cornea, fixed mid-dilated pupil.",
     "g-pxf": "A 74-year-old man of Scandinavian descent: whitish ring-shaped deposits on the lens after dilation. IOP 32 mmHg right, 18 left.",
     "g-pigmentaire": "A 32-year-old myopic man: blur and halos after jogging. Krukenberg spindle, radial iris defects, heavily pigmented angle.",
     "g-neovasculaire": "A 58-year-old with poorly followed diabetes. Painful left eye, counting fingers; IOP 48 mmHg, vessels at the pupil margin.",

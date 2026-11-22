@@ -65,7 +65,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 6,
     "label": {
      "fr": "Macula : centre de la paroi postérieure",
-     "en": "Macula: centre of the posterior wall"
+     "en": "Macula: center of the posterior wall"
     }
    },
    {
@@ -603,7 +603,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">A-scan standardisé · Standardised A-scan</text><line x1=\"20\" y1=\"240\" x2=\"385\" y2=\"240\" stroke=\"#8a8578\"/><text x=\"20\" y=\"256\" font-size=\"9\" fill=\"#5c5850\">temps → profondeur · time → depth</text><path d=\"M20 240 L22 240 L30 50 L36 240 L60 240 L62 40 L66 240 L72 240 L74 150 L78 240 L84 240 L86 160 L90 240 L96 240 L98 168 L102 240 L108 240 L110 178 L114 240 L120 240 L122 186 L126 240 L132 240 L134 194 L138 240 L144 240 L146 200 L150 240 L156 240 L158 206 L162 240 L176 240 L178 46 L182 240 L192 240 L194 150 L198 240 L208 240 L210 175 L214 240 L224 240 L226 195 L230 240 L385 240\" fill=\"none\" stroke=\"#1f6f8b\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M62 120 L162 200\" stroke=\"#c0392b\" stroke-dasharray=\"4 3\"/><g font-size=\"9\" fill=\"#2b2a26\" text-anchor=\"middle\"><text x=\"66\" y=\"56\" text-anchor=\"start\">surface</text><text x=\"112\" y=\"130\">échos internes</text><text x=\"182\" y=\"56\" text-anchor=\"start\">sclère</text><text x=\"220\" y=\"140\">orbite</text></g><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text><g transform=\"translate(286,48)\"><rect x=\"-4\" y=\"-8\" width=\"104\" height=\"96\" rx=\"4\" fill=\"#f7f6f2\" stroke=\"#8a8578\"/><path d=\"M0 40 L96 4 L96 76 Z\" fill=\"#3a3a3a\"/><circle cx=\"58\" cy=\"40\" r=\"30\" fill=\"#111\"/><path d=\"M84 22 Q64 40 84 58 Z\" fill=\"#8a8a8a\"/><text x=\"2\" y=\"84\" font-size=\"8\" fill=\"#2b2a26\">B-scan : dôme</text></g></svg>",
   "alt": {
    "fr": "Schéma d’un A-scan standardisé à travers une masse choroïdienne en dôme : réflectivité interne faible à moyenne, régulière, décroissante.",
-   "en": "Schematic of a standardised A-scan through a dome-shaped choroidal mass: low-to-medium, regular, decreasing internal reflectivity."
+   "en": "Schematic of a standardized A-scan through a dome-shaped choroidal mass: low-to-medium, regular, decreasing internal reflectivity."
   },
   "hotspots": [
    {
@@ -622,7 +622,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 5,
     "label": {
      "fr": "Pic haut de la surface de la tumeur",
-     "en": "Tall spike at the tumour surface"
+     "en": "Tall spike at the tumor surface"
     }
    },
    {
@@ -693,7 +693,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 3,
     "label": {
      "fr": "Couche des fibres nerveuses : bande brillante la plus interne",
-     "en": "Nerve fibre layer: innermost bright band"
+     "en": "Nerve fiber layer: innermost bright band"
     }
    },
    {
@@ -1174,7 +1174,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 7.0,
     "label": {
      "fr": "Main de l’examinateur qui stabilise le verre",
-     "en": "Examiner’s hand stabilising the lens"
+     "en": "Examiner’s hand stabilizing the lens"
     }
    }
   ],
@@ -1192,7 +1192,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Angle normal en gonioscopie · Normal angle on gonioscopy</text><rect x=\"30\" y=\"40\" width=\"340\" height=\"200\" rx=\"6\" fill=\"#2a2420\"/><rect x=\"30\" y=\"40\" width=\"340\" height=\"40\" fill=\"#cfd8dc\"/><rect x=\"30\" y=\"80\" width=\"340\" height=\"6\" fill=\"#fffbe6\"/><rect x=\"30\" y=\"86\" width=\"340\" height=\"16\" fill=\"#b9a68f\"/><rect x=\"30\" y=\"102\" width=\"340\" height=\"16\" fill=\"#6d4c35\"/><rect x=\"30\" y=\"118\" width=\"340\" height=\"10\" fill=\"#f4f1ea\"/><rect x=\"30\" y=\"128\" width=\"340\" height=\"26\" fill=\"#4a3b33\"/><path d=\"M30 154 Q120 150 200 158 T370 154 L370 240 L30 240 Z\" fill=\"#8a5a3b\"/><g font-size=\"10\" fill=\"#2b2a26\"><text x=\"40\" y=\"62\">cornée · cornea</text></g><g font-size=\"9\" fill=\"#ffffff\"><text x=\"40\" y=\"84\" fill=\"#2b2a26\">Ligne de Schwalbe · Schwalbe’s line</text><text x=\"40\" y=\"98\" fill=\"#2b2a26\">Trabéculum non pigmenté · non-pigmented TM</text><text x=\"40\" y=\"114\">Trabéculum pigmenté · pigmented TM</text><text x=\"40\" y=\"126\" fill=\"#2b2a26\">Éperon scléral · scleral spur</text><text x=\"40\" y=\"145\">Bande ciliaire · ciliary body band</text><text x=\"40\" y=\"200\">Racine de l’iris · iris root</text></g><text x=\"200\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">De l’avant (haut) vers l’arrière (bas) · anterior (top) → posterior (bottom)</text><text x=\"200\" y=\"276\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">Bande ciliaire visible = angle grand ouvert · ciliary band visible = wide-open angle</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
   "alt": {
    "fr": "Schéma des structures de l’angle iridocornéen telles que vues en gonioscopie, de la ligne de Schwalbe à la racine de l’iris.",
-   "en": "Schematic of the iridocorneal angle structures as seen on gonioscopy, from Schwalbe’s line to the iris root."
+   "en": "Schematic of the iridocorneal angle structures as seen on gonioscopy, from Schwalbe line to the iris root."
   },
   "hotspots": [
    {
@@ -1201,7 +1201,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 3,
     "label": {
      "fr": "Ligne de Schwalbe : fin liseré blanc, fin de la membrane de Descemet",
-     "en": "Schwalbe’s line: thin white line, end of Descemet membrane"
+     "en": "Schwalbe line: thin white line, end of Descemet membrane"
     }
    },
    {
@@ -1238,7 +1238,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 3.5,
     "label": {
      "fr": "Bande ciliaire grise-brune",
-     "en": "Grey-brown ciliary body band"
+     "en": "Gray-brown ciliary body band"
     }
    },
    {
@@ -1263,7 +1263,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Gonioscopie dynamique (indentation) · Indentation gonioscopy</text><g><rect x=\"20\" y=\"50\" width=\"170\" height=\"180\" rx=\"6\" fill=\"#2a2420\"/><rect x=\"20\" y=\"50\" width=\"170\" height=\"40\" fill=\"#cfd8dc\"/><rect x=\"20\" y=\"90\" width=\"170\" height=\"5\" fill=\"#fffbe6\"/><path d=\"M20 95 Q105 86 190 95 L190 230 L20 230 Z\" fill=\"#8a5a3b\"/></g><g><rect x=\"210\" y=\"50\" width=\"170\" height=\"180\" rx=\"6\" fill=\"#2a2420\"/><rect x=\"210\" y=\"50\" width=\"170\" height=\"40\" fill=\"#cfd8dc\"/><rect x=\"210\" y=\"90\" width=\"170\" height=\"5\" fill=\"#fffbe6\"/><rect x=\"210\" y=\"95\" width=\"170\" height=\"13\" fill=\"#b9a68f\"/><rect x=\"210\" y=\"108\" width=\"170\" height=\"12\" fill=\"#6d4c35\"/><rect x=\"210\" y=\"120\" width=\"170\" height=\"8\" fill=\"#f4f1ea\"/><rect x=\"210\" y=\"128\" width=\"170\" height=\"12\" fill=\"#4a3b33\"/><path d=\"M210 140 Q295 146 380 140 L380 230 L210 230 Z\" fill=\"#8a5a3b\"/></g><text x=\"105\" y=\"44\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">1 · sans indentation</text><text x=\"295\" y=\"44\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">2 · avec indentation</text><text x=\"105\" y=\"250\" text-anchor=\"middle\" font-size=\"9\" fill=\"#2b2a26\">iris convexe : Schwalbe seul visible</text><text x=\"105\" y=\"262\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">convex iris: only Schwalbe visible</text><text x=\"295\" y=\"250\" text-anchor=\"middle\" font-size=\"9\" fill=\"#2b2a26\">l’iris recule : éperon visible, pas de synéchie</text><text x=\"295\" y=\"262\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">iris falls back: spur visible, no synechia</text><text x=\"200\" y=\"282\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5c5850\">fermeture apposée (non synéchiale) · appositional (non-synechial) closure</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
   "alt": {
    "fr": "Schéma en deux temps : sans indentation l’iris convexe ne laisse voir que la ligne de Schwalbe; avec indentation l’iris recule et l’éperon scléral apparaît.",
-   "en": "Two-step schematic: without indentation the convex iris shows only Schwalbe’s line; with indentation the iris falls back and the scleral spur appears."
+   "en": "Two-step schematic: without indentation the convex iris shows only Schwalbe line; with indentation the iris falls back and the scleral spur appears."
   },
   "hotspots": [
    {
@@ -1282,7 +1282,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 4,
     "label": {
      "fr": "Panneau 1 : seule la ligne de Schwalbe est visible",
-     "en": "Panel 1: only Schwalbe’s line is visible"
+     "en": "Panel 1: only Schwalbe line is visible"
     }
    },
    {
@@ -1369,7 +1369,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 5,
     "label": {
      "fr": "Pointe de flèche : ligne de Sampaolesi, pigment ondulé en avant de Schwalbe",
-     "en": "Arrowhead: Sampaolesi line, wavy pigment anterior to Schwalbe’s line"
+     "en": "Arrowhead: Sampaolesi line, wavy pigment anterior to Schwalbe line"
     },
     "decisive": true
    },
@@ -1707,7 +1707,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 3.5,
     "label": {
      "fr": "Tache rouge cerise : la fovéa (sans couches internes) garde la couleur de la choroïde au milieu de la rétine pâle",
-     "en": "Cherry-red spot: the fovea (no inner layers) keeps the choroidal colour amid the pale retina"
+     "en": "Cherry-red spot: the fovea (no inner layers) keeps the choroidal color amid the pale retina"
     },
     "decisive": true
    },
@@ -1904,7 +1904,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 3.2,
     "label": {
      "fr": "OD : seule la tache aveugle sur l’échelle de gris",
-     "en": "OD: only the blind spot on the grey scale"
+     "en": "OD: only the blind spot on the gray scale"
     }
    }
   ],
@@ -1957,7 +1957,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 6.3,
     "label": {
      "fr": "Échelle de gris OS",
-     "en": "OS grey scale"
+     "en": "OS gray scale"
     }
    }
   ],
@@ -1973,7 +1973,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "photo": "OPH-190",
   "alt": {
    "fr": "Champ visuel Humphrey de l’œil droit (échelle de gris et déviation corrigée) : déficit supérieur.",
-   "en": "Humphrey visual field of the right eye (grey scale and pattern deviation): superior defect."
+   "en": "Humphrey visual field of the right eye (gray scale and pattern deviation): superior defect."
   },
   "hotspots": [
    {
@@ -2018,7 +2018,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "photo": "OPH-293",
   "alt": {
    "fr": "Échelles de gris Humphrey annotées : A tache aveugle normale, B déficit arciforme, C déficit arciforme et marche nasale.",
-   "en": "Annotated Humphrey grey scales: A normal blind spot, B arcuate defect, C arcuate defect and nasal step."
+   "en": "Annotated Humphrey gray scales: A normal blind spot, B arcuate defect, C arcuate defect and nasal step."
   },
   "hotspots": [
    {
@@ -2027,7 +2027,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 4,
     "label": {
      "fr": "Panneau B : tache aveugle à droite du centre (œil droit)",
-     "en": "Panel B: blind spot right of centre (right eye)"
+     "en": "Panel B: blind spot right of center (right eye)"
     },
     "decisive": true
    },
@@ -2127,7 +2127,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 4,
     "label": {
      "fr": "Chiasma optique : lésion (ex. adénome hypophysaire) qui touche les fibres nasales croisées",
-     "en": "Optic chiasm: lesion (e.g. pituitary adenoma) affecting crossing nasal fibres"
+     "en": "Optic chiasm: lesion (e.g. pituitary adenoma) affecting crossing nasal fibers"
     },
     "decisive": true
    },
@@ -2180,7 +2180,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "r": 9,
     "label": {
      "fr": "Déviation corrigée « propre » : pas de défaut localisé une fois la baisse générale retirée",
-     "en": "Clean pattern deviation: no localised defect once the general depression is removed"
+     "en": "Clean pattern deviation: no localized defect once the general depression is removed"
     },
     "decisive": true
    },

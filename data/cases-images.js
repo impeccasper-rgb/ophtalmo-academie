@@ -49,7 +49,7 @@ G.OPH.imageCases = [
     q: { fr: "Porteur de lentilles de contact. Douleur intense, œil très rouge depuis 24 h. Que faire?", en: "Contact lens wearer. Severe pain, very red eye for 24 hours. What do you do?" },
     options: [
       { fr: "Ulcère bactérien : cultures, fortifiés en urgence", en: "Bacterial ulcer: cultures, urgent fortified drops" },
-      { fr: "Conjonctivite : antibiotique aux 6 h, revoir dans une semaine", en: "Conjunctivitis: antibiotic every 6 hours, review in a week" },
+      { fr: "Conjonctivite : antibiotique aux 6 h, revoir dans une semaine", en: "Conjunctivitis: antibiotic every 6 hours, recheck in a week" },
       { fr: "Corticoïde topique pour calmer l’inflammation", en: "Topical steroid to settle the inflammation" },
       { fr: "Pansement occlusif 24 h", en: "Pressure patch for 24 hours" }
     ],
@@ -58,7 +58,7 @@ G.OPH.imageCases = [
       { fr: "Juste : retirer les lentilles, gratter pour cultures, puis antibiotiques fortifiés. Chez le porteur de lentilles, penser Pseudomonas. Les gouttes fortifiées viennent des pharmacies hospitalières : référence urgente en ophtalmologie.", en: "Correct: remove the lenses, scrape for cultures, then fortified antibiotics. In contact lens wearers, think Pseudomonas. Fortified drops come from hospital pharmacies: urgent ophthalmology referral." },
       { fr: "Un infiltrat cornéen dense n’est pas une conjonctivite; un délai d’une semaine peut mener à la perforation.", en: "A dense corneal infiltrate isn’t conjunctivitis; a one-week delay can lead to perforation." },
       { fr: "Pas de corticoïde avant les cultures et une réponse aux antibiotiques.", en: "No steroid before cultures and a response to antibiotics." },
-      { fr: "Jamais de pansement occlusif chez un porteur de lentilles : il favorise le Pseudomonas.", en: "Never patch a contact lens wearer: it favours Pseudomonas." }
+      { fr: "Jamais de pansement occlusif chez un porteur de lentilles : il favorise le Pseudomonas.", en: "Never patch a contact lens wearer: it favors Pseudomonas." }
     ],
     reveal: { fr: "Infiltrat stromal central, dense et suppuré, dans un œil très injecté : ulcère bactérien (Pseudomonas chez le porteur de lentilles).", en: "Dense, suppurative central stromal infiltrate in a very injected eye: bacterial ulcer (Pseudomonas in a lens wearer)." }
   },
@@ -129,7 +129,7 @@ G.OPH.imageCases = [
     why: [
       { fr: "Juste : l’humeur aqueuse entre dans le stroma par la déchirure. Résorption en semaines à mois, souvent avec cicatrice. Salin hypertonique, cycloplégie; gaz intracamérulaire possible.", en: "Correct: aqueous enters the stroma through the tear. Resolves over weeks to months, often with scarring. Hypertonic saline, cycloplegia; intracameral gas is an option." },
       { fr: "Une infection montre un infiltrat blanc dense sous un défaut épithélial, pas un œdème bleuté diffus.", en: "Infection shows a dense white infiltrate under an epithelial defect, not diffuse bluish edema." },
-      { fr: "Pas d’exposition chimique; l’œdème est centré sur le cône.", en: "No chemical exposure; the edema is centred on the cone." },
+      { fr: "Pas d’exposition chimique; l’œdème est centré sur le cône.", en: "No chemical exposure; the edema is centered on the cone." },
       { fr: "Fuchs est bilatéral et progressif, pas brutal chez un jeune kératocône.", en: "Fuchs is bilateral and gradual, not sudden in a young keratoconus patient." }
     ],
     reveal: { fr: "Opacité œdémateuse blanc-bleu au sommet du cône : hydrops aigu.", en: "White-blue edematous opacity at the apex of the cone: acute hydrops." }
@@ -218,7 +218,7 @@ G.OPH.imageCases = [
     answer: 3,
     why: [
       { fr: "Des abcès seraient douloureux, suppurés, avec défaut épithélial.", en: "Abscesses would be painful and suppurative, with an epithelial defect." },
-      { fr: "Thygeson : lésions épithéliales grises, sans conjonctivite associée.", en: "Thygeson: grey epithelial lesions, without associated conjunctivitis." },
+      { fr: "Thygeson : lésions épithéliales grises, sans conjonctivite associée.", en: "Thygeson: gray epithelial lesions, without associated conjunctivitis." },
       { fr: "Les guttae sont sur l’endothélium, pas sous l’épithélium.", en: "Guttae lie on the endothelium, not under the epithelium." },
       { fr: "Juste : réaction immunitaire après une kératoconjonctivite à adénovirus; peut durer des mois. Corticoïde topique seulement si la vision est touchée (rebond, sevrage lent).", en: "Correct: an immune reaction after adenoviral keratoconjunctivitis; can last months. Topical steroid only if vision is affected (rebound; slow taper)." }
     ],
@@ -255,7 +255,7 @@ G.OPH.imageCases = [
     answer: 1,
     why: [
       { fr: "La cataracte cortisonique est postérieure.", en: "Steroid cataract is posterior." },
-      { fr: "Juste : nécrose de l’épithélium cristallinien sous une PIO très élevée. Avec l’atrophie irienne et la pupille fixe en semi-mydriase : triade de Vogt.", en: "Correct: lens epithelial necrosis from very high IOP. With iris atrophy and a fixed mid-dilated pupil: Vogt’s triad." },
+      { fr: "Juste : nécrose de l’épithélium cristallinien sous une PIO très élevée. Avec l’atrophie irienne et la pupille fixe en semi-mydriase : triade de Vogt.", en: "Correct: lens epithelial necrosis from very high IOP. With iris atrophy and a fixed mid-dilated pupil: Vogt triad." },
       { fr: "La cataracte corticale forme des rayons en périphérie, pas des taches sous-capsulaires antérieures.", en: "Cortical cataract forms peripheral spokes, not anterior subcapsular flecks." },
       { fr: "La pseudoexfoliation dépose un matériel blanc en cible sur la capsule, pas sous elle.", en: "Pseudoexfoliation deposits white material in a target pattern on the capsule, not beneath it." }
     ],
@@ -272,7 +272,7 @@ G.OPH.imageCases = [
     ],
     answer: 0,
     why: [
-      { fr: "Juste : flocons blanc-gris (« pellicules »). Glaucome pseudoexfoliatif : PIO élevée, progression rapide. Zonules faibles : chirurgie de cataracte à risque. Ligne de Sampaolesi en gonioscopie.", en: "Correct: grey-white “dandruff” flakes. Pseudoexfoliation glaucoma: high IOP, fast progression. Weak zonules: higher-risk cataract surgery. Sampaolesi line on gonioscopy." },
+      { fr: "Juste : flocons blanc-gris (« pellicules »). Glaucome pseudoexfoliatif : PIO élevée, progression rapide. Zonules faibles : chirurgie de cataracte à risque. Ligne de Sampaolesi en gonioscopie.", en: "Correct: gray-white “dandruff” flakes. Pseudoexfoliation glaucoma: high IOP, fast progression. Weak zonules: higher-risk cataract surgery. Sampaolesi line on gonioscopy." },
       { fr: "Le pigment est brun et se voit chez le jeune myope (fuseau de Krukenberg, défauts de transillumination).", en: "Pigment is brown and seen in young myopes (Krukenberg spindle, transillumination defects)." },
       { fr: "Les synéchies collent l’iris au cristallin et déforment la pupille; ce ne sont pas des flocons.", en: "Synechiae glue the iris to the lens and distort the pupil; they aren’t flakes." },
       { fr: "Les nodules de Koeppe sont des amas inflammatoires translucides au bord pupillaire, dans une uvéite granulomateuse.", en: "Koeppe nodules are translucent inflammatory clumps at the pupil edge in granulomatous uveitis." }
@@ -309,9 +309,9 @@ G.OPH.imageCases = [
     answer: 2,
     why: [
       { fr: "L’anneau de Fleischer est du fer dans l’épithélium cornéen, à la base du cône.", en: "The Fleischer ring is iron in the corneal epithelium at the base of the cone." },
-      { fr: "L’anneau de Kayser-Fleischer est du cuivre sur la Descemet périphérique.", en: "The Kayser-Fleischer ring is copper on peripheral Descemet’s membrane." },
+      { fr: "L’anneau de Kayser-Fleischer est du cuivre sur la Descemet périphérique.", en: "The Kayser-Fleischer ring is copper on peripheral Descemet membrane." },
       { fr: "Juste : pigment déposé sur la capsule postérieure, à l’insertion des zonules. Visible seulement pupille dilatée.", en: "Correct: pigment deposited on the posterior capsule at the zonular insertion. Only seen through a dilated pupil." },
-      { fr: "La ligne de Sampaolesi est dans l’angle, en avant de la ligne de Schwalbe (gonioscopie).", en: "The Sampaolesi line is in the angle, anterior to Schwalbe’s line (gonioscopy)." }
+      { fr: "La ligne de Sampaolesi est dans l’angle, en avant de la ligne de Schwalbe (gonioscopie).", en: "The Sampaolesi line is in the angle, anterior to Schwalbe line (gonioscopy)." }
     ],
     reveal: { fr: "Ligne pigmentée en périphérie du cristallin, pupille dilatée : ligne de Scheie de la dispersion pigmentaire.", en: "A pigmented line at the lens periphery, pupil dilated: the Scheie stripe of pigment dispersion." }
   },
@@ -365,7 +365,7 @@ G.OPH.imageCases = [
       { fr: "Les stries de Vogt (kératocône) sont verticales et s’effacent à la pression.", en: "Vogt striae (keratoconus) are vertical and fade with pressure." },
       { fr: "La dystrophie grillagée donne des lignes ramifiées dans le stroma antérieur.", en: "Lattice dystrophy gives branching lines in the anterior stroma." },
       { fr: "Des rayures seraient épithéliales et prendraient la fluorescéine.", en: "Scratches would be epithelial and take up fluorescein." },
-      { fr: "Juste : la cornée distendue par la PIO fissure la Descemet. Les stries persistent même une fois la PIO contrôlée.", en: "Correct: the cornea stretched by IOP splits Descemet’s membrane. The striae persist even after IOP is controlled." }
+      { fr: "Juste : la cornée distendue par la PIO fissure la Descemet. Les stries persistent même une fois la PIO contrôlée.", en: "Correct: the cornea stretched by IOP splits Descemet membrane. The striae persist even after IOP is controlled." }
     ],
     reveal: { fr: "Lignes curvilignes à double contour dans la cornée profonde : stries de Haab.", en: "Double-contoured curvilinear lines in the deep cornea: Haab striae." }
   },
@@ -380,7 +380,7 @@ G.OPH.imageCases = [
     ],
     answer: 2,
     why: [
-      { fr: "Le glaucome malin aplatit toute la chambre, centre compris, sans iris bombé.", en: "Malignant glaucoma flattens the whole chamber, centre included, without iris bombé." },
+      { fr: "Le glaucome malin aplatit toute la chambre, centre compris, sans iris bombé.", en: "Malignant glaucoma flattens the whole chamber, center included, without iris bombé." },
       { fr: "Aucun néovaisseau n’est décrit; le mécanisme ici est mécanique.", en: "No new vessels are described; the mechanism here is mechanical." },
       { fr: "Juste : les synéchies empêchent l’humeur aqueuse de passer par la pupille; elle pousse l’iris en avant et ferme l’angle. L’iridotomie rétablit le passage; traiter aussi l’inflammation.", en: "Correct: synechiae stop aqueous passing through the pupil; it pushes the iris forward and closes the angle. An iridotomy restores flow; treat the inflammation too." },
       { fr: "L’iris plateau a un iris central plat; la chambre centrale est normale.", en: "Plateau iris has a flat central iris; the central chamber is normal." }
@@ -399,7 +399,7 @@ G.OPH.imageCases = [
     answer: 1,
     why: [
       { fr: "Un vaisseau optociliaire est un vaisseau en boucle sur la papille, sans saignement.", en: "An optociliary vessel is a looping vessel on the disc, with no bleeding." },
-      { fr: "Juste : petite hémorragie en flammèche qui croise le bord du disque, souvent inférotemporale. Elle disparaît en quelques semaines et précède souvent un défaut des fibres. Plus fréquente dans le glaucome à pression normale.", en: "Correct: a small flame hemorrhage crossing the disc margin, often inferotemporal. It clears in weeks and often precedes a nerve fibre defect. More common in normal-tension glaucoma." },
+      { fr: "Juste : petite hémorragie en flammèche qui croise le bord du disque, souvent inférotemporale. Elle disparaît en quelques semaines et précède souvent un défaut des fibres. Plus fréquente dans le glaucome à pression normale.", en: "Correct: a small flame hemorrhage crossing the disc margin, often inferotemporal. It clears in weeks and often precedes a nerve fiber defect. More common in normal-tension glaucoma." },
       { fr: "Un néovaisseau est un lacis de fins vaisseaux sur la papille (rétinopathie proliférante).", en: "A new vessel is a net of fine vessels on the disc (proliferative retinopathy)." },
       { fr: "L’œdème brouille tout le contour du disque; ici le bord est net et l’excavation large.", en: "Swelling blurs the whole disc outline; here the margin is sharp and the cup is large." }
     ],
@@ -494,7 +494,7 @@ G.OPH.imageCases = [
       { fr: "Les concrétions sont de petits dépôts jaunes durs, sans inflammation.", en: "Concretions are small hard yellow deposits without inflammation." },
       { fr: "Une membrane est une couche blanchâtre qui recouvre la conjonctive, pas des grains.", en: "A membrane is a whitish sheet over the conjunctiva, not grains." }
     ],
-    reveal: { fr: "Grains ronds, pâles, au centre avasculaire, sur la conjonctive palpébrale : follicules.", en: "Round, pale grains with an avascular centre on the palpebral conjunctiva: follicles." }
+    reveal: { fr: "Grains ronds, pâles, au centre avasculaire, sur la conjonctive palpébrale : follicules.", en: "Round, pale grains with an avascular center on the palpebral conjunctiva: follicles." }
   },
   {
     id: "ic-x06", topic: "general", media: "mi-x06", level: 2,
@@ -507,7 +507,7 @@ G.OPH.imageCases = [
     ],
     answer: 3,
     why: [
-      { fr: "L’impétigo donne des croûtes mélicériques, sans topographie d’un dermatome.", en: "Impetigo gives honey-coloured crusts, not in a dermatome." },
+      { fr: "L’impétigo donne des croûtes mélicériques, sans topographie d’un dermatome.", en: "Impetigo gives honey-colored crusts, not in a dermatome." },
       { fr: "La cellulite donne une paupière rouge et enflée, sans vésicules.", en: "Cellulitis gives a red swollen lid, without vesicles." },
       { fr: "Un corticoïde seul sur un zona est une erreur.", en: "A steroid alone on zoster is a mistake." },
       { fr: "Juste : réactivation du VZV dans le territoire ophtalmique (V1); antiviral idéalement dans les 72 h. Atteinte du bout du nez (signe de Hutchinson) : risque oculaire accru. Chercher kératite, uvéite, PIO élevée. Vaccin recombinant dès 50 ans.", en: "Correct: VZV reactivation in the ophthalmic (V1) territory; antiviral ideally within 72 h. Nose-tip involvement (Hutchinson sign): higher ocular risk. Look for keratitis, uveitis, raised IOP. Recombinant vaccine from age 50." }
@@ -528,7 +528,7 @@ G.OPH.imageCases = [
       { fr: "Sans artère ciliorétinienne, la macula blanchit autour d’une tache rouge cerise.", en: "Without a cilioretinal artery, the macula whitens around a cherry-red spot." },
       { fr: "La papille n’est pas gonflée; la zone épargnée suit un territoire artériel.", en: "The disc isn’t swollen; the spared zone follows an arterial territory." },
       { fr: "Juste : l’artère ciliorétinienne vient des artères ciliaires postérieures, pas de l’artère centrale. Elle peut préserver la vision centrale. Comme toute OACR : AVC oculaire, bilan urgent; après 50 ans, éliminer l’artérite à cellules géantes.", en: "Correct: the cilioretinal artery comes from the posterior ciliary arteries, not the central artery. It can preserve central vision. Like any CRAO: an eye stroke, urgent workup; over 50, rule out giant cell arteritis." },
-      { fr: "Une hémorragie est rouge foncé et masque les vaisseaux; ici la rétine a sa couleur normale.", en: "A hemorrhage is dark red and hides the vessels; here the retina has its normal colour." }
+      { fr: "Une hémorragie est rouge foncé et masque les vaisseaux; ici la rétine a sa couleur normale.", en: "A hemorrhage is dark red and hides the vessels; here the retina has its normal color." }
     ],
     reveal: { fr: "Langue de rétine normale entre la papille et la macula dans une rétine blanche : territoire d’une artère ciliorétinienne.", en: "A tongue of normal retina between the disc and macula in a white retina: a cilioretinal artery territory." }
   },
@@ -543,7 +543,7 @@ G.OPH.imageCases = [
     ],
     answer: 1,
     why: [
-      { fr: "Le décollement donne une rétine grise soulevée, pas des hémorragies en flammèche.", en: "A detachment gives grey elevated retina, not flame hemorrhages." },
+      { fr: "Le décollement donne une rétine grise soulevée, pas des hémorragies en flammèche.", en: "A detachment gives gray elevated retina, not flame hemorrhages." },
       { fr: "Juste : hémorragies limitées au territoire d’une veine, souvent en aval d’un croisement artérioveineux (HTA). Surveiller l’œdème maculaire et la néovascularisation.", en: "Correct: hemorrhages confined to one vein’s territory, often downstream of an arteriovenous crossing (hypertension). Watch for macular edema and neovascularization." },
       { fr: "L’OVCR touche les 4 quadrants à partir de la papille.", en: "CRVO involves all 4 quadrants from the disc." },
       { fr: "La rétinopathie diabétique est diffuse et bilatérale, faite surtout de microanévrismes et d’hémorragies ponctuées.", en: "Diabetic retinopathy is diffuse and bilateral, mostly microaneurysms and dot hemorrhages." }
