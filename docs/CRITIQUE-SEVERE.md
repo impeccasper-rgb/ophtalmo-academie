@@ -1,6 +1,368 @@
 # Ocelle : critique sévère
 
-> **État actuel : passage 2 (cycle 8), note 6 / 10.** Le passage 1 (cycle 7, 4 / 10) est conservé plus bas comme historique.
+> **État actuel : passe 3 (cycle 9), note 7 / 10.** Plus bas, dans l'ordre : passage 2 (cycle 8, 6 / 10), puis passage 1 (cycle 7, 4 / 10), conservés comme historique.
+
+## Passe 3 (cycle 9) : 21 novembre 2026
+
+Arbre testé : `main` @ ac13f46, site reconstruit. Même méthode et même barème que la passe 2 :
+- 390 × 844, FR, niveau « Essentiel », stockage vierge, requêtes externes bloquées.
+- **186 écrans mesurés** : 108 écrans de fiche, 6 Investigations, 5 listes et 42 micro-fiches A, 17 cartes de capsule, 8 hubs.
+- 20 captures ; 44 photos Voir testées une à une (coordonnées des zones, toucher simulé, couverture d'un toucher au hasard).
+- 10 fiches relues cliniquement (arbre, drapeaux, bloc Traitement).
+
+### P3.1 Note : 7 / 10 (passe 2 : 6 ; passe 1 : 4)
+
+**Le gain du cycle 9 : la boucle est enfin réelle.**
+- « Touche le signe » fonctionne sur 42 des 44 photos (27 fiches et 15 micro-fiches A5). Une erreur affiche « pas ici ». Au 2e échec, une zone d'indice apparaît ; au 3e, la réponse est révélée sans récompense.
+- Les budgets de texte sont tenus partout :
+
+  | Écran | Mots | Plafond |
+  |---|---|---|
+  | Voir | 40–51 | 60 |
+  | Comprendre (hors étiquettes SVG) | 70–103 | 120 |
+  | Décider (hors arbre) | 87–131 | 180 |
+
+- Aucun paragraphe de plus de 3 lignes sur Voir ; puces « essentiel » ≤ 15 mots.
+- Comprendre tient en 1,24–1,43 écran.
+- Aucune animation auto-rythmée : le TBUT ne démarre plus seul.
+
+**Pourquoi pas 8 :**
+1. **La récompense se gagne sans regarder.** Un toucher au **centre** de la photo donne « Bien vu ! » sur **25 des 42** photos, dont 12 des 14 fiches cornée. Sur `c-secheresse`, un toucher au hasard réussit 53 % du temps (vérifié : un toucher en bas à gauche obtient « Exact ! »).
+2. **Comprendre ne dessine toujours aucun mécanisme** (0/27). La chaîne reste du texte qu'on dévoile.
+3. **Les finitions régressent par endroits** : options de repli incohérentes, héros de l'accueil illisible, palette de Réviser hors charte.
+
+### P3.2 Synthèse des mesures (passe 3)
+
+Pour Comprendre, la colonne « Hors plafond » compte les étiquettes SVG des schémas ; hors étiquettes, les 27 écrans sont ≤ 120 mots.
+
+| Écran | n | Mots médiane (min–max) | Plafond | Hors plafond | Figures visibles médiane | Écrans à 0 figure | 1re figure (px, médiane) | Hauteur (écrans) médiane (max) | Mots au 1er écran (méd.) | Tableaux visibles | Arbre | Animations auto-rythmées |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Voir | 27 | 44 (40–51) | 60 | 0 | 1 | 0 | 209 | 1.3 (1.4) | 52 | 0 | 0/27 | 0 |
+| Comprendre | 27 | 94 (73–141) | 120 | 6 | 2 | 0 | 236 | 1.4 (1.4) | 88 | 0 | 0/27 | 0 |
+| Décider (hors arbre) | 27 | 106 (87–131) | 180 | 0 | 0 | 27 | — | 1.8 (1.9) | 79 | 0 | 27/27 | 0 |
+| S’entraîner | 27 | 66 (59–77) | ≈200 (1 min) | 0 | 0 | 27 | — | 1.2 (1.3) | 76 | 0 | 0/27 | 0 |
+| Investigations | 6 | 178 (167–200) | ≈200 (1 min) | 0 | 2 | 0 | 282 | 2.8 (2.9) | 57 | 0 | 0/6 | 0 |
+| Module A : listes | 5 | 73 (65–237) | ≈200 (1 min) | 1 | 0 | 5 | — | 1.4 (3.3) | 60 | 0 | 0/5 | 0 |
+| Module A : micro-fiches | 42 | 102 (22–205) | ≈200 (1 min) | 1 | 1 | 3 | 226 | 1.6 (2.1) | 83 | 0 | 0/42 | 0 |
+| Capsules : cartes | 17 | 79 (57–134) | ≈200 (1 min) | 0 | 1 | 7 | 213 | 1.2 (1.6) | 75 | 0 | 0/17 | 0 |
+| Hubs + accueil | 7 | 144 (103–318) | ≈200 (1 min) | 2 | 1 | 3 | 467 | 2.8 (5.4) | 63 | 0 | 0/7 | 0 |
+| Accueil | 1 | 141 (141–141) | ≈200 (1 min) | 0 | 2 | 0 | — | 2.3 (2.3) | 81 | 0 | 0/1 | 0 |
+
+### P3.3 Statut des MUST-FIX de la passe 2
+
+| # (passe 2) | Défaut | Statut | Preuve |
+|---|---|---|---|
+| 1 | Boucle Observe → Réponds → Révèle factice | **Partiel** | Boucle réelle sur 42/44 photos, avec feutre et autocollant seulement si c'est juste ✓. Mais elle est gagnable (P3.4-N1), et le repli à 3 options est incohérent (N2). |
+| 2 | Comprendre : mécanisme, 1er écran utile | **Partiel** | Paire normal/pathologique côte à côte, 1er écran utile (88 mots en médiane) ✓. Mais la figure montre toujours un **signe** ; aucun schéma de mécanisme (0/27). La chaîne se dévoile au toucher, sans prédiction. |
+| 3 | Cohérence des délais de référence | **Corrigé** | `g-crise` : « Crise = appel immédiat ; si PIO inchangée à 1 h : mannitol, sur avis ». Les drapeaux, l'arbre et « Quand référer » concordent sur les 10 fiches relues (outil `tools/check-delays.js`). |
+| 4 | Dépassements restants | **Corrigé en grande partie** | Voir au-dessus de 60 mots : 14 → 0/27. Paragraphes de plus de 3 lignes : 27 → 0/27. Puces de plus de 15 mots : 4 → 0. Micro-fiches au-dessus de 200 mots (hors étiquettes) : 2 → 0. **Reste** : 10 écrans sans figure, la même liste qu'en passe 2. |
+| 5 | Murs et hubs | **Partiel** | Corrigés : `#cas` (bande « Cas en images », vignettes, 201 mots, 1,7 écran) et la bannière Module C (photos de papille). Restent : `#b-bases/8` (17 pastilles, 0 figure) et `#reviser` (toujours une liste verticale de 8 cartes, voir N5). |
+
+SHOULD-FIX de la passe 2 :
+- **Corrigés** :
+  - « Je suis prêt à répondre » retiré (la pratique s'ouvre sur les options).
+  - Schéma OCT de pratique redessiné.
+  - TBUT sans démarrage automatique.
+  - « J'ai terminé cette section » retiré ; un seul bouton fluo sur S'entraîner.
+- **Non corrigés** :
+  - Arbres sans vignette clinique : `src/tree.js` lit `f.cat.vignette`, mais **0/27** fiches en ont une.
+  - Chaîne causale sans prédiction.
+  - Cartes du patron sans auto-évaluation.
+
+### P3.4 Nouveaux défauts
+
+- **N1. Récompense gagnable par réflexe.**
+  - **Couverture d'un toucher au hasard** (tolérance du code : `max(r × 1,3 ; 6 %)`) :
+
+    | Route | Couverture |
+    |---|---|
+    | `#c-secheresse/voir` | 53 % |
+    | `#a-retine/papille-oedeme` | 38 % |
+    | `#g-cristallin/voir` | 34 % |
+    | `#c-dystrophies/voir` | 29 % |
+    | `#c-brulure/voir` | 28 % |
+    | `#c-atypiques/voir` | 26 % |
+    | `#a-retine/decollement-choroidien` | 25 % |
+    | `#c-bacterienne/voir` | 24 % |
+    | `#c-depots/voir` | 24 % |
+
+    Médiane : 11 %.
+  - **Toucher au centre** : réussi sur 25/42 photos.
+  - Les signes **diffus** (KPS diffuse, cornée opaque, cristallin) ne peuvent pas être une cible à toucher.
+- **N2. Le repli à 3 options recycle des légendes.**
+  - **Où** : `#a-retine/macula-chirurgicale` et `#a-retine/pupilles-neuro`.
+  - **Constat** : les options sont des légendes d'autres photos, avec du texte interne : « La source parle d'une membrane « trace » (très légère) », « Photo de gauche (OD selon la légende) », et des « dômes gris-jaunâtres en périphérie » pour une photo de pupilles. La légende de `#g-papille/voir` contient aussi « (selon la source) ».
+- **N3. Rendu de la boucle.**
+  - `#c-secheresse/voir` : la boucle sort de l'image et elle est coupée.
+  - `#g-gpao/voir` : le trait fluo passe **sur** le rebord inférieur, c'est-à-dire sur le signe qu'il désigne.
+  - Le message est doublé : titre « Bien vu », puis autocollant « Bien vu ! ».
+- **N4. Le héros de l'accueil a régressé** (`#accueil`). La carte photo inclinée est réduite à environ 60 px d'image. Le crédit (« Imrankabirhossain · CC BY-SA 4.0 · Wikimedia Commons · annotation superposée ») prend plus de place que la photo, et l'autocollant « dendrite ! » recouvre l'image. Le visuel signature n'est plus lisible.
+- **N5. Réviser n'est pas « en tuiles »** (`#reviser`). C'est la même liste verticale de 8 cartes, avec des pictogrammes pastel rouge, orange, violet et menthe, **hors palette** v2 (cobalt, fluo, sémantiques).
+- **N6. En-tête presque unifié.** Le contenu commence à 202–257 px. Mais sur les micro-fiches A, la pastille « Niveau » reste seule sur sa ligne. Le bouton Suivant fluo reprend le titre complet de l'entrée suivante, sur 4 lignes (`#a-retine/macula-chirurgicale`).
+- **N7. Les micro-fiches débordent encore.** 29 des 42 dépassent 1,5 écran (médiane 1,61 ; maximum 2,14 sur `#a-retine/pupilles-neuro`). 9 dépassent 120 mots, dont `a-imagerie/champs-visuels` (205, étiquettes comprises), `a-physiologie/transparence` (181) et `a-examen/papille` (176).
+
+### P3.5 Revue clinique (10 fiches, niveau externe)
+
+Fiches relues : `c-bacterienne`, `c-herpes`, `c-brulure`, `c-surface`, `c-erosion`, `g-crise`, `g-gpao`, `g-fermeture`, `g-neovasculaire`, `g-papille`.
+
+**Juste et utile à l'externe :**
+- Irrigation au NaCl 0,9 % pendant au moins 30 min jusqu'à pH 7,0–7,5.
+- Érythromycine en onguent 4×/j ; fluoroquinolone sans pansement chez le porteur de lentilles ; TDM et non IRM après une projection.
+- Moxifloxacine 0,5 % aux heures ; « le jour même pour tout ulcère ».
+- Acyclovir 400 mg 5×/j ou valacyclovir 500 mg 3×/j ; zona : valacyclovir 1 g 3×/j × 7 j.
+- Crise aiguë : timolol, brimonidine, dorzolamide, acétazolamide 500 mg, antiémétique, et appel immédiat.
+- Olopatadine 0,1 % ; ceftriaxone si gonocoque ; MADO.
+- EAGLE (≥ 50 ans, PAC ≥ 30 mmHg ou PACG).
+- Bévacizumab 1,25 mg ; Doppler carotidien en l'absence de cause rétinienne.
+- Encadrés Québec utiles : CNESST, Centre antipoison, O-7, gonioscopie chez les patients inuits (Nunavik), pharmacies d'hôpital pour les gouttes fortifiées.
+- Le seuil PACS (contact ≥ 180°) est utilisé de façon cohérente.
+
+**À corriger :**
+- `c-brulure` : l'arbre (Q3 « grade II–IV : ophtalmologie immédiatement ») contredit le drapeau rouge (« grades III–IV »).
+- `g-gpao` : le nœud 1 donne « Bilan de base (4 P + G) » sans explication, et l'arbre reste écrit pour l'ophtalmologiste.
+- `g-crise` : la carte « Au Québec » n'a aucun contenu québécois.
+- `c-herpes` : la fenêtre de 72 h pour l'antiviral du zona n'est pas dite.
+
+### P3.6 Direction artistique
+- **Mieux** : la boucle au feutre et l'autocollant vivent enfin dans le parcours principal ; Comprendre est compact ; `#cas` et le hub Investigations ont des images.
+- **Moins bien** :
+  - Le héros de l'accueil est écrasé (N4).
+  - Réviser introduit une palette pastel hors charte (N5).
+  - Les encadrés « High yield » (menthe, `--teal-wash`) et « Le signe qui compte » (vert pâle) restent hors palette.
+  - Le badge « High yield » est toujours en anglais.
+
+  L'ensemble reste reconnaissable comme « Fluorescéine », mais la discipline de palette se relâche hors des fiches.
+
+### P3.7 MUST-FIX restants (classés)
+
+1. **Rendre la récompense méritée.**
+   - Routes : `#c-secheresse/voir`, `#g-cristallin/voir`, `#c-dystrophies/voir`, `#c-brulure/voir`, `#a-retine/papille-oedeme`, et les 25 photos où le toucher au centre suffit.
+   - Correction : tolérance = `r` ; couverture ≤ 10 % vérifiée par test ; signes diffus en `skip` ; photos dont le signe n'est pas central, ou un 2e geste (nommer le signe).
+   - Fichiers : `data/voir-hotspots.js`, `src/core.js` (`Photo.voirTap`), `tests/run.py`.
+2. **Repli à 3 options écrit à la main.**
+   - Routes : `#a-retine/macula-chirurgicale`, `#a-retine/pupilles-neuro` ; légende de `#g-papille/voir`.
+   - Correction : un champ `choices` par entrée, avec 2 sosies plausibles ; le validateur interdit « source », « légende » et « photo de gauche ».
+   - Fichiers : `data/voir-hotspots.js`, `src/core.js` (`voirCard`), `data/photos.js`, `tools/validate.js`.
+3. **Un mécanisme dessiné dans Comprendre**, en commençant par `#g-crise`, `#g-gpao`, `#c-herpes`, `#c-bacterienne`, `#c-fuchs` et `#g-pigmentaire`. La chaîne doit devenir une prédiction (« maillon suivant ? », 3 choix).
+   - Fichiers : `src/views.js` (branche `comprendre`), `src/figures-a.js`, `src/figures-b.js`, `data/fiches-*.js` (`causal`).
+4. **Héros de l'accueil** (`#accueil`) : image d'au moins 140 px, crédit derrière une icône ⓘ, autocollant à côté du signe.
+   - Fichiers : `src/views.js` (accueil), `src/web.css`.
+5. **Écrans sans figure et micro-fiches trop longues** :
+   - Sans figure : `#a-physiologie/pio`, `#a-physiologie/pupille`, `#a-examen/av`, `#b-bases/4`, `/7`, `/8`, `/9`, `#c-bases/6`, `/7`, `/8`.
+   - Trop longues : 29 micro-fiches A sur 42 au-dessus de 1,5 écran.
+   - Fichiers : `data/module-a.js`, `data/capsules.js`.
+6. **Rendu de la boucle** : `#c-secheresse/voir` (boucle coupée) et `#g-gpao/voir` (trait sur le signe) ; supprimer le titre « Bien vu » en double.
+   - Fichiers : `src/motion.js`, `src/core.js` (`voirReveal`), `src/web.css`.
+7. **Précision clinique** :
+   - `#c-brulure/decider` : grades.
+   - `#g-gpao/decider` : « 4 P + G ».
+   - `#g-crise/decider` : carte Québec.
+   - `#c-herpes/decider` : fenêtre de 72 h.
+   - Fichiers : `data/fiches-cornee*.js`, `data/ext-cornee-*.js`, `data/fiches-glaucome.js`.
+8. **Vignettes cliniques des arbres** (0/27) : remplir `cat.vignette`.
+   - Fichiers : `data/fiches-*.js`.
+9. **`#reviser`** : une vraie grille, dans la palette v2.
+   - Fichiers : `src/views.js`, `src/web.css`.
+
+### Annexe P3. Mesures par écran (passe 3 : 186 écrans)
+
+<details><summary>186 écrans</summary>
+
+| Écran | Mots visibles | dont étiquettes SVG | Mots 1er écran | Contenu commence à (px) | Figures | Hauteur (écrans) | Verdict |
+|---|---|---|---|---|---|---|---|
+| `#c-secheresse/voir` | 47 | 0 | 53 | 224 | 1 | 1.23 | OK |
+| `#c-secheresse/comprendre` | 92 | 0 | 69 | 224 | 2 | 1.43 | OK |
+| `#c-secheresse/decider` | 122 | 0 | 76 | 224 | 0 | 1.79 | OK |
+| `#c-secheresse/entrainer` | 68 | 0 | 77 | 224 | 0 | 1.23 | OK |
+| `#c-bacterienne/voir` | 44 | 0 | 51 | 207 | 1 | 1.27 | OK |
+| `#c-bacterienne/comprendre` | 82 | 0 | 71 | 207 | 2 | 1.36 | OK |
+| `#c-bacterienne/decider` | 128 | 0 | 76 | 207 | 0 | 1.81 | OK |
+| `#c-bacterienne/entrainer` | 71 | 0 | 77 | 207 | 0 | 1.16 | OK |
+| `#c-atypiques/voir` | 43 | 0 | 52 | 207 | 1 | 1.2 | OK |
+| `#c-atypiques/comprendre` | 85 | 0 | 77 | 207 | 2 | 1.41 | OK |
+| `#c-atypiques/decider` | 128 | 0 | 79 | 207 | 0 | 1.8 | OK |
+| `#c-atypiques/entrainer` | 67 | 0 | 75 | 207 | 0 | 1.2 | OK |
+| `#c-herpes/voir` | 51 | 0 | 58 | 204 | 1 | 1.29 | OK |
+| `#c-herpes/comprendre` | 84 | 0 | 76 | 204 | 2 | 1.38 | OK |
+| `#c-herpes/decider` | 144 | 0 | 83 | 204 | 0 | 1.84 | OK |
+| `#c-herpes/entrainer` | 64 | 0 | 74 | 204 | 0 | 1.19 | OK |
+| `#c-keratocone/voir` | 45 | 0 | 51 | 207 | 1 | 1.28 | OK |
+| `#c-keratocone/comprendre` | 137 | 34 | 127 | 207 | 2 | 1.37 | OK |
+| `#c-keratocone/decider` | 118 | 0 | 74 | 207 | 0 | 1.74 | OK |
+| `#c-keratocone/entrainer` | 65 | 0 | 70 | 207 | 0 | 1.14 | OK |
+| `#c-fuchs/voir` | 45 | 0 | 53 | 224 | 1 | 1.23 | OK |
+| `#c-fuchs/comprendre` | 115 | 36 | 110 | 224 | 2 | 1.38 | OK |
+| `#c-fuchs/decider` | 108 | 0 | 85 | 224 | 0 | 1.55 | OK |
+| `#c-fuchs/entrainer` | 65 | 0 | 76 | 224 | 0 | 1.19 | OK |
+| `#c-erosion/voir` | 41 | 0 | 51 | 224 | 1 | 1.36 | OK |
+| `#c-erosion/comprendre` | 89 | 0 | 74 | 224 | 2 | 1.41 | OK |
+| `#c-erosion/decider` | 126 | 0 | 82 | 224 | 0 | 1.8 | OK |
+| `#c-erosion/entrainer` | 62 | 0 | 75 | 224 | 0 | 1.11 | OK |
+| `#c-pterygion/voir` | 46 | 0 | 55 | 224 | 1 | 1.3 | OK |
+| `#c-pterygion/comprendre` | 133 | 34 | 130 | 224 | 2 | 1.36 | OK |
+| `#c-pterygion/decider` | 109 | 0 | 78 | 224 | 0 | 1.67 | OK |
+| `#c-pterygion/entrainer` | 59 | 0 | 71 | 224 | 0 | 1.19 | OK |
+| `#c-greffe/voir` | 47 | 0 | 57 | 224 | 1 | 1.3 | OK |
+| `#c-greffe/comprendre` | 87 | 0 | 86 | 224 | 2 | 1.36 | OK |
+| `#c-greffe/decider` | 129 | 0 | 83 | 224 | 0 | 1.7 | OK |
+| `#c-greffe/entrainer` | 64 | 0 | 77 | 224 | 0 | 1.11 | OK |
+| `#c-brulure/voir` | 45 | 0 | 52 | 207 | 1 | 1.23 | OK |
+| `#c-brulure/comprendre` | 129 | 36 | 131 | 207 | 2 | 1.3 | OK |
+| `#c-brulure/decider` | 130 | 0 | 69 | 207 | 0 | 1.81 | OK |
+| `#c-brulure/entrainer` | 64 | 0 | 70 | 207 | 0 | 1.12 | OK |
+| `#c-dystrophies/voir` | 45 | 0 | 47 | 207 | 1 | 1.23 | OK |
+| `#c-dystrophies/comprendre` | 100 | 0 | 88 | 207 | 2 | 1.38 | OK |
+| `#c-dystrophies/decider` | 110 | 0 | 71 | 207 | 0 | 1.59 | OK |
+| `#c-dystrophies/entrainer` | 69 | 0 | 75 | 207 | 0 | 1.23 | OK |
+| `#c-depots/voir` | 42 | 0 | 50 | 224 | 1 | 1.3 | OK |
+| `#c-depots/comprendre` | 99 | 0 | 95 | 224 | 2 | 1.38 | OK |
+| `#c-depots/decider` | 124 | 0 | 87 | 224 | 0 | 1.67 | OK |
+| `#c-depots/entrainer` | 69 | 0 | 80 | 224 | 0 | 1.18 | OK |
+| `#c-surface/voir` | 43 | 0 | 55 | 224 | 1 | 1.27 | OK |
+| `#c-surface/comprendre` | 94 | 0 | 74 | 224 | 2 | 1.43 | OK |
+| `#c-surface/decider` | 132 | 0 | 82 | 224 | 0 | 1.89 | OK |
+| `#c-surface/entrainer` | 70 | 0 | 81 | 224 | 0 | 1.25 | OK |
+| `#c-peripherie/voir` | 42 | 0 | 33 | 224 | 1 | 1.43 | OK |
+| `#c-peripherie/comprendre` | 97 | 0 | 90 | 224 | 2 | 1.38 | OK |
+| `#c-peripherie/decider` | 130 | 0 | 81 | 224 | 0 | 1.79 | OK |
+| `#c-peripherie/entrainer` | 77 | 0 | 87 | 224 | 0 | 1.28 | OK |
+| `#g-gpao/voir` | 48 | 0 | 54 | 207 | 1 | 1.29 | OK |
+| `#g-gpao/comprendre` | 91 | 6 | 84 | 207 | 2 | 1.36 | OK |
+| `#g-gpao/decider` | 127 | 0 | 77 | 207 | 0 | 1.68 | OK |
+| `#g-gpao/entrainer` | 60 | 0 | 69 | 207 | 0 | 1.15 | OK |
+| `#g-hto/voir` | 42 | 0 | 53 | 204 | 1 | 1.22 | OK |
+| `#g-hto/comprendre` | 141 | 54 | 147 | 204 | 2 | 1.31 | OK |
+| `#g-hto/decider` | 120 | 0 | 74 | 204 | 0 | 1.74 | OK |
+| `#g-hto/entrainer` | 59 | 0 | 69 | 204 | 0 | 1.09 | OK |
+| `#g-gpn/voir` | 43 | 0 | 47 | 207 | 1 | 1.3 | OK |
+| `#g-gpn/comprendre` | 106 | 24 | 99 | 207 | 2 | 1.39 | OK |
+| `#g-gpn/decider` | 126 | 0 | 73 | 207 | 0 | 1.65 | OK |
+| `#g-gpn/entrainer` | 59 | 0 | 67 | 207 | 0 | 1.17 | OK |
+| `#g-fermeture/voir` | 46 | 0 | 34 | 224 | 1 | 1.45 | OK |
+| `#g-fermeture/comprendre` | 123 | 39 | 117 | 224 | 2 | 1.32 | OK |
+| `#g-fermeture/decider` | 126 | 0 | 78 | 224 | 0 | 1.79 | OK |
+| `#g-fermeture/entrainer` | 69 | 0 | 80 | 224 | 0 | 1.2 | OK |
+| `#g-crise/voir` | 46 | 0 | 57 | 207 | 1 | 1.13 | OK |
+| `#g-crise/comprendre` | 79 | 0 | 75 | 207 | 2 | 1.36 | OK |
+| `#g-crise/decider` | 154 | 0 | 96 | 207 | 0 | 1.86 | OK |
+| `#g-crise/entrainer` | 66 | 0 | 76 | 207 | 0 | 1.14 | OK |
+| `#g-pxf/voir` | 44 | 0 | 51 | 207 | 1 | 1.27 | OK |
+| `#g-pxf/comprendre` | 83 | 0 | 73 | 207 | 2 | 1.34 | OK |
+| `#g-pxf/decider` | 151 | 0 | 77 | 207 | 0 | 1.86 | OK |
+| `#g-pxf/entrainer` | 63 | 0 | 69 | 207 | 0 | 1.17 | OK |
+| `#g-pigmentaire/voir` | 43 | 0 | 47 | 224 | 1 | 1.3 | OK |
+| `#g-pigmentaire/comprendre` | 90 | 0 | 83 | 224 | 2 | 1.33 | OK |
+| `#g-pigmentaire/decider` | 124 | 0 | 79 | 224 | 0 | 1.7 | OK |
+| `#g-pigmentaire/entrainer` | 73 | 0 | 82 | 224 | 0 | 1.14 | OK |
+| `#g-neovasculaire/voir` | 43 | 0 | 50 | 207 | 1 | 1.24 | OK |
+| `#g-neovasculaire/comprendre` | 122 | 37 | 114 | 207 | 2 | 1.33 | OK |
+| `#g-neovasculaire/decider` | 121 | 0 | 85 | 207 | 0 | 1.68 | OK |
+| `#g-neovasculaire/entrainer` | 60 | 0 | 66 | 207 | 0 | 1.18 | OK |
+| `#g-secondaires/voir` | 40 | 0 | 49 | 207 | 1 | 1.18 | OK |
+| `#g-secondaires/comprendre` | 79 | 0 | 72 | 207 | 2 | 1.39 | OK |
+| `#g-secondaires/decider` | 128 | 0 | 80 | 207 | 0 | 1.77 | OK |
+| `#g-secondaires/entrainer` | 70 | 0 | 78 | 207 | 0 | 1.23 | OK |
+| `#g-postop/voir` | 45 | 0 | 55 | 204 | 1 | 1.28 | OK |
+| `#g-postop/comprendre` | 73 | 0 | 78 | 204 | 2 | 1.3 | OK |
+| `#g-postop/decider` | 122 | 0 | 78 | 204 | 0 | 1.73 | OK |
+| `#g-postop/entrainer` | 72 | 0 | 81 | 204 | 0 | 1.16 | OK |
+| `#g-papille/voir` | 44 | 0 | 57 | 224 | 1 | 1.19 | OK |
+| `#g-papille/comprendre` | 81 | 0 | 90 | 224 | 2 | 1.29 | OK |
+| `#g-papille/decider` | 129 | 0 | 80 | 224 | 0 | 1.72 | OK |
+| `#g-papille/entrainer` | 64 | 0 | 77 | 224 | 0 | 1.23 | OK |
+| `#g-cristallin/voir` | 44 | 0 | 53 | 224 | 1 | 1.35 | OK |
+| `#g-cristallin/comprendre` | 110 | 36 | 119 | 224 | 2 | 1.3 | OK |
+| `#g-cristallin/decider` | 139 | 0 | 82 | 224 | 0 | 1.88 | OK |
+| `#g-cristallin/entrainer` | 73 | 0 | 86 | 224 | 0 | 1.25 | OK |
+| `#g-dev/voir` | 48 | 0 | 57 | 224 | 1 | 1.4 | OK |
+| `#g-dev/comprendre` | 106 | 36 | 115 | 224 | 2 | 1.24 | OK |
+| `#g-dev/decider` | 143 | 0 | 88 | 224 | 0 | 1.79 | OK |
+| `#g-dev/entrainer` | 76 | 0 | 89 | 224 | 0 | 1.24 | OK |
+| `#inv-bscan` | 200 | 2 | 54 | 61 | 2 | 2.87 | 2.87 écrans |
+| `#inv-ascan` | 169 | 28 | 79 | 61 | 2 | 2.48 | OK |
+| `#inv-oct` | 167 | 6 | 66 | 61 | 2 | 2.38 | OK |
+| `#inv-gonio` | 176 | 2 | 52 | 61 | 2 | 2.88 | 2.88 écrans |
+| `#inv-fondoeil` | 189 | 32 | 44 | 61 | 2 | 2.82 | 2.82 écrans |
+| `#inv-cv` | 181 | 3 | 61 | 61 | 2 | 2.78 | 2.78 écrans |
+| `#a-anatomie` | 73 | 0 | 63 | 61 | 0 | 1.35 | OK |
+| `#a-anatomie/globe` | 127 | 62 | 138 | 202 | 1 | 1.19 | OK |
+| `#a-anatomie/cornee` | 60 | 18 | 72 | 202 | 1 | 1 | OK |
+| `#a-anatomie/angle` | 93 | 47 | 102 | 202 | 2 | 1.13 | OK |
+| `#a-anatomie/papille` | 22 | 3 | 35 | 202 | 1 | 1 | OK |
+| `#a-anatomie/annexes` | 30 | 19 | 43 | 224 | 1 | 1 | OK |
+| `#a-anatomie/photos` | 82 | 0 | 82 | 202 | 1 | 1.34 | OK |
+| `#a-physiologie` | 75 | 0 | 60 | 61 | 0 | 1.45 | OK |
+| `#a-physiologie/aqueuse` | 170 | 14 | 127 | 202 | 1 | 1.69 | > 1,5 écran |
+| `#a-physiologie/pio` | 78 | 0 | 89 | 202 | 0 | 1 | 0 figure |
+| `#a-physiologie/film-lacrymal` | 114 | 0 | 89 | 202 | 1 | 1.51 | > 1,5 écran |
+| `#a-physiologie/transparence` | 181 | 18 | 103 | 202 | 1 | 1.89 | > 1,5 écran |
+| `#a-physiologie/refraction` | 129 | 0 | 110 | 202 | 1 | 1.46 | OK |
+| `#a-physiologie/pupille` | 81 | 0 | 93 | 202 | 0 | 1 | 0 figure |
+| `#a-examen` | 73 | 0 | 45 | 61 | 0 | 1.61 | OK |
+| `#a-examen/av` | 111 | 0 | 116 | 202 | 0 | 1.25 | 0 figure |
+| `#a-examen/pupilles` | 123 | 6 | 87 | 202 | 1 | 1.6 | > 1,5 écran |
+| `#a-examen/lampe` | 118 | 21 | 111 | 202 | 1 | 1.43 | OK |
+| `#a-examen/fluoresceine` | 108 | 0 | 73 | 224 | 1 | 1.61 | > 1,5 écran |
+| `#a-examen/tonometrie` | 124 | 0 | 91 | 202 | 1 | 1.64 | > 1,5 écran |
+| `#a-examen/gonioscopie` | 129 | 19 | 102 | 202 | 1 | 1.59 | > 1,5 écran |
+| `#a-examen/pachymetrie` | 139 | 0 | 77 | 202 | 1 | 1.72 | > 1,5 écran |
+| `#a-examen/papille` | 176 | 42 | 108 | 202 | 3 | 1.87 | > 1,5 écran |
+| `#a-imagerie` | 65 | 0 | 51 | 61 | 0 | 1.4 | OK |
+| `#a-imagerie/structure` | 138 | 42 | 97 | 202 | 3 | 1.46 | OK |
+| `#a-imagerie/oct` | 147 | 27 | 123 | 224 | 1 | 1.51 | > 1,5 écran |
+| `#a-imagerie/topographie` | 131 | 17 | 97 | 202 | 2 | 1.63 | > 1,5 écran |
+| `#a-imagerie/champs-visuels` | 205 | 30 | 167 | 202 | 3 | 1.65 | > 1,5 écran |
+| `#a-imagerie/speculaire` | 106 | 0 | 84 | 202 | 1 | 1.51 | > 1,5 écran |
+| `#a-retine` | 237 | 0 | 60 | 61 | 0 | 3.29 | > 200 mots; 3.29 écrans |
+| `#a-retine/cataracte-nucleaire` | 98 | 0 | 71 | 202 | 1 | 1.65 | > 1,5 écran |
+| `#a-retine/cataracte-corticale-scp` | 97 | 0 | 64 | 224 | 1 | 1.66 | > 1,5 écran |
+| `#a-retine/cataracte-mature` | 99 | 0 | 91 | 257 | 1 | 1.47 | OK |
+| `#a-retine/opacification-capsulaire` | 100 | 0 | 70 | 202 | 1 | 1.56 | > 1,5 écran |
+| `#a-retine/bscan` | 103 | 0 | 80 | 224 | 1 | 1.55 | > 1,5 écran |
+| `#a-retine/decollement-retine` | 98 | 0 | 65 | 224 | 1 | 1.7 | > 1,5 écran |
+| `#a-retine/decollement-choroidien` | 101 | 0 | 65 | 224 | 1 | 1.72 | > 1,5 écran |
+| `#a-retine/dmla` | 99 | 0 | 73 | 257 | 1 | 1.73 | > 1,5 écran |
+| `#a-retine/retinopathie-diabetique` | 96 | 0 | 60 | 257 | 1 | 1.73 | > 1,5 écran |
+| `#a-retine/occlusions-retiniennes` | 93 | 0 | 64 | 224 | 1 | 1.69 | > 1,5 écran |
+| `#a-retine/retinopathie-hypertensive` | 97 | 0 | 62 | 257 | 1 | 1.76 | > 1,5 écran |
+| `#a-retine/macula-chirurgicale` | 130 | 0 | 60 | 257 | 1 | 2.03 | > 1,5 écran |
+| `#a-retine/peripherie-vitre` | 95 | 0 | 67 | 257 | 1 | 1.68 | > 1,5 écran |
+| `#a-retine/inflammation-infection` | 92 | 0 | 72 | 224 | 1 | 1.63 | > 1,5 écran |
+| `#a-retine/papille-oedeme` | 100 | 0 | 86 | 224 | 1 | 1.55 | > 1,5 écran |
+| `#a-retine/pupilles-neuro` | 135 | 0 | 45 | 257 | 1 | 2.14 | > 1,5 écran |
+| `#a-retine/tumeurs-toxicite-trauma` | 100 | 0 | 44 | 257 | 1 | 1.8 | > 1,5 écran |
+| `#b-bases` | 109 | 0 | 80 | 212 | 1 | 1.61 | > 1,5 écran |
+| `#b-bases/2` | 133 | 62 | 151 | 212 | 1 | 1.18 | OK |
+| `#b-bases/3` | 108 | 18 | 67 | 234 | 2 | 1.51 | > 1,5 écran |
+| `#b-bases/4` | 57 | 0 | 73 | 212 | 0 | 1 | 0 figure |
+| `#b-bases/5` | 61 | 0 | 74 | 212 | 1 | 1.15 | OK |
+| `#b-bases/6` | 103 | 18 | 62 | 212 | 2 | 1.51 | > 1,5 écran |
+| `#b-bases/7` | 62 | 0 | 75 | 212 | 0 | 1 | 0 figure |
+| `#b-bases/8` | 70 | 0 | 86 | 212 | 0 | 1.14 | 0 figure |
+| `#b-bases/9` | 59 | 0 | 65 | 212 | 0 | 1.61 | 0 figure; > 1,5 écran |
+| `#c-bases` | 102 | 0 | 76 | 212 | 1 | 1.58 | > 1,5 écran |
+| `#c-bases/2` | 134 | 62 | 151 | 212 | 1 | 1.18 | OK |
+| `#c-bases/3` | 90 | 18 | 108 | 234 | 1 | 1.09 | OK |
+| `#c-bases/4` | 79 | 0 | 95 | 212 | 1 | 1.13 | OK |
+| `#c-bases/5` | 86 | 0 | 40 | 212 | 2 | 1.53 | > 1,5 écran |
+| `#c-bases/6` | 58 | 0 | 71 | 212 | 0 | 1 | 0 figure |
+| `#c-bases/7` | 75 | 0 | 91 | 212 | 0 | 1.16 | 0 figure |
+| `#c-bases/8` | 65 | 0 | 69 | 212 | 0 | 1.63 | 0 figure; > 1,5 écran |
+| `#accueil` | 141 | 0 | 81 | 61 | 2 | 2.33 | OK |
+| `#apprendre` | 318 | 0 | 72 | 61 | 0 | 4.42 | > 200 mots; 4.42 écrans |
+| `#reviser` | 103 | 0 | 63 | 61 | 0 | 1.78 | OK |
+| `#investigations` | 108 | 19 | 48 | 61 | 6 | 2.79 | 2.79 écrans |
+| `#module-a` | 107 | 0 | 68 | 61 | 0 | 1.65 | OK |
+| `#module-b` | 154 | 0 | 41 | 61 | 14 | 5.37 | 5.37 écrans |
+| `#module-c` | 144 | 0 | 39 | 61 | 13 | 4.94 | 4.94 écrans |
+| `#cas` | 201 | 70 | 129 | 61 | 1 | 1.66 | OK |
+
+</details>
+
+Fichiers de la passe 3 (dossier de travail du critique) : `measure3.py`, `routes2.json`, `metrics3-final.csv`, `voir3.py` et `voircov.json` (couverture des zones), `loop3.py`, `clin3.txt`, `shots3/`.
+
+---
+
 
 ## Passage 2 (cycle 8) : 21 novembre 2026
 
