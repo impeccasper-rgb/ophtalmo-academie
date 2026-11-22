@@ -104,7 +104,7 @@ function eyeSvg() {
   var e = D.cat('IMG3-035'), credit = e ? (Photo.owner(e) + ' · ' + (e.license_url ? '<a href="' + U.esc(e.license_url) + '" target="_blank" rel="noopener">' + U.esc(e.license) + '</a>' : U.esc(e.license)) + (Photo.srcUrl(e) ? ' · <a href="' + U.esc(Photo.srcUrl(e)) + '" target="_blank" rel="noopener">Wikimedia Commons</a>' : '') + ' · ' + t('hero.annot')) : '';
   return '<svg class="hero-ocellus" viewBox="0 0 460 460" aria-hidden="true" focusable="false"><path class="mo-path draw" pathLength="1" d="' + oc + '" style="--mo-delay:.15s;--mo-dur:.85s"/><circle cx="240" cy="222" r="46"/></svg>' +
     '<div class="hero-art"><figure class="hero-photo" style="margin:0"><div class="hero-img" data-loop="53.5,32,23,17"><img src="' + Photo.src('IMG3-035') + '" width="853" height="788" alt="' + U.esc(t('hero.photoAlt')) + '" decoding="async"></div>' +
-    '<figcaption>' + credit + '</figcaption><span class="mo-sticker" aria-hidden="true" style="--mo-delay:1.75s">' + U.esc(t('hero.sticker')) + '</span></figure></div>';
+    '<figcaption class="hero-cred"><details><summary aria-label="' + U.esc(t('hero.credit')) + '" title="' + U.esc(t('hero.credit')) + '"><span aria-hidden="true">i</span></summary><span class="hero-cred-t">' + credit + '</span></details></figcaption><span class="mo-sticker" aria-hidden="true" style="--mo-delay:1.75s">' + U.esc(t('hero.sticker')) + '</span></figure></div>';
 }
 Plan.next = function () { var T2 = Plan.tasks(), all = T2.pre1.concat(T2.pre2); for (var i = 0; i < all.length; i++) if (!Plan.done(all[i])) return all[i]; return null; };
 Views.accueil = {
@@ -561,9 +561,10 @@ function ficheView(f, step) {
       } else if (step === 'comprendre') {
         var ess = (hy && hy.essentials) || [];
         var steps = f.causal.steps;
-        var nEss = f.compare ? 4 : 5; // the mechanism figure takes the room of one key point (≤ 120 words)
+        var mech = window.Mech ? Mech.html(f.id) : ''; // drawn, tap-paced mechanism (src/figures-mech.js)
+        var nEss = (f.compare ? 4 : 5) - (mech ? 1 : 0); // each figure takes the room of one key point (≤ 120 words)
         body = cmpFig() +
-          '<div class="stack mech-chain"><h2 class="h3">' + U.esc(t('f.mech', { t: f.causal.title })) + '</h2>' +
+          '<div class="stack mech-chain"><h2 class="h3">' + U.esc(t('f.mech', { t: f.causal.title })) + '</h2>' + mech +
           '<div class="chain paced" data-chain data-shown="1">' + steps.map(function (s, i) { return '<div class="cstep k-' + s.kind + (i > 0 ? ' pending' : '') + '" data-step="' + i + '"><div class="node">' + (i + 1) + '</div><div class="body"><span class="k">' + (L.kinds[s.kind] || s.kind) + '</span><b>' + U.md(s.label) + '</b><span class="small" data-dz="3">' + T(s.detail, scope) + '</span><div class="cutslot"></div></div></div>'; }).join('') + '</div>' +
           '<div class="row"><button type="button" class="btn primary sm" data-causal="next">' + t('f.next.link', { i: 2, n: steps.length }) + '</button><button type="button" class="btn ghost sm" data-causal="all">' + t('f.all.links') + '</button></div>' +
           '<div class="stack" data-levers hidden><span class="small muted">' + t('f.levers') + '</span><div class="chips">' + f.causal.levers.map(function (l, i) { return '<button class="chip" data-lever="' + i + '" aria-pressed="false">' + U.esc(l.label) + '</button>'; }).join('') + '</div></div></div>' + hyList(ess.slice(0, nEss), t('f.hy')) +

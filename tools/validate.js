@@ -21,7 +21,7 @@ const EXAM_IDS = ['av','pupilles','lampe','fluoresceine','tonometrie','gonioscop
 const IMAGE_EXTRA = ['a-lampe','a-fluoresceine','a-gonioscopie','a-papille','a-oct','a-topographie','a-champs-visuels','a-speculaire'];
 const TAGS = ['urgent','frequent','highyield','piege'];
 let CATALOG = {};
-for (const cf of [['imgsrc', 'catalog.json'], ['imgsrc2', 'catalog2.json']]) { try { for (const e of JSON.parse(fs.readFileSync(path.join(__dirname, '..', cf[0], cf[1]), 'utf8'))) CATALOG[e.id] = e; } catch (e) { /* no catalog */ } }
+for (const cf of [['imgsrc', 'catalog.json'], ['imgsrc2', 'catalog2.json'], ['imgsrc3', 'catalog3.json']]) { try { for (const e of JSON.parse(fs.readFileSync(path.join(__dirname, '..', cf[0], cf[1]), 'utf8'))) CATALOG[e.id] = e; } catch (e) { /* no catalog */ } }
 delete CATALOG['OPH-185']; delete CATALOG['OPH-186'];
 const PHOTO_KEYS_EXTRA = ['b-bases','c-bases','bonus-B','bonus-C','a-anatomie','a-physiologie','a-av','a-pupilles','a-lampe','a-fluoresceine','a-tonometrie','a-gonioscopie','a-pachymetrie','a-papille','a-oct','a-topographie','a-champs-visuels','a-speculaire'];
 const KINDS = ['cause','mecanisme','lesion','signe','complication'];
@@ -275,6 +275,36 @@ function checkPhotos(P, pairs) {
   console.log('Photos: keys', Object.keys(P).length, 'distinct images used', used.size);
 }
 
+// « Voir » hotspots (cycle 10): reward must be earned. Right zones ≤ 8 % of the image area (r as authored, % of width);
+// a tap at the centre (50 %, 50 %, + 3 % tolerance) must miss unless the entry is `central` (then `choices` = 2nd gesture);
+// choices = 3 short sign names (≤ 6 words, no « source / légende / photo de gauche »).
+function checkVoirHotspots(H) {
+  const stats = { n: 0, hot: 0, central: 0, choiceOnly: 0, maxArea: 0, centreWins: 0 };
+  const BAN = /\b(source|légende|legend|caption|photo de gauche|left photo)\b/i;
+  const DIM = {}; // shipped image size (data/catalog.js tw × th), else the source catalogs
+  try { const sb = {}; sb.globalThis = sb; vm.createContext(sb); vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'data', 'catalog.js'), 'utf8'), sb); for (const e of (sb.OPH && sb.OPH.catalog) || []) DIM[e.id] = e; } catch (e) { W('voirHotspots', 'data/catalog.js not readable: aspect ratios from source catalogs'); }
+  for (const [k, h] of Object.entries(H)) {
+    const c = 'voirHotspots.' + k; stats.n++;
+    if (!CATALOG[h.photo]) E(c, 'unknown photo ' + h.photo);
+    const e = DIM[h.photo] || CATALOG[h.photo] || {}, ratio = (e.tw || e.w || 3) / (e.th || e.h || 2);
+    if (h.choices) {
+      if (!Array.isArray(h.choices) || h.choices.length !== 3) E(c, 'choices: exactly 3 ({fr,en}, first = right)');
+      else h.choices.forEach((o, i) => { for (const L of ['fr', 'en']) { if (!isStr(o && o[L])) E(c, `choice ${i} missing ${L}`); else { if (words(o[L]) > 6) E(c, `choice ${i} ${L} > 6 words`); if (BAN.test(o[L])) E(c, `choice ${i} ${L} recycles caption wording`); } } });
+      const fr = (h.choices || []).map(o => o && o.fr); if (new Set(fr).size !== fr.length) E(c, 'duplicate choices');
+    }
+    if (h.skip) { if (!h.choices) E(c, 'skip needs authored choices'); else stats.choiceOnly++; continue; }
+    stats.hot++;
+    const zs = [h].concat((h.alt || []).filter(a => a.hit));
+    if (!zs.every(z => typeof z.x === 'number' && typeof z.y === 'number' && typeof z.r === 'number' && z.r > 0)) { E(c, 'x, y, r numbers'); continue; }
+    const area = zs.reduce((s, z) => s + Math.PI * z.r * z.r * ratio / 1e4, 0); stats.maxArea = Math.max(stats.maxArea, area);
+    if (area > 0.08) E(c, `right zones cover ${(area * 100).toFixed(1)} % of the image (max 8 %)`);
+    const centre = zs.some(z => Math.hypot(50 - z.x, (50 - z.y) / ratio) <= z.r + 3);
+    if (centre) { stats.centreWins++; if (!h.central) E(c, 'a tap at the centre wins: shrink/move the zone or mark central (with choices)'); else if (!h.choices) E(c, 'central needs choices (2nd gesture)'); }
+    if (h.central) stats.central++;
+  }
+  console.log(`Voir hotspots: ${stats.n} entries · ${stats.hot} tap targets (max area ${(stats.maxArea * 100).toFixed(1)} %) · centre tap wins on ${stats.centreWins} (all central → named 2nd) · ${stats.choiceOnly} name-only`);
+}
+
 const PARTIAL = process.argv.includes('--partial');
 const ARGS = process.argv.slice(2).filter(a => a !== '--partial');
 const files = ARGS.length ? ARGS : fs.readdirSync(path.join(__dirname, '..', 'data')).filter(f => f.endsWith('.js')).sort((a, b) => (a.startsWith('ext-') - b.startsWith('ext-')) || a.localeCompare(b)).map(f => path.join('data', f));
@@ -293,6 +323,7 @@ if (OPH.images) checkImages(OPH.images);
 if (OPH.capsules) checkCapsules(OPH.capsules);
 if (OPH.glossary) checkGlossary(OPH.glossary);
 if (OPH.photos) checkPhotos(OPH.photos, OPH.photoPairs);
+if (OPH.voirHotspots) checkVoirHotspots(OPH.voirHotspots);
 
 console.log('Files:', files.join(', '));
 if (OPH.fiches) console.log('Fiches:', OPH.fiches.length);

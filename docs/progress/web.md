@@ -88,3 +88,10 @@ _Dernière mise à jour : 2026-11-21, cycle 2 (rôle web)._
 - **Hubs**: #cas = image-case strip (#cas-images, 105 cases) + clinical cases with figure thumbs, « À faire » labels removed; toolbox chips (b-bases/8, c-bases/7); reviser tiles with per-mode pictures; « 4 écrans » text removed; TBUT no autostart; home hero compact on phone.
 - Measured at 390×844 (whole #view scroll): home 2.88 → 2.26 screens; Comprendre pair 226–379 → 139–186 px, 57–98 words; Voir 19–30 words; #cas 170 → 134 words; micro-fiches max 150 words (none > 200), median 1.53 screens, 23/42 still > 1.5 (max 2.07, a-physiologie/transparence: big sim).
 - Tests: run.py 0 problems (adapted: Voir « Je ne trouve pas » before lightbox); test_site quick 85 checks, 2 known offline-images fails.
+
+## Cycle 10 — critique pass 3 (Voir earned, distractors, hero, loops, Réviser)
+- data/voir-hotspots.js: radii scaled so right zones ≤ 8 % of the image (max 7.7 %); `choices` (3 sign names ≤ 5 words, first = right) on 28 entries; diffuse signs (c-secheresse, c-brulure, c-dystrophies, g-cristallin) → `skip` + choices; `central` (21 entries whose sign is truly central) → tap then name the sign; papille-oedeme → `all` (touch both discs). New API: `voirEntry`, `voirZones`, `voirZoneAt(h, tx, ty, ratio, tol=3)`.
+- core.js Voir: tolerance = r + 3 % (no 6 % floor); secondary alts neutral and loop-free; no caption-recycling fallback (authored choices, else neutral « Révéler »); verdict title hidden on success (sticker only); `Motion.scan()` on reveal (loop was missing on a direct hit).
+- motion.js: loop around the sign (≥ 1.3 r + 6 px, default 2.1 r × 1.8 r) and clamped inside the frame; .voir-media clips.
+- tools/validate.js `checkVoirHotspots`: area ≤ 8 %, centre tap must miss unless `central` (+ choices), options ≤ 6 words, banned wording (source/légende/photo de gauche); reads data/catalog.js sizes.
+- Home hero: photo 160 px on phones beside the title, credit behind an « i » button, sticker below-left of the photo. #reviser: tile grid (2 cols phone, auto-fill desktop), cobalt/ink/fluo only, urgent for the error tile.

@@ -53,7 +53,9 @@ var Motion = (function () {
     Array.prototype.forEach.call(targets, function (h, i) {
       var x = parseFloat(h.style.left) / 100 * o.w, y = parseFloat(h.style.top) / 100 * o.h, r = (parseFloat(h.style.getPropertyValue('--r')) || 8) / 100 * o.w;
       if (isNaN(x) || isNaN(y)) return;
-      var rx = Math.max(r * 1.8, 28), ry = Math.max(r * 1.5, 22);
+      // around the sign, never on it (≥ 1.3 r + stroke), and kept inside the frame (clamped to the edges, then clipped)
+      var rx = Math.max(r * 2.1, 34), ry = Math.max(r * 1.8, 30), minR = r * 1.3 + 6;
+      rx = Math.max(Math.min(rx, Math.min(x, o.w - x) - 6), minR); ry = Math.max(Math.min(ry, Math.min(y, o.h - y) - 6), minR);
       marker(o.svg, loop(x, y, rx, ry, hash((h.textContent || '') + '|' + i)), '', .12 + k * .25, .7, animate); k++;
     });
     var old = hots.querySelector(':scope > .mo-marks'); if (old) old.remove();

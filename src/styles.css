@@ -971,3 +971,20 @@ a { text-underline-offset: .18em; }
 @keyframes mo-grow { from { transform: scaleX(0); } }
 @keyframes mo-tab { from { transform: rotate(-24deg) scale(.7); } }
 .inv-hots.mo-marked .inv-hot:not(.mo-loop) em { background: #fff; }
+
+/* ---------- mechanism figures (src/figures-mech.js): tap to advance, nothing plays by itself ---------- */
+.fig.mech { background: var(--surface); }
+.mech-stage { cursor: pointer; padding: 6px 6px 0; -webkit-tap-highlight-color: transparent; border-radius: var(--radius) var(--radius) 0 0; }
+.mech-stage:focus-visible { outline: 3px solid var(--cobalt); outline-offset: -3px; }
+.mech-stage svg { display: block; width: 100%; max-width: 520px; max-height: 230px; margin: 0 auto; height: auto; }
+.mech-cap { padding: 6px 12px 10px; border-top: 1px solid var(--line-2); display: grid; gap: 6px; }
+.mech-lab { margin: 0; font-size: var(--fs-sm); line-height: 1.35; color: var(--ink); font-weight: 600; min-height: 2.7em; }
+.mech-n { font-family: var(--font-mono, monospace); font-size: var(--fs-xs); color: var(--cobalt-ink); font-weight: 700; margin-right: 2px; }
+.mech-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.mech-row .btn { margin-left: auto; }
+.mech-dots { display: flex; gap: 5px; list-style: none; margin: 0; padding: 0; }
+.mech-dots li { width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--ink-3); }
+.mech-dots li.done { background: var(--ink-3); }
+.mech-dots li.on { background: var(--cobalt); border-color: var(--cobalt); border-radius: 2px; transform: rotate(45deg); }
+@media (prefers-reduced-motion: no-preference) { html:not(.no-motion) .mech-s.mech-in { animation: mech-in .32s ease-out; } }
+@keyframes mech-in { from { opacity: .25; } to { opacity: 1; } }

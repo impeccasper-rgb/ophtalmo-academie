@@ -286,27 +286,31 @@ var Photo = {
         '<ul class="reveal-list" id="' + rid + '" hidden>' + p.reveal.map(function (r) { return '<li>' + U.md(r) + '</li>'; }).join('') + '</ul></div>' : '') +
       Photo.credit(e, opts.quiz) + '</figcaption></figure>';
   },
-  /* fiche « Voir » / module A5: a real Observe → Réponds → Révèle loop on the photo.
-     With a hotspot (OPH.voirHotspots[photoId] = { x, y, r, label, alt[] } in % of the image): « Touche le signe qui compte »,
-     hit-test → loop + sticker; miss → « pas ici », 2nd miss → hint area, 3rd miss or « Je ne trouve pas » → reveal without reward.
-     Without a hotspot: a 3-option « Quel est le signe ? » built from this photo's sign and two other photos' signs. */
-  voirHot: function (key, pid) { var O = window.OPH || {}; if (O.voirHotspot) return O.voirHotspot(key, pid); var h = (O.voirHotspots || {})[key]; return h && !h.skip && h.x != null && (!pid || h.photo === pid) ? h : null; },
+  /* fiche « Voir » / module A5: Observe → Réponds → Révèle on the photo (data/voir-hotspots.js, OPH.voirEntry(key, photoId)).
+     - hotspot: « Touche le signe qui compte » → hit (r as authored + 3 % tolerance) → loop + sticker; miss → « pas ici »;
+       2nd miss → hint area; 3rd miss or « Je ne trouve pas » → reveal without reward. `all`: every right zone must be found.
+     - central sign (`central`): the tap is followed by a 2nd gesture, naming the sign among the authored `choices`.
+     - no hotspot (`skip`) + `choices`: name the sign among 3 authored options. Nothing authored: neutral « Révéler ». */
+  voirEntry: function (key, pid) { var O = window.OPH || {}; return typeof key === 'string' && O.voirEntry ? O.voirEntry(key, pid) : null; },
   voirSign: function (p) { return p.sign || (p.reveal || [])[0] || p.look || ''; },
-  voirOthers: function (p) {
-    var me = Photo.voirSign(p), all = [], seen = {};
-    Object.keys(OPH.photos || {}).forEach(function (k) { (OPH.photos[k] || []).forEach(function (q) { var s = Photo.voirSign(q); if (q.id !== p.id && s && s !== me && !seen[s] && U.words(s) <= 25) { seen[s] = 1; all.push(s); } }); });
-    return U.shuffle(all, U.hash(p.id)).slice(0, 2);
+  voirChoices: function (h, seed) {
+    var c = (h && h.choices || []).map(function (x) { return I18N.pick(x); }).filter(Boolean); if (c.length < 2) return '';
+    var right = c[0], opts = U.shuffle(c.slice(), U.hash(seed));
+    return '<div class="opts">' + opts.map(function (o, k) { return '<button type="button" class="opt" data-act="voir-opt" data-ok="' + (o === right ? 1 : 0) + '"><span class="key">' + (k + 1) + '</span><span>' + U.esc(o) + '</span></button>'; }).join('') + '</div>';
   },
   voirCard: function (p, e, key) {
     var cap = (window.I18N && I18N.lang === 'en' && p.caption && !p._en && e._en) ? e.title : (p.caption || e.title);
-    var hot = typeof key === 'string' ? Photo.voirHot(key, e.id) : null, sign = hot && I18N.pick(hot.label) || Photo.voirSign(p) || cap, rest = [p.look].concat(p.reveal || []).filter(function (x) { return x && x !== sign; });
+    var en = Photo.voirEntry(key, e.id), hot = en && !en.skip && en.x != null ? en : null, ch = en && en.choices && en.choices.length > 1;
+    var sign = hot && I18N.pick(hot.label) || ch && I18N.pick(en.choices[0]) || Photo.voirSign(p) || cap, rest = [p.look].concat(p.reveal || []).filter(function (x) { return x && x !== sign; });
     var w = String(sign).split(/\s+/); if (w.length > 25) { rest.unshift(sign); sign = w.slice(0, 25).join(' ') + '…'; }
-    var hots = hot ? '<div class="inv-hots" hidden>' + [hot].concat(hot.alt || []).map(function (z, k) { return '<span class="inv-hot dec' + (k && !z.hit ? ' minor' : '') + '" style="left:' + z.x + '%;top:' + z.y + '%;--r:' + (z.r || hot.r || 8) + '"><i></i></span>'; }).join('') + '</div>' : '';
-    var ask = hot
-      ? '<div class="voir-ask"><span class="eyebrow">' + t('voir.observe') + '</span><b>' + t('voir.tap') + '</b><button type="button" class="btn ghost sm" data-act="voir-idk">' + t('voir.idk') + '</button></div>'
-      : (function () { var opts = U.shuffle([sign].concat(Photo.voirOthers(p)), U.hash(p.id + 's')); return '<div class="voir-ask"><span class="eyebrow">' + t('voir.observe') + '</span><b>' + t('voir.which') + '</b><div class="opts">' + opts.map(function (o, k) { return '<button type="button" class="opt" data-act="voir-opt" data-ok="' + (o === sign ? 1 : 0) + '"><span class="key">' + (k + 1) + '</span><span>' + U.md(o) + '</span></button>'; }).join('') + '<button type="button" class="opt idk" data-act="voir-idk"><span class="key">?</span><span>' + t('voir.idk') + '</span></button></div></div>'; })();
-    return '<figure class="ph-card voir-card" style="margin:0" data-voir data-photo="' + e.id + '"' + (hot ? ' data-hot="' + [hot.x, hot.y, hot.r || 8].join(',') + '" data-alt="' + U.esc(JSON.stringify(hot.alt || [])) + '"' : '') + '>' +
-      '<div class="voir-media inv-media"' + (hot ? ' data-act="voir-tap" role="button" tabindex="0" aria-label="' + U.esc(t('voir.tap')) + '"' : '') + '>' +
+    // rings: the right zones get the marker loop after the reveal; secondary findings keep a quiet dashed ring (no loop)
+    var hots = hot ? '<div class="inv-hots" hidden>' + [hot].concat(hot.alt || []).map(function (z, k) { var right = !k || z.hit; return '<span class="inv-hot' + (right ? ' dec' : ' minor') + '" style="left:' + z.x + '%;top:' + z.y + '%;--r:' + (z.r || hot.r || 8) + '"><i></i></span>'; }).join('') + '</div>' : '';
+    var q = en && en.ask ? I18N.pick(en.ask) : '', ask;
+    if (hot) ask = '<div class="voir-ask"><span class="eyebrow">' + t('voir.observe') + '</span><b>' + U.esc(q || t('voir.tap')) + '</b><button type="button" class="btn ghost sm" data-act="voir-idk">' + t('voir.idk') + '</button></div>';
+    else if (ch) ask = '<div class="voir-ask"><span class="eyebrow">' + t('voir.observe') + '</span><b>' + U.esc(q || t('voir.which')) + '</b>' + Photo.voirChoices(en, p.id + 's') + '<button type="button" class="btn ghost sm" data-act="voir-idk">' + t('voir.idk') + '</button></div>';
+    else ask = '<div class="voir-ask"><span class="eyebrow">' + t('voir.observe') + '</span><b>' + U.esc(p.look || t('voir.which')) + '</b><button type="button" class="btn sm" data-act="voir-idk">' + t('voir.reveal') + '</button></div>';
+    return '<figure class="ph-card voir-card" style="margin:0" data-voir data-photo="' + e.id + '"' + (hot ? ' data-key="' + U.esc(key) + '" data-ratio="' + ((e.tw || 440) / (e.th || 300)).toFixed(3) + '"' : '') + '>' +
+      '<div class="voir-media inv-media"' + (hot ? ' data-act="voir-tap" role="button" tabindex="0" aria-label="' + U.esc(q || t('voir.tap')) + '"' : '') + '>' +
       '<img loading="lazy" decoding="async" src="' + Photo.src(e.id) + '" width="' + (e.tw || 440) + '" height="' + (e.th || 300) + '" alt="' + U.esc(t('img.toid')) + '">' + hots + '</div>' +
       '<figcaption class="ph-b">' + ask +
       '<div class="voir-ans" hidden><div class="cap">' + U.md(cap) + '</div><div class="voir-sign" role="status"><div class="verdict"></div><div><b>' + t('voir.sign') + ' :</b> ' + U.md(sign) + '</div></div>' +
@@ -314,31 +318,45 @@ var Photo = {
       '<button type="button" class="btn ghost xs" data-act="lightbox" data-id="' + e.id + '" data-cap="' + U.esc(cap) + '">' + t('lb.zoomin') + '</button></div>' +
       Photo.credit(e, true) + '</figcaption></figure>';
   },
-  /* reveal: ok = answered right (sticker via .feedback.ok), otherwise no reward */
+  /* reveal: ok = answered right (the sticker « Bien vu ! » is the only praise), otherwise no reward */
   voirReveal: function (vc, ok) {
     if (!vc || vc.getAttribute('data-done')) return; vc.setAttribute('data-done', ok ? 'ok' : 'shown');
     var ask = U.$('.voir-ask', vc), ans = U.$('.voir-ans', vc), hw = U.$('.inv-hots', vc), sg = U.$('.voir-sign', vc);
     U.$$('[data-act="voir-opt"], [data-act="voir-idk"]', vc).forEach(function (b) { b.disabled = true; });
     if (ask && !U.$('.opts', ask)) ask.hidden = true;
     if (ans) ans.hidden = false;
-    if (sg) { sg.className = 'voir-sign feedback ' + (ok ? 'ok' : 'neutral'); U.$('.verdict', sg).textContent = ok ? t('voir.ok') : t('voir.shown'); }
-    U.$$('.voir-hint, .voir-miss', vc).forEach(function (x) { x.remove(); });
+    if (sg) { sg.className = 'voir-sign feedback ' + (ok ? 'ok' : 'neutral'); var vd = U.$('.verdict', sg); vd.textContent = ok ? '' : t('voir.shown'); vd.hidden = !!ok; }
+    U.$$('.voir-hint, .voir-miss, .voir-found', vc).forEach(function (x) { x.remove(); });
     if (hw) { hw.hidden = false; hw.parentNode.classList.add('revealed'); }
     var m = U.$('.voir-media', vc); if (m) { m.removeAttribute('role'); m.removeAttribute('tabindex'); m.removeAttribute('data-act'); }
+    if (window.Motion && Motion.scan) Motion.scan(); // attribute-only changes: ask Motion for the loop + sticker now
   },
   voirTap: function (media, ev) {
-    var vc = media.closest('[data-voir]'); if (!vc || vc.getAttribute('data-done')) return;
+    var vc = media.closest('[data-voir]'); if (!vc || vc.getAttribute('data-done') || vc.getAttribute('data-step') === 'name') return;
     var img = U.$('img', media), b = img.getBoundingClientRect(); if (!b.width) return;
     var px, py; if (ev && ev.clientX != null && (ev.clientX || ev.clientY)) { px = 100 * (ev.clientX - b.left) / b.width; py = 100 * (ev.clientY - b.top) / b.height; } else return;
-    var h = vc.getAttribute('data-hot').split(',').map(Number), alt = []; try { alt = JSON.parse(vc.getAttribute('data-alt') || '[]'); } catch (e) { }
-    var hit = function (x, y, r) { var dx = px - x, dy = (py - y) * b.height / b.width; return Math.sqrt(dx * dx + dy * dy) <= Math.max(r * 1.3, 6); };
-    if (hit(h[0], h[1], h[2]) || alt.some(function (a) { return a && a.hit && hit(a.x, a.y, a.r || h[2]); })) { Photo.voirReveal(vc, true); return; }
-    var sec = alt.filter(function (a) { return a && !a.hit && hit(a.x, a.y, a.r || h[2]); })[0];
+    var h = Photo.voirEntry(vc.getAttribute('data-key'), vc.getAttribute('data-photo')); if (!h) return;
+    var ratio = +vc.getAttribute('data-ratio') || b.width / b.height, zs = OPH.voirZones(h), zi = OPH.voirZoneAt(h, px, py, ratio, 3);
+    if (zi >= 0) {
+      if (h.all && zs.length > 1) { // every right zone must be found
+        var got = (vc.getAttribute('data-found') || '').split(',').filter(Boolean);
+        if (got.indexOf(String(zi)) < 0) { got.push(String(zi)); vc.setAttribute('data-found', got.join(',')); var fm = document.createElement('span'); fm.className = 'voir-found'; fm.setAttribute('aria-hidden', 'true'); fm.style.left = zs[zi].x + '%'; fm.style.top = zs[zi].y + '%'; fm.style.setProperty('--r', zs[zi].r); media.appendChild(fm); }
+        if (got.length < zs.length) { U.toast(t('voir.more1', { n: zs.length - got.length })); return; }
+      }
+      if (h.central && h.choices && h.choices.length > 1) { // 2nd gesture: name the sign
+        vc.setAttribute('data-step', 'name');
+        var ask = U.$('.voir-ask', vc); ask.innerHTML = '<span class="eyebrow">' + t('voir.found') + '</span><b>' + t('voir.name') + '</b>' + Photo.voirChoices(h, vc.getAttribute('data-photo') + 'n') + '<button type="button" class="btn ghost sm" data-act="voir-idk">' + t('voir.idk') + '</button>';
+        var hit = document.createElement('span'); hit.className = 'voir-found'; hit.setAttribute('aria-hidden', 'true'); hit.style.left = px + '%'; hit.style.top = py + '%'; hit.style.setProperty('--r', 4); media.appendChild(hit);
+        var f = U.$('[data-act="voir-opt"]', ask); if (f) f.focus({ preventScroll: true }); return;
+      }
+      Photo.voirReveal(vc, true); return;
+    }
+    var sec = (h.alt || []).filter(function (a) { if (a.hit) return false; var dx = px - a.x, dy = (py - a.y) / ratio; return Math.sqrt(dx * dx + dy * dy) <= a.r + 3; })[0];
     if (sec) { U.toast((sec.label ? I18N.pick(sec.label) + ' — ' : '') + t('voir.sec')); return; } // secondary finding: neutral, no miss counted
     var n = (+vc.getAttribute('data-miss') || 0) + 1; vc.setAttribute('data-miss', n);
     var mk = document.createElement('span'); mk.className = 'voir-miss'; mk.setAttribute('aria-hidden', 'true'); mk.textContent = t('voir.miss'); mk.style.left = px + '%'; mk.style.top = py + '%';
     U.$$('.voir-miss', media).forEach(function (x) { x.remove(); }); media.appendChild(mk);
-    if (n === 2 && !U.$('.voir-hint', media)) { var hr = Math.max(h[2] * 3, 14), off = (U.hash(vc.getAttribute('data-photo')) % 2 ? 1 : -1) * h[2]; var hc = document.createElement('span'); hc.className = 'voir-hint'; hc.setAttribute('aria-hidden', 'true'); hc.style.left = (h[0] + off) + '%'; hc.style.top = (h[1] - off / 2) + '%'; hc.style.setProperty('--r', hr); media.appendChild(hc); U.toast(t('voir.hint')); }
+    if (n === 2 && !U.$('.voir-hint', media)) { var z0 = zs[0], hr = Math.max(z0.r * 2.5, 12), off = (U.hash(vc.getAttribute('data-photo')) % 2 ? 1 : -1) * z0.r * .8; var hc = document.createElement('span'); hc.className = 'voir-hint'; hc.setAttribute('aria-hidden', 'true'); hc.style.left = Math.min(92, Math.max(8, z0.x + off)) + '%'; hc.style.top = Math.min(90, Math.max(10, z0.y - off / 2)) + '%'; hc.style.setProperty('--r', hr); media.appendChild(hc); U.toast(t('voir.hint')); }
     if (n >= 3) Photo.voirReveal(vc, false);
   },
   gallery: function (list, opts) { if (!list || !list.length) return ''; return '<div class="gallery">' + list.map(function (p) { return Photo.card(p, opts); }).join('') + '</div>'; },

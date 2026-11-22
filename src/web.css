@@ -156,11 +156,6 @@ html.no-motion .voir-miss { animation: none; }
 /* réviser: one visual per mode */
 .mode-ic.pic { overflow: hidden; padding: 0; }
 .mode-ic.pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.mode-tile.t-mots-troues .mode-ic { background: var(--fluo-wash, #eef8e0); color: var(--fluo-ink, #2e6a0c); }
-.mode-tile.t-triage .mode-ic { background: #fde8e6; color: var(--urgent, #b3261e); }
-.mode-tile.t-associe .mode-ic { background: #fff3d6; color: #8a5a00; }
-.mode-tile.t-quiz .mode-ic { background: var(--cobalt-wash); color: var(--cobalt-ink); }
-.mode-tile.t-cartes-vocab .mode-ic { background: #efe6fb; color: #5b2d9e; }
 /* cas: image-case strip */
 .ic-strip { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; align-items: center; border-color: var(--cobalt); }
 .ic-pics { display: flex; }
@@ -244,3 +239,52 @@ html.no-motion .voir-miss { animation: none; }
   .a-item .fstep-body { gap: 12px; }
   .a-item .fiche-bar { gap: 6px; padding-bottom: 8px; }
 }
+/* cycle 10: Voir — loops clipped inside the photo frame; found-zone ring for 2-step tasks */
+.voir-media { position: relative; overflow: hidden; }
+.voir-media .inv-hots > .mo-marks { overflow: hidden; }
+.voir-found { position: absolute; width: calc(var(--r) * 2%); aspect-ratio: 1; transform: translate(-50%, -50%); border: 3px solid var(--fluo, #d8ff3a); border-radius: 50%; box-shadow: 0 0 0 2px rgba(0, 0, 0, .55); pointer-events: none; }
+.voir-sign .verdict[hidden] { display: none; }
+/* cycle 10: home hero — photo ≥ 140 px on phones, credit behind an « i » button, sticker beside the sign (never on it) */
+.hero-photo .mo-sticker { top: auto; bottom: -16px; right: auto; left: -14px; --rot: -7deg; }
+.hero-photo figcaption.hero-cred { position: absolute; right: 16px; bottom: 14px; margin: 0; z-index: 3; font-size: 11px; line-height: 1.35; }
+.hero-cred summary { list-style: none; cursor: pointer; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, .92); color: #0a0f40; font: 700 13px/1 var(--font-display); font-style: italic; box-shadow: 0 0 0 2px rgba(10, 15, 64, .55); margin-left: auto; }
+.hero-cred summary::-webkit-details-marker { display: none; }
+.hero-cred summary:focus-visible { outline: 3px solid var(--fluo); outline-offset: 2px; }
+.hero-cred-t { position: absolute; right: 0; bottom: calc(100% + 6px); width: max-content; max-width: min(260px, 70vw); background: #fff; color: #0a0f40; padding: 8px 10px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0, 0, 0, .35); }
+.hero-cred-t a { color: inherit; }
+.hero-photo { padding-bottom: 10px; }
+@media (max-width: 760px) {
+  .hero2-in { grid-template-columns: minmax(0, 1fr) 160px; gap: 8px 12px; padding: 20px 16px 22px; align-items: start; }
+  .hero2 .hero-text { display: contents; padding: 0; }
+  .hero2 .hero-text > * { grid-column: 1; }
+  .hero2 .hero-text > .row { grid-column: 1 / -1; margin-top: 10px; }
+  .hero2 .hero-eye { grid-column: 2; grid-row: 1 / span 3; width: 160px; max-width: 160px; margin: 4px 0 0; order: 0; align-self: start; }
+  .hero2 .hero-ocellus { display: none; }
+  .hero2 .hero-art { position: static; }
+  .hero2 .hero-photo { padding: 6px 6px 6px; border-radius: 14px; transform: rotate(-2.5deg); box-shadow: 0 8px 0 -3px #0a0f40; }
+  .hero2 .hero-photo .mo-sticker { font-size: .78rem; padding: 4px 10px 5px; bottom: -14px; left: -10px; }
+  .hero2 .hero-cred { right: 10px; bottom: 10px; }
+  .hero2 h1 { font-size: 2rem; line-height: 1; }
+  .hero2 .eyebrow { font-size: .66rem; letter-spacing: .08em; }
+  .hero2 .hero-lead { font-size: .9rem; line-height: 1.4; }
+}
+/* cycle 10: #reviser = a real grid of tiles, identity v2 palette only (cobalt, ink, fluo, white; urgent for the error tile) */
+.mode-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: 12px; }
+.mode-tile { grid-template-columns: 1fr; grid-template-rows: auto 1fr; gap: 10px; padding: 10px 10px 14px; background: var(--surface); border: 2px solid var(--edge); box-shadow: 0 4px 0 var(--edge); }
+.mode-tile .mode-ic { width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; font-size: 2.2rem; background: var(--cobalt); color: #fff; }
+.mode-tile:nth-child(3n+2) .mode-ic:not(.pic) { background: var(--edge); color: var(--fluo); }
+.mode-tile:nth-child(3n) .mode-ic:not(.pic) { background: var(--fluo); color: var(--on-fluo); }
+.mode-tile .mode-ic.pic { background: #000; }
+.mode-tile b { font-size: 1.02rem; line-height: 1.2; }
+.mode-tile .xs.mono { color: var(--cobalt-ink); font-weight: 700; }
+.mode-tile.err-tile { border-color: var(--urgent); box-shadow: 0 4px 0 var(--urgent); background: var(--surface); }
+.mode-tile.err-tile .mode-ic { background: var(--urgent); color: #fff; }
+@media (max-width: 600px) {
+  .mode-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .mode-tile { padding: 8px 8px 12px; gap: 8px; }
+  .mode-tile .mode-ic { aspect-ratio: 16 / 10; font-size: 1.7rem; }
+  .mode-tile .small.muted { display: none; } /* phone: picture + name + count */
+  .mode-tile b { font-size: .92rem; }
+}
+.hero2 .eyebrow { hyphens: manual; -webkit-hyphens: manual; }
+.voir-media .inv-hot.dec > i { inset: -40%; } /* fallback ring (no Motion): around the sign, not on it */
