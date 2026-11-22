@@ -670,6 +670,220 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     qc: ["Urgence hypertensive : urgence ou soins intensifs ; l’ophtalmologiste documente le fond d’œil.", "Suivi de l’HTA par le médecin de famille."]
   }
 }
+,
+{
+  id: "r-dpv",
+  module: "D",
+  order: 1,
+  title: "Décollement postérieur du vitré et déchirure rétinienne",
+  en: "Posterior vitreous detachment and retinal tear",
+  tags: ["frequent", "highyield"],
+  oneLiner: "Corps flottants et éclairs après 50 ans : souvent un DPV bénin, mais environ 1 sur 7 cache une déchirure.",
+  definition: "Le vitré, devenu liquide avec l’âge, se détache de la rétine. C’est souvent bénin, mais en tirant, il peut la déchirer.",
+  anatomy: {
+    text: "Le vitré est un gel de collagène et d’eau, collé à la rétine surtout à sa base (en périphérie), à la papille, à la macula et le long des vaisseaux. Avec l’âge, il se liquéfie et se contracte, puis se détache de la rétine postérieure, souvent entre 50 et 70 ans, plus tôt chez le myope."
+  },
+  causal: {
+    title: "Du gel qui se liquéfie à la déchirure",
+    steps: [
+      { label: "Synérèse du vitré", detail: "Le gel se liquéfie par poches avec l’âge ; plus tôt si myopie, chirurgie de la cataracte ou traumatisme.", kind: "cause" },
+      { label: "Décollement postérieur", detail: "Le vitré se détache de la papille et de la macula : anneau de Weiss et corps flottants.", kind: "mecanisme" },
+      { label: "Traction sur la rétine", detail: "Là où il reste collé (base, palissades, vaisseaux), il tire : éclairs, parfois saignement.", kind: "mecanisme" },
+      { label: "Déchirure en fer à cheval", detail: "Un lambeau de rétine est arraché ; un vaisseau rompu donne une hémorragie du vitré.", kind: "lesion" },
+      { label: "Décollement de rétine", detail: "Sans laser, le liquide passe sous la rétine : rideau, puis macula.", kind: "complication" }
+    ],
+    levers: [
+      { at: 1, label: "Examen dilaté et consignes", detail: "Dans les 24 h : chercher une déchirure ; expliquer quand revenir." },
+      { at: 3, label: "Laser ou cryothérapie", detail: "Soude la rétine autour d’une déchirure symptomatique : prévient le décollement." },
+      { at: 4, label: "Chirurgie", detail: "Si le décollement est déjà là : voir la fiche Décollement de rétine." }
+    ]
+  },
+  risk: [
+    "Âge 50–70 ans",
+    "Myopie (DPV plus précoce)",
+    "Chirurgie de la cataracte, capsulotomie au laser YAG",
+    "Traumatisme, inflammation intraoculaire",
+    "Dégénérescence palissadique (lattice)"
+  ],
+  presentation: [
+    "Corps flottants nouveaux : anneau, toile d’araignée, mouches",
+    "Éclairs brefs, en périphérie, surtout dans la pénombre",
+    "Vision normale le plus souvent",
+    "Pluie de points noirs ou voile : sang dans le vitré"
+  ],
+  exam: {
+    signs: [
+      { sign: "Anneau de Weiss devant la papille", why: "Confirme le décollement postérieur du vitré." },
+      { sign: "Pigment dans le vitré antérieur (signe de Shafer)", why: "Évoque fortement une déchirure." },
+      { sign: "Hémorragie du vitré", why: "Déchirure fréquente : examen dilaté complet ou échographie B." },
+      { sign: "Déchirure en fer à cheval en périphérie", why: "Vue avec dépression sclérale ; symptomatique = laser rapidement." }
+    ],
+    tests: [
+      { test: "Acuité, champ par confrontation", when: "À tout patient avec corps flottants ou éclairs", read: "Baisse de vision ou déficit de champ : déchirure ou décollement plus probables." },
+      { test: "Fond d’œil dilaté avec dépression sclérale", when: "Dans les 24 h ; le jour même si nuée de corps flottants, sang ou rideau", read: "Déchirure, palissades, décollement." },
+      { test: "Échographie B", when: "Si le fond d’œil est caché", read: "Vitré détaché ; rétine à plat ou décollée." },
+      { test: "Réexamen", when: "Dans les semaines suivantes, selon l’ophtalmologiste", read: "Une déchirure peut apparaître plus tard (≈ 3 % en 6 semaines)." }
+    ]
+  },
+  ddx: [
+    { dx: "Déchirure ou décollement de rétine", clue: "Pigment, sang, rideau, baisse de vision." },
+    { dx: "Hémorragie du vitré d’autre cause", clue: "Diabète proliférant, occlusion veineuse : antécédents, autre œil." },
+    { dx: "Aura migraineuse", clue: "Zigzags des deux yeux, qui disparaissent en 20–30 min." },
+    { dx: "Hyalite astéroïde", clue: "Petits points blancs brillants dans le vitré, sans symptôme aigu." },
+    { dx: "Uvéite postérieure (vitrite)", clue: "Cellules dans le vitré, baisse de vision, souvent les deux yeux." }
+  ],
+  redFlags: [
+    "Rideau ou baisse de vision : décollement probable, ophtalmologiste de garde le jour même",
+    "Nuée de corps flottants, sang ou pigment dans le vitré : déchirure probable, le jour même",
+    "Symptômes nouveaux après un DPV jugé bénin : réexaminer sans attendre"
+  ],
+  cat: {
+    vignette: "Femme de 62 ans : depuis hier, un anneau gris flotte devant l’œil droit, éclairs au coin de l’œil le soir. Vision 6/6.",
+    algo: [
+      { q: "Rideau ou baisse de vision ?", yes: { t: "Décollement probable : ophtalmologiste de garde le jour même.", urgent: true }, no: "", noGo: 1 },
+      { q: "Nuée de corps flottants, sang ou pigment ?", yes: { t: "Déchirure probable : examen dilaté le jour même.", urgent: true }, yesGo: 2, no: "Examen dilaté dans les 24 h.", noGo: 2 },
+      { q: "Déchirure à l’examen dilaté ?", yes: "Symptomatique : laser ou cryothérapie rapidement.", no: "DPV simple : consignes de retour, réexamen prévu." }
+    ],
+    phases: [
+      { phase: "observation", items: ["DPV sans déchirure : expliquer les signes d’alarme ; réexamen dans les semaines suivantes selon l’ophtalmologiste"] },
+      { phase: "laser", items: ["Déchirure symptomatique en fer à cheval : laser (ou cryothérapie) rapidement", "Déchirure asymptomatique : traitement discuté selon le type et le contexte"] },
+      { phase: "suivi", items: ["Revenir le jour même si nuée de corps flottants, éclairs persistants, rideau ou baisse de vision", "Autre œil : DPV probable dans les mois ou les années suivantes"] }
+    ],
+    local: "Au Québec, beaucoup de patients consultent d’abord l’optométriste, qui fait l’examen dilaté et dirige vers l’ophtalmologiste si une déchirure est trouvée."
+  },
+  treatments: [
+    { name: "Consignes et réexamen", how: "Expliquer les signes d’alarme ; réexaminer la périphérie dans les semaines suivantes.", why: "DPV sans déchirure.", pros: "Repère une déchirure tardive.", cons: "Les corps flottants persistent souvent des mois.", cx: "Aucune." },
+    { name: "Laser de la déchirure", how: "Deux ou trois rangées de brûlures autour de la déchirure : la cicatrice soude la rétine.", why: "Déchirure symptomatique en fer à cheval.", pros: "En clinique ; prévient le décollement.", cons: "Ne prévient pas les déchirures ailleurs.", cx: "Membrane épirétinienne, nouvelle déchirure.", refer: "Rapidement après le diagnostic." },
+    { name: "Cryothérapie", how: "Le froid appliqué à travers la sclère crée la même cicatrice.", why: "Déchirure très périphérique ou milieux troubles (sang dans le vitré).", pros: "Possible quand le laser passe mal.", cons: "Plus inconfortable.", cx: "Inflammation, prolifération vitréorétinienne." }
+  ],
+  pearls: [
+    { q: "Comment distinguer les éclairs du DPV d’une aura migraineuse ?", a: "Le DPV donne des éclairs brefs, d’un œil, en périphérie et dans la pénombre. L’aura dessine des zigzags qui s’étendent pendant 20–30 min, des deux yeux, même les yeux fermés." },
+    { q: "Les corps flottants vont-ils disparaître ?", a: "Ils s’atténuent souvent en quelques mois. Ce qui compte : signaler tout changement brutal (nuée, éclairs qui persistent, rideau)." },
+    { q: "Pourquoi revoir un DPV sans déchirure ?", a: "Une déchirure peut apparaître dans les semaines suivantes (environ 3 % en 6 semaines, Hollands 2009), surtout si de nouveaux corps flottants apparaissent." }
+  ],
+  sources: [
+    "AAO PPP Posterior Vitreous Detachment, Retinal Breaks, and Lattice Degeneration (Flaxel CJ et al., Ophthalmology 2020) ; AAO Summary Benchmarks 2023",
+    "Hollands H et al., Acute-onset floaters and flashes, JAMA 2009;302:2243-9",
+    "EyeWiki : Posterior Vitreous Detachment"
+  ],
+  treatment: {
+    first: [
+      "**Toi** : acuité, champ au doigt ; chercher nuée de corps flottants, sang, rideau ; expliquer les signes d’alarme.",
+      "**Ophtalmologiste ou optométriste** : examen dilaté avec dépression sclérale ; laser si déchirure."
+    ],
+    refer: "Référer : examen dilaté dans les 24 h pour un DPV probable ; le jour même si nuée de corps flottants, sang, rideau ou baisse de vision — une déchirure traitée tôt ne devient pas un décollement.",
+    pitfall: [
+      "**Rassurer sans dilater** : la déchirure est en périphérie.",
+      "**Ignorer un changement de symptômes** après un premier examen normal : la déchirure peut venir plus tard."
+    ],
+    qc: ["Optométriste ou ophtalmologiste pour l’examen dilaté initial.", "Consignes de retour remises par écrit."]
+  }
+},
+{
+  id: "r-endophtalmie",
+  module: "D",
+  order: 10,
+  title: "Endophtalmie après chirurgie ou injection",
+  en: "Endophthalmitis after surgery or intravitreal injection",
+  tags: ["urgent", "highyield"],
+  oneLiner: "Œil opéré ou injecté qui devient douloureux, rouge et voit moins, avec hypopyon : endophtalmie jusqu’à preuve du contraire, le jour même.",
+  definition: "Une infection de l’intérieur de l’œil, souvent quelques jours après une chirurgie ou une injection. Elle peut détruire la vision en quelques heures : ophtalmologiste le jour même.",
+  anatomy: {
+    text: "Le vitré, gel sans vaisseaux ni défenses, est un milieu de culture idéal. Les bactéries viennent surtout de la flore des paupières et de la conjonctive du patient ; elles entrent par une incision (cataracte) ou par l’aiguille (injection intravitréenne)."
+  },
+  causal: {
+    title: "De la plaie au vitré infecté",
+    steps: [
+      { label: "Bactéries de la surface", detail: "Surtout des staphylocoques à coagulase négative venus des paupières ; ils entrent par la plaie ou l’aiguille.", kind: "cause" },
+      { label: "Prolifération dans le vitré", detail: "Sans défenses locales, elles se multiplient en heures ou en jours.", kind: "mecanisme" },
+      { label: "Inflammation intense", detail: "Douleur, rougeur, baisse de vision ; cellules, hypopyon, vitré trouble.", kind: "signe" },
+      { label: "Rétine détruite", detail: "Toxines et inflammation abîment la rétine : perte de vision définitive possible.", kind: "complication" }
+    ],
+    levers: [
+      { at: 0, label: "Prévention", detail: "Povidone iodée 5 % avant toute injection ; antibiotique intracamérulaire à la fin de la cataracte." },
+      { at: 1, label: "Antibiotiques intravitréens", detail: "Vancomycine et ceftazidime injectées dans le vitré après ponction, le jour même." },
+      { at: 3, label: "Vitrectomie si perception lumineuse", detail: "Dans l’EVS, la vitrectomie immédiate n’aidait que les yeux réduits à la perception lumineuse." }
+    ]
+  },
+  risk: [
+    "Chirurgie de la cataracte, surtout avec rupture capsulaire ou plaie qui fuit",
+    "Injection intravitréenne",
+    "Bulle de filtration (glaucome) : endophtalmie tardive",
+    "Blépharite, diabète, immunosuppression",
+    "Traumatisme perforant, corps étranger intraoculaire"
+  ],
+  presentation: [
+    "Douleur et baisse de vision qui s’aggravent, quelques jours après le geste",
+    "Œil rouge, paupières gonflées",
+    "Hypopyon : niveau blanc dans la chambre antérieure",
+    "Reflet rouge diminué (vitré trouble)"
+  ],
+  exam: {
+    signs: [
+      { sign: "Acuité : perception lumineuse seulement ?", why: "Guide le traitement : perception lumineuse = vitrectomie (EVS)." },
+      { sign: "Hypopyon, cellules et fibrine en chambre antérieure", why: "Inflammation intense ; l’hypopyon manque parfois." },
+      { sign: "Vitré trouble, reflet rouge diminué", why: "Atteinte du vitré : échographie B si le fond est caché." },
+      { sign: "Douleur qui s’aggrave après le geste", why: "Après une cataracte ou une injection, l’œil doit aller mieux chaque jour." }
+    ],
+    tests: [
+      { test: "Acuité, PIO, lampe à fente", when: "Immédiatement", read: "Hypopyon, vitré trouble ; perception lumineuse ou mieux." },
+      { test: "Échographie B", when: "Si le fond d’œil est caché", read: "Échos dans le vitré ; rétine à plat ou non." },
+      { test: "Ponction du vitré pour culture", when: "Par l’ophtalmologiste, au moment des injections", read: "Identifie le germe ; ne retarde jamais les antibiotiques." }
+    ]
+  },
+  ddx: [
+    { dx: "Syndrome toxique du segment antérieur (TASS)", clue: "12–48 h après la cataracte : cornée trouble d’un limbe à l’autre, peu de douleur, vitré clair." },
+    { dx: "Inflammation post-opératoire habituelle", clue: "S’améliore jour après jour sous gouttes, sans hypopyon." },
+    { dx: "Inflammation stérile après injection", clue: "Peu de douleur, vision moins touchée ; seul l’ophtalmologiste peut trancher." },
+    { dx: "Endophtalmie endogène", clue: "Sans chirurgie : bactériémie ou fongémie (cathéter, drogues IV, endocardite)." }
+  ],
+  redFlags: [
+    "Œil opéré ou injecté douloureux, rouge, qui voit moins : ophtalmologiste le jour même",
+    "Hypopyon après un geste oculaire : endophtalmie jusqu’à preuve du contraire",
+    "Jamais traiter comme une conjonctivite, ni attendre le lendemain"
+  ],
+  cat: {
+    vignette: "Homme de 76 ans, injection d’anti-VEGF il y a 3 jours : œil gauche rouge, douloureux, vision réduite à compter les doigts. Hypopyon.",
+    algo: [
+      { q: "Chirurgie ou injection récente de l’œil ?", yes: "", yesGo: 1, no: "Sans geste : uvéite, kératite ou endophtalmie endogène." },
+      { q: "Douleur, rougeur, vision qui s’aggravent ?", yes: { t: "Endophtalmie probable : ophtalmologiste le jour même.", urgent: true }, yesGo: 2, no: "Inflammation habituelle : revoir selon le chirurgien." },
+      { q: "Perception lumineuse seulement ?", yes: { t: "Vitrectomie urgente et antibiotiques intravitréens.", urgent: true }, no: { t: "Ponction et antibiotiques intravitréens, le jour même.", urgent: true } }
+    ],
+    phases: [
+      { phase: "medical", items: ["Ponction du vitré pour culture, puis vancomycine 1 mg/0,1 mL et ceftazidime 2,25 mg/0,1 mL intravitréennes, le jour même", "Antibiotiques intraveineux : sans bénéfice prouvé dans l’EVS (après cataracte)"] },
+      { phase: "chirurgie", items: ["Vitrectomie immédiate si la vision est réduite à la perception lumineuse (EVS)"] },
+      { phase: "suivi", items: ["Revoir le lendemain et les jours suivants ; nouvelle injection selon l’évolution et la culture"] }
+    ],
+    local: "Au Québec, joindre directement le chirurgien ou l’ophtalmologiste de garde : le patient doit être vu le jour même, fin de semaine comprise."
+  },
+  treatments: [
+    { name: "Antibiotiques intravitréens", how: "Injectés directement dans le vitré, après une ponction pour culture.", why: "Toute endophtalmie bactérienne suspectée.", pros: "Concentration élevée là où sont les bactéries.", cons: "Parfois à répéter.", cx: "Toxicité rétinienne (rare), décollement de rétine.", dose: "Vancomycine 1 mg/0,1 mL et ceftazidime 2,25 mg/0,1 mL.", refer: "Le jour même.", pitfall: "Attendre la culture avant d’injecter." },
+    { name: "Vitrectomie", how: "Retire le vitré infecté, les bactéries et les toxines.", why: "Vision réduite à la perception lumineuse (EVS) ; aggravation malgré les injections.", pros: "Meilleure vision finale dans ce groupe (20/40 : 33 % contre 11 %).", cons: "Chirurgie urgente, en salle d’opération.", cx: "Décollement de rétine, cataracte." },
+    { name: "Prévention", how: "Povidone iodée 5 % sur la surface avant une injection ; antibiotique intracamérulaire à la fin de la cataracte.", why: "Toute chirurgie ou injection intraoculaire.", pros: "Réduit le risque d’infection.", cons: "Allergie vraie à l’iode : autre antiseptique.", cx: "Irritation de la surface." }
+  ],
+  pearls: [
+    { q: "Pourquoi pas seulement des antibiotiques par la bouche ou la veine ?", a: "Ils pénètrent mal dans le vitré ; dans l’EVS, les antibiotiques IV n’ont rien ajouté. Ce sont les antibiotiques intravitréens, le jour même, qui comptent." },
+    { q: "Cornée trouble et peu de douleur le lendemain d’une cataracte : endophtalmie ?", a: "Pas forcément : le syndrome toxique du segment antérieur (TASS) apparaît en 12–48 h, cornée trouble d’un limbe à l’autre, peu de douleur, vitré clair. L’endophtalmie vient plutôt après quelques jours, avec douleur croissante. Dans le doute : le jour même." },
+    { q: "Que dis-tu à un patient qui reçoit des injections ?", a: "Revenir le jour même si l’œil devient rouge, douloureux ou voit moins dans les jours qui suivent l’injection." }
+  ],
+  sources: [
+    "Endophthalmitis Vitrectomy Study Group, Arch Ophthalmol 1995;113:1479-96",
+    "NLM Clinical Alert : Endophthalmitis Vitrectomy Study (vitrectomie si perception lumineuse ; antibiotiques IV sans bénéfice)",
+    "AAO Summary Benchmarks 2023 (signaler vite douleur ou rougeur après une injection)"
+  ],
+  treatment: {
+    first: [
+      "**Toi** : acuité, recherche d’hypopyon ; pas de gouttes antibiotiques « en attendant ». Appeler le chirurgien ou l’ophtalmologiste de garde maintenant.",
+      "**Ophtalmologiste** : ponction et antibiotiques intravitréens le jour même ; vitrectomie si perception lumineuse."
+    ],
+    refer: "Référer : immédiatement, le jour même, à l’ophtalmologiste de garde ou au chirurgien — la rétine peut être perdue en quelques heures.",
+    pitfall: [
+      "**Gouttes antibiotiques** pour une « conjonctivite » sur un œil opéré ou injecté : endophtalmie manquée.",
+      "**Antibiotiques oraux ou IV seuls** : ils n’atteignent pas assez le vitré."
+    ],
+    qc: ["Joindre directement le chirurgien ou l’ophtalmologiste de garde, fin de semaine comprise.", "Consignes écrites de retour pour tout patient injecté."]
+  }
+}
 
 ]);
 

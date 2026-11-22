@@ -70,6 +70,14 @@
       if (o.inflow) s += Ar('M' + n1(tip[0] + 18) + ',' + n1(tip[1] + 18) + ' Q' + n1(t1[0] + 12) + ',' + n1(t1[1] + 4) + ' ' + n1(t1[0] + 16) + ',' + n1(t1[1] - 2), t1[0] + 16, t1[1] - 2, -20, C, 2);
       if (o.laser) for (var k = 0; k < 7; k++) { var lp = pol(GX, GY, RR + 1, -112 + k * 5.5); s += O(lp[0], lp[1], 2.6, o.hl === 'laser' ? FL : INK, o.hl === 'laser' ? EDGE : null, 1); }
     }
+    if (o.pockets) [[118, 84, 9, 6], [150, 118, 11, 7], [170, 78, 7, 5]].forEach(function (q) { s += E(q[0], q[1], q[2], q[3], SURF, o.hl === 'pockets' ? EDGE : I3, o.hl === 'pockets' ? 1.6 : 1, ' stroke-dasharray="3 2"'); });
+    if (o.pockets && o.hl === 'pockets') s += flO(150, 118, 15);
+    if (o.weiss) { var wr = pol(GX, GY, RR - 20, 10); s += E(wr[0], wr[1], 4, 8, 'none', o.hl === 'weiss' ? EDGE : INK, o.hl === 'weiss' ? 4 : 1.8) + (o.hl === 'weiss' ? E(wr[0], wr[1], 4, 8, 'none', FL, 2.4) : ''); }
+    if (o.haze) [[110, 70], [150, 92], [128, 124], [172, 112], [96, 104], [160, 66], [140, 146]].forEach(function (q, i) { s += O(q[0], q[1], 7 + (i % 3) * 2, I3, null, 0, ' fill-opacity="' + (o.hl === 'haze' ? '.55' : '.35') + '"'); });
+    if (o.haze && o.hl === 'haze') s += flO(132, 100, 34);
+    if (o.bact) { var bp = o.bact === 'inj' ? pol(GX, GY, GR - 4, -128) : [58, 72]; [[0, 0], [5, 4], [-3, 6], [7, -3]].forEach(function (q) { s += O(bp[0] + q[0], bp[1] + q[1], 2.2, o.hl === 'bact' ? FL : INK, o.hl === 'bact' ? EDGE : null, 1); }); if (o.hl === 'bact') s += flO(bp[0] + 2, bp[1] + 2, 10); }
+    if (o.hypopyon) s += P('M53,121 L67,121 L66,130 Q60,133 56,129 Z', o.hl === 'hypo' ? FL : HY, o.hl === 'hypo' ? EDGE : INK, 1);
+    if (o.needle) { var nt = pol(GX, GY, RR - 22, -128); s += Ln(26, 26, nt[0], nt[1], INK, 2.2) + R(14, 14, 16, 8, SURF, INK, 1.2, 2, ' transform="rotate(48 22 18)"') + (o.hl === 'needle' ? flO(nt[0], nt[1], 9) : ''); }
     if (o.view) s += view(o.view, o.hl === 'view');
     return s;
   }
@@ -80,6 +88,8 @@
       s += P('M' + n1(cx - dx) + ',' + n1(yc) + ' A' + r + ',' + r + ' 0 ' + (yc < cy ? 1 : 0) + ' 0 ' + n1(cx + dx) + ',' + n1(yc) + ' Z', INK, hl ? FL : null, hl ? 3 : 0, ' fill-opacity=".72"');
     }
     if (v.central) s += O(cx, cy, 13, INK, hl ? FL : null, hl ? 3 : 0, ' fill-opacity=".6"');
+    if (v.blur) s += O(cx, cy, r - 2, I3, null, 0, ' fill-opacity=".5"');
+    if (v.ring) s += E(cx - 6, cy - 4, 9, 7, 'none', INK, 2.2);
     if (v.flash) s += flP('M' + (cx + 22) + ',' + (cy - 30) + ' l-8,10 l8,2 l-8,12', 2.4);
     if (v.floaters) [[-14, -10], [6, -18], [-4, 8], [14, 2]].forEach(function (q, i) { s += P('M' + (cx + q[0]) + ',' + (cy + q[1]) + ' q4,' + (i % 2 ? 4 : -4) + ' 8,0 t8,0', 'none', INK, 1.8, ' stroke-linecap="round"'); });
     return s + T(cx, cy + r + 15, 'Ce que voit le patient', 'middle');
@@ -303,6 +313,32 @@
     'Nodules cotonneux : micro-infarctus des fibres nerveuses': 'Cotton-wool spots: micro-infarcts of the nerve fibres',
     'Papille gonflée, étoile maculaire : urgence hypertensive': 'Swollen disc, macular star: hypertensive emergency',
     'TA baissée sans brusquerie : les lésions régressent en semaines': 'BP lowered without haste: the lesions fade over weeks'
+  });
+
+  /* ===== D7 · Décollement postérieur du vitré et déchirure ===== */
+  reg('r-dpv', [
+    [globe({ pockets: true, hl: 'pockets' }), 'Avec l’âge, le gel du vitré se liquéfie par poches'],
+    [globe({ pvd: true, weiss: true, hl: 'weiss', view: { ring: true, floaters: true } }), 'Il se détache de la papille : anneau de Weiss, corps flottants'],
+    [globe({ pvd: true, weiss: true, tear: true, pull: true, hl: 'tear', view: { ring: true, flash: true } }), 'Là où il reste collé, il tire : éclairs, déchirure'],
+    [globe({ pvd: true, weiss: true, tear: true, laser: true, hl: 'laser', view: { ring: true } }), 'Laser autour de la déchirure : la rétine reste à plat']
+  ], {
+    'Avec l’âge, le gel du vitré se liquéfie par poches': 'With age, the vitreous gel liquefies in pockets',
+    'Il se détache de la papille : anneau de Weiss, corps flottants': 'It separates from the disc: Weiss ring, floaters',
+    'Là où il reste collé, il tire : éclairs, déchirure': 'Where it stays stuck, it pulls: flashes, a tear',
+    'Laser autour de la déchirure : la rétine reste à plat': 'Laser around the tear: the retina stays flat'
+  });
+
+  /* ===== D8 · Endophtalmie ===== */
+  reg('r-endophtalmie', [
+    [globe({ bact: 'inj', hl: 'bact' }), 'Des bactéries de la surface entrent par la plaie ou l’aiguille'],
+    [globe({ bact: 'inj', haze: true, hl: 'haze', view: { blur: true } }), 'Elles prolifèrent dans le vitré, qui devient trouble'],
+    [globe({ haze: true, hypopyon: true, hl: 'hypo', view: { blur: true } }), 'Inflammation : douleur, hypopyon, vision qui chute'],
+    [globe({ hypopyon: true, needle: true, hl: 'needle' }), 'Ponction et antibiotiques dans le vitré, le jour même']
+  ], {
+    'Des bactéries de la surface entrent par la plaie ou l’aiguille': 'Surface bacteria enter through the wound or the needle',
+    'Elles prolifèrent dans le vitré, qui devient trouble': 'They multiply in the vitreous, which turns cloudy',
+    'Inflammation : douleur, hypopyon, vision qui chute': 'Inflammation: pain, hypopyon, falling vision',
+    'Ponction et antibiotiques dans le vitré, le jour même': 'Vitreous tap and antibiotics, the same day'
   });
 
   W.MechRetine = { kit: { globe: globe, fundus: fundus, layers: layers, svg: svg } };

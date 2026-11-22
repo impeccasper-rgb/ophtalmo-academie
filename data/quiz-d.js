@@ -282,5 +282,85 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Des croisements pincés sont des signes d’HTA chronique, pas une variante normale.",
       "Exact : forme légère ; mieux contrôler l’HTA en externe."
     ]
+  },
+  {
+    id: "D-015", module: "D", topic: "r-dpv", type: "diagnostic", level: 1, trap: false,
+    stem: "Femme de 63 ans : depuis hier, un anneau gris flotte devant l’œil droit et elle voit des éclairs brefs au coin de l’œil le soir. Vision 6/6, champ normal. Diagnostic le plus probable ?",
+    figure: null,
+    options: [
+      "Aura migraineuse visuelle",
+      "Décollement postérieur du vitré",
+      "Occlusion de l’artère centrale de la rétine",
+      "Uvéite antérieure aiguë"
+    ],
+    answer: 1,
+    explain: "Anneau flottant (anneau de Weiss) et éclairs brefs d’un œil après 50 ans : décollement postérieur du vitré. Environ 1 sur 7 cache une déchirure : examen dilaté dans les 24 h.",
+    deep: "**Ce que c’est :** le vitré, liquéfié avec l’âge, s’est détaché de la papille ; le tissu arraché autour d’elle flotte sous forme d’anneau (anneau de Weiss). Les éclairs viennent de la traction du vitré sur la rétine périphérique. **Quoi faire :** examen dilaté avec dépression sclérale dans les 24 h (le jour même si nuée de corps flottants, sang ou rideau) et consignes de retour.",
+    why: [
+      "L’aura touche les deux yeux et dessine des zigzags qui disparaissent en 20–30 min ; elle ne fait pas d’anneau flottant.",
+      "Exact : anneau de Weiss et éclairs = DPV ; examen dilaté dans les 24 h.",
+      "L’OACR fait perdre la vision brutalement, sans corps flottants ni éclairs.",
+      "L’uvéite antérieure donne un œil rouge, douloureux et photophobe."
+    ]
+  },
+  {
+    id: "D-016", module: "D", topic: "r-dpv", type: "cat", level: 2, trap: false,
+    stem: "Homme de 66 ans : examen dilaté le jour même pour des corps flottants, DPV sans déchirure. Quelle consigne lui donnes-tu en partant ?",
+    figure: null,
+    options: [
+      "Aucun suivi : le DPV est toujours bénin",
+      "Repos au lit, tête surélevée, pendant une semaine",
+      "Gouttes anti-inflammatoires pour faire disparaître les corps flottants",
+      "Revenir le jour même si nuée de corps flottants, rideau ou baisse de vision"
+    ],
+    answer: 3,
+    explain: "Une déchirure peut apparaître dans les semaines suivant un DPV (environ 3 % en 6 semaines). Le patient doit revenir le jour même si les symptômes changent : nuée, éclairs persistants, rideau, baisse de vision.",
+    deep: "**Pourquoi :** le vitré continue de tirer sur la rétine périphérique après le décollement ; une déchirure peut se former plus tard (Hollands, JAMA 2009 : 3,4 % dans les 6 semaines, risque plus élevé si de nouveaux corps flottants apparaissent). **Quoi faire :** consignes écrites, réexamen prévu selon l’ophtalmologiste.",
+    why: [
+      "Faux : une déchirure peut survenir dans les semaines qui suivent.",
+      "Le repos au lit n’empêche pas une déchirure ; il n’est pas recommandé ici.",
+      "Aucune goutte ne fait disparaître les corps flottants.",
+      "Exact : consignes de retour claires, réexamen prévu."
+    ]
+  },
+  {
+    id: "D-017", module: "D", topic: "r-endophtalmie", type: "cat", level: 1, trap: false,
+    stem: "Femme de 79 ans, injection d’anti-VEGF il y a 2 jours : œil droit rouge, douloureux, vision qui baisse. Tu vois un petit niveau blanc en bas de la chambre antérieure. Quelle conduite ?",
+    figure: null,
+    options: [
+      "Gouttes antibiotiques et contrôle dans 48 h",
+      "Ophtalmologiste le jour même : antibiotiques intravitréens",
+      "Corticostéroïde topique et compresses froides",
+      "Antibiotique oral et rendez-vous dans la semaine"
+    ],
+    answer: 1,
+    explain: "Douleur, rougeur, baisse de vision et hypopyon quelques jours après une injection : endophtalmie. Ponction et antibiotiques intravitréens le jour même ; la rétine peut être perdue en quelques heures.",
+    deep: "**Ce que c’est :** une infection du vitré, le plus souvent par des bactéries de la flore des paupières entrées par l’aiguille. **Pourquoi pas des gouttes ou des comprimés :** ils n’atteignent pas assez le vitré ; seuls les antibiotiques injectés dans le vitré (vancomycine 1 mg/0,1 mL et ceftazidime 2,25 mg/0,1 mL) traitent l’infection. **Quoi faire :** appeler l’ophtalmologiste de garde ou le chirurgien maintenant.",
+    why: [
+      "Les gouttes n’atteignent pas le vitré ; 48 h, c’est trop tard.",
+      "Exact : endophtalmie, antibiotiques intravitréens le jour même.",
+      "Un corticostéroïde seul masquerait une infection qui progresse.",
+      "Un antibiotique oral pénètre mal dans le vitré ; une semaine, c’est trop tard."
+    ]
+  },
+  {
+    id: "D-018", module: "D", topic: "r-endophtalmie", type: "cat", level: 2, trap: true,
+    stem: "Homme de 72 ans, cataracte il y a 6 jours : endophtalmie avec hypopyon ; il ne perçoit plus que la lumière. Selon l’Endophthalmitis Vitrectomy Study, quelle prise en charge ?",
+    figure: null,
+    options: [
+      "Antibiotiques intraveineux seuls",
+      "Ponction et injection, sans vitrectomie",
+      "Gouttes antibiotiques fortifiées aux heures",
+      "Vitrectomie immédiate et antibiotiques intravitréens"
+    ],
+    answer: 3,
+    explain: "Dans l’EVS, quand la vision est réduite à la perception lumineuse, la vitrectomie immédiate triple les chances de retrouver 20/40 (33 % contre 11 %). Les antibiotiques IV n’ont rien ajouté.",
+    deep: "**Ce que dit l’EVS (1995) :** 420 patients avec endophtalmie dans les 6 semaines suivant une cataracte. Vision « mouvements de la main » ou mieux : ponction et injection aussi efficaces que la vitrectomie. Perception lumineuse seulement : vitrectomie nettement meilleure (20/40 : 33 % contre 11 % ; perte sévère : 20 % contre 47 %). Antibiotiques IV : aucun bénéfice. **Le piège :** croire que la voie IV suffit.",
+    why: [
+      "Piège : dans l’EVS, les antibiotiques IV n’ont rien ajouté ; ils ne remplacent pas les injections.",
+      "C’est la conduite si la vision est « mouvements de la main » ou mieux, pas à la perception lumineuse.",
+      "Les gouttes fortifiées traitent une kératite, pas une infection du vitré.",
+      "Exact : perception lumineuse seulement = vitrectomie immédiate."
+    ]
   }
 ]);

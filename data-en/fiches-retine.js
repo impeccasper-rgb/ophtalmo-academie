@@ -552,6 +552,154 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   qc: ["Hypertensive emergency: ED or intensive care; the ophthalmologist documents the fundus.", "Hypertension follow-up by the family physician."]
  }
 }
+,
+"r-dpv": {
+ title: "Posterior vitreous detachment and retinal tear",
+ oneLiner: "Floaters and flashes after 50: usually a benign PVD, but about 1 in 7 hides a retinal tear.",
+ definition: "The vitreous, liquefied with age, separates from the retina. It is usually benign, but by pulling, it can tear the retina.",
+ anatomy: { text: "The vitreous is a gel of collagen and water, attached to the retina mostly at its base (in the periphery), at the disc, at the macula and along the vessels. With age it liquefies and shrinks, then separates from the posterior retina, often between 50 and 70, earlier in myopes." },
+ causal: {
+  title: "From liquefying gel to a tear",
+  steps: [
+   { label: "Vitreous syneresis", detail: "The gel liquefies in pockets with age; earlier with myopia, cataract surgery or trauma.", kind: "cause" },
+   { label: "Posterior detachment", detail: "The vitreous separates from the disc and macula: Weiss ring and floaters.", kind: "mecanisme" },
+   { label: "Traction on the retina", detail: "Where it stays attached (base, lattice, vessels), it pulls: flashes, sometimes bleeding.", kind: "mecanisme" },
+   { label: "Horseshoe tear", detail: "A flap of retina is torn off; a ruptured vessel causes vitreous haemorrhage.", kind: "lesion" },
+   { label: "Retinal detachment", detail: "Without laser, fluid passes under the retina: a curtain, then the macula.", kind: "complication" }
+  ],
+  levers: [
+   { at: 1, label: "Dilated exam and advice", detail: "Within 24 h: look for a tear; explain when to come back." },
+   { at: 3, label: "Laser or cryotherapy", detail: "Welds the retina around a symptomatic tear: prevents detachment." },
+   { at: 4, label: "Surgery", detail: "If the detachment is already there: see the Retinal detachment topic." }
+  ]
+ },
+ risk: ["Age 50–70", "Myopia (earlier PVD)", "Cataract surgery, YAG laser capsulotomy", "Trauma, intraocular inflammation", "Lattice degeneration"],
+ presentation: ["New floaters: a ring, cobweb, flies", "Brief flashes, in the periphery, mostly in dim light", "Vision usually normal", "A shower of black dots or a veil: blood in the vitreous"],
+ exam: {
+  signs: [
+   { sign: "Weiss ring in front of the disc", why: "Confirms posterior vitreous detachment." },
+   { sign: "Pigment in the anterior vitreous (Shafer sign)", why: "Strongly suggests a tear." },
+   { sign: "Vitreous haemorrhage", why: "A tear is common: full dilated exam or B-scan." },
+   { sign: "Peripheral horseshoe tear", why: "Seen with scleral depression; symptomatic = laser promptly." }
+  ],
+  tests: [
+   { test: "Acuity, confrontation fields", when: "Every patient with floaters or flashes", read: "Vision loss or a field defect: tear or detachment more likely." },
+   { test: "Dilated fundus exam with scleral depression", when: "Within 24 h; same day for a shower of floaters, blood or a curtain", read: "Tear, lattice, detachment." },
+   { test: "B-scan ultrasound", when: "If the fundus is hidden", read: "Detached vitreous; retina flat or detached." },
+   { test: "Re-examination", when: "In the following weeks, as the ophthalmologist decides", read: "A tear can appear later (≈ 3% within 6 weeks)." }
+  ]
+ },
+ ddx: [
+  { dx: "Retinal tear or detachment", clue: "Pigment, blood, curtain, vision loss." },
+  { dx: "Vitreous haemorrhage from another cause", clue: "Proliferative diabetes, vein occlusion: history, other eye." },
+  { dx: "Migraine aura", clue: "Zigzags in both eyes that vanish within 20–30 min." },
+  { dx: "Asteroid hyalosis", clue: "Small shiny white dots in the vitreous, no acute symptoms." },
+  { dx: "Posterior uveitis (vitritis)", clue: "Vitreous cells, vision loss, often both eyes." }
+ ],
+ redFlags: ["Curtain or vision loss: probable detachment, on-call ophthalmologist the same day", "Shower of floaters, blood or pigment in the vitreous: probable tear, the same day", "New symptoms after a PVD judged benign: re-examine without delay"],
+ cat: {
+  vignette: "A 62-year-old woman: since yesterday, a grey ring floats in front of her right eye, with flashes at the corner of the eye in the evening. Vision 6/6.",
+  algo: [
+   { q: "Curtain or vision loss?", yes: { t: "Probable detachment: on-call ophthalmologist the same day.", urgent: true }, no: "", noGo: 1 },
+   { q: "Shower of floaters, blood or pigment?", yes: { t: "Probable tear: dilated exam the same day.", urgent: true }, yesGo: 2, no: "Dilated exam within 24 h.", noGo: 2 },
+   { q: "Tear on dilated exam?", yes: "Symptomatic: laser or cryotherapy promptly.", no: "Simple PVD: return advice, planned re-exam." }
+  ],
+  phases: [
+   { phase: "observation", items: ["PVD without a tear: explain the warning signs; re-examination in the following weeks as the ophthalmologist decides"] },
+   { phase: "laser", items: ["Symptomatic horseshoe tear: laser (or cryotherapy) promptly", "Asymptomatic tear: treatment discussed according to type and context"] },
+   { phase: "suivi", items: ["Come back the same day for a shower of floaters, persistent flashes, a curtain or vision loss", "Other eye: PVD likely in the following months or years"] }
+  ],
+  local: "In Quebec, many patients first see an optometrist, who does the dilated exam and refers to an ophthalmologist if a tear is found."
+ },
+ treatments: [
+  { name: "Advice and re-examination", how: "Explain the warning signs; re-examine the periphery in the following weeks.", why: "PVD without a tear.", pros: "Catches a late tear.", cons: "Floaters often persist for months.", cx: "None." },
+  { name: "Laser of the tear", how: "Two or three rows of burns around the tear: the scar welds the retina down.", why: "Symptomatic horseshoe tear.", pros: "In the clinic; prevents detachment.", cons: "Does not prevent tears elsewhere.", cx: "Epiretinal membrane, new tear.", refer: "Promptly after diagnosis." },
+  { name: "Cryotherapy", how: "Cold applied through the sclera creates the same scar.", why: "Very peripheral tear or cloudy media (vitreous blood).", pros: "Possible when laser does not get through.", cons: "More uncomfortable.", cx: "Inflammation, proliferative vitreoretinopathy." }
+ ],
+ pearls: [
+  { q: "How do you tell PVD flashes from a migraine aura?", a: "PVD gives brief flashes in one eye, in the periphery and in dim light. An aura draws zigzags that spread over 20–30 min, in both eyes, even with the eyes closed." },
+  { q: "Will the floaters go away?", a: "They often fade over a few months. What matters: report any sudden change (a shower, persistent flashes, a curtain)." },
+  { q: "Why re-examine a PVD without a tear?", a: "A tear can appear in the following weeks (about 3% within 6 weeks, Hollands 2009), especially if new floaters appear." }
+ ],
+ treatment: {
+  first: ["**You**: acuity, finger fields; look for a shower of floaters, blood, a curtain; explain the warning signs.", "**Ophthalmologist or optometrist**: dilated exam with scleral depression; laser if there is a tear."],
+  refer: "Refer: dilated exam within 24 h for a probable PVD; the same day for a shower of floaters, blood, a curtain or vision loss — a tear treated early does not become a detachment.",
+  pitfall: ["**Reassuring without dilating**: the tear is in the periphery.", "**Ignoring a change in symptoms** after a first normal exam: the tear can come later."],
+  qc: ["Optometrist or ophthalmologist for the first dilated exam.", "Written return advice."]
+ }
+},
+"r-endophtalmie": {
+ title: "Endophthalmitis after surgery or intravitreal injection",
+ oneLiner: "An operated or injected eye that becomes painful, red and sees less, with a hypopyon: endophthalmitis until proven otherwise, the same day.",
+ definition: "An infection inside the eye, often a few days after surgery or an injection. It can destroy vision within hours: ophthalmologist the same day.",
+ anatomy: { text: "The vitreous, a gel with no vessels or defences, is an ideal culture medium. Bacteria come mostly from the patient’s own eyelid and conjunctival flora; they enter through an incision (cataract) or the needle (intravitreal injection)." },
+ causal: {
+  title: "From the wound to an infected vitreous",
+  steps: [
+   { label: "Surface bacteria", detail: "Mostly coagulase-negative staphylococci from the eyelids; they enter through the wound or the needle.", kind: "cause" },
+   { label: "Growth in the vitreous", detail: "With no local defences, they multiply within hours or days.", kind: "mecanisme" },
+   { label: "Intense inflammation", detail: "Pain, redness, vision loss; cells, hypopyon, cloudy vitreous.", kind: "signe" },
+   { label: "Destroyed retina", detail: "Toxins and inflammation damage the retina: possible permanent vision loss.", kind: "complication" }
+  ],
+  levers: [
+   { at: 0, label: "Prevention", detail: "Povidone-iodine 5% before every injection; intracameral antibiotic at the end of cataract surgery." },
+   { at: 1, label: "Intravitreal antibiotics", detail: "Vancomycin and ceftazidime injected into the vitreous after a tap, the same day." },
+   { at: 3, label: "Vitrectomy if light perception", detail: "In the EVS, immediate vitrectomy helped only eyes reduced to light perception." }
+  ]
+ },
+ risk: ["Cataract surgery, especially with capsule rupture or a leaking wound", "Intravitreal injection", "Filtering bleb (glaucoma): late endophthalmitis", "Blepharitis, diabetes, immunosuppression", "Penetrating trauma, intraocular foreign body"],
+ presentation: ["Pain and vision loss that worsen a few days after the procedure", "Red eye, swollen eyelids", "Hypopyon: a white level in the anterior chamber", "Reduced red reflex (cloudy vitreous)"],
+ exam: {
+  signs: [
+   { sign: "Acuity: light perception only?", why: "Guides treatment: light perception = vitrectomy (EVS)." },
+   { sign: "Hypopyon, cells and fibrin in the anterior chamber", why: "Intense inflammation; a hypopyon is sometimes absent." },
+   { sign: "Cloudy vitreous, reduced red reflex", why: "Vitreous involvement: B-scan if the fundus is hidden." },
+   { sign: "Pain that worsens after the procedure", why: "After cataract surgery or an injection, the eye should feel better every day." }
+  ],
+  tests: [
+   { test: "Acuity, IOP, slit lamp", when: "Immediately", read: "Hypopyon, cloudy vitreous; light perception or better." },
+   { test: "B-scan ultrasound", when: "If the fundus is hidden", read: "Echoes in the vitreous; retina flat or not." },
+   { test: "Vitreous tap for culture", when: "By the ophthalmologist, at the time of the injections", read: "Identifies the organism; never delays antibiotics." }
+  ]
+ },
+ ddx: [
+  { dx: "Toxic anterior segment syndrome (TASS)", clue: "12–48 h after cataract surgery: limbus-to-limbus corneal haze, little pain, clear vitreous." },
+  { dx: "Usual postoperative inflammation", clue: "Improves day by day on drops, no hypopyon." },
+  { dx: "Sterile inflammation after injection", clue: "Little pain, vision less affected; only the ophthalmologist can tell." },
+  { dx: "Endogenous endophthalmitis", clue: "No surgery: bacteraemia or fungaemia (catheter, IV drug use, endocarditis)." }
+ ],
+ redFlags: ["Operated or injected eye that is painful, red and sees less: ophthalmologist the same day", "Hypopyon after an eye procedure: endophthalmitis until proven otherwise", "Never treat it as conjunctivitis, or wait until tomorrow"],
+ cat: {
+  vignette: "A 76-year-old man, anti-VEGF injection 3 days ago: red, painful left eye, vision down to counting fingers. Hypopyon.",
+  algo: [
+   { q: "Recent eye surgery or injection?", yes: "", yesGo: 1, no: "No procedure: uveitis, keratitis or endogenous endophthalmitis." },
+   { q: "Pain, redness, vision getting worse?", yes: { t: "Probable endophthalmitis: ophthalmologist the same day.", urgent: true }, yesGo: 2, no: "Usual inflammation: follow-up as the surgeon decides." },
+   { q: "Light perception only?", yes: { t: "Urgent vitrectomy and intravitreal antibiotics.", urgent: true }, no: { t: "Tap and intravitreal antibiotics, the same day.", urgent: true } }
+  ],
+  phases: [
+   { phase: "medical", items: ["Vitreous tap for culture, then intravitreal vancomycin 1 mg/0.1 mL and ceftazidime 2.25 mg/0.1 mL, the same day", "IV antibiotics: no proven benefit in the EVS (after cataract surgery)"] },
+   { phase: "chirurgie", items: ["Immediate vitrectomy if vision is reduced to light perception (EVS)"] },
+   { phase: "suivi", items: ["Review the next day and the following days; repeat injection depending on course and culture"] }
+  ],
+  local: "In Quebec, reach the surgeon or the on-call ophthalmologist directly: the patient must be seen the same day, weekends included."
+ },
+ treatments: [
+  { name: "Intravitreal antibiotics", how: "Injected directly into the vitreous, after a tap for culture.", why: "Any suspected bacterial endophthalmitis.", pros: "High concentration where the bacteria are.", cons: "Sometimes need repeating.", cx: "Retinal toxicity (rare), retinal detachment.", dose: "Vancomycin 1 mg/0.1 mL and ceftazidime 2.25 mg/0.1 mL.", refer: "The same day.", pitfall: "Waiting for the culture before injecting." },
+  { name: "Vitrectomy", how: "Removes the infected vitreous, bacteria and toxins.", why: "Vision reduced to light perception (EVS); worsening despite injections.", pros: "Better final vision in that group (20/40: 33% vs 11%).", cons: "Urgent operating-room surgery.", cx: "Retinal detachment, cataract." },
+  { name: "Prevention", how: "Povidone-iodine 5% on the surface before an injection; intracameral antibiotic at the end of cataract surgery.", why: "Any intraocular surgery or injection.", pros: "Lowers the risk of infection.", cons: "True iodine allergy: another antiseptic.", cx: "Surface irritation." }
+ ],
+ pearls: [
+  { q: "Why not just oral or IV antibiotics?", a: "They penetrate the vitreous poorly; in the EVS, IV antibiotics added nothing. What counts is intravitreal antibiotics, the same day." },
+  { q: "Hazy cornea and little pain the day after cataract surgery: endophthalmitis?", a: "Not necessarily: toxic anterior segment syndrome (TASS) appears within 12–48 h, with limbus-to-limbus corneal haze, little pain and a clear vitreous. Endophthalmitis tends to come after a few days, with increasing pain. When in doubt: the same day." },
+  { q: "What do you tell a patient who receives injections?", a: "Come back the same day if the eye becomes red, painful or sees less in the days after the injection." }
+ ],
+ treatment: {
+  first: ["**You**: acuity, look for a hypopyon; no antibiotic drops “in the meantime”. Call the surgeon or the on-call ophthalmologist now.", "**Ophthalmologist**: tap and intravitreal antibiotics the same day; vitrectomy if light perception."],
+  refer: "Refer: immediately, the same day, to the on-call ophthalmologist or the surgeon — the retina can be lost within hours.",
+  pitfall: ["**Antibiotic drops** for “conjunctivitis” in an operated or injected eye: missed endophthalmitis.", "**Oral or IV antibiotics alone**: they do not reach the vitreous well enough."],
+  qc: ["Reach the surgeon or the on-call ophthalmologist directly, weekends included.", "Written return advice for every injected patient."]
+ }
+}
 
 });
 
@@ -687,6 +835,50 @@ G.OPH_EN.hy = Object.assign(G.OPH_EN.hy || {}, {
    { s: "A woman 32 weeks pregnant: BP 168/112, headache, blurred vision.", u: "urgent", why: "Possible severe pre-eclampsia: obstetric emergency now." }
   ],
   cues: ["Swollen discs, macular star, BP 230/140", "Nipped artery–vein crossings, copper wiring"]
+ },
+ "r-dpv": {
+  essentials: [
+   "**PVD**: the vitreous separates, often between 50 and 70; Weiss ring, floaters, flashes.",
+   "About **1 in 7** hides a **tear**: dilated exam within 24 h.",
+   "**Shower of floaters**, blood or pigment: probable tear, **the same day**.",
+   "Symptomatic horseshoe tear: **laser** promptly.",
+   "Advice: come back for a shower, persistent flashes, a **curtain**, vision loss."
+  ],
+  cloze: [
+   "The grey ring floating in front of the disc after a PVD is the [[Weiss]] ring.",
+   "With age, the vitreous liquefies: this is [[syneresis]].",
+   "A symptomatic horseshoe tear is treated with [[laser|photocoagulation|cryotherapy]].",
+   "PVD flashes come from vitreous [[traction]] on the retina.",
+   "After a simple PVD, a tear appears within 6 weeks in about [[3%|3 %|3 percent]] of patients."
+  ],
+  triage: [
+   { s: "A 64-year-old man: a floating ring and flashes for 2 days, normal vision, no shadow.", u: "rapide", why: "Probable PVD: dilated exam within 24 h, return advice." },
+   { s: "A 58-year-old woman, PVD seen 10 days ago: this morning, a new shower of black dots.", u: "urgent", why: "Changing symptoms: possible tear or haemorrhage, dilated exam the same day." },
+   { s: "A 70-year-old man: floaters stable for 2 years, previous exams normal.", u: "routine", why: "Old, stable PVD: nothing urgent; usual advice." }
+  ],
+  cues: ["Weiss ring in front of the disc", "Brief flashes, one eye, in dim light"]
+ },
+ "r-endophtalmie": {
+  essentials: [
+   "An **operated or injected** eye that becomes painful, red and sees less: **endophthalmitis**, the same day.",
+   "**Hypopyon** and cloudy vitreous; the hypopyon may be absent.",
+   "Treatment: **tap** and **intravitreal antibiotics** (vancomycin, ceftazidime) the same day.",
+   "**Light perception** only: **vitrectomy** (EVS).",
+   "Prevention: **povidone-iodine 5%** before every injection."
+  ],
+  cloze: [
+   "Before an injection, infection is prevented with povidone-iodine [[5%|5 %|five percent]].",
+   "In the EVS, immediate vitrectomy helped eyes reduced to [[light perception]].",
+   "A white level of pus in the anterior chamber is a [[hypopyon]].",
+   "The usual intravitreal antibiotics are vancomycin and [[ceftazidime]].",
+   "Sterile inflammation 12–48 h after cataract surgery, limbus-to-limbus corneal haze: [[TASS|toxic anterior segment syndrome]]."
+  ],
+  triage: [
+   { s: "A 74-year-old woman, cataract surgery 5 days ago: increasing pain, blurred vision, hypopyon.", u: "urgent", why: "Probable endophthalmitis: ophthalmologist the same day, intravitreal antibiotics." },
+   { s: "A 70-year-old man: a red patch on the white of the eye at yesterday’s injection site, no pain, stable vision.", u: "routine", why: "A harmless subconjunctival haemorrhage after injection: reassure, return advice." },
+   { s: "An 81-year-old man, injection 2 days ago: red, painful eye, sees less than before.", u: "urgent", why: "Possible endophthalmitis: ophthalmologist the same day." }
+  ],
+  cues: ["Pain, redness, hypopyon after an injection", "Cloudy vitreous, reduced red reflex"]
  }
 });
 
@@ -719,6 +911,13 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
  add("r-hta", {
   "OPH-257": { caption: "Malignant hypertension in a 52-year-old man", look: "Look at the disc, then at the white and red spots around it.", reveal: ["Swollen disc with blurred margins: severe (malignant) grade, hypertensive emergency.", "Many white cotton-wool spots around the disc and along the arcades: micro-infarcts.", "Flame haemorrhages near the disc.", "Management: ED, controlled BP lowering, search for other organ damage."] },
   "OPH-256": { caption: "Hypertensive retinopathy: swollen disc, cotton-wool spots, exudates", look: "Compare the area between the disc and the fovea with the rest.", reveal: ["Hard exudates between the disc and the fovea: an early macular star.", "Cotton-wool spots and haemorrhages near the swollen disc.", "A 37-year-old man: look for secondary hypertension."] }
+ });
+ add("r-dpv", {
+  "OPH-275": { caption: "Posterior vitreous detachment: Weiss ring in front of the disc", look: "Find the ring floating in front of the retina, near the disc.", reveal: ["Oval ring to the right of the disc: the Weiss ring, tissue torn from around the disc when the vitreous separated.", "Slightly blurred image: the ring floats in the vitreous, in front of the retinal plane.", "PVD is confirmed; the dilated periphery still has to be checked for a tear."] },
+  "OPH-273": { caption: "Lattice degeneration of the peripheral retina", look: "Look for a band of different-looking retina in the periphery.", reveal: ["A band of thinned peripheral retina: lattice degeneration.", "The vitreous adheres firmly there: a common site of tears when it separates.", "Without symptoms, no routine laser; return advice."] }
+ });
+ add("r-endophtalmie", {
+  "OPH-198": { caption: "Endophthalmitis: red eye and hypopyon", look: "Look at the bottom of the anterior chamber, behind the cornea.", reveal: ["A white-yellow level at the bottom of the anterior chamber: hypopyon (pus).", "Very red conjunctiva: intense inflammation.", "After surgery or an injection: endophthalmitis, ophthalmologist the same day."] }
  });
 })(G.OPH_EN.photos);
 
@@ -821,6 +1020,34 @@ Object.assign(G.OPH_EN.quiz, {
   explain: "Thin arterioles and nipped crossings without haemorrhage or a swollen disc: mild Wong-Mitchell retinopathy, a sign of long-standing hypertension. Adjust treatment as an outpatient.",
   deep: "**Wong and Mitchell classification:** mild = thin arterioles, nipped crossings, copper wiring; moderate = haemorrhages, microaneurysms, cotton-wool spots, exudates; severe = moderate signs plus a swollen disc. **Here:** mild disease, a sign of long-standing hypertension; adjust treatment as an outpatient, without rapid lowering.",
   why: ["A swollen disc would be needed to call it severe.", "Haemorrhages, cotton-wool spots or exudates would be needed.", "Nipped crossings are signs of chronic hypertension, not a normal variant.", "Correct: mild disease; control hypertension better as an outpatient."]
+ },
+ "D-015": {
+  stem: "A 63-year-old woman: since yesterday, a grey ring floats in front of her right eye and she sees brief flashes at the corner of the eye in the evening. Vision 6/6, full fields. Most likely diagnosis?",
+  options: ["Visual migraine aura", "Posterior vitreous detachment", "Central retinal artery occlusion", "Acute anterior uveitis"],
+  explain: "A floating ring (Weiss ring) and brief one-eyed flashes after 50: posterior vitreous detachment. About 1 in 7 hides a tear: dilated exam within 24 h.",
+  deep: "**What it is:** the vitreous, liquefied with age, has separated from the disc; the tissue torn from around it floats as a ring (Weiss ring). The flashes come from vitreous traction on the peripheral retina. **What to do:** dilated exam with scleral depression within 24 h (the same day for a shower of floaters, blood or a curtain) and return advice.",
+  why: ["An aura affects both eyes and draws zigzags that vanish within 20–30 min; it does not cause a floating ring.", "Correct: Weiss ring and flashes = PVD; dilated exam within 24 h.", "CRAO causes sudden vision loss, without floaters or flashes.", "Anterior uveitis gives a red, painful, photophobic eye."]
+ },
+ "D-016": {
+  stem: "A 66-year-old man: same-day dilated exam for floaters, PVD without a tear. What advice do you give him as he leaves?",
+  options: ["No follow-up: PVD is always benign", "Bed rest, head raised, for a week", "Anti-inflammatory drops to make the floaters go away", "Come back the same day for a shower of floaters, a curtain or vision loss"],
+  explain: "A tear can appear in the weeks after a PVD (about 3% within 6 weeks). The patient must come back the same day if symptoms change: a shower, persistent flashes, a curtain, vision loss.",
+  deep: "**Why:** the vitreous keeps pulling on the peripheral retina after the detachment; a tear can form later (Hollands, JAMA 2009: 3.4% within 6 weeks, higher if new floaters appear). **What to do:** written advice, planned re-examination as the ophthalmologist decides.",
+  why: ["Wrong: a tear can occur in the following weeks.", "Bed rest does not prevent a tear; it is not recommended here.", "No drop makes floaters disappear.", "Correct: clear return advice, planned re-examination."]
+ },
+ "D-017": {
+  stem: "A 79-year-old woman, anti-VEGF injection 2 days ago: red, painful right eye, vision dropping. You see a small white level at the bottom of the anterior chamber. What do you do?",
+  options: ["Antibiotic drops and a check in 48 h", "Ophthalmologist the same day: intravitreal antibiotics", "Topical corticosteroid and cold compresses", "Oral antibiotic and an appointment within the week"],
+  explain: "Pain, redness, vision loss and a hypopyon a few days after an injection: endophthalmitis. Tap and intravitreal antibiotics the same day; the retina can be lost within hours.",
+  deep: "**What it is:** an infection of the vitreous, most often by eyelid flora bacteria carried in by the needle. **Why not drops or pills:** they do not reach the vitreous well enough; only antibiotics injected into the vitreous (vancomycin 1 mg/0.1 mL and ceftazidime 2.25 mg/0.1 mL) treat the infection. **What to do:** call the on-call ophthalmologist or the surgeon now.",
+  why: ["Drops do not reach the vitreous; 48 h is too late.", "Correct: endophthalmitis, intravitreal antibiotics the same day.", "A corticosteroid alone would mask a progressing infection.", "An oral antibiotic penetrates the vitreous poorly; a week is too late."]
+ },
+ "D-018": {
+  stem: "A 72-year-old man, cataract surgery 6 days ago: endophthalmitis with a hypopyon; he perceives only light. According to the Endophthalmitis Vitrectomy Study, what is the management?",
+  options: ["IV antibiotics alone", "Tap and inject, without vitrectomy", "Hourly fortified antibiotic drops", "Immediate vitrectomy and intravitreal antibiotics"],
+  explain: "In the EVS, when vision is reduced to light perception, immediate vitrectomy tripled the chance of reaching 20/40 (33% vs 11%). IV antibiotics added nothing.",
+  deep: "**What the EVS (1995) showed:** 420 patients with endophthalmitis within 6 weeks of cataract surgery. Hand motion or better: tap and inject as good as vitrectomy. Light perception only: vitrectomy clearly better (20/40: 33% vs 11%; severe loss: 20% vs 47%). IV antibiotics: no benefit. **The trap:** thinking the IV route is enough.",
+  why: ["Trap: in the EVS, IV antibiotics added nothing; they do not replace injections.", "That is the approach for hand motion or better, not light perception.", "Fortified drops treat keratitis, not a vitreous infection.", "Correct: light perception only = immediate vitrectomy."]
  }
 });
 

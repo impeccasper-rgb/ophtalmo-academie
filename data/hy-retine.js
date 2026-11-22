@@ -134,5 +134,49 @@ Object.assign(G.OPH.hy, {
       { s: "Femme enceinte de 32 semaines : TA 168/112, céphalée, vision floue.", u: "urgent", why: "Prééclampsie sévère possible : urgence obstétricale maintenant." }
     ],
     cues: ["Papilles gonflées, étoile maculaire, TA 230/140", "Croisements artère-veine pincés, fils de cuivre"]
+  },
+  "r-dpv": {
+    essentials: [
+      "**DPV** : le vitré se détache, souvent entre 50 et 70 ans ; anneau de Weiss, corps flottants, éclairs.",
+      "Environ **1 sur 7** cache une **déchirure** : examen dilaté dans les 24 h.",
+      "**Nuée de corps flottants**, sang ou pigment : déchirure probable, **le jour même**.",
+      "Déchirure symptomatique en fer à cheval : **laser** rapidement.",
+      "Consignes : revenir si nuée, éclairs persistants, **rideau**, baisse de vision."
+    ],
+    cloze: [
+      "L’anneau gris qui flotte devant la papille après un DPV s’appelle l’anneau de [[Weiss]].",
+      "Avec l’âge, le vitré se liquéfie : c’est la [[synérèse]].",
+      "Une déchirure symptomatique en fer à cheval se traite par [[laser|photocoagulation|cryothérapie]].",
+      "Les éclairs du DPV viennent de la [[traction]] du vitré sur la rétine.",
+      "Après un DPV simple, une déchirure apparaît dans les 6 semaines chez environ [[3 %|3%|3 pour cent]] des patients."
+    ],
+    triage: [
+      { s: "Homme de 64 ans : anneau flottant et éclairs depuis 2 jours, vision normale, pas d’ombre.", u: "rapide", why: "DPV probable : examen dilaté dans les 24 h, consignes de retour." },
+      { s: "Femme de 58 ans, DPV vu il y a 10 jours : ce matin, pluie de points noirs nouveaux.", u: "urgent", why: "Symptômes qui changent : déchirure ou hémorragie possibles, examen dilaté le jour même." },
+      { s: "Homme de 70 ans : corps flottants stables depuis 2 ans, examens antérieurs normaux.", u: "routine", why: "DPV ancien et stable : rien d’urgent ; consignes habituelles." }
+    ],
+    cues: ["Anneau de Weiss devant la papille", "Éclairs brefs, d’un œil, dans la pénombre"]
+  },
+  "r-endophtalmie": {
+    essentials: [
+      "Œil **opéré ou injecté** qui devient douloureux, rouge et voit moins : **endophtalmie**, le jour même.",
+      "**Hypopyon** et vitré trouble ; l’hypopyon peut manquer.",
+      "Traitement : **ponction** et **antibiotiques intravitréens** (vancomycine, ceftazidime) le jour même.",
+      "**Perception lumineuse** seulement : **vitrectomie** (EVS).",
+      "Prévention : **povidone iodée 5 %** avant chaque injection."
+    ],
+    cloze: [
+      "Avant une injection, on prévient l’infection avec de la povidone iodée à [[5 %|5%|cinq pour cent]].",
+      "Dans l’EVS, la vitrectomie immédiate aidait les yeux réduits à la [[perception lumineuse|perception de la lumière]].",
+      "Un niveau blanc de pus dans la chambre antérieure s’appelle un [[hypopyon]].",
+      "Les antibiotiques intravitréens usuels sont la vancomycine et la [[ceftazidime]].",
+      "Inflammation stérile 12–48 h après une cataracte, cornée trouble d’un limbe à l’autre : [[TASS|syndrome toxique du segment antérieur]]."
+    ],
+    triage: [
+      { s: "Femme de 74 ans, cataracte il y a 5 jours : douleur croissante, vision floue, hypopyon.", u: "urgent", why: "Endophtalmie probable : ophtalmologiste le jour même, antibiotiques intravitréens." },
+      { s: "Homme de 70 ans : tache rouge sur le blanc de l’œil au site de l’injection d’hier, sans douleur, vision stable.", u: "routine", why: "Hémorragie sous-conjonctivale banale après injection : rassurer, consignes de retour." },
+      { s: "Homme de 81 ans, injection il y a 2 jours : œil rouge, douloureux, voit moins qu’avant.", u: "urgent", why: "Endophtalmie possible : ophtalmologiste le jour même." }
+    ],
+    cues: ["Douleur, rougeur, hypopyon après une injection", "Vitré trouble, reflet rouge diminué"]
   }
 });

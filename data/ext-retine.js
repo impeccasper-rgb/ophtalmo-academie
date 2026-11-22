@@ -129,5 +129,32 @@ G.OPH.photos = G.OPH.photos || {};
         "Nodules cotonneux et hémorragies près de la papille, qui est gonflée.",
         "Homme de 37 ans : chercher une HTA secondaire."
       ] }
+  ],
+
+  "r-dpv": [
+    { id: "OPH-275", license: "CC BY-NC-ND 3.0", caption: "Décollement postérieur du vitré : anneau de Weiss devant la papille",
+      look: "Repère l’anneau qui flotte en avant de la rétine, près de la papille.",
+      reveal: [
+        "Anneau ovale à droite de la papille : anneau de Weiss, tissu arraché autour de la papille quand le vitré s’est détaché.",
+        "Image un peu floue : l’anneau flotte dans le vitré, en avant du plan de la rétine.",
+        "Le DPV est confirmé ; reste à examiner la périphérie dilatée pour une déchirure."
+      ] },
+    { id: "OPH-273", license: "CC BY-NC-ND 3.0", caption: "Dégénérescence palissadique de la rétine périphérique",
+      look: "Cherche une bande de rétine différente en périphérie.",
+      reveal: [
+        "Bande de rétine amincie en périphérie : palissades (lattice degeneration).",
+        "Le vitré y adhère fort : site fréquent de déchirures quand il se décolle.",
+        "Sans symptôme, pas de laser systématique ; consignes de retour."
+      ] }
+  ],
+
+  "r-endophtalmie": [
+    { id: "OPH-198", license: "CC BY-NC-ND 3.0", caption: "Endophtalmie : œil rouge et hypopyon",
+      look: "Regarde le bas de la chambre antérieure, derrière la cornée.",
+      reveal: [
+        "Niveau blanc-jaune en bas de la chambre antérieure : hypopyon (pus).",
+        "Conjonctive très rouge : inflammation intense.",
+        "Après une chirurgie ou une injection : endophtalmie, ophtalmologiste le jour même."
+      ] }
   ]
 });

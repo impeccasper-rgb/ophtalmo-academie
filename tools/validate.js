@@ -9,7 +9,7 @@ const vm = require('vm');
 const FICHE_IDS = {
   B: ['c-secheresse','c-bacterienne','c-atypiques','c-herpes','c-keratocone','c-fuchs','c-erosion','c-pterygion','c-greffe','c-brulure','c-surface','c-peripherie','c-depots','c-dystrophies'],
   C: ['g-gpao','g-hto','g-gpn','g-fermeture','g-crise','g-pxf','g-pigmentaire','g-neovasculaire','g-secondaires','g-postop','g-papille','g-cristallin','g-dev'],
-  D: ['r-decollement','r-oacr','r-ovr','r-diabete','r-dmla','r-hta'], // module D (rétine): fiches present so far, in the order they were written
+  D: ['r-decollement','r-oacr','r-ovr','r-diabete','r-dmla','r-hta','r-dpv','r-endophtalmie'], // module D (rétine): fiches present so far, in the order they were written
 };
 const A_TOPICS = ['a-anatomie','a-physiologie','a-examen','a-imagerie','a-retine'];
 const ANAT_IDS = ['cornee','limbe','sclere','conjonctive','chambre-anterieure','angle','trabeculum','schlemm','iris','pupille','corps-ciliaire','proces-ciliaires','chambre-posterieure','zonules','cristallin','vitre','retine','macula','fovea','papille','nerf-optique','choroide','ora-serrata','acr','vcr','arteres-ciliaires-post','arteres-ciliaires-ant','veines-vortiqueuses','nerfs-ciliaires-longs','nerfs-ciliaires-courts','lame-criblee','muscles-droits'];
