@@ -3,52 +3,51 @@ var REELS = (function () {
   var EZ = K.EZ, R = {};
   function ant(o) { return '<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">' + Mech.kit.ant(o) + '</svg>'; }
   var SPEC = {
-    angle: function () { return { html: ant({ iris: 'bombe', lens: 'thick', flow: 'block', iop: .7 }), vb: [360, 200], sign: [36, 140, 24, 22] }; },
+    angle: function () { // cropped on the left angle, labelled (cornea, iris, lens), view in figure coordinates
+      var h = ant({ iris: 'bombe', lens: 'thick', flow: 'block', tags: [[150, 70, 'Cornée', 'middle'], [118, 132, 'Iris', 'middle'], [196, 190, 'Cristallin', 'middle']] }).replace('viewBox="0 0 360 200"', 'viewBox="0 28 250 150"');
+      return { html: h, vb: [250, 150], view: '0 28 250 150', sign: [36, 140, 24, 22] }; },
     dendrite: function () { return { html: ART.eye({ mode: 'cobalt', dendrite: true }), vb: [900, 560], sign: [446, 268, 175, 104] }; },
     rd: function () { return { html: ART.fundus({ kind: 'rd', bg: 'none' }), vb: [440, 400], sign: [120, 62, 44, 40] }; },
     crao: function () { return { html: ART.fundus({ kind: 'crao', bg: 'none' }), vb: [440, 400], sign: [224, 216, 34, 32] }; },
     hypopyon: function () { return { html: ART.eye({ red: true, flush: true, hypopyon: true }), vb: [900, 560], sign: [450, 398, 140, 50] }; }
   };
   R.SPEC = SPEC;
-  var HOOK = { fr: 'Tu vois<br>le <span style="color:var(--fluo)" class="gl">signe</span>&nbsp;?', en: 'See the<br><span style="color:var(--fluo)" class="gl">sign</span>?' };
+  function hook(fr, en) { return { fr: fr, en: en }; }
+  var GL = function (w) { return '<span style="color:var(--fluo)" class="gl">' + w + '</span>'; };
   var P_DX = { fr: 'Ton diagnostic ?', en: 'Your diagnosis?' }, P_SIGN = { fr: 'C’est quoi le signe ?', en: 'What’s the sign?' }, P_SEE = { fr: 'Qu’est-ce que tu vois ?', en: 'What do you see?' };
+  /* every option differs by a sign the drawing settles; the question never gives the answer away */
   R.QUIZ = {
-    angle: { num: 1, spec: 'angle', hook: HOOK, prompt: P_DX, ok: 1, stk: [96, 980],
-      q: { fr: 'Œil rouge, douloureux, halos autour des lumières. Que montre la coupe ?', en: 'Red, painful eye, halos around lights. What does the section show?' },
-      opts: [{ fr: 'Angle ouvert, normal', en: 'Open, normal angle' }, { fr: 'Iris bombé, angle fermé', en: 'Iris bombé, closed angle' }, { fr: 'Hypopion', en: 'Hypopyon' }],
+    angle: { num: 1, spec: 'angle', hook: hook('Ouvert<br>ou ' + GL('fermé') + '&nbsp;?', 'Open<br>or ' + GL('closed') + '?'), prompt: P_DX, ok: 2, stk: [90, 990],
+      q: { fr: 'Œil rouge et flou. Diagnostic ?', en: 'Red, blurry eye. Diagnosis?' },
+      opts: [{ fr: 'Conjonctivite', en: 'Conjunctivitis' }, { fr: 'Uvéite antérieure', en: 'Anterior uveitis' }, { fr: 'Fermeture de l’angle', en: 'Angle closure' }],
       sign: { fr: 'angle fermé', en: 'closed angle' },
-      dx: { fr: 'Crise de <span style="color:var(--fluo)" class="gl">fermeture</span> de l’angle', en: 'Acute <span style="color:var(--fluo)" class="gl">angle-closure</span> crisis' },
-      why: { fr: 'Urgence : baisser la PIO, puis iridotomie.', en: 'Emergency: lower the IOP, then iridotomy.' } },
-    dendrite: { num: 2, spec: 'dendrite', hook: HOOK, prompt: P_SIGN, ok: 2, stk: [560, 520],
-      q: { fr: 'Fluorescéine, lumière bleu cobalt. Quel signe ?', en: 'Fluorescein, cobalt blue light. Which sign?' },
-      opts: [{ fr: 'Ulcère rond bactérien', en: 'Round bacterial ulcer' }, { fr: 'Kératite ponctuée', en: 'Punctate keratitis' }, { fr: 'Dendrite à bulbes terminaux', en: 'Dendrite with terminal bulbs' }],
+      dx: { fr: GL('Fermeture de l’angle') + ' : baisser la PIO', en: GL('Angle closure') + ': lower the IOP' } },
+    dendrite: { num: 2, spec: 'dendrite', hook: hook('Qu’est-ce<br>qui ' + GL('s’allume') + '&nbsp;?', 'What<br>' + GL('lights up') + '?'), prompt: P_SIGN, ok: 2, stk: [560, 520],
+      q: { fr: 'Fluorescéine, bleu cobalt. Quel signe ?', en: 'Fluorescein, cobalt light. Which sign?' },
+      opts: [{ fr: 'Ulcère bactérien', en: 'Bacterial ulcer' }, { fr: 'Kératite ponctuée', en: 'Punctate keratitis' }, { fr: 'Dendrite à bulbes', en: 'Dendrite with bulbs' }],
       sign: { fr: 'dendrite', en: 'dendrite' },
-      dx: { fr: 'Kératite <span style="color:var(--fluo)" class="gl">herpétique</span>', en: '<span style="color:var(--fluo)" class="gl">Herpes</span> simplex keratitis' },
-      why: { fr: 'Antiviral ; jamais de corticoïde seul.', en: 'Antiviral; never a steroid alone.' } },
-    rd: { num: 3, spec: 'rd', hook: HOOK, prompt: P_SEE, ok: 0, stk: [72, 650],
-      q: { fr: 'Éclairs, corps flottants, puis une ombre. Que vois-tu ?', en: 'Flashes, floaters, then a shadow. What do you see?' },
-      opts: [{ fr: 'Décollement de rétine', en: 'Retinal detachment' }, { fr: 'Occlusion veineuse centrale', en: 'Central vein occlusion' }, { fr: 'Décollement du vitré seul', en: 'Vitreous detachment alone' }],
+      dx: { fr: 'Kératite ' + GL('herpétique') + ' : antiviral, pas de corticoïde', en: GL('Herpes') + ' keratitis: antiviral, no steroids' } },
+    rd: { num: 3, spec: 'rd', hook: hook('Urgence<br>ou ' + GL('pas') + '&nbsp;?', 'Emergency<br>or ' + GL('not') + '?'), prompt: P_SEE, ok: 0, stk: [72, 650],
+      q: { fr: 'Baisse de vision. Fond d’œil ?', en: 'Vision loss. What’s on the fundus?' },
+      opts: [{ fr: 'Décollement de rétine', en: 'Retinal detachment' }, { fr: 'Occlusion veineuse', en: 'Vein occlusion' }, { fr: 'Rétinopathie diabétique', en: 'Diabetic retinopathy' }],
       sign: { fr: 'déchirure en fer à cheval', en: 'horseshoe tear' },
-      dx: { fr: 'Décollement de rétine <span style="color:var(--fluo)" class="gl">rhegmatogène</span>', en: '<span style="color:var(--fluo)" class="gl">Rhegmatogenous</span> retinal detachment' },
-      why: { fr: 'Rideau ou ombre : ophtalmo le jour même.', en: 'Shadow or curtain: same-day ophthalmology.' } },
-    crao: { num: 4, spec: 'crao', hook: HOOK, prompt: P_SIGN, ok: 2, stk: [110, 1000],
-      q: { fr: 'Baisse de vision brutale et indolore. Quel signe décide ?', en: 'Sudden, painless vision loss. Which sign decides?' },
-      opts: [{ fr: 'Hémorragies dans 4 quadrants', en: 'Four-quadrant hemorrhages' }, { fr: 'Papille gonflée', en: 'Swollen disc' }, { fr: 'Tache rouge cerise', en: 'Cherry-red spot' }],
+      dx: { fr: GL('Décollement de rétine') + ' : ophtalmo aujourd’hui', en: GL('Retinal detachment') + ': same-day ophthalmology' } },
+    crao: { num: 4, spec: 'crao', hook: hook('Soudain,<br>' + GL('plus rien'), 'Suddenly,<br>' + GL('nothing')), prompt: P_SIGN, ok: 2, stk: [110, 1000],
+      q: { fr: 'Brutal, indolore. Quel signe ?', en: 'Sudden, painless. Which sign?' },
+      opts: [{ fr: 'Hémorragies diffuses', en: 'Diffuse hemorrhages' }, { fr: 'Papille gonflée', en: 'Swollen disc' }, { fr: 'Tache rouge cerise', en: 'Cherry-red spot' }],
       sign: { fr: 'tache rouge cerise', en: 'cherry-red spot' },
-      dx: { fr: 'Occlusion de l’artère <span style="color:var(--fluo)" class="gl">centrale</span>', en: 'Central retinal <span style="color:var(--fluo)" class="gl">artery</span> occlusion' },
-      why: { fr: 'AVC de l’œil : centre d’AVC, maintenant.', en: 'An eye stroke: stroke centre now.' } },
-    hypopyon: { num: 5, spec: 'hypopyon', hook: HOOK, prompt: P_DX, ok: 0, stk: [110, 990],
-      q: { fr: 'Œil rouge et douloureux, 4 jours après une cataracte. Que vois-tu ?', en: 'Red, painful eye 4 days after cataract surgery. What do you see?' },
-      opts: [{ fr: 'Hypopion', en: 'Hypopyon' }, { fr: 'Hyphéma', en: 'Hyphema' }, { fr: 'Arc sénile', en: 'Arcus senilis' }],
-      sign: { fr: 'hypopion', en: 'hypopyon' },
-      dx: { fr: '<span style="color:var(--fluo)" class="gl">Endophtalmie</span> jusqu’à preuve du contraire', en: '<span style="color:var(--fluo)" class="gl">Endophthalmitis</span> until proven otherwise' },
-      why: { fr: 'Ophtalmo le jour même.', en: 'Same-day ophthalmology.' } }
+      dx: { fr: 'Occlusion de l’artère ' + GL('centrale') + ' de la rétine', en: 'Central retinal ' + GL('artery') + ' occlusion: eye stroke' } },
+    hypopyon: { num: 5, spec: 'hypopyon', hook: hook('Ce niveau<br>' + GL('blanc') + '&nbsp;?', 'That white<br>' + GL('layer') + '?'), prompt: P_DX, ok: 1, stk: [110, 990],
+      q: { fr: 'Douleur après une cataracte. Que vois-tu ?', en: 'Pain after cataract surgery. What do you see?' },
+      opts: [{ fr: 'Hyphéma', en: 'Hyphema' }, { fr: 'Hypopyon', en: 'Hypopyon' }, { fr: 'Œdème cornéen', en: 'Corneal edema' }],
+      sign: { fr: 'hypopyon', en: 'hypopyon' },
+      dx: { fr: GL('Endophtalmie') + ' : ophtalmo le jour même', en: GL('Endophthalmitis') + ': same-day ophthalmology' } }
   };
   R.quiz = function (S, key, mode) { var c = Object.assign({}, R.QUIZ[key]); c.spec = SPEC[c.spec](); return H.quiz(S, c, mode); };
 
   /* ---------- R1 · brand reveal « Ocelle arrive » (14.5 s) ---------- */
   R.brand = function (S) {
-    K.T = 10.5 + H.END; H.scene(S);
+    K.T = 11 + H.END; H.scene(S);
     var BK = [[0, 120], [.2, 120], [2.3, 960]];
     H.beam(S, BK, 420, 820, 0, 2.55);
     var spec = { html: ART.eyeA(true), vb: [900, 560] };
@@ -61,54 +60,51 @@ var REELS = (function () {
     // three words, stacked, each read alone for ≥ 2.5 s
     [[{ fr: 'Observe.', en: 'Observe.' }, 0], [{ fr: 'Réponds.', en: 'Answer.' }, 2.5], [{ fr: '<span style="color:var(--fluo)" class="gl">Révèle.</span>', en: '<span style="color:var(--fluo)" class="gl">Reveal.</span>' }, 5]].forEach(function (w, i) {
       var tx = H.t(w[0]), e = K.div(S, 'left:72px;top:' + (200 + i * 160) + 'px;width:876px;color:#fff;font-size:150px', '<div class="dsp">' + tx + '</div>');
-      K.rise(e, w[1], .3, 26, 7.85, .15); H.reg('word-' + (i + 1), tx, w[1] + .3, 7.85);
+      K.rise(e, w[1], .3, 26, 8.0, .15); H.reg('word-' + (i + 1), tx, w[1] + .3, 8.0);
     });
     // the loop becomes the brand mark, then « ocelle arrive »
     K.mark(S, 'left:330px;top:690px;width:420px;height:395px', { t0: 6.5, dur: .7, sw: 70, filter: 'url(#glowM)' });
     var wm = K.wordmark(S, 'left:250px;top:1120px;width:580px;color:#fff', '#ffffff'); K.rise(wm, 7.5, .45, 30);
     var art = H.t({ fr: 'arrive', en: 'is coming' }), ar = K.div(S, 'left:72px;top:1325px;width:876px;text-align:center;font-size:120px', '<span class="dsp gl" style="color:var(--fluo)">' + art + '</span>'); K.rise(ar, 7.5, .45, 24);
-    H.reg('ocelle-arrive', 'ocelle ' + art, 7.95, 10.5);
-    H.endCard(S, 10.5);
-    return { cuts: [0, 2.5, 5, 6.5, 7.5, 10.5, K.T] };
+    H.reg('ocelle-arrive', 'ocelle ' + art, 7.95, 11);
+    H.endCard(S, 11);
+    return { cuts: [0, 2.5, 5, 6.5, 7.5, 11, K.T] };
   };
 
-  /* ---------- R3 · drawn mechanism stepping (g-crise), one short caption per step ---------- */
-  var MECH_LAB = [{ fr: 'Pupille mi-dilatée', en: 'Mid-dilated pupil' }, { fr: 'Bloc pupillaire', en: 'Pupillary block' }, { fr: 'L’iris bombe, l’angle se ferme', en: 'The iris bows, the angle closes' }, { fr: 'La PIO flambe', en: 'IOP spikes' }, { fr: 'L’iridotomie rouvre l’angle', en: 'Iridotomy reopens the angle' }];
+  /* ---------- R3 · drawn mechanism stepping (g-crise steps 2–5), 4 short captions, 3 s each ---------- */
+  var MECH_LAB = [{ fr: 'Bloc pupillaire', en: 'Pupillary block' }, { fr: 'L’angle se ferme', en: 'The angle closes' }, { fr: 'La PIO flambe', en: 'IOP spikes' }, { fr: 'L’iridotomie rouvre', en: 'Iridotomy reopens' }];
   R.mech = function (S) {
-    var T0 = [4, 7, 10, 14, 17], END = 20.5; K.T = END + H.END; H.scene(S);
-    var steps = window.OPH.mech['g-crise'].steps, BOX = [40, 560, 1000, 620];
-    var BK = [[0, 120], [.2, 120], [3.8, 960]];
-    H.beam(S, BK, 470, 760, 0, 4.05);
-    var hk = H.t({ fr: 'Une crise d’angle,<br>en <span style="color:var(--fluo)" class="gl">5 temps</span>', en: 'Angle closure,<br>in <span style="color:var(--fluo)" class="gl">5 steps</span>' });
-    var hook = K.div(S, 'left:72px;top:200px;width:876px;color:#fff;font-size:128px', '<div class="dsp">' + hk + '</div>');
-    K.rise(hook, 0, .25, 40, 3.9, .1); H.reg('hook', hk, .25, 3.9);
-    var eb = H.t({ fr: 'Mécanisme dessiné', en: 'Drawn mechanism' }); H.eyebrow(S, eb, .05, END - .2); H.reg('eyebrow', eb, .35, END - .2, 'label');
+    var T0 = [0, 3, 6, 9], END = 12; K.T = END + H.END; H.scene(S);
+    var steps = window.OPH.mech['g-crise'].steps.slice(1), BOX = [40, 560, 1000, 620];
+    var BK = [[0, 120], [.1, 120], [2.6, 960]];
+    H.beam(S, BK, 470, 760, 0, 3.05);
+    var eb = H.t({ fr: 'Mécanisme · crise d’angle', en: 'Mechanism · angle closure' }); H.eyebrow(S, eb, .05, END - .2); H.reg('eyebrow', eb, .35, END - .2, 'label');
     steps.forEach(function (st, i) {
-      var F = H.figure(S, { html: st.svg, vb: [360, 200] }, BOX, i === 0 ? BK : null, 4.0);
-      var t0 = T0[i], t1 = i < 4 ? T0[i + 1] : END;
-      K.track(F.wrap, [[0, { opacity: i ? 0 : 1, transform: 'scale(1)' }], [t0, { opacity: i ? 0 : 1, transform: 'scale(1.06)' }], [t0, { opacity: 1, transform: 'scale(1.06)' }, EZ.out], [t0 + .5, { opacity: 1, transform: 'scale(1)' }, EZ.lin], [t1, { opacity: 1, transform: 'scale(1.02)' }], [t1, { opacity: i < 4 ? 0 : 1, transform: 'scale(1.02)' }]]);
-      H.flash(S, t0, i ? .32 : .65);
-      var n = K.div(S, 'left:72px;top:200px;color:#d8ff3a;font:700 120px/1 var(--mono);text-shadow:0 0 22px rgba(216,255,58,.6)', (i + 1) + '<span style="color:#7d84c2;font-size:60px">/5</span>');
-      K.cut(n, t0, t1); K.track(n, [[t0, { transform: 'translateY(20px)' }, EZ.out], [t0 + .3, { transform: 'translateY(0px)' }]]);
-      var lt = H.t(MECH_LAB[i]), lb = K.div(S, 'left:72px;top:1260px;width:876px;padding:30px 34px 34px;color:#fff;font:700 60px/1.15 var(--body)', lt, 'hud');
-      K.cut(lb, t0, t1); K.track(lb, [[t0, { transform: 'translateY(24px)' }, EZ.out], [t0 + .35, { transform: 'translateY(0px)' }]]);
-      H.reg('step-' + (i + 1), lt, t0 + .35, t1);
+      var F = H.figure(S, { html: st.svg, vb: [360, 200] }, BOX, i === 0 ? BK : null, 3.0);
+      var t0 = T0[i], t1 = i < 3 ? T0[i + 1] : END;
+      K.track(F.wrap, [[0, { opacity: i ? 0 : 1, transform: 'scale(1)' }], [t0, { opacity: i ? 0 : 1, transform: 'scale(1.06)' }], [t0, { opacity: 1, transform: 'scale(1.06)' }, EZ.out], [t0 + .5, { opacity: 1, transform: 'scale(1)' }, EZ.lin], [t1, { opacity: 1, transform: 'scale(1.02)' }], [t1, { opacity: i < 3 ? 0 : 1, transform: 'scale(1.02)' }]]);
+      if (i) H.flash(S, t0, .32);
+      var n = K.div(S, 'left:72px;top:200px;color:#d8ff3a;font:700 120px/1 var(--mono);text-shadow:0 0 22px rgba(216,255,58,.6)', (i + 1) + '<span style="color:#7d84c2;font-size:60px">/4</span>');
+      K.cut(n, t0, t1); K.track(n, [[t0, { transform: 'translateY(20px)' }, EZ.out], [t0 + .25, { transform: 'translateY(0px)' }]]);
+      var lt = H.t(MECH_LAB[i]), lb = K.div(S, 'left:72px;top:1260px;width:876px;padding:30px 34px 34px;color:#fff;font:700 72px/1.1 var(--display);letter-spacing:-.02em', lt, 'hud');
+      K.cut(lb, t0, t1); K.track(lb, [[t0, { transform: 'translateY(24px)' }, EZ.out], [t0 + .25, { transform: 'translateY(0px)' }]]);
+      H.reg('step-' + (i + 1), lt, t0 + .25, t1);
     });
-    for (var i = 0; i < 5; i++) { var sg = K.div(S, 'left:' + (72 + i * 180) + 'px;top:1560px;width:156px;height:12px;border-radius:8px;background:rgba(74,87,255,.3);border:1px solid rgba(90,104,255,.8)');
-      var on = K.div(sg, 'inset:0;border-radius:8px;background:#d8ff3a;box-shadow:0 0 14px rgba(216,255,58,.8)'); K.cut(on, T0[i]); K.fade(sg, 4, .3); }
+    for (var i = 0; i < 4; i++) { var sg = K.div(S, 'left:' + (72 + i * 224) + 'px;top:1560px;width:204px;height:12px;border-radius:8px;background:rgba(74,87,255,.3);border:1px solid rgba(90,104,255,.8)');
+      var on = K.div(sg, 'inset:0;border-radius:8px;background:#d8ff3a;box-shadow:0 0 14px rgba(216,255,58,.8)'); K.cut(on, T0[i]); }
     H.endCard(S, END);
-    return { cuts: [0].concat(T0, [END, K.T]) };
+    return { cuts: [0].concat(T0.slice(1), [END, K.T]) };
   };
 
   /* ---------- countdown template (J-30 / J-14 / J-7 / J-1), 13 s ---------- */
-  var LINE = { 30: { fr: 'Le compte à rebours commence.', en: 'The countdown starts.' }, 14: { fr: 'Deux semaines. Les signes sont prêts.', en: 'Two weeks. The signs are ready.' }, 7: { fr: 'Une semaine. Entraîne ton œil.', en: 'One week. Train your eye.' }, 1: { fr: 'Demain, tu vois le signe.', en: 'Tomorrow, you see the sign.' } };
+  var LINE = { 30: { fr: 'Le compte à rebours<br>commence.', en: 'The countdown<br>starts.' }, 14: { fr: 'Deux semaines.<br>Les signes sont prêts.', en: 'Two weeks.<br>The signs are ready.' }, 7: { fr: 'Une semaine.<br>Entraîne ton œil.', en: 'One week.<br>Train your eye.' }, 1: { fr: 'Demain,<br>tu vois le signe.', en: 'Tomorrow,<br>you see the sign.' } };
   R.countdown = function (S, n) {
     n = +n || 30; var END = 9.5; K.T = END + H.END; H.scene(S);
     var BK = [[0, 100], [.2, 100], [1.9, 980]], big = H.lang === 'fr' ? 'J-' + n : String(n), fs = H.lang === 'fr' ? (n > 9 ? 330 : 400) : 520;
     H.beam(S, BK, 420, 820, 0, 2.05);
     var eb = H.t({ fr: 'Compte à rebours', en: 'Countdown' }); H.eyebrow(S, eb, .05, END - .2); H.reg('eyebrow', eb, .35, END - .2, 'label');
     var box = 'left:0;top:520px;width:1080px;text-align:center;font-family:var(--display);font-weight:800;letter-spacing:-.05em;line-height:1;font-size:' + fs + 'px';
-    var dim = K.div(S, box + ';color:#1a2266', big), lit = K.div(S, box + ';color:#eef0ff;text-shadow:0 0 30px rgba(170,178,255,.8)', big);
+    var dim = K.div(S, box + ';color:#c9ceff', big), lit = K.div(S, box + ';color:#eef0ff;text-shadow:0 0 30px rgba(170,178,255,.8)', big);
     K.track(lit, BK.map(function (k) { return [k[0], { clipPath: 'inset(0px ' + (1080 - k[1] - 40) + 'px 0px ' + (k[1] - 40) + 'px)' }, EZ.slow]; }));
     K.cut(lit, 0, 2);
     var glow = K.div(S, box + ';color:#d8ff3a;text-shadow:0 0 40px rgba(216,255,58,.6),0 0 90px rgba(216,255,58,.3)', big);

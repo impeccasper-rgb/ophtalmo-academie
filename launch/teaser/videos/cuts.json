@@ -3,15 +3,15 @@
  "note": "cut times in seconds on the 120 BPM grid; texts = fully-visible window of each readable text (checked by _src/check_reading.py)",
  "reels": {
   "ocelle-teaser-01-ocelle-arrive-en": {
-   "T": 15,
+   "T": 16.5,
    "cuts": [
     0,
     2.5,
     5,
     6.5,
     7.5,
-    10.5,
-    15
+    11,
+    16.5
    ],
    "texts": [
     {
@@ -23,7 +23,7 @@
      "words": 3
     },
     {
-     "end": 7.85,
+     "end": 8,
      "id": "word-1",
      "kind": "card",
      "start": 0.3,
@@ -31,7 +31,7 @@
      "words": 1
     },
     {
-     "end": 7.85,
+     "end": 8,
      "id": "word-2",
      "kind": "card",
      "start": 2.8,
@@ -39,7 +39,7 @@
      "words": 1
     },
     {
-     "end": 7.85,
+     "end": 8,
      "id": "word-3",
      "kind": "card",
      "start": 5.3,
@@ -47,7 +47,7 @@
      "words": 1
     },
     {
-     "end": 10.5,
+     "end": 11,
      "id": "ocelle-arrive",
      "kind": "card",
      "start": 7.95,
@@ -55,25 +55,25 @@
      "words": 3
     },
     {
-     "end": 15,
+     "end": 16.5,
      "id": "end",
      "kind": "card",
-     "start": 11.5,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 11.8,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-01-ocelle-arrive-fr": {
-   "T": 15,
+   "T": 16.5,
    "cuts": [
     0,
     2.5,
     5,
     6.5,
     7.5,
-    10.5,
-    15
+    11,
+    16.5
    ],
    "texts": [
     {
@@ -85,7 +85,7 @@
      "words": 4
     },
     {
-     "end": 7.85,
+     "end": 8,
      "id": "word-1",
      "kind": "card",
      "start": 0.3,
@@ -93,7 +93,7 @@
      "words": 1
     },
     {
-     "end": 7.85,
+     "end": 8,
      "id": "word-2",
      "kind": "card",
      "start": 2.8,
@@ -101,7 +101,7 @@
      "words": 1
     },
     {
-     "end": 7.85,
+     "end": 8,
      "id": "word-3",
      "kind": "card",
      "start": 5.3,
@@ -109,7 +109,7 @@
      "words": 1
     },
     {
-     "end": 10.5,
+     "end": 11,
      "id": "ocelle-arrive",
      "kind": "card",
      "start": 7.95,
@@ -117,659 +117,632 @@
      "words": 2
     },
     {
-     "end": 15,
+     "end": 16.5,
      "id": "end",
      "kind": "card",
-     "start": 11.5,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 11.8,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-02-defi-angle-ferme-en": {
-   "T": 25.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
+    3.25,
     3.5,
     4,
-    4.5,
-    5,
-    6,
-    14,
-    15,
-    21,
-    25.5
+    10,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "See the sign ?",
+     "start": 0.25,
+     "text": "Open or closed ?",
      "words": 3
     },
     {
-     "end": 20.8,
+     "end": 14.3,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #1",
-     "words": 2
+     "text": "Challenge #1 \u00b7 clerks & R1s",
+     "words": 4
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "question+options",
      "kind": "card",
-     "start": 5.35,
-     "text": "Red, painful eye, halos around lights. What does the section show? Open, normal angle Iris bomb\u00e9, closed angle Hypopyon",
-     "words": 19
+     "start": 3.85,
+     "text": "Red, blurry eye. Diagnosis? Conjunctivitis Anterior uveitis Angle closure",
+     "words": 9
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 4.4,
      "text": "Your diagnosis?",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "sign-sticker",
      "kind": "label",
-     "start": 14.85,
+     "start": 10.85,
      "text": "closed angle",
      "words": 2
     },
     {
-     "end": 17.5,
-     "id": "bien-vu",
+     "end": 14.5,
+     "id": "answer-letter",
      "kind": "label",
-     "start": 14.7,
-     "text": "Nice catch!",
+     "start": 10.7,
+     "text": "Answer C",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 15.45,
-     "text": "Acute angle-closure crisis Emergency: lower the IOP, then iridotomy.",
-     "words": 9
+     "start": 10.45,
+     "text": "Angle closure : lower the IOP",
+     "words": 5
     },
     {
-     "end": 25.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 22,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-02-defi-angle-ferme-fr": {
-   "T": 25.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
+    3.25,
     3.5,
     4,
-    4.5,
-    5,
-    6,
-    14,
-    15,
-    21,
-    25.5
+    10,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "Tu vois le signe ?",
-     "words": 4
+     "start": 0.25,
+     "text": "Ouvert ou ferm\u00e9 ?",
+     "words": 3
     },
     {
-     "end": 20.8,
+     "end": 14.3,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #1",
-     "words": 2
+     "text": "D\u00e9fi #1 \u00b7 externes et R1",
+     "words": 5
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "question+options",
      "kind": "card",
-     "start": 5.35,
-     "text": "\u0152il rouge, douloureux, halos autour des lumi\u00e8res. Que montre la coupe ? Angle ouvert, normal Iris bomb\u00e9, angle ferm\u00e9 Hypopion",
-     "words": 19
+     "start": 3.85,
+     "text": "\u0152il rouge et flou. Diagnostic ? Conjonctivite Uv\u00e9ite ant\u00e9rieure Fermeture de l\u2019angle",
+     "words": 11
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 4.4,
      "text": "Ton diagnostic ?",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "sign-sticker",
      "kind": "label",
-     "start": 14.85,
+     "start": 10.85,
      "text": "angle ferm\u00e9",
      "words": 2
     },
     {
-     "end": 17.5,
-     "id": "bien-vu",
+     "end": 14.5,
+     "id": "answer-letter",
      "kind": "label",
-     "start": 14.7,
-     "text": "Bien vu !",
+     "start": 10.7,
+     "text": "R\u00e9ponse C",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 15.45,
-     "text": "Crise de fermeture de l\u2019angle Urgence : baisser la PIO, puis iridotomie.",
-     "words": 11
+     "start": 10.45,
+     "text": "Fermeture de l\u2019angle : baisser la PIO",
+     "words": 6
     },
     {
-     "end": 25.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 22,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-03-mecanisme-crise-angle-en": {
-   "T": 25,
+   "T": 17.5,
    "cuts": [
     0,
-    4,
-    7,
-    10,
-    14,
-    17,
-    20.5,
-    25
+    3,
+    6,
+    9,
+    12,
+    17.5
    ],
    "texts": [
     {
-     "end": 3.9,
-     "id": "hook",
-     "kind": "card",
-     "start": 0.25,
-     "text": "Angle closure, in 5 steps",
-     "words": 5
-    },
-    {
-     "end": 20.3,
+     "end": 11.8,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Drawn mechanism",
-     "words": 2
+     "text": "Mechanism \u00b7 angle closure",
+     "words": 3
     },
     {
-     "end": 7,
+     "end": 3,
      "id": "step-1",
      "kind": "card",
-     "start": 4.35,
-     "text": "Mid-dilated pupil",
-     "words": 2
-    },
-    {
-     "end": 10,
-     "id": "step-2",
-     "kind": "card",
-     "start": 7.35,
+     "start": 0.25,
      "text": "Pupillary block",
      "words": 2
     },
     {
-     "end": 14,
-     "id": "step-3",
+     "end": 6,
+     "id": "step-2",
      "kind": "card",
-     "start": 10.35,
-     "text": "The iris bows, the angle closes",
-     "words": 6
+     "start": 3.25,
+     "text": "The angle closes",
+     "words": 3
     },
     {
-     "end": 17,
-     "id": "step-4",
+     "end": 9,
+     "id": "step-3",
      "kind": "card",
-     "start": 14.35,
+     "start": 6.25,
      "text": "IOP spikes",
      "words": 2
     },
     {
-     "end": 20.5,
-     "id": "step-5",
+     "end": 12,
+     "id": "step-4",
      "kind": "card",
-     "start": 17.35,
-     "text": "Iridotomy reopens the angle",
-     "words": 4
+     "start": 9.25,
+     "text": "Iridotomy reopens",
+     "words": 2
     },
     {
-     "end": 25,
+     "end": 17.5,
      "id": "end",
      "kind": "card",
-     "start": 21.5,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 12.8,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-03-mecanisme-crise-angle-fr": {
-   "T": 25,
+   "T": 17.5,
    "cuts": [
     0,
-    4,
-    7,
-    10,
-    14,
-    17,
-    20.5,
-    25
+    3,
+    6,
+    9,
+    12,
+    17.5
    ],
    "texts": [
     {
-     "end": 3.9,
-     "id": "hook",
-     "kind": "card",
-     "start": 0.25,
-     "text": "Une crise d\u2019angle, en 5 temps",
-     "words": 6
-    },
-    {
-     "end": 20.3,
+     "end": 11.8,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "M\u00e9canisme dessin\u00e9",
-     "words": 2
+     "text": "M\u00e9canisme \u00b7 crise d\u2019angle",
+     "words": 3
     },
     {
-     "end": 7,
+     "end": 3,
      "id": "step-1",
      "kind": "card",
-     "start": 4.35,
-     "text": "Pupille mi-dilat\u00e9e",
-     "words": 2
-    },
-    {
-     "end": 10,
-     "id": "step-2",
-     "kind": "card",
-     "start": 7.35,
+     "start": 0.25,
      "text": "Bloc pupillaire",
      "words": 2
     },
     {
-     "end": 14,
-     "id": "step-3",
+     "end": 6,
+     "id": "step-2",
      "kind": "card",
-     "start": 10.35,
-     "text": "L\u2019iris bombe, l\u2019angle se ferme",
-     "words": 5
+     "start": 3.25,
+     "text": "L\u2019angle se ferme",
+     "words": 3
     },
     {
-     "end": 17,
-     "id": "step-4",
+     "end": 9,
+     "id": "step-3",
      "kind": "card",
-     "start": 14.35,
+     "start": 6.25,
      "text": "La PIO flambe",
      "words": 3
     },
     {
-     "end": 20.5,
-     "id": "step-5",
+     "end": 12,
+     "id": "step-4",
      "kind": "card",
-     "start": 17.35,
-     "text": "L\u2019iridotomie rouvre l\u2019angle",
-     "words": 3
+     "start": 9.25,
+     "text": "L\u2019iridotomie rouvre",
+     "words": 2
     },
     {
-     "end": 25,
+     "end": 17.5,
      "id": "end",
      "kind": "card",
-     "start": 21.5,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 12.8,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-04-defi-dendrite-reponse-demain-en": {
-   "T": 22.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
+    3.25,
     3.5,
     4,
-    4.5,
-    5,
-    6,
-    14,
-    18,
-    22.5
+    10,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "See the sign ?",
+     "start": 0.25,
+     "text": "What lights up ?",
      "words": 3
     },
     {
-     "end": 17.8,
+     "end": 14.3,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #2",
-     "words": 2
+     "text": "Challenge #2 \u00b7 clerks & R1s",
+     "words": 4
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "question+options",
      "kind": "card",
-     "start": 5.35,
-     "text": "Fluorescein, cobalt blue light. Which sign? Round bacterial ulcer Punctate keratitis Dendrite with terminal bulbs",
-     "words": 15
+     "start": 3.85,
+     "text": "Fluorescein, cobalt light. Which sign? Bacterial ulcer Punctate keratitis Dendrite with bulbs",
+     "words": 12
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 4.4,
      "text": "What\u2019s the sign?",
      "words": 3
     },
     {
-     "end": 18,
+     "end": 14.5,
      "id": "answer-tomorrow",
      "kind": "label",
-     "start": 14.6,
+     "start": 10.6,
      "text": "Answer tomorrow",
      "words": 2
     },
     {
-     "end": 18,
+     "end": 14.5,
      "id": "follow-line",
      "kind": "card",
-     "start": 14.7,
+     "start": 10.7,
      "text": "Follow to see it",
      "words": 4
     },
     {
-     "end": 22.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 19,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-04-defi-dendrite-reponse-demain-fr": {
-   "T": 22.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
+    3.25,
     3.5,
     4,
-    4.5,
-    5,
-    6,
-    14,
-    18,
-    22.5
+    10,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "Tu vois le signe ?",
-     "words": 4
+     "start": 0.25,
+     "text": "Qu\u2019est-ce qui s\u2019allume ?",
+     "words": 3
     },
     {
-     "end": 17.8,
+     "end": 14.3,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #2",
-     "words": 2
+     "text": "D\u00e9fi #2 \u00b7 externes et R1",
+     "words": 5
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "question+options",
      "kind": "card",
-     "start": 5.35,
-     "text": "Fluoresc\u00e9ine, lumi\u00e8re bleu cobalt. Quel signe ? Ulc\u00e8re rond bact\u00e9rien K\u00e9ratite ponctu\u00e9e Dendrite \u00e0 bulbes terminaux",
-     "words": 15
+     "start": 3.85,
+     "text": "Fluoresc\u00e9ine, bleu cobalt. Quel signe ? Ulc\u00e8re bact\u00e9rien K\u00e9ratite ponctu\u00e9e Dendrite \u00e0 bulbes",
+     "words": 12
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 4.4,
      "text": "C\u2019est quoi le signe ?",
      "words": 4
     },
     {
-     "end": 18,
+     "end": 14.5,
      "id": "answer-tomorrow",
      "kind": "label",
-     "start": 14.6,
+     "start": 10.6,
      "text": "R\u00e9ponse demain",
      "words": 2
     },
     {
-     "end": 18,
+     "end": 14.5,
      "id": "follow-line",
      "kind": "card",
-     "start": 14.7,
+     "start": 10.7,
      "text": "Abonne-toi pour la voir",
      "words": 4
     },
     {
-     "end": 22.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 19,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-04b-defi-dendrite-reponse-en": {
-   "T": 25.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
     3.5,
-    4,
-    4.5,
-    5,
-    6,
-    14,
-    15,
-    21,
-    25.5
+    9.5,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
+     "start": 0.25,
      "text": "Yesterday\u2019s answer",
      "words": 2
     },
     {
-     "end": 20.8,
+     "end": 14.3,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #2 \u00b7 answer",
-     "words": 3
+     "text": "Challenge #2 \u00b7 answer \u00b7 clerks & R1s",
+     "words": 5
     },
     {
-     "end": 14,
+     "end": 9.5,
      "id": "question+options",
      "kind": "card",
-     "start": 5.35,
-     "text": "Fluorescein, cobalt blue light. Which sign? Round bacterial ulcer Punctate keratitis Dendrite with terminal bulbs",
-     "words": 15
+     "start": 3.4,
+     "text": "Fluorescein, cobalt light. Which sign? Bacterial ulcer Punctate keratitis Dendrite with bulbs",
+     "words": 12
     },
     {
-     "end": 14,
+     "end": 9.5,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 3.9,
      "text": "Did you get it?",
      "words": 4
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "sign-sticker",
      "kind": "label",
-     "start": 14.85,
+     "start": 10.35,
      "text": "dendrite",
      "words": 1
     },
     {
-     "end": 17.5,
-     "id": "bien-vu",
+     "end": 14.5,
+     "id": "answer-letter",
      "kind": "label",
-     "start": 14.7,
-     "text": "Nice catch!",
+     "start": 10.2,
+     "text": "Answer C",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 15.45,
-     "text": "Herpes simplex keratitis Antiviral; never a steroid alone.",
-     "words": 8
+     "start": 9.95,
+     "text": "Herpes keratitis: antiviral, no steroids",
+     "words": 5
     },
     {
-     "end": 25.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 22,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-04b-defi-dendrite-reponse-fr": {
-   "T": 25.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
     3.5,
-    4,
-    4.5,
-    5,
-    6,
-    14,
-    15,
-    21,
-    25.5
+    9.5,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "La r\u00e9ponse d\u2019 hier",
-     "words": 4
-    },
-    {
-     "end": 20.8,
-     "id": "eyebrow",
-     "kind": "label",
-     "start": 0.35,
-     "text": "D\u00e9fi #2 \u00b7 r\u00e9ponse",
+     "start": 0.25,
+     "text": "La r\u00e9ponse d\u2019hier",
      "words": 3
     },
     {
-     "end": 14,
-     "id": "question+options",
-     "kind": "card",
-     "start": 5.35,
-     "text": "Fluoresc\u00e9ine, lumi\u00e8re bleu cobalt. Quel signe ? Ulc\u00e8re rond bact\u00e9rien K\u00e9ratite ponctu\u00e9e Dendrite \u00e0 bulbes terminaux",
-     "words": 15
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "D\u00e9fi #2 \u00b7 r\u00e9ponse \u00b7 externes et R1",
+     "words": 6
     },
     {
-     "end": 14,
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.4,
+     "text": "Fluoresc\u00e9ine, bleu cobalt. Quel signe ? Ulc\u00e8re bact\u00e9rien K\u00e9ratite ponctu\u00e9e Dendrite \u00e0 bulbes",
+     "words": 12
+    },
+    {
+     "end": 9.5,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 3.9,
      "text": "Tu avais vu juste ?",
      "words": 4
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "sign-sticker",
      "kind": "label",
-     "start": 14.85,
+     "start": 10.35,
      "text": "dendrite",
      "words": 1
     },
     {
-     "end": 17.5,
-     "id": "bien-vu",
+     "end": 14.5,
+     "id": "answer-letter",
      "kind": "label",
-     "start": 14.7,
-     "text": "Bien vu !",
+     "start": 10.2,
+     "text": "R\u00e9ponse C",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 15.45,
-     "text": "K\u00e9ratite herp\u00e9tique Antiviral ; jamais de cortico\u00efde seul.",
-     "words": 7
+     "start": 9.95,
+     "text": "K\u00e9ratite herp\u00e9tique : antiviral, pas de cortico\u00efde",
+     "words": 6
     },
     {
-     "end": 25.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 22,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-05-touche-le-signe-en": {
-   "T": 22.5,
+   "T": 19.5,
    "cuts": [
     0,
     2,
-    4,
-    4.5,
-    7.5,
-    8,
-    11.5,
-    12,
-    15,
-    18,
-    22.5
+    3,
+    3.5,
+    6,
+    6.5,
+    9.5,
+    10,
+    14,
+    19.5
    ],
    "texts": [
     {
-     "end": 17.8,
+     "end": 6.5,
+     "id": "pas-ici",
+     "kind": "label",
+     "start": 3.9,
+     "text": "not here",
+     "words": 2
+    },
+    {
+     "end": 13.9,
+     "id": "chosen-sign",
+     "kind": "label",
+     "start": 10.7,
+     "text": "Cherry-red spot",
+     "words": 2
+    },
+    {
+     "end": 13.9,
+     "id": "verdict",
+     "kind": "label",
+     "start": 10.9,
+     "text": "Nailed it!",
+     "words": 2
+    },
+    {
+     "end": 13.8,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
@@ -777,73 +750,88 @@
      "words": 3
     },
     {
-     "end": 4,
+     "end": 3,
      "id": "caption-1",
      "kind": "card",
-     "start": 0.3,
-     "text": "Tap the sign that matters .",
-     "words": 5
+     "start": 0.25,
+     "text": "Tap the sign .",
+     "words": 3
     },
     {
-     "end": 7.5,
+     "end": 6,
      "id": "caption-2",
      "kind": "card",
-     "start": 4.3,
+     "start": 3.25,
      "text": "Miss: \u201cnot here\u201d.",
      "words": 3
     },
     {
-     "end": 11.5,
+     "end": 9.5,
      "id": "caption-3",
      "kind": "card",
-     "start": 7.8,
-     "text": "Hit: the marker circles the sign.",
-     "words": 6
+     "start": 6.25,
+     "text": "Hit: the loop appears .",
+     "words": 4
     },
     {
-     "end": 15,
+     "end": 14,
      "id": "caption-4",
      "kind": "card",
-     "start": 11.8,
+     "start": 9.75,
      "text": "Then you name it.",
      "words": 4
     },
     {
-     "end": 18,
-     "id": "caption-5",
-     "kind": "card",
-     "start": 15.3,
-     "text": "Observe. Answer. Reveal.",
-     "words": 3
-    },
-    {
-     "end": 22.5,
+     "end": 19.5,
      "id": "end",
      "kind": "card",
-     "start": 19,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 14.8,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-05-touche-le-signe-fr": {
-   "T": 22.5,
+   "T": 19.5,
    "cuts": [
     0,
     2,
-    4,
-    4.5,
-    7.5,
-    8,
-    11.5,
-    12,
-    15,
-    18,
-    22.5
+    3,
+    3.5,
+    6,
+    6.5,
+    9.5,
+    10,
+    14,
+    19.5
    ],
    "texts": [
     {
-     "end": 17.8,
+     "end": 6.5,
+     "id": "pas-ici",
+     "kind": "label",
+     "start": 3.9,
+     "text": "pas ici",
+     "words": 2
+    },
+    {
+     "end": 13.9,
+     "id": "chosen-sign",
+     "kind": "label",
+     "start": 10.7,
+     "text": "Tache rouge cerise",
+     "words": 3
+    },
+    {
+     "end": 13.9,
+     "id": "verdict",
+     "kind": "label",
+     "start": 10.9,
+     "text": "Exact !",
+     "words": 1
+    },
+    {
+     "end": 13.8,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
@@ -851,687 +839,661 @@
      "words": 3
     },
     {
-     "end": 4,
+     "end": 3,
      "id": "caption-1",
      "kind": "card",
-     "start": 0.3,
-     "text": "Touche le signe qui compte .",
-     "words": 5
+     "start": 0.25,
+     "text": "Touche le signe .",
+     "words": 3
     },
     {
-     "end": 7.5,
+     "end": 6,
      "id": "caption-2",
      "kind": "card",
-     "start": 4.3,
+     "start": 3.25,
      "text": "Rat\u00e9 : \u00ab pas ici \u00bb.",
      "words": 3
     },
     {
-     "end": 11.5,
+     "end": 9.5,
      "id": "caption-3",
      "kind": "card",
-     "start": 7.8,
-     "text": "Touch\u00e9 : le marqueur entoure le signe.",
-     "words": 6
+     "start": 6.25,
+     "text": "Touch\u00e9 : le marqueur l\u2019entoure .",
+     "words": 4
     },
     {
-     "end": 15,
+     "end": 14,
      "id": "caption-4",
      "kind": "card",
-     "start": 11.8,
+     "start": 9.75,
      "text": "Puis tu le nommes .",
      "words": 4
     },
     {
-     "end": 18,
-     "id": "caption-5",
-     "kind": "card",
-     "start": 15.3,
-     "text": "Observe. R\u00e9ponds. R\u00e9v\u00e8le.",
-     "words": 3
-    },
-    {
-     "end": 22.5,
+     "end": 19.5,
      "id": "end",
      "kind": "card",
-     "start": 19,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 14.8,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-06-defi-decollement-retine-en": {
-   "T": 25.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
+    3.25,
     3.5,
     4,
-    4.5,
-    5,
-    6,
-    14,
-    15,
-    21,
-    25.5
+    10,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "See the sign ?",
+     "start": 0.25,
+     "text": "Emergency or not ?",
      "words": 3
     },
     {
-     "end": 20.8,
+     "end": 14.3,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #3",
-     "words": 2
+     "text": "Challenge #3 \u00b7 clerks & R1s",
+     "words": 4
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "question+options",
      "kind": "card",
-     "start": 5.35,
-     "text": "Flashes, floaters, then a shadow. What do you see? Retinal detachment Central vein occlusion Vitreous detachment alone",
-     "words": 17
+     "start": 3.85,
+     "text": "Vision loss. What\u2019s on the fundus? Retinal detachment Vein occlusion Diabetic retinopathy",
+     "words": 12
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 4.4,
      "text": "What do you see?",
      "words": 4
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "sign-sticker",
      "kind": "label",
-     "start": 14.85,
+     "start": 10.85,
      "text": "horseshoe tear",
      "words": 2
     },
     {
-     "end": 17.5,
-     "id": "bien-vu",
+     "end": 14.5,
+     "id": "answer-letter",
      "kind": "label",
-     "start": 14.7,
-     "text": "Nice catch!",
+     "start": 10.7,
+     "text": "Answer A",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 15.45,
-     "text": "Rhegmatogenous retinal detachment Shadow or curtain: same-day ophthalmology.",
-     "words": 8
+     "start": 10.45,
+     "text": "Retinal detachment : same-day ophthalmology",
+     "words": 4
     },
     {
-     "end": 25.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 22,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-06-defi-decollement-retine-fr": {
-   "T": 25.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
+    3.25,
     3.5,
     4,
-    4.5,
-    5,
-    6,
-    14,
-    15,
-    21,
-    25.5
+    10,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "Tu vois le signe ?",
-     "words": 4
+     "start": 0.25,
+     "text": "Urgence ou pas ?",
+     "words": 3
     },
     {
-     "end": 20.8,
+     "end": 14.3,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #3",
-     "words": 2
+     "text": "D\u00e9fi #3 \u00b7 externes et R1",
+     "words": 5
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "question+options",
      "kind": "card",
-     "start": 5.35,
-     "text": "\u00c9clairs, corps flottants, puis une ombre. Que vois-tu ? D\u00e9collement de r\u00e9tine Occlusion veineuse centrale D\u00e9collement du vitr\u00e9 seul",
-     "words": 18
+     "start": 3.85,
+     "text": "Baisse de vision. Fond d\u2019\u0153il ? D\u00e9collement de r\u00e9tine Occlusion veineuse R\u00e9tinopathie diab\u00e9tique",
+     "words": 12
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 4.4,
      "text": "Qu\u2019est-ce que tu vois ?",
      "words": 4
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "sign-sticker",
      "kind": "label",
-     "start": 14.85,
+     "start": 10.85,
      "text": "d\u00e9chirure en fer \u00e0 cheval",
      "words": 5
     },
     {
-     "end": 17.5,
-     "id": "bien-vu",
+     "end": 14.5,
+     "id": "answer-letter",
      "kind": "label",
-     "start": 14.7,
-     "text": "Bien vu !",
+     "start": 10.7,
+     "text": "R\u00e9ponse A",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 15.45,
-     "text": "D\u00e9collement de r\u00e9tine rhegmatog\u00e8ne Rideau ou ombre : ophtalmo le jour m\u00eame.",
-     "words": 11
+     "start": 10.45,
+     "text": "D\u00e9collement de r\u00e9tine : ophtalmo aujourd\u2019hui",
+     "words": 5
     },
     {
-     "end": 25.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 22,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-07-defi-oacr-reponse-demain-en": {
-   "T": 22.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
+    3.25,
     3.5,
     4,
-    4.5,
-    5,
-    6,
-    14,
-    18,
-    22.5
+    10,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "See the sign ?",
-     "words": 3
-    },
-    {
-     "end": 17.8,
-     "id": "eyebrow",
-     "kind": "label",
-     "start": 0.35,
-     "text": "Challenge #4",
+     "start": 0.25,
+     "text": "Suddenly, nothing",
      "words": 2
     },
     {
-     "end": 14,
-     "id": "question+options",
-     "kind": "card",
-     "start": 5.35,
-     "text": "Sudden, painless vision loss. Which sign decides? Four-quadrant hemorrhages Swollen disc Cherry-red spot",
-     "words": 13
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "Challenge #4 \u00b7 clerks & R1s",
+     "words": 4
     },
     {
-     "end": 14,
+     "end": 10,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.85,
+     "text": "Sudden, painless. Which sign? Diffuse hemorrhages Swollen disc Cherry-red spot",
+     "words": 10
+    },
+    {
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 4.4,
      "text": "What\u2019s the sign?",
      "words": 3
     },
     {
-     "end": 18,
+     "end": 14.5,
      "id": "answer-tomorrow",
      "kind": "label",
-     "start": 14.6,
+     "start": 10.6,
      "text": "Answer tomorrow",
      "words": 2
     },
     {
-     "end": 18,
+     "end": 14.5,
      "id": "follow-line",
      "kind": "card",
-     "start": 14.7,
+     "start": 10.7,
      "text": "Follow to see it",
      "words": 4
     },
     {
-     "end": 22.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 19,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-07-defi-oacr-reponse-demain-fr": {
-   "T": 22.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
+    3.25,
     3.5,
     4,
-    4.5,
-    5,
-    6,
-    14,
-    18,
-    22.5
+    10,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "Tu vois le signe ?",
-     "words": 4
+     "start": 0.25,
+     "text": "Soudain, plus rien",
+     "words": 3
     },
     {
-     "end": 17.8,
+     "end": 14.3,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #4",
-     "words": 2
+     "text": "D\u00e9fi #4 \u00b7 externes et R1",
+     "words": 5
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "question+options",
      "kind": "card",
-     "start": 5.35,
-     "text": "Baisse de vision brutale et indolore. Quel signe d\u00e9cide ? H\u00e9morragies dans 4 quadrants Papille gonfl\u00e9e Tache rouge cerise",
-     "words": 18
+     "start": 3.85,
+     "text": "Brutal, indolore. Quel signe ? H\u00e9morragies diffuses Papille gonfl\u00e9e Tache rouge cerise",
+     "words": 11
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 4.4,
      "text": "C\u2019est quoi le signe ?",
      "words": 4
     },
     {
-     "end": 18,
+     "end": 14.5,
      "id": "answer-tomorrow",
      "kind": "label",
-     "start": 14.6,
+     "start": 10.6,
      "text": "R\u00e9ponse demain",
      "words": 2
     },
     {
-     "end": 18,
+     "end": 14.5,
      "id": "follow-line",
      "kind": "card",
-     "start": 14.7,
+     "start": 10.7,
      "text": "Abonne-toi pour la voir",
      "words": 4
     },
     {
-     "end": 22.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 19,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-07b-defi-oacr-reponse-en": {
-   "T": 25.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
     3.5,
-    4,
-    4.5,
-    5,
-    6,
-    14,
-    15,
-    21,
-    25.5
+    9.5,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
+     "start": 0.25,
      "text": "Yesterday\u2019s answer",
      "words": 2
     },
     {
-     "end": 20.8,
+     "end": 14.3,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #4 \u00b7 answer",
-     "words": 3
+     "text": "Challenge #4 \u00b7 answer \u00b7 clerks & R1s",
+     "words": 5
     },
     {
-     "end": 14,
+     "end": 9.5,
      "id": "question+options",
      "kind": "card",
-     "start": 5.35,
-     "text": "Sudden, painless vision loss. Which sign decides? Four-quadrant hemorrhages Swollen disc Cherry-red spot",
-     "words": 13
+     "start": 3.4,
+     "text": "Sudden, painless. Which sign? Diffuse hemorrhages Swollen disc Cherry-red spot",
+     "words": 10
     },
     {
-     "end": 14,
+     "end": 9.5,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 3.9,
      "text": "Did you get it?",
      "words": 4
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "sign-sticker",
      "kind": "label",
-     "start": 14.85,
+     "start": 10.35,
      "text": "cherry-red spot",
      "words": 2
     },
     {
-     "end": 17.5,
-     "id": "bien-vu",
+     "end": 14.5,
+     "id": "answer-letter",
      "kind": "label",
-     "start": 14.7,
-     "text": "Nice catch!",
+     "start": 10.2,
+     "text": "Answer C",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 15.45,
-     "text": "Central retinal artery occlusion An eye stroke: stroke centre now.",
-     "words": 10
+     "start": 9.95,
+     "text": "Central retinal artery occlusion: eye stroke",
+     "words": 6
     },
     {
-     "end": 25.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 22,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-07b-defi-oacr-reponse-fr": {
-   "T": 25.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
     3.5,
-    4,
-    4.5,
-    5,
-    6,
-    14,
-    15,
-    21,
-    25.5
+    9.5,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "La r\u00e9ponse d\u2019 hier",
-     "words": 4
-    },
-    {
-     "end": 20.8,
-     "id": "eyebrow",
-     "kind": "label",
-     "start": 0.35,
-     "text": "D\u00e9fi #4 \u00b7 r\u00e9ponse",
+     "start": 0.25,
+     "text": "La r\u00e9ponse d\u2019hier",
      "words": 3
     },
     {
-     "end": 14,
-     "id": "question+options",
-     "kind": "card",
-     "start": 5.35,
-     "text": "Baisse de vision brutale et indolore. Quel signe d\u00e9cide ? H\u00e9morragies dans 4 quadrants Papille gonfl\u00e9e Tache rouge cerise",
-     "words": 18
+     "end": 14.3,
+     "id": "eyebrow",
+     "kind": "label",
+     "start": 0.35,
+     "text": "D\u00e9fi #4 \u00b7 r\u00e9ponse \u00b7 externes et R1",
+     "words": 6
     },
     {
-     "end": 14,
+     "end": 9.5,
+     "id": "question+options",
+     "kind": "card",
+     "start": 3.4,
+     "text": "Brutal, indolore. Quel signe ? H\u00e9morragies diffuses Papille gonfl\u00e9e Tache rouge cerise",
+     "words": 11
+    },
+    {
+     "end": 9.5,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 3.9,
      "text": "Tu avais vu juste ?",
      "words": 4
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "sign-sticker",
      "kind": "label",
-     "start": 14.85,
+     "start": 10.35,
      "text": "tache rouge cerise",
      "words": 3
     },
     {
-     "end": 17.5,
-     "id": "bien-vu",
+     "end": 14.5,
+     "id": "answer-letter",
      "kind": "label",
-     "start": 14.7,
-     "text": "Bien vu !",
+     "start": 10.2,
+     "text": "R\u00e9ponse C",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 15.45,
-     "text": "Occlusion de l\u2019art\u00e8re centrale AVC de l\u2019\u0153il : centre d\u2019AVC, maintenant.",
-     "words": 10
+     "start": 9.95,
+     "text": "Occlusion de l\u2019art\u00e8re centrale de la r\u00e9tine",
+     "words": 7
     },
     {
-     "end": 25.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 22,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-08-defi-hypopion-en": {
-   "T": 25.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
+    3.25,
     3.5,
     4,
-    4.5,
-    5,
-    6,
-    14,
-    15,
-    21,
-    25.5
+    10,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "See the sign ?",
+     "start": 0.25,
+     "text": "That white layer ?",
      "words": 3
     },
     {
-     "end": 20.8,
+     "end": 14.3,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "Challenge #5",
-     "words": 2
+     "text": "Challenge #5 \u00b7 clerks & R1s",
+     "words": 4
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "question+options",
      "kind": "card",
-     "start": 5.35,
-     "text": "Red, painful eye 4 days after cataract surgery. What do you see? Hypopyon Hyphema Arcus senilis",
-     "words": 16
+     "start": 3.85,
+     "text": "Pain after cataract surgery. What do you see? Hyphema Hypopyon Corneal edema",
+     "words": 12
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 4.4,
      "text": "Your diagnosis?",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "sign-sticker",
      "kind": "label",
-     "start": 14.85,
+     "start": 10.85,
      "text": "hypopyon",
      "words": 1
     },
     {
-     "end": 17.5,
-     "id": "bien-vu",
+     "end": 14.5,
+     "id": "answer-letter",
      "kind": "label",
-     "start": 14.7,
-     "text": "Nice catch!",
+     "start": 10.7,
+     "text": "Answer B",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 15.45,
-     "text": "Endophthalmitis until proven otherwise Same-day ophthalmology.",
-     "words": 6
+     "start": 10.45,
+     "text": "Endophthalmitis : same-day ophthalmology",
+     "words": 3
     },
     {
-     "end": 25.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 22,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 15.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-08-defi-hypopion-fr": {
-   "T": 25.5,
+   "T": 20,
    "cuts": [
     0,
+    3,
+    3.25,
     3.5,
     4,
-    4.5,
-    5,
-    6,
-    14,
-    15,
-    21,
-    25.5
+    10,
+    14.5,
+    20
    ],
    "texts": [
     {
-     "end": 3.35,
+     "end": 2.9,
      "id": "hook",
      "kind": "card",
-     "start": 0.3,
-     "text": "Tu vois le signe ?",
-     "words": 4
+     "start": 0.25,
+     "text": "Ce niveau blanc ?",
+     "words": 3
     },
     {
-     "end": 20.8,
+     "end": 14.3,
      "id": "eyebrow",
      "kind": "label",
      "start": 0.35,
-     "text": "D\u00e9fi #5",
-     "words": 2
+     "text": "D\u00e9fi #5 \u00b7 externes et R1",
+     "words": 5
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "question+options",
      "kind": "card",
-     "start": 5.35,
-     "text": "\u0152il rouge et douloureux, 4 jours apr\u00e8s une cataracte. Que vois-tu ? Hypopion Hyph\u00e9ma Arc s\u00e9nile",
-     "words": 15
+     "start": 3.85,
+     "text": "Douleur apr\u00e8s une cataracte. Que vois-tu ? Hyph\u00e9ma Hypopyon \u0152d\u00e8me corn\u00e9en",
+     "words": 10
     },
     {
-     "end": 14,
+     "end": 10,
      "id": "prompt",
      "kind": "label",
-     "start": 6.4,
+     "start": 4.4,
      "text": "Ton diagnostic ?",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "sign-sticker",
      "kind": "label",
-     "start": 14.85,
-     "text": "hypopion",
+     "start": 10.85,
+     "text": "hypopyon",
      "words": 1
     },
     {
-     "end": 17.5,
-     "id": "bien-vu",
+     "end": 14.5,
+     "id": "answer-letter",
      "kind": "label",
-     "start": 14.7,
-     "text": "Bien vu !",
+     "start": 10.7,
+     "text": "R\u00e9ponse B",
      "words": 2
     },
     {
-     "end": 21,
+     "end": 14.5,
      "id": "answer",
      "kind": "card",
-     "start": 15.45,
-     "text": "Endophtalmie jusqu\u2019\u00e0 preuve du contraire Ophtalmo le jour m\u00eame.",
-     "words": 9
+     "start": 10.45,
+     "text": "Endophtalmie : ophtalmo le jour m\u00eame",
+     "words": 5
     },
     {
-     "end": 25.5,
+     "end": 20,
      "id": "end",
      "kind": "card",
-     "start": 22,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 15.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-09-compte-a-rebours-j1-en": {
-   "T": 14,
+   "T": 15,
    "cuts": [
     0,
     2,
@@ -1539,7 +1501,7 @@
     3,
     5,
     9.5,
-    14
+    15
    ],
    "texts": [
     {
@@ -1575,17 +1537,17 @@
      "words": 5
     },
     {
-     "end": 14,
+     "end": 15,
      "id": "end",
      "kind": "card",
-     "start": 10.5,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 10.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-09-compte-a-rebours-j1-fr": {
-   "T": 14,
+   "T": 15,
    "cuts": [
     0,
     2,
@@ -1593,7 +1555,7 @@
     3,
     5,
     9.5,
-    14
+    15
    ],
    "texts": [
     {
@@ -1629,17 +1591,17 @@
      "words": 5
     },
     {
-     "end": 14,
+     "end": 15,
      "id": "end",
      "kind": "card",
-     "start": 10.5,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 10.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-09-compte-a-rebours-j14-en": {
-   "T": 14,
+   "T": 15,
    "cuts": [
     0,
     2,
@@ -1647,7 +1609,7 @@
     3,
     5,
     9.5,
-    14
+    15
    ],
    "texts": [
     {
@@ -1683,17 +1645,17 @@
      "words": 6
     },
     {
-     "end": 14,
+     "end": 15,
      "id": "end",
      "kind": "card",
-     "start": 10.5,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 10.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-09-compte-a-rebours-j14-fr": {
-   "T": 14,
+   "T": 15,
    "cuts": [
     0,
     2,
@@ -1701,7 +1663,7 @@
     3,
     5,
     9.5,
-    14
+    15
    ],
    "texts": [
     {
@@ -1737,17 +1699,17 @@
      "words": 6
     },
     {
-     "end": 14,
+     "end": 15,
      "id": "end",
      "kind": "card",
-     "start": 10.5,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 10.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-09-compte-a-rebours-j30-en": {
-   "T": 14,
+   "T": 15,
    "cuts": [
     0,
     2,
@@ -1755,7 +1717,7 @@
     3,
     5,
     9.5,
-    14
+    15
    ],
    "texts": [
     {
@@ -1791,17 +1753,17 @@
      "words": 3
     },
     {
-     "end": 14,
+     "end": 15,
      "id": "end",
      "kind": "card",
-     "start": 10.5,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 10.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-09-compte-a-rebours-j30-fr": {
-   "T": 14,
+   "T": 15,
    "cuts": [
     0,
     2,
@@ -1809,7 +1771,7 @@
     3,
     5,
     9.5,
-    14
+    15
    ],
    "texts": [
     {
@@ -1845,17 +1807,17 @@
      "words": 5
     },
     {
-     "end": 14,
+     "end": 15,
      "id": "end",
      "kind": "card",
-     "start": 10.5,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 10.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   },
   "ocelle-teaser-09-compte-a-rebours-j7-en": {
-   "T": 14,
+   "T": 15,
    "cuts": [
     0,
     2,
@@ -1863,7 +1825,7 @@
     3,
     5,
     9.5,
-    14
+    15
    ],
    "texts": [
     {
@@ -1899,17 +1861,17 @@
      "words": 5
     },
     {
-     "end": 14,
+     "end": 15,
      "id": "end",
      "kind": "card",
-     "start": 10.5,
-     "text": "ocelle Coming December 2026 Follow",
-     "words": 5
+     "start": 10.3,
+     "text": "ocelle Ophthalmology in images Coming December 2026 Follow",
+     "words": 8
     }
    ]
   },
   "ocelle-teaser-09-compte-a-rebours-j7-fr": {
-   "T": 14,
+   "T": 15,
    "cuts": [
     0,
     2,
@@ -1917,7 +1879,7 @@
     3,
     5,
     9.5,
-    14
+    15
    ],
    "texts": [
     {
@@ -1953,12 +1915,12 @@
      "words": 5
     },
     {
-     "end": 14,
+     "end": 15,
      "id": "end",
      "kind": "card",
-     "start": 10.5,
-     "text": "ocelle \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
-     "words": 4
+     "start": 10.3,
+     "text": "ocelle L\u2019ophtalmo en images \u00b7 D\u00e9cembre 2026 \u00b7 Abonne-toi",
+     "words": 7
     }
    ]
   }

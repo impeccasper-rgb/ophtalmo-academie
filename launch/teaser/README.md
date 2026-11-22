@@ -2,18 +2,18 @@
 
 **Status: drafts. Nothing has been posted or sent.** The owner posts everything himself, adds the trending sound in the app and writes the final caption. The captions below are drafts he can adapt.
 
-- **Art direction (owner's choice): A « Lampe à fente » + E « Quiz show ».** The base is A: dark navy, a cobalt slit-beam sweep across a drawn subject, the decisive sign glowing fluo, a slow build then a snap reveal. A owns all motion and transitions. E's quiz becomes a HUD layer: question card, A/B/C buttons, an 8-s timer bar (after a calm hold on the question and options), score, and a restrained fluo burst on the right answer. The direction samples are in `directions/`.
+- **Art direction (owner's choice): A « Lampe à fente » + E « Quiz show ».** The base is A: dark navy, a cobalt slit-beam sweep across a drawn subject, the decisive sign glowing fluo, a slow build then a snap reveal. A owns all motion and transitions. E's quiz becomes a HUD layer: question card, A/B/C buttons, a 6-s timer bar, then a « Réponse B » sticker and a restrained fluo burst on the right answer (no score and no « Bien vu ! », which would congratulate every viewer). The direction samples are in `directions/`.
 - **No call to comment on screen.** During the timer, the screen shows an open question (« Ton diagnostic ? », « C'est quoi le signe ? », « Qu'est-ce que tu vois ? »; EN "Your diagnosis?", "What's the sign?", "What do you see?"). Any call to comment goes only in the caption or the bio.
 - **Clinical review is mandatory before posting** (rule from `launch/CONTENU.md`). The medical statements come from the site's content.
 - **Placeholder date: launch day = Wednesday 23 December 2026, to be confirmed.** The J-30 / J-14 / J-7 / J-1 videos are dated from it. If the date changes, the template takes any number (`countdown:N`).
 
 ## Rules applied to every file
-- **Video format:** 1080×1920, 30 fps, H.264 (`-preset veryfast -crf 21`), yuv420p, `+faststart`, **no audio track**. Quizzes run 22.5–25.5 s, showcase reels 15–25 s, countdowns 14 s. All lengths are whole beats at 120 BPM.
+- **Video format:** 1080×1920, 30 fps, H.264 (`-preset veryfast -crf 21`), yuv420p, `+faststart`, **no audio track**. **Owner's cap: 20 s maximum.** Quizzes run 20 s (40 beats), showcase reels 16.5–19.5 s, countdowns 15 s. All lengths are whole beats at 120 BPM.
 - **Platform safe zones:** all text stays inside x 72–948 and y 140–1680, so it is clear of the top 120 px, the bottom 220 px and the right 120 px. Unlike direction C, nothing ever goes past these margins, not even during a transition.
-- **End card on every reel:** FR « ocelle · Décembre 2026 · Abonne-toi »; EN « ocelle · Coming December 2026 · Follow ».
+- **End card on every reel (5.5 s):** FR « ocelle · L'ophtalmo en images · Décembre 2026 · Abonne-toi »; EN « ocelle · Ophthalmology in images · Coming December 2026 · Follow ». The audience (« externes et R1 » / « clerks & R1s ») sits in the eyebrow of every challenge.
 - **No URL anywhere.** Not in the videos, the carousels or the bio.
-- **Reading time (owner's rule):** every text stays fully visible, after its entrance, for at least max(2.5 s, 1.5 s + 0.35 s per word). Two texts that must be read never compete: a new card enters only once the previous one has had its full reading time. Stickers, eyebrows and the timer prompt accompany a card and are exempt from that second check only. To make this fit, the answer texts were shortened (diagnosis plus one line; the mechanism sits in reel 03), and the end card lasts 4.5 s. `_src/check_reading.py` checks every reel from `videos/cuts.json` (`--live` reads the timeline directly) and fails if any text is under the rule.
-- **Sync grid:** every reel is cut on a **120 BPM** grid, so every cut falls on a multiple of 0.5 s. This also works with sounds at 60 or 240 BPM. For any other tempo, slide the sound in the app so its drop lands on the **snap at 2.0 s** (on the quizzes, a second drop can land on the **reveal at 14 s**). The exact cuts are listed in `videos/cuts.json` and in the table below.
+- **Reading time (owner's rule):** every text stays fully visible, after its entrance, for at least max(2.5 s, 1.5 s + 0.35 s per word). Two texts that must be read never compete: a new card enters only once the previous one has had its full reading time. Stickers, eyebrows and the timer prompt accompany a card and are exempt from that second check only. To fit 20 s, the words were cut rather than the reading time: question plus options ≤ 13 words, read over a 6-s answer window; the diagnosis and the action are merged into one answer line; the mechanism sits in reel 03. `_src/check_reading.py` checks every reel from `videos/cuts.json` (`--live` reads the timeline directly) and fails if any text is under the rule.
+- **Sync grid:** every reel is cut on a **120 BPM** grid, so every cut falls on a multiple of 0.5 s. This also works with sounds at 60 or 240 BPM. For any other tempo, slide the sound in the app so its drop lands on the reel's **snap**: 3.0 s on the quizzes, 2.5 s on 01, 3.0 s on 03, 2.0 s on 05 and 09. On the quizzes a second drop can land on the **reveal**, at 10 s (9.5 s on 04b/07b). The exact cuts are listed in `videos/cuts.json` and in the table below.
 - **Rights:** see « Sources et licences » at the bottom. Everything is original SVG or our own interface. **No photos.**
 
 ## Files
@@ -24,17 +24,26 @@
 
 | # | File (`ocelle-teaser-…-{fr,en}.mp4`) | Type | Duration | Cuts (s), 120 BPM |
 |---|---|---|---|---|
-| 01 | `01-ocelle-arrive` | Pure A: brand reveal | 15 | 0 (« Observe. ») · 2.5 (snap, « Réponds. ») · 5 (« Révèle. », loop) · 6.5 (mark) · 7.5 (« ocelle arrive ») · 10.5 (end) · 15 |
-| 02 | `02-defi-angle-ferme` | Quiz, answered in the video | 25.5 | 0 (hook) · 3.5 (snap, question) · 4 · 4.5 · 5 (A/B/C) · 6 (8-s timer, one digit per second) · 14 (reveal) · 15 (answer card) · 21 (end) · 25.5 |
-| 03 | `03-mecanisme-crise-angle` | Pure A: drawn mechanism, 5 steps | 25 | 0 (hook) · 4 · 7 · 10 · 14 · 17 (one step per cut) · 20.5 (end) · 25 |
-| 04 | `04-defi-dendrite-reponse-demain` | Quiz, « réponse demain » | 22.5 | 0 · 3.5 · 4 · 4.5 · 5 · 6 (8-s timer) · 14 (« Réponse demain ») · 18 (end) · 22.5 |
-| 04b | `04b-defi-dendrite-reponse` | The next day's answer | 25.5 | same cuts as 02 |
-| 05 | `05-touche-le-signe` | Pure A: real interface (touch the sign) | 22.5 | 0 · 2 (snap) · 4 / 4.5 (caption, then miss « pas ici ») · 7.5 / 8 (hit, loop) · 11.5 / 12 (names the sign, sticker) · 15 · 18 (end) · 22.5 |
-| 06 | `06-defi-decollement-retine` | Quiz, answered in the video | 18 | same cuts as 02 |
-| 07 | `07-defi-oacr-reponse-demain` | Quiz, « réponse demain » | 18 | same cuts as 04 |
-| 07b | `07b-defi-oacr-reponse` | The next day's answer | 18 | same cuts as 04b |
-| 08 | `08-defi-hypopion` | Quiz, answered in the video | 18 | same cuts as 02 |
-| 09 | `09-compte-a-rebours-j30`, `-j14`, `-j7`, `-j1` | Countdown template | 14 | 0 · 2 (snap) · 2.5 (« avant Ocelle ») · 3 (ticks) · 5 (line) · 9.5 (end) · 14 |
+| 01 | `01-ocelle-arrive` | Pure A: brand reveal | 16.5 | 0 (« Observe. ») · 2.5 (snap, « Réponds. ») · 5 (« Révèle. », loop) · 6.5 (mark) · 7.5 (« ocelle arrive ») · 11 (end) · 16.5 |
+| 02 | `02-defi-angle-ferme` | Quiz, answered in the video | 20 | 0 (hook, drawing visible) · 3 (snap, question + options) · 4 (6-s timer, one digit per second) · 10 (reveal + answer line) · 14.5 (end) · 20 |
+| 03 | `03-mecanisme-crise-angle` | Pure A: drawn mechanism, 4 steps | 17.5 | 0 · 3 · 6 · 9 (one step per cut) · 12 (end) · 17.5 |
+| 04 | `04-defi-dendrite-reponse-demain` | Quiz, « réponse demain » | 20 | 0 · 3 · 4 (6-s timer) · 10 (« Réponse demain ») · 14.5 (end) · 20 |
+| 04b | `04b-defi-dendrite-reponse` | The next day's answer | 20 | 0 (« La réponse d'hier ») · 3 (question + options) · 3.5 (6-s timer) · 9.5 (reveal + answer line) · 14.5 (end) · 20 |
+| 05 | `05-touche-le-signe` | Pure A: real interface (touch the sign) | 19.5 | 0 · 2 (snap) · 3 / 3.5 (zoom onto the photo, miss « pas ici ») · 6 / 6.5 (hit, loop) · 9.5 / 10 (zoom onto the choices, names the sign) · 14 (end) · 19.5 |
+| 06 | `06-defi-decollement-retine` | Quiz, answered in the video | 20 | same cuts as 02 |
+| 07 | `07-defi-oacr-reponse-demain` | Quiz, « réponse demain » | 20 | same cuts as 04 |
+| 07b | `07b-defi-oacr-reponse` | The next day's answer | 20 | same cuts as 04b |
+| 08 | `08-defi-hypopion` | Quiz, answered in the video | 20 | same cuts as 02 |
+| 09 | `09-compte-a-rebours-j30`, `-j14`, `-j7`, `-j1` | Countdown template | 15 | 0 (« J-x » legible from frame 1) · 2 (snap) · 2.5 (« avant Ocelle ») · 3 (ticks) · 5 (line) · 9.5 (end) · 15 |
+
+Changes after `CRITIQUE-REELS.md`:
+- Dendrite: « Antiviral · pas de corticoïde » (reel 04b, carousel 2, captions).
+- Each challenge has its own hook, and the drawing is visible from frame 1.
+- In 02, 06 and 08 the options differ by a sign the drawing settles.
+- 04b/07b reveal at 9.5 s; the 07b title gains « de la rétine ».
+- The end card says what Ocelle is.
+- In 05: camera zoom and large overlays, and the secondary ring is removed.
+- J-x is legible from frame 1.
 
 The 8 reels from the brief are 01–08. 04b and 07b are the answer posts for the « réponse demain » reels. 09 is the countdown template in 4 variants.
 
@@ -72,8 +81,8 @@ Common end of every caption: FR « Outil d'apprentissage, pas un avis médical. 
 - Visuals: drawn eye (A), Ocelle mark and wordmark.
 
 **02 · Défi #1: angle fermé** (answered in the video)
-- FR: « 8 secondes. Tu avais trouvé avant la révélation ? Dis-nous en commentaire si tu avais A, B ou C. »
-- EN: « 8 seconds. Did you get it before the reveal? Tell us in the comments: A, B or C? »
+- FR: « 6 secondes. Tu avais trouvé avant la révélation ? Dis-nous en commentaire si tu avais A, B ou C. »
+- EN: « 6 seconds. Did you get it before the reveal? Tell us in the comments: A, B or C? »
 - Hashtags FR: `#ophtalmologie #glaucome #externat #EDN #urgences #étudiantenmédecine` · EN: `#ophthalmology #glaucoma #meded #medstudent #emergencymedicine #CaRMS`
 - Visuals: angle section from the site's mechanism kit (`g-crise`, iris bombé), original SVG.
 
@@ -90,19 +99,19 @@ Common end of every caption: FR « Outil d'apprentissage, pas un avis médical. 
 - Visuals: front view of the eye under cobalt light with a dendrite, drawn (`art.js`).
 
 **04b · Réponse du défi #2** (the next day, as a reel or a story)
-- FR: « La réponse d'hier : une dendrite. Des branches, un bulbe au bout de chacune : kératite herpétique. Pas de corticoïde seul. »
-- EN: « Yesterday's answer: a dendrite. Branches with a bulb at each tip: herpes keratitis. No steroid alone. »
+- FR: « La réponse d'hier : une dendrite. Des branches, un bulbe au bout de chacune : kératite herpétique. Antiviral, et aucun corticoïde sur une dendrite. »
+- EN: « Yesterday's answer: a dendrite. Branches with a bulb at each tip: herpes keratitis. Antiviral, and no steroids on a dendrite. »
 - Hashtags: same as 04.
 
 **05 · Touche le signe** (the real interface)
 - FR: « Sur Ocelle, tu ne lis pas la réponse : tu touches le signe. Raté, le site te le dit. Touché, le marqueur l'entoure. Puis tu le nommes. Décembre. »
 - EN: « On Ocelle you don't read the answer: you tap the sign. Miss, and it tells you. Hit, and the marker circles it. Then you name it. December. »
 - Hashtags FR: `#ophtalmologie #externat #apprentissage #médecine #EDN #Québec` · EN: `#ophthalmology #meded #medstudent #edtech #medicalstudent #eyes`
-- Visuals: the site's real « Voir » screen (A5, retinal occlusions), captured with Playwright. The photo slot was fed our CRAO schematic and every other raster image was blanked, so the screen shows **no photo**. The credit line reads « Schéma · Ocelle ». The sticker is the interface's real one: it draws among « Bien vu ! / Dans le mille ! / Exact ! » and shows « Exact ! » here (EN « Nailed it! »).
+- Visuals: the site's real « Voir » screen (A5, retinal occlusions), captured with Playwright. The photo slot was fed our CRAO schematic and every other raster image was blanked, so the screen shows **no photo**. The credit line reads « Schéma · Ocelle ». The secondary dashed ring is hidden during the capture. A camera zooms onto the photo, then onto the choices. Large overlays (« pas ici », the chosen sign, the interface's own verdict « Exact ! » / « Nailed it! ») carry what must be read at ≥ 56 px.
 
 **06 · Défi #3: décollement de rétine** (answered in the video)
-- FR: « Éclairs, corps flottants, puis une ombre. Tu l'avais ? Un rideau, c'est ophtalmo le jour même. »
-- EN: « Flashes, floaters, then a shadow. Did you get it? A curtain means same-day ophthalmology. »
+- FR: « Baisse de vision d'un œil : c'est le fond d'œil qui tranche. Tu l'avais avant la révélation ? »
+- EN: « Vision loss in one eye: the fundus settles it. Did you get it before the reveal? »
 - Hashtags FR: `#ophtalmologie #rétine #urgences #externat #EDN #étudiantenmédecine` · EN: `#ophthalmology #retina #emergencymedicine #meded #medstudent #CaRMS`
 - Visuals: drawn fundus, superotemporal detachment with a horseshoe tear.
 
@@ -117,9 +126,9 @@ Common end of every caption: FR « Outil d'apprentissage, pas un avis médical. 
 - EN: « Cherry-red spot: central retinal artery occlusion. An eye stroke: stroke centre now. »
 - Hashtags: same as 07.
 
-**08 · Défi #5: hypopion** (answered in the video)
-- FR: « Œil rouge et douloureux après une cataracte. Le niveau blanc ne pardonne pas : ophtalmo le jour même. »
-- EN: « Red, painful eye after cataract surgery. That white layer can't wait: same-day ophthalmology. »
+**08 · Défi #5: hypopyon** (answered in the video)
+- FR: « Œil rouge et douloureux après une cataracte. Regarde bien le bas de la chambre antérieure. »
+- EN: « Red, painful eye after cataract surgery. Look closely at the bottom of the anterior chamber. »
 - Hashtags FR: `#ophtalmologie #cataracte #urgences #externat #internat #médecine` · EN: `#ophthalmology #cataract #emergencymedicine #meded #medstudent #ophthalmologyresident`
 - Visuals: drawn front view of the eye (ciliary flush, hypopyon).
 
@@ -167,7 +176,7 @@ Each week has 1 motion feature reel, 1 challenge and 1 slot « visage/voix du pr
 | Tue 22 Dec | Motion | **09 J-1** as a reel | |
 | Wed 23 Dec | Face/voice | **Script 5: launch day** | |
 
-**Held back for launch week or January:** 08 Défi hypopion, Carrousel 2 (fluorescéine), Carrousel 3 (crise d'angle). They can replace any slot if one post underperforms.
+**Held back for launch week or January:** 08 Défi hypopyon, Carrousel 2 (fluorescéine), Carrousel 3 (crise d'angle). They can replace any slot if one post underperforms.
 
 Note: lengths follow the reading-time rule (owner's feedback), so the quizzes run about 25 s.
 

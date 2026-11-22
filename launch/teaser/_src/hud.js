@@ -17,7 +17,7 @@ var H = (function () {
       '<filter id="glowL" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>' +
       '<filter id="glowM" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs></svg>' +
       '<style>.hud{position:absolute;background:rgba(14,20,64,.74);border:2px solid rgba(90,104,255,.95);border-radius:22px;box-shadow:0 0 0 1px rgba(74,87,255,.25),0 0 34px rgba(74,87,255,.42),inset 0 0 22px rgba(74,87,255,.16)}' +
-      '.mono{font-family:var(--mono);font-weight:700;letter-spacing:.12em;text-transform:uppercase}' +
+      '.lbl-sm{font-size:12px!important;font-weight:700}.mono{font-family:var(--mono);font-weight:700;letter-spacing:.12em;text-transform:uppercase}' +
       '.eyb{font:700 26px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--fluo);text-shadow:0 0 14px rgba(216,255,58,.45)}' +
       '.gl{text-shadow:0 0 22px rgba(216,255,58,.55)}' +
       '.tile{display:inline-grid;place-items:center;width:68px;height:68px;border-radius:16px;border:3px solid var(--fluo);color:var(--fluo);font:800 40px var(--display);box-shadow:0 0 18px rgba(216,255,58,.35),inset 0 0 12px rgba(216,255,58,.2);text-shadow:0 0 12px rgba(216,255,58,.7);flex:none}' +
@@ -37,15 +37,16 @@ var H = (function () {
   H.figure = function (S, spec, box, beamKeys, tSnap, o) {
     o = o || {}; var sc = Math.min(box[2] / spec.vb[0], box[3] / spec.vb[1]), w = spec.vb[0] * sc, h = spec.vb[1] * sc, x = box[0] + (box[2] - w) / 2, y = box[1] + (box[3] - h) / 2;
     var wrap = K.div(S, 'left:' + x + 'px;top:' + y + 'px;width:' + w + 'px;height:' + h + 'px', '', 'fig');
-    var dim = K.div(wrap, 'inset:0;filter:brightness(.26) saturate(.5)', spec.html);
+    var dim = K.div(wrap, 'inset:0;filter:brightness(.62) saturate(.8)', spec.html);
     var lit = K.div(wrap, 'inset:0', spec.html);
     if (beamKeys) {
       var kk = beamKeys.map(function (k) { var l = k[1] - x - 34, r = w - (k[1] - x + 34); return [k[0], { clipPath: 'inset(0px ' + r.toFixed(0) + 'px 0px ' + l.toFixed(0) + 'px)' }, EZ.slow]; });
       kk.push([tSnap - .001, kk[kk.length - 1][1]], [tSnap, { clipPath: 'inset(0px 0px 0px 0px)' }]);
       K.track(lit, kk);
     }
-    var ov = K.svgBox(wrap, 'left:0;top:0;width:100%;height:100%', '0 0 ' + spec.vb[0] + ' ' + spec.vb[1]);
-    return { wrap: wrap, ov: ov, sc: sc, x: x, y: y, w: w, h: h, px: function (vx, vy) { return [x + vx * sc, y + vy * sc]; } };
+    var ov = K.svgBox(wrap, 'left:0;top:0;width:100%;height:100%', spec.view || ('0 0 ' + spec.vb[0] + ' ' + spec.vb[1]));
+    var vx = spec.view ? +spec.view.split(' ')[0] : 0, vy = spec.view ? +spec.view.split(' ')[1] : 0;
+    return { wrap: wrap, ov: ov, sc: sc, x: x, y: y, w: w, h: h, px: function (a, b) { return [x + (a - vx) * sc, y + (b - vy) * sc]; } };
   };
   H.signLoop = function (F, spec, t0, seed) {
     var g = spec.sign; return K.loop(F.ov, g[0], g[1], g[2], g[3], seed || 11, t0, .55, { filter: 'url(#glowA)', tilt: -.1, w: 6.5 / F.sc, hw: 10 / F.sc });
@@ -67,20 +68,21 @@ var H = (function () {
   H.reg = function (id, text, start, end, kind) { H.texts.push({ id: id, text: String(text).replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim(), words: H.words(text), start: +start.toFixed(3), end: +end.toFixed(3), kind: kind || 'card' }); };
   H.need = function (w) { return Math.max(2.5, 1.5 + .35 * w); };
   /* A end card (4 s): fade through black, the ocellus draws in glowing fluorescein; date + CTA read as one group */
-  H.END = 4.5;
+  H.END = 5.5;
   H.endCard = function (S, t0) {
     var hh = S.offsetHeight, k = hh / 1920;
     var blk = K.div(S, 'left:0;top:0;width:1080px;height:' + hh + 'px;background:radial-gradient(90% 60% at 50% 45%,#0e1440,#03051a);z-index:80'); K.fade(blk, t0, .25);
     var z = K.div(S, 'left:0;top:0;width:1080px;height:' + hh + 'px;z-index:81');
     var sweep = K.div(z, 'left:0;top:' + (420 * k) + 'px;width:120px;height:' + (1100 * k) + 'px;mix-blend-mode:screen;filter:blur(18px);background:linear-gradient(90deg,transparent,rgba(74,87,255,.45),transparent)');
     K.track(sweep, [[0, { opacity: 0, transform: 'translateX(-200px)' }], [t0 + .2, { opacity: 0, transform: 'translateX(-200px)' }], [t0 + .25, { opacity: 1, transform: 'translateX(-200px)' }, EZ.slow], [t0 + 1.4, { opacity: 1, transform: 'translateX(1200px)' }]]);
-    var y0 = 560 * k;
-    K.mark(z, 'left:330px;top:' + y0 + 'px;width:420px;height:395px', { t0: t0 + .2, dur: .7, sw: 70, filter: 'url(#glowM)' });
-    var wm = K.wordmark(z, 'left:270px;top:' + (y0 + 470) + 'px;width:540px;color:#fff', '#ffffff'); K.rise(wm, t0 + .4, .4, 30);
-    var dtx = H.t({ fr: '· Décembre 2026 ·', en: 'Coming December 2026' }), ctx = H.t({ fr: 'Abonne-toi', en: 'Follow' });
-    var dt = K.div(z, 'left:72px;top:' + (y0 + 670) + 'px;width:876px;text-align:center;color:#c9ceff;font:700 60px var(--display);letter-spacing:-.02em', dtx); K.rise(dt, t0 + .5, .35, 24);
-    var cta = K.div(z, 'left:72px;top:' + (y0 + 800) + 'px;width:876px;text-align:center;font-size:76px', '<span class="sticker dk">' + ctx + '</span>'); K.pop(cta, t0 + .55, -5, .45);
-    H.reg('end', 'ocelle ' + dtx + ' ' + ctx, t0 + 1.0, K.T, 'card');
+    var y0 = 470 * k;
+    K.mark(z, 'left:350px;top:' + y0 + 'px;width:380px;height:357px', { t0: t0 + .15, dur: .6, sw: 70, filter: 'url(#glowM)' });
+    var wm = K.wordmark(z, 'left:270px;top:' + (y0 + 420) + 'px;width:540px;color:#fff', '#ffffff'); K.rise(wm, t0 + .3, .35, 30);
+    var dsx = H.t({ fr: 'L’ophtalmo en images', en: 'Ophthalmology in images' }), dtx = H.t({ fr: '· Décembre 2026 ·', en: 'Coming December 2026' }), ctx = H.t({ fr: 'Abonne-toi', en: 'Follow' });
+    var ds = K.div(z, 'left:72px;top:' + (y0 + 610) + 'px;width:876px;text-align:center;color:#ffffff;font:600 50px/1.2 var(--body)', dsx); K.rise(ds, t0 + .3, .35, 20);
+    var dt = K.div(z, 'left:72px;top:' + (y0 + 700) + 'px;width:876px;text-align:center;color:#c9ceff;font:700 60px var(--display);letter-spacing:-.02em', dtx); K.rise(dt, t0 + .35, .35, 24);
+    var cta = K.div(z, 'left:72px;top:' + (y0 + 820) + 'px;width:876px;text-align:center;font-size:76px', '<span class="sticker dk">' + ctx + '</span>'); K.pop(cta, t0 + .4, -5, .4);
+    H.reg('end', 'ocelle ' + dsx + ' ' + dtx + ' ' + ctx, t0 + .8, K.T, 'card');
     return z;
   };
   H.eyebrow = function (S, txt, t0, t1) { var e = K.div(S, 'left:72px;top:142px;z-index:30', '<span class="eyb">' + txt + '</span>'); K.fade(e, t0, .3, t1, .2); return e; };
@@ -89,33 +91,29 @@ var H = (function () {
      cfg: { num, spec, hook, q, opts[3], ok, sign, stk:[x,y], dx, why, prompt }   mode: 'same' | 'demain' | 'recap' */
   /* quiz timeline (120 BPM, 0.5-s grid). Hook read alone (≥2.9 s), question + options read as one block over the
      calm hold + the 8-s answer window, labels (sign, « Bien vu ! ») at the reveal, then one answer card, then the end card. */
+  /* ≤ 20 s (40 beats): hook 3 s, question + options (≤ 13 words) read over a 6-s answer window, answer card = one line at the reveal, end card 5.5 s */
   H.QUIZ_T = {
-    same: { snap: 3.5, btn: [4, 4.5, 5], tm: 6, tmd: 8, rev: 14, dx: 15, end: 21, T: 25.5 },
-    demain: { snap: 3.5, btn: [4, 4.5, 5], tm: 6, tmd: 8, rev: 14, dx: null, end: 18, T: 22.5 },
-    recap: { snap: 3.5, btn: [4, 4.5, 5], tm: 6, tmd: 8, rev: 14, dx: 15, end: 21, T: 25.5 }
+    same: { snap: 3, btn: [3, 3.25, 3.5], tm: 4, tmd: 6, rev: 10, dx: 10, end: 14.5 },
+    demain: { snap: 3, btn: [3, 3.25, 3.5], tm: 4, tmd: 6, rev: 10, dx: null, end: 14.5 },
+    recap: { snap: 3, btn: [3, 3, 3], tm: 3.5, tmd: 6, rev: 9.5, dx: 9.5, end: 14.5 }
   };
   H.quiz = function (S, cfg, mode) {
-    var Q = H.QUIZ_T[mode]; K.T = Q.T; H.scene(S);
+    var Q = H.QUIZ_T[mode]; Q.T = Q.end + H.END; K.T = Q.T; H.scene(S);
     var ST = Q.snap, FB = [40, 470, 1000, 620];
-    var BK = [[0, 120], [.2, 120], [3.3, 960]];
+    var BK = [[0, 120], [.1, 120], [2.8, 960]];
     H.beam(S, BK, 380, 860, 0, ST + .05);
     var F = H.figure(S, cfg.spec, FB, BK, ST);
     K.track(F.wrap, [[0, { transform: 'scale(1)' }, EZ.lin], [ST, { transform: 'scale(1.05)' }], [ST, { transform: 'scale(1.14)' }, EZ.out], [ST + .7, { transform: 'scale(1)' }], [Q.end, { transform: 'scale(1)' }]]);
     H.flash(S, ST);
-    var hookTxt = mode === 'recap' ? H.t({ fr: 'La réponse<br>d’<span style="color:var(--fluo)" class="gl">hier</span>', en: 'Yesterday’s<br><span style="color:var(--fluo)" class="gl">answer</span>' }) : H.t(cfg.hook);
+    var hookTxt = mode === 'recap' ? H.t({ fr: 'La réponse<br><span style="color:var(--fluo)" class="gl">d’hier</span>', en: 'Yesterday’s<br><span style="color:var(--fluo)" class="gl">answer</span>' }) : H.t(cfg.hook);
     var hook = K.div(S, 'left:72px;top:200px;width:876px;color:#fff;font-size:140px', '<div class="dsp">' + hookTxt + '</div>');
-    K.rise(hook, 0, .3, 40, ST - .15, .15); H.reg('hook', hookTxt, .3, ST - .15);
-    var eyb = H.t({ fr: 'Défi #', en: 'Challenge #' }) + cfg.num + (mode === 'recap' ? H.t({ fr: ' · réponse', en: ' · answer' }) : '');
+    K.rise(hook, 0, .25, 40, ST - .1, .1); H.reg('hook', hookTxt, .25, ST - .1);
+    var eyb = H.t({ fr: 'Défi #', en: 'Challenge #' }) + cfg.num + (mode === 'recap' ? H.t({ fr: ' · réponse', en: ' · answer' }) : '') + H.t({ fr: ' · externes et R1', en: ' · clerks & R1s' });
     H.eyebrow(S, eyb, .05, Q.end - .2); H.reg('eyebrow', eyb, .35, Q.end - .2, 'label');
-    var chip = K.div(S, 'right:132px;top:132px;padding:10px 18px;z-index:30', '', 'hud'); chip.style.borderRadius = '14px';
-    var c0 = K.div(chip, 'position:relative;color:#c9ceff;font:700 26px var(--mono);letter-spacing:.12em', 'SCORE <b style="color:#fff">00</b>');
-    if (Q.dx) { var c1 = K.div(chip, 'left:18px;top:10px;color:#c9ceff;font:700 26px var(--mono);letter-spacing:.12em', 'SCORE <b style="color:#d8ff3a;text-shadow:0 0 12px rgba(216,255,58,.8)">01</b>'); K.cut(c1, Q.rev + .1); K.track(c0, [[0, { opacity: 1 }], [Q.rev + .1, { opacity: 1 }], [Q.rev + .1, { opacity: 0 }]]);
-      K.track(chip, [[Q.rev + .1, { transform: 'scale(1)' }, EZ.pop], [Q.rev + .25, { transform: 'scale(1.15)' }], [Q.rev + .5, { transform: 'scale(1)' }]]); }
-    K.fade(chip, ST, .3, Q.end - .2, .2);
     // question card + options (one reading block)
     var qx = H.t(cfg.q), card = K.div(S, 'left:72px;top:198px;width:876px;padding:26px 32px 30px;z-index:20', '<div class="eyb" style="margin-bottom:12px">' + H.t({ fr: 'Question', en: 'Question' }) + '</div><div style="color:#fff;font:600 44px/1.22 var(--body)">' + qx + '</div>', 'hud');
-    var qOut = Q.dx ? Q.rev + .5 : Q.end;
-    K.rise(card, ST, .4, 24, qOut, .3);
+    var qOut = Q.dx ? Q.rev : Q.end;
+    K.rise(card, ST, .4, 24, qOut, .25);
     var bs = [], BY = 1112, otx = [];
     cfg.opts.forEach(function (op, i) {
       var b = K.div(S, 'left:72px;top:' + (BY + i * 130) + 'px;width:876px;height:112px;display:flex;align-items:center;gap:26px;padding:0 24px;color:#fff;font:600 44px/1.1 var(--body);z-index:20', '<span class="tile">' + 'ABC'[i] + '</span><span>' + H.t(op) + '</span>', 'hud');
@@ -125,7 +123,7 @@ var H = (function () {
         [qOut, { opacity: (Q.dx && i !== cfg.ok) ? .32 : 1, transform: 'translateY(0px)' }, EZ.in],
         (Q.dx && i === cfg.ok) ? [qOut + .4, { opacity: 1, transform: 'translateY(' + (-i * 130) + 'px)' }] : [qOut + .3, { opacity: 0, transform: 'translateY(24px)' }]].concat((Q.dx && i === cfg.ok) ? [[Q.end, { opacity: 1, transform: 'translateY(' + (-i * 130) + 'px)' }]] : []));
     });
-    H.reg('question+options', qx + ' ' + otx.join(' '), Q.btn[2] + .35, Q.rev);
+    H.reg('question+options', qx + ' ' + otx.join(' '), Math.max(ST + .4, Q.btn[2] + .35), Q.rev);
     // timer bar + open prompt (no call to comment on screen)
     var tb = K.div(S, 'left:72px;top:1508px;width:740px;height:22px;border-radius:12px;background:rgba(74,87,255,.22);border:2px solid rgba(90,104,255,.9);box-shadow:0 0 18px rgba(74,87,255,.4);overflow:hidden;z-index:20');
     var tf = K.div(tb, 'left:0;top:0;width:100%;height:100%;background:#d8ff3a;box-shadow:0 0 16px rgba(216,255,58,.9);transform-origin:0 50%');
@@ -144,17 +142,15 @@ var H = (function () {
       var bo = bs[cfg.ok], hi = K.div(bo, 'inset:-2px;border-radius:22px;background:#d8ff3a;display:flex;align-items:center;gap:26px;padding:0 24px;color:#0a0f40;font:800 44px/1.1 var(--body);box-shadow:0 0 44px rgba(216,255,58,.55)', '<span class="tile" style="background:#0a0f40;box-shadow:none">' + 'ABC'[cfg.ok] + '</span><span>' + H.t(cfg.opts[cfg.ok]) + '</span>');
       K.cut(hi, Q.rev);
       K.track(hi, [[Q.rev, { transform: 'scale(1)' }, EZ.pop], [Q.rev + .14, { transform: 'scale(1.04)' }], [Q.rev + .4, { transform: 'scale(1)' }]]);
-      H.burst(S, 72 + 24 + 34, BY + cfg.ok * 130 + 56, Q.rev + .05, 14, cfg.num);
+      H.burst(S, 72 + 24 + 34, BY + 56, Q.rev + .45, 14, cfg.num);
       var sg = H.t(cfg.sign), st = K.div(S, 'left:' + cfg.stk[0] + 'px;top:' + cfg.stk[1] + 'px;font-size:54px;z-index:30', '<span class="sticker dk">' + sg + '</span>'); st.style.transformOrigin = '20% 50%';
       K.pop(st, Q.rev + .35, -5, .5); H.reg('sign-sticker', sg, Q.rev + .85, Q.end, 'label');
-      var bv = H.t({ fr: 'Bien vu !', en: 'Nice catch!' }), ok = K.div(bo, 'right:-12px;top:-44px;font-size:44px;z-index:31', '<span class="sticker dk">' + bv + '</span>');
-      K.pop(ok, Q.rev + .2, 6, .5, Q.dx + 2.5); H.reg('bien-vu', bv, Q.rev + .7, Q.dx + 2.5, 'label');
-      // the answer: diagnosis title + one line, entering together, read as one card
-      var dxt = H.t(cfg.dx), wht = H.t(cfg.why);
-      var dx = K.div(S, 'left:72px;top:196px;width:876px;color:#fff;font-size:92px;z-index:20', '<div class="dsp">' + dxt + '</div>'); K.rise(dx, Q.dx, .45, 36);
-      var why = K.div(S, 'left:72px;top:1262px;width:876px;padding:28px 32px 32px;z-index:20', '<div class="eyb" style="margin-bottom:14px">' + H.t({ fr: 'À retenir', en: 'Key point' }) + '</div><div style="color:#fff;font:600 46px/1.25 var(--body)">' + wht + '</div>', 'hud');
-      K.rise(why, Q.dx, .45, 24);
-      H.reg('answer', dxt + ' ' + wht, Q.dx + .45, Q.end);
+      var bv = H.t({ fr: 'Réponse ', en: 'Answer ' }) + 'ABC'[cfg.ok], ok = K.div(bo, 'right:-12px;top:-44px;font-size:44px;z-index:31', '<span class="sticker dk">' + bv + '</span>');
+      K.pop(ok, Q.rev + .2, 6, .5); H.reg('answer-letter', bv, Q.rev + .7, Q.end, 'label');
+      // the answer: one card, diagnosis and action merged in one short line
+      var dxt = H.t(cfg.dx);
+      var dx = K.div(S, 'left:72px;top:196px;width:876px;color:#fff;font-size:84px;z-index:20', '<div class="dsp">' + dxt + '</div>'); K.rise(dx, Q.dx, .45, 36);
+      H.reg('answer', dxt, Q.dx + .45, Q.end);
     } else { // answer tomorrow
       H.flash(S, Q.rev, .4);
       var dmt = H.t({ fr: 'Réponse demain', en: 'Answer tomorrow' }), dm = K.div(S, 'left:72px;top:440px;width:876px;text-align:center;font-size:104px;z-index:30', '<span class="sticker dk">' + dmt + '</span>');
@@ -165,6 +161,6 @@ var H = (function () {
     H.endCard(S, Q.end);
     return { F: F, cuts: H.cutsQuiz(mode) };
   };
-  H.cutsQuiz = function (mode) { var Q = H.QUIZ_T[mode]; return [0, Q.snap].concat(Q.btn, [Q.tm], Q.dx ? [Q.rev, Q.dx] : [Q.rev], [Q.end, Q.T]); };
+  H.cutsQuiz = function (mode) { var Q = H.QUIZ_T[mode], c = [0, Q.snap].concat(Q.btn, [Q.tm], Q.dx ? [Q.rev, Q.dx] : [Q.rev], [Q.end, Q.end + H.END]); return c.filter(function (v, i) { return c.indexOf(v) === i; }); };
   return H;
 })();

@@ -52,9 +52,11 @@ def seg(pg, cdp, name, dur, action, out, idx):
     idx['segs'].append({'name': name, 'frames': frames})
 def capture(pg, ctx, lang):
     out = os.path.join(HERE, 'ui-frames', lang); os.makedirs(out, exist_ok=True)
-    for f in os.listdir(out): os.remove(os.path.join(out, f))
+    for f in os.listdir(out):
+        if os.path.isfile(os.path.join(out, f)): os.remove(os.path.join(out, f))
     pg.evaluate('''() => { const c = document.querySelector('[data-voir]'); const cr = c.querySelector('.credit, .ph-credit, [class*=credit]'); if (cr) cr.textContent = (document.documentElement.lang === 'en' ? 'Diagram · Ocelle' : 'Schéma · Ocelle');
-      window.scrollBy(0, c.getBoundingClientRect().top - 70); }''')
+      window.scrollBy(0, c.getBoundingClientRect().top - 70);
+      const st = document.createElement('style'); st.textContent = '[data-voir] .inv-hot.minor{display:none!important}'; document.head.appendChild(st); }''')
     pg.wait_for_timeout(600)
     cdp = ctx.new_cdp_session(pg); cdp.send('Animation.enable'); cdp.send('Animation.setPlaybackRate', {'playbackRate': RATE})
     m = pg.evaluate("() => { const r = document.querySelector('[data-voir] .voir-media').getBoundingClientRect(); return [r.x, r.y, r.width, r.height]; }")
@@ -72,6 +74,9 @@ def capture(pg, ctx, lang):
     if ok: seg(pg, cdp, 'name', 1.6, lambda: pg.mouse.click(*ok), out, idx)
     pg.wait_for_timeout(200)
     print('verdict', pg.evaluate('''() => [...document.querySelectorAll('[data-voir] .feedback, [data-voir] .mo-sticker, .mo-sticker')].map(e => [e.className, Math.round(e.getBoundingClientRect().top), Math.round(e.getBoundingClientRect().height), e.textContent.slice(0, 40)])'''))
+    idx['rects'] = pg.evaluate('''() => { const c = document.querySelector('[data-voir]'), q = s => { const e = c.querySelector(s); if (!e) return null; const r = e.getBoundingClientRect(); return [r.x, r.y, r.width, r.height]; };
+      return { card: q(':scope'), media: q('.voir-media'), opts: q('.opts'), verdict: q('.feedback') }; }''')
+    pg.evaluate("() => document.querySelectorAll('[data-voir] .mo-path.minor').length")
     json.dump(idx, open(os.path.join(out, 'index.json'), 'w'), indent=1)
     print({s['name']: len(s['frames']) for s in idx['segs']})
 main()

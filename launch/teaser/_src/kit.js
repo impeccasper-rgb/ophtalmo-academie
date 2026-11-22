@@ -8,7 +8,7 @@ var KIT = (function () {
       '<path d="M420,310 H690 M420,512 H690 M420,714 H690" stroke="#D8FF3A" stroke-width="18" stroke-linecap="round" opacity=".55"/><path d="M430,512 H690" stroke="#0A0F40" stroke-width="18" stroke-linecap="round"/>';
     if (name === 'mecanismes') return '<path d="M190,660 C240,300 784,300 834,660" ' + st + '/><path d="M240,690 Q380,560 500,650 M524,650 Q644,560 784,690" ' + st + '/><ellipse cx="512" cy="740" rx="170" ry="70" ' + st + ' opacity=".7"/><path d="M380,610 l0,-70 M640,610 l0,-70" ' + st + '/><path d="M360,560 l20,-26 l20,26 M620,560 l20,-26 l20,26" ' + st + '/>';
     if (name === 'coulisses') return '<path d="' + Motion.loop(470, 560, 230, 190, 21, { tilt: -.12, over: .45 }) + '" ' + st + '/><g transform="rotate(38 700 330)"><rect x="660" y="160" width="80" height="300" rx="16" ' + st + '/><path d="M660,460 L700,540 L740,460" ' + st + '/></g><circle cx="470" cy="560" r="44" fill="#D8FF3A" filter="url(#glowL)"/>';
-    if (name === 'decembre') return '<rect x="220" y="260" width="584" height="540" rx="56" ' + st + '/><path d="M220,400 H804 M380,200 V310 M644,200 V310" ' + st + '/><text x="512" y="700" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="250" fill="#D8FF3A" letter-spacing="-12" filter="url(#glowL)">12</text>';
+    if (name === 'decembre') return '<rect x="220" y="260" width="584" height="540" rx="56" ' + st + '/><path d="M220,400 H804 M380,200 V310 M644,200 V310" ' + st + '/><text x="512" y="700" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="190" fill="#D8FF3A" letter-spacing="-6" filter="url(#glowL)">DÉC</text>';
     return '';
   }
   KT.make = function (S, what) {
