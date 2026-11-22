@@ -286,20 +286,58 @@ var Photo = {
         '<ul class="reveal-list" id="' + rid + '" hidden>' + p.reveal.map(function (r) { return '<li>' + U.md(r) + '</li>'; }).join('') + '</ul></div>' : '') +
       Photo.credit(e, opts.quiz) + '</figcaption></figure>';
   },
-  /* fiche « Voir »: Observe → Réponds → Révèle. Caption (diagnosis) hidden until the reveal, which shows the decisive sign
-     in ≤ 25 words with a sticker (Motion), loops the hotspots when the photo has any, and keeps the rest collapsed. */
+  /* fiche « Voir » / module A5: a real Observe → Réponds → Révèle loop on the photo.
+     With a hotspot (OPH.voirHotspots[photoId] = { x, y, r, label, alt[] } in % of the image): « Touche le signe qui compte »,
+     hit-test → loop + sticker; miss → « pas ici », 2nd miss → hint area, 3rd miss or « Je ne trouve pas » → reveal without reward.
+     Without a hotspot: a 3-option « Quel est le signe ? » built from this photo's sign and two other photos' signs. */
+  voirHot: function (id) { var H = (window.OPH && OPH.voirHotspots) || {}, h = H[id]; if (Array.isArray(h)) h = h[0]; return h && h.x != null ? h : null; },
+  voirSign: function (p) { return p.sign || (p.reveal || [])[0] || p.look || ''; },
+  voirOthers: function (p) {
+    var me = Photo.voirSign(p), all = [], seen = {};
+    Object.keys(OPH.photos || {}).forEach(function (k) { (OPH.photos[k] || []).forEach(function (q) { var s = Photo.voirSign(q); if (q.id !== p.id && s && s !== me && !seen[s] && U.words(s) <= 25) { seen[s] = 1; all.push(s); } }); });
+    return U.shuffle(all, U.hash(p.id)).slice(0, 2);
+  },
   voirCard: function (p, e) {
     var cap = (window.I18N && I18N.lang === 'en' && p.caption && !p._en && e._en) ? e.title : (p.caption || e.title);
-    var rev = (p.reveal || []).slice(), sign = p.sign || rev.shift() || p.look || cap, rest = [p.look].concat(rev).filter(function (x) { return x && x !== sign; });
+    var hot = Photo.voirHot(p.id), sign = hot && I18N.pick(hot.label) || Photo.voirSign(p) || cap, rest = [p.look].concat(p.reveal || []).filter(function (x) { return x && x !== sign; });
     var w = String(sign).split(/\s+/); if (w.length > 25) { rest.unshift(sign); sign = w.slice(0, 25).join(' ') + '…'; }
-    var hots = (p.hotspots || []).map(function (h) { return '<span class="inv-hot' + (h.decisive === false ? ' minor' : ' dec') + '" style="left:' + h.x + '%;top:' + h.y + '%;--r:' + (h.r || 8) + '%"><span class="inv-hot-l">' + U.esc(I18N.pick(h.label) || '') + '</span></span>'; }).join('');
-    return '<figure class="ph-card voir-card" style="margin:0" data-voir>' +
-      '<div class="voir-media' + (hots ? ' inv-media' : '') + '"><button type="button" class="ph-img" data-act="lightbox" data-id="' + e.id + '" data-cap="" data-quiz="1" aria-label="' + U.esc(t('img.hiddencap')) + '">' +
-      '<img loading="lazy" decoding="async" src="' + Photo.src(e.id) + '" width="' + (e.tw || 440) + '" height="' + (e.th || 300) + '" alt="' + U.esc(t('img.toid')) + '"></button>' + (hots ? '<div class="inv-hots" hidden>' + hots + '</div>' : '') + '</div>' +
-      '<figcaption class="ph-b"><div class="voir-ask"><span class="eyebrow">' + t('voir.observe') + '</span><span>' + t('voir.q') + '</span><button type="button" class="btn primary sm" data-act="ph-reveal">' + t('voir.reveal') + '</button></div>' +
-      '<div class="voir-ans" hidden><div class="cap">' + U.md(cap) + '</div><div class="feedback ok voir-sign" role="status"><div class="verdict">' + t('voir.sign') + '</div><div>' + U.md(sign) + '</div></div>' +
-      (rest.length ? '<details class="acc"><summary>' + t('voir.more') + '</summary><ul class="reveal-list">' + rest.map(function (r) { return '<li>' + U.md(r) + '</li>'; }).join('') + '</ul></details>' : '') + '</div>' +
+    var hots = hot ? '<div class="inv-hots" hidden><span class="inv-hot dec" style="left:' + hot.x + '%;top:' + hot.y + '%;--r:' + (hot.r || 8) + '"><i></i></span></div>' : '';
+    var ask = hot
+      ? '<div class="voir-ask"><span class="eyebrow">' + t('voir.observe') + '</span><b>' + t('voir.tap') + '</b><button type="button" class="btn ghost sm" data-act="voir-idk">' + t('voir.idk') + '</button></div>'
+      : (function () { var opts = U.shuffle([sign].concat(Photo.voirOthers(p)), U.hash(p.id + 's')); return '<div class="voir-ask"><span class="eyebrow">' + t('voir.observe') + '</span><b>' + t('voir.which') + '</b><div class="opts">' + opts.map(function (o, k) { return '<button type="button" class="opt" data-act="voir-opt" data-ok="' + (o === sign ? 1 : 0) + '"><span class="key">' + (k + 1) + '</span><span>' + U.md(o) + '</span></button>'; }).join('') + '<button type="button" class="opt idk" data-act="voir-idk"><span class="key">?</span><span>' + t('voir.idk') + '</span></button></div></div>'; })();
+    return '<figure class="ph-card voir-card" style="margin:0" data-voir data-photo="' + e.id + '"' + (hot ? ' data-hot="' + [hot.x, hot.y, hot.r || 8].join(',') + '" data-alt="' + U.esc(JSON.stringify(hot.alt || [])) + '"' : '') + '>' +
+      '<div class="voir-media inv-media"' + (hot ? ' data-act="voir-tap" role="button" tabindex="0" aria-label="' + U.esc(t('voir.tap')) + '"' : '') + '>' +
+      '<img loading="lazy" decoding="async" src="' + Photo.src(e.id) + '" width="' + (e.tw || 440) + '" height="' + (e.th || 300) + '" alt="' + U.esc(t('img.toid')) + '">' + hots + '</div>' +
+      '<figcaption class="ph-b">' + ask +
+      '<div class="voir-ans" hidden><div class="cap">' + U.md(cap) + '</div><div class="voir-sign" role="status"><div class="verdict"></div><div><b>' + t('voir.sign') + ' :</b> ' + U.md(sign) + '</div></div>' +
+      (rest.length ? '<details class="acc"><summary>' + t('voir.more') + '</summary><ul class="reveal-list">' + rest.map(function (r) { return '<li>' + U.md(r) + '</li>'; }).join('') + '</ul></details>' : '') +
+      '<button type="button" class="btn ghost xs" data-act="lightbox" data-id="' + e.id + '" data-cap="' + U.esc(cap) + '">' + t('lb.zoomin') + '</button></div>' +
       Photo.credit(e, true) + '</figcaption></figure>';
+  },
+  /* reveal: ok = answered right (sticker via .feedback.ok), otherwise no reward */
+  voirReveal: function (vc, ok) {
+    if (!vc || vc.getAttribute('data-done')) return; vc.setAttribute('data-done', ok ? 'ok' : 'shown');
+    var ask = U.$('.voir-ask', vc), ans = U.$('.voir-ans', vc), hw = U.$('.inv-hots', vc), sg = U.$('.voir-sign', vc);
+    U.$$('[data-act="voir-opt"], [data-act="voir-idk"]', vc).forEach(function (b) { b.disabled = true; });
+    if (ask && !U.$('.opts', ask)) ask.hidden = true;
+    if (ans) ans.hidden = false;
+    if (sg) { sg.className = 'voir-sign feedback ' + (ok ? 'ok' : 'neutral'); U.$('.verdict', sg).textContent = ok ? t('voir.ok') : t('voir.shown'); }
+    U.$$('.voir-hint, .voir-miss', vc).forEach(function (x) { x.remove(); });
+    if (hw) { hw.hidden = false; hw.parentNode.classList.add('revealed'); }
+    var m = U.$('.voir-media', vc); if (m) { m.removeAttribute('role'); m.removeAttribute('tabindex'); m.removeAttribute('data-act'); }
+  },
+  voirTap: function (media, ev) {
+    var vc = media.closest('[data-voir]'); if (!vc || vc.getAttribute('data-done')) return;
+    var img = U.$('img', media), b = img.getBoundingClientRect(); if (!b.width) return;
+    var px, py; if (ev && ev.clientX != null && (ev.clientX || ev.clientY)) { px = 100 * (ev.clientX - b.left) / b.width; py = 100 * (ev.clientY - b.top) / b.height; } else return;
+    var h = vc.getAttribute('data-hot').split(',').map(Number), alt = []; try { alt = JSON.parse(vc.getAttribute('data-alt') || '[]'); } catch (e) { }
+    var hit = function (x, y, r) { var dx = px - x, dy = (py - y) * b.height / b.width; return Math.sqrt(dx * dx + dy * dy) <= Math.max(r * 1.3, 6); };
+    if (hit(h[0], h[1], h[2]) || alt.some(function (a) { return a && hit(a.x, a.y, a.r || h[2]); })) { Photo.voirReveal(vc, true); return; }
+    var n = (+vc.getAttribute('data-miss') || 0) + 1; vc.setAttribute('data-miss', n);
+    var mk = document.createElement('span'); mk.className = 'voir-miss'; mk.setAttribute('aria-hidden', 'true'); mk.textContent = t('voir.miss'); mk.style.left = px + '%'; mk.style.top = py + '%';
+    U.$$('.voir-miss', media).forEach(function (x) { x.remove(); }); media.appendChild(mk);
+    if (n === 2 && !U.$('.voir-hint', media)) { var hr = Math.max(h[2] * 3, 14), off = (U.hash(vc.getAttribute('data-photo')) % 2 ? 1 : -1) * h[2]; var hc = document.createElement('span'); hc.className = 'voir-hint'; hc.setAttribute('aria-hidden', 'true'); hc.style.left = (h[0] + off) + '%'; hc.style.top = (h[1] - off / 2) + '%'; hc.style.setProperty('--r', hr); media.appendChild(hc); U.toast(t('voir.hint')); }
+    if (n >= 3) Photo.voirReveal(vc, false);
   },
   gallery: function (list, opts) { if (!list || !list.length) return ''; return '<div class="gallery">' + list.map(function (p) { return Photo.card(p, opts); }).join('') + '</div>'; },
   opener: null,
@@ -478,6 +516,9 @@ document.addEventListener('click', function (ev) {
   if (act === 'close-drawer') { Shell.close(); return; }
   if (act === 'lightbox') { Photo.open(el.getAttribute('data-id'), el.getAttribute('data-cap'), el.getAttribute('data-quiz') === '1'); return; }
   if (act === 'lb-close') { Photo.close(); return; }
+  if (act === 'voir-tap') { Photo.voirTap(el, ev); return; }
+  if (act === 'voir-idk') { Photo.voirReveal(el.closest('[data-voir]'), false); return; }
+  if (act === 'voir-opt') { var vc2 = el.closest('[data-voir]'), okk = el.getAttribute('data-ok') === '1'; U.$$('[data-act="voir-opt"]', vc2).forEach(function (b) { if (b.getAttribute('data-ok') === '1') b.classList.add('correct'); }); if (!okk) el.classList.add('wrong'); Photo.voirReveal(vc2, okk); return; }
   if (act === 'ph-reveal') { var vc = el.closest('[data-voir]'); if (vc) { var ask = U.$('.voir-ask', vc), ans = U.$('.voir-ans', vc), hw = U.$('.inv-hots', vc); if (ask) ask.hidden = true; if (ans) ans.hidden = false; if (hw) { hw.hidden = false; hw.parentNode.classList.add('revealed'); } var lb = U.$('[data-act="lightbox"]', vc); if (lb) { lb.removeAttribute('data-quiz'); var cp = U.$('.cap', vc); lb.setAttribute('data-cap', cp ? cp.textContent : ''); } } return; }
   if (act === 'figzoom') { Photo.openFig(el.closest('figure')); return; }
   if (act === 'lb-zoom') { var lbx = U.$('#lightbox'); Photo.zoom((+lbx.getAttribute('data-z') || 1) + (+el.getAttribute('data-z')) * 0.5); return; }

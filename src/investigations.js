@@ -298,23 +298,23 @@
 
   /* ---------- OCT ---------- */
   var OCT_LAYERS = [
-    { id: 'ilm', l: .97, thin: 1, n: { fr: 'Membrane limitante interne (MLI)', en: 'Internal limiting membrane (ILM)' }, d: { fr: 'Surface interne de la rétine, au contact du vitré; plan de clivage des membranes épirétiniennes (pelage).', en: 'Inner surface of the retina, against the vitreous; cleavage plane for epiretinal membranes (peeling).' } },
-    { id: 'rnfl', l: .86, n: { fr: 'Couche des fibres nerveuses (CFNR)', en: 'Retinal nerve fibre layer (RNFL)' }, d: { fr: 'Hyperréflective. Axones des cellules ganglionnaires; plus épaisse côté papille, absente à la fovéa. S’amincit dans le glaucome.', en: 'Hyperreflective. Ganglion cell axons; thicker towards the disc, absent at the fovea. Thins in glaucoma.' } },
-    { id: 'gcl', l: .46, n: { fr: 'Couche des cellules ganglionnaires (CCG)', en: 'Ganglion cell layer (GCL)' }, d: { fr: 'Moyennement réflective. Corps des cellules ganglionnaires, plus épaisse autour de la fovéa.', en: 'Moderately reflective. Ganglion cell bodies, thickest around the fovea.' } },
-    { id: 'ipl', l: .72, n: { fr: 'Couche plexiforme interne (CPI)', en: 'Inner plexiform layer (IPL)' }, d: { fr: 'Hyperréflective. Synapses bipolaires–ganglionnaires.', en: 'Hyperreflective. Bipolar–ganglion cell synapses.' } },
-    { id: 'inl', l: .3, n: { fr: 'Couche nucléaire interne (CNI)', en: 'Inner nuclear layer (INL)' }, d: { fr: 'Hyporéflective. Noyaux des cellules bipolaires, amacrines, horizontales et de Müller; site fréquent de kystes.', en: 'Hyporeflective. Nuclei of bipolar, amacrine, horizontal and Müller cells; common site of cysts.' } },
-    { id: 'opl', l: .66, n: { fr: 'Couche plexiforme externe (CPE)', en: 'Outer plexiform layer (OPL)' }, d: { fr: 'Hyperréflective. Synapses photorécepteurs–bipolaires.', en: 'Hyperreflective. Photoreceptor–bipolar synapses.' } },
-    { id: 'onl', l: .2, n: { fr: 'Couche nucléaire externe (CNE)', en: 'Outer nuclear layer (ONL)' }, d: { fr: 'Hyporéflective. Noyaux des photorécepteurs; la plus épaisse au centre de la fovéa.', en: 'Hyporeflective. Photoreceptor nuclei; thickest at the foveal centre.' } },
-    { id: 'elm', l: .62, thin: 1, n: { fr: 'Membrane limitante externe (MLE)', en: 'External limiting membrane (ELM)' }, d: { fr: 'Fine ligne hyperréflective (jonctions Müller–photorécepteurs).', en: 'Thin hyperreflective line (Müller–photoreceptor junctions).' } },
-    { id: 'gap1', l: .16, gap: 1 },
-    { id: 'ez', l: .92, n: { fr: 'Zone ellipsoïde (ZE)', en: 'Ellipsoid zone (EZ)' }, d: { fr: 'Hyperréflective. Mitochondries des segments internes; son interruption signe une atteinte des photorécepteurs.', en: 'Hyperreflective. Inner segment mitochondria; disruption means photoreceptor damage.' } },
+    { id: 'ilm', l: .93, thin: 1, n: { fr: 'Membrane limitante interne (MLI)', en: 'Internal limiting membrane (ILM)' }, d: { fr: 'Surface interne de la rétine, au contact du vitré; plan de clivage des membranes épirétiniennes (pelage).', en: 'Inner surface of the retina, against the vitreous; cleavage plane for epiretinal membranes (peeling).' } },
+    { id: 'rnfl', l: .8, n: { fr: 'Couche des fibres nerveuses (CFNR)', en: 'Retinal nerve fibre layer (RNFL)' }, d: { fr: 'Hyperréflective. Axones des cellules ganglionnaires; plus épaisse côté papille, absente à la fovéa. S’amincit dans le glaucome.', en: 'Hyperreflective. Ganglion cell axons; thicker towards the disc, absent at the fovea. Thins in glaucoma.' } },
+    { id: 'gcl', l: .47, n: { fr: 'Couche des cellules ganglionnaires (CCG)', en: 'Ganglion cell layer (GCL)' }, d: { fr: 'Moyennement réflective. Corps des cellules ganglionnaires, plus épaisse autour de la fovéa.', en: 'Moderately reflective. Ganglion cell bodies, thickest around the fovea.' } },
+    { id: 'ipl', l: .63, n: { fr: 'Couche plexiforme interne (CPI)', en: 'Inner plexiform layer (IPL)' }, d: { fr: 'Hyperréflective. Synapses bipolaires–ganglionnaires.', en: 'Hyperreflective. Bipolar–ganglion cell synapses.' } },
+    { id: 'inl', l: .25, n: { fr: 'Couche nucléaire interne (CNI)', en: 'Inner nuclear layer (INL)' }, d: { fr: 'Hyporéflective. Noyaux des cellules bipolaires, amacrines, horizontales et de Müller; site fréquent de kystes.', en: 'Hyporeflective. Nuclei of bipolar, amacrine, horizontal and Müller cells; common site of cysts.' } },
+    { id: 'opl', l: .57, n: { fr: 'Couche plexiforme externe (CPE)', en: 'Outer plexiform layer (OPL)' }, d: { fr: 'Hyperréflective. Synapses photorécepteurs–bipolaires.', en: 'Hyperreflective. Photoreceptor–bipolar synapses.' } },
+    { id: 'onl', l: .13, n: { fr: 'Couche nucléaire externe (CNE)', en: 'Outer nuclear layer (ONL)' }, d: { fr: 'Hyporéflective. Noyaux des photorécepteurs; la plus épaisse au centre de la fovéa.', en: 'Hyporeflective. Photoreceptor nuclei; thickest at the foveal centre.' } },
+    { id: 'elm', l: .5, thin: 1, n: { fr: 'Membrane limitante externe (MLE)', en: 'External limiting membrane (ELM)' }, d: { fr: 'Fine ligne hyperréflective (jonctions Müller–photorécepteurs).', en: 'Thin hyperreflective line (Müller–photoreceptor junctions).' } },
+    { id: 'gap1', l: .1, gap: 1 },
+    { id: 'ez', l: .87, n: { fr: 'Zone ellipsoïde (ZE)', en: 'Ellipsoid zone (EZ)' }, d: { fr: 'Hyperréflective. Mitochondries des segments internes; son interruption signe une atteinte des photorécepteurs.', en: 'Hyperreflective. Inner segment mitochondria; disruption means photoreceptor damage.' } },
     { id: 'gap2', l: .38, gap: 1 },
-    { id: 'rpe', l: .97, n: { fr: 'Complexe EPR–membrane de Bruch', en: 'RPE–Bruch membrane complex' }, d: { fr: 'Bande hyperréflective la plus externe de la rétine. Soulevée en dôme dans un décollement de l’EPR.', en: 'Outermost hyperreflective retinal band. Lifted into a dome in a pigment epithelial detachment.' } },
-    { id: 'cho', l: .5, n: { fr: 'Choroïde', en: 'Choroid' }, d: { fr: 'Couche vasculaire sous l’EPR (lumières vasculaires sombres). Épaisseur variable : mince chez le myope fort.', en: 'Vascular layer under the RPE (dark vessel lumens). Variable thickness: thin in high myopia.' } }
+    { id: 'rpe', l: .96, n: { fr: 'Complexe EPR–membrane de Bruch', en: 'RPE–Bruch membrane complex' }, d: { fr: 'Bande hyperréflective la plus externe de la rétine. Soulevée en dôme dans un décollement de l’EPR.', en: 'Outermost hyperreflective retinal band. Lifted into a dome in a pigment epithelial detachment.' } },
+    { id: 'cho', l: .43, n: { fr: 'Choroïde', en: 'Choroid' }, d: { fr: 'Couche vasculaire sous l’EPR (lumières vasculaires sombres). Épaisseur variable : mince chez le myope fort.', en: 'Vascular layer under the RPE (dark vessel lumens). Variable thickness: thin in high myopia.' } }
   ];
   var OCT_CX = 320, OCT_ELM = 178;
   function octThick(id, x, fluid) {
-    var g = bump(x, OCT_CX, 62), irf = fluid === 'irf' ? bump(x, OCT_CX, 80) : 0;
+    var g = bump(x, OCT_CX, 76), irf = fluid === 'irf' ? bump(x, OCT_CX, 80) : 0;
     switch (id) {
       case 'ilm': return 2.5;
       case 'rnfl': return (4 + 10 * (1 - x / 640)) * (1 - .95 * g);
@@ -334,7 +334,7 @@
     return 0;
   }
   function octGeom(fluid) {
-    var xs = []; for (var x = 0; x <= 640; x += 8) xs.push(x);
+    var xs = []; for (var x = 0; x <= 640; x += 4) xs.push(x);   // finer sampling = smoother bands
     var L = OCT_LAYERS, iElm = OCT_LAYERS.map(function (l) { return l.id; }).indexOf('elm'), geo = {};
     xs.forEach(function (x, xi) {
       var y = OCT_ELM;
@@ -345,7 +345,7 @@
     });
     geo.xs = xs; return geo;
   }
-  function octAt(arr, xs, x) { var i = clamp(Math.floor(x / 8), 0, xs.length - 2), f = (x - xs[i]) / 8; return arr[i] * (1 - f) + arr[i + 1] * f; }
+  function octAt(arr, xs, x) { var i = clamp(Math.floor(x / 4), 0, xs.length - 2), f = (x - xs[i]) / 4; return arr[i] * (1 - f) + arr[i + 1] * f; }
   Gen.oct = function (o) {
     o = o || {}; var fluid = o.fluid || 'none', geo = octGeom(fluid), xs = geo.xs, cid = nid('oct'), r = U.rng(5), h = '', hl = o.hl;
     h += '<rect x="0" y="0" width="640" height="300" fill="#000"/>';
@@ -353,10 +353,17 @@
     var bot = geo.cho.bot.map(function (y, i) { return P2(xs[i], y); });
     h += '<defs><linearGradient id="' + cid + 's" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a5a5a"/><stop offset="1" stop-color="#000"/></linearGradient><clipPath id="' + cid + 'c"><polygon points="' + geo.cho.top.map(function (y, i) { return P2(xs[i], y); }).concat(geo.cho.bot.map(function (y, i) { return P2(xs[i], y); }).reverse()).join(' ') + '"/></clipPath></defs>';
     h += '<polygon points="' + bot.join(' ') + ' 640,300 0,300" fill="url(#' + cid + 's)"/>';
+    h += '<defs><filter id="' + cid + 'b" x="-2%" y="-10%" width="104%" height="120%"><feGaussianBlur stdDeviation=".55"/></filter>' +
+      '<filter id="' + cid + 'v"><feGaussianBlur stdDeviation="1.4"/></filter>' +
+      '<filter id="' + cid + 'nd" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.15 .5" numOctaves="2" seed="7"/><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.7 0 0 0 -.8"/></filter>' +
+      '<filter id="' + cid + 'nl" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.3 .6" numOctaves="2" seed="11"/><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 1.7 0 0 -.95"/></filter>' +
+      '<clipPath id="' + cid + 'r"><polygon points="' + geo.ilm.top.map(function (y, i) { return P2(xs[i], y); }).concat(geo.cho.bot.map(function (y, i) { return P2(xs[i], y + 14); }).reverse()).join(' ') + '"/></clipPath></defs>';
+    h += '<g filter="url(#' + cid + 'b)">';
     OCT_LAYERS.forEach(function (l) {
       var g = geo[l.id], poly = g.top.map(function (y, i) { return P2(xs[i], y); }).concat(g.bot.map(function (y, i) { return P2(xs[i], y); }).reverse()).join(' ');
       h += '<polygon points="' + poly + '" fill="' + gray(l.l) + '"' + (l.gap ? '' : (o.hitU ? ' data-vl="' : ' data-layer="') + l.id + '"') + (hl === l.id ? ' class="inv-hl"' : '') + '/>';
     });
+    h += '</g>';
     var hitsH = '';
     if (o.hitU) {   // invisible enlarged hit areas: each tappable layer gets a band at least hitU units tall around its centre line
       var half = o.hitU / 2;
@@ -369,8 +376,10 @@
       });
     }
     // choroidal vessel lumens
-    var ves = ''; for (var k = 0; k < 46; k++) { var vx = r() * 640, deep = r(), ty = octAt(geo.cho.top, xs, vx), by = octAt(geo.cho.bot, xs, vx), vy = ty + 10 + deep * (by - ty - 16); ves += '<ellipse cx="' + vx.toFixed(1) + '" cy="' + vy.toFixed(1) + '" rx="' + (4 + deep * 10).toFixed(1) + '" ry="' + (2 + deep * 5).toFixed(1) + '"/>'; }
-    h += '<g clip-path="url(#' + cid + 'c)" fill="#1c1c1c" pointer-events="none">' + ves + '</g>';
+    var ves = ''; for (var k = 0; k < 70; k++) { var vx = r() * 640, deep = r(), ty = octAt(geo.cho.top, xs, vx), by = octAt(geo.cho.bot, xs, vx), vy = ty + 10 + deep * (by - ty - 16); ves += '<ellipse cx="' + vx.toFixed(1) + '" cy="' + vy.toFixed(1) + '" rx="' + (3 + deep * deep * 12).toFixed(1) + '" ry="' + (1.6 + deep * deep * 6).toFixed(1) + '"/>'; }
+    h += '<g clip-path="url(#' + cid + 'c)" fill="#262626" filter="url(#' + cid + 'v)" pointer-events="none">' + ves + '</g>';
+    // OCT speckle (dark and light grain) over retina and choroid only
+    h += '<g clip-path="url(#' + cid + 'r)" pointer-events="none" opacity=".5"><rect x="0" y="0" width="640" height="300" filter="url(#' + cid + 'nd)"/><rect x="0" y="0" width="640" height="300" filter="url(#' + cid + 'nl)"/></g>';
     if (fluid === 'ped') { var br = geo.rpe.bot.map(function (y, i) { var x = xs[i]; return P2(x, y - octLift('rpe', x, 'ped')); }); h += '<polyline points="' + br.join(' ') + '" fill="none" stroke="' + gray(.82) + '" stroke-width="2.2" data-layer="rpe"/>'; }
     if (fluid === 'irf') {
       var cy = '';
@@ -608,11 +617,11 @@
 
   function practice(host, items, opts) {
     opts = opts || {};
-    var st = { i: 0, res: [], conf: 'sure', phase: 'observe', order: {} };
+    var st = { i: 0, res: [], conf: 'sure', phase: 'answer', order: {} };   // S-8: image and choices shown together (no 'ready' tap)
     var src = items.slice();
     function orderFor(it) { if (!st.order[it.id]) st.order[it.id] = U.shuffle(it.options.map(function (_, k) { return k; }), U.hash(it.id)); return st.order[it.id]; }
     function steps() {
-      var ph = ['observe', 'answer', 'reveal'], lab = [S('ph.obs', 'Observe', 'Observe'), S('ph.ans', 'Réponds', 'Answer'), S('ph.rev', 'Révèle', 'Reveal')];
+      var ph = ['answer', 'reveal'], lab = [S('ph.obsans', 'Observe et réponds', 'Observe and answer'), S('ph.rev', 'Révèle', 'Reveal')];
       return '<ol class="inv-steps" aria-label="' + E(S('ph.aria', 'Étapes', 'Steps')) + '">' + ph.map(function (p, k) { var cur = ph.indexOf(st.phase); return '<li class="' + (k === cur ? 'on' : k < cur ? 'done' : '') + '"' + (k === cur ? ' aria-current="step"' : '') + '><span>' + (k + 1) + '</span>' + E(lab[k]) + '</li>'; }).join('') + '</ol>';
     }
     function head() {
@@ -667,10 +676,9 @@
       var ip = t.closest('[data-ip]');
       if (ip) {
         var a = ip.getAttribute('data-ip');
-        if (a === 'ready') { st.phase = 'answer'; draw(ev.detail > 0 ? '.opts' : '.opt'); }
-        else if (a === 'next') { st.i++; st.phase = 'observe'; st.last = null; draw('[data-ip="ready"]'); var top = host.getBoundingClientRect().top; if (top < 0) host.scrollIntoView({ block: 'start', behavior: reduced() ? 'auto' : 'smooth' }); }
-        else if (a === 'retry') { var ids = st.wrongIds || []; src = items.filter(function (x) { return ids.indexOf(x.id) >= 0; }); st = { i: 0, res: [], conf: st.conf, phase: 'observe', order: st.order }; draw('[data-ip="ready"]'); }
-        else if (a === 'again') { src = items.slice(); st = { i: 0, res: [], conf: st.conf, phase: 'observe', order: {} }; draw('[data-ip="ready"]'); }
+        if (a === 'next') { st.i++; st.phase = 'answer'; st.last = null; draw('.opts'); var top = host.getBoundingClientRect().top; if (top < 0) host.scrollIntoView({ block: 'start', behavior: reduced() ? 'auto' : 'smooth' }); }
+        else if (a === 'retry') { var ids = st.wrongIds || []; src = items.filter(function (x) { return ids.indexOf(x.id) >= 0; }); st = { i: 0, res: [], conf: st.conf, phase: 'answer', order: st.order }; draw('.opts'); }
+        else if (a === 'again') { src = items.slice(); st = { i: 0, res: [], conf: st.conf, phase: 'answer', order: {} }; draw('.opts'); }
         return;
       }
       var c = t.closest('[data-ic]'); if (c && st.phase === 'answer') { st.conf = c.getAttribute('data-ic'); setPressed(host, 'ic', st.conf); return; }
@@ -1224,7 +1232,7 @@
         run.innerHTML = '<div class="row ic-runbar"><button type="button" class="btn ghost sm" data-icstop>← ' + E(S('ic.backlist', 'Retour à la liste', 'Back to the list')) + '</button></div><div data-icp></div>';
         clean = practice(U.$('[data-icp]', run), items, { title: S('ic.title', 'Cas en images', 'Image cases') });
         var r = U.$('.inv-run', run); if (r) r.scrollIntoView({ block: 'start', behavior: reduced() ? 'auto' : 'smooth' });
-        var f = U.$('[data-ip="ready"]', run); if (f) f.focus({ preventScroll: true });
+        var f = U.$('.opts', run); if (f) f.focus({ preventScroll: true });
         return;
       }
       if (t.closest('[data-icstop]')) { stopRun(); Router.refresh(true); }

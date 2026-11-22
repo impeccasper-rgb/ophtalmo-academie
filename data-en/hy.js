@@ -34,7 +34,7 @@ Object.assign(G.OPH_EN.hy, {
 
   "c-secheresse": {
     essentials: [
-      "Most often the problem is not a lack of tears but poor-quality meibomian oil (**MGD**).",
+      "Often not a lack of tears but poor-quality meibomian oil (**MGD**).",
       "DEWS III: **no symptoms, no dry eye**; OSDI-6 ≥ 4, then one objective sign.",
       "**Inferior** punctate keratitis: MGD, exposure or toxic drops; interpalpebral: aqueous deficiency.",
       "Dry eyes on glaucoma drops: **BAK** toxicity, switch to preservative-free drops."
@@ -89,7 +89,7 @@ Object.assign(G.OPH_EN.hy, {
   "c-erosion": {
     essentials: [
       "Sharp pain **on waking**, weeks after a fingernail scratch: poorly anchored epithelium that tears off.",
-      "**Never topical anesthetic** at home: abuse blocks healing and can cause ulceration and perforation.",
+      "**Never topical anesthetic** at home: abuse blocks healing and can perforate.",
       "Recurrent erosion: **NaCl 5 %** ointment at bedtime for 3–6 months.",
       "EBMD before cataract surgery: **polish first**, then repeat biometry on a stable cornea."
     ],
@@ -172,7 +172,7 @@ Object.assign(G.OPH_EN.hy, {
       "Dendrite with **terminal bulbs** + decreased corneal sensation = herpes simplex.",
       "Epithelial (live virus): antiviral ± debridement; **steroid contraindicated** on an active dendrite.",
       "Immune stromal keratitis or endotheliitis: **steroid under oral antiviral cover**, tapered very slowly (HEDS).",
-      "**Hutchinson** sign (vesicles on the tip of the nose): high risk of ocular involvement in zoster.",
+      "**Hutchinson** sign (vesicles on the nose tip): high risk of ocular zoster.",
       "Uveitis with **elevated IOP**: think herpetic trabeculitis (HSV, VZV or CMV)."
     ],
     cloze: [
@@ -224,10 +224,10 @@ Object.assign(G.OPH_EN.hy, {
 
   "c-pterygion": {
     essentials: [
-      "Pterygium: UV-related **nasal** wing that crosses the limbus; a pinguecula stays on the conjunctiva.",
+      "Pterygium: **nasal** wing (UV) crossing the limbus; a pinguecula does not.",
       "**Conjunctival autograft** after excision: far lower recurrence than bare sclera.",
       "Pterygium and cataract: **remove the pterygium first**, then repeat biometry.",
-      "Pseudopterygium: after a burn or trauma, any meridian; **a probe passes under the neck**."
+      "Pseudopterygium: after a burn or trauma; **a probe passes under the neck**."
     ],
     cloze: [
       "The brown iron line in front of the pterygium head is the [[Stocker]] line.",
@@ -306,8 +306,8 @@ Object.assign(G.OPH_EN.hy, {
   "c-dystrophies": {
     essentials: [
       "**Bilateral, symmetric**, familial opacities without vessels or inflammation: dystrophy; localize the layer.",
-      "Granular: discrete crumbs with clear stroma between them; **macular**: haze out to the limbus, thin cornea.",
-      "Of the three stromal dystrophies, only **macular is recessive** (CHST6); granular and lattice are dominant (TGFBI).",
+      "Granular: discrete crumbs, clear stroma between; **macular**: haze to the limbus, thin cornea.",
+      "Only **macular dystrophy is recessive** (CHST6); granular and lattice are dominant (TGFBI).",
       "**TGFBI** mutation or snowflake opacities: no LASIK, deposits proliferate at the interface."
     ],
     cloze: [

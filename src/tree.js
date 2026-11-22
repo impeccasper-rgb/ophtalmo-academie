@@ -8,6 +8,9 @@
    API:
      Tree.render(algo, opts) → HTML string. opts.fmt(text) formats content (default U.md; views pass T for glossary);
        opts.title accessible name; opts.mode 'walk' (default: one question per card, learner-paced) | 'overview'.
+       opts.vignette (or algo.vignette / algo[0].vignette; views pass f.cat.vignette): one-line clinical case shown above the walk.
+         string, or { t: '…', answers: ['yes','no',…] | { 0:'yes', 2:'no' } } — with answers, each choice is checked, the right
+         answer is always shown, and the walk follows the correct branch for this patient.
      Tree.mount(host) → hydrates every [data-tree] in host; returns a cleanup function.
    Overview: semantic ordered list of questions with Oui/Non leaves; SVG connectors; 3 columns (Oui | question | Non)
    in boxes ≥ 700 px, question + 2 small columns below on phones. Nothing advances by itself (§4). */
@@ -51,6 +54,12 @@ var Tree = (function () {
     var fmt = opts.fmt || function (s) { return (W.U && U.md) ? U.md(s) : esc(s); };
     var id = 'tree-' + (++uid), YES = TT('yes', 'Oui', 'Yes'), NO = TT('no', 'Non', 'No'), urgentTag = TT('urgent', 'Urgent', 'Urgent');
     var mode = opts.mode === 'overview' ? 'overview' : 'walk', title = opts.title || TT('title', 'Algorithme', 'Algorithm');
+    var vg = opts.vignette || (algo && algo.vignette) || (algo && algo[0] && algo[0].vignette) || null, vig = null;
+    if (vg) {
+      var vt = typeof vg === 'string' ? vg : (vg.t || vg.text || ''), va = {};
+      if (vg && typeof vg === 'object' && vg.answers) Object.keys(vg.answers).forEach(function (k) { var v = String(vg.answers[k]).toLowerCase(); v = (v === 'oui' || v === 'yes' || v === 'true') ? 'yes' : (v === 'non' || v === 'no' || v === 'false') ? 'no' : ''; if (v) va[k] = v; });
+      if (vt) vig = { h: fmt(vt), ans: va };
+    }
     var data = nodes.map(function (nd) { return { q: fmt(nd.q), yes: { h: nd.b.yes.t ? fmt(nd.b.yes.t) : '', u: nd.b.yes.urgent, go: nd.b.yes.go }, no: { h: nd.b.no.t ? fmt(nd.b.no.t) : '', u: nd.b.no.urgent, go: nd.b.no.go } }; });
     var h = '<div class="tree" data-tree data-mode="' + mode + '"' + (N.legacy ? ' data-legacy="1"' : '') + ' id="' + id + '">';
     h += '<div class="tree-bar"><div class="seg tree-seg" role="group" aria-label="' + esc(TT('modes', 'Affichage de l’algorithme', 'Algorithm view')) + '">' +
@@ -58,7 +67,7 @@ var Tree = (function () {
       '<button type="button" data-tmode="overview" aria-pressed="' + (mode === 'overview') + '">' + esc(TT('overview', 'Vue d’ensemble', 'Overview')) + '</button></div>' +
       '<button type="button" class="btn sm tree-restart" data-trestart>' + esc(TT('restart', 'Recommencer', 'Start again')) + '</button></div>';
     // ---- walk mode (filled by mount)
-    h += '<div class="tree-walk"><ol class="tw-dots" aria-hidden="true">' + nodes.map(function (_, i) { return '<li data-d="' + i + '">' + (i + 1) + '</li>'; }).join('') + '</ol>' +
+    h += '<div class="tree-walk">' + (vig ? '<p class="tw-vig"><b>' + esc(TT('case', 'Cas', 'Case')) + ' :</b> ' + vig.h + '</p>' : '') + '<ol class="tw-dots" aria-hidden="true">' + nodes.map(function (_, i) { return '<li data-d="' + i + '">' + (i + 1) + '</li>'; }).join('') + '</ol>' +
       '<ol class="tw-trail" aria-label="' + esc(TT('trail', 'Ton chemin', 'Your path')) + '"></ol><div class="tw-stage"></div><div class="tree-live tree-sr" aria-live="polite"></div></div>';
     // ---- overview mode (static, semantic)
     h += '<div class="tree-box"><div class="tree-canvas"><svg class="tree-wires" aria-hidden="true" focusable="false"></svg><ol class="tree-flow" aria-label="' + esc(title) + '">';
@@ -73,7 +82,7 @@ var Tree = (function () {
         }).join('') + '</ul>' + (N.legacy && i < nodes.length - 1 ? '<span class="tree-then" aria-hidden="true">' + esc(TT('then', 'puis', 'then')) + '</span>' : '') + '</li>';
     });
     h += '</ol></div></div>';
-    h += '<script type="application/json" class="tree-data">' + JSON.stringify({ n: data, legacy: N.legacy }).replace(/</g, '\\u003c') + '</script></div>';
+    h += '<script type="application/json" class="tree-data">' + JSON.stringify({ n: data, legacy: N.legacy, ans: vig ? vig.ans : null }).replace(/</g, '\\u003c') + '</script></div>';
     return h;
   }
 
@@ -117,12 +126,13 @@ var Tree = (function () {
       // trail of answered questions: compact, chosen branch only
       trail.innerHTML = st.path.map(function (p, j) {
         var nd = nodes[p.i], b = nd[p.k];
-        return '<li class="tw-step' + (animate && j === st.path.length - 1 ? ' just' : '') + '"><span class="tw-n" aria-hidden="true">' + (p.i + 1) + '</span><div class="tw-body"><p class="tw-q">' + nd.q + '</p><p class="tw-a"><b>' + esc(p.k === 'yes' ? YES : NO) + '</b>' + (b.h ? ' — ' + b.h : '') + '</p></div></li>';
+        var chk = p.right ? (p.chose === p.k ? '<span class="tw-ok">✓ ' + esc(TT('right', 'juste', 'right')) + '</span>' : '<span class="tw-bad">' + esc(TT('youchose', 'Tu as dit', 'You said')) + ' ' + esc(p.chose === 'yes' ? YES : NO) + ' · ' + esc(TT('forthis', 'pour ce patient', 'for this patient')) + ' :</span> ') : '';
+        return '<li class="tw-step' + (animate && j === st.path.length - 1 ? ' just' : '') + (p.right && p.chose !== p.k ? ' miss' : '') + '"><span class="tw-n" aria-hidden="true">' + (p.i + 1) + '</span><div class="tw-body"><p class="tw-q">' + nd.q + '</p><p class="tw-a">' + (p.right && p.chose !== p.k ? chk : '') + '<b>' + esc(p.k === 'yes' ? YES : NO) + '</b>' + (p.right && p.chose === p.k ? ' ' + chk : '') + (b.h ? ' — ' + b.h : '') + '</p></div></li>';
       }).join('');
       Array.prototype.forEach.call(dots, function (d, i) { d.className = (st.seen[i] ? 'on' : '') + (i === st.cur && !st.done ? ' cur' : ''); });
       if (st.done) {
         var last = st.path[st.path.length - 1], lb = nodes[last.i][last.k];
-        stage.innerHTML = '<div class="tw-end" tabindex="-1"><b>' + esc(TT('end', 'Fin du parcours', 'End of path')) + '</b>' + leafHtml(lb, last.k, true) + '<div class="row"><button type="button" class="btn sm" data-trestart>' + esc(TT('restart', 'Recommencer', 'Start again')) + '</button><button type="button" class="btn sm ghost" data-tmode="overview">' + esc(TT('seeall', 'Voir tout l’arbre', 'See the whole tree')) + '</button></div></div>';
+        stage.innerHTML = '<div class="tw-end" tabindex="-1"><b>' + esc(TT('end', 'Fin du parcours', 'End of path')) + (st.n ? ' · ' + st.ok + ' / ' + st.n + ' ' + esc(TT('gooddec', 'bonnes décisions', 'right decisions')) : '') + '</b>' + leafHtml(lb, last.k, true) + '<div class="row"><button type="button" class="btn sm" data-trestart>' + esc(TT('restart', 'Recommencer', 'Start again')) + '</button><button type="button" class="btn sm ghost" data-tmode="overview">' + esc(TT('seeall', 'Voir tout l’arbre', 'See the whole tree')) + '</button></div></div>';
       } else {
         var nd = nodes[st.cur], nextBtn = D.legacy && st.await;
         stage.innerHTML = '<div class="tw-card' + (animate ? ' just' : '') + '"><span class="tw-qn">' + esc(TT('q', 'Question', 'Question') + ' ' + (st.cur + 1)) + '</span><p class="tw-qt">' + nd.q + '</p>' +
@@ -130,17 +140,21 @@ var Tree = (function () {
           (nextBtn ? '<div class="row"><button type="button" class="btn" data-tnext>' + esc(TT('nextq', 'Question suivante', 'Next question')) + ' ↓</button></div>' : '');
       }
       var fe = focusSel && tree.querySelector(focusSel); if (fe) fe.focus({ preventScroll: true });
-      if (animate) { var cardEl = stage.firstChild; if (cardEl && cardEl.getBoundingClientRect().bottom > W.innerHeight) cardEl.scrollIntoView({ block: 'nearest', behavior: reduced() ? 'auto' : 'smooth' }); }
+      if (animate) {   // keep the current question (and its answer buttons) fully visible, above the bottom tab bar
+        var cardEl = stage.firstChild, tb = document.getElementById('tabbar'), tbH = tb && tb.offsetParent ? tb.getBoundingClientRect().height : 0;
+        if (cardEl) { var r = cardEl.getBoundingClientRect(); var dy = r.bottom > W.innerHeight - tbH - 8 ? r.bottom - (W.innerHeight - tbH - 16) : r.top < 70 ? r.top - 80 : 0; if (dy) W.scrollBy({ top: dy, behavior: reduced() ? 'auto' : 'smooth' }); }
+      }
     }
-    function answer(k) {
-      var nd = nodes[st.cur], b = nd[k];
-      st.path.push({ i: st.cur, k: k }); st.seen[st.cur] = 1;
-      live.textContent = (k === 'yes' ? YES : NO) + (b.h ? ' : ' + b.h.replace(/<[^>]+>/g, '') : '');
+    function answer(chose) {
+      var right = D.ans && D.ans[st.cur] ? D.ans[st.cur] : null, k = right || chose, nd = nodes[st.cur], b = nd[k];
+      st.path.push({ i: st.cur, k: k, chose: chose, right: right }); st.seen[st.cur] = 1;
+      if (right) { st.n = (st.n || 0) + 1; if (chose === right) st.ok = (st.ok || 0) + 1; }
+      live.textContent = (right ? (chose === right ? TT('right', 'juste', 'right') + '. ' : TT('forthis', 'pour ce patient', 'for this patient') + ' : ') : '') + (k === 'yes' ? YES : NO) + (b.h ? ' : ' + b.h.replace(/<[^>]+>/g, '') : '');
       if (b.go != null && !st.seen[b.go]) { st.cur = b.go; draw('[data-tyn="yes"]', true); }
       else if (D.legacy && st.cur < nodes.length - 1) { st.await = true; st.path[st.path.length - 1].legacy = 1; draw('[data-tnext]', true); }
       else { st.done = true; draw('.tw-end [data-trestart]', true); }
     }
-    function reset(focus) { st = { cur: 0, path: [], seen: {} }; live.textContent = ''; draw(focus ? '[data-tyn="yes"]' : null); }
+    function reset(focus) { st = { cur: 0, path: [], seen: {}, ok: 0, n: 0 }; live.textContent = ''; draw(focus ? '[data-tyn="yes"]' : null); }
     function setMode(m) { tree.setAttribute('data-mode', m); tree.querySelectorAll('.tree-seg [data-tmode]').forEach(function (x) { x.setAttribute('aria-pressed', String(x.getAttribute('data-tmode') === m)); }); if (m === 'overview') W.requestAnimationFrame(function () { wires(tree); }); }
     function onClick(ev) {
       var t = ev.target, b;

@@ -10,7 +10,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Glaucomatous cupping and its mimics",
   tags: ["highyield", "piege"],
   oneLiner: "Un C/D élevé n’est pas un diagnostic : mesurer le disque, lire l’anneau, chercher la pâleur qui impose une IRM.",
-  definition: "L’excavation glaucomateuse est la perte des axones de l’anneau, surtout aux pôles ; l’anneau restant reste rose. Grand disque, papille inclinée, compression, ischémie, hérédité ou drusen l’imitent.",
+  definition: "Le glaucome creuse l’anneau aux pôles, qui reste rose. Grand disque, compression ou ischémie l’imitent.",
   anatomy: {
     text: "La papille (optic disc) mesure ≈ 1,5–2 mm, mais sa taille varie beaucoup alors que l’anneau d’axones occupe une surface assez semblable : grand disque = grand creux physiologique, petit disque = presque aucun creux. Le bord neurorétinien (neuroretinal rim) est normalement plus épais en inférieur, puis supérieur, nasal et temporal (règle ISNT, imparfaite). Les fibres maculaires entrent du côté temporal : une atteinte héréditaire, toxique ou compressive les pâlit en premier.",
     figure: {
@@ -156,7 +156,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Lens-, IOL- and trauma-related glaucomas",
   tags: ["urgent", "highyield"],
   oneLiner: "PIO élevée avec cataracte avancée, implant ou trauma : trouver le mécanisme (angle fermé ou ouvert), baisser la PIO, traiter la cause.",
-  definition: "Le cristallin (gonflé, qui fuit, déplacé), un implant qui frotte l’iris ou un trauma fait monter la PIO. On baisse la PIO, puis on retire ou replace la cause.",
+  definition: "Cristallin, implant ou trauma font monter la PIO. Baisser la PIO, puis traiter la cause.",
   anatomy: {
     text: "Le cristallin est suspendu derrière l’iris par la zonule (zonules), fibres attachées au corps ciliaire ; il s’épaissit toute la vie et pousse l’iris vers l’avant. Sa capsule retient des protéines qui, libérées, bouchent le trabéculum ou déclenchent une inflammation. Le corps ciliaire est fragile au trauma : sa déchirure entre fibres longitudinales et circulaires donne la récession de l’angle.",
     figure: {
@@ -302,7 +302,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       "**Toi** : hyphéma : tête du lit à 30–45°, coque, pas d’AINS ni d’aspirine.",
       "**Ophtalmologiste** : baisser la PIO, prednisolone acétate 1 %, cycloplégique ; retirer ou replacer la cause."
     ],
-    refer: "Référer en ophtalmologie : le jour même — trauma avec sang, cataracte blanche et œil douloureux, ou cristallin luxé.",
+    refer: "Référer en ophtalmologie : le jour même — trauma avec sang, cataracte blanche et œil douloureux, ou cristallin luxé ; immédiatement si douleur après une vitrectomie avec gaz.",
     pitfall: ["**Acétazolamide** en drépanocytose : falciformation dans l’hyphéma.", "**Pilocarpine** : jamais si la cause est cristallinienne."],
     qc: "Montréal : électrophorèse de l’hémoglobine si origine haïtienne, africaine, antillaise, méditerranéenne, moyen-orientale ou indienne."
   }

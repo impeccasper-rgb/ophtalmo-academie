@@ -11,7 +11,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Childhood glaucoma, anterior segment dysgenesis and iridocorneal endothelial syndrome",
   tags: ["urgent", "highyield", "piege"],
   oneLiner: "Nourrisson qui larmoie, fuit la lumière et serre les paupières, cornée large ou trouble : glaucome congénital jusqu’à preuve du contraire.",
-  definition: "Ces glaucomes viennent d’un angle mal formé, d’une membrane (ICE) ou d’une pression veineuse élevée (Sturge-Weber). Avant ≈ 3 ans, la PIO étire tout l’œil ; chez l’adulte, seulement le nerf souffre.",
+  definition: "Angle mal formé dès la naissance, ou membrane ICE chez l’adulte. Avant 3 ans, la PIO étire tout l’œil.",
   anatomy: {
     text: "L’angle se forme pendant la vie fœtale à partir de la crête neurale, qui donne le trabéculum (filtre spongieux), la ligne de Schwalbe (bord de la Descemet) et le stroma irien. Un arrêt de ce développement laisse un trabéculum immature ou des brides d’iris tendues jusqu’à Schwalbe.",
     figure: {
@@ -81,12 +81,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   cat: {
     algo: [
       { q: "Nourrisson ou jeune enfant ?", yes: "", no: "", yesGo: 1, noGo: 4 },
-      {
-        q: "Triade, cornée large ou trouble ?",
-        yes: { t: "Référence urgente : examen sous anesthésie ; gouttes en pont.", urgent: true },
-        no: "Larmoiement, cornée claire : obstruction lacrymonasale probable.",
-        yesGo: 2
-      },
+      { q: "Triade, cornée large ou trouble ?", yes: "Référer dans les 24 h : examen sous anesthésie ; gouttes en pont.", no: "Larmoiement, cornée claire : obstruction lacrymonasale probable.", yesGo: 2 },
       { q: "Cornée assez claire pour voir l’angle ?", yes: "Goniotomie ou trabéculotomie.", no: "Trabéculotomie par voie externe.", yesGo: 3, noGo: 3 },
       { q: "Échec de la chirurgie de l’angle ?", yes: "Reprise, tube, trabéculectomie avec MMC ou cyclophotocoagulation.", no: "Suivi : PIO, diamètre, réfraction, amblyopie." },
       { q: "Adulte : œdème, corectopie, synéchies d’un côté ?", yes: "ICE : spéculaire, gouttes, tube si échec ; DSAEK ou DMEK si œdème.", no: "Penser Axenfeld-Rieger, dystrophie polymorphe postérieure ou glaucome juvénile." }

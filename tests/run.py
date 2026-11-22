@@ -143,8 +143,7 @@ try:
                             page.click('[data-startmini]'); page.click('[data-miniquiz] .opt >> nth=0')
                             if not page.query_selector('[data-miniquiz] .feedback'): raise Exception('no feedback')
                         step('mini quiz', mini)
-                    step('mark read', lambda: page.click('[data-act="mark-read"] >> nth=0'))
-                    step('next screen', lambda: (page.click('[data-fnext]'), page.wait_for_timeout(200)))
+                    step('mark read via next', lambda: (page.click('[data-markread]'), page.wait_for_timeout(200), None if page.evaluate("f => Prog.ficheDone(f)", first) else (_ for _ in ()).throw(Exception('not marked read'))))
                 # quiz run
                 page.evaluate("h => { location.hash = h }", 'quiz'); page.wait_for_timeout(300)
                 def qrun():
@@ -217,8 +216,9 @@ try:
                 step('unlock', lambda: page.click('a.chart-line >> nth=1'))
                 # learning layer v2
                 page.evaluate("h => { location.hash = h }", 'accueil'); page.wait_for_timeout(300)
-                step('depth 3', lambda: page.click('.level-card[data-v="3"]'))
-                step('depth 1', lambda: page.click('.level-card[data-v="1"]'))
+                page.evaluate("h => { location.hash = h }", 'progression'); page.wait_for_timeout(300)
+                step('depth 3', lambda: page.click('[data-act="depth"][data-v="3"] >> nth=0'))
+                step('depth 1', lambda: page.click('[data-act="depth"][data-v="1"] >> nth=0'))
                 fid = page.evaluate("() => (OPH.fiches.find(f => (OPH.photos||{})[f.id]) || {}).id")
                 page.evaluate("h => { location.hash = h }", fid + '/decider'); page.wait_for_timeout(400)
                 def gating():

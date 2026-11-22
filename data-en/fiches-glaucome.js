@@ -5,7 +5,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-gpao": {
  "title": "Primary open-angle glaucoma",
  "oneLiner": "Chronic, painless optic neuropathy with an open angle: the disc cups and peripheral field is lost silently.",
- "definition": "POAG is a chronic optic neuropathy: nerve fibers die slowly, mainly because intraocular pressure (IOP) is too high for that nerve, with a normal angle. Peripheral vision goes first, painlessly: hence screening.",
+ "definition": "A chronic optic neuropathy, mainly from IOP too high for the nerve. The field is lost painlessly.",
  "anatomy": {
   "text": "Aqueous humor, made by the ciliary processes, leaves mainly through the trabecular meshwork (the angle's filter) and Schlemm's canal, and partly between the ciliary muscle fibers (uveoscleral outflow); IOP reflects this balance. Retinal ganglion cell axons leave the eye through the lamina cribrosa, a vulnerable collagen sieve."
  },
@@ -307,7 +307,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-crise": {
  "title": "Acute angle-closure crisis",
  "oneLiner": "Painful red eye, halos, hazy cornea, fixed mid-dilated pupil and very high IOP: lower the IOP now, then iridotomy in both eyes.",
- "definition": "The iris suddenly blocks the whole angle filter: aqueous can no longer leave and IOP rises very high within hours. It is an emergency: the nerve, cornea and iris can be permanently damaged.",
+ "definition": "The iris suddenly closes the whole angle: IOP rises very high within hours. It is an emergency.",
  "anatomy": {
   "text": "Aqueous flows from the posterior to the anterior chamber through the pupil, then leaves through the trabecular meshwork (the angle's filter). In a short eye with a thick lens, the iris rubs against the lens; in mid-dilation, this contact hinders flow the most (pupillary block). The corneal endothelium pumps water out of the cornea; a very high IOP overwhelms this pump."
  },
@@ -435,7 +435,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   }
  ],
  "redFlags": [
-  "IOP unchanged after 1 h of maximal treatment: mannitol, call the on-call ophthalmologist",
+  "Attack = immediate call; if IOP unchanged at 1 h: mannitol, on advice",
   "Bilateral crisis: think drug-induced effusion (topiramate)",
   "Before acetazolamide or mannitol: sulfa allergy, kidney, heart, sickle cell"
  ],
@@ -624,7 +624,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-fermeture": {
  "title": "Primary angle closure (PACS, PAC, PACG)",
  "oneLiner": "The peripheral iris blocks the angle's filter: detect it on gonioscopy, classify as PACS, PAC or PACG, then open the angle according to risk.",
- "definition": "The peripheral iris presses against the trabecular meshwork and blocks aqueous outflow, in a predisposed eye (small eye, thick lens). Three stages: contact only (PACS), raised IOP or synechiae (PAC), then nerve damage (PACG).",
+ "definition": "The iris blocks the filter of a short eye. Stages: contact (PACS), IOP or synechiae (PAC), nerve damage (PACG).",
  "anatomy": {
   "text": "The iridocorneal angle contains the trabecular meshwork; on gonioscopy (examination of the angle with a mirrored lens), you see from posterior to anterior: iris root, ciliary body band, scleral spur, trabecular meshwork, Schwalbe's line. Aqueous passes from the posterior to the anterior chamber by sliding between iris and lens; a short eye with a thick lens has a narrow angle."
  },
@@ -930,7 +930,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-hto": {
  "title": "Ocular hypertension and glaucoma suspect",
  "oneLiner": "IOP > 21 mmHg or a suspicious disc without proven neuropathy: estimate the risk of conversion, then observe or treat.",
- "definition": "Ocular hypertension (OHT) is IOP > 21 mmHg with an open angle and a normal nerve and field. A glaucoma suspect has one doubtful finding (IOP, disc, OCT or field) without proven neuropathy.",
+ "definition": "OHT: IOP > 21 mmHg, normal nerve and field. Suspect: one doubtful finding without proven neuropathy.",
  "anatomy": {
   "text": "Normal IOP ranges from 10 to 21 mmHg (mean ≈ 15–16) and varies by 2 to 6 mmHg over 24 h; it reflects the balance between aqueous production and outflow. The Goldmann tonometer flattens the cornea: a thick cornea resists and leads to overestimating IOP, a thin cornea to underestimating it. A large disc normally has a large cup."
  },
@@ -1209,7 +1209,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-papille": {
  "title": "The deceptive disc: glaucomatous cupping and its mimics",
  "oneLiner": "A high C/D is not a diagnosis: measure the disc, read the rim, look for the pallor that mandates an MRI.",
- "definition": "Glaucomatous cupping is loss of rim axons, mostly at the poles; the remaining rim stays pink. Large or tilted discs, compression, ischemia, heredity and drusen mimic it.",
+ "definition": "Glaucoma hollows the rim at the poles, which stays pink. Large discs, compression or ischemia mimic it.",
  "anatomy": {
   "text": "The optic disc measures ≈ 1.5–2 mm, but its size varies widely while the axonal rim occupies a fairly similar area: large disc = large physiologic cup, small disc = almost no cup. The neuroretinal rim is normally thickest inferiorly, then superiorly, nasally and temporally (ISNT rule, imperfect). Macular fibers enter on the temporal side: hereditary, toxic or compressive damage makes them pale first."
  },
@@ -1506,7 +1506,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-pxf": {
  "title": "Pseudoexfoliation glaucoma",
  "oneLiner": "Older patient, whitish target-pattern deposits on the lens after dilation, high and fluctuating IOP: aggressive glaucoma and a high-risk cataract.",
- "definition": "With age, a whitish fibrillar material is deposited on the lens, zonules, iris and trabecular meshwork. When it clogs the filter, IOP rises: this is pseudoexfoliation glaucoma, more aggressive than POAG.",
+ "definition": "Age-related whitish material clogs the meshwork. A more aggressive glaucoma than POAG.",
  "anatomy": {
   "text": "The lens is suspended by the zonules, fibers attached to the ciliary body. With each pupil movement, the pigmented posterior surface of the iris slides over the anterior lens capsule. Aqueous carries whatever floats in the anterior chamber to the trabecular meshwork."
  },
@@ -1809,7 +1809,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-pigmentaire": {
  "title": "Pigment dispersion and pigmentary glaucoma",
  "oneLiner": "Young myopic man, Krukenberg spindle, mid-peripheral transillumination slits and a heavily pigmented angle: IOP spikes with exercise.",
- "definition": "The posteriorly bowed iris rubs against the zonules and sheds pigment, which settles on the cornea, lens and trabecular meshwork. If IOP rises and the nerve is damaged, it is pigmentary glaucoma.",
+ "definition": "The bowed iris rubs the zonules and sheds pigment. The pigment clogs the meshwork.",
  "anatomy": {
   "text": "The posterior surface of the iris is lined with a heavily pigmented epithelium; just behind it lie the zonules, the fibers that hold the lens. In myopes, the anterior chamber is deep and the iris can take on a concave shape. Aqueous circulates in a loop in the anterior chamber and ends up at the trabecular meshwork."
  },
@@ -2112,7 +2112,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-neovasculaire": {
  "title": "Neovascular glaucoma",
  "oneLiner": "Ischemic retina (vein occlusion, diabetes, carotid), neovessels on the iris and in the angle, very high IOP: urgent anti-VEGF and panretinal photocoagulation.",
- "definition": "An ischemic retina releases VEGF (vascular endothelial growth factor), which grows new vessels on the iris and in the angle. Their fibrous membrane closes the filter: IOP rises, often in an eye that already sees poorly.",
+ "definition": "An ischemic retina releases VEGF. New vessels close the angle and IOP rises.",
  "anatomy": {
   "text": "The inner retina is supplied by the central retinal artery and drained by the central retinal vein; if this network becomes occluded or depleted, the retina becomes ischemic. VEGF diffuses into the vitreous and then the aqueous, reaching the iris and angle. Normally, no vessel crosses the scleral spur to branch over the trabecular meshwork."
  },
@@ -2262,7 +2262,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    },
    {
     "q": "Raised IOP?",
-    "yes": "NVG: anti-VEGF, PRP and urgent IOP lowering.",
+    "yes": "NVG: anti-VEGF, PRP and IOP lowering the same day.",
     "no": "Neovessels only: prompt anti-VEGF and PRP to save the angle.",
     "yesGo": 3
    },
@@ -2419,7 +2419,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-gpn": {
  "title": "Normal-tension glaucoma",
  "oneLiner": "Glaucomatous neuropathy with IOP always ≤ 21 mmHg: a diagnosis of exclusion, disc hemorrhages and early paracentral defects.",
- "definition": "Normal-tension glaucoma (NTG) is open-angle glaucoma in which the nerve cups while IOP stays ≤ 21 mmHg. It is a diagnosis of exclusion: missed high IOP, intermittent angle closure or a non-glaucomatous neuropathy.",
+ "definition": "Open-angle glaucoma with IOP always ≤ 21 mmHg. It is a diagnosis of exclusion.",
  "anatomy": {
   "text": "The optic nerve head is supplied by the short posterior ciliary arteries; its blood flow depends on perfusion pressure (blood pressure minus IOP) and on vascular autoregulation. The axons pass through the lamina cribrosa, a collagen sieve that is more fragile in some individuals, in whom they are damaged even at a normal IOP."
  },
@@ -2714,7 +2714,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-secondaires": {
  "title": "Steroid-induced and uveitic glaucoma",
  "oneLiner": "IOP rising on steroids or during uveitis: identify the mechanism, adjust the steroid, treat the inflammation, avoid pilocarpine.",
- "definition": "Steroid-induced glaucoma: IOP rises on a corticosteroid (drops, injection, implant, sometimes inhaled or oral) in a responder. Uveitic glaucoma: inflammation clogs the filter or sticks the iris down, and its steroid can also raise IOP.",
+ "definition": "IOP rises on a corticosteroid (responder). Or from the inflammation of uveitis.",
  "anatomy": {
   "text": "Trabecular meshwork cells (the angle's filter) clean and renew their matrix to let aqueous through; steroids alter this function. The ciliary body produces aqueous: severe inflammation shuts it down (production ↓), hence an IOP that is sometimes low in active uveitis. The inflamed iris can stick to the lens (posterior synechiae) or to the angle."
  },
@@ -3030,7 +3030,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-cristallin": {
  "title": "Lens-related, IOL-related and traumatic glaucomas",
  "oneLiner": "Elevated IOP with advanced cataract, an IOL or trauma: find the mechanism (closed or open angle), lower the IOP, treat the cause.",
- "definition": "The lens (swollen, leaking, displaced), an IOL rubbing the iris, or trauma raises IOP. Lower IOP first, then remove or reposition the cause.",
+ "definition": "The lens, an IOL or trauma raises IOP. Lower IOP, then treat the cause.",
  "anatomy": {
   "text": "The lens is suspended behind the iris by the zonules, fibers attached to the ciliary body; it thickens throughout life and pushes the iris forward. Its capsule holds in proteins which, once released, clog the trabecular meshwork or trigger inflammation. The ciliary body is vulnerable to trauma: a tear between its longitudinal and circular fibers produces angle recession."
  },
@@ -3355,7 +3355,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "**You**: hyphema: head of bed at 30–45°, shield, no NSAIDs or aspirin.",
    "**Ophthalmologist**: lower IOP, prednisolone acetate 1%, cycloplegic; remove or reposition the cause."
   ],
-  "refer": "Refer to ophthalmology: same day — trauma with blood, white cataract with a painful eye, or a dislocated lens.",
+  "refer": "Refer to ophthalmology: same day — trauma with blood, white cataract with a painful eye, or a dislocated lens; immediately if pain after vitrectomy with gas.",
   "pitfall": [
    "**Acetazolamide** in sickle cell: sickling in the hyphema.",
    "**Pilocarpine**: never for a lens cause."
@@ -3369,7 +3369,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-dev": {
  "title": "Childhood glaucomas, developmental anomalies and ICE syndrome",
  "oneLiner": "Infant with tearing, light avoidance and squeezed lids, large or hazy cornea: congenital glaucoma until proven otherwise.",
- "definition": "These glaucomas come from a malformed angle, a membrane (ICE) or high venous pressure (Sturge-Weber). Before about age 3, IOP stretches the whole eye; in adults, only the nerve suffers.",
+ "definition": "An angle malformed from birth, or an ICE membrane in adults. Before age 3, IOP stretches the whole eye.",
  "anatomy": {
   "text": "The angle forms during fetal life from the neural crest, which gives rise to the trabecular meshwork (spongy filter), Schwalbe's line (the edge of Descemet's membrane) and the iris stroma. Arrested development leaves an immature trabecular meshwork or iris strands stretched up to Schwalbe's line."
  },
@@ -3527,10 +3527,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    },
    {
     "q": "Triad, large or cloudy cornea?",
-    "yes": {
-     "t": "Urgent referral: examination under anesthesia; bridging drops.",
-     "urgent": true
-    },
+    "yes": "Refer within 24 h: examination under anesthesia; bridging drops.",
     "no": "Tearing, clear cornea: probable nasolacrimal duct obstruction.",
     "yesGo": 2
    },
@@ -3683,7 +3680,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "g-postop": {
  "title": "The postoperative patient: trabeculectomy, tubes, MIGS",
  "oneLiner": "After filtering surgery, read IOP × chamber depth, look for a leak (Seidel) and never miss a bleb infection.",
- "definition": "Glaucoma surgery creates a new exit for aqueous: to a bleb under the conjunctiva (trabeculectomy, PreserFlo, XEN), to a plate (tubes) or into Schlemm's canal (MIGS). Tell normal healing apart from complications, including bleb infection, an emergency.",
+ "definition": "Surgery opens an exit for aqueous: bleb, tube or Schlemm's canal. Bleb infection is an emergency.",
  "anatomy": {
   "text": "In trabeculectomy, aqueous passes through a fistula created under a scleral flap, then collects under the conjunctiva where the vessels absorb it: this is the filtering bleb. Scarring is the main enemy; mitomycin C (MMC, an antifibrotic) slows it. MIGS stay within the natural pathway: IOP cannot go below episcleral venous pressure (≈ 8–10 mmHg)."
  },
@@ -3821,7 +3818,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   }
  ],
  "redFlags": [
-  "White bleb, red and painful eye ± hypopyon: infection, same day",
+  "White bleb, red painful eye ± hypopyon: infection, immediate call",
   "Sudden pain, high IOP, flat chamber: suprachoroidal hemorrhage",
   "Lens touching the cornea: re-form the chamber urgently"
  ],

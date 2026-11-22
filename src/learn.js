@@ -335,7 +335,9 @@ Views.reviser = {
     var nCloze = Cloze.pool(mod).length, nTri = Triage.pool(mod).length, nImg = ImgGame.pool(mod).length;
     var nErr = Prog.qs(mod).filter(function (qq) { var a = Store.p.answers[qq.id]; return a && (!a.last || a.conf === 'unsure'); }).length;
     var errTile = nErr ? '<button type="button" class="mode-tile err-tile" data-act="quiz-wrong"><span class="mode-ic" aria-hidden="true">↺</span><span class="stack" style="gap:2px"><b>' + t('rev.wrong') + '</b><span class="small muted">' + t('rev.wrong.d') + '</span><span class="xs mono">' + t('rev.nq', { n: nErr }) + '</span></span></button>' : '';
-    var tile = function (href, k, ttl, d, n) { return '<a class="mode-tile" href="#' + href + '"><span class="mode-ic" aria-hidden="true">' + k + '</span><span class="stack" style="gap:2px"><b>' + ttl + '</b><span class="small muted">' + d + '</span>' + (n != null ? '<span class="xs mono">' + n + '</span>' : '') + '</span></a>'; };
+    var R0 = window.OPH_RESTRICTED || {}, pic = function (id) { return D.cat(id) && !R0[id] ? '<img src="' + Photo.src(id) + '" alt="" loading="lazy">' : ''; };
+    var VIS = { cartes: pic('OPH-001'), 'jeu-images': pic('OPH-057') || pic('OPH-002'), cas: pic('OPH-131') };
+    var tile = function (href, k, ttl, d, n) { return '<a class="mode-tile t-' + href + '" href="#' + href + '"><span class="mode-ic' + (VIS[href] ? ' pic' : '') + '" aria-hidden="true">' + (VIS[href] || k) + '</span><span class="stack" style="gap:2px"><b>' + ttl + '</b><span class="small muted">' + d + '</span>' + (n != null ? '<span class="xs mono">' + n + '</span>' : '') + '</span></a>'; };
     return '<div class="page">' + crumbs([[t('nav.home'), 'accueil'], [t('nav.review'), null]]) + '<div class="phead"><div class="eyebrow">' + t('rev.eyebrow') + '</div><h1>' + t('rev.h1') + '</h1><p class="muted" style="max-width:62ch">' + t('rev.lead') + '</p></div>' + modSeg(mod) +
       '<div class="today card"><div class="stack" style="gap:4px"><div class="eyebrow">' + t('rev.today') + '</div><b class="today-n">' + t('rev.ncards', { n: q.length }) + '</b><span class="small muted">' + t('rev.today.d', { due: c.due, fresh: Math.max(0, q.length - c.due), known: c.known, total: c.total }) + '</span></div><a class="btn primary" href="#cartes">' + t('rev.start') + '</a></div>' +
       '<div class="mode-grid">' + errTile +
@@ -426,7 +428,7 @@ Views.progression = {
 };
 
 /* ---------- apprendre hub (all modules, visual) ---------- */
-var COVER = { A: 'OPH-192', B: 'OPH-001', C: 'OPH-298' };
+var COVER = { A: 'OPH-192', B: 'OPH-001', C: 'OPH-131' }; // C: a real optic disc photo (not an OCT print under the title)
 var THUMB_ALIAS = { 'a-physiologie': 'a-gonioscopie', 'a-examen': 'a-lampe', 'a-imagerie': 'a-oct', 'a-retine': 'a5-retinopathie-diabetique' };
 function thumbFor(key) {
   // real photo first (fiche photos, alias, a photo question on this topic), then the fiche's own schematic; never an empty tile

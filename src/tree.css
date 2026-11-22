@@ -74,3 +74,9 @@
 }
 @media (prefers-reduced-motion: reduce) { .tw-card.just, .tw-step.just { animation: none; } }
 .no-motion .tw-card.just, .no-motion .tw-step.just { animation: none; }
+
+/* cycle 9: clinical vignette and checked answers */
+.tw-vig { margin: 0; padding: 10px 12px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--cobalt); font-size: var(--fs-sm); line-height: 1.45; }
+.tw-ok { font-weight: 700; color: var(--ok); }
+.tw-bad { font-weight: 700; color: var(--bad); display: block; }
+.tw-step.miss .tw-n { background: var(--bad); }

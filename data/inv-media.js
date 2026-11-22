@@ -643,16 +643,16 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
   "schematic": true
  },
  "m-oct-1": {
-  "kind": "svg",
-  "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" font-family=\"system-ui,-apple-system,Segoe UI,sans-serif\"><rect width=\"400\" height=\"300\" rx=\"10\" fill=\"#f7f6f2\"/><text x=\"200\" y=\"27\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"#2b2a26\">Coupe OCT maculaire normale · Normal macular OCT</text><rect x=\"30\" y=\"30\" width=\"340\" height=\"210\" fill=\"#1a1a1a\"/><rect x=\"30\" y=\"80\" width=\"340\" height=\"12\" fill=\"#e6e6e6\"/><rect x=\"30\" y=\"92\" width=\"340\" height=\"10\" fill=\"#9a9a9a\"/><rect x=\"30\" y=\"102\" width=\"340\" height=\"10\" fill=\"#c6c6c6\"/><rect x=\"30\" y=\"112\" width=\"340\" height=\"12\" fill=\"#5a5a5a\"/><rect x=\"30\" y=\"124\" width=\"340\" height=\"8\" fill=\"#bdbdbd\"/><rect x=\"30\" y=\"132\" width=\"340\" height=\"30\" fill=\"#3e3e3e\"/><rect x=\"30\" y=\"162\" width=\"340\" height=\"2\" fill=\"#9c9c9c\"/><rect x=\"30\" y=\"166\" width=\"340\" height=\"5\" fill=\"#f2f2f2\"/><rect x=\"30\" y=\"173\" width=\"340\" height=\"3\" fill=\"#b0b0b0\"/><rect x=\"30\" y=\"177\" width=\"340\" height=\"9\" fill=\"#ffffff\"/><rect x=\"30\" y=\"186\" width=\"340\" height=\"54\" fill=\"#6e6e6e\"/><clipPath id=\"moct1-frame\"><rect x=\"30\" y=\"30\" width=\"340\" height=\"210\"/></clipPath><ellipse cx=\"200\" cy=\"78\" rx=\"58\" ry=\"54\" fill=\"#1a1a1a\" clip-path=\"url(#moct1-frame)\"/><text x=\"200\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2b2a26\">vitré en haut, choroïde en bas · vitreous on top, choroid below</text><text x=\"394\" y=\"10\" text-anchor=\"end\" font-size=\"7.5\" fill=\"#8a8578\">schéma · schematic</text></svg>",
+  "kind": "gen",
+  "gen": "oct:none",
   "alt": {
    "fr": "Schéma d’une coupe OCT maculaire normale avec dépression fovéolaire et bandes rétiniennes.",
    "en": "Schematic of a normal macular OCT B-scan with the foveal pit and retinal bands."
   },
   "hotspots": [
    {
-    "x": 18,
-    "y": 60.5,
+    "x": 21.9,
+    "y": 63.1,
     "r": 4,
     "label": {
      "fr": "Complexe EPR–membrane de Bruch : bande brillante la plus profonde, posée sur la choroïde",
@@ -661,8 +661,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     "decisive": true
    },
    {
-    "x": 34,
-    "y": 56,
+    "x": 33.8,
+    "y": 58.1,
     "r": 3,
     "label": {
      "fr": "Zone ellipsoïde (photorécepteurs) : fine bande brillante juste au-dessus",
@@ -670,8 +670,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     }
    },
    {
-    "x": 14,
-    "y": 49,
+    "x": 14.4,
+    "y": 48.3,
     "r": 4,
     "label": {
      "fr": "Couche nucléaire externe : bande sombre épaisse",
@@ -679,8 +679,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     }
    },
    {
-    "x": 30,
-    "y": 39,
+    "x": 28.8,
+    "y": 36.7,
     "r": 3,
     "label": {
      "fr": "Couche nucléaire interne",
@@ -688,8 +688,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     }
    },
    {
-    "x": 14,
-    "y": 28.7,
+    "x": 11.9,
+    "y": 21.5,
     "r": 3,
     "label": {
      "fr": "Couche des fibres nerveuses : bande brillante la plus interne",
@@ -698,7 +698,7 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
    },
    {
     "x": 50,
-    "y": 40,
+    "y": 33.4,
     "r": 5,
     "label": {
      "fr": "Fovéa : couches internes écartées, dépression centrale",
@@ -706,8 +706,8 @@ G.OPH.invMedia = Object.assign(G.OPH.invMedia || {}, {
     }
    },
    {
-    "x": 24,
-    "y": 70,
+    "x": 10,
+    "y": 77.9,
     "r": 4,
     "label": {
      "fr": "Choroïde",

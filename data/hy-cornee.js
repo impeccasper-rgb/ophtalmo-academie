@@ -7,11 +7,11 @@ Object.assign(G.OPH.hy, {
 
   "b-bases": {
     essentials: [
-      "Premier réflexe : **trier** ce qui menace la vision ou le globe dans les heures qui viennent.",
+      "Premier réflexe : **trier** ce qui menace la vision ou le globe dans les heures.",
       "**Ulcère** = défaut épithélial + infiltrat avec perte de tissu : infectieux jusqu’à preuve du contraire.",
       "Le **stéroïde topique** est l’outil le plus utile et le plus dangereux de la clinique.",
       "Greffe moderne : **ne remplacer que la couche malade** (PK, DALK, DSAEK ou DMEK).",
-      "À chaque visite : AV, PIO, lampe à fente **avant puis après fluorescéine**, dessin de la lésion."
+      "À chaque visite : AV, PIO, lampe **avant puis après fluorescéine**, dessin de la lésion."
     ],
     cloze: [
       "Ulcère si profond que seule la [[Descemet|membrane de Descemet]], qui bombe, retient encore le contenu de l’œil.",
@@ -35,7 +35,7 @@ Object.assign(G.OPH.hy, {
 
   "c-secheresse": {
     essentials: [
-      "Le plus souvent, ce n’est pas un manque de larmes, mais une huile meibomienne de mauvaise qualité (**MGD**).",
+      "Souvent, pas un manque de larmes : une huile meibomienne de mauvaise qualité (**MGD**).",
       "DEWS III : **sans symptômes, pas de sécheresse** ; OSDI-6 ≥ 4 puis un signe objectif.",
       "Kératite ponctuée **inférieure** : MGD, exposition ou gouttes toxiques ; entre les paupières : manque d’eau.",
       "Yeux secs sous gouttes de glaucome : **BAK** toxique, passer aux gouttes sans agent de conservation."
@@ -90,7 +90,7 @@ Object.assign(G.OPH.hy, {
   "c-erosion": {
     essentials: [
       "Douleur vive **au réveil**, des semaines après une égratignure d’ongle : épithélium mal ancré qui s’arrache.",
-      "**Jamais d’anesthésique topique** à la maison : l’abus bloque la guérison et peut causer ulcère et perforation.",
+      "**Jamais d’anesthésique topique** à la maison : l’abus bloque la guérison et peut perforer.",
       "Érosion récidivante : onguent **NaCl 5 %** au coucher pendant 3–6 mois.",
       "EBMD avant une cataracte : **polir d’abord**, puis refaire la biométrie sur une cornée stable."
     ],
@@ -225,10 +225,10 @@ Object.assign(G.OPH.hy, {
 
   "c-pterygion": {
     essentials: [
-      "Ptérygion : aile **nasale** liée aux UV qui franchit le limbe ; la pinguécula reste sur la conjonctive.",
+      "Ptérygion : aile **nasale** (UV) qui franchit le limbe ; pas la pinguécula.",
       "**Autogreffe conjonctivale** après exérèse : récidive bien plus faible qu’avec la sclère nue.",
       "Ptérygion et cataracte : **enlever le ptérygion d’abord**, puis refaire la biométrie.",
-      "Pseudoptérygion : après brûlure ou trauma, tout méridien ; **la sonde passe sous le col**."
+      "Pseudoptérygion : après brûlure ou trauma ; **la sonde passe sous le col**."
     ],
     cloze: [
       "Le dépôt de fer brun devant la tête du ptérygion est la ligne de [[Stocker]].",
@@ -308,7 +308,7 @@ Object.assign(G.OPH.hy, {
     essentials: [
       "Opacités **bilatérales et symétriques**, sans vaisseaux ni inflammation, familiales : dystrophie ; situer la couche.",
       "Granulaire : miettes nettes, stroma clair entre elles ; **maculaire** : voile jusqu’au limbe, cornée mince.",
-      "Des trois dystrophies stromales, seule la **maculaire est récessive** (CHST6) ; granulaire et grillagée sont dominantes (TGFBI).",
+      "Seule la dystrophie **maculaire est récessive** (CHST6) ; granulaire et grillagée : dominantes (TGFBI).",
       "Mutation **TGFBI** ou opacités en flocons : pas de LASIK, les dépôts prolifèrent à l’interface."
     ],
     cloze: [

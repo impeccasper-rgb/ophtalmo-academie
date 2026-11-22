@@ -10,7 +10,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Primary open-angle glaucoma (POAG)",
   tags: ["frequent", "highyield"],
   oneLiner: "Neuropathie optique chronique, indolore, à angle ouvert : la papille se creuse et le champ périphérique se perd en silence.",
-  definition: "Le GPAO est une neuropathie optique chronique : les fibres du nerf meurent lentement, surtout parce que la pression intraoculaire (PIO) est trop haute pour ce nerf, avec un angle normal. La vision périphérique part en premier, sans douleur : d’où le dépistage.",
+  definition: "Neuropathie optique chronique, surtout liée à une PIO trop haute pour le nerf. Le champ se perd sans douleur.",
   anatomy: {
     text: "L’humeur aqueuse (aqueous humor), fabriquée par les procès ciliaires, sort surtout par le trabéculum (trabecular meshwork : filtre de l’angle) et le canal de Schlemm, et en partie entre les fibres du muscle ciliaire (voie uvéosclérale, uveoscleral outflow) ; la PIO reflète cet équilibre. Les axones des cellules ganglionnaires (retinal ganglion cells) quittent l’œil par la lame criblée (lamina cribrosa), tamis de collagène vulnérable.",
     figure: {
@@ -162,7 +162,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Ocular hypertension and glaucoma suspect",
   tags: ["frequent", "highyield"],
   oneLiner: "PIO > 21 mmHg ou papille douteuse sans neuropathie démontrée : estimer le risque de conversion, puis observer ou traiter.",
-  definition: "L’hypertension oculaire (HTO) est une PIO > 21 mmHg avec un angle ouvert, un nerf et un champ normaux. Le suspect de glaucome a un élément douteux (PIO, papille, OCT ou champ) sans neuropathie prouvée.",
+  definition: "HTO : PIO > 21 mmHg, nerf et champ normaux. Suspect : un élément douteux sans neuropathie prouvée.",
   anatomy: {
     text: "La PIO normale va de 10 à 21 mmHg (moyenne ≈ 15–16) et varie de 2 à 6 mmHg sur 24 h ; elle reflète l’équilibre entre production et sortie de l’aqueuse. Le tonomètre de Goldmann aplatit la cornée : une cornée épaisse résiste et fait surestimer la PIO, une cornée mince la fait sous-estimer. Une grande papille a normalement une grande excavation.",
     figure: {
@@ -303,7 +303,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Normal-tension glaucoma (NTG)",
   tags: ["highyield", "piege"],
   oneLiner: "Neuropathie glaucomateuse avec PIO toujours ≤ 21 mmHg : diagnostic d’exclusion, hémorragies papillaires et défauts paracentraux précoces.",
-  definition: "Le glaucome à pression normale (GPN) est un glaucome à angle ouvert où le nerf se creuse alors que la PIO reste ≤ 21 mmHg. C’est un diagnostic d’exclusion : PIO élevée manquée, fermeture intermittente ou atteinte non glaucomateuse.",
+  definition: "Glaucome à angle ouvert avec une PIO toujours ≤ 21 mmHg. C’est un diagnostic d’exclusion.",
   anatomy: {
     text: "La tête du nerf optique est irriguée par les artères ciliaires postérieures courtes ; son débit dépend de la pression de perfusion (tension artérielle moins PIO) et d’une autorégulation vasculaire. Les axones passent par la lame criblée (lamina cribrosa), tamis de collagène plus fragile chez certains sujets, chez qui ils s’abîment même à une PIO normale.",
     figure: {
@@ -457,7 +457,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Primary angle-closure disease (PACD)",
   tags: ["frequent", "highyield"],
   oneLiner: "L’iris périphérique bloque le filtre de l’angle : dépister à la gonioscopie, classer PACS, PAC ou PACG, puis ouvrir l’angle selon le risque.",
-  definition: "L’iris périphérique s’applique contre le trabéculum et bloque la sortie de l’aqueuse, sur un œil prédisposé (petit œil, cristallin épais). Trois stades : contact seul (PACS), PIO élevée ou synéchies (PAC), puis nerf atteint (PACG).",
+  definition: "L’iris bloque le filtre d’un œil court. Stades : contact (PACS), PIO ou synéchies (PAC), nerf atteint (PACG).",
   anatomy: {
     text: "L’angle iridocornéen (iridocorneal angle) contient le trabéculum ; à la gonioscopie (examen de l’angle avec une lentille à miroir), on voit de l’arrière vers l’avant : racine de l’iris, bande ciliaire, éperon scléral, trabéculum, ligne de Schwalbe. L’aqueuse passe de la chambre postérieure à l’antérieure en glissant entre iris et cristallin ; un œil court au cristallin épais a un angle étroit.",
     figure: {
@@ -609,7 +609,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Acute angle-closure crisis",
   tags: ["urgent", "highyield", "piege"],
   oneLiner: "Œil rouge douloureux, halos, cornée trouble, pupille mi-dilatée fixe et PIO très haute : baisser la PIO maintenant, puis iridotomie des deux yeux.",
-  definition: "L’iris bloque soudain tout le filtre de l’angle : l’aqueuse ne sort plus et la PIO monte très haut en quelques heures. C’est une urgence : le nerf, la cornée et l’iris peuvent être abîmés pour de bon.",
+  definition: "L’iris ferme d’un coup tout l’angle : la PIO monte très haut en quelques heures. C’est une urgence.",
   anatomy: {
     text: "L’aqueuse passe de la chambre postérieure à l’antérieure par la pupille, puis sort par le trabéculum (filtre de l’angle). Sur un œil court au cristallin épais, l’iris frotte contre le cristallin ; en mi-dilatation, ce contact gêne le plus le passage (bloc pupillaire). L’endothélium cornéen pompe l’eau hors de la cornée ; une PIO très haute dépasse cette pompe.",
     figure: {
@@ -666,7 +666,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     { dx: "Migraine, céphalée en grappe", clue: "PIO normale, cornée claire." }
   ],
   redFlags: [
-    "PIO inchangée après 1 h de traitement maximal : mannitol, appeler l’ophtalmologiste de garde",
+    "Crise = appel immédiat ; si PIO inchangée à 1 h : mannitol, sur avis",
     "Crise bilatérale : penser effusion médicamenteuse (topiramate)",
     "Avant acétazolamide ou mannitol : allergie sulfa, rein, cœur, drépanocytose"
   ],
@@ -769,7 +769,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Pseudoexfoliation (exfoliation) glaucoma",
   tags: ["frequent", "highyield"],
   oneLiner: "Patient âgé, dépôts blanchâtres en cible sur le cristallin après dilatation, PIO haute et fluctuante : glaucome agressif et cataracte à risque.",
-  definition: "Avec l’âge, un matériel fibrillaire blanchâtre se dépose sur le cristallin, les zonules, l’iris et le trabéculum. Quand il bouche le filtre, la PIO monte : c’est le glaucome pseudo-exfoliatif, plus agressif que le GPAO.",
+  definition: "Un matériel blanchâtre lié à l’âge bouche le trabéculum. Glaucome plus agressif que le GPAO.",
   anatomy: {
     text: "Le cristallin est suspendu par les zonules, fibres attachées au corps ciliaire. À chaque mouvement de la pupille, la face postérieure pigmentée de l’iris glisse sur la capsule antérieure du cristallin. L’aqueuse transporte ce qui flotte dans la chambre antérieure jusqu’au trabéculum.",
     figure: {
@@ -909,7 +909,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Pigment dispersion syndrome and pigmentary glaucoma",
   tags: ["highyield", "piege"],
   oneLiner: "Jeune homme myope, fuseau de Krukenberg, fentes de transillumination médio-périphériques et angle très pigmenté : pics de PIO à l’effort.",
-  definition: "L’iris, creusé vers l’arrière, frotte contre les zonules et libère son pigment, qui se dépose sur la cornée, le cristallin et le trabéculum. Si la PIO monte et que le nerf s’abîme, c’est un glaucome pigmentaire.",
+  definition: "L’iris creusé frotte les zonules et libère son pigment. Le pigment bouche le trabéculum.",
   anatomy: {
     text: "La face postérieure de l’iris est tapissée d’un épithélium très pigmenté ; juste derrière se trouvent les zonules, fibres qui retiennent le cristallin. Chez le myope, la chambre antérieure est profonde et l’iris peut prendre une forme concave. L’aqueuse circule en boucle dans la chambre antérieure et finit au trabéculum.",
     figure: {
@@ -1054,7 +1054,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Neovascular glaucoma (NVG)",
   tags: ["urgent", "highyield"],
   oneLiner: "Rétine ischémique (occlusion veineuse, diabète, carotide), néovaisseaux sur l’iris et dans l’angle, PIO très haute : anti-VEGF et panphotocoagulation en urgence.",
-  definition: "Une rétine ischémique sécrète du VEGF (vascular endothelial growth factor), qui fait pousser des néovaisseaux sur l’iris et dans l’angle. Leur membrane fibreuse ferme le filtre : la PIO monte, souvent dans un œil qui voit déjà mal.",
+  definition: "Une rétine ischémique sécrète du VEGF. Des néovaisseaux ferment l’angle et la PIO monte.",
   anatomy: {
     text: "La rétine interne est nourrie par l’artère centrale de la rétine et drainée par la veine centrale ; si ce réseau se bouche ou s’appauvrit, la rétine devient ischémique. Le VEGF diffuse dans le vitré puis dans l’aqueuse jusqu’à l’iris et l’angle. Normalement, aucun vaisseau ne franchit l’éperon scléral pour se ramifier sur le trabéculum.",
     figure: {
@@ -1119,7 +1119,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     algo: [
       { q: "Néovaisseaux de l’iris ou de l’angle ?", yes: "Chercher la cause ischémique.", no: "OVCR ischémique, rétinopathie proliférante : gonioscopie non dilatée régulière.", yesGo: 1 },
       { q: "Cause rétinienne évidente (diabète, OVCR) ?", yes: "Coordonner rétine et médecin traitant (glycémie, tension).", no: "Syndrome ischémique oculaire : Doppler carotidien (risque d’AVC).", yesGo: 2, noGo: 2 },
-      { q: "PIO élevée ?", yes: "GNV : anti-VEGF, PRP et baisse de PIO en urgence.", no: "Néovaisseaux seuls : anti-VEGF et PRP rapides pour sauver l’angle.", yesGo: 3 },
+      { q: "PIO élevée ?", yes: "GNV : anti-VEGF, PRP et baisse de PIO le jour même.", no: "Néovaisseaux seuls : anti-VEGF et PRP rapides pour sauver l’angle.", yesGo: 3 },
       { q: "Angle fermé par synéchies étendues ?", yes: "Les gouttes ne suffiront pas.", no: "Angle encore ouvert : PRP et gouttes.", yesGo: 4 },
       { q: "Potentiel visuel utile ?", yes: "Tube après anti-VEGF (moins de saignement).", no: "Cyclophotocoagulation, atropine et stéroïde pour le confort." }
     ],
@@ -1204,7 +1204,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Steroid-induced and uveitic glaucoma",
   tags: ["frequent", "highyield", "piege"],
   oneLiner: "PIO qui monte sous cortisone ou pendant une uvéite : identifier le mécanisme, ajuster le stéroïde, traiter l’inflammation, éviter la pilocarpine.",
-  definition: "Glaucome cortisonique : la PIO monte sous corticostéroïde (gouttes, injection, implant, parfois inhalé ou oral) chez un répondeur. Glaucome uvéitique : l’inflammation bouche le filtre ou colle l’iris, et sa cortisone peut aussi faire monter la PIO.",
+  definition: "La PIO monte sous corticostéroïde (répondeur). Ou par l’inflammation d’une uvéite.",
   anatomy: {
     text: "Les cellules du trabéculum (filtre de l’angle) nettoient et renouvellent leur matrice pour laisser passer l’aqueuse ; la cortisone modifie ce fonctionnement. Le corps ciliaire produit l’aqueuse : une inflammation forte le met au repos (production ↓), d’où une PIO parfois basse en uvéite active. L’iris inflammé peut se coller au cristallin (synéchies postérieures) ou à l’angle.",
     figure: {
@@ -1355,7 +1355,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "The operated glaucoma patient: trabeculectomy, tubes, MIGS",
   tags: ["urgent", "frequent", "highyield"],
   oneLiner: "Après chirurgie filtrante, lire PIO × profondeur de chambre, chercher une fuite (Seidel) et ne jamais manquer une infection de bulle.",
-  definition: "Les chirurgies du glaucome créent une nouvelle sortie pour l’aqueuse : vers une bulle sous la conjonctive (trabéculectomie, PreserFlo, XEN), une plaque (tubes) ou le canal de Schlemm (MIGS). Il faut distinguer l’évolution normale des complications, dont l’infection de bulle, urgente.",
+  definition: "La chirurgie ouvre une sortie à l’aqueuse : bulle, tube ou Schlemm. L’infection de bulle est urgente.",
   anatomy: {
     text: "Dans la trabéculectomie, l’aqueuse passe par une fistule creusée sous un volet de sclère, puis s’accumule sous la conjonctive où les vaisseaux la résorbent : c’est la bulle de filtration. La cicatrisation est l’ennemi principal ; la mitomycine C (MMC, anticicatrisant) la freine. Les MIGS restent dans la voie naturelle : la PIO ne peut y descendre sous la pression veineuse épisclérale (≈ 8–10 mmHg).",
     figure: {
@@ -1415,7 +1415,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     { dx: "Volet serré ou bulle encapsulée", clue: "PIO haute, chambre profonde." }
   ],
   redFlags: [
-    "Bulle blanche, œil rouge et douloureux ± hypopyon : infection, le jour même",
+    "Bulle blanche, œil rouge et douloureux ± hypopyon : infection, appel immédiat",
     "Douleur brutale, PIO haute, chambre plate : hémorragie suprachoroïdienne",
     "Cristallin qui touche la cornée : reformer la chambre en urgence"
   ],

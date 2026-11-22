@@ -390,7 +390,7 @@ Sims.defs.gonio = function (el) {
 
 /* ---------- tear break-up time ---------- */
 Sims.defs.tbut = function (el) {
-  var st = { q: 80, t0: performance.now(), raf: 0 };
+  var st = { q: 80, t0: 0, raf: 0, run: false }; // the timer starts only when the learner blinks (no auto-paced animation)
   var reduced = U.reduced();
   el.innerHTML = fx('<div class="simgrid"><div class="fig dark-bg"><div class="fig-body"><svg viewBox="0 0 320 300" data-tsvg role="img" aria-label="Film lacrymal à la fluorescéine"></svg></div><div class="fig-cap" style="background:var(--surface)"><span>Fluorescéine + bleu cobalt : les taches sombres marquent la rupture du film.</span><span class="schema-badge">Simulation pédagogique</span></div></div>') +
     '<div class="stack">' + sliderHtml('t-q', fx('Qualité de la couche lipidique (glandes de Meibomius)'), 0, 100, 5, st.q, ' %') +
@@ -405,10 +405,10 @@ Sims.defs.tbut = function (el) {
     U.$('[data-tt]', el).textContent = t.toFixed(1).replace('.', ',') + ' s';
     U.$('[data-tb]', el).textContent = T.toFixed(0) + ' s'; U.$('[data-tbox]', el).className = 'readout ' + (T < 10 ? 'bad' : 'good');
   }
-  function frame(ts) { var t = (ts - st.t0) / 1000; draw(Math.min(t, 30)); st.raf = requestAnimationFrame(frame); }
-  Sims.on(el, 'click', '[data-blink]', function () { st.t0 = performance.now(); if (reduced) draw(tbut() + 2); });
-  el.addEventListener('input', function (e) { if (e.target.id === 't-q') { st.q = +e.target.value; U.$('#t-q-o', el).textContent = st.q + ' %'; if (reduced) draw(tbut() + 2); } });
-  if (reduced) draw(tbut() + 2); else st.raf = requestAnimationFrame(frame);
+  function frame(ts) { var t = (ts - st.t0) / 1000; draw(Math.min(t, 30)); if (t < 30) st.raf = requestAnimationFrame(frame); else st.run = false; }
+  Sims.on(el, 'click', '[data-blink]', function () { st.t0 = performance.now(); if (reduced) { draw(tbut() + 2); return; } cancelAnimationFrame(st.raf); st.run = true; st.raf = requestAnimationFrame(frame); });
+  el.addEventListener('input', function (e) { if (e.target.id === 't-q') { st.q = +e.target.value; U.$('#t-q-o', el).textContent = st.q + ' %'; if (reduced) draw(tbut() + 2); else if (!st.run) draw(0); } });
+  draw(0);
   return function () { cancelAnimationFrame(st.raf); };
 };
 

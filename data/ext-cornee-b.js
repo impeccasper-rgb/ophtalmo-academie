@@ -7,264 +7,319 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
 
   // Conjonctivites et inflammations de la surface oculaire
   {
-    id: "c-surface",
-    module: "B",
-    order: 9,
-    title: "Conjonctivites et inflammations de la surface oculaire",
-    en: "Conjunctivitis and ocular surface inflammation",
-    tags: ["frequent", "highyield", "piege"],
-    oneLiner: "Œil rouge : lire d’abord la conjonctive (relief, sécrétions, ganglion, limbe), puis toujours vérifier la cornée à la fluorescéine.",
-    definition: "Inflammation de la conjonctive par un virus, une bactérie, une allergie ou un frottement.\nSouvent bénigne, elle menace la vision quand elle atteint la cornée.",
-    anatomy: {
-      text: "La conjonctive palpébrale (sur le tarse) et bulbaire (sur la sclère) contient du tissu lymphoïde, des mastocytes (cellules de l’allergie) et des cellules caliciformes (mucus). Au limbe vivent les cellules souches de l’épithélium cornéen : une inflammation limbique peut donc abîmer la cornée, comme dans la kératoconjonctivite vernale (vernal keratoconjunctivitis), la kératoconjonctivite limbique supérieure ou KLS (superior limbic keratoconjunctivitis) et la rosacée. Formes qui atteignent la cornée : vernale, atopique, rosacée, gonocoque.",
-      figure: { type: "eye", highlight: ["conjonctive", "limbe", "cornee"] }
-    },
-    causal: {
-      title: "De l’agression de la conjonctive à la cornée",
-      steps: [
-        { label: "Agression de la conjonctive", detail: "Virus (adénovirus), Chlamydia, allergène, lentille ou suture qui frotte, bord palpébral malade (rosacée, blépharite).", kind: "cause" },
-        { label: "Réponse immunitaire locale", detail: "Lymphocytes regroupés en follicules (virus, Chlamydia, gouttes toxiques) ; mastocytes qui libèrent l’histamine, éosinophiles et papilles (allergie, frottement).", kind: "mecanisme" },
-        { label: "Signes conjonctivaux", detail: "Rougeur, larmes ou mucus, démangeaison (allergie) ou sable (virus), ganglion préauriculaire (virus, Chlamydia).", kind: "signe" },
-        { label: "Atteinte du limbe et de la cornée", detail: "Infiltrats sous-épithéliaux (adénovirus), ulcère en bouclier (protéines toxiques des éosinophiles), infiltrats marginaux et vaisseaux (rosacée).", kind: "lesion" },
-        { label: "Cicatrices et perte de vision", detail: "Opacités, pannus, symblépharon (adhérence paupière-globe), déficit limbique ; ou complications des stéroïdes (glaucome, cataracte).", kind: "complication" }
-      ],
-      levers: [
-        { at: 0, label: "Hygiène et retrait de la cause", detail: "Mains et matériel désinfectés (adénovirus), pause des lentilles, retrait de la suture, soins des paupières." },
-        { at: 1, label: "Antihistaminique, stabilisateur, cyclosporine", detail: "Bloquent l’histamine, empêchent les mastocytes de se vider, freinent les lymphocytes T." },
-        { at: 3, label: "Stéroïde court surveillé", detail: "Éteint l’inflammation cornéenne (bouclier, infiltrats gênants, membranes) ; PIO à contrôler à chaque visite." }
-      ]
-    },
-    risk: [
-      "Contact avec un œil rouge (garderie, école, milieu de soins) : adénovirus",
-      "Atopie : vernale (jeune garçon), atopique (adulte)",
-      "Lentilles, prothèse, suture exposée : gigantopapillaire",
-      "Nouveau partenaire sexuel : Chlamydia, gonocoque",
-      "Rosacée, dysfonction meibomienne ; maladie thyroïdienne (KLS)"
+  id: "c-surface",
+  module: "B",
+  order: 9,
+  title: "Conjonctivites et inflammations de la surface oculaire",
+  en: "Conjunctivitis and ocular surface inflammation",
+  tags: ["frequent", "highyield", "piege"],
+  oneLiner: "Œil rouge : lire d’abord la conjonctive (relief, sécrétions, ganglion, limbe), puis toujours vérifier la cornée à la fluorescéine.",
+  definition: "Conjonctivite virale, bactérienne, allergique ou mécanique. Souvent bénigne, sauf si la cornée est touchée.",
+  anatomy: {
+    text: "La conjonctive palpébrale (sur le tarse) et bulbaire (sur la sclère) contient du tissu lymphoïde, des mastocytes (cellules de l’allergie) et des cellules caliciformes (mucus). Au limbe vivent les cellules souches de l’épithélium cornéen : une inflammation limbique peut donc abîmer la cornée, comme dans la kératoconjonctivite vernale (vernal keratoconjunctivitis), la kératoconjonctivite limbique supérieure ou KLS (superior limbic keratoconjunctivitis) et la rosacée. Formes qui atteignent la cornée : vernale, atopique, rosacée, gonocoque.",
+    figure: {
+      type: "eye",
+      highlight: ["conjonctive", "limbe", "cornee"]
+    }
+  },
+  causal: {
+    title: "De l’agression de la conjonctive à la cornée",
+    steps: [
+      { label: "Agression de la conjonctive", detail: "Virus (adénovirus), Chlamydia, allergène, lentille ou suture qui frotte, bord palpébral malade (rosacée, blépharite).", kind: "cause" },
+      { label: "Réponse immunitaire locale", detail: "Lymphocytes regroupés en follicules (virus, Chlamydia, gouttes toxiques) ; mastocytes qui libèrent l’histamine, éosinophiles et papilles (allergie, frottement).", kind: "mecanisme" },
+      { label: "Signes conjonctivaux", detail: "Rougeur, larmes ou mucus, démangeaison (allergie) ou sable (virus), ganglion préauriculaire (virus, Chlamydia).", kind: "signe" },
+      { label: "Atteinte du limbe et de la cornée", detail: "Infiltrats sous-épithéliaux (adénovirus), ulcère en bouclier (protéines toxiques des éosinophiles), infiltrats marginaux et vaisseaux (rosacée).", kind: "lesion" },
+      { label: "Cicatrices et perte de vision", detail: "Opacités, pannus, symblépharon (adhérence paupière-globe), déficit limbique ; ou complications des stéroïdes (glaucome, cataracte).", kind: "complication" }
     ],
-    presentation: [
-      "Adénovirus : œil rouge larmoyant, sable, 2e œil en quelques jours, follicules, ganglion ; pseudomembranes, puis infiltrats sous-épithéliaux 1–2 semaines plus tard",
-      "Chlamydia (conjonctivite à inclusions de l’adulte) : folliculaire, plus de 3–4 semaines malgré les gouttes, pannus supérieur",
-      "Vernale : garçon atopique, démangeaison au printemps, mucus filant, pavés du tarse supérieur, points de Horner-Trantas",
-      "Atopique : adulte avec eczéma des paupières, toute l’année, symblépharon ; gigantopapillaire : lentilles, prothèse, suture",
-      "KLS : rougeur et coloration de la conjonctive supérieure, filaments ; pinguéculite : nodule jaunâtre enflammé au limbe",
-      "Rosacée : bord palpébral télangiectasique, chalazions, infiltrats marginaux, vaisseaux et phlyctènes sur la cornée inférieure"
+    levers: [
+      { at: 0, label: "Hygiène et retrait de la cause", detail: "Mains et matériel désinfectés (adénovirus), pause des lentilles, retrait de la suture, soins des paupières." },
+      { at: 1, label: "Antihistaminique, stabilisateur, cyclosporine", detail: "Bloquent l’histamine, empêchent les mastocytes de se vider, freinent les lymphocytes T." },
+      { at: 3, label: "Stéroïde court surveillé", detail: "Éteint l’inflammation cornéenne (bouclier, infiltrats gênants, membranes) ; PIO à contrôler à chaque visite." }
+    ]
+  },
+  risk: [
+    "Contact avec un œil rouge (garderie, école, milieu de soins) : adénovirus",
+    "Atopie : vernale (jeune garçon), atopique (adulte)",
+    "Lentilles, prothèse, suture exposée : gigantopapillaire",
+    "Nouveau partenaire sexuel : Chlamydia, gonocoque",
+    "Rosacée, dysfonction meibomienne ; maladie thyroïdienne (KLS)"
+  ],
+  presentation: [
+    "Adénovirus : œil rouge larmoyant, sable, 2e œil en quelques jours, follicules, ganglion ; pseudomembranes, puis infiltrats sous-épithéliaux 1–2 semaines plus tard",
+    "Chlamydia (conjonctivite à inclusions de l’adulte) : folliculaire, plus de 3–4 semaines malgré les gouttes, pannus supérieur",
+    "Vernale : garçon atopique, démangeaison au printemps, mucus filant, pavés du tarse supérieur, points de Horner-Trantas",
+    "Atopique : adulte avec eczéma des paupières, toute l’année, symblépharon ; gigantopapillaire : lentilles, prothèse, suture",
+    "KLS : rougeur et coloration de la conjonctive supérieure, filaments ; pinguéculite : nodule jaunâtre enflammé au limbe",
+    "Rosacée : bord palpébral télangiectasique, chalazions, infiltrats marginaux, vaisseaux et phlyctènes sur la cornée inférieure"
+  ],
+  exam: {
+    signs: [
+      { sign: "Follicules : dômes pâles, vaisseaux autour de la base", why: "Amas de lymphocytes : virus, Chlamydia, toxicité de gouttes." },
+      { sign: "Papilles : vaisseau central ; papilles géantes si plus de 1 mm (pavés)", why: "Peu spécifiques ; géantes : vernale, atopique ou gigantopapillaire." },
+      { sign: "Type de sécrétions", why: "Aqueuses : virus ; filantes : allergie ; mucopurulentes : bactérie, Chlamydia ; purulentes abondantes en quelques heures : gonocoque." },
+      { sign: "Ganglion préauriculaire (devant l’oreille)", why: "Adénovirus, herpès, Chlamydia, gonocoque ; absent dans l’allergie." },
+      { sign: "Limbe : points de Horner-Trantas, rougeur supérieure, pannus", why: "Horner-Trantas : vernale ; rougeur supérieure : KLS ; pannus supérieur : Chlamydia, inférieur : rosacée." },
+      { sign: "Cornée à la fluorescéine", why: "Infiltrat, bouclier ou défaut épithélial : ce n’est plus une simple conjonctivite." }
     ],
-    exam: {
-      signs: [
-        { sign: "Follicules : dômes pâles, vaisseaux autour de la base", why: "Amas de lymphocytes : virus, Chlamydia, toxicité de gouttes." },
-        { sign: "Papilles : vaisseau central ; papilles géantes si plus de 1 mm (pavés)", why: "Peu spécifiques ; géantes : vernale, atopique ou gigantopapillaire." },
-        { sign: "Type de sécrétions", why: "Aqueuses : virus ; filantes : allergie ; mucopurulentes : bactérie, Chlamydia ; purulentes abondantes en quelques heures : gonocoque." },
-        { sign: "Ganglion préauriculaire (devant l’oreille)", why: "Adénovirus, herpès, Chlamydia, gonocoque ; absent dans l’allergie." },
-        { sign: "Limbe : points de Horner-Trantas, rougeur supérieure, pannus", why: "Horner-Trantas : vernale ; rougeur supérieure : KLS ; pannus supérieur : Chlamydia, inférieur : rosacée." },
-        { sign: "Cornée à la fluorescéine", why: "Infiltrat, bouclier ou défaut épithélial : ce n’est plus une simple conjonctivite." }
-      ],
-      tests: [
-        { test: "Éversion de la paupière supérieure", when: "Allergie, lentilles, corps étranger, coloration supérieure", read: "Pavés, papilles, corps étranger caché." },
-        { test: "TAAN (test d’amplification des acides nucléiques, NAAT) sur écouvillon conjonctival : Chlamydia, gonocoque", when: "Folliculaire de plus de 3–4 semaines, nouveau-né, purulence abondante", read: "Positif : traitement oral, partenaires, dépistage des autres ITSS (infections transmissibles sexuellement et par le sang), déclaration." },
-        { test: "Gram et culture ; TSH (bilan thyroïdien) si KLS", when: "Purulence hyperaiguë ; KLS", read: "Diplocoques Gram négatif : gonocoque ; dysthyroïdie fréquente dans la KLS." }
-      ]
-    },
-    ddx: [
-      { dx: "Kératite (bactérienne, herpétique, amibienne)", clue: "Douleur, photophobie, infiltrat avec défaut épithélial ; lentilles = kératite jusqu’à preuve du contraire." },
-      { dx: "Conjonctivite herpétique (HSV)", clue: "Souvent unilatérale, vésicules palpébrales ; chercher une dendrite avant tout stéroïde." },
-      { dx: "Uvéite antérieure ou sclérite", clue: "Rougeur périlimbique ou profonde, douleur, sans sécrétions." },
-      { dx: "Néoplasie de surface ou carcinome sébacé", clue: "Conjonctivite unilatérale chronique rebelle chez l’adulte âgé : biopsie." }
+    tests: [
+      { test: "Éversion de la paupière supérieure", when: "Allergie, lentilles, corps étranger, coloration supérieure", read: "Pavés, papilles, corps étranger caché." },
+      { test: "TAAN (test d’amplification des acides nucléiques, NAAT) sur écouvillon conjonctival : Chlamydia, gonocoque", when: "Folliculaire de plus de 3–4 semaines, nouveau-né, purulence abondante", read: "Positif : traitement oral, partenaires, dépistage des autres ITSS (infections transmissibles sexuellement et par le sang), déclaration." },
+      { test: "Gram et culture ; TSH (bilan thyroïdien) si KLS", when: "Purulence hyperaiguë ; KLS", read: "Diplocoques Gram négatif : gonocoque ; dysthyroïdie fréquente dans la KLS." }
+    ]
+  },
+  ddx: [
+    { dx: "Kératite (bactérienne, herpétique, amibienne)", clue: "Douleur, photophobie, infiltrat avec défaut épithélial ; lentilles = kératite jusqu’à preuve du contraire." },
+    { dx: "Conjonctivite herpétique (HSV)", clue: "Souvent unilatérale, vésicules palpébrales ; chercher une dendrite avant tout stéroïde." },
+    { dx: "Uvéite antérieure ou sclérite", clue: "Rougeur périlimbique ou profonde, douleur, sans sécrétions." },
+    { dx: "Néoplasie de surface ou carcinome sébacé", clue: "Conjonctivite unilatérale chronique rebelle chez l’adulte âgé : biopsie." }
+  ],
+  redFlags: [
+    "Douleur, photophobie, baisse de vision ou infiltrat : kératite, uvéite, sclérite",
+    "Pus abondant en quelques heures : gonocoque, ceftriaxone systémique le jour même",
+    "Nouveau-né, ou ulcère en bouclier : traitement le jour même"
+  ],
+  cat: {
+    algo: [
+      { q: "Douleur, photophobie, baisse de vision ou cornée atteinte ?", yes: "Fluorescéine ; ophtalmologie le jour même.", no: "", noGo: 1 },
+      { q: "Nouveau-né, ou pus abondant en quelques heures ?", yes: "Gram, culture, TAAN ; ceftriaxone si gonocoque ; ophtalmo le jour même.", no: "", noGo: 2 },
+      { q: "Follicules, ganglion préauriculaire, contagion ?", yes: "Adénovirus : soutien, hygiène, pas d’antibiotique.", no: "", yesGo: 3, noGo: 4 },
+      { q: "Persiste plus de 3–4 semaines ?", yes: "TAAN pour Chlamydia ; traiter les partenaires.", no: "Guérison spontanée en 1–3 semaines." },
+      { q: "Démangeaison et papilles ?", yes: "Antihistaminique-stabilisateur ; papilles géantes : vernale, atopique, lentilles.", no: "Rosacée, KLS, conjonctivite bactérienne ?" }
     ],
-    redFlags: [
-      "Douleur, photophobie, baisse de vision ou infiltrat : kératite, uvéite, sclérite",
-      "Pus abondant en quelques heures : gonocoque, ceftriaxone systémique le jour même",
-      "Nouveau-né, ou ulcère en bouclier : traitement le jour même"
-    ],
-    cat: {
-      algo: [
-        { q: "Douleur, photophobie, baisse de vision ou cornée atteinte ?", yes: "Fluorescéine ; ophtalmologie le jour même.", no: "", noGo: 1 },
-        { q: "Nouveau-né, ou pus abondant en quelques heures ?", yes: "Gram, culture, TAAN ; ceftriaxone si gonocoque ; ophtalmo le jour même.", no: "", noGo: 2 },
-        { q: "Follicules, ganglion préauriculaire, contagion ?", yes: "Adénovirus : soutien, hygiène, pas d’antibiotique.", no: "", yesGo: 3, noGo: 4 },
-        { q: "Persiste plus de 3–4 semaines ?", yes: "TAAN pour Chlamydia ; traiter les partenaires.", no: "Guérison spontanée en 1–3 semaines." },
-        { q: "Démangeaison et papilles ?", yes: "Antihistaminique-stabilisateur ; papilles géantes : vernale, atopique, lentilles.", no: "Rosacée, KLS, conjonctivite bactérienne ?" }
-      ],
-      phases: [
-        { phase: "observation", items: [
-          "Adénovirus : compresses froides, larmes, mains lavées ; contagieux environ 2 semaines"
-        ] },
-        { phase: "medical", items: [
+    phases: [
+      {
+        phase: "observation",
+        items: ["Adénovirus : compresses froides, larmes, mains lavées ; contagieux environ 2 semaines"]
+      },
+      {
+        phase: "medical",
+        items: [
           "Allergie : olopatadine ou kétotifène",
           "Vernale ou atopique : cyclosporine ou tacrolimus topiques ; stéroïde court en poussée",
           "Rosacée : soins des paupières, doxycycline orale à faible dose (effet anti-inflammatoire) ; enfant de moins de 8 ans ou grossesse : érythromycine ou azithromycine orales",
           "Chlamydia : doxycycline 100 mg BID × 7 j ou azithromycine 1 g en dose unique ; traiter les partenaires",
           "KLS : lubrification, lentille pansement, nitrate d’argent en solution diluée (jamais le bâtonnet)"
-        ] },
-        { phase: "chirurgie", items: [
-          "Bouclier rebelle : grattage de la plaque ± membrane amniotique ; KLS rebelle : résection conjonctivale"
-        ] },
-        { phase: "suivi", items: [
-          "Tout stéroïde : PIO à chaque visite, sevrage lent"
-        ] }
-      ],
-      local: "Chlamydia et gonocoque sont des maladies à déclaration obligatoire (MADO) au Québec ; les guides québécois sur les ITSS de l’INESSS (Institut national d’excellence en santé et en services sociaux) encadrent traitement et partenaires."
-    },
-    treatments: [
-      { name: "Compresses froides et larmes artificielles", dose: "Compresses froides, larmes réfrigérées 4–6×/j.", pitfall: "Ne raccourcit pas l’infection virale.", how: "Le froid resserre les vaisseaux ; les larmes réfrigérées rincent virus et allergènes.", why: "Adénovirus, allergie légère.", pros: "Sans risque.", cons: "Ne raccourcit pas l’infection virale.", cx: "Aucune." },
-      { name: "Antihistaminique-stabilisateur des mastocytes (olopatadine, kétotifène)", dose: "Olopatadine 0,1 % ou kétotifène 0,025 %, 1 goutte 2×/j.", pitfall: "Insuffisant seul si vernale sévère.", how: "Bloque le récepteur H1 (démangeaison) et freine la libération des médiateurs (prévention).", why: "Allergie, vernale, atopique, gigantopapillaire.", pros: "Bien toléré au long cours.", cons: "Insuffisant seul si vernale sévère.", cx: "Brûlure." },
-      { name: "Cyclosporine ou tacrolimus topiques", dose: "Cyclosporine ou tacrolimus topiques, sur ordonnance spécialisée.", pitfall: "Effet en semaines.", qc: "Formulations : disponibilité canadienne à vérifier.", how: "Bloquent la calcineurine, donc l’activation des lymphocytes T.", why: "Vernale, atopique, rosacée, KLS.", pros: "Épargne les stéroïdes.", cons: "Effet en semaines ; formulations et disponibilité canadienne à vérifier.", cx: "Brûlure ; prudence si herpès." },
-      { name: "Stéroïde topique court (fluorométholone, prednisolone)", dose: "Fluorométholone 0,1 % 4×/j, cure courte.", pitfall: "Exclure un herpès épithélial avant.", how: "Éteint l’inflammation lymphocytaire et éosinophilique.", why: "Bouclier, pseudomembranes, infiltrats gênants.", pros: "Effet rapide.", cons: "Rebond à l’arrêt (adénovirus) ; contre-indiqué si herpès épithélial.", cx: "Hausse de PIO, cataracte, surinfection." },
-      { name: "Hygiène palpébrale, doxycycline ou azithromycine", dose: "Hygiène palpébrale 1–2×/j ; doxycycline faible dose.", pitfall: "Doxycycline : pas avant 8 ans ni en grossesse.", qc: "Chlamydia, gonocoque : MADO au Québec.", how: "Compresses chaudes et nettoyage du bord libre (bactéries, Demodex) ; doxycycline faible dose anti-collagénase.", why: "Rosacée, blépharokératoconjonctivite.", pros: "Traite la cause.", cons: "Doxycycline : pas avant 8 ans ni pendant la grossesse.", cx: "Photosensibilité, œsophagite." }
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Bouclier rebelle : grattage de la plaque ± membrane amniotique ; KLS rebelle : résection conjonctivale"]
+      },
+      {
+        phase: "suivi",
+        items: ["Tout stéroïde : PIO à chaque visite, sevrage lent"]
+      }
     ],
-    treatment: {
-      first: ["**Externe / 1re ligne** : virale : compresses froides, larmes, hygiène ; allergique : olopatadine 0,1 % 2×/j.", "**Ophtalmologiste** : stéroïde court, cyclosporine ou tacrolimus pour vernale et atopique."],
-      refer: ["Le jour même si douleur, photophobie, baisse de vision, nouveau-né ou pus abondant — cornée menacée.", "Cette semaine si vernale, atopique ou plus de 3–4 semaines."],
-      pitfall: ["Fluorométholone ou prednisolone sans suivi : PIO élevée, herpès aggravé.", "Antibiotique pour une conjonctivite virale : inutile."],
-      qc: ["Chlamydia et gonocoque : MADO au Québec."]
-    },
-    pearls: [
-      { q: "Antibiotique ou stéroïde dans une conjonctivite adénovirale ?", a: "Antibiotique : non. Stéroïde : seulement si pseudomembranes ou infiltrats sous-épithéliaux qui baissent la vision ; il peut prolonger l’excrétion virale et causer un **rebond à l’arrêt** : sevrage lent, PIO." },
-      { q: "Vernale connue avec douleur et photophobie nouvelles : que cherches-tu ?", a: "Un **ulcère en bouclier** : défaut ovale de la cornée supérieure, parfois couvert d’une plaque de mucus et de fibrine. Le jour même : stéroïde, cyclosporine ou tacrolimus, grattage de la plaque au besoin." },
-      { q: "Comment distinguer follicule et papille à la lampe ?", a: "Le follicule est un dôme pâle dont les vaisseaux **entourent la base** ; la papille porte un **vaisseau au centre**. Follicules : virus, Chlamydia, toxicité ; papilles : allergie, lentilles, blépharite, bactérie." }
-    ],
-    mnemonic: { title: "Ordre de lecture d’un œil rouge", text: "Paupières, conjonctive éversée, sécrétions, ganglion, limbe, puis cornée à la fluorescéine." },
-    compare: {
-      title: "Normal vs coloration supérieure (KLS, vernale)",
-      normal: { figure: { type: "fluo", pattern: "normal" }, caption: "Épithélium intact : aucune prise de fluorescéine." },
-      patho: { figure: { type: "fluo", pattern: "spk-superior" }, caption: "Kératite ponctuée de la cornée supérieure, sous la paupière.", reveal: ["Points verts groupés dans le tiers supérieur, zone couverte par la paupière", "Penser KLS (vérifier la thyroïde), vernale (pavés, risque de bouclier) ou lentille serrée", "Éverser la paupière supérieure : papilles géantes, corps étranger"] }
-    },
-    sources: [
-      "AAO PPP Conjunctivitis (2023 ; Cheung AY et al., Ophthalmology 2024)",
-      "AAO PPP Blepharitis (2023 ; Lin A et al., Ophthalmology 2024)",
-      "AAO BCSC Section 8 : External Disease and Cornea",
-      "Guides canadiens sur les infections transmissibles sexuellement et par le sang (Agence de la santé publique du Canada)"
-    ]
+    local: "Chlamydia et gonocoque sont des maladies à déclaration obligatoire (MADO) au Québec ; les guides québécois sur les ITSS de l’INESSS (Institut national d’excellence en santé et en services sociaux) encadrent traitement et partenaires."
   },
+  treatments: [
+    { name: "Compresses froides et larmes artificielles", dose: "Compresses froides, larmes réfrigérées 4–6×/j.", pitfall: "Ne raccourcit pas l’infection virale.", how: "Le froid resserre les vaisseaux ; les larmes réfrigérées rincent virus et allergènes.", why: "Adénovirus, allergie légère.", pros: "Sans risque.", cons: "Ne raccourcit pas l’infection virale.", cx: "Aucune." },
+    { name: "Antihistaminique-stabilisateur des mastocytes (olopatadine, kétotifène)", dose: "Olopatadine 0,1 % ou kétotifène 0,025 %, 1 goutte 2×/j.", pitfall: "Insuffisant seul si vernale sévère.", how: "Bloque le récepteur H1 (démangeaison) et freine la libération des médiateurs (prévention).", why: "Allergie, vernale, atopique, gigantopapillaire.", pros: "Bien toléré au long cours.", cons: "Insuffisant seul si vernale sévère.", cx: "Brûlure." },
+    { name: "Cyclosporine ou tacrolimus topiques", dose: "Cyclosporine ou tacrolimus topiques, sur ordonnance spécialisée.", pitfall: "Effet en semaines.", qc: "Formulations : disponibilité canadienne à vérifier.", how: "Bloquent la calcineurine, donc l’activation des lymphocytes T.", why: "Vernale, atopique, rosacée, KLS.", pros: "Épargne les stéroïdes.", cons: "Effet en semaines ; formulations et disponibilité canadienne à vérifier.", cx: "Brûlure ; prudence si herpès." },
+    { name: "Stéroïde topique court (fluorométholone, prednisolone)", dose: "Fluorométholone 0,1 % 4×/j, cure courte.", pitfall: "Exclure un herpès épithélial avant.", how: "Éteint l’inflammation lymphocytaire et éosinophilique.", why: "Bouclier, pseudomembranes, infiltrats gênants.", pros: "Effet rapide.", cons: "Rebond à l’arrêt (adénovirus) ; contre-indiqué si herpès épithélial.", cx: "Hausse de PIO, cataracte, surinfection." },
+    { name: "Hygiène palpébrale, doxycycline ou azithromycine", dose: "Hygiène palpébrale 1–2×/j ; doxycycline faible dose.", pitfall: "Doxycycline : pas avant 8 ans ni en grossesse.", qc: "Chlamydia, gonocoque : MADO au Québec.", how: "Compresses chaudes et nettoyage du bord libre (bactéries, Demodex) ; doxycycline faible dose anti-collagénase.", why: "Rosacée, blépharokératoconjonctivite.", pros: "Traite la cause.", cons: "Doxycycline : pas avant 8 ans ni pendant la grossesse.", cx: "Photosensibilité, œsophagite." }
+  ],
+  treatment: {
+    first: [
+      "**Externe / 1re ligne** : virale : compresses froides, larmes, hygiène ; allergique : olopatadine 0,1 % 2×/j.",
+      "**Ophtalmologiste** : stéroïde court, cyclosporine ou tacrolimus pour vernale et atopique."
+    ],
+    refer: [
+      "Le jour même si douleur, photophobie, baisse de vision, nouveau-né ou pus abondant — cornée menacée.",
+      "Cette semaine si vernale, atopique ou plus de 3–4 semaines."
+    ],
+    pitfall: ["Fluorométholone ou prednisolone sans suivi : PIO élevée, herpès aggravé.", "Antibiotique pour une conjonctivite virale : inutile."],
+    qc: ["Chlamydia et gonocoque : MADO au Québec."]
+  },
+  pearls: [
+    { q: "Antibiotique ou stéroïde dans une conjonctivite adénovirale ?", a: "Antibiotique : non. Stéroïde : seulement si pseudomembranes ou infiltrats sous-épithéliaux qui baissent la vision ; il peut prolonger l’excrétion virale et causer un **rebond à l’arrêt** : sevrage lent, PIO." },
+    { q: "Vernale connue avec douleur et photophobie nouvelles : que cherches-tu ?", a: "Un **ulcère en bouclier** : défaut ovale de la cornée supérieure, parfois couvert d’une plaque de mucus et de fibrine. Le jour même : stéroïde, cyclosporine ou tacrolimus, grattage de la plaque au besoin." },
+    { q: "Comment distinguer follicule et papille à la lampe ?", a: "Le follicule est un dôme pâle dont les vaisseaux **entourent la base** ; la papille porte un **vaisseau au centre**. Follicules : virus, Chlamydia, toxicité ; papilles : allergie, lentilles, blépharite, bactérie." }
+  ],
+  mnemonic: { title: "Ordre de lecture d’un œil rouge", text: "Paupières, conjonctive éversée, sécrétions, ganglion, limbe, puis cornée à la fluorescéine." },
+  compare: {
+    title: "Normal vs coloration supérieure (KLS, vernale)",
+    normal: {
+      figure: { type: "fluo", pattern: "normal" },
+      caption: "Épithélium intact : aucune prise de fluorescéine."
+    },
+    patho: {
+      figure: { type: "fluo", pattern: "spk-superior" },
+      caption: "Kératite ponctuée de la cornée supérieure, sous la paupière.",
+      reveal: [
+        "Points verts groupés dans le tiers supérieur, zone couverte par la paupière",
+        "Penser KLS (vérifier la thyroïde), vernale (pavés, risque de bouclier) ou lentille serrée",
+        "Éverser la paupière supérieure : papilles géantes, corps étranger"
+      ]
+    }
+  },
+  sources: [
+    "AAO PPP Conjunctivitis (2023 ; Cheung AY et al., Ophthalmology 2024)",
+    "AAO PPP Blepharitis (2023 ; Lin A et al., Ophthalmology 2024)",
+    "AAO BCSC Section 8 : External Disease and Cornea",
+    "Guides canadiens sur les infections transmissibles sexuellement et par le sang (Agence de la santé publique du Canada)"
+  ]
+},
 
   // Kératites ulcératives périphériques, Terrien et sclérites
   {
-    id: "c-peripherie",
-    module: "B",
-    order: 10,
-    title: "Kératites ulcératives périphériques, Terrien et sclérites",
-    en: "Peripheral ulcerative keratitis, Terrien degeneration and scleritis",
-    tags: ["urgent", "highyield", "piege"],
-    oneLiner: "Cornée périphérique qui s’amincit : intervalle clair et blépharite = kératite marginale ; croissant collé au limbe avec défaut épithélial = PUK, bilan systémique urgent.",
-    definition: "La cornée périphérique, près du limbe, a ses propres maladies.\nInflammatoires : kératite marginale, PUK, Mooren ; dégénérative : Terrien.\nLa PUK fait fondre le stroma et peut révéler une vasculite grave.",
-    anatomy: {
-      text: "La cornée périphérique est nourrie par les arcades vasculaires du limbe : complément et complexes immuns (anticorps liés à leur cible) s’y déposent, et les cellules inflammatoires y libèrent des collagénases qui dissolvent le stroma. La sclère partage le même collagène et les mêmes vaisseaux : PUK et sclérite vont souvent ensemble. Une sclérite est souvent associée ; la dellen est une cause mécanique.",
-      figure: { type: "eye", highlight: ["limbe", "cornee", "sclere", "conjonctive"] }
-    },
-    causal: {
-      title: "De la maladie systémique à la perforation",
-      steps: [
-        { label: "Maladie auto-immune ou vasculite", detail: "Polyarthrite rhumatoïde (la plus fréquente), granulomatose avec polyangéite (GPA), lupus, polychondrite ; parfois aucune cause (Mooren).", kind: "cause" },
-        { label: "Complexes immuns au limbe", detail: "Déposés dans les vaisseaux limbiques, ils activent le complément et attirent les neutrophiles.", kind: "mecanisme" },
-        { label: "Collagénases qui dissolvent le stroma", detail: "Neutrophiles et kératocytes libèrent des métalloprotéinases (MMP) : le stroma fond sous un défaut épithélial.", kind: "mecanisme" },
-        { label: "Croissant d’ulcère collé au limbe", detail: "Sans intervalle clair, il s’étend autour du limbe et vers le centre.", kind: "lesion" },
-        { label: "Descémétocèle et perforation", detail: "Sans traitement systémique, la fonte atteint Descemet puis perce ; la vasculite peut toucher reins et poumons.", kind: "complication" }
-      ],
-      levers: [
-        { at: 0, label: "Immunosuppression systémique", detail: "Corticostéroïdes oraux ou IV, puis immunosuppresseur choisi avec la rhumatologie : traite la source." },
-        { at: 2, label: "Freiner les collagénases", detail: "Doxycycline orale, lubrification sans agent de conservation ; éviter les AINS topiques (anti-inflammatoires non stéroïdiens), qui favorisent la fonte." },
-        { at: 4, label: "Colle, greffe tectonique", detail: "Colle cyanoacrylate + lentille pansement si petite perforation ; greffe lamellaire ou transfixiante tectonique sinon." }
-      ]
-    },
-    risk: [
-      "Polyarthrite rhumatoïde ancienne ou mal contrôlée",
-      "Vasculites à ANCA (GPA), lupus, polychondrite",
-      "Blépharite et rosacée : kératite marginale",
-      "Lésion surélevée au limbe (chémosis, ptérygion, bulle) : dellen",
-      "Chirurgie oculaire récente ; AINS topiques prolongés",
-      "Terrien : cause inconnue, plus fréquente chez l’homme, souvent bilatérale"
+  id: "c-peripherie",
+  module: "B",
+  order: 10,
+  title: "Kératites ulcératives périphériques, Terrien et sclérites",
+  en: "Peripheral ulcerative keratitis, Terrien degeneration and scleritis",
+  tags: ["urgent", "highyield", "piege"],
+  oneLiner: "Cornée périphérique qui s’amincit : intervalle clair et blépharite = kératite marginale ; croissant collé au limbe avec défaut épithélial = PUK, bilan systémique urgent.",
+  definition: "Maladies de la cornée près du limbe. Inflammatoires (PUK, Mooren) ou dégénératives (Terrien).",
+  anatomy: {
+    text: "La cornée périphérique est nourrie par les arcades vasculaires du limbe : complément et complexes immuns (anticorps liés à leur cible) s’y déposent, et les cellules inflammatoires y libèrent des collagénases qui dissolvent le stroma. La sclère partage le même collagène et les mêmes vaisseaux : PUK et sclérite vont souvent ensemble. Une sclérite est souvent associée ; la dellen est une cause mécanique.",
+    figure: {
+      type: "eye",
+      highlight: ["limbe", "cornee", "sclere", "conjonctive"]
+    }
+  },
+  causal: {
+    title: "De la maladie systémique à la perforation",
+    steps: [
+      { label: "Maladie auto-immune ou vasculite", detail: "Polyarthrite rhumatoïde (la plus fréquente), granulomatose avec polyangéite (GPA), lupus, polychondrite ; parfois aucune cause (Mooren).", kind: "cause" },
+      { label: "Complexes immuns au limbe", detail: "Déposés dans les vaisseaux limbiques, ils activent le complément et attirent les neutrophiles.", kind: "mecanisme" },
+      { label: "Collagénases qui dissolvent le stroma", detail: "Neutrophiles et kératocytes libèrent des métalloprotéinases (MMP) : le stroma fond sous un défaut épithélial.", kind: "mecanisme" },
+      { label: "Croissant d’ulcère collé au limbe", detail: "Sans intervalle clair, il s’étend autour du limbe et vers le centre.", kind: "lesion" },
+      { label: "Descémétocèle et perforation", detail: "Sans traitement systémique, la fonte atteint Descemet puis perce ; la vasculite peut toucher reins et poumons.", kind: "complication" }
     ],
-    presentation: [
-      "Kératite marginale : irritation modérée, infiltrats blancs vers 2, 4, 8 ou 10 h avec intervalle clair, blépharite",
-      "PUK : douleur, rougeur, photophobie ; croissant d’amincissement et défaut épithélial collés au limbe",
-      "Terrien : indolore, œil blanc, vision qui baisse lentement par astigmatisme",
-      "Sclérite : douleur profonde qui réveille la nuit, globe sensible, rougeur violacée",
-      "Épisclérite : rougeur en secteur, inconfort léger, vision normale"
+    levers: [
+      { at: 0, label: "Immunosuppression systémique", detail: "Corticostéroïdes oraux ou IV, puis immunosuppresseur choisi avec la rhumatologie : traite la source." },
+      { at: 2, label: "Freiner les collagénases", detail: "Doxycycline orale, lubrification sans agent de conservation ; éviter les AINS topiques (anti-inflammatoires non stéroïdiens), qui favorisent la fonte." },
+      { at: 4, label: "Colle, greffe tectonique", detail: "Colle cyanoacrylate + lentille pansement si petite perforation ; greffe lamellaire ou transfixiante tectonique sinon." }
+    ]
+  },
+  risk: [
+    "Polyarthrite rhumatoïde ancienne ou mal contrôlée",
+    "Vasculites à ANCA (GPA), lupus, polychondrite",
+    "Blépharite et rosacée : kératite marginale",
+    "Lésion surélevée au limbe (chémosis, ptérygion, bulle) : dellen",
+    "Chirurgie oculaire récente ; AINS topiques prolongés",
+    "Terrien : cause inconnue, plus fréquente chez l’homme, souvent bilatérale"
+  ],
+  presentation: [
+    "Kératite marginale : irritation modérée, infiltrats blancs vers 2, 4, 8 ou 10 h avec intervalle clair, blépharite",
+    "PUK : douleur, rougeur, photophobie ; croissant d’amincissement et défaut épithélial collés au limbe",
+    "Terrien : indolore, œil blanc, vision qui baisse lentement par astigmatisme",
+    "Sclérite : douleur profonde qui réveille la nuit, globe sensible, rougeur violacée",
+    "Épisclérite : rougeur en secteur, inconfort léger, vision normale"
+  ],
+  exam: {
+    signs: [
+      { sign: "Intervalle clair entre l’infiltrat et le limbe", why: "Présent dans la kératite marginale ; absent dans la PUK, collée au limbe." },
+      { sign: "Défaut épithélial et amincissement en croissant", why: "Fonte active de la PUK ; estimer l’épaisseur perdue à chaque visite." },
+      { sign: "Gouttière avec ligne de lipides, épithélium intact", why: "Terrien : non inflammatoire, souvent supérieur, astigmatisme contre la règle." },
+      { sign: "Cuvette sèche à côté d’une lésion surélevée", why: "Dellen : se regonfle avec lubrification ou retrait de la lésion." },
+      { sign: "Blanchiment au test à la phényléphrine", why: "La phényléphrine 2,5 % blanchit les vaisseaux superficiels (épisclérite), pas le plexus profond (sclérite)." },
+      { sign: "Plages bleutées ou blanches avasculaires de la sclère", why: "Sclérite nécrosante ou scléromalacie perforante." }
     ],
-    exam: {
-      signs: [
-        { sign: "Intervalle clair entre l’infiltrat et le limbe", why: "Présent dans la kératite marginale ; absent dans la PUK, collée au limbe." },
-        { sign: "Défaut épithélial et amincissement en croissant", why: "Fonte active de la PUK ; estimer l’épaisseur perdue à chaque visite." },
-        { sign: "Gouttière avec ligne de lipides, épithélium intact", why: "Terrien : non inflammatoire, souvent supérieur, astigmatisme contre la règle." },
-        { sign: "Cuvette sèche à côté d’une lésion surélevée", why: "Dellen : se regonfle avec lubrification ou retrait de la lésion." },
-        { sign: "Blanchiment au test à la phényléphrine", why: "La phényléphrine 2,5 % blanchit les vaisseaux superficiels (épisclérite), pas le plexus profond (sclérite)." },
-        { sign: "Plages bleutées ou blanches avasculaires de la sclère", why: "Sclérite nécrosante ou scléromalacie perforante." }
-      ],
-      tests: [
-        { test: "Bilan systémique : formule sanguine (FSC), créatinine, analyse d’urine, VS et CRP (inflammation), facteur rhumatoïde et anti-CCP (polyarthrite), ANCA (vasculites), ANA (lupus), syphilis, radiographie pulmonaire", when: "PUK, sclérite, Mooren présumé ; tuberculose et hépatites avant immunosuppression", read: "Maladie en cause, atteinte rénale ou pulmonaire." },
-        { test: "Grattage et cultures", when: "Infiltrat, patient immunosupprimé", read: "Exclure l’infection avant d’intensifier les stéroïdes." },
-        { test: "OCT du segment antérieur (AS-OCT), pachymétrie, topographie", when: "Suivi de l’amincissement", read: "Épaisseur résiduelle ; astigmatisme." },
-        { test: "Échographie B", when: "Douleur sclérale, œil peu rouge, baisse de vision", read: "Liquide sous la capsule de Tenon, le long du nerf optique (signe du T) : sclérite postérieure." }
-      ]
-    },
-    ddx: [
-      { dx: "Kératite infectieuse périphérique", clue: "Infiltrat dense, sécrétions ; cultures positives." },
-      { dx: "Ulcère de Mooren", clue: "Très douloureux, bord surplombant ; bilan systémique négatif." },
-      { dx: "Dégénérescence marginale pellucide", clue: "Amincissement inférieur sans vaisseaux ni lipides." },
-      { dx: "Arc sénile", clue: "Anneau lipidique avec intervalle clair, sans amincissement." },
-      { dx: "Épisclérite", clue: "Vaisseaux superficiels qui blanchissent à la phényléphrine ; peu de douleur." }
+    tests: [
+      { test: "Bilan systémique : formule sanguine (FSC), créatinine, analyse d’urine, VS et CRP (inflammation), facteur rhumatoïde et anti-CCP (polyarthrite), ANCA (vasculites), ANA (lupus), syphilis, radiographie pulmonaire", when: "PUK, sclérite, Mooren présumé ; tuberculose et hépatites avant immunosuppression", read: "Maladie en cause, atteinte rénale ou pulmonaire." },
+      { test: "Grattage et cultures", when: "Infiltrat, patient immunosupprimé", read: "Exclure l’infection avant d’intensifier les stéroïdes." },
+      { test: "OCT du segment antérieur (AS-OCT), pachymétrie, topographie", when: "Suivi de l’amincissement", read: "Épaisseur résiduelle ; astigmatisme." },
+      { test: "Échographie B", when: "Douleur sclérale, œil peu rouge, baisse de vision", read: "Liquide sous la capsule de Tenon, le long du nerf optique (signe du T) : sclérite postérieure." }
+    ]
+  },
+  ddx: [
+    { dx: "Kératite infectieuse périphérique", clue: "Infiltrat dense, sécrétions ; cultures positives." },
+    { dx: "Ulcère de Mooren", clue: "Très douloureux, bord surplombant ; bilan systémique négatif." },
+    { dx: "Dégénérescence marginale pellucide", clue: "Amincissement inférieur sans vaisseaux ni lipides." },
+    { dx: "Arc sénile", clue: "Anneau lipidique avec intervalle clair, sans amincissement." },
+    { dx: "Épisclérite", clue: "Vaisseaux superficiels qui blanchissent à la phényléphrine ; peu de douleur." }
+  ],
+  redFlags: [
+    "Défaut et amincissement collés au limbe : PUK, rhumatologie le jour même",
+    "Douleur nocturne, rougeur violacée qui ne blanchit pas, plage blanche : sclérite",
+    "Descémétocèle ou Seidel positif : coquille, aucune pression, aviser le patron"
+  ],
+  cat: {
+    algo: [
+      { q: "Croissant limbique avec défaut et amincissement ?", yes: "PUK : bilan, rhumatologie et ophtalmo le jour même.", no: "", yesGo: 1, noGo: 2 },
+      { q: "Descémétocèle ou perforation ?", yes: "Coquille ; colle si ≤ 2–3 mm, sinon greffe tectonique.", no: "Corticostéroïdes systémiques ; bilan négatif et ulcère surplombant : Mooren." },
+      { q: "Intervalle clair, blépharite, peu d’amincissement ?", yes: "Kératite marginale : paupières + stéroïde doux court.", no: "", noGo: 3 },
+      { q: "Œil blanc indolore, gouttière bordée de lipides ?", yes: "Terrien : topographie, correction optique, suivi.", no: "", noGo: 4 },
+      { q: "Rougeur profonde qui ne blanchit pas ?", yes: "Sclérite : AINS oraux ; nécrosante : immunosuppression.", no: "Épisclérite : larmes froides ± AINS oral court." }
     ],
-    redFlags: [
-      "Défaut et amincissement collés au limbe : PUK, rhumatologie le jour même",
-      "Douleur nocturne, rougeur violacée qui ne blanchit pas, plage blanche : sclérite",
-      "Descémétocèle ou Seidel positif : coquille, aucune pression, aviser le patron"
-    ],
-    cat: {
-      algo: [
-        { q: "Croissant limbique avec défaut et amincissement ?", yes: "PUK : bilan, rhumatologie et ophtalmo le jour même.", no: "", yesGo: 1, noGo: 2 },
-        { q: "Descémétocèle ou perforation ?", yes: "Coquille ; colle si ≤ 2–3 mm, sinon greffe tectonique.", no: "Corticostéroïdes systémiques ; bilan négatif et ulcère surplombant : Mooren." },
-        { q: "Intervalle clair, blépharite, peu d’amincissement ?", yes: "Kératite marginale : paupières + stéroïde doux court.", no: "", noGo: 3 },
-        { q: "Œil blanc indolore, gouttière bordée de lipides ?", yes: "Terrien : topographie, correction optique, suivi.", no: "", noGo: 4 },
-        { q: "Rougeur profonde qui ne blanchit pas ?", yes: "Sclérite : AINS oraux ; nécrosante : immunosuppression.", no: "Épisclérite : larmes froides ± AINS oral court." }
-      ],
-      phases: [
-        { phase: "medical", items: [
+    phases: [
+      {
+        phase: "medical",
+        items: [
           "Kératite marginale : soins des paupières, stéroïde doux quelques jours",
           "PUK, sclérite nécrosante : corticostéroïdes systémiques, puis immunosuppresseur (rhumatologie)",
           "Lubrifiants sans agent de conservation, doxycycline orale ; pas d’AINS topiques",
           "Sclérite non nécrosante : AINS oraux d’abord"
-        ] },
-        { phase: "chirurgie", items: [
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: [
           "Colle cyanoacrylate + lentille pansement ; greffe tectonique si grand trou",
           "Terrien : lentille rigide ou sclérale ; greffe lamellaire si amincissement extrême"
-        ] },
-        { phase: "suivi", items: [
-          "PUK : revoir aux 1–3 jours au début, puis espacer ; PIO et cataracte sous stéroïdes"
-        ] },
-        { phase: "escalade", items: [
-          "Progression sous prednisone : cyclophosphamide ou rituximab, selon la rhumatologie"
-        ] }
-      ],
-      local: "Au Québec, PUK et sclérite nécrosante justifient un contact le jour même avec la rhumatologie ou la médecine interne du centre ; accès aux biologiques à vérifier localement."
-    },
-    treatments: [
-      { name: "Soins des paupières + stéroïde topique court", dose: "Hygiène palpébrale + stéroïde doux 1–2 semaines.", pitfall: "Exclure d’abord l’infection.", how: "Nettoyer le bord libre réduit l’antigène ; le stéroïde éteint la réaction.", why: "Kératite marginale.", pros: "Résolution en quelques jours.", cons: "Récidives ; exclure d’abord l’infection.", cx: "Hausse de PIO, surinfection." },
-      { name: "Corticostéroïdes systémiques et immunosuppresseurs", dose: "Prednisone orale, puis immunosuppresseur choisi par la rhumatologie.", qc: "Accès aux biologiques à vérifier.", how: "Freinent la vasculite à la source : prednisone rapide, puis méthotrexate, mycophénolate, cyclophosphamide ou rituximab.", why: "PUK, sclérite nécrosante, Mooren, sclérite résistante aux AINS.", pros: "Sauve l’œil, parfois la vie.", cons: "Choix et suivi par la rhumatologie.", cx: "Infections, diabète, ostéoporose, cytopénies." },
-      { name: "Doxycycline orale et lubrification", dose: "Doxycycline 100 mg 2×/j + lubrifiants sans agent de conservation.", pitfall: "Appoint seulement.", how: "Doxycycline : inhibe les métalloprotéinases ; lubrifiants sans agent de conservation : protègent l’épithélium.", why: "PUK, fonte cornéenne, rosacée.", pros: "Oral, peu coûteux.", cons: "Appoint ; pas avant 8 ans ni en grossesse.", cx: "Photosensibilité, œsophagite." },
-      { name: "AINS oraux", dose: "AINS oral (ibuprofène, naproxène) à dose anti-inflammatoire.", pitfall: "Pas d’AINS topiques sur une cornée amincie.", how: "Bloquent la cyclo-oxygénase (prostaglandines).", why: "Sclérite diffuse ou nodulaire, épisclérite tenace.", pros: "Souvent suffisants.", cons: "Insuffisants si nécrosante ; AINS topiques à éviter sur une cornée amincie.", cx: "Ulcère gastrique, atteinte rénale." },
-      { name: "Colle cyanoacrylate, lentille pansement, greffe tectonique", dose: "Colle si trou ≤ 2–3 mm, sinon greffe tectonique.", pitfall: "Nouvelle fonte si la maladie est active.", how: "La colle bouche le trou et freine les neutrophiles ; la greffe remplace le tissu fondu.", why: "Descémétocèle, perforation ≤ 2–3 mm (colle) ou plus grande (greffe).", pros: "Referme vite le globe.", cons: "Nouvelle fonte si maladie active.", cx: "Colle décollée, rejet." }
+        ]
+      },
+      {
+        phase: "suivi",
+        items: ["PUK : revoir aux 1–3 jours au début, puis espacer ; PIO et cataracte sous stéroïdes"]
+      },
+      {
+        phase: "escalade",
+        items: ["Progression sous prednisone : cyclophosphamide ou rituximab, selon la rhumatologie"]
+      }
     ],
-    treatment: {
-      first: ["**Externe / 1re ligne** : kératite marginale : hygiène palpébrale ; sclérite : ibuprofène ou naproxène oral.", "**Ophtalmologiste** : stéroïde doux, corticostéroïdes systémiques avec la rhumatologie, colle si perforation."],
-      refer: ["Le jour même si croissant qui s’amincit, sclérite douloureuse ou plage blanche — PUK ou nécrose.", "Immédiatement si descémétocèle ou Seidel positif — globe ouvert."],
-      pitfall: ["Kétorolac ou autre AINS topique sur une cornée amincie : fonte."],
-      qc: ["PUK et sclérite nécrosante : rhumatologie du centre le jour même."]
-    },
-    pearls: [
-      { q: "Kératite marginale ou PUK : quel signe regardes-tu en premier ?", a: "L’**intervalle clair** : bande transparente entre l’infiltrat et le limbe dans la kératite marginale. La PUK, collée au limbe, creuse le stroma et commande un **bilan systémique urgent**." },
-      { q: "Pourquoi une PUK dans la polyarthrite rhumatoïde inquiète-t-elle l’interniste autant que toi ?", a: "Elle signale souvent une **vasculite systémique** active : dans une série classique (Foster, 1984), la mortalité était élevée sous traitement conventionnel, beaucoup plus faible sous immunosuppresseur cytotoxique." },
-      { q: "Comment le test à la phényléphrine distingue-t-il épisclérite et sclérite ?", a: "La **phényléphrine 2,5 %** contracte en 10–15 minutes les vaisseaux superficiels : l’épisclérite blanchit, la sclérite (plexus profond) persiste." }
+    local: "Au Québec, PUK et sclérite nécrosante justifient un contact le jour même avec la rhumatologie ou la médecine interne du centre ; accès aux biologiques à vérifier localement."
+  },
+  treatments: [
+    { name: "Soins des paupières + stéroïde topique court", dose: "Hygiène palpébrale + stéroïde doux 1–2 semaines.", pitfall: "Exclure d’abord l’infection.", how: "Nettoyer le bord libre réduit l’antigène ; le stéroïde éteint la réaction.", why: "Kératite marginale.", pros: "Résolution en quelques jours.", cons: "Récidives ; exclure d’abord l’infection.", cx: "Hausse de PIO, surinfection." },
+    { name: "Corticostéroïdes systémiques et immunosuppresseurs", dose: "Prednisone orale, puis immunosuppresseur choisi par la rhumatologie.", qc: "Accès aux biologiques à vérifier.", how: "Freinent la vasculite à la source : prednisone rapide, puis méthotrexate, mycophénolate, cyclophosphamide ou rituximab.", why: "PUK, sclérite nécrosante, Mooren, sclérite résistante aux AINS.", pros: "Sauve l’œil, parfois la vie.", cons: "Choix et suivi par la rhumatologie.", cx: "Infections, diabète, ostéoporose, cytopénies." },
+    { name: "Doxycycline orale et lubrification", dose: "Doxycycline 100 mg 2×/j + lubrifiants sans agent de conservation.", pitfall: "Appoint seulement.", how: "Doxycycline : inhibe les métalloprotéinases ; lubrifiants sans agent de conservation : protègent l’épithélium.", why: "PUK, fonte cornéenne, rosacée.", pros: "Oral, peu coûteux.", cons: "Appoint ; pas avant 8 ans ni en grossesse.", cx: "Photosensibilité, œsophagite." },
+    { name: "AINS oraux", dose: "AINS oral (ibuprofène, naproxène) à dose anti-inflammatoire.", pitfall: "Pas d’AINS topiques sur une cornée amincie.", how: "Bloquent la cyclo-oxygénase (prostaglandines).", why: "Sclérite diffuse ou nodulaire, épisclérite tenace.", pros: "Souvent suffisants.", cons: "Insuffisants si nécrosante ; AINS topiques à éviter sur une cornée amincie.", cx: "Ulcère gastrique, atteinte rénale." },
+    { name: "Colle cyanoacrylate, lentille pansement, greffe tectonique", dose: "Colle si trou ≤ 2–3 mm, sinon greffe tectonique.", pitfall: "Nouvelle fonte si la maladie est active.", how: "La colle bouche le trou et freine les neutrophiles ; la greffe remplace le tissu fondu.", why: "Descémétocèle, perforation ≤ 2–3 mm (colle) ou plus grande (greffe).", pros: "Referme vite le globe.", cons: "Nouvelle fonte si maladie active.", cx: "Colle décollée, rejet." }
+  ],
+  treatment: {
+    first: [
+      "**Externe / 1re ligne** : kératite marginale : hygiène palpébrale ; sclérite : ibuprofène ou naproxène oral.",
+      "**Ophtalmologiste** : stéroïde doux, corticostéroïdes systémiques avec la rhumatologie, colle si perforation."
     ],
-    mnemonic: { title: "Terrien, le « T » tranquille", text: "Terrien : tranquille (œil blanc), en haut, en tranchée bordée de lipides, astigmatisme contre la règle." },
-    compare: {
-      title: "Normal vs Terrien (cornée de profil)",
-      normal: { figure: { type: "photo", id: "OPH-001" }, caption: "Cornée normale de profil : courbe régulière, épaisseur uniforme." },
-      patho: { figure: { type: "photo", id: "OPH-382" }, caption: "Dégénérescence de Terrien de profil (source).", reveal: ["Au bord supérieur, la courbe cornéenne devient irrégulière et opaque : zone amincie", "Dépôt blanc-jaunâtre au front de la lésion : ligne de lipides", "Œil blanc, sans rougeur : maladie non inflammatoire", "Selon la source : épithélium intact et pannus sur la zone amincie"] }
+    refer: [
+      "Le jour même si croissant qui s’amincit, sclérite douloureuse ou plage blanche — PUK ou nécrose.",
+      "Immédiatement si descémétocèle ou Seidel positif — globe ouvert."
+    ],
+    pitfall: ["Kétorolac ou autre AINS topique sur une cornée amincie : fonte."],
+    qc: ["PUK et sclérite nécrosante : rhumatologie du centre le jour même."]
+  },
+  pearls: [
+    { q: "Kératite marginale ou PUK : quel signe regardes-tu en premier ?", a: "L’**intervalle clair** : bande transparente entre l’infiltrat et le limbe dans la kératite marginale. La PUK, collée au limbe, creuse le stroma et commande un **bilan systémique urgent**." },
+    { q: "Pourquoi une PUK dans la polyarthrite rhumatoïde inquiète-t-elle l’interniste autant que toi ?", a: "Elle signale souvent une **vasculite systémique** active : dans une série classique (Foster, 1984), la mortalité était élevée sous traitement conventionnel, beaucoup plus faible sous immunosuppresseur cytotoxique." },
+    { q: "Comment le test à la phényléphrine distingue-t-il épisclérite et sclérite ?", a: "La **phényléphrine 2,5 %** contracte en 10–15 minutes les vaisseaux superficiels : l’épisclérite blanchit, la sclérite (plexus profond) persiste." }
+  ],
+  mnemonic: { title: "Terrien, le « T » tranquille", text: "Terrien : tranquille (œil blanc), en haut, en tranchée bordée de lipides, astigmatisme contre la règle." },
+  compare: {
+    title: "Normal vs Terrien (cornée de profil)",
+    normal: {
+      figure: { type: "photo", id: "OPH-001" },
+      caption: "Cornée normale de profil : courbe régulière, épaisseur uniforme."
     },
-    sources: [
-      "AAO BCSC Section 8 : External Disease and Cornea",
-      "Watson PG, Hayreh SS. Scleritis and episcleritis (Br J Ophthalmol 1976;60:163-91)",
-      "Foster CS, Forstot SL, Wilson LA. Mortality rate in rheumatoid arthritis patients developing necrotizing scleritis or peripheral ulcerative keratitis (Ophthalmology 1984;91:1253-63)"
-    ]
-  }
+    patho: {
+      figure: { type: "photo", id: "OPH-382" },
+      caption: "Dégénérescence de Terrien de profil (source).",
+      reveal: [
+        "Au bord supérieur, la courbe cornéenne devient irrégulière et opaque : zone amincie",
+        "Dépôt blanc-jaunâtre au front de la lésion : ligne de lipides",
+        "Œil blanc, sans rougeur : maladie non inflammatoire",
+        "Selon la source : épithélium intact et pannus sur la zone amincie"
+      ]
+    }
+  },
+  sources: [
+    "AAO BCSC Section 8 : External Disease and Cornea",
+    "Watson PG, Hayreh SS. Scleritis and episcleritis (Br J Ophthalmol 1976;60:163-91)",
+    "Foster CS, Forstot SL, Wilson LA. Mortality rate in rheumatoid arthritis patients developing necrotizing scleritis or peripheral ulcerative keratitis (Ophthalmology 1984;91:1253-63)"
+  ]
+}
 ]);
 
 // QCM B-211 à B-218

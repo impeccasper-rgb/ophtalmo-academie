@@ -8,7 +8,7 @@ G.OPH_EN.fiches = G.OPH_EN.fiches || {};
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-bacterienne": {
   title: "Bacterial keratitis",
   oneLiner: "Painful red eye, white infiltrate under an epithelial defect, especially in a contact lens wearer: scrape, culture, treat hourly.",
-  definition: "Infection of the stroma by a bacterium that entered through an epithelial break: a white abscess (infiltrate).\nIt is an emergency: Pseudomonas can perforate the cornea within days.",
+  definition: "A stromal abscess from bacteria entering through an epithelial break. An emergency: it can perforate.",
   anatomy: { text: "An intact epithelium and the tear film (lysozyme, antibodies) block nearly all bacteria; classic exception: Neisseria gonorrhoeae penetrates it. The avascular stroma receives white blood cells via the tears and the limbus (corneoscleral junction); their enzymes can melt collagen." },
   causal: {
     title: "From epithelial break to perforation",
@@ -66,23 +66,30 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-bacterienne": {
       { q: "Worse at 48 h, lenses + water, plants?", yes: "Think fungus or ameba: specific sampling.", no: "Continue until the epithelium closes." }
     ],
     phases: [
-      { phase: "medical", items: [
-        "Stop lenses; bring lens and case for culture",
-        "Small peripheral ulcer: moxifloxacin 0.5% (fluoroquinolone) every 5–15 min for the 1st hour, then hourly day and night",
-        "Threatening ulcer, after scraping: fortified drops (hospital pharmacy), vancomycin 25 mg/mL or cefazolin 50 mg/mL + tobramycin 14 mg/mL, alternating hourly for 24–48 h",
-        "Cycloplegic (drop that relaxes the ciliary muscle: less pain), oral analgesic; no pressure patch and no steroid at the outset"
-      ] },
-      { phase: "chirurgie", items: [
-        "Perforation: cyanoacrylate glue if ≤ 2–3 mm, otherwise tectonic graft"
-      ] },
-      { phase: "suivi", items: [
-        "See daily at first: pain, size of the infiltrate and the defect, anterior chamber",
-        "Taper gradually according to response and culture"
-      ] },
-      { phase: "escalade", items: [
-        "No improvement at 48–72 h: reculture, biopsy; think fungus, ameba, Nocardia (atypical bacterium), mycobacteria",
-        "Steroid: the specialist’s decision, after culture and response to antibiotics; never with fungus or Nocardia"
-      ] }
+      {
+        phase: "medical",
+        items: [
+          "Stop lenses; bring lens and case for culture",
+          "Small peripheral ulcer: moxifloxacin 0.5% (fluoroquinolone) every 5–15 min for the 1st hour, then hourly day and night",
+          "Threatening ulcer, after scraping: fortified drops (hospital pharmacy), vancomycin 25 mg/mL or cefazolin 50 mg/mL + tobramycin 14 mg/mL, alternating hourly for 24–48 h",
+          "Cycloplegic (drop that relaxes the ciliary muscle: less pain), oral analgesic; no pressure patch and no steroid at the outset"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Perforation: cyanoacrylate glue if ≤ 2–3 mm, otherwise tectonic graft"]
+      },
+      {
+        phase: "suivi",
+        items: ["See daily at first: pain, size of the infiltrate and the defect, anterior chamber", "Taper gradually according to response and culture"]
+      },
+      {
+        phase: "escalade",
+        items: [
+          "No improvement at 48–72 h: reculture, biopsy; think fungus, ameba, Nocardia (atypical bacterium), mycobacteria",
+          "Steroid: the specialist’s decision, after culture and response to antibiotics; never with fungus or Nocardia"
+        ]
+      }
     ],
     local: "Fortified drops come from hospital pharmacies: a threatening ulcer is sent the same day to the ophthalmology emergency service of a tertiary center (CHUM, HMR, MUHC, Jewish General Hospital, CHU de Québec)."
   },
@@ -92,7 +99,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-bacterienne": {
     { name: "Cyanoacrylate glue, tectonic graft", dose: "Cyanoacrylate glue + bandage lens if the hole is ≤ 2–3 mm.", pitfall: "No pressure on a perforated eye.", how: "A drop of tissue adhesive placed on the hole after debriding the epithelium, then a bandage contact lens; if the hole is large, a piece of donor cornea is sutured in.", why: "Descemetocele or perforation.", pros: "Seals the globe quickly; the glue also inhibits bacteria.", cons: "Glue only for small holes; graft on an infected eye (“hot” graft): rejection and recurrence are common.", cx: "Glue dislodgement; rejection, glaucoma." }
   ],
   treatment: {
-    first: ["**You (first line)**: remove the lens; moxifloxacin 0.5% hourly for a small peripheral ulcer.", "**Ophthalmologist**: scraping, cultures, hourly fortified drops."],
+    first: [
+      "**You (first line)**: remove the lens; moxifloxacin 0.5% hourly for a small peripheral ulcer.",
+      "**Ophthalmologist**: scraping, cultures, hourly fortified drops."
+    ],
     refer: ["Same day for any ulcer — it can perforate within days.", "Immediately if perforation or descemetocele — an open globe."],
     pitfall: ["Pressure patch in a lens wearer: favors Pseudomonas.", "Topical steroid before cultures: worsens the infection."],
     qc: ["Fortified drops come from hospital pharmacies: refer to a centre."]
@@ -106,12 +116,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-bacterienne": {
   compare: {
     title: "Normal vs bacterial ulcer (fluorescein)",
     normal: { caption: "Intact epithelium: no fluorescein uptake." },
-    patho: { caption: "Ulcer: green epithelial defect overlying a white infiltrate.", reveal: [
-      "Green area = absent epithelium",
-      "White infiltrate under the green area, in the stroma",
-      "Measure the longest diameter and the distance from the center (1-2-3 rule)",
-      "Look for hypopyon and thinning"
-    ] }
+    patho: {
+      caption: "Ulcer: green epithelial defect overlying a white infiltrate.",
+      reveal: [
+        "Green area = absent epithelium",
+        "White infiltrate under the green area, in the stroma",
+        "Measure the longest diameter and the distance from the center (1-2-3 rule)",
+        "Look for hypopyon and thinning"
+      ]
+    }
   }
 } });
 
@@ -119,7 +132,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-bacterienne": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-herpes": {
   title: "Herpetic keratitis (HSV) and herpes zoster ophthalmicus",
   oneLiner: "Dendrite with terminal bulbs and reduced corneal sensation: herpes; forehead rash with Hutchinson sign: zoster. Never a steroid without an antiviral.",
-  definition: "Herpes simplex virus lies dormant in the trigeminal ganglion.\nIt reactivates on the surface (dendrite) or deeper (immune reaction).\nZoster ophthalmicus is VZV reactivation in V1.",
+  definition: "HSV lies dormant in the trigeminal ganglion and reactivates in the cornea. Zoster is VZV reactivating in V1.",
   anatomy: { text: "The cornea is innervated by the ophthalmic nerve (V1, nasociliary branch): the virus travels down these nerves from the ganglion. These nerves also provide sensation and support healing; once destroyed, they leave an anesthetic cornea that heals poorly. The nasociliary nerve also supplies the tip of the nose. Zoster: forehead rash, with possible involvement of any part of the eye." },
   causal: {
     title: "From the ganglion to the cornea",
@@ -178,23 +191,32 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-herpes": {
       { q: "Recurrences, stromal disease or graft?", yes: "Long-term oral prophylaxis (HEDS); zoster: discuss valacyclovir 1 year.", no: "Treat each episode." }
     ],
     phases: [
-      { phase: "medical", items: [
-        "Epithelial: acyclovir 400 mg PO 5×/day or valacyclovir 500 mg PO TID × 7–10 days, or trifluridine 1% 9×/day, for 14–21 days at most; cotton-tip debridement",
-        "Immune stromal or endotheliitis: prednisolone acetate 1% tapered very slowly, always with an oral antiviral",
-        "Zoster: valacyclovir 1 g TID × 7 days (or famciclovir 500 mg TID, or acyclovir 800 mg 5×/day), adjusted to renal function"
-      ] },
-      { phase: "chirurgie", items: [
-        "Persistent defect: bandage contact lens, amniotic membrane, tarsorrhaphy (eyelids partially sutured closed)",
-        "Central scar: graft once the eye has been quiet for months, under prophylaxis"
-      ] },
-      { phase: "suivi", items: [
-        "Recheck in 1 week; on steroids, IOP at every visit",
-        "Prophylaxis: acyclovir 400 mg BID or valacyclovir 500 mg once daily for recurrences, stromal form or graft"
-      ] },
-      { phase: "escalade", items: [
-        "Anesthetic cornea with a persistent defect: cenegermin (Oxervate)",
-        "Refractory hypertensive uveitis: aqueous humor PCR (look for CMV)"
-      ] }
+      {
+        phase: "medical",
+        items: [
+          "Epithelial: acyclovir 400 mg PO 5×/day or valacyclovir 500 mg PO TID × 7–10 days, or trifluridine 1% 9×/day, for 14–21 days at most; cotton-tip debridement",
+          "Immune stromal or endotheliitis: prednisolone acetate 1% tapered very slowly, always with an oral antiviral",
+          "Zoster: valacyclovir 1 g TID × 7 days (or famciclovir 500 mg TID, or acyclovir 800 mg 5×/day), adjusted to renal function"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: [
+          "Persistent defect: bandage contact lens, amniotic membrane, tarsorrhaphy (eyelids partially sutured closed)",
+          "Central scar: graft once the eye has been quiet for months, under prophylaxis"
+        ]
+      },
+      {
+        phase: "suivi",
+        items: [
+          "Recheck in 1 week; on steroids, IOP at every visit",
+          "Prophylaxis: acyclovir 400 mg BID or valacyclovir 500 mg once daily for recurrences, stromal form or graft"
+        ]
+      },
+      {
+        phase: "escalade",
+        items: ["Anesthetic cornea with a persistent defect: cenegermin (Oxervate)", "Refractory hypertensive uveitis: aqueous humor PCR (look for CMV)"]
+      }
     ],
     local: "Shingrix is recommended from age 50 by NACI (National Advisory Committee on Immunization); check whether it is publicly funded. Oxervate is approved by Health Canada for moderate or severe neurotrophic keratitis in adults: 1 drop 6×/day every 2 h for 8 weeks."
   },
@@ -204,7 +226,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-herpes": {
     { name: "Topical steroid under antiviral cover", dose: "Prednisolone 1% under oral antiviral, tapered over weeks to months.", pitfall: "Never on an active dendrite; rebound if stopped fast.", how: "Prednisolone 1% drops tapered over weeks to months, always with an oral antiviral: calm the immune attack on viral antigens.", why: "Immune stromal keratitis, endotheliitis, uveitis; never on an active dendrite.", pros: "HEDS: faster resolution of stromal keratitis.", cons: "Does not kill the virus; rebound if stopped quickly.", cx: "Geographic ulcer without an antiviral, IOP rise, cataract." }
   ],
   treatment: {
-    first: ["**You (first line)**: dendrite: acyclovir 400 mg 5×/day or valacyclovir 500 mg TID; zoster: valacyclovir 1 g TID.", "**Ophthalmologist**: steroid under antiviral for stromal disease; prophylaxis (acyclovir 400 mg BID)."],
+    first: [
+      "**You (first line)**: dendrite: acyclovir 400 mg 5×/day or valacyclovir 500 mg TID; zoster: valacyclovir 1 g TID.",
+      "**Ophthalmologist**: steroid under antiviral for stromal disease; prophylaxis (acyclovir 400 mg BID)."
+    ],
     refer: ["Within 24 h for any herpetic keratitis — confirm the form and check IOP.", "Same day for zoster with a red eye, vision loss or Hutchinson sign."],
     pitfall: ["Prednisolone on a dendrite: geographic ulcer.", "Trifluridine beyond 14–21 days: toxic to the epithelium."],
     qc: ["Shingrix recommended from age 50 (NACI); public coverage to check."]
@@ -218,12 +243,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-herpes": {
   compare: {
     title: "Normal vs herpetic dendrite (fluorescein)",
     normal: { caption: "Intact epithelium, no fluorescein uptake." },
-    patho: { caption: "HSV dendrite: branching ulcer with terminal bulbs.", reveal: [
-      "Branching linear ulcer",
-      "Terminal bulbs at the ends of the branches",
-      "Green base (absent cells), edges swollen with infected cells",
-      "Zoster or Acanthamoeba pseudodendrite: no bulbs"
-    ] }
+    patho: {
+      caption: "HSV dendrite: branching ulcer with terminal bulbs.",
+      reveal: [
+        "Branching linear ulcer",
+        "Terminal bulbs at the ends of the branches",
+        "Green base (absent cells), edges swollen with infected cells",
+        "Zoster or Acanthamoeba pseudodendrite: no bulbs"
+      ]
+    }
   }
 } });
 
@@ -231,7 +259,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-herpes": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-secheresse": {
   title: "Dry eye disease and meibomian gland dysfunction",
   oneLiner: "Burning, gritty feeling, vision that fluctuates with blinking: look for an unstable tear film, plugged meibomian glands or a toxic drop.",
-  definition: "An unstable, overly salty tear film that irritates and inflames the ocular surface.\nMost often the meibomian gland oil is poor: it is not a lack of tears.",
+  definition: "An unstable tear film that irritates the surface. Most often, meibomian gland oil is the culprit.",
   anatomy: { text: "The tear film consists of an oil layer from the meibomian glands, which slows evaporation, resting on a muco-aqueous phase: water from the lacrimal gland mixed with mucus from the goblet cells, which makes the epithelium wettable. Blinking spreads the film and expresses oil from the glands." },
   causal: {
     title: "The vicious circle of dry eye",
@@ -291,24 +319,31 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-secheresse": {
       { q: "Still symptomatic after 1–2 months?", yes: "Add cyclosporine or lifitegrast; refer if severe.", no: "Continue and space out follow-up." }
     ],
     phases: [
-      { phase: "medical", items: [
-        "Preservative-free tears 4–6 times a day, gel at bedtime; screen breaks",
-        "Plugged glands: warm compresses 5–10 min then lid massage, 1–2 times a day",
-        "Inflammation: cyclosporine or lifitegrast; soft steroid for a few weeks; low-dose oral doxycycline (anti-inflammatory) if rosacea",
-        "Demodex: tea tree oil cleanser; lotilaner (antiparasitic drops) approved in the US, Canadian availability to be confirmed"
-      ] },
-      { phase: "laser", items: [
-        "IPL (intense pulsed light: light flashes on the eyelid skin) for refractory glands"
-      ] },
-      { phase: "chirurgie", items: [
-        "Punctal plugs placed in the office for aqueous deficiency, once inflammation has settled"
-      ] },
-      { phase: "suivi", items: [
-        "Recheck at 1–3 months; step up if needed"
-      ] },
-      { phase: "escalade", items: [
-        "Severe: autologous serum (drops made from the patient’s blood), scleral lens (large rigid lens with a fluid reservoir)"
-      ] }
+      {
+        phase: "medical",
+        items: [
+          "Preservative-free tears 4–6 times a day, gel at bedtime; screen breaks",
+          "Plugged glands: warm compresses 5–10 min then lid massage, 1–2 times a day",
+          "Inflammation: cyclosporine or lifitegrast; soft steroid for a few weeks; low-dose oral doxycycline (anti-inflammatory) if rosacea",
+          "Demodex: tea tree oil cleanser; lotilaner (antiparasitic drops) approved in the US, Canadian availability to be confirmed"
+        ]
+      },
+      {
+        phase: "laser",
+        items: ["IPL (intense pulsed light: light flashes on the eyelid skin) for refractory glands"]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Punctal plugs placed in the office for aqueous deficiency, once inflammation has settled"]
+      },
+      {
+        phase: "suivi",
+        items: ["Recheck at 1–3 months; step up if needed"]
+      },
+      {
+        phase: "escalade",
+        items: ["Severe: autologous serum (drops made from the patient’s blood), scleral lens (large rigid lens with a fluid reservoir)"]
+      }
     ],
     local: "In Québec, optometrists manage most dry eye and refer to ophthalmology for severe disease, Sjögren or treatment failure; IPL is mostly in private clinics, coverage of cyclosporine and lifitegrast to be confirmed."
   },
@@ -318,7 +353,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-secheresse": {
     { name: "Cyclosporine or lifitegrast", dose: "Cyclosporine 0.05–0.09% or lifitegrast 5%, 1 drop twice a day.", pitfall: "Works after several weeks: don’t stop too early.", qc: "Coverage to check.", how: "Prescription anti-inflammatory drops, twice a day: cyclosporine blocks T-cell activation, lifitegrast blocks their binding (LFA-1/ICAM-1).", why: "Inflammation persisting despite tears.", pros: "No IOP rise or cataract with long-term use, unlike steroids.", cons: "Effect only after several weeks; cost.", cx: "Burning on instillation; metallic taste (lifitegrast)." }
   ],
   treatment: {
-    first: ["**You (first line)**: preservative-free tears 4–6×/day, warm compresses once or twice a day.", "**Ophthalmologist**: cyclosporine or lifitegrast, punctal plugs, IPL."],
+    first: [
+      "**You (first line)**: preservative-free tears 4–6×/day, warm compresses once or twice a day.",
+      "**Ophthalmologist**: cyclosporine or lifitegrast, punctal plugs, IPL."
+    ],
     refer: ["This week if ulcer, thinning or dry mouth (Sjögren) — the cornea is at risk.", "Otherwise routine follow-up — a chronic disease treated step by step."],
     pitfall: ["BAK-preserved tears more than 4×/day: toxic to the surface."],
     qc: ["Optometrists manage most cases; IPL is mostly private."]
@@ -332,12 +370,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-secheresse": {
   compare: {
     title: "Normal vs dry eye (fluorescein)",
     normal: { caption: "Continuous film, no fluorescein uptake." },
-    patho: { caption: "Inferior punctate keratitis (MGD, exposure, toxic drops).", reveal: [
-      "Fine green dots in the inferior third",
-      "No ulcer or infiltrate",
-      "More than 5 corneal spots = DEWS III sign",
-      "Interpalpebral dots = aqueous deficiency; superior = contact lenses"
-    ] }
+    patho: {
+      caption: "Inferior punctate keratitis (MGD, exposure, toxic drops).",
+      reveal: [
+        "Fine green dots in the inferior third",
+        "No ulcer or infiltrate",
+        "More than 5 corneal spots = DEWS III sign",
+        "Interpalpebral dots = aqueous deficiency; superior = contact lenses"
+      ]
+    }
   }
 } });
 
@@ -345,7 +386,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-secheresse": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-surface": {
   title: "Conjunctivitis and ocular surface inflammation",
   oneLiner: "Red eye: read the conjunctiva first (texture, discharge, node, limbus), then always check the cornea with fluorescein.",
-  definition: "Inflammation of the conjunctiva from a virus, bacteria, allergy or friction.\nUsually benign, it threatens vision when it reaches the cornea.",
+  definition: "Viral, bacterial, allergic or mechanical conjunctivitis. Usually benign, unless the cornea is involved.",
   anatomy: { text: "The palpebral (over the tarsus) and bulbar (over the sclera) conjunctiva contain lymphoid tissue, mast cells (allergy cells) and goblet cells (mucus). The limbus houses the stem cells of the corneal epithelium: limbal inflammation can therefore damage the cornea, as in vernal keratoconjunctivitis, superior limbic keratoconjunctivitis (SLK) and rosacea. Forms that involve the cornea: vernal, atopic, rosacea, gonococcal." },
   causal: {
     title: "From conjunctival insult to the cornea",
@@ -412,22 +453,28 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-surface": {
       { q: "Itching and papillae?", yes: "Antihistamine–stabilizer; giant papillae: vernal, atopic, lenses.", no: "Rosacea, SLK, bacterial conjunctivitis?" }
     ],
     phases: [
-      { phase: "observation", items: [
-        "Adenovirus: cold compresses, tears, hand washing; contagious about 2 weeks"
-      ] },
-      { phase: "medical", items: [
-        "Allergy: olopatadine or ketotifen",
-        "Vernal or atopic: topical cyclosporine or tacrolimus; short steroid course for flares",
-        "Rosacea: lid hygiene, low-dose oral doxycycline (anti-inflammatory effect); child under 8 or pregnancy: oral erythromycin or azithromycin",
-        "Chlamydia: doxycycline 100 mg BID × 7 days or azithromycin 1 g single dose; treat partners",
-        "SLK: lubrication, bandage contact lens, dilute silver nitrate solution (never the stick)"
-      ] },
-      { phase: "chirurgie", items: [
-        "Refractory shield ulcer: plaque debridement ± amniotic membrane; refractory SLK: conjunctival resection"
-      ] },
-      { phase: "suivi", items: [
-        "Any steroid: IOP at every visit, slow taper"
-      ] }
+      {
+        phase: "observation",
+        items: ["Adenovirus: cold compresses, tears, hand washing; contagious about 2 weeks"]
+      },
+      {
+        phase: "medical",
+        items: [
+          "Allergy: olopatadine or ketotifen",
+          "Vernal or atopic: topical cyclosporine or tacrolimus; short steroid course for flares",
+          "Rosacea: lid hygiene, low-dose oral doxycycline (anti-inflammatory effect); child under 8 or pregnancy: oral erythromycin or azithromycin",
+          "Chlamydia: doxycycline 100 mg BID × 7 days or azithromycin 1 g single dose; treat partners",
+          "SLK: lubrication, bandage contact lens, dilute silver nitrate solution (never the stick)"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Refractory shield ulcer: plaque debridement ± amniotic membrane; refractory SLK: conjunctival resection"]
+      },
+      {
+        phase: "suivi",
+        items: ["Any steroid: IOP at every visit, slow taper"]
+      }
     ],
     local: "Chlamydia and gonococcus are notifiable diseases (MADO) in Québec; the Québec STBBI guides from INESSS (Institut national d’excellence en santé et en services sociaux) govern treatment and partner management."
   },
@@ -439,7 +486,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-surface": {
     { name: "Lid hygiene, doxycycline or azithromycin", dose: "Lid hygiene once or twice a day; low-dose doxycycline.", pitfall: "Doxycycline: not under 8 or in pregnancy.", qc: "Chlamydia, gonorrhea: reportable in Québec.", how: "Warm compresses and cleaning of the lid margin (bacteria, Demodex); low-dose doxycycline is anti-collagenase.", why: "Rosacea, blepharokeratoconjunctivitis.", pros: "Treats the cause.", cons: "Doxycycline: not before age 8 or during pregnancy.", cx: "Photosensitivity, esophagitis." }
   ],
   treatment: {
-    first: ["**You (first line)**: viral: cold compresses, tears, hygiene; allergic: olopatadine 0.1% BID.", "**Ophthalmologist**: short steroid, cyclosporine or tacrolimus for vernal and atopic disease."],
+    first: [
+      "**You (first line)**: viral: cold compresses, tears, hygiene; allergic: olopatadine 0.1% BID.",
+      "**Ophthalmologist**: short steroid, cyclosporine or tacrolimus for vernal and atopic disease."
+    ],
     refer: ["Same day for pain, photophobia, vision loss, newborn or copious pus — cornea at risk.", "This week for vernal, atopic or more than 3–4 weeks."],
     pitfall: ["Fluorometholone or prednisolone without follow-up: raised IOP, worse herpes.", "Antibiotic for viral conjunctivitis: useless."],
     qc: ["Chlamydia and gonorrhea: reportable in Québec."]
@@ -453,11 +503,14 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-surface": {
   compare: {
     title: "Normal vs superior staining (SLK, vernal)",
     normal: { caption: "Intact epithelium: no fluorescein uptake." },
-    patho: { caption: "Punctate keratitis of the superior cornea, under the lid.", reveal: [
-      "Clustered green dots in the superior third, the area covered by the lid",
-      "Think SLK (check the thyroid), vernal (cobblestones, risk of shield ulcer) or a tight contact lens",
-      "Evert the upper lid: giant papillae, foreign body"
-    ] }
+    patho: {
+      caption: "Punctate keratitis of the superior cornea, under the lid.",
+      reveal: [
+        "Clustered green dots in the superior third, the area covered by the lid",
+        "Think SLK (check the thyroid), vernal (cobblestones, risk of shield ulcer) or a tight contact lens",
+        "Evert the upper lid: giant papillae, foreign body"
+      ]
+    }
   }
 } });
 
@@ -465,7 +518,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-surface": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-erosion": {
   title: "Recurrent erosion, abrasion and epithelial basement membrane dystrophy",
   oneLiner: "Sharp pain on waking, on opening the eyes, weeks after a fingernail scratch: the poorly anchored epithelium tears off.",
-  definition: "An abrasion is a scratch that removes part of the epithelium.\nRecurrent erosion occurs when the epithelium stays poorly anchored and tears off repeatedly, mostly on waking.",
+  definition: "Abrasion: scratched epithelium. Recurrent erosion: poorly anchored epithelium that tears off on waking.",
   anatomy: { text: "The epithelium is riveted to its basement membrane by hemidesmosomes (molecular rivets), themselves anchored to the stroma through Bowman layer. After an abrasion, it covers the wound in 1 to 3 days, but these anchors take weeks to months to re-form. The cornea, the most densely innervated tissue in the body, is very painful when it loses its epithelium." },
   causal: {
     title: "From fragile anchoring to tearing on waking",
@@ -526,22 +579,27 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-erosion": {
       { q: "Recurrences despite 2–3 months of prevention?", yes: "Refer: doxycycline, polishing, puncture or PTK.", no: "Continue, then taper slowly." }
     ],
     phases: [
-      { phase: "medical", items: [
-        "Topical antibiotic; cycloplegic (cyclopentolate, which relaxes the ciliary muscle) for painful spasm",
-        "Oral analgesia; **never a topical anesthetic for home use**",
-        "Bandage contact lens for severe pain (not if infected)",
-        "Refractory: oral doxycycline ± soft steroid"
-      ] },
-      { phase: "chirurgie", items: [
-        "Debridement ± diamond burr polishing of Bowman layer",
-        "Anterior stromal puncture, outside the visual axis"
-      ] },
-      { phase: "suivi", items: [
-        "Recheck at 24–48 h if the abrasion is large, central or in a contact lens wearer"
-      ] },
-      { phase: "escalade", items: [
-        "PTK (excimer laser phototherapeutic keratectomy) for central involvement or failure"
-      ] }
+      {
+        phase: "medical",
+        items: [
+          "Topical antibiotic; cycloplegic (cyclopentolate, which relaxes the ciliary muscle) for painful spasm",
+          "Oral analgesia; **never a topical anesthetic for home use**",
+          "Bandage contact lens for severe pain (not if infected)",
+          "Refractory: oral doxycycline ± soft steroid"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Debridement ± diamond burr polishing of Bowman layer", "Anterior stromal puncture, outside the visual axis"]
+      },
+      {
+        phase: "suivi",
+        items: ["Recheck at 24–48 h if the abrasion is large, central or in a contact lens wearer"]
+      },
+      {
+        phase: "escalade",
+        items: ["PTK (excimer laser phototherapeutic keratectomy) for central involvement or failure"]
+      }
     ],
     local: "In Québec, many abrasions are seen in the ED, in primary care or by the optometrist; refer for an infiltrate, non-healing or repeated episodes. Work injury: CNESST forms."
   },
@@ -553,8 +611,14 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-erosion": {
     { name: "Stromal puncture or PTK", dose: "Stromal puncture off-axis; PTK if central.", pitfall: "Leaves opacities; PTK is costly.", how: "Puncture: superficial needle pricks whose microscars anchor the epithelium. PTK: excimer laser that ablates a few microns of surface.", why: "Puncture: outside the visual axis; PTK: central involvement.", pros: "Puncture is quick; PTK gives a smooth surface.", cons: "Opacities; PTK is costly.", cx: "Haze, infection." }
   ],
   treatment: {
-    first: ["**You (first line)**: erythromycin ointment QID; lens wearer: fluoroquinolone. Erosions: 5% NaCl at bedtime.", "**Ophthalmologist**: polishing, stromal puncture or PTK for recurrences."],
-    refer: ["Same day for infiltrate, hypopyon or high-velocity injury — infection or intraocular foreign body.", "Within 48 h if not healed — look for another cause."],
+    first: [
+      "**You (first line)**: erythromycin ointment QID; lens wearer: fluoroquinolone. Erosions: 5% NaCl at bedtime.",
+      "**Ophthalmologist**: polishing, stromal puncture or PTK for recurrences."
+    ],
+    refer: [
+      "Same day for infiltrate, hypopyon or high-velocity injury — infection or intraocular foreign body.",
+      "Within 48 h if not healed — look for another cause."
+    ],
     pitfall: ["Topical anesthetic sent home: ulcer, perforation.", "Pressure patch in a lens wearer: Pseudomonas."],
     qc: ["Work injury: CNESST forms."]
   },
@@ -567,12 +631,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-erosion": {
   compare: {
     title: "Fluorescein: normal vs EBMD",
     normal: { caption: "Uniform film, no dark area and no dye uptake." },
-    patho: { caption: "EBMD: negative staining, dark lines and dots where the surface is elevated.", reveal: [
-      "Dark wavy lines: basement membrane folds (map, fingerprint)",
-      "Dark dots: Cogan microcysts",
-      "No staining defect between episodes",
-      "An abrasion would instead show a green area with sharp edges"
-    ] }
+    patho: {
+      caption: "EBMD: negative staining, dark lines and dots where the surface is elevated.",
+      reveal: [
+        "Dark wavy lines: basement membrane folds (map, fingerprint)",
+        "Dark dots: Cogan microcysts",
+        "No staining defect between episodes",
+        "An abrasion would instead show a green area with sharp edges"
+      ]
+    }
   }
 } });
 
@@ -580,7 +647,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-erosion": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-keratocone": {
   title: "Keratoconus",
   oneLiner: "Young eye rubber with increasing irregular astigmatism: tomography, then crosslinking if it progresses, and right at diagnosis in children.",
-  definition: "The cornea thins and bulges into a cone, distorting vision (irregular astigmatism).\nIt starts in adolescence, in both eyes asymmetrically, and progresses mainly until about 30.",
+  definition: "The cornea thins and bulges into a cone. It starts in adolescence and progresses mainly until 30.",
   anatomy: { text: "The strength of the cornea comes from the collagen lamellae of the stroma, linked by chemical bridges (cross-links). Its anterior surface provides about two thirds of the eye’s power (≈ 43 D): a small distortion blurs vision a lot. Normal central thickness ≈ 540–550 µm. Keratoconus signs: Munson (V-shaped lower lid on downgaze), Rizzuti (conical nasal light reflex), Fleischer (iron ring), Vogt (striae that vanish with pressure), scissor reflex and oil-droplet reflex." },
   causal: {
     title: "From soft stroma to cone",
@@ -598,11 +665,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-keratocone": {
       { at: 4, label: "Graft", detail: "DALK (graft of the anterior layers, keeping the endothelium) or PK (full-thickness graft) for a central scar or contact lens intolerance." }
     ]
   },
-  risk: [
-    "Eye rubbing, atopy (allergies, eczema, asthma)",
-    "Family history of keratoconus",
-    "Down syndrome, Leber congenital amaurosis, Ehlers-Danlos"
-  ],
+  risk: ["Eye rubbing, atopy (allergies, eczema, asthma)", "Family history of keratoconus", "Down syndrome, Leber congenital amaurosis, Ehlers-Danlos"],
   presentation: [
     "Blurred, distorted vision, ghost images, halos at night",
     "Frequent glasses changes; increasing, oblique or irregular astigmatism",
@@ -640,22 +703,31 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-keratocone": {
       { q: "Good enough vision with glasses?", yes: "Glasses.", no: "Rigid or scleral lenses; graft if scarred." }
     ],
     phases: [
-      { phase: "medical", items: [
-        "Stop eye rubbing; treat the allergy (antihistamine drops, cold compresses)",
-        "Glasses if adequate; otherwise rigid gas permeable (RGP) or scleral lenses (large lenses resting on the sclera)"
-      ] },
-      { phase: "chirurgie", items: [
-        "CXL: Dresden protocol (3 mW/cm² × 30 min) or accelerated (9 mW/cm² × 10 min), riboflavin 0.1% epi-off",
-        "Intracorneal ring segments (ICRS) for contact lens intolerance, clear cornea and adequate thickness at the tunnel; they do not stop progression",
-        "Graft: DALK preferred over PK if the endothelium is healthy"
-      ] },
-      { phase: "suivi", items: [
-        "Tomography after CXL to confirm stabilization; CXL can be repeated",
-        "Offer screening to siblings and children"
-      ] },
-      { phase: "escalade", items: [
-        "Acute hydrops: cycloplegic, NaCl 5% (hypertonic ointment that draws water out of the cornea), steroid, sometimes a gas bubble in the anterior chamber; resolves over a few months, graft later if scarred"
-      ] }
+      {
+        phase: "medical",
+        items: [
+          "Stop eye rubbing; treat the allergy (antihistamine drops, cold compresses)",
+          "Glasses if adequate; otherwise rigid gas permeable (RGP) or scleral lenses (large lenses resting on the sclera)"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: [
+          "CXL: Dresden protocol (3 mW/cm² × 30 min) or accelerated (9 mW/cm² × 10 min), riboflavin 0.1% epi-off",
+          "Intracorneal ring segments (ICRS) for contact lens intolerance, clear cornea and adequate thickness at the tunnel; they do not stop progression",
+          "Graft: DALK preferred over PK if the endothelium is healthy"
+        ]
+      },
+      {
+        phase: "suivi",
+        items: ["Tomography after CXL to confirm stabilization; CXL can be repeated", "Offer screening to siblings and children"]
+      },
+      {
+        phase: "escalade",
+        items: [
+          "Acute hydrops: cycloplegic, NaCl 5% (hypertonic ointment that draws water out of the cornea), steroid, sometimes a gas bubble in the anterior chamber; resolves over a few months, graft later if scarred"
+        ]
+      }
     ],
     local: "In Québec, CXL is offered in specialized centers (public coverage varies, check locally); optometrists often detect keratoconus and fit the lenses. Epioxa (epi-on, FDA 2025): Canadian availability to be confirmed."
   },
@@ -665,7 +737,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-keratocone": {
     { name: "Corneal graft (DALK or PK)", dose: "DALK preferred; PK if Descemet is involved.", pitfall: "Recovery takes a year or more.", how: "DALK: diseased stroma removed down to Descemet and replaced, the patient’s endothelium preserved; PK: full thickness replaced, sutured.", why: "Central scar, contact lens intolerance.", pros: "Very good prognosis; DALK: no endothelial rejection, stronger globe.", cons: "Recovery over a year or more, astigmatism; DALK is technically difficult (conversion to PK if Descemet perforates).", cx: "PK: rejection, glaucoma, wound dehiscence with the slightest blow, lifelong." }
   ],
   treatment: {
-    first: ["**You (first line)**: stop eye rubbing, treat allergy, order tomography.", "**Ophthalmologist**: crosslinking (riboflavin + UVA); rigid lenses, graft if scarred."],
+    first: [
+      "**You (first line)**: stop eye rubbing, treat allergy, order tomography.",
+      "**Ophthalmologist**: crosslinking (riboflavin + UVA); rigid lenses, graft if scarred."
+    ],
     refer: ["Immediately for sudden vision loss with a white cornea — acute hydrops.", "This week for a young patient who progresses — CXL halts the disease."],
     pitfall: ["LASIK with abnormal tomography: risk of ectasia."],
     qc: ["CXL: public coverage varies by centre."]
@@ -679,11 +754,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-keratocone": {
   compare: {
     title: "Normal vs keratoconus (axial topography)",
     normal: { caption: "Regular, symmetric curvature." },
-    patho: { caption: "Keratoconus: asymmetric inferior steepening.", reveal: [
-      "Hot (steep) zone inferior to the center",
-      "Asymmetric bowtie with skewed axes",
-      "High Kmax: compare with previous maps to judge progression"
-    ] }
+    patho: {
+      caption: "Keratoconus: asymmetric inferior steepening.",
+      reveal: ["Hot (steep) zone inferior to the center", "Asymmetric bowtie with skewed axes", "High Kmax: compare with previous maps to judge progression"]
+    }
   }
 } });
 
@@ -691,7 +765,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-keratocone": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-fuchs": {
   title: "Fuchs endothelial dystrophy and corneal edema",
   oneLiner: "Woman aged 50 or older, blurred vision on waking that clears during the day: the endothelium pumps poorly, the cornea swells.",
-  definition: "An inherited, bilateral, asymmetric disease.\nThe cells that pump water out of the cornea die off and guttae appear.\nWith too few cells, the cornea swells and clouds, first in the morning.",
+  definition: "An inherited loss of the endothelium, the cornea's pump. The cornea swells, first in the morning.",
   anatomy: { text: "The endothelium is a single layer of hexagonal cells that do not divide: ≈ 3000 cells/mm² in young adults, ≈ 2500 around age 60–70. Its pumps (Na⁺/K⁺-ATPase) move water out of the stroma: this deturgescence keeps the cornea clear, at ≈ 540 µm. It rests on Descemet membrane, which it produces; the cornea generally decompensates below 400–500 cells/mm²." },
   causal: {
     title: "When the endothelial pump fails",
@@ -753,23 +827,33 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-fuchs": {
       { q: "Stromal scar or complex eye?", yes: "PK if scarred; DSAEK if complex eye.", no: "DMEK." }
     ],
     phases: [
-      { phase: "observation", items: [
-        "Guttae without edema: annual follow-up (specular microscopy, pachymetry)"
-      ] },
-      { phase: "medical", items: [
-        "NaCl 5% drops 4 times a day, ointment at bedtime",
-        "Hair dryer at arm’s length, warm air, for a few minutes on waking",
-        "Raised IOP: lower it, without a topical CAI",
-        "Painful bullae: soft bandage contact lens"
-      ] },
-      { phase: "chirurgie", items: [
-        "DMEK; DSAEK if complex eye; PK if scarred",
-        "Triple procedure: target slight myopia (≈ −0.5 to −1.0 D), because DMEK induces a hyperopic shift",
-        "Research: DSO ± ROCK inhibitor"
-      ] },
-      { phase: "suivi", items: [
-        "After DMEK: supine positioning for a few days (the bubble presses the graft in place), prolonged steroid, IOP; detached graft: air reinjection (rebubbling)"
-      ] }
+      {
+        phase: "observation",
+        items: ["Guttae without edema: annual follow-up (specular microscopy, pachymetry)"]
+      },
+      {
+        phase: "medical",
+        items: [
+          "NaCl 5% drops 4 times a day, ointment at bedtime",
+          "Hair dryer at arm’s length, warm air, for a few minutes on waking",
+          "Raised IOP: lower it, without a topical CAI",
+          "Painful bullae: soft bandage contact lens"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: [
+          "DMEK; DSAEK if complex eye; PK if scarred",
+          "Triple procedure: target slight myopia (≈ −0.5 to −1.0 D), because DMEK induces a hyperopic shift",
+          "Research: DSO ± ROCK inhibitor"
+        ]
+      },
+      {
+        phase: "suivi",
+        items: [
+          "After DMEK: supine positioning for a few days (the bubble presses the graft in place), prolonged steroid, IOP; detached graft: air reinjection (rebubbling)"
+        ]
+      }
     ],
     local: "In Québec, guttae are often found by the optometrist, who refers for edema, symptoms or cataract. Netarsudil (ROCK inhibitor): Canadian availability to be confirmed; experimental use in Fuchs."
   },
@@ -780,7 +864,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-fuchs": {
     { name: "Penetrating keratoplasty (PK)", dose: "Full-thickness graft, sutured.", pitfall: "Wound fragile for life, astigmatism.", how: "A full-thickness disc of cornea is replaced and sutured in place.", why: "Stromal scar, failed endothelial grafts.", pros: "Replaces all layers.", cons: "Slow recovery, astigmatism, lifelong wound fragility.", cx: "Rejection (highest risk), loose sutures, infection, glaucoma." }
   ],
   treatment: {
-    first: ["**You (first line)**: 5% NaCl drops QID or ointment at bedtime; hair dryer on waking.", "**Ophthalmologist**: endothelial graft (DMEK), sometimes with cataract surgery."],
+    first: [
+      "**You (first line)**: 5% NaCl drops QID or ointment at bedtime; hair dryer on waking.",
+      "**Ophthalmologist**: endothelial graft (DMEK), sometimes with cataract surgery."
+    ],
     refer: ["This week if edema blurs vision — discuss a graft.", "Routine follow-up for guttae without symptoms, and before any cataract surgery."],
     pitfall: ["Dorzolamide or brinzolamide drops: slow the endothelial pump."]
   },
@@ -793,13 +880,16 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-fuchs": {
   compare: {
     title: "Normal cornea vs decompensated Fuchs",
     normal: { caption: "Endothelium as a regular monolayer, thin, clear stroma." },
-    patho: { caption: "Guttae, sparse and stretched cells, stromal and epithelial edema (schematic).", reveal: [
-      "Guttae: excrescences of Descemet protruding toward the anterior chamber",
-      "Fewer, larger endothelial cells (polymegethism)",
-      "Thickened stroma, Descemet folds",
-      "Microcysts and bullae in the epithelium",
-      "Clinical correlation: blurred vision in the morning, glare"
-    ] }
+    patho: {
+      caption: "Guttae, sparse and stretched cells, stromal and epithelial edema (schematic).",
+      reveal: [
+        "Guttae: excrescences of Descemet protruding toward the anterior chamber",
+        "Fewer, larger endothelial cells (polymegethism)",
+        "Thickened stroma, Descemet folds",
+        "Microcysts and bullae in the epithelium",
+        "Clinical correlation: blurred vision in the morning, glare"
+      ]
+    }
   }
 } });
 
@@ -807,7 +897,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-fuchs": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-atypiques": {
   title: "Acanthamoeba and fungal keratitis",
   oneLiner: "Ulcer that does not heal on antibiotics: think ameba (contact lenses + water, severe pain) or fungus (branch, feathery borders). Never a steroid.",
-  definition: "Keratitis from slow, resistant organisms: an ameba (Acanthamoeba) or a fungus (Fusarium, Aspergillus, Candida).\nOften mistaken for herpes or bacteria, they need specific sampling and long treatment.",
+  definition: "Ameba (Acanthamoeba) or fungal keratitis. Slow, resistant, often mistaken for herpes.",
   anatomy: { text: "These organisms do not penetrate a healthy epithelium: they exploit a microlesion (contact lens, branch, soil). The corneal nerves run from the limbus toward the center in the stroma; the ameba follows them, hence the extreme pain. Fungal filaments can penetrate Descemet." },
   causal: {
     title: "From microlesion to refractory ulcer",
@@ -866,21 +956,29 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-atypiques": {
       { q: "Deep progression or perforation?", yes: "Therapeutic graft; consider intrastromal voriconazole.", no: "Continue, close follow-up." }
     ],
     phases: [
-      { phase: "medical", items: [
-        "Stop contact lenses and steroids; cycloplegic and oral analgesic",
-        "Ameba: biguanide ± propamidine hourly day and night, then tapered over months",
-        "Filamentous fungus: natamycin 5% hourly; repeated epithelial debridement to aid penetration; oral voriconazole adds no benefit (MUTT II)"
-      ] },
-      { phase: "chirurgie", items: [
-        "Therapeutic graft (penetrating keratoplasty: full-thickness replacement) for perforation or progression"
-      ] },
-      { phase: "suivi", items: [
-        "See every 1–3 days at first; treat for a few weeks (fungus) to several months (ameba), otherwise recurrence"
-      ] },
-      { phase: "escalade", items: [
-        "Failure: corneal biopsy if cultures are negative; intrastromal or intracameral voriconazole (fungus), graft; refer to a cornea center",
-        "Ameba: steroid only by the specialist, after weeks of anti-amebic therapy (scleritis, severe inflammation)"
-      ] }
+      {
+        phase: "medical",
+        items: [
+          "Stop contact lenses and steroids; cycloplegic and oral analgesic",
+          "Ameba: biguanide ± propamidine hourly day and night, then tapered over months",
+          "Filamentous fungus: natamycin 5% hourly; repeated epithelial debridement to aid penetration; oral voriconazole adds no benefit (MUTT II)"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Therapeutic graft (penetrating keratoplasty: full-thickness replacement) for perforation or progression"]
+      },
+      {
+        phase: "suivi",
+        items: ["See every 1–3 days at first; treat for a few weeks (fungus) to several months (ameba), otherwise recurrence"]
+      },
+      {
+        phase: "escalade",
+        items: [
+          "Failure: corneal biopsy if cultures are negative; intrastromal or intracameral voriconazole (fungus), graft; refer to a cornea center",
+          "Ameba: steroid only by the specialist, after weeks of anti-amebic therapy (scleritis, severe inflammation)"
+        ]
+      }
     ],
     local: "In Canada, PHMB, chlorhexidine and propamidine are compounded by hospital pharmacies; Akantior (polihexanide 0.08%, approved in Europe in 2024) and natamycin: Canadian availability to be confirmed. Confocal microscopy and PCR: only in some academic centers."
   },
@@ -890,7 +988,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-atypiques": {
     { name: "Voriconazole", dose: "Voriconazole 1% hourly; intrastromal if deep.", pitfall: "Inferior to natamycin for Fusarium (MUTT I).", how: "Azole antifungal as 1% drops, as an intrastromal or anterior chamber injection, or as tablets: prevents the fungus from making ergosterol.", why: "Yeasts (Candida), deep infection or natamycin failure.", pros: "Good penetration, broad spectrum.", cons: "Inferior to natamycin for Fusarium (MUTT I); oral adds no benefit (MUTT II).", cx: "Oral: transient visual disturbances, liver injury." }
   ],
   treatment: {
-    first: ["**You (first line)**: remove the lens, no steroid, refer the same day.", "**Ophthalmologist**: specific sampling; biguanide (ameba) or natamycin 5% (fungus)."],
+    first: [
+      "**You (first line)**: remove the lens, no steroid, refer the same day.",
+      "**Ophthalmologist**: specific sampling; biguanide (ameba) or natamycin 5% (fungus)."
+    ],
     refer: ["Same day — specific treatment, often in a cornea centre."],
     pitfall: ["Prednisolone or any steroid: makes a fungus flare.", "Topical anesthetic for ameba pain: never."],
     qc: ["Biguanides are compounded by hospital pharmacies."]
@@ -904,12 +1005,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-atypiques": {
   compare: {
     title: "Normal vs amebic pseudodendrite (fluorescein)",
     normal: { caption: "Intact epithelium, no fluorescein uptake." },
-    patho: { caption: "Acanthamoeba pseudodendrite: irregular lines without terminal bulbs.", reveal: [
-      "Coarse, raised epithelial lines",
-      "No terminal bulbs (≠ herpetic dendrite)",
-      "Faint, irregular fluorescein uptake",
-      "Look for radial keratoneuritis and a stromal ring"
-    ] }
+    patho: {
+      caption: "Acanthamoeba pseudodendrite: irregular lines without terminal bulbs.",
+      reveal: [
+        "Coarse, raised epithelial lines",
+        "No terminal bulbs (≠ herpetic dendrite)",
+        "Faint, irregular fluorescein uptake",
+        "Look for radial keratoneuritis and a stromal ring"
+      ]
+    }
   }
 } });
 
@@ -917,7 +1021,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-atypiques": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-brulure": {
   title: "Chemical burn",
   oneLiner: "Chemical in the eye: irrigate immediately, before the history and exam, until pH 7.0–7.5; alkalis are the worst.",
-  definition: "Ocular surface injury from an alkali or an acid, at work or at home.\nAlkalis penetrate and can destroy the limbal stem cells: immediate irrigation saves vision.",
+  definition: "A burn from an alkali or an acid. Alkalis penetrate and kill the limbus: irrigate immediately.",
   anatomy: { text: "The limbus houses the stem cells that renew the corneal epithelium; it acts as a barrier against the conjunctiva and is nourished by the limbal vascular arcades. The conjunctiva also lines the inside of the lids and forms fornices where particles hide. An alkali can reach the anterior chamber within seconds to minutes. After a severe burn: an opaque, vascularized cornea." },
   causal: {
     title: "From splash to vascularized cornea",
@@ -977,21 +1081,27 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-brulure": {
       { q: "Epithelium closed by day 10–14?", yes: "Taper the steroid quickly.", no: "Reduce the steroid; amniotic membrane, ± tarsorrhaphy." }
     ],
     phases: [
-      { phase: "medical", items: [
-        "**Irrigate first**: ≥ 30 min and several liters, topical anesthetic, lid speculum or irrigating lens",
-        "Double eversion, removal of particles with a moistened cotton tip, sweeping of the fornices",
-        "Preservative-free antibiotic, cycloplegic, IOP control",
-        "Grades II–IV: steroid ≤ 10–14 days, doxycycline, ascorbate; topical citrate (compounded, to be confirmed)"
-      ] },
-      { phase: "chirurgie", items: [
-        "Early amniotic membrane; symblepharon prevention (glass rod, ring); glue or tectonic (reinforcing) graft if melting"
-      ] },
-      { phase: "suivi", items: [
-        "Daily at first; watch for melt (weeks 2–3), IOP, symblepharon"
-      ] },
-      { phase: "escalade", items: [
-        "Limbal stem cell deficiency: limbal graft, then corneal graft; keratoprosthesis (artificial cornea) after repeated failures"
-      ] }
+      {
+        phase: "medical",
+        items: [
+          "**Irrigate first**: ≥ 30 min and several liters, topical anesthetic, lid speculum or irrigating lens",
+          "Double eversion, removal of particles with a moistened cotton tip, sweeping of the fornices",
+          "Preservative-free antibiotic, cycloplegic, IOP control",
+          "Grades II–IV: steroid ≤ 10–14 days, doxycycline, ascorbate; topical citrate (compounded, to be confirmed)"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Early amniotic membrane; symblepharon prevention (glass rod, ring); glue or tectonic (reinforcing) graft if melting"]
+      },
+      {
+        phase: "suivi",
+        items: ["Daily at first; watch for melt (weeks 2–3), IOP, symblepharon"]
+      },
+      {
+        phase: "escalade",
+        items: ["Limbal stem cell deficiency: limbal graft, then corneal graft; keratoprosthesis (artificial cornea) after repeated failures"]
+      }
     ],
     local: "In Québec, a work-related burn requires CNESST forms; the Centre antipoison du Québec (poison control) helps identify the agent and its toxicity."
   },
@@ -1003,7 +1113,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-brulure": {
     { name: "Limbal stem cell transplantation", dose: "CLAU, SLET or KLAL depending on the other eye.", pitfall: "KLAL: systemic immunosuppression.", how: "Supply of healthy limbus: CLAU (conjunctival limbal autograft from the other eye), SLET (small limbal fragments on amniotic membrane) or KLAL (keratolimbal allograft from a donor).", why: "Chronic limbal stem cell deficiency.", pros: "Stable surface, then a corneal graft becomes possible.", cons: "CLAU, SLET: healthy fellow eye required; KLAL: immunosuppression.", cx: "Rejection, failure, injury to the donor eye." }
   ],
   treatment: {
-    first: ["**You (first line)**: irrigate with 0.9% saline ≥ 30 min to pH 7.0–7.5, lids everted.", "**Ophthalmologist**: short steroid, doxycycline + vitamin C, amniotic membrane."],
+    first: [
+      "**You (first line)**: irrigate with 0.9% saline ≥ 30 min to pH 7.0–7.5, lids everted.",
+      "**Ophthalmologist**: short steroid, doxycycline + vitamin C, amniotic membrane."
+    ],
     refer: ["Immediately if white limbus, opaque cornea or rising pH — sight-threatening.", "Within 24 h for any alkali burn, even mild."],
     pitfall: ["Waiting for acuity or the product name before irrigating: minutes lost.", "Prednisolone beyond 10–14 days: corneal melting."],
     qc: ["At work: CNESST; Québec Poison Control Centre for the product."]
@@ -1017,12 +1130,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-brulure": {
   compare: {
     title: "Normal cornea vs alkali burn sequelae",
     normal: { caption: "Intact epithelium, thin, transparent stroma." },
-    patho: { caption: "Alkali that penetrated (schematic): edematous stroma, ruptured Bowman layer, anterior scar.", reveal: [
-      "White scar in the anterior stroma: a ruptured Bowman layer does not regenerate",
-      "Thickened, hazy stroma: iris hazy or not visible (grades III–IV)",
-      "Descemet folds: the endothelium was also injured",
-      "Not shown in the schematic: ischemic white limbus, epithelial defect, IOP, particles"
-    ] }
+    patho: {
+      caption: "Alkali that penetrated (schematic): edematous stroma, ruptured Bowman layer, anterior scar.",
+      reveal: [
+        "White scar in the anterior stroma: a ruptured Bowman layer does not regenerate",
+        "Thickened, hazy stroma: iris hazy or not visible (grades III–IV)",
+        "Descemet folds: the endothelium was also injured",
+        "Not shown in the schematic: ischemic white limbus, epithelial defect, IOP, particles"
+      ]
+    }
   }
 } });
 
@@ -1030,7 +1146,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-brulure": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-pterygion": {
   title: "Pterygium and ocular surface lesions (pinguecula, OSSN)",
   oneLiner: "Pinkish wing advancing from the nasal side onto the cornea after years of sun; atypical: think neoplasia.",
-  definition: "A wing-shaped fold of thickened conjunctiva that crosses the limbus onto the cornea, almost always nasally (UV).\nDistinguish it from a pinguecula and above all from a surface neoplasia (OSSN).",
+  definition: "A wing-shaped fold of conjunctiva growing onto the cornea, nasally (UV). Rule out a surface neoplasia.",
   anatomy: { text: "The conjunctiva, a vascularized mucous membrane covering the sclera, stops at the limbus, home to the stem cells of the corneal epithelium. The limbus acts as a barrier: it keeps the conjunctiva and its vessels from invading the cornea, which must remain transparent. The cornea focuses light coming from the temporal side onto the nasal limbus, hence the typical location. A pinguecula is a yellowish bump that stays on the conjunctiva; OSSN is an epithelial cancer that can mimic a pterygium." },
   causal: {
     title: "From sun to fibrovascular wing",
@@ -1090,21 +1206,29 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-pterygion": {
       { q: "Recurrence, or fleshy lesion in a young patient?", yes: "Add mitomycin C or amniotic membrane.", no: "Autograft alone." }
     ],
     phases: [
-      { phase: "observation", items: [
-        "Photo and measurement of encroachment (mm) at each visit"
-      ] },
-      { phase: "medical", items: [
-        "Wraparound glasses, hat; preservative-free tears",
-        "Flare: soft steroid (fluorometholone) for a few days, intraocular pressure (IOP) monitored",
-        "OSSN: topical chemotherapy drops (interferon alfa-2b, 5-fluorouracil, mitomycin C)"
-      ] },
-      { phase: "chirurgie", items: [
-        "Excision + conjunctival autograft, fibrin glue or sutures; ± mitomycin C or amniotic membrane",
-        "OSSN: “no-touch” excision (without handling the tumor) with clear margins + cryotherapy of the edges"
-      ] },
-      { phase: "suivi", items: [
-        "Steroid for a few weeks after excision, IOP; recurrence mainly in the first year; OSSN: prolonged follow-up"
-      ] }
+      {
+        phase: "observation",
+        items: ["Photo and measurement of encroachment (mm) at each visit"]
+      },
+      {
+        phase: "medical",
+        items: [
+          "Wraparound glasses, hat; preservative-free tears",
+          "Flare: soft steroid (fluorometholone) for a few days, intraocular pressure (IOP) monitored",
+          "OSSN: topical chemotherapy drops (interferon alfa-2b, 5-fluorouracil, mitomycin C)"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: [
+          "Excision + conjunctival autograft, fibrin glue or sutures; ± mitomycin C or amniotic membrane",
+          "OSSN: “no-touch” excision (without handling the tumor) with clear margins + cryotherapy of the edges"
+        ]
+      },
+      {
+        phase: "suivi",
+        items: ["Steroid for a few weeks after excision, IOP; recurrence mainly in the first year; OSSN: prolonged follow-up"]
+      }
     ],
     local: "In Québec, pterygium is less common than in tropical areas; it is seen mainly in outdoor workers and in patients who grew up in a sunny climate. Topical interferon and 5-fluorouracil: compounded preparations, availability to be confirmed."
   },
@@ -1115,7 +1239,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-pterygion": {
     { name: "Treatment of OSSN", dose: "Topical chemotherapy courses, or no-touch excision + cryotherapy.", qc: "Interferon, 5-FU: compounded preparations.", how: "Chemotherapy drops in cycles, or no-touch excision with clear margins and cryotherapy (freezing) of the edges.", why: "Confirmed or highly suspected OSSN.", pros: "Drops treat the entire surface.", cons: "Prolonged follow-up, recurrences.", cx: "Surface toxicity; limbal stem cell deficiency after extensive excision." }
   ],
   treatment: {
-    first: ["**You (first line)**: UV-blocking glasses, tears; fluorometholone for a few days in flares.", "**Ophthalmologist**: excision with conjunctival autograft; biopsy if atypical."],
+    first: [
+      "**You (first line)**: UV-blocking glasses, tears; fluorometholone for a few days in flares.",
+      "**Ophthalmologist**: excision with conjunctival autograft; biopsy if atypical."
+    ],
     refer: ["This week if gelatinous, white, pigmented or fast-growing — possible cancer.", "Otherwise routine follow-up; sooner if the visual axis is threatened."],
     pitfall: ["Bare-sclera excision without graft: frequent recurrence."]
   },
@@ -1128,12 +1255,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-pterygion": {
   compare: {
     title: "Topography: normal vs pterygium",
     normal: { caption: "Regular, nearly spherical curvature." },
-    patho: { caption: "Induced with-the-rule astigmatism (schematic): the nasal pterygium flattens the horizontal meridian.", reveal: [
-      "Vertical bowtie: steeper vertical meridian",
-      "In reality often asymmetric, with localized flattening in front of the head",
-      "Keratometry skewed: redo biometry after excision",
-      "Astigmatism often decreases after surgery"
-    ] }
+    patho: {
+      caption: "Induced with-the-rule astigmatism (schematic): flattened horizontal meridian.",
+      reveal: [
+        "Vertical bowtie: steeper vertical meridian",
+        "In reality often asymmetric, with localized flattening in front of the head",
+        "Keratometry skewed: redo biometry after excision",
+        "Astigmatism often decreases after surgery"
+      ]
+    }
   }
 } });
 
@@ -1141,7 +1271,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-pterygion": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-peripherie": {
   title: "Peripheral ulcerative keratitis, Terrien and scleritis",
   oneLiner: "Thinning peripheral cornea: lucid interval and blepharitis = marginal keratitis; crescent hugging the limbus with an epithelial defect = PUK, urgent systemic workup.",
-  definition: "The peripheral cornea, near the limbus, has its own diseases.\nInflammatory: marginal keratitis, PUK, Mooren; degenerative: Terrien.\nPUK melts the stroma and can reveal serious vasculitis.",
+  definition: "Diseases of the cornea near the limbus. Inflammatory (PUK, Mooren) or degenerative (Terrien).",
   anatomy: { text: "The peripheral cornea is nourished by the limbal vascular arcades: complement and immune complexes (antibodies bound to their target) deposit there, and inflammatory cells release collagenases that dissolve the stroma. The sclera shares the same collagen and the same vessels: PUK and scleritis often go together. Scleritis is often associated; dellen is a mechanical cause." },
   causal: {
     title: "From systemic disease to perforation",
@@ -1210,22 +1340,27 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-peripherie": {
       { q: "Deep redness that doesn’t blanch?", yes: "Scleritis: oral NSAIDs; necrotizing: immunosuppression.", no: "Episcleritis: chilled tears ± short oral NSAID." }
     ],
     phases: [
-      { phase: "medical", items: [
-        "Marginal keratitis: lid hygiene, soft steroid for a few days",
-        "PUK, necrotizing scleritis: systemic corticosteroids, then an immunosuppressant (rheumatology)",
-        "Preservative-free lubricants, oral doxycycline; no topical NSAIDs",
-        "Non-necrotizing scleritis: oral NSAIDs first"
-      ] },
-      { phase: "chirurgie", items: [
-        "Cyanoacrylate glue + bandage contact lens; tectonic graft for a large hole",
-        "Terrien: rigid or scleral lens; lamellar graft for extreme thinning"
-      ] },
-      { phase: "suivi", items: [
-        "PUK: see every 1–3 days at first, then space out; IOP and cataract on steroids"
-      ] },
-      { phase: "escalade", items: [
-        "Progression on prednisone: cyclophosphamide or rituximab, per rheumatology"
-      ] }
+      {
+        phase: "medical",
+        items: [
+          "Marginal keratitis: lid hygiene, soft steroid for a few days",
+          "PUK, necrotizing scleritis: systemic corticosteroids, then an immunosuppressant (rheumatology)",
+          "Preservative-free lubricants, oral doxycycline; no topical NSAIDs",
+          "Non-necrotizing scleritis: oral NSAIDs first"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: ["Cyanoacrylate glue + bandage contact lens; tectonic graft for a large hole", "Terrien: rigid or scleral lens; lamellar graft for extreme thinning"]
+      },
+      {
+        phase: "suivi",
+        items: ["PUK: see every 1–3 days at first, then space out; IOP and cataract on steroids"]
+      },
+      {
+        phase: "escalade",
+        items: ["Progression on prednisone: cyclophosphamide or rituximab, per rheumatology"]
+      }
     ],
     local: "In Québec, PUK and necrotizing scleritis warrant same-day contact with the center’s rheumatology or internal medicine service; access to biologics to be checked locally."
   },
@@ -1237,7 +1372,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-peripherie": {
     { name: "Cyanoacrylate glue, bandage contact lens, tectonic graft", dose: "Glue if the hole is ≤ 2–3 mm, else tectonic graft.", pitfall: "Melts again if the disease is active.", how: "The glue plugs the hole and inhibits neutrophils; the graft replaces the melted tissue.", why: "Descemetocele, perforation ≤ 2–3 mm (glue) or larger (graft).", pros: "Seals the globe quickly.", cons: "Re-melting if the disease is active.", cx: "Glue dislodgement, rejection." }
   ],
   treatment: {
-    first: ["**You (first line)**: marginal keratitis: lid hygiene; scleritis: oral ibuprofen or naproxen.", "**Ophthalmologist**: mild steroid, systemic steroids with rheumatology, glue if perforated."],
+    first: [
+      "**You (first line)**: marginal keratitis: lid hygiene; scleritis: oral ibuprofen or naproxen.",
+      "**Ophthalmologist**: mild steroid, systemic steroids with rheumatology, glue if perforated."
+    ],
     refer: ["Same day for a thinning crescent, painful scleritis or white patch — PUK or necrosis.", "Immediately for descemetocele or positive Seidel — open globe."],
     pitfall: ["Ketorolac or another topical NSAID on a thinned cornea: melting."],
     qc: ["PUK and necrotizing scleritis: centre rheumatology the same day."]
@@ -1251,12 +1389,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-peripherie": {
   compare: {
     title: "Normal vs Terrien (cornea in profile)",
     normal: { caption: "Normal cornea in profile: regular curve, uniform thickness." },
-    patho: { caption: "Terrien degeneration in profile (source).", reveal: [
-      "At the superior edge, the corneal curve becomes irregular and opaque: thinned zone",
-      "White-yellowish deposit at the leading edge of the lesion: lipid line",
-      "White eye, no redness: noninflammatory disease",
-      "According to the source: intact epithelium and pannus over the thinned zone"
-    ] }
+    patho: {
+      caption: "Terrien degeneration in profile (source).",
+      reveal: [
+        "At the superior edge, the corneal curve becomes irregular and opaque: thinned zone",
+        "White-yellowish deposit at the leading edge of the lesion: lipid line",
+        "White eye, no redness: noninflammatory disease",
+        "According to the source: intact epithelium and pannus over the thinned zone"
+      ]
+    }
   }
 } });
 
@@ -1264,7 +1405,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-peripherie": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-depots": {
   title: "Corneal opacities, deposits and degenerations",
   oneLiner: "Facing an opacity: which layer, which color, which context? These three questions lead to the deposit, the workup and the treatment.",
-  definition: "A degeneration is an acquired change (age, disease), often asymmetric.\nA deposit is a substance from elsewhere: lipid, calcium, iron, copper, blood, drug.\nEach has its own layer and color.",
+  definition: "Degeneration: an acquired change. Deposit: a substance from elsewhere, with its own layer and color.",
   anatomy: { text: "Each layer retains its own deposits: epithelium (whorl-like drug deposits, iron lines), Bowman (calcium), stroma (lipid, blood, scars), peripheral Descemet (copper). The normal cornea has no vessels: the lipid in lipid keratopathy leaks from abnormal vessels growing in from the limbus (corneal arcus, by contrast, forms without vessels). To localize the layer: thin slit beam and retroillumination (lighting by the reflex from the iris or fundus). Layer + color + context: chalky white in Bowman = calcium (band); grey-white peripheral ring = lipid (arcus); yellow at vessel tips = lipid keratopathy; golden brown whorl = drug or Fabry, Descemet ring = copper (Wilson), around a foreign body = rust; diffuse red-brown to green = blood; crystals in a graft = infection. Peripheral brown ring with liver or nervous system involvement: Wilson disease." },
   causal: {
     title: "From context to visible deposit",
@@ -1332,25 +1473,34 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-depots": {
       { q: "Stromal deposit with vessels or blood?", yes: "Lipid: close the vessels; blood: IOP, washout.", no: "Dystrophy, haze or scar?" }
     ],
     phases: [
-      { phase: "observation", items: [
-        "Arcus, cornea verticillata: reassure, document"
-      ] },
-      { phase: "medical", items: [
-        "Lubricants; bandage contact lens if the band is irritating",
-        "Topical steroid: haze, active interstitial keratitis",
-        "Crystalline infection: intensive antibiotic guided by culture, steroid reduced cautiously"
-      ] },
-      { phase: "laser", items: [
-        "PTK ± mitomycin C; laser or diathermy of the feeder vessels"
-      ] },
-      { phase: "chirurgie", items: [
-        "Band: epithelial debridement then disodium EDTA",
-        "Hyphema: washout for persistently raised IOP or early blood staining",
-        "Deep central opacity: DALK or PK"
-      ] },
-      { phase: "suivi", items: [
-        "Band: recurs if the cause persists; Wilson: the ring fades on treatment"
-      ] }
+      {
+        phase: "observation",
+        items: ["Arcus, cornea verticillata: reassure, document"]
+      },
+      {
+        phase: "medical",
+        items: [
+          "Lubricants; bandage contact lens if the band is irritating",
+          "Topical steroid: haze, active interstitial keratitis",
+          "Crystalline infection: intensive antibiotic guided by culture, steroid reduced cautiously"
+        ]
+      },
+      {
+        phase: "laser",
+        items: ["PTK ± mitomycin C; laser or diathermy of the feeder vessels"]
+      },
+      {
+        phase: "chirurgie",
+        items: [
+          "Band: epithelial debridement then disodium EDTA",
+          "Hyphema: washout for persistently raised IOP or early blood staining",
+          "Deep central opacity: DALK or PK"
+        ]
+      },
+      {
+        phase: "suivi",
+        items: ["Band: recurs if the cause persists; Wilson: the ring fades on treatment"]
+      }
     ],
     local: "In Québec, optometrists often refer these opacities; systemic workup with the family physician. Disodium EDTA: hospital preparation, availability to be confirmed."
   },
@@ -1361,7 +1511,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-depots": {
     { name: "PTK ± mitomycin C", dose: "Excimer laser ± mitomycin C against haze.", pitfall: "Superficial only.", how: "Excimer laser that smooths the surface; mitomycin C slows the return of haze.", why: "Persistent haze, residual calcium.", pros: "Avoids a graft.", cons: "Superficial only.", cx: "Delayed healing, recurrence." }
   ],
   treatment: {
-    first: ["**You (first line)**: remove a superficial foreign body; blood tests by color (lipids, calcium, copper).", "**Ophthalmologist**: rust ring removal, EDTA for calcium, vessel closure."],
+    first: [
+      "**You (first line)**: remove a superficial foreign body; blood tests by color (lipids, calcium, copper).",
+      "**Ophthalmologist**: rust ring removal, EDTA for calcium, vessel closure."
+    ],
     refer: ["Same day for crystals or infiltrate on a graft — infection.", "This week for a rust ring or a bothersome calcium band — office procedure."],
     pitfall: ["Digging out deep rust with a needle: risk of perforation."]
   },
@@ -1374,12 +1527,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-depots": {
   compare: {
     title: "Normal cornea vs band keratopathy",
     normal: { caption: "Normal cornea: transparent, sharp iris detail." },
-    patho: { caption: "Band keratopathy; hyperparathyroidism per the source caption.", reveal: [
-      "Horizontal white-gray band in the inferior half of the cornea, in front of the pupil",
-      "Clear superior cornea, in the area covered by the lid",
-      "Granular texture of the band, with small clearer areas",
-      "No visible infiltrate or ulcer: chronic deposit, not an infection"
-    ] }
+    patho: {
+      caption: "Band keratopathy; hyperparathyroidism per the source caption.",
+      reveal: [
+        "Horizontal white-gray band in the inferior half of the cornea, in front of the pupil",
+        "Clear superior cornea, in the area covered by the lid",
+        "Granular texture of the band, with small clearer areas",
+        "No visible infiltrate or ulcer: chronic deposit, not an infection"
+      ]
+    }
   }
 } });
 
@@ -1387,10 +1543,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-depots": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-dystrophies": {
   title: "Corneal dystrophies",
   oneLiner: "Bilateral, symmetric opacities, without vessels or inflammation, often familial: think dystrophy, localize the layer, then protect the surface.",
-  definition: "An inherited disease: an abnormal substance builds up in one corneal layer, in both eyes.\nNo inflammation or vessels; a degeneration, by contrast, is acquired and often asymmetric.",
+  definition: "Inherited: an abnormal substance builds up in one corneal layer. Both eyes, without inflammation.",
   anatomy: { text: "The cornea has five classic layers: epithelium (≈ 50 µm, self-renewing), Bowman layer (8–12 µm, does not regenerate), stroma (≈ 90% of the thickness, highly ordered collagen), Descemet and endothelium (a pump that does not divide). Any deposit that disrupts this order scatters light. The IC3D classification (International Committee for Classification of Corneal Dystrophies) sorts dystrophies by layer and by gene; it groups Reis-Bücklers, granular and lattice under the TGFBI gene. Stain mnemonic: “Marilyn Monroe Always Gets Her Men in LA City” (Macular – Mucopolysaccharides – Alcian; Granular – Hyaline – Masson; Lattice – Amyloid – Congo)." },
   causal: {
-    title: "From gene to opacity, then to recurrence",
+    title: "From gene to opacity",
     steps: [
       { label: "Inherited mutation", detail: "Often dominant (50% risk per child): TGFBI for Reis-Bücklers, granular and lattice; CHST6, recessive, for macular.", kind: "cause" },
       { label: "Abnormal substance accumulating", detail: "Hyaline (granular), amyloid (lattice), mucopolysaccharides (macular), over years.", kind: "mecanisme" },
@@ -1455,22 +1611,26 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-dystrophies": {
       { q: "Guttae or Descemet lesions?", yes: "Guttae: Fuchs; vesicles or bands: PPCD (IOP).", no: "Reconsider: acquired deposit?" }
     ],
     phases: [
-      { phase: "observation", items: [
-        "Functional vision: annual follow-up, photos, examination of family members"
-      ] },
-      { phase: "medical", items: [
-        "Erosions: lubricants, NaCl 5% ointment at bedtime, bandage contact lens",
-        "PPCD with ↑ IOP: treat the glaucoma"
-      ] },
-      { phase: "laser", items: [
-        "PTK: superficial opacities; can be repeated; possible hyperopic shift"
-      ] },
-      { phase: "chirurgie", items: [
-        "DALK if the endothelium is healthy; PK if the full thickness or the endothelium is involved; DMEK or DSAEK for endothelial edema"
-      ] },
-      { phase: "suivi", items: [
-        "Recurrence in the graft: rapid (Reis-Bücklers), frequent (granular, lattice), less common (macular)"
-      ] }
+      {
+        phase: "observation",
+        items: ["Functional vision: annual follow-up, photos, examination of family members"]
+      },
+      {
+        phase: "medical",
+        items: ["Erosions: lubricants, NaCl 5% ointment at bedtime, bandage contact lens", "PPCD with ↑ IOP: treat the glaucoma"]
+      },
+      {
+        phase: "laser",
+        items: ["PTK: superficial opacities; can be repeated; possible hyperopic shift"]
+      },
+      {
+        phase: "chirurgie",
+        items: ["DALK if the endothelium is healthy; PK if the full thickness or the endothelium is involved; DMEK or DSAEK for endothelial edema"]
+      },
+      {
+        phase: "suivi",
+        items: ["Recurrence in the graft: rapid (Reis-Bücklers), frequent (granular, lattice), less common (macular)"]
+      }
     ],
     local: "In Québec, the optometrist often finds these opacities; refer for ↓ vision, erosions or planned refractive surgery. Genetic testing: access and coverage to be checked locally (medical genetics)."
   },
@@ -1481,7 +1641,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-dystrophies": {
     { name: "Penetrating keratoplasty (PK)", dose: "Full-thickness graft if the endothelium is diseased.", pitfall: "Slow recovery, astigmatism.", how: "Replacement of a full-thickness disc of cornea, sutured.", why: "Full-thickness involvement or diseased endothelium.", pros: "Replaces all layers.", cons: "Slow recovery, astigmatism.", cx: "Rejection, glaucoma, recurrence in the graft." }
   ],
   treatment: {
-    first: ["**You (first line)**: erosions: 5% NaCl ointment at bedtime; avoid refractive surgery.", "**Ophthalmologist**: PTK for superficial opacities; DALK or PK if deep."],
+    first: [
+      "**You (first line)**: erosions: 5% NaCl ointment at bedtime; avoid refractive surgery.",
+      "**Ophthalmologist**: PTK for superficial opacities; DALK or PK if deep."
+    ],
     refer: ["Routine ophthalmology follow-up — sooner if vision ↓, repeated erosions or planned LASIK."],
     pitfall: ["LASIK or PRK with a TGFBI dystrophy: deposits proliferate.", "PTK: deposits come back over time."]
   },
@@ -1493,13 +1656,16 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-dystrophies": {
   mnemonic: { title: "Stains for the stromal dystrophies", text: "Macular: mucopolysaccharides, Alcian blue. Granular: hyaline, Masson. Lattice: amyloid, Congo red." },
   compare: {
     title: "Normal cornea vs granular dystrophy",
-    normal: { caption: "Normal cornea at the slit lamp: transparent, no deposit." },
-    patho: { caption: "Granular dystrophy: breadcrumb opacities (source: EyeRounds).", reveal: [
-      "Sharply demarcated white-gray opacities, as grains or small rings, in front of the pupil",
-      "Some lesions aligned in streaks in the inferior half",
-      "Clear cornea between the opacities",
-      "Lesions clustered in the central cornea; no vessels"
-    ] }
+    normal: { caption: "Transparent cornea, no deposit." },
+    patho: {
+      caption: "Granular dystrophy: breadcrumb opacities (source: EyeRounds).",
+      reveal: [
+        "Sharply demarcated white-gray opacities, as grains or small rings, in front of the pupil",
+        "Some lesions aligned in streaks in the inferior half",
+        "Clear cornea between the opacities",
+        "Lesions clustered in the central cornea; no vessels"
+      ]
+    }
   }
 } });
 
@@ -1507,7 +1673,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-dystrophies": {
 G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-greffe": {
   title: "Corneal graft: rejection and complications (PK, DSAEK, DMEK)",
   oneLiner: "Corneal graft patient with a red eye, photophobia, ↓ vision or pain: rejection until proven otherwise, intensive steroids the same day.",
-  definition: "A corneal graft replaces the diseased part with donor tissue, full thickness or one layer only.\nRejection, an immune attack on the graft, is often reversible if treated early.",
+  definition: "A graft replaces the diseased cornea, whole or one layer. Rejection treated early is often reversible.",
   anatomy: { text: "The cornea has immune privilege: no blood or lymphatic vessels, and an anterior chamber that dampens immunity; neovascularization (abnormal vessels growing in from the limbus) causes this privilege to be lost. Depending on the diseased layer, the graft replaces the full thickness (PK, penetrating keratoplasty), the stroma only while keeping the patient’s endothelium (DALK, deep anterior lamellar keratoplasty), or the endothelium and Descemet, with a thin layer of stroma (DSAEK) or without (DMEK). Rejection remains a major cause of graft failure." },
   causal: {
     title: "From foreign graft to failure",
@@ -1573,22 +1739,30 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-greffe": {
       { q: "Graft still edematous after a few weeks?", yes: "Failure: regraft (often DMEK or DSAEK).", no: "Slow taper, then maintenance dose." }
     ],
     phases: [
-      { phase: "medical", items: [
-        "Rejection: prednisolone acetate 1% hourly (or difluprednate 0.05%, Canadian availability to be confirmed), then slow taper",
-        "Cycloplegic (cyclopentolate: rests the ciliary muscle)",
-        "Severe: sub-Tenon triamcinolone (under Tenon capsule, the envelope of the globe) or oral prednisone",
-        "History of herpes: valacyclovir 500 mg PO TID or acyclovir 400 mg PO 5 times/day, then prophylaxis"
-      ] },
-      { phase: "chirurgie", items: [
-        "Removal of loose sutures; selective topography-guided removal",
-        "Air reinjection (rebubbling); repair of a dehisced wound; regraft; keratoprosthesis (artificial cornea) after repeated failures"
-      ] },
-      { phase: "suivi", items: [
-        "Steroid tapered over months, often 1 drop a day long term; IOP at every visit; protective eyewear after PK"
-      ] },
-      { phase: "escalade", items: [
-        "High risk: systemic immunosuppression (cyclosporine, mycophenolate) with internal medicine"
-      ] }
+      {
+        phase: "medical",
+        items: [
+          "Rejection: prednisolone acetate 1% hourly (or difluprednate 0.05%, Canadian availability to be confirmed), then slow taper",
+          "Cycloplegic (cyclopentolate: rests the ciliary muscle)",
+          "Severe: sub-Tenon triamcinolone (under Tenon capsule, the envelope of the globe) or oral prednisone",
+          "History of herpes: valacyclovir 500 mg PO TID or acyclovir 400 mg PO 5 times/day, then prophylaxis"
+        ]
+      },
+      {
+        phase: "chirurgie",
+        items: [
+          "Removal of loose sutures; selective topography-guided removal",
+          "Air reinjection (rebubbling); repair of a dehisced wound; regraft; keratoprosthesis (artificial cornea) after repeated failures"
+        ]
+      },
+      {
+        phase: "suivi",
+        items: ["Steroid tapered over months, often 1 drop a day long term; IOP at every visit; protective eyewear after PK"]
+      },
+      {
+        phase: "escalade",
+        items: ["High risk: systemic immunosuppression (cyclosporine, mycophenolate) with internal medicine"]
+      }
     ],
     local: "In Québec, grafts come from post-mortem tissue donation, with the consent of the person or their family; a graft patient must be able to be seen the same day for any RSVP symptom."
   },
@@ -1599,7 +1773,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-greffe": {
     { name: "Air reinjection (rebubbling)", dose: "New air or SF6 bubble, patient lying face up.", pitfall: "Sometimes needs repeating.", how: "A new air or gas bubble (SF6, which lasts longer) injected into the anterior chamber to reattach the graft; patient positioned supine.", why: "Centrally detached DMEK or DSAEK graft.", pros: "Simple, often effective.", cons: "Sometimes needs repeating.", cx: "↑ IOP (bubble causing pupillary block), endothelial cell loss." }
   ],
   treatment: {
-    first: ["**You (first line)**: check the steroid drops are being used; never stop them.", "**Ophthalmologist**: prednisolone 1% hourly for rejection; cultures if infiltrate."],
+    first: [
+      "**You (first line)**: check the steroid drops are being used; never stop them.",
+      "**Ophthalmologist**: prednisolone 1% hourly for rejection; cultures if infiltrate."
+    ],
     refer: ["Same day for any graft patient with RSVP — rejection treated early is reversible.", "Immediately after a blow to a PK — the wound can open."],
     pitfall: ["Raising prednisolone on an uncultured infiltrate: masked infection."],
     qc: ["Grafts come from tissue donation after death."]
@@ -1613,11 +1790,14 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-greffe": {
   compare: {
     title: "Anterior segment: normal vs endothelial rejection",
     normal: { caption: "White eye, clear cornea." },
-    patho: { caption: "Endothelial rejection (schematic): injected eye and keratic precipitates.", reveal: [
-      "Redness around the limbus (ciliary flush)",
-      "Keratic precipitates (KP) in the inferior half",
-      "Look for: Khodadoust line and edema confined to the graft",
-      "The peripheral recipient cornea stays clear"
-    ] }
+    patho: {
+      caption: "Endothelial rejection (schematic): injected eye and keratic precipitates.",
+      reveal: [
+        "Redness around the limbus (ciliary flush)",
+        "Keratic precipitates (KP) in the inferior half",
+        "Look for: Khodadoust line and edema confined to the graft",
+        "The peripheral recipient cornea stays clear"
+      ]
+    }
   }
 } });

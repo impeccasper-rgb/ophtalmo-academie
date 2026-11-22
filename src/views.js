@@ -124,9 +124,9 @@ Views.accueil = {
     return '<div class="hero2"><div class="hero2-in"><div class="stack hero-text"><div class="eyebrow">' + t('home.eyebrow') + '</div><h1>' + t('home.h1') + '</h1><p class="hero-lead">' + t('home.lead') + '</p>' + cd +
       '<div class="row">' + last + '<a class="btn hero-btn ghost" href="#reviser">' + t('home.today', { n: q.length }) + '</a></div></div><div class="hero-eye">' + eyeSvg() + '</div></div></div>' +
       '<div class="page">' +
-      '<div class="sec"><div class="section-h"><span class="k">1</span><h2>' + t('home.level.h') + '</h2></div><p class="small muted">' + t('home.level.d') + '</p><div class="level-grid">' + levels + '</div></div>' +
-      '<div class="today-grid">' + Daily.card() + nxt + '<a class="next-step alt" href="#cartes"><span class="eyebrow">' + t('home.srs') + '</span><b>' + t('home.srs.n', { n: q.length }) + '</b><span class="small">' + t('home.srs.d') + '</span></a>' + (Views.investigations ? '<a class="next-step alt2" href="#investigations"><span class="eyebrow">' + t('brand.method') + '</span><b>' + t('nav.inv') + '</b><span class="small">' + t('home.inv.d', { n: ((window.OPH && OPH.invPractice) || []).length }) + '</span></a>' : '<a class="next-step alt2" href="#jeu-images"><span class="eyebrow">' + t('home.game') + '</span><b>' + t('game.img') + '</b><span class="small">' + t('home.game.d', { n: ImgGame.pool('').length }) + '</span></a>') + '</div>' +
-      '<div class="sec"><div class="section-h"><span class="k">2</span><h2>' + t('home.mod.h') + '</h2></div><div class="mod-grid">' + mods + '</div></div>' +
+      // level choice lives in Progression and the « Niveau » chip (home ≤ 2.5 screens)
+      '<div class="today-grid">' + Daily.card() + nxt + (Views.investigations ? '<a class="next-step alt2" href="#investigations"><span class="eyebrow">' + t('brand.method') + '</span><b>' + t('nav.inv') + '</b><span class="small">' + t('home.inv.d', { n: ((window.OPH && OPH.invPractice) || []).length }) + '</span></a>' : '<a class="next-step alt2" href="#jeu-images"><span class="eyebrow">' + t('home.game') + '</span><b>' + t('game.img') + '</b><span class="small">' + t('home.game.d', { n: ImgGame.pool('').length }) + '</span></a>') + '</div>' +
+      '<div class="sec"><div class="section-h"><span class="k">1</span><h2>' + t('home.mod.h') + '</h2></div><div class="mod-grid">' + mods + '</div></div>' +
       '<p class="xs muted disclaimer">' + t('disclaimer') + ' · <a href="#sources">' + t('nav.sources') + '</a></p></div>';
   }
 };
@@ -352,8 +352,9 @@ function capsuleCards(c, m) {
       return (media ? '<div class="cap-media">' + media + '</div>' : '') + '<p class="read">' + T(s2.text, scope) + '</p>' + levelBlocks([{ lvl: 2, title: t('f.more'), html: s2.bullets && s2.bullets.length ? '<ul class="blist read">' + s2.bullets.map(function (b) { return '<li>' + T(b, scope) + '</li>'; }).join('') + '</ul>' : '' }]);
     } });
   });
-  if ((c.toolbox || []).length) cards.push({ title: t('caps.tools.h'), body: function (scope) { return '<p class="small muted">' + t('caps.tools.d') + '</p>' + c.toolbox.map(function (tl) {
-    return '<details class="acc"><summary>' + U.esc(tl.name) + (I18N.lang === 'en' ? '' : ' <span class="small muted" style="font-weight:400"><i>' + U.esc(tl.en) + '</i></span>') + '</summary><div class="acc-b"><div class="kv"><span class="k">' + t('caps.what') + '</span><span>' + T(tl.what, scope) + '</span></div><div class="kv"><span class="k">' + t('caps.how') + '</span><span>' + T(tl.how, scope) + '</span></div><div class="kv"><span class="k">' + t('caps.when') + '</span><span>' + T(tl.when, scope) + '</span></div><div class="kv"><span class="k">' + t('caps.cx') + '</span><span>' + T(tl.cx, scope) + '</span></div></div></details>'; }).join(''); } });
+  if ((c.toolbox || []).length) cards.push({ title: t('caps.tools.h'), body: function (scope) { // compact chips: one tool open at a time
+    return '<p class="small muted">' + t('caps.tools.tap') + '</p><div class="chips tool-chips">' + c.toolbox.map(function (tl, k) { return '<button type="button" class="chip" data-tool="' + k + '" aria-pressed="false">' + U.esc(tl.name) + '</button>'; }).join('') + '</div>' +
+      c.toolbox.map(function (tl, k) { return '<div class="card tool-panel" data-toolp="' + k + '" hidden><b>' + U.esc(tl.name) + '</b><div class="kv"><span class="k">' + t('caps.what') + '</span><span>' + T(tl.what, scope) + '</span></div><div class="kv"><span class="k">' + t('caps.how') + '</span><span>' + T(tl.how, scope) + '</span></div><div class="kv"><span class="k">' + t('caps.when') + '</span><span>' + T(tl.when, scope) + '</span></div><div class="kv" data-dz="2"><span class="k">' + t('caps.cx') + '</span><span>' + T(tl.cx, scope) + '</span></div></div>'; }).join(''); } });
   if ((c.vocab || []).length) cards.push({ title: t('caps.vocab'), body: function () { return '<details class="acc"><summary>' + t('caps.vocab') + ' (' + c.vocab.length + ')</summary><div class="tbl-wrap acc-b"><table class="tbl"><tbody>' + c.vocab.map(function (v) { return '<tr><td>' + U.esc(v.term) + '</td><td>' + U.md(v.def) + '</td></tr>'; }).join('') + '</tbody></table></div></details>' + (h ? '<div class="stack">' + trainBlock(c.id) + '</div>' : ''); } });
   return cards;
 }
@@ -372,11 +373,13 @@ function capsuleCardView(id, n) {
       '<nav class="row fstep-nav"><a class="btn ghost" data-fprev href="' + (i > 0 ? href(i - 1) : '#module-' + m.toLowerCase()) + '">← ' + U.esc(i > 0 ? (i - 1 === 0 ? c.title : cards[i - 1].title) : 'Module ' + m) + '</a><a class="btn primary" data-fnext href="' + (i < cards.length - 1 ? href(i + 1) : (first ? '#' + first.id + '/voir' : '#module-' + m.toLowerCase())) + '">' + U.esc(i < cards.length - 1 ? cards[i + 1].title : (first ? I18N.title(first) : 'Module ' + m)) + ' →</a></nav></div>';
   }, after: function (host) {
     mountTrainers(host);
+    var tool = function (ev) { var b = ev.target.closest('[data-tool]'); if (!b) return; var k = b.getAttribute('data-tool'), on = b.getAttribute('aria-pressed') !== 'true'; U.$$('[data-tool]', host).forEach(function (x) { x.setAttribute('aria-pressed', String(x === b && on)); }); U.$$('[data-toolp]', host).forEach(function (pn) { pn.hidden = !(on && pn.getAttribute('data-toolp') === k); }); };
+    host.addEventListener('click', tool);
     var go = function (sel) { var a = U.$(sel, host); if (a) location.hash = a.getAttribute('href').slice(1); };
     var arrows = function (ev) { if (ev.defaultPrevented || ev.altKey || ev.ctrlKey || ev.metaKey || /input|select|textarea/i.test(ev.target.tagName || '')) return; if (U.$('#lightbox:not([hidden])') || U.$('#drawer:not([hidden])')) return; if (ev.key === 'ArrowRight') go('[data-fnext]'); else if (ev.key === 'ArrowLeft') go('[data-fprev]'); };
     document.addEventListener('keydown', arrows);
     if (U.wordsDev()) console.info('[words] ' + id + '/' + (n || 1) + ': ' + U.wordsVisible(U.$('[data-step-body]', host)) + ' visible words');
-    return function () { document.removeEventListener('keydown', arrows); };
+    return function () { document.removeEventListener('keydown', arrows); host.removeEventListener('click', tool); };
   } };
 }
 
@@ -536,7 +539,7 @@ function ficheView(f, step) {
       // compact header (≤ 25 % of a phone screen): module code + one tag + level chip, one-line title, 4 pips
       var tag1 = si === 0 ? ((f.tags || []).filter(function (x) { return x === 'urgent'; })[0] || (f.tags || []).filter(function (x) { return x === 'frequent'; })[0] || '') : '';
       h.push('<div class="fiche-bar"><div class="fb-top"><span class="eyebrow">' + m + (idx + 1) + ' · ' + L.modules[m] + '</span>' + (tag1 ? L.tag(tag1) : '') + '<button type="button" class="chip lvl-chip" data-act="lvl-open" aria-expanded="false" aria-controls="lvl-pop">' + t('f.level.chip', { l: DEPTHS[dpt].t }) + '</button></div>' +
-        '<h1 class="fb-title" title="' + U.esc(I18N.title(f)) + '">' + U.esc(I18N.title(f)) + (window.I18N ? I18N.badge(f) : '') + '</h1>' +
+        '<h1 class="fb-title' + (I18N.title(f).length > 38 ? ' long' : '') + '">' + U.esc(I18N.title(f)) + (window.I18N ? I18N.badge(f) : '') + '</h1>' +
         '<div class="lvl-pop" id="lvl-pop" hidden><span class="xs muted">' + t('f.level') + '</span>' + depthSeg(true) + '</div>' +
         '<nav class="fsteps" aria-label="' + t('f.steps.aria') + '"><ol>' + FSTEPS.map(function (s2, k) { return '<li class="' + (k === si ? 'on' : k < si ? 'done' : '') + '"><a href="#' + f.id + '/' + s2 + '"' + (k === si ? ' aria-current="step"' : '') + '><span class="pip" aria-hidden="true">' + (k + 1) + '</span><span class="lab">' + t(FSTEP_KEY[s2]) + '</span></a></li>'; }).join('') + '</ol></nav></div>');
       var body = '';
@@ -588,8 +591,7 @@ function ficheView(f, step) {
             { lvl: 2, title: t('f.othergame'), html: qids.length ? trainBlock(f.id) : '' }
           ]) +
           '<details class="acc src-acc"><summary>' + t('f.sources') + '</summary><div style="padding:0 14px 14px">' + (links.length ? '<ul class="src-list">' + links.map(function (l) { return '<li><a href="' + U.esc(l.url) + '" target="_blank" rel="noopener">' + U.esc(l.title) + '</a> <span class="muted">· ' + U.esc(l.site) + '</span><div class="small muted">' + U.md(l.look) + '</div></li>'; }).join('') + '</ul>' : '') +
-          '<ul class="src-list">' + f.sources.map(function (x) { return '<li class="small">' + U.md(x) + '</li>'; }).join('') + '</ul>' + reviewMeta(f.id) + '</div></details>' +
-          '<div class="row">' + readBtn(f.id) + '</div>';
+          '<ul class="src-list">' + f.sources.map(function (x) { return '<li class="small">' + U.md(x) + '</li>'; }).join('') + '</ul>' + reviewMeta(f.id) + '</div></details>';
       }
       var ids = { voir: 'mv-voir', comprendre: 'mv-comp', decider: 'mv-dec', entrainer: 'mv-train' };
       h.push('<section class="mv fstep-body" id="' + ids[step] + '" data-step-body="' + step + '">' + body + '</section>');
@@ -598,7 +600,7 @@ function ficheView(f, step) {
       var prevLab = si > 0 ? t(FSTEP_KEY[FSTEPS[si - 1]]) : (prev ? I18N.title(prev) : t('nav.foundations'));
       var nextHref = si < 3 ? '#' + f.id + '/' + FSTEPS[si + 1] : (next ? '#' + next.id + '/voir' : '#module-' + m.toLowerCase());
       var nextLab = si < 3 ? t(FSTEP_KEY[FSTEPS[si + 1]]) : (next ? I18N.title(next) : t('f.backmod'));
-      h.push('<nav class="row fstep-nav" aria-label="' + t('f.steps.aria') + '"><a class="btn ghost" data-fprev href="' + prevHref + '">← ' + U.esc(prevLab) + '</a><a class="btn primary" data-fnext href="' + nextHref + '">' + U.esc(nextLab) + ' →</a></nav>');
+      h.push('<nav class="row fstep-nav" aria-label="' + t('f.steps.aria') + '"><a class="btn ghost" data-fprev href="' + prevHref + '">← ' + U.esc(prevLab) + '</a><a class="btn' + (si === 3 ? '' : ' primary') + '" data-fnext' + (si === 3 ? ' data-markread="' + f.id + '"' : '') + ' href="' + nextHref + '">' + U.esc(nextLab) + ' →</a></nav>');
       return '<div class="page fiche-page">' + h.join('') + '</div>';
     },
     after: function (host) {
@@ -607,6 +609,7 @@ function ficheView(f, step) {
       var treeClean = null; if (U.$('[data-tree]', host) && window.Tree && typeof Tree.mount === 'function') { try { treeClean = Tree.mount(host); } catch (e) { console.error('Tree.mount', e); } }
       var onClick = function (ev) {
         var tg = ev.target;
+        var mr = tg.closest('[data-markread]'); if (mr && !Prog.ficheDone(f.id)) Store.markRead(f.id, true);
         var cz = tg.closest('[data-causal]');
         if (cz) {
           var chain = U.$('[data-chain]', host), steps = U.$$('[data-step]', chain), shown = +chain.getAttribute('data-shown') || 1;
@@ -716,13 +719,20 @@ Views['quiz-run'] = {
 };
 
 /* ---------- cases ---------- */
+function caseThumb(c) {
+  var fig = (c.steps || []).map(function (st) { return st.figure; }).filter(function (f) { return f && f.type !== 'photo' && typeof Figures[f.type] === 'function'; })[0];
+  if (fig) { try { return '<span class="thumb-svg" aria-hidden="true">' + Figures[fig.type](fig, {}).svg.replace(/ role="(img|group)"/, '').replace(/ aria-label="[^"]*"/, '') + '</span>'; } catch (e) { } }
+  return '<img loading="lazy" src="' + Photo.src(COVER[c.module] || COVER.B) + '" alt="">';
+}
 Views.cas = {
   title: t('cas.title'), render: function () {
-    var groups = ['A', 'B', 'C'].map(function (m) {
-      var cs = OPH.cases.filter(function (c) { return c.module === m; }); if (!cs.length) return '';
-      return '<div class="sec">' + secH(m, 'Module ' + m + ' · ' + L.modules[m]) + '<div class="grid2">' + cs.map(function (c) { var r = Store.p.cases[c.id]; return '<a class="card link" href="#' + c.id + '"><span class="eyebrow">' + (r ? t('cas.done', { n: r.score }) : t('cas.todo')) + '</span><h3>' + U.esc(c.title) + '</h3><span class="row tight">' + (c.tags || []).map(L.tag).join('') + (window.I18N ? I18N.badge(c) : '') + '</span><span class="small muted">' + U.esc(String(c.intro).slice(0, 150)) + '…</span></a>'; }).join('') + '</div></div>';
-    }).join('');
-    return '<div class="page">' + crumbs([[t('nav.home'), 'accueil'], [t('cas.title'), null]]) + '<div class="phead"><div class="eyebrow">' + t('cas.eyebrow') + '</div><h1>' + t('cas.h1') + '</h1><p class="muted" style="max-width:62ch">' + t('cas.lead') + '</p></div>' + (groups || missing(t('cas.the'))) + '</div>';
+    // ≤ 150 words: picture + title per case; the image cases (Investigations) are a section of the same tab
+    var R0 = window.OPH_RESTRICTED || {}, ic = (OPH.imageCases || []).length + (OPH.openCases || []).length;
+    var media = OPH.imageCasesMedia || {}, pics = Object.keys(media).map(function (k) { return media[k] && media[k].photo; }).filter(function (id) { return id && D.cat(id) && !R0[id]; }).slice(0, 3);
+    var imgSec = ic ? '<a class="card link ic-strip" href="#cas-images"><span class="ic-pics">' + pics.map(function (id) { return '<img loading="lazy" src="' + Photo.src(id) + '" alt="">'; }).join('') + '</span><span class="stack" style="gap:2px"><b>' + t('cas.img.h') + '</b><span class="small muted">' + t('cas.img.d', { n: ic }) + '</span></span></a>' : '';
+    var cards = OPH.cases.map(function (c) { var r = Store.p.cases[c.id]; return '<a class="lrow" href="#' + c.id + '"><span class="lthumb">' + caseThumb(c) + '</span><span class="stack" style="gap:2px;min-width:0"><span class="xs mono muted">' + c.module + ' · ' + (r ? t('cas.done', { n: r.score }) : t('cas.todo')) + '</span><b>' + U.esc(c.title) + '</b></span></a>'; }).join('');
+    return '<div class="page">' + crumbs([[t('nav.home'), 'accueil'], [t('cas.title'), null]]) + '<div class="phead"><h1>' + t('cas.title') + '</h1><p class="muted">' + t('cas.lead2') + '</p></div>' + imgSec +
+      '<div class="sec">' + secH('➜', t('cas.clin')) + '<div class="a-list">' + (cards || missing(t('cas.the'))) + '</div></div></div>';
   }
 };
 function caseView(c) { return { title: c.title, render: function () { return '<div class="page read" style="margin:0 auto;width:100%">' + crumbs([[t('cas.title'), 'cas'], [c.title, null]]) + '<div class="phead"><div class="eyebrow">' + t('cas.eyebrow1', { m: c.module }) + '</div><h1>' + U.esc(c.title) + '</h1><div class="row tight">' + (c.tags || []).map(L.tag).join('') + (window.I18N ? I18N.badge(c) : '') + '</div></div><div id="case-host"></div></div>'; }, after: function (host) { Case.mount(U.$('#case-host', host), c); } }; }

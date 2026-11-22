@@ -78,3 +78,6 @@ for(const lg of ['fr','en']){ const R=rows.filter(r=>r.lg===lg); console.log(lg,
 ## Cycle 8 — glaucome (fait)
 - 13 arbres en v2 (yesGo/noGo), 4 erreurs de logique de la critique corrigées ; bloc Traitement de fiche pour l’externe (Toi / Ophtalmologiste, délai, piège nommé) ; 6 mini-QCM de diagnostic → conduite ; validate.js contrôle v2. Détails : docs/PEDAGOGY-REVIEW.md « Cycle 8 — glaucome ».
 - Reste : src/tree.js doit lire yesGo/noGo (sinon les branches apparaissent comme des fins).
+
+## Cycle 9 (fait)
+- Délais drapeaux / arbre / référence : tools/check-delays.js, 0 écart sur 27 fiches (FR, EN). « En deux phrases » ≤ 3 lignes à 390 px sur 27/27 (mesuré dans le site). Essentiels ≤ 15 mots partout ; c-pterygion et c-dystrophies sous 120 en Comprendre.
