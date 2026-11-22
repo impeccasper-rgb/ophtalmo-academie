@@ -1,6 +1,52 @@
 # Ocelle : critique sévère
 
-> **État actuel : passe 5 (module D et audits), module D 7 / 10, site entier 8 / 10.** Plus bas, dans l'ordre : passe 4 (cycle 10, 8 / 10), passe 3 (cycle 9, 7 / 10), passage 2 (cycle 8, 6 / 10), puis passage 1 (cycle 7, 4 / 10), conservés comme historique.
+> **État actuel : passe 6 (re-contrôle), module D 8 / 10, site entier 8 / 10.** Plus bas, dans l'ordre : passe 5 (module D 7 / 10, site 8 / 10), passe 4 (8 / 10), passe 3 (7 / 10), passage 2 (6 / 10), puis passage 1 (4 / 10), conservés comme historique.
+
+## Passe 6 (re-contrôle des correctifs de la passe 5) : 22 novembre 2026
+
+Arbre testé : `main` @ 2af659f (commits b583731 et 2af659f), site reconstruit. Même méthode : 390 × 844, FR, niveau « Essentiel », 220 écrans remesurés.
+
+**Tests** :
+- `tests/run.py` : 0 problème.
+- `node tools/validate.js` : OK.
+- `tests/web/test_site.py --quick` : 85 contrôles, 2 échecs. Ce sont les mêmes que depuis le cycle 9 : images hors ligne non mises en cache, sur `g-gpao` et `reviser`.
+
+### P6.1 Notes
+
+| Périmètre | Note | Passe 5 |
+|---|---|---|
+| **Module D** | **8 / 10** | 7 |
+| **Site entier** | **8 / 10** | 8 |
+
+Le module D gagne un point : les 3 défauts cliniques sont corrigés, aucun autocollant ne recouvre plus le texte (0/52), et l'A5 est reliée aux fiches D. Le site reste à 8 : les restes de B, C et A ne bougent pas.
+
+### P6.2 Statut des MUST-FIX de la passe 5
+
+Le contact du responsable de la confidentialité est un choix délibéré du propriétaire : il est exclu de la liste.
+
+| # | Défaut (passe 5) | Statut | Preuve |
+|---|---|---|---|
+| 1 | Délai OACR incohérent | **Corrigé**, avec un reste | Définition, drapeaux, essentiels, arbre, Quand référer, A5 et explication du QCM disent « urgence : immédiatement, comme un AVC ». Reste : l'explication d'option de D-004 dit « bilan le jour même », et le libellé « immédiatement (le jour même) » garde une parenthèse ambiguë. |
+| 2 | Arbres `r-decollement` et `r-diabete` | **Corrigé** | `#r-decollement/decider` pose « Rideau, ombre ou baisse de vision ? » en Q1. `#r-diabete/decider` demande « Déjà examiné ? » ; Non → « Examen maintenant ». |
+| 3 | Corticostéroïdes de l'ACG non sourcés | **Corrigé** | Perte visuelle : méthylprednisolone IV 250–1000 mg/j jusqu'à 3 jours, puis prednisone 40–60 mg/j. Sans perte visuelle : prednisone d'emblée. Source : EULAR 2018. Biopsie dans les 2 semaines. |
+| 4 | Autocollant sur le nom du signe | **Corrigé** | Chevauchement mesuré : 0/52 photos (14 en passe 5). |
+| 5 | Confidentialité | **Hors périmètre** | Le contact reste un placeholder (choix du propriétaire). La mention « compatible RGPD » a été retirée. |
+| 6 | A5 et D incohérents, non reliés | **Corrigé** | Les 7 entrées A5 concernées renvoient vers leur fiche D. `#a-retine/retinopathie-hypertensive` est passée en « Urgent ». Reste mineur : la pastille de `#a-retine/occlusions-retiniennes` dit « le jour même » alors que le texte dit « immédiatement » pour l'OACR. |
+| 7 | QCM D biaisés par la longueur | **Corrigé** | La bonne réponse est la plus longue dans 4/18 cas (11 en passe 5). |
+| 8 | « À vérifier » visible | **Corrigé** | 35 → 0 (seule reste la tournure légitime « sert à vérifier »). |
+| 9 | Budgets | **Partiel** | En D : `#r-ovr/voir` fait 61 mots (80 en passe 5) ; définitions de plus de 3 lignes 4 → 0 ; paragraphes longs sur Décider 10 → 5 (`r-oacr`, `r-ovr`, `r-diabete` ×2, `r-endophtalmie`). Hors D, rien ne change : vignettes de B et C sur 4–5 lignes (31 paragraphes longs), paire normal/pathologique en B et C, 17/42 micro-fiches A au-dessus de 1,5 écran. |
+
+### P6.3 MUST-FIX restants
+1. **Budgets de D** : `#r-ovr/voir` à 60 mots au plus ; 5 paragraphes de 4 lignes sur Décider (`#r-oacr/decider`, `#r-ovr/decider`, `#r-diabete/decider`, `#r-endophtalmie/decider`).
+   - Fichier : `data/fiches-retine.js`.
+2. **Reste du délai OACR** : explication d'option de D-004 ; retirer la parenthèse « (le jour même) ».
+   - Fichiers : `data/quiz-d.js`, `data/fiches-retine.js`, `data/hy-retine.js`, `data/ext-a5-b.js`.
+3. **Restes de B, C et A** (inchangés depuis la passe 5) : vignettes sur 3 lignes au plus, paire normal/pathologique à retirer en B et C, 17 micro-fiches A trop longues.
+   - Fichiers : `data/fiches-*.js`, `src/views.js`, `data/module-a.js`.
+
+Fichiers de la passe 6 (dossier de travail du critique) : `measure6.py`, `m6-part*.csv`, et les sorties de `overlap5.py`, `a5d.py` et `clin5.py`.
+
+---
 
 ## Passe 5 (module D Rétine, audits, confidentialité) : 22 novembre 2026
 
