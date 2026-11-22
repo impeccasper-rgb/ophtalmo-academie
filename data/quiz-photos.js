@@ -43,22 +43,22 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ] },
 
   { id: "B-103", module: "B", topic: "c-atypiques", type: "image", level: 2, trap: false,
-    stem: "Porteur de lentilles cornéennes souples ; douleur intense qui persiste malgré une semaine de gouttes antibiotiques. Lampe à fente, éclairage diffus. Quel diagnostic cet aspect doit-il faire évoquer en premier ?",
+    stem: "Porteur de lentilles cornéennes souples ; douleur intense qui persiste malgré une semaine de gouttes antibiotiques. Lampe à fente, éclairage diffus : cet aspect fait suspecter une kératite à Acanthamoeba. Laquelle de ces mesures faut-il éviter à ce stade ?",
     figure: { type: "photo", id: "OPH-067" },
     options: [
-      "Kératite herpétique épithéliale (dendrite)",
-      "Infiltrat stérile périphérique lié aux lentilles",
-      "Kératite à Acanthamoeba (infiltrat annulaire)",
-      "Kératite ponctuée par sécheresse oculaire"
+      "Grattage cornéen pour culture et PCR",
+      "Arrêt complet du port des lentilles",
+      "Corticostéroïde topique contre l’inflammation",
+      "Analgésique oral pour soulager la douleur"
     ],
     answer: 2,
     explain: "Un anneau stromal chez un porteur de lentilles, avec une douleur intense et un échec des antibiotiques : Acanthamoeba jusqu’à preuve du contraire. On confirme par grattage (culture, PCR) ou microscopie confocale.",
     deep: "L’anneau stromal paracentral qui entoure une zone plus claire est l’infiltrat annulaire (ring infiltrate) typique de la kératite à Acanthamoeba, une infection par une amibe libre présente dans l’eau, surtout chez les porteurs de lentilles. Le diagnostic se confirme par grattage (culture, PCR) ou par microscopie confocale, comme chez ce patient.",
     why: [
-      "Une dendrite est une lésion épithéliale fine et ramifiée, pas un anneau dans le stroma.",
-      "Un infiltrat stérile est petit, périphérique et peu douloureux ; ici l’anneau est central et la douleur intense.",
-      "Exact : anneau stromal, lentilles, douleur intense, échec des antibiotiques.",
-      "Une kératite ponctuée donne de fins points épithéliaux, sans anneau stromal ni douleur de cette intensité."
+      "Le grattage (culture, PCR) confirme le diagnostic : c’est la première étape.",
+      "Les lentilles et leur étui sont la source de l’amibe : on les retire.",
+      "Exact, à éviter : sans traitement antiamibien, le stéroïde masque les signes et laisse l’infection progresser.",
+      "La douleur est intense : un analgésique oral est utile, à la différence d’un anesthésique topique répété."
     ] },
 
   { id: "B-104", module: "B", topic: "c-herpes", type: "image", level: 1, trap: false,
@@ -155,22 +155,22 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ] },
 
   { id: "B-109", module: "B", topic: "c-greffe", type: "image", level: 2, trap: false,
-    stem: "Patient porteur d’une kératoplastie transfixiante (greffe de toute l’épaisseur de la cornée) ancienne, vision embrouillée et photophobie depuis 2 jours. Photo en dispersion sclérale. Que représente la ligne qui traverse le greffon ?",
+    stem: "Patient porteur d’une kératoplastie transfixiante (greffe de toute l’épaisseur de la cornée) ancienne, vision embrouillée et photophobie depuis 2 jours. Photo en dispersion sclérale : une ligne de précipités traverse le greffon (ligne de Khodadoust). De quel côté de cette ligne la cornée est-elle œdémateuse, et pourquoi ?",
     figure: { type: "photo", id: "OPH-104" },
     options: [
-      "Une ligne de Khodadoust : front d’un rejet endothélial",
-      "Une dendrite herpétique récidivante sur le greffon",
-      "Un pli de la Descemet causé par une suture trop serrée",
-      "Une ligne de fer épithéliale, banale sur une greffe"
+      "Du côté déjà franchi : l’endothélium y est détruit",
+      "Du côté pas encore franchi : l’inflammation y arrive",
+      "Des deux côtés également : l’œdème vient de la PIO",
+      "D’aucun côté : la ligne est dans l’épithélium"
     ],
     answer: 0,
     explain: "Une ligne de précipités qui traverse le greffon, avec de l’œdème du côté déjà franchi, est une ligne de Khodadoust : le front du rejet endothélial. Corticostéroïde topique intensif dès aujourd’hui.",
     deep: "La ligne de précipités qui traverse le greffon, avec un œdème du côté déjà franchi, est une ligne de Khodadoust (Khodadoust line) : le front de lymphocytes qui détruisent l’endothélium du donneur. C’est une urgence : corticostéroïde topique intensif, fréquent, parfois complété par un stéroïde systémique ou péri-oculaire. Le rappel RSVP (rougeur, sensibilité à la lumière, vision diminuée, douleur) justifie une consultation le jour même.",
     why: [
-      "Exact : précipités alignés sur l’endothélium, œdème du côté déjà franchi.",
-      "Une dendrite est épithéliale, ramifiée, et prend la fluorescéine ; cette ligne est faite de précipités sur la face postérieure.",
-      "Un pli de Descemet est une strie fine sans précipités, et n’explique pas photophobie et flou récents.",
-      "Une ligne de fer est brune, dans l’épithélium, stable et sans symptôme."
+      "Exact : la ligne est le front du rejet ; derrière elle, l’endothélium attaqué ne pompe plus et le stroma gonfle.",
+      "Devant la ligne, l’endothélium du donneur est encore intact : la cornée y reste claire.",
+      "Une PIO élevée donnerait un œdème diffus, sans limite nette le long d’une ligne de précipités.",
+      "Les précipités sont sur la face postérieure de la cornée (endothélium), pas dans l’épithélium."
     ] },
 
   { id: "C-101", module: "C", topic: "g-gpao", type: "image", level: 1, trap: false,
@@ -230,21 +230,21 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ] },
 
   { id: "C-104", module: "C", topic: "g-crise", type: "image", level: 1, trap: false,
-    stem: "Patient hypermétrope réveillé par une douleur intense de l’œil droit, avec céphalée, nausées et baisse de vision. Compare les deux yeux sur la photo. Quel diagnostic est le plus probable ?",
+    stem: "Patient hypermétrope réveillé par une douleur intense de l’œil droit, avec céphalée, nausées et baisse de vision. Voici ses yeux. Quel examen fais-tu en premier ?",
     figure: { type: "photo", id: "OPH-140" },
     options: [
-      "Crise aiguë de fermeture de l’angle",
-      "Uvéite antérieure aiguë",
-      "Kératite bactérienne",
-      "Conjonctivite adénovirale"
+      "Mesure de la PIO des deux yeux",
+      "Tomodensitométrie cérébrale",
+      "Fond d’œil après dilatation",
+      "Culture des sécrétions de l’œil"
     ],
     answer: 0,
-    explain: "Un œil rouge et une cornée trouble sur toute sa surface, chez un hypermétrope avec céphalée et nausées : crise aiguë de fermeture de l’angle. On mesure la PIO sans attendre.",
+    explain: "Œil rouge, cornée trouble, céphalée et nausées chez un hypermétrope : crise aiguë de fermeture de l’angle jusqu’à preuve du contraire. La PIO se mesure en une minute et confirme. Dilater aggraverait la fermeture.",
     why: [
-      "Exact : œil rouge, cornée diffusément trouble, douleur avec nausées chez un hypermétrope.",
-      "Dans l’uvéite, la cornée reste claire et la pupille est petite ; les nausées sont inhabituelles.",
-      "Une kératite bactérienne donne une tache blanche localisée (infiltrat), pas une cornée trouble en entier.",
-      "La conjonctivite virale gratte et larmoie, sans baisse de vision ni cornée trouble ; elle touche souvent les deux yeux."
+      "Exact : une PIO très élevée confirme la crise et lance le traitement.",
+      "La céphalée et les nausées trompent : on mesure la PIO avant le scan cérébral.",
+      "Dilater un angle fermé aggrave la crise ; le fond d’œil attendra.",
+      "Rien n’évoque une infection : pas de sécrétions, cornée trouble en entier."
     ] },
 
   { id: "C-105", module: "C", topic: "g-pxf", type: "image", level: 1, trap: false,

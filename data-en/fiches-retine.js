@@ -95,15 +95,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  mnemonic: { title: "Warning signs: “Flash, Shower, Curtain”", text: "**Flash** (the vitreous pulls), **Shower** of floaters (blood, pigment), **Curtain** (detachment): dilated exam, the same day as soon as there is a curtain." },
  treatment: {
   first: [
-   "**You**: acuity, confrontation fields; ask about flashes, a shower of floaters, a curtain. Do not reassure without a dilated exam.",
-   "**Ophthalmologist**: dilated fundus exam with scleral depression; laser for a tear, surgery for a detachment."
+   "**You**: acuity, finger fields; ask about flashes, a shower of floaters, a curtain. No reassurance without a dilated exam.",
+   "**Ophthalmologist**: dilated fundus exam; laser for a tear, surgery for a detachment."
   ],
-  refer: "Refer to ophthalmology: the same day for a curtain, vision loss or a shower of floaters; within 24 h for isolated flashes or floaters — a tear is treated with laser before it becomes a detachment.",
+  refer: "Refer to ophthalmology: the same day for a curtain, vision loss or a shower of floaters; otherwise within 24 h — a tear is treated with laser before detachment.",
   pitfall: [
    "**Undilated fundus** judged normal: the tear is in the periphery, invisible without dilation.",
    "**Nitrous oxide** during anaesthesia with a gas bubble in the eye: the bubble expands and IOP soars."
   ],
-  qc: ["An optometrist can do the first dilated exam, then refer to the on-call ophthalmologist.", "Gas bubble: no flying, no altitude (mountain roads); warn the anaesthetist before any surgery."]
+  qc: ["An optometrist can do the first dilated exam.", "Gas bubble: no flying, no altitude; warn the anaesthetist."]
  }
 },
 "r-oacr": {
@@ -195,15 +195,15 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  mnemonic: { title: "CRAO: “Stroke, ESR, steroids”", text: "**Stroke**: stroke-centre emergency; **ESR** (with CRP and platelets) from age 50; **steroids** without waiting if arteritis is suspected." },
  treatment: {
   first: [
-   "**You, now**: acuity, RAPD, time of onset. From 50: headache, jaw, PMR; draw ESR, CRP, platelets. Call the ED of a stroke centre.",
-   "**Ophthalmologist and stroke team**: fundus, OCT; MRI, carotids, rhythm; corticosteroids if GCA."
+   "**You, now**: acuity, RAPD, time of onset; from 50, ESR, CRP, platelets. Call the ED of a stroke centre.",
+   "**Stroke team and ophthalmologist**: MRI, carotids, rhythm; corticosteroids if GCA."
   ],
   refer: "Refer: immediately, to the ED of a stroke centre (not an outpatient clinic) — it is a stroke, and brain-stroke risk peaks in the following days.",
   pitfall: [
    "**Ocular massage or paracentesis**: no proven benefit; they never delay transfer.",
    "**Corticosteroids postponed** until the biopsy when GCA is suspected: the other eye can be lost."
   ],
-  qc: ["Call the on-call emergency physician or neurologist before transfer; ambulance if onset is recent.", "Temporal artery biopsy: within 2 weeks of starting corticosteroids."]
+  qc: ["Call the ED before transfer; ambulance if onset is recent.", "Temporal biopsy within 2 weeks of starting corticosteroids."]
  }
 },
 "r-ovr": {

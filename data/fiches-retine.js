@@ -108,15 +108,15 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Toi** : acuité, champ par confrontation ; demander éclairs, nuée de corps flottants, rideau. Ne pas rassurer sans examen dilaté.",
-      "**Ophtalmologiste** : fond d’œil dilaté avec dépression sclérale ; laser d’une déchirure, chirurgie d’un décollement."
+      "**Toi** : acuité, champ au doigt ; chercher éclairs, nuée de corps flottants, rideau. Pas de réassurance sans examen dilaté.",
+      "**Ophtalmologiste** : fond d’œil dilaté ; laser d’une déchirure, chirurgie d’un décollement."
     ],
-    refer: "Référer en ophtalmologie : le jour même si rideau, baisse de vision ou nuée de corps flottants ; dans les 24 h pour des éclairs ou corps flottants isolés — une déchirure se traite au laser avant de devenir un décollement.",
+    refer: "Référer en ophtalmologie : le jour même si rideau, baisse de vision ou nuée de corps flottants ; sinon dans les 24 h — une déchirure se traite au laser avant le décollement.",
     pitfall: [
       "**Fond d’œil non dilaté** jugé normal : la déchirure est en périphérie, invisible sans dilatation.",
       "**Protoxyde d’azote** à l’anesthésie avec une bulle de gaz dans l’œil : la bulle gonfle et la PIO s’envole."
     ],
-    qc: ["L’optométriste peut faire l’examen dilaté initial, puis diriger vers l’ophtalmologiste de garde.", "Bulle de gaz : ni avion ni altitude (routes de montagne) ; prévenir l’anesthésiste avant toute chirurgie."]
+    qc: ["L’optométriste peut faire l’examen dilaté initial.", "Bulle de gaz : ni avion ni altitude ; prévenir l’anesthésiste."]
   }
 },
 {
@@ -221,15 +221,15 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Toi, maintenant** : acuité, DPAR, heure de début. Dès 50 ans : céphalée, mâchoire, PPR ; prélever VS, CRP, plaquettes. Appeler l’urgence d’un centre de l’AVC.",
-      "**Ophtalmologiste et équipe AVC** : fond d’œil, OCT ; IRM, carotides, rythme ; corticostéroïdes si ACG."
+      "**Toi, maintenant** : acuité, DPAR, heure de début ; dès 50 ans, VS, CRP, plaquettes. Appeler l’urgence d’un centre de l’AVC.",
+      "**Équipe AVC et ophtalmologiste** : IRM, carotides, rythme ; corticostéroïdes si ACG."
     ],
     refer: "Référer : immédiatement, à l’urgence d’un centre de l’AVC (pas en clinique externe) — c’est un AVC, et le risque d’AVC cérébral est maximal dans les jours qui suivent.",
     pitfall: [
       "**Massage oculaire ou paracentèse** : aucun bénéfice prouvé ; ils ne retardent jamais le transfert.",
       "**Corticostéroïdes reportés** jusqu’à la biopsie quand l’ACG est suspectée : l’autre œil peut être perdu."
     ],
-    qc: ["Appeler l’urgentologue ou le neurologue de garde avant le transfert ; ambulance si le début est récent.", "Biopsie de l’artère temporale : dans les 2 semaines suivant le début des corticostéroïdes."]
+    qc: ["Appeler l’urgence avant le transfert ; ambulance si le début est récent.", "Biopsie temporale dans les 2 semaines suivant le début des corticostéroïdes."]
   }
 },
 {

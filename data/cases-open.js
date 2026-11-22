@@ -895,8 +895,8 @@ G.OPH.openCases = [
   "media": "mo-18",
   "level": 3,
   "q": {
-   "fr": "Vue au verre de gonioscopie de l’angle d’un homme de 25 ans; du pigment est visible dans l’angle. Si le trabéculum était densément pigmenté sur 360° chez un jeune myope, que chercher?",
-   "en": "Gonioscopy lens view of the angle of a 25-year-old man; pigment is visible in the angle. If the meshwork were densely pigmented over 360° in a young myope, what would you look for?"
+   "fr": "Vue au verre de gonioscopie de l’angle d’un homme de 25 ans. Regarde la bande sombre dans l’angle. Si elle était dense sur 360° chez un jeune myope, à quoi penserais-tu ?",
+   "en": "Gonioscopy lens view of the angle of a 25-year-old man. Look at the dark band in the angle. If it were dense over 360° in a young myope, what would you think of?"
   },
   "options": [
    {
@@ -1363,8 +1363,8 @@ G.OPH.openCases = [
   "media": "mo-27",
   "level": 3,
   "q": {
-   "fr": "Voile noir brutal après une quinte d’éternuements, sans anticoagulant. Échographie : bande hyperéchogène qui croise la limite du nerf optique, échos en arrière. Diagnostic final de l’ophtalmologiste?",
-   "en": "Sudden dark curtain after a sneezing fit, no anticoagulant. Ultrasound: a hyperechoic band crossing the optic nerve boundary, echoes behind it. Ophthalmologist’s final diagnosis?"
+   "fr": "Voile noir brutal après une quinte d’éternuements, sans anticoagulant. Échographie. Regarde où passe la bande hyperéchogène (flèche) par rapport au nerf optique. Que conclure ?",
+   "en": "Sudden dark curtain after a sneezing fit, no anticoagulant. Ultrasound. Look at where the hyperechoic band (arrow) runs relative to the optic nerve. What do you conclude?"
   },
   "options": [
    {
@@ -1372,8 +1372,8 @@ G.OPH.openCases = [
     "en": "Asteroid hyalosis"
    },
    {
-    "fr": "Rétinopathie de Valsalva, rétine à plat",
-    "en": "Valsalva retinopathy, retina attached"
+    "fr": "Hémorragie prérétinienne (Valsalva), rétine à plat",
+    "en": "Preretinal hemorrhage (Valsalva), retina attached"
    },
    {
     "fr": "Décollement de rétine rhegmatogène",
@@ -1571,8 +1571,8 @@ G.OPH.openCases = [
   "media": "mo-31",
   "level": 3,
   "q": {
-   "fr": "Femme de 30 ans, éclairs depuis 2 semaines dans l’œil gauche. Échographie B : liquide sous-rétinien et lésion mesurée. Diagnostic confirmé?",
-   "en": "30-year-old woman, flashes for 2 weeks in the left eye. B-scan: subretinal fluid and a measured lesion. Confirmed diagnosis?"
+   "fr": "Femme de 30 ans, éclairs depuis 2 semaines dans l’œil gauche. Échographie B. Que montre la flèche, sous le liquide sous-rétinien ?",
+   "en": "A 30-year-old woman, flashes for 2 weeks in the left eye. B-scan. What does the arrow show, beneath the subretinal fluid?"
   },
   "options": [
    {
@@ -1580,8 +1580,8 @@ G.OPH.openCases = [
     "en": "Vitreous haemorrhage"
    },
    {
-    "fr": "Mélanome choroïdien amélanotique",
-    "en": "Amelanotic choroidal melanoma"
+    "fr": "Masse choroïdienne : mélanome",
+    "en": "Choroidal mass: melanoma"
    },
    {
     "fr": "Décollement de rétine rhegmatogène simple",

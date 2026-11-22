@@ -10,7 +10,7 @@ G.OPH.imageCases = [
   /* ═════════════════════════ CORNÉE ═════════════════════════ */
   {
     id: "ic-c01", topic: "cornee", media: "mi-c01", level: 1,
-    q: { fr: "Œil rouge, larmoiement, vision un peu floue. Lésion épithéliale fine et ramifiée au centre de la cornée. Diagnostic le plus probable?", en: "Red eye, tearing, slightly blurred vision. A fine, branching epithelial lesion in the central cornea. Most likely diagnosis?" },
+    q: { fr: "Œil rouge, larmoiement, vision un peu floue. Regarde la cornée devant la pupille. Diagnostic le plus probable ?", en: "Red eye, tearing, slightly blurred vision. Look at the cornea in front of the pupil. Most likely diagnosis?" },
     options: [
       { fr: "Kératite à Acanthamoeba", en: "Acanthamoeba keratitis" },
       { fr: "Kératite bactérienne", en: "Bacterial keratitis" },
@@ -100,7 +100,7 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-c06", topic: "cornee", media: "mi-c06", level: 2,
-    q: { fr: "Jeune patient, myopie et astigmatisme qui augmentent vite. Fines stries parallèles dans le stroma profond. Diagnostic?", en: "Young patient, rapidly increasing myopia and astigmatism. Fine parallel striae in the deep stroma. Diagnosis?" },
+    q: { fr: "Jeune patient, myopie et astigmatisme qui augmentent vite. Regarde le stroma profond dans le faisceau de la fente. Diagnostic ?", en: "Young patient, rapidly increasing myopia and astigmatism. Look at the deep stroma within the slit beam. Diagnosis?" },
     options: [
       { fr: "Plis de Descemet postopératoires", en: "Postoperative Descemet folds" },
       { fr: "Kératocône (stries de Vogt)", en: "Keratoconus (Vogt striae)" },
@@ -136,7 +136,7 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-c08", topic: "cornee", media: "mi-c08", level: 1,
-    q: { fr: "Tissu conjonctival en forme d’aile qui avance sur la cornée. Diagnostic, et quand opérer?", en: "Wing-shaped conjunctival tissue growing onto the cornea. Diagnosis, and when to operate?" },
+    q: { fr: "Travailleur extérieur, gêne et rougeur chroniques d’un œil. Que montre la photo, et quand opérer ?", en: "Outdoor worker with chronic irritation and redness of one eye. What does the photo show, and when should it be operated on?" },
     options: [
       { fr: "Pinguécula : jamais d’intervention", en: "Pinguecula: never any surgery" },
       { fr: "Carcinome épidermoïde : énucléation", en: "Squamous cell carcinoma: enucleation" },
@@ -245,7 +245,7 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-g02", topic: "glaucome", media: "mi-g02", level: 3,
-    q: { fr: "Petites taches gris-blanc sous la capsule antérieure du cristallin, iris atrophique par secteur. Qu’indiquent-elles?", en: "Small grey-white spots under the anterior lens capsule, sectoral iris atrophy. What do they indicate?" },
+    q: { fr: "Œil calme aujourd’hui. Regarde la surface du cristallin dans la pupille, puis l’iris. Que t’apprennent ces trouvailles ?", en: "The eye is quiet today. Look at the lens surface within the pupil, then at the iris. What do these findings tell you?" },
     options: [
       { fr: "Une cataracte sous-capsulaire postérieure cortisonique", en: "Steroid-induced posterior subcapsular cataract" },
       { fr: "Une ancienne crise de fermeture de l’angle", en: "A past angle-closure attack" },
@@ -299,7 +299,7 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-g05", topic: "glaucome", media: "mi-g05", level: 3,
-    q: { fr: "Pupille dilatée. Fine ligne pigmentée en périphérie du cristallin. Nom et contexte?", en: "Dilated pupil. A fine pigmented line at the lens periphery. Name and setting?" },
+    q: { fr: "Homme myope de 35 ans, pupille dilatée. Regarde la périphérie du cristallin. Quel signe, et dans quel contexte ?", en: "A 35-year-old myopic man, dilated pupil. Look at the lens periphery. Which sign, and in what setting?" },
     options: [
       { fr: "Anneau de Fleischer : kératocône", en: "Fleischer ring: keratoconus" },
       { fr: "Anneau de Kayser-Fleischer : maladie de Wilson", en: "Kayser-Fleischer ring: Wilson disease" },
@@ -353,7 +353,7 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-g08", topic: "glaucome", media: "mi-g08", level: 3,
-    q: { fr: "Glaucome congénital. Fines lignes à double contour dans la cornée profonde. Comment s’appellent-elles?", en: "Congenital glaucoma. Fine double-contoured lines in the deep cornea. What are they called?" },
+    q: { fr: "Glaucome congénital connu. Regarde la cornée en profondeur. Comment s’appellent ces lignes ?", en: "Known congenital glaucoma. Look deep in the cornea. What are these lines called?" },
     options: [
       { fr: "Stries de Vogt (kératocône)", en: "Vogt striae (keratoconus)" },
       { fr: "Lignes de dystrophie grillagée", en: "Lattice dystrophy lines" },
@@ -371,7 +371,7 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-g09", topic: "glaucome", media: "mi-g09", level: 3,
-    q: { fr: "Uvéite chronique avec synéchies postérieures. À la fente, l’iris bombe vers la cornée. Mécanisme et traitement?", en: "Chronic uveitis with posterior synechiae. On the slit beam, the iris bows toward the cornea. Mechanism and treatment?" },
+    q: { fr: "Uvéite chronique avec synéchies postérieures, PIO élevée. Suis le faisceau de la fente sur l’iris. Mécanisme et traitement ?", en: "Chronic uveitis with posterior synechiae and high IOP. Follow the slit beam across the iris. Mechanism and treatment?" },
     options: [
       { fr: "Glaucome malin : cycloplégie et vitrectomie", en: "Malignant glaucoma: cycloplegia and vitrectomy" },
       { fr: "Glaucome néovasculaire : anti-VEGF", en: "Neovascular glaucoma: anti-VEGF" },
@@ -408,7 +408,7 @@ G.OPH.imageCases = [
   /* ═════════════════════════ OPHTALMOLOGIE GÉNÉRALE ═════════════════════════ */
   {
     id: "ic-x01", topic: "general", media: "mi-x01", level: 1,
-    q: { fr: "Nappe rouge vif, bien limitée, sous la conjonctive. Aucune douleur, vision normale, pas de traumatisme. Conduite?", en: "Bright red, well-defined patch under the conjunctiva. No pain, normal vision, no trauma. Management?" },
+    q: { fr: "Œil rouge remarqué au réveil. Aucune douleur, vision normale, pas de traumatisme. Conduite ?", en: "Red eye noticed on waking. No pain, normal vision, no trauma. Management?" },
     options: [
       { fr: "Hémorragie sous-conjonctivale : rassurer, TA", en: "Subconjunctival hemorrhage: reassure, check BP" },
       { fr: "Sclérite : AINS oraux, bilan", en: "Scleritis: oral NSAIDs, workup" },
@@ -462,7 +462,7 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-x04", topic: "general", media: "mi-x04", level: 2,
-    q: { fr: "Douleur profonde, sourde, qui réveille la nuit. Vaisseaux engorgés et nodule sous le limbe. Diagnostic et bilan?", en: "Deep, boring pain that wakes the patient at night. Engorged vessels and a nodule below the limbus. Diagnosis and workup?" },
+    q: { fr: "Douleur profonde, sourde, qui réveille la nuit. Regarde la zone sous le limbe. Diagnostic et bilan ?", en: "Deep, boring pain that wakes the patient at night. Look at the area below the limbus. Diagnosis and workup?" },
     options: [
       { fr: "Conjonctivite virale", en: "Viral conjunctivitis" },
       { fr: "Sclérite nodulaire : bilan systémique", en: "Nodular scleritis: systemic workup" },
@@ -480,7 +480,7 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-x05", topic: "general", media: "mi-x05", level: 1,
-    q: { fr: "Œil rouge, larmoiement, sensation de sable. Petites élévations rondes et pâles sur la conjonctive palpébrale inférieure. Comment les nomme-t-on, et qu’orientent-elles?", en: "Red eye, tearing, gritty feeling. Small pale round elevations on the lower palpebral conjunctiva. What are they called, and what do they suggest?" },
+    q: { fr: "Œil rouge, larmoiement, sensation de sable. Voici la conjonctive palpébrale inférieure. Comment nomme-t-on ces élévations, et vers quoi orientent-elles ?", en: "Red eye, tearing, gritty feeling. Here is the lower palpebral conjunctiva. What are these elevations called, and what do they point to?" },
     options: [
       { fr: "Follicules : virus ou Chlamydia", en: "Follicles: virus or Chlamydia" },
       { fr: "Papilles : allergie ou lentilles", en: "Papillae: allergy or contact lenses" },
@@ -498,7 +498,7 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-x06", topic: "general", media: "mi-x06", level: 2,
-    q: { fr: "Éruption vésiculaire et croûteuse d’un seul côté du front et du nez, œil rouge. Diagnostic et conduite?", en: "One-sided vesicular, crusted rash on the forehead and nose, red eye. Diagnosis and management?" },
+    q: { fr: "Douleur d’un côté du front depuis quelques jours, puis œil rouge. Voici le visage. Diagnostic et conduite ?", en: "Pain on one side of the forehead for a few days, then a red eye. Here is the face. Diagnosis and management?" },
     options: [
       { fr: "Impétigo : antibiotique topique", en: "Impetigo: topical antibiotic" },
       { fr: "Cellulite préseptale : antibiotique oral seul", en: "Preseptal cellulitis: oral antibiotic only" },
@@ -516,7 +516,7 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-x07", topic: "general", media: "mi-x07", level: 3,
-    q: { fr: "Perte de vision brutale et indolore. Rétine blanchâtre, sauf une zone de couleur normale entre la papille et la macula. Pourquoi cette zone est-elle épargnée?", en: "Sudden painless vision loss. Whitened retina, except a normally coloured zone between the disc and the macula. Why is that zone spared?" },
+    q: { fr: "Perte de vision brutale et indolore d’un œil. Compare la rétine située entre la papille et la macula avec le reste du fond d’œil. Pourquoi cette zone est-elle différente ?", en: "Sudden painless vision loss in one eye. Compare the retina between the disc and the macula with the rest of the fundus. Why is that zone different?" },
     options: [
       { fr: "La macula est toujours épargnée", en: "The macula is always spared" },
       { fr: "Un œdème papillaire qui s’étend", en: "Spreading disc swelling" },
@@ -624,7 +624,7 @@ G.OPH.imageCases = [
   },
   {
     id: "ic-x13", topic: "general", media: "mi-x13", level: 3,
-    q: { fr: "Lésion choroïdienne pigmentée au pôle postérieur, avec des dépôts orange en surface. Conduite?", en: "Pigmented choroidal lesion at the posterior pole, with orange deposits on its surface. Management?" },
+    q: { fr: "Découverte au fond d’œil dilaté, chez un patient sans symptôme. Regarde la lésion et sa surface. Conduite ?", en: "Found on dilated fundus examination in a patient with no symptoms. Look at the lesion and its surface. Management?" },
     options: [
       { fr: "Mélanome suspect : oncologie oculaire", en: "Suspected melanoma: ocular oncology" },
       { fr: "Nævus typique : photo dans un an", en: "Typical nevus: photo in a year" },

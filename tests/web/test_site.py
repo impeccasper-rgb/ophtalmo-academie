@@ -354,8 +354,8 @@ def run_flows(browser):
             go(page, 'image-du-jour', 500)
             el = page.locator('[data-daily]')
             assert el.count() == 1, 'no daily item'
-            if el.locator('[data-ip="ready"]').count():
-                el.locator('[data-ip="ready"]').click(); page.wait_for_timeout(120)
+            if el.locator('[data-ip="ready"]').count() or el.locator('.inv-run').count():  # practice item (the « ready » step was removed in cycle 9)
+                if el.locator('[data-ip="ready"]').count(): el.locator('[data-ip="ready"]').click(); page.wait_for_timeout(120)
                 el.locator('.opt[data-k]:not(.idk)').first.click(); page.wait_for_timeout(200)
                 el.locator('[data-ip="next"]').click(); page.wait_for_timeout(300)
             else:

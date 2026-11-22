@@ -1938,20 +1938,20 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "B-103": {
-    stem: "A soft contact lens wearer has severe pain that persists despite a week of antibiotic drops. Slit lamp, diffuse illumination. Which diagnosis should this appearance suggest first?",
+    stem: "A soft contact lens wearer has severe pain that persists despite a week of antibiotic drops. Slit lamp, diffuse illumination: this appearance suggests Acanthamoeba keratitis. Which of these measures should be avoided at this stage?",
     options: [
-      "Herpetic epithelial keratitis (dendrite)",
-      "Sterile peripheral contact lens infiltrate",
-      "Acanthamoeba keratitis (ring infiltrate)",
-      "Punctate keratitis from dry eye"
+      "Corneal scraping for culture and PCR",
+      "Stopping contact lens wear completely",
+      "Topical corticosteroid for the inflammation",
+      "Oral analgesic to relieve the pain"
     ],
     explain: "A stromal ring in a contact lens wearer, with severe pain and failure of antibiotics: Acanthamoeba until proven otherwise. Confirm by scraping (culture, PCR) or confocal microscopy.",
     deep: "The paracentral stromal ring surrounding a clearer zone is the ring infiltrate typical of Acanthamoeba keratitis, an infection by a free-living ameba found in water, mainly in contact lens wearers. The diagnosis is confirmed by scraping (culture, PCR) or by confocal microscopy, as in this patient.",
     why: [
-      "A dendrite is a fine, branching epithelial lesion, not a ring in the stroma.",
-      "A sterile infiltrate is small, peripheral and not very painful; here the ring is central and the pain severe.",
-      "Correct: stromal ring, contact lenses, severe pain, failure of antibiotics.",
-      "Punctate keratitis gives fine epithelial dots, with no stromal ring and no pain of this intensity."
+      "Scraping (culture, PCR) confirms the diagnosis: it is the first step.",
+      "The lenses and their case are the source of the ameba: they are removed.",
+      "Correct, avoid it: without anti-amebic treatment, a steroid masks the signs and lets the infection progress.",
+      "The pain is severe: an oral analgesic helps, unlike repeated topical anesthetic."
     ]
   },
   "B-104": {
@@ -2041,20 +2041,20 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "B-109": {
-    stem: "A patient with an old penetrating keratoplasty (full-thickness corneal graft) has had blurred vision and photophobia for 2 days. Photo taken with sclerotic scatter. What is the line crossing the graft?",
+    stem: "A patient with an old penetrating keratoplasty (full-thickness corneal graft) has had blurred vision and photophobia for 2 days. Photo taken with sclerotic scatter: a line of precipitates crosses the graft (Khodadoust line). On which side of the line is the cornea edematous, and why?",
     options: [
-      "A Khodadoust line: the front of endothelial rejection",
-      "A recurrent herpetic dendrite on the graft",
-      "A Descemet fold caused by an overly tight suture",
-      "An epithelial iron line, harmless on a graft"
+      "The side already crossed: the endothelium there is destroyed",
+      "The side not yet crossed: inflammation is arriving there",
+      "Both sides equally: the edema comes from the IOP",
+      "Neither side: the line is in the epithelium"
     ],
     explain: "A line of precipitates crossing the graft, with edema on the side already crossed, is a Khodadoust line: the advancing front of endothelial rejection. Intensive topical steroid starting today.",
     deep: "The line of precipitates crossing the graft, with edema on the side already crossed, is a Khodadoust line: the front of lymphocytes destroying the donor endothelium. It is an emergency: intensive, frequent topical corticosteroid, sometimes supplemented by a systemic or periocular steroid. The RSVP reminder (redness, sensitivity to light, vision loss, pain) warrants a same-day visit.",
     why: [
-      "Correct: precipitates lined up on the endothelium, with edema on the side already crossed.",
-      "A dendrite is epithelial, branching and stains with fluorescein; this line is made of precipitates on the posterior surface.",
-      "A Descemet fold is a fine stria without precipitates and does not explain recent photophobia and blur.",
-      "An iron line is brown, in the epithelium, stable and symptom-free."
+      "Correct: the line is the front of rejection; behind it the damaged endothelium no longer pumps and the stroma swells.",
+      "Ahead of the line the donor endothelium is still intact: the cornea stays clear there.",
+      "High IOP would cause diffuse edema, with no sharp border along a line of precipitates.",
+      "The precipitates are on the posterior corneal surface (endothelium), not in the epithelium."
     ]
   },
   "C-101": {
@@ -2108,19 +2108,19 @@ Object.assign(G.OPH_EN.quiz, {
     ]
   },
   "C-104": {
-    stem: "A hyperopic patient is woken by severe pain in the right eye, with headache, nausea and decreased vision. Compare the two eyes in the photo. What is the most likely diagnosis?",
+    stem: "A hyperopic patient is woken by severe pain in the right eye, with headache, nausea and decreased vision. Here are his eyes. Which test do you do first?",
     options: [
-      "Acute angle-closure crisis",
-      "Acute anterior uveitis",
-      "Bacterial keratitis",
-      "Adenoviral conjunctivitis"
+      "IOP measurement in both eyes",
+      "CT scan of the head",
+      "Dilated fundus examination",
+      "Culture of the eye discharge"
     ],
-    explain: "A red eye and a cornea that is hazy across its whole surface, in a hyperopic patient with headache and nausea: acute angle-closure crisis. Measure IOP without delay.",
+    explain: "A red eye, hazy cornea, headache and nausea in a hyperope: acute angle-closure crisis until proven otherwise. IOP takes a minute to measure and confirms it. Dilating would worsen the closure.",
     why: [
-      "Correct: red eye, diffusely hazy cornea, pain with nausea in a hyperope.",
-      "In uveitis the cornea stays clear and the pupil is small; nausea is unusual.",
-      "Bacterial keratitis gives a localized white spot (infiltrate), not a cornea that is hazy throughout.",
-      "Viral conjunctivitis itches and waters, with no vision loss or corneal haze; it often affects both eyes."
+      "Correct: a very high IOP confirms the crisis and starts treatment.",
+      "Headache and nausea are misleading: measure IOP before ordering a head CT.",
+      "Dilating a closed angle worsens the crisis; the fundus can wait.",
+      "Nothing suggests infection: no discharge, and the cornea is hazy throughout."
     ]
   },
   "C-105": {
@@ -2890,7 +2890,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Atropine 1 % drops",
       "Oral acetazolamide 500 mg"
     ],
-    explain: "In sickle cell disease (even the trait), sickled red cells pass poorly through the trabecular meshwork and the nerve tolerates IOP poorly. CAIs (especially oral) and hyperosmotics are avoided, and the threshold for surgical washout is lower (IOP ≥ 24 mmHg for more than 24 h).",
+    explain: "In sickle cell disease (even the trait), sickled red cells pass poorly through the meshwork and the nerve tolerates IOP poorly. CAIs (especially oral) and hyperosmotics are avoided, and the threshold for surgical washout is lower (IOP ≥ 24 mmHg for more than 24 h).",
     why: [
       "A topical beta-blocker: a safe first choice for lowering IOP in this setting.",
       "A topical steroid reduces inflammation: standard hyphema protocol.",
