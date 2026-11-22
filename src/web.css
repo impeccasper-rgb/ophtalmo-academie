@@ -307,15 +307,15 @@ body { padding-top: env(safe-area-inset-top, 0px); }
 /* touch screens: every control gets a hit area of at least 44 px while its drawn size stays the same.
    :where() keeps the specificity at 0, so buttons that are absolutely placed (.inv-zoom, .bs3-view…) keep their own position. */
 @media (pointer: coarse) {
-  :where(.btn, .chip, .langsw button, .seg button, .conf button, .crumbs a, a.eyebrow, .hero-cred summary, .bs3-val summary) { position: relative; }
-  :where(.btn, .chip, .langsw button, .seg button, .conf button, .crumbs a, a.eyebrow, .hero-cred summary, .bs3-val summary)::after { content: ""; position: absolute; inset: -2px; }
+  :where(.btn, .chip, .conf button, .crumbs a, a.eyebrow, .hero-cred summary, .bs3-val summary, .inv-term, .fc-hint summary) { position: relative; }
+  :where(.btn, .chip, .conf button, .crumbs a, a.eyebrow, .hero-cred summary, .bs3-val summary, .inv-term, .fc-hint summary)::after { content: ""; position: absolute; inset: -2px; }
   :where(.btn.sm, .conf button)::after { inset: -6px -3px; }
-  :where(.chip)::after { inset: -7px -3px; }
-  :where(.seg button)::after { inset: -9px -2px; }
+  :where(.chip)::after { inset: -8px -3px; }
+  .seg button, .topbar .langsw button { min-height: 44px; min-width: 44px; } /* .seg clips its children (overflow: hidden), so a pseudo hit area would be cut: the buttons grow instead */
   .inv-fold summary { min-height: 44px; } /* its ::after draws the « + », so no hit-area pseudo here */
   :where(.btn.xs, .bs3-val summary)::after { inset: -8px; }
-  :where(.langsw button)::after { inset: -4px 0; }
-  :where(.crumbs a, a.eyebrow)::after { inset: -13px -4px; }
+  :where(.crumbs a, a.eyebrow, .inv-term, .fc-hint summary)::after { inset: -13px -4px; }
+  .a-item [data-sim] .chips { padding-block: 8px; margin-block: -8px; } /* room for the chips’ hit area inside the horizontal scroller */
   :where(.hero-cred summary)::after { inset: -10px; }
   .car-nav .btn { min-width: 44px; }
 }
