@@ -47,6 +47,14 @@ RIGHTS_FILTER_JS = r"""(function () {
     (O.inv || []).forEach(function (e) { if (e.practice) e.practice = e.practice.filter(function (id) { return ok[id]; }); }); }
 })();
 """
+# English overlays (data-en/*.js, ~1.5 MB raw, a third of the first-load JS) are only read by I18N.applyContent() when the page is in
+# English, so a French visit skips them. Same rule as pickLang() in src/i18n.js (?lang=, then localStorage oph-lang, then navigator.languages,
+# else fr); parser-blocking document.write keeps them before i18n.js. Any error → load them (former behaviour). Switching language reloads the page.
+EN_LOADER = ("(function () { var l = 'en'; try { var ok = function (v) { v = String(v || '').toLowerCase().slice(0, 2); return v === 'fr' || v === 'en' ? v : ''; }, q = '', s = '', n = [];"
+             " try { q = ok(new URLSearchParams(location.search).get('lang')); } catch (e) { } try { s = ok(localStorage.getItem('oph-lang')); } catch (e) { }"
+             " try { n = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language]) || []; } catch (e) { }"
+             " l = q || s; for (var i = 0; !l && i < n.length; i++) l = ok(n[i]); l = l || 'fr'; } catch (e) { l = 'en'; }"
+             " window.OPH_EN_LOADED = l === 'en'; if (l === 'en') document.write(__TAGS__); })();")
 SRC_ORDER = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'bscan-sim', 'motion', 'tree', 'figures-mech', 'figures-retine', 'privacy', 'views', 'web']
 CSS_ORDER = ['styles', 'investigations', 'bscan-sim', 'tree', 'web']
 VENDOR = ['three-0.159.0']   # pinned local libraries (no CDN: CSP 'self', offline, iOS); loaded on demand by src/bscan-sim.js
@@ -220,6 +228,21 @@ def self_hosted_fonts():
     return '/* self-hosted fonts (SIL Open Font License 1.1, see fonts/OFL-*.txt) */\n' + '\n'.join(rules) + '\n', pub
 
 
+def splash_links():
+    """brand/splash/ (tools/make_splash.py) → site/icons/splash/ + one <link rel=apple-touch-startup-image> per iPhone screen (portrait).
+    Without them iOS shows a white screen when the home-screen app starts."""
+    src = os.path.join(BRAND, 'splash'); meta = os.path.join(src, 'splash.json')
+    if not os.path.exists(meta): return ''
+    dst = os.path.join(OUT, 'icons', 'splash'); os.makedirs(dst, exist_ok=True)
+    out = []
+    for m in json.load(open(meta, encoding='utf-8')):
+        if not os.path.exists(os.path.join(src, m['file'])): continue
+        shutil.copy2(os.path.join(src, m['file']), os.path.join(dst, m['file']))
+        out.append('<link rel="apple-touch-startup-image" href="icons/splash/%s" media="(device-width: %dpx) and (device-height: %dpx) and (-webkit-device-pixel-ratio: %d) and (orientation: portrait)">'
+                   % (m['file'], m['w'], m['h'], m['dpr']))
+    return '\n'.join(out) + ('\n' if out else '')
+
+
 def js(s):
     return re.sub(r'</(script)', r'<\\/\1', s, flags=re.I)
 
@@ -251,7 +274,9 @@ def main():
         if os.path.exists(p): emit('d-' + name + '.js', read(p))
         else: missing.append('data/' + name)
     en_files = sorted(glob.glob(os.path.join(DATA_EN, '*.js')))
+    n0 = len(files)
     for p in en_files: emit('en-' + os.path.basename(p), read(p))
+    en_urls = files[n0:]  # loaded only when the page runs in English (EN_LOADER below); still precached for offline language switches
     emit('rights-filter.js', RIGHTS_FILTER_JS.replace('__IDS__', json.dumps(sorted(restricted))))
     for name in SRC_ORDER:
         p = os.path.join(SRC, name + '.js')
@@ -306,7 +331,7 @@ def main():
 <link rel="icon" href="{ic['svg']}" type="image/svg+xml">
 <link rel="icon" href="{ic['favicon-32.png']}" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{ic['apple-touch-icon.png']}">
-{preload}{fonts}
+{splash_links()}{preload}{fonts}
 <link rel="stylesheet" href="app.css?v={hcss}">
 <style>:root{{color-scheme:light dark}}body{{margin:0}}img{{max-width:100%}}[hidden]{{display:none!important}}</style>
 </head>
@@ -324,13 +349,20 @@ def main():
 <div class="lightbox" id="lightbox" hidden role="dialog" aria-label="Image agrandie"></div>
 <noscript><p>Cette classe interactive a besoin de JavaScript. / This interactive course needs JavaScript.</p></noscript>
 '''
-    html = head + body + ''.join('<script src="%s"></script>\n' % f for f in files) + '</body>\n</html>\n'
+    tags = []
+    for f in files:
+        if f in en_urls:
+            if f == en_urls[0]: tags.append('<script>%s</script>\n' % EN_LOADER.replace('__TAGS__', json.dumps(''.join('<script src="%s"></script>' % u for u in en_urls)).replace('</', '<\\/')))
+            continue
+        tags.append('<script src="%s"></script>\n' % f)
+    html = head + body + ''.join(tags) + '</body>\n</html>\n'
     open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(html)
 
     # ---- manifest ----
     man = {'name': 'Ocelle', 'short_name': 'Ocelle', 'description': DESC['fr'], 'lang': 'fr-CA',
            'start_url': './', 'scope': './', 'display': 'standalone', 'background_color': BRAND_BG, 'theme_color': BRAND_BG, 'categories': ['education', 'medical'],
-           'icons': ([{'src': ic['icon-192.png'], 'sizes': '192x192', 'type': 'image/png', 'purpose': 'any maskable'}, {'src': ic['icon-512.png'], 'sizes': '512x512', 'type': 'image/png', 'purpose': 'any maskable'}] if ic.get('brand') else
+           'icons': ([{'src': ic['icon-192.png'], 'sizes': '192x192', 'type': 'image/png', 'purpose': 'any'}, {'src': ic['icon-512.png'], 'sizes': '512x512', 'type': 'image/png', 'purpose': 'any'},
+                      {'src': ic['icon-512.png'], 'sizes': '512x512', 'type': 'image/png', 'purpose': 'maskable'}] if ic.get('brand') else
                      [{'src': ic['icon-192.png'], 'sizes': '192x192', 'type': 'image/png'}, {'src': ic['icon-512.png'], 'sizes': '512x512', 'type': 'image/png'},
                       {'src': ic['maskable-512.png'], 'sizes': '512x512', 'type': 'image/png', 'purpose': 'maskable'}]) + [{'src': ic['svg'], 'sizes': 'any', 'type': 'image/svg+xml'}]}
     json.dump(man, open(os.path.join(OUT, 'manifest.webmanifest'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
