@@ -194,3 +194,10 @@ html.no-motion .voir-miss { animation: none; }
   .a-item [data-sim] .eyebrow { margin: 0; }
   .a-item [data-sim] .eqn { font-size: .72rem; padding: 4px 8px; }
 }
+.voir-sign.feedback { position: relative; padding-right: 120px; min-height: 46px; }
+.voir-sign.feedback > .mo-sticker { top: 8px; right: 8px; } /* inside the verdict box: never over the caption */
+@media (max-width: 600px) {
+  .mech-fig .pair .fig-body svg, .mech-fig .pair .fig-body canvas { max-height: 110px; width: 100%; object-fit: contain; }
+  .mech-fig .pair .fig-body .row.small { font-size: .7rem; gap: 4px; margin-top: 2px; }
+  .mech-fig .pair .fig-body .row.small input[type="range"] { min-width: 0; width: 100%; }
+}
