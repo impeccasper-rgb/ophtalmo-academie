@@ -47,8 +47,9 @@ RIGHTS_FILTER_JS = r"""(function () {
     (O.inv || []).forEach(function (e) { if (e.practice) e.practice = e.practice.filter(function (id) { return ok[id]; }); }); }
 })();
 """
-SRC_ORDER = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'motion', 'tree', 'figures-mech', 'figures-retine', 'privacy', 'views', 'web']
-CSS_ORDER = ['styles', 'investigations', 'tree', 'web']
+SRC_ORDER = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'bscan-sim', 'motion', 'tree', 'figures-mech', 'figures-retine', 'privacy', 'views', 'web']
+CSS_ORDER = ['styles', 'investigations', 'bscan-sim', 'tree', 'web']
+VENDOR = ['three-0.159.0']   # pinned local libraries (no CDN: CSP 'self', offline, iOS); loaded on demand by src/bscan-sim.js
 THEME_LIGHT, THEME_DARK, COBALT, BRAND_BG = '#1f2cff', '#1a23d9', '#1f2cff', '#1F2CFF'
 TITLE = {'fr': 'Ocelle · ophtalmologie pour externes et R1', 'en': 'Ocelle · ophthalmology for clerks and R1s'}
 DESC = {'fr': 'Apprends à voir le signe qui compte : cornée, glaucome et examens, en images, cas et jeux. Gratuit, sans pub.',
@@ -257,6 +258,13 @@ def main():
         if os.path.exists(p): emit(name + '.js', read(p))
         else: missing.append('src/' + name)
     font_css, font_files = self_hosted_fonts()
+    vendor_files = []
+    for v in VENDOR:
+        vsrc = os.path.join(ROOT, 'vendor', v)
+        if os.path.isdir(vsrc):
+            shutil.copytree(vsrc, os.path.join(OUT, 'vendor', v), dirs_exist_ok=True)
+            vendor_files += ['vendor/%s/%s' % (v, f) for f in sorted(os.listdir(vsrc)) if f.endswith('.js')]
+        else: missing.append('vendor/' + v)
     css = font_css + '\n'.join('/* src/%s.css */\n' % n + read(os.path.join(SRC, n + '.css')) for n in CSS_ORDER if os.path.exists(os.path.join(SRC, n + '.css')))
     hcss = hashlib.sha1(css.encode()).hexdigest()[:10]
     hjs = hashlib.sha1(''.join(files).encode()).hexdigest()[:10]
@@ -363,7 +371,7 @@ self.addEventListener('fetch', e => {
     else e.respondWith(caches.match(req).then(hit => hit || fetch(req).then(r => { if (r.ok) { const cp = r.clone(); caches.open(CORE).then(c => c.put(req, cp)); } return r; })));
   } else if (u.hostname === 'fonts.googleapis.com' || u.hostname === 'fonts.gstatic.com') e.respondWith(cacheFirst(req, FONT));
 });
-''' % (version, hcss, ic['svg'], ic['icon-192.png'], json.dumps(files + [f for f in font_files if '-latin-wght-normal' in f]))
+''' % (version, hcss, ic['svg'], ic['icon-192.png'], json.dumps(files + vendor_files + [f for f in font_files if '-latin-wght-normal' in f]))
     open(os.path.join(OUT, 'sw.js'), 'w', encoding='utf-8').write(sw)
 
     # ---- 404: send unknown paths back to the SPA (/repo/cas-b1 → /repo/#cas-b1) ----

@@ -1304,7 +1304,7 @@
           '<b class="inv-card-t">' + PE(inv.title) + '</b>' + // one line per card (hub ≤ 120 words); the purpose is on the exam page
           '<span class="row tight"><span class="tag plain">' + p.n + ' ' + E(S('hub.imgs', 'images', 'images')) + '</span></span>' +
           (p.n ? '<span class="pbar' + (pct >= 60 ? ' ok' : '') + '" aria-label="' + E(p.ok + ' / ' + p.n) + '"><i style="width:' + pct + '%"></i></span>' : '') + '</a>';
-      }).join('') + '</div>' + icHubCard() + '</div>';
+      }).join('') + (W.BscanSim ? W.BscanSim.hubCard() : '') + '</div>' + icHubCard() + '</div>';
   }
   function listBlock(title, arr, cls) {
     if (!arr || !arr.length) return '';
@@ -1324,7 +1324,7 @@
     return '<div class="page inv-page inv-page2">' + crumbsH([[S('hub', 'Investigations', 'Investigations'), 'investigations'], [pick(inv.title), null]]) +
       '<div class="phead inv-phead"><h1>' + PE(inv.title) + '</h1>' + (inv.en_term && lang() !== 'en' ? '<div class="en">' + E(inv.en_term) + '</div>' : '') + '</div>' +
       (usingFixture() ? '<div class="callout amber small">' + E(S('fixture', 'Contenu de démonstration (le contenu pédagogique complet arrive bientôt).', 'Demo content (full teaching content coming soon).')) + '</div>' : '') +
-      (hasTool ? '<section class="stack inv-sec" id="inv-tool" aria-label="' + E(pick(TOOL_NAMES[inv.tool]) || S('tool', 'Outil interactif', 'Interactive tool')) + '"><h2 class="sr-only">' + E(pick(TOOL_NAMES[inv.tool]) || S('tool', 'Outil interactif', 'Interactive tool')) + '</h2><div data-invtool="' + E(inv.tool) + '"></div></section>' : '') +
+      (hasTool ? '<section class="stack inv-sec" id="inv-tool" aria-label="' + E(pick(TOOL_NAMES[inv.tool]) || S('tool', 'Outil interactif', 'Interactive tool')) + '"><h2 class="sr-only">' + E(pick(TOOL_NAMES[inv.tool]) || S('tool', 'Outil interactif', 'Interactive tool')) + '</h2><div data-invtool="' + E(inv.tool) + '"></div>' + (id === 'bscan' && W.BscanSim ? W.BscanSim.promo() : '') + '</section>' : '') +
       '<section class="stack inv-sec" id="inv-practice">' + secHead(S('k.practice', 'Pratique', 'Practice'), S('practice.h', 'Observe, réponds, révèle', 'Observe, answer, reveal') + ' · ' + items.length) + '<div data-invpractice></div></section>' +
       '<section class="inv-ref" aria-label="' + E(S('ref', 'Fiche de l’examen', 'Test summary')) + '"><h2 class="inv-ref-h">' + E(S('ref', 'Fiche de l’examen', 'Test summary')) + '</h2><div class="inv-folds">' +
       chip('why', S('why', 'À quoi ça sert', 'What it is for'), inv.why) + chip('how', S('how', 'Comment faire et lire', 'How to do and read it'), inv.how, true) +

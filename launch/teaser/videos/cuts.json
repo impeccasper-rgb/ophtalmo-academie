@@ -1,0 +1,398 @@
+{
+ "bpm": 120,
+ "note": "cut times in seconds; every cut is on a 0.5-s grid (0.25 s = half-beat)",
+ "reels": {
+  "ocelle-teaser-01-ocelle-arrive-en": {
+   "T": 10.5,
+   "cuts": [
+    0,
+    2,
+    3,
+    3.5,
+    4,
+    4.5,
+    5,
+    6,
+    6.5,
+    7,
+    7.5,
+    8,
+    10.5
+   ]
+  },
+  "ocelle-teaser-01-ocelle-arrive-fr": {
+   "T": 10.5,
+   "cuts": [
+    0,
+    2,
+    3,
+    3.5,
+    4,
+    4.5,
+    5,
+    6,
+    6.5,
+    7,
+    7.5,
+    8,
+    10.5
+   ]
+  },
+  "ocelle-teaser-02-defi-angle-ferme-en": {
+   "T": 13.5,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    4,
+    8,
+    9,
+    11,
+    13.5
+   ]
+  },
+  "ocelle-teaser-02-defi-angle-ferme-fr": {
+   "T": 13.5,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    4,
+    8,
+    9,
+    11,
+    13.5
+   ]
+  },
+  "ocelle-teaser-03-mecanisme-crise-angle-en": {
+   "T": 13.5,
+   "cuts": [
+    0,
+    2,
+    3.5,
+    5,
+    6.5,
+    8,
+    9.5,
+    11,
+    13.5
+   ]
+  },
+  "ocelle-teaser-03-mecanisme-crise-angle-fr": {
+   "T": 13.5,
+   "cuts": [
+    0,
+    2,
+    3.5,
+    5,
+    6.5,
+    8,
+    9.5,
+    11,
+    13.5
+   ]
+  },
+  "ocelle-teaser-04-defi-dendrite-reponse-demain-en": {
+   "T": 12,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    4,
+    8,
+    9.5,
+    12
+   ]
+  },
+  "ocelle-teaser-04-defi-dendrite-reponse-demain-fr": {
+   "T": 12,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    4,
+    8,
+    9.5,
+    12
+   ]
+  },
+  "ocelle-teaser-04b-defi-dendrite-reponse-en": {
+   "T": 10.5,
+   "cuts": [
+    0,
+    2,
+    2.25,
+    2.5,
+    2.75,
+    3,
+    4.5,
+    5.5,
+    8,
+    10.5
+   ]
+  },
+  "ocelle-teaser-04b-defi-dendrite-reponse-fr": {
+   "T": 10.5,
+   "cuts": [
+    0,
+    2,
+    2.25,
+    2.5,
+    2.75,
+    3,
+    4.5,
+    5.5,
+    8,
+    10.5
+   ]
+  },
+  "ocelle-teaser-05-touche-le-signe-en": {
+   "T": 13.5,
+   "cuts": [
+    0,
+    2,
+    3,
+    5,
+    7.5,
+    9,
+    11,
+    13.5
+   ]
+  },
+  "ocelle-teaser-05-touche-le-signe-fr": {
+   "T": 13.5,
+   "cuts": [
+    0,
+    2,
+    3,
+    5,
+    7.5,
+    9,
+    11,
+    13.5
+   ]
+  },
+  "ocelle-teaser-06-defi-decollement-retine-en": {
+   "T": 13.5,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    4,
+    8,
+    9,
+    11,
+    13.5
+   ]
+  },
+  "ocelle-teaser-06-defi-decollement-retine-fr": {
+   "T": 13.5,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    4,
+    8,
+    9,
+    11,
+    13.5
+   ]
+  },
+  "ocelle-teaser-07-defi-oacr-reponse-demain-en": {
+   "T": 12,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    4,
+    8,
+    9.5,
+    12
+   ]
+  },
+  "ocelle-teaser-07-defi-oacr-reponse-demain-fr": {
+   "T": 12,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    4,
+    8,
+    9.5,
+    12
+   ]
+  },
+  "ocelle-teaser-07b-defi-oacr-reponse-en": {
+   "T": 10.5,
+   "cuts": [
+    0,
+    2,
+    2.25,
+    2.5,
+    2.75,
+    3,
+    4.5,
+    5.5,
+    8,
+    10.5
+   ]
+  },
+  "ocelle-teaser-07b-defi-oacr-reponse-fr": {
+   "T": 10.5,
+   "cuts": [
+    0,
+    2,
+    2.25,
+    2.5,
+    2.75,
+    3,
+    4.5,
+    5.5,
+    8,
+    10.5
+   ]
+  },
+  "ocelle-teaser-08-defi-hypopion-en": {
+   "T": 13.5,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    4,
+    8,
+    9,
+    11,
+    13.5
+   ]
+  },
+  "ocelle-teaser-08-defi-hypopion-fr": {
+   "T": 13.5,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    4,
+    8,
+    9,
+    11,
+    13.5
+   ]
+  },
+  "ocelle-teaser-09-compte-a-rebours-j1-en": {
+   "T": 8,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    5.5,
+    8
+   ]
+  },
+  "ocelle-teaser-09-compte-a-rebours-j1-fr": {
+   "T": 8,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    5.5,
+    8
+   ]
+  },
+  "ocelle-teaser-09-compte-a-rebours-j14-en": {
+   "T": 8,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    5.5,
+    8
+   ]
+  },
+  "ocelle-teaser-09-compte-a-rebours-j14-fr": {
+   "T": 8,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    5.5,
+    8
+   ]
+  },
+  "ocelle-teaser-09-compte-a-rebours-j30-en": {
+   "T": 8,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    5.5,
+    8
+   ]
+  },
+  "ocelle-teaser-09-compte-a-rebours-j30-fr": {
+   "T": 8,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    5.5,
+    8
+   ]
+  },
+  "ocelle-teaser-09-compte-a-rebours-j7-en": {
+   "T": 8,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    5.5,
+    8
+   ]
+  },
+  "ocelle-teaser-09-compte-a-rebours-j7-fr": {
+   "T": 8,
+   "cuts": [
+    0,
+    2,
+    2.5,
+    3,
+    3.5,
+    5.5,
+    8
+   ]
+  }
+ }
+}

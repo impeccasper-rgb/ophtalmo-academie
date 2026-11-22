@@ -355,3 +355,29 @@ Aucune date n’est proposée ici : l’ordre compte, pas le calendrier.
 | Commandes trop difficiles sur téléphone | Positions guidées dans les missions ; deux curseurs en repli du glisser 3D |
 | Poids et batterie | Chargement à la demande, rendu à la demande |
 | Dérive de périmètre (orbite, Doppler, biométrie) | Hors objectifs, écrit au § 2 |
+
+## 13. Prototype livré (2026-11-22)
+
+Route `#inv-bscan-sim`, liée depuis le hub Investigations et depuis la page Échographie B. Aperçus : `apercu-ordinateur.png`, `apercu-telephone.png`.
+
+| Élément | État |
+|---|---|
+| Fichiers | `src/bscan-sim.js`, `src/bscan-sim.css` ; three.js 0.159.0 en copie locale (`vendor/three-0.159.0/`, licence MIT jointe), chargé à la demande par `import()` ; copié dans `site/vendor/` et précaché par le service worker (`tools/build_web.py`) |
+| Œil 3D | Globe, cornée, iris, nerf optique, macula ; sonde avec marqueur fluo ; plan de coupe visible ; 3 vues de caméra |
+| Sonde | Glisser (souris ou doigt), flèches du clavier, `R` pour tourner, `F` pour retourner le marqueur ; positions T12, T6, T3, T9, LMAC, HAX ; coupes transverse, longitudinale, axiale |
+| Image B | Nuanceur procédural : paroi, graisse orbitaire, ombre du nerf, écho initial, capsule du cristallin, tavelure dans le repère de la sonde |
+| Gain | Curseur de 50 à 100 dB ; tout est calculé en dB, donc les échos faibles disparaissent les premiers |
+| Cinétique | « Regarde en haut / en bas » : saccade puis mouvements résiduels propres à chaque structure ; image figée si `prefers-reduced-motion` |
+| Cas | Œil normal d’abord (3 repères à cocher), puis 5 cas Observe → Réponds → Révèle : DPV, décollement de rétine, examen normal, hémorragie du vitré, décollement choroïdien |
+| Points disputés | Pastille discrète « i » (« À valider par un échographiste ») : séquence de dépistage, valeurs en dB, cinétique, règle de l’attache à la papille. Jamais dans le texte d’enseignement |
+| Tests | `tests/run.py`, fonction `sim_smoke` : la route charge, les canevas s’affichent, le glisser (souris et tactile 390 × 844) change l’image, le gain agit, la cinétique déplace la membrane puis revient au repos, mouvement réduit respecté |
+| Repli | Sans WebGL : message et lien vers l’outil 2D |
+
+Écarts par rapport à la spécification, à connaître avant la revue par l’expert :
+
+1. **Visée du faisceau.** Au limbe, le faisceau vise la papille (« on commence par le nerf optique »), puis balaie vers la périphérie quand la sonde glisse vers le fornix. C’est un choix de simulation : la spécification prévoyait un faisceau passant par le centre du globe, qui ne montrait pas le nerf au limbe.
+2. **Regard du patient.** Pas de pavé de regard : la position de la sonde est définie sur le globe, et le texte dit où le patient doit regarder. Le globe ne tourne que pendant la saccade cinétique.
+3. **Œil droit seulement.** Pas de mode paupière fermée, pas de vecteur A, pas de carte de couverture, pas d’étiquetage par l’apprenant, pas d’écran de bilan.
+4. **Décollement choroïdien.** Deux dômes (nasal et temporal) au contenu ponctué ; la coupe révélée est l’axiale horizontale, parce qu’elle montre les deux dômes et la papille libre.
+5. **Version de three.js.** 0.159.0, dernière série qui tient en un seul fichier module ; à remonter lors d’un prochain lot si besoin.
+6. Le build « artifact » (`tools/build.py`, `dist/`) n’inclut pas le simulateur : three.js n’y est pas disponible sans CDN.

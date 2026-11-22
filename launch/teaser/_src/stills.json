@@ -1,0 +1,296 @@
+[
+ {
+  "r": "kit:avatar",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1080,
+  "out": "profil/ocelle-avatar-1080.png"
+ },
+ {
+  "r": "kit:craoasset",
+  "lang": "fr",
+  "w": 880,
+  "h": 800,
+  "out": "_src/ui-asset-crao.png"
+ },
+ {
+  "r": "kit:defis",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1920,
+  "out": "profil/ocelle-highlight-1-defis.png"
+ },
+ {
+  "r": "kit:mecanismes",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1920,
+  "out": "profil/ocelle-highlight-2-mecanismes.png"
+ },
+ {
+  "r": "kit:coulisses",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1920,
+  "out": "profil/ocelle-highlight-3-coulisses.png"
+ },
+ {
+  "r": "kit:decembre",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1920,
+  "out": "profil/ocelle-highlight-4-decembre.png"
+ },
+ {
+  "r": "car:c1:1",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-fr-1.png"
+ },
+ {
+  "r": "car:c1:2",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-fr-2.png"
+ },
+ {
+  "r": "car:c1:3",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-fr-3.png"
+ },
+ {
+  "r": "car:c1:4",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-fr-4.png"
+ },
+ {
+  "r": "car:c1:5",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-fr-5.png"
+ },
+ {
+  "r": "car:c1:6",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-fr-6.png"
+ },
+ {
+  "r": "car:c1:1",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-en-1.png"
+ },
+ {
+  "r": "car:c1:2",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-en-2.png"
+ },
+ {
+  "r": "car:c1:3",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-en-3.png"
+ },
+ {
+  "r": "car:c1:4",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-en-4.png"
+ },
+ {
+  "r": "car:c1:5",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-en-5.png"
+ },
+ {
+  "r": "car:c1:6",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-1-oeil-rouge-3-signes-en-6.png"
+ },
+ {
+  "r": "car:c2:1",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-fr-1.png"
+ },
+ {
+  "r": "car:c2:2",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-fr-2.png"
+ },
+ {
+  "r": "car:c2:3",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-fr-3.png"
+ },
+ {
+  "r": "car:c2:4",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-fr-4.png"
+ },
+ {
+  "r": "car:c2:5",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-fr-5.png"
+ },
+ {
+  "r": "car:c2:6",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-fr-6.png"
+ },
+ {
+  "r": "car:c2:1",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-en-1.png"
+ },
+ {
+  "r": "car:c2:2",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-en-2.png"
+ },
+ {
+  "r": "car:c2:3",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-en-3.png"
+ },
+ {
+  "r": "car:c2:4",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-en-4.png"
+ },
+ {
+  "r": "car:c2:5",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-en-5.png"
+ },
+ {
+  "r": "car:c2:6",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-2-fluoresceine-lis-le-dessin-en-6.png"
+ },
+ {
+  "r": "car:c3:1",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-fr-1.png"
+ },
+ {
+  "r": "car:c3:2",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-fr-2.png"
+ },
+ {
+  "r": "car:c3:3",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-fr-3.png"
+ },
+ {
+  "r": "car:c3:4",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-fr-4.png"
+ },
+ {
+  "r": "car:c3:5",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-fr-5.png"
+ },
+ {
+  "r": "car:c3:6",
+  "lang": "fr",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-fr-6.png"
+ },
+ {
+  "r": "car:c3:1",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-en-1.png"
+ },
+ {
+  "r": "car:c3:2",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-en-2.png"
+ },
+ {
+  "r": "car:c3:3",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-en-3.png"
+ },
+ {
+  "r": "car:c3:4",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-en-4.png"
+ },
+ {
+  "r": "car:c3:5",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-en-5.png"
+ },
+ {
+  "r": "car:c3:6",
+  "lang": "en",
+  "w": 1080,
+  "h": 1350,
+  "out": "carousels/ocelle-carrousel-3-crise-angle-4-etapes-en-6.png"
+ }
+]

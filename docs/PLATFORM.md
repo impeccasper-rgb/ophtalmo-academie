@@ -73,6 +73,9 @@ G.OPH.invMedia = { '<media id>': {
 `Inv.render(id)` page ; `Inv.practice(host, items)` moteur Observe→Réponds→Révèle (hotspots animés, « Je ne sais pas », confiance, enregistre via `Store.answer`-like dans `Store.p.inv`).
 Outils interactifs : A-scan (pics cornée/cristallin/rétine/sclère, mesure de longueur axiale), sonde B-scan (orientation, fenêtres), champ visuel (lire fiabilité, MD/PSD, défaut), gonioscopie (grader Shaffer), couches OCT (étiqueter), fond d’œil (explorer).
 
+### Simulateur d’échographie B (`#inv-bscan-sim`)
+`src/bscan-sim.js` + `src/bscan-sim.css` (rôle : exercices interactifs). three.js est une copie locale épinglée (`vendor/three-0.159.0/`, aucun CDN), chargée à la demande, copiée dans `site/vendor/` et précachée par le service worker. Spécification et état : `docs/bscan/SPEC-SIMULATEUR.md`.
+
 ## Build web
 `python3 tools/build_web.py` → `site/` : index.html complet (doctype, meta, manifest, icônes), CSS/JS concaténés, `img/`, `sw.js` (hors ligne), `404.html`.
 Inclut src : core, i18n, figures-a, figures-b, sims, quiz, learn, investigations, views, web ; css : styles, investigations, web ; data FR puis data-en.

@@ -9,7 +9,15 @@ Mis à jour : 2026-11-22.
 - Spécification du simulateur (œil 3D, sonde, image B procédurale, gain, cinétique, 13 cas + 4 artéfacts, objectifs, évaluation, écrans, faisabilité) : `docs/bscan/SPEC-SIMULATEUR.md`.
 - Questions pour l’échographiste expert (14 bloquantes) : `docs/bscan/VALIDATION.md`.
 
+## Prototype (2026-11-22)
+- Route `#inv-bscan-sim` livrée : œil 3D (three.js 0.159.0 local), sonde glissable, image B procédurale, gain en dB, cinétique, œil normal puis 5 cas. Détail et écarts : `docs/bscan/SPEC-SIMULATEUR.md`, section 13.
+- Test de fumée ajouté à `tests/run.py` (`sim_smoke`, sur `site/`).
+- Clés d’interface `bs3.*` définies dans `src/bscan-sim.js` (`BscanSim.keys`), non recopiées dans `src/i18n.js`.
+
 ## Reste
+- Revue du rendu par l’expert sur le prototype (questions 9.1 à 9.6 de `VALIDATION.md`).
+- Les 8 autres tableaux, la carte de couverture, l’étiquetage, le bilan, l’œil gauche.
+- Test sur un vrai iPhone (import dynamique depuis `capacitor://`) : non fait.
 - Lot L0 : réponses de l’expert aux questions bloquantes, avant tout code.
 - Lire Byrne et Green, et Harrie et Kendall (non accessibles en ligne).
 - Visionner les cours de Yale Fisher (ASRS Image Bank), repérés mais non vus.

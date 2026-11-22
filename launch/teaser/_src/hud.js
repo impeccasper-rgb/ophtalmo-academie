@@ -1,0 +1,157 @@
+/* Hybrid system: A « Lampe à fente » (dark navy, cobalt slit beam, snap reveal, glowing fluo sign) owns all motion;
+   E « Quiz show » becomes a HUD layer (question card, A/B/C buttons, timer, score) restyled as glowing cobalt/fluo UI.
+   Safe zones: text stays inside x 72–948, y 140–1680 (1080×1920). */
+var H = (function () {
+  var H = {}, EZ = K.EZ;
+  H.X0 = 72; H.X1 = 948; H.W = 876;
+  H.lang = 'fr';
+  H.t = function (o) { var v = o == null ? '' : (typeof o === 'string' ? o : (o[H.lang] != null ? o[H.lang] : o.fr)); return String(v).replace(/ ([?!:;»])/g, '&nbsp;$1').replace(/« /g, '«&nbsp;'); };
+
+  H.scene = function (S, h) {
+    S.style.height = (h || 1920) + 'px';
+    S.style.background = 'radial-gradient(120% 80% at 50% 48%, #10184a 0%, #060a2a 62%, #03051a 100%)';
+    var tok = { '--surface': '#0e1440', '--sunk': '#151c52', '--paper': '#060a2a', '--ink': '#eef0ff', '--ink-2': '#7d84c2', '--ink-3': '#8e94c4', '--line': '#2a3170', '--cobalt': '#4a57ff', '--cobalt-wash': '#1a2266', '--edge': '#000', '--t-label': '#c9ceff', '--urgent': '#ff6b5e' };
+    Object.keys(tok).forEach(function (k) { S.style.setProperty(k, tok[k]); });
+    K.div(S, 'width:0;height:0', '<svg width="0" height="0"><defs>' +
+      '<filter id="glowA" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>' +
+      '<filter id="glowL" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>' +
+      '<filter id="glowM" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs></svg>' +
+      '<style>.hud{position:absolute;background:rgba(14,20,64,.74);border:2px solid rgba(90,104,255,.95);border-radius:22px;box-shadow:0 0 0 1px rgba(74,87,255,.25),0 0 34px rgba(74,87,255,.42),inset 0 0 22px rgba(74,87,255,.16)}' +
+      '.mono{font-family:var(--mono);font-weight:700;letter-spacing:.12em;text-transform:uppercase}' +
+      '.eyb{font:700 26px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--fluo);text-shadow:0 0 14px rgba(216,255,58,.45)}' +
+      '.gl{text-shadow:0 0 22px rgba(216,255,58,.55)}' +
+      '.tile{display:inline-grid;place-items:center;width:68px;height:68px;border-radius:16px;border:3px solid var(--fluo);color:var(--fluo);font:800 40px var(--display);box-shadow:0 0 18px rgba(216,255,58,.35),inset 0 0 12px rgba(216,255,58,.2);text-shadow:0 0 12px rgba(216,255,58,.7);flex:none}' +
+      '.sticker{color:#0a0f40!important}.sticker.dk{border-color:#000;box-shadow:7px 7px 0 #000}</style>');
+  };
+  /* slit beam + halo following keys [[t, x], ...]; visible in [t0, t1) */
+  H.beam = function (S, keys, top, h, t0, t1, op) {
+    var beam = K.div(S, 'left:0;top:' + top + 'px;width:90px;height:' + h + 'px;mix-blend-mode:screen;filter:blur(5px);background:linear-gradient(90deg,transparent,rgba(74,87,255,.55) 32%,#dfe3ff 50%,rgba(74,87,255,.55) 68%,transparent)');
+    var halo = K.div(S, 'left:0;top:' + (top - 100) + 'px;width:520px;height:' + (h + 200) + 'px;mix-blend-mode:screen;background:radial-gradient(closest-side,rgba(74,87,255,.34),rgba(74,87,255,.1) 60%,transparent)');
+    K.track(beam, keys.map(function (k) { return [k[0], { transform: 'translateX(' + (k[1] - 45) + 'px)' }, EZ.slow]; }));
+    K.track(halo, keys.map(function (k) { return [k[0], { transform: 'translateX(' + (k[1] - 260) + 'px)' }, EZ.slow]; }));
+    [beam, halo].forEach(function (e) { var k = [[0, { opacity: 0 }], [t0, { opacity: 0 }], [t0 + .15, { opacity: op || 1 }]]; if (t1 != null) k.push([t1 - .2, { opacity: op || 1 }], [t1, { opacity: 0 }]); K.track(e, k); });
+  };
+  H.flash = function (S, t, op) { var f = K.div(S, 'left:0;top:0;width:1080px;height:' + S.offsetHeight + 'px;background:#4a57ff;mix-blend-mode:screen;z-index:40'); K.track(f, [[0, { opacity: 0 }], [t, { opacity: 0 }], [t, { opacity: op || .65 }, EZ.out], [t + .35, { opacity: 0 }]]); };
+
+  /* figure spec {html, vb:[w,h], sign:[x,y,rx,ry]} fitted in a box; dim copy + a copy lit inside the beam until tSnap */
+  H.figure = function (S, spec, box, beamKeys, tSnap, o) {
+    o = o || {}; var sc = Math.min(box[2] / spec.vb[0], box[3] / spec.vb[1]), w = spec.vb[0] * sc, h = spec.vb[1] * sc, x = box[0] + (box[2] - w) / 2, y = box[1] + (box[3] - h) / 2;
+    var wrap = K.div(S, 'left:' + x + 'px;top:' + y + 'px;width:' + w + 'px;height:' + h + 'px', '', 'fig');
+    var dim = K.div(wrap, 'inset:0;filter:brightness(.26) saturate(.5)', spec.html);
+    var lit = K.div(wrap, 'inset:0', spec.html);
+    if (beamKeys) {
+      var kk = beamKeys.map(function (k) { var l = k[1] - x - 34, r = w - (k[1] - x + 34); return [k[0], { clipPath: 'inset(0px ' + r.toFixed(0) + 'px 0px ' + l.toFixed(0) + 'px)' }, EZ.slow]; });
+      kk.push([tSnap - .001, kk[kk.length - 1][1]], [tSnap, { clipPath: 'inset(0px 0px 0px 0px)' }]);
+      K.track(lit, kk);
+    }
+    var ov = K.svgBox(wrap, 'left:0;top:0;width:100%;height:100%', '0 0 ' + spec.vb[0] + ' ' + spec.vb[1]);
+    return { wrap: wrap, ov: ov, sc: sc, x: x, y: y, w: w, h: h, px: function (vx, vy) { return [x + vx * sc, y + vy * sc]; } };
+  };
+  H.signLoop = function (F, spec, t0, seed) {
+    var g = spec.sign; return K.loop(F.ov, g[0], g[1], g[2], g[3], seed || 11, t0, .55, { filter: 'url(#glowA)', tilt: -.1, w: 6.5 / F.sc, hw: 10 / F.sc });
+  };
+  H.burst = function (S, x, y, t0, n, seed) { // restrained fluo burst + ring
+    var R = K.rng(seed || 3); n = n || 14;
+    for (var i = 0; i < n; i++) {
+      var a = (i / n) * Math.PI * 2 + R() * .5, d = 90 + R() * 110, sz = 8 + R() * 8;
+      var e = K.div(S, 'left:' + (x - sz / 2) + 'px;top:' + (y - sz / 2) + 'px;width:' + sz + 'px;height:' + sz + 'px;border-radius:' + (i % 2 ? '50%' : '3px') + ';background:#d8ff3a;box-shadow:0 0 12px rgba(216,255,58,.8);z-index:45');
+      K.track(e, [[0, { opacity: 0, transform: 'translate(0px,0px) scale(.4)' }], [t0, { opacity: 0, transform: 'translate(0px,0px) scale(.4)' }], [t0 + .01, { opacity: 1, transform: 'translate(0px,0px) scale(1)' }, 'cubic-bezier(.15,.7,.3,1)'], [t0 + .75, { opacity: 0, transform: 'translate(' + (Math.cos(a) * d).toFixed(0) + 'px,' + (Math.sin(a) * d).toFixed(0) + 'px) scale(.6)' }]]);
+    }
+    var ring = K.div(S, 'left:' + (x - 60) + 'px;top:' + (y - 60) + 'px;width:120px;height:120px;border-radius:50%;border:4px solid #d8ff3a;box-shadow:0 0 22px rgba(216,255,58,.7);z-index:44');
+    K.track(ring, [[0, { opacity: 0, transform: 'scale(.3)' }], [t0, { opacity: 0, transform: 'scale(.3)' }], [t0 + .01, { opacity: 1, transform: 'scale(.4)' }, EZ.out], [t0 + .6, { opacity: 0, transform: 'scale(2.4)' }]]);
+  };
+  /* A end card: fade through black, beam sweep, the ocellus draws in glowing fluorescein */
+  H.endCard = function (S, t0) {
+    var hh = S.offsetHeight, top = hh === 1920 ? 0 : 0, k = hh / 1920;
+    var blk = K.div(S, 'left:0;top:0;width:1080px;height:' + hh + 'px;background:radial-gradient(90% 60% at 50% 45%,#0e1440,#03051a);z-index:80'); K.fade(blk, t0, .25);
+    var z = K.div(S, 'left:0;top:0;width:1080px;height:' + hh + 'px;z-index:81');
+    var sweep = K.div(z, 'left:0;top:' + (420 * k) + 'px;width:120px;height:' + (1100 * k) + 'px;mix-blend-mode:screen;filter:blur(18px);background:linear-gradient(90deg,transparent,rgba(74,87,255,.45),transparent)');
+    K.track(sweep, [[0, { opacity: 0, transform: 'translateX(-200px)' }], [t0 + .2, { opacity: 0, transform: 'translateX(-200px)' }], [t0 + .25, { opacity: 1, transform: 'translateX(-200px)' }, EZ.slow], [t0 + 1.4, { opacity: 1, transform: 'translateX(1200px)' }]]);
+    var y0 = 560 * k;
+    K.mark(z, 'left:330px;top:' + y0 + 'px;width:420px;height:395px', { t0: t0 + .25, dur: .8, sw: 70, filter: 'url(#glowM)' });
+    var wm = K.wordmark(z, 'left:270px;top:' + (y0 + 470) + 'px;width:540px;color:#fff', '#ffffff'); K.rise(wm, t0 + .8, .5, 30);
+    var dt = K.div(z, 'left:72px;top:' + (y0 + 670) + 'px;width:876px;text-align:center;color:#c9ceff;font:700 60px var(--display);letter-spacing:-.02em', H.t({ fr: '· Décembre 2026 ·', en: 'Coming December 2026' })); K.rise(dt, t0 + .95, .45, 24);
+    var cta = K.div(z, 'left:72px;top:' + (y0 + 800) + 'px;width:876px;text-align:center;font-size:76px', '<span class="sticker dk">' + H.t({ fr: 'Abonne-toi', en: 'Follow' }) + '</span>'); K.pop(cta, t0 + 1.15, -5);
+    return z;
+  };
+  H.eyebrow = function (S, txt, t0, t1) { var e = K.div(S, 'left:72px;top:142px;z-index:30', '<span class="eyb">' + txt + '</span>'); K.fade(e, t0, .3, t1, .2); return e; };
+
+  /* ---------- the quiz reel (A+E) ----------
+     cfg: { num, spec, hook, q, opts[3], ok, sign, stk:[x,y], dx, why, prompt }   mode: 'same' | 'demain' | 'recap' */
+  H.QUIZ_T = {
+    same: { snap: 2, btn: [2.5, 3, 3.5], tm: 4, tmd: 4, rev: 8, dx: 9, end: 11, T: 13.5 },
+    demain: { snap: 2, btn: [2.5, 3, 3.5], tm: 4, tmd: 4, rev: 8, dx: null, end: 9.5, T: 12 },
+    recap: { snap: 2, btn: [2.25, 2.5, 2.75], tm: 3, tmd: 1.5, rev: 4.5, dx: 5.5, end: 8, T: 10.5 }
+  };
+  H.quiz = function (S, cfg, mode) {
+    var Q = H.QUIZ_T[mode]; K.T = Q.T; H.scene(S);
+    var ST = Q.snap, FB = [40, 470, 1000, 620];
+    // hook: the beam sweeps the drawn sign in the dark
+    var BK = [[0, 120], [.2, 120], [1.9, 960]];
+    H.beam(S, BK, 380, 860, 0, ST + .05);
+    var F = H.figure(S, cfg.spec, FB, BK, ST);
+    K.track(F.wrap, [[0, { transform: 'scale(1)' }, EZ.lin], [ST, { transform: 'scale(1.05)' }], [ST, { transform: 'scale(1.14)' }, EZ.out], [ST + .7, { transform: 'scale(1)' }], [Q.end, { transform: 'scale(1)' }]]);
+    H.flash(S, ST);
+    var hookTxt = mode === 'recap' ? H.t({ fr: 'La réponse<br>d’<span style="color:var(--fluo)" class="gl">hier</span>', en: 'Yesterday’s<br><span style="color:var(--fluo)" class="gl">answer</span>' }) : H.t(cfg.hook);
+    var hook = K.div(S, 'left:72px;top:200px;width:876px;color:#fff;font-size:140px', '<div class="dsp">' + hookTxt + '</div>');
+    K.rise(hook, .1, .55, 40, ST - .15, .15);
+    var eyb = H.t({ fr: 'Défi #', en: 'Challenge #' }) + cfg.num + (mode === 'recap' ? H.t({ fr: ' · réponse', en: ' · answer' }) : '');
+    H.eyebrow(S, eyb, .05, Q.end - .2);
+    // score chip (HUD)
+    var chip = K.div(S, 'right:132px;top:132px;padding:10px 18px;z-index:30', '', 'hud');
+    chip.style.borderRadius = '14px';
+    var c0 = K.div(chip, 'position:relative;color:#c9ceff;font:700 26px var(--mono);letter-spacing:.12em', 'SCORE <b style="color:#fff">00</b>');
+    if (Q.dx) { var c1 = K.div(chip, 'left:18px;top:10px;color:#c9ceff;font:700 26px var(--mono);letter-spacing:.12em', 'SCORE <b style="color:#d8ff3a;text-shadow:0 0 12px rgba(216,255,58,.8)">01</b>'); K.cut(c1, Q.rev + .1); K.track(c0, [[0, { opacity: 1 }], [Q.rev + .1, { opacity: 1 }], [Q.rev + .1, { opacity: 0 }]]);
+      K.track(chip, [[Q.rev + .1, { transform: 'scale(1)' }, EZ.pop], [Q.rev + .25, { transform: 'scale(1.15)' }], [Q.rev + .5, { transform: 'scale(1)' }]]); }
+    K.fade(chip, ST, .3, Q.end - .2, .2);
+    // question card
+    var card = K.div(S, 'left:72px;top:198px;width:876px;padding:26px 32px 30px;z-index:20', '<div class="eyb" style="margin-bottom:12px">' + H.t({ fr: 'Question', en: 'Question' }) + '</div><div style="color:#fff;font:600 44px/1.22 var(--body)">' + H.t(cfg.q) + '</div>', 'hud');
+    K.rise(card, ST, .45, 24, Q.dx || Q.end, .3);
+    // answer buttons
+    var bs = [], BY = 1112;
+    cfg.opts.forEach(function (op, i) {
+      var b = K.div(S, 'left:72px;top:' + (BY + i * 130) + 'px;width:876px;height:112px;display:flex;align-items:center;gap:26px;padding:0 24px;color:#fff;font:600 44px/1.1 var(--body);z-index:20', '<span class="tile">' + 'ABC'[i] + '</span><span>' + H.t(op) + '</span>', 'hud');
+      b.style.display = 'flex'; bs.push(b);
+      K.track(b, [[0, { opacity: 0, transform: 'translateY(30px)' }], [Q.btn[i], { opacity: 0, transform: 'translateY(30px)' }, EZ.out], [Q.btn[i] + .35, { opacity: 1, transform: 'translateY(0px)' }],
+        [Q.rev, { opacity: 1, transform: 'translateY(0px)' }], [Q.rev + .01, { opacity: (Q.dx && i !== cfg.ok) ? .32 : 1, transform: 'translateY(0px)' }],
+        [Q.dx || Q.end, { opacity: (Q.dx && i !== cfg.ok) ? .32 : 1, transform: 'translateY(0px)' }, EZ.in], [(Q.dx || Q.end) + .3, { opacity: 0, transform: 'translateY(24px)' }]]);
+    });
+    // timer bar + open prompt (no call to comment on screen)
+    var tb = K.div(S, 'left:72px;top:1508px;width:740px;height:22px;border-radius:12px;background:rgba(74,87,255,.22);border:2px solid rgba(90,104,255,.9);box-shadow:0 0 18px rgba(74,87,255,.4);overflow:hidden;z-index:20');
+    var tf = K.div(tb, 'left:0;top:0;width:100%;height:100%;background:#d8ff3a;box-shadow:0 0 16px rgba(216,255,58,.9);transform-origin:0 50%');
+    K.track(tf, [[Q.tm, { transform: 'scaleX(1)' }, EZ.lin], [Q.tm + Q.tmd, { transform: 'scaleX(0)' }]]);
+    K.fade(tb, Q.tm - .25, .25, Q.rev, .15);
+    var nd = Math.round(Q.tmd);
+    for (var s = 0; s < nd; s++) { var dg = K.div(S, 'left:836px;top:1484px;width:112px;text-align:right;color:#d8ff3a;font:700 64px/1 var(--mono);text-shadow:0 0 16px rgba(216,255,58,.7);z-index:20', String(nd - s)); var a0 = Q.tm + s * (Q.tmd / nd); K.cut(dg, a0, a0 + Q.tmd / nd); K.track(dg, [[a0, { transform: 'scale(1.3)' }, EZ.out], [a0 + .2, { transform: 'scale(1)' }]]); }
+    var pr = K.div(S, 'left:72px;top:1556px;width:876px;color:#fff;font:800 66px/1 var(--display);letter-spacing:-.03em;z-index:20', mode === 'recap' ? H.t({ fr: 'Tu avais vu juste ?', en: 'Did you get it?' }) : H.t(cfg.prompt));
+    K.rise(pr, Q.tm, .4, 16, Q.rev, .2);
+    // ambient slow beam during the timer
+    H.beam(S, [[Q.tm, 60], [Q.tm + Q.tmd, 1000]], 440, 700, Q.tm, Q.rev, .45);
+
+    if (Q.dx) { // reveal in the same video
+      H.flash(S, Q.rev, .55);
+      H.signLoop(F, cfg.spec, Q.rev + .02, cfg.num * 7);
+      var bo = bs[cfg.ok], hi = K.div(bo, 'inset:-2px;border-radius:22px;background:#d8ff3a;display:flex;align-items:center;gap:26px;padding:0 24px;color:#0a0f40;font:800 44px/1.1 var(--body);box-shadow:0 0 44px rgba(216,255,58,.55)', '<span class="tile" style="background:#0a0f40;box-shadow:none">' + 'ABC'[cfg.ok] + '</span><span>' + H.t(cfg.opts[cfg.ok]) + '</span>');
+      K.cut(hi, Q.rev);
+      K.track(bo, [[Q.rev, { transform: 'translateY(0px) scale(1)' }, EZ.pop], [Q.rev + .14, { transform: 'translateY(0px) scale(1.04)' }], [Q.rev + .4, { transform: 'translateY(0px) scale(1)' }]]);
+      H.burst(S, 72 + 24 + 34, BY + cfg.ok * 130 + 56, Q.rev + .05, 14, cfg.num);
+      var st = K.div(S, 'left:' + cfg.stk[0] + 'px;top:' + cfg.stk[1] + 'px;font-size:54px;z-index:30', '<span class="sticker dk">' + H.t(cfg.sign) + '</span>'); st.style.transformOrigin = '20% 50%';
+      K.pop(st, Q.rev + .35, -5, .5);
+      var ok = K.div(S, 'left:730px;top:' + (BY + cfg.ok * 130 - 40) + 'px;font-size:44px;z-index:31', '<span class="sticker dk">' + H.t({ fr: 'Bien vu !', en: 'Nice catch!' }) + '</span>'); K.pop(ok, Q.rev + .2, 6, .5, Q.dx - .2);
+      var dx = K.div(S, 'left:72px;top:196px;width:876px;color:#fff;font-size:92px;z-index:20', '<div class="dsp">' + H.t(cfg.dx) + '</div>');
+      K.rise(dx, Q.dx + .25, .5, 36);
+      var why = K.div(S, 'left:72px;top:1150px;width:876px;padding:28px 32px 32px;z-index:20', '<div class="eyb" style="margin-bottom:14px">' + H.t({ fr: 'À retenir', en: 'Key point' }) + '</div><div style="color:#fff;font:600 42px/1.25 var(--body)">' + H.t(cfg.why) + '</div>', 'hud');
+      K.rise(why, Q.dx + .5, .45, 24);
+    } else { // answer tomorrow
+      H.flash(S, Q.rev, .4);
+      var dm = K.div(S, 'left:72px;top:440px;width:876px;text-align:center;font-size:104px;z-index:30', '<span class="sticker dk">' + H.t({ fr: 'Réponse demain', en: 'Answer tomorrow' }) + '</span>');
+      K.pop(dm, Q.rev + .05, -5, .55);
+      var sub = K.div(S, 'left:72px;top:1556px;width:876px;color:#fff;font:800 60px/1 var(--display);letter-spacing:-.03em;z-index:20', H.t({ fr: 'Abonne-toi pour la voir', en: 'Follow to see it' }));
+      K.rise(sub, Q.rev + .3, .4, 16);
+    }
+    H.endCard(S, Q.end);
+    return { F: F, cuts: H.cutsQuiz(mode) };
+  };
+  H.cutsQuiz = function (mode) { var Q = H.QUIZ_T[mode]; return [0, Q.snap].concat(Q.btn, [Q.tm], Q.dx ? [Q.rev, Q.dx] : [Q.rev], [Q.end, Q.T]); };
+  return H;
+})();

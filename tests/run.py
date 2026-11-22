@@ -17,6 +17,74 @@ problems = []
 
 def log(msg): print(msg, flush=True)
 
+def sim_smoke(p):
+    """B-scan simulator (#inv-bscan-sim), tested on the web build (site/): three.js is a local file there, not in the single-file dist/.
+    Checks: the route loads, both canvases render, dragging the probe changes the image, the gain slider works, the kinetic button moves the membrane."""
+    site = os.path.join(ROOT, 'site')
+    if not os.path.exists(os.path.join(site, 'js', 'bscan-sim.js')):
+        problems.append('[sim] site/ is not built with the simulator (run python3 tools/build_web.py)'); return
+    port = PORT + 1
+    srv2 = subprocess.Popen([sys.executable, '-m', 'http.server', str(port), '--directory', site], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    time.sleep(0.8)
+    snap = "() => window.__bs3.snapshot()"
+    gain = "v => { const g = document.querySelector('[data-gain]'); g.value = v; g.dispatchEvent(new Event('input', { bubbles: true })); }"
+    try:
+        b = p.chromium.launch(executable_path='/usr/bin/google-chrome', args=['--no-sandbox', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--disable-background-networking', '--disable-component-update', '--no-first-run', '--disable-sync', '--disable-default-apps', '--disable-features=Translate,OptimizationHints,MediaRouter,AutofillServerCommunication'])
+        for vw, vh, label, rm in [(1280, 900, 'desktop', False), (390, 844, 'mobile', False), (390, 844, 'reduced-motion', True)]:
+            tag = '[sim %s] ' % label
+            ctx = b.new_context(viewport={'width': vw, 'height': vh}, has_touch=(vw < 500), reduced_motion='reduce' if rm else 'no-preference')
+            ctx.route('**/*', lambda route: route.continue_() if route.request.url.startswith('http://127.0.0.1') or route.request.url.startswith('data:') or route.request.url.startswith('blob:') else route.abort())
+            page = ctx.new_page(); page.set_default_timeout(5000); errs = []
+            page.on('pageerror', lambda e: errs.append('pageerror: ' + str(e)))
+            page.on('console', lambda m: errs.append('console.' + m.type + ': ' + m.text) if m.type == 'error' and 'Failed to load resource' not in m.text else None)
+            try:
+                page.goto('http://127.0.0.1:%d/index.html?lang=fr#inv-bscan-sim' % port, wait_until='domcontentloaded', timeout=30000)
+                try: page.wait_for_function('window.__bs3 && window.__bs3.ready', timeout=45000)
+                except Exception:
+                    problems.append(tag + 'simulator did not start: ' + ' | '.join(errs[:3]) + ' | ' + page.inner_text('#view')[:100].replace('\n', ' ')); continue
+                box = page.eval_on_selector('[data-c3]', "c => { const r = c.getBoundingClientRect(); return [r.left, r.top, r.width, r.height, c.width, c.height]; }")
+                if box[2] < 150 or box[3] < 120 or box[4] < 150: problems.append(tag + '3D canvas too small: %s' % box)
+                s0 = page.evaluate(snap)
+                if s0['mean'] < 4: problems.append(tag + 'B image is black (mean %.1f)' % s0['mean'])
+                # drag the probe from 6 o'clock toward 10 o'clock (touch on the phone, mouse on desktop)
+                x0, y0, x1, y1 = box[0] + box[2] * .5, box[1] + box[3] * .68, box[0] + box[2] * .38, box[1] + box[3] * .38
+                if vw < 500:
+                    cdp = ctx.new_cdp_session(page)
+                    cdp.send('Input.dispatchTouchEvent', {'type': 'touchStart', 'touchPoints': [{'x': x0, 'y': y0}]})
+                    for i in range(1, 7): cdp.send('Input.dispatchTouchEvent', {'type': 'touchMove', 'touchPoints': [{'x': x0 + (x1 - x0) * i / 6, 'y': y0 + (y1 - y0) * i / 6}]})
+                    cdp.send('Input.dispatchTouchEvent', {'type': 'touchEnd', 'touchPoints': []})
+                else:
+                    page.mouse.move(x0, y0); page.mouse.down(); page.mouse.move(x1, y1, steps=6); page.mouse.up()
+                page.wait_for_timeout(150)
+                s1 = page.evaluate(snap)
+                if s1['sig'] == s0['sig']: problems.append(tag + 'dragging the probe did not change the image')
+                page.evaluate(gain, 100); hi = page.evaluate(snap)
+                page.evaluate(gain, 50); lo = page.evaluate(snap)
+                if not (hi['mean'] > s1['mean'] + 2 and lo['mean'] < s1['mean'] - 2): problems.append(tag + 'gain slider has no effect: %.1f / %.1f / %.1f' % (lo['mean'], s1['mean'], hi['mean']))
+                # case 1 (PVD): the kinetic button displaces the membrane, then it comes back to rest
+                page.click('[data-a="next"]'); page.click('[data-preset="T12"]'); page.evaluate(gain, 90)
+                rest = page.evaluate(snap)
+                page.click('[data-kin="1"]'); page.wait_for_timeout(500)
+                mov = page.evaluate(snap)
+                if mov['sig'] == rest['sig']: problems.append(tag + 'kinetic button did not move the membrane')
+                anim = page.evaluate("() => window.__bs3.kin()")
+                if rm and anim['on']: problems.append(tag + 'animation runs despite prefers-reduced-motion')
+                if not rm:
+                    page.wait_for_timeout(3400)
+                    if page.evaluate(snap)['sig'] != rest['sig']: problems.append(tag + 'membrane did not come back to rest')
+                page.click('[data-ans="pvd"]'); page.wait_for_timeout(200)
+                if not page.query_selector('.bs3-rev') or page.evaluate("() => document.querySelector('[data-ring]').hidden"): problems.append(tag + 'no decisive-sign reveal after the answer')
+                over = page.evaluate("() => document.documentElement.scrollWidth - document.documentElement.clientWidth")
+                if over > 2: problems.append(tag + 'horizontal overflow %dpx' % over)
+                if take_shots and not rm: page.screenshot(path=os.path.join(SHOTS, 'sim-%s.png' % label))
+                for e in errs: problems.append(tag + e)
+            finally:
+                ctx.close()
+        b.close()
+        log('  simulator smoke test done (desktop, mobile touch, reduced motion)')
+    finally:
+        srv2.terminate()
+
 try:
     with sync_playwright() as p:
         browser = p.chromium.launch(executable_path='/usr/bin/google-chrome', args=['--no-sandbox', '--disable-background-networking', '--disable-component-update', '--no-first-run', '--disable-sync', '--disable-default-apps', '--disable-features=Translate,OptimizationHints,MediaRouter,AutofillServerCommunication'])
@@ -270,6 +338,7 @@ try:
                 log('  data: ' + json.dumps(stats))
             ctx.close()
         browser.close()
+        sim_smoke(p)
 finally:
     srv.terminate()
 
