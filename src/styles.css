@@ -933,7 +933,7 @@ a { text-underline-offset: .18em; }
 .mo-scribble { position: absolute; left: 46px; right: 16px; bottom: 5px; height: 12px; width: calc(100% - 62px); overflow: visible; pointer-events: none; }
 .mo-scribble path { fill: none; stroke: var(--bad); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
 /* page change: cobalt wipe with a fluorescein trailing edge */
-.mo-wipe { position: fixed; inset: 0; z-index: 95; pointer-events: none; background: var(--chrome); transform: translateX(101%); }
+.mo-wipe { position: fixed; inset: 0; z-index: 95; pointer-events: none; background: var(--chrome); transform: translateX(calc(101% + 16px)); } /* + 16 px: the 14 px fluo edge (::before, left: -14px) also leaves the screen */
 .mo-wipe::before { content: ""; position: absolute; top: 0; bottom: 0; left: -14px; width: 14px; background: var(--fluo); }
 /* reward burst */
 .mo-burst { position: absolute; left: 50%; top: 50%; width: 0; height: 0; pointer-events: none; z-index: 3; }
@@ -967,7 +967,7 @@ a { text-underline-offset: .18em; }
 @keyframes mo-pop { 0% { opacity: 0; transform: scale(.4); } 60% { opacity: 1; transform: scale(1.12); } 100% { opacity: 1; transform: scale(1); } }
 @keyframes mo-sticker { 0% { opacity: 0; transform: scale(.3) rotate(calc(var(--rot, -6deg) - 28deg)); } 60% { opacity: 1; transform: scale(1.12) rotate(calc(var(--rot, -6deg) + 4deg)); } 100% { opacity: 1; transform: scale(1) rotate(var(--rot, -6deg)); } }
 @keyframes mo-shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-5px); } 40% { transform: translateX(5px); } 60% { transform: translateX(-3px); } 80% { transform: translateX(3px); } }
-@keyframes mo-wipe { 0% { transform: translateX(0); } 100% { transform: translateX(101%); } }
+@keyframes mo-wipe { 0% { transform: translateX(0); } 100% { transform: translateX(calc(101% + 16px)); } }
 @keyframes mo-burst { 0% { opacity: 1; transform: translate(0, 0) rotate(0) scale(.6); } 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(1); } }
 @keyframes mo-grow { from { transform: scaleX(0); } }
 @keyframes mo-tab { from { transform: rotate(-24deg) scale(.7); } }
