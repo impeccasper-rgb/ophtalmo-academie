@@ -94,6 +94,13 @@ G.OPH.photos = G.OPH.photos || {};
         "Petits points rouges épars : microanévrismes et petites hémorragies.",
         "Pas de néovaisseaux visibles : forme non proliférante, suivi selon la sévérité.",
         "Contrôle de la glycémie et de la TA : ralentit la progression."
+      ] },
+    { id: "IMG3-061", license: "Domaine public (National Eye Institute)", caption: "Après laser panrétinien : cicatrices rondes en périphérie",
+      look: "Compare la périphérie et le centre de la rétine.",
+      reveal: [
+        "Taches rondes pâles, en rangées, sur toute la périphérie : cicatrices de laser panrétinien (en dispersion).",
+        "La macula et la zone autour de la papille sont épargnées : on garde la vision centrale.",
+        "Prix à payer : champ périphérique et vision nocturne réduits."
       ] }
   ],
 
@@ -155,6 +162,16 @@ G.OPH.photos = G.OPH.photos || {};
         "Niveau blanc-jaune en bas de la chambre antérieure : hypopyon (pus).",
         "Conjonctive très rouge : inflammation intense.",
         "Après une chirurgie ou une injection : endophtalmie, ophtalmologiste le jour même."
+      ] }
+  ],
+
+  "bonus-D": [
+    { id: "IMG3-062", license: "Domaine public (National Eye Institute)", caption: "Rétinite à cytomégalovirus",
+      look: "Observe la plage blanche et ce qui la borde.",
+      reveal: [
+        "Plage blanche de rétine nécrosée, bordée d’hémorragies, près de la papille et de la macula : rétinite à CMV.",
+        "Terrain : immunodépression profonde (VIH avec CD4 bas, greffe).",
+        "Antiviral systémique avec l’infectiologie ; la macula est menacée."
       ] }
   ]
 });

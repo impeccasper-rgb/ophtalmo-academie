@@ -136,3 +136,9 @@ Commande de recomptage : voir `docs/progress/visuals.md`.
 - IMG3-038 (hydrops) est exclue : elle ne fait que 116 × 86 px.
 - IMG3-017 avait été rejetée à tort : le motif « (c) » reconnaissait le libellé de panneau « (C) and (D) ». Le motif est corrigé et la figure est publiée. Si une vraie mention © apparaît dans une légende, elle est affichée dans le log; la recopier dans `figure_rights_reviewed` après lecture pour l’accepter.
 - Routes de téléchargement PMC : le service OA de NCBI (`oa.fcgi`) répond 404 en 2026. Les fichiers viennent du jeu de données **PMC Article Datasets sur AWS** (`pmc-oa-opendata.s3.amazonaws.com/PMCxxxx.N/<fichier>`), d’accès public. Repli : zip Europe PMC `supplementaryFiles`.
+
+### 7 ter. Module D · Rétine (22 nov. 2026, run media.yml 44991700555)
+- **Ajoutées et publiées** : IMG3-061 (« Fundus photo showing scatter laser surgery for diabetic retinopathy EDA09.JPG », NEI, domaine public, 975 × 621) et IMG3-062 (« Fundus photograph-CMV retinitis EDA07.JPG », NEI, domaine public). Licence lue au build par l’API Commons ; pages Commons inaccessibles depuis le conteneur et via WebFetch ce jour-là.
+- **Images libres déjà au catalogue réutilisées dans les fiches `r-*`** : IMG3-029 (OACR, CC BY-SA 4.0), IMG3-030 (OVCR, CC BY 4.0), IMG3-031/032/033 (rétinopathie diabétique, NEI, domaine public), IMG3-034 (décollement sur déchirure, CC BY-SA 4.0), IMG3-005 (échographie B, CC BY 4.0).
+- **EyeRounds CC BY-NC-ND 3.0, faute d’équivalent libre vérifiable** : OPH-287, OPH-249, OPH-274, OPH-254, OPH-265, OPH-264, OPH-257, OPH-256, OPH-275, OPH-273, OPH-198. À remplacer en priorité si un palier payant apparaît (DMLA humide, occlusion de branche, rétinopathie hypertensive, anneau de Weiss, endophtalmie).
+- Chaque entrée de `data/ext-retine.js` porte `license` (copie de la licence du catalogue).
