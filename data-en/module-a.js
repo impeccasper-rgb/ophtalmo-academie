@@ -10,6 +10,16 @@ G.OPH_EN.A.physio = G.OPH_EN.A.physio || {};
 
 Object.assign(G.OPH_EN.A.recog, {
   "cataracte-nucleaire": {
+    card: {
+      lead: "With age, the lens nucleus yellows and hardens. A hard nucleus threatens the endothelium during phaco, and the thickened lens narrows the angle.",
+      keys: [
+        "Slit: nucleus yellow then brown, more opaque than the cortex.",
+        "Myopic shift: the presbyope reads without glasses (**second sight**).",
+        "Dulled red reflex; reduced contrast and colors.",
+        "We operate for functional impairment, not for the grade."
+      ],
+      ask: { q: "Why does your 75-year-old patient say he has been reading better without glasses for a few months?", a: "Nuclear sclerosis increases the refractive index of the nucleus: the eye becomes more myopic and the presbyope regains near vision, the \"second sight\". It is a sign of nuclear cataract, not an improvement of the eye." }
+    },
     title: "Nuclear sclerosis and nuclear cataract",
     what: "With age, the center of the lens (the nucleus) compacts, yellows and hardens: this is **nuclear sclerosis**. When the nucleus becomes yellow-brown and opaque enough to reduce vision, it is called a nuclear cataract, then a brunescent cataract when it is dark brown.",
     look: [
@@ -37,6 +47,16 @@ Object.assign(G.OPH_EN.A.recog, {
     }
   },
   "cataracte-corticale-scp": {
+    card: {
+      lead: "Cortical cataract forms white spokes in the periphery; posterior subcapsular cataract (PSC), a small central plaque, is very disabling. PSC is the steroid cataract.",
+      keys: [
+        "Use **retroillumination**: opacities in shadow against the orange reflex.",
+        "Cortical: spokes from the periphery toward the center.",
+        "PSC: granular plaque at the center of the posterior surface.",
+        "PSC: look for steroids, diabetes, uveitis; measure IOP."
+      ],
+      ask: { q: "Why is a PSC most bothersome at near and in bright sunlight?", a: "The plaque is central and posterior. In bright light and during accommodation (near miosis), the pupil constricts and all the light must pass through the plaque." }
+    },
     title: "Cortical, posterior subcapsular, sutural and mixed cataracts",
     what: "A cortical cataract forms white spokes, like the spokes of a wheel, in the outer layer of the lens (the cortex). A **posterior subcapsular cataract** (PSC) is a granular plaque at the center, just in front of the posterior capsule: small, yet very disabling.",
     look: [
@@ -63,6 +83,16 @@ Object.assign(G.OPH_EN.A.recog, {
     }
   },
   "cataracte-mature": {
+    card: {
+      lead: "Lens opaque edge to edge, with no red reflex. The fundus can no longer be seen, and the lens can cause phacomorphic or phacolytic glaucoma.",
+      keys: [
+        "White or amber pupil, no red reflex.",
+        "Vision CF, HM or LP: test projection and RAPD.",
+        "**B-scan** before surgery; biometry often ultrasonic.",
+        "Closed angle = phacomorphic; open + white particles = phacolytic."
+      ],
+      ask: { q: "Why trypan blue in a white cataract, and where do you find it again in cornea?", a: "Without a red reflex, the anterior capsule is almost invisible: the dye stains it blue to guide the capsulorhexis. In cornea, it is also used to stain the DMEK graft to see its orientation in the anterior chamber." }
+    },
     title: "Mature, white and Morgagnian cataract",
     what: "A mature cataract is opaque from edge to edge: white (cortex) or dark brown (brunescent nucleus), with no red reflex. When the cortex liquefies and the nucleus sinks to the bottom of the capsular bag, it is a **Morgagnian cataract**, a hypermature stage.",
     look: [
@@ -92,6 +122,16 @@ Object.assign(G.OPH_EN.A.recog, {
 });
 Object.assign(G.OPH_EN.A.recog, {
   "opacification-capsulaire": {
+    card: {
+      lead: "After cataract surgery, cells regrow and cloud the capsule behind the IOL. The YAG laser treats it in minutes but can raise IOP.",
+      keys: [
+        "Vision clouding months or years after surgery.",
+        "Retroillumination: gray haze, fibrosis or Elschnig pearls behind the IOL.",
+        "Rule out macular edema (OCT) before YAG capsulotomy.",
+        "Glaucoma patient: apraclonidine or brimonidine, minimal energy, IOP rechecked."
+      ],
+      ask: { q: "What do you do before and after a YAG in a patient with advanced glaucoma?", a: "I instill an alpha-agonist before or right after the laser, use minimal energy and remeasure IOP within the following hours. If a spike occurs, I adjust treatment and see the patient again promptly." }
+    },
     title: "Posterior capsule opacification",
     what: "After cataract surgery, the IOL sits in the capsular bag; lens cells left behind regrow and haze the posterior capsule behind the IOL: this is **posterior capsule opacification**, sometimes called a \"secondary cataract\". It is treated with a laser in a few minutes.",
     look: [
@@ -118,6 +158,16 @@ Object.assign(G.OPH_EN.A.recog, {
     }
   },
   "bscan": {
+    card: {
+      lead: "A cross-sectional ultrasound that shows the inside of the eye when the fundus is not visible (white cataract, vitreous hemorrhage). Not on an open globe.",
+      keys: [
+        "Probe on the closed lid; marker = top of the image.",
+        "High gain for weak echoes, low to compare and measure.",
+        "Thin and very mobile = vitreous; thick, attached to the nerve = retina.",
+        "Smooth, thick, barely mobile dome = choroid."
+      ],
+      ask: { q: "How do you tell a posterior vitreous detachment, a retinal detachment and a choroidal detachment apart on B-scan?", a: "Detached vitreous is thin, weakly reflective and very mobile. Detached retina is thicker, highly reflective, attached to the optic nerve and the ora serrata, often V-shaped. Detached choroid forms smooth, thick, minimally mobile domes that do not attach to the optic nerve." }
+    },
     title: "B-scan ultrasonography: technique and reading",
     what: "The **B-scan** is a two-dimensional ultrasound that shows the inside of the eye when the fundus cannot be seen: white cataract, vitreous hemorrhage, opaque cornea. The probe is placed on the closed lid (with gel) and the screen shows a fan-shaped section of the globe.",
     look: [
@@ -145,6 +195,16 @@ Object.assign(G.OPH_EN.A.recog, {
     }
   },
   "decollement-retine": {
+    card: {
+      lead: "A tear lets fluid pass under the retina (rhegmatogenous), or membranes pull on it (tractional, diabetes). Macula on: retina the same day.",
+      keys: [
+        "Flashes, new floaters, then a curtain opposite the detachment.",
+        "**Shafer sign**: tobacco dust in the anterior vitreous.",
+        "Gray, elevated, undulating, mobile retina; horseshoe tear.",
+        "Macula off: VA collapsed; also refer the same day."
+      ],
+      ask: { q: "What is the Shafer sign and why do you look for it?", a: "It is pigment granules in the anterior vitreous, seen with the slit behind the lens. They come from pigment epithelium released through a tear: in a patient with flashes and floaters, this sign means you must look for a tear or a detachment." }
+    },
     title: "Rhegmatogenous and tractional retinal detachment",
     what: "In **rhegmatogenous** retinal detachment, a tear lets vitreous fluid pass under the retina, which lifts like peeling wallpaper. In tractional retinal detachment, fibrovascular membranes, for example from proliferative diabetic retinopathy, pull on the retina without a tear.",
     look: [
@@ -174,6 +234,16 @@ Object.assign(G.OPH_EN.A.recog, {
 });
 Object.assign(G.OPH_EN.A.recog, {
   "decollement-choroidien": {
+    card: {
+      lead: "Fluid or blood between choroid and sclera, as large brown domes. A typical complication after glaucoma surgery: serous versus hemorrhagic changes everything.",
+      keys: [
+        "Smooth, brown, immobile domes; ora visible without indentation.",
+        "Serous: low IOP, little pain, after trabeculectomy or a leak.",
+        "Hemorrhagic: sudden pain, high IOP, flat chamber: surgeon urgently.",
+        "B-scan: domes not attached to the nerve; black = serous, gray = blood."
+      ],
+      ask: { q: "After a trabeculectomy, IOP is 3 mmHg with brown domes in the periphery: serous or hemorrhagic?", a: "Low IOP, little pain and anechoic content on B-scan suggest a serous detachment from hypotony. A suprachoroidal hemorrhage instead gives sudden pain, high IOP and echogenic content." }
+    },
     title: "Serous and hemorrhagic choroidal detachment",
     what: "A **choroidal detachment** is an elevation of the choroid by fluid (serous form, or effusion) or blood (hemorrhagic form) accumulated between the choroid and the sclera. It forms large, smooth brown domes in the periphery; when two domes touch centrally, they are said to be \"kissing\" (kissing choroidals).",
     look: [
@@ -201,6 +271,16 @@ Object.assign(G.OPH_EN.A.recog, {
     }
   },
   "dmla": {
+    card: {
+      lead: "Wear of the macula after 50: drusen and atrophy (dry form) or new vessels that bleed and leak (wet form): central vision can drop within days.",
+      keys: [
+        "Drusen: yellow dots around the fovea.",
+        "Wet: subretinal hemorrhage or fluid, recent metamorphopsia.",
+        "Recent metamorphopsia: retina within a few days (anti-VEGF).",
+        "Repeated anti-VEGF: monitor IOP in glaucoma patients."
+      ],
+      ask: { q: "Your glaucoma patient has seen his door frame as wavy for 4 days. What do you do?", a: "I test each eye with the Amsler grid, dilate and do a macular OCT. Recent metamorphopsia suggests neovascular AMD: referral to retina within a few days for anti-VEGF, because the delay matters for the final vision." }
+    },
     title: "Dry and neovascular age-related macular degeneration (AMD)",
     what: "**AMD** (age-related macular degeneration) is wear of the macula after age 50. In the dry form, yellow deposits (drusen) accumulate under the pigment epithelium and then the retina slowly atrophies (geographic atrophy at the advanced stage); in the neovascular or \"wet\" form, abnormal vessels grow under the macula, bleed and leak, and central vision can drop within days.",
     look: [
@@ -228,6 +308,16 @@ Object.assign(G.OPH_EN.A.recog, {
     }
   },
   "retinopathie-diabetique": {
+    card: {
+      lead: "Small vessels leak and close; ischemia releases VEGF: new vessels on the retina, the iris and the angle.",
+      keys: [
+        "Non-proliferative: microaneurysms, hemorrhages, hard exudates, cotton-wool spots.",
+        "Severe, **4-2-1** rule: hemorrhages 4 quadrants, beading 2, IRMA 1.",
+        "Proliferative (NVD, NVE): retina within a few days (PRP, anti-VEGF).",
+        "High IOP: iris before dilation and gonioscopy (angle new vessels)."
+      ],
+      ask: { q: "Why do you perform gonioscopy in a diabetic with NVD and an IOP of 26 mmHg?", a: "Angle new vessels can appear before iris new vessels visible at the slit lamp. Seeing them early allows the ischemia to be treated (PRP, anti-VEGF) before the fibrovascular membrane closes the angle permanently." }
+    },
     title: "Diabetic retinopathy and diabetic macular edema",
     what: "Diabetes damages the small vessels of the retina: they leak (exudates, edema) and close off (ischemia). The ischemic retina releases VEGF, which makes new vessels grow: the disease then moves from the nonproliferative form (NPDR) to the proliferative form (PDR).",
     look: [
@@ -257,6 +347,16 @@ Object.assign(G.OPH_EN.A.recog, {
 });
 Object.assign(G.OPH_EN.A.recog, {
   "occlusions-retiniennes": {
+    card: {
+      lead: "Arterial occlusion (CRAO, BRAO): a stroke of the eye, the retina dies within hours. Venous occlusion (CRVO, BRVO): hemorrhages, macular edema, sometimes ischemia.",
+      keys: [
+        "CRAO: pale retina, **cherry-red spot**: immediate stroke emergency.",
+        "CRAO at 50 or older: ESR, CRP, platelets (arteritis).",
+        "CRVO: hemorrhages in all 4 quadrants, dilated veins, swollen disc.",
+        "Ischemic CRVO: gonioscopy ≈ monthly (90-day glaucoma)."
+      ],
+      ask: { q: "Why does the fovea stay red in a CRAO?", a: "The fovea has no inner layers and no retinal vessels: it stays transparent and lets the red choroid show through, while the ischemic inner retina around it whitens." }
+    },
     title: "Retinal artery and vein occlusions",
     what: "An arterial occlusion blocks blood flow into the retina (**CRAO** for the central artery, **BRAO** for a branch): the inner retina dies within hours; it is a stroke of the eye. A venous occlusion blocks blood outflow (**CRVO** for the central vein, **BRVO** for a branch): blood backs up and causes hemorrhages, macular edema and sometimes retinal ischemia.",
     look: [
@@ -285,6 +385,16 @@ Object.assign(G.OPH_EN.A.recog, {
     }
   },
   "retinopathie-hypertensive": {
+    card: {
+      lead: "Chronic hypertension narrows the arterioles; a severe surge makes blood and lipids leak. Swollen disc as well: malignant hypertension, a medical emergency.",
+      keys: [
+        "Narrow arterioles, abnormal arteriovenous crossings.",
+        "Flame hemorrhages, cotton-wool spots, hard exudates.",
+        "New signs: take the BP on the spot.",
+        "Disc edema + very high BP: immediate emergency, gradual lowering."
+      ],
+      ask: { q: "Facing cotton-wool spots and flame hemorrhages in a 45-year-old man, what do you do before talking about the eye?", a: "I take the BP and look at the disc: very high BP with a swollen disc = malignant hypertension, immediate transfer to the ED. If BP is normal, I look for diabetes, HIV or systemic disease." }
+    },
     title: "Hypertensive retinopathy and malignant hypertension",
     what: "Chronic systemic hypertension thickens and narrows the retinal arterioles; a severe flare damages their walls and makes blood, plasma and lipids leak. When the disc also swells, it is **malignant hypertension**, a medical emergency that also threatens the brain, heart and kidneys.",
     look: [
@@ -311,6 +421,16 @@ Object.assign(G.OPH_EN.A.recog, {
     }
   },
   "macula-chirurgicale": {
+    card: {
+      lead: "Macula wrinkled (epiretinal membrane), holed (macular hole) or lifted by fluid (CSC): blurred, distorted central vision; OCT settles it.",
+      keys: [
+        "**Metamorphopsia**: Amsler grid, one eye at a time.",
+        "Recent full-thickness hole: retina within a few weeks.",
+        "CSC: list ALL steroids (drops, creams, inhalers, nasal sprays).",
+        "Epiretinal membrane: skews ganglion cell OCT (green disease)."
+      ],
+      ask: { q: "A 40-year-old man on prednisolone for herpetic stromal keratitis sees wavy lines in one eye. What do you suspect?", a: "CSCR promoted by the corticosteroid: I confirm it on macular OCT (fluid under the retina), plan a cautious steroid reduction under antiviral cover and refer to retina if the fluid persists. I also check the IOP (steroid response)." }
+    },
     title: "Epiretinal membrane, macular holes and CSCR",
     what: "The macula (the center of fine vision) can be wrinkled by an **epiretinal membrane** (a fibrous film on its surface), perforated by a **macular hole**, or lifted by fluid in **CSCR** (central serous chorioretinopathy). All three cause blurred, distorted central vision, and macular OCT distinguishes them in seconds.",
     look: [
@@ -340,6 +460,16 @@ Object.assign(G.OPH_EN.A.recog, {
 });
 Object.assign(G.OPH_EN.A.recog, {
   "peripherie-vitre": {
+    card: {
+      lead: "The vitreous detaches with age (PVD) and can tear a fragile retina. Lattice: a risk zone; schisis and asteroid hyalosis: benign.",
+      keys: [
+        "**Weiss ring** in front of the disc: proof of a PVD.",
+        "New flashes or floaters: dilated periphery without delay.",
+        "Flashes + curtain or vision loss: retina the same day.",
+        "Before pilocarpine in a myope: examine the periphery."
+      ],
+      ask: { q: "Why examine the periphery before pilocarpine in a young myope?", a: "Pilocarpine contracts the ciliary muscle, which pulls on the vitreous base and the peripheral retina: pre-existing lattice or a tear can progress to a retinal detachment. I dilate, examine the periphery and teach the warning symptoms (flashes, floaters, curtain)." }
+    },
     title: "Periphery and vitreous: lattice, retinoschisis, Weiss ring, asteroid hyalosis",
     what: "With age, the vitreous (the gel that fills the eye) liquefies and detaches from the retina: this is **PVD** (posterior vitreous detachment), which can tear a fragile peripheral retina and cause a retinal detachment. Some peripheral findings are areas at risk (**lattice degeneration**), others are benign but misleading (**retinoschisis**, **asteroid hyalosis**).",
     look: [
@@ -367,6 +497,16 @@ Object.assign(G.OPH_EN.A.recog, {
     }
   },
   "inflammation-infection": {
+    card: {
+      lead: "Uveitis inflames the iris, ciliary body or choroid. Some infections, including **endophthalmitis**, destroy vision within hours: same-day treatment.",
+      keys: [
+        "Anterior uveitis: AC cells and flare, posterior synechiae.",
+        "Cycloplegic + topical steroid, infection excluded; IOP at every visit.",
+        "Endophthalmitis: pain, hypopyon, vitritis; same-day tap and inject.",
+        "Intravitreal vancomycin 1 mg/0.1 mL + ceftazidime 2.25 mg/0.1 mL."
+      ],
+      ask: { q: "Why is a cycloplegic given in anterior uveitis?", a: "It relaxes the ciliary muscle (less pain) and dilates the pupil, which moves the iris away from the lens and prevents posterior synechiae. Without it, 360° synechiae can create iris bombé and secondary angle closure." }
+    },
     title: "Uveitis and posterior segment infections",
     what: "Uveitis is inflammation of the uvea (iris, ciliary body, choroid), autoimmune or infectious. Some infections of the retina or of the whole inside of the eye (**endophthalmitis**) destroy vision within hours or days and are treated the same day.",
     look: [
@@ -394,6 +534,16 @@ Object.assign(G.OPH_EN.A.recog, {
     }
   },
   "papille-oedeme": {
+    card: {
+      lead: "A swollen disc is never glaucomatous. Tell true edema from pseudo-edema (drusen), then spot what needs imaging or steroids the same day.",
+      keys: [
+        "True edema: vessels obscured at the margin, flame hemorrhages.",
+        "Bilateral: BP, then same-day neuroimaging, before the lumbar puncture.",
+        "AION at 50 or older: rule out arteritis (ESR, CRP, platelets).",
+        "Disc drusen: confirm (autofluorescence, OCT, B-scan) before reassuring."
+      ],
+      ask: { q: "How do you tell true disc edema from pseudo-edema on fundus exam?", a: "True edema obscures the vessels at the disc margin and is often accompanied by hyperemia, flame hemorrhages and cotton-wool spots. The pseudo-edema of drusen keeps crisp vessels, a lumpy contour with refractile bodies and no hemorrhage; autofluorescence, OCT or B-scan confirm it." }
+    },
     title: "Swollen disc: papilledema, AION, drusen, neuroretinitis",
     what: "A swollen disc (blurred, elevated margins) can come from raised intracranial pressure (**papilledema** in the strict sense), an infarct of the nerve (**AION**, anterior ischemic optic neuropathy), inflammation (**neuroretinitis**) or a false swelling (pseudo-edema) such as **optic disc drusen**. First distinguish true edema from pseudo-edema, then spot the cases that require same-day imaging or steroids.",
     look: [
@@ -424,6 +574,16 @@ Object.assign(G.OPH_EN.A.recog, {
 });
 Object.assign(G.OPH_EN.A.recog, {
   "pupilles-neuro": {
+    card: {
+      lead: "Anisocoria is often normal but can reveal a Horner syndrome. A homonymous hemianopia means a brain lesion, not glaucoma.",
+      keys: [
+        "Worse in the dark: Horner; in light: the large pupil is abnormal.",
+        "Large pupil + ptosis or diplopia: CN III aneurysm, same-day imaging.",
+        "Acute painful Horner: carotid dissection, same-day imaging.",
+        "Defect bounded by the **vertical** meridian: urgent brain imaging."
+      ],
+      ask: { q: "How does the apraclonidine test confirm Horner syndrome?", a: "The pupil deprived of its sympathetic innervation becomes hypersensitive (denervation hypersensitivity): apraclonidine, a weak alpha agonist with almost no effect on a normal pupil, dilates it. The anisocoria reverses, the small pupil becoming the larger one, and the ptosis decreases." }
+    },
     title: "Pupils and visual pathways: anisocoria, Horner, homonymous hemianopia",
     what: "Pupils of different sizes (anisocoria) are often normal, but can reveal **Horner syndrome** (damage to the sympathetic pathway that dilates the pupil and lifts the lid). A **homonymous hemianopia** (loss of the same half of the field in both eyes) indicates brain damage behind the chiasm, not glaucoma.",
     look: [
@@ -451,6 +611,16 @@ Object.assign(G.OPH_EN.A.recog, {
     }
   },
   "tumeurs-toxicite-trauma": {
+    card: {
+      lead: "Choroidal nevi are common and benign, but melanoma must be spotted. Also know: hydroxychloroquine toxicity and commotio retinae.",
+      keys: [
+        "Nevus: slate gray, flat (< 2 mm), surface drusen.",
+        "Melanoma: > 2 mm, fluid, symptoms, **orange pigment**, acoustic hollowness.",
+        "Hydroxychloroquine ≤ 5 mg/kg/day (real weight); annual screening after 5 years.",
+        "After blunt trauma: dilated periphery and gonioscopy (angle recession)."
+      ],
+      ask: { q: "Which signs of a pigmented choroidal lesion make you think of melanoma rather than nevus?", a: "Thickness > 2 mm, subretinal fluid, symptoms, orange pigment, a margin 3 mm or less from the disc, acoustic hollowness on ultrasound, absence of halo and of drusen. The more these signs add up, the greater the risk of growth: I refer to ocular oncology." }
+    },
     title: "Nevus or melanoma, hydroxychloroquine toxicity, commotio retinae",
     what: "A **choroidal nevus** (a flat \"mole\" under the retina) is common and benign, but the signs of **choroidal melanoma**, the most common primary intraocular malignancy in adults, must be recognized. Two other macular findings to know: retinal toxicity from antimalarials (hydroxychloroquine, chloroquine) and **commotio retinae** (retinal whitening after a blow).",
     look: [
@@ -482,6 +652,16 @@ Object.assign(G.OPH_EN.A.recog, {
 
 Object.assign(G.OPH_EN.A.exam, {
   "av": {
+    card: {
+      lead: "The vital sign of the eye: it measures central vision, guides urgency and is the legal reference for driving (SAAQ).",
+      keys: [
+        "One eye at a time, with distance correction, at 6 m.",
+        "< 6/6: repeat with the **pinhole** (corrects optical blur).",
+        "No line read: CF, HM, LP with projection, NLP.",
+        "Always first, before drops, tonometry or dilation."
+      ],
+      ask: { q: "VA goes from 6/18 to 6/7.5 with pinhole: your conclusion?", a: "The loss is mainly optical: I do a refraction (or try a rigid lens if the cornea is irregular) before looking for macular or optic nerve disease." }
+    },
     title: "Visual acuity",
     why: "It is the vital sign of the eye: it measures central function, guides urgency (central keratitis, angle-closure attack) and serves as a legal reference, notably for driving (Société de l'assurance automobile du Québec, SAAQ).",
     how: [
@@ -512,6 +692,16 @@ Object.assign(G.OPH_EN.A.exam, {
     pearl: "Attending: \"VA goes from 6/18 to 6/7.5 with pinhole: your conclusion?\" The loss is mainly optical: I do a refraction (or try a rigid lens if the cornea is irregular) before looking for macular or optic nerve disease."
   },
   "pupilles": {
+    card: {
+      lead: "The swinging flashlight test detects an asymmetric optic neuropathy in 30 seconds. Do it before any dilation.",
+      keys: [
+        "Dim room, distance fixation; anisocoria in the dark, then in light.",
+        "Swinging light: 2–3 s per eye, same intensity, several back-and-forths.",
+        "**RAPD**: both pupils dilate when the light reaches the affected eye.",
+        "Poorly reactive mid-dilated pupil, painful red eye, high IOP: angle closure."
+      ],
+      ask: { q: "Your patient has a left RAPD and a dense left cataract: does the cataract explain it?", a: "No: a cataract scatters light but does not cause a significant RAPD. Before operating, I look for an optic neuropathy (advanced glaucoma, compression) or extensive retinal disease (OCT, visual field, ultrasound if the fundus cannot be seen)." }
+    },
     title: "Pupil examination",
     why: "The swinging flashlight test detects an asymmetric optic neuropathy (e.g. advanced glaucoma on one side) in 30 seconds, and a fixed mid-dilated pupil points to an angle-closure attack: do it before any dilation.",
     how: [
@@ -545,6 +735,16 @@ Object.assign(G.OPH_EN.A.exam, {
 });
 Object.assign(G.OPH_EN.A.exam, {
   "lampe": {
+    card: {
+      lead: "The central tool in cornea and glaucoma: every layer is examined, from the lids to the anterior vitreous.",
+      keys: [
+        "Always front to back, low then high magnification.",
+        "Optic section: depth of a lesion; retroillumination: guttae, transillumination.",
+        "AC cells: 1 × 1 mm beam, dark room.",
+        "**Van Herick ≤ 2** (≤ 1/4 CT): gonioscopy mandatory."
+      ],
+      ask: { q: "How do you confirm guttae at the slit lamp?", a: "With specular reflection (dark spots in the endothelial mosaic) and retroillumination (droplets); I then quantify with specular microscopy and pachymetry, and ask whether vision is worse in the morning (edema)." }
+    },
     title: "Slit-lamp biomicroscopy",
     why: "It is the central tool of both clinics: each corneal layer, the anterior chamber, the iris and the lens are examined with it, then the angle and the disc with lenses.",
     how: [
@@ -577,6 +777,16 @@ Object.assign(G.OPH_EN.A.exam, {
     pearl: "Attending: \"How do you confirm guttae at the slit lamp?\" With specular reflection (dark spots in the endothelial mosaic) and retroillumination (droplets); I then quantify with specular microscopy and pachymetry, and ask whether vision is worse in the morning (edema)."
   },
   "fluoresceine": {
+    card: {
+      lead: "They reveal epithelial lesions, dry eye and aqueous humor leaks (Seidel).",
+      keys: [
+        "Read under cobalt blue within 1–3 min.",
+        "Inferior SPK: dry eye, blepharitis; superior: contact lenses.",
+        "Dendrite with terminal bulbs: herpes simplex.",
+        "**Positive Seidel**: a stream diluting the dye = wound or bleb leak."
+      ],
+      ask: { q: "After a trabeculectomy, IOP is 4 mmHg and the AC is shallow: first test?", a: "A Seidel on the bleb: a stream diluting the fluorescein confirms a leak, to be closed (bandage contact lens, suture, revision) to prevent hypotony, a flat chamber and infection." }
+    },
     title: "Vital dyes: fluorescein, lissamine, Seidel",
     why: "They reveal epithelial lesions (abrasion, keratitis, dendrite), dry eye and aqueous leaks (Seidel): a basic exam in cornea and after filtering surgery.",
     how: [
@@ -607,6 +817,16 @@ Object.assign(G.OPH_EN.A.exam, {
     pearl: "Attending: \"After a trabeculectomy, IOP is 4 mmHg and the AC is shallow: first test?\" A Seidel on the bleb: a stream diluting the fluorescein confirms a leak, to be closed (bandage contact lens, suture, revision) to prevent hypotony, a flat chamber and infection."
   },
   "tonometrie": {
+    card: {
+      lead: "IOP is the only glaucoma risk factor whose treatment has proven effective: the measurement must be reliable.",
+      keys: [
+        "Goldmann: anesthetic + fluorescein, cobalt blue, inner edges of mires touching.",
+        "Dial reading × 10 = mmHg.",
+        "Thick mires, pressed lids, Valsalva: IOP overestimated.",
+        "Thin cornea, edema, post-LASIK: IOP underestimated."
+      ],
+      ask: { q: "Your patient who had LASIK has an IOP of 13 mmHg but her cupping is increasing: reassured?", a: "No: the thinned cornea makes Goldmann underestimate IOP. I look at the pre-surgery IOP, the trend, and above all structure and function (OCT, visual field); a tonometer less dependent on the cornea can help." }
+    },
     title: "Tonometry",
     why: "IOP is the only glaucoma risk factor whose treatment has proven effective: a reliable, reproducible measurement guides diagnosis, the target IOP and follow-up.",
     how: [
@@ -638,6 +858,16 @@ Object.assign(G.OPH_EN.A.exam, {
 });
 Object.assign(G.OPH_EN.A.exam, {
   "gonioscopie": {
+    card: {
+      lead: "The only test that shows the angle directly: open, narrow or closed, apposition or synechiae, secondary causes.",
+      keys: [
+        "Dark room, short beam off the pupil (else falsely open angle).",
+        "Posterior to anterior: iris, ciliary body band, spur, meshwork, Schwalbe.",
+        "Pigmented meshwork not seen over ≥ 180°: iridotrabecular contact.",
+        "**Indentation**: the angle opens (apposition) or stays stuck (synechiae)."
+      ],
+      ask: { q: "How do you tell apposition from synechiae?", a: "With indentation: using a 4-mirror lens, I press centrally; aqueous pushes the iris back and the angle opens if it is apposition, whereas PAS stay stuck. This separates PACS from PAC and points toward LPI (laser iridotomy) or lens extraction." }
+    },
     title: "Gonioscopy",
     why: "It is the only exam that shows the angle directly: it distinguishes open, narrow or closed angles, apposition or synechiae, and identifies secondary causes (PXF, recession, new vessels) before any glaucoma treatment.",
     how: [
@@ -670,6 +900,16 @@ Object.assign(G.OPH_EN.A.exam, {
     pearl: "Attending: \"How do you tell apposition from synechiae?\" With indentation: using a 4-mirror lens, I press centrally; aqueous pushes the iris back and the angle opens if it is apposition, whereas PAS stay stuck. This separates PACS from PAC and points toward LPI (laser iridotomy) or lens extraction."
   },
   "pachymetrie": {
+    card: {
+      lead: "Central corneal thickness changes how IOP is read and the glaucoma risk; in cornea, it tracks edema and thinning.",
+      keys: [
+        "Normal ≈ 540–550 µm centrally, ≈ 650–700 µm peripherally.",
+        "OHTS: ≤ 555 µm ≈ 3 × more conversion than > 588 µm.",
+        "Rising CCT: edema (Fuchs, graft rejection).",
+        "Keratoconus: thinnest point getting thinner = progression, think CXL."
+      ],
+      ask: { q: "Why does a thin cornea increase the risk in OHTS?", a: "First because the true IOP is underestimated; second, a thin cornea may reflect a more fragile ocular structure (low hysteresis is also a risk factor). It is integrated into the risk calculation rather than used to correct the number." }
+    },
     title: "Pachymetry",
     why: "Central corneal thickness (CCT) influences the IOP reading and the risk that ocular hypertension becomes glaucoma; in cornea, it tracks edema (Fuchs) and thinning (keratoconus).",
     how: [
@@ -697,6 +937,16 @@ Object.assign(G.OPH_EN.A.exam, {
     pearl: "Attending: \"Why does a thin cornea increase the risk in OHTS?\" First because the true IOP is underestimated; second, a thin cornea may reflect a more fragile ocular structure (low hysteresis is also a risk factor). It is integrated into the risk calculation rather than used to correct the number."
   },
   "papille": {
+    card: {
+      lead: "Glaucoma is an optic neuropathy: describing the disc systematically is the foundation of glaucoma clinic.",
+      keys: [
+        "1. Disc size (normal ≈ 1.5–2 mm) first.",
+        "2. Rim: ISNT rule, inferotemporal or superotemporal notch.",
+        "3. Vertical C/D > 0.6 or asymmetry ≥ 0.2: suspicious.",
+        "Drance hemorrhage: active disease; pallor > cupping: another cause."
+      ],
+      ask: { q: "What is the first thing to describe on a disc?", a: "Its size: a C/D of 0.7 can be normal on a large disc and pathological on a small one. Then the rim (ISNT, notch), hemorrhage, PPA and color; a pale remaining rim makes me think of a non-glaucomatous cause." }
+    },
     title: "Optic disc examination",
     why: "Glaucoma is a characteristic optic neuropathy: describing a disc systematically is the foundation of glaucoma clinic and of the attending's questions.",
     how: [
@@ -730,6 +980,16 @@ Object.assign(G.OPH_EN.A.exam, {
 });
 Object.assign(G.OPH_EN.A.exam, {
   "oct": {
+    card: {
+      lead: "OCT objectively measures the RNFL and the macular ganglion cells (GCIPL), at baseline and follow-up, together with the visual field.",
+      keys: [
+        "Check signal, centering and segmentation before reading the colors.",
+        "Inferotemporal thinning first ↔ superior field defect.",
+        "Floor effect ≈ 50–60 µm: in advanced disease, follow the field and GCIPL.",
+        "**Red disease**: false red (high myopia, tilted disc, segmentation)."
+      ],
+      ask: { q: "OCT all red in a −9 D myope with a normal visual field: glaucoma?", a: "Probably red disease (tilted disc, unsuitable normative database, doubtful segmentation). I check the segmentation, correlate with the field (including a 10-2) and follow progression over time rather than the colors." }
+    },
     title: "OCT: RNFL, ganglion cells and anterior segment",
     why: "OCT objectively measures the RNFL and the macular ganglion cells: the AAO 2026 recommends both at baseline and at follow-up, combined with the visual field; anterior segment OCT (AS-OCT) assesses the angle and the cornea.",
     how: [
@@ -761,6 +1021,16 @@ Object.assign(G.OPH_EN.A.exam, {
     pearl: "Attending: \"OCT all red in a −9 D myope with a normal visual field: glaucoma?\" Probably red disease (tilted disc, unsuitable normative database, doubtful segmentation). I check the segmentation, correlate with the field (including a 10-2) and follow progression over time rather than the colors."
   },
   "topographie": {
+    card: {
+      lead: "They detect and follow ectasias (keratoconus) and irregular astigmatism: the basis for cross-linking and for screening before refractive surgery.",
+      keys: [
+        "Read 4 maps: curvature, anterior and posterior elevation, pachymetry.",
+        "Keratoconus: inferior steepening, asymmetric bow tie, posterior elevation ↑.",
+        "Screening: central K > 47.2 D or I-S value > 1.4 D.",
+        "**Progression** on the same device = main criterion for CXL."
+      ],
+      ask: { q: "What is the difference between topography and tomography?", a: "Placido topography measures only the curvature of the anterior surface, through the tear film. Tomography (Scheimpflug or OCT) reconstructs the cornea in 3D (anterior and posterior elevation, pachymetry) and detects keratoconus earlier: posterior elevation and a displaced thinnest point." }
+    },
     title: "Corneal topography and tomography",
     why: "They detect and follow ectasias (keratoconus: a cornea that thins and bulges into a cone; pellucid marginal degeneration) and irregular astigmatism; they are the basis for the cross-linking indication and for screening before refractive surgery.",
     how: [
@@ -792,6 +1062,16 @@ Object.assign(G.OPH_EN.A.exam, {
     pearl: "Attending: \"What is the difference between topography and tomography?\" Placido topography measures only the curvature of the anterior surface, through the tear film. Tomography (Scheimpflug or OCT) reconstructs the cornea in 3D (anterior and posterior elevation, pachymetry) and detects keratoconus earlier: posterior elevation and a displaced thinnest point."
   },
   "champs-visuels": {
+    card: {
+      lead: "It measures function: it confirms glaucomatous neuropathy, stages it, detects progression and assesses fitness to drive.",
+      keys: [
+        "24-2 for diagnosis and follow-up; 10-2 if fixation is threatened.",
+        "Reliability first: false positives ≤ 15%, fixation losses.",
+        "Glaucoma respects the **horizontal** meridian; vertical → neuroimaging.",
+        "Stages: early MD > −6 dB; advanced < −12 dB."
+      ],
+      ask: { q: "Superior arcuate defect in the right eye: where do you look on the disc?", a: "At the inferior pole, especially inferotemporally: notch, hemorrhage, thinned RNFL. If the defect respected the vertical meridian, I would think instead of the chiasm or the retrochiasmal pathways." }
+    },
     title: "Automated visual field (Humphrey)",
     why: "It measures function: it confirms glaucomatous neuropathy, stages it and detects progression; it is also used to assess fitness to drive (SAAQ).",
     how: [
@@ -825,6 +1105,16 @@ Object.assign(G.OPH_EN.A.exam, {
     pearl: "Attending: \"Superior arcuate defect in the right eye: where do you look on the disc?\" At the inferior pole, especially inferotemporally: notch, hemorrhage, thinned RNFL. If the defect respected the vertical meridian, I would think instead of the chiasm or the retrochiasmal pathways."
   },
   "speculaire": {
+    card: {
+      lead: "It counts and describes endothelial cells: useful before surgery in Fuchs patients and to follow grafts, tubes and angle-closure attacks.",
+      keys: [
+        "Density ≈ 3000–3500 cells/mm² when young, ≈ 2500 at 60–70.",
+        "Guttae = dark spots in the mosaic: Fuchs dystrophy.",
+        "Decompensation usually < 400–500 cells/mm².",
+        "CV ↑ and hexagons ↓: stressed endothelium, sometimes before the drop."
+      ],
+      ask: { q: "A patient with guttae wants cataract surgery: what do you order?", a: "Specular microscopy, pachymetry and the history of morning vision: low density, a thick cornea or morning edema prompt discussion of combined cataract + DMEK (endothelial keratoplasty) rather than cataract surgery alone." }
+    },
     title: "Specular microscopy",
     why: "It counts and describes endothelial cells: it helps decide on and plan surgery in Fuchs patients, and monitors grafts, tubes and implants, and the eye after an angle-closure attack (AAO 2026).",
     how: [
@@ -855,6 +1145,16 @@ Object.assign(G.OPH_EN.A.exam, {
 
 Object.assign(G.OPH_EN.A.physio, {
   "aqueuse": {
+    card: {
+      lead: "The ciliary processes secrete aqueous humor, which leaves mainly through the trabecular meshwork. If outflow is slowed, IOP rises.",
+      keys: [
+        "Production ≈ 2.5 µL/min by day, lower at night.",
+        "Trabecular pathway: most of the outflow; resistance ↑ in open-angle glaucoma.",
+        "Uveoscleral pathway: 5–30% of outflow, ↑ by prostaglandins.",
+        "**IOP = (F − U) / C + Pv**, with Pv ≈ 8–10 mmHg."
+      ],
+      ask: { q: "Why does timolol lower IOP little at night, while prostaglandins remain effective?", a: "Timolol reduces aqueous production, which is already low during sleep (less sympathetic tone); prostaglandins increase uveoscleral outflow, which works day and night." }
+    },
     title: "Aqueous humor: production and drainage",
     intro: "Aqueous humor nourishes the lens and cornea, which have no blood vessels, and maintains the shape of the globe. Intraocular pressure (IOP) depends on the balance between its production and the resistance to its outflow: if outflow is impeded, IOP rises.",
     points: [
@@ -875,6 +1175,16 @@ Object.assign(G.OPH_EN.A.physio, {
     pearl: "Attending: \"Why does timolol lower IOP little at night, while prostaglandins remain effective?\" Timolol reduces aqueous production, which is already low during sleep (less sympathetic tone); prostaglandins increase uveoscleral outflow, which works day and night."
   },
   "pio": {
+    card: {
+      lead: "The only modifiable glaucoma risk factor whose lowering slows the disease. A normal IOP does not rule out glaucoma.",
+      keys: [
+        "Normal 10–21 mmHg: 21 is a statistical limit, not a threshold.",
+        "Varies 2–6 mmHg over 24 h; peak at night or early morning.",
+        "Thin or post-LASIK cornea: IOP underestimated; thick cornea: overestimated.",
+        "IOP > 21 mmHg without nerve damage = ocular hypertension."
+      ],
+      ask: { q: "IOP of 23 mmHg with a 600 µm cornea: is it glaucoma?", a: "No: without optic nerve or visual field damage, it is at most ocular hypertension, and the thick cornea probably makes IOP read too high. Overall risk is assessed with the OHTS predictors (age, IOP, corneal thickness, vertical C/D, PSD) rather than by correcting the number." }
+    },
     title: "Intraocular pressure (IOP)",
     intro: "IOP is the pressure of the intraocular fluid on the wall of the globe. It is the only modifiable risk factor whose lowering has been proven to slow glaucoma, but a \"normal\" IOP does not rule out glaucoma and an elevated IOP is not glaucoma on its own.",
     points: [
@@ -895,6 +1205,16 @@ Object.assign(G.OPH_EN.A.physio, {
     pearl: "Attending: \"IOP of 23 mmHg with a 600 µm cornea: is it glaucoma?\" No: without optic nerve or visual field damage, it is at most ocular hypertension, and the thick cornea probably makes IOP read too high. Overall risk is assessed with the OHTS predictors (age, IOP, corneal thickness, vertical C/D, PSD) rather than by correcting the number."
   },
   "film-lacrymal": {
+    card: {
+      lead: "The tear film smooths the first optical surface and protects the epithelium. When its balance breaks down, a vicious circle sets in: dry eye disease.",
+      keys: [
+        "Lipids (meibomian glands), muco-aqueous phase, epithelial glycocalyx.",
+        "Normal TBUT > 10 s; Schirmer I < 5 mm/5 min: severe aqueous deficiency.",
+        "Osmolarity ≥ 308 mOsm/L or a difference > 8 between eyes.",
+        "Instability → evaporation → hyperosmolarity → inflammation → instability."
+      ],
+      ask: { q: "Your glaucoma patient on 3 drops complains of burning and fluctuating vision: what do you think?", a: "Probably ocular surface disease worsened by the preservative in the drops (benzalkonium chloride, BAK): it hurts adherence and skews VA, topography and the visual field. Options: preservative-free drops, fixed combinations (fewer drops), SLT, treatment of meibomian gland dysfunction." }
+    },
     title: "Tear film and ocular surface",
     intro: "The tear film smooths the eye's first optical surface, nourishes and protects the corneal epithelium and is renewed with every blink. When its balance breaks down, a vicious circle sets in: this is dry eye disease.",
     points: [
@@ -917,6 +1237,16 @@ Object.assign(G.OPH_EN.A.physio, {
 });
 Object.assign(G.OPH_EN.A.physio, {
   "transparence": {
+    card: {
+      lead: "The cornea stays clear thanks to very regular collagen fibrils and an endothelium that keeps it dehydrated. If either fails, it swells and turns gray.",
+      keys: [
+        "\"Pump-leak\" endothelium: stroma stable at ≈ 78% water.",
+        "Stromal edema: thickened, grayish cornea, Descemet folds.",
+        "Epithelial edema: microcysts, bullae, colored halos, markedly reduced vision.",
+        "IOP nearing 50–60 mmHg (angle-closure attack): hazy epithelium, healthy endothelium."
+      ],
+      ask: { q: "Why is the cornea steamy in an acute angle-closure attack when the endothelium is healthy?", a: "Because IOP exceeds the stromal swelling pressure: water is pushed forward and the epithelium becomes edematous (colored halos). The cornea clears when IOP is lowered; specular microscopy afterward is useful, because the attack causes endothelial cell loss." }
+    },
     title: "Corneal transparency",
     intro: "The cornea is transparent because its collagen fibers are arranged with perfect regularity and because the endothelium keeps it permanently dehydrated (corneal deturgescence). If either mechanism weakens, the cornea swells and turns greyish.",
     points: [
@@ -937,6 +1267,16 @@ Object.assign(G.OPH_EN.A.physio, {
     pearl: "Attending: \"Why is the cornea steamy in an acute angle-closure attack when the endothelium is healthy?\" Because IOP exceeds the stromal swelling pressure: water is pushed forward and the epithelium becomes edematous (colored halos). The cornea clears when IOP is lowered; specular microscopy afterward is useful, because the attack causes endothelial cell loss."
   },
   "refraction": {
+    card: {
+      lead: "The eye (≈ 60 D) must focus the image on the retina. A refractive error occurs when its length does not match its power.",
+      keys: [
+        "Cornea ≈ 43 D (≈ 2/3 of the total); lens ≈ 20 D.",
+        "Myope: eye too long (or too strong), blurred distance vision, minus lens.",
+        "Hyperope: short eye, shallow chamber, **risk of angle closure**.",
+        "Pinhole: improved VA = optical cause; otherwise macula, nerve."
+      ],
+      ask: { q: "A 65-year-old woman, hyperopic at +4 D, saw very well at distance when young: why examine her angle?", a: "Her short eye has a shallow anterior chamber, and her lens, thickened with age, pushes the iris forward: risk of angle closure. Van Herick then gonioscopy before dilating her; if the angle is narrow, discuss LPI or lens extraction." }
+    },
     title: "Refraction and the optics of the eye",
     intro: "The eye is an optical system of ≈ 60 D that must focus the image exactly on the retina. A refractive error occurs when the length of the eye does not match its optical power.",
     points: [
@@ -957,6 +1297,16 @@ Object.assign(G.OPH_EN.A.physio, {
     pearl: "Attending: \"A 65-year-old woman, hyperopic at +4 D, saw very well at distance when young: why examine her angle?\" Her short eye has a shallow anterior chamber, and her lens, thickened with age, pushes the iris forward: risk of angle closure. Van Herick then gonioscopy before dilating her; if the angle is narrow, discuss LPI or lens extraction."
   },
   "pupille": {
+    card: {
+      lead: "The pupillary light reflex compares the light carried by each optic nerve. It separates an afferent lesion (retina, nerve) from an efferent one (CN III, sympathetic, iris).",
+      keys: [
+        "Each pretectal nucleus drives both pupils: direct and consensual reflexes.",
+        "**RAPD**: both pupils dilate when the affected eye is lit.",
+        "Requires asymmetric damage; an RAPD causes no anisocoria.",
+        "Anisocoria worse in the dark: Horner; in light: CN III, Adie."
+      ],
+      ask: { q: "Your patient has a right RAPD: which pupil is larger?", a: "Neither: the pupils stay equal, because each pretectal nucleus drives both Edinger-Westphal nuclei. An associated anisocoria indicates a second problem (efferent or iris); an RAPD points to the optic nerve or a severely damaged retina, never to a cataract or a refractive error." }
+    },
     title: "Pupillary light reflex and RAPD",
     intro: "The pupillary light reflex compares the light information transmitted by each optic nerve. It distinguishes damage to the afferent pathway (retina, optic nerve) from damage to the efferent pathway (CN III, sympathetic, iris).",
     points: [

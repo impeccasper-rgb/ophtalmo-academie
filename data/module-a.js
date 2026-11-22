@@ -314,6 +314,16 @@ G.OPH.A = {
   physio: [
     {
       id: "aqueuse",
+      card: {
+        lead: "Les procès ciliaires sécrètent l’humeur aqueuse, qui sort surtout par le trabéculum. Si l’écoulement est freiné, la PIO monte.",
+        keys: [
+          "Production ≈ 2,5 µL/min le jour, plus basse la nuit.",
+          "Voie trabéculaire : majorité du débit ; résistance ↑ en glaucome à angle ouvert.",
+          "Voie uvéosclérale : 5–30 % du débit, ↑ par les prostaglandines.",
+          "**PIO = (F − U) / C + Pv**, avec Pv ≈ 8–10 mmHg."
+        ],
+        ask: { q: "Pourquoi le timolol baisse-t-il peu la PIO la nuit, alors que les prostaglandines restent efficaces ?", a: "Le timolol réduit la production d’aqueuse, déjà basse pendant le sommeil (moins de tonus sympathique) ; les prostaglandines augmentent l’écoulement uvéoscléral, qui agit jour et nuit." }
+      },
       title: "Humeur aqueuse : production et drainage",
       en: "Aqueous humor dynamics",
       intro: "L’humeur aqueuse (aqueous humor) nourrit le cristallin et la cornée, qui n’ont pas de vaisseaux, et maintient la forme du globe. La pression intraoculaire (PIO) dépend de l’équilibre entre sa production et la résistance à son écoulement : si l’écoulement est freiné, la PIO monte.",
@@ -336,6 +346,16 @@ G.OPH.A = {
     },
     {
       id: "pio",
+      card: {
+        lead: "Seul facteur de risque modifiable du glaucome dont la baisse freine la maladie. Une PIO normale n’exclut pas un glaucome.",
+        keys: [
+          "Normale 10–21 mmHg : 21 est une limite statistique, pas un seuil.",
+          "Variation de 2–6 mmHg sur 24 h, pic nocturne ou matinal.",
+          "Cornée mince ou post-LASIK : PIO sous-estimée ; cornée épaisse : surestimée.",
+          "PIO > 21 mmHg sans atteinte du nerf = hypertension oculaire."
+        ],
+        ask: { q: "PIO de 23 mmHg avec une cornée de 600 µm : c’est un glaucome ?", a: "Non : sans atteinte du nerf optique ni du champ visuel, c’est au plus une hypertension oculaire, et la cornée épaisse fait probablement surestimer la PIO. On évalue le risque global avec les prédicteurs d’OHTS (âge, PIO, épaisseur cornéenne, C/D vertical, PSD) plutôt que de corriger le chiffre." }
+      },
       title: "Pression intraoculaire (PIO)",
       en: "Intraocular pressure (IOP)",
       intro: "La PIO est la pression du liquide intraoculaire sur la paroi du globe. C’est le seul facteur de risque modifiable dont la baisse a prouvé qu’elle freine le glaucome, mais une PIO « normale » n’exclut pas un glaucome et une PIO élevée n’en est pas un à elle seule.",
@@ -358,6 +378,16 @@ G.OPH.A = {
     },
     {
       id: "film-lacrymal",
+      card: {
+        lead: "Le film lacrymal lisse la première surface optique et protège l’épithélium. Quand son équilibre se rompt, un cercle vicieux s’installe : la sécheresse oculaire.",
+        keys: [
+          "Lipides (Meibomius), phase muco-aqueuse, glycocalyx de l’épithélium.",
+          "TBUT normal > 10 s ; Schirmer I < 5 mm/5 min : déficit aqueux sévère.",
+          "Osmolarité ≥ 308 mOsm/L ou écart > 8 entre les yeux.",
+          "Instabilité → évaporation → hyperosmolarité → inflammation → instabilité."
+        ],
+        ask: { q: "Ton glaucomateux sous 3 gouttes se plaint de brûlure et de vision qui fluctue : qu’en penses-tu ?", a: "Probable maladie de surface aggravée par l’agent de conservation des gouttes (chlorure de benzalkonium, BAK) : elle nuit à l’observance et fausse l’AV, la topographie et le champ visuel. Options : gouttes sans agent de conservation, combinaisons fixes (moins de gouttes), SLT, traitement de la dysfonction meibomienne." }
+      },
       title: "Film lacrymal et surface oculaire",
       en: "Tear film and ocular surface",
       intro: "Le film lacrymal (tear film) lisse la première surface optique de l’œil, nourrit et protège l’épithélium cornéen et se renouvelle à chaque clignement. Quand son équilibre se rompt, un cercle vicieux s’installe : c’est la sécheresse oculaire (dry eye disease).",
@@ -380,6 +410,16 @@ G.OPH.A = {
     },
     {
       id: "transparence",
+      card: {
+        lead: "La cornée reste claire grâce à des fibrilles de collagène très régulières et à un endothélium qui la garde déshydratée. Si l’un faiblit, elle gonfle et grisaille.",
+        keys: [
+          "Endothélium « pompe-fuite » : stroma stable à ≈ 78 % d’eau.",
+          "Œdème stromal : cornée épaissie, grisâtre, plis de Descemet.",
+          "Œdème épithélial : microkystes, bulles, halos colorés, vision très baissée.",
+          "PIO qui approche 50–60 mmHg (crise de fermeture) : épithélium embué, endothélium sain."
+        ],
+        ask: { q: "Pourquoi la cornée est-elle embuée en crise aiguë de fermeture alors que l’endothélium est sain ?", a: "Parce que la PIO dépasse la pression de gonflement du stroma : l’eau est poussée vers l’avant et l’épithélium devient œdémateux (halos colorés). La cornée s’éclaircit quand on baisse la PIO ; une microscopie spéculaire ensuite est utile, car la crise fait perdre des cellules endothéliales." }
+      },
       title: "Transparence cornéenne",
       en: "Corneal transparency",
       intro: "La cornée est transparente parce que ses fibres de collagène sont rangées avec une régularité parfaite et parce que l’endothélium la garde déshydratée en permanence (déturgescence, corneal deturgescence). Si l’un de ces deux mécanismes faiblit, la cornée gonfle et devient grisâtre.",
@@ -402,6 +442,16 @@ G.OPH.A = {
     },
     {
       id: "refraction",
+      card: {
+        lead: "L’œil (≈ 60 D) doit focaliser l’image sur la rétine. Une erreur de réfraction survient quand sa longueur ne correspond pas à sa puissance.",
+        keys: [
+          "Cornée ≈ 43 D (≈ 2/3 du total) ; cristallin ≈ 20 D.",
+          "Myope : œil trop long (ou trop puissant), flou de loin, verre négatif.",
+          "Hypermétrope : œil court, chambre peu profonde, **risque de fermeture de l’angle**.",
+          "Trou sténopéique : AV améliorée = cause optique ; sinon macula, nerf."
+        ],
+        ask: { q: "Une patiente de 65 ans, hypermétrope de +4 D, voyait très bien de loin jeune : pourquoi examiner son angle ?", a: "Son œil court a une chambre antérieure peu profonde, et son cristallin épaissi avec l’âge pousse l’iris vers l’avant : risque de fermeture de l’angle. Van Herick puis gonioscopie avant de la dilater ; si l’angle est étroit, on discute LPI ou extraction du cristallin." }
+      },
       title: "Réfraction et optique de l’œil",
       en: "Refraction and ocular optics",
       intro: "L’œil est un système optique d’≈ 60 D qui doit focaliser l’image exactement sur la rétine. Une erreur de réfraction (refractive error) survient quand la longueur de l’œil ne correspond pas à sa puissance optique.",
@@ -424,6 +474,16 @@ G.OPH.A = {
     },
     {
       id: "pupille",
+      card: {
+        lead: "Le réflexe photomoteur compare la lumière transmise par chaque nerf optique. Il sépare une atteinte afférente (rétine, nerf) d’une atteinte efférente (III, sympathique, iris).",
+        keys: [
+          "Chaque noyau prétectal commande les deux pupilles : réflexes direct et consensuel.",
+          "**DPAR** : les deux pupilles se dilatent en éclairant l’œil atteint.",
+          "Il faut une atteinte asymétrique ; un DPAR ne donne pas d’anisocorie.",
+          "Anisocorie plus marquée au noir : Horner ; à la lumière : III, Adie."
+        ],
+        ask: { q: "Ton patient a un DPAR droit : quelle pupille est la plus grande ?", a: "Aucune : les pupilles restent égales, parce que chaque noyau prétectal commande les deux noyaux d’Edinger-Westphal. Une anisocorie associée signe un deuxième problème (efférent ou de l’iris) ; un DPAR oriente vers le nerf optique ou une rétine très atteinte, jamais vers une cataracte ou une erreur de réfraction." }
+      },
       title: "Réflexe pupillaire et DPAR",
       en: "Pupillary light reflex and RAPD",
       intro: "Le réflexe photomoteur (pupillary light reflex) compare l’information lumineuse transmise par chaque nerf optique. Il distingue une atteinte de la voie afférente (rétine, nerf optique) d’une atteinte de la voie efférente (nerf III, sympathique, iris).",
@@ -448,6 +508,16 @@ G.OPH.A = {
   exam: [
     {
       id: "av",
+      card: {
+        lead: "Le signe vital de l’œil : elle mesure la vision centrale, oriente l’urgence et sert de référence légale pour la conduite (SAAQ).",
+        keys: [
+          "Chaque œil séparément, avec la correction de loin, à 6 m.",
+          "< 6/6 : refaire au **trou sténopéique** (corrige le flou optique).",
+          "Aucune ligne lue : CD, MM, PL avec projection, NPL.",
+          "Toujours en premier, avant gouttes, tonométrie ou dilatation."
+        ],
+        ask: { q: "L’AV passe de 6/18 à 6/7,5 au trou sténopéique : ta conclusion ?", a: "La baisse est surtout optique : je fais une réfraction (ou j’essaie une lentille rigide si la cornée est irrégulière) avant de chercher une maladie de la macula ou du nerf optique." }
+      },
       title: "Acuité visuelle",
       en: "Visual acuity",
       why: "C’est le signe vital de l’œil : elle mesure la fonction centrale, oriente l’urgence (kératite centrale, crise de fermeture) et sert de référence légale, notamment pour la conduite (Société de l’assurance automobile du Québec, SAAQ).",
@@ -480,6 +550,16 @@ G.OPH.A = {
     },
     {
       id: "pupilles",
+      card: {
+        lead: "La lampe oscillante détecte en 30 secondes une neuropathie optique asymétrique. À faire avant toute dilatation.",
+        keys: [
+          "Pièce sombre, fixation au loin ; anisocorie au noir puis à la lumière.",
+          "Lampe oscillante : 2–3 s par œil, même intensité, plusieurs allers-retours.",
+          "**DPAR** : les deux pupilles se dilatent sur l’œil atteint.",
+          "Mi-mydriase peu réactive, œil rouge douloureux, PIO élevée : crise de fermeture."
+        ],
+        ask: { q: "Ton patient a un DPAR gauche et une cataracte gauche dense : la cataracte l’explique-t-elle ?", a: "Non : une cataracte diffuse la lumière mais ne cause pas de DPAR significatif. Avant d’opérer, je cherche une neuropathie optique (glaucome avancé, compression) ou une atteinte rétinienne étendue (OCT, champ visuel, échographie si le fond d’œil est invisible)." }
+      },
       title: "Examen des pupilles",
       en: "Pupil examination",
       why: "La lampe oscillante détecte en 30 secondes une neuropathie optique asymétrique (ex. glaucome avancé d’un côté), et une pupille mi-dilatée fixe oriente vers une crise de fermeture de l’angle : à faire avant toute dilatation.",
@@ -513,6 +593,16 @@ G.OPH.A = {
     },
     {
       id: "lampe",
+      card: {
+        lead: "L’outil central en cornée et en glaucome : on examine chaque couche, des paupières au vitré antérieur.",
+        keys: [
+          "Toujours de l’avant vers l’arrière, faible puis fort grossissement.",
+          "Coupe optique : profondeur d’une lésion ; rétro-illumination : guttae, transillumination.",
+          "Cellules en CA : faisceau 1 × 1 mm, pièce sombre.",
+          "**Van Herick ≤ 2** (≤ 1/4 EC) : gonioscopie obligatoire."
+        ],
+        ask: { q: "Comment confirmes-tu des guttae à la lampe ?", a: "En réflexion spéculaire (taches noires dans la mosaïque endothéliale) et en rétro-illumination (gouttelettes) ; je quantifie ensuite avec une microscopie spéculaire et une pachymétrie, et je demande si la vision est pire le matin (œdème)." }
+      },
       title: "Biomicroscopie à la lampe à fente",
       en: "Slit-lamp biomicroscopy",
       why: "C’est l’outil central des deux cliniques : on y examine chaque couche de la cornée, la chambre antérieure, l’iris et le cristallin, puis l’angle et la papille avec des verres.",
@@ -547,6 +637,16 @@ G.OPH.A = {
     },
     {
       id: "fluoresceine",
+      card: {
+        lead: "Elles révèlent les lésions de l’épithélium, la sécheresse et les fuites d’humeur aqueuse (Seidel).",
+        keys: [
+          "Lire au bleu cobalt dans les 1–3 min.",
+          "KPS inférieure : sécheresse, blépharite ; supérieure : lentilles cornéennes.",
+          "Dendrite à bulbes terminaux : herpès simplex.",
+          "**Seidel positif** : ruisseau qui dilue le colorant = fuite (plaie, bulle)."
+        ],
+        ask: { q: "Après une trabéculectomie, PIO à 4 mmHg et CA peu profonde : premier test ?", a: "Un Seidel sur la bulle : un ruisseau qui dilue la fluorescéine confirme une fuite, à fermer (lentille pansement, suture, révision) pour éviter hypotonie, chambre plate et infection." }
+      },
       title: "Colorations vitales : fluorescéine, lissamine, Seidel",
       en: "Vital dyes and Seidel test",
       why: "Elles révèlent les lésions de l’épithélium (abrasion, kératite, dendrite), la sécheresse et les fuites d’humeur aqueuse (Seidel) : examen de base en cornée et après une chirurgie filtrante.",
@@ -579,6 +679,16 @@ G.OPH.A = {
     },
     {
       id: "tonometrie",
+      card: {
+        lead: "La PIO est le seul facteur de risque du glaucome dont le traitement a prouvé son efficacité : il faut une mesure fiable.",
+        keys: [
+          "Goldmann : anesthésique + fluorescéine, bleu cobalt, bords internes des mires qui se touchent.",
+          "Lecture du cadran × 10 = mmHg.",
+          "Mires épaisses, paupières pressées, Valsalva : PIO surestimée.",
+          "Cornée mince, œdème, post-LASIK : PIO sous-estimée."
+        ],
+        ask: { q: "Ta patiente opérée en LASIK a une PIO de 13 mmHg mais son excavation augmente : rassurée ?", a: "Non : la cornée amincie fait sous-estimer la PIO au Goldmann. Je regarde la PIO d’avant la chirurgie, la tendance, et surtout la structure et la fonction (OCT, champ visuel) ; un tonomètre moins dépendant de la cornée peut aider." }
+      },
       title: "Tonométrie",
       en: "Tonometry",
       why: "La PIO est le seul facteur de risque du glaucome dont le traitement a prouvé son efficacité : une mesure fiable et reproductible guide le diagnostic, la PIO cible et le suivi.",
@@ -610,6 +720,16 @@ G.OPH.A = {
     },
     {
       id: "gonioscopie",
+      card: {
+        lead: "Le seul examen qui montre l’angle directement : ouvert, étroit ou fermé, apposition ou synéchies, causes secondaires.",
+        keys: [
+          "Pièce sombre, faisceau court hors de la pupille (sinon angle faussement ouvert).",
+          "Du postérieur à l’antérieur : iris, bande ciliaire, éperon, trabéculum, Schwalbe.",
+          "Trabéculum pigmenté invisible sur ≥ 180° : contact iridotrabéculaire.",
+          "**Indentation** : l’angle s’ouvre (apposition) ou reste collé (synéchies)."
+        ],
+        ask: { q: "Comment distingues-tu apposition et synéchies ?", a: "Par l’indentation : avec un verre à 4 miroirs, j’appuie au centre ; l’aqueuse repousse l’iris et l’angle s’ouvre s’il s’agit d’une apposition, alors que les PAS restent collées. Cela sépare PACS de PAC et oriente vers la LPI (iridotomie au laser) ou l’extraction du cristallin." }
+      },
       title: "Gonioscopie",
       en: "Gonioscopy",
       why: "C’est le seul examen qui montre directement l’angle : il distingue angle ouvert, étroit ou fermé, apposition ou synéchies, et repère les causes secondaires (PXF, récession, néovaisseaux) avant tout traitement du glaucome.",
@@ -644,6 +764,16 @@ G.OPH.A = {
     },
     {
       id: "pachymetrie",
+      card: {
+        lead: "L’épaisseur cornéenne centrale change la lecture de la PIO et le risque de glaucome ; en cornée, elle suit l’œdème et l’amincissement.",
+        keys: [
+          "Normale ≈ 540–550 µm au centre, ≈ 650–700 µm en périphérie.",
+          "OHTS : ≤ 555 µm ≈ 3 × plus de conversion que > 588 µm.",
+          "ECC qui augmente : œdème (Fuchs, rejet de greffe).",
+          "Kératocône : point le plus mince qui s’amincit = progression, penser CXL."
+        ],
+        ask: { q: "Pourquoi une cornée mince augmente-t-elle le risque dans OHTS ?", a: "D’abord parce que la PIO réelle est sous-estimée ; ensuite, une cornée mince pourrait refléter une structure oculaire plus fragile (l’hystérésis basse est aussi un facteur de risque). On l’intègre au calcul du risque plutôt que de corriger le chiffre." }
+      },
       title: "Pachymétrie",
       en: "Pachymetry",
       why: "L’épaisseur cornéenne centrale (ECC, central corneal thickness) influence la lecture de la PIO et le risque qu’une hypertension oculaire devienne un glaucome ; en cornée, elle suit l’œdème (Fuchs) et l’amincissement (kératocône).",
@@ -673,6 +803,16 @@ G.OPH.A = {
     },
     {
       id: "papille",
+      card: {
+        lead: "Le glaucome est une neuropathie optique : décrire la papille de façon systématique est la base de la clinique de glaucome.",
+        keys: [
+          "1. Taille du disque (normal ≈ 1,5–2 mm) avant tout.",
+          "2. Anneau : règle ISNT, encoche inféro- ou supérotemporale.",
+          "3. C/D vertical > 0,6 ou asymétrie ≥ 0,2 : suspect.",
+          "Hémorragie de Drance : maladie active ; pâleur > excavation : autre cause."
+        ],
+        ask: { q: "Quelle est la première chose à décrire sur une papille ?", a: "Sa taille : un C/D de 0,7 peut être normal sur un grand disque et pathologique sur un petit. Puis l’anneau (ISNT, encoche), l’hémorragie, l’APP et la couleur ; un anneau restant pâle me fait penser à une cause non glaucomateuse." }
+      },
       title: "Examen de la papille",
       en: "Optic disc evaluation",
       why: "Le glaucome est une neuropathie optique caractéristique : décrire une papille de façon systématique est la base de la clinique de glaucome et des questions du patron.",
@@ -706,6 +846,16 @@ G.OPH.A = {
     },
     {
       id: "oct",
+      card: {
+        lead: "L’OCT mesure objectivement la RNFL et les cellules ganglionnaires maculaires (GCIPL), au départ et au suivi, avec le champ visuel.",
+        keys: [
+          "Vérifier signal, centrage et segmentation avant de lire les couleurs.",
+          "Amincissement inférotemporal d’abord ↔ défaut du champ supérieur.",
+          "Effet plancher ≈ 50–60 µm : au stade avancé, suivre champ et GCIPL.",
+          "**Red disease** : faux rouge (myopie forte, papille inclinée, segmentation)."
+        ],
+        ask: { q: "OCT tout rouge chez un myope de −9 D avec un champ visuel normal : glaucome ?", a: "Probablement de la red disease (papille inclinée, base normative inadaptée, segmentation douteuse). Je vérifie la segmentation, je corrèle avec le champ (incluant un 10-2) et je suis la progression dans le temps plutôt que les couleurs." }
+      },
       title: "OCT : RNFL, cellules ganglionnaires et segment antérieur",
       en: "Optical coherence tomography (OCT)",
       why: "L’OCT mesure de façon objective la RNFL et les cellules ganglionnaires maculaires : l’AAO 2026 recommande les deux au départ et au suivi, combinés au champ visuel ; l’OCT du segment antérieur (AS-OCT) évalue l’angle et la cornée.",
@@ -739,6 +889,16 @@ G.OPH.A = {
     },
     {
       id: "topographie",
+      card: {
+        lead: "Elles détectent et suivent les ectasies (kératocône) et l’astigmatisme irrégulier : base du cross-linking et du dépistage avant chirurgie réfractive.",
+        keys: [
+          "Lire 4 cartes : courbure, élévations antérieure et postérieure, pachymétrie.",
+          "Kératocône : cambrure inférieure, nœud papillon asymétrique, élévation postérieure ↑.",
+          "Dépistage : K central > 47,2 D ou valeur I-S > 1,4 D.",
+          "**Progression** sur le même appareil = critère principal du CXL."
+        ],
+        ask: { q: "Quelle différence entre topographie et tomographie ?", a: "La topographie de Placido mesure seulement la courbure de la face antérieure, à travers le film lacrymal. La tomographie (Scheimpflug ou OCT) reconstruit la cornée en 3D (élévations antérieure et postérieure, pachymétrie) et détecte plus tôt le kératocône : élévation postérieure et point le plus mince déplacé." }
+      },
       title: "Topographie et tomographie cornéennes",
       en: "Corneal topography and tomography",
       why: "Elles détectent et suivent les ectasies (kératocône : cornée qui s’amincit et bombe en cône ; dégénérescence marginale pellucide) et l’astigmatisme irrégulier ; c’est la base de l’indication du cross-linking et du dépistage avant chirurgie réfractive.",
@@ -772,6 +932,16 @@ G.OPH.A = {
     },
     {
       id: "champs-visuels",
+      card: {
+        lead: "Il mesure la fonction : il confirme la neuropathie glaucomateuse, en donne le stade, détecte la progression et juge l’aptitude à conduire.",
+        keys: [
+          "24-2 pour diagnostic et suivi ; 10-2 si la fixation est menacée.",
+          "Fiabilité d’abord : faux positifs ≤ 15 %, pertes de fixation.",
+          "Glaucome : respecte le méridien **horizontal** ; vertical → neuro-imagerie.",
+          "Stades : débutant MD > −6 dB ; avancé < −12 dB."
+        ],
+        ask: { q: "Défaut arciforme supérieur à l’œil droit : où regardes-tu sur la papille ?", a: "Au pôle inférieur, surtout inférotemporal : encoche, hémorragie, RNFL amincie. Si le défaut respectait le méridien vertical, je penserais plutôt au chiasma ou aux voies rétrochiasmatiques." }
+      },
       title: "Champ visuel automatisé (Humphrey)",
       en: "Standard automated perimetry",
       why: "Il mesure la fonction : il confirme la neuropathie glaucomateuse, en donne le stade et détecte la progression ; il sert aussi à évaluer l’aptitude à conduire (SAAQ).",
@@ -807,6 +977,16 @@ G.OPH.A = {
     },
     {
       id: "speculaire",
+      card: {
+        lead: "Elle compte et décrit les cellules endothéliales : utile avant une chirurgie chez le patient avec Fuchs et pour suivre greffes, tubes et crises de fermeture.",
+        keys: [
+          "Densité ≈ 3000–3500 cellules/mm² jeune, ≈ 2500 vers 60–70 ans.",
+          "Guttae = zones noires dans la mosaïque : dystrophie de Fuchs.",
+          "Décompensation en général < 400–500 cellules/mm².",
+          "CV ↑ et hexagones ↓ : endothélium stressé, parfois avant la chute."
+        ],
+        ask: { q: "Une patiente avec des guttae veut se faire opérer de la cataracte : que demandes-tu ?", a: "Une microscopie spéculaire, une pachymétrie et l’histoire de vision matinale : une densité basse, une cornée épaisse ou un œdème le matin font discuter une chirurgie combinée cataracte + DMEK (greffe endothéliale) plutôt qu’une chirurgie de cataracte seule." }
+      },
       title: "Microscopie spéculaire",
       en: "Specular microscopy",
       why: "Elle compte et décrit les cellules endothéliales : elle aide à décider et planifier la chirurgie chez le patient avec Fuchs, surveille les greffes, les tubes et implants, et l’œil après une crise de fermeture de l’angle (AAO 2026).",

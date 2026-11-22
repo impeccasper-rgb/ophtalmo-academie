@@ -6,6 +6,16 @@ G.OPH.A = G.OPH.A || {};
 G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   {
     id: "cataracte-nucleaire", order: 1, group: "cristallin",
+    card: {
+      lead: "Avec l’âge, le noyau du cristallin jaunit et durcit. Un noyau dur menace l’endothélium à la phaco, et le cristallin épaissi rétrécit l’angle.",
+      keys: [
+        "Fente : noyau jaune puis brun, plus opaque que le cortex.",
+        "Myopisation : le presbyte relit sans lunettes (**seconde vue**).",
+        "Reflet rouge terni ; contraste et couleurs diminués.",
+        "On opère pour la gêne fonctionnelle, pas pour le grade."
+      ],
+      ask: { q: "Pourquoi ton patient de 75 ans dit-il qu’il lit mieux sans lunettes depuis quelques mois ?", a: "La sclérose nucléaire augmente l’indice de réfraction du noyau : l’œil devient plus myope et le presbyte retrouve sa vision de près, la « seconde vue ». C’est un signe de cataracte nucléaire, pas une amélioration de l’œil." }
+    },
     title: "Sclérose nucléaire et cataracte nucléaire", en: "Nuclear sclerosis / nuclear cataract",
     urgency: "routine",
     what: "Avec l’âge, le centre du cristallin (le noyau) se tasse, jaunit et durcit : c’est la **sclérose nucléaire** (nuclear sclerosis). Quand le noyau devient assez jaune-brun et opaque pour baisser la vision, on parle de cataracte nucléaire, puis de cataracte brunescente (brunescent cataract) quand il est brun foncé.",
@@ -32,6 +42,16 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "cataracte-corticale-scp", order: 2, group: "cristallin",
+    card: {
+      lead: "La corticale forme des rayons blancs en périphérie ; la sous-capsulaire postérieure (SCP), petite plaque centrale, gêne beaucoup. La SCP est la cataracte des corticostéroïdes.",
+      keys: [
+        "Voir en **rétroillumination** : opacités en ombre sur le reflet orangé.",
+        "Corticale : rayons de la périphérie vers le centre.",
+        "SCP : plaque granuleuse au centre de la face postérieure.",
+        "SCP : chercher stéroïdes, diabète, uvéite ; mesurer la PIO."
+      ],
+      ask: { q: "Pourquoi une SCP gêne-t-elle surtout de près et en plein soleil ?", a: "La plaque est centrale et postérieure. En lumière vive et pendant l’accommodation (myosis de la vision de près), la pupille se contracte et toute la lumière doit traverser la plaque." }
+    },
     title: "Cataractes corticale, sous-capsulaire postérieure, suturale et mixte", en: "Cortical, posterior subcapsular, sutural and mixed cataract",
     urgency: "routine",
     what: "La cataracte corticale (cortical cataract) forme des rayons blancs, comme les rayons d’une roue, dans la couche externe du cristallin (le cortex). La **cataracte sous-capsulaire postérieure** (posterior subcapsular cataract, SCP) est une plaque granuleuse au centre, juste devant la capsule arrière : petite, elle gêne pourtant beaucoup.",
@@ -57,6 +77,16 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "cataracte-mature", order: 3, group: "cristallin",
+    card: {
+      lead: "Cristallin opaque d’un bord à l’autre, sans reflet rouge. On ne voit plus le fond, et le cristallin peut causer un glaucome phacomorphique ou phacolytique.",
+      keys: [
+        "Pupille blanche ou ambrée, aucun reflet rouge.",
+        "Vision CD, MM ou PL : tester la projection et le DPAR.",
+        "**B-scan** avant la chirurgie ; biométrie souvent ultrasonique.",
+        "Angle fermé = phacomorphique ; ouvert + particules blanches = phacolytique."
+      ],
+      ask: { q: "Pourquoi le bleu trypan dans une cataracte blanche, et où le retrouves-tu en cornée ?", a: "Sans reflet rouge, la capsule antérieure est presque invisible : le colorant la teint en bleu pour guider le capsulorhexis. En cornée, il sert aussi à colorer le greffon de DMEK pour voir son orientation dans la chambre antérieure." }
+    },
     title: "Cataracte mature, blanche et morgagnienne", en: "Mature, white and Morgagnian cataract",
     urgency: "rapide",
     what: "Une cataracte mature (mature cataract) est opaque d’un bord à l’autre : blanche (cortex) ou brun foncé (noyau brunescent), sans reflet rouge. Quand le cortex se liquéfie et que le noyau tombe vers le bas dans le sac capsulaire, c’est une **cataracte morgagnienne** (Morgagnian cataract), un stade hypermature.",
@@ -83,6 +113,16 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "opacification-capsulaire", order: 4, group: "cristallin",
+    card: {
+      lead: "Après une cataracte, des cellules repoussent et voilent la capsule derrière l’implant. Le laser YAG la traite en minutes, mais peut faire monter la PIO.",
+      keys: [
+        "Vision qui se voile des mois ou années après la chirurgie.",
+        "Rétroillumination : voile gris, fibrose ou perles d’Elschnig derrière l’implant.",
+        "Exclure un œdème maculaire (OCT) avant la capsulotomie YAG.",
+        "Glaucomateux : apraclonidine ou brimonidine, énergie minimale, PIO recontrôlée."
+      ],
+      ask: { q: "Que fais-tu avant et après un YAG chez un patient avec glaucome avancé ?", a: "J’instille un alpha-agoniste avant ou juste après le laser, j’utilise l’énergie minimale et je remesure la PIO dans les heures qui suivent. Si un pic survient, j’ajuste le traitement et je revois le patient rapidement." }
+    },
     title: "Opacification capsulaire postérieure", en: "Posterior capsule opacification (PCO)",
     urgency: "routine",
     what: "Après une chirurgie de cataracte, l’implant repose dans le sac capsulaire ; des cellules du cristallin restées sur place repoussent et voilent la capsule postérieure derrière l’implant : c’est l’**opacification capsulaire postérieure** (posterior capsule opacification), parfois appelée « cataracte secondaire ». Elle se traite au laser en quelques minutes.",
@@ -108,6 +148,16 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "bscan", order: 5, group: "echo",
+    card: {
+      lead: "Échographie en coupe qui montre l’intérieur de l’œil quand le fond est invisible (cataracte blanche, hémorragie du vitré). Pas sur un globe ouvert.",
+      keys: [
+        "Sonde sur la paupière fermée ; marqueur = haut de l’image.",
+        "Gain élevé pour les échos faibles, bas pour comparer et mesurer.",
+        "Fine et très mobile = vitré ; épaisse, attachée au nerf = rétine.",
+        "Dôme lisse, épais, peu mobile = choroïde."
+      ],
+      ask: { q: "Comment distingues-tu au B-scan un décollement postérieur du vitré, un décollement de rétine et un décollement choroïdien ?", a: "Le vitré décollé est fin, peu réfléchissant et très mobile. La rétine décollée est plus épaisse, très réfléchissante, attachée au nerf optique et à l’ora serrata, souvent en V. La choroïde décollée forme des dômes lisses et épais, peu mobiles, qui ne s’attachent pas au nerf optique." }
+    },
     title: "Échographie B (B-scan) : technique et lecture", en: "B-scan ocular ultrasonography",
     urgency: "routine",
     what: "Le **B-scan** est une échographie en deux dimensions qui montre l’intérieur de l’œil quand on ne voit pas le fond : cataracte blanche, hémorragie du vitré, cornée opaque. La sonde est posée sur la paupière fermée (avec gel) et l’écran montre une coupe en éventail du globe.",
@@ -134,6 +184,16 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "decollement-retine", order: 6, group: "retine",
+    card: {
+      lead: "Une déchirure laisse passer le liquide sous la rétine (rhegmatogène), ou des membranes la tirent (tractionnel, diabète). Macula attachée : rétine le jour même.",
+      keys: [
+        "Éclairs, nouvelles mouches, puis rideau du côté opposé au décollement.",
+        "**Signe de Shafer** : poussière de tabac dans le vitré antérieur.",
+        "Rétine grise, soulevée, ondulée, mobile ; déchirure en fer à cheval.",
+        "Macula décollée : AV effondrée ; référer aussi le jour même."
+      ],
+      ask: { q: "Qu’est-ce que le signe de Shafer et pourquoi le cherches-tu ?", a: "Ce sont des grains de pigment dans le vitré antérieur, vus à la fente derrière le cristallin. Ils viennent de l’épithélium pigmentaire libéré par une déchirure : chez un patient avec éclairs et mouches, ce signe impose de chercher une déchirure ou un décollement." }
+    },
     title: "Décollement de rétine rhegmatogène et tractionnel", en: "Rhegmatogenous and tractional retinal detachment",
     urgency: "urgent",
     what: "Dans le décollement de rétine **rhegmatogène** (rhegmatogenous retinal detachment), une déchirure laisse passer le liquide du vitré sous la rétine, qui se soulève comme du papier peint qui décolle. Dans le décollement tractionnel (tractional retinal detachment), des membranes fibrovasculaires, par exemple d’une rétinopathie diabétique proliférante, tirent la rétine sans déchirure.",
@@ -160,6 +220,16 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "decollement-choroidien", order: 7, group: "retine",
+    card: {
+      lead: "Liquide ou sang entre choroïde et sclère, en gros dômes bruns. Complication typique après chirurgie du glaucome : séreux ou hémorragique change toute la conduite.",
+      keys: [
+        "Dômes lisses, bruns, immobiles ; ora visible sans indentation.",
+        "Séreux : PIO basse, peu de douleur, après trabéculectomie ou fuite.",
+        "Hémorragique : douleur brutale, PIO haute, chambre plate : chirurgien d’urgence.",
+        "B-scan : dômes non attachés au nerf ; noir = séreux, gris = sang."
+      ],
+      ask: { q: "Après une trabéculectomie, PIO à 3 mmHg et dômes bruns en périphérie : séreux ou hémorragique ?", a: "PIO basse, peu de douleur et contenu anéchogène au B-scan évoquent un décollement séreux par hypotonie. Une hémorragie suprachoroïdienne donne plutôt une douleur brutale, une PIO élevée et un contenu échogène." }
+    },
     title: "Décollement choroïdien séreux et hémorragique", en: "Serous and hemorrhagic choroidal detachment",
     urgency: "urgent",
     what: "Un **décollement choroïdien** (choroidal detachment) est un soulèvement de la choroïde par du liquide (forme séreuse, ou effusion) ou du sang (forme hémorragique) accumulé entre la choroïde et la sclère. Il forme de gros dômes bruns et lisses en périphérie ; quand deux dômes se touchent au centre, on dit qu’ils « s’embrassent » (kissing choroidals).",
@@ -186,6 +256,16 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "dmla", order: 8, group: "retine",
+    card: {
+      lead: "Usure de la macula après 50 ans : drusen et atrophie (forme sèche) ou néovaisseaux qui saignent et fuient (forme humide) : la vision centrale peut chuter en quelques jours.",
+      keys: [
+        "Drusen : points jaunes autour de la fovéa.",
+        "Humide : hémorragie ou liquide sous-rétinien, métamorphopsies récentes.",
+        "Métamorphopsie récente : rétine en quelques jours (anti-VEGF).",
+        "Anti-VEGF répétés : surveiller la PIO du glaucomateux."
+      ],
+      ask: { q: "Ton patient glaucomateux voit le cadre de sa porte ondulé depuis 4 jours. Que fais-tu ?", a: "Je teste chaque œil à la grille d’Amsler, je dilate et je fais un OCT maculaire. Une métamorphopsie récente évoque une DMLA néovasculaire : référence en rétine en quelques jours pour anti-VEGF, car le délai compte pour la vision finale." }
+    },
     title: "Dégénérescence maculaire liée à l’âge (DMLA) sèche et néovasculaire", en: "Age-related macular degeneration (AMD), dry and neovascular",
     urgency: "rapide",
     what: "La **DMLA** (dégénérescence maculaire liée à l’âge, age-related macular degeneration) est une usure de la macula après 50 ans. Dans la forme sèche (dry AMD), des dépôts jaunes (drusen) s’accumulent sous l’épithélium pigmentaire puis la rétine s’atrophie lentement (atrophie géographique au stade avancé) ; dans la forme néovasculaire ou « humide » (neovascular AMD), des vaisseaux anormaux poussent sous la macula, saignent et fuient, et la vision centrale peut chuter en quelques jours.",
@@ -212,6 +292,16 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   },
   {
     id: "retinopathie-diabetique", order: 9, group: "retine",
+    card: {
+      lead: "Les petits vaisseaux fuient et se bouchent ; l’ischémie libère du VEGF : néovaisseaux sur la rétine, l’iris et l’angle.",
+      keys: [
+        "Non proliférante : microanévrismes, hémorragies, exsudats durs, nodules cotonneux.",
+        "Sévère, règle **4-2-1** : hémorragies 4 quadrants, chapelet 2, IRMA 1.",
+        "Proliférante (NVD, NVE) : rétine en quelques jours (PRP, anti-VEGF).",
+        "PIO élevée : iris avant dilatation et gonioscopie (néovaisseaux de l’angle)."
+      ],
+      ask: { q: "Pourquoi fais-tu une gonioscopie chez un diabétique avec des NVD et une PIO à 26 mmHg ?", a: "Les néovaisseaux de l’angle peuvent apparaître avant ceux de l’iris visibles à la fente. Les voir tôt permet de traiter l’ischémie (PRP, anti-VEGF) avant que la membrane fibrovasculaire ne ferme l’angle de façon permanente." }
+    },
     title: "Rétinopathie diabétique et œdème maculaire diabétique", en: "Diabetic retinopathy and diabetic macular edema",
     urgency: "rapide",
     what: "Le diabète abîme les petits vaisseaux de la rétine : ils fuient (exsudats, œdème) et se bouchent (ischémie). La rétine ischémique libère du VEGF qui fait pousser des néovaisseaux : on passe alors de la forme non proliférante (non-proliferative diabetic retinopathy, NPDR) à la forme proliférante (proliferative diabetic retinopathy, PDR).",
