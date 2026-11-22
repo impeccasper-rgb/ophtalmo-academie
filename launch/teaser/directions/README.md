@@ -37,4 +37,4 @@ Possible hybrid: use C's hook (2 s of type), then A's or D's reveal, with E's en
 - **No photos**, no EyeRounds images, no URL.
 
 ## Regenerating
-From `_src/`, run `python3 render.py [A B C D E]`. It serves the repo on 127.0.0.1:8791, uses `harness.html?d=X` (the paused Web Animations timeline is sought frame by frame), and pipes JPEG screenshots to ffmpeg. The script also writes the stills. The contact sheet is built with PIL from the `*-1-hook.png` files.
+From `_src/`, run `python3 render.py [A B C D E]`. It serves the repo on 127.0.0.1:8791, uses `harness.html?d=X` (the paused Web Animations timeline is sought frame by frame), and pipes JPEG screenshots to ffmpeg. The script also writes the stills. Then run `python3 contact.py` to build the contact sheet.

@@ -19,7 +19,7 @@ Baisse de vision brutale et indolore : un vrai fond d'œil, une question sur 4 s
 Capacitor 8, compilée et auto-testée sur simulateur iPhone par GitHub Actions (macOS) à chaque poussée. Toutes les compilations récentes sont vertes, et la preuve (captures, vidéo, journal d'autotest) est sur la branche `ios-evidence`. TestFlight : désactivé, faute de compte Apple Developer.
 
 ## 4. Vidéos
-18 MP4 dans `videos/`, tournés à partir de la vraie interface (Playwright), en 9:16 et 16:9, FR et EN, avec une affiche pour chacun. Les vidéos destinées aux réseaux sociaux n'utilisent que des schémas originaux (voir `videos/README.md`, tableau des droits).
+18 MP4 dans `videos/`, retournés le 2026-11-22 sur l'interface actuelle (Playwright), en 9:16 et 16:9, FR et EN, avec une affiche pour chacun : cas vedette, A-scan, image du jour + Voir « touche le signe », et une variante réseaux sociaux (schéma de dendrite, mécanisme dessiné pas à pas, arbre décisionnel). Les fichiers `ocelle-social-*` n'utilisent que des schémas SVG originaux, vérifié image par image pendant l'enregistrement (voir `videos/README.md`, tableau des droits).
 
 ## 5. Analyse concurrentielle
 `market/ANALYSE.md` et `market/SOURCES.md` (sources datées du 2026-11-21).
