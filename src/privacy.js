@@ -120,7 +120,7 @@ Actions.stats = function (el) {
 /* ---------- page #confidentialite ---------- */
 var PRIVACY_TXT = {
   fr: {
-    eyebrow: 'Loi 25 (Québec) · LPRPDE (Canada) · compatible RGPD',
+    eyebrow: 'Loi 25 (Québec) · LPRPDE (Canada) · utilisateurs en Europe (RGPD)',
     lead: 'Ocelle ne te demande aucun compte et ne garde aucun renseignement personnel sur un serveur. Voici tout ce qui se passe, en clair.',
     date: 'En vigueur le',
     s: [
@@ -157,7 +157,7 @@ var PRIVACY_TXT = {
     changes: 'Si cette politique change, la date ci-dessus change aussi.'
   },
   en: {
-    eyebrow: 'Québec Law 25 · PIPEDA (Canada) · GDPR-compatible',
+    eyebrow: 'Québec Law 25 · PIPEDA (Canada) · users in Europe (GDPR)',
     lead: 'Ocelle asks for no account and keeps no personal data on a server. Here is everything that happens, in plain words.',
     date: 'Effective',
     s: [
