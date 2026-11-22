@@ -301,3 +301,16 @@ Conventions retenues pour l’externe (délais) :
 - `r-ovr`, délai « dans la semaine » : consensus pratique ; l’AAO ne fixe pas de délai de référence.
 - `r-ovr` : « glaucome des 90 jours » = enseignement classique ; l’AAO parle de suivi mensuel pendant 6 mois.
 - Photos : OPH-249 (zone rouge entre papille et macula décrite comme « évoquant » une artère ciliorétinienne épargnée : interprétation de l’image, non écrite par la source) ; IMG3-034 (couleurs « photo grand champ à balayage laser » : déduites de l’aspect).
+
+## H. Audit des exercices (QCM, cas en images, cas cliniques), 22 novembre 2026
+
+Audit de forme et de pédagogie, sans nouvelle source : les énoncés réécrits reprennent des faits déjà présents dans les fiches ou dans les sections A à C. Mesures et méthode : `tools/validate.js` (lignes « Quiz FR / EN », « Clinical cases », « Image cases »).
+
+### À valider par un clinicien (exercices réécrits)
+- QCM réécrits en entier (nouvelle question, mêmes identifiants) : `A-016` (Schirmer et déficit aqueux), `A-028` (seuil d’acuité SAAQ 6/15, classe 5), `A-029` (scotome central, névrite optique), `A-033` (« green disease »), `A-034` (astigmatisme régulier direct), `A-035` (endothélium et microscopie spéculaire), `A-206` (glaucome phacomorphique), `A-303` et `A-218` (hémianopsie homonyme), `B-003` (dysfonction meibomienne, 1re ligne), `B-102`, `B-103` (stéroïde à éviter si Acanthamoeba suspectée), `B-106` (stries de Vogt), `B-109` (côté de l’œdème dans une ligne de Khodadoust), `B-203` (dystrophie maculaire), `C-008` (terrain vasculaire du glaucome à pression normale), `C-020` (iris plateau), `C-054` (cible et suivi en pseudo-exfoliation), `C-102`, `C-104`, `C-106`, `C-109`.
+- `B-103`, justification : « sans traitement antiamibien, le stéroïde masque les signes et laisse l’infection progresser » : formulation d’enseignement, non relue à la source.
+- `C-008`, distracteur : « diabète, hypertension, dyslipidémie = facteurs des rétinopathies et des occlusions, pas le profil du glaucome à pression normale » : simplification pédagogique (l’hypertension traitée la nuit peut compter).
+- `B-203`, distracteur : « la dystrophie de Fuchs se révèle bien plus tard dans la vie » : formulation qualitative.
+- Explications courtes des 164 autres QCM : condensées à partir de l’ancienne explication, conservée telle quelle dans le champ `deep` (« Pour aller plus loin »). Aucune dose ni aucun délai n’a été modifié.
+- Cas cliniques : seuls les libellés des bonnes réponses ont été raccourcis (33 étapes) ; les notes de rétroaction, qui portent les doses, sont inchangées.
+- Orthographe harmonisée en français : « hypopyon », « phtisie », « endophtalmie » (formes du glossaire).

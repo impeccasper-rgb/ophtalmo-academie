@@ -30,7 +30,7 @@ G.OPH_EN.bonus = Object.assign(G.OPH_EN.bonus || {}, {
       action: "UBM (high-frequency ultrasound) to see the anterior ciliary processes, then iridoplasty (laser that shrinks the peripheral iris), low-dose pilocarpine or lens extraction." },
     { clue: "After surgery, often in a short eye: a chamber that is flat centrally AND peripherally, high (sometimes normal) IOP despite a patent iridotomy, with no choroidal elevation.",
       action: "Atropine and IOP-lowering drugs, never pilocarpine, then Nd:YAG laser opening of the anterior hyaloid in pseudophakic eyes, or vitrectomy." },
-    { clue: "A middle-aged woman, one eye only: beaten-metal endothelium, displaced pupil (corectopia), iris holes, synechiae extending beyond Schwalbe line.",
+    { clue: "A middle-aged woman, one eye only: hammered-silver endothelium, displaced pupil (corectopia), iris holes, synechiae extending beyond Schwalbe line.",
       action: "Specular microscopy (ICE cells) and IOP control; a tube is often needed, and endothelial keratoplasty if there is corneal edema." },
     { clue: "Recurrent unilateral attacks of very high IOP with few cells, a few fine keratic precipitates and an open angle.",
       action: "Topical steroid and IOP-lowering drops without pilocarpine; anterior chamber tap with CMV PCR if it recurs." },

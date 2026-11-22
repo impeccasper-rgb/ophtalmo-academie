@@ -26,7 +26,7 @@ G.OPH.A = {
     "chambre-anterieure": {
       t: "Chambre antérieure", en: "Anterior chamber",
       d: "Espace entre l’endothélium cornéen et l’iris/cristallin, rempli d’humeur aqueuse (≈ 250 µL). Sa profondeur centrale (≈ 3 mm) diminue chez l’hypermétrope (œil court) et avec l’âge (le cristallin s’épaissit).",
-      c: "On y cherche des cellules et du flare (protéines qui diffusent la lumière : inflammation), un hypopyon (niveau de globules blancs : kératite grave, endophtalmite = infection à l’intérieur de l’œil) et une faible profondeur (risque de fermeture de l’angle : l’iris vient boucher le trabéculum). Après une trabéculectomie, une chambre plate évoque une surfiltration (trop d’humeur aqueuse évacuée par la bulle), une fuite de la bulle ou une mal-direction de l’aqueuse (aqueuse détournée vers le vitré)."
+      c: "On y cherche des cellules et du flare (protéines qui diffusent la lumière : inflammation), un hypopyon (niveau de globules blancs : kératite grave, endophtalmie = infection à l’intérieur de l’œil) et une faible profondeur (risque de fermeture de l’angle : l’iris vient boucher le trabéculum). Après une trabéculectomie, une chambre plate évoque une surfiltration (trop d’humeur aqueuse évacuée par la bulle), une fuite de la bulle ou une mal-direction de l’aqueuse (aqueuse détournée vers le vitré)."
     },
     "angle": {
       t: "Angle iridocornéen", en: "Iridocorneal angle",
@@ -302,7 +302,7 @@ G.OPH.A = {
     "sac-lacrymal": {
       t: "Sac lacrymal", en: "Lacrimal sac",
       d: "Réservoir d’≈ 12–15 mm logé dans la fosse lacrymale, entre les crêtes lacrymales antérieure et postérieure, sous le tendon canthal médial. Il collecte les larmes des canalicules et se vide dans le canal lacrymonasal.",
-      c: "Une obstruction en aval laisse le sac se remplir et s’infecter (dacryocystite : tuméfaction douloureuse sous le canthus médial). Une pression sur le sac qui fait refluer du pus par les points signe une dacryocystite chronique, réservoir de bactéries (ex. pneumocoque) : on la traite, souvent par dacryocystorhinostomie (DCR : nouvelle voie entre le sac et le nez), avant toute chirurgie intraoculaire ou greffe de cornée, à cause du risque de kératite et d’endophtalmite."
+      c: "Une obstruction en aval laisse le sac se remplir et s’infecter (dacryocystite : tuméfaction douloureuse sous le canthus médial). Une pression sur le sac qui fait refluer du pus par les points signe une dacryocystite chronique, réservoir de bactéries (ex. pneumocoque) : on la traite, souvent par dacryocystorhinostomie (DCR : nouvelle voie entre le sac et le nez), avant toute chirurgie intraoculaire ou greffe de cornée, à cause du risque de kératite et d’endophtalmie."
     },
     "canal-lacrymonasal": {
       t: "Canal lacrymonasal", en: "Nasolacrimal duct",
@@ -621,7 +621,7 @@ G.OPH.A = {
       ],
       patho: [
         "Van Herick ≤ 2 (≤ 1/4 EC) → gonioscopie obligatoire (angle possiblement étroit) ; 0 = iris au contact de la cornée.",
-        "Cellules et flare en CA → inflammation (uvéite) ; hypopyon (dépôt de globules blancs) → kératite sévère ou endophtalmite.",
+        "Cellules et flare en CA → inflammation (uvéite) ; hypopyon (dépôt de globules blancs) → kératite sévère ou endophtalmie.",
         "Précipités rétrocornéens (KP : amas de cellules inflammatoires sur l’endothélium) → uvéite ; fuseau de Krukenberg (pigment vertical sur l’endothélium) → dispersion pigmentaire.",
         "Dépôts blanchâtres en cible sur le cristallin (souvent visibles seulement après dilatation) → pseudo-exfoliation (PXF : matériel fibrillaire lié à l’âge, glaucome agressif).",
         "Néovaisseaux au bord pupillaire (rubéose) → ischémie rétinienne : gonioscopie et fond d’œil le jour même.",

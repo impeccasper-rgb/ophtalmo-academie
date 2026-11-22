@@ -14,7 +14,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "IRM cérébrale pour éliminer une aura migraineuse"
     ],
     answer: 1,
-    explain: "**Ce que c’est :** probablement un décollement postérieur du vitré (DPV), mais une nuée de corps flottants nouveaux fait craindre une déchirure de la rétine. **Pourquoi pas rassurer :** la déchirure est en périphérie, invisible sans dilatation ; environ 14 % des patients avec éclairs ou corps flottants aigus en ont une, et une dizaine de nouveaux corps flottants augmente nettement ce risque (Hollands, JAMA 2009). **Quoi faire :** examen dilaté avec dépression sclérale le jour même ; une déchirure se traite au laser avant de devenir un décollement.",
+    explain: "Une nuée de corps flottants nouveaux rend une déchirure probable. Elle est en périphérie, invisible sans dilatation : examen dilaté le jour même, laser si on la trouve.",
+    deep: "**Ce que c’est :** probablement un décollement postérieur du vitré (DPV), mais une nuée de corps flottants nouveaux fait craindre une déchirure de la rétine. **Pourquoi pas rassurer :** la déchirure est en périphérie, invisible sans dilatation ; environ 14 % des patients avec éclairs ou corps flottants aigus en ont une, et une dizaine de nouveaux corps flottants augmente nettement ce risque (Hollands, JAMA 2009). **Quoi faire :** examen dilaté avec dépression sclérale le jour même ; une déchirure se traite au laser avant de devenir un décollement.",
     why: [
       "Piège : un fond d’œil non dilaté ne voit pas la périphérie, où naissent les déchirures.",
       "Exact : la nuée de corps flottants rend une déchirure probable ; elle se traite au laser si on la trouve tôt.",
@@ -33,7 +34,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "La rétine nasale"
     ],
     answer: 0,
-    explain: "**Règle :** l’image est inversée sur la rétine ; un déficit du champ inférieur correspond à la rétine supérieure. **Pourquoi c’est pressant :** un décollement supérieur gagne vite la macula, car le liquide descend avec la gravité. **Quoi faire :** ophtalmologiste de garde le jour même, avant que la vision centrale tombe.",
+    explain: "L’image est inversée sur la rétine : un rideau qui monte du bas du champ vient de la rétine supérieure. Ce décollement gagne vite la macula : le jour même.",
+    deep: "**Règle :** l’image est inversée sur la rétine ; un déficit du champ inférieur correspond à la rétine supérieure. **Pourquoi c’est pressant :** un décollement supérieur gagne vite la macula, car le liquide descend avec la gravité. **Quoi faire :** ophtalmologiste de garde le jour même, avant que la vision centrale tombe.",
     why: [
       "Exact : champ inférieur = rétine supérieure ; c’est le décollement qui menace le plus vite la macula.",
       "La rétine inférieure décollée donnerait un rideau qui descend du haut du champ.",
@@ -52,7 +54,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Protoxyde d’azote"
     ],
     answer: 3,
-    explain: "**Le piège :** le protoxyde d’azote diffuse dans la bulle de gaz intraoculaire bien plus vite que l’azote n’en sort ; la bulle gonfle, la PIO monte brutalement et peut fermer l’artère centrale de la rétine. **Quoi faire :** signaler la bulle à l’anesthésiste ; pas de protoxyde d’azote tant qu’elle persiste, ni avion ni altitude.",
+    explain: "Le protoxyde d’azote diffuse dans la bulle de gaz intraoculaire : elle gonfle, la PIO s’envole et l’artère centrale peut se fermer. Le signaler à l’anesthésiste.",
+    deep: "**Le piège :** le protoxyde d’azote diffuse dans la bulle de gaz intraoculaire bien plus vite que l’azote n’en sort ; la bulle gonfle, la PIO monte brutalement et peut fermer l’artère centrale de la rétine. **Quoi faire :** signaler la bulle à l’anesthésiste ; pas de protoxyde d’azote tant qu’elle persiste, ni avion ni altitude.",
     why: [
       "Le propofol ne modifie pas le volume d’une bulle de gaz.",
       "Le rocuronium (curare) ne modifie pas le volume d’une bulle de gaz.",
@@ -71,7 +74,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Gouttes hypotensives et contrôle dans une semaine"
     ],
     answer: 2,
-    explain: "**Ce que c’est :** une occlusion de l’artère centrale de la rétine, c’est-à-dire un AVC de l’œil. **Pourquoi l’urgence :** le risque d’AVC cérébral est élevé dans les jours qui suivent ; le bilan (IRM de diffusion, carotides, rythme cardiaque, échographie) se fait le jour même, et la thrombolyse se discute en centre de l’AVC si le début date de moins de 4,5 h. **Après 50 ans :** VS, CRP et plaquettes pour éliminer une artérite à cellules géantes.",
+    explain: "Perte de vision brutale et indolore avec tache rouge cerise : OACR, un AVC de l’œil. Bilan d’AVC le jour même en centre de l’AVC ; VS, CRP et plaquettes dès 50 ans.",
+    deep: "**Ce que c’est :** une occlusion de l’artère centrale de la rétine, c’est-à-dire un AVC de l’œil. **Pourquoi l’urgence :** le risque d’AVC cérébral est élevé dans les jours qui suivent ; le bilan (IRM de diffusion, carotides, rythme cardiaque, échographie) se fait le jour même, et la thrombolyse se discute en centre de l’AVC si le début date de moins de 4,5 h. **Après 50 ans :** VS, CRP et plaquettes pour éliminer une artérite à cellules géantes.",
     why: [
       "Le massage n’a aucun bénéfice prouvé et le délai fait manquer le bilan d’AVC urgent.",
       "Un bilan en externe laisse passer la fenêtre où le risque d’AVC est le plus élevé.",
@@ -90,7 +94,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "L’artère ciliorétinienne se dilate pour compenser"
     ],
     answer: 0,
-    explain: "**Mécanisme :** l’artère centrale nourrit les couches internes de la rétine, qui blanchissent quand elles manquent d’oxygène. La fovéa n’a pas de couches internes : elle dépend de la choroïde, qui reste perfusée. On voit donc la choroïde rouge au centre d’une rétine pâle.",
+    explain: "La fovéa n’a pas de rétine interne à blanchir : nourrie par la choroïde, intacte, elle reste rouge au milieu d’une rétine pâle.",
+    deep: "**Mécanisme :** l’artère centrale nourrit les couches internes de la rétine, qui blanchissent quand elles manquent d’oxygène. La fovéa n’a pas de couches internes : elle dépend de la choroïde, qui reste perfusée. On voit donc la choroïde rouge au centre d’une rétine pâle.",
     why: [
       "Exact : sans rétine interne à blanchir, la fovéa laisse voir la choroïde perfusée.",
       "Il n’y a pas de sang hors des vaisseaux : c’est un effet de contraste.",
@@ -109,7 +114,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Maintenant, sans attendre la biopsie"
     ],
     answer: 3,
-    explain: "**Ce que c’est :** une artérite à cellules géantes probable (âge, céphalée, claudication de la mâchoire, VS et CRP élevées) avec atteinte de la vision. **Pourquoi maintenant :** l’autre œil peut être perdu en quelques jours ; la biopsie reste interprétable si elle est faite dans les 2 semaines suivant le début des corticostéroïdes. **Quoi faire :** corticostéroïdes à haute dose immédiatement, avec l’équipe (médecine interne ou rhumatologie).",
+    explain: "Artérite à cellules géantes probable avec atteinte visuelle : corticostéroïdes à haute dose maintenant. La biopsie reste valable si elle est faite dans les 2 semaines.",
+    deep: "**Ce que c’est :** une artérite à cellules géantes probable (âge, céphalée, claudication de la mâchoire, VS et CRP élevées) avec atteinte de la vision. **Pourquoi maintenant :** l’autre œil peut être perdu en quelques jours ; la biopsie reste interprétable si elle est faite dans les 2 semaines suivant le début des corticostéroïdes. **Quoi faire :** corticostéroïdes à haute dose immédiatement, avec l’équipe (médecine interne ou rhumatologie).",
     why: [
       "Piège : attendre la biopsie expose l’autre œil à une perte définitive.",
       "L’imagerie peut aider au diagnostic, mais elle ne doit pas retarder le traitement.",
@@ -128,7 +134,8 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Décollement postérieur du vitré"
     ],
     answer: 2,
-    explain: "**Ce que c’est :** une occlusion de la veine centrale : le sang reflue dans tout le territoire veineux, d’où des hémorragies dans les quatre quadrants et des veines dilatées et tortueuses. Une occlusion de branche, elle, reste dans un secteur limité par le raphé horizontal. **Quoi faire :** ophtalmologie dans la semaine (OCT, angiographie), bilan TA, glycémie, lipides, FSC ; surveiller l’iris et l’angle chaque mois au début.",
+    explain: "Hémorragies dans les quatre quadrants et veines tortueuses : occlusion de la veine centrale. Une branche reste dans un secteur limité par le raphé horizontal.",
+    deep: "**Ce que c’est :** une occlusion de la veine centrale : le sang reflue dans tout le territoire veineux, d’où des hémorragies dans les quatre quadrants et des veines dilatées et tortueuses. Une occlusion de branche, elle, reste dans un secteur limité par le raphé horizontal. **Quoi faire :** ophtalmologie dans la semaine (OCT, angiographie), bilan TA, glycémie, lipides, FSC ; surveiller l’iris et l’angle chaque mois au début.",
     why: [
       "L’OACR donne une rétine blanche et une tache rouge cerise, avec peu ou pas d’hémorragies.",
       "Une rétinopathie diabétique légère montre quelques microanévrismes aux deux yeux, pas des hémorragies diffuses d’un œil.",
@@ -147,12 +154,133 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Échographie B à chaque visite"
     ],
     answer: 1,
-    explain: "**La complication redoutée :** le glaucome néovasculaire. La rétine ischémique libère du VEGF ; des néovaisseaux poussent sur l’iris et dans l’angle, souvent dans les 3 premiers mois. **Quoi faire :** examen de l’iris non dilaté et gonioscopie chaque mois pendant 6 mois ; laser panrétinien (et anti-VEGF) dès l’apparition de néovaisseaux.",
+    explain: "Après une occlusion ischémique de la veine centrale, la complication redoutée est le glaucome néovasculaire : iris non dilaté et gonioscopie chaque mois pendant 6 mois.",
+    deep: "**La complication redoutée :** le glaucome néovasculaire. La rétine ischémique libère du VEGF ; des néovaisseaux poussent sur l’iris et dans l’angle, souvent dans les 3 premiers mois. **Quoi faire :** examen de l’iris non dilaté et gonioscopie chaque mois pendant 6 mois ; laser panrétinien (et anti-VEGF) dès l’apparition de néovaisseaux.",
     why: [
       "Le champ visuel ne détecte pas les néovaisseaux de l’iris, et 6 mois, c’est trop tard.",
       "Exact : on cherche la rubéose et les néovaisseaux de l’angle chaque mois au début.",
       "L’occlusion veineuse n’est pas un AVC ; l’IRM n’est pas le suivi.",
       "L’échographie sert si le fond d’œil est caché ; elle ne montre pas l’angle."
+    ]
+  },
+  {
+    id: "D-009", module: "D", topic: "r-diabete", type: "cat", level: 1, trap: false,
+    stem: "Homme de 50 ans : diabète de type 2 diagnostiqué cette semaine, vision normale. Quand faire examiner sa rétine (Diabetes Canada) ?",
+    figure: null,
+    options: [
+      "Dans 5 ans, puis chaque année",
+      "Maintenant, puis aux 1–2 ans si aucune rétinopathie",
+      "Seulement si sa vision baisse",
+      "Maintenant, puis aux 5 ans si l’examen est normal"
+    ],
+    answer: 1,
+    explain: "Type 2 : dépistage au diagnostic, car la rétinopathie peut déjà être là, puis aux 1–2 ans sans rétinopathie. Type 1 : chaque année dès 5 ans d’évolution.",
+    deep: "**Règle :** dans le type 2, le diabète évolue souvent depuis des années au diagnostic ; une rétinopathie peut déjà être présente. Le dépistage se fait donc **au diagnostic**, par photographies rétiniennes ou fond d’œil dilaté, puis **aux 1–2 ans** s’il n’y a pas de rétinopathie (plus souvent s’il y en a). **Type 1 :** dépistage annuel dès 5 ans d’évolution, à partir de 15 ans.",
+    why: [
+      "Attendre 5 ans, c’est la règle du type 1, pas du type 2.",
+      "Exact : au diagnostic, puis aux 1–2 ans sans rétinopathie.",
+      "La rétinopathie, même proliférante, peut ne donner aucun symptôme.",
+      "Cinq ans est un intervalle trop long : 1–2 ans sans rétinopathie."
+    ]
+  },
+  {
+    id: "D-010", module: "D", topic: "r-diabete", type: "cat", level: 2, trap: false,
+    stem: "Femme de 34 ans, diabète de type 1 depuis 20 ans. Les photos de dépistage montrent des néovaisseaux sur la papille ; vision 6/6, aucun symptôme. Quelle conduite ?",
+    figure: null,
+    options: [
+      "Contrôle des photos dans 1 an",
+      "Intensifier l’insuline et revoir dans 3 mois",
+      "Ophtalmologiste en quelques jours : laser panrétinien ou anti-VEGF",
+      "Aspirine pour prévenir l’hémorragie du vitré"
+    ],
+    answer: 2,
+    explain: "Néovaisseaux sur la papille : forme proliférante, muette jusqu’à l’hémorragie. Ophtalmologiste en quelques jours pour laser panrétinien ou anti-VEGF.",
+    deep: "**Ce que c’est :** une rétinopathie diabétique proliférante (néovaisseaux sur la papille), muette jusqu’à ce qu’elle saigne. **Pourquoi vite :** les néovaisseaux saignent dans le vitré et tirent la rétine ; le laser panrétinien ou les anti-VEGF les font régresser. **Glycémie :** à améliorer, mais une baisse très rapide de l’HbA1c peut aggraver transitoirement la rétinopathie : les yeux d’abord.",
+    why: [
+      "Un an, c’est l’intervalle d’un œil sans rétinopathie, pas d’une forme proliférante.",
+      "Le contrôle glycémique aide à long terme ; il ne traite pas des néovaisseaux, et une baisse rapide peut aggraver.",
+      "Exact : forme proliférante, traitement oculaire sans tarder.",
+      "L’aspirine ne modifie ni l’évolution de la rétinopathie ni le risque d’hémorragie du vitré (Diabetes Canada)."
+    ]
+  },
+  {
+    id: "D-011", module: "D", topic: "r-dmla", type: "cat", level: 1, trap: false,
+    stem: "Femme de 79 ans avec des drusens connus : depuis 4 jours, les lignes du carrelage ondulent devant son œil gauche. Acuité 6/12 à gauche. Quelle conduite ?",
+    figure: null,
+    options: [
+      "Ophtalmologie en quelques jours : forme humide possible",
+      "Rassurer : cataracte, revoir dans 6 mois",
+      "Commencer l’AREDS2 et revoir dans 3 mois",
+      "Grille d’Amsler à domicile, consulter si la tache grossit"
+    ],
+    answer: 0,
+    explain: "Métamorphopsies nouvelles avec drusens : forme humide jusqu’à preuve du contraire. OCT et anti-VEGF en quelques jours ; plus on traite tôt, plus la vision est préservée.",
+    deep: "**Ce que c’est :** des métamorphopsies nouvelles chez une patiente avec des drusens : néovaisseaux (forme humide) jusqu’à preuve du contraire. **Pourquoi vite :** le liquide et le sang sous la macula abîment les photorécepteurs ; plus les anti-VEGF commencent tôt, plus la vision est préservée. **Quoi faire :** ophtalmologie en quelques jours (OCT, angiographie, anti-VEGF).",
+    why: [
+      "Exact : métamorphopsies nouvelles = forme humide possible, OCT en quelques jours.",
+      "La cataracte voile la vision ; elle ne fait pas onduler les lignes.",
+      "L’AREDS2 ralentit la forme intermédiaire ; il ne traite pas des néovaisseaux actifs.",
+      "L’Amsler sert à repérer le changement ; ici, le changement est déjà là."
+    ]
+  },
+  {
+    id: "D-012", module: "D", topic: "r-dmla", type: "cat", level: 2, trap: true,
+    stem: "Homme de 70 ans, fumeur depuis 50 ans : gros drusens aux deux yeux (DMLA intermédiaire). Il demande quel supplément prendre. Que lui proposes-tu ?",
+    figure: null,
+    options: [
+      "Aucun : les suppléments ne servent à rien",
+      "Oméga-3 à haute dose seulement",
+      "La formule AREDS2, sans bêtacarotène, et l’arrêt du tabac",
+      "La formule AREDS d’origine, avec bêtacarotène"
+    ],
+    answer: 2,
+    explain: "Forme intermédiaire : AREDS2 et arrêt du tabac. La formule d’origine au bêtacarotène augmente le risque de cancer du poumon chez le fumeur.",
+    deep: "**Ce que dit la preuve :** dans la forme intermédiaire, la formule AREDS ralentit l’évolution vers la forme avancée (environ 25 %). **Le piège :** la formule d’origine contenait du bêtacarotène, qui augmente le risque de cancer du poumon chez les fumeurs ; l’AREDS2 l’a remplacé par la lutéine et la zéaxanthine. **Quoi faire :** AREDS2 (vitamines C et E, lutéine, zéaxanthine, zinc, cuivre) et arrêt du tabac.",
+    why: [
+      "Faux dans la forme intermédiaire : la formule AREDS ralentit la progression.",
+      "Les oméga-3 n’ont pas montré de bénéfice dans l’AREDS2.",
+      "Exact : AREDS2 sans bêtacarotène, et cesser de fumer.",
+      "Piège : le bêtacarotène augmente le risque de cancer du poumon chez le fumeur."
+    ]
+  },
+  {
+    id: "D-013", module: "D", topic: "r-hta", type: "cat", level: 1, trap: false,
+    stem: "Homme de 45 ans à l’urgence : céphalée, vision floue, TA 232/138. Fond d’œil : papilles gonflées, nodules cotonneux, hémorragies en flammèches. Créatinine élevée. Quelle conduite ?",
+    figure: null,
+    options: [
+      "Nifédipine sublinguale pour normaliser la TA en 30 min",
+      "Hospitaliser, antihypertenseur IV, baisse graduelle de la TA",
+      "Retour à domicile, nouvel antihypertenseur oral, suivi dans un mois",
+      "IRM cérébrale d’abord, traiter la TA selon le résultat"
+    ],
+    answer: 1,
+    explain: "Urgence hypertensive avec atteinte d’organes : hospitaliser, antihypertenseur IV, baisse graduelle (environ 10–15 % la 1re heure, pas plus de 25 % le 1er jour). Une chute brutale cause une ischémie.",
+    deep: "**Ce que c’est :** une urgence hypertensive (TA très haute avec atteinte d’organes : rétinopathie sévère, rein). **Pourquoi graduellement :** les organes se sont adaptés à une pression haute ; une chute brutale peut causer une ischémie du cerveau, du rein ou du nerf optique. **Quoi faire :** hospitaliser, antihypertenseur IV titrable, baisse d’environ 10–15 % de la pression moyenne la 1re heure et pas plus de 25 % le 1er jour, puis relais oral.",
+    why: [
+      "Piège : la nifédipine sublinguale fait chuter la TA de façon imprévisible ; normaliser en 30 min est dangereux.",
+      "Exact : urgence hypertensive, baisse contrôlée en milieu surveillé.",
+      "Une atteinte d’organe ne se gère pas à domicile.",
+      "L’imagerie suit les signes neurologiques ; elle ne doit pas retarder le traitement de la TA."
+    ]
+  },
+  {
+    id: "D-014", module: "D", topic: "r-hta", type: "diagnostic", level: 2, trap: false,
+    stem: "Au fond d’œil d’une femme de 66 ans hypertendue, tu vois des artérioles fines et des croisements artère-veine pincés, sans hémorragie ni œdème papillaire. TA 150/92, aucun symptôme. Comment classer cette rétinopathie ?",
+    figure: null,
+    options: [
+      "Sévère (maligne) : urgence hypertensive",
+      "Modérée : chercher une atteinte d’organe aiguë",
+      "Absente : variante normale",
+      "Légère (Wong-Mitchell) : HTA chronique à mieux contrôler"
+    ],
+    answer: 3,
+    explain: "Artérioles fines et croisements pincés sans hémorragie ni papille gonflée : forme légère de Wong-Mitchell, signe d’HTA ancienne. On ajuste le traitement en externe.",
+    deep: "**Classification de Wong et Mitchell :** légère = artérioles fines, croisements pincés, fils de cuivre ; modérée = hémorragies, microanévrismes, nodules cotonneux, exsudats ; sévère = forme modérée avec papille gonflée. **Ici :** forme légère, signe d’une HTA ancienne ; on ajuste le traitement en externe, sans baisse rapide.",
+    why: [
+      "Il faudrait une papille gonflée pour parler de forme sévère.",
+      "Il faudrait des hémorragies, nodules cotonneux ou exsudats.",
+      "Des croisements pincés sont des signes d’HTA chronique, pas une variante normale.",
+      "Exact : forme légère ; mieux contrôler l’HTA en externe."
     ]
   }
 ]);

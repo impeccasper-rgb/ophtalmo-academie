@@ -902,7 +902,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       "**Toi** : diriger ; noter « pseudo-exfoliation » pour le chirurgien de cataracte.",
       "**Ophtalmologiste** : latanoprost 0,005 % au coucher ou SLT, cible plus basse ; chirurgie plus tôt."
     ],
-    refer: "Référer en ophtalmologie : en quelques semaines — dépôts blanchâtres sur le cristallin ; le jour même si vision ↓ brusque après une cataracte (endophtalmite, décollement, implant luxé avec PIO haute).",
+    refer: "Référer en ophtalmologie : en quelques semaines — dépôts blanchâtres sur le cristallin ; le jour même si vision ↓ brusque après une cataracte (endophtalmie, décollement, implant luxé avec PIO haute).",
     pitfall: ["**Chirurgie de cataracte** sans prévoir les zonules faibles : issue de vitré.", "**SLT** : pic de PIO plus probable ; recontrôler après."],
     qc: "Québec : hors glaucome suspect, débutant ou cortisonique, l’optométriste traite seulement avec le consentement d’un médecin (O-7)."
   }
@@ -1160,7 +1160,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     local: "Au Québec, les injections et la PRP se font en clinique de rétine et les tubes en centre hospitalier : diriger le jour même et coordonner rétine et glaucome. Le dépistage de la rétinopathie diabétique, souvent fait par l’optométriste, reste la meilleure prévention."
   },
   treatments: [
-    { name: "Anti-VEGF intravitréen (bévacizumab, ranibizumab, aflibercept)", how: "Injection en clinique d’un anticorps dans le vitré : il neutralise le VEGF et les néovaisseaux régressent en quelques jours.", why: "Dès le diagnostic ; avant une chirurgie (moins de saignement).", pros: "Effet rapide.", cons: "Temporaire : ne remplace pas la PRP.", cx: "Endophtalmite (rare), pic de PIO.", dose: "Bévacizumab 1,25 mg/0,05 mL intravitréen (ou ranibizumab 0,5 mg, aflibercept 2 mg).", refer: "Dès le diagnostic : diriger en rétine le jour même.", pitfall: "Effet temporaire : ne remplace pas la PRP.", qc: "Québec : injections et PRP en clinique de rétine ; tubes en centre hospitalier." },
+    { name: "Anti-VEGF intravitréen (bévacizumab, ranibizumab, aflibercept)", how: "Injection en clinique d’un anticorps dans le vitré : il neutralise le VEGF et les néovaisseaux régressent en quelques jours.", why: "Dès le diagnostic ; avant une chirurgie (moins de saignement).", pros: "Effet rapide.", cons: "Temporaire : ne remplace pas la PRP.", cx: "Endophtalmie (rare), pic de PIO.", dose: "Bévacizumab 1,25 mg/0,05 mL intravitréen (ou ranibizumab 0,5 mg, aflibercept 2 mg).", refer: "Dès le diagnostic : diriger en rétine le jour même.", pitfall: "Effet temporaire : ne remplace pas la PRP.", qc: "Québec : injections et PRP en clinique de rétine ; tubes en centre hospitalier." },
     { name: "Panphotocoagulation rétinienne (PRP)", how: "Laser en clinique à travers une lentille : des centaines d’impacts détruisent la rétine ischémique, qui cesse de produire du VEGF.", why: "Traitement de fond.", pros: "Effet durable.", cons: "Agit en quelques semaines ; milieux clairs requis.", cx: "Champ périphérique et vision nocturne ↓, œdème maculaire aggravé.", dose: "Laser en clinique : ≈ 1200–1600 impacts en 1–3 séances.", refer: "Traitement de fond, dès que les milieux le permettent.", pitfall: "Agit en quelques semaines : couvrir par anti-VEGF entre-temps." },
     { name: "Tube de drainage (Ahmed, Baerveldt)", how: "Au bloc : tube placé dans la chambre (ou par la pars plana) et relié à une plaque sur la sclère ; l’aqueuse court-circuite l’angle fermé.", why: "PIO non contrôlée avec potentiel visuel.", pros: "Résiste mieux à la cicatrisation que la trabéculectomie.", cons: "Œil inflammé et fragile.", cx: "Hyphéma, hypotonie, tube bouché, exposition.", dose: "Ahmed ou Baerveldt, au bloc, après anti-VEGF.", refer: "PIO non contrôlée avec potentiel visuel.", pitfall: "Œil inflammé et fragile : risque d’hyphéma et de tube bouché." },
     { name: "Cyclophotocoagulation", how: "Laser appliqué à travers la sclère qui détruit une partie du corps ciliaire : moins d’aqueuse produite.", why: "Potentiel visuel faible ou échec du tube.", pros: "Rapide, sans incision.", cons: "Effet difficile à doser.", cx: "Hypotonie, phtisie (œil qui s’atrophie), baisse de vision.", dose: "Cyclophotocoagulation transsclérale au laser diode.", refer: "Potentiel visuel faible ou échec du tube.", pitfall: "Effet difficile à doser : risque d’hypotonie et de phtisie." }
@@ -1380,13 +1380,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       { label: "Trop de débit : PIO basse", detail: "Surfiltration, fuite ou décollement choroïdien (effusion) : la chambre s’aplatit.", kind: "lesion" },
       { label: "Pas assez de débit : PIO haute", detail: "Volet serré, fistule bouchée (caillot, iris) ou bulle encapsulée par la fibrose.", kind: "lesion" },
       { label: "Chambre plate avec PIO haute", detail: "Rare et grave : aqueuse détournée vers le vitré (mal-direction), hémorragie suprachoroïdienne ou bloc pupillaire.", kind: "signe" },
-      { label: "Complications tardives", detail: "Bulle mince qui fuit ou s’infecte (blébite, endophtalmite), maculopathie d’hypotonie, tube exposé.", kind: "complication" }
+      { label: "Complications tardives", detail: "Bulle mince qui fuit ou s’infecte (blébite, endophtalmie), maculopathie d’hypotonie, tube exposé.", kind: "complication" }
     ],
     levers: [
       { at: 1, label: "Mitomycine C et 5-FU", detail: "Anticicatrisants appliqués au bloc (MMC) ou injectés sous la conjonctive ensuite (5-FU, 5-fluorouracile) : retardent la fibrose de la bulle." },
       { at: 3, label: "Titrer en clinique", detail: "Massage, lyse de sutures au laser, retrait d’une suture relâchable ou du ripcord : ↑ le débit ; needling (aiguille sous la conjonctive) pour libérer une bulle encapsulée." },
       { at: 2, label: "Freiner la fuite", detail: "Atropine (recule le cristallin, approfondit la chambre), lentille pansement ou suture de la fuite, viscoélastique pour reformer la chambre." },
-      { at: 5, label: "Antibiotiques en urgence", detail: "Blébite : antibiotiques topiques intensifs ; endophtalmite : ponction du vitré et antibiotiques intravitréens le jour même." }
+      { at: 5, label: "Antibiotiques en urgence", detail: "Blébite : antibiotiques topiques intensifs ; endophtalmie : ponction du vitré et antibiotiques intravitréens le jour même." }
     ]
   },
   risk: [
@@ -1400,7 +1400,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Bulle fonctionnelle : diffuse, peu surélevée, modérément vascularisée",
     "Bulle à risque : mince, avasculaire, kystique ; encapsulée : dôme ferme, PIO haute",
     "Alarme : œil rouge, douleur, écoulement, vision ↓",
-    "Tube exposé : risque d’endophtalmite, réparer"
+    "Tube exposé : risque d’endophtalmie, réparer"
   ],
   exam: {
     signs: [
@@ -1433,7 +1433,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     algo: [
       {
         q: "Signes d’infection (bulle blanche, hypopyon, douleur) ?",
-        yes: { t: "Ophtalmologiste immédiatement : antibiotiques ; si endophtalmite, ponction et injection.", urgent: true },
+        yes: { t: "Ophtalmologiste immédiatement : antibiotiques ; si endophtalmie, ponction et injection.", urgent: true },
         no: "Évaluer PIO et chambre.",
         noGo: 1
       },
@@ -1460,7 +1460,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
         items: [
           "Jour 1, semaine 1, puis rapproché les premiers mois ; à vie, inspecter la bulle",
           "Œil rouge douloureux : consulter le jour même",
-          "Endophtalmite liée à la bulle : ponction + vancomycine 1 mg/0,1 mL et ceftazidime 2,25 mg/0,1 mL intravitréennes ± vitrectomie, le jour même.",
+          "Endophtalmie liée à la bulle : ponction + vancomycine 1 mg/0,1 mL et ceftazidime 2,25 mg/0,1 mL intravitréennes ± vitrectomie, le jour même.",
           "PIO haute, chambre étroite : iridectomie bouchée → iridotomie ; perméable → mal-direction (atropine, laser YAG, vitrectomie) ; dômes sombres → hémorragie suprachoroïdienne.",
           "PIO haute, chambre profonde : gonioscopie, massage, lyse de sutures au laser ou retrait du ripcord ; bulle encapsulée : needling ± 5-FU ; hausse tardive sous stéroïde : réponse cortisonique. PIO basse et chambre formée : Seidel, surveiller la macula."
         ]
@@ -1511,7 +1511,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   treatment: {
     first: [
       "**Toi** : reconnaître la bulle (sous la paupière supérieure) ; œil opéré rouge ou douloureux = appeler.",
-      "**Ophtalmologiste** : Seidel, PIO × chambre ; antibiotiques intensifs, ponction et injection si endophtalmite."
+      "**Ophtalmologiste** : Seidel, PIO × chambre ; antibiotiques intensifs, ponction et injection si endophtalmie."
     ],
     refer: "Référer en ophtalmologie : immédiatement — œil opéré rouge, douloureux, bulle blanche ou vision ↓.",
     pitfall: ["**Traiter une « conjonctivite »** sur un œil opéré : infection de bulle manquée."],

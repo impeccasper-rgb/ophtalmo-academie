@@ -313,15 +313,15 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Blébite : antibiotique topique aux heures et revoir dans 48 h",
       "Uvéite tardive non infectieuse : stéroïde topique intensif et cycloplégique",
       "Fuite de bulle : lentille pansement et suppresseurs de la PIO",
-      "Endophtalmite : ponction et antibiotiques intravitréens d’urgence"
+      "Endophtalmie : ponction et antibiotiques intravitréens d’urgence"
     ],
     answer: 3,
-    explain: "Bulle laiteuse avec hypopyon et cellules dans le vitré : l’infection a gagné l’intérieur de l’œil, c’est une endophtalmite. La blébite reste limitée à la bulle. Ponction et antibiotiques intravitréens sans délai.",
-    deep: "**Ce que c’est :** une endophtalmite liée à la bulle (bleb-related endophthalmitis) : des bactéries traversent une bulle mince, parfois des années après la chirurgie, et infectent l’intérieur de l’œil jusqu’au vitré. **Pourquoi c’est important :** il faut la distinguer de la blébite (blebitis : infection limitée à la bulle, blanc laiteux entourée de rougeur, avec peu de réaction dans la chambre et un vitré clair) ; ici, l’hypopyon, le vitré inflammatoire et la chute de vision signent l’atteinte du vitré, une urgence, car les germes en cause (streptocoques, Haemophilus) détruisent vite la rétine. **Quoi faire :** le jour même, ponction du vitré pour culture et injection intravitréenne de vancomycine 1 mg/0,1 mL et de ceftazidime 2,25 mg/0,1 mL (± vitrectomie), avec antibiotiques topiques intensifs ; une fois l’infection maîtrisée, réparer la bulle si elle fuit.",
+    explain: "Bulle laiteuse avec hypopyon et cellules dans le vitré : l’infection a gagné l’intérieur de l’œil, c’est une endophtalmie. La blébite reste limitée à la bulle. Ponction et antibiotiques intravitréens sans délai.",
+    deep: "**Ce que c’est :** une endophtalmie liée à la bulle (bleb-related endophthalmitis) : des bactéries traversent une bulle mince, parfois des années après la chirurgie, et infectent l’intérieur de l’œil jusqu’au vitré. **Pourquoi c’est important :** il faut la distinguer de la blébite (blebitis : infection limitée à la bulle, blanc laiteux entourée de rougeur, avec peu de réaction dans la chambre et un vitré clair) ; ici, l’hypopyon, le vitré inflammatoire et la chute de vision signent l’atteinte du vitré, une urgence, car les germes en cause (streptocoques, Haemophilus) détruisent vite la rétine. **Quoi faire :** le jour même, ponction du vitré pour culture et injection intravitréenne de vancomycine 1 mg/0,1 mL et de ceftazidime 2,25 mg/0,1 mL (± vitrectomie), avec antibiotiques topiques intensifs ; une fois l’infection maîtrisée, réparer la bulle si elle fuit.",
     why: [
       "Ce traitement convient à une blébite sans atteinte du vitré ; ici, l’hypopyon et le vitré inflammatoire exigent un traitement intravitréen immédiat.",
       "Des stéroïdes seuls laisseraient les bactéries détruire l’œil : bulle mince + œil rouge et douloureux = infection jusqu’à preuve du contraire.",
       "Une fuite de bulle (test de Seidel positif) peut être la porte d’entrée, mais elle ne cause ni hypopyon ni vitré inflammatoire à elle seule.",
-      "Exact : endophtalmite liée à la bulle = ponction et injection intravitréennes d’antibiotiques sans délai."
+      "Exact : endophtalmie liée à la bulle = ponction et injection intravitréennes d’antibiotiques sans délai."
     ] }
 ]);

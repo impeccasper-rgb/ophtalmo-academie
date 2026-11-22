@@ -71,5 +71,63 @@ G.OPH.photos = G.OPH.photos || {};
         "La limite supérieure suit le raphé horizontal : la moitié supérieure est épargnée.",
         "La macula est menacée par l’œdème : OCT, puis anti-VEGF si la vision baisse."
       ] }
+  ],
+
+  "r-diabete": [
+    { id: "IMG3-031", license: "Domaine public (National Eye Institute)", caption: "Rétinopathie diabétique proliférante : néovaisseaux et tissu fibreux",
+      look: "Observe la papille et ce qui pousse dessus.",
+      reveal: [
+        "Néovaisseaux fins en éventail sur et autour de la papille : rétinopathie diabétique proliférante.",
+        "Plages blanches à la surface de la rétine : tissu cicatriciel qui accompagne les néovaisseaux ; il peut tirer la rétine.",
+        "Risque d’hémorragie du vitré et de décollement tractionnel : ophtalmologiste en quelques jours (laser panrétinien ou anti-VEGF)."
+      ] },
+    { id: "IMG3-033", license: "Domaine public (National Eye Institute)", caption: "Œdème maculaire diabétique : exsudats durs autour de la macula",
+      look: "Repère les dépôts jaunes et leur position par rapport au centre.",
+      reveal: [
+        "Exsudats durs jaunes en amas autour de la macula : lipides qui ont fui des capillaires.",
+        "Œdème maculaire diabétique : OCT, puis anti-VEGF s’il touche le centre.",
+        "Mention « PRETREATMENT » : photo prise avant traitement."
+      ] },
+    { id: "IMG3-032", license: "Domaine public (National Eye Institute)", caption: "Rétinopathie diabétique non proliférante (« de fond »)",
+      look: "Cherche de petits points rouges entre les vaisseaux.",
+      reveal: [
+        "Petits points rouges épars : microanévrismes et petites hémorragies.",
+        "Pas de néovaisseaux visibles : forme non proliférante, suivi selon la sévérité.",
+        "Contrôle de la glycémie et de la TA : ralentit la progression."
+      ] }
+  ],
+
+  "r-dmla": [
+    { id: "OPH-265", license: "CC BY-NC-ND 3.0", caption: "DMLA intermédiaire à haut risque : drusens maculaires",
+      look: "Observe les dépôts jaunes au centre de l’image.",
+      reveal: [
+        "Drusens jaunes nombreux, de tailles variées, groupés dans la macula : DMLA intermédiaire.",
+        "Conduite : AREDS2, arrêt du tabac, Amsler à domicile un œil à la fois.",
+        "Lignes ondulées nouvelles : ophtalmologie en quelques jours (forme humide)."
+      ] },
+    { id: "OPH-264", license: "CC BY-NC-ND 3.0", caption: "DMLA précoce : petits drusens près de la fovéa",
+      look: "Cherche de petits points jaunes autour du centre de la macula.",
+      reveal: [
+        "Petits drusens épars autour de la fovéa : DMLA précoce.",
+        "Pas d’AREDS2 à ce stade (aucun bénéfice prouvé) ; arrêt du tabac et suivi."
+      ] }
+  ],
+
+  "r-hta": [
+    { id: "OPH-257", license: "CC BY-NC-ND 3.0", caption: "Hypertension maligne chez un homme de 52 ans",
+      look: "Regarde la papille, puis les taches blanches et rouges autour.",
+      reveal: [
+        "Papille gonflée aux bords flous : forme sévère (maligne), urgence hypertensive.",
+        "Nodules cotonneux blancs nombreux autour de la papille et le long des arcades : micro-infarctus.",
+        "Hémorragies en flammèches près de la papille.",
+        "Conduite : urgence, baisse contrôlée de la TA, recherche d’autres atteintes d’organes."
+      ] },
+    { id: "OPH-256", license: "CC BY-NC-ND 3.0", caption: "Rétinopathie hypertensive : papille gonflée, nodules cotonneux, exsudats",
+      look: "Compare la zone entre la papille et la fovéa avec le reste.",
+      reveal: [
+        "Exsudats durs entre la papille et la fovéa : début d’étoile maculaire.",
+        "Nodules cotonneux et hémorragies près de la papille, qui est gonflée.",
+        "Homme de 37 ans : chercher une HTA secondaire."
+      ] }
   ]
 });

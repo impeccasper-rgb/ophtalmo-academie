@@ -397,50 +397,100 @@ Object.assign(G.OPH_EN.quiz, {
  "D-001": {
   stem: "A 62-year-old myopic man: since this morning, flashes in the left eye and about ten new floaters. Acuity 6/6, full fields to fingers, undilated fundus normal in the office. What do you do?",
   options: ["Reassure: benign vitreous detachment, follow up as needed", "Dilated exam by the ophthalmologist the same day", "Review in 6 weeks if symptoms persist", "Brain MRI to rule out a migraine aura"],
-  explain: "**What it is:** probably a posterior vitreous detachment (PVD), but a shower of new floaters raises concern for a retinal tear. **Why not reassure:** the tear is in the periphery, invisible without dilation; about 14% of patients with acute flashes or floaters have one, and ten or so new floaters raises that risk sharply (Hollands, JAMA 2009). **What to do:** dilated exam with scleral depression the same day; a tear is treated with laser before it becomes a detachment.",
+  explain: "A shower of new floaters makes a tear likely. It lies in the periphery, invisible without dilation: dilated exam the same day, laser if one is found.",
+  deep: "**What it is:** probably a posterior vitreous detachment (PVD), but a shower of new floaters raises concern for a retinal tear. **Why not reassure:** the tear is in the periphery, invisible without dilation; about 14% of patients with acute flashes or floaters have one, and ten or so new floaters raises that risk sharply (Hollands, JAMA 2009). **What to do:** dilated exam with scleral depression the same day; a tear is treated with laser before it becomes a detachment.",
   why: ["Trap: an undilated fundus exam does not see the periphery, where tears arise.", "Correct: the shower of floaters makes a tear likely; it is treated with laser if found early.", "Six weeks lets a tear progress to a detachment.", "An aura affects both eyes and fades within 20–30 min; it does not explain floaters."]
  },
  "D-002": {
   stem: "A patient describes a grey shadow rising from the bottom of her right visual field since this morning. Which part of the retina is detached?",
   options: ["The superior retina", "The inferior retina", "The macula only", "The nasal retina"],
-  explain: "**Rule:** the image is inverted on the retina; an inferior field defect matches the superior retina. **Why it is pressing:** a superior detachment reaches the macula quickly, because fluid sinks with gravity. **What to do:** on-call ophthalmologist the same day, before central vision drops.",
+  explain: "The image is inverted on the retina: a curtain rising from the bottom of the field comes from the superior retina. This detachment reaches the macula fast: same day.",
+  deep: "**Rule:** the image is inverted on the retina; an inferior field defect matches the superior retina. **Why it is pressing:** a superior detachment reaches the macula quickly, because fluid sinks with gravity. **What to do:** on-call ophthalmologist the same day, before central vision drops.",
   why: ["Correct: inferior field = superior retina; this detachment threatens the macula fastest.", "An inferior detachment would give a curtain coming down from the top of the field.", "Macular involvement alone gives a central spot, not a rising curtain.", "The nasal retina matches the temporal field, off to the side."]
  },
  "D-003": {
   stem: "A man operated on yesterday for retinal detachment, with vitrectomy and a gas bubble, needs emergency surgery for appendicitis. Which agent should the anaesthetist avoid?",
   options: ["Propofol", "Rocuronium", "Sevoflurane", "Nitrous oxide"],
-  explain: "**The trap:** nitrous oxide diffuses into the intraocular gas bubble much faster than nitrogen leaves it; the bubble expands, IOP rises sharply and can shut off the central retinal artery. **What to do:** tell the anaesthetist about the bubble; no nitrous oxide while it persists, and no flying or altitude.",
+  explain: "Nitrous oxide diffuses into the intraocular gas bubble: it expands, IOP soars and the central artery can close. Tell the anaesthetist.",
+  deep: "**The trap:** nitrous oxide diffuses into the intraocular gas bubble much faster than nitrogen leaves it; the bubble expands, IOP rises sharply and can shut off the central retinal artery. **What to do:** tell the anaesthetist about the bubble; no nitrous oxide while it persists, and no flying or altitude.",
   why: ["Propofol does not change the volume of a gas bubble.", "Rocuronium (a neuromuscular blocker) does not change the volume of a gas bubble.", "Sevoflurane does not make an intraocular bubble expand.", "Correct: nitrous oxide expands the bubble, IOP soars and the eye can lose its perfusion."]
  },
  "D-004": {
   stem: "A 72-year-old hypertensive man: sudden, painless loss of vision in the right eye 2 hours ago. Right RAPD, pale retina with a cherry-red spot. You see him in clinic. What do you do?",
   options: ["Ocular massage and an ophthalmology appointment tomorrow", "Aspirin, home, and an outpatient MRI", "Stroke-centre ED now; ESR and CRP", "IOP-lowering drops and a check in one week"],
-  explain: "**What it is:** central retinal artery occlusion, i.e., a stroke of the eye. **Why the urgency:** brain-stroke risk is high in the following days; the work-up (diffusion MRI, carotids, heart rhythm, echocardiography) is done the same day, and thrombolysis is discussed at a stroke centre if onset was under 4.5 h ago. **Over 50:** ESR, CRP and platelets to rule out giant cell arteritis.",
+  explain: "Sudden, painless vision loss with a cherry-red spot: CRAO, a stroke of the eye. Same-day stroke work-up at a stroke centre; ESR, CRP and platelets from age 50.",
+  deep: "**What it is:** central retinal artery occlusion, i.e., a stroke of the eye. **Why the urgency:** brain-stroke risk is high in the following days; the work-up (diffusion MRI, carotids, heart rhythm, echocardiography) is done the same day, and thrombolysis is discussed at a stroke centre if onset was under 4.5 h ago. **Over 50:** ESR, CRP and platelets to rule out giant cell arteritis.",
   why: ["Massage has no proven benefit and the delay misses the urgent stroke work-up.", "An outpatient work-up misses the window when stroke risk is highest.", "Correct: it is a stroke; same-day work-up and arteritis to rule out.", "IOP-lowering drops have shown no benefit and delay the work-up."]
  },
  "D-005": {
   stem: "In central retinal artery occlusion, why does the fovea look cherry red in the middle of a white retina?",
   options: ["The intact choroid shows through a fovea with no inner retina", "A subretinal haemorrhage forms under the fovea", "Foveal cones contain a red pigment", "The cilioretinal artery dilates to compensate"],
-  explain: "**Mechanism:** the central artery feeds the inner retinal layers, which turn white when deprived of oxygen. The fovea has no inner layers: it depends on the choroid, which stays perfused. So the red choroid shows at the centre of a pale retina.",
+  explain: "The fovea has no inner retina to whiten: fed by the intact choroid, it stays red in the middle of a pale retina.",
+  deep: "**Mechanism:** the central artery feeds the inner retinal layers, which turn white when deprived of oxygen. The fovea has no inner layers: it depends on the choroid, which stays perfused. So the red choroid shows at the centre of a pale retina.",
   why: ["Correct: with no inner retina to whiten, the fovea lets the perfused choroid show.", "There is no blood outside the vessels: it is a contrast effect.", "The colour comes not from the cones but from the underlying choroid.", "A cilioretinal artery spares an area near the disc; it does not explain the central spot."]
  },
  "D-006": {
   stem: "A 78-year-old woman: sudden loss of vision in the left eye, temporal headache and jaw pain when chewing for 3 weeks. ESR 85 mm/h, raised CRP. The temporal artery biopsy is booked in 5 days. When do you start corticosteroids?",
   options: ["After the biopsy result", "After a temporal artery ultrasound", "Only if the other eye becomes symptomatic", "Now, without waiting for the biopsy"],
-  explain: "**What it is:** probable giant cell arteritis (age, headache, jaw claudication, raised ESR and CRP) with visual involvement. **Why now:** the other eye can be lost within days; the biopsy remains interpretable if done within 2 weeks of starting corticosteroids. **What to do:** high-dose corticosteroids immediately, with the team (internal medicine or rheumatology).",
+  explain: "Probable giant cell arteritis with visual involvement: high-dose corticosteroids now. The biopsy stays valid if done within 2 weeks.",
+  deep: "**What it is:** probable giant cell arteritis (age, headache, jaw claudication, raised ESR and CRP) with visual involvement. **Why now:** the other eye can be lost within days; the biopsy remains interpretable if done within 2 weeks of starting corticosteroids. **What to do:** high-dose corticosteroids immediately, with the team (internal medicine or rheumatology).",
   why: ["Trap: waiting for the biopsy exposes the other eye to permanent loss.", "Imaging can help the diagnosis, but must not delay treatment.", "By the time the other eye is symptomatic, it is often too late to save it.", "Correct: treat on suspicion; a biopsy within 2 weeks remains valid."]
  },
  "D-007": {
   stem: "A 70-year-old hypertensive man: blurred left eye on waking. Flame haemorrhages in all four quadrants, dilated and tortuous veins, a congested disc. What is the diagnosis?",
   options: ["Central retinal artery occlusion", "Mild non-proliferative diabetic retinopathy", "Central retinal vein occlusion", "Posterior vitreous detachment"],
-  explain: "**What it is:** central retinal vein occlusion: blood backs up through the whole venous territory, hence haemorrhages in all four quadrants and dilated, tortuous veins. A branch occlusion stays within a sector bounded by the horizontal raphe. **What to do:** ophthalmology within the week (OCT, angiography), BP, glucose, lipids, CBC; check the iris and angle monthly at first.",
+  explain: "Haemorrhages in all four quadrants and tortuous veins: central retinal vein occlusion. A branch occlusion stays within a sector bounded by the horizontal raphe.",
+  deep: "**What it is:** central retinal vein occlusion: blood backs up through the whole venous territory, hence haemorrhages in all four quadrants and dilated, tortuous veins. A branch occlusion stays within a sector bounded by the horizontal raphe. **What to do:** ophthalmology within the week (OCT, angiography), BP, glucose, lipids, CBC; check the iris and angle monthly at first.",
   why: ["CRAO gives a white retina and a cherry-red spot, with few or no haemorrhages.", "Mild diabetic retinopathy shows a few microaneurysms in both eyes, not diffuse haemorrhages in one eye.", "Correct: haemorrhages in all four quadrants and tortuous veins = central vein.", "PVD gives floaters and flashes, without diffuse retinal haemorrhages."]
  },
  "D-008": {
   stem: "A 74-year-old woman with an ischaemic central vein occlusion in the right eye 3 weeks ago (RAPD, many cotton-wool spots). Which follow-up watches for the most feared complication?",
   options: ["Visual field every 6 months", "Iris exam and gonioscopy every month", "Follow-up brain MRI at 3 months", "B-scan at every visit"],
-  explain: "**The feared complication:** neovascular glaucoma. The ischaemic retina releases VEGF; new vessels grow on the iris and in the angle, often within the first 3 months. **What to do:** undilated iris exam and gonioscopy every month for 6 months; panretinal laser (and anti-VEGF) as soon as new vessels appear.",
+  explain: "After an ischaemic central vein occlusion, the feared complication is neovascular glaucoma: undilated iris exam and gonioscopy monthly for 6 months.",
+  deep: "**The feared complication:** neovascular glaucoma. The ischaemic retina releases VEGF; new vessels grow on the iris and in the angle, often within the first 3 months. **What to do:** undilated iris exam and gonioscopy every month for 6 months; panretinal laser (and anti-VEGF) as soon as new vessels appear.",
   why: ["The visual field does not detect iris new vessels, and 6 months is too late.", "Correct: look for rubeosis and angle new vessels every month at first.", "A vein occlusion is not a stroke; MRI is not the follow-up.", "Ultrasound helps when the fundus is hidden; it does not show the angle."]
+ },
+ "D-009": {
+  stem: "A 50-year-old man: type 2 diabetes diagnosed this week, normal vision. When should his retina be examined (Diabetes Canada)?",
+  options: ["In 5 years, then every year", "Now, then every 1–2 years if no retinopathy", "Only if his vision drops", "Now, then every 5 years if normal"],
+  explain: "Type 2: screen at diagnosis, since retinopathy may already be there, then every 1–2 years without retinopathy. Type 1: every year from 5 years after onset.",
+  deep: "**Rule:** in type 2, diabetes has often been present for years at diagnosis; retinopathy may already be there. Screening is therefore done **at diagnosis**, with retinal photographs or a dilated fundus exam, then **every 1–2 years** if there is no retinopathy (more often if there is). **Type 1:** yearly screening from 5 years after onset, from age 15.",
+  why: ["Waiting 5 years is the type 1 rule, not type 2.", "Correct: at diagnosis, then every 1–2 years without retinopathy.", "Retinopathy, even proliferative, can cause no symptoms.", "Five years is too long: 1–2 years without retinopathy."]
+ },
+ "D-010": {
+  stem: "A 34-year-old woman with type 1 diabetes for 20 years. Screening photos show new vessels on the disc; vision 6/6, no symptoms. What do you do?",
+  options: ["Repeat photos in 1 year", "Intensify insulin and review in 3 months", "Ophthalmologist within days: panretinal laser or anti-VEGF", "Aspirin to prevent vitreous haemorrhage"],
+  explain: "New vessels on the disc: proliferative disease, silent until it bleeds. Ophthalmologist within days for panretinal laser or anti-VEGF.",
+  deep: "**What it is:** proliferative diabetic retinopathy (new vessels on the disc), silent until it bleeds. **Why quickly:** new vessels bleed into the vitreous and pull on the retina; panretinal laser or anti-VEGF makes them regress. **Glucose:** to improve, but a very rapid HbA1c drop can transiently worsen retinopathy: eyes first.",
+  why: ["One year is the interval for an eye with no retinopathy, not proliferative disease.", "Glucose control helps in the long run; it does not treat new vessels, and a rapid drop can worsen them.", "Correct: proliferative disease, eye treatment without delay.", "Aspirin changes neither the course of retinopathy nor the risk of vitreous haemorrhage (Diabetes Canada)."]
+ },
+ "D-011": {
+  stem: "A 79-year-old woman with known drusen: for 4 days, the tile lines have looked wavy to her left eye. Left acuity 6/12. What do you do?",
+  options: ["Ophthalmology within days: possible wet form", "Reassure: cataract, review in 6 months", "Start AREDS2 and review in 3 months", "Amsler grid at home, come back if the spot grows"],
+  explain: "New metamorphopsia with drusen: wet AMD until proven otherwise. OCT and anti-VEGF within days; the earlier treatment starts, the more vision is kept.",
+  deep: "**What it is:** new metamorphopsia in a patient with drusen: new vessels (wet form) until proven otherwise. **Why quickly:** fluid and blood under the macula damage the photoreceptors; the earlier anti-VEGF starts, the more vision is preserved. **What to do:** ophthalmology within days (OCT, angiography, anti-VEGF).",
+  why: ["Correct: new metamorphopsia = possible wet form, OCT within days.", "A cataract veils vision; it does not make lines wavy.", "AREDS2 slows the intermediate form; it does not treat active new vessels.", "The Amsler grid is for spotting a change; here, the change has already happened."]
+ },
+ "D-012": {
+  stem: "A 70-year-old man who has smoked for 50 years: large drusen in both eyes (intermediate AMD). He asks which supplement to take. What do you suggest?",
+  options: ["None: supplements are useless", "High-dose omega-3 only", "The AREDS2 formula, without beta-carotene, and quitting smoking", "The original AREDS formula, with beta-carotene"],
+  explain: "Intermediate AMD: AREDS2 and stopping smoking. The original beta-carotene formula raises the risk of lung cancer in smokers.",
+  deep: "**What the evidence says:** in intermediate AMD, the AREDS formula slows progression to advanced disease (about 25%). **The trap:** the original formula contained beta-carotene, which raises the risk of lung cancer in smokers; AREDS2 replaced it with lutein and zeaxanthin. **What to do:** AREDS2 (vitamins C and E, lutein, zeaxanthin, zinc, copper) and smoking cessation.",
+  why: ["Wrong for the intermediate form: the AREDS formula slows progression.", "Omega-3 showed no benefit in AREDS2.", "Correct: AREDS2 without beta-carotene, and stop smoking.", "Trap: beta-carotene raises lung cancer risk in smokers."]
+ },
+ "D-013": {
+  stem: "A 45-year-old man in the ED: headache, blurred vision, BP 232/138. Fundus: swollen discs, cotton-wool spots, flame haemorrhages. Raised creatinine. What do you do?",
+  options: ["Sublingual nifedipine to normalise BP within 30 min", "Admit, IV antihypertensive, gradual BP lowering", "Home on a new oral antihypertensive, follow-up in a month", "Brain MRI first, then treat BP according to the result"],
+  explain: "Hypertensive emergency with organ damage: admit, IV antihypertensive, gradual lowering (about 10–15% in the first hour, no more than 25% on day 1). A sudden drop causes ischaemia.",
+  deep: "**What it is:** a hypertensive emergency (very high BP with organ damage: severe retinopathy, kidney). **Why gradually:** the organs have adapted to high pressure; a sudden drop can cause ischaemia of the brain, kidney or optic nerve. **What to do:** admit, titratable IV antihypertensive, lower mean pressure by about 10–15% in the first hour and no more than 25% on day 1, then switch to oral.",
+  why: ["Trap: sublingual nifedipine drops BP unpredictably; normalising within 30 min is dangerous.", "Correct: hypertensive emergency, controlled lowering in a monitored setting.", "Organ damage is not managed at home.", "Imaging follows the neurological signs; it must not delay BP treatment."]
+ },
+ "D-014": {
+  stem: "In the fundus of a 66-year-old hypertensive woman, you see thin arterioles and nipped artery–vein crossings, with no haemorrhage or disc swelling. BP 150/92, no symptoms. How do you grade this retinopathy?",
+  options: ["Severe (malignant): hypertensive emergency", "Moderate: look for acute organ damage", "Absent: a normal variant", "Mild (Wong-Mitchell): chronic hypertension to control better"],
+  explain: "Thin arterioles and nipped crossings without haemorrhage or a swollen disc: mild Wong-Mitchell retinopathy, a sign of long-standing hypertension. Adjust treatment as an outpatient.",
+  deep: "**Wong and Mitchell classification:** mild = thin arterioles, nipped crossings, copper wiring; moderate = haemorrhages, microaneurysms, cotton-wool spots, exudates; severe = moderate signs plus a swollen disc. **Here:** mild disease, a sign of long-standing hypertension; adjust treatment as an outpatient, without rapid lowering.",
+  why: ["A swollen disc would be needed to call it severe.", "Haemorrhages, cotton-wool spots or exudates would be needed.", "Nipped crossings are signs of chronic hypertension, not a normal variant.", "Correct: mild disease; control hypertension better as an outpatient."]
  }
 });
 

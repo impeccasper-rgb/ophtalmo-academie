@@ -450,7 +450,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
   options: [
     "Hémorragie suprachoroïdienne retardée",
     "Expansion de la bulle de gaz intraoculaire",
-    "Endophtalmite aiguë postopératoire",
+    "Endophtalmie aiguë postopératoire",
     "Mal-direction de l’aqueuse (bloc ciliaire)"
   ],
   answer: 1,

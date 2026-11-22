@@ -339,7 +339,338 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     qc: ["Le médecin de famille fait le bilan vasculaire ; l’ophtalmologiste suit l’œil.", "Injections en clinique, souvent en série : prévoir le transport et un accompagnateur."]
   }
+},
+{
+  id: "r-diabete",
+  module: "D",
+  order: 5,
+  title: "Rétinopathie diabétique",
+  en: "Diabetic retinopathy",
+  tags: ["frequent", "highyield"],
+  oneLiner: "Souvent muette jusqu’au stade grave : dépister au diagnostic (type 2) ou dès 5 ans d’évolution (type 1), puis référer selon la sévérité.",
+  definition: "L’hyperglycémie abîme les petits vaisseaux de la rétine : ils fuient, se ferment, puis font pousser des néovaisseaux. Elle reste longtemps muette, d’où le dépistage.",
+  anatomy: {
+    text: "La rétine interne est nourrie par des capillaires étanches (barrière hématorétinienne) ; la macula, au centre, assure la vision fine. Quand les capillaires se ferment, la rétine ischémique libère du VEGF (facteur de croissance de l’endothélium vasculaire), qui fait fuir les vaisseaux et pousser des néovaisseaux fragiles."
+  },
+  causal: {
+    title: "Du capillaire abîmé au néovaisseau qui saigne",
+    steps: [
+      { label: "Capillaires abîmés", detail: "Perte des péricytes, membrane basale épaissie : microanévrismes, premières hémorragies.", kind: "cause" },
+      { label: "Fuite : exsudats, œdème maculaire", detail: "La barrière cède : lipides (exsudats durs) et liquide s’accumulent ; au centre, la vision baisse.", kind: "lesion" },
+      { label: "Fermeture capillaire, ischémie", detail: "Nodules cotonneux, hémorragies en taches, veines en chapelet, IRMA : forme non proliférante sévère.", kind: "mecanisme" },
+      { label: "VEGF : néovaisseaux", detail: "Sur la papille ou la rétine (forme proliférante), sur l’iris (glaucome néovasculaire).", kind: "lesion" },
+      { label: "Hémorragie, traction", detail: "Les néovaisseaux saignent dans le vitré et tirent la rétine : décollement tractionnel.", kind: "complication" }
+    ],
+    levers: [
+      { at: 0, label: "Glycémie et TA", detail: "HbA1c ≤ 7 % en général et TA contrôlée : ralentissent l’apparition et la progression." },
+      { at: 1, label: "Anti-VEGF intravitréen", detail: "Première intention pour l’œdème maculaire qui touche le centre." },
+      { at: 3, label: "Laser panrétinien ou anti-VEGF", detail: "Font régresser les néovaisseaux de la forme proliférante." },
+      { at: 4, label: "Vitrectomie", detail: "Hémorragie du vitré qui ne se résorbe pas, décollement tractionnel." }
+    ]
+  },
+  risk: [
+    "Durée du diabète (le facteur le plus fort)",
+    "HbA1c élevée, hypertension, dyslipidémie",
+    "Grossesse, surtout dans le diabète de type 1",
+    "Néphropathie diabétique",
+    "Baisse très rapide de l’HbA1c : aggravation transitoire possible"
+  ],
+  presentation: [
+    "Aucun symptôme jusqu’à un stade avancé",
+    "Vision floue ou fluctuante : œdème maculaire",
+    "Pluie de corps flottants, voile brutal : hémorragie du vitré",
+    "Rideau : décollement tractionnel"
+  ],
+  exam: {
+    signs: [
+      { sign: "Microanévrismes, hémorragies en points et en taches", why: "Premiers signes : forme non proliférante." },
+      { sign: "Exsudats durs près de la fovéa, rétine épaissie", why: "Œdème maculaire : baisse de vision, à traiter." },
+      { sign: "Hémorragies dans 4 quadrants, veines en chapelet, IRMA", why: "Forme non proliférante sévère (règle 4-2-1) : risque élevé de néovaisseaux." },
+      { sign: "Néovaisseaux sur la papille ou ailleurs", why: "Forme proliférante : référence rapide." },
+      { sign: "Rubéose irienne", why: "Glaucome néovasculaire qui menace." }
+    ],
+    tests: [
+      { test: "Photographies rétiniennes ou fond d’œil dilaté", when: "Type 2 : au diagnostic ; type 1 : dès 5 ans d’évolution (à partir de 15 ans)", read: "Gradation de la sévérité : fixe le prochain intervalle." },
+      { test: "OCT maculaire", when: "Baisse de vision ou exsudats près du centre", read: "Œdème qui touche le centre ou non : guide les anti-VEGF." },
+      { test: "Angiographie à la fluorescéine", when: "Par l’ophtalmologiste, au besoin", read: "Zones non perfusées, néovaisseaux discrets." },
+      { test: "HbA1c, TA, bilan lipidique, fonction rénale", when: "Au suivi du diabète", read: "Facteurs modifiables de progression." }
+    ]
+  },
+  ddx: [
+    { dx: "Rétinopathie hypertensive", clue: "Artérioles fines, croisements pincés, nodules cotonneux ; peu de microanévrismes." },
+    { dx: "Occlusion veineuse rétinienne", clue: "Un œil, un territoire veineux, veines tortueuses." },
+    { dx: "Rétinopathie radique", clue: "Antécédent de radiothérapie de la tête ou de l’œil." },
+    { dx: "Syndrome d’ischémie oculaire", clue: "Sténose carotidienne, hémorragies en moyenne périphérie, un seul œil." }
+  ],
+  redFlags: [
+    "Pluie de corps flottants ou voile brutal : hémorragie du vitré, ophtalmologie en urgence",
+    "Néovaisseaux, rubéose ou PIO haute : ophtalmologiste en quelques jours",
+    "Grossesse (diabète préexistant) : examen des yeux au 1er trimestre"
+  ],
+  cat: {
+    vignette: "Homme de 52 ans, diabète de type 2 depuis 12 ans, HbA1c 9,5 %, jamais vu en ophtalmologie. Vision normale, aucun symptôme.",
+    algo: [
+      { q: "Voile, pluie de corps flottants, rideau ?", yes: { t: "Hémorragie du vitré ou décollement : ophtalmologie en urgence.", urgent: true }, no: "", noGo: 1 },
+      { q: "Aucune rétinopathie au dernier examen ?", yes: "Type 1 : chaque année ; type 2 : aux 1–2 ans.", no: "", noGo: 2 },
+      { q: "Néovaisseaux ou forme non proliférante sévère ?", yes: { t: "Ophtalmologiste en quelques jours : laser panrétinien ou anti-VEGF.", urgent: true }, no: "", noGo: 3 },
+      { q: "Œdème maculaire qui touche le centre ?", yes: "Ophtalmologiste en quelques semaines : anti-VEGF.", no: "Forme légère ou modérée : examen aux 6–12 mois." }
+    ],
+    phases: [
+      { phase: "observation", items: ["Pas de rétinopathie : type 1 chaque année ; type 2 aux 1–2 ans (Diabetes Canada)", "Forme légère à modérée : examen aux 6–12 mois ; sévère : aux 3–4 mois"] },
+      { phase: "medical", items: ["HbA1c ≤ 7 % en général, TA, lipides ; fénofibrate possible en ajout à une statine (type 2, rétinopathie établie)", "Œdème maculaire qui touche le centre : anti-VEGF intravitréen"] },
+      { phase: "laser", items: ["Forme proliférante : laser panrétinien (ou anti-VEGF)", "Œdème qui ne touche pas le centre : laser focal possible"] },
+      { phase: "chirurgie", items: ["Vitrectomie : hémorragie du vitré persistante, décollement tractionnel"] }
+    ],
+    local: "Au Québec, l’optométriste fait souvent le dépistage et dirige vers l’ophtalmologiste dès qu’une rétinopathie menace la vision. Le médecin de famille vérifie que l’examen est fait et que le résultat lui revient."
+  },
+  treatments: [
+    { name: "Contrôle de la glycémie et de la TA", how: "Ralentit l’atteinte des capillaires.", why: "Tout diabétique.", pros: "Prévient l’apparition et la progression.", cons: "Effet lent ; une baisse très rapide de l’HbA1c peut aggraver transitoirement la rétinopathie.", cx: "Hypoglycémies.", pitfall: "Intensifier sans faire examiner les yeux d’une rétinopathie avancée." },
+    { name: "Anti-VEGF intravitréen", how: "Bloque le VEGF : moins de fuite, régression des néovaisseaux.", why: "Œdème maculaire qui touche le centre ; forme proliférante (autre option que le laser).", pros: "Meilleure vision que le laser pour l’œdème central.", cons: "Injections répétées.", cx: "Endophtalmie (rare), PIO transitoire.", dose: "Bévacizumab 1,25 mg (hors indication), ranibizumab 0,5 mg ou aflibercept 2 mg, mensuel au début." },
+    { name: "Laser panrétinien", how: "Brûlures en périphérie : moins de rétine ischémique, donc moins de VEGF.", why: "Forme proliférante, surtout à haut risque.", pros: "Effet durable, peu de visites.", cons: "Perte de champ périphérique, vision nocturne réduite.", cx: "Œdème maculaire, douleur." },
+    { name: "Fénofibrate", how: "Mécanisme mal connu, indépendant des lipides.", why: "Diabète de type 2 avec rétinopathie établie, en ajout à une statine.", pros: "Ralentit la progression (Diabetes Canada, grade A).", cons: "Ne remplace ni l’examen ni le traitement oculaire.", cx: "Hausse de la créatinine, myalgies." },
+    { name: "Vitrectomie", how: "Retire le sang du vitré et les membranes qui tirent.", why: "Hémorragie persistante, décollement tractionnel.", pros: "Rend la vision si la macula est saine.", cons: "Chirurgie en salle d’opération.", cx: "Cataracte, décollement de rétine, nouvelle hémorragie." }
+  ],
+  pearls: [
+    { q: "Pourquoi dépister un patient qui voit bien ?", a: "Même la forme proliférante peut ne donner aucun symptôme. Traitée à temps, le laser et les anti-VEGF réduisent beaucoup le risque de perte de vision grave ; découverte au stade d’hémorragie, le pronostic est moins bon." },
+    { q: "Qu’est-ce que la règle 4-2-1 ?", a: "Forme non proliférante sévère : hémorragies dans les 4 quadrants, ou veines en chapelet dans 2, ou IRMA dans 1. Un seul critère suffit : risque élevé de forme proliférante, référer rapidement." },
+    { q: "Grossesse chez une diabétique de type 1 : que prévoir pour les yeux ?", a: "Un examen avant la conception idéalement, puis au 1er trimestre, au besoin pendant la grossesse et dans l’année qui suit l’accouchement (Diabetes Canada) : la rétinopathie peut progresser." }
+  ],
+  mnemonic: { title: "Forme sévère : « 4-2-1 »", text: "Hémorragies dans **4** quadrants, veines en chapelet dans **2**, IRMA dans **1** : un seul critère suffit." },
+  sources: [
+    "Diabetes Canada 2018 Clinical Practice Guidelines, chapitre 30 « Retinopathy » (Altomare F, Kherani A, Lovshin J, Can J Diabetes 2018;42 Suppl 1:S210-S216) et chapitre 36 « Diabetes and Pregnancy »",
+    "AAO PPP Diabetic Retinopathy (Flaxel CJ et al., Ophthalmology 2020) ; AAO Summary Benchmarks 2023",
+    "ETDRS : règle 4-2-1 de la forme non proliférante sévère"
+  ],
+  treatment: {
+    first: [
+      "**Toi** : vérifier la date du dernier examen des yeux et l’organiser ; viser HbA1c, TA, lipides ; s’assurer que le résultat te revient.",
+      "**Ophtalmologiste** : gradation, OCT ; anti-VEGF si œdème central ; laser panrétinien ou anti-VEGF si forme proliférante."
+    ],
+    refer: "Référer en ophtalmologie : en urgence si voile ou corps flottants brutaux ; en quelques jours si néovaisseaux ou forme sévère ; en quelques semaines si œdème maculaire — traitée à temps, la rétinopathie rend rarement aveugle.",
+    pitfall: [
+      "**Attendre des symptômes** pour faire examiner les yeux : la forme proliférante peut être muette.",
+      "**Baisse rapide de l’HbA1c** (insuline intensifiée, sémaglutide) sur une rétinopathie avancée : aggravation transitoire possible, surveiller les yeux."
+    ],
+    qc: ["Dépistage souvent fait par l’optométriste ; le résultat doit revenir au médecin traitant.", "Grossesse : examen avant la conception ou au 1er trimestre."]
+  }
+},
+{
+  id: "r-dmla",
+  module: "D",
+  order: 7,
+  title: "DMLA sèche et néovasculaire",
+  en: "Age-related macular degeneration (dry and neovascular)",
+  tags: ["frequent", "highyield"],
+  oneLiner: "Après 50 ans, drusens puis atrophie (sèche) ou néovaisseaux (humide) : toute déformation nouvelle des lignes impose une référence en quelques jours.",
+  definition: "La macula vieillit : des dépôts (drusens) s’accumulent, puis elle s’atrophie (forme sèche) ou des néovaisseaux y fuient (forme humide). La forme humide se traite, à condition d’aller vite.",
+  anatomy: {
+    text: "Sous les photorécepteurs, l’épithélium pigmentaire les nourrit et recycle leurs déchets ; il repose sur la membrane de Bruch, au-dessus de la choroïde. La macula, riche en cônes, donne la vision fine, la lecture et la reconnaissance des visages."
+  },
+  causal: {
+    title: "Des drusens à la cicatrice",
+    steps: [
+      { label: "Drusens sous l’épithélium", detail: "Déchets lipidiques accumulés sous l’épithélium pigmentaire ; gros drusens = forme intermédiaire.", kind: "cause" },
+      { label: "Forme sèche : atrophie", detail: "L’épithélium et les cônes disparaissent par plages (atrophie géographique) : perte lente, sur des années.", kind: "lesion" },
+      { label: "Forme humide : néovaisseaux", detail: "Des vaisseaux venus de la choroïde franchissent la membrane de Bruch.", kind: "mecanisme" },
+      { label: "Liquide, sang : métamorphopsies", detail: "Ils fuient et saignent sous la macula : lignes ondulées, tache centrale, en jours ou semaines.", kind: "signe" },
+      { label: "Cicatrice disciforme", detail: "Sans traitement, une cicatrice fibreuse détruit la vision centrale.", kind: "complication" }
+    ],
+    levers: [
+      { at: 0, label: "AREDS2 et arrêt du tabac", detail: "Forme intermédiaire (ou avancée à un œil) : suppléments AREDS2 ; cesser de fumer réduit le risque." },
+      { at: 3, label: "Anti-VEGF intravitréen", detail: "Assèchent les néovaisseaux ; injections répétées, souvent pendant des années." },
+      { at: 3, label: "Amsler et référence rapide", detail: "Repérer tôt la forme humide : plus le traitement commence tôt, plus la vision est préservée." }
+    ]
+  },
+  risk: [
+    "Âge > 50 ans, surtout > 75",
+    "Tabac (le grand facteur modifiable)",
+    "Antécédents familiaux, ascendance européenne",
+    "Gros drusens, anomalies pigmentaires, DMLA avancée à l’autre œil"
+  ],
+  presentation: [
+    "Lignes droites ondulées (métamorphopsies), tache centrale",
+    "Difficulté à lire, à reconnaître les visages ; périphérie conservée",
+    "Sèche : baisse lente sur des années ; humide : en jours ou semaines",
+    "Souvent : drusens découverts chez un patient sans symptôme"
+  ],
+  exam: {
+    signs: [
+      { sign: "Drusens jaunâtres dans la macula", why: "Gros drusens ou anomalies pigmentaires = forme intermédiaire : AREDS2." },
+      { sign: "Plages d’atrophie aux bords nets", why: "Atrophie géographique : forme sèche avancée." },
+      { sign: "Hémorragie ou liquide sous la macula, soulèvement gris-vert", why: "Néovaisseaux : forme humide, à traiter rapidement." },
+      { sign: "Grille d’Amsler déformée ou trouée", why: "Signe fonctionnel de la forme humide, utilisable à domicile." }
+    ],
+    tests: [
+      { test: "Grille d’Amsler, un œil à la fois", when: "Au bureau, et régulièrement à domicile si forme intermédiaire", read: "Lignes ondulées ou manquantes nouvelles : référence en quelques jours." },
+      { test: "OCT maculaire", when: "Par l’optométriste ou l’ophtalmologiste", read: "Liquide dans ou sous la rétine = forme humide active." },
+      { test: "Angiographie (fluorescéine, angio-OCT)", when: "Par l’ophtalmologiste, devant une forme humide", read: "Confirme et localise les néovaisseaux." }
+    ]
+  },
+  ddx: [
+    { dx: "Choriorétinopathie séreuse centrale", clue: "Plus jeune (30–50 ans), corticostéroïdes, stress ; soulèvement séreux sans drusens." },
+    { dx: "Membrane épirétinienne", clue: "Reflet de cellophane, plis à l’OCT ; métamorphopsies lentes." },
+    { dx: "Trou maculaire", clue: "Tache centrale nette, trou rond à l’OCT." },
+    { dx: "Œdème maculaire diabétique", clue: "Diabète, exsudats, microanévrismes." },
+    { dx: "Toxicité de l’hydroxychloroquine", clue: "Atteinte en anneau autour de la fovéa, traitement de longue date." }
+  ],
+  redFlags: [
+    "Métamorphopsies ou tache centrale nouvelles : ophtalmologie en quelques jours",
+    "Hémorragie sous la macula au fond d’œil : référence urgente",
+    "Œil rouge, douloureux, vision qui baisse après une injection : endophtalmie, le jour même"
+  ],
+  cat: {
+    vignette: "Femme de 78 ans, ancienne fumeuse : depuis 5 jours, les cadres de porte ondulent devant son œil gauche. Drusens connus aux deux yeux.",
+    algo: [
+      { q: "Métamorphopsies ou tache centrale nouvelles ?", yes: { t: "Forme humide possible : ophtalmologie en quelques jours.", urgent: true }, yesGo: 1, no: "", noGo: 2 },
+      { q: "Liquide ou sang à l’OCT ?", yes: "Anti-VEGF intravitréen, mensuel au début.", no: "Autre cause : membrane, trou maculaire, séreuse centrale." },
+      { q: "Gros drusens ou DMLA avancée à un œil ?", yes: "AREDS2, arrêt du tabac, Amsler à domicile.", yesGo: 3, no: "Petits drusens : pas d’AREDS2 ; examen de suivi." },
+      { q: "Atrophie géographique qui gêne la vision ?", yes: "Réadaptation visuelle ; nouveaux traitements : disponibilité canadienne à vérifier.", no: "Suivi ; consulter vite si lignes ondulées." }
+    ],
+    phases: [
+      { phase: "observation", items: ["Forme précoce : examen de suivi, Amsler, arrêt du tabac", "Forme intermédiaire : AREDS2, Amsler à domicile un œil à la fois"] },
+      { phase: "medical", items: ["Forme humide : anti-VEGF intravitréen (bévacizumab, ranibizumab, aflibercept), mensuel puis espacé selon l’OCT"] },
+      { phase: "suivi", items: ["Réadaptation en déficience visuelle si la vision baisse aux deux yeux", "Anti-VEGF : ne pas manquer les rendez-vous"] }
+    ],
+    local: "Au Québec, les anti-VEGF se donnent en clinique d’ophtalmologie, souvent pendant des années. Si la vision baisse, diriger vers les services de réadaptation en déficience visuelle du réseau public (CISSS ou CIUSSS)."
+  },
+  treatments: [
+    { name: "Suppléments AREDS2", how: "Antioxydants et zinc : ralentissent l’évolution vers la forme avancée.", why: "Forme intermédiaire, ou forme avancée à un œil.", pros: "Progression réduite d’environ 25 % (AREDS).", cons: "Aucun effet sur la forme précoce ; n’empêchent pas l’apparition.", cx: "Troubles digestifs (zinc).", dose: "Vitamine C 500 mg, vitamine E 400 UI, lutéine 10 mg, zéaxanthine 2 mg, zinc 80 mg, cuivre 2 mg par jour.", pitfall: "Ancienne formule au bêtacarotène chez un fumeur ou ex-fumeur : risque de cancer du poumon." },
+    { name: "Anti-VEGF intravitréen", how: "Bloque le VEGF : les néovaisseaux fuient moins et régressent.", why: "Forme humide active.", pros: "Stabilise la vision chez la plupart, l’améliore parfois.", cons: "Injections répétées, souvent pendant des années.", cx: "Endophtalmie (rare), PIO transitoire, déchirure de l’épithélium pigmentaire.", dose: "Bévacizumab 1,25 mg (hors indication), ranibizumab 0,5 mg ou aflibercept 2 mg ; mensuel au début.", refer: "Dès que la forme humide est suspectée, en quelques jours." },
+    { name: "Arrêt du tabac", how: "Réduit le stress oxydatif de la macula.", why: "Tout patient fumeur.", pros: "Le seul grand facteur de risque modifiable.", cons: "Difficile ; aide souvent nécessaire.", cx: "Aucune." },
+    { name: "Réadaptation en déficience visuelle", how: "Loupes, éclairage, aides électroniques, apprentissage de la vision excentrique.", why: "Vision basse aux deux yeux.", pros: "Garde l’autonomie : lecture, cuisine, sécurité.", cons: "Ne rend pas la vision.", cx: "Aucune." }
+  ],
+  pearls: [
+    { q: "Pourquoi l’AREDS2 n’a-t-il plus de bêtacarotène ?", a: "Le bêtacarotène augmente le risque de cancer du poumon chez les fumeurs ; l’AREDS2 l’a remplacé par la lutéine et la zéaxanthine." },
+    { q: "Des suppléments pour tous les patients avec quelques petits drusens ?", a: "Non. L’AREDS n’a montré aucun bénéfice dans la forme précoce ; les suppléments visent la forme intermédiaire ou la forme avancée à un œil." },
+    { q: "Comment utiliser la grille d’Amsler ?", a: "Lunettes de lecture, un œil caché, fixer le point central : des lignes ondulées, floues ou manquantes, nouvelles, imposent de consulter en quelques jours." }
+  ],
+  sources: [
+    "AAO PPP Age-Related Macular Degeneration (Flaxel CJ et al., Ophthalmology 2020) ; AAO Summary Benchmarks 2023",
+    "National Eye Institute : About AREDS and AREDS2 (composition et indications, consulté en novembre 2026)",
+    "AREDS2 Research Group, JAMA 2013 (lutéine et zéaxanthine à la place du bêtacarotène)"
+  ],
+  treatment: {
+    first: [
+      "**Toi** : acuité, Amsler un œil à la fois ; arrêt du tabac ; AREDS2 seulement si forme intermédiaire ou avancée à un œil.",
+      "**Ophtalmologiste** : OCT, angiographie ; anti-VEGF si forme humide."
+    ],
+    refer: "Référer en ophtalmologie : en quelques jours (moins d’une semaine) si métamorphopsies ou tache centrale nouvelles ; sinon suivi régulier — traitée tôt, la forme humide garde plus de vision.",
+    pitfall: [
+      "**Bêtacarotène** (ancienne formule AREDS) chez un fumeur ou ex-fumeur : cancer du poumon.",
+      "**Mettre sur le compte de la cataracte** une baisse récente avec lignes ondulées : forme humide manquée."
+    ],
+    qc: ["Anti-VEGF en clinique d’ophtalmologie, souvent pendant des années.", "Vision basse : réadaptation en déficience visuelle du réseau public."]
+  }
+},
+{
+  id: "r-hta",
+  module: "D",
+  order: 6,
+  title: "Rétinopathie hypertensive",
+  en: "Hypertensive retinopathy",
+  tags: ["urgent", "highyield"],
+  oneLiner: "Artérioles fines et croisements pincés en chronique ; hémorragies, nodules cotonneux et papille gonflée avec TA très haute : urgence hypertensive.",
+  definition: "Une pression trop haute abîme les artérioles de la rétine. Une papille gonflée avec hémorragies signe une urgence hypertensive.",
+  anatomy: {
+    text: "Les artérioles de la rétine se règlent seules (autorégulation) : elles se contractent quand la TA monte. On les voit directement au fond d’œil, qui devient une fenêtre sur la microcirculation du cerveau et du rein."
+  },
+  causal: {
+    title: "De l’artériole qui se serre à la papille qui gonfle",
+    steps: [
+      { label: "Vasoconstriction, sclérose", detail: "TA haute chronique : artérioles rétrécies, paroi épaissie (« fils de cuivre »), croisements artère-veine pincés.", kind: "cause" },
+      { label: "Barrière qui cède", detail: "Poussée sévère : la paroi lâche ; hémorragies en flammèches, exsudats durs.", kind: "mecanisme" },
+      { label: "Micro-infarctus", detail: "Artérioles fermées : nodules cotonneux (fibres nerveuses ischémiques).", kind: "lesion" },
+      { label: "Papille gonflée, étoile maculaire", detail: "Œdème papillaire et exsudats en étoile : forme maligne, atteinte d’organe.", kind: "signe" },
+      { label: "Atteinte des autres organes", detail: "Même processus au cerveau (encéphalopathie, AVC), au rein et au cœur.", kind: "complication" }
+    ],
+    levers: [
+      { at: 3, label: "Baisse contrôlée de la TA", detail: "À l’hôpital, souvent IV : environ 10–15 % de la pression artérielle moyenne la 1re heure, pas plus de 25 % le 1er jour." },
+      { at: 0, label: "Traitement de fond", detail: "Cible systolique < 130 mmHg si tolérée (Hypertension Canada 2025)." },
+      { at: 4, label: "Chercher les autres atteintes", detail: "Créatinine, analyse d’urine, ECG, troponine, imagerie cérébrale selon les symptômes." }
+    ]
+  },
+  risk: [
+    "HTA mal contrôlée ou non traitée, médicaments non pris",
+    "HTA secondaire : rein, hyperaldostéronisme, phéochromocytome, coarctation",
+    "Prééclampsie",
+    "Cocaïne, amphétamines"
+  ],
+  presentation: [
+    "Souvent aucun symptôme (forme chronique)",
+    "Urgence : vision floue, céphalée, nausées, confusion",
+    "Douleur thoracique, dyspnée, oligurie selon les organes atteints",
+    "Découverte au fond d’œil d’un patient très hypertendu"
+  ],
+  exam: {
+    signs: [
+      { sign: "Artérioles fines, croisements pincés, fils de cuivre", why: "HTA chronique (forme légère de Wong-Mitchell)." },
+      { sign: "Hémorragies en flammèches, nodules cotonneux, exsudats", why: "Forme modérée ; avec une TA très haute, chercher une urgence." },
+      { sign: "Papille gonflée, étoile maculaire", why: "Forme sévère (maligne) : urgence hypertensive." },
+      { sign: "TA aux deux bras, signes neurologiques", why: "Encéphalopathie, AVC, dissection : changent la cible de baisse." }
+    ],
+    tests: [
+      { test: "TA répétée, aux deux bras", when: "Immédiatement", read: "Au-dessus de 180/110 avec atteinte d’organe = urgence hypertensive." },
+      { test: "Créatinine, électrolytes, analyse d’urine, FSC avec frottis", when: "À l’urgence", read: "Atteinte rénale, microangiopathie thrombotique." },
+      { test: "ECG, troponine, imagerie cérébrale", when: "Selon les symptômes", read: "Atteinte du cœur ou du cerveau." },
+      { test: "Fond d’œil dilaté ou photo", when: "Par l’ophtalmologiste, au besoin", read: "Gradation ; suivi de la régression." }
+    ]
+  },
+  ddx: [
+    { dx: "Œdème papillaire de stase (hypertension intracrânienne)", clue: "Aux deux yeux, TA normale ou peu élevée ; céphalées, imagerie cérébrale." },
+    { dx: "Rétinopathie diabétique", clue: "Microanévrismes nombreux, diabète connu." },
+    { dx: "Occlusion veineuse rétinienne", clue: "Un œil, un territoire veineux." },
+    { dx: "Neurorétinite", clue: "Un œil, étoile maculaire, souvent infectieuse (Bartonella)." }
+  ],
+  redFlags: [
+    "Papille gonflée ou hémorragies avec TA très haute : urgence hypertensive, à l’urgence maintenant",
+    "Céphalée, confusion, douleur thoracique, oligurie : atteinte d’autres organes",
+    "Grossesse, TA haute et vision floue : prééclampsie, urgence obstétricale"
+  ],
+  cat: {
+    vignette: "Homme de 45 ans à l’urgence : céphalée et vision floue des deux yeux. TA 230/140. Papilles gonflées, nodules cotonneux, hémorragies en flammèches.",
+    algo: [
+      { q: "TA à 180/110 ou plus ?", yes: "", yesGo: 1, no: "HTA chronique : traiter en externe, fond d’œil au suivi." },
+      { q: "Papille gonflée, hémorragies, nodules cotonneux ?", yes: { t: "Urgence hypertensive : hospitaliser, baisse contrôlée IV.", urgent: true }, yesGo: 2, no: "", noGo: 3 },
+      { q: "AVC, dissection ou prééclampsie ?", yes: { t: "Cible propre à chaque situation : équipe spécialisée.", urgent: true }, no: "Environ 10–15 % de la TAM la 1re heure, ≤ 25 % le 1er jour." },
+      { q: "Autre atteinte d’organe : cerveau, cœur, rein ?", yes: { t: "Urgence hypertensive : hospitaliser, baisse contrôlée.", urgent: true }, no: "Sans atteinte : pas de baisse rapide ; ajuster le traitement oral." }
+    ],
+    phases: [
+      { phase: "medical", items: ["Urgence hypertensive : hospitalisation, antihypertenseur IV titrable ; environ 10–15 % de la TA moyenne la 1re heure, pas plus de 25 % le 1er jour", "Puis relais oral ; à long terme, cible systolique < 130 mmHg si tolérée"] },
+      { phase: "suivi", items: ["Fond d’œil de contrôle : hémorragies et nodules régressent avec la TA ; les changements artériolaires restent", "Chercher une HTA secondaire chez le jeune ou si résistante"] }
+    ],
+    local: "Au Québec, l’urgence hypertensive se traite à l’urgence ou aux soins intensifs (médecine interne) ; l’ophtalmologiste confirme et documente le fond d’œil. Le suivi de l’HTA revient au médecin de famille."
+  },
+  treatments: [
+    { name: "Baisse contrôlée de la TA (urgence hypertensive)", how: "Antihypertenseur IV titrable, en milieu surveillé.", why: "TA très haute avec atteinte d’organe, dont la rétinopathie sévère.", pros: "Arrête les lésions des organes.", cons: "Trop rapide, elle peut causer une ischémie (cerveau, rein, nerf optique).", cx: "Hypotension, AVC ischémique.", refer: "Urgence, le jour même.", pitfall: "Normaliser la TA en quelques minutes." },
+    { name: "Traitement de fond de l’HTA", how: "Médicaments oraux et mode de vie, suivi régulier.", why: "Toute rétinopathie hypertensive.", pros: "Les lésions aiguës régressent ; prévient AVC et occlusions vasculaires de la rétine.", cons: "Les changements artériolaires restent.", cx: "Selon les médicaments.", dose: "Cible systolique < 130 mmHg si tolérée (Hypertension Canada 2025)." },
+    { name: "Bilan d’HTA secondaire", how: "Rein, aldostérone et rénine, métanéphrines, coarctation selon le contexte.", why: "Patient jeune, HTA résistante ou maligne.", pros: "Cause parfois curable.", cons: "Tests nombreux.", cx: "Aucune propre au bilan." }
+  ],
+  pearls: [
+    { q: "Qu’est-ce qui sépare la forme chronique de l’urgence ?", a: "Artérioles fines et croisements pincés = HTA ancienne. Hémorragies, nodules cotonneux et surtout papille gonflée avec TA très haute = urgence hypertensive." },
+    { q: "Pourquoi ne pas normaliser la TA d’un coup ?", a: "Les organes se sont habitués à une pression haute (autorégulation déplacée) : une chute brutale les prive de sang. On baisse d’environ 10–15 % la 1re heure, pas plus de 25 % le 1er jour." },
+    { q: "Papilles gonflées, TA 240/130 : IRM avant tout ?", a: "Non : c’est d’abord une urgence hypertensive, il faut traiter la TA ; l’imagerie suit les signes neurologiques. Le tableau peut imiter une hypertension intracrânienne." }
+  ],
+  mnemonic: { title: "Wong-Mitchell : « Fin, Fuite, Gonflé »", text: "**Fin** (légère : artérioles fines, croisements pincés), **Fuite** (modérée : hémorragies, nodules, exsudats), **Gonflé** (sévère : papille gonflée = urgence)." },
+  sources: [
+    "Wong TY, Mitchell P. Hypertensive retinopathy, N Engl J Med 2004 (classification légère, modérée, sévère)",
+    "EyeWiki : Hypertensive Retinopathy (Keith-Wagener-Barker, Wong-Mitchell, prise en charge)",
+    "AHA Scientific Statement : Management of Elevated Blood Pressure in the Acute Care Setting (Bress AP et al., Hypertension 2024)",
+    "Hypertension Canada Primary Care Guideline (CMAJ 2025;197:E549)"
+  ],
+  treatment: {
+    first: [
+      "**Toi** : TA répétée, fond d’œil ; créatinine, analyse d’urine, ECG ; à l’urgence si papille gonflée ou hémorragies avec TA très haute.",
+      "**Urgence, médecine interne** : baisse IV contrôlée ; **ophtalmologiste** : confirmer et suivre le fond d’œil."
+    ],
+    refer: "Référer : immédiatement à l’urgence si papille gonflée, hémorragies ou nodules avec TA ≥ 180/110 — c’est une atteinte d’organe ; HTA chronique sans signe aigu : médecin de famille.",
+    pitfall: [
+      "**Nifédipine à action rapide** (sublinguale) ou toute baisse brutale : ischémie cérébrale ou du nerf optique.",
+      "**Papille gonflée attribuée à une hypertension intracrânienne** sans avoir mesuré la TA."
+    ],
+    qc: ["Urgence hypertensive : urgence ou soins intensifs ; l’ophtalmologiste documente le fond d’œil.", "Suivi de l’HTA par le médecin de famille."]
+  }
 }
+
 ]);
 
 G.OPH.bonus = G.OPH.bonus || {};

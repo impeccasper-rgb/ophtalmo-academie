@@ -868,7 +868,7 @@ Object.assign(G.OPH.hy, {
     essentials: [
       "Uvéite antérieure : œil rouge douloureux, photophobie, **cellules et tyndall** en chambre antérieure.",
       "Le **cycloplégique** soulage et prévient les synéchies postérieures ; stéroïde après avoir éliminé une infection.",
-      "**Endophtalmie** : douleur, baisse de vision, hypopion, vitrite ; ponction-injection le jour même.",
+      "**Endophtalmie** : douleur, baisse de vision, hypopyon, vitrite ; ponction-injection le jour même.",
       "Bulle blanc laiteux + cellules en chambre = **endophtalmie liée à la bulle**, même des années après.",
       "Synéchies sur 360° → **iris bombé** et fermeture secondaire de l’angle : iridotomie ou iridectomie."
     ],
@@ -887,7 +887,7 @@ Object.assign(G.OPH.hy, {
     ],
     cues: [
       "Phare dans le brouillard",
-      "Bulle blanc laiteux et hypopion",
+      "Bulle blanc laiteux et hypopyon",
       "Plages blanches granuleuses le long des vaisseaux"
     ]
   },

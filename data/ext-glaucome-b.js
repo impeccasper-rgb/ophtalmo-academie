@@ -279,7 +279,7 @@ G.OPH.cases = (G.OPH.cases || []).concat([
           { label: "Uvéite antérieure hypertensive à cytomégalovirus", correct: false, note: "Donne une PIO élevée, quelques précipités et parfois une atrophie de l’iris, mais pas de défauts qui dessinent l’implant ni d’hyphéma à répétition. PCR si le tableau reste inexpliqué." },
           { label: "Syndrome de dispersion pigmentaire primaire", correct: false, note: "Jeune myope, atteinte bilatérale, fentes médio-périphériques sans lien avec un implant ; ici : 71 ans, un seul œil, pseudophaque." },
           { label: "Syndrome UGH (uvéite-glaucome-hyphéma) par l’implant", correct: true, note: "L’implant frotte l’iris et le corps ciliaire : inflammation (uvéite), saignements (hyphéma ou microhyphéma) et pigment libéré qui encrasse le trabéculum (PIO élevée). Les brouillards « rouges » sont typiques. Le monobloc acrylique, aux haptiques épaisses à bords carrés, n’est pas conçu pour le sulcus." },
-          { label: "Endophtalmite chronique à Cutibacterium acnes", correct: false, note: "Inflammation granulomateuse persistante, plaque blanche dans le sac capsulaire ; pas d’hyphéma à répétition ni de défauts qui dessinent l’implant." }
+          { label: "Endophtalmie chronique à Cutibacterium acnes", correct: false, note: "Inflammation granulomateuse persistante, plaque blanche dans le sac capsulaire ; pas d’hyphéma à répétition ni de défauts qui dessinent l’implant." }
         ]
       },
       {

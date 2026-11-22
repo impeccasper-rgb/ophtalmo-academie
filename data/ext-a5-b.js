@@ -159,7 +159,7 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
       keys: [
         "Uvéite antérieure : cellules et flare en CA, synéchies postérieures.",
         "Cycloplégique + stéroïde, infection exclue ; PIO.",
-        "Endophtalmie : douleur, hypopion : ponction le jour même.",
+        "Endophtalmie : douleur, hypopyon : ponction le jour même.",
         "Vancomycine 1 mg/0,1 mL + ceftazidime 2,25 mg/0,1 mL intravitréennes."
       ],
       ask: { q: "Pourquoi donne-t-on un cycloplégique dans une uvéite antérieure ?", a: "Il relâche le muscle ciliaire (moins de douleur) et dilate la pupille, ce qui éloigne l’iris du cristallin et empêche les synéchies postérieures. Sans lui, des synéchies sur 360° peuvent créer un iris bombé et une fermeture secondaire de l’angle." }
@@ -173,7 +173,7 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
       "**Rétinite à CMV** (cytomegalovirus retinitis), chez l’immunosupprimé : plages blanches granuleuses de nécrose avec hémorragies le long des vaisseaux, peu d’inflammation du vitré.",
       "Toxoplasmose oculaire : foyer blanc actif au bord d’une vieille cicatrice pigmentée, sous une vitrite dense : le « phare dans le brouillard » (headlight in the fog).",
       "**Nécrose rétinienne aiguë** (acute retinal necrosis, due au virus varicelle-zona, VZV, ou à l’herpès simplex, HSV) : plages blanches confluentes en périphérie qui avancent vite, vascularite occlusive, vitrite marquée.",
-      "Endophtalmie : douleur, baisse de vision, hypopion, vitrite, perte du reflet rouge ; **panophtalmie** si l’infection gagne la sclère et l’orbite (paupières gonflées, chémosis, proptose)."
+      "Endophtalmie : douleur, baisse de vision, hypopyon, vitrite, perte du reflet rouge ; **panophtalmie** si l’infection gagne la sclère et l’orbite (paupières gonflées, chémosis, proptose)."
     ],
     why: "En glaucome, des synéchies postérieures sur 360° (séclusion pupillaire) bloquent le passage de l’aqueuse : l’iris bombé ferme l’angle de façon secondaire, et les stéroïdes de l’uvéite peuvent eux-mêmes faire monter la PIO (fiche « Glaucomes cortisonique et uvéitique »). Le patient avec une bulle de trabéculectomie garde à vie un risque d’endophtalmie liée à la bulle (fiche « Patient opéré »), et une plaie ou un ulcère de cornée peut ensemencer l’intérieur de l’œil.",
     action: [
@@ -617,7 +617,7 @@ Object.assign(G.OPH.glossary, {
   "synéchies postérieures": "Adhérences entre l’iris et le cristallin après une uvéite ; pupille irrégulière ; sur 360°, elles causent un iris bombé.",
   "rétinite à CMV": "Infection de la rétine par le cytomégalovirus chez l’immunosupprimé : nécrose blanche granuleuse avec hémorragies ; antiviraux.",
   "nécrose rétinienne aiguë": "Rétinite virale (VZV, HSV) avec nécrose périphérique confluente et rapide, vascularite et vitrite ; antiviraux en urgence ; risque élevé de décollement de rétine.",
-  "endophtalmie": "Infection à l’intérieur de l’œil (après chirurgie, bulle, trauma ou par le sang) : douleur, hypopion, vitrite ; ponction et antibiotiques intravitréens urgents.",
+  "endophtalmie": "Infection à l’intérieur de l’œil (après chirurgie, bulle, trauma ou par le sang) : douleur, hypopyon, vitrite ; ponction et antibiotiques intravitréens urgents.",
   "panophtalmie": "Infection de tout le globe qui gagne la sclère et l’orbite : paupières gonflées, chémosis, proptose ; pronostic visuel très sombre.",
   "œdème papillaire": "Au sens strict (papilledema), gonflement des papilles dû à une pression intracrânienne élevée ; neuro-imagerie urgente avant la ponction lombaire.",
   "neurorétinite": "Inflammation du nerf optique avec étoile d’exsudats à la macula, souvent due à Bartonella henselae (maladie des griffes du chat).",

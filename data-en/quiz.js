@@ -2196,7 +2196,7 @@ Object.assign(G.OPH_EN.quiz, {
     stem: "Retroillumination (transillumination) of the iris at the slit lamp in a 35-year-old myopic man. What does the image show, and which sign do you then look for on the cornea?",
     options: [
       "Sectoral iris atrophy; a herpetic keratitis scar",
-      "Iris holes and a displaced pupil; a beaten-metal endothelium",
+      "Iris holes and a displaced pupil; a hammered-silver endothelium",
       "Radial transillumination defects; a Krukenberg spindle",
       "Loss of the pupillary ruff; white flakes on the endothelium"
     ],

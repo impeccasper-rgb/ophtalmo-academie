@@ -369,12 +369,12 @@ Object.assign(G.OPH.hy, {
       "Au test de [[Seidel]], un ruisseau vert vif sur la bulle signe une fuite.",
       "Chambre plate de grade [[3|III|trois]], cristallin contre cornée : reformer la chambre en urgence.",
       "PIO haute, chambre plate, iridectomie perméable, sans dôme choroïdien : [[mal-direction|mal direction|glaucome malin]] ; iridectomie bouchée : bloc pupillaire.",
-      "Endophtalmite de bulle : vancomycine 1 mg/0,1 mL et [[ceftazidime]] 2,25 mg/0,1 mL intravitréennes.",
+      "Endophtalmie de bulle : vancomycine 1 mg/0,1 mL et [[ceftazidime]] 2,25 mg/0,1 mL intravitréennes.",
       "On ligature un tube de [[Baerveldt]], sans valve, jusqu’à la formation de la capsule.",
       "Vision ↓ avec PIO basse et plis choroïdiens à l’OCT : maculopathie d’[[hypotonie]]."
     ],
     triage: [
-      { s: "Trabéculectomie il y a 3 ans : œil rouge, douleur, écoulement, bulle blanc laiteux, hypopyon.", u: "urgent", why: "Endophtalmite liée à la bulle : ponction et antibiotiques intravitréens le jour même, ± vitrectomie." },
+      { s: "Trabéculectomie il y a 3 ans : œil rouge, douleur, écoulement, bulle blanc laiteux, hypopyon.", u: "urgent", why: "Endophtalmie liée à la bulle : ponction et antibiotiques intravitréens le jour même, ± vitrectomie." },
       { s: "Jour 1 post-trabéculectomie : PIO 4 mmHg, chambre étroite sans contact cristallin–cornée, Seidel négatif.", u: "rapide", why: "Surfiltration ou effusion : fond d’œil, atropine, surveillance rapprochée ; reformer si contact cristallin–cornée." },
       { s: "Semaine 1 post-trabéculectomie : PIO 30 mmHg, chambre profonde, bulle plate.", u: "rapide", why: "Haute + profonde : gonioscopie, puis massage, lyse de sutures au laser ou retrait d’une suture relâchable." }
     ],

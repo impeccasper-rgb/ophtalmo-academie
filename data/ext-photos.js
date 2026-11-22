@@ -312,7 +312,7 @@ G.OPH.photos = G.OPH.photos || {};
         "Toile de filaments blanchâtres tendue devant la pupille : fibrine dans la chambre antérieure.",
         "Forte injection conjonctivale; petits fils de suture visibles en périphérie de la cornée.",
         "Premier jour après une chirurgie de tube pour glaucome non contrôlé, avec inflammation intraoculaire importante.",
-        "Fibrine n’égale pas endophtalmite : elle répond aux corticostéroïdes topiques intensifs; douleur croissante, hypopyon, vitrite ou baisse brutale de vision imposent d’éliminer une endophtalmite."
+        "Fibrine n’égale pas endophtalmie : elle répond aux corticostéroïdes topiques intensifs; douleur croissante, hypopyon, vitrite ou baisse brutale de vision imposent d’éliminer une endophtalmie."
       ] }
   ],
 
@@ -585,7 +585,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     stem: "Deux semaines après une chirurgie MIGS interrompue en cours de route. Voici l’œil en photographie externe. Quel est le principal risque à surveiller dans les jours qui viennent ?",
     figure: { type: "photo", id: "OPH-315" },
     options: [
-      "Une endophtalmite, presque certaine devant ce sang",
+      "Une endophtalmie, presque certaine devant ce sang",
       "Une hypotonie par fuite de la bulle de filtration",
       "Hausse de PIO et imprégnation hématique de la cornée",
       "Une kératite à Acanthamoeba liée au geste chirurgical"
@@ -594,7 +594,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     explain: "Le caillot rouge foncé en chambre antérieure est un hyphéma. Les globules rouges bouchent le trabéculum : la PIO monte. Une PIO élevée prolongée avec beaucoup de sang peut teinter la cornée.",
     deep: "Le caillot rouge foncé dans la chambre antérieure est un hyphéma, ici en voie de rétraction deux semaines après une tentative d’iStent interrompue à cause du saignement. Les globules rouges bouchent le trabéculum et font monter la PIO; une PIO élevée prolongée avec beaucoup de sang peut teinter la cornée (imprégnation hématique). Surveillance de la PIO, tête surélevée, cycloplégique et corticostéroïde topique; lavage chirurgical si la PIO reste incontrôlée ou si la cornée commence à se teinter.",
     why: [
-      "Faux : le sang n’est pas un signe d’infection; l’endophtalmite donne douleur croissante, hypopyon et vitrite.",
+      "Faux : le sang n’est pas un signe d’infection; l’endophtalmie donne douleur croissante, hypopyon et vitrite.",
       "Faux : l’iStent ne crée pas de bulle de filtration; il dérive l’humeur aqueuse vers le canal de Schlemm.",
       "Exact : sang dans le trabéculum = PIO élevée; la cornée peut se teinter si la PIO reste haute avec un gros hyphéma.",
       "Faux : l’Acanthamoeba est surtout liée aux lentilles cornéennes et à l’eau, pas à une chirurgie intraoculaire."
@@ -604,16 +604,16 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     stem: "Premier jour après la pose d’un tube de drainage pour un glaucome non contrôlé. Voici l’aspect à la lampe à fente en éclairage diffus. Quelle est l’interprétation la plus probable et la conduite ?",
     figure: { type: "photo", id: "OPH-340" },
     options: [
-      "Endophtalmite aiguë : ponction et injections intravitréennes immédiates",
+      "Endophtalmie aiguë : ponction et injections intravitréennes immédiates",
       "Réaction fibrineuse : stéroïde topique intensif et suivi rapproché",
       "Hyphéma organisé : lavage chirurgical de la chambre antérieure",
       "Mal-direction de l’aqueuse : cycloplégique et laser du vitré antérieur"
     ],
     answer: 1,
-    explain: "Toile de filaments blanchâtres devant la pupille au lendemain d’une chirurgie : réaction fibrineuse. Elle répond aux stéroïdes topiques intensifs. On évoque plutôt l’endophtalmite devant une douleur croissante et un hypopyon.",
-    deep: "La toile de filaments blanchâtres tendue devant la pupille, au lendemain d’une chirurgie, est une réaction fibrineuse : l’inflammation postopératoire fait passer de la fibrine dans la chambre antérieure. Elle répond aux corticostéroïdes topiques intensifs (avec cycloplégique au besoin). Le piège : la confondre avec une endophtalmite, qu’on évoque plutôt devant une douleur croissante, un hypopyon, une vitrite ou une baisse brutale de vision, et qui impose ponction et antibiotiques intravitréens.",
+    explain: "Toile de filaments blanchâtres devant la pupille au lendemain d’une chirurgie : réaction fibrineuse. Elle répond aux stéroïdes topiques intensifs. On évoque plutôt l’endophtalmie devant une douleur croissante et un hypopyon.",
+    deep: "La toile de filaments blanchâtres tendue devant la pupille, au lendemain d’une chirurgie, est une réaction fibrineuse : l’inflammation postopératoire fait passer de la fibrine dans la chambre antérieure. Elle répond aux corticostéroïdes topiques intensifs (avec cycloplégique au besoin). Le piège : la confondre avec une endophtalmie, qu’on évoque plutôt devant une douleur croissante, un hypopyon, une vitrite ou une baisse brutale de vision, et qui impose ponction et antibiotiques intravitréens.",
     why: [
-      "Faux : piège. Au jour 1, une fibrine sans hypopyon ni vitrite oriente vers l’inflammation; l’endophtalmite reste à éliminer si l’évolution se dégrade.",
+      "Faux : piège. Au jour 1, une fibrine sans hypopyon ni vitrite oriente vers l’inflammation; l’endophtalmie reste à éliminer si l’évolution se dégrade.",
       "Exact : réaction fibrineuse postopératoire; revoir dans 24 à 48 h pour s’assurer qu’elle régresse.",
       "Faux : un hyphéma est rouge, avec un niveau ou un caillot; la fibrine est blanche et filamenteuse.",
       "Faux : la mal-direction donne une chambre antérieure aplatie au centre comme en périphérie, avec une PIO normale ou élevée; la toile blanche devant la pupille n’en fait pas partie."

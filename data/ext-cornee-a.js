@@ -203,7 +203,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   exam: {
     signs: [
       { sign: "Arc cornéen (arcus) : anneau gris-blanc du stroma périphérique, séparé du limbe par une bande claire (intervalle lucide)", why: "Lipides ; banal après 50 ans ; avant : bilan lipidique ; unilatéral : carotide du côté sans arc." },
-      { sign: "Kératopathie en bande (band keratopathy) : plaque blanche crayeuse entre les paupières, dans la Bowman, débutant à 3 h et 9 h, percée de trous", why: "Calcium (trous = passage des nerfs) ; uvéite, phtise, silicone, œdème cornéen chronique, hypercalcémie, insuffisance rénale." },
+      { sign: "Kératopathie en bande (band keratopathy) : plaque blanche crayeuse entre les paupières, dans la Bowman, débutant à 3 h et 9 h, percée de trous", why: "Calcium (trous = passage des nerfs) ; uvéite, phtisie, silicone, œdème cornéen chronique, hypercalcémie, insuffisance rénale." },
       { sign: "Cornée verticillée (cornea verticillata) : lignes brun doré en tourbillon dans l’épithélium, sous la pupille", why: "Amiodarone, hydroxychloroquine, maladie de Fabry ; vision rarement touchée." },
       { sign: "Anneau brun-vert ou doré dans la Descemet périphérique, d’abord en haut et en bas", why: "Anneau de Kayser-Fleischer (cuivre) : maladie de Wilson ; parfois vu seulement en gonioscopie." },
       { sign: "Dépôt jaune à bords plumeux au bout de vaisseaux stromaux", why: "Kératopathie lipidique (lipid keratopathy) : fuite de vaisseaux anormaux." },
@@ -470,7 +470,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     ],
     answer: 1,
     explain: "Plaque blanche crayeuse entre les paupières, percée de petits trous : kératopathie en bande (calcium). Sans cause oculaire, on cherche une hypercalcémie ou une atteinte rénale : calcium, phosphore, PTH, créatinine.",
-    deep: "Plaque blanche crayeuse entre les paupières, percée de trous : kératopathie en bande (calcium dans la couche de Bowman). Sans cause oculaire (uvéite, phtise, huile de silicone), on cherche une hypercalcémie ou une hyperphosphatémie : calcium, phosphore, PTH et fonction rénale. Ici, le patient avait une hyperparathyroïdie.",
+    deep: "Plaque blanche crayeuse entre les paupières, percée de trous : kératopathie en bande (calcium dans la couche de Bowman). Sans cause oculaire (uvéite, phtisie, huile de silicone), on cherche une hypercalcémie ou une hyperphosphatémie : calcium, phosphore, PTH et fonction rénale. Ici, le patient avait une hyperparathyroïdie.",
     why: [
       "Lipides : arc gris-blanc périphérique ou dépôt jaune près de vaisseaux, pas une bande crayeuse.",
       "Exact : hyperparathyroïdie ou insuffisance rénale favorisent le dépôt de calcium.",
@@ -542,7 +542,7 @@ Object.assign(G.OPH.glossary, {
   "DPP": "Dystrophie polymorphe postérieure : vésicules ou bandes de la Descemet, héréditaire, parfois associée à un glaucome.",
   "CHED": "Dystrophie endothéliale héréditaire congénitale : cornées troubles et épaissies dès la naissance ; à distinguer du glaucome congénital.",
   "amyloïde": "Protéine mal repliée en fibrilles ; colorée par le rouge Congo, avec biréfringence vert pomme en lumière polarisée.",
-  "kératopathie en bande": "Dépôt de calcium dans la couche de Bowman, en bande horizontale entre les paupières ; uvéite chronique, phtise, huile de silicone, hypercalcémie.",
+  "kératopathie en bande": "Dépôt de calcium dans la couche de Bowman, en bande horizontale entre les paupières ; uvéite chronique, phtisie, huile de silicone, hypercalcémie.",
   "EDTA": "Chélateur (acide éthylène-diamine-tétra-acétique) qui capte le calcium ; appliqué sur la cornée grattée pour dissoudre une kératopathie en bande.",
   "arc cornéen": "Anneau gris-blanc de lipides dans le stroma périphérique, séparé du limbe par un intervalle clair ; avant 50 ans, bilan lipidique.",
   "intervalle lucide": "Bande de cornée claire entre un dépôt périphérique (arc, bande calcique) et le limbe.",
