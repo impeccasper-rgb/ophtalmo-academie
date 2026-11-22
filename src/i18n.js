@@ -365,7 +365,7 @@ function G_OPH() { return (window.OPH = window.OPH || {}); }
     'home.plan': ['Plan', 'Plan'], 'home.plandone': ['Plan terminé : bravo. Révise tes erreurs.', 'Plan complete: well done. Review your mistakes.'],
     'home.modA.d': ['Anatomie, examen, imagerie, rétine et cristallin', 'Anatomy, exam, imaging, retina and lens'],
     'home.mod.d': ['{n} fiches · stage du {d}', '{n} topics · rotation on {d}'], 'home.tounlock': [' · à déverrouiller', ' · to unlock'],
-    'home.eyebrow': ['Ocelle · ophtalmologie en images', 'Ocelle · ophthalmology you can see'], 'home.h1': ['Cornée et glaucome', 'Cornea and glaucoma'],
+    'home.eyebrow': ['Ocelle · ophtalmologie en images', 'Ocelle · ophthalmology you can see'], 'home.h1': ['Cornée, glaucome et rétine', 'Cornea, glaucoma and retina'],
     'home.lead': ['Apprends à voir le signe qui compte. Voir <span aria-hidden="true">→</span> Comprendre <span aria-hidden="true">→</span> Décider, en images et en jeux.', 'Learn to see the sign that matters. See <span aria-hidden="true">→</span> Understand <span aria-hidden="true">→</span> Decide, through images and games.'],
     'hero.credit': ['Crédit et licence de la photo', 'Photo credit and licence'], 'home.today': ['Séance du jour · {n} cartes', 'Today’s session · {n} cards'],
     'home.level.h': ['Quel niveau souhaites-tu atteindre ?', 'What level are you aiming for?'],

@@ -763,7 +763,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       "**Pilocarpine** : inutile avant la baisse de PIO ; jamais si cause cristallinienne ou topiramate.",
       "**Acétazolamide** : vérifier allergie sulfa, rein, potassium, drépanocytose."
     ],
-    qc: ["Souvent vu d’abord à l’urgence pour céphalée et vomissements : regarder l’œil.", "Appeler l’ophtalmologiste de garde avant tout transfert ; amorcer les gouttes sur place.", "Acétazolamide 250 mg PO : disponible partout. La forme IV n’a qu’un fournisseur au Canada (pénurie annoncée mai–juillet 2026, Pénuries de produits de santé Canada, rapport 282580) : si elle manque, donner la forme PO."]
+    qc: ["Souvent vu d’abord à l’urgence pour céphalée et vomissements : regarder l’œil.", "Appeler l’ophtalmologiste de garde avant tout transfert ; amorcer les gouttes sur place.", "Acétazolamide en comprimés de 250 mg (dose de charge 500 mg = 2 comprimés) : disponible partout. La forme IV n’a qu’un fournisseur au Canada (pénurie annoncée mai–juillet 2026, Pénuries de produits de santé Canada, rapport 282580) : si elle manque, donner la forme PO."]
   }
 },
 {

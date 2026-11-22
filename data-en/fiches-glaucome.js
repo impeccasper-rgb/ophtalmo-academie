@@ -615,7 +615,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "**Pilocarpine**: useless before IOP falls; never for a lens cause or topiramate.",
    "**Acetazolamide**: check sulfa allergy, kidney, potassium, sickle cell."
   ],
-  "qc": ["Often seen first in the ED for headache and vomiting: look at the eye.", "Call the on-call ophthalmologist before any transfer; start the drops on site.", "Acetazolamide 250 mg PO: available everywhere. The IV form has a single Canadian supplier (shortage announced May–July 2026, Drug Shortages Canada report 282580): if it runs out, give it PO."]
+  "qc": ["Often seen first in the ED for headache and vomiting: look at the eye.", "Call the on-call ophthalmologist before any transfer; start the drops on site.", "Acetazolamide 250 mg tablets (500 mg loading dose = 2 tablets): available everywhere. The IV form has a single Canadian supplier (shortage announced May–July 2026, Drug Shortages Canada report 282580): if it runs out, give it PO."]
  }
 }
 });
