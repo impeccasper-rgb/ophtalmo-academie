@@ -169,3 +169,28 @@ html.no-motion .voir-miss { animation: none; }
 /* apprendre covers: legible title over the photo */
 .lcover { position: relative; isolation: isolate; }
 .lcover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(5, 14, 29, .15) 0%, rgba(5, 14, 29, .82) 100%); border-radius: inherit; }
+/* cycle 9b: phone budgets — Comprendre pair ≤ 220 px, home ≤ 2.5 screens, micro-fiches ≤ 1.5 screens */
+@media (max-width: 600px) {
+  .mech-fig .pair .fig .fig-body svg { max-height: 128px; }
+  .mech-fig .pair .lab { font-size: .7rem; }
+  .mech-fig .pair > div:last-child .schema-badge { display: none; } /* one « schéma » badge for the pair */
+  .mech-fig .pair .schema-badge { font-size: .6rem; line-height: 1.2; }
+  .mech-fig .pair .fig-cap { padding: 3px 4px; }
+  .hero2-in { grid-template-columns: minmax(0, 1fr) 96px; gap: 10px 12px; padding: 18px 16px 18px; align-items: start; }
+  .hero2 .hero-eye { order: 0; width: 96px; max-width: 96px; margin: 0; grid-column: 2; grid-row: 1; }
+  .hero2 .hero-text { grid-column: 1 / -1; grid-row: 1; padding-right: 104px; }
+  .hero2 .hero-art .ph-credit, .hero2 .hero-eye .credit, .hero2 .hero-eye figcaption { font-size: .55rem; }
+  .hero2 h1 { font-size: 2.1rem; }
+  .hero2 .hero-lead { font-size: .92rem; margin: 0; }
+  .mod-card { grid-template-rows: 84px auto; }
+  .mod-grid, .today-grid { gap: 10px; }
+  .a-item .simgrid, .fstep-body .simgrid { gap: 8px; }
+  .a-item [data-sim] .fig-cap { font-size: .72rem; padding: 4px 8px; }
+  .a-item [data-sim] svg, .a-item [data-sim] canvas { max-height: 200px; }
+  .a-item [data-sim] .chips { gap: 4px; }
+  .a-item [data-sim] .chip { padding: 4px 9px; font-size: .76rem; min-height: 28px; }
+  .a-item [data-sim] .readout { padding: 6px 10px; gap: 0; }
+  .a-item [data-sim] .readout .v { font-size: 1.15rem; }
+  .a-item [data-sim] .eyebrow { margin: 0; }
+  .a-item [data-sim] .eqn { font-size: .72rem; padding: 4px 8px; }
+}

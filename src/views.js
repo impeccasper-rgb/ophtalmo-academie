@@ -248,7 +248,7 @@ function aItems(page) {
     [['globe', 'a1.s1', 'a1.p1', 'anatomy'], ['cornee', 'a1.s2', 'a1.p2', 'corneaLayers'], ['angle', 'a1.s3', 'a1.p3', 'angleExplorer'], ['papille', 'a1.s4', null, 'discAnatomy'], ['annexes', 'a1.s5', null, 'annexes']].forEach(function (x) {
       it.push({ id: x[0], title: t(x[1]), body: function () { return (x[2] ? '<p class="read">' + t(x[2]) + '</p>' : '') + '<div data-sim="' + x[3] + '"></div>'; } });
     });
-    var ph = photosFor('a-anatomie'); if (ph.length) it.push({ id: 'photos', title: t('a.photos'), thumb: ph[0].id, body: function () { return Photo.carousel(ph, { voir: true }); } });
+    var ph = photosFor('a-anatomie'); if (ph.length) it.push({ id: 'photos', title: t('a.photos'), thumb: ph[0].id, body: function () { return Photo.carousel(ph, { voir: 'a-anatomie' }); } });
   } else if (page === 'a-physiologie') {
     (A.physio || []).forEach(function (p) {
       it.push({ id: p.id, title: I18N.title(p), en: p.en, body: function (scope) {
@@ -270,9 +270,9 @@ function aItems(page) {
         var tools = (EXAM_TOOL[p.id] || []).map(function (x) { var parts = x.split(':'); return parts[0] === 'patterns' ? '<div data-sim="patterns" data-kind="' + parts[1] + '"' + (parts[2] ? ' data-compare="1"' : '') + '></div>' : '<div data-sim="' + parts[0] + '"></div>'; }).join('');
         var h = HY.get('ex-' + p.id), ess = (h && h.essentials) || [];
         var main = '<div class="callout"><span class="eyebrow">' + t('a.why') + '</span><span>' + T(p.why, scope) + '</span></div>' + hyList(ess.slice(0, 5), t('hy.title'));
-        return (tools || (ph.length ? Photo.carousel(ph, { voir: true }) : '')) + (p.card ? aCard(p.card, scope) : main) +
+        return (tools || (ph.length ? Photo.carousel(ph, { voir: 'a-' + p.id }) : '')) + (p.card ? aCard(p.card, scope) : main) +
           levelBlocks([
-            { lvl: 1, title: p.card ? t('f.more') : t('a.normpatho'), html: (p.card ? main + '<h3 class="h4">' + t('a.normpatho') + '</h3>' : '') + '<div class="twocol"><div class="panel-sunk stack"><h3 class="h4" style="color:var(--ok)">' + t('f.normal') + '</h3><ul class="blist ok">' + (p.normal || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="panel-sunk stack"><h3 class="h4" style="color:var(--urgent)">' + t('f.patho') + '</h3><ul class="blist red">' + (p.patho || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' + (tools && ph.length ? Photo.carousel(ph, { voir: true }) : '') },
+            { lvl: 1, title: p.card ? t('f.more') : t('a.normpatho'), html: (p.card ? main + '<h3 class="h4">' + t('a.normpatho') + '</h3>' : '') + '<div class="twocol"><div class="panel-sunk stack"><h3 class="h4" style="color:var(--ok)">' + t('f.normal') + '</h3><ul class="blist ok">' + (p.normal || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="panel-sunk stack"><h3 class="h4" style="color:var(--urgent)">' + t('f.patho') + '</h3><ul class="blist red">' + (p.patho || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' + (tools && ph.length ? Photo.carousel(ph, { voir: 'a-' + p.id }) : '') },
             { lvl: 2, title: t('a.howpit'), html: '<h3 class="h4">' + t('a.how') + '</h3><ol class="read">' + (p.how || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ol><h3 class="h4">' + t('a.pitfalls') + '</h3><ul class="blist red">' + (p.pitfalls || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' },
             { lvl: 2, title: t('a.asks.train'), html: (p.pearl ? '<div class="callout amber"><span class="eyebrow">' + t('a.asks') + '</span><span>' + T(p.pearl, scope) + '</span></div>' : '') + (HY.get('ex-' + p.id) ? trainBlock('ex-' + p.id) : '') }
           ]);
@@ -284,7 +284,7 @@ function aItems(page) {
       it.push({ id: r.id, title: I18N.title(r), en: r.en, thumb: ph[0] && ph[0].id, tag: '<span class="tag ' + u[0] + '">' + u[1] + '</span>', body: function (scope) {
         var h = HY.get('a5-' + r.id), ess = (h && h.essentials) || [];
         var main = '<div class="callout"><span class="eyebrow">' + t('caps.what') + '</span><span>' + T(r.what, scope) + '</span></div>' + hyList(ess.slice(0, 5), t('hy.title'));
-        return (ph.length ? Photo.carousel(ph, { voir: true }) : '') + (r.card ? aCard(r.card, scope) : main) +
+        return (ph.length ? Photo.carousel(ph, { voir: r.id }) : '') + (r.card ? aCard(r.card, scope) : main) +
           levelBlocks([
             { lvl: 1, title: r.card ? t('f.more') : t('a5.lookact'), html: (r.card ? main : '') + '<h3 class="h4">' + t('a.look') + '</h3><ul class="blist">' + (r.look || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><h3 class="h4">' + t('a5.action') + '</h3><ul class="blist">' + (r.action || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' },
             { lvl: 2, title: t('a5.pitwhy'), html: '<ul class="blist red">' + (r.pitfalls || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><div class="callout violet"><span class="eyebrow">' + t('a5.why') + '</span><span>' + T(r.why, scope) + '</span></div>' },
@@ -345,7 +345,7 @@ function aItemView(page, id) {
 function capsuleCards(c, m) {
   var cards = [];
   var scope0 = Gloss.scope(), h = HY.get(c.id);
-  cards.push({ title: c.title, body: function (scope) { var ph = photosFor(c.id); return (ph.length ? Photo.carousel(ph, { voir: true }) : '') + '<p class="read">' + T(c.intro, scope) + '</p>' + levelBlocks([{ lvl: 1, title: t('caps.hy'), html: hyList(((h && h.essentials) || []).slice(0, 5), t('caps.hy')) }]); } });
+  cards.push({ title: c.title, body: function (scope) { var ph = photosFor(c.id); return (ph.length ? Photo.carousel(ph, { voir: c.id }) : '') + '<p class="read">' + T(c.intro, scope) + '</p>' + levelBlocks([{ lvl: 1, title: t('caps.hy'), html: hyList(((h && h.essentials) || []).slice(0, 5), t('caps.hy')) }]); } });
   (c.sections || []).forEach(function (s2) {
     cards.push({ title: s2.title, body: function (scope) {
       var media = (s2.figure ? '<div class="cm-fig">' + Figures.render(s2.figure) + '</div>' : '') + (s2.photo && D.cat(s2.photo) ? '<div class="cm-ph">' + Photo.card({ id: s2.photo, caption: D.cat(s2.photo).title, look: '', reveal: [] }) + '</div>' : '');
@@ -550,7 +550,7 @@ function ficheView(f, step) {
       };
       if (step === 'voir') {
         var two = '<div class="callout"><span class="eyebrow">' + t('f.twosent') + '</span><span class="def-text">' + T(f.definition, scope) + '</span></div>';
-        body = (ph.length ? '<div class="voir-grid"><div class="stack">' + Photo.carousel(ph, { voir: true }) + '</div><div class="stack voir-side">' + two + '</div></div>' : cmpFig() + two) +
+        body = (ph.length ? '<div class="voir-grid"><div class="stack">' + Photo.carousel(ph, { voir: f.id }) + '</div><div class="stack voir-side">' + two + '</div></div>' : cmpFig() + two) +
           levelBlocks([
             { lvl: 1, title: t('f.more'), html: (enSub(f.en)) + (f.oneLiner ? '<p class="oneliner">' + T(f.oneLiner, scope) + '</p>' : '') + (pre ? '<div class="prereq"><span class="small muted">' + t('f.prereq') + '</span>' + pre + '</div>' : '') },
             { lvl: 2, title: t('f.pairs'), html: pairs.length ? pairs.map(pairHtml).join('') : '' },
