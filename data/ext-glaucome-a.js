@@ -407,8 +407,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     "L’herpès donne une atrophie en plages ou sectorielle avec KP, sans lien avec l’implant."
   ]
 },
-{
-  id: "C-206", module: "C", topic: "g-cristallin", type: "cat", level: 2, trap: true,
+{ id: "C-206", module: "C", topic: "g-cristallin", type: "cat", level: 2, trap: true,
   stem: "Un homme de 19 ans reçoit une rondelle de hockey dans l’œil gauche. Hyphéma de grade II, PIO 34 mmHg. L’électrophorèse confirme un trait drépanocytaire. Quel médicament dois-tu éviter ?",
   figure: null,
   options: [
@@ -424,8 +423,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     "Le stéroïde topique réduit l’inflammation : protocole habituel de l’hyphéma.",
     "La cycloplégie soulage, immobilise l’iris et limite les synéchies : protocole habituel.",
     "Oui : il acidifie l’aqueuse et favorise la falciformation ; les globules rigides bouchent le trabéculum."
-  ]
-},
+  ] },
 {
   id: "C-207", module: "C", topic: "g-cristallin", type: "diagnostic", level: 1, trap: false,
   stem: "Une femme de 82 ans, qui ne voit presque plus de l’œil droit depuis des années, consulte pour cet œil rouge et douloureux. PIO 46 mmHg, cataracte blanche hypermûre, chambre antérieure profonde, angle ouvert, nombreuses particules blanches flottantes et cellules, sans KP. Quel est le diagnostic ?",

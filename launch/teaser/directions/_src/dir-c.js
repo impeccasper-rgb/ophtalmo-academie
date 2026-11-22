@@ -11,7 +11,7 @@ K.dirs.C = function (S) {
   function type(parent, css, html, t0, fit) {
     var e = K.div(parent, 'left:72px;width:888px;font-family:var(--display);font-weight:800;font-stretch:75%;letter-spacing:-.035em;line-height:.86;transform-origin:0% 50%;' + css, '<span style="display:inline-block;white-space:nowrap">' + html + '</span>');
     if (fit) {
-      var sp = e.firstChild, fs = parseFloat(e.style.fontSize); fs = fs * 880 / sp.offsetWidth; e.style.fontSize = Math.floor(fs) + 'px';
+      var sp = e.firstChild, fs = parseFloat(e.style.fontSize); fs = fs * 850 / sp.offsetWidth; e.style.fontSize = Math.floor(fs) + 'px';
       if (fit !== 'keep') { if (e.offsetHeight > 1180) e.style.fontSize = Math.floor(fs * 1180 / e.offsetHeight) + 'px'; e.style.top = Math.round(140 + (1540 - e.offsetHeight) / 2) + 'px'; }
     }
     slam(e, t0); return e;

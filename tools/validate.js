@@ -181,6 +181,29 @@ function checkQuiz(list) {
   return { pos, lv, traps, byMod };
 }
 
+// Quiz audit (2026-11-22): the right option must not be the single longest in more than 35 % of the questions, in French
+// and in the English overlay (data-en/quiz.js); `explain` stays ≤ 45 words (about 3 lines), the longer text goes to `deep`.
+function checkQuizBias(list) {
+  const MAX = 0.35, WORDS = 45, en = {};
+  try { const sb = {}; sb.globalThis = sb; vm.createContext(sb); vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'data-en', 'quiz.js'), 'utf8'), sb); Object.assign(en, (sb.OPH_EN && sb.OPH_EN.quiz) || {}); }
+  catch (e) { W('quiz EN', 'data-en/quiz.js not readable: English overlay not checked'); }
+  for (const [L, get] of [['FR', q => q], ['EN', q => en[q.id]]]) {
+    let n = 0, longest = 0; const long = [];
+    for (const q of list) {
+      const o = get(q); if (!o || !Array.isArray(o.options) || !Array.isArray(q.options) || !Number.isInteger(q.answer)) continue; n++;
+      if (o.options.length !== q.options.length || (Array.isArray(o.why) && o.why.length !== q.options.length)) E(`quiz ${q.id} ${L}`, 'options / why count differs from the French question');
+      if (o.deep != null && !isStr(o.deep)) E(`quiz ${q.id} ${L}`, 'deep must be a non-empty string');
+      const len = o.options.map(x => String(x).length), mx = Math.max(...len);
+      if (len[q.answer] === mx && len.filter(v => v === mx).length === 1) longest++;
+      if (words(o.explain) > WORDS) long.push(q.id);
+    }
+    if (!n) continue;
+    console.log(`Quiz ${L}: right option is the single longest in ${longest}/${n} (${Math.round(100 * longest / n)} %, max 35 %) · explanations > ${WORDS} words: ${long.length}`);
+    if (longest / n > MAX) E('quiz ' + L, `right option is the single longest in ${Math.round(100 * longest / n)} % of the questions (> 35 %): rebalance option lengths`);
+    if (long.length) W('quiz ' + L, `explain > ${WORDS} words (keep 3 lines, move the detail to deep): ${long.slice(0, 15).join(', ')}${long.length > 15 ? '…' : ''}`);
+  }
+}
+
 function checkCases(list) {
   const seen = new Set();
   for (const c of list) {
@@ -338,6 +361,7 @@ for (const f of files) {
 const OPH = sandbox.OPH || {};
 if (OPH.fiches) checkFiches(OPH.fiches, OPH);
 let qs = null; if (OPH.quiz) qs = checkQuiz(OPH.quiz);
+if (OPH.quiz) checkQuizBias(OPH.quiz);
 if (OPH.cases) checkCases(OPH.cases);
 if (OPH.A) checkModuleA(OPH.A);
 if (OPH.images) checkImages(OPH.images);

@@ -781,7 +781,7 @@ Object.assign(G.OPH_EN.quiz, {
   "B-010": {
     stem: "PCR of a corneal scraping confirms Acanthamoeba keratitis in a 31-year-old contact lens wearer. Which first-line topical treatment is appropriate, and how is it usually obtained in Canada?",
     options: [
-      "Biguanide (PHMB 0.02 % or chlorhexidine 0.02 %), ± propamidine, as a compounded preparation",
+      "Biguanide (PHMB 0.02% or chlorhexidine 0.02%) ± propamidine, compounded",
       "Commercial natamycin 5 % hourly, the reference antifungal in atypical keratitis",
       "Moxifloxacin 0.5 % hourly, since the ameba is sensitive to fluoroquinolones",
       "Oral acyclovir 400 mg 5 times daily for 10 days, then a preventive dose"
@@ -1040,10 +1040,10 @@ Object.assign(G.OPH_EN.quiz, {
   "B-025": {
     stem: "A 48-year-old fisherman from the Îles-de-la-Madeleine with a fleshy triangular lesion of the nasal conjunctiva whose apex extends 2 mm onto the cornea. He asks whether he needs surgery. Which answer is most accurate?",
     options: [
-      "Yes, now: simple excision leaving bare sclera",
+      "Yes, right away: simple excision leaving the sclera bare",
       "Not yet: UV protection; operate if it nears the visual axis",
-      "No: these lesions regress on their own after 50",
-      "Yes: topical chemotherapy, as for a neoplasia"
+      "No: these lesions regress on their own after age 50",
+      "Yes: topical chemotherapy, as for a surface neoplasia"
     ],
     explain: "A 2 mm pterygium far from the visual axis: UV protection, tears and follow-up. Operate if it nears the axis, induces astigmatism or bothers the patient; simple bare-sclera excision often recurs.",
     deep: "**What it is**: a pterygium is a triangular fibrovascular growth of the conjunctiva, almost always nasal, that **crosses the limbus** and advances onto the cornea; it is related to ultraviolet light (outdoor work, reflection off water). **Why it matters**: it can induce astigmatism and threaten the visual axis, whereas a pinguecula (a small yellowish elevation of the conjunctiva, with the same cause) stays on the conjunctiva. **What to do**: UV protection (sunglasses, hat), artificial tears for irritation, and surgery if it advances toward the visual axis, induces astigmatism, limits eye movements or is very bothersome.",
@@ -1460,7 +1460,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Laser iridotomy in both eyes the same day",
       "Pilocarpine 2 % QID to pull the iris out of the angle",
       "Urgent clear lens extraction in both eyes",
-      "Stop topiramate, cycloplegic, steroid and pressure-lowering drops"
+      "Stop topiramate; cycloplegic, steroid and IOP-lowering drops"
     ],
     explain: "Acute myopia and bilateral closed angles on topiramate: ciliochoroidal effusion, with no pupillary block. Iridotomy is useless and pilocarpine makes it worse. Stop the drug and give a cycloplegic.",
     deep: "**What it is:** topiramate (like some sulfonamides) can cause ciliochoroidal effusion: fluid accumulates around the ciliary body, which rotates forward and pushes the lens and iris against the angle, in both eyes, with acute myopia. **Why it is different:** there is no pupillary block (impeded aqueous flow between iris and lens), so laser iridotomy (a small hole in the iris) does not open the angle, and pilocarpine (a drop that constricts the pupil and the ciliary muscle) moves the lens further forward and worsens the closure. **What to do:** stop topiramate with the prescriber, cycloplegic (a drop that relaxes the ciliary muscle and moves the lens back), topical steroid and pressure-lowering drops; the condition usually improves within a few days of stopping.",
@@ -1508,7 +1508,7 @@ Object.assign(G.OPH_EN.quiz, {
   "C-016": {
     stem: "A 72-year-old hyperopic man comes to the ER with intense pain in the OS that began last night at the movies, with blurred vision and nausea. The diagram shows his OS anterior segment at the slit lamp. You are the clerk: what do you do first?",
     options: [
-      "IOP-lowering drops and acetazolamide, then call ophthalmology immediately",
+      "IOP-lowering drops and acetazolamide, then call ophthalmology now",
       "Dilate the pupil to get a good view of the fundus",
       "Pilocarpine 2% alone, then see the patient again tomorrow",
       "Topical steroid and a clinic appointment this week"
@@ -1767,8 +1767,8 @@ Object.assign(G.OPH_EN.quiz, {
   "C-061": {
     stem: "A 27-year-old man with severe allergic keratoconjunctivitis treated with prednisolone acetate 1 % QID for 4 weeks. IOP 33 mmHg OD, versus 15 mmHg before treatment; quiet anterior chamber, open angle. What is the most appropriate management?",
     options: [
-      "Switch to loteprednol or reduce the steroid, and add a pressure-lowering drop",
-      "Replace with difluprednate, a steroid that raises IOP less",
+      "Switch to loteprednol or taper the steroid, and add an IOP-lowering drop",
+      "Replace prednisolone with difluprednate, a steroid that raises IOP less",
       "Continue the same steroid and plan a trabeculectomy soon",
       "Perform a laser iridotomy to prevent angle closure"
     ],
@@ -2096,7 +2096,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Reassure: it is a photographic artifact with no clinical value",
       "Stop treatment since the IOP is normal",
       "Refer urgently for ischemic optic neuropathy",
-      "Treat it as a sign of insufficient control: revisit the target and bring fields and OCT closer together"
+      "Likely insufficient control: review the target, repeat fields and OCT sooner"
     ],
     explain: "A flame-shaped hemorrhage at the disc margin is a risk factor for progression, common in normal-tension glaucoma. It casts doubt on control: review the target and bring fields and OCT closer together.",
     deep: "A flame-shaped disc hemorrhage is seen at the inferotemporal margin (bottom left). More common in normal-tension glaucoma, it is a risk factor for progression; it often signals insufficient IOP control. Document it, schedule visual fields and OCT more frequently, and consider lowering the target.",
@@ -2178,7 +2178,7 @@ Object.assign(G.OPH_EN.quiz, {
   "C-108": {
     stem: "A 34-year-old man referred for \"severe thinning of the temporal rim\". The RNFL OCT is normal in all quadrants. What is the most likely explanation?",
     options: [
-      "Gray crescent: pigment at the temporal margin that mimics a thinned rim",
+      "Gray crescent: pigment that mimics a thinned rim",
       "Early glaucoma with a falsely reassuring OCT",
       "Beta-zone peripapillary atrophy",
       "Tilted disc of high myopia"
@@ -2261,7 +2261,7 @@ Object.assign(G.OPH_EN.quiz, {
   "A-202": {
     stem: "A 74-year-old woman with Fuchs dystrophy (confluent guttae, blurred vision in the morning) says she has been reading without glasses for a year. Refraction shows a myopic shift and the nucleus is dark brown. Which statement is correct?",
     options: [
-      "The more refractive nucleus explains the myopia; its hardness will increase phaco energy and endothelial risk",
+      "The denser nucleus explains the myopia; its hardness raises phaco energy and endothelial risk",
       "The myopic shift indicates late keratoconus caused by Fuchs edema; topography is needed first",
       "Nuclear sclerosis has no refractive effect; a retinal cause for this myopic shift must be sought",
       "It is better to wait until the cataract is mature to combine phaco and graft in a single surgery"
@@ -2394,7 +2394,7 @@ Object.assign(G.OPH_EN.quiz, {
     stem: "A 76-year-old woman followed for primary open-angle glaucoma (POAG) suddenly and painlessly lost vision in one eye 2 hours ago. For 3 weeks, her jaw has hurt when she chews. Here is her fundus. What is the most appropriate course of action?",
     options: [
       "Ocular massage and paracentesis, then a retina appointment in a week",
-      "ESR, CRP and steroids without delay, and immediate transfer to the ED (stroke workup)",
+      "ESR, CRP and steroids now, and immediate transfer to the ED (stroke workup)",
       "Outpatient fluorescein angiography before deciding on treatment",
       "Intravitreal anti-VEGF injection to prevent neovascular glaucoma"
     ],
@@ -3018,9 +3018,9 @@ Object.assign(G.OPH_EN.quiz, {
   "A-302": {
     stem: "Routine gonioscopy in an asymptomatic patient, normal IOP. At the top of the mirror, look at the junction between the iris periphery and the angle wall. What is the most accurate interpretation?",
     options: [
-      "Iris processes: a normal variant, with no treatment or special follow-up",
+      "Iris processes: a normal variant, no treatment or special follow-up",
       "Peripheral anterior synechiae: plan a laser iridotomy",
-      "Angle new vessels: arrange anti-VEGF and photocoagulation",
+      "Angle neovascularization: arrange anti-VEGF and photocoagulation",
       "Angle recession: a sequela of contusion to follow for life"
     ],
     explain: "Fine, lacy strands that let you see the angle structures behind them are iris processes, a normal variant. Synechiae are broad and opaque, hide the angle and persist on indentation.",

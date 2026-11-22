@@ -406,8 +406,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Le rejet se voit sur la cornée (précipités, œdème), pas comme une plaque sur le reflet rouge du cristallin."
     ]
   },
-  {
-    id: "A-202", module: "A", topic: "a-retine", type: "physiopathologie", level: 2, trap: false,
+  { id: "A-202", module: "A", topic: "a-retine", type: "physiopathologie", level: 2, trap: false,
     stem: "Une patiente de 74 ans avec une dystrophie de Fuchs (guttae confluentes, vision floue le matin) dit lire sans lunettes depuis un an. La réfraction montre une myopisation et le noyau est brun foncé. Quel énoncé est juste ?",
     figure: null,
     options: [
@@ -423,8 +422,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "L’œdème de Fuchs ne crée pas de kératocône ; la myopisation s’explique par le noyau.",
       "Faux : la myopisation est justement l’effet réfractif classique de la sclérose nucléaire.",
       "Attendre durcit encore le noyau, augmente l’énergie nécessaire et menace davantage l’endothélium."
-    ]
-  },
+    ] },
   {
     id: "A-203", module: "A", topic: "a-retine", type: "image", level: 1, trap: false,
     stem: "Un patient suivi pour un glaucome à angle ouvert stable signale depuis 5 jours une baisse de vision centrale et des lignes déformées d’un œil. Au fond d’œil dilaté, vous voyez ceci. Quelle est la conduite la plus appropriée ?",

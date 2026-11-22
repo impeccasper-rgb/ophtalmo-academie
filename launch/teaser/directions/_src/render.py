@@ -10,7 +10,7 @@ OUT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 PORT = 8791
 FPS, DUR = 30, 5.0
 # hook, middle, end-card times per direction (seconds into the 5-s timeline)
-STILLS = {'A': (1.55, 2.95, 4.95), 'B': (1.6, 3.05, 4.95), 'C': (1.25, 2.25, 4.95), 'D': (1.7, 3.1, 4.95), 'E': (1.45, 2.6, 4.95)}
+STILLS = {'A': (1.55, 2.95, 4.95), 'B': (1.6, 3.15, 4.95), 'C': (1.25, 2.25, 4.95), 'D': (1.7, 3.15, 4.95), 'E': (1.45, 3.05, 4.95)}
 SLUG = {'A': 'a-lampe-a-fente', 'B': 'b-carnet-externe', 'C': 'c-kinetic-type', 'D': 'd-schema-vivant', 'E': 'e-quiz-show'}
 
 

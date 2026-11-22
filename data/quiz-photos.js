@@ -217,7 +217,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Rassurer : c’est un artéfact photographique sans valeur clinique",
       "Arrêter le traitement puisque la PIO est normale",
       "Adresser en urgence pour une neuropathie optique ischémique",
-      "Y voir un signe de contrôle insuffisant : revoir la cible et rapprocher champs et OCT"
+      "Contrôle insuffisant probable : revoir la cible, rapprocher champs et OCT"
     ],
     answer: 3,
     explain: "Hémorragie en flammèche au bord de la papille : facteur de risque de progression, fréquent dans le glaucome à pression normale. Elle fait douter du contrôle : on revoit la cible et on rapproche champs et OCT.",
@@ -307,7 +307,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     stem: "Homme de 34 ans adressé pour un « amincissement important du rebord temporal ». L’OCT RNFL est normal dans tous les quadrants. Quelle explication est la plus probable ?",
     figure: { type: "photo", id: "OPH-139" },
     options: [
-      "Croissant gris : pigment au bord temporal qui simule un rebord aminci",
+      "Croissant gris : pigment qui simule un rebord aminci",
       "Glaucome débutant avec un OCT faussement rassurant",
       "Atrophie péripapillaire de la zone bêta",
       "Papille inclinée de myope fort"

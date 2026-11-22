@@ -115,7 +115,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Accepter le GPN et demander une IRM cérébrale d’emblée",
       "Chercher des dépôts en cible sur la capsule antérieure",
       "Questionner sur les gouttes de cortisone, puis conclure",
-      "Gonioscopie, transillumination de l’iris, puis suivre la progression"
+      "Gonioscopie et transillumination de l’iris, puis suivi"
     ],
     answer: 3,
     explain: "Le dépôt vertical de pigment sur l’endothélium est un fuseau de Krukenberg : trace d’une dispersion pigmentaire ancienne. Avec l’âge, la PIO se normalise et le tableau imite un glaucome à pression normale.",

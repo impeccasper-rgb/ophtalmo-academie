@@ -63,11 +63,11 @@ K.dirs.B = function (S) {
 
   var dx = K.div(S, 'left:140px;top:180px;width:820px;color:#0a0f40;font-size:104px;transform:rotate(-2deg)', '');
   var d1 = K.div(dx, 'left:0;top:0;white-space:nowrap', '<div class="dsp">' + hand('Crise de', 21) + '</div>');
-  highlight(dx, -10, 96, 520, 92, 3.0, .3, -1);
+  highlight(dx, -10, 96, 520, 92, 2.85, .3, -1);
   var d2 = K.div(dx, 'left:0;top:100px;white-space:nowrap', '<div class="dsp">' + hand('fermeture', 22) + '</div>');
   var d3 = K.div(dx, 'left:0;top:200px;white-space:nowrap', '<div class="dsp">' + hand('de l’angle', 23) + '</div>');
   // the dx block appears only after the hook is gone
-  writeOn(d1, 2.6, .3); writeOn(d2, 2.8, .3); writeOn(d3, 3.0, .3);
+  writeOn(d1, 2.5, .25); writeOn(d2, 2.65, .25); writeOn(d3, 2.8, .25);
   K.track(dx, [[0, { opacity: 1 }], [3.25, { opacity: 1 }], [3.45, { opacity: 0 }]]);
 
   /* ---- end card: stickers slapped on the page ---- */
