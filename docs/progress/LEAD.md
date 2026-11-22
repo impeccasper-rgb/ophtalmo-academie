@@ -42,3 +42,9 @@
 3. Web : déverrouiller les modules pour le public (pas de boîte « verrouillé »), lien d'évitement, sélecteur de profondeur (role=radio sans aria-pressed), focus lightbox, aria-expanded/aria-modal, débordement atlas 320 px, h1 manquants.
 4. Exercices : bouton Agrandir hors du role=img, couches OCT accessibles, cibles tactiles ≥ 24 px, noms accessibles des SVG.
 5. iOS : relancer sur l'arbre actuel, captures vides.
+
+## Cycle 9 — fait (ac13f46)
+- Voir « touche le signe » (points chauds + repli 3 options), Comprendre côte à côte + chaîne causale, en-tête unifié, micro-fiches 3 points, hubs (#cas images, #reviser tuiles, accueil 2,26 écrans).
+- tests/run.py 0 problème ; test_site --quick 85 contrôles, 2 échecs connus (images hors ligne non mises en cache : g-gpao, reviser).
+- Reste : 23/42 micro-fiches > 1,5 écran (max 2,07 a-physiologie/transparence).
+- Critique sévère passe 3 lancée.
