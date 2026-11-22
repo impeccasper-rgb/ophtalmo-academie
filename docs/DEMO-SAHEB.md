@@ -16,7 +16,7 @@ Durée visée : 5 minutes de démo, puis la discussion. Sur ton téléphone, l'a
 | 1:30 | `#g-crise/decider` | L'**arbre décisionnel** + le bloc **Traitement adapté au Québec** (acétazolamide PO, antiémétique, quand référer) | « Pensé pour l'externe et le médecin de 1re ligne, avec les délais de référence. » |
 | 2:15 | Examens → **Gonioscopie** (`#inv-gonio`) puis **Champ visuel** (`#inv-cv`) | Lire un angle (Shaffer), lire un 24-2 | « La section Examens fait lire les examens : observe → réponds → révèle. » |
 | 3:00 | Examens → Échographie B → **Tiens la sonde** (`#inv-bscan-sim`) | Glisser la sonde, baisser le gain, « Regarde en haut » | « Simulateur conçu à partir de 21 vidéos et 14 références ; les points discutés sont marqués à valider par un échographiste. » |
-| 4:00 | Réviser / un **Défi du jour** | Le format court, quotidien | « Le but : revenir 2 minutes par jour. » |
+| 4:00 | Accueil → **Image du jour** (`#image-du-jour`) ou Réviser → **Séance du jour** (dans l’app, le « Défi du jour » des réels s’appelle « Image du jour ») | Le format court, quotidien | « Le but : revenir 2 minutes par jour. » |
 | 4:30 | (parler) | La méthode et la suite | voir ci-dessous |
 
 ## Ce que tu peux dire sur la méthode (30 s)
@@ -39,6 +39,6 @@ Durée visée : 5 minutes de démo, puis la discussion. Sur ton téléphone, l'a
 - **« Payant ? »** Gratuit, sans pub pour l'instant.
 
 ## Si quelque chose bloque
-- Page blanche ou lente : tirer vers le bas pour recharger, ou rouvrir l'app.
+- Page blanche ou lente : dans l'app installée, il n'y a pas de « tirer pour recharger » (c'est une fonction de Safari) : fermer l'app (balayer vers le haut depuis le bas de l'écran, puis la chasser vers le haut) et la rouvrir depuis l'icône.
 - Simulateur lent : le montrer sur ordinateur (même lien).
 - Voir aussi `docs/REVUE-GLAUCOME-SAHEB.md` (11 points de discussion possibles).

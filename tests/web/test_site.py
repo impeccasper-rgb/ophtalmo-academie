@@ -36,7 +36,7 @@ ap.add_argument('--site', default=os.path.join(ROOT, 'site'))
 ap.add_argument('--out', default=os.path.join(tempfile.gettempdir(), 'ocelle-web-test'))
 ap.add_argument('--quick', action='store_true')
 ap.add_argument('--axe', default='')
-ap.add_argument('--only', default='', help='comma list of sections: routes,flows,offline,axe')
+ap.add_argument('--only', default='', help='comma list of sections: routes,flows,offline,axe,mobile')
 ap.add_argument('--snapshot', action='store_true', help='copy site/ to a temp dir first (stable while others rebuild)')
 args = ap.parse_args()
 OUT = os.path.abspath(args.out); SHOTS = os.path.join(OUT, 'shots')
@@ -663,6 +663,93 @@ def run_axe(browser):
     json.dump(out, open(os.path.join(OUT, 'axe.json'), 'w'), ensure_ascii=False, indent=1)
 
 
+# ---------- 5. mobile regressions (QA démo, docs/QA-DEMO.md) ----------
+def run_mobile(browser):
+    """Phone-specific regressions: 360 px overflow, step pips on one line, 44 px touch hit areas, EN overlays only in English,
+    iOS home-screen tags, MCQ hub module D, Voir hit + sticker with a real tap, swipe between fiche screens."""
+    log('[mobile]')
+    combo = '360-light-fr-touch'
+    ctx = new_ctx(browser, 360, 740, 'light', 'fr'); page = ctx.new_page(); st = attach(page)
+    reqs = []; page.on('request', lambda r: reqs.append(r.url))
+    try:
+        boot(page)
+        # EN overlays (data-en/*.js) are skipped in French, loaded in English
+        n_en = sum(1 for u in reqs if '/js/en-' in u)
+        rec('mobile', 'en-overlays-skipped-in-fr', n_en == 0 and page.evaluate("() => window.OPH_EN_LOADED === false && !window.OPH_EN"), 'en-*.js requests in FR: %d' % n_en, combo)
+        # iOS home-screen app: icon, launch images, standalone meta; manifest icons
+        head = page.evaluate("""() => ({ ati: !!document.querySelector('link[rel="apple-touch-icon"]'), cap: (document.querySelector('meta[name="apple-mobile-web-app-capable"]') || {}).content,
+            startup: [...document.querySelectorAll('link[rel="apple-touch-startup-image"]')].map(l => l.getAttribute('href')) })""")
+        missing = [h for h in head['startup'] if not os.path.exists(os.path.join(SITE, h))]
+        rec('mobile', 'ios-home-screen-tags', head['ati'] and head['cap'] == 'yes' and len(head['startup']) >= 8 and not missing, 'startup images %d, missing %s' % (len(head['startup']), missing), combo)
+        man = json.load(open(os.path.join(SITE, 'manifest.webmanifest'), encoding='utf-8'))
+        purp = set(i.get('purpose', 'any') for i in man['icons'])
+        rec('mobile', 'manifest', man.get('display') == 'standalone' and {'any', 'maskable'} <= purp and not any(' ' in p for p in purp), 'purposes %s' % sorted(purp), combo)
+        # no horizontal overflow at 360 px on Module A micro-fiches (simulators with selects/sliders) and the demo route
+        routes = page.evaluate("() => { const r = []; A_SECTIONS.forEach(s => aItems(s.id).forEach(it => r.push(s.id + '/' + it.id))); return r.concat(['g-crise/voir', 'g-crise/comprendre', 'g-crise/decider', 'inv-gonio', 'inv-cv', 'quiz']); }")
+        over = []
+        for r in routes:
+            go(page, r, 200)
+            o = page.evaluate("() => document.documentElement.scrollWidth - document.documentElement.clientWidth")
+            if o > 1: over.append('%s +%dpx' % (r, o))
+        rec('mobile', 'no-overflow-360', not over, '; '.join(over) or '%d routes' % len(routes), combo)
+        # fiche step pips (and other horizontal step lists) on one line
+        go(page, 'g-crise/decider', 400)
+        tops = page.evaluate("() => [...document.querySelectorAll('.fsteps li, .tw-dots li')].reduce((m, li) => { const k = li.parentElement.className || 'fsteps'; (m[k] = m[k] || []).push(Math.round(li.getBoundingClientRect().top)); return m; }, {})")
+        bad = {k: v for k, v in tops.items() if v and max(v) - min(v) > 1}
+        rec('mobile', 'step-lists-aligned', not bad, json.dumps(tops), combo)
+        # touch hit areas ≥ 44 px (drawn size + ::after extension) for the small controls
+        # effective hit box = drawn box + invisible ::after extension, clipped by every ancestor that hides its overflow
+        small = page.evaluate("""() => [...document.querySelectorAll('.btn, .chip, .langsw button, .seg button, .conf button')].filter(e => e.getClientRects().length && !e.closest('#rail, #drawer')).map(e => {
+            const r = e.getBoundingClientRect(), a = getComputedStyle(e, '::after'), n = v => Math.max(0, -parseFloat(v) || 0);
+            let T = r.top, B = r.bottom;
+            if (a.content && a.content !== 'none' && a.position === 'absolute') { T -= n(a.top); B += n(a.bottom); }
+            for (let p = e.parentElement; p && p !== document.documentElement; p = p.parentElement) { if (/(hidden|clip|auto|scroll)/.test(getComputedStyle(p).overflowY)) { const q = p.getBoundingClientRect(); T = Math.max(T, q.top); B = Math.min(B, q.bottom); } }
+            return [e.className + ' ' + (e.innerText || '').trim().slice(0, 16), Math.round(B - T)]; }).filter(x => x[1] < 44)""")
+        rec('mobile', 'touch-hit-areas-44', not small, json.dumps(small[:8], ensure_ascii=False), combo)
+        # MCQ hub offers every module that has a fiche list (module D included)
+        go(page, 'quiz', 300)
+        mods = page.evaluate("() => [...document.querySelectorAll('[data-q=\"adaptive\"]')].map(b => b.getAttribute('data-m'))")
+        want_m = page.evaluate("() => ['A', 'B', 'C', 'D'].filter(m => m === 'A' || D.ordered(m).length)")
+        rec('mobile', 'quiz-hub-modules', mods == want_m, 'cards %s, expected %s' % (mods, want_m), combo)
+        # Voir: a real tap on the authored zone gives the reward and the sticker covers no text
+        go(page, 'g-crise/voir', 500)
+        vc = page.locator('[data-voir][data-key]').first
+        if vc.count():
+            vc.scroll_into_view_if_needed(); page.wait_for_timeout(300)
+            pt = vc.evaluate("vc => { const h = OPH.voirEntry(vc.getAttribute('data-key'), vc.getAttribute('data-photo')); const b = vc.querySelector('.voir-media img').getBoundingClientRect(); return [b.left + b.width * h.x / 100, b.top + b.height * h.y / 100]; }")
+            page.touchscreen.tap(pt[0], pt[1]); page.wait_for_timeout(300)
+            if vc.get_attribute('data-step') == 'name': vc.locator('[data-act="voir-opt"][data-ok="1"]').first.tap()
+            page.wait_for_timeout(900)
+            res = vc.evaluate("""vc => { const s = vc.querySelector('.mo-sticker'); if (!s) return { done: vc.getAttribute('data-done'), sticker: false };
+                const sr = s.getBoundingClientRect(), rg = document.createRange(), tw = document.createTreeWalker(vc, NodeFilter.SHOW_TEXT); let n, hits = [];
+                while ((n = tw.nextNode())) { if (!n.nodeValue.trim() || s.contains(n) || n.parentElement.closest('[hidden]')) continue; rg.selectNodeContents(n);
+                  [...rg.getClientRects()].forEach(q => { if (q.width > 1 && q.left < sr.right - 1 && q.right > sr.left + 1 && q.top < sr.bottom - 1 && q.bottom > sr.top + 1) hits.push(n.nodeValue.trim().slice(0, 24)); }); }
+                return { done: vc.getAttribute('data-done'), sticker: true, hits }; }""")
+            rec('mobile', 'voir-tap-reward', res.get('done') == 'ok' and res.get('sticker') and not res.get('hits'), json.dumps(res, ensure_ascii=False), combo)
+        # swipe left on the fiche header → next screen
+        go(page, 'g-crise/comprendre', 400)
+        cdp = ctx.new_cdp_session(page)
+        y = page.evaluate("() => { window.scrollTo(0, 0); const r = document.querySelector('.fiche-page .fb-title').getBoundingClientRect(); return r.top + r.height / 2; }")
+        cdp.send('Input.dispatchTouchEvent', {'type': 'touchStart', 'touchPoints': [{'x': 300, 'y': y}]})
+        for i in range(1, 9): cdp.send('Input.dispatchTouchEvent', {'type': 'touchMove', 'touchPoints': [{'x': 300 - 28 * i, 'y': y + i}]})
+        cdp.send('Input.dispatchTouchEvent', {'type': 'touchEnd', 'touchPoints': []}); page.wait_for_timeout(400)
+        cur = page.evaluate("() => Router.cur")
+        rec('mobile', 'swipe-next-screen', cur == 'g-crise/decider', 'after swipe: %s' % cur, combo)
+        if st['errors']: rec('mobile', 'console', False, ' | '.join(st['errors'])[:400], combo)
+    except Exception as e:
+        rec('mobile', 'mobile-flow', False, 'exception: ' + repr(e)[:400], combo); shot(page, 'mobile-fail')
+    ctx.close()
+    # English: the overlays are loaded and applied
+    ctx = new_ctx(browser, 390, 844, 'dark', 'en'); page = ctx.new_page(); attach(page)
+    try:
+        boot(page)
+        r = page.evaluate("() => [window.OPH_EN_LOADED, (OPH.fiches || []).filter(f => f._en).length, (OPH.quiz || []).filter(q => q._en).length]")
+        rec('mobile', 'en-overlays-loaded-in-en', r[0] is True and r[1] >= 30 and r[2] >= 100, 'loaded=%s fiches_en=%s quiz_en=%s' % tuple(r), '390-dark-en')
+    except Exception as e:
+        rec('mobile', 'en-overlays-loaded-in-en', False, repr(e)[:300], '390-dark-en')
+    ctx.close()
+
+
 def main():
     t0 = time.time()
     with sync_playwright() as p:
@@ -671,6 +758,7 @@ def main():
             if want('routes'): run_routes(browser)
             if want('flows'): run_flows(browser)
             if want('offline'): run_offline(browser)
+            if want('mobile'): run_mobile(browser)
             if want('axe'): run_axe(browser)
         except Exception:
             traceback.print_exc(); rec('runner', 'crash', False, traceback.format_exc()[-800:])
