@@ -1,6 +1,388 @@
 # Ocelle : critique sévère
 
-> **État actuel : passe 4 (cycle 10), note 8 / 10.** Plus bas, dans l'ordre : passe 3 (cycle 9, 7 / 10), passage 2 (cycle 8, 6 / 10), puis passage 1 (cycle 7, 4 / 10), conservés comme historique.
+> **État actuel : passe 5 (module D et audits), module D 7 / 10, site entier 8 / 10.** Plus bas, dans l'ordre : passe 4 (cycle 10, 8 / 10), passe 3 (cycle 9, 7 / 10), passage 2 (cycle 8, 6 / 10), puis passage 1 (cycle 7, 4 / 10), conservés comme historique.
+
+## Passe 5 (module D Rétine, audits, confidentialité) : 22 novembre 2026
+
+Arbre testé : `main` @ 9513fc0, site reconstruit (`python3 tools/build_web.py`). Même barème et même méthode que la passe 4 :
+- 390 × 844, FR, niveau « Essentiel », stockage vierge, requêtes externes bloquées.
+- **220 écrans mesurés**, dont les **32 écrans du module D** et la page `#confidentialite`.
+- Équité de Voir simulée sur **52 photos** (toucher au hasard sur 10 000 points, toucher au centre, 3 touchers avec l'indice).
+- Les 8 mécanismes de D parcourus étape par étape.
+- Surcouche anglaise de D vérifiée sur les 32 écrans.
+- Relecture clinique des 8 fiches D contre `docs/FACTS.md` §G.
+- QCM : 148 items mesurés.
+
+**Tests** : `tests/run.py` → 0 problème. `node tools/validate.js` → OK. `tests/web/test_site.py --quick` → 85 contrôles, **2 échecs**. Ces deux échecs sont les mêmes que depuis le cycle 9 : images hors ligne non mises en cache, sur `g-gpao` et `reviser`. L'équipe les tient pour connus ; ils sont sans lien avec cette critique, qui ne touche pas au code.
+
+### P5.1 Notes
+
+| Périmètre | Note | Passe 4 |
+|---|---|---|
+| **Module D (Rétine)** | **7 / 10** | — |
+| **Site entier** | **8 / 10** | 8 |
+
+**Module D : ce qui est bon**
+- **Budgets** : tenus sur 31 des 32 écrans.
+- **Comprendre** : un seul pas-à-pas dessiné, sans paire normal/pathologique. Il fait 1,28–1,33 écran, mieux que B et C.
+- **Voir** : équitable. Un toucher au hasard réussit 3,0–5,8 % du temps ; le centre rate sauf si le signe est central, et il faut alors le nommer (1 chance sur 3). Aucune fuite par le titre.
+- **Surcouche anglaise** : propre (0 mot français résiduel).
+- **Contenu clinique** : juste et sourcé pour l'essentiel :
+  - Hollands : 14 % de déchirures.
+  - Diabetes Canada : type 2 au diagnostic, puis aux 1–2 ans.
+  - AREDS2 sans bêtacarotène.
+  - EVS : vitrectomie si perception lumineuse seulement ; doses intravitréennes.
+  - AHA : baisse de la TAM de 10–15 % la 1re heure.
+  - THEIA et TenCRAOS : aucun bénéfice prouvé de la thrombolyse.
+
+**Pourquoi pas plus** :
+1. Les délais de l'OACR sont incohérents.
+2. Deux arbres ont une faille de logique.
+3. Les doses de corticostéroïdes pour l'ACG ne sont pas sourcées.
+4. Le module D double l'A5, avec des délais contradictoires.
+
+**Site entier** : les MUST-FIX de la passe 4 sont réglés en grande partie. Mais deux régressions transversales apparaissent : l'autocollant cache le nom du signe sur **14 des 52** photos, et la page de confidentialité affiche un **courriel provisoire**.
+
+### P5.2 Mesures
+
+| Écran | Modules | n | Mots médiane (min–max) | Plafond | Hors plafond | Figures (méd.) | Hauteur (écrans) méd. (max) | Paragraphes > 3 lignes |
+|---|---|---|---|---|---|---|---|---|
+| Voir | B + C | 27 | 45 (40–58) | 60 | 0 | 1 | 1.29 (1.55) | 0 |
+| Voir | D | 8 | 54 (48–80) | 60 | 1 | 1 | 1.32 (1.45) | 4 |
+| Comprendre | B + C | 27 | 76 (61–96) | 120 | 0 | 3 | 1.51 (1.57) | 1 |
+| Comprendre | D | 8 | 77 (68–83) | 120 | 0 | 1 | 1.30 (1.33) | 1 |
+| Décider (hors arbre) | B + C | 27 | 106 (87–175) | 180 | 0 | 0 | 1.88 (2.26) | 31 |
+| Décider (hors arbre) | D | 8 | 146 (137–162) | 180 | 0 | 0 | 2.05 (2.10) | 10 |
+| S’entraîner | B + C | 27 | 66 (59–77) | ≈200 | 0 | 0 | 1.18 (1.28) | 0 |
+| S’entraîner | D | 8 | 69 (63–77) | ≈200 | 0 | 0 | 1.18 (1.22) | 0 |
+| Investigations | — | 6 | 167 (141–198) | ≈200 | 0 | 2 | 2.80 (2.88) | 3 |
+| Module A : micro-fiches | — | 42 | 79 (11–149) | ≈200 | 0 | 1 | 1.48 (1.96) | 7 |
+| Capsules : cartes | — | 17 | 74 (61–90) | ≈200 | 0 | 1 | 1.26 (2.18) | 16 |
+
+Points saillants :
+- **Voir** : `#r-ovr/voir` fait 80 mots (plafond 60). « En deux phrases » dépasse 3 lignes sur 4 fiches D sur 8 : `r-ovr`, `r-diabete`, `r-dmla`, `r-endophtalmie`.
+- **Décider (D)** : 137–162 mots hors arbre, 2,0–2,1 écrans ; vignettes de 4 à 5 lignes.
+- **Arbres** : questions ≤ 8 mots, actions ≤ 12 mots ✓.
+- **`#confidentialite`** : 414 mots, 3 écrans, 7 paragraphes de plus de 3 lignes.
+- **Global** : 0 animation auto-rythmée, 0 tableau visible, 0 erreur JavaScript sur les 220 écrans.
+
+### P5.3 Statut des MUST-FIX de la passe 4
+
+| # | Défaut | Statut | Preuve |
+|---|---|---|---|
+| 1 | Un seul composant pour le mécanisme | **Partiel** | La chaîne de texte est supprimée : un seul « Étape suivante » sur 35/35 fiches ✓. Mais B et C gardent la paire normal/pathologique et « Révéler les anomalies » (3 figures, 1,40–1,57 écran), alors que D s'en passe (1,28–1,33). Les deux modules divergent. |
+| 2 | Récompense pleine après l'indice | **Corrigé** | `#g-crise/voir` : « Trouvé avec l'indice », sans autocollant. |
+| 3 | Biais des choix Voir | **Corrigé** | La bonne réponse est la plus longue dans 8/32 cas (25 %). Fuites par le titre : 0/32. |
+| 4 | Texte interne (« selon la source ») | **Corrigé** | Il ne reste que « Photo de gauche (OD) », légitime sur une image double. |
+| 5 | Sources et précision clinique | **Corrigé** | Pénurie d'acétazolamide sourcée (Pénuries de produits de santé). Kératocône : « 2e consensus mondial, ESCRS 2025 ». Avertissement timolol chez le nourrisson (apnée, bradycardie) rétabli. `c-brulure` : « cornée voilée (Roper-Hall ≥ II) ». |
+| 6 | Vignettes ≤ 25 mots | **Partiel** | 35/35 font ≤ 25 mots, mais elles tiennent encore sur 4–5 lignes : 31 paragraphes longs sur Décider en B et C, 10 en D. |
+| 7 | Micro-fiches A | **Non corrigé** | 16/42 dépassent encore 1,5 écran (maximum 1,96, `#a-retine/pupilles-neuro`). |
+
+### P5.4 Module D : revue clinique (niveau externe, contre FACTS §G)
+
+| Fiche | Verdict | À corriger |
+|---|---|---|
+| `r-dpv` | Juste | — |
+| `r-decollement` | Juste, **arbre faux** | Q1 « Éclairs ou corps flottants nouveaux ? » → Non → « autre cause de baisse de vision ». Un décollement qui se présente par un **rideau sans éclairs** (fréquent chez le patient âgé ou dans le décollement inférieur) sort donc du parcours. Il faut poser la question du rideau ou de la baisse de vision **en premier**. |
+| `r-oacr` | Juste sur le fond, **délais incohérents** | Le délai varie selon l'endroit : « le jour même » (définition, 1er drapeau, essentiel n° 2, explication du QCM D-004, carte A5), « maintenant » (arbre), « immédiatement » (Quand référer, FACTS). Pour un équivalent d'AVC, « le jour même » est un déclassement : écrire « **maintenant** » partout. |
+| `r-oacr` (ACG) | **Non sourcé** | « Prednisone 40–60 mg/j ; souvent méthylprednisolone IV 250–1000 mg/j × 3 j si perte visuelle, selon l'équipe ». La fourchette correspond à EULAR 2018, mais FACTS la classe « de mémoire, non relue ». Or dans l'OACR, la perte visuelle est acquise par définition : le bolus IV de méthylprednisolone (BSR 2020 : 500 mg–1 g/j jusqu'à 3 j) devrait être présenté **en premier**, avec la source. Biopsie dans les 2 semaines ✓. L'échographie des temporales (EULAR 2023) n'est pas mentionnée. |
+| `r-ovr` | Juste | « Dans la semaine », et le jour même si glaucome néovasculaire ✓. Iris et angle chaque mois ✓. Voir fait 80 mots. |
+| `r-diabete` | Juste, **arbre incomplet** | Q2 « Aucune rétinopathie au dernier examen ? » suppose un examen antérieur. Le patient de la vignette n'a **jamais** été examiné : aucun chemin ne mène à « examen maintenant ». « Règle 4-2-1 » apparaît au niveau Essentiel sans explication. |
+| `r-hta` | Juste | Seuil 180/110 (AHA 2024) ; −10–15 % la 1re heure, ≤ 25 % le 1er jour ; pas de baisse rapide sans atteinte d'organe ; piège de la nifédipine ✓. |
+| `r-dmla` | Juste | AREDS2 (doses exactes), « moins d'une semaine » ✓. Mais « disponibilité canadienne à vérifier » s'affiche à l'apprenant (voir N4). |
+| `r-endophtalmie` | Juste | EVS, vancomycine 1 mg et ceftazidime 2,25 mg, pas d'antibiotique en goutte « en attendant », appel le jour même ✓. La boucle de Voir entoure toute la cornée plutôt que le niveau d'hypopyon. |
+
+### P5.5 Nouveaux défauts
+
+- **N1. L'autocollant cache le nom du signe** sur **14/52** photos. C'est toujours la variante « Dans le mille ! », la plus large. Routes : `#r-dpv/voir`, `#r-hta/voir`, `#c-keratocone/voir`, `#c-fuchs/voir`, `#c-brulure/voir`, `#g-gpn/voir`, `#g-crise/voir`, `#g-pxf/voir`, `#g-papille/voir`, `#g-neovasculaire/voir`, `#g-fermeture/voir`, `#a-retine/bscan`, `#a-retine/decollement-retine`, `#a-retine/decollement-choroidien`. Exemple : « Le signe qui compte : Papi… ». C'est une régression : le cycle 9 avait placé l'autocollant hors du texte.
+- **N2. Le module D double l'A5, avec des délais contradictoires et sans lien entre eux.**
+  - `#a-retine/occlusions-retiniennes` (« Urgent : le jour même ») regroupe OACR et OVR, alors que D3 dit « immédiatement » et D4 « dans la semaine ».
+  - `#a-retine/retinopathie-hypertensive` est étiquetée « Rapide : jours à semaines », alors que D6 envoie à l'urgence **immédiatement**.
+  - Les fiches A5 qui ont un équivalent D ne contiennent aucun lien vers lui (0 lien `#r-*`).
+- **N3. QCM du module D biaisés par la longueur** : la bonne réponse est la plus longue dans **11/18** cas (61 % ; B et C sont à 23–31 %). Items : D-002, D-003, D-005, D-008, D-009, D-010, D-012, D-014, D-016, D-017, D-018.
+- **N4. Texte de rédaction visible** : **35** « … à vérifier » dans des champs lus par l'apprenant, surtout les cartes « Au Québec » et les capsules. Exemples : « disponibilité canadienne à vérifier », « gratuité à vérifier », « remboursement à vérifier ».
+- **N5. `#confidentialite`.**
+  - Le responsable de la protection des renseignements personnels s'affiche « Ocelle — **[courriel à confirmer · email to be confirmed]** », placeholder bilingue compris. La Loi 25 exige de publier le titre et les **coordonnées** de ce responsable.
+  - « Pour une question, écris au responsable ci-dessous » ne mène donc nulle part. Les signalements d'erreur restent eux aussi stockés localement : l'apprenant n'a **aucun canal** pour joindre l'équipe.
+  - Le sélecteur « Permise / Refusée » commande une mesure d'audience déclarée « inactive » : c'est une interaction sans effet (barème §4).
+  - L'en-tête affiche « Compatible RGPD » sans justification.
+- **N6. Anglais** : l'étiquette de vignette s'affiche « **Case :** », avec l'espace française avant le deux-points, sur les 35 écrans Décider en anglais.
+
+**QCM de B et C après l'audit : pas de régression.** Les explications font 29–31 mots en médiane (≤ 39). Le détail (`deep`, 60–130 mots) est replié sous « Pour aller plus loin ». Les explications par option restent visibles : 67–78 mots en médiane, soit environ 120 mots visibles après une réponse. C'est acceptable, à surveiller.
+
+### P5.6 Direction artistique
+- Le module D est la partie la plus cohérente du site : mécanismes en cobalt, encre et fluo ; hub à photos réelles ; boucles bien placées sur la déchirure, la tache rouge cerise et la papille œdémateuse.
+- L'autocollant qui déborde (N1) abîme précisément le geste signature.
+- Restes hors charte : encadrés « High yield » (menthe) et « Le signe qui compte » (vert pâle) ; badge « High yield » en anglais.
+
+### P5.7 MUST-FIX restants (classés)
+
+1. **Délai unique « maintenant » pour l'OACR** : `#r-oacr/voir`, `#r-oacr/comprendre`, `#r-oacr/decider`, QCM D-004, et `#a-retine/occlusions-retiniennes`. Étendre `tools/check-delays.js` aux définitions, aux essentiels et aux QCM.
+   - Fichiers : `data/fiches-retine.js`, `data/hy-retine.js`, `data/quiz-d.js`, `data/ext-a5-b.js`, `tools/check-delays.js`.
+2. **Arbres de D** : rideau en 1re question (`#r-decollement/decider`) ; chemin « jamais examiné → examen maintenant » (`#r-diabete/decider`).
+   - Fichier : `data/fiches-retine.js` (`cat.algo`).
+3. **Corticostéroïdes pour l'ACG** (`#r-oacr/decider`) : citer EULAR 2018 et BSR 2020 ; bolus IV de méthylprednisolone en premier quand la vision est perdue ; retirer la mention « de mémoire » de FACTS.
+   - Fichiers : `data/fiches-retine.js`, `docs/FACTS.md` §G.
+4. **Autocollant sur le texte** (14/52 photos, liste en N1).
+   - Fichiers : `src/motion.js`, `src/core.js` (`voirReveal`), `src/web.css`.
+5. **Confidentialité** (`#confidentialite`) : vraie adresse de contact ; retirer le sélecteur tant que la mesure est inactive.
+   - Fichier : `src/privacy.js`.
+6. **A5 et D cohérents et reliés** : `#a-retine/occlusions-retiniennes`, `#a-retine/retinopathie-hypertensive`, `#a-retine/dmla`, `#a-retine/retinopathie-diabetique`, `#a-retine/decollement-retine`. Aligner les délais et ajouter un lien « Fiche complète : D… ».
+   - Fichiers : `data/ext-a5-a.js`, `data/ext-a5-b.js`, `src/views.js` (entrées A5).
+7. **QCM D sans biais de longueur** (11/18).
+   - Fichiers : `data/quiz-d.js` ; ajouter le contrôle à `tools/validate.js`.
+8. **« À vérifier » visible** (35 occurrences) : vérifier, ou retirer.
+   - Fichiers : `data/fiches-cornee*.js`, `data/capsules.js`, `data/cases.js`, `data/ext-cornee-a.js`, `data/fiches-retine.js`.
+9. **Budgets restants** :
+   - `#r-ovr/voir` : 80 mots.
+   - Définitions de plus de 3 lignes : `r-ovr`, `r-diabete`, `r-dmla`, `r-endophtalmie`.
+   - Vignettes encore sur 4–5 lignes.
+   - 16 micro-fiches A au-dessus de 1,5 écran.
+   - Paire normal/pathologique de B et C à retirer, pour s'aligner sur D.
+   - Fichiers : `data/fiches-retine.js`, `data/fiches-*.js`, `data/module-a.js`, `src/views.js`.
+
+**SHOULD-FIX** :
+- Étiquette « Case : » en anglais (`src/tree.js`).
+- Les 2 échecs hors ligne connus de `test_site` (`site/sw.js`, mise en cache des images).
+- Échographie des temporales dans `r-oacr`.
+- Boucle de l'hypopyon (`data/voir-hotspots.js`).
+
+### Annexe P5. Mesures par écran (220 écrans)
+
+<details><summary>220 écrans</summary>
+
+| Écran | Mots visibles | dont SVG | Mots 1er écran | Contenu à (px) | Figures | Hauteur (écrans) | Paragr. > 3 lignes | Verdict |
+|---|---|---|---|---|---|---|---|---|
+| `#c-secheresse/voir` | 55 | 0 | 40 | 224 | 1 | 1.43 | 0 | OK |
+| `#c-secheresse/comprendre` | 79 | 1 | 42 | 224 | 3 | 1.57 | 0 | OK |
+| `#c-secheresse/decider` | 144 | 0 | 86 | 224 | 0 | 1.9 | 1 | paragraphe > 3 lignes |
+| `#c-secheresse/entrainer` | 68 | 0 | 77 | 224 | 0 | 1.23 | 0 | OK |
+| `#c-bacterienne/voir` | 44 | 0 | 51 | 207 | 1 | 1.27 | 0 | OK |
+| `#c-bacterienne/comprendre` | 71 | 1 | 41 | 207 | 3 | 1.49 | 0 | OK |
+| `#c-bacterienne/decider` | 153 | 0 | 85 | 207 | 0 | 1.92 | 1 | paragraphe > 3 lignes |
+| `#c-bacterienne/entrainer` | 71 | 0 | 77 | 207 | 0 | 1.16 | 0 | OK |
+| `#c-atypiques/voir` | 43 | 0 | 52 | 207 | 1 | 1.2 | 0 | OK |
+| `#c-atypiques/comprendre` | 75 | 1 | 43 | 207 | 3 | 1.55 | 0 | OK |
+| `#c-atypiques/decider` | 152 | 0 | 100 | 207 | 0 | 1.91 | 1 | paragraphe > 3 lignes |
+| `#c-atypiques/entrainer` | 67 | 0 | 75 | 207 | 0 | 1.2 | 0 | OK |
+| `#c-herpes/voir` | 51 | 0 | 58 | 204 | 1 | 1.29 | 0 | OK |
+| `#c-herpes/comprendre` | 72 | 3 | 46 | 204 | 3 | 1.52 | 0 | OK |
+| `#c-herpes/decider` | 190 | 0 | 86 | 204 | 0 | 2.05 | 2 | paragraphe > 3 lignes |
+| `#c-herpes/entrainer` | 64 | 0 | 74 | 204 | 0 | 1.19 | 0 | OK |
+| `#c-keratocone/voir` | 45 | 0 | 51 | 207 | 1 | 1.28 | 0 | OK |
+| `#c-keratocone/comprendre` | 130 | 34 | 102 | 207 | 3 | 1.53 | 0 | OK |
+| `#c-keratocone/decider` | 145 | 0 | 80 | 207 | 0 | 1.88 | 1 | paragraphe > 3 lignes |
+| `#c-keratocone/entrainer` | 65 | 0 | 70 | 207 | 0 | 1.14 | 0 | OK |
+| `#c-fuchs/voir` | 45 | 0 | 53 | 224 | 1 | 1.23 | 0 | OK |
+| `#c-fuchs/comprendre` | 105 | 37 | 80 | 224 | 3 | 1.54 | 0 | OK |
+| `#c-fuchs/decider` | 127 | 0 | 81 | 224 | 0 | 1.66 | 1 | paragraphe > 3 lignes |
+| `#c-fuchs/entrainer` | 65 | 0 | 76 | 224 | 0 | 1.19 | 0 | OK |
+| `#c-erosion/voir` | 41 | 0 | 51 | 224 | 1 | 1.36 | 0 | OK |
+| `#c-erosion/comprendre` | 77 | 1 | 45 | 224 | 3 | 1.54 | 0 | OK |
+| `#c-erosion/decider` | 152 | 0 | 93 | 224 | 0 | 1.91 | 1 | paragraphe > 3 lignes |
+| `#c-erosion/entrainer` | 62 | 0 | 75 | 224 | 0 | 1.11 | 0 | OK |
+| `#c-pterygion/voir` | 46 | 0 | 55 | 224 | 1 | 1.3 | 0 | OK |
+| `#c-pterygion/comprendre` | 124 | 34 | 98 | 224 | 3 | 1.52 | 0 | OK |
+| `#c-pterygion/decider` | 131 | 0 | 86 | 224 | 0 | 1.78 | 1 | paragraphe > 3 lignes |
+| `#c-pterygion/entrainer` | 59 | 0 | 71 | 224 | 0 | 1.19 | 0 | OK |
+| `#c-greffe/voir` | 47 | 0 | 57 | 224 | 1 | 1.3 | 0 | OK |
+| `#c-greffe/comprendre` | 76 | 0 | 44 | 224 | 3 | 1.49 | 0 | OK |
+| `#c-greffe/decider` | 154 | 0 | 91 | 224 | 0 | 1.81 | 1 | paragraphe > 3 lignes |
+| `#c-greffe/entrainer` | 64 | 0 | 77 | 224 | 0 | 1.11 | 0 | OK |
+| `#c-brulure/voir` | 58 | 0 | 45 | 207 | 1 | 1.43 | 0 | OK |
+| `#c-brulure/comprendre` | 118 | 37 | 92 | 207 | 3 | 1.46 | 0 | OK |
+| `#c-brulure/decider` | 155 | 0 | 78 | 207 | 0 | 1.92 | 1 | paragraphe > 3 lignes |
+| `#c-brulure/entrainer` | 64 | 0 | 70 | 207 | 0 | 1.12 | 0 | OK |
+| `#c-dystrophies/voir` | 55 | 0 | 38 | 207 | 1 | 1.43 | 0 | OK |
+| `#c-dystrophies/comprendre` | 90 | 1 | 67 | 207 | 3 | 1.52 | 0 | OK |
+| `#c-dystrophies/decider` | 132 | 0 | 78 | 207 | 0 | 1.7 | 1 | paragraphe > 3 lignes |
+| `#c-dystrophies/entrainer` | 69 | 0 | 75 | 207 | 0 | 1.23 | 0 | OK |
+| `#c-depots/voir` | 42 | 0 | 50 | 224 | 1 | 1.3 | 0 | OK |
+| `#c-depots/comprendre` | 90 | 0 | 60 | 224 | 3 | 1.51 | 0 | OK |
+| `#c-depots/decider` | 145 | 0 | 89 | 224 | 0 | 1.78 | 1 | paragraphe > 3 lignes |
+| `#c-depots/entrainer` | 69 | 0 | 80 | 224 | 0 | 1.18 | 0 | OK |
+| `#c-surface/voir` | 43 | 0 | 55 | 224 | 1 | 1.27 | 0 | OK |
+| `#c-surface/comprendre` | 79 | 0 | 43 | 224 | 3 | 1.57 | 0 | OK |
+| `#c-surface/decider` | 152 | 0 | 87 | 224 | 0 | 2 | 1 | paragraphe > 3 lignes |
+| `#c-surface/entrainer` | 70 | 0 | 81 | 224 | 0 | 1.25 | 0 | OK |
+| `#c-peripherie/voir` | 42 | 0 | 33 | 224 | 1 | 1.43 | 0 | OK |
+| `#c-peripherie/comprendre` | 83 | 0 | 58 | 224 | 3 | 1.51 | 0 | OK |
+| `#c-peripherie/decider` | 151 | 0 | 88 | 224 | 0 | 1.9 | 1 | paragraphe > 3 lignes |
+| `#c-peripherie/entrainer` | 77 | 0 | 87 | 224 | 0 | 1.28 | 0 | OK |
+| `#g-gpao/voir` | 48 | 0 | 54 | 207 | 1 | 1.29 | 0 | OK |
+| `#g-gpao/comprendre` | 84 | 7 | 54 | 207 | 3 | 1.52 | 0 | OK |
+| `#g-gpao/decider` | 149 | 0 | 87 | 207 | 0 | 1.79 | 1 | paragraphe > 3 lignes |
+| `#g-gpao/entrainer` | 60 | 0 | 69 | 207 | 0 | 1.15 | 0 | OK |
+| `#g-hto/voir` | 42 | 0 | 53 | 204 | 1 | 1.22 | 0 | OK |
+| `#g-hto/comprendre` | 131 | 55 | 115 | 204 | 3 | 1.47 | 0 | OK |
+| `#g-hto/decider` | 144 | 0 | 83 | 204 | 0 | 1.85 | 1 | paragraphe > 3 lignes |
+| `#g-hto/entrainer` | 59 | 0 | 69 | 204 | 0 | 1.09 | 0 | OK |
+| `#g-gpn/voir` | 43 | 0 | 47 | 207 | 1 | 1.3 | 0 | OK |
+| `#g-gpn/comprendre` | 99 | 27 | 68 | 207 | 3 | 1.52 | 0 | OK |
+| `#g-gpn/decider` | 147 | 0 | 81 | 207 | 0 | 1.76 | 1 | paragraphe > 3 lignes |
+| `#g-gpn/entrainer` | 59 | 0 | 67 | 207 | 0 | 1.17 | 0 | OK |
+| `#g-fermeture/voir` | 46 | 0 | 34 | 224 | 1 | 1.45 | 0 | OK |
+| `#g-fermeture/comprendre` | 112 | 40 | 96 | 224 | 3 | 1.49 | 0 | OK |
+| `#g-fermeture/decider` | 148 | 0 | 85 | 224 | 0 | 1.9 | 1 | paragraphe > 3 lignes |
+| `#g-fermeture/entrainer` | 69 | 0 | 80 | 224 | 0 | 1.2 | 0 | OK |
+| `#g-crise/voir` | 46 | 0 | 57 | 207 | 1 | 1.13 | 0 | OK |
+| `#g-crise/comprendre` | 71 | 1 | 55 | 207 | 3 | 1.5 | 0 | OK |
+| `#g-crise/decider` | 219 | 0 | 85 | 207 | 0 | 2.26 | 3 | paragraphe > 3 lignes |
+| `#g-crise/entrainer` | 66 | 0 | 76 | 207 | 0 | 1.14 | 0 | OK |
+| `#g-pxf/voir` | 44 | 0 | 51 | 207 | 1 | 1.27 | 0 | OK |
+| `#g-pxf/comprendre` | 73 | 1 | 53 | 207 | 3 | 1.5 | 0 | OK |
+| `#g-pxf/decider` | 175 | 0 | 90 | 207 | 0 | 1.97 | 1 | paragraphe > 3 lignes |
+| `#g-pxf/entrainer` | 63 | 0 | 69 | 207 | 0 | 1.17 | 0 | OK |
+| `#g-pigmentaire/voir` | 43 | 0 | 47 | 224 | 1 | 1.3 | 0 | OK |
+| `#g-pigmentaire/comprendre` | 79 | 1 | 46 | 224 | 3 | 1.49 | 0 | OK |
+| `#g-pigmentaire/decider` | 146 | 0 | 81 | 224 | 0 | 1.81 | 1 | paragraphe > 3 lignes |
+| `#g-pigmentaire/entrainer` | 73 | 0 | 82 | 224 | 0 | 1.14 | 0 | OK |
+| `#g-neovasculaire/voir` | 43 | 0 | 50 | 207 | 1 | 1.24 | 0 | OK |
+| `#g-neovasculaire/comprendre` | 115 | 37 | 92 | 207 | 3 | 1.49 | 0 | OK |
+| `#g-neovasculaire/decider` | 143 | 0 | 87 | 207 | 0 | 1.79 | 1 | paragraphe > 3 lignes |
+| `#g-neovasculaire/entrainer` | 60 | 0 | 66 | 207 | 0 | 1.18 | 0 | OK |
+| `#g-secondaires/voir` | 40 | 0 | 49 | 207 | 1 | 1.18 | 0 | OK |
+| `#g-secondaires/comprendre` | 71 | 1 | 51 | 207 | 3 | 1.52 | 1 | paragraphe > 3 lignes |
+| `#g-secondaires/decider` | 150 | 0 | 88 | 207 | 0 | 1.88 | 1 | paragraphe > 3 lignes |
+| `#g-secondaires/entrainer` | 70 | 0 | 78 | 207 | 0 | 1.23 | 0 | OK |
+| `#g-postop/voir` | 45 | 0 | 55 | 204 | 1 | 1.28 | 0 | OK |
+| `#g-postop/comprendre` | 68 | 1 | 54 | 204 | 3 | 1.47 | 0 | OK |
+| `#g-postop/decider` | 145 | 0 | 85 | 204 | 0 | 1.84 | 1 | paragraphe > 3 lignes |
+| `#g-postop/entrainer` | 72 | 0 | 81 | 204 | 0 | 1.16 | 0 | OK |
+| `#g-papille/voir` | 44 | 0 | 57 | 224 | 1 | 1.19 | 0 | OK |
+| `#g-papille/comprendre` | 74 | 1 | 61 | 224 | 3 | 1.46 | 0 | OK |
+| `#g-papille/decider` | 151 | 0 | 86 | 224 | 0 | 1.83 | 1 | paragraphe > 3 lignes |
+| `#g-papille/entrainer` | 64 | 0 | 77 | 224 | 0 | 1.23 | 0 | OK |
+| `#g-cristallin/voir` | 55 | 0 | 45 | 224 | 1 | 1.55 | 0 | OK |
+| `#g-cristallin/comprendre` | 99 | 37 | 93 | 224 | 3 | 1.43 | 0 | OK |
+| `#g-cristallin/decider` | 164 | 0 | 92 | 224 | 0 | 1.99 | 1 | paragraphe > 3 lignes |
+| `#g-cristallin/entrainer` | 73 | 0 | 86 | 224 | 0 | 1.25 | 0 | OK |
+| `#g-dev/voir` | 48 | 0 | 57 | 224 | 1 | 1.4 | 0 | OK |
+| `#g-dev/comprendre` | 98 | 37 | 91 | 224 | 3 | 1.4 | 0 | OK |
+| `#g-dev/decider` | 176 | 0 | 94 | 224 | 0 | 1.96 | 2 | paragraphe > 3 lignes |
+| `#g-dev/entrainer` | 76 | 0 | 89 | 224 | 0 | 1.24 | 0 | OK |
+| `#r-dpv/voir` | 50 | 0 | 58 | 224 | 1 | 1.33 | 0 | OK |
+| `#r-dpv/comprendre` | 83 | 1 | 82 | 224 | 1 | 1.32 | 0 | OK |
+| `#r-dpv/decider` | 188 | 0 | 93 | 224 | 0 | 2.06 | 1 | paragraphe > 3 lignes |
+| `#r-dpv/entrainer` | 66 | 0 | 77 | 224 | 0 | 1.2 | 0 | OK |
+| `#r-decollement/voir` | 54 | 0 | 36 | 207 | 1 | 1.45 | 0 | OK |
+| `#r-decollement/comprendre` | 89 | 6 | 92 | 207 | 1 | 1.33 | 0 | OK |
+| `#r-decollement/decider` | 200 | 0 | 98 | 207 | 0 | 1.98 | 1 | paragraphe > 3 lignes |
+| `#r-decollement/entrainer` | 71 | 0 | 79 | 207 | 0 | 1.22 | 0 | OK |
+| `#r-oacr/voir` | 58 | 0 | 66 | 204 | 1 | 1.3 | 0 | OK |
+| `#r-oacr/comprendre` | 87 | 6 | 94 | 204 | 1 | 1.3 | 0 | OK |
+| `#r-oacr/decider` | 195 | 0 | 94 | 204 | 0 | 2.01 | 1 | paragraphe > 3 lignes |
+| `#r-oacr/entrainer` | 63 | 0 | 74 | 204 | 0 | 1.17 | 0 | OK |
+| `#r-ovr/voir` | 80 | 0 | 60 | 207 | 1 | 1.43 | 1 | > 60 mots; paragraphe > 3 lignes |
+| `#r-ovr/comprendre` | 76 | 6 | 79 | 207 | 1 | 1.3 | 0 | OK |
+| `#r-ovr/decider` | 187 | 0 | 91 | 207 | 0 | 2.01 | 1 | paragraphe > 3 lignes |
+| `#r-ovr/entrainer` | 69 | 0 | 76 | 207 | 0 | 1.16 | 0 | OK |
+| `#r-diabete/voir` | 52 | 0 | 55 | 207 | 1 | 1.31 | 1 | paragraphe > 3 lignes |
+| `#r-diabete/comprendre` | 80 | 2 | 82 | 207 | 1 | 1.28 | 0 | OK |
+| `#r-diabete/decider` | 204 | 0 | 83 | 207 | 0 | 2.1 | 2 | paragraphe > 3 lignes |
+| `#r-diabete/entrainer` | 70 | 0 | 76 | 207 | 0 | 1.12 | 0 | OK |
+| `#r-hta/voir` | 48 | 0 | 51 | 207 | 1 | 1.29 | 0 | OK |
+| `#r-hta/comprendre` | 83 | 6 | 85 | 207 | 1 | 1.28 | 0 | OK |
+| `#r-hta/decider` | 187 | 0 | 82 | 207 | 0 | 2.09 | 1 | paragraphe > 3 lignes |
+| `#r-hta/entrainer` | 69 | 0 | 75 | 207 | 0 | 1.16 | 0 | OK |
+| `#r-dmla/voir` | 57 | 0 | 62 | 207 | 1 | 1.34 | 1 | paragraphe > 3 lignes |
+| `#r-dmla/comprendre` | 78 | 9 | 81 | 207 | 1 | 1.3 | 1 | paragraphe > 3 lignes |
+| `#r-dmla/decider` | 185 | 0 | 85 | 207 | 0 | 2.1 | 1 | paragraphe > 3 lignes |
+| `#r-dmla/entrainer` | 67 | 0 | 75 | 207 | 0 | 1.2 | 0 | OK |
+| `#r-endophtalmie/voir` | 54 | 0 | 64 | 204 | 1 | 1.28 | 1 | paragraphe > 3 lignes |
+| `#r-endophtalmie/comprendre` | 69 | 1 | 73 | 204 | 1 | 1.3 | 0 | OK |
+| `#r-endophtalmie/decider` | 180 | 0 | 88 | 204 | 0 | 2.04 | 2 | paragraphe > 3 lignes |
+| `#r-endophtalmie/entrainer` | 77 | 0 | 86 | 204 | 0 | 1.19 | 0 | OK |
+| `#inv-bscan` | 200 | 2 | 54 | 61 | 2 | 2.87 | 2 | 2.87 écrans |
+| `#inv-ascan` | 169 | 28 | 79 | 61 | 2 | 2.48 | 0 | OK |
+| `#inv-oct` | 167 | 6 | 66 | 61 | 2 | 2.38 | 0 | OK |
+| `#inv-gonio` | 176 | 2 | 52 | 61 | 2 | 2.88 | 0 | 2.88 écrans |
+| `#inv-fondoeil` | 189 | 32 | 44 | 61 | 2 | 2.82 | 1 | 2.82 écrans |
+| `#inv-cv` | 182 | 3 | 62 | 61 | 2 | 2.78 | 0 | 2.78 écrans |
+| `#a-anatomie` | 73 | 0 | 63 | 61 | 0 | 1.35 | 0 | OK |
+| `#a-anatomie/globe` | 127 | 62 | 138 | 202 | 1 | 1.19 | 1 | OK |
+| `#a-anatomie/cornee` | 60 | 18 | 72 | 202 | 1 | 1 | 1 | OK |
+| `#a-anatomie/angle` | 93 | 47 | 102 | 202 | 2 | 1.13 | 1 | OK |
+| `#a-anatomie/papille` | 22 | 3 | 35 | 202 | 1 | 1 | 0 | OK |
+| `#a-anatomie/annexes` | 30 | 19 | 43 | 224 | 1 | 1 | 0 | OK |
+| `#a-anatomie/photos` | 23 | 0 | 32 | 202 | 1 | 1 | 0 | OK |
+| `#a-physiologie` | 75 | 0 | 60 | 61 | 0 | 1.45 | 0 | OK |
+| `#a-physiologie/aqueuse` | 144 | 14 | 123 | 202 | 1 | 1.52 | 0 | > 1,5 écran |
+| `#a-physiologie/pio` | 108 | 17 | 119 | 202 | 1 | 1.23 | 0 | OK |
+| `#a-physiologie/film-lacrymal` | 91 | 0 | 82 | 202 | 1 | 1.39 | 0 | OK |
+| `#a-physiologie/transparence` | 151 | 18 | 103 | 202 | 1 | 1.76 | 0 | > 1,5 écran |
+| `#a-physiologie/refraction` | 118 | 0 | 102 | 202 | 1 | 1.4 | 0 | OK |
+| `#a-physiologie/pupille` | 105 | 12 | 113 | 202 | 1 | 1.26 | 1 | OK |
+| `#a-examen` | 73 | 0 | 45 | 61 | 0 | 1.61 | 0 | OK |
+| `#a-examen/av` | 136 | 23 | 112 | 202 | 1 | 1.51 | 1 | > 1,5 écran |
+| `#a-examen/pupilles` | 96 | 6 | 78 | 202 | 1 | 1.44 | 0 | OK |
+| `#a-examen/lampe` | 118 | 21 | 111 | 202 | 1 | 1.43 | 0 | OK |
+| `#a-examen/fluoresceine` | 96 | 0 | 73 | 224 | 1 | 1.57 | 0 | > 1,5 écran |
+| `#a-examen/tonometrie` | 96 | 0 | 78 | 202 | 1 | 1.48 | 0 | OK |
+| `#a-examen/gonioscopie` | 118 | 19 | 102 | 202 | 1 | 1.5 | 0 | OK |
+| `#a-examen/pachymetrie` | 96 | 0 | 82 | 202 | 1 | 1.4 | 0 | OK |
+| `#a-examen/papille` | 155 | 42 | 108 | 202 | 3 | 1.71 | 0 | > 1,5 écran |
+| `#a-imagerie` | 65 | 0 | 51 | 61 | 0 | 1.4 | 0 | OK |
+| `#a-imagerie/structure` | 138 | 42 | 97 | 202 | 3 | 1.46 | 1 | OK |
+| `#a-imagerie/oct` | 121 | 27 | 113 | 224 | 1 | 1.41 | 0 | OK |
+| `#a-imagerie/topographie` | 110 | 17 | 97 | 202 | 2 | 1.5 | 0 | OK |
+| `#a-imagerie/champs-visuels` | 179 | 30 | 158 | 202 | 3 | 1.5 | 0 | OK |
+| `#a-imagerie/speculaire` | 81 | 0 | 74 | 202 | 1 | 1.35 | 0 | OK |
+| `#a-retine` | 237 | 0 | 60 | 61 | 0 | 3.29 | 0 | > 200 mots; 3.29 écrans |
+| `#a-retine/cataracte-nucleaire` | 70 | 0 | 63 | 202 | 1 | 1.49 | 0 | OK |
+| `#a-retine/cataracte-corticale-scp` | 68 | 0 | 55 | 224 | 1 | 1.53 | 0 | > 1,5 écran |
+| `#a-retine/cataracte-mature` | 99 | 0 | 91 | 257 | 1 | 1.47 | 1 | OK |
+| `#a-retine/opacification-capsulaire` | 76 | 0 | 61 | 202 | 1 | 1.46 | 0 | OK |
+| `#a-retine/bscan` | 78 | 0 | 75 | 224 | 1 | 1.41 | 0 | OK |
+| `#a-retine/decollement-retine` | 74 | 0 | 57 | 224 | 1 | 1.54 | 0 | > 1,5 écran |
+| `#a-retine/decollement-choroidien` | 67 | 0 | 56 | 224 | 1 | 1.53 | 0 | > 1,5 écran |
+| `#a-retine/dmla` | 73 | 0 | 60 | 257 | 1 | 1.57 | 0 | > 1,5 écran |
+| `#a-retine/retinopathie-diabetique` | 62 | 0 | 53 | 257 | 1 | 1.57 | 0 | > 1,5 écran |
+| `#a-retine/occlusions-retiniennes` | 67 | 0 | 55 | 224 | 1 | 1.54 | 0 | > 1,5 écran |
+| `#a-retine/retinopathie-hypertensive` | 68 | 0 | 55 | 257 | 1 | 1.61 | 0 | > 1,5 écran |
+| `#a-retine/macula-chirurgicale` | 81 | 0 | 52 | 257 | 1 | 1.81 | 0 | > 1,5 écran |
+| `#a-retine/peripherie-vitre` | 70 | 0 | 58 | 257 | 1 | 1.58 | 0 | > 1,5 écran |
+| `#a-retine/inflammation-infection` | 71 | 0 | 70 | 224 | 1 | 1.47 | 0 | OK |
+| `#a-retine/papille-oedeme` | 73 | 0 | 78 | 224 | 1 | 1.4 | 0 | OK |
+| `#a-retine/pupilles-neuro` | 72 | 0 | 35 | 257 | 1 | 1.96 | 0 | > 1,5 écran |
+| `#a-retine/tumeurs-toxicite-trauma` | 63 | 0 | 44 | 257 | 1 | 1.61 | 0 | > 1,5 écran |
+| `#b-bases` | 62 | 0 | 80 | 212 | 1 | 1.29 | 1 | OK |
+| `#b-bases/2` | 133 | 62 | 151 | 212 | 1 | 1.18 | 1 | OK |
+| `#b-bases/3` | 108 | 18 | 67 | 234 | 2 | 1.51 | 1 | > 1,5 écran |
+| `#b-bases/4` | 82 | 12 | 98 | 212 | 1 | 1.12 | 1 | OK |
+| `#b-bases/5` | 61 | 0 | 74 | 212 | 1 | 1.15 | 1 | OK |
+| `#b-bases/6` | 103 | 18 | 62 | 212 | 2 | 1.51 | 1 | > 1,5 écran |
+| `#b-bases/7` | 92 | 18 | 105 | 212 | 1 | 1.1 | 1 | OK |
+| `#b-bases/8` | 91 | 4 | 83 | 212 | 1 | 1.49 | 0 | OK |
+| `#b-bases/9` | 100 | 18 | 82 | 212 | 1 | 2.02 | 2 | > 1,5 écran |
+| `#c-bases` | 63 | 0 | 78 | 212 | 1 | 1.26 | 1 | OK |
+| `#c-bases/2` | 134 | 62 | 151 | 212 | 1 | 1.18 | 1 | OK |
+| `#c-bases/3` | 90 | 18 | 108 | 234 | 1 | 1.09 | 1 | OK |
+| `#c-bases/4` | 79 | 0 | 95 | 212 | 1 | 1.13 | 1 | OK |
+| `#c-bases/5` | 86 | 0 | 40 | 212 | 2 | 1.53 | 1 | > 1,5 écran |
+| `#c-bases/6` | 88 | 18 | 101 | 212 | 1 | 1.08 | 1 | OK |
+| `#c-bases/7` | 93 | 4 | 84 | 212 | 1 | 1.51 | 0 | > 1,5 écran |
+| `#c-bases/8` | 78 | 3 | 54 | 212 | 1 | 2.18 | 1 | > 1,5 écran |
+| `#accueil` | 144 | 0 | 71 | 61 | 3 | 2.64 | 1 | 2.64 écrans |
+| `#apprendre` | 367 | 0 | 72 | 61 | 0 | 5.26 | 0 | > 200 mots; 5.26 écrans |
+| `#reviser` | 73 | 0 | 51 | 61 | 3 | 1.63 | 0 | OK |
+| `#investigations` | 108 | 19 | 48 | 61 | 6 | 2.79 | 0 | 2.79 écrans |
+| `#module-a` | 107 | 0 | 68 | 61 | 0 | 1.65 | 1 | OK |
+| `#module-b` | 154 | 0 | 41 | 61 | 14 | 5.37 | 0 | 5.37 écrans |
+| `#module-c` | 144 | 0 | 39 | 61 | 13 | 4.94 | 0 | 4.94 écrans |
+| `#module-d` | 78 | 0 | 32 | 61 | 8 | 3.11 | 0 | 3.11 écrans |
+| `#cas` | 201 | 70 | 129 | 61 | 1 | 1.66 | 1 | OK |
+| `#confidentialite` | 414 | 0 | 132 | 61 | 0 | 3.02 | 7 | > 200 mots; 3.02 écrans |
+
+</details>
+
+Fichiers de la passe 5 (dossier de travail du critique) :
+- `measure5.py`, `metrics5-final.csv`
+- `voir5.py`, `voircov5.json`, `leak5.py`, `overlap5.py`, `loop5.py`
+- `check5.py`, `en5.py`, `a5d.py`, `clin5.txt`
+- `shots5/`
+
+---
 
 ## Passe 4 (cycle 10) : 21 novembre 2026
 
