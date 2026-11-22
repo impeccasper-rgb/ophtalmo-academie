@@ -38,7 +38,7 @@ G.OPH.photos = G.OPH.photos || {};
       reveal: [
         "Tache rouge cerise à la fovéa : la choroïde, intacte, se voit à travers une fovéa sans rétine interne.",
         "Rétine pâle et œdémateuse autour : couches internes privées d’oxygène.",
-        "C’est un AVC de l’œil : urgence d’un centre de l’AVC ; VS, CRP et plaquettes dès 50 ans."
+        "C’est un AVC de l’œil. Urgence : immédiatement (le jour même), comme un AVC ; VS, CRP et plaquettes dès 50 ans."
       ] },
     { id: "OPH-249", license: "CC BY-NC-ND 3.0", caption: "Occlusion de l’artère centrale : rétine blanchie, zone restée rouge près de la papille",
       look: "Compare la couleur de la rétine entre la papille et la macula, et ailleurs.",

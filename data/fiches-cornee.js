@@ -86,7 +86,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
           "Larmes sans agent de conservation 4–6 fois par jour, gel au coucher ; pauses écran",
           "Glandes bouchées : compresses chaudes 5–10 min puis massage des paupières, 1–2 fois par jour",
           "Inflammation : cyclosporine ou lifitégrast ; stéroïde doux quelques semaines ; doxycycline orale à faible dose (anti-inflammatoire) si rosacée",
-          "Demodex : nettoyant à l’huile de théier ; lotilaner (antiparasitaire en gouttes) approuvé aux É.-U., disponibilité canadienne à vérifier"
+          "Demodex : nettoyant à l’huile de théier ; lotilaner (antiparasitaire en gouttes) approuvé aux É.-U."
         ]
       },
       {
@@ -106,12 +106,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
         items: ["Sévère : sérum autologue (gouttes faites avec le sang du patient), lentille sclérale (grande lentille rigide avec réservoir de liquide)"]
       }
     ],
-    local: "Au Québec, l’optométriste traite la plupart des sécheresses et dirige en ophtalmologie si atteinte sévère, Sjögren ou échec ; IPL surtout au privé, remboursement de la cyclosporine et du lifitégrast à vérifier."
+    local: "Au Québec, l’optométriste traite la plupart des sécheresses et dirige en ophtalmologie si atteinte sévère, Sjögren ou échec ; IPL surtout au privé ; remboursement de la cyclosporine et du lifitégrast variable selon le régime."
   },
   treatments: [
     { name: "Larmes artificielles sans agent de conservation", dose: "1 goutte 4–6 fois par jour, plus au besoin.", pitfall: "Flacon avec BAK + usage fréquent = toxicité.", how: "Gouttes lubrifiantes en unidoses ou flacon spécial : ajoutent du liquide et diluent les sels ; les émulsions renforcent la couche d’huile.", why: "Toute sécheresse ; premier palier.", pros: "Sûres, sans ordonnance, soulagement immédiat.", cons: "Effet bref ; le BAK devient toxique si usage fréquent.", cx: "Vision brouillée avec gels et onguents." },
     { name: "Soins des paupières, IPL", dose: "Compresses chaudes 5–10 min + massage, 1–2 fois par jour.", pitfall: "Arrêter les soins = rechute.", qc: "IPL surtout offerte au privé.", how: "Compresses chaudes et massage à la maison ; en clinique, IPL ou thermopulsation (appareil qui chauffe et presse les paupières) : la chaleur fond l’huile figée, la pression vide les glandes.", why: "Dysfonction meibomienne, cause la plus fréquente.", pros: "Traite la cause ; effet de l’IPL sur des mois.", cons: "Demande de la constance ; IPL coûteuse.", cx: "Brûlure cutanée ; yeux protégés pendant l’IPL." },
-    { name: "Cyclosporine ou lifitégrast", dose: "Cyclosporine 0,05–0,09 % ou lifitégrast 5 %, 1 goutte 2 fois par jour.", pitfall: "Effet après plusieurs semaines : ne pas arrêter trop tôt.", qc: "Remboursement à vérifier.", how: "Gouttes anti-inflammatoires sur ordonnance, 2 fois par jour : la cyclosporine bloque l’activation des lymphocytes T, le lifitégrast bloque leur arrimage (LFA-1/ICAM-1).", why: "Inflammation qui persiste malgré les larmes.", pros: "Pas de hausse de pression ni de cataracte au long cours, contrairement aux stéroïdes.", cons: "Effet après plusieurs semaines ; coût.", cx: "Brûlure à l’instillation ; goût métallique (lifitégrast)." }
+    { name: "Cyclosporine ou lifitégrast", dose: "Cyclosporine 0,05–0,09 % ou lifitégrast 5 %, 1 goutte 2 fois par jour.", pitfall: "Effet après plusieurs semaines : ne pas arrêter trop tôt.", qc: "Remboursement variable selon le régime d’assurance.", how: "Gouttes anti-inflammatoires sur ordonnance, 2 fois par jour : la cyclosporine bloque l’activation des lymphocytes T, le lifitégrast bloque leur arrimage (LFA-1/ICAM-1).", why: "Inflammation qui persiste malgré les larmes.", pros: "Pas de hausse de pression ni de cataracte au long cours, contrairement aux stéroïdes.", cons: "Effet après plusieurs semaines ; coût.", cx: "Brûlure à l’instillation ; goût métallique (lifitégrast)." }
   ],
   treatment: {
     first: [
@@ -399,11 +399,11 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
         ]
       }
     ],
-    local: "Au Canada, PHMB, chlorhexidine et propamidine sont des préparations magistrales de pharmacie d’hôpital ; Akantior (polihexanide 0,08 %, approuvé en Europe en 2024) et natamycine : disponibilité canadienne à vérifier. Confocale et PCR : seulement dans certains centres universitaires."
+    local: "Au Canada, PHMB, chlorhexidine et propamidine sont des préparations magistrales de pharmacie d’hôpital ; Akantior (polihexanide 0,08 %, approuvé en Europe en 2024) et natamycine : souvent obtenues par la pharmacie d’hôpital. Confocale et PCR : seulement dans certains centres universitaires."
   },
   treatments: [
     { name: "Biguanide ± diamidine (amibe)", dose: "PHMB ou chlorhexidine 0,02 % aux heures ± propamidine, sur des mois.", pitfall: "Souvent prise pour un herpès au début.", qc: "Préparations magistrales de pharmacie d’hôpital.", how: "Gouttes antiseptiques préparées par la pharmacie (PHMB ou chlorhexidine 0,02 %), aux heures jour et nuit au début, souvent avec propamidine : le biguanide perce la membrane de l’amibe et traverse la paroi des kystes.", why: "Toute kératite à Acanthamoeba, dès la suspicion forte.", pros: "Seule classe active sur les kystes ; polihexanide 0,08 % validé en monothérapie en Europe.", cons: "Plusieurs mois de traitement ; préparations magistrales.", cx: "Toxicité épithéliale, retard de cicatrisation." },
-    { name: "Natamycine 5 % (champignon filamenteux)", dose: "Natamycine 5 %, 1 goutte aux heures.", pitfall: "Pénètre mal : atteinte profonde = autre option.", qc: "Disponibilité canadienne à vérifier.", how: "Suspension antifongique en gouttes, aux heures : se fixe à l’ergostérol (constituant de la membrane du champignon) et bloque sa croissance.", why: "Fusarium ou Aspergillus : premier choix.", pros: "MUTT I : meilleure vision et moins de perforations qu’avec le voriconazole, surtout pour Fusarium.", cons: "Pénètre mal en profondeur.", cx: "Irritation, dépôts blancs." },
+    { name: "Natamycine 5 % (champignon filamenteux)", dose: "Natamycine 5 %, 1 goutte aux heures.", pitfall: "Pénètre mal : atteinte profonde = autre option.", qc: "Souvent obtenue par la pharmacie d’hôpital.", how: "Suspension antifongique en gouttes, aux heures : se fixe à l’ergostérol (constituant de la membrane du champignon) et bloque sa croissance.", why: "Fusarium ou Aspergillus : premier choix.", pros: "MUTT I : meilleure vision et moins de perforations qu’avec le voriconazole, surtout pour Fusarium.", cons: "Pénètre mal en profondeur.", cx: "Irritation, dépôts blancs." },
     { name: "Voriconazole", dose: "Voriconazole 1 % aux heures ; intrastromal si profond.", pitfall: "Inférieur à la natamycine pour Fusarium (MUTT I).", how: "Antifongique (azolé) en gouttes à 1 %, en injection dans le stroma ou la chambre antérieure, ou en comprimés : empêche le champignon de fabriquer l’ergostérol.", why: "Levures (Candida), infection profonde ou échec de la natamycine.", pros: "Bonne pénétration, large spectre.", cons: "Inférieur à la natamycine pour Fusarium (MUTT I) ; oral sans bénéfice ajouté (MUTT II).", cx: "Oral : troubles visuels passagers, atteinte du foie." }
   ],
   treatment: {
@@ -548,7 +548,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
         items: ["Cornée insensible avec défaut persistant : cénégermine (Oxervate)", "Uvéite hypertensive rebelle : PCR d’humeur aqueuse (chercher un CMV)"]
       }
     ],
-    local: "Shingrix est recommandé dès 50 ans par le CCNI (Comité consultatif national de l’immunisation) ; gratuité à vérifier. Oxervate est approuvé par Santé Canada pour la kératite neurotrophique modérée ou sévère de l’adulte : 1 goutte 6×/j aux 2 h pendant 8 semaines."
+    local: "Shingrix est recommandé dès 50 ans par le CCNI (Comité consultatif national de l’immunisation). Oxervate est approuvé par Santé Canada pour la kératite neurotrophique modérée ou sévère de l’adulte : 1 goutte 6×/j aux 2 h pendant 8 semaines."
   },
   treatments: [
     { name: "Antiviraux oraux (acyclovir, valacyclovir)", dose: "Acyclovir 400 mg 5×/j ou valacyclovir 500 mg 3×/j ; prévention : acyclovir 400 mg 2×/j.", pitfall: "Ajuster la dose à la fonction rénale.", how: "Comprimés activés par une enzyme du virus (thymidine kinase), qui bloquent ensuite la copie de l’ADN viral, seulement dans les cellules infectées.", why: "Kératite épithéliale, couverture des stéroïdes, prévention des récidives, zona.", pros: "Aucune toxicité pour la surface ; prophylaxie efficace (HEDS).", cons: "Dose à ajuster au rein ; sans effet sur la réaction immunitaire.", cx: "Nausées ; confusion ou atteinte rénale si surdosage chez l’âgé." },
@@ -565,7 +565,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       "Le jour même si zona avec œil rouge, baisse de vision ou signe de Hutchinson."
     ],
     pitfall: ["Prednisolone sur une dendrite : ulcère géographique.", "Zona vu après 72 h : traiter quand même si vésicules récentes ou œil atteint.", "Trifluridine plus de 14–21 jours : toxique pour l’épithélium."],
-    qc: ["Shingrix recommandé dès 50 ans (CCNI) ; gratuité à vérifier."]
+    qc: ["Shingrix recommandé dès 50 ans (CCNI) ; couverture selon le programme provincial."]
   },
   pearls: [
     { q: "Pourquoi tester la sensibilité cornéenne avant l’anesthésique ?", a: "Diminuée, elle oriente vers HSV ou VZV et annonce une kératite neurotrophique ; après l’anesthésique, le test ne vaut plus rien." },
@@ -700,10 +700,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
         ]
       }
     ],
-    local: "Au Québec, la CXL est offerte dans des centres spécialisés (couverture publique variable, à vérifier localement) ; l’optométriste dépiste souvent le kératocône et adapte les lentilles. Epioxa (epi-on, FDA 2025) : disponibilité canadienne à vérifier."
+    local: "Au Québec, la CXL est offerte dans des centres spécialisés (couverture publique variable selon le centre) ; l’optométriste dépiste souvent le kératocône et adapte les lentilles. Epioxa (epi-on) : approuvé par la FDA en 2025."
   },
   treatments: [
-    { name: "Crosslinking du collagène (CXL)", dose: "Riboflavine 0,1 % + UVA, après retrait de l’épithélium.", pitfall: "Freine la maladie, ne rend pas la vision perdue.", qc: "Couverture publique variable, à vérifier.", how: "On retire l’épithélium (epi-off), on imbibe le stroma de riboflavine (vitamine B2) 0,1 %, puis on l’éclaire aux UVA : la riboflavine excitée libère des radicaux d’oxygène qui soudent les fibres de collagène.", why: "Kératocône qui progresse ; enfant dès le diagnostic.", pros: "Arrête la progression dans la plupart des cas ; répétable.", cons: "Ne rend pas la vision perdue ; douleur quelques jours ; stroma ≥ 400 µm requis pour protéger l’endothélium des UV.", cx: "Infection, voile stromal (haze) souvent passager, réactivation herpétique, rarement cicatrice." },
+    { name: "Crosslinking du collagène (CXL)", dose: "Riboflavine 0,1 % + UVA, après retrait de l’épithélium.", pitfall: "Freine la maladie, ne rend pas la vision perdue.", qc: "Couverture publique variable selon le centre.", how: "On retire l’épithélium (epi-off), on imbibe le stroma de riboflavine (vitamine B2) 0,1 %, puis on l’éclaire aux UVA : la riboflavine excitée libère des radicaux d’oxygène qui soudent les fibres de collagène.", why: "Kératocône qui progresse ; enfant dès le diagnostic.", pros: "Arrête la progression dans la plupart des cas ; répétable.", cons: "Ne rend pas la vision perdue ; douleur quelques jours ; stroma ≥ 400 µm requis pour protéger l’endothélium des UV.", cx: "Infection, voile stromal (haze) souvent passager, réactivation herpétique, rarement cicatrice." },
     { name: "Lentilles rigides et sclérales", dose: "Lentilles rigides perméables ou sclérales, adaptées par l’optométriste.", pitfall: "N’arrête pas la progression : suivre la tomographie.", how: "Les larmes, ou le liquide du réservoir de la sclérale, comblent les irrégularités : la face lisse de la lentille devient la nouvelle surface optique.", why: "Vision insuffisante en lunettes.", pros: "Bien meilleure vision qu’en lunettes ; sans chirurgie.", cons: "Adaptation longue, coût ; n’arrête pas la progression.", cx: "Abrasion, infection, cicatrice au sommet du cône." },
     { name: "Greffe de cornée (DALK ou PK)", dose: "DALK de préférence ; PK si la Descemet est atteinte.", pitfall: "Récupération sur un an ou plus.", how: "DALK : stroma malade retiré jusqu’à Descemet et remplacé, endothélium du patient conservé ; PK : toute l’épaisseur remplacée, cousue.", why: "Cicatrice centrale, intolérance aux lentilles.", pros: "Très bon pronostic ; DALK : pas de rejet endothélial, globe plus solide.", cons: "Récupération sur un an ou plus, astigmatisme ; DALK difficile (conversion en PK si Descemet perce).", cx: "PK : rejet, glaucome, ouverture de la plaie au moindre choc, toute la vie." }
   ],

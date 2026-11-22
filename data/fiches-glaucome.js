@@ -1470,13 +1470,13 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
         items: ["Seconde chirurgie (souvent tube), puis cyclophotocoagulation"]
       }
     ],
-    local: "Au Québec, ces chirurgies se font surtout en centre hospitalier ; couverture RAMQ des MIGS et des implants à vérifier."
+    local: "Au Québec, ces chirurgies se font surtout en centre hospitalier ; couverture des MIGS et des implants variable selon le centre."
   },
   treatments: [
     { name: "Trabéculectomie avec mitomycine C", how: "Au bloc : volet taillé dans la sclère, fistule sous ce volet vers la chambre et petite iridectomie ; l’aqueuse forme une bulle sous la conjonctive. Sutures ajustables pour titrer le débit (massage, lyse au laser).", why: "Glaucome avancé, PIO cible basse.", pros: "PIO la plus basse.", cons: "Suivi intensif ; échec par fibrose.", cx: "Hypotonie, fuite, cataracte, infection de bulle à vie.", dose: "Au bloc, avec mitomycine C ; sutures ajustables en clinique (massage, lyse au laser).", refer: "Glaucome avancé ou PIO cible basse.", pitfall: "Infection de bulle possible à vie : œil rouge et douloureux = consulter le jour même." },
     { name: "PreserFlo MicroShunt et XEN", how: "Au bloc : microtube souple (PreserFlo par l’extérieur avec MMC ; XEN par l’intérieur ou à conjonctive ouverte) qui draine vers une bulle ; parfois un ripcord (fil intraluminal), retiré en clinique pour ↑ le débit.", why: "Alternative moins invasive à la trabéculectomie.", pros: "Récupération rapide, moins d’hypotonie.", cons: "PIO un peu moins basse ; needling fréquent (XEN).", cx: "Fibrose, hypotonie, exposition, infection de bulle.", dose: "Microtube vers une bulle ; ripcord parfois retiré en clinique.", refer: "Alternative moins invasive à la trabéculectomie.", pitfall: "Fibrose : needling fréquent (XEN)." },
     { name: "Tube : Ahmed ou Baerveldt", how: "Au bloc : tube dans la chambre relié à une plaque sur la sclère, où une capsule résorbe l’aqueuse. Ahmed : valve ; Baerveldt : sans valve, ligaturé (± ripcord) jusqu’à la formation de la capsule.", why: "Échec de trabéculectomie, glaucome néovasculaire ou uvéitique.", pros: "Résiste à la fibrose ; Baerveldt : PIO plus basse à long terme.", cons: "Ahmed : phase hypertensive ; Baerveldt : hypotonie à l’ouverture.", cx: "Exposition, contact tube–cornée (perte endothéliale), diplopie.", dose: "Ahmed (valve) ou Baerveldt (ligaturé jusqu’à la formation de la capsule).", refer: "Échec de trabéculectomie, glaucome néovasculaire ou uvéitique.", pitfall: "Tube exposé ou qui touche la cornée : référer rapidement." },
-    { name: "MIGS : iStent, Hydrus, KDB", how: "Au bloc, souvent avec la cataracte, par l’intérieur : micro-implant vers le canal de Schlemm (iStent, Hydrus) ou excision d’une bande de trabéculum (KDB).", why: "Glaucome léger à modéré.", pros: "Très sécuritaires, sans bulle.", cons: "Baisse modeste (plancher épiscléral).", cx: "Hyphéma, pic de PIO, implant bouché.", dose: "iStent, Hydrus ou KDB, souvent avec la cataracte.", refer: "Glaucome léger à modéré.", pitfall: "Baisse modeste : ne vise pas une PIO cible très basse.", qc: "Québec : surtout en centre hospitalier ; couverture RAMQ des MIGS et des implants à vérifier." }
+    { name: "MIGS : iStent, Hydrus, KDB", how: "Au bloc, souvent avec la cataracte, par l’intérieur : micro-implant vers le canal de Schlemm (iStent, Hydrus) ou excision d’une bande de trabéculum (KDB).", why: "Glaucome léger à modéré.", pros: "Très sécuritaires, sans bulle.", cons: "Baisse modeste (plancher épiscléral).", cx: "Hyphéma, pic de PIO, implant bouché.", dose: "iStent, Hydrus ou KDB, souvent avec la cataracte.", refer: "Glaucome léger à modéré.", pitfall: "Baisse modeste : ne vise pas une PIO cible très basse.", qc: "Québec : surtout en centre hospitalier ; couverture des MIGS et des implants variable selon le centre." }
   ],
   pearls: [
     { q: "Jour 1 post-trabéculectomie : PIO 4 mmHg, chambre étroite ?", a: "Seidel : positif = fuite (lentille, suture) ; négatif = surfiltration ou effusion (fond d’œil, atropine). Reformer si le cristallin touche la cornée." },
@@ -1515,7 +1515,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     ],
     refer: "Référer en ophtalmologie : immédiatement — œil opéré rouge, douloureux, bulle blanche ou vision ↓.",
     pitfall: ["**Traiter une « conjonctivite »** sur un œil opéré : infection de bulle manquée."],
-    qc: "Québec : surtout en centre hospitalier ; couverture RAMQ des MIGS et des implants à vérifier."
+    qc: "Québec : surtout en centre hospitalier ; couverture des MIGS et des implants variable selon le centre."
   }
 }
 ]);

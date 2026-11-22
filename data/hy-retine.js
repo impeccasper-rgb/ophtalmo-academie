@@ -28,7 +28,7 @@ Object.assign(G.OPH.hy, {
   "r-oacr": {
     essentials: [
       "Perte de vision **brutale, indolore**, d’un œil : **AVC de l’œil** jusqu’à preuve du contraire.",
-      "**Urgence d’un centre de l’AVC** le jour même : IRM, carotides, rythme cardiaque, échographie.",
+      "Urgence : **immédiatement (le jour même), comme un AVC** ; IRM, carotides, rythme, échographie.",
       "Dès **50 ans** : VS, CRP, plaquettes ; **corticostéroïdes** sans attendre la biopsie si ACG suspectée.",
       "Rétine blanche et **tache rouge cerise** : la fovéa reste nourrie par la choroïde.",
       "Massage, paracentèse, thrombolyse : **aucun bénéfice visuel prouvé** ; ne pas retarder le bilan."
@@ -41,9 +41,9 @@ Object.assign(G.OPH.hy, {
       "Une artère [[ciliorétinienne]] peut épargner une partie de la macula."
     ],
     triage: [
-      { s: "Homme de 68 ans : perte de vision indolore de l’œil gauche il y a 1 h, DPAR gauche.", u: "urgent", why: "OACR probable : urgence d’un centre de l’AVC maintenant ; VS, CRP, plaquettes." },
+      { s: "Homme de 68 ans : perte de vision indolore de l’œil gauche il y a 1 h, DPAR gauche.", u: "urgent", why: "OACR probable. Urgence : immédiatement (le jour même), comme un AVC ; VS, CRP, plaquettes." },
       { s: "Femme de 79 ans : flou soudain de l’œil droit, céphalée temporale, douleur en mâchant depuis 2 semaines.", u: "urgent", why: "ACG probable : VS, CRP, plaquettes et corticostéroïdes le jour même." },
-      { s: "Homme de 66 ans : voile noir sur l’œil droit pendant 5 minutes hier, vision normale aujourd’hui.", u: "urgent", why: "Amaurose fugace = AIT : bilan urgent (carotides, rythme) le jour même." }
+      { s: "Homme de 66 ans : voile noir sur l’œil droit pendant 5 minutes hier, vision normale aujourd’hui.", u: "urgent", why: "Amaurose fugace = AIT. Urgence : immédiatement (le jour même), comme un AVC." }
     ],
     cues: ["Perte brutale indolore, DPAR, tache rouge cerise", "Embole brillant à une bifurcation artérielle"]
   },
@@ -73,7 +73,7 @@ Object.assign(G.OPH.hy, {
     essentials: [
       "**Dépister** : type 2 au diagnostic ; type 1 dès 5 ans d’évolution (à partir de 15 ans).",
       "Sans rétinopathie : type 1 **chaque année**, type 2 **aux 1–2 ans** (Diabetes Canada).",
-      "**Néovaisseaux** ou forme sévère (règle 4-2-1) : ophtalmologiste **en quelques jours**.",
+      "**Néovaisseaux** ou forme non proliférante sévère : ophtalmologiste **en quelques jours**.",
       "Œdème maculaire qui touche le centre : **anti-VEGF** ; forme proliférante : **laser panrétinien** ou anti-VEGF.",
       "HbA1c, **TA**, lipides ; **grossesse** : examen au 1er trimestre."
     ],

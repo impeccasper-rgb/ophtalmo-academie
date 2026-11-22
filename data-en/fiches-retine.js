@@ -65,11 +65,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "New flashes in a myope or after cataract surgery: dilated exam within 24 h"
  ],
  cat: {
-  vignette: "A 58-year-old myopic man, cataract surgery a year ago: flashes and a shower of floaters since yesterday, an inferior shadow this morning.",
+  vignette: "A 58-year-old myope after cataract surgery: flashes, a shower of floaters, an inferior shadow this morning.",
   algo: [
-   { q: "New flashes or floaters?", yes: "", yesGo: 1, no: "Another cause of vision loss: keep examining." },
-   { q: "Curtain, shadow or vision loss?", yes: { t: "On-call ophthalmologist the same day.", urgent: true }, yesGo: 3, no: "", noGo: 2 },
-   { q: "Shower of floaters or blurred vision?", yes: { t: "Tear likely: dilated exam the same day.", urgent: true }, yesGo: 3, no: "Probable PVD: dilated exam within 24 h." },
+   { q: "Curtain, shadow or vision loss?", yes: { t: "On-call ophthalmologist the same day.", urgent: true }, yesGo: 3, no: "", noGo: 1 },
+   { q: "New flashes or floaters?", yes: "", yesGo: 2, no: "No sign of a tear: keep examining." },
+   { q: "Shower of floaters, blood or pigment?", yes: { t: "Tear likely: dilated exam the same day.", urgent: true }, yesGo: 3, no: "Probable PVD: dilated exam within 24 h." },
    { q: "Retina detached on dilated exam?", yes: "", yesGo: 4, no: "Tear: laser promptly; nothing: close follow-up." },
    { q: "Macula still on?", yes: { t: "Urgent surgery, as soon as possible.", urgent: true }, no: "Prompt surgery; central vision often incomplete." }
   ],
@@ -98,7 +98,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "**You**: acuity, finger fields; ask about flashes, a shower of floaters, a curtain. No reassurance without a dilated exam.",
    "**Ophthalmologist**: dilated fundus exam; laser for a tear, surgery for a detachment."
   ],
-  refer: "Refer to ophthalmology: the same day for a curtain, vision loss or a shower of floaters; otherwise within 24 h — a tear is treated with laser before detachment.",
+  refer: "Refer to ophthalmology: immediately (the same day) for a curtain, vision loss or a shower of floaters; otherwise within 24 h — a tear is treated with laser before detachment.",
   pitfall: [
    "**Undilated fundus** judged normal: the tear is in the periphery, invisible without dilation.",
    "**Nitrous oxide** during anaesthesia with a gas bubble in the eye: the bubble expands and IOP soars."
@@ -109,7 +109,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "r-oacr": {
  title: "Central retinal artery occlusion (CRAO)",
  oneLiner: "Sudden, painless loss of vision in one eye: a stroke of the eye; emergency at a stroke centre and rule out arteritis.",
- definition: "An embolus or arteritis blocks the artery that feeds the inner retina. It is a stroke of the eye: stroke work-up the same day.",
+ definition: "An embolus or arteritis blocks the artery of the inner retina. It is a stroke of the eye: an immediate emergency.",
  anatomy: { text: "The central retinal artery, a branch of the ophthalmic artery (from the internal carotid), feeds the inner retinal layers; the choroid feeds the photoreceptors. The fovea has no inner retina: it depends on the choroid. Sometimes a cilioretinal artery from the choroidal circulation supplies part of the macula." },
  causal: {
   title: "From embolus to looming stroke",
@@ -162,28 +162,28 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   { dx: "Amaurosis fugax", clue: "Transient loss over minutes: TIA work-up, just as urgent." }
  ],
  redFlags: [
-  "Sudden painless vision loss = stroke: emergency at a stroke centre the same day",
+  "Sudden painless vision loss = stroke. Emergency: immediately (the same day), like a stroke",
   "Age 50 or over: ESR, CRP, platelets; corticosteroids as soon as GCA is suspected",
   "Resolved amaurosis fugax: as urgent as a TIA"
  ],
  cat: {
-  vignette: "A 71-year-old hypertensive smoker: on waking, his right eye sees only hand motion. White eye, right RAPD, no pain.",
+  vignette: "A 71-year-old smoker: on waking, his right eye sees hand motion only. Right RAPD, no pain.",
   algo: [
    { q: "Sudden, painless vision loss?", yes: "", yesGo: 1, no: "Pain, red eye: another emergency (angle closure, keratitis)." },
-   { q: "White retina, cherry-red spot or RAPD?", yes: { t: "CRAO likely: stroke-centre emergency now.", urgent: true }, yesGo: 2, no: "On-call ophthalmologist the same day: find the cause." },
+   { q: "White retina, cherry-red spot or RAPD?", yes: { t: "CRAO likely: emergency immediately, like a stroke.", urgent: true }, yesGo: 2, no: "On-call ophthalmologist the same day: find the cause." },
    { q: "Age 50 or over?", yes: "", yesGo: 3, no: "Young: embolic source, coagulopathy, vasculitis." },
-   { q: "Headache, jaw, PMR or raised ESR/CRP?", yes: { t: "GCA: corticosteroids now; temporal biopsy within 2 weeks.", urgent: true }, no: "Stroke work-up: MRI, carotids, rhythm, echocardiography." }
+   { q: "Headache, jaw, PMR or raised ESR/CRP?", yes: { t: "GCA: IV methylprednisolone, then prednisone; biopsy within 2 weeks.", urgent: true }, no: "Stroke work-up: MRI, carotids, rhythm, echocardiography." }
   ],
   phases: [
-   { phase: "medical", items: ["Stroke-centre emergency: diffusion MRI, carotids, ECG and monitoring, echocardiography", "Age 50 or over: ESR, CRP, platelets; if GCA is suspected, high-dose corticosteroids immediately", "IV thrombolysis: discussed by the stroke team if under 4.5 h; no proven visual benefit (THEIA 2025, TenCRAOS 2026)"] },
+   { phase: "medical", items: ["Stroke-centre emergency: diffusion MRI, carotids, ECG and monitoring, echocardiography", "Age 50 or over: ESR, CRP, platelets; GCA with vision loss: IV methylprednisolone 250–1000 mg/day for up to 3 days, then prednisone 40–60 mg/day (EULAR 2018)", "IV thrombolysis: discussed by the stroke team if under 4.5 h; no proven visual benefit (THEIA 2025, TenCRAOS 2026)"] },
    { phase: "laser", items: ["Iris or retinal new vessels in the following weeks: panretinal laser, anti-VEGF"] },
    { phase: "suivi", items: ["Ophthalmology in the following weeks: look for iris rubeosis (neovascular glaucoma)", "Secondary prevention: antiplatelet or anticoagulant, statin, BP, smoking cessation"] }
   ],
   local: "In Quebec, send the patient to the ED of a hospital that treats stroke (neurology and MRI available), after calling ahead. Do not settle for an ophthalmology clinic appointment."
  },
  treatments: [
-  { name: "Stroke work-up and management", how: "Brain and vascular imaging, search for arrhythmia and a cardiac source.", why: "Every non-arteritic CRAO: it is a stroke.", pros: "Prevents the brain stroke that often follows.", cons: "Does not restore vision.", cx: "None specific to the work-up.", refer: "Stroke-centre ED, the same day.", pitfall: "Sending the patient to an ophthalmology clinic the following week." },
-  { name: "Corticosteroids for giant cell arteritis", how: "Calm the inflammation of the artery wall.", why: "Suspected GCA: age 50 or over, symptoms, raised ESR or CRP.", pros: "Protect the other eye and the brain.", cons: "Many adverse effects.", cx: "Hyperglycaemia, infection, osteoporosis, mood changes.", dose: "Prednisone 40–60 mg/day; often IV methylprednisolone 250–1000 mg/day for 3 days if vision is lost, per the team.", refer: "Without waiting for the biopsy (to be done within 2 weeks).", pitfall: "Waiting for the biopsy result before treating." },
+  { name: "Stroke work-up and management", how: "Brain and vascular imaging, search for arrhythmia and a cardiac source.", why: "Every non-arteritic CRAO: it is a stroke.", pros: "Prevents the brain stroke that often follows.", cons: "Does not restore vision.", cx: "None specific to the work-up.", refer: "Emergency: immediately (the same day), like a stroke.", pitfall: "Sending the patient to an ophthalmology clinic the following week." },
+  { name: "Corticosteroids for giant cell arteritis", how: "Calm the inflammation of the artery wall.", why: "Suspected GCA: age 50 or over, symptoms, raised ESR or CRP.", pros: "Protect the other eye and the brain.", cons: "Many adverse effects.", cx: "Hyperglycaemia, infection, osteoporosis, mood changes.", dose: "Vision loss: IV methylprednisolone 250–1000 mg/day for up to 3 days, then prednisone 40–60 mg/day; no vision loss: prednisone 40–60 mg/day from the start (EULAR 2018). IV treatment must not delay oral prednisone.", refer: "Without waiting for the biopsy (to be done within 2 weeks).", pitfall: "Waiting for the biopsy result before treating." },
   { name: "Intravenous thrombolysis", how: "Dissolves the clot (alteplase, tenecteplase).", why: "Discussed by the stroke team if under 4.5 h and no contraindication.", pros: "Same rationale as for brain stroke.", cons: "No proven visual benefit (THEIA 2025, TenCRAOS 2026).", cx: "Intracranial haemorrhage." },
   { name: "So-called conservative measures", how: "Ocular massage, paracentesis, IOP lowering, oxygen.", why: "Used historically.", pros: "Simple.", cons: "No proven benefit; must never delay transfer.", cx: "Paracentesis: infection, lens injury." }
  ],
@@ -196,9 +196,9 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  treatment: {
   first: [
    "**You, now**: acuity, RAPD, time of onset; from 50, ESR, CRP, platelets. Call the ED of a stroke centre.",
-   "**Stroke team and ophthalmologist**: MRI, carotids, rhythm; corticosteroids if GCA."
+   "**Stroke team and ophthalmologist**: MRI, carotids, rhythm; GCA with vision loss: IV methylprednisolone first, then prednisone."
   ],
-  refer: "Refer: immediately, to the ED of a stroke centre (not an outpatient clinic) — it is a stroke, and brain-stroke risk peaks in the following days.",
+  refer: "Emergency: immediately (the same day), like a stroke — to the ED of a stroke centre, not an outpatient clinic; brain-stroke risk peaks in the following days.",
   pitfall: [
    "**Ocular massage or paracentesis**: no proven benefit; they never delay transfer.",
    "**Corticosteroids postponed** until the biopsy when GCA is suspected: the other eye can be lost."
@@ -209,7 +209,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "r-ovr": {
  title: "Retinal vein occlusions (central and branch)",
  oneLiner: "Painless vision loss and flame haemorrhages, in one sector (branch) or everywhere (central): treat the oedema, watch for new vessels.",
- definition: "A retinal vein becomes blocked: blood backs up, bleeds and swells the macula. We treat the oedema and watch for new vessels.",
+ definition: "A blocked retinal vein: blood and macular oedema. Treat the oedema, watch for new vessels.",
  anatomy: { text: "The central retinal vein leaves through the disc beside the artery, in a shared sheath; further out, arterioles and venules cross under a shared adventitia. A stiff artery (hypertension, atherosclerosis) compresses the vein at these points. The temporal arcades drain the macula." },
  causal: {
   title: "From a pinched crossing to new vessels",
@@ -264,12 +264,12 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "Occlusion in a young patient or both eyes: coagulation, hyperviscosity, vasculitis"
  ],
  cat: {
-  vignette: "A 66-year-old woman with poorly controlled hypertension: blurred right eye on waking. Flame haemorrhages in the superotemporal sector.",
+  vignette: "A 66-year-old woman, poorly controlled hypertension: blurred right eye on waking, superotemporal flame haemorrhages.",
   algo: [
    { q: "Haemorrhages in all 4 quadrants?", yes: "Central retinal vein occlusion.", yesGo: 1, no: "Branch occlusion: one sector.", noGo: 2 },
    { q: "RAPD, many cotton-wool spots?", yes: "Ischaemic form: IOP, iris and angle monthly.", yesGo: 2, no: "Non-ischaemic: can worsen, close follow-up.", noGo: 2 },
    { q: "Thickened macula on OCT, low vision?", yes: "Intravitreal anti-VEGF, monthly at first.", yesGo: 3, no: "Observation; treat the risk factors.", noGo: 3 },
-   { q: "New vessels: iris, angle, retina?", yes: { t: "Panretinal laser and anti-VEGF; same day if IOP high.", urgent: true }, no: "Follow-up; BP, glucose, lipids by the family physician." }
+   { q: "New vessels: iris, angle, retina?", yes: "Panretinal laser and anti-VEGF; same day if IOP high.", no: "Follow-up; BP, glucose, lipids by the family physician." }
   ],
   phases: [
    { phase: "medical", items: ["Macular oedema: intravitreal anti-VEGF (bevacizumab, ranibizumab, aflibercept); dexamethasone implant second line", "Family physician: BP, glucose, lipids; IOP if glaucoma"] },
@@ -305,7 +305,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "r-diabete": {
  title: "Diabetic retinopathy",
  oneLiner: "Often silent until advanced: screen at diagnosis (type 2) or from 5 years after onset (type 1), then refer by severity.",
- definition: "High glucose damages the small retinal vessels: they leak, close off, then trigger new vessels. It stays silent for a long time, hence screening.",
+ definition: "Diabetes damages the retinal capillaries: leakage, ischaemia, new vessels. Silent for a long time, it must be screened for.",
  anatomy: { text: "The inner retina is fed by watertight capillaries (the blood–retinal barrier); the macula, at the centre, provides fine vision. When capillaries close, the ischaemic retina releases VEGF (vascular endothelial growth factor), which makes vessels leak and grow fragile new ones." },
  causal: {
   title: "From damaged capillary to bleeding new vessel",
@@ -348,11 +348,12 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  redFlags: ["Shower of floaters or a sudden veil: vitreous haemorrhage, urgent ophthalmology", "New vessels, rubeosis or high IOP: ophthalmologist within days", "Pregnancy (pre-existing diabetes): eye exam in the first trimester"],
  cat: {
-  vignette: "A 52-year-old man with type 2 diabetes for 12 years, HbA1c 9.5%, never seen in ophthalmology. Normal vision, no symptoms.",
+  vignette: "A 52-year-old man, type 2 diabetes for 12 years, never had an eye exam. No symptoms.",
   algo: [
    { q: "Veil, shower of floaters, curtain?", yes: { t: "Vitreous haemorrhage or detachment: urgent ophthalmology.", urgent: true }, no: "", noGo: 1 },
-   { q: "No retinopathy at the last exam?", yes: "Type 1: every year; type 2: every 1–2 years.", no: "", noGo: 2 },
-   { q: "New vessels or severe non-proliferative disease?", yes: { t: "Ophthalmologist within days: panretinal laser or anti-VEGF.", urgent: true }, no: "", noGo: 3 },
+   { q: "Examined before: photos or dilated fundus?", yes: "", yesGo: 2, no: "Examine now, then read the result.", noGo: 2 },
+   { q: "No retinopathy on the exam?", yes: "Type 1: every year; type 2: every 1–2 years.", no: "", noGo: 3 },
+   { q: "New vessels or severe non-proliferative disease?", yes: { t: "Ophthalmologist within days: panretinal laser or anti-VEGF.", urgent: true }, no: "", noGo: 4 },
    { q: "Centre-involving macular oedema?", yes: "Ophthalmologist within a few weeks: anti-VEGF.", no: "Mild or moderate: exam every 6–12 months." }
   ],
   phases: [
@@ -381,7 +382,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "**You**: check the date of the last eye exam and arrange it; aim for HbA1c, BP, lipids; make sure the result comes back to you.",
    "**Ophthalmologist**: grading, OCT; anti-VEGF for central oedema; panretinal laser or anti-VEGF for proliferative disease."
   ],
-  refer: "Refer to ophthalmology: urgently for a sudden veil or floaters; within days for new vessels or severe disease; within a few weeks for macular oedema — treated in time, retinopathy rarely causes blindness.",
+  refer: "Refer to ophthalmology: as an emergency for a sudden veil or floaters; within days for new vessels or severe disease; within a few weeks for macular oedema — treated in time, retinopathy rarely causes blindness.",
   pitfall: [
    "**Waiting for symptoms** before having the eyes examined: proliferative disease can be silent.",
    "**Rapid HbA1c drop** (intensified insulin, semaglutide) with advanced retinopathy: possible transient worsening, watch the eyes."
@@ -392,7 +393,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "r-dmla": {
  title: "Age-related macular degeneration (dry and neovascular)",
  oneLiner: "After 50, drusen then atrophy (dry) or new vessels (wet): any new distortion of straight lines calls for referral within days.",
- definition: "The macula ages: deposits (drusen) build up, then it wastes away (dry form) or new vessels leak into it (wet form). The wet form can be treated, provided you act fast.",
+ definition: "The macula ages: drusen, then atrophy (dry) or leaking new vessels (wet). The wet form can be treated, but fast.",
  anatomy: { text: "Beneath the photoreceptors, the pigment epithelium feeds them and recycles their waste; it rests on Bruch’s membrane, above the choroid. The macula, rich in cones, provides fine vision, reading and face recognition." },
  causal: {
   title: "From drusen to scar",
@@ -433,12 +434,12 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  redFlags: ["New metamorphopsia or central spot: ophthalmology within days", "Blood under the macula on fundus exam: urgent referral", "Red, painful eye, falling vision after an injection: endophthalmitis, the same day"],
  cat: {
-  vignette: "A 78-year-old former smoker: for 5 days, door frames have looked wavy to her left eye. Known drusen in both eyes.",
+  vignette: "A 78-year-old ex-smoker with known drusen: door frames have looked wavy for 5 days.",
   algo: [
-   { q: "New metamorphopsia or central spot?", yes: { t: "Possible wet AMD: ophthalmology within days.", urgent: true }, yesGo: 1, no: "", noGo: 2 },
+   { q: "New metamorphopsia or central spot?", yes: "Possible wet AMD: ophthalmology within days.", yesGo: 1, no: "", noGo: 2 },
    { q: "Fluid or blood on OCT?", yes: "Intravitreal anti-VEGF, monthly at first.", no: "Another cause: membrane, macular hole, central serous." },
    { q: "Large drusen or advanced AMD in one eye?", yes: "AREDS2, stop smoking, Amsler at home.", yesGo: 3, no: "Small drusen: no AREDS2; follow-up exam." },
-   { q: "Geographic atrophy affecting vision?", yes: "Low-vision rehabilitation; newer treatments: Canadian availability to check.", no: "Follow-up; come back quickly if lines look wavy." }
+   { q: "Geographic atrophy affecting vision?", yes: "Low-vision rehabilitation; ask the ophthalmologist about newer treatments.", no: "Follow-up; come back quickly if lines look wavy." }
   ],
   phases: [
    { phase: "observation", items: ["Early AMD: follow-up exam, Amsler, stop smoking", "Intermediate AMD: AREDS2, Amsler at home one eye at a time"] },
@@ -463,7 +464,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "**You**: acuity, Amsler one eye at a time; stop smoking; AREDS2 only for intermediate AMD or advanced AMD in one eye.",
    "**Ophthalmologist**: OCT, angiography; anti-VEGF for wet AMD."
   ],
-  refer: "Refer to ophthalmology: within days (under a week) for new metamorphopsia or a central spot; otherwise regular follow-up — treated early, wet AMD keeps more vision.",
+  refer: "Refer to ophthalmology: within days (under a week) for new metamorphopsia or a central spot; the same day for a red, painful eye after an injection; otherwise regular follow-up.",
   pitfall: [
    "**Beta-carotene** (old AREDS formula) in a smoker or ex-smoker: lung cancer.",
    "**Blaming a cataract** for recent vision loss with wavy lines: missed wet AMD."
@@ -515,7 +516,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  redFlags: ["Swollen disc or haemorrhages with very high BP: hypertensive emergency, to the ED now", "Headache, confusion, chest pain, oliguria: other organs involved", "Pregnancy, high BP and blurred vision: pre-eclampsia, obstetric emergency"],
  cat: {
-  vignette: "A 45-year-old man in the ED: headache and blurred vision in both eyes. BP 230/140. Swollen discs, cotton-wool spots, flame haemorrhages.",
+  vignette: "A 45-year-old man: headache, blurred vision, BP 230/140. Swollen discs, cotton-wool spots.",
   algo: [
    { q: "BP 180/110 or higher?", yes: "", yesGo: 1, no: "Chronic hypertension: treat as an outpatient, fundus at follow-up." },
    { q: "Swollen disc, haemorrhages, cotton-wool spots?", yes: { t: "Hypertensive emergency: admit, controlled IV lowering.", urgent: true }, yesGo: 2, no: "", noGo: 3 },
@@ -598,7 +599,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  redFlags: ["Curtain or vision loss: probable detachment, on-call ophthalmologist the same day", "Shower of floaters, blood or pigment in the vitreous: probable tear, the same day", "New symptoms after a PVD judged benign: re-examine without delay"],
  cat: {
-  vignette: "A 62-year-old woman: since yesterday, a grey ring floats in front of her right eye, with flashes at the corner of the eye in the evening. Vision 6/6.",
+  vignette: "A 62-year-old woman: a grey ring floating before her right eye, flashes at night. Vision 6/6.",
   algo: [
    { q: "Curtain or vision loss?", yes: { t: "Probable detachment: on-call ophthalmologist the same day.", urgent: true }, no: "", noGo: 1 },
    { q: "Shower of floaters, blood or pigment?", yes: { t: "Probable tear: dilated exam the same day.", urgent: true }, yesGo: 2, no: "Dilated exam within 24 h.", noGo: 2 },
@@ -623,7 +624,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
  ],
  treatment: {
   first: ["**You**: acuity, finger fields; look for a shower of floaters, blood, a curtain; explain the warning signs.", "**Ophthalmologist or optometrist**: dilated exam with scleral depression; laser if there is a tear."],
-  refer: "Refer: dilated exam within 24 h for a probable PVD; the same day for a shower of floaters, blood, a curtain or vision loss — a tear treated early does not become a detachment.",
+  refer: "Refer: immediately (the same day) for a shower of floaters, blood, a curtain or vision loss; otherwise a dilated exam within 24 h — a tear treated early does not become a detachment.",
   pitfall: ["**Reassuring without dilating**: the tear is in the periphery.", "**Ignoring a change in symptoms** after a first normal exam: the tear can come later."],
   qc: ["Optometrist or ophthalmologist for the first dilated exam.", "Written return advice."]
  }
@@ -631,7 +632,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
 "r-endophtalmie": {
  title: "Endophthalmitis after surgery or intravitreal injection",
  oneLiner: "An operated or injected eye that becomes painful, red and sees less, with a hypopyon: endophthalmitis until proven otherwise, the same day.",
- definition: "An infection inside the eye, often a few days after surgery or an injection. It can destroy vision within hours: ophthalmologist the same day.",
+ definition: "An infection inside the eye, a few days after surgery or an injection. Ophthalmologist the same day.",
  anatomy: { text: "The vitreous, a gel with no vessels or defences, is an ideal culture medium. Bacteria come mostly from the patient’s own eyelid and conjunctival flora; they enter through an incision (cataract) or the needle (intravitreal injection)." },
  causal: {
   title: "From the wound to an infected vitreous",
@@ -668,9 +669,9 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   { dx: "Sterile inflammation after injection", clue: "Little pain, vision less affected; only the ophthalmologist can tell." },
   { dx: "Endogenous endophthalmitis", clue: "No surgery: bacteraemia or fungaemia (catheter, IV drug use, endocarditis)." }
  ],
- redFlags: ["Operated or injected eye that is painful, red and sees less: ophthalmologist the same day", "Hypopyon after an eye procedure: endophthalmitis until proven otherwise", "Never treat it as conjunctivitis, or wait until tomorrow"],
+ redFlags: ["Operated or injected eye that is painful, red and sees less: ophthalmologist the same day", "Hypopyon after an eye procedure: endophthalmitis until proven otherwise", "Never treat it as conjunctivitis or postpone the exam"],
  cat: {
-  vignette: "A 76-year-old man, anti-VEGF injection 3 days ago: red, painful left eye, vision down to counting fingers. Hypopyon.",
+  vignette: "A 76-year-old man, anti-VEGF injection 3 days ago: red, painful eye, hypopyon.",
   algo: [
    { q: "Recent eye surgery or injection?", yes: "", yesGo: 1, no: "No procedure: uveitis, keratitis or endogenous endophthalmitis." },
    { q: "Pain, redness, vision getting worse?", yes: { t: "Probable endophthalmitis: ophthalmologist the same day.", urgent: true }, yesGo: 2, no: "Usual inflammation: follow-up as the surgeon decides." },
@@ -729,7 +730,7 @@ G.OPH_EN.hy = Object.assign(G.OPH_EN.hy || {}, {
  "r-oacr": {
   essentials: [
    "**Sudden, painless** loss of vision in one eye: a **stroke of the eye** until proven otherwise.",
-   "**Stroke-centre emergency** the same day: MRI, carotids, heart rhythm, echocardiography.",
+   "Emergency: **immediately (the same day), like a stroke**; MRI, carotids, rhythm, echocardiography.",
    "From **age 50**: ESR, CRP, platelets; **corticosteroids** without waiting for the biopsy if GCA is suspected.",
    "White retina and **cherry-red spot**: the fovea is still fed by the choroid.",
    "Massage, paracentesis, thrombolysis: **no proven visual benefit**; do not delay the work-up."
@@ -742,9 +743,9 @@ G.OPH_EN.hy = Object.assign(G.OPH_EN.hy || {}, {
    "A [[cilioretinal]] artery can spare part of the macula."
   ],
   triage: [
-   { s: "A 68-year-old man: painless loss of vision in the left eye 1 h ago, left RAPD.", u: "urgent", why: "Probable CRAO: stroke-centre emergency now; ESR, CRP, platelets." },
+   { s: "A 68-year-old man: painless loss of vision in the left eye 1 h ago, left RAPD.", u: "urgent", why: "Probable CRAO. Emergency: immediately (the same day), like a stroke; ESR, CRP, platelets." },
    { s: "A 79-year-old woman: sudden blur in the right eye, temporal headache, pain when chewing for 2 weeks.", u: "urgent", why: "Probable GCA: ESR, CRP, platelets and corticosteroids the same day." },
-   { s: "A 66-year-old man: a black veil over the right eye for 5 minutes yesterday, normal vision today.", u: "urgent", why: "Amaurosis fugax = TIA: urgent work-up (carotids, rhythm) the same day." }
+   { s: "A 66-year-old man: a black veil over the right eye for 5 minutes yesterday, normal vision today.", u: "urgent", why: "Amaurosis fugax = TIA. Emergency: immediately (the same day), like a stroke." }
   ],
   cues: ["Sudden painless loss, RAPD, cherry-red spot", "Bright embolus at an arterial bifurcation"]
  },
@@ -774,7 +775,7 @@ G.OPH_EN.hy = Object.assign(G.OPH_EN.hy || {}, {
   essentials: [
    "**Screen**: type 2 at diagnosis; type 1 from 5 years after onset (from age 15).",
    "No retinopathy: type 1 **every year**, type 2 **every 1–2 years** (Diabetes Canada).",
-   "**New vessels** or severe disease (4-2-1 rule): ophthalmologist **within days**.",
+   "**New vessels** or severe non-proliferative disease: ophthalmologist **within days**.",
    "Centre-involving macular oedema: **anti-VEGF**; proliferative disease: **panretinal laser** or anti-VEGF.",
    "HbA1c, **BP**, lipids; **pregnancy**: eye exam in the first trimester."
   ],
@@ -891,7 +892,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
   "IMG3-005": { caption: "B-scan: detached retina, attached at the disc and the ora serrata", look: "Find the membrane in the globe and its attachment points.", reveal: ["An echogenic membrane in the vitreous cavity: detached retina.", "Attached behind at the disc (*) and in front at the ora serrata (arrows): this is what sets it apart from a vitreous detachment.", "Useful when vitreous haemorrhage or a cataract hides the fundus."] }
  });
  add("r-oacr", {
-  "IMG3-029": { caption: "Central retinal artery occlusion: cherry-red spot", look: "Look at the colour of the retina around the macula, then its centre.", reveal: ["Cherry-red spot at the fovea: the intact choroid shows through a fovea with no inner retina.", "Pale, oedematous retina around it: inner layers deprived of oxygen.", "It is a stroke of the eye: stroke-centre emergency; ESR, CRP and platelets from age 50."] },
+  "IMG3-029": { caption: "Central retinal artery occlusion: cherry-red spot", look: "Look at the colour of the retina around the macula, then its centre.", reveal: ["Cherry-red spot at the fovea: the intact choroid shows through a fovea with no inner retina.", "Pale, oedematous retina around it: inner layers deprived of oxygen.", "It is a stroke of the eye. Emergency: immediately (the same day), like a stroke; ESR, CRP and platelets from age 50."] },
   "OPH-249": { caption: "Central artery occlusion: whitened retina, an area still red near the disc", look: "Compare the colour of the retina between the disc and the macula with the rest.", reveal: ["Yellow-white retina almost everywhere: ischaemia of the inner layers.", "Red area between the disc and the macula: still-perfused retina, suggesting a spared cilioretinal artery.", "If this area covers the fovea, part of central vision may be preserved."] },
   "OPH-274": { caption: "Giant cell arteritis: pale, swollen disc (ischaemic optic neuropathy)", look: "Look at the colour and margins of the disc.", reveal: ["Chalk-white, swollen disc with blurred margins: arteritic anterior ischaemic optic neuropathy.", "The same disease as arteritic CRAO: ESR, CRP, platelets and corticosteroids without waiting for the biopsy.", "Without treatment, the other eye is at risk in the following days."] }
  });
@@ -950,14 +951,14 @@ Object.assign(G.OPH_EN.quiz, {
  },
  "D-004": {
   stem: "A 72-year-old hypertensive man: sudden, painless loss of vision in the right eye 2 hours ago. Right RAPD, pale retina with a cherry-red spot. You see him in clinic. What do you do?",
-  options: ["Ocular massage and an ophthalmology appointment tomorrow", "Aspirin, home, and an outpatient MRI", "Stroke-centre ED now; ESR and CRP", "IOP-lowering drops and a check in one week"],
-  explain: "Sudden, painless vision loss with a cherry-red spot: CRAO, a stroke of the eye. Same-day stroke work-up at a stroke centre; ESR, CRP and platelets from age 50.",
-  deep: "**What it is:** central retinal artery occlusion, i.e., a stroke of the eye. **Why the urgency:** brain-stroke risk is high in the following days; the work-up (diffusion MRI, carotids, heart rhythm, echocardiography) is done the same day, and thrombolysis is discussed at a stroke centre if onset was under 4.5 h ago. **Over 50:** ESR, CRP and platelets to rule out giant cell arteritis.",
+  options: ["Ocular massage and an ophthalmology appointment tomorrow", "Aspirin, home, and an outpatient MRI", "Emergency immediately, like a stroke; ESR and CRP", "IOP-lowering drops and a check in one week"],
+  explain: "Sudden, painless vision loss with a cherry-red spot: CRAO, a stroke of the eye. Emergency: immediately (the same day), like a stroke; ESR, CRP and platelets from age 50.",
+  deep: "**What it is:** central retinal artery occlusion, i.e., a stroke of the eye. **Why the urgency:** brain-stroke risk is high in the following days; the work-up (diffusion MRI, carotids, heart rhythm, echocardiography) is done immediately, and thrombolysis is discussed at a stroke centre if onset was under 4.5 h ago. **Over 50:** ESR, CRP and platelets to rule out giant cell arteritis.",
   why: ["Massage has no proven benefit and the delay misses the urgent stroke work-up.", "An outpatient work-up misses the window when stroke risk is highest.", "Correct: it is a stroke; same-day work-up and arteritis to rule out.", "IOP-lowering drops have shown no benefit and delay the work-up."]
  },
  "D-005": {
   stem: "In central retinal artery occlusion, why does the fovea look cherry red in the middle of a white retina?",
-  options: ["The intact choroid shows through a fovea with no inner retina", "A subretinal haemorrhage forms under the fovea", "Foveal cones contain a red pigment", "The cilioretinal artery dilates to compensate"],
+  options: ["The intact choroid shows through the fovea", "A subretinal haemorrhage forms under the fovea", "Foveal cones contain a red pigment", "The cilioretinal artery dilates to compensate"],
   explain: "The fovea has no inner retina to whiten: fed by the intact choroid, it stays red in the middle of a pale retina.",
   deep: "**Mechanism:** the central artery feeds the inner retinal layers, which turn white when deprived of oxygen. The fovea has no inner layers: it depends on the choroid, which stays perfused. So the red choroid shows at the centre of a pale retina.",
   why: ["Correct: with no inner retina to whiten, the fovea lets the perfused choroid show.", "There is no blood outside the vessels: it is a contrast effect.", "The colour comes not from the cones but from the underlying choroid.", "A cilioretinal artery spares an area near the disc; it does not explain the central spot."]
@@ -978,7 +979,7 @@ Object.assign(G.OPH_EN.quiz, {
  },
  "D-008": {
   stem: "A 74-year-old woman with an ischaemic central vein occlusion in the right eye 3 weeks ago (RAPD, many cotton-wool spots). Which follow-up watches for the most feared complication?",
-  options: ["Visual field every 6 months", "Iris exam and gonioscopy every month", "Follow-up brain MRI at 3 months", "B-scan at every visit"],
+  options: ["Visual field every 6 months", "Iris exam and gonioscopy every month", "Follow-up brain MRI at 3 months", "B-scan and fundus photos at every visit"],
   explain: "After an ischaemic central vein occlusion, the feared complication is neovascular glaucoma: undilated iris exam and gonioscopy monthly for 6 months.",
   deep: "**The feared complication:** neovascular glaucoma. The ischaemic retina releases VEGF; new vessels grow on the iris and in the angle, often within the first 3 months. **What to do:** undilated iris exam and gonioscopy every month for 6 months; panretinal laser (and anti-VEGF) as soon as new vessels appear.",
   why: ["The visual field does not detect iris new vessels, and 6 months is too late.", "Correct: look for rubeosis and angle new vessels every month at first.", "A vein occlusion is not a stroke; MRI is not the follow-up.", "Ultrasound helps when the fundus is hidden; it does not show the angle."]
@@ -992,7 +993,7 @@ Object.assign(G.OPH_EN.quiz, {
  },
  "D-010": {
   stem: "A 34-year-old woman with type 1 diabetes for 20 years. Screening photos show new vessels on the disc; vision 6/6, no symptoms. What do you do?",
-  options: ["Repeat photos in 1 year", "Intensify insulin and review in 3 months", "Ophthalmologist within days: panretinal laser or anti-VEGF", "Aspirin to prevent vitreous haemorrhage"],
+  options: ["Repeat photos in 1 year", "Intensify insulin and review in 3 months", "Ophthalmologist within days", "Aspirin to prevent vitreous haemorrhage"],
   explain: "New vessels on the disc: proliferative disease, silent until it bleeds. Ophthalmologist within days for panretinal laser or anti-VEGF.",
   deep: "**What it is:** proliferative diabetic retinopathy (new vessels on the disc), silent until it bleeds. **Why quickly:** new vessels bleed into the vitreous and pull on the retina; panretinal laser or anti-VEGF makes them regress. **Glucose:** to improve, but a very rapid HbA1c drop can transiently worsen retinopathy: eyes first.",
   why: ["One year is the interval for an eye with no retinopathy, not proliferative disease.", "Glucose control helps in the long run; it does not treat new vessels, and a rapid drop can worsen them.", "Correct: proliferative disease, eye treatment without delay.", "Aspirin changes neither the course of retinopathy nor the risk of vitreous haemorrhage (Diabetes Canada)."]
@@ -1006,7 +1007,7 @@ Object.assign(G.OPH_EN.quiz, {
  },
  "D-012": {
   stem: "A 70-year-old man who has smoked for 50 years: large drusen in both eyes (intermediate AMD). He asks which supplement to take. What do you suggest?",
-  options: ["None: supplements are useless", "High-dose omega-3 only", "The AREDS2 formula, without beta-carotene, and quitting smoking", "The original AREDS formula, with beta-carotene"],
+  options: ["None: supplements are useless", "High-dose omega-3 only", "AREDS2 and quitting smoking", "The original AREDS formula, with beta-carotene"],
   explain: "Intermediate AMD: AREDS2 and stopping smoking. The original beta-carotene formula raises the risk of lung cancer in smokers.",
   deep: "**What the evidence says:** in intermediate AMD, the AREDS formula slows progression to advanced disease (about 25%). **The trap:** the original formula contained beta-carotene, which raises the risk of lung cancer in smokers; AREDS2 replaced it with lutein and zeaxanthin. **What to do:** AREDS2 (vitamins C and E, lutein, zeaxanthin, zinc, copper) and smoking cessation.",
   why: ["Wrong for the intermediate form: the AREDS formula slows progression.", "Omega-3 showed no benefit in AREDS2.", "Correct: AREDS2 without beta-carotene, and stop smoking.", "Trap: beta-carotene raises lung cancer risk in smokers."]
@@ -1020,7 +1021,7 @@ Object.assign(G.OPH_EN.quiz, {
  },
  "D-014": {
   stem: "In the fundus of a 66-year-old hypertensive woman, you see thin arterioles and nipped artery–vein crossings, with no haemorrhage or disc swelling. BP 150/92, no symptoms. How do you grade this retinopathy?",
-  options: ["Severe (malignant): hypertensive emergency", "Moderate: look for acute organ damage", "Absent: a normal variant", "Mild (Wong-Mitchell): chronic hypertension to control better"],
+  options: ["Severe (malignant): a hypertensive emergency now", "Moderate: look for acute organ damage", "Absent: a normal variant", "Mild: chronic hypertension to control better"],
   explain: "Thin arterioles and nipped crossings without haemorrhage or a swollen disc: mild Wong-Mitchell retinopathy, a sign of long-standing hypertension. Adjust treatment as an outpatient.",
   deep: "**Wong and Mitchell classification:** mild = thin arterioles, nipped crossings, copper wiring; moderate = haemorrhages, microaneurysms, cotton-wool spots, exudates; severe = moderate signs plus a swollen disc. **Here:** mild disease, a sign of long-standing hypertension; adjust treatment as an outpatient, without rapid lowering.",
   why: ["A swollen disc would be needed to call it severe.", "Haemorrhages, cotton-wool spots or exudates would be needed.", "Nipped crossings are signs of chronic hypertension, not a normal variant.", "Correct: mild disease; control hypertension better as an outpatient."]
@@ -1034,14 +1035,14 @@ Object.assign(G.OPH_EN.quiz, {
  },
  "D-016": {
   stem: "A 66-year-old man: same-day dilated exam for floaters, PVD without a tear. What advice do you give him as he leaves?",
-  options: ["No follow-up: PVD is always benign", "Bed rest, head raised, for a week", "Anti-inflammatory drops to make the floaters go away", "Come back the same day for a shower of floaters, a curtain or vision loss"],
+  options: ["No follow-up: PVD is always benign", "Bed rest, head raised, for a week", "Anti-inflammatory drops to make the floaters go away", "Come back the same day if symptoms change"],
   explain: "A tear can appear in the weeks after a PVD (about 3% within 6 weeks). The patient must come back the same day if symptoms change: a shower, persistent flashes, a curtain, vision loss.",
   deep: "**Why:** the vitreous keeps pulling on the peripheral retina after the detachment; a tear can form later (Hollands, JAMA 2009: 3.4% within 6 weeks, higher if new floaters appear). **What to do:** written advice, planned re-examination as the ophthalmologist decides.",
   why: ["Wrong: a tear can occur in the following weeks.", "Bed rest does not prevent a tear; it is not recommended here.", "No drop makes floaters disappear.", "Correct: clear return advice, planned re-examination."]
  },
  "D-017": {
   stem: "A 79-year-old woman, anti-VEGF injection 2 days ago: red, painful right eye, vision dropping. You see a small white level at the bottom of the anterior chamber. What do you do?",
-  options: ["Antibiotic drops and a check in 48 h", "Ophthalmologist the same day: intravitreal antibiotics", "Topical corticosteroid and cold compresses", "Oral antibiotic and an appointment within the week"],
+  options: ["Antibiotic drops and a check in 48 h", "Ophthalmologist the same day", "Topical corticosteroid and cold compresses", "Oral antibiotic and an appointment within the week"],
   explain: "Pain, redness, vision loss and a hypopyon a few days after an injection: endophthalmitis. Tap and intravitreal antibiotics the same day; the retina can be lost within hours.",
   deep: "**What it is:** an infection of the vitreous, most often by eyelid flora bacteria carried in by the needle. **Why not drops or pills:** they do not reach the vitreous well enough; only antibiotics injected into the vitreous (vancomycin 1 mg/0.1 mL and ceftazidime 2.25 mg/0.1 mL) treat the infection. **What to do:** call the on-call ophthalmologist or the surgeon now.",
   why: ["Drops do not reach the vitreous; 48 h is too late.", "Correct: endophthalmitis, intravitreal antibiotics the same day.", "A corticosteroid alone would mask a progressing infection.", "An oral antibiotic penetrates the vitreous poorly; a week is too late."]

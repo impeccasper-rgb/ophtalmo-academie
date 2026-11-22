@@ -183,7 +183,7 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
     pearl: { q: "Comment distingues-tu au B-scan un décollement postérieur du vitré, un décollement de rétine et un décollement choroïdien ?", a: "Le vitré décollé est fin, peu réfléchissant et très mobile. La rétine décollée est plus épaisse, très réfléchissante, attachée au nerf optique et à l’ora serrata, souvent en V. La choroïde décollée forme des dômes lisses et épais, peu mobiles, qui ne s’attachent pas au nerf optique." }
   },
   {
-    id: "decollement-retine", order: 6, group: "retine",
+    id: "decollement-retine", order: 6, group: "retine", full: ["r-decollement", "r-dpv"],
     card: { nk: 2,
       lead: "Une déchirure laisse passer le liquide sous la rétine. Macula attachée : rétine le jour même.",
       keys: [
@@ -255,7 +255,7 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
     pearl: { q: "Après une trabéculectomie, PIO à 3 mmHg et dômes bruns en périphérie : séreux ou hémorragique ?", a: "PIO basse, peu de douleur et contenu anéchogène au B-scan évoquent un décollement séreux par hypotonie. Une hémorragie suprachoroïdienne donne plutôt une douleur brutale, une PIO élevée et un contenu échogène." }
   },
   {
-    id: "dmla", order: 8, group: "retine",
+    id: "dmla", order: 8, group: "retine", full: ["r-dmla"],
     card: { nk: 2,
       lead: "Après 50 ans : drusen et atrophie (sèche) ou néovaisseaux qui fuient (humide), avec chute rapide.",
       keys: [
@@ -291,7 +291,7 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
     pearl: { q: "Ton patient glaucomateux voit le cadre de sa porte ondulé depuis 4 jours. Que fais-tu ?", a: "Je teste chaque œil à la grille d’Amsler, je dilate et je fais un OCT maculaire. Une métamorphopsie récente évoque une DMLA néovasculaire : référence en rétine en quelques jours pour anti-VEGF, car le délai compte pour la vision finale." }
   },
   {
-    id: "retinopathie-diabetique", order: 9, group: "retine",
+    id: "retinopathie-diabetique", order: 9, group: "retine", full: ["r-diabete"],
     card: { nk: 2,
       lead: "Les capillaires fuient et se bouchent ; l’ischémie libère du VEGF : néovaisseaux.",
       keys: [

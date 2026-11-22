@@ -108,7 +108,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
         ]
       }
     ],
-    local: "Au Québec, les guttae sont souvent découvertes par l’optométriste, qui dirige si œdème, symptômes ou cataracte. Netarsudil (inhibiteur ROCK) : disponibilité canadienne à vérifier ; usage expérimental dans le Fuchs."
+    local: "Au Québec, les guttae sont souvent découvertes par l’optométriste, qui dirige si œdème, symptômes ou cataracte. Netarsudil (inhibiteur ROCK, approuvé aux É.-U.) : usage expérimental dans le Fuchs."
   },
   treatments: [
     { name: "NaCl 5 % et séchoir", dose: "NaCl 5 % goutte 4×/j ou onguent au coucher ; séchoir au réveil.", pitfall: "Effet modeste, surtout sur l’épithélium.", how: "Goutte ou onguent salé (hypertonique) qui attire par osmose l’eau de l’épithélium vers les larmes ; l’air tiède du séchoir accélère l’évaporation au réveil.", why: "Œdème épithélial léger, attente de greffe.", pros: "Simple, peu coûteux.", cons: "Agit peu sur le stroma ; effet modeste.", cx: "Brûlure, vision brouillée (onguent)." },
@@ -415,7 +415,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
         items: ["Stéroïde quelques semaines après l’exérèse, PIO ; récidive surtout la première année ; OSSN : suivi prolongé"]
       }
     ],
-    local: "Au Québec, le ptérygion est moins fréquent qu’en zone tropicale ; on le voit surtout chez les travailleurs extérieurs et les patients qui ont grandi sous un climat ensoleillé. Interféron et 5-fluorouracile topiques : préparations magistrales, disponibilité à vérifier."
+    local: "Au Québec, le ptérygion est moins fréquent qu’en zone tropicale ; on le voit surtout chez les travailleurs extérieurs et les patients qui ont grandi sous un climat ensoleillé. Interféron et 5-fluorouracile topiques : préparations magistrales de pharmacie d’hôpital."
   },
   treatments: [
     { name: "Traitement conservateur", dose: "Lunettes anti-UV, larmes ; stéroïde doux quelques jours si poussée.", pitfall: "Ne fait pas régresser la lésion.", how: "Protection UV, larmes artificielles et, en poussée, stéroïde doux quelques jours : on protège et on calme la surface.", why: "Petit ptérygion, pinguécula, poussée inflammatoire.", pros: "Sans chirurgie.", cons: "Ne fait pas régresser la lésion.", cx: "Stéroïde : PIO ↑." },
@@ -549,7 +549,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       {
         phase: "medical",
         items: [
-          "Rejet : acétate de prednisolone 1 % aux heures (ou difluprednate 0,05 %, disponibilité canadienne à vérifier), puis sevrage lent",
+          "Rejet : acétate de prednisolone 1 % aux heures (ou difluprednate 0,05 %), puis sevrage lent",
           "Cycloplégique (cyclopentolate : met au repos le muscle ciliaire)",
           "Sévère : triamcinolone sous-ténonienne (sous la capsule de Tenon, enveloppe du globe) ou prednisone orale",
           "Antécédent d’herpès : valacyclovir 500 mg PO TID ou acyclovir 400 mg PO 5 fois/j, puis prophylaxie"
@@ -701,7 +701,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
           "**Irriguer d’abord** : ≥ 30 min et plusieurs litres, anesthésique topique, blépharostat (écarteur de paupières) ou lentille d’irrigation",
           "Double éversion, retrait des particules au coton-tige mouillé, balayage des culs-de-sac",
           "Antibiotique sans agent de conservation, cycloplégique, contrôle de la PIO",
-          "Grades II–IV : stéroïde ≤ 10–14 j, doxycycline, ascorbate ; citrate topique (préparation magistrale, à vérifier)"
+          "Grades II–IV : stéroïde ≤ 10–14 j, doxycycline, ascorbate ; citrate topique (préparation magistrale, selon le centre)"
         ]
       },
       {

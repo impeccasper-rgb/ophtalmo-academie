@@ -299,13 +299,15 @@ Sources consultées le 22 nov. 2026 (WebFetch / PubMed), citées dans les fiches
 - **Endophthalmitis Vitrectomy Study** (EVS Group, *Arch Ophthalmol* 1995;113:1479-96, PubMed 7487614 ; NLM Clinical Alert) : 420 patients, endophtalmie dans les **6 semaines** après une cataracte ; vision « mouvements de la main » ou mieux : vitrectomie = ponction-injection ; **perception lumineuse seulement** : vitrectomie → 20/40 **33 % vs 11 %**, 20/100 56 % vs 30 %, perte sévère 20 % vs 47 % ; **antibiotiques IV sans bénéfice**. Doses intravitréennes (section C) : vancomycine 1 mg/0,1 mL, ceftazidime 2,25 mg/0,1 mL.
 - EyeWiki *Postoperative Endophthalmitis* : page non lue (demande d’accès expirée le 22 nov. 2026). TASS (12–48 h, cornée trouble d’un limbe à l’autre, peu de douleur), povidone iodée 5 % avant injection et antibiotique intracamérulaire : repères classiques non relus ici.
 
+- **EULAR 2018, vascularites des gros vaisseaux** (Hellmich B et al., *Ann Rheum Dis* 2020;79:19-30, PubMed 31270110, doi:10.1136/annrheumdis-2019-215672 ; texte intégral lu sur ard.bmj.com le 22 nov. 2026) : ACG active → **prednisone-équivalent 40–60 mg/j immédiatement** (au-delà de 60 mg/j, pas de bénéfice démontré) ; **perte visuelle ou amaurose fugace : « 0.25–1 g intravenous methylprednisolone for up to 3 days should be considered »** (données rétrospectives de faible qualité) ; « Referral for intravenous GC therapy should not delay treatment with oral GC ». Repris dans `r-oacr` : méthylprednisolone IV en premier si la vision est perdue, puis prednisone 40–60 mg/j ; prednisone d’emblée sans perte visuelle. Guide BSR 2020 (Mackie SL et al., *Rheumatology* 2020;59:487-494, PubMed 31970410) repéré, non relu en texte intégral.
+- Formulation unique du délai de l’OACR (critique passe 5) : « **Urgence : immédiatement (le jour même), comme un AVC** », reprise dans la définition, le 1er drapeau, l’arbre, « Quand référer », les essentiels, le triage, le QCM D-004, la photo IMG3-029 et l’entrée A5 `occlusions-retiniennes` (FR et EN). `tools/check-delays.js` couvre maintenant le module D.
+
 Conventions retenues pour l’externe (délais) :
 - Éclairs ou corps flottants isolés : examen dilaté **dans les 24 h** ; rideau, baisse de vision, nuée de corps flottants : **le jour même**.
 - OACR / amaurose fugace : **immédiatement**, urgence d’un centre de l’AVC (pas une clinique externe).
 - Occlusion veineuse : ophtalmologie **dans la semaine** ; le jour même si œil rouge douloureux avec PIO haute (glaucome néovasculaire).
 
 ### À valider par un clinicien (module D)
-- `r-oacr`, doses de corticostéroïdes pour l’ACG (prednisone 40–60 mg/j ; méthylprednisolone IV 250–1000 mg/j × 3 j si perte visuelle) : reprises des recommandations EULAR 2018 de mémoire, non relues à la source ici ; la fiche précise « selon l’équipe ».
 - `r-oacr`, encadré Québec : « urgence d’un hôpital qui traite les AVC » ; aucun centre n’est nommé (désignations régionales non vérifiées).
 - `r-decollement`, encadré Québec : rôle de l’optométriste pour l’examen dilaté initial (pratique courante ; pas de texte réglementaire consulté).
 - `r-ovr`, délai « dans la semaine » : consensus pratique ; l’AAO ne fixe pas de délai de référence.
@@ -332,3 +334,10 @@ Audit de forme et de pédagogie, sans nouvelle source : les énoncés réécrits
 - Explications courtes des 164 autres QCM : condensées à partir de l’ancienne explication, conservée telle quelle dans le champ `deep` (« Pour aller plus loin »). Aucune dose ni aucun délai n’a été modifié.
 - Cas cliniques : seuls les libellés des bonnes réponses ont été raccourcis (33 étapes) ; les notes de rétroaction, qui portent les doses, sont inchangées.
 - Orthographe harmonisée en français : « hypopyon », « phtisie », « endophtalmie » (formes du glossaire).
+
+### À valider par un clinicien : mentions « à vérifier » retirées des textes de l’apprenant (critique passe 5, N4, 22 nov. 2026)
+Les mentions ont été remplacées par une formulation prudente dans les textes visibles ; le doute reste ici.
+- Disponibilité au Canada, non vérifiée : polihexanide 0,08 % (Akantior, approuvé en Europe en 2024 ; `capsules`, `c-atypiques`, `cases`, QCM B) ; lotilaner, perfluorohexyloctane, varénicline nasale, CXL epi-on Epioxa (approuvés aux É.-U. ou par la FDA ; `capsules`, `c-secheresse`, `c-keratocone`) ; netarsudil et implants intracamérulaires de PGA (`capsules`, `c-fuchs`, photo netarsudil) ; difluprednate 0,05 % (`c-greffe`, mention retirée) ; natamycine 5 % (texte : « souvent obtenue par la pharmacie d’hôpital ») ; cyclosporine ou tacrolimus topiques (« souvent en préparation magistrale ou sur ordonnance spécialisée »).
+- Préparations magistrales : chlorhexidine, PHMB, interféron et 5-FU topiques, EDTA disodique, citrate topique (« pharmacie d’hôpital », « selon le centre ») : offre réelle variable selon l’hôpital.
+- Couverture publique : CXL, MIGS et implants (« variable selon le centre », au lieu de « couverture RAMQ à vérifier ») ; cyclosporine et lifitégrast (« variable selon le régime ») ; vaccin Shingrix (« couverture selon le programme provincial ») ; test génétique des dystrophies (« selon l’accès local ») ; biologiques en rhumatologie (« prescrits par la rhumatologie »).
+- `r-dmla` : nouveaux traitements de l’atrophie géographique (« avis de l’ophtalmologiste ») ; statut canadien non vérifié.

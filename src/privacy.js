@@ -90,11 +90,13 @@ var PRIV_T = {
   'stats.s.optout': ['Inactive : tu l’as refusée sur cet appareil.', 'Off: you refused it on this device.'],
   'stats.s.on': ['Active : visites comptées sans témoin ni renseignement personnel.', 'On: visits counted with no cookies and no personal data.'],
   'stats.saved.off': ['Mesure d’audience refusée sur cet appareil.', 'Audience measurement refused on this device.'],
-  'stats.saved.on': ['Mesure d’audience permise.', 'Audience measurement allowed.']
+  'stats.saved.on': ['Mesure d’audience permise.', 'Audience measurement allowed.'],
+  'stats.refuse': ['Tu peux la refuser sur cet appareil (aussi dans Progression → Affichage) :', 'You can refuse it on this device (also in Progress → Display):']
 };
 (function () { if (!window.I18N) return; Object.keys(PRIV_T).forEach(function (k) { I18N.dict.fr[k] = PRIV_T[k][0]; I18N.dict.en[k] = PRIV_T[k][1]; }); })();
 
 var Privacy = {
+  toggleUseful: function () { var st = Stats.state(); return st === 'on' || st === 'optout'; },
   statusText: function () { return t('stats.s.' + Stats.state()); },
   toggleHtml: function () {
     var off = Stats.optedOut(), b = function (v, label, on) { return '<button type="button" data-act="stats" data-v="' + v + '" aria-pressed="' + on + '">' + label + '</button>'; };
@@ -102,6 +104,7 @@ var Privacy = {
   },
   /* ligne prête à insérer dans la carte « Affichage » de Progression */
   settingsRow: function () {
+    if (!Privacy.toggleUseful()) return '';
     return '<div class="row"><span class="small" style="min-width:9rem">' + t('stats.label') + '</span>' + Privacy.toggleHtml() + '</div>' +
       '<p class="xs muted" data-stats-state>' + U.esc(Privacy.statusText()) + ' <a href="#confidentialite">' + t('nav.privacy') + '</a></p>';
   }
@@ -130,7 +133,7 @@ var PRIVACY_TXT = {
         'Pour savoir quelles pages servent, nous pouvons compter les visites avec <a href="https://www.goatcounter.com/help/privacy" target="_blank" rel="noopener">GoatCounter</a>.',
         '<b>Aucun témoin (cookie), aucun renseignement personnel</b> : seulement des totaux par page (page vue, site d’origine, navigateur, taille d’écran, langue, pays).',
         'L’adresse IP sert à déduire le pays, puis <b>n’est pas conservée</b>. Le chemin compté est la page seule (ex. <span class="mono">/cas-vedette</span>), sans autre paramètre que la langue.',
-        'Rien n’est compté si ton navigateur envoie « Ne pas me pister » (Do Not Track), ni dans l’app iOS. Tu peux aussi refuser ici ou dans Progression → Affichage :'
+        'Rien n’est compté si ton navigateur envoie « Ne pas me pister » (Do Not Track), ni dans l’app iOS.'
       ]],
       ['Hébergement', [
         'Le site est hébergé par <b>GitHub Pages</b> (GitHub, Inc., États-Unis). Comme tout hébergeur, GitHub enregistre l’adresse IP des visiteurs pour la sécurité du service ; ces données peuvent être traitées hors du Québec.',
@@ -167,7 +170,7 @@ var PRIVACY_TXT = {
         'To learn which pages are useful, we may count visits with <a href="https://www.goatcounter.com/help/privacy" target="_blank" rel="noopener">GoatCounter</a>.',
         '<b>No cookies, no personal data</b>: only totals per page (page viewed, referring site, browser, screen size, language, country).',
         'The IP address is used to work out the country and is <b>not stored</b>. The counted path is the page alone (e.g. <span class="mono">/cas-vedette</span>), with no parameter other than the language.',
-        'Nothing is counted if your browser sends Do Not Track, nor in the iOS app. You can also refuse here or in Progress → Display:'
+        'Nothing is counted if your browser sends Do Not Track, nor in the iOS app.'
       ]],
       ['Hosting', [
         'The site is hosted by <b>GitHub Pages</b> (GitHub, Inc., United States). Like any host, GitHub logs visitors’ IP addresses for security; this data may be processed outside Québec.',
@@ -198,7 +201,7 @@ Views.confidentialite = {
     try { when = d.toLocaleDateString(I18N.lang === 'en' ? 'en-CA' : 'fr-CA', { year: 'numeric', month: 'long', day: 'numeric' }); } catch (e) { }
     var secs = L.s.map(function (s, i) {
       return '<div class="sec">' + secH(String(i + 1), s[0]) + '<ul class="blist">' + s[1].map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>' +
-        (i === 1 ? '<div class="row" style="margin-top:8px">' + Privacy.toggleHtml() + '</div><p class="xs muted" data-stats-state>' + U.esc(Privacy.statusText()) + '</p>' : '') + '</div>';
+        (i === 1 ? (Privacy.toggleUseful() ? '<p class="small">' + t('stats.refuse') + '</p><div class="row">' + Privacy.toggleHtml() + '</div>' : '') + '<p class="small" data-stats-state><b>' + U.esc(Privacy.statusText()) + '</b></p>' : '') + '</div>';
     }).join('');
     return '<div class="page read privacy" style="margin:0 auto;width:100%">' + crumbs([[t('nav.home'), 'accueil'], [t('nav.privacy'), null]]) +
       '<div class="phead"><div class="eyebrow">' + L.eyebrow + '</div><h1>' + t('nav.privacy') + '</h1><p class="muted">' + L.lead + '</p><p class="small"><b>' + L.date + ' ' + U.esc(when) + '</b></p></div>' +

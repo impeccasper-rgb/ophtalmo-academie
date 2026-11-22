@@ -5,11 +5,11 @@ G.OPH = G.OPH || {};
 G.OPH.A = G.OPH.A || {};
 G.OPH.A.recog = (G.OPH.A.recog || []).concat([
   {
-    id: "occlusions-retiniennes", order: 10, group: "retine",
+    id: "occlusions-retiniennes", order: 10, group: "retine", full: ["r-oacr", "r-ovr"],
     card: { nk: 2,
       lead: "Occlusion artérielle : AVC de l’œil. Occlusion veineuse : hémorragies, œdème maculaire, parfois ischémie.",
       keys: [
-        "OACR : **tache rouge cerise** : urgence AVC.",
+        "OACR : **tache rouge cerise**. Urgence : immédiatement (le jour même), comme un AVC.",
         "OACR ≥ 50 ans : VS, CRP (artérite).",
         "OVCR : hémorragies 4 quadrants, veines dilatées.",
         "OVCR ischémique : gonioscopie ≈ mensuelle (glaucome des 90 jours)."
@@ -32,7 +32,7 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
     action: [
       "OACR ou OBAR aiguë : diriger IMMÉDIATEMENT vers l’urgence d’un centre de l’AVC pour un bilan d’AVC (imagerie cérébrale, carotides, rythme cardiaque) ; le temps compte, une thrombolyse peut y être discutée dans les premières heures (pratique encore à l’étude).",
       "OACR à 50 ans ou plus : éliminer l’**artérite à cellules géantes** (giant cell arteritis ; céphalée, claudication de la mâchoire) : vitesse de sédimentation (VS), protéine C réactive (CRP) et plaquettes en urgence, stéroïdes sans attendre si suspicion forte.",
-      "OVCR ou OBVR : référer rapidement en rétine pour l’œdème maculaire (injections intravitréennes d’anti-VEGF ; un implant de dexaméthasone peut faire monter la PIO) ; tension artérielle (TA), glycémie et lipides au médecin de famille.",
+      "OVCR ou OBVR : référer en ophtalmologie dans la semaine pour l’œdème maculaire (injections intravitréennes d’anti-VEGF ; un implant de dexaméthasone peut faire monter la PIO) ; tension artérielle (TA), glycémie et lipides au médecin de famille.",
       "OVCR ischémique : iris non dilaté et gonioscopie environ chaque mois pendant les premiers mois ; photocoagulation panrétinienne (PRP) dès l’apparition de NVI ou de NVA plutôt qu’en prévention (étude CVOS, Central Vein Occlusion Study)."
     ],
     pitfalls: [
@@ -43,7 +43,7 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
     pearl: { q: "Pourquoi la fovéa reste-t-elle rouge dans une OACR ?", a: "La fovéa n’a ni couches internes ni vaisseaux rétiniens : elle reste transparente et laisse voir la choroïde rouge, alors que la rétine interne autour, ischémique, blanchit. Si une **artère ciliorétinienne** (issue de la circulation ciliaire, celle de la choroïde) existe, une langue de rétine entre la papille et la macula reste rose et la vision centrale peut être épargnée." }
   },
   {
-    id: "retinopathie-hypertensive", order: 11, group: "retine",
+    id: "retinopathie-hypertensive", order: 11, group: "retine", full: ["r-hta"],
     card: { nk: 2,
       lead: "L’HTA rétrécit les artérioles ; une poussée fait fuir sang et lipides. Papille gonflée : urgence.",
       keys: [
@@ -56,7 +56,7 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
     },
     title: "Rétinopathie hypertensive et hypertension maligne",
     en: "Hypertensive retinopathy / malignant hypertension",
-    urgency: "rapide",
+    urgency: "urgent",
     what: "L’hypertension artérielle chronique épaissit et rétrécit les artérioles de la rétine ; une poussée sévère abîme leur paroi et fait fuir sang, plasma et lipides. Quand la papille gonfle en plus, on parle d’**hypertension maligne** (malignant hypertension), une urgence médicale qui menace aussi le cerveau, le cœur et les reins.",
     look: [
       "Rétrécissement artériolaire diffus ou focal : artérioles nettement plus fines que les veines (rapport normal artère/veine d’environ 2/3).",
@@ -116,7 +116,7 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
     pearl: { q: "Un homme de 40 ans sous acétate de prednisolone pour une kératite stromale herpétique voit les lignes ondulées d’un œil. Que suspectes-tu ?", a: "Une CRSC favorisée par le corticostéroïde : je la confirme à l’OCT maculaire (liquide sous la rétine), je planifie une réduction prudente du stéroïde sous couverture antivirale et je réfère en rétine si le liquide persiste. Je vérifie aussi la PIO (réponse cortisonique)." }
   },
   {
-    id: "peripherie-vitre", order: 13, group: "retine",
+    id: "peripherie-vitre", order: 13, group: "retine", full: ["r-dpv"],
     card: { nk: 2,
       lead: "Le vitré se décolle avec l’âge et peut déchirer une rétine fragile.",
       keys: [
@@ -153,7 +153,7 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
     pearl: { q: "Pourquoi examines-tu la périphérie avant de prescrire de la pilocarpine à un jeune myope avec dispersion pigmentaire ?", a: "La pilocarpine contracte le muscle ciliaire, qui tire sur la base du vitré et la rétine périphérique : une palissade ou une déchirure préexistante peut évoluer en décollement de rétine. Je dilate, j’examine la périphérie et j’enseigne les symptômes d’alarme (flashs, corps flottants, rideau)." }
   },
   {
-    id: "inflammation-infection", order: 14, group: "retine",
+    id: "inflammation-infection", order: 14, group: "retine", full: ["r-endophtalmie"],
     card: { nk: 2,
       lead: "L’uvéite enflamme l’uvée. L’**endophtalmie** détruit la vision en heures : traitement le jour même.",
       keys: [

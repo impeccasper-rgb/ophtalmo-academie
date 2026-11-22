@@ -388,7 +388,7 @@ G.OPH_EN.photos = G.OPH_EN.photos || {};
         "A, anterior segment OCT: small black cavities lined up just beneath the epithelium (subepithelial fluid).",
         "B and C, slit lamp: diffuse reticular edema, like a honeycomb, clearly seen in B.",
         "D, fluorescein: punctate staining in a horizontal band across the palpebral fissure, where subepithelial bullae have ruptured.",
-        "Grafted eye (DSAEK) with advanced glaucoma and an Ahmed tube; edema appeared about 10 months after netarsudil was started, and it was stopped. This type of edema occurs mainly on an already fragile cornea. Canadian availability of netarsudil to be checked."
+        "Grafted eye (DSAEK) with advanced glaucoma and an Ahmed tube; edema appeared about 10 months after netarsudil was started, and it was stopped. This type of edema occurs mainly on an already fragile cornea. Netarsudil is approved in the US."
       ]
     },
     "OPH-354": {

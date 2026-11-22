@@ -112,10 +112,10 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
       bullets: [
         "**Où va la kératite sévère** : souvent à l’urgence ophtalmologique d’un centre (CHUM, HMR, CUSM, Hôpital général juif, CHU de Québec). Premières consultations en optométrie : œil rouge, lentilles, sécheresse, corps étranger.",
         "**CNESST** : accident de travail (brûlure chimique, corps étranger) → documents CNESST à remplir.",
-        "**CXL** : offerte dans les centres spécialisés ; couverture publique variable, à vérifier localement.",
+        "**CXL** : offerte dans les centres spécialisés ; couverture publique variable selon le centre.",
         "**Oxervate** (cénégermine 0,002 %) : approuvé par Santé Canada pour la kératite neurotrophique modérée ou sévère de l’adulte.",
-        "**Anti-amibiens** : préparations magistrales (PHMB 0,02 %, chlorhexidine 0,02 %, ± propamidine) ; polihexanide 0,08 % (Europe) : disponibilité canadienne à vérifier.",
-        "**Produits américains récents** (lotilaner, perfluorohexyloctane, varénicline nasale, CXL epi-on Epioxa) : disponibilité canadienne à vérifier.",
+        "**Anti-amibiens** : préparations magistrales (PHMB 0,02 %, chlorhexidine 0,02 %, ± propamidine) ; polihexanide 0,08 % : approuvé en Europe en 2024.",
+        "**Produits américains récents** (lotilaner, perfluorohexyloctane, varénicline nasale, CXL epi-on Epioxa) : approuvés aux É.-U. ; au Canada, l’ophtalmologiste dira ce qui est offert.",
         "**Zona** : vaccin recombinant (Shingrix) recommandé par le CCNI dès 50 ans, y compris après un épisode de zona."
       ]
     }
@@ -161,7 +161,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
       what: "Gouttes de biguanides (PHMB 0,02 %, chlorhexidine 0,02 %) ± diamidine (propamidine), en préparations magistrales au Canada.",
       how: "Les biguanides détruisent la membrane de l’amibe active (trophozoïte) et du kyste résistant ; les diamidines complètent leur action.",
       when: "Kératite à Acanthamoeba (porteur de lentilles, contact avec l’eau, douleur hors de proportion, infiltrat en anneau), pendant des mois.",
-      cx: "Toxicité épithéliale, traitement très long, récidives ; polihexanide 0,08 % approuvé en Europe : disponibilité canadienne à vérifier." },
+      cx: "Toxicité épithéliale, traitement très long, récidives ; polihexanide 0,08 % approuvé en Europe en 2024." },
     { name: "Corticostéroïdes topiques", en: "Topical corticosteroids",
       what: "Gouttes anti-inflammatoires de puissance variable : fortes (acétate de prednisolone 1 %, difluprednate 0,05 %, dexaméthasone 0,1 %) ou plus faibles (fluorométholone, lotéprednol).",
       how: "Bloquent la cascade inflammatoire : moins de cicatrice, de néovaisseaux et de destruction immune.",
@@ -360,8 +360,8 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
         "**SAAQ, classe 5** : AV binoculaire ≥ 6/15 (20/50) ; champ binoculaire continu ≥ 100° à l’horizontale (≥ 30° de chaque côté), 10° au-dessus et 20° au-dessous de la fixation.",
         "**Véhicules lourds** : 6/9 et 150°. Anomalie du champ → la SAAQ exige un champ **binoculaire** (Esterman ou Goldmann III/4e) signé.",
         "**Glaucome et permis** : pas de suspension automatique ; restriction de conduite de nuit possible ; le médecin peut recommander l’arrêt.",
-        "**Médicaments** : latanoprostène bunod (Vyzulta) approuvé par Santé Canada ; netarsudil et implants intracamérulaires approuvés aux É.-U., disponibilité canadienne à vérifier.",
-        "**Accès** : SLT et MIGS variables selon les milieux ; couverture publique des MIGS et des nouveaux produits à vérifier localement.",
+        "**Médicaments** : latanoprostène bunod (Vyzulta) approuvé par Santé Canada ; netarsudil et implants intracamérulaires approuvés aux É.-U.",
+        "**Accès** : SLT et MIGS variables selon les milieux ; couverture publique des MIGS et des nouveaux produits variable selon le centre.",
         "**Populations à risque** : les Inuits (ex. Nunavik) ont parmi les plus forts taux de fermeture primaire de l’angle ; ne jamais omettre la gonioscopie.",
         "**Référence canadienne** : guide de la COS (2009) ; PIO cible individualisée."
       ]
@@ -373,7 +373,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
       what: "Gouttes une fois par jour, le soir : latanoprost, travoprost, bimatoprost, tafluprost (certaines sans agent de conservation).",
       how: "Remodèlent la matrice du muscle ciliaire : ↑ U (écoulement uvéoscléral) ; la baisse de PIO la plus forte parmi les gouttes.",
       when: "Première intention médicale du GPAO, du GPN et de l’HTO à traiter ; une seule goutte par jour aide l’observance.",
-      cx: "Hyperhémie, cils allongés, assombrissement irien (irréversible), pigmentation de la peau, périorbitopathie (fonte de la graisse orbitaire) ; prudence si uvéite, herpès ou œdème maculaire. Implants intracamérulaires de PGA (disponibilité canadienne à vérifier) : perte endothéliale si doses répétées (AAO 2026)." },
+      cx: "Hyperhémie, cils allongés, assombrissement irien (irréversible), pigmentation de la peau, périorbitopathie (fonte de la graisse orbitaire) ; prudence si uvéite, herpès ou œdème maculaire. Implants intracamérulaires de PGA (approuvés aux É.-U.) : perte endothéliale si doses répétées (AAO 2026)." },
     { name: "Latanoprostène bunod", en: "Latanoprostene bunod",
       what: "Goutte une fois par jour (0,024 %, Vyzulta), approuvée par Santé Canada en 2019.",
       how: "Se scinde en latanoprost (↑ U) et en donneur d’oxyde nitrique qui détend le trabéculum (↑ C) : double voie d’écoulement.",
@@ -405,7 +405,7 @@ G.OPH.capsules = (G.OPH.capsules || []).concat([
       when: "Crise aiguë une fois la PIO abaissée (avant, le sphincter ischémique ne répond pas) ; avant une iridotomie ; iris plateau.",
       cx: "Céphalée frontale, myopisation, vision sombre la nuit, rare déchirure rétinienne ; contre-indiquée si cause cristallinienne, mal-direction ou effusion au topiramate." },
     { name: "Inhibiteur de la Rho kinase (netarsudil)", en: "Rho kinase inhibitor (netarsudil)",
-      what: "Goutte une fois par jour, le soir ; approuvée aux États-Unis, disponibilité canadienne à vérifier.",
+      what: "Goutte une fois par jour, le soir ; approuvée aux États-Unis.",
       how: "Relâche les cellules du trabéculum : ↑ C ; abaisse aussi la Pv et un peu la production (↓ F).",
       when: "Appoint quand les autres classes ne suffisent pas ou ne sont pas tolérées, si le produit est accessible.",
       cx: "Hyperhémie conjonctivale fréquente, petites hémorragies sous-conjonctivales, dépôts cornéens en tourbillon (cornea verticillata), rare œdème épithélial réticulaire." },

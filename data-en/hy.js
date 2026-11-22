@@ -1555,8 +1555,8 @@ Object.assign(G.OPH_EN.hy, {
       "After a CRVO, an RNFL OCT falsely thickened by edema is [[green disease|a false negative|false negative]]."
     ],
     triage: [
-      { s: "72-year-old man: sudden black vision in one eye for 1 h, cherry-red spot.", u: "urgent", why: "CRAO: stroke center emergency department immediately; rule out giant cell arteritis." },
-      { s: "Hemorrhages in all 4 quadrants, VA 6/24, iris and angle without new vessels.", u: "rapide", why: "CRVO: retina promptly for macular edema; surveillance gonioscopy." },
+      { s: "72-year-old man: sudden black vision in one eye for 1 h, cherry-red spot.", u: "urgent", why: "CRAO. Emergency: immediately (the same day), like a stroke; rule out giant cell arteritis." },
+      { s: "Hemorrhages in all 4 quadrants, VA 6/24, iris and angle without new vessels.", u: "rapide", why: "CRVO: ophthalmology within the week for macular edema; surveillance gonioscopy." },
       { s: "Hollenhorst plaque found incidentally, no symptoms.", u: "rapide", why: "Vascular warning sign: notify the family physician for a carotid workup." }
     ],
     cues: [

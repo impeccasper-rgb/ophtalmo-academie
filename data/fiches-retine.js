@@ -72,11 +72,11 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Éclairs nouveaux chez le myope ou l’opéré de cataracte : examen dilaté dans les 24 h"
   ],
   cat: {
-    vignette: "Homme myope de 58 ans, opéré de cataracte il y a 1 an : éclairs, nuée de corps flottants depuis hier, ombre inférieure ce matin.",
+    vignette: "Myope de 58 ans, opéré de cataracte : éclairs, nuée de corps flottants, ombre inférieure ce matin.",
     algo: [
-      { q: "Éclairs ou corps flottants nouveaux ?", yes: "", yesGo: 1, no: "Autre cause de baisse de vision : poursuivre l’examen." },
-      { q: "Rideau, ombre ou baisse de vision ?", yes: { t: "Ophtalmologiste de garde le jour même.", urgent: true }, yesGo: 3, no: "", noGo: 2 },
-      { q: "Nuée de corps flottants ou vision embrouillée ?", yes: { t: "Déchirure probable : examen dilaté le jour même.", urgent: true }, yesGo: 3, no: "DPV probable : examen dilaté dans les 24 h." },
+      { q: "Rideau, ombre ou baisse de vision ?", yes: { t: "Ophtalmologiste de garde le jour même.", urgent: true }, yesGo: 3, no: "", noGo: 1 },
+      { q: "Éclairs ou corps flottants nouveaux ?", yes: "", yesGo: 2, no: "Pas de signe de déchirure : poursuivre l’examen." },
+      { q: "Nuée de corps flottants, sang ou pigment ?", yes: { t: "Déchirure probable : examen dilaté le jour même.", urgent: true }, yesGo: 3, no: "DPV probable : examen dilaté dans les 24 h." },
       { q: "Rétine décollée à l’examen dilaté ?", yes: "", yesGo: 4, no: "Déchirure : laser sans tarder ; rien : suivi rapproché." },
       { q: "Macula encore à plat ?", yes: { t: "Chirurgie urgente, le plus tôt possible.", urgent: true }, no: "Chirurgie rapide ; vision centrale souvent incomplète." }
     ],
@@ -111,7 +111,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       "**Toi** : acuité, champ au doigt ; chercher éclairs, nuée de corps flottants, rideau. Pas de réassurance sans examen dilaté.",
       "**Ophtalmologiste** : fond d’œil dilaté ; laser d’une déchirure, chirurgie d’un décollement."
     ],
-    refer: "Référer en ophtalmologie : le jour même si rideau, baisse de vision ou nuée de corps flottants ; sinon dans les 24 h — une déchirure se traite au laser avant le décollement.",
+    refer: "Référer en ophtalmologie : immédiatement (le jour même) si rideau, baisse de vision ou nuée de corps flottants ; sinon dans les 24 h — une déchirure se traite au laser avant le décollement.",
     pitfall: [
       "**Fond d’œil non dilaté** jugé normal : la déchirure est en périphérie, invisible sans dilatation.",
       "**Protoxyde d’azote** à l’anesthésie avec une bulle de gaz dans l’œil : la bulle gonfle et la PIO s’envole."
@@ -127,7 +127,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Central retinal artery occlusion (CRAO)",
   tags: ["urgent", "highyield", "piege"],
   oneLiner: "Perte de vision brutale, indolore, d’un œil : c’est un AVC de l’œil ; urgence d’un centre de l’AVC et artérite à éliminer.",
-  definition: "Un embole ou une artérite bouche l’artère qui nourrit la rétine interne. C’est un AVC de l’œil : bilan d’AVC le jour même.",
+  definition: "Un embole ou une artérite bouche l’artère de la rétine interne. C’est un AVC de l’œil : urgence immédiate.",
   anatomy: {
     text: "L’artère centrale de la rétine, branche de l’artère ophtalmique (issue de la carotide interne), nourrit les couches internes de la rétine ; la choroïde nourrit les photorécepteurs. La fovéa n’a pas de rétine interne : elle dépend de la choroïde. Parfois, une artère ciliorétinienne venue de la circulation choroïdienne irrigue une partie de la macula."
   },
@@ -182,28 +182,28 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     { dx: "Amaurose fugace", clue: "Perte transitoire, en minutes : bilan d’AIT, tout aussi urgent." }
   ],
   redFlags: [
-    "Perte de vision brutale et indolore = AVC : urgence d’un centre de l’AVC le jour même",
+    "Perte de vision brutale et indolore = AVC. Urgence : immédiatement (le jour même), comme un AVC",
     "50 ans ou plus : VS, CRP, plaquettes ; corticostéroïdes dès que l’ACG est suspectée",
     "Amaurose fugace résolue : même urgence qu’un AIT"
   ],
   cat: {
-    vignette: "Homme de 71 ans, hypertendu, fumeur : au réveil, l’œil droit ne voit que la main qui bouge. Œil blanc, DPAR droit, aucune douleur.",
+    vignette: "Homme de 71 ans, fumeur : au réveil, l’œil droit voit la main bouger. DPAR droit, aucune douleur.",
     algo: [
       { q: "Perte de vision brutale et indolore ?", yes: "", yesGo: 1, no: "Douleur, œil rouge : autre urgence (crise, kératite)." },
-      { q: "Rétine blanche, tache rouge cerise ou DPAR ?", yes: { t: "OACR probable : urgence d’un centre de l’AVC maintenant.", urgent: true }, yesGo: 2, no: "Ophtalmologiste de garde le jour même : chercher la cause." },
+      { q: "Rétine blanche, tache rouge cerise ou DPAR ?", yes: { t: "OACR probable : urgence immédiatement, comme un AVC.", urgent: true }, yesGo: 2, no: "Ophtalmologiste de garde le jour même : chercher la cause." },
       { q: "50 ans ou plus ?", yes: "", yesGo: 3, no: "Jeune : source d’embole, coagulopathie, vasculite." },
-      { q: "Céphalée, mâchoire, PPR ou VS/CRP élevées ?", yes: { t: "ACG : corticostéroïdes maintenant ; biopsie temporale en 2 semaines.", urgent: true }, no: "Bilan d’AVC : IRM, carotides, rythme, échographie cardiaque." }
+      { q: "Céphalée, mâchoire, PPR ou VS/CRP élevées ?", yes: { t: "ACG : méthylprednisolone IV, puis prednisone ; biopsie en 2 semaines.", urgent: true }, no: "Bilan d’AVC : IRM, carotides, rythme, échographie cardiaque." }
     ],
     phases: [
-      { phase: "medical", items: ["Urgence d’un centre de l’AVC : IRM de diffusion, carotides, ECG et monitorage, échographie cardiaque", "50 ans ou plus : VS, CRP, plaquettes ; si ACG suspectée, corticostéroïdes à haute dose immédiatement", "Thrombolyse IV : discutée par l’équipe AVC si moins de 4,5 h ; bénéfice visuel non prouvé (THEIA 2025, TenCRAOS 2026)"] },
+      { phase: "medical", items: ["Urgence d’un centre de l’AVC : IRM de diffusion, carotides, ECG et monitorage, échographie cardiaque", "50 ans ou plus : VS, CRP, plaquettes ; ACG avec perte visuelle : méthylprednisolone IV 250–1000 mg/j jusqu’à 3 jours, puis prednisone 40–60 mg/j (EULAR 2018)", "Thrombolyse IV : discutée par l’équipe AVC si moins de 4,5 h ; bénéfice visuel non prouvé (THEIA 2025, TenCRAOS 2026)"] },
       { phase: "laser", items: ["Néovaisseaux de l’iris ou de la rétine dans les semaines suivantes : laser panrétinien, anti-VEGF"] },
       { phase: "suivi", items: ["Ophtalmologie dans les semaines suivantes : chercher la rubéose irienne (glaucome néovasculaire)", "Prévention secondaire : antiplaquettaire ou anticoagulant, statine, TA, arrêt du tabac"] }
     ],
     local: "Au Québec, diriger le patient vers l’urgence d’un hôpital qui traite les AVC (neurologie et IRM accessibles), en appelant d’abord. Ne pas se contenter d’un rendez-vous en clinique d’ophtalmologie."
   },
   treatments: [
-    { name: "Bilan et prise en charge d’AVC", how: "Imagerie cérébrale et vasculaire, recherche d’arythmie et de source cardiaque.", why: "Toute OACR non artéritique : c’est un AVC.", pros: "Prévient l’AVC cérébral qui suit souvent.", cons: "Ne rend pas la vision.", cx: "Aucune propre au bilan.", refer: "Urgence d’un centre de l’AVC, le jour même.", pitfall: "Envoyer le patient en clinique d’ophtalmologie la semaine suivante." },
-    { name: "Corticostéroïdes si artérite à cellules géantes", how: "Calment l’inflammation de la paroi des artères.", why: "ACG suspectée : 50 ans ou plus, symptômes, VS ou CRP élevées.", pros: "Protègent l’autre œil et le cerveau.", cons: "Effets indésirables nombreux.", cx: "Hyperglycémie, infection, ostéoporose, troubles de l’humeur.", dose: "Prednisone 40–60 mg/j ; souvent méthylprednisolone IV 250–1000 mg/j pendant 3 jours si perte visuelle, selon l’équipe.", refer: "Sans attendre la biopsie (à faire dans les 2 semaines).", pitfall: "Attendre le résultat de la biopsie avant de traiter." },
+    { name: "Bilan et prise en charge d’AVC", how: "Imagerie cérébrale et vasculaire, recherche d’arythmie et de source cardiaque.", why: "Toute OACR non artéritique : c’est un AVC.", pros: "Prévient l’AVC cérébral qui suit souvent.", cons: "Ne rend pas la vision.", cx: "Aucune propre au bilan.", refer: "Urgence : immédiatement (le jour même), comme un AVC.", pitfall: "Envoyer le patient en clinique d’ophtalmologie la semaine suivante." },
+    { name: "Corticostéroïdes si artérite à cellules géantes", how: "Calment l’inflammation de la paroi des artères.", why: "ACG suspectée : 50 ans ou plus, symptômes, VS ou CRP élevées.", pros: "Protègent l’autre œil et le cerveau.", cons: "Effets indésirables nombreux.", cx: "Hyperglycémie, infection, ostéoporose, troubles de l’humeur.", dose: "Perte visuelle : méthylprednisolone IV 250–1000 mg/j jusqu’à 3 jours, puis prednisone 40–60 mg/j ; sans perte visuelle : prednisone 40–60 mg/j d’emblée (EULAR 2018). L’IV ne doit pas retarder la prednisone orale.", refer: "Sans attendre la biopsie (à faire dans les 2 semaines).", pitfall: "Attendre le résultat de la biopsie avant de traiter." },
     { name: "Thrombolyse intraveineuse", how: "Dissout le caillot (alteplase, ténectéplase).", why: "Discutée par l’équipe AVC si moins de 4,5 h et sans contre-indication.", pros: "Même logique que pour l’AVC cérébral.", cons: "Bénéfice visuel non démontré (THEIA 2025, TenCRAOS 2026).", cx: "Hémorragie intracrânienne." },
     { name: "Mesures dites conservatrices", how: "Massage oculaire, paracentèse, baisse de la PIO, oxygène.", why: "Utilisées historiquement.", pros: "Simples.", cons: "Aucun bénéfice prouvé ; ne doivent jamais retarder le transfert.", cx: "Paracentèse : infection, blessure du cristallin." }
   ],
@@ -217,14 +217,15 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "AAO PPP Retinal and Ophthalmic Artery Occlusions (Flaxel CJ et al., Ophthalmology 2020) ; AAO Summary Benchmarks 2023",
     "AHA Scientific Statement : Management of Central Retinal Artery Occlusion (Mac Grory B et al., Stroke 2021)",
     "THEIA (Préterre C et al., Lancet Neurol 2025;24:909-919) ; TenCRAOS (N Engl J Med 2026;394:442-450)",
+    "EULAR 2018, vascularites des gros vaisseaux (Hellmich B et al., Ann Rheum Dis 2020;79:19-30)",
     "EyeWiki : Central Retinal Artery Occlusion"
   ],
   treatment: {
     first: [
       "**Toi, maintenant** : acuité, DPAR, heure de début ; dès 50 ans, VS, CRP, plaquettes. Appeler l’urgence d’un centre de l’AVC.",
-      "**Équipe AVC et ophtalmologiste** : IRM, carotides, rythme ; corticostéroïdes si ACG."
+      "**Équipe AVC et ophtalmologiste** : IRM, carotides, rythme ; ACG avec perte visuelle : méthylprednisolone IV en premier, puis prednisone."
     ],
-    refer: "Référer : immédiatement, à l’urgence d’un centre de l’AVC (pas en clinique externe) — c’est un AVC, et le risque d’AVC cérébral est maximal dans les jours qui suivent.",
+    refer: "Urgence : immédiatement (le jour même), comme un AVC — à l’urgence d’un centre de l’AVC, pas en clinique externe ; le risque d’AVC cérébral est maximal dans les jours qui suivent.",
     pitfall: [
       "**Massage oculaire ou paracentèse** : aucun bénéfice prouvé ; ils ne retardent jamais le transfert.",
       "**Corticostéroïdes reportés** jusqu’à la biopsie quand l’ACG est suspectée : l’autre œil peut être perdu."
@@ -240,7 +241,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Retinal vein occlusions (central and branch)",
   tags: ["frequent", "highyield"],
   oneLiner: "Baisse de vision indolore et hémorragies en flammèches, dans un secteur (branche) ou partout (centrale) : traiter l’œdème, guetter les néovaisseaux.",
-  definition: "Une veine de la rétine se bouche : le sang reflue, saigne et fait gonfler la macula. On traite l’œdème et on surveille les néovaisseaux.",
+  definition: "Veine rétinienne bouchée : sang et œdème maculaire. Traiter l’œdème, guetter les néovaisseaux.",
   anatomy: {
     text: "La veine centrale de la rétine sort par la papille à côté de l’artère, dans une gaine commune ; en périphérie, artérioles et veinules se croisent sous une adventice commune. Une artère rigide (hypertension, athérosclérose) comprime la veine à ces endroits. Les arcades temporales drainent la macula."
   },
@@ -297,12 +298,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Occlusion chez un jeune ou aux deux yeux : coagulation, hyperviscosité, vasculite"
   ],
   cat: {
-    vignette: "Femme de 66 ans, hypertendue mal contrôlée : vision floue de l’œil droit au réveil. Hémorragies en flammèches dans le secteur temporal supérieur.",
+    vignette: "Femme de 66 ans, HTA mal contrôlée : œil droit flou au réveil, flammèches temporales supérieures.",
     algo: [
       { q: "Hémorragies dans les 4 quadrants ?", yes: "Occlusion de la veine centrale.", yesGo: 1, no: "Occlusion de branche : un secteur.", noGo: 2 },
       { q: "DPAR, nombreux nodules cotonneux ?", yes: "Forme ischémique : PIO, iris et angle chaque mois.", yesGo: 2, no: "Non ischémique : peut s’aggraver, suivi rapproché.", noGo: 2 },
       { q: "Macula épaissie à l’OCT, vision basse ?", yes: "Anti-VEGF intravitréen, mensuel au début.", yesGo: 3, no: "Observation ; traiter les facteurs de risque.", noGo: 3 },
-      { q: "Néovaisseaux : iris, angle, rétine ?", yes: { t: "Laser panrétinien et anti-VEGF ; le jour même si PIO haute.", urgent: true }, no: "Suivi ; TA, glycémie, lipides par le médecin traitant." }
+      { q: "Néovaisseaux : iris, angle, rétine ?", yes: "Laser panrétinien et anti-VEGF ; le jour même si PIO haute.", no: "Suivi ; TA, glycémie, lipides par le médecin traitant." }
     ],
     phases: [
       { phase: "medical", items: ["Œdème maculaire : anti-VEGF intravitréen (bévacizumab, ranibizumab, aflibercept) ; implant de dexaméthasone en 2e intention", "Médecin traitant : TA, glycémie, lipides ; PIO si glaucome"] },
@@ -348,7 +349,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Diabetic retinopathy",
   tags: ["frequent", "highyield"],
   oneLiner: "Souvent muette jusqu’au stade grave : dépister au diagnostic (type 2) ou dès 5 ans d’évolution (type 1), puis référer selon la sévérité.",
-  definition: "L’hyperglycémie abîme les petits vaisseaux de la rétine : ils fuient, se ferment, puis font pousser des néovaisseaux. Elle reste longtemps muette, d’où le dépistage.",
+  definition: "Le diabète abîme les capillaires de la rétine : fuite, ischémie, néovaisseaux. Longtemps muette, elle se dépiste.",
   anatomy: {
     text: "La rétine interne est nourrie par des capillaires étanches (barrière hématorétinienne) ; la macula, au centre, assure la vision fine. Quand les capillaires se ferment, la rétine ischémique libère du VEGF (facteur de croissance de l’endothélium vasculaire), qui fait fuir les vaisseaux et pousser des néovaisseaux fragiles."
   },
@@ -408,11 +409,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Grossesse (diabète préexistant) : examen des yeux au 1er trimestre"
   ],
   cat: {
-    vignette: "Homme de 52 ans, diabète de type 2 depuis 12 ans, HbA1c 9,5 %, jamais vu en ophtalmologie. Vision normale, aucun symptôme.",
+    vignette: "Homme de 52 ans, diabète de type 2 depuis 12 ans, jamais examiné en ophtalmologie. Aucun symptôme.",
     algo: [
       { q: "Voile, pluie de corps flottants, rideau ?", yes: { t: "Hémorragie du vitré ou décollement : ophtalmologie en urgence.", urgent: true }, no: "", noGo: 1 },
-      { q: "Aucune rétinopathie au dernier examen ?", yes: "Type 1 : chaque année ; type 2 : aux 1–2 ans.", no: "", noGo: 2 },
-      { q: "Néovaisseaux ou forme non proliférante sévère ?", yes: { t: "Ophtalmologiste en quelques jours : laser panrétinien ou anti-VEGF.", urgent: true }, no: "", noGo: 3 },
+      { q: "Déjà examiné : photos ou fond d’œil dilaté ?", yes: "", yesGo: 2, no: "Examen maintenant, puis lire le résultat.", noGo: 2 },
+      { q: "Aucune rétinopathie à l’examen ?", yes: "Type 1 : chaque année ; type 2 : aux 1–2 ans.", no: "", noGo: 3 },
+      { q: "Néovaisseaux ou forme non proliférante sévère ?", yes: { t: "Ophtalmologiste en quelques jours : laser panrétinien ou anti-VEGF.", urgent: true }, no: "", noGo: 4 },
       { q: "Œdème maculaire qui touche le centre ?", yes: "Ophtalmologiste en quelques semaines : anti-VEGF.", no: "Forme légère ou modérée : examen aux 6–12 mois." }
     ],
     phases: [
@@ -462,7 +464,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Age-related macular degeneration (dry and neovascular)",
   tags: ["frequent", "highyield"],
   oneLiner: "Après 50 ans, drusens puis atrophie (sèche) ou néovaisseaux (humide) : toute déformation nouvelle des lignes impose une référence en quelques jours.",
-  definition: "La macula vieillit : des dépôts (drusens) s’accumulent, puis elle s’atrophie (forme sèche) ou des néovaisseaux y fuient (forme humide). La forme humide se traite, à condition d’aller vite.",
+  definition: "La macula vieillit : drusens, puis atrophie (sèche) ou néovaisseaux qui fuient (humide). L’humide se traite, mais vite.",
   anatomy: {
     text: "Sous les photorécepteurs, l’épithélium pigmentaire les nourrit et recycle leurs déchets ; il repose sur la membrane de Bruch, au-dessus de la choroïde. La macula, riche en cônes, donne la vision fine, la lecture et la reconnaissance des visages."
   },
@@ -519,12 +521,12 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Œil rouge, douloureux, vision qui baisse après une injection : endophtalmie, le jour même"
   ],
   cat: {
-    vignette: "Femme de 78 ans, ancienne fumeuse : depuis 5 jours, les cadres de porte ondulent devant son œil gauche. Drusens connus aux deux yeux.",
+    vignette: "Femme de 78 ans, ex-fumeuse, drusens connus : les cadres de porte ondulent depuis 5 jours.",
     algo: [
-      { q: "Métamorphopsies ou tache centrale nouvelles ?", yes: { t: "Forme humide possible : ophtalmologie en quelques jours.", urgent: true }, yesGo: 1, no: "", noGo: 2 },
+      { q: "Métamorphopsies ou tache centrale nouvelles ?", yes: "Forme humide possible : ophtalmologie en quelques jours.", yesGo: 1, no: "", noGo: 2 },
       { q: "Liquide ou sang à l’OCT ?", yes: "Anti-VEGF intravitréen, mensuel au début.", no: "Autre cause : membrane, trou maculaire, séreuse centrale." },
       { q: "Gros drusens ou DMLA avancée à un œil ?", yes: "AREDS2, arrêt du tabac, Amsler à domicile.", yesGo: 3, no: "Petits drusens : pas d’AREDS2 ; examen de suivi." },
-      { q: "Atrophie géographique qui gêne la vision ?", yes: "Réadaptation visuelle ; nouveaux traitements : disponibilité canadienne à vérifier.", no: "Suivi ; consulter vite si lignes ondulées." }
+      { q: "Atrophie géographique qui gêne la vision ?", yes: "Réadaptation en déficience visuelle ; avis de l’ophtalmologiste sur les nouveaux traitements.", no: "Suivi ; consulter vite si lignes ondulées." }
     ],
     phases: [
       { phase: "observation", items: ["Forme précoce : examen de suivi, Amsler, arrêt du tabac", "Forme intermédiaire : AREDS2, Amsler à domicile un œil à la fois"] },
@@ -554,7 +556,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       "**Toi** : acuité, Amsler un œil à la fois ; arrêt du tabac ; AREDS2 seulement si forme intermédiaire ou avancée à un œil.",
       "**Ophtalmologiste** : OCT, angiographie ; anti-VEGF si forme humide."
     ],
-    refer: "Référer en ophtalmologie : en quelques jours (moins d’une semaine) si métamorphopsies ou tache centrale nouvelles ; sinon suivi régulier — traitée tôt, la forme humide garde plus de vision.",
+    refer: "Référer en ophtalmologie : en quelques jours (moins d’une semaine) si métamorphopsies ou tache centrale nouvelles ; le jour même si œil rouge et douloureux après une injection ; sinon suivi régulier.",
     pitfall: [
       "**Bêtacarotène** (ancienne formule AREDS) chez un fumeur ou ex-fumeur : cancer du poumon.",
       "**Mettre sur le compte de la cataracte** une baisse récente avec lignes ondulées : forme humide manquée."
@@ -627,7 +629,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Grossesse, TA haute et vision floue : prééclampsie, urgence obstétricale"
   ],
   cat: {
-    vignette: "Homme de 45 ans à l’urgence : céphalée et vision floue des deux yeux. TA 230/140. Papilles gonflées, nodules cotonneux, hémorragies en flammèches.",
+    vignette: "Homme de 45 ans : céphalée, vision floue, TA 230/140. Papilles gonflées, nodules cotonneux.",
     algo: [
       { q: "TA à 180/110 ou plus ?", yes: "", yesGo: 1, no: "HTA chronique : traiter en externe, fond d’œil au suivi." },
       { q: "Papille gonflée, hémorragies, nodules cotonneux ?", yes: { t: "Urgence hypertensive : hospitaliser, baisse contrôlée IV.", urgent: true }, yesGo: 2, no: "", noGo: 3 },
@@ -738,7 +740,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
     "Symptômes nouveaux après un DPV jugé bénin : réexaminer sans attendre"
   ],
   cat: {
-    vignette: "Femme de 62 ans : depuis hier, un anneau gris flotte devant l’œil droit, éclairs au coin de l’œil le soir. Vision 6/6.",
+    vignette: "Femme de 62 ans : anneau gris flottant devant l’œil droit, éclairs le soir. Vision 6/6.",
     algo: [
       { q: "Rideau ou baisse de vision ?", yes: { t: "Décollement probable : ophtalmologiste de garde le jour même.", urgent: true }, no: "", noGo: 1 },
       { q: "Nuée de corps flottants, sang ou pigment ?", yes: { t: "Déchirure probable : examen dilaté le jour même.", urgent: true }, yesGo: 2, no: "Examen dilaté dans les 24 h.", noGo: 2 },
@@ -771,7 +773,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
       "**Toi** : acuité, champ au doigt ; chercher nuée de corps flottants, sang, rideau ; expliquer les signes d’alarme.",
       "**Ophtalmologiste ou optométriste** : examen dilaté avec dépression sclérale ; laser si déchirure."
     ],
-    refer: "Référer : examen dilaté dans les 24 h pour un DPV probable ; le jour même si nuée de corps flottants, sang, rideau ou baisse de vision — une déchirure traitée tôt ne devient pas un décollement.",
+    refer: "Référer : immédiatement (le jour même) si nuée de corps flottants, sang, rideau ou baisse de vision ; sinon examen dilaté dans les 24 h — une déchirure traitée tôt ne devient pas un décollement.",
     pitfall: [
       "**Rassurer sans dilater** : la déchirure est en périphérie.",
       "**Ignorer un changement de symptômes** après un premier examen normal : la déchirure peut venir plus tard."
@@ -787,7 +789,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   en: "Endophthalmitis after surgery or intravitreal injection",
   tags: ["urgent", "highyield"],
   oneLiner: "Œil opéré ou injecté qui devient douloureux, rouge et voit moins, avec hypopyon : endophtalmie jusqu’à preuve du contraire, le jour même.",
-  definition: "Une infection de l’intérieur de l’œil, souvent quelques jours après une chirurgie ou une injection. Elle peut détruire la vision en quelques heures : ophtalmologiste le jour même.",
+  definition: "Infection de l’intérieur de l’œil, quelques jours après une chirurgie ou une injection. Ophtalmologiste le jour même.",
   anatomy: {
     text: "Le vitré, gel sans vaisseaux ni défenses, est un milieu de culture idéal. Les bactéries viennent surtout de la flore des paupières et de la conjonctive du patient ; elles entrent par une incision (cataracte) ou par l’aiguille (injection intravitréenne)."
   },
@@ -840,10 +842,10 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   redFlags: [
     "Œil opéré ou injecté douloureux, rouge, qui voit moins : ophtalmologiste le jour même",
     "Hypopyon après un geste oculaire : endophtalmie jusqu’à preuve du contraire",
-    "Jamais traiter comme une conjonctivite, ni attendre le lendemain"
+    "Jamais traiter comme une conjonctivite ni reporter l’examen"
   ],
   cat: {
-    vignette: "Homme de 76 ans, injection d’anti-VEGF il y a 3 jours : œil gauche rouge, douloureux, vision réduite à compter les doigts. Hypopyon.",
+    vignette: "Homme de 76 ans, injection d’anti-VEGF il y a 3 jours : œil rouge, douloureux, hypopyon.",
     algo: [
       { q: "Chirurgie ou injection récente de l’œil ?", yes: "", yesGo: 1, no: "Sans geste : uvéite, kératite ou endophtalmie endogène." },
       { q: "Douleur, rougeur, vision qui s’aggravent ?", yes: { t: "Endophtalmie probable : ophtalmologiste le jour même.", urgent: true }, yesGo: 2, no: "Inflammation habituelle : revoir selon le chirurgien." },

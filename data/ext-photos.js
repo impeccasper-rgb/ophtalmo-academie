@@ -202,7 +202,7 @@ G.OPH.photos = G.OPH.photos || {};
         "A, OCT du segment antérieur : petites cavités noires alignées juste sous l’épithélium (liquide sous-épithélial).",
         "B et C, lampe à fente : œdème diffus en mailles, comme un nid d’abeilles (honeycomb), bien visible en B.",
         "D, fluorescéine : ponctuations dans une bande horizontale de la fente palpébrale, là où des bulles sous-épithéliales se sont rompues.",
-        "Œil greffé (DSAEK) avec glaucome avancé et tube d’Ahmed; œdème apparu environ 10 mois après le début du netarsudil, qui a été cessé. Ce type d’œdème survient surtout sur une cornée déjà fragile. Disponibilité canadienne du netarsudil à vérifier."
+        "Œil greffé (DSAEK) avec glaucome avancé et tube d’Ahmed; œdème apparu environ 10 mois après le début du netarsudil, qui a été cessé. Ce type d’œdème survient surtout sur une cornée déjà fragile. Le netarsudil est approuvé aux É.-U."
       ] },
     { id: "OPH-354", caption: "Implant de dexaméthasone (Ozurdex) migré en chambre antérieure chez un œil aphaque",
       look: "Repère le corps étranger dans la chambre antérieure et sa position par rapport à l’iris.",

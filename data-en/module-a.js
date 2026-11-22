@@ -350,7 +350,7 @@ Object.assign(G.OPH_EN.A.recog, {
     card: {
       lead: "Arterial occlusion: a stroke of the eye. Venous occlusion: hemorrhages, macular edema, sometimes ischemia.",
       keys: [
-        "CRAO: **cherry-red spot**: stroke emergency.",
+        "CRAO: **cherry-red spot**. Emergency: immediately (the same day), like a stroke.",
         "CRAO ≥ 50: ESR, CRP (arteritis).",
         "CRVO: hemorrhages in 4 quadrants, dilated veins.",
         "Ischemic CRVO: gonioscopy ≈ monthly (90-day glaucoma)."
@@ -371,7 +371,7 @@ Object.assign(G.OPH_EN.A.recog, {
     action: [
       "Acute CRAO or BRAO: send IMMEDIATELY to the ED of a stroke center for a stroke workup (brain imaging, carotids, cardiac rhythm); time matters, and thrombolysis may be discussed there within the first hours (practice still under study).",
       "CRAO at age 50 or older: rule out **giant cell arteritis** (headache, jaw claudication): urgent erythrocyte sedimentation rate (ESR), C-reactive protein (CRP) and platelets, and steroids without waiting if suspicion is strong.",
-      "CRVO or BRVO: refer promptly to retina for macular edema (intravitreal anti-VEGF injections; a dexamethasone implant can raise IOP); blood pressure (BP), glucose and lipids to the family physician.",
+      "CRVO or BRVO: refer to ophthalmology within the week for macular edema (intravitreal anti-VEGF injections; a dexamethasone implant can raise IOP); blood pressure (BP), glucose and lipids to the family physician.",
       "Ischemic CRVO: undilated iris exam and gonioscopy about monthly during the first months; panretinal photocoagulation (PRP) as soon as NVI or NVA appears rather than as prevention (CVOS, Central Vein Occlusion Study)."
     ],
     pitfalls: [
@@ -1120,7 +1120,7 @@ Object.assign(G.OPH_EN.A.exam, {
     how: [
       "Usually a non-contact device: light reflected by the endothelium–aqueous interface outlines the cell mosaic.",
       "Measure centrally (± peripherally or near a tube) and compare the two eyes.",
-      "Automatic analysis, to be checked: density (ECD, cells/mm²), coefficient of variation of cell size (CV: polymegathism), percentage of hexagonal cells (pleomorphism).",
+      "Automatic analysis, to be reviewed: density (ECD, cells/mm²), coefficient of variation of cell size (CV: polymegathism), percentage of hexagonal cells (pleomorphism).",
       "Repeat over time on the same device."
     ],
     normal: [

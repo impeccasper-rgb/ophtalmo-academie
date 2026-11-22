@@ -285,7 +285,8 @@ function aItems(page) {
       it.push({ id: r.id, title: I18N.title(r), en: r.en, thumb: ph[0] && ph[0].id, tag: '<span class="tag ' + u[0] + '">' + u[1] + '</span>', body: function (scope) {
         var h = HY.get('a5-' + r.id), ess = (h && h.essentials) || [];
         var main = '<div class="callout"><span class="eyebrow">' + t('caps.what') + '</span><span>' + T(r.what, scope) + '</span></div>' + hyList(ess.slice(0, 5), t('hy.title'));
-        return (ph.length ? Photo.carousel(ph, { voir: r.id }) : '') + (r.card ? aCard(r.card, scope) : main) +
+        var full = (r.full || []).filter(function (id) { return D.fiche(id); }).map(function (id) { return '<a class="btn sm" href="#' + id + '/voir">' + U.esc(t('a5.full', { t: D.title(id) })) + ' →</a>'; }).join(''); // A5 → module D fiche
+        return (ph.length ? Photo.carousel(ph, { voir: r.id }) : '') + (r.card ? aCard(r.card, scope) : main) + (full ? '<div class="row tight">' + full + '</div>' : '') +
           levelBlocks([
             { lvl: 1, title: r.card ? t('f.more') : t('a5.lookact'), html: (r.card ? aCardRest(r.card, scope) + main : '') + '<h3 class="h4">' + t('a.look') + '</h3><ul class="blist">' + (r.look || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><h3 class="h4">' + t('a5.action') + '</h3><ul class="blist">' + (r.action || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' },
             { lvl: 2, title: t('a5.pitwhy'), html: '<ul class="blist red">' + (r.pitfalls || []).map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul><div class="callout violet"><span class="eyebrow">' + t('a5.why') + '</span><span>' + T(r.why, scope) + '</span></div>' },

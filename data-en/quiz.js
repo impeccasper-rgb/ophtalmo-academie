@@ -787,7 +787,7 @@ Object.assign(G.OPH_EN.quiz, {
       "Oral acyclovir 400 mg 5 times daily for 10 days, then a preventive dose"
     ],
     explain: "Biguanides (PHMB or chlorhexidine 0.02%) kill the ameba and its cysts. In Canada they are compounded by a pharmacy, sometimes together with propamidine.",
-    deep: "**What it is**: biguanides (PHMB, or polyhexamethylene biguanide, and chlorhexidine) are antiseptics that kill the active form of the ameba and its cysts, a highly resistant dormant form. **Why it matters**: in Canada, they are made in pharmacies (compounded preparations), sometimes with propamidine (another antiseptic active against the ameba); polihexanide 0.08% (Akantior), approved by the European Commission in 2024 as monotherapy, has Canadian availability that should be checked. **What to do**: intensive then prolonged treatment, often over several months, with close follow-up at a cornea center and pain control without topical anesthetics.",
+    deep: "**What it is**: biguanides (PHMB, or polyhexamethylene biguanide, and chlorhexidine) are antiseptics that kill the active form of the ameba and its cysts, a highly resistant dormant form. **Why it matters**: in Canada, they are made in pharmacies (compounded preparations), sometimes with propamidine (another antiseptic active against the ameba); polihexanide 0.08% (Akantior) was approved by the European Commission in 2024 as monotherapy. **What to do**: intensive then prolonged treatment, often over several months, with close follow-up at a cornea center and pain control without topical anesthetics.",
     why: [
       "Correct: compounded biguanide, ± propamidine.",
       "Natamycin is an antifungal, useful against filamentous fungi; it does not treat the ameba.",

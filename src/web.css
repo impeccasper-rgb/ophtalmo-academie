@@ -293,3 +293,5 @@ html.no-motion .voir-miss { animation: none; }
 .mech-sub .k { display: inline-block; font: 700 .66rem/1.4 var(--font-mono, monospace); text-transform: uppercase; letter-spacing: .06em; color: var(--cobalt-ink); margin-right: 4px; }
 .mech-chain [data-levnote] { margin-top: 6px; }
 .chain-list { padding-left: 1.2em; }
+/* sticker placed by motion.js placeSticker(): inline row when every corner would cover text (never over the sign's name) */
+.feedback > .mo-sticker.mo-inline { position: static; display: inline-flex; grid-column: 1 / -1; justify-self: end; width: max-content; max-width: 100%; margin-top: 4px; }

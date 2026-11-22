@@ -772,8 +772,8 @@ Object.assign(G.OPH.hy, {
       "Après une OVCR, l’OCT RNFL faussement épaissi par l’œdème est une [[green disease|faux négatif]]."
     ],
     triage: [
-      { s: "Homme de 72 ans : vision noire soudaine d’un œil depuis 1 h, tache rouge cerise.", u: "urgent", why: "OACR : urgence d’un centre de l’AVC immédiatement ; éliminer l’artérite à cellules géantes." },
-      { s: "Hémorragies dans les 4 quadrants, AV à 6/24, iris et angle sans néovaisseaux.", u: "rapide", why: "OVCR : rétine rapidement pour l’œdème maculaire ; gonioscopie de surveillance." },
+      { s: "Homme de 72 ans : vision noire soudaine d’un œil depuis 1 h, tache rouge cerise.", u: "urgent", why: "OACR. Urgence : immédiatement (le jour même), comme un AVC ; éliminer l’artérite à cellules géantes." },
+      { s: "Hémorragies dans les 4 quadrants, AV à 6/24, iris et angle sans néovaisseaux.", u: "rapide", why: "OVCR : ophtalmologie dans la semaine pour l’œdème maculaire ; gonioscopie de surveillance." },
       { s: "Plaque de Hollenhorst trouvée par hasard, aucun symptôme.", u: "rapide", why: "Signal d’alarme vasculaire : aviser le médecin de famille pour un bilan carotidien." }
     ],
     cues: [

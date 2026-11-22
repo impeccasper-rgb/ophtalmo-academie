@@ -70,12 +70,12 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     options: [
       "Massage oculaire et rendez-vous en ophtalmologie demain",
       "Aspirine, retour à domicile et IRM en externe",
-      "Urgence d’un centre de l’AVC maintenant ; VS et CRP",
+      "Urgence immédiatement, comme un AVC ; VS et CRP",
       "Gouttes hypotensives et contrôle dans une semaine"
     ],
     answer: 2,
-    explain: "Perte de vision brutale et indolore avec tache rouge cerise : OACR, un AVC de l’œil. Bilan d’AVC le jour même en centre de l’AVC ; VS, CRP et plaquettes dès 50 ans.",
-    deep: "**Ce que c’est :** une occlusion de l’artère centrale de la rétine, c’est-à-dire un AVC de l’œil. **Pourquoi l’urgence :** le risque d’AVC cérébral est élevé dans les jours qui suivent ; le bilan (IRM de diffusion, carotides, rythme cardiaque, échographie) se fait le jour même, et la thrombolyse se discute en centre de l’AVC si le début date de moins de 4,5 h. **Après 50 ans :** VS, CRP et plaquettes pour éliminer une artérite à cellules géantes.",
+    explain: "Perte de vision brutale et indolore avec tache rouge cerise : OACR, un AVC de l’œil. Urgence : immédiatement (le jour même), comme un AVC ; VS, CRP et plaquettes dès 50 ans.",
+    deep: "**Ce que c’est :** une occlusion de l’artère centrale de la rétine, c’est-à-dire un AVC de l’œil. **Pourquoi l’urgence :** le risque d’AVC cérébral est élevé dans les jours qui suivent ; le bilan (IRM de diffusion, carotides, rythme cardiaque, échographie) se fait immédiatement, et la thrombolyse se discute en centre de l’AVC si le début date de moins de 4,5 h. **Après 50 ans :** VS, CRP et plaquettes pour éliminer une artérite à cellules géantes.",
     why: [
       "Le massage n’a aucun bénéfice prouvé et le délai fait manquer le bilan d’AVC urgent.",
       "Un bilan en externe laisse passer la fenêtre où le risque d’AVC est le plus élevé.",
@@ -88,7 +88,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     stem: "Dans une occlusion de l’artère centrale de la rétine, pourquoi la fovéa paraît-elle rouge cerise au milieu d’une rétine blanche ?",
     figure: null,
     options: [
-      "La choroïde, intacte, se voit à travers une fovéa sans rétine interne",
+      "La choroïde intacte se voit à travers la fovéa",
       "Une hémorragie sous-rétinienne se forme sous la fovéa",
       "Les cônes de la fovéa contiennent un pigment rouge",
       "L’artère ciliorétinienne se dilate pour compenser"
@@ -151,7 +151,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Champ visuel tous les 6 mois",
       "Examen de l’iris et gonioscopie chaque mois",
       "IRM cérébrale de contrôle à 3 mois",
-      "Échographie B à chaque visite"
+      "Échographie B et photos du fond d’œil à chaque visite"
     ],
     answer: 1,
     explain: "Après une occlusion ischémique de la veine centrale, la complication redoutée est le glaucome néovasculaire : iris non dilaté et gonioscopie chaque mois pendant 6 mois.",
@@ -190,7 +190,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     options: [
       "Contrôle des photos dans 1 an",
       "Intensifier l’insuline et revoir dans 3 mois",
-      "Ophtalmologiste en quelques jours : laser panrétinien ou anti-VEGF",
+      "Ophtalmologiste en quelques jours",
       "Aspirine pour prévenir l’hémorragie du vitré"
     ],
     answer: 2,
@@ -230,7 +230,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     options: [
       "Aucun : les suppléments ne servent à rien",
       "Oméga-3 à haute dose seulement",
-      "La formule AREDS2, sans bêtacarotène, et l’arrêt du tabac",
+      "AREDS2 et arrêt du tabac",
       "La formule AREDS d’origine, avec bêtacarotène"
     ],
     answer: 2,
@@ -271,7 +271,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Sévère (maligne) : urgence hypertensive",
       "Modérée : chercher une atteinte d’organe aiguë",
       "Absente : variante normale",
-      "Légère (Wong-Mitchell) : HTA chronique à mieux contrôler"
+      "Légère : HTA chronique à mieux contrôler"
     ],
     answer: 3,
     explain: "Artérioles fines et croisements pincés sans hémorragie ni papille gonflée : forme légère de Wong-Mitchell, signe d’HTA ancienne. On ajuste le traitement en externe.",
@@ -311,7 +311,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
       "Aucun suivi : le DPV est toujours bénin",
       "Repos au lit, tête surélevée, pendant une semaine",
       "Gouttes anti-inflammatoires pour faire disparaître les corps flottants",
-      "Revenir le jour même si nuée de corps flottants, rideau ou baisse de vision"
+      "Revenir le jour même si les symptômes changent"
     ],
     answer: 3,
     explain: "Une déchirure peut apparaître dans les semaines suivant un DPV (environ 3 % en 6 semaines). Le patient doit revenir le jour même si les symptômes changent : nuée, éclairs persistants, rideau, baisse de vision.",
@@ -329,7 +329,7 @@ G.OPH.quiz = (G.OPH.quiz || []).concat([
     figure: null,
     options: [
       "Gouttes antibiotiques et contrôle dans 48 h",
-      "Ophtalmologiste le jour même : antibiotiques intravitréens",
+      "Ophtalmologiste le jour même",
       "Corticostéroïde topique et compresses froides",
       "Antibiotique oral et rendez-vous dans la semaine"
     ],

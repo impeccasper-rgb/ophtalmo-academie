@@ -3940,7 +3940,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
    "dose": "iStent, Hydrus or KDB, often with cataract surgery.",
    "refer": "Mild to moderate glaucoma.",
    "pitfall": "Modest lowering: not for a very low target IOP.",
-   "qc": "Quebec: mostly in hospital centers; RAMQ coverage of MIGS and implants to be checked."
+   "qc": "Quebec: mostly in hospital centers; coverage of MIGS and implants varies by centre."
   }
  ],
  "pearls": [
@@ -3992,7 +3992,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, {
   "pitfall": [
    "**Treating \"conjunctivitis\"** in an operated eye: missed bleb infection."
   ],
-  "qc": "Quebec: mostly in hospital centers; RAMQ coverage of MIGS and implants to be checked."
+  "qc": "Quebec: mostly in hospital centers; coverage of MIGS and implants varies by centre."
  }
 }
 });

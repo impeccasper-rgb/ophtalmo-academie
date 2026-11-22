@@ -9,7 +9,7 @@
 'use strict';
 const fs = require('fs'), path = require('path'), vm = require('vm');
 const R = path.join(__dirname, '..'), EN = process.argv.includes('--en'), ALL = process.argv.includes('--all');
-const FILES = ['data/fiches-cornee.js', 'data/fiches-cornee-2.js', 'data/ext-cornee-a.js', 'data/ext-cornee-b.js', 'data/fiches-glaucome.js', 'data/ext-glaucome-a.js', 'data/ext-glaucome-b.js'].concat(EN ? ['data-en/fiches-cornee.js', 'data-en/fiches-glaucome.js'] : []);
+const FILES = ['data/fiches-cornee.js', 'data/fiches-cornee-2.js', 'data/ext-cornee-a.js', 'data/ext-cornee-b.js', 'data/fiches-glaucome.js', 'data/ext-glaucome-a.js', 'data/ext-glaucome-b.js', 'data/fiches-retine.js'].concat(EN ? ['data-en/fiches-cornee.js', 'data-en/fiches-glaucome.js', 'data-en/fiches-retine.js'] : []);
 const ctx = {}; ctx.globalThis = ctx; vm.createContext(ctx);
 for (const f of FILES) if (fs.existsSync(path.join(R, f))) vm.runInContext(fs.readFileSync(path.join(R, f), 'utf8'), ctx, { filename: f });
 function merge(a, b) { if (Array.isArray(b) || typeof b !== 'object' || b === null) return b; const o = Object.assign({}, a); for (const k of Object.keys(b)) o[k] = (a && typeof a[k] === 'object' && !Array.isArray(a[k])) ? merge(a[k], b[k]) : b[k]; return o; }

@@ -993,7 +993,7 @@ G.OPH.A = {
       how: [
         "Appareil le plus souvent sans contact : la lumière réfléchie par l’interface endothélium–humeur aqueuse dessine la mosaïque des cellules.",
         "Mesurer au centre (± en périphérie ou près d’un tube) et comparer les deux yeux.",
-        "Analyse automatique, à vérifier : densité (ECD, cellules/mm²), coefficient de variation de la taille (CV : polymégathisme), pourcentage d’hexagones (pléomorphisme).",
+        "Analyse automatique, à contrôler : densité (ECD, cellules/mm²), coefficient de variation de la taille (CV : polymégathisme), pourcentage d’hexagones (pléomorphisme).",
         "Répéter dans le temps sur le même appareil."
       ],
       normal: [

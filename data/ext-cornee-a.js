@@ -107,7 +107,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
         items: ["Récidive dans le greffon : rapide (Reis-Bücklers), fréquente (granulaire, grillagée), plus rare (maculaire)"]
       }
     ],
-    local: "Au Québec, l’optométriste découvre souvent ces opacités ; diriger si vision ↓, érosions ou projet de chirurgie réfractive. Test génétique : accès et couverture à vérifier localement (génétique médicale)."
+    local: "Au Québec, l’optométriste découvre souvent ces opacités ; diriger si vision ↓, érosions ou projet de chirurgie réfractive. Test génétique : par la génétique médicale, selon l’accès local."
   },
   treatments: [
     { name: "Soins de surface", dose: "Onguent NaCl 5 % au coucher ; lentille pansement en crise.", pitfall: "Ne retire pas les opacités.", how: "Lubrifiants, onguent NaCl 5 % au coucher, lentille souple de pansement en crise.", why: "Érosions récidivantes.", pros: "Simple, peu risqué.", cons: "Ne retire pas les opacités.", cx: "Infection sous lentille." },
@@ -267,7 +267,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
         items: ["Bande : récidive si la cause persiste ; Wilson : l’anneau pâlit sous traitement"]
       }
     ],
-    local: "Au Québec, l’optométriste dirige souvent ces opacités ; bilan systémique avec le médecin de famille. EDTA disodique : préparation hospitalière, disponibilité à vérifier."
+    local: "Au Québec, l’optométriste dirige souvent ces opacités ; bilan systémique avec le médecin de famille. EDTA disodique : préparation de pharmacie d’hôpital."
   },
   treatments: [
     { name: "Chélation à l’EDTA", dose: "EDTA disodique sur éponge, après grattage épithélial.", pitfall: "Récidive si la cause persiste.", qc: "Préparation hospitalière.", how: "Après grattage épithélial, une éponge d’EDTA disodique (chélateur) dissout le calcium.", why: "Kératopathie en bande gênante.", pros: "Efficace, en salle de procédure.", cons: "Récidive si la cause persiste.", cx: "Retard de cicatrisation, infection." },

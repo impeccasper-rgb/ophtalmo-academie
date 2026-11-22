@@ -232,7 +232,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-herpes": {
     ],
     refer: ["Within 24 h for any herpetic keratitis — confirm the form and check IOP.", "Same day for zoster with a red eye, vision loss or Hutchinson sign."],
     pitfall: ["Prednisolone on a dendrite: geographic ulcer.", "Zoster seen after 72 h: still treat if vesicles are recent or the eye is involved.", "Trifluridine beyond 14–21 days: toxic to the epithelium."],
-    qc: ["Shingrix recommended from age 50 (NACI); public coverage to check."]
+    qc: ["Shingrix recommended from age 50 (NACI); coverage depends on the provincial program."]
   },
   pearls: [
     { q: "Why test corneal sensation before the anesthetic?", a: "Reduced sensation points to HSV or VZV and signals neurotrophic keratitis; after the anesthetic, the test is worthless." },
@@ -325,7 +325,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-secheresse": {
           "Preservative-free tears 4–6 times a day, gel at bedtime; screen breaks",
           "Plugged glands: warm compresses 5–10 min then lid massage, 1–2 times a day",
           "Inflammation: cyclosporine or lifitegrast; soft steroid for a few weeks; low-dose oral doxycycline (anti-inflammatory) if rosacea",
-          "Demodex: tea tree oil cleanser; lotilaner (antiparasitic drops) approved in the US, Canadian availability to be confirmed"
+          "Demodex: tea tree oil cleanser; lotilaner (antiparasitic drops) approved in the US"
         ]
       },
       {
@@ -345,12 +345,12 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-secheresse": {
         items: ["Severe: autologous serum (drops made from the patient’s blood), scleral lens (large rigid lens with a fluid reservoir)"]
       }
     ],
-    local: "In Quebec, optometrists manage most dry eye and refer to ophthalmology for severe disease, Sjögren or treatment failure; IPL is mostly in private clinics, coverage of cyclosporine and lifitegrast to be confirmed."
+    local: "In Quebec, optometrists manage most dry eye and refer to ophthalmology for severe disease, Sjögren or treatment failure; IPL is mostly in private clinics; coverage of cyclosporine and lifitegrast varies by plan."
   },
   treatments: [
     { name: "Preservative-free artificial tears", dose: "1 drop 4–6 times a day, more as needed.", pitfall: "BAK-preserved bottle + frequent use = toxicity.", how: "Lubricating drops in single-dose vials or special bottles: add fluid and dilute salts; emulsions reinforce the oil layer.", why: "Any dry eye; first step.", pros: "Safe, over the counter, immediate relief.", cons: "Short-lived effect; BAK becomes toxic with frequent use.", cx: "Blurred vision with gels and ointments." },
     { name: "Lid hygiene, IPL", dose: "Warm compresses 5–10 min + massage, once or twice a day.", pitfall: "Stopping lid care = relapse.", qc: "IPL is mostly offered privately.", how: "Warm compresses and massage at home; in clinic, IPL or thermal pulsation (device that heats and compresses the lids): heat melts the solidified oil, pressure empties the glands.", why: "Meibomian gland dysfunction, the most common cause.", pros: "Treats the cause; IPL effect lasts months.", cons: "Requires consistency; IPL is costly.", cx: "Skin burn; eyes shielded during IPL." },
-    { name: "Cyclosporine or lifitegrast", dose: "Cyclosporine 0.05–0.09% or lifitegrast 5%, 1 drop twice a day.", pitfall: "Works after several weeks: don’t stop too early.", qc: "Coverage to check.", how: "Prescription anti-inflammatory drops, twice a day: cyclosporine blocks T-cell activation, lifitegrast blocks their binding (LFA-1/ICAM-1).", why: "Inflammation persisting despite tears.", pros: "No IOP rise or cataract with long-term use, unlike steroids.", cons: "Effect only after several weeks; cost.", cx: "Burning on instillation; metallic taste (lifitegrast)." }
+    { name: "Cyclosporine or lifitegrast", dose: "Cyclosporine 0.05–0.09% or lifitegrast 5%, 1 drop twice a day.", pitfall: "Works after several weeks: don’t stop too early.", qc: "Coverage varies by insurance plan.", how: "Prescription anti-inflammatory drops, twice a day: cyclosporine blocks T-cell activation, lifitegrast blocks their binding (LFA-1/ICAM-1).", why: "Inflammation persisting despite tears.", pros: "No IOP rise or cataract with long-term use, unlike steroids.", cons: "Effect only after several weeks; cost.", cx: "Burning on instillation; metallic taste (lifitegrast)." }
   ],
   treatment: {
     first: [
@@ -481,7 +481,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-surface": {
   treatments: [
     { name: "Cold compresses and artificial tears", dose: "Cold compresses, chilled tears 4–6×/day.", pitfall: "Doesn’t shorten the viral infection.", how: "Cold constricts vessels; refrigerated tears rinse away viruses and allergens.", why: "Adenovirus, mild allergy.", pros: "No risk.", cons: "Does not shorten the viral infection.", cx: "None." },
     { name: "Antihistamine-mast cell stabilizer (olopatadine, ketotifen)", dose: "Olopatadine 0.1% or ketotifen 0.025%, 1 drop BID.", pitfall: "Not enough alone in severe vernal disease.", how: "Blocks the H1 receptor (itching) and slows mediator release (prevention).", why: "Allergy, vernal, atopic, giant papillary.", pros: "Well tolerated long term.", cons: "Not enough alone for severe vernal disease.", cx: "Burning." },
-    { name: "Topical cyclosporine or tacrolimus", dose: "Topical cyclosporine or tacrolimus, specialist-prescribed.", pitfall: "Works over weeks.", qc: "Formulations: Canadian availability to check.", how: "Block calcineurin, and therefore T-cell activation.", why: "Vernal, atopic, rosacea, SLK.", pros: "Steroid-sparing.", cons: "Effect over weeks; formulations and Canadian availability to be confirmed.", cx: "Burning; caution with herpes." },
+    { name: "Topical cyclosporine or tacrolimus", dose: "Topical cyclosporine or tacrolimus, specialist-prescribed.", pitfall: "Works over weeks.", qc: "Often compounded or specialist-prescribed.", how: "Block calcineurin, and therefore T-cell activation.", why: "Vernal, atopic, rosacea, SLK.", pros: "Steroid-sparing.", cons: "Effect over weeks; formulations sometimes compounded.", cx: "Burning; caution with herpes." },
     { name: "Short topical steroid (fluorometholone, prednisolone)", dose: "Fluorometholone 0.1% QID, short course.", pitfall: "Rule out epithelial herpes first.", how: "Puts out lymphocytic and eosinophilic inflammation.", why: "Shield ulcer, pseudomembranes, bothersome infiltrates.", pros: "Rapid effect.", cons: "Rebound on stopping (adenovirus); contraindicated with epithelial herpes.", cx: "IOP rise, cataract, superinfection." },
     { name: "Lid hygiene, doxycycline or azithromycin", dose: "Lid hygiene once or twice a day; low-dose doxycycline.", pitfall: "Doxycycline: not under 8 or in pregnancy.", qc: "Chlamydia, gonorrhea: reportable in Quebec.", how: "Warm compresses and cleaning of the lid margin (bacteria, Demodex); low-dose doxycycline is anti-collagenase.", why: "Rosacea, blepharokeratoconjunctivitis.", pros: "Treats the cause.", cons: "Doxycycline: not before age 8 or during pregnancy.", cx: "Photosensitivity, esophagitis." }
   ],
@@ -729,10 +729,10 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-keratocone": {
         ]
       }
     ],
-    local: "In Quebec, CXL is offered in specialized centers (public coverage varies, check locally); optometrists often detect keratoconus and fit the lenses. Epioxa (epi-on, FDA 2025): Canadian availability to be confirmed."
+    local: "In Quebec, CXL is offered in specialized centers (public coverage varies by centre); optometrists often detect keratoconus and fit the lenses. Epioxa (epi-on): FDA-approved in 2025."
   },
   treatments: [
-    { name: "Corneal collagen cross-linking (CXL)", dose: "Riboflavin 0.1% + UVA, after epithelial removal.", pitfall: "Halts the disease; doesn’t restore lost vision.", qc: "Public coverage varies; check locally.", how: "The epithelium is removed (epi-off), the stroma is soaked with riboflavin (vitamin B2) 0.1%, then exposed to UVA: excited riboflavin releases oxygen radicals that weld the collagen fibers together.", why: "Progressive keratoconus; children at diagnosis.", pros: "Halts progression in most cases; can be repeated.", cons: "Does not restore lost vision; pain for a few days; stroma ≥ 400 µm required to protect the endothelium from UV.", cx: "Infection, stromal haze (often transient), herpetic reactivation, rarely scarring." },
+    { name: "Corneal collagen cross-linking (CXL)", dose: "Riboflavin 0.1% + UVA, after epithelial removal.", pitfall: "Halts the disease; doesn’t restore lost vision.", qc: "Public coverage varies by centre.", how: "The epithelium is removed (epi-off), the stroma is soaked with riboflavin (vitamin B2) 0.1%, then exposed to UVA: excited riboflavin releases oxygen radicals that weld the collagen fibers together.", why: "Progressive keratoconus; children at diagnosis.", pros: "Halts progression in most cases; can be repeated.", cons: "Does not restore lost vision; pain for a few days; stroma ≥ 400 µm required to protect the endothelium from UV.", cx: "Infection, stromal haze (often transient), herpetic reactivation, rarely scarring." },
     { name: "Rigid and scleral lenses", dose: "Rigid gas-permeable or scleral lenses, fitted by the optometrist.", pitfall: "Don’t stop progression: keep following tomography.", how: "Tears, or the fluid in the scleral lens reservoir, fill in the irregularities: the smooth lens surface becomes the new optical surface.", why: "Inadequate vision with glasses.", pros: "Much better vision than glasses; no surgery.", cons: "Lengthy fitting, cost; does not stop progression.", cx: "Abrasion, infection, scar at the cone apex." },
     { name: "Corneal graft (DALK or PK)", dose: "DALK preferred; PK if Descemet is involved.", pitfall: "Recovery takes a year or more.", how: "DALK: diseased stroma removed down to Descemet and replaced, the patient’s endothelium preserved; PK: full thickness replaced, sutured.", why: "Central scar, contact lens intolerance.", pros: "Very good prognosis; DALK: no endothelial rejection, stronger globe.", cons: "Recovery over a year or more, astigmatism; DALK is technically difficult (conversion to PK if Descemet perforates).", cx: "PK: rejection, glaucoma, wound dehiscence with the slightest blow, lifelong." }
   ],
@@ -855,7 +855,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-fuchs": {
         ]
       }
     ],
-    local: "In Quebec, guttae are often found by the optometrist, who refers for edema, symptoms or cataract. Netarsudil (ROCK inhibitor): Canadian availability to be confirmed; experimental use in Fuchs."
+    local: "In Quebec, guttae are often found by the optometrist, who refers for edema, symptoms or cataract. Netarsudil (ROCK inhibitor, approved in the US): experimental use in Fuchs."
   },
   treatments: [
     { name: "NaCl 5% and hair dryer", dose: "5% NaCl drops QID or ointment at bedtime; hair dryer on waking.", pitfall: "Modest effect, mainly on the epithelium.", how: "Hypertonic saline drop or ointment that draws water osmotically from the epithelium into the tears; warm air from the dryer speeds evaporation on waking.", why: "Mild epithelial edema, awaiting a graft.", pros: "Simple, inexpensive.", cons: "Little effect on the stroma; modest benefit.", cx: "Burning, blurred vision (ointment)." },
@@ -980,11 +980,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-atypiques": {
         ]
       }
     ],
-    local: "In Canada, PHMB, chlorhexidine and propamidine are compounded by hospital pharmacies; Akantior (polihexanide 0.08%, approved in Europe in 2024) and natamycin: Canadian availability to be confirmed. Confocal microscopy and PCR: only in some academic centers."
+    local: "In Canada, PHMB, chlorhexidine and propamidine are compounded by hospital pharmacies; Akantior (polihexanide 0.08%, approved in Europe in 2024) and natamycin: often obtained through the hospital pharmacy. Confocal microscopy and PCR: only in some academic centers."
   },
   treatments: [
     { name: "Biguanide ± diamidine (ameba)", dose: "PHMB or chlorhexidine 0.02% hourly ± propamidine, over months.", pitfall: "Often mistaken for herpes early on.", qc: "Compounded by hospital pharmacies.", how: "Antiseptic drops compounded by the pharmacy (PHMB or chlorhexidine 0.02%), hourly day and night at first, often with propamidine: the biguanide breaches the ameba’s membrane and penetrates the cyst wall.", why: "Any Acanthamoeba keratitis, as soon as suspicion is strong.", pros: "The only class active against cysts; polihexanide 0.08% validated as monotherapy in Europe.", cons: "Several months of treatment; compounded preparations.", cx: "Epithelial toxicity, delayed healing." },
-    { name: "Natamycin 5% (filamentous fungus)", dose: "Natamycin 5%, 1 drop hourly.", pitfall: "Penetrates poorly: deep disease needs another option.", qc: "Canadian availability to check.", how: "Antifungal suspension drops, hourly: binds ergosterol (a component of the fungal membrane) and blocks growth.", why: "Fusarium or Aspergillus: first choice.", pros: "MUTT I: better vision and fewer perforations than voriconazole, especially for Fusarium.", cons: "Poor deep penetration.", cx: "Irritation, white deposits." },
+    { name: "Natamycin 5% (filamentous fungus)", dose: "Natamycin 5%, 1 drop hourly.", pitfall: "Penetrates poorly: deep disease needs another option.", qc: "Often obtained through the hospital pharmacy.", how: "Antifungal suspension drops, hourly: binds ergosterol (a component of the fungal membrane) and blocks growth.", why: "Fusarium or Aspergillus: first choice.", pros: "MUTT I: better vision and fewer perforations than voriconazole, especially for Fusarium.", cons: "Poor deep penetration.", cx: "Irritation, white deposits." },
     { name: "Voriconazole", dose: "Voriconazole 1% hourly; intrastromal if deep.", pitfall: "Inferior to natamycin for Fusarium (MUTT I).", how: "Azole antifungal as 1% drops, as an intrastromal or anterior chamber injection, or as tablets: prevents the fungus from making ergosterol.", why: "Yeasts (Candida), deep infection or natamycin failure.", pros: "Good penetration, broad spectrum.", cons: "Inferior to natamycin for Fusarium (MUTT I); oral adds no benefit (MUTT II).", cx: "Oral: transient visual disturbances, liver injury." }
   ],
   treatment: {
@@ -1087,7 +1087,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-brulure": {
           "**Irrigate first**: ≥ 30 min and several liters, topical anesthetic, lid speculum or irrigating lens",
           "Double eversion, removal of particles with a moistened cotton tip, sweeping of the fornices",
           "Preservative-free antibiotic, cycloplegic, IOP control",
-          "Grades II–IV: steroid ≤ 10–14 days, doxycycline, ascorbate; topical citrate (compounded, to be confirmed)"
+          "Grades II–IV: steroid ≤ 10–14 days, doxycycline, ascorbate; topical citrate (compounded, depending on the centre)"
         ]
       },
       {
@@ -1230,7 +1230,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-pterygion": {
         items: ["Steroid for a few weeks after excision, IOP; recurrence mainly in the first year; OSSN: prolonged follow-up"]
       }
     ],
-    local: "In Quebec, pterygium is less common than in tropical areas; it is seen mainly in outdoor workers and in patients who grew up in a sunny climate. Topical interferon and 5-fluorouracil: compounded preparations, availability to be confirmed."
+    local: "In Quebec, pterygium is less common than in tropical areas; it is seen mainly in outdoor workers and in patients who grew up in a sunny climate. Topical interferon and 5-fluorouracil: hospital-pharmacy compounded preparations."
   },
   treatments: [
     { name: "Conservative treatment", dose: "UV-blocking glasses, tears; mild steroid for a few days in flares.", pitfall: "Doesn’t make the lesion regress.", how: "UV protection, artificial tears and, during flares, a soft steroid for a few days: protect and calm the surface.", why: "Small pterygium, pinguecula, inflammatory flare.", pros: "No surgery.", cons: "Does not make the lesion regress.", cx: "Steroid: ↑ IOP." },
@@ -1362,11 +1362,11 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-peripherie": {
         items: ["Progression on prednisone: cyclophosphamide or rituximab, per rheumatology"]
       }
     ],
-    local: "In Quebec, PUK and necrotizing scleritis warrant same-day contact with the center’s rheumatology or internal medicine service; access to biologics to be checked locally."
+    local: "In Quebec, PUK and necrotizing scleritis warrant same-day contact with the center’s rheumatology or internal medicine service; biologics are prescribed by rheumatology."
   },
   treatments: [
     { name: "Lid hygiene + short topical steroid", dose: "Lid hygiene + mild steroid for 1–2 weeks.", pitfall: "Rule out infection first.", how: "Cleaning the lid margin reduces the antigen load; the steroid puts out the reaction.", why: "Marginal keratitis.", pros: "Resolves within a few days.", cons: "Recurrences; rule out infection first.", cx: "IOP rise, superinfection." },
-    { name: "Systemic corticosteroids and immunosuppressants", dose: "Oral prednisone, then an immunosuppressant chosen by rheumatology.", qc: "Access to biologics to check.", how: "Suppress the vasculitis at its source: prompt prednisone, then methotrexate, mycophenolate, cyclophosphamide or rituximab.", why: "PUK, necrotizing scleritis, Mooren, NSAID-resistant scleritis.", pros: "Saves the eye, sometimes the patient’s life.", cons: "Choice and monitoring by rheumatology.", cx: "Infections, diabetes, osteoporosis, cytopenias." },
+    { name: "Systemic corticosteroids and immunosuppressants", dose: "Oral prednisone, then an immunosuppressant chosen by rheumatology.", qc: "Biologics prescribed by rheumatology.", how: "Suppress the vasculitis at its source: prompt prednisone, then methotrexate, mycophenolate, cyclophosphamide or rituximab.", why: "PUK, necrotizing scleritis, Mooren, NSAID-resistant scleritis.", pros: "Saves the eye, sometimes the patient’s life.", cons: "Choice and monitoring by rheumatology.", cx: "Infections, diabetes, osteoporosis, cytopenias." },
     { name: "Oral doxycycline and lubrication", dose: "Doxycycline 100 mg BID + preservative-free lubricants.", pitfall: "Adjunct only.", how: "Doxycycline: inhibits metalloproteinases; preservative-free lubricants: protect the epithelium.", why: "PUK, corneal melt, rosacea.", pros: "Oral, inexpensive.", cons: "Adjunct only; not before age 8 or in pregnancy.", cx: "Photosensitivity, esophagitis." },
     { name: "Oral NSAIDs", dose: "Oral NSAID (ibuprofen, naproxen) at anti-inflammatory dose.", pitfall: "No topical NSAIDs on a thinned cornea.", how: "Block cyclooxygenase (prostaglandins).", why: "Diffuse or nodular scleritis, persistent episcleritis.", pros: "Often sufficient.", cons: "Insufficient if necrotizing; avoid topical NSAIDs on a thinned cornea.", cx: "Gastric ulcer, renal injury." },
     { name: "Cyanoacrylate glue, bandage contact lens, tectonic graft", dose: "Glue if the hole is ≤ 2–3 mm, else tectonic graft.", pitfall: "Melts again if the disease is active.", how: "The glue plugs the hole and inhibits neutrophils; the graft replaces the melted tissue.", why: "Descemetocele, perforation ≤ 2–3 mm (glue) or larger (graft).", pros: "Seals the globe quickly.", cons: "Re-melting if the disease is active.", cx: "Glue dislodgement, rejection." }
@@ -1502,7 +1502,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-depots": {
         items: ["Band: recurs if the cause persists; Wilson: the ring fades on treatment"]
       }
     ],
-    local: "In Quebec, optometrists often refer these opacities; systemic workup with the family physician. Disodium EDTA: hospital preparation, availability to be confirmed."
+    local: "In Quebec, optometrists often refer these opacities; systemic workup with the family physician. Disodium EDTA: hospital-pharmacy preparation."
   },
   treatments: [
     { name: "EDTA chelation", dose: "Disodium EDTA on a sponge, after epithelial scraping.", pitfall: "Recurs if the cause persists.", qc: "Hospital-prepared.", how: "After epithelial debridement, a sponge soaked in disodium EDTA (chelator) dissolves the calcium.", why: "Symptomatic band keratopathy.", pros: "Effective, done in a procedure room.", cons: "Recurs if the cause persists.", cx: "Delayed healing, infection." },
@@ -1632,7 +1632,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-dystrophies": {
         items: ["Recurrence in the graft: rapid (Reis-Bücklers), frequent (granular, lattice), less common (macular)"]
       }
     ],
-    local: "In Quebec, the optometrist often finds these opacities; refer for ↓ vision, erosions or planned refractive surgery. Genetic testing: access and coverage to be checked locally (medical genetics)."
+    local: "In Quebec, the optometrist often finds these opacities; refer for ↓ vision, erosions or planned refractive surgery. Genetic testing: through medical genetics, depending on local access."
   },
   treatments: [
     { name: "Surface care", dose: "5% NaCl ointment at bedtime; bandage lens in flares.", pitfall: "Doesn’t remove the opacities.", how: "Lubricants, NaCl 5% ointment at bedtime, soft bandage contact lens during episodes.", why: "Recurrent erosions.", pros: "Simple, low risk.", cons: "Does not remove the opacities.", cx: "Infection under the lens." },
@@ -1742,7 +1742,7 @@ G.OPH_EN.fiches = Object.assign(G.OPH_EN.fiches || {}, { "c-greffe": {
       {
         phase: "medical",
         items: [
-          "Rejection: prednisolone acetate 1% hourly (or difluprednate 0.05%, Canadian availability to be confirmed), then slow taper",
+          "Rejection: prednisolone acetate 1% hourly (or difluprednate 0.05%), then slow taper",
           "Cycloplegic (cyclopentolate: rests the ciliary muscle)",
           "Severe: sub-Tenon triamcinolone (under Tenon capsule, the envelope of the globe) or oral prednisone",
           "History of herpes: valacyclovir 500 mg PO TID or acyclovir 400 mg PO 5 times/day, then prophylaxis"

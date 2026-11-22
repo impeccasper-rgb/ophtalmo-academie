@@ -76,6 +76,35 @@ var Motion = (function () {
     s.className = 'mo-sticker'; s.setAttribute('aria-hidden', 'true'); s.textContent = list[hash(fb.textContent) % list.length];
     s.style.setProperty('--rot', (hash(fb.textContent + 'r') % 2 ? 5 : -6) + 'deg'); s.style.setProperty('--mo-delay', '.12s');
     fb.appendChild(s);
+    placeSticker(fb, s, 0);
+  }
+  /* keep the sticker off every text: verdict lines, the caption and hotspot labels around it (collision test on bounding boxes).
+     Tries corners of the verdict box (inside, then straddling its edges); if all collide, the sticker becomes an inline row. */
+  function rectsOf(node, skip) {
+    var out = [], w = D.createTreeWalker(node, NodeFilter.SHOW_TEXT, null), r = D.createRange();
+    while (w.nextNode()) { var tn = w.currentNode; if (!tn.nodeValue.trim() || (skip && skip.contains(tn))) continue; r.selectNodeContents(tn); Array.prototype.forEach.call(r.getClientRects(), function (q) { if (q.width && q.height) out.push(q); }); }
+    Array.prototype.forEach.call(node.querySelectorAll('button, a, img, svg, input, .reveal-label'), function (e) { if (skip && skip.contains(e)) return; var q = e.getBoundingClientRect(); if (q.width && q.height) out.push(q); });
+    return out;
+  }
+  function placeSticker(fb, s, tries) {
+    var fr = fb.getBoundingClientRect();
+    if (!fr.width || !fr.height) { if (tries < 30) W.setTimeout(function () { placeSticker(fb, s, tries + 1); }, 120); return; }
+    if (W.getComputedStyle(fb).position === 'static') fb.style.position = 'relative';
+    s.classList.remove('mo-inline'); ['top', 'right', 'bottom', 'left'].forEach(function (k) { s.style[k] = ''; });
+    fb.style.paddingRight = ''; fb.style.minHeight = '';
+    var w = s.offsetWidth + 8, h = s.offsetHeight + 8;
+    // reserve a column for the sticker inside the verdict box (text reflows to its left) when the box is wide enough
+    if (fr.width - w - 24 >= 150) { fb.style.paddingRight = (w + 12) + 'px'; fb.style.minHeight = (h + 10) + 'px'; fr = fb.getBoundingClientRect(); }
+    var obst = rectsOf(fb, s);
+    [fb.previousElementSibling, fb.nextElementSibling].forEach(function (n) { if (n && n.getBoundingClientRect().height) obst = obst.concat(rectsOf(n, s), [n.getBoundingClientRect()]); });
+    var card = fb.closest('figure, .run, .card, .voir-card'); if (card) Array.prototype.forEach.call(card.querySelectorAll('.reveal-label, .mo-label, .inv-hot b, .cap'), function (e) { var q = e.getBoundingClientRect(); if (q.width && q.height && !fb.contains(e)) obst.push(q); });
+    var hh = Math.round(h * .55), C = [{ top: 8, right: 8 }, { top: -hh, right: 12 }, { bottom: -hh, right: 12 }, { bottom: 8, right: 8 }, { top: -hh, left: 12 }, { bottom: -hh, left: 12 }];
+    function box(c) { var x = c.right != null ? fr.right - c.right - w : fr.left + c.left, y = c.top != null ? fr.top + c.top : fr.bottom - c.bottom - h; return { left: x, top: y, right: x + w, bottom: y + h }; }
+    function hit(a, b) { return a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top; }
+    var vw = D.documentElement.clientWidth || W.innerWidth;
+    var pick = C.filter(function (c) { var b = box(c); return b.left >= 0 && b.right <= vw && !obst.some(function (o) { return hit(b, o); }); })[0];
+    if (!pick) { fb.style.paddingRight = ''; fb.style.minHeight = ''; s.classList.add('mo-inline'); return; }
+    Object.keys(pick).forEach(function (k) { s.style[k] = pick[k] + 'px'; });
   }
   /* wrong answer: scribbled underline under the chosen option (the CSS adds a small shake) */
   function scribble(opt) {
@@ -142,6 +171,7 @@ var Motion = (function () {
     W.clearTimeout(rt); rt = W.setTimeout(function () {
       Array.prototype.forEach.call(D.querySelectorAll('.inv-hots.mo-marked'), function (h) { markHots(h, false); });
       Array.prototype.forEach.call(D.querySelectorAll('.hero-img.mo-marked'), function (b) { markHero(b, false); });
+      Array.prototype.forEach.call(D.querySelectorAll('.feedback > .mo-sticker'), function (st) { placeSticker(st.parentNode, st, 0); });
     }, 160);
   }
   function init() {

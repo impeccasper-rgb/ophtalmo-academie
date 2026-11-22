@@ -138,10 +138,10 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
    "bullets": [
     "**Where severe keratitis goes**: often to a center's ophthalmology emergency (CHUM, HMR, MUHC, Jewish General Hospital, CHU de Québec). First visits in optometry: red eye, contact lenses, dry eye, foreign body.",
     "**CNESST**: workplace injury (chemical burn, foreign body) → CNESST forms to complete.",
-    "**CXL**: offered in specialized centers; public coverage variable, check locally.",
+    "**CXL**: offered in specialized centers; public coverage varies by centre.",
     "**Oxervate** (cenegermin 0.002%): approved by Health Canada for moderate or severe neurotrophic keratitis in adults.",
-    "**Anti-amebic agents**: compounded preparations (PHMB 0.02%, chlorhexidine 0.02%, ± propamidine); polihexanide 0.08% (Europe): Canadian availability to be confirmed.",
-    "**Recent US products** (lotilaner, perfluorohexyloctane, nasal varenicline, epi-on CXL Epioxa): Canadian availability to be confirmed.",
+    "**Anti-amebic agents**: compounded preparations (PHMB 0.02%, chlorhexidine 0.02%, ± propamidine); polihexanide 0.08%: approved in Europe in 2024.",
+    "**Recent US products** (lotilaner, perfluorohexyloctane, nasal varenicline, epi-on CXL Epioxa): approved in the US; in Canada, the ophthalmologist will know what is offered.",
     "**Zoster**: recombinant vaccine (Shingrix) recommended by NACI from age 50, including after an episode of zoster."
    ]
   }
@@ -209,7 +209,7 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
    "what": "Biguanide drops (PHMB 0.02%, chlorhexidine 0.02%) ± a diamidine (propamidine), as compounded preparations in Canada.",
    "how": "Biguanides destroy the membrane of the active ameba (trophozoite) and of the resistant cyst; diamidines complement their action.",
    "when": "Acanthamoeba keratitis (contact lens wearer, water exposure, pain out of proportion, ring infiltrate), for months.",
-   "cx": "Epithelial toxicity, very long treatment, recurrences; polihexanide 0.08% approved in Europe: Canadian availability to be confirmed."
+   "cx": "Epithelial toxicity, very long treatment, recurrences; polihexanide 0.08% approved in Europe in 2024."
   },
   {
    "name": "Topical corticosteroids",
@@ -556,7 +556,7 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
     "**SAAQ, class 5**: binocular VA ≥ 6/15 (20/50); continuous binocular field ≥ 100° horizontally (≥ 30° on each side), 10° above and 20° below fixation.",
     "**Heavy vehicles**: 6/9 and 150°. Field abnormality → the SAAQ requires a signed **binocular** field (Esterman or Goldmann III/4e).",
     "**Glaucoma and the license**: no automatic suspension; a night-driving restriction is possible; the physician may recommend stopping.",
-    "**Medications**: latanoprostene bunod (Vyzulta) approved by Health Canada; netarsudil and intracameral implants approved in the US, Canadian availability to be confirmed.",
+    "**Medications**: latanoprostene bunod (Vyzulta) approved by Health Canada; netarsudil and intracameral implants approved in the US.",
     "**Access**: SLT and MIGS vary by setting; public coverage of MIGS and new products should be checked locally.",
     "**At-risk populations**: the Inuit (e.g. Nunavik) have among the highest rates of primary angle closure; never skip gonioscopy.",
     "**Canadian reference**: COS guideline (2009); individualized target IOP."
@@ -570,7 +570,7 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
    "what": "Once-daily drops, at bedtime: latanoprost, travoprost, bimatoprost, tafluprost (some preservative-free).",
    "how": "Remodel the ciliary muscle matrix: ↑ U (uveoscleral outflow); the largest IOP reduction among drops.",
    "when": "First-line medical therapy for POAG, NTG and OHT requiring treatment; a single daily drop helps adherence.",
-   "cx": "Hyperemia, lengthened lashes, iris darkening (irreversible), skin pigmentation, periorbitopathy (orbital fat atrophy); caution with uveitis, herpes or macular edema. Intracameral PGA implants (Canadian availability to be confirmed): endothelial cell loss with repeated doses (AAO 2026)."
+   "cx": "Hyperemia, lengthened lashes, iris darkening (irreversible), skin pigmentation, periorbitopathy (orbital fat atrophy); caution with uveitis, herpes or macular edema. Intracameral PGA implants (approved in the US): endothelial cell loss with repeated doses (AAO 2026)."
   },
   {
    "name": "Latanoprostene bunod",
@@ -623,7 +623,7 @@ G.OPH_EN.capsules = Object.assign(G.OPH_EN.capsules || {}, {
   {
    "name": "Rho kinase inhibitor (netarsudil)",
    "en": "Rho kinase inhibitor (netarsudil)",
-   "what": "Once-daily drop, at bedtime; approved in the United States, Canadian availability to be confirmed.",
+   "what": "Once-daily drop, at bedtime; approved in the United States.",
    "how": "Relaxes trabecular meshwork cells: ↑ C; also lowers Pv and slightly reduces production (↓ F).",
    "when": "Add-on when the other classes are insufficient or not tolerated, if the product is accessible.",
    "cx": "Frequent conjunctival hyperemia, small subconjunctival hemorrhages, whorl-like corneal deposits (cornea verticillata), rare reticular epithelial edema."
@@ -2243,7 +2243,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
     {
      "label": "Stop valacyclovir and lenses; hourly biguanide ± propamidine, then slow taper; cycloplegic",
      "correct": true,
-     "note": "Biguanides (PHMB, polyhexamethylene biguanide, or chlorhexidine, at 0.02%) destroy the ameba's membrane and are the usual agents effective against cysts (cysticidal): they form the basis of treatment. They are given hourly day and night for the first days, then tapered gradually over several months, with close follow-up in a cornea center. Diamidines, such as propamidine, are often added, but they are more toxic to the epithelium. In Canada, these drops are compounded preparations (availability to be confirmed); polihexanide 0.08% (Akantior) has been approved in Europe since 2024, as monotherapy. Treatment lasts months, because cysts survive a long time and can reactivate. The cycloplegic (a drop that paralyzes the ciliary muscle, e.g. cyclopentolate) relieves the painful spasm."
+     "note": "Biguanides (PHMB, polyhexamethylene biguanide, or chlorhexidine, at 0.02%) destroy the ameba's membrane and are the usual agents effective against cysts (cysticidal): they form the basis of treatment. They are given hourly day and night for the first days, then tapered gradually over several months, with close follow-up in a cornea center. Diamidines, such as propamidine, are often added, but they are more toxic to the epithelium. In Canada, these drops are hospital-pharmacy compounded preparations; polihexanide 0.08% (Akantior) has been approved in Europe since 2024, as monotherapy. Treatment lasts months, because cysts survive a long time and can reactivate. The cycloplegic (a drop that paralyzes the ciliary muscle, e.g. cyclopentolate) relieves the painful spasm."
     },
     {
      "label": "Moxifloxacin 0.5% hourly and a patch at night to relieve pain",
@@ -2618,7 +2618,7 @@ G.OPH_EN.cases = Object.assign(G.OPH_EN.cases || {}, {
     {
      "label": "CXL in the right eye now, without waiting for documented progression; stop rubbing",
      "correct": true,
-     "note": "CXL stiffens the cornea: the epithelium is removed (epi-off), riboflavin 0.1% (vitamin B2) is instilled, then UV-A irradiation creates bonds between the collagen fibers. Common protocols: Dresden (3 mW/cm² × 30 min) or accelerated (9 mW/cm² × 10 min). The 2nd global consensus (2025) recommends CXL in children at diagnosis, because the disease progresses quickly at this age; stopping eye rubbing helps, but must never delay CXL. Then plan the OS, which already shows tomographic signs, and treat the allergy to curb the urge to rub. In Quebec, CXL is offered in specialized centers; public coverage varies (check locally)."
+     "note": "CXL stiffens the cornea: the epithelium is removed (epi-off), riboflavin 0.1% (vitamin B2) is instilled, then UV-A irradiation creates bonds between the collagen fibers. Common protocols: Dresden (3 mW/cm² × 30 min) or accelerated (9 mW/cm² × 10 min). The 2nd global consensus (2025) recommends CXL in children at diagnosis, because the disease progresses quickly at this age; stopping eye rubbing helps, but must never delay CXL. Then plan the OS, which already shows tomographic signs, and treat the allergy to curb the urge to rub. In Quebec, CXL is offered in specialized centers; public coverage varies by centre."
     },
     {
      "label": "Wait for progression documented on two tomographies 6 months apart before any CXL",
