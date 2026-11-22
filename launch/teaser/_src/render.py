@@ -28,9 +28,18 @@ REELS = [  # (file stem, harness r)
     ('09-compte-a-rebours-j14', 'countdown:14'),
     ('09-compte-a-rebours-j7', 'countdown:7'),
     ('09-compte-a-rebours-j1', 'countdown:1'),
+    ('10-xy-episclerite-sclerite', 'xy:episclerite'),
+    ('11-xy-herpes-zona', 'xy:herpes'),
+    ('12-xy-dpv-dechirure', 'xy:dpv'),
+    ('13-xy-anisocorie', 'xy:anisocorie'),
+    ('14-xy-oacr-ovcr', 'xy:occlusions'),
+    ('15-xy-abrasion-lentille', 'xy:lentille'),
+    ('16-xy-uveite-crise', 'xy:uveite'),
+    ('17-xy-dpar', 'xy:dpar'),
 ]
 POSTER = {'brand': 8.5, 'quiz:angle:same': 11.5, 'mech': 4.0, 'quiz:dendrite:demain': 7.5, 'quiz:dendrite:recap': 11.0, 'ui': 8.0, 'quiz:rd:same': 11.5,
           'quiz:crao:demain': 7.5, 'quiz:crao:recap': 11.0, 'quiz:hypopyon:same': 11.5, 'countdown:30': 6.5, 'countdown:14': 6.5, 'countdown:7': 6.5, 'countdown:1': 6.5}
+POSTER.update({r: 11.6 for _, r in REELS if r.startswith('xy:')})
 
 
 def serve():

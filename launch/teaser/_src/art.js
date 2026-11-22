@@ -80,15 +80,43 @@ var ART = (function () {
     if (o.flush && !cob) s += '<circle cx="450" cy="280" r="215" fill="url(#' + gl + ')"/>';
     s += '<circle cx="450" cy="280" r="150" fill="' + C.ir + '"/>';
     for (var a = 0; a < 360; a += 10) { var r = a * Math.PI / 180; s += '<line x1="' + (450 + Math.cos(r) * 66).toFixed(1) + '" y1="' + (280 + Math.sin(r) * 66).toFixed(1) + '" x2="' + (450 + Math.cos(r) * 144).toFixed(1) + '" y2="' + (280 + Math.sin(r) * 144).toFixed(1) + '" stroke="' + C.ir2 + '" stroke-width="4" opacity=".6"/>'; }
-    s += '<circle cx="450" cy="280" r="150" fill="none" stroke="' + C.edge + '" stroke-width="7"/><circle cx="450" cy="280" r="' + (o.pupil || 56) + '" fill="' + C.pu + '"/>';
+    s += '<circle cx="450" cy="280" r="150" fill="none" stroke="' + C.edge + '" stroke-width="7"/>' + (o.pupil === 0 ? '' : '<circle cx="450" cy="280" r="' + (o.pupil || 56) + '" fill="' + C.pu + '"/>');
     if (o.haze) s += '<circle cx="450" cy="280" r="152" fill="#e9eef5" opacity="' + o.haze + '"/>';
     if (o.hypopyon) s += '<g><clipPath id="' + cl + 'h"><circle cx="450" cy="280" r="146"/></clipPath><g clip-path="url(#' + cl + 'h)"><rect x="300" y="372" width="300" height="80" fill="#f4efdd"/><rect x="300" y="372" width="300" height="6" fill="#fffdf3"/><rect x="300" y="395" width="300" height="60" fill="#e6dcc0" opacity=".6"/></g></g>';
     if (cob) s += '<circle cx="450" cy="280" r="162" fill="#3a48ff" opacity=".12"/>';
     if (o.patch) s += '<path d="M392,236 C420,214 476,220 500,246 C516,268 498,300 470,306 C440,312 404,300 392,280 C384,266 384,248 392,236 Z" fill="#d8ff3a" opacity=".92" filter="url(#' + fl + ')"/>';
     if (o.dots) { var Rr = K.rng(5); for (var k = 0; k < 70; k++) { var aa = Rr() * Math.PI * 2, rr = Math.sqrt(Rr()) * 132; s += '<circle cx="' + (450 + Math.cos(aa) * rr).toFixed(1) + '" cy="' + (290 + Math.sin(aa) * rr * .9).toFixed(1) + '" r="' + (2.4 + Rr() * 2.2).toFixed(1) + '" fill="#d8ff3a" filter="url(#' + fl + ')"/>'; } }
+    if (o.pseudo) s += '<g opacity=".9"><path d="' + A.PSEUDO + '" fill="none" stroke="#d8ff3a" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity=".62"/><path d="' + A.PSEUDO + '" fill="none" stroke="#f4ffd1" stroke-width="5" stroke-linecap="round" transform="translate(-3,-6)" opacity=".7"/></g>';
+    if (o.kp) { var Rk = K.rng(12); for (var q = 0; q < 26; q++) { var kx = 450 + (Rk() - .5) * 150 * (1 - q / 40), ky = 330 + Rk() * 80; s += '<circle cx="' + kx.toFixed(0) + '" cy="' + ky.toFixed(0) + '" r="' + (3 + Rk() * 3.5).toFixed(1) + '" fill="#e8e4d8" opacity=".9"/>'; } }
+    if (o.lensRing) s += '<circle cx="450" cy="280" r="196" fill="#9da5ff" fill-opacity=".08" stroke="#dfe3ff" stroke-width="4" stroke-opacity=".75"/>';
     if (o.dendrite) s += '<g filter="url(#' + fl + ')"><path d="' + A.DENDRITE.d + '" fill="none" stroke="#d8ff3a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>' + A.DENDRITE.bulbs.map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="12" fill="#d8ff3a"/>'; }).join('') + '</g>';
     s += '<path d="M380,160 Q450,138 520,160" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round" opacity="' + (cob ? .35 : .75) + '"/></g>';
     s += '<path d="' + LID + '" fill="none" stroke="' + C.lid + '" stroke-width="16"/><path d="M30,280 Q450,-60 870,280" fill="none" stroke="' + (cob ? '#02030f' : '#2a1a14') + '" stroke-width="6"/>';
+    return s + '</svg>';
+  };
+  /* sectoral injection overlays (same 900×560 frame as A.eye): superficial episcleral vessels (blanch with phenylephrine)
+     and the deep plexus of scleritis (does not blanch). layer: 'wash' | 'sup' | 'deep' */
+  A.sector = function (kind, layer) {
+    var cl = id('sc'), s = '<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="' + cl + '"><path d="' + LID + '"/></clipPath>' +
+      '<radialGradient id="' + cl + 'g" cx="78%" cy="50%" r="34%"><stop offset="0" stop-color="' + (kind === 'scl' ? '#7d2a63' : '#ec5b4f') + '" stop-opacity="' + (kind === 'scl' ? .75 : .55) + '"/><stop offset="1" stop-color="#ec5b4f" stop-opacity="0"/></radialGradient></defs><g clip-path="url(#' + cl + ')">';
+    var R = K.rng(kind === 'scl' ? 41 : 23);
+    if (layer === 'wash') s += '<rect width="900" height="560" fill="url(#' + cl + 'g)"/>';
+    if (layer === 'sup') for (var i = 0; i < 16; i++) { var y0 = 170 + R() * 220, x0 = 880 - R() * 40, x1 = 612 + R() * 20; s += '<path d="M' + x0.toFixed(0) + ',' + y0.toFixed(0) + ' L' + x1.toFixed(0) + ',' + (280 + (y0 - 280) * .55).toFixed(0) + '" stroke="#e8463c" stroke-width="' + (2.5 + R() * 2.5).toFixed(1) + '" fill="none" stroke-linecap="round"/>'; }
+    if (layer === 'deep') for (var j = 0; j < 9; j++) { var yy = 190 + R() * 190, xa = 860 - R() * 30; s += '<path d="M' + xa.toFixed(0) + ',' + yy.toFixed(0) + ' q-40,' + ((R() - .5) * 60).toFixed(0) + ' -80,' + ((R() - .5) * 30).toFixed(0) + ' t-80,' + ((R() - .5) * 30).toFixed(0) + ' t-60,' + ((R() - .5) * 20).toFixed(0) + '" stroke="#5a1846" stroke-width="' + (5 + R() * 3).toFixed(1) + '" fill="none" stroke-linecap="round" opacity=".9"/>'; }
+    return s + '</g></svg>';
+  };
+  /* zoster pseudodendrite: thick, wavy, « painted-on », no terminal bulbs, faint staining */
+  A.PSEUDO = 'M318,262 C350,240 372,288 404,268 S452,232 486,262 S534,300 566,276 M404,268 C412,300 438,312 456,330';
+  /* slit-lamp optical section: cornea, lens, anterior vitreous (Weiss ring floater; o.dust = Shafer « tobacco dust ») — viewBox 0 0 420 460 */
+  A.vitreous = function (o) {
+    o = o || {}; var g = id('vt'), s = '<svg viewBox="0 0 420 460" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="' + g + '" x1="0" x2="1"><stop offset="0" stop-color="#9da5ff" stop-opacity="0"/><stop offset=".5" stop-color="#dfe3ff" stop-opacity=".55"/><stop offset="1" stop-color="#9da5ff" stop-opacity="0"/></linearGradient>' +
+      '<filter id="' + g + 'b"><feGaussianBlur stdDeviation="3"/></filter></defs><rect width="420" height="460" fill="#02041a"/>';
+    s += '<path d="M60,40 Q30,230 60,420" stroke="#9da5ff" stroke-width="5" fill="none" opacity=".8"/>';
+    s += '<ellipse cx="150" cy="230" rx="52" ry="150" fill="#3a46b8" opacity=".55"/><ellipse cx="150" cy="230" rx="52" ry="150" fill="none" stroke="#c9ceff" stroke-width="3"/>';
+    s += '<rect x="40" y="200" width="380" height="60" fill="url(#' + g + ')" filter="url(#' + g + 'b)" transform="rotate(-8 230 230)"/>';
+    var R = K.rng(9); for (var i = 0; i < 9; i++) { var y = 90 + i * 34; s += '<path d="M215,' + y + ' C260,' + (y - 18 + R() * 36).toFixed(0) + ' 320,' + (y - 18 + R() * 36).toFixed(0) + ' 405,' + (y - 10 + R() * 20).toFixed(0) + '" stroke="#8e94c4" stroke-width="1.6" fill="none" opacity=".55"/>'; }
+    s += '<ellipse cx="320" cy="150" rx="34" ry="28" fill="none" stroke="#b9bee6" stroke-width="7" opacity=".85"/>';
+    if (o.dust) { var Rd = K.rng(4); for (var k = 0; k < 46; k++) { var x = 222 + Rd() * 120, yy = 200 + Rd() * 120; s += '<circle cx="' + x.toFixed(0) + '" cy="' + yy.toFixed(0) + '" r="' + (3 + Rd() * 3).toFixed(1) + '" fill="' + (k % 3 ? '#b8702e' : '#7a4318') + '"/>'; } }
     return s + '</svg>';
   };
   /* stylised eye of direction A (for the brand reveal) */

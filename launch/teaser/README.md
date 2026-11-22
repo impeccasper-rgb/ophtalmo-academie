@@ -2,7 +2,7 @@
 
 **Status: drafts. Nothing has been posted or sent.** The owner posts everything himself, adds the trending sound in the app and writes the final caption. The captions below are drafts he can adapt.
 
-- **Art direction (owner's choice): A « Lampe à fente » + E « Quiz show ».** The base is A: dark navy, a cobalt slit-beam sweep across a drawn subject, the decisive sign glowing fluo, a slow build then a snap reveal. A owns all motion and transitions. E's quiz becomes a HUD layer: question card, A/B/C buttons, a 6-s timer bar, then a « Réponse B » sticker and a restrained fluo burst on the right answer (no score and no « Bien vu ! », which would congratulate every viewer). The direction samples are in `directions/`.
+- **Art direction (owner's choice): A « Lampe à fente » + E « Quiz show ».** The base is A: dark navy, a cobalt slit-beam sweep across a drawn subject, the decisive sign glowing fluo, a slow build then a snap reveal. A owns all motion and transitions. E's quiz becomes a HUD layer: question card, A/B/C buttons, a 6-s timer bar, with the eyebrow « Défi du jour · Ocelle » (EN « Daily challenge · Ocelle »), then a « Réponse B » sticker and a restrained fluo burst on the right answer (no score and no « Bien vu ! », which would congratulate every viewer). The direction samples are in `directions/`.
 - **No call to comment on screen.** During the timer, the screen shows an open question (« Ton diagnostic ? », « C'est quoi le signe ? », « Qu'est-ce que tu vois ? »; EN "Your diagnosis?", "What's the sign?", "What do you see?"). Any call to comment goes only in the caption or the bio.
 - **Clinical review is mandatory before posting** (rule from `launch/CONTENU.md`). The medical statements come from the site's content.
 - **Placeholder date: launch day = Wednesday 23 December 2026, to be confirmed.** The J-30 / J-14 / J-7 / J-1 videos are dated from it. If the date changes, the template takes any number (`countdown:N`).
@@ -10,7 +10,7 @@
 ## Rules applied to every file
 - **Video format:** 1080×1920, 30 fps, H.264 (`-preset veryfast -crf 21`), yuv420p, `+faststart`, **no audio track**. **Owner's cap: 20 s maximum.** Quizzes run 20 s (40 beats), showcase reels 16.5–19.5 s, countdowns 15 s. All lengths are whole beats at 120 BPM.
 - **Platform safe zones:** all text stays inside x 72–948 and y 140–1680, so it is clear of the top 120 px, the bottom 220 px and the right 120 px. Unlike direction C, nothing ever goes past these margins, not even during a transition.
-- **End card on every reel (5.5 s):** FR « ocelle · L'ophtalmo en images · Décembre 2026 · Abonne-toi »; EN « ocelle · Ophthalmology in images · Coming December 2026 · Follow ». The audience (« externes et R1 » / « clerks & R1s ») sits in the eyebrow of every challenge.
+- **End card on every reel (5.5 s):** FR « ocelle · L'ophtalmo en images · Décembre 2026 · Abonne-toi »; EN « ocelle · Ophthalmology in images · Coming December 2026 · Follow ».
 - **No URL anywhere.** Not in the videos, the carousels or the bio.
 - **Reading time (owner's rule):** every text stays fully visible, after its entrance, for at least max(2.5 s, 1.5 s + 0.35 s per word). Two texts that must be read never compete: a new card enters only once the previous one has had its full reading time. Stickers, eyebrows and the timer prompt accompany a card and are exempt from that second check only. To fit 20 s, the words were cut rather than the reading time: question plus options ≤ 13 words, read over a 6-s answer window; the diagnosis and the action are merged into one answer line; the mechanism sits in reel 03. `_src/check_reading.py` checks every reel from `videos/cuts.json` (`--live` reads the timeline directly) and fails if any text is under the rule.
 - **Sync grid:** every reel is cut on a **120 BPM** grid, so every cut falls on a multiple of 0.5 s. This also works with sounds at 60 or 240 BPM. For any other tempo, slide the sound in the app so its drop lands on the reel's **snap**: 3.0 s on the quizzes, 2.5 s on 01, 3.0 s on 03, 2.0 s on 05 and 09. On the quizzes a second drop can land on the **reveal**, at 10 s (9.5 s on 04b/07b). The exact cuts are listed in `videos/cuts.json` and in the table below.
@@ -57,9 +57,9 @@ Slide 5 of each carousel is a quiz (A/B/C), and its answer is on slide 6, next t
 ### `profil/`
 - **`ocelle-avatar-1080.png`:** the fluo loop and dot on cobalt. It stays readable at 40 px (checked on a circular crop).
 - **4 highlight covers (1080×1920):** `ocelle-highlight-1-defis.png`, `-2-mecanismes.png`, `-3-coulisses.png`, `-4-decembre.png`. The icon sits in the central circle that Instagram keeps.
-- **Bio FR** (111 characters): `Ophtalmo en images pour externes et R1. Un signe à trouver chaque semaine. Gratuit, FR/EN. Site : décembre 2026`
-- **Bio EN** (105 characters): `Ophthalmology in images for clerks and R1s. One sign to spot every week. Free, FR/EN. Site: December 2026`
-- **Alternative with the tagline:** FR (125) `Apprends à voir le signe qui compte. Ophtalmo pour externes et R1, gratuit, FR/EN. Défis chaque semaine. Site : décembre 2026` · EN (121) `Learn to see the sign that matters. Ophthalmology for clerks and R1s, free, FR/EN. Weekly challenges. Site: December 2026`
+- **Bio FR** (91 characters): `Ophtalmo en images. Un signe à trouver chaque semaine. Gratuit, FR/EN. Site : décembre 2026`
+- **Bio EN** (86 characters): `Ophthalmology in images. One sign to spot every week. Free, FR/EN. Site: December 2026`
+- **Alternative with the tagline:** FR (115) `Apprends à voir le signe qui compte. Ophtalmo en images, gratuit, FR/EN. Défis chaque semaine. Site : décembre 2026` · EN (112) `Learn to see the sign that matters. Ophthalmology in images, free, FR/EN. Weekly challenges. Site: December 2026`
 
 ### `_src/` (to regenerate)
 - `harness.html` + `common.js`: a paused Web Animations timeline that can be sought frame by frame.
@@ -71,16 +71,83 @@ Slide 5 of each carousel is a quiz (A/B/C), and its answer is on slide 6, next t
 - `ui_capture.py`: the capture of the real interface. The captured frames (`ui-frames/`, 144 MB) are not committed; to recreate them, run `python3 tools/build_web.py`, then `ROUTE='#a-retine/occlusions-retiniennes' python3 ui_capture.py fr cap` (and the same with `en`).
 - `vendor/`: frozen copies of `src/figures-mech.js` and `src/motion.js`. src/ was not modified.
 
+## Série « X ou Y ? » (8 reels × FR + EN, 20 s each)
+Each reel differentiates two look-alikes:
+1. Eyebrow « Défi du jour · Ocelle ».
+2. Hook « X ou Y ? », with both drawings visible from frame 1 (stacked panels; the slit beam is only an accent).
+3. Question and 2 options over a 6-s answer window.
+4. Reveal of the ONE discriminating sign: animated, with the marker loop.
+5. One « pourquoi » line, then the end card.
+
+**Timing:**
+- Cuts: 0 (hook) · snap 3.0 s (3.5 s when the hook has 4 words: 12 in FR and EN, 15-EN, 16-EN) · timer at snap + 0.5 · reveal at snap + 6.5 · end card 14.5 · 20 s.
+- Exact cuts per file are in `videos/cuts.json`.
+- Drops land on the snap and on the reveal.
+
+**Building blocks:**
+- Our own SVG in `_src/art.js`: eyes, sectoral injection, cornea under cobalt, vitreous section.
+- The site's own fundus kit (`src/figures-retine.js`, frozen copy in `_src/vendor/`) for 14.
+- `Motion.loop` for the marker.
+- The A+E HUD.
+- A mini decision tree for 16, drawn in the same style. It is not the site's `tree.js` widget, whose 3-column layout does not fit 20 s at a readable size.
+
+| # | File (`ocelle-teaser-…-{fr,en}.mp4`) | X ou Y | The ONE sign revealed | « Pourquoi » line (FR / EN) | Source checked |
+|---|---|---|---|---|---|
+| 10 | `10-xy-episclerite-sclerite` | Épisclérite / sclérite | A phenylephrine drop: the superficial vessels blanch (episcleritis), the deep plexus stays red (scleritis) | « Sclérite : douleur profonde, bilan systémique » / "Scleritis: deep pain, systemic work-up" | [EyeWiki, Scleritis](https://eyewiki.aao.org/Scleritis): « conjunctival and superficial vessels may blanch with 2.5%–10% phenylephrine, but deep vessels are not affected »; boring pain that wakes the patient; systemic disease in up to 50 %. [EyeWiki, Episcleritis](https://eyewiki.aao.org/Episcleritis) gives 10 % for episcleral blanching (2.5 % for conjunctival). **No concentration is shown on screen.** |
+| 11 | `11-xy-herpes-zona` | Dendrite VHS / pseudodendrite VZV | Terminal bulbs (looped), vs no bulbs, raised, faint staining | « VHS : vrai ulcère, prend la fluorescéine » / "HSV: a true ulcer that stains" | [Moran CORE, VZV pseudodendrites](https://morancore.utah.edu/?p=24172): elevated, « stuck on », no terminal end bulbs, weaker fluorescein staining; [AAFP 2002, HZO](https://www.aafp.org/pubs/afp/issues/2002/1101/p1723.html) |
+| 12 | `12-xy-dpv-dechirure` | DPV simple / DPV + déchirure | Shafer sign (« tobacco dust ») looped; the Weiss ring is present in both | « Signe de Shafer : rétine en urgence » / "Shafer sign: urgent retina referral" | [EyeWiki, Horseshoe tear](https://eyewiki.aao.org/Horseshoe_or_Flap_Tear): Shafer sign ≈ 90 % predictive of a tear; [EyeWiki, PVD](https://eyewiki.aao.org/Posterior_Vitreous_Detachment): pigment or hemorrhage → tear in 50–70 % |
+| 13 | `13-xy-anisocorie` | Grande / petite pupille | Bigger gap in the light → the large pupil fails to constrict (looped: « III · Adie · collyre ») | « À l'obscurité, c'est la petite : Horner » / "In the dark, the small one: Horner" | [Moran CORE, anisocoria](https://morancore.utah.edu/?p=25489); [MSD Manual, Anisocoria](https://www.msdmanuals.com/professional/eye-disorders/symptoms-of-ophthalmologic-disorders/anisocoria) |
+| 14 | `14-xy-oacr-ovcr` | OACR / OVCR | Cherry-red spot on a pale retina (looped) vs « sang et tonnerre » | « OACR : centre d'AVC, tout de suite » / "CRAO: stroke centre, right now" | [EyeWiki, Retinal artery occlusion](https://eyewiki.aao.org/Retinal_Artery_Occlusion): « immediate emergent referral to the nearest stroke center »; [EyeWiki, CRVO](https://eyewiki.aao.org/Central_Retinal_Vein_Occlusion) |
+| 15 | `15-xy-abrasion-lentille` | Abrasion with / without contact lenses | The lens wearer's abrasion: patch crossed out, antipseudomonal cover | « Pseudomonas : fluoroquinolone, jamais de pansement » / "Pseudomonas: fluoroquinolone, never a patch" | [AAFP 2004, corneal abrasion](https://aafp.org/pubs/afp/issues/2004/0701/p123.pdf): antipseudomonal antibiotic (ciprofloxacin, ofloxacin) for lens wearers, reassess at 24 h; patching is no longer recommended for any abrasion, so the question asks which one **needs a fluoroquinolone** |
+| 16 | `16-xy-uveite-crise` | Uvéite antérieure / crise d'angle | The pupil (small vs mid-dilated, hazy cornea) looped, then a mini tree: « Vision ↓, photophobie ? » ✗ → conjonctivite; ✓ → « Pupille ? » → uvéite / crise | (the tree is the « pourquoi ») | [AAFP 2010, Red eye](https://www.aafp.org/pubs/afp/issues/2010/0115/p137.html): conjunctivitis keeps vision and pupil normal; iritis has constricted, poorly reacting pupils, ciliary injection and photophobia; angle closure has marked vision loss and dilated, poorly reactive pupils |
+| 17 | `17-xy-dpar` | DPAR droit / gauche | The swinging light: both pupils widen when the light reaches the left eye (looped: « se dilate ») | « DPAR : la pupille éclairée se dilate » / "RAPD: the lit pupil dilates" | [Community Eye Health, How to test for a RAPD](https://pmc.ncbi.nlm.nih.gov/articles/PMC3588138/): « When the light is shone back into the abnormal eye, both pupils will get larger »; [EyeWiki, RAPD](https://eyewiki.aao.org/Relative_Afferent_Pupillary_Defect) |
+
+**Captions (drafts) and hashtags.** The caption may invite comments; the video never does. Common end: « Outil d'apprentissage, pas un avis médical. Site : décembre 2026. »
+- **10:**
+  - FR: « Deux yeux rouges, un seul est grave. Une goutte suffit à les départager. »
+  - EN: "Two red eyes, only one is serious. One drop tells them apart."
+  - Hashtags: `#ophtalmologie #sclérite #médecine #EDN #étudiantenmédecine #ophtalmo` · `#ophthalmology #scleritis #meded #medstudent #eyes #ophtho`
+- **11:**
+  - FR: « Herpès ou zona sur la cornée ? Regarde le bout des branches. »
+  - EN: "Herpes or shingles on the cornea? Look at the tips."
+  - Hashtags: `#ophtalmologie #cornée #herpès #zona #EDN #médecine` · `#ophthalmology #cornea #herpes #shingles #meded #medstudent`
+- **12:**
+  - FR: « Corps flottants récents : banal ou déchirure ? Un signe à la lampe à fente tranche. »
+  - EN: "New floaters: benign or a tear? One slit-lamp sign decides."
+  - Hashtags: `#ophtalmologie #rétine #urgences #EDN #médecine #ophtalmo` · `#ophthalmology #retina #emergencymedicine #meded #medstudent #ophtho`
+- **13:**
+  - FR: « Anisocorie : la grande ou la petite ? Tout dépend de la lumière. »
+  - EN: "Anisocoria: the big one or the small one? It depends on the light."
+  - Hashtags: `#ophtalmologie #neuroophtalmologie #pupille #EDN #médecine #neurologie` · `#ophthalmology #neuroophthalmology #pupil #meded #medstudent #neurology`
+- **14:**
+  - FR: « Deux fonds d'œil, une seule urgence AVC. »
+  - EN: "Two fundi, only one stroke emergency."
+  - Hashtags: `#ophtalmologie #rétine #AVC #urgences #EDN #médecine` · `#ophthalmology #retina #stroke #emergencymedicine #meded #medstudent`
+- **15:**
+  - FR: « Même abrasion, pas la même prise en charge. »
+  - EN: "Same abrasion, different treatment."
+  - Hashtags: `#ophtalmologie #cornée #lentilles #urgences #médecine #optométrie` · `#ophthalmology #cornea #contactlenses #emergencymedicine #meded #optometry`
+- **16:**
+  - FR: « Œil rouge et flou : uvéite ou crise ? La pupille répond. »
+  - EN: "Red, blurry eye: uveitis or angle closure? The pupil answers."
+  - Hashtags: `#ophtalmologie #œilrouge #uvéite #glaucome #EDN #médecine` · `#ophthalmology #redeye #uveitis #glaucoma #meded #medstudent`
+- **17:**
+  - FR: « Le test de la lampe qui balance, en 6 secondes. »
+  - EN: "The swinging flashlight test, in 6 seconds."
+  - Hashtags: `#ophtalmologie #neuroophtalmologie #examenclinique #EDN #médecine #ophtalmo` · `#ophthalmology #neuroophthalmology #physicalexam #meded #medstudent #ophtho`
+
+**Overview of the series:** `apercu-x-ou-y-fr.png`.
+
 ## Captions, hashtags and sources for each piece
 Common end of every caption: FR « Outil d'apprentissage, pas un avis médical. Site : décembre 2026. » / EN « A learning tool, not medical advice. Site: December 2026. » No link.
 
 **01 · Ocelle arrive**
-- FR: « Observe. Réponds. Révèle. Ocelle, c'est l'ophtalmo en images pour externes et R1 : des cas, des mécanismes dessinés, des arbres de décision. Gratuit, en français et en anglais. Abonne-toi pour être là au lancement. »
-- EN: « Observe. Answer. Reveal. Ocelle is ophthalmology in images for clerks and R1s: cases, drawn mechanisms, decision trees. Free, in French and English. Follow to be there at launch. »
+- FR: « Observe. Réponds. Révèle. Ocelle, c'est l'ophtalmo en images : des cas, des mécanismes dessinés, des arbres de décision. Gratuit, en français et en anglais. Abonne-toi pour être là au lancement. »
+- EN: « Observe. Answer. Reveal. Ocelle is ophthalmology in images: cases, drawn mechanisms, decision trees. Free, in French and English. Follow to be there at launch. »
 - Hashtags FR: `#ophtalmologie #externat #médecine #étudiantenmédecine #EDN #Québec #ophtalmo` · EN: `#ophthalmology #meded #medstudent #medicalstudent #ophthalmologyresident #eyes`
 - Visuals: drawn eye (A), Ocelle mark and wordmark.
 
-**02 · Défi #1: angle fermé** (answered in the video)
+**02 · Défi : angle fermé** (answered in the video)
 - FR: « 6 secondes. Tu avais trouvé avant la révélation ? Dis-nous en commentaire si tu avais A, B ou C. »
 - EN: « 6 seconds. Did you get it before the reveal? Tell us in the comments: A, B or C? »
 - Hashtags FR: `#ophtalmologie #glaucome #externat #EDN #urgences #étudiantenmédecine` · EN: `#ophthalmology #glaucoma #meded #medstudent #emergencymedicine #CaRMS`
@@ -92,7 +159,7 @@ Common end of every caption: FR « Outil d'apprentissage, pas un avis médical. 
 - Hashtags FR: `#ophtalmologie #glaucome #physiopathologie #externat #internat #médecine` · EN: `#ophthalmology #glaucoma #pathophysiology #meded #medstudent #ophthalmologyresident`
 - Visuals: the 5 steps of `g-crise` (the site's own drawings).
 
-**04 · Défi #2: dendrite** (« réponse demain »)
+**04 · Défi : dendrite** (« réponse demain »)
 - FR: « Fluorescéine, lumière bleu cobalt. Ton diagnostic en commentaire ; la réponse arrive demain. »
 - EN: « Fluorescein under cobalt blue light. Your diagnosis in the comments; the answer drops tomorrow. »
 - Hashtags FR: `#ophtalmologie #cornée #herpès #externat #EDN #étudiantenmédecine` · EN: `#ophthalmology #cornea #herpes #meded #medstudent #optometry`
@@ -109,13 +176,13 @@ Common end of every caption: FR « Outil d'apprentissage, pas un avis médical. 
 - Hashtags FR: `#ophtalmologie #externat #apprentissage #médecine #EDN #Québec` · EN: `#ophthalmology #meded #medstudent #edtech #medicalstudent #eyes`
 - Visuals: the site's real « Voir » screen (A5, retinal occlusions), captured with Playwright. The photo slot was fed our CRAO schematic and every other raster image was blanked, so the screen shows **no photo**. The credit line reads « Schéma · Ocelle ». The secondary dashed ring is hidden during the capture. A camera zooms onto the photo, then onto the choices. Large overlays (« pas ici », the chosen sign, the interface's own verdict « Exact ! » / « Nailed it! ») carry what must be read at ≥ 56 px.
 
-**06 · Défi #3: décollement de rétine** (answered in the video)
+**06 · Défi : décollement de rétine** (answered in the video)
 - FR: « Baisse de vision d'un œil : c'est le fond d'œil qui tranche. Tu l'avais avant la révélation ? »
 - EN: « Vision loss in one eye: the fundus settles it. Did you get it before the reveal? »
 - Hashtags FR: `#ophtalmologie #rétine #urgences #externat #EDN #étudiantenmédecine` · EN: `#ophthalmology #retina #emergencymedicine #meded #medstudent #CaRMS`
 - Visuals: drawn fundus, superotemporal detachment with a horseshoe tear.
 
-**07 · Défi #4: tache rouge cerise** (« réponse demain »)
+**07 · Défi : tache rouge cerise** (« réponse demain »)
 - FR: « Baisse de vision brutale, indolore. Quel signe décide ? Réponse demain. »
 - EN: « Sudden, painless vision loss. Which sign decides? Answer tomorrow. »
 - Hashtags FR: `#ophtalmologie #rétine #AVC #urgences #externat #EDN` · EN: `#ophthalmology #retina #stroke #meded #medstudent #emergencymedicine`
@@ -126,7 +193,7 @@ Common end of every caption: FR « Outil d'apprentissage, pas un avis médical. 
 - EN: « Cherry-red spot: central retinal artery occlusion. An eye stroke: stroke centre now. »
 - Hashtags: same as 07.
 
-**08 · Défi #5: hypopyon** (answered in the video)
+**08 · Défi : hypopyon** (answered in the video)
 - FR: « Œil rouge et douloureux après une cataracte. Regarde bien le bas de la chambre antérieure. »
 - EN: « Red, painful eye after cataract surgery. Look closely at the bottom of the anterior chamber. »
 - Hashtags FR: `#ophtalmologie #cataracte #urgences #externat #internat #médecine` · EN: `#ophthalmology #cataract #emergencymedicine #meded #medstudent #ophthalmologyresident`
@@ -155,30 +222,37 @@ Common end of every caption: FR « Outil d'apprentissage, pas un avis médical. 
 - Hashtags FR: `#ophtalmologie #glaucome #physiopathologie #externat #internat` · EN: `#ophthalmology #glaucoma #pathophysiology #meded #ophthalmologyresident`
 - Visuals: steps of `g-crise` (the site's drawings).
 
-## Posting calendar (3 posts per week, until launch day)
-Each week has 1 motion feature reel, 1 challenge and 1 slot « visage/voix du propriétaire (POV externe, coulisses) ». Countdowns and answers go out as Stories in addition.
+## Posting calendar (3 posts per week)
+Each week has 1 motion slot (showcase or « X ou Y ? »), 1 challenge slot (quiz, or « X ou Y ? » to alternate) and 1 slot « visage/voix du propriétaire (POV externe, coulisses) ». Countdowns and answer reels go out as Stories in addition. The launch date (Wed 23 Dec) is still provisional.
 
 | Date | Slot | Post | Extra (story) |
 |---|---|---|---|
 | Mon 23 Nov | Motion | **01 Ocelle arrive** | 09 J-30 |
-| Wed 25 Nov | Challenge | **02 Défi angle fermé** (answered in the video) | |
+| Wed 25 Nov | Challenge | **02 Défi angle fermé** | |
 | Fri 27 Nov | Face/voice | **Script 1** | |
-| Mon 30 Nov | Motion | **03 Mécanisme crise d'angle** | |
+| Mon 30 Nov | Motion | **10 X ou Y : épisclérite ou sclérite ?** | |
 | Wed 2 Dec | Challenge | **04 Défi dendrite** (« réponse demain ») | Thu 3 Dec: 04b réponse |
 | Fri 4 Dec | Face/voice | **Script 2** | |
 | Mon 7 Dec | Motion | **05 Touche le signe** | |
-| Wed 9 Dec | Challenge | **Carrousel 1 · œil rouge** (quiz slide 5) | 09 J-14 |
+| Wed 9 Dec | Challenge | **13 X ou Y : grande ou petite pupille ?** | 09 J-14 |
 | Fri 11 Dec | Face/voice | **Script 3** | |
-| Mon 14 Dec | Challenge | **06 Défi décollement de rétine** (answered in the video) | |
-| Wed 16 Dec | Motion | **09 J-7** as a reel | |
+| Mon 14 Dec | Motion | **14 X ou Y : OACR ou OVCR ?** | |
+| Wed 16 Dec | Challenge | **06 Défi décollement de rétine** | 09 J-7 |
 | Fri 18 Dec | Face/voice | **Script 4** | |
 | Mon 21 Dec | Challenge | **07 Défi tache rouge cerise** (« réponse demain ») | Tue 22: 07b réponse |
 | Tue 22 Dec | Motion | **09 J-1** as a reel | |
 | Wed 23 Dec | Face/voice | **Script 5: launch day** | |
+| Mon 28 Dec | Motion | **12 X ou Y : DPV simple ou déchirure ?** | |
+| Wed 30 Dec | Challenge | **08 Défi hypopyon** | |
+| Fri 1 Jan | Motion (holiday) | **17 X ou Y : DPAR, droit ou gauche ?** | |
+| Mon 4 Jan | Motion | **11 X ou Y : herpès ou zona ?** | |
+| Wed 6 Jan | Challenge | **15 X ou Y : lentille ou pas ?** | |
+| Fri 8 Jan | Face/voice | free script (POV externe) | |
+| Mon 11 Jan | Motion | **16 X ou Y : uvéite ou crise ?** | |
 
-**Held back for launch week or January:** 08 Défi hypopyon, Carrousel 2 (fluorescéine), Carrousel 3 (crise d'angle). They can replace any slot if one post underperforms.
+**In reserve:** 03 Mécanisme crise d'angle and Carrousels 1–3. Each can replace a post that underperforms.
 
-Note: lengths follow the reading-time rule (owner's feedback), so the quizzes run about 25 s.
+Note: the reading-time rule and the 20-s cap both apply; every reel is ≤ 20 s.
 
 ### Scripts for the owner slot (20–30 s, filmed on a phone)
 The owner can do each one **without his face or name**: voice-over on his hands, a notebook or a screen recording. The open question can appear on screen. **Any call to comment stays in the caption.**

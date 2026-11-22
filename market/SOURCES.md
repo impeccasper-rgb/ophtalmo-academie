@@ -54,3 +54,10 @@ Format : date | URL | ce qui a été vu
 2026-11-21 | (visuels) API PubMed/PMC get_copyright_status + full text | Licences de ~70 articles ophtalmo (CPC-EM, WestJEM, CEHJ, BMC Ophthalmol, Cureus) ; retenus : 30 figures → imgsrc3/sources.json. CEHJ 2024-2025 : photos individuelles © … CC BY-NC-SA 4.0 malgré article CC BY → écartées
 2026-11-21 | (visuels) WebSearch site:commons.wikimedia.org | ~25 requêtes (gonioscopie, B-scan, OCT, papilloedème, OACR/OVCR, RD, cornée, glaucome, anisocorie, cellulite orbitaire, hyphéma) ; 30 noms de fichiers retenus ; pages File: illisibles (WebFetch url_not_found), licences à lire au build (media.yml)
 2026-11-21 | (visuels) pmc.ncbi.nlm.nih.gov/articles/PMC8862628/ | reCAPTCHA « Checking your browser » : figures PMC non lisibles depuis le conteneur
+
+## 2026-11-22 — Ophthalmo Daily
+| 2026-11-22 | https://www.instagram.com/reel/DcGz26iIAVw/ | simulateur de motilité sur tablette ; 15,1 k j'aime, 3,1 k commentaires ; « Comment LINK » |
+| 2026-11-22 | https://www.instagram.com/reel/DdgxbsWoMHW/ | « Duolingo for ophthalmologists? » ; 239 j'aime, 510 commentaires |
+| 2026-11-22 | https://www.instagram.com/reel/DeE_jTDIKXg/ | « The app I wish I had… residency » ; 1,1 k j'aime, 876 commentaires (« App ») |
+| 2026-11-22 | https://www.instagram.com/reel/Df7qKsIIwgQ/ | brûlure alcaline animée ; 6,5 k j'aime, 39 commentaires |
+| 2026-11-22 | https://ophthalmo-daily.com | plateforme d'apprentissage et communauté ; ES/EN ; prix non indiqué |

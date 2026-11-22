@@ -56,7 +56,7 @@ var REELS = (function () {
     K.track(F.wrap, [[0, { transform: 'scale(1)', opacity: 1 }, EZ.lin], [2.5, { transform: 'scale(1.05)', opacity: 1 }], [2.5, { transform: 'scale(1.14)', opacity: 1 }, EZ.out], [3.1, { transform: 'scale(1)', opacity: 1 }], [6.0, { transform: 'scale(1)', opacity: 1 }, EZ.io], [6.5, { transform: 'scale(2.4)', opacity: 1 }], [6.5, { transform: 'scale(2.4)', opacity: 0 }]]);
     K.loop(F.ov, 450, 280, 104, 98, 21, 5.0, .5, { filter: 'url(#glowA)', w: 6, hw: 9, tilt: -.12, over: .45 });
     H.flash(S, 2.5); H.flash(S, 6.5, .5);
-    var eb = H.t({ fr: 'Ophtalmo · externes et R1', en: 'Ophthalmology · clerks & R1s' }); H.eyebrow(S, eb, .05, 10.8); H.reg('eyebrow', eb, .35, 10.8, 'label');
+    var eb = H.t({ fr: 'Bientôt · Ocelle', en: 'Coming soon · Ocelle' }); H.eyebrow(S, eb, .05, 10.8); H.reg('eyebrow', eb, .35, 10.8, 'label');
     // three words, stacked, each read alone for ≥ 2.5 s
     [[{ fr: 'Observe.', en: 'Observe.' }, 0], [{ fr: 'Réponds.', en: 'Answer.' }, 2.5], [{ fr: '<span style="color:var(--fluo)" class="gl">Révèle.</span>', en: '<span style="color:var(--fluo)" class="gl">Reveal.</span>' }, 5]].forEach(function (w, i) {
       var tx = H.t(w[0]), e = K.div(S, 'left:72px;top:' + (200 + i * 160) + 'px;width:876px;color:#fff;font-size:150px', '<div class="dsp">' + tx + '</div>');

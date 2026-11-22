@@ -108,7 +108,7 @@ var H = (function () {
     var hookTxt = mode === 'recap' ? H.t({ fr: 'La réponse<br><span style="color:var(--fluo)" class="gl">d’hier</span>', en: 'Yesterday’s<br><span style="color:var(--fluo)" class="gl">answer</span>' }) : H.t(cfg.hook);
     var hook = K.div(S, 'left:72px;top:200px;width:876px;color:#fff;font-size:140px', '<div class="dsp">' + hookTxt + '</div>');
     K.rise(hook, 0, .25, 40, ST - .1, .1); H.reg('hook', hookTxt, .25, ST - .1);
-    var eyb = H.t({ fr: 'Défi #', en: 'Challenge #' }) + cfg.num + (mode === 'recap' ? H.t({ fr: ' · réponse', en: ' · answer' }) : '') + H.t({ fr: ' · externes et R1', en: ' · clerks & R1s' });
+    var eyb = H.t({ fr: 'Défi du jour · Ocelle', en: 'Daily challenge · Ocelle' });
     H.eyebrow(S, eyb, .05, Q.end - .2); H.reg('eyebrow', eyb, .35, Q.end - .2, 'label');
     // question card + options (one reading block)
     var qx = H.t(cfg.q), card = K.div(S, 'left:72px;top:198px;width:876px;padding:26px 32px 30px;z-index:20', '<div class="eyb" style="margin-bottom:12px">' + H.t({ fr: 'Question', en: 'Question' }) + '</div><div style="color:#fff;font:600 44px/1.22 var(--body)">' + qx + '</div>', 'hud');

@@ -41,7 +41,7 @@ Merci et bonne semaine ,
 Taha
 
 ## 3. Relecteur clinicien (FR, vouvoiement)
-Objet : Relecture de fiches d'ophtalmo pour externes (environ 1 h)
+Objet : Relecture de fiches d'ophtalmo (environ 1 h)
 
 Bonjour Dr [nom] ,
 

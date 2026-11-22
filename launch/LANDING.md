@@ -65,11 +65,11 @@ Aperçu vidéo (facultatif) : la démo de 30 s (`CONTENU.md` §4), sans voix, so
 |---|---|---|
 | Surtitre | Ocelle · ophtalmologie en images | Ocelle · ophthalmology you can see |
 | Titre | Apprends à voir le signe qui compte. | Learn to see the sign that matters. |
-| Sous-titre | Une image, une question, puis le signe décisif s'allume. Pour externes et R1. | One image, one question, then the decisive sign lights up. For clerks and R1s. |
+| Sous-titre | Une image, une question, puis le signe décisif s'allume. | One image, one question, then the decisive sign lights up. |
 | Bouton principal (vert fluorescéine) | Essayer le cas du jour | Try today's case |
 | Lien secondaire | Voir le laboratoire d'examens | See the investigations lab |
 | 3 points | Observe. Réponds. Révèle. · OCT, champ visuel, gonio, échographie · Gratuit, sans pub, sans compte | Observe. Answer. Reveal. · OCT, fields, gonio, ultrasound · Free, no ads, no account |
 | Bloc enseignants | Tu enseignes aux externes ? Projette un cas, ils répondent sur leur téléphone. | Teaching clerks? Project a case; they answer on their phones. |
 | Pied de page | Outil d'apprentissage, pas un avis médical · Crédits images · Confidentialité | Learning tool, not medical advice · Image credits · Privacy |
-| Balise `<title>` / description (déjà dans brand/HANDOFF.md §1) | Ocelle · ophtalmologie pour externes et R1 | Ocelle · ophthalmology for clerks and R1s |
+| Balise `<title>` / description (déjà dans brand/HANDOFF.md §1) | Ocelle · l'ophtalmo en images | Ocelle · ophthalmology in images |
 Aperçu de partage (Open Graph, 1200×630) : schéma de la tache rouge cerise + « Tu vois le signe ? » + logo. Pas de photo EyeRounds dans l'image OG, car les réseaux la copient sur leurs serveurs.

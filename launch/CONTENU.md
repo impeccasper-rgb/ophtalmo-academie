@@ -88,8 +88,8 @@ Si l'écran montre une photo EyeRounds, ajouter le crédit à l'écran (« Image
 ---
 
 ## 5. Bio des comptes
-- FR : « Ocelle · Apprends à voir le signe qui compte. Ophtalmo en images pour externes et R1. Gratuit, sans pub. FR/EN. » (lien : cas vedette)
-- EN : « Ocelle · Learn to see the sign that matters. Ophthalmology in images for clerks and R1s. Free, no ads. FR/EN. »
+- FR : « Ocelle · Apprends à voir le signe qui compte. Ophtalmo en images. Gratuit, sans pub. FR/EN. » (lien : cas vedette)
+- EN : « Ocelle · Learn to see the sign that matters. Ophthalmology in images. Free, no ads. FR/EN. »
 
 ---
 
@@ -127,7 +127,7 @@ L'utilisateur relit, personnalise [entre crochets] et envoie lui-même. Un seul 
 > Hi [name], do you teach clerks? Ocelle is a free tool for it: project a case, they answer on their phones, you reveal the sign. Ten minutes, no accounts. I can prepare 10 cases on [topic]. And if you spot an error, please tell me. [link ?ref=session#cas-vedette] [name]
 
 **G4 · Relecteur clinicien — FR**
-> Bonjour Dr [nom], je cherche un·e ophtalmologiste ou résident·e senior pour relire 20 cas courts (≈ 1 h) avant le lancement d'Ocelle, un outil gratuit et sans pub pour externes. Je mentionnerai votre nom comme relecteur·rice si vous le souhaitez, et seulement dans ce cas. Accepteriez-vous ? [prénom]
+> Bonjour Dr [nom], je cherche un·e ophtalmologiste ou résident·e senior pour relire 20 cas courts (≈ 1 h) avant le lancement d'Ocelle, un outil gratuit et sans pub pour apprendre l'ophtalmo. Je mentionnerai votre nom comme relecteur·rice si vous le souhaitez, et seulement dans ce cas. Accepteriez-vous ? [prénom]
 
 **G5 · Admins Discord / groupe Facebook EDN — FR**
 > Bonjour, je suis [une ligne]. Avant de poster quoi que ce soit : est-ce que je peux partager un défi d'image d'ophtalmo (item OACR) avec un lien vers un site gratuit, sans pub et sans inscription que j'ai créé ? Si ce n'est pas permis, aucun souci. Merci.

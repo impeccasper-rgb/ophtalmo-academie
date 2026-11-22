@@ -38,6 +38,7 @@ html, body { margin: 0; padding: 0; background: #000; }
   window.fx = function (s) { return (I18N.lang === 'en' && I18N.fx[s]) || s; };
 </script>
 <script src="vendor/figures-mech.js"></script>
+<script src="vendor/figures-retine.js"></script>
 <script src="vendor/motion.js"></script>
 <script src="common.js"></script>
 <script src="art.js"></script>
@@ -46,6 +47,7 @@ html, body { margin: 0; padding: 0; background: #000; }
 <script src="ui.js"></script>
 <script src="carousels.js"></script>
 <script src="kit.js"></script>
+<script src="xy.js"></script>
 <script>
   (async function () {
     var r = Q.get('r') || 'brand', p = r.split(':');
@@ -59,6 +61,7 @@ html, body { margin: 0; padding: 0; background: #000; }
     else if (p[0] === 'ui') out = await UI.reel(S);
     else if (p[0] === 'car') out = CAR.slide(S, p[1], +p[2]);
     else if (p[0] === 'kit') out = KIT.make(S, p[1]);
+    else if (p[0] === 'xy') out = XY.reel(S, p[1]);
     else out = REELS[p[0]](S);
     window.OUT = { T: K.T, cuts: out && out.cuts, texts: H.texts, w: S.offsetWidth, h: S.offsetHeight };
     if (Q.get('guides')) K.guides();

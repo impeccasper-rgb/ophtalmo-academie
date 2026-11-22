@@ -108,3 +108,16 @@ On n'est pas une encyclopédie (EyeWiki), ni une trousse à outils (Eye Handbook
 - **Exactitude clinique et maintenance** par un auteur seul ; EyeWiki montre que 39 % du contenu peut vieillir. Prévoir revue par les pairs et date de révision visible.
 - **iOS seulement** : l'Afrique francophone (65 % des francophones) utilise sans doute surtout Android **[hypothèse non vérifiée]**. Le site web couvre ce public.
 - **Engagement sur les réseaux** : le contenu éducatif est le moins engageant sur Instagram. Pour l'acquisition, préférer des formats « quiz sur image » et le vécu de résident.
+
+---
+
+## 5. Mise à jour 2026-11-22 : concurrent direct repéré — Ophthalmo Daily (@ophthalmo.daily)
+Vu le 2026-11-22 (Instagram, sans connexion ; site ophthalmo-daily.com). Sources : `market/SOURCES.md` §2026-11-22.
+- **Offre** : « un Duolingo pour ophtalmologistes » : cas interactifs quotidiens (5 min), défis, mini-jeux, cartes mémoire, simulateurs (motilité oculaire / paralysies des nerfs crâniens, test à l'écran). Web, sans installation. Langues : anglais et espagnol (pas de français vu). Prix : non indiqué. Public : ophtalmologistes, résidents, étudiants, optométristes.
+- **Ce qui marche sur leurs réels** (chiffres affichés le 2026-11-22) :
+  - Simulateur filmé sur tablette en main, légende « Spot every deviation instantly » : 15,1 k j'aime, 3,1 k commentaires (16 août).
+  - « Wait… a Duolingo for ophthalmologists? », téléphone en main : 239 j'aime, 510 commentaires (20 sept.).
+  - « The app I wish I had when I started ophthalmology residency », écran de bureau en ambiance : 1,1 k j'aime, 876 commentaires (4 oct.).
+  - Brûlure alcaline en animation illustrée, sous-titres mot à mot, voix : 6,5 k j'aime, 39 commentaires (19 nov.).
+- **Lecture** : (1) le produit filmé en vrai, dans la main, avec une accroche relatable, fait le plus de portée ; (2) les commentaires massifs viennent d'une récompense (« commente LINK/APP et je t'envoie l'accès » par message privé) ; (3) l'animation pédagogique attire des j'aime mais peu de commentaires.
+- **Conséquence pour Ocelle** : le concurrent le plus proche n'est plus OcuLearning mais Ophthalmo Daily (même promesse « quotidien, ludique »). Nos différences à mettre en avant : **français d'abord** (et bilingue), vraies images d'atlas avec signe à trouver, arbres décisionnels et traitement adaptés au Québec, simulateur de B-scan (qu'ils n'affichent pas).
