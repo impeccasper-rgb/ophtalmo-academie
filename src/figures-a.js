@@ -350,5 +350,5 @@ Figures.annexes = function (fig, opts) {
   lb += label(600, 120, fx('Sac lacrymal'), 584, 150, 'middle', 'sac-lacrymal');
   lb += label(520, 360, fx('Canal lacrymonasal'), 576, 330, 'end', 'canal-lacrymonasal');
   s.push('<g class="g-labels">' + lb + '</g>');
-  return { svg: '<svg viewBox="0 0 660 400" role="img" aria-label="Voies lacrymales et glandes de Meibomius (œil droit, vue de face)">' + s.join('') + '</svg>', cap: fx('Œil droit vu de face : production (glande lacrymale, Meibomius, cellules caliciformes) et drainage des larmes.') };
+  return { svg: '<svg viewBox="0 0 660 400" role="img" aria-label="' + fx('Voies lacrymales et glandes de Meibomius (œil droit, vue de face)') + '">' + s.join('') + '</svg>', cap: fx('Œil droit vu de face : production (glande lacrymale, Meibomius, cellules caliciformes) et drainage des larmes.') };
 };

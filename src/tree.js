@@ -67,7 +67,7 @@ var Tree = (function () {
       '<button type="button" data-tmode="overview" aria-pressed="' + (mode === 'overview') + '">' + esc(TT('overview', 'Vue d’ensemble', 'Overview')) + '</button></div>' +
       '<button type="button" class="btn sm tree-restart" data-trestart>' + esc(TT('restart', 'Recommencer', 'Start again')) + '</button></div>';
     // ---- walk mode (filled by mount)
-    h += '<div class="tree-walk">' + (vig ? '<p class="tw-vig"><b>' + esc(TT('case', 'Cas', 'Case')) + ' :</b> ' + vig.h + '</p>' : '') + '<ol class="tw-dots" aria-hidden="true">' + nodes.map(function (_, i) { return '<li data-d="' + i + '">' + (i + 1) + '</li>'; }).join('') + '</ol>' +
+    h += '<div class="tree-walk">' + (vig ? '<p class="tw-vig"><b>' + esc(TT('case', 'Cas', 'Case')) + (lang() === 'en' ? ':' : ' :') + '</b> ' + vig.h + '</p>' : '') + '<ol class="tw-dots" aria-hidden="true">' + nodes.map(function (_, i) { return '<li data-d="' + i + '">' + (i + 1) + '</li>'; }).join('') + '</ol>' +
       '<ol class="tw-trail" aria-label="' + esc(TT('trail', 'Ton chemin', 'Your path')) + '"></ol><div class="tw-stage"></div><div class="tree-live tree-sr" aria-live="polite"></div></div>';
     // ---- overview mode (static, semantic)
     h += '<div class="tree-box"><div class="tree-canvas"><svg class="tree-wires" aria-hidden="true" focusable="false"></svg><ol class="tree-flow" aria-label="' + esc(title) + '">';

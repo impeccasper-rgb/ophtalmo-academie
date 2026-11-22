@@ -20,7 +20,7 @@ function lockHtml(m) {
 Actions.unlock = function (el) { Store.p.unlocked[el.getAttribute('data-m')] = true; Store.touch(); Router.refresh(); U.toast(t('lock.opened', { m: el.getAttribute('data-m') })); };
 Actions['mark-read'] = function (el) { var id = el.getAttribute('data-id'), on = !Prog.ficheDone(id); Store.markRead(id, on); el.setAttribute('aria-pressed', String(on)); el.textContent = on ? t('read.on') : t('read.off'); Shell.render(); };
 function readBtn(id) { var on = Prog.ficheDone(id); return '<button type="button" class="btn ' + (on ? '' : 'primary') + '" data-act="mark-read" data-id="' + id + '" aria-pressed="' + on + '">' + (on ? t('read.on') : t('read.off')) + '</button>'; }
-function miniQuiz(id, ids, title) { if (!ids.length) return ''; return '<div class="sec"><div class="section-h"><span class="k">QCM</span><h2>' + U.esc(title || t('mini.title')) + '</h2><span class="small muted">' + t('rev.nq', { n: ids.length }) + '</span></div><div data-miniquiz="' + id + '" data-ids="' + ids.join(',') + '"></div></div>'; }
+function miniQuiz(id, ids, title) { if (!ids.length) return ''; return '<div class="sec"><div class="section-h"><span class="k">' + (I18N.lang === 'en' ? 'MCQ' : 'QCM') + '</span><h2>' + U.esc(title || t('mini.title')) + '</h2><span class="small muted">' + t('rev.nq', { n: ids.length }) + '</span></div><div data-miniquiz="' + id + '" data-ids="' + ids.join(',') + '"></div></div>'; }
 function readMin(f) {
   if (f._mins) return f._mins;
   var vis = [f.definition, f.oneLiner, f.anatomy.text].concat(f.risk, f.presentation, f.redFlags, [f.cat.local]);
@@ -687,7 +687,7 @@ function ficheView(f, step) {
 /* ---------- quiz hub & run ---------- */
 Views.quiz = {
   title: t('qh.title'), render: function () {
-    var mods = ['A', 'B', 'C'].map(function (m) {
+    var mods = ['A', 'B', 'C'].concat(D.ordered('D').length ? ['D'] : []).map(function (m) {
       var s = Prog.stat(m), a = Prog.acuity(s.mastery);
       return '<div class="card stack"><div class="eyebrow">Module ' + m + ' · ' + L.modules[m] + '</div><div class="row" style="justify-content:space-between"><span class="acuity-big" style="font-size:var(--fs-xl)">' + a.m + '</span><span class="small mono">' + t('qh.okn', { a: s.correct, b: s.total, c: s.wrong + s.shaky }) + '</span></div><div class="pbar"><i style="width:' + (100 * s.mastery).toFixed(0) + '%"></i></div>' +
         '<div class="row"><button class="btn primary" data-q="adaptive" data-m="' + m + '">' + t('qh.set10') + '</button><button class="btn" data-q="all" data-m="' + m + '">' + t('qh.all') + '</button><button class="btn" data-q="wrong" data-m="' + m + '"' + (s.wrong + s.shaky ? '' : ' disabled') + '>' + t('rev.wrong') + '</button></div></div>';

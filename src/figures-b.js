@@ -46,7 +46,7 @@ Figures.gonio = function (fig, opts) {
   // labels (right)
   var lb = '';
   var vis = { schwalbe: irisTop > Y.schw[1] - 1, 'trab-nonpig': irisTop > Y.tmn[0] + 4, 'trab-pig': irisTop > Y.tmp[0] + 4, eperon: irisTop > Y.spur[0] + 3, 'bande-ciliaire': irisTop > Y.cbb[0] + 4 };
-  [['schwalbe', fx('Ligne de Schwalbe'), 79], ['trab-nonpig', fx('Trabéculum non pigmenté'), 95], ['trab-pig', fx('Trabéculum pigmenté'), 124], ['eperon', fx('Éperon scléral'), 146], ['bande-ciliaire', fx('Bande ciliaire'), (Y.cbb[0] + Y.cbb[1]) / 2], ['iris-racine', fx('Iris (dernier pli)'), Math.min(282, irisTop + 22)]].forEach(function (r) {
+  [['schwalbe', fx('Ligne de Schwalbe'), 79], ['trab-nonpig', fx('Trabéculum non pigmenté'), 95], ['trab-pig', fx('Trabéculum pigmenté'), 124], ['eperon', fx('Éperon scléral'), 146], ['bande-ciliaire', fx('Bande ciliaire'), (Y.cbb[0] + Y.cbb[1]) / 2], ['iris-racine', fx('Iris (dernier pli)'), Math.min(282, Math.max(irisTop + 22, (Y.cbb[0] + Y.cbb[1]) / 2 + 18))]].forEach(function (r) {
     var isVis = r[0] === 'iris-racine' ? true : vis[r[0]];
     lb += label(476, r[2], r[1] + (isVis ? '' : fx(' — caché')), 458, r[2], 'start', r[0], isVis ? 'lbl-sm lbl-white' : 'lbl-sm lbl-muted');
   });
@@ -349,7 +349,7 @@ Figures.fluo = function (fig, opts) {
     var rv = { 'spk-inferior': [160, 222, fx('KPS inférieure')], 'spk-interpalpebral': [160, 150, fx('bande interpalpébrale')], 'spk-superior': [160, 70, fx('KPS supérieure')], dendrite: [160, 140, 'bulbes terminaux'], geographic: [160, 150, fx('ulcère à bords dendritiques')], pseudodendrite: [160, 145, fx('pas de bulbes, prend peu')], abrasion: [170, 140, fx('défaut net, géométrique')], 'fb-tracking': [160, 95, 'stries verticales'], ulcer: [165, 150, fx('infiltrat + défaut')], seidel: [165, 196, 'filet vert vif = fuite'], negative: [160, 130, fx('coloration négative')] }[pattern];
     if (rv) s.push(ring(rv[0], rv[1], 44, rv[2], 40, rv[1] < 150 ? rv[1] + 70 : rv[1] - 56));
   }
-  return { svg: '<svg viewBox="0 0 320 300" role="img" aria-label="Cornée à la fluorescéine, schéma">' + s.join('') + '</svg>', cap: fx('Fluorescéine sous lumière bleu cobalt (schéma).') };
+  return { svg: '<svg viewBox="0 0 320 300" role="img" aria-label="' + fx('Cornée à la fluorescéine, schéma') + '">' + s.join('') + '</svg>', cap: fx('Fluorescéine sous lumière bleu cobalt (schéma).') };
 };
 
 /* ---------- Slit lamp (anterior segment front view) ---------- */
@@ -396,7 +396,7 @@ Figures.slit = function (fig, opts) {
     var rv = { hypopyon: [cx, cy + 58, 'niveau de pus (hypopyon)'], pxf: [cx, cy, fx('dépôts en cible sur la capsule')], krukenberg: [cx, cy + 6, 'fuseau pigmentaire vertical'], nvi: [cx, cy, fx('néovaisseaux au rebord pupillaire')], tid: [cx, cy, fx('défects radiaires de transillumination')], aacc: [cx, cy, fx('cornée œdémateuse, pupille semi-dilatée')], bleb: [cx, 58, fx('bulle filtrante supérieure')], kp: [cx, cy + 40, fx('précipités rétrocornéens inférieurs')] }[pattern];
     if (rv) s.push(ring(rv[0], rv[1], pattern === 'bleb' ? 40 : 46, rv[2], 300, rv[1] > 150 ? 280 : 30));
   }
-  return { svg: '<svg viewBox="0 0 480 300" role="img" aria-label="Segment antérieur à la lampe à fente, schéma">' + s.join('') + '</svg>', cap: fx('Segment antérieur, vue de face (schéma).') };
+  return { svg: '<svg viewBox="0 0 480 300" role="img" aria-label="' + fx('Segment antérieur à la lampe à fente, schéma') + '">' + s.join('') + '</svg>', cap: fx('Segment antérieur, vue de face (schéma).') };
 };
 
 /* ---------- Van Herick ---------- */
