@@ -117,7 +117,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : érosions : onguent NaCl 5 % au coucher ; éviter la chirurgie réfractive.",
+      "**1re ligne** : érosions : onguent NaCl 5 % au coucher ; éviter la chirurgie réfractive.",
       "**Ophtalmologiste** : PTK pour les opacités superficielles ; DALK ou PK si profondes."
     ],
     refer: ["Suivi régulier en ophtalmologie — plus tôt si vision ↓, érosions répétées ou projet de LASIK."],
@@ -277,7 +277,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : retirer un corps étranger superficiel ; bilan sanguin selon la couleur (lipides, calcium, cuivre).",
+      "**1re ligne** : retirer un corps étranger superficiel ; bilan sanguin selon la couleur (lipides, calcium, cuivre).",
       "**Ophtalmologiste** : anneau de rouille, EDTA pour le calcium, fermeture des vaisseaux."
     ],
     refer: ["Le jour même si cristaux ou infiltrat sur une greffe — infection.", "Cette semaine si anneau de rouille ou bande calcique qui gêne — geste en clinique."],

@@ -122,7 +122,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : virale : compresses froides, larmes, hygiène ; allergique : olopatadine 0,1 % 2×/j.",
+      "**1re ligne** : virale : compresses froides, larmes, hygiène ; allergique : olopatadine 0,1 % 2×/j.",
       "**Ophtalmologiste** : stéroïde court, cyclosporine ou tacrolimus pour vernale et atopique."
     ],
     refer: [
@@ -283,7 +283,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : kératite marginale : hygiène palpébrale ; sclérite : ibuprofène ou naproxène oral.",
+      "**1re ligne** : kératite marginale : hygiène palpébrale ; sclérite : ibuprofène ou naproxène oral.",
       "**Ophtalmologiste** : stéroïde doux, corticostéroïdes systémiques avec la rhumatologie, colle si perforation."
     ],
     refer: [

@@ -118,7 +118,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : NaCl 5 % goutte 4×/j ou onguent au coucher ; séchoir au réveil.",
+      "**1re ligne** : NaCl 5 % goutte 4×/j ou onguent au coucher ; séchoir au réveil.",
       "**Ophtalmologiste** : greffe endothéliale (DMEK), parfois avec la cataracte."
     ],
     refer: ["Cette semaine si œdème qui gêne la vision — greffe à discuter.", "Suivi régulier si guttae sans symptômes, et avant toute cataracte."],
@@ -277,7 +277,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : érythromycine onguent 4×/j ; lentilles : fluoroquinolone. Érosions : NaCl 5 % au coucher.",
+      "**1re ligne** : érythromycine onguent 4×/j ; lentilles : fluoroquinolone. Érosions : NaCl 5 % au coucher.",
       "**Ophtalmologiste** : polissage, ponctions stromales ou PTK si récidives."
     ],
     refer: ["Le jour même si infiltrat, hypopyon ou projection rapide — infection ou corps intraoculaire.", "Dans les 48 h si pas guéri — chercher une autre cause."],
@@ -425,7 +425,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : lunettes anti-UV, larmes ; fluorométholone quelques jours si poussée.",
+      "**1re ligne** : lunettes anti-UV, larmes ; fluorométholone quelques jours si poussée.",
       "**Ophtalmologiste** : exérèse avec autogreffe conjonctivale ; biopsie si lésion atypique."
     ],
     refer: [
@@ -581,7 +581,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : vérifier que les gouttes de stéroïde sont prises ; ne jamais les arrêter.",
+      "**1re ligne** : vérifier que les gouttes de stéroïde sont prises ; ne jamais les arrêter.",
       "**Ophtalmologiste** : prednisolone 1 % aux heures si rejet ; cultures si infiltrat."
     ],
     refer: ["Le jour même pour tout greffé avec RSVP — le rejet traité tôt est réversible.", "Immédiatement après un coup sur une PK — la plaie peut s’ouvrir."],
@@ -728,7 +728,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : irriguer au NaCl 0,9 % ≥ 30 min jusqu’à pH 7,0–7,5, paupières retournées.",
+      "**1re ligne** : irriguer au NaCl 0,9 % ≥ 30 min jusqu’à pH 7,0–7,5, paupières retournées.",
       "**Ophtalmologiste** : stéroïde court, doxycycline + vitamine C, membrane amniotique."
     ],
     refer: ["Immédiatement si limbe blanc, cornée voilée (Roper-Hall ≥ II) ou pH qui remonte — perte de la vision.", "Dans les 24 h pour toute brûlure par une base, même légère."],

@@ -204,7 +204,7 @@ G.OPH.A.recog = (G.OPH.A.recog || []).concat([
       "Macula attachée (macula-on) : AV centrale conservée ; macula décollée (macula-off) : AV centrale effondrée, souvent très basse.",
       "Tractionnel : membranes blanc-jaune le long des arcades vasculaires, rétine soulevée en tente, concave et peu mobile, chez un diabétique mal contrôlé."
     ],
-    why: "Le R1 dilate des patients à risque : myopes forts, pseudophakes, patients récemment traités au YAG et patients sous pilocarpine (les myotiques ont été associés à des déchirures et décollements). En glaucome, la rétinopathie diabétique proliférante qui cause le décollement tractionnel est la même qui donne le glaucome néovasculaire ; après une chirurgie de décollement (gaz, huile de silicone, indentation sclérale), la PIO peut aussi monter.",
+    why: "On dilate les patients à risque : myopes forts, pseudophakes, patients récemment traités au YAG et patients sous pilocarpine (les myotiques ont été associés à des déchirures et décollements). En glaucome, la rétinopathie diabétique proliférante qui cause le décollement tractionnel est la même qui donne le glaucome néovasculaire ; après une chirurgie de décollement (gaz, huile de silicone, indentation sclérale), la PIO peut aussi monter.",
     action: [
       "Macula attachée, surtout si le décollement est supérieur ou bulleux : appel en rétine le jour même ; c’est la vraie urgence, la vision centrale est encore à sauver.",
       "Macula décollée : référer aussi le jour même ; la réparation se fait habituellement dans les jours suivants et le pronostic dépend de la durée du décollement.",

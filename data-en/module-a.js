@@ -214,7 +214,7 @@ Object.assign(G.OPH_EN.A.recog, {
       "Macula-on: central VA preserved; macula-off: central VA collapsed, often very low.",
       "Tractional: white-yellow membranes along the vascular arcades, retina tented up, concave and minimally mobile, in a poorly controlled diabetic."
     ],
-    why: "The R1 dilates at-risk patients: high myopes, pseudophakic patients, patients recently treated with YAG and patients on pilocarpine (miotics have been associated with tears and detachments). In glaucoma, the proliferative diabetic retinopathy that causes tractional detachment is the same one that causes neovascular glaucoma; after detachment surgery (gas, silicone oil, scleral buckle), IOP can also rise.",
+    why: "At-risk patients are dilated: high myopes, pseudophakic patients, patients recently treated with YAG and patients on pilocarpine (miotics have been associated with tears and detachments). In glaucoma, the proliferative diabetic retinopathy that causes tractional detachment is the same one that causes neovascular glaucoma; after detachment surgery (gas, silicone oil, scleral buckle), IOP can also rise.",
     action: [
       "Macula-on, especially if the detachment is superior or bullous: call retina the same day; this is the true emergency, central vision can still be saved.",
       "Macula-off: also refer the same day; repair is usually done within the following days and the prognosis depends on how long the macula has been detached.",

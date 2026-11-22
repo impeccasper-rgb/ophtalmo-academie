@@ -115,7 +115,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : larmes sans agent de conservation 4–6×/j, compresses chaudes 1–2×/j.",
+      "**1re ligne** : larmes sans agent de conservation 4–6×/j, compresses chaudes 1–2×/j.",
       "**Ophtalmologiste** : cyclosporine ou lifitégrast, bouchons, IPL."
     ],
     refer: [
@@ -267,7 +267,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : retirer la lentille, moxifloxacine 0,5 % aux heures si petit ulcère périphérique.",
+      "**1re ligne** : retirer la lentille, moxifloxacine 0,5 % aux heures si petit ulcère périphérique.",
       "**Ophtalmologiste** : grattage, cultures, gouttes fortifiées aux heures."
     ],
     refer: ["Le jour même pour tout ulcère — il peut perforer en quelques jours.", "Immédiatement si perforation ou descémétocèle — globe ouvert."],
@@ -408,7 +408,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : retirer la lentille, aucun stéroïde, adresser le jour même.",
+      "**1re ligne** : retirer la lentille, aucun stéroïde, adresser le jour même.",
       "**Ophtalmologiste** : prélèvements spécifiques ; biguanide (amibe) ou natamycine 5 % (champignon)."
     ],
     refer: ["Le jour même — traitement spécifique, souvent en centre de cornée."],
@@ -557,7 +557,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : dendrite : acyclovir 400 mg 5×/j ou valacyclovir 500 mg 3×/j ; zona : valacyclovir 1 g 3×/j × 7 j, idéalement dans les 72 h suivant l’éruption.",
+      "**1re ligne** : dendrite : acyclovir 400 mg 5×/j ou valacyclovir 500 mg 3×/j ; zona : valacyclovir 1 g 3×/j × 7 j, idéalement dans les 72 h suivant l’éruption.",
       "**Ophtalmologiste** : stéroïde sous antiviral pour la forme stromale ; prophylaxie (acyclovir 400 mg 2×/j)."
     ],
     refer: [
@@ -709,7 +709,7 @@ G.OPH.fiches = (G.OPH.fiches || []).concat([
   ],
   treatment: {
     first: [
-      "**Externe / 1re ligne** : faire cesser le frottement, traiter l’allergie, demander une tomographie.",
+      "**1re ligne** : faire cesser le frottement, traiter l’allergie, demander une tomographie.",
       "**Ophtalmologiste** : crosslinking (riboflavine + UVA) ; lentilles rigides, greffe si cicatrice."
     ],
     refer: ["Dans les 24 h si baisse brutale avec cornée blanche — hydrops aigu ; exclure infection et perforation.", "Cette semaine pour un jeune qui progresse — le CXL freine la maladie."],

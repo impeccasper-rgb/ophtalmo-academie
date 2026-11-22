@@ -66,7 +66,7 @@ def js(path):
     return re.sub(r'</(script)', r'<\\/\1', s, flags=re.I)
 
 parts = []
-parts.append('<title>Ocelle · ophtalmologie pour externes et R1</title>')
+parts.append('<title>Ocelle · l’ophtalmologie en images</title>')
 parts.append('<meta name="claude:viewport-fit-sides" content="cover">')
 parts.append('<meta name="description" content="Apprends à voir le signe qui compte : cornée, glaucome et examens, en images, cas et jeux. Gratuit, sans pub.">')
 parts.append('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>')
@@ -76,7 +76,7 @@ parts.append('''<a class="skip-link" href="#view" data-act="skip">Aller au conte
 <div class="shell">
 <aside class="rail" id="rail" aria-label="Navigation"></aside>
 <div style="min-width:0">
-<header class="topbar"><button type="button" class="btn sm" data-act="menu" aria-label="Ouvrir le menu" aria-controls="drawer">Menu</button><a class="brand" href="#accueil"><svg class="logo" viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" rx="236" fill="#0A2547"/><circle cx="512" cy="512" r="282" fill="#2F4EE6"/><circle cx="512" cy="512" r="116" fill="#050E1D"/><path d="M336 236A330 330 0 0 0 336 788" fill="none" stroke="#EAF3FF" stroke-opacity=".85" stroke-width="40" stroke-linecap="round"/><circle cx="660" cy="364" r="66" fill="#B6F04E"/></svg><span><b>Ocelle</b><span>Ophtalmo · externat et R1</span></span></a></header>
+<header class="topbar"><button type="button" class="btn sm" data-act="menu" aria-label="Ouvrir le menu" aria-controls="drawer">Menu</button><a class="brand" href="#accueil"><svg class="logo" viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" rx="236" fill="#0A2547"/><circle cx="512" cy="512" r="282" fill="#2F4EE6"/><circle cx="512" cy="512" r="116" fill="#050E1D"/><path d="M336 236A330 330 0 0 0 336 788" fill="none" stroke="#EAF3FF" stroke-opacity=".85" stroke-width="40" stroke-linecap="round"/><circle cx="660" cy="364" r="66" fill="#B6F04E"/></svg><span><b>Ocelle</b><span>L’ophtalmo en images</span></span></a></header>
 <main class="main" id="view" tabindex="-1"><div class="page"><p class="muted">Chargement de la classe…</p></div></main>
 </div></div>
 <nav class="tabbar" id="tabbar" aria-label="Navigation rapide"></nav>
