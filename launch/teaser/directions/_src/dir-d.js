@@ -40,7 +40,7 @@ K.dirs.D = function (S) {
 
   var dx = K.div(S, 'left:90px;top:258px;width:860px;color:#0a0f40;font-family:var(--display);font-weight:740;font-size:88px;letter-spacing:-.04em;line-height:1', 'Crise de fermeture<br>de l’angle');
   K.rise(dx, 2.75, .6, 24, 3.3, .25);
-  var ch = K.div(S, 'left:90px;top:1560px;width:860px;color:#5b6188;font:700 27px/1.5 var(--mono);letter-spacing:.02em', 'Bloc pupillaire → iris bombé → angle fermé → PIO ↑');
+  var ch = K.div(S, 'left:90px;top:1560px;width:860px;color:#5b6188;font:700 24px/1.5 var(--mono);letter-spacing:0', 'Bloc pupillaire → iris bombé → angle fermé → PIO ↑');
   K.fade(ch, 2.8, .3, 3.3, .25);
 
   /* ---- end card: white space, the mark draws itself ---- */
