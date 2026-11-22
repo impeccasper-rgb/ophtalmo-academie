@@ -80,3 +80,11 @@ _Dernière mise à jour : 2026-11-21, cycle 2 (rôle web)._
 
 ## Blocages / notes
 - Les surcouches data-en couvrent 67 QCM et 64 clés hy ; le reste s'affiche en FR avec le badge.
+
+## Cycle 9 — critique pass 2 (MF-1 loop, Comprendre, headers, budgets, hubs)
+- **Voir = real loop** (core.js `Photo.voirCard/voirTap/voirReveal`, keyed by fiche / `a-<entry>` / A5 id via `opts.voir`): uses `OPH.voirHotspot(key, photoId)` from data/voir-hotspots.js. Tap → hit (main + alt `hit:true`, tolerance max(r×1.3, 6 %)) → marker loop + « Bien vu ! » sticker; miss → « pas ici »; 2nd miss → dashed hint area; 3rd miss or « Je ne trouve pas » → reveal, no reward. Secondary alt (no `hit`) = neutral toast, no miss. No hotspot / `skip` → 3-option « Quel est le signe ? » (photo's sign vs 2 other photos' signs). Sticker sits inside the verdict box (never over the caption; measured no overlap). « Réponds dans ta tête » removed.
+- **Comprendre**: pair side by side (photo pairs: caption → alt/Agrandir, small credits; one schéma badge + one Agrandir per pair), then causal chain (tap-to-advance), then essentials.
+- **Micro-fiches**: 3 key points inline (4th → « Pour aller plus loin »), secondary exam tool → collapse, sims compact on phone (chips/printouts scroll sideways, structure sim panels 2-up).
+- **Hubs**: #cas = image-case strip (#cas-images, 105 cases) + clinical cases with figure thumbs, « À faire » labels removed; toolbox chips (b-bases/8, c-bases/7); reviser tiles with per-mode pictures; « 4 écrans » text removed; TBUT no autostart; home hero compact on phone.
+- Measured at 390×844 (whole #view scroll): home 2.88 → 2.26 screens; Comprendre pair 226–379 → 139–186 px, 57–98 words; Voir 19–30 words; #cas 170 → 134 words; micro-fiches max 150 words (none > 200), median 1.53 screens, 23/42 still > 1.5 (max 2.07, a-physiologie/transparence: big sim).
+- Tests: run.py 0 problems (adapted: Voir « Je ne trouve pas » before lightbox); test_site quick 85 checks, 2 known offline-images fails.

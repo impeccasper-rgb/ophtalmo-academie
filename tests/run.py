@@ -126,8 +126,9 @@ try:
                     go_ = lambda st: (page.evaluate("h => { location.hash = h }", first + '/' + st), page.wait_for_timeout(300))
                     go_('voir')
                     if page.query_selector('[data-cmpreveal]') and page.is_visible('[data-cmpreveal]'): step('compare reveal', lambda: page.click('[data-cmpreveal]'))
+                    if page.query_selector('[data-act="voir-idk"]:visible'): step('voir reveal', lambda: (page.click('[data-act="voir-idk"]:visible >> nth=0'), page.wait_for_selector('.voir-ans:not([hidden])', timeout=1500)))
                     if page.query_selector('[data-act="lightbox"]'):
-                        step('lightbox', lambda: (page.click('[data-act="lightbox"] >> nth=0'), page.wait_for_selector('#lightbox:not([hidden])', timeout=1500), page.click('[data-act="lb-close"]')))
+                        step('lightbox', lambda: (page.click('[data-act="lightbox"]:visible >> nth=0'), page.wait_for_selector('#lightbox:not([hidden])', timeout=1500), page.click('[data-act="lb-close"]')))
                     go_('comprendre')
                     step('causal step', lambda: (page.click('[data-causal="next"]'), page.click('[data-causal="all"]')))
                     step('lever', lambda: page.click('[data-lever="0"]'))

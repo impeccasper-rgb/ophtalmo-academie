@@ -240,3 +240,7 @@ html.no-motion .voir-miss { animation: none; }
   .a-item [data-sim="structure"] .grid2 .slider { font-size: .72rem; }
   .a-item [data-sim="structure"] .grid2 .fig-cap { font-size: .62rem; }
 }
+@media (max-width: 600px) {
+  .a-item .fstep-body { gap: 12px; }
+  .a-item .fiche-bar { gap: 6px; padding-bottom: 8px; }
+}
