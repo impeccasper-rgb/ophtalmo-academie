@@ -1,0 +1,1 @@
+{ "private": true, "type": "module", "description": "Ask Ocelle chat Worker (see README.md). No dependencies: deploy with npx wrangler deploy." }

@@ -36,7 +36,8 @@ ap.add_argument('--site', default=os.path.join(ROOT, 'site'))
 ap.add_argument('--out', default=os.path.join(tempfile.gettempdir(), 'ocelle-web-test'))
 ap.add_argument('--quick', action='store_true')
 ap.add_argument('--axe', default='')
-ap.add_argument('--only', default='', help='comma list of sections: routes,flows,offline,axe,mobile')
+ap.add_argument('--only', default='', help='comma list of sections: routes,flows,offline,axe,mobile,chat')
+ap.add_argument('--chat-shots', default='', help='also copy the chat screenshots (phone + desktop, mock endpoint) to this folder, e.g. docs/chat')
 ap.add_argument('--snapshot', action='store_true', help='copy site/ to a temp dir first (stable while others rebuild)')
 args = ap.parse_args()
 OUT = os.path.abspath(args.out); SHOTS = os.path.join(OUT, 'shots')
@@ -750,6 +751,203 @@ def run_mobile(browser):
     ctx.close()
 
 
+# ---------- 6. « Demande à Ocelle » (src/chat.js, server/chat-worker.js) ----------
+CHAT_MOCK = 'https://chat-mock.ocelle.test/ask'
+CHAT_RECT_JS = """() => { const f = document.getElementById('chat-fab'); if (!f) return null; const r = f.getBoundingClientRect(), cs = getComputedStyle(f);
+  const tb = document.getElementById('tabbar'), tr = tb && tb.getClientRects().length && getComputedStyle(tb).display !== 'none' ? tb.getBoundingClientRect() : null;
+  return { x: r.left, y: r.top, w: r.width, h: r.height, right: r.right, bottom: r.bottom, vis: cs.visibility !== 'hidden' && !f.classList.contains('tucked'), tbTop: tr ? tr.top : null, vh: innerHeight, vw: innerWidth }; }"""
+# touch targets the visible button must never cover: the Voir game, the B-scan simulator, quiz answers, and any button/link of the page
+CHAT_HITS_JS = """() => { const fab = document.getElementById('chat-fab'), tab = document.getElementById('chat-tab'), out = [];
+  const f = fab && !fab.classList.contains('tucked') && getComputedStyle(fab).visibility !== 'hidden' ? fab : (tab && !tab.hidden ? tab : null); if (!f) return [];
+  const r = f.getBoundingClientRect(), HARD = '[data-voir], [data-bs3], .opts button, .opt, .exam-opt, input, select, textarea, #tabbar';
+  document.querySelectorAll('#view [data-voir], #view [data-bs3], #view .opts button, #view .opt, #view .exam-opt, #view button, #view a[href], #view input, #view select, #view textarea, #tabbar').forEach(e => {
+    if (!e.getClientRects().length || getComputedStyle(e).visibility === 'hidden') return; const q = e.getBoundingClientRect(); if (!q.width || !q.height) return;
+    const ov = Math.max(0, Math.min(r.right, q.right) - Math.max(r.left, q.left)) * Math.max(0, Math.min(r.bottom, q.bottom) - Math.max(r.top, q.top));
+    if (ov > 0 && (e.matches(HARD) || ov / (q.width * q.height) > 0.2)) out.push(f.id + ' over ' + (e.id ? '#' + e.id : e.tagName.toLowerCase()) + '.' + String(e.className || '').split(' ')[0] + ' ' + (e.innerText || '').trim().slice(0, 20)); });
+  return out.slice(0, 5); }"""
+
+
+def chat_mock(seen):
+    """Local stand-in for server/chat-worker.js: echoes the retrieved passages as numbered sources, plus one PubMed review."""
+    def handle(route):
+        req = route.request
+        hdr = {'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Content-Type', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Content-Type': 'application/json'}
+        if req.method == 'OPTIONS': return route.fulfill(status=204, headers=hdr, body='')
+        try: body = json.loads(req.post_data or '{}')
+        except Exception: body = {}
+        seen.append(body)
+        ps = body.get('passages') or []
+        en = body.get('lang') == 'en'
+        src = [{'n': p['n'], 'kind': 'ocelle', 'title': p['title'], 'route': p['route']} for p in ps]
+        k = len(src) + 1
+        src.append({'n': k, 'kind': 'pubmed', 'title': 'Primary angle-closure disease: a review', 'url': 'https://pubmed.ncbi.nlm.nih.gov/12345678/', 'journal': 'Ophthalmology', 'year': '2024'})
+        if en:
+            ans = ('**Lower the IOP now**, then treat the cause [1]. Give aqueous suppressants and acetazolamide as stated on the Decide screen [1, 2].\n'
+                   '- Pilocarpine only once the IOP is falling [2].\n- Laser iridotomy of **both eyes** once the cornea clears [%d].\nEducational tool: not a substitute for a clinician’s advice.' % k)
+        else:
+            ans = ('**Baisse la PIO tout de suite**, puis traite la cause [1]. Gouttes hypotensives et acétazolamide, comme sur l’écran Décider [1, 2].\n'
+                   '- Pilocarpine seulement une fois la PIO en baisse [2].\n- Iridotomie au laser des **deux yeux** quand la cornée s’éclaircit [%d].\nOutil éducatif : ne remplace pas l’avis d’un clinicien.' % k)
+        route.fulfill(status=200, headers=hdr, body=json.dumps({'answer': ans, 'sources': src}, ensure_ascii=False))
+    return handle
+
+
+def run_chat(browser):
+    """Flag OFF: no chat code, file, CSP origin or UI in site/. Mock endpoint: a chat-enabled build (OCELLE_CHAT_ENDPOINT, --out) opens the sheet,
+    asks, renders the answer with numbered sources and further reading, keeps history and state, traps focus, closes on Esc, and the button never
+    covers the tab bar, the Voir game, the B-scan simulator or quiz answers."""
+    log('[chat]')
+    src_flag = re.search(r"^var CHAT_ENDPOINT = '([^']*)';", open(os.path.join(ROOT, 'src', 'chat.js'), encoding='utf-8').read(), re.M)
+    flag = src_flag.group(1) if src_flag else None
+    # ---- A. flag OFF: nothing of the chat in the published site ----
+    if flag == '':
+        files = [f for f in ('js/chat.js', 'chat-index-fr.json', 'chat-index-en.json') if os.path.exists(os.path.join(SITE, f))]
+        html = open(os.path.join(SITE, 'index.html'), encoding='utf-8').read()
+        csp = re.search(r"connect-src ([^;]*);", html).group(1)
+        rec('chat', 'off-no-files', not files and 'chat' not in open(os.path.join(SITE, 'app.css'), encoding='utf-8').read().lower() and 'chat.js' not in html, 'shipped: %s' % files, 'site/')
+        rec('chat', 'off-csp-unchanged', csp.strip() == "'self' https://*.goatcounter.com", csp, 'site/')
+        ctx = new_ctx(browser, 390, 844, 'light', 'fr'); page = ctx.new_page(); attach(page)
+        try:
+            boot(page); found = []
+            for r in ['accueil', 'g-crise/voir', 'confidentialite']:
+                go(page, r, 300)
+                n = page.evaluate("() => [document.querySelectorAll('#chat-fab, .chat-fab, .chat-layer, [data-chat-privacy], [data-chat]').length, typeof window.Chat, typeof window.CHAT_BUILD]")
+                if n[0] or n[1] != 'undefined' or n[2] != 'undefined': found.append('%s %s' % (r, n))
+            rec('chat', 'off-no-chat-ui', not found, '; '.join(found), '390-light-fr', 'accueil,g-crise/voir,confidentialite')
+        except Exception as e:
+            rec('chat', 'off-no-chat-ui', False, repr(e)[:300], '390-light-fr')
+        ctx.close()
+    else:
+        rec('chat', 'flag-on-in-src', True, 'CHAT_ENDPOINT is set in src/chat.js: OFF checks skipped', 'src', '', 'info')
+    # ---- B. chat-enabled build + mock endpoint ----
+    var = os.path.join(OUT, 'site-chat')
+    env = dict(os.environ, OCELLE_CHAT_ENDPOINT=CHAT_MOCK)
+    b = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'build_web.py'), '--out', var], cwd=ROOT, env=env, capture_output=True, text=True)
+    if b.returncode or not os.path.exists(os.path.join(var, 'js', 'chat.js')):
+        rec('chat', 'mock-build', False, (b.stdout + b.stderr)[-400:]); return
+    rec('chat', 'mock-build', True, b.stdout.strip()[-200:])
+    srv = http.server.ThreadingHTTPServer(('127.0.0.1', 0), functools.partial(Quiet, directory=var))
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    origin = 'http://127.0.0.1:%d' % srv.server_address[1]
+    shots = []
+
+    def ctx_for(vw, vh, scheme, lang):
+        c = browser.new_context(viewport={'width': vw, 'height': vh}, color_scheme=scheme, locale='fr-CA' if lang == 'fr' else 'en-CA', service_workers='block',
+                                device_scale_factor=2 if vw < 500 else 1, is_mobile=vw < 500, has_touch=vw < 500)
+        c.add_init_script("try { if (!localStorage.getItem('oph-lang')) localStorage.setItem('oph-lang', '%s'); } catch (e) {}" % lang)
+        c.route('**/*', lambda rt: rt.continue_() if rt.request.url.startswith(origin) or rt.request.url.startswith('data:') or rt.request.url.startswith('blob:') else rt.abort())
+        return c
+
+    def boot2(page, hash_=''):
+        page.goto(origin + '/' + ('#' + hash_ if hash_ else ''), wait_until='domcontentloaded')
+        page.wait_for_function("() => window.Router && document.getElementById('view').children.length > 0 && document.getElementById('chat-fab')", timeout=10000)
+        page.wait_for_timeout(500)
+
+    # phone, FR, light
+    combo = '390-light-fr-touch'
+    ctx = ctx_for(390, 844, 'light', 'fr'); page = ctx.new_page(); st = attach(page); seen = []
+    page.route(CHAT_MOCK + '*', chat_mock(seen))
+    try:
+        boot2(page)
+        go(page, 'apprendre', 400)
+        r = page.evaluate(CHAT_RECT_JS)
+        rec('chat', 'fab-size-44-48', r and 44 <= r['w'] <= 48 and 44 <= r['h'] <= 48 and r['vis'], json.dumps(r), combo, 'apprendre')
+        rec('chat', 'fab-above-tabbar', r and r['tbTop'] is not None and r['bottom'] <= r['tbTop'] - 4, 'fab bottom %.0f, tab bar top %s' % (r['bottom'], r['tbTop']), combo)
+        lab = page.get_attribute('#chat-fab', 'aria-label')
+        rec('chat', 'fab-aria', lab == 'Ouvrir Demande à Ocelle' and page.get_attribute('#chat-fab', 'aria-expanded') == 'false', lab, combo)
+        page.tap('#chat-fab'); page.wait_for_timeout(350)
+        shot(page, 'chat-phone-fr-light-empty')
+        d = page.evaluate("""() => { const s = document.getElementById('chat-sheet'), r = s.getBoundingClientRect();
+            return { open: !document.getElementById('chat-layer').hidden, role: s.getAttribute('role'), modal: s.getAttribute('aria-modal'), h: document.getElementById('chat-h').innerText, sub: document.getElementById('chat-sub').innerText,
+              focus: document.activeElement && document.activeElement.id, left: r.left, right: r.right, bottom: r.bottom, vw: innerWidth, vh: innerHeight }; }""")
+        rec('chat', 'sheet-opens', d['open'] and d['role'] == 'dialog' and d['modal'] == 'true' and d['focus'] == 'chat-q', json.dumps(d, ensure_ascii=False), combo)
+        rec('chat', 'sheet-title-fr', d['h'] == 'Demande à Ocelle' and d['sub'] == 'Réponses sourcées · outil éducatif', d['h'] + ' / ' + d['sub'], combo)
+        rec('chat', 'phone-bottom-sheet', d['left'] <= 1 and d['right'] >= d['vw'] - 1 and abs(d['bottom'] - d['vh']) <= 1, json.dumps(d), combo)
+        small = page.evaluate("() => [...document.querySelectorAll('#chat-sheet button, #chat-sheet textarea')].filter(e => e.offsetParent !== null && !e.classList.contains('chat-clear')).map(e => { const r = e.getBoundingClientRect(); return [e.className || e.id, Math.round(r.width), Math.round(r.height)]; }).filter(x => x[1] < 44 || x[2] < 44)")
+        rec('chat', 'sheet-targets-44', not small, json.dumps(small), combo)
+        page.fill('#chat-q', 'Que faire devant une crise aiguë de fermeture de l’angle ?'); page.keyboard.press('Enter')
+        page.wait_for_selector('#chat-log .chat-msg.bot .chat-a', timeout=8000); page.wait_for_timeout(300)
+        q = seen[-1] if seen else {}
+        routes = [p.get('route') for p in q.get('passages', [])]
+        rec('chat', 'request-passages', q.get('lang') == 'fr' and 4 <= len(routes) <= 6 and any(x and x.startswith('g-crise/') for x in routes) and set(q) == {'question', 'lang', 'passages'},
+            'lang=%s routes=%s keys=%s' % (q.get('lang'), routes, sorted(q)), combo)
+        a = page.evaluate("""() => { const m = [...document.querySelectorAll('#chat-log .chat-msg.bot')].pop();
+            return { cites: [...m.querySelectorAll('.chat-a a.chat-cite')].map(a => [a.textContent, a.getAttribute('href')]), srcs: [...m.querySelectorAll('.chat-srcs li a')].map(a => a.getAttribute('href')),
+              more: [...m.querySelectorAll('.chat-more a')].map(a => [a.innerText.trim(), a.getAttribute('href')]), disc: (m.querySelector('.chat-disc') || {}).innerText || '', text: m.innerText,
+              left: document.querySelector('[data-chat-left]').innerText }; }""")
+        rec('chat', 'answer-cites-sources', len(a['cites']) >= 3 and all(h.startswith('#') or h.startswith('https://pubmed.ncbi.nlm.nih.gov/') for _, h in a['cites']) and len(a['srcs']) >= 3 and any(h.startswith('#g-crise/') for h in a['srcs']) and any('pubmed' in h for h in a['srcs']),
+            json.dumps(a['cites'] + a['srcs'], ensure_ascii=False)[:300], combo)
+        more_ok = [h for _, h in a['more']] == ['https://www.aao.org/basic-ophthalmology-resources', 'https://shop.lww.com/p/9781975160753', 'https://shop.elsevier.com/books/kanskis-clinical-ophthalmology/salmon/978-0-443-11099-3', 'https://www.openevidence.com']
+        rec('chat', 'further-reading', more_ok and a['more'][3][0] == 'OpenEvidence (cliniciens)' and not re.search(r'powered by|propulsé|partenai|partner', a['text'], re.I), json.dumps(a['more'], ensure_ascii=False)[:300], combo)
+        rec('chat', 'disclaimer-line', a['disc'].startswith('Outil éducatif'), a['disc'], combo)
+        rec('chat', 'daily-counter', a['left'] == '14 questions restantes aujourd’hui', a['left'], combo)
+        page.evaluate("() => document.getElementById('chat-log').scrollTop = 0"); page.wait_for_timeout(100)
+        shot(page, 'chat-phone-fr-light'); shots.append('chat-phone-fr-light')
+        # focus trap + Esc
+        page.focus('#chat-q')
+        inside = all(page.evaluate("() => document.getElementById('chat-sheet').contains(document.activeElement)") for _ in range(1) if [page.keyboard.press('Tab') for _ in range(25)])
+        rec('chat', 'focus-trap', inside, '', combo)
+        page.keyboard.press('Escape'); page.wait_for_timeout(200)
+        e = page.evaluate("() => [document.getElementById('chat-layer').hidden, document.activeElement && document.activeElement.id, document.getElementById('chat-fab').getAttribute('aria-expanded')]")
+        rec('chat', 'esc-closes-returns-focus', e[0] is True and e[1] in ('chat-fab', 'chat-tab') and e[2] == 'false', json.dumps(e), combo)
+        # history + open state persisted (localStorage only)
+        page.tap('#chat-tab:not([hidden]), #chat-fab:not(.tucked)'); page.wait_for_timeout(200)
+        page.reload(); page.wait_for_function("() => document.getElementById('chat-fab')", timeout=10000); page.wait_for_timeout(500)
+        h = page.evaluate("() => [!document.getElementById('chat-layer').hidden, document.querySelectorAll('#chat-log .chat-msg').length, Object.keys(localStorage).filter(k => k.indexOf('oph-chat') === 0).sort()]")
+        rec('chat', 'state-history-persist', h[0] is True and h[1] >= 2 and h[2] == ['oph-chat-quota', 'oph-chat-v1'], json.dumps(h), combo)
+        page.keyboard.press('Escape'); page.wait_for_timeout(150)
+        # privacy section only when enabled
+        go(page, 'confidentialite', 300)
+        pv = page.evaluate("() => { const s = document.querySelector('[data-chat-privacy]'); return s ? s.innerText : ''; }")
+        rec('chat', 'privacy-section-on', 'Demande à Ocelle' in pv and 'renseignement personnel' in pv and 'fournisseur' in pv, pv[:160], combo)
+        # never over the tab bar or a touch target: scroll through the Voir game, a quiz, the sim, a practice, the A3 gonioscopy tool
+        page.evaluate("() => { Quiz.session = { title: 'test', ids: OPH.quiz.slice(0, 3).map(q => q.id), back: 'quiz' }; }")
+        hits, tucked = [], {}
+        for r in ['g-crise/voir', 'c-herpes/voir', 'g-crise/entrainer', 'inv-gonio', 'a-examen/gonioscopie', 'quiz', 'quiz-run', 'inv-bscan-sim', 'accueil']:
+            if r == 'quiz-run': page.evaluate("() => Router.go('quiz-run')"); page.wait_for_timeout(500)
+            else: go(page, r, 500)
+            H = page.evaluate("() => document.documentElement.scrollHeight"); y = 0
+            while True:
+                page.evaluate("y => window.scrollTo(0, y)", y); page.wait_for_timeout(90)
+                bad = page.evaluate(CHAT_HITS_JS)
+                if bad: hits.append('%s@%d: %s' % (r, y, bad))
+                if r in ('quiz-run', 'inv-bscan-sim'): tucked[r] = page.evaluate("() => document.getElementById('chat-fab').classList.contains('tucked')")
+                y += 260
+                if y > H: break
+        rec('chat', 'fab-never-covers-targets', not hits, '; '.join(hits)[:400], combo)
+        rec('chat', 'fab-hidden-on-sim-and-quiz', tucked.get('quiz-run') and tucked.get('inv-bscan-sim'), json.dumps(tucked), combo)
+        page.evaluate("() => window.scrollTo(0, 0)"); page.wait_for_timeout(200)
+        tb = page.evaluate("() => { const f = document.getElementById('chat-fab'), t = document.getElementById('chat-tab'), r = t.getBoundingClientRect(); return [!f.classList.contains('tucked'), !t.hidden, innerWidth - r.left]; }")
+        rec('chat', 'fab-or-edge-tab-on-home', (tb[0] or tb[1]) and (not tb[1] or tb[2] <= 12), 'fab %s, tab %s, tab width from edge %.0f px' % tuple(tb), combo, 'accueil')
+        if st['errors']: rec('chat', 'console', False, ' | '.join(st['errors'])[:400], combo)
+    except Exception as ex:
+        rec('chat', 'phone-flow', False, 'exception: ' + repr(ex)[:400], combo); shot(page, 'chat-phone-fail')
+    ctx.close()
+    # desktop, EN, dark: ~380 px panel
+    combo = '1280-dark-en'
+    ctx = ctx_for(1280, 900, 'dark', 'en'); page = ctx.new_page(); st = attach(page); seen = []
+    page.route(CHAT_MOCK + '*', chat_mock(seen))
+    try:
+        boot2(page, 'g-crise/decider')
+        page.click('#chat-fab'); page.wait_for_timeout(350)
+        page.fill('#chat-q', 'What do I do for acute angle-closure crisis?'); page.click('.chat-send')
+        page.wait_for_selector('#chat-log .chat-msg.bot .chat-a', timeout=8000); page.wait_for_timeout(300)
+        d = page.evaluate("() => { const r = document.getElementById('chat-sheet').getBoundingClientRect(); return { w: r.width, right: innerWidth - r.right, h: document.getElementById('chat-h').innerText, sub: document.getElementById('chat-sub').innerText, oe: [...document.querySelectorAll('.chat-more a')].pop().innerText }; }")
+        rec('chat', 'desktop-panel-380', 360 <= d['w'] <= 400 and d['right'] < 40 and d['h'] == 'Ask Ocelle' and d['sub'] == 'Sourced answers · educational tool' and d['oe'] == 'OpenEvidence (clinicians)', json.dumps(d), combo)
+        q = seen[-1] if seen else {}
+        rec('chat', 'request-lang-en', q.get('lang') == 'en' and any((p.get('route') or '').startswith('g-crise/') for p in q.get('passages', [])), json.dumps([p.get('route') for p in q.get('passages', [])]), combo)
+        page.evaluate("() => document.getElementById('chat-log').scrollTop = 0"); page.wait_for_timeout(100)
+        shot(page, 'chat-desktop-en-dark'); shots.append('chat-desktop-en-dark')
+        if st['errors']: rec('chat', 'console', False, ' | '.join(st['errors'])[:400], combo)
+    except Exception as ex:
+        rec('chat', 'desktop-flow', False, 'exception: ' + repr(ex)[:400], combo); shot(page, 'chat-desktop-fail')
+    ctx.close()
+    srv.shutdown()
+    if args.chat_shots:
+        dst = os.path.join(ROOT, args.chat_shots) if not os.path.isabs(args.chat_shots) else args.chat_shots
+        os.makedirs(dst, exist_ok=True)
+        for n in shots: shutil.copy2(os.path.join(SHOTS, n + '.png'), os.path.join(dst, n + '.png'))
+
+
 def main():
     t0 = time.time()
     with sync_playwright() as p:
@@ -759,6 +957,7 @@ def main():
             if want('flows'): run_flows(browser)
             if want('offline'): run_offline(browser)
             if want('mobile'): run_mobile(browser)
+            if want('chat'): run_chat(browser)
             if want('axe'): run_axe(browser)
         except Exception:
             traceback.print_exc(); rec('runner', 'crash', False, traceback.format_exc()[-800:])

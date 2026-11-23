@@ -61,3 +61,10 @@ Format : date | URL | ce qui a été vu
 | 2026-11-22 | https://www.instagram.com/reel/DeE_jTDIKXg/ | « The app I wish I had… residency » ; 1,1 k j'aime, 876 commentaires (« App ») |
 | 2026-11-22 | https://www.instagram.com/reel/Df7qKsIIwgQ/ | brûlure alcaline animée ; 6,5 k j'aime, 39 commentaires |
 | 2026-11-22 | https://ophthalmo-daily.com | plateforme d'apprentissage et communauté ; ES/EN ; prix non indiqué |
+| 2026-11-22 | https://www.aao.org/basic-ophthalmology-resources | AAO *Basic Ophthalmology* (lien « Pour aller plus loin » de Demande à Ocelle) |
+| 2026-11-22 | https://shop.lww.com/p/9781975160753 | *The Wills Eye Manual*, 8e éd., Wolters Kluwer (même usage) |
+| 2026-11-22 | https://shop.elsevier.com/books/kanskis-clinical-ophthalmology/salmon/978-0-443-11099-3 | *Kanski’s Clinical Ophthalmology*, 10e éd., Elsevier (même usage) |
+| 2026-11-22 | https://platform.claude.com/docs/en/models/overview | ID de modèle Anthropic le moins cher : `claude-haiku-5-5` (défaut du Worker) |
+| 2026-11-22 | https://ai.google.dev/gemini-api/docs/models ; https://ai.google.dev/gemini-api/docs/pricing | modèles Gemini ; offre gratuite de `gemini-3.1-flash-lite` ; offre gratuite = contenus « utilisés pour améliorer nos produits » |
+| 2026-11-22 | https://developers.cloudflare.com/workers-ai/platform/pricing/ ; https://developers.cloudflare.com/changelog/post/2026-05-08-planned-model-deprecations/ | Workers AI : 10 000 neurones gratuits par jour ; Llama 3.x 8B/70B retirés le 30 mai 2026, remplaçants recommandés dont `@cf/google/gemma-4-26b-a4b-it` |
+| 2026-11-22 | https://developers.cloudflare.com/workers/runtime-apis/bindings/rate-limit/ | syntaxe `[[ratelimits]]` (période 10 ou 60 s), `env.X.limit({ key })` |

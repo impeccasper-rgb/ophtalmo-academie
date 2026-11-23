@@ -1,0 +1,36 @@
+# « Demande à Ocelle » — Cloudflare Worker configuration (see server/README.md)
+name = "ocelle-chat"
+main = "chat-worker.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+# No request logs kept by Cloudflare's Workers Logs for this Worker (Loi 25: questions are never logged by the code either).
+[observability]
+enabled = false
+
+[vars]
+# 'workers-ai' (free start, no key) | 'gemini' (secret GEMINI_API_KEY) | 'anthropic' (secret ANTHROPIC_API_KEY, paid)
+LLM_PROVIDER = "workers-ai"
+ALLOWED_ORIGINS = "https://ocelle.net,https://www.ocelle.net,https://impeccasper-rgb.github.io"
+PUBMED = "on"
+NCBI_TOOL = "ocelle-chat"
+# NCBI_EMAIL = "contact@example.org"   # optional: NCBI asks heavy users for a contact email (put a project address, not a personal one)
+RATE_PER_MINUTE = "6"
+RATE_PER_DAY = "60"
+# Optional model overrides:
+# WORKERS_AI_MODEL = "@cf/google/gemma-4-26b-a4b-it"
+# GEMINI_MODEL = "gemini-3.1-flash-lite"
+# ANTHROPIC_MODEL = "claude-haiku-5-5"
+
+# Workers AI binding (used only when LLM_PROVIDER = "workers-ai"; harmless otherwise)
+[ai]
+binding = "AI"
+
+# Per-IP limit shared across Cloudflare's network (period must be 10 or 60 s). Without it, the Worker falls back to an in-memory limit.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1701"
+
+  [ratelimits.simple]
+  limit = 6
+  period = 60

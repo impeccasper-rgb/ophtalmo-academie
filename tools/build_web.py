@@ -4,6 +4,8 @@
   python3 tools/build_web.py            # → site/index.html, app.css, js/*.js, img/, sw.js, 404.html, manifest, icons
 Env (optional): SITE_URL=https://user.github.io/repo/  (absolute Open Graph URLs)
                 SITE_BASE=/repo/                        (404.html redirect base; guessed on *.github.io otherwise)
+                OCELLE_CHAT_ENDPOINT=https://…          (tests only: overrides CHAT_ENDPOINT of src/chat.js)
+  --out DIR     write the site to DIR instead of site/ (tests: a chat-enabled variant next to the real build)
 """
 import ast, glob, hashlib, json, os, re, shutil, struct, zlib
 
@@ -12,6 +14,7 @@ SRC, DATA, DATA_EN, BRAND = (os.path.join(ROOT, d) for d in ('src', 'data', 'dat
 import sys as _sys
 COMMERCIAL_SAFE = '--commercial-safe' in _sys.argv  # local study build only, written to site-commercial-safe/ (never deployed)
 OUT = os.path.join(ROOT, 'site-commercial-safe' if COMMERCIAL_SAFE else 'site')
+if '--out' in _sys.argv: OUT = os.path.abspath(_sys.argv[_sys.argv.index('--out') + 1])
 SITE_URL = os.environ.get('SITE_URL', '').rstrip('/') + ('/' if os.environ.get('SITE_URL') else '')
 SITE_BASE = os.environ.get('SITE_BASE', '')
 
@@ -55,6 +58,20 @@ EN_LOADER = ("(function () { var l = 'en'; try { var ok = function (v) { v = Str
              " try { n = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language]) || []; } catch (e) { }"
              " l = q || s; for (var i = 0; !l && i < n.length; i++) l = ok(n[i]); l = l || 'fr'; } catch (e) { l = 'en'; }"
              " window.OPH_EN_LOADED = l === 'en'; if (l === 'en') document.write(__TAGS__); })();")
+def chat_endpoint():
+    """« Demande à Ocelle »: CHAT_ENDPOINT at the top of src/chat.js (the single switch). Empty → chat.js, chat.css and the search index
+    are NOT shipped, the CSP is unchanged: the site is byte-for-byte the build without the feature. OCELLE_CHAT_ENDPOINT overrides it (tests)."""
+    env = os.environ.get('OCELLE_CHAT_ENDPOINT')
+    if env is not None: return env.strip()
+    p = os.path.join(SRC, 'chat.js')
+    if not os.path.exists(p): return ''
+    m = re.search(r"^var CHAT_ENDPOINT = '([^'\\]*)';", open(p, encoding='utf-8').read(), re.M)
+    if not m: raise SystemExit("src/chat.js: line « var CHAT_ENDPOINT = '…'; » not found")
+    return m.group(1).strip()
+CHAT = chat_endpoint()
+if CHAT and not re.match(r'^https://[A-Za-z0-9.-]+(:\d+)?(/[^\s\'"<>]*)?$|^http://(127\.0\.0\.1|localhost)(:\d+)?(/[^\s\'"<>]*)?$', CHAT):
+    raise SystemExit('CHAT_ENDPOINT must be an https:// URL (or http://127.0.0.1 / localhost for local tests): %r' % CHAT)
+CHAT_ORIGIN = re.match(r'^(https?://[^/]+)', CHAT).group(1) if CHAT else ''
 SRC_ORDER = ['core', 'i18n', 'figures-a', 'figures-b', 'sims', 'quiz', 'learn', 'investigations', 'bscan-sim', 'motion', 'tree', 'figures-mech', 'figures-retine', 'privacy', 'views', 'web']
 CSS_ORDER = ['styles', 'investigations', 'bscan-sim', 'tree', 'web']
 VENDOR = ['three-0.159.0']   # pinned local libraries (no CDN: CSP 'self', offline, iOS); loaded on demand by src/bscan-sim.js
@@ -282,6 +299,18 @@ def main():
         p = os.path.join(SRC, name + '.js')
         if os.path.exists(p): emit(name + '.js', read(p))
         else: missing.append('src/' + name)
+    chat_note = ''
+    if CHAT:  # « Demande à Ocelle »: search index from Ocelle's content (node), then chat.js last (it needs Views, Router, I18N)
+        import subprocess
+        r = subprocess.run(['node', os.path.join(ROOT, 'tools', 'build_chat_index.js'), OUT], capture_output=True, text=True)
+        if r.returncode: raise SystemExit('chat index failed (node required when CHAT_ENDPOINT is set):\n' + r.stderr[-800:])
+        idx = {}
+        for lg in ('fr', 'en'):
+            fn = 'chat-index-%s.json' % lg
+            idx[lg] = '%s?v=%s' % (fn, hashlib.sha1(open(os.path.join(OUT, fn), 'rb').read()).hexdigest()[:10])
+        src = re.sub(r"^var CHAT_ENDPOINT = '[^']*';", lambda m: 'var CHAT_ENDPOINT = %s;' % json.dumps(CHAT), read(os.path.join(SRC, 'chat.js')), count=1, flags=re.M)
+        emit('chat.js', 'window.CHAT_BUILD = %s;\n' % json.dumps({'endpoint': CHAT, 'index': idx}) + src)
+        chat_note = ' · chat ON → %s (%s)' % (CHAT, r.stdout.strip().replace('\n', '; '))
     font_css, font_files = self_hosted_fonts()
     vendor_files = []
     for v in VENDOR:
@@ -290,7 +319,7 @@ def main():
             shutil.copytree(vsrc, os.path.join(OUT, 'vendor', v), dirs_exist_ok=True)
             vendor_files += ['vendor/%s/%s' % (v, f) for f in sorted(os.listdir(vsrc)) if f.endswith('.js')]
         else: missing.append('vendor/' + v)
-    css = font_css + '\n'.join('/* src/%s.css */\n' % n + read(os.path.join(SRC, n + '.css')) for n in CSS_ORDER if os.path.exists(os.path.join(SRC, n + '.css')))
+    css = font_css + '\n'.join('/* src/%s.css */\n' % n + read(os.path.join(SRC, n + '.css')) for n in CSS_ORDER + (['chat'] if CHAT else []) if os.path.exists(os.path.join(SRC, n + '.css')))
     hcss = hashlib.sha1(css.encode()).hexdigest()[:10]
     hjs = hashlib.sha1(''.join(files).encode()).hexdigest()[:10]
     open(os.path.join(OUT, 'app.css'), 'w', encoding='utf-8').write(css)
@@ -300,7 +329,7 @@ def main():
     # Google Fonts only when fonts/ is missing (self-hosted fonts work offline and inside the iOS app)
     fonts = '' if font_files else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">')
     preload = ''.join('<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' % f for f in font_files if f.endswith('-latin-wght-normal.woff2') and 'mono' not in f)
-    CSP = '<meta http-equiv="Content-Security-Policy" content="%s">' % CSP_POLICY
+    CSP = '<meta http-equiv="Content-Security-Policy" content="%s">' % (CSP_POLICY.replace("connect-src 'self' ", "connect-src 'self' %s " % CHAT_ORIGIN) if CHAT else CSP_POLICY)
     esc = lambda s: s.replace('&', '&amp;').replace('"', '&quot;').replace('<', '&lt;')
     head = f'''<!doctype html>
 <html lang="fr">
@@ -426,7 +455,7 @@ self.addEventListener('fetch', e => {
     imgbytes = sum(os.path.getsize(os.path.join(img, f)) for f in os.listdir(img))
     print(os.path.basename(OUT) + '/ js %d files %.0f KB · app.css %.0f KB · images %d (%.1f MB) · data-en %d file(s) · missing: %s%s' % (
         len(files), size / 1024, os.path.getsize(os.path.join(OUT, 'app.css')) / 1024, nimg, imgbytes / 1e6, len(en_files), ', '.join(missing) or 'none',
-        (' · images absent: ' + ', '.join(absent[:8])) if absent else ''))
+        (' · images absent: ' + ', '.join(absent[:8])) if absent else '') + chat_note)
 
 
 def commercial_safe_report():

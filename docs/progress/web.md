@@ -100,3 +100,8 @@ _Dernière mise à jour : 2026-11-21, cycle 2 (rôle web)._
 - Comprendre: one stepper. The drawn mechanism (Mech.html) is the only « suivant » on all 27 fiches (figure + one caption per step); the paced text chain is rendered only when no mech exists and otherwise moves to « Pour aller plus loin » as a static list. Levers open when the mechanism reaches its last step (`mech:step` event from figures-mech.js `go()`), and the cut is told under the figure. `Mech.html(id, { sub })` can carry per-step extra captions (unused: index mapping mislabelled steps).
 - Voir: a hit after the hint (2nd miss), or naming after the hint, gives the neutral verdict « Trouvé avec l’indice » (no sticker); progress stored in `Store.p.voir[photo] = { s: 1 | .5 | 0 }` (merged like other maps).
 - tests/run.py walks the mechanism instead of the text chain.
+
+## Cycle 12 — « Demande à Ocelle » prêt à allumer (2026-11-22, ÉTEINT)
+- Fait : `src/chat.js` + `src/chat.css` (bouton, fenêtre, recherche BM25 côté client, historique et compteur locaux, section Confidentialité conditionnelle), `tools/build_chat_index.js`, interrupteur dans `tools/build_web.py` (+ `--out`, `OCELLE_CHAT_ENDPOINT` pour les tests), `server/chat-worker.js` + `wrangler.toml` + `README.md` + `test-worker.mjs`, section `chat` de `tests/web/test_site.py`, captures `docs/chat/`. Détails : docs/PLATFORM.md.
+- Éteint : `site/` identique octet pour octet à la version d’avant (diff -r).
+- Reste au propriétaire : choisir le fournisseur, déployer le Worker, remplir `CHAT_ENDPOINT`/`CHAT_PROVIDER`, changer `PRIVACY_DATE`. Après activation, vérifier les vraies réponses du modèle sur 10–20 questions types (citations, refus d’un cas patient, doses).
