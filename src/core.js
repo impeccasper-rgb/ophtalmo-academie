@@ -493,7 +493,7 @@ var Shell = {
     h += '<details class="grp"><summary class="grp-h">' + t('nav.more') + '</summary>' + a('atlas', t('nav.atlas'), ' ') + a('recherche', t('nav.search'), ' ') + a('express-b', t('nav.expressB'), ' ') + a('express-c', t('nav.expressC'), ' ') + a('image-du-jour', t('daily.title'), ' ') + a('sources', t('nav.sources'), ' ') + a('confidentialite', t('nav.privacy'), ' ') + '</details>';
     h += '</nav>';
     h += '<div class="syncnote" id="syncnote"></div>';
-    if (window.I18N) h += '<div class="lang-row">' + I18N.switchHtml() + '</div>';
+    if (window.I18N) h += '<div class="lang-row">' + I18N.switchHtml() + Shell.themeHtml() + '</div>';
     h += '<p class="xs muted disclaimer"><a href="#sources">' + t('disclaimer') + '</a></p>';
     return h;
   },
@@ -522,6 +522,18 @@ var Shell = {
     var tbar = U.$('#tabbar'); if (tbar) tbar.setAttribute('aria-label', t('nav.quick'));
     var lbx = U.$('#lightbox'); if (lbx) lbx.setAttribute('aria-label', t('lb.aria'));
     if (window.I18N && !U.$('.langsw', tb)) tb.insertAdjacentHTML('beforeend', I18N.switchHtml('top'));
+    if (!U.$('.themesw', tb)) tb.insertAdjacentHTML('beforeend', Shell.themeHtml());
+  },
+  themeHtml: function () {
+    var sun = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>';
+    var moon = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M20.2 14.6A8.5 8.5 0 0 1 9.4 3.8a8.5 8.5 0 1 0 10.8 10.8z"/></svg>';
+    var cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark', fr = !window.I18N || I18N.lang === 'fr';
+    var b = function (v, ico, lab) { return '<button type="button" data-act="themeq" data-v="' + v + '" aria-pressed="' + (cur === v) + '" aria-label="' + lab + '" title="' + lab + '">' + ico + '</button>'; };
+    return '<div class="seg sm themesw" role="group" aria-label="' + (fr ? 'Thème' : 'Theme') + '">' + b('light', sun, fr ? 'Mode clair' : 'Light mode') + b('dark', moon, fr ? 'Mode sombre' : 'Dark mode') + '</div>';
+  },
+  syncTheme: function () {
+    var cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    U.$$('[data-act="themeq"]').forEach(function (x) { x.setAttribute('aria-pressed', String(x.getAttribute('data-v') === cur)); });
   },
   sync: function () {
     var txt = Store.status === 'sync' ? ['ok', t('sync.sync')] : Store.status === 'local' ? ['ok', t('sync.local')] : ['warn', t('sync.none')];

@@ -2,6 +2,11 @@
 .langsw { flex: none; }
 .langsw button { min-width: 40px; min-height: 32px; font-weight: 600; letter-spacing: .03em; }
 .topbar .langsw button { min-height: 36px; }
+.themesw { flex: none; margin-left: 8px; }
+.themesw button { min-width: 40px; min-height: 32px; display: inline-flex; align-items: center; justify-content: center; }
+.topbar .themesw button { min-height: 36px; }
+@media (max-width: 420px) { .topbar .brand > span > span { display: none; } }
+@media (max-width: 430px) { .topbar .brand > span { display: none; } .themesw { margin-left: 6px; } }
 .lang-row { display: flex; align-items: center; gap: 8px; }
 .fr-badge { margin-left: 8px; font-size: .68rem; letter-spacing: .05em; vertical-align: middle; }
 h1 .fr-badge { position: relative; top: -.2em; }
@@ -286,7 +291,7 @@ html.no-motion .voir-miss { animation: none; }
   .mode-tile .small.muted { display: none; } /* phone: picture + name + count */
   .mode-tile b { font-size: .92rem; }
 }
-.hero2 .eyebrow { hyphens: manual; -webkit-hyphens: manual; }
+.hero2 .eyebrow, .hero2 h1 { hyphens: manual; -webkit-hyphens: manual; overflow-wrap: normal; }
 .voir-media .inv-hot.dec > i { inset: -40%; } /* fallback ring (no Motion): around the sign, not on it */
 /* cycle 11: one stepper in Comprendre — the chain item mapped onto each drawn step */
 .mech-sub { margin: 4px 0 0; color: var(--ink-2); line-height: 1.4; }
@@ -311,7 +316,7 @@ body { padding-top: env(safe-area-inset-top, 0px); }
   :where(.btn, .chip, .conf button, .crumbs a, a.eyebrow, .hero-cred summary, .bs3-val summary, .inv-term, .fc-hint summary)::after { content: ""; position: absolute; inset: -2px; }
   :where(.btn.sm, .conf button)::after { inset: -6px -3px; }
   :where(.chip)::after { inset: -8px -3px; }
-  .seg button, .topbar .langsw button { min-height: 44px; min-width: 44px; } /* .seg clips its children (overflow: hidden), so a pseudo hit area would be cut: the buttons grow instead */
+  .seg button, .topbar .langsw button, .topbar .themesw button { min-height: 44px; min-width: 44px; } /* .seg clips its children (overflow: hidden), so a pseudo hit area would be cut: the buttons grow instead */
   .inv-fold summary { min-height: 44px; } /* its ::after draws the « + », so no hit-area pseudo here */
   :where(.btn.xs, .bs3-val summary)::after { inset: -8px; }
   :where(.crumbs a, a.eyebrow, .inv-term, .fc-hint summary)::after { inset: -13px -4px; }

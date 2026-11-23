@@ -342,6 +342,7 @@ def main():
 <meta name="theme-color" content="{THEME_LIGHT}" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="{THEME_DARK}" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
+<script>/* theme before first paint: dark by default (owner's choice), saved choice wins */(function(){{var t='dark';try{{var p=JSON.parse(localStorage.getItem('oph-r1-progress-v1')||'{{}}');var st=p&&p.settings&&p.settings.theme;if(st==='light'||st==='dark')t=st;else if(st==='auto')t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}}catch(e){{}}var r=document.documentElement;r.setAttribute('data-theme',t);r.setAttribute('data-theme-boot','1');}})();</script>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Ocelle">

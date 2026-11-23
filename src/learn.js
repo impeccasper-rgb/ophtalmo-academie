@@ -11,7 +11,7 @@ var Settings = {
   hostTheme: undefined,
   get: function () {
     var s = Store.p.settings || {};
-    return { depth: +s.depth || 1, size: s.size || 'm', theme: s.theme || 'auto', motion: s.motion !== false, mod: s.mod || '' };
+    return { depth: +s.depth || 1, size: s.size || 'm', theme: s.theme || 'dark', motion: s.motion !== false, mod: s.mod || '' };
   },
   set: function (k, v) {
     var s = Object.assign({}, Store.p.settings || {}); s[k] = v; s.t = Date.now();
@@ -27,7 +27,7 @@ var Settings = {
   apply: function () {
     Settings.watch();
     var s = Settings.get(), r = document.documentElement;
-    if (Settings.hostTheme === undefined) Settings.hostTheme = r.getAttribute('data-theme');
+    if (Settings.hostTheme === undefined) Settings.hostTheme = r.hasAttribute('data-theme-boot') ? null : r.getAttribute('data-theme');
     r.setAttribute('data-depth', String(s.depth));
     r.setAttribute('data-size', s.size);
     // auto: follow the host theme (artifact) or the system appearance, set explicitly so it also works where the
@@ -45,7 +45,8 @@ function depthSeg(small) {
 }
 Actions.depth = function (el) { Settings.set('depth', +el.getAttribute('data-v')); var y = window.scrollY; Router.refresh(true); Shell.render(); U.$$('[data-act="depth"]').forEach(function (b) { var on = b.getAttribute('data-v') === String(Settings.get().depth); b.setAttribute(b.getAttribute('role') === 'radio' ? 'aria-checked' : 'aria-pressed', on); }); window.scrollTo(0, y); };
 Actions.size = function (el) { Settings.set('size', el.getAttribute('data-v')); Router.refresh(true); };
-Actions.theme = function (el) { Settings.set('theme', el.getAttribute('data-v')); Router.refresh(true); };
+Actions.theme = function (el) { Settings.set('theme', el.getAttribute('data-v')); Router.refresh(true); if (window.Shell && Shell.syncTheme) Shell.syncTheme(); };
+Actions.themeq = function (el) { Settings.set('theme', el.getAttribute('data-v')); if (window.Shell && Shell.syncTheme) Shell.syncTheme(); };
 Actions.motion = function (el) { Settings.set('motion', el.getAttribute('data-v') === 'on'); Router.refresh(true); };
 Actions['mv-open'] = function (el) { var mv = el.closest('.mv'); if (!mv) return; var on = !mv.classList.contains('open'); mv.classList.toggle('open', on); el.setAttribute('aria-expanded', String(on)); el.textContent = on ? t('mv.hide') : el.getAttribute('data-label'); Figures.hydrate(mv); };
 function mvMore(need, label) { return '<button type="button" class="btn sm ghost mv-more" data-need="' + need + '" data-act="mv-open" data-label="' + U.esc(label) + '" aria-expanded="false">' + U.esc(label) + '</button>'; }
