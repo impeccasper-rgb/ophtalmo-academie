@@ -928,7 +928,8 @@ def run_chat(browser):
     page.route(CHAT_MOCK + '*', chat_mock(seen))
     try:
         boot2(page, 'g-crise/decider')
-        page.click('#chat-fab'); page.wait_for_timeout(350)
+        # the button tucks itself to the edge tab when it would cover a tappable card: open through whichever is shown
+        page.click('#chat-tab' if page.evaluate("document.getElementById('chat-fab').classList.contains('tucked')") else '#chat-fab'); page.wait_for_timeout(350)
         page.fill('#chat-q', 'What do I do for acute angle-closure crisis?'); page.click('.chat-send')
         page.wait_for_selector('#chat-log .chat-msg.bot .chat-a', timeout=8000); page.wait_for_timeout(300)
         d = page.evaluate("() => { const r = document.getElementById('chat-sheet').getBoundingClientRect(); return { w: r.width, right: innerWidth - r.right, h: document.getElementById('chat-h').innerText, sub: document.getElementById('chat-sub').innerText, oe: [...document.querySelectorAll('.chat-more a')].pop().innerText }; }")

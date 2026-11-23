@@ -175,7 +175,7 @@ Views['a-physiologie'] = {
         HY.essentials('phy-' + p.id, t('hy.title')) +
         '<ul class="blist read" data-dz="2">' + p.points.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' +
         '<div class="callout amber"><span class="eyebrow">' + t('a.pearl') + '</span><span>' + T(p.pearl, scope) + '</span></div>' +
-        (sim ? '<details class="acc" open><summary>' + t('a.sim') + '</summary><div style="padding:0 14px 14px"><div data-sim="' + sim + '"></div></div></details>' : '') +
+        (sim ? '<details class="acc"><summary>' + t('a.sim') + '</summary><div style="padding:0 14px 14px"><div data-sim="' + sim + '"></div></div></details>' : '') +
         '<details class="acc"><summary>' + t('a.train') + '</summary><div class="stack" style="padding:0 14px 14px">' + trainBlock('phy-' + p.id) + '</div></details>' + '</div>';
     }).join('');
     return '<div class="page mv">' + aHead('a-physiologie') + aTools() + nav + (P.length ? body : missing(t('a2.title'))) + miniQuiz('a-physiologie', quizIds(function (q) { return q.topic === 'a-physiologie'; }), t('a.mini', { t: t('a2.title') })) + aNav('a-physiologie') + '</div>';
@@ -190,7 +190,7 @@ function examBlock(p, i, prefix, scope) {
     '<div class="twocol" data-dz="2"><div class="stack"><h3 class="h4">' + t('a.how') + '</h3><ol class="read">' + p.how.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ol></div><div class="stack"><h3 class="h4">' + t('a.pitfalls') + '</h3><ul class="blist red">' + p.pitfalls.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' +
     '<div class="twocol"><div class="panel-sunk stack"><h3 class="h4" style="color:var(--ok)">' + t('f.normal') + '</h3><ul class="blist ok">' + p.normal.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div><div class="panel-sunk stack"><h3 class="h4" style="color:var(--urgent)">' + t('f.patho') + '</h3><ul class="blist red">' + p.patho.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul></div></div>' +
     '<div class="callout amber"><span class="eyebrow">' + t('a.asks') + '</span><span>' + T(p.pearl, scope) + '</span></div>' +
-    (tools ? '<details class="acc" open><summary>' + t('a.practice') + '</summary><div class="stack" style="padding:0 14px 14px">' + tools + '</div></details>' : '') +
+    (tools ? '<details class="acc"><summary>' + t('a.practice') + '</summary><div class="stack" style="padding:0 14px 14px">' + tools + '</div></details>' : '') +
     (HY.get('ex-' + p.id) ? '<details class="acc"><summary>' + t('a.train') + '</summary><div class="stack" style="padding:0 14px 14px">' + trainBlock('ex-' + p.id) + '</div></details>' : '') + '</div>';
 }
 var EXAM_CLIN = ['av', 'pupilles', 'lampe', 'fluoresceine', 'tonometrie', 'gonioscopie', 'pachymetrie', 'papille'], EXAM_IMG = ['oct', 'topographie', 'champs-visuels', 'speculaire'];
@@ -518,8 +518,17 @@ function txBlock(f, scope) {
   // compact card group when the content provides it (first line / when to refer / pitfall / Quebec) + the full list collapsed
   var c = f.treatment || f.txCard || null;
   if (c && (c.first || c.refer || c.pitfall || c.trap)) {
-    var card = function (k, cls, v) { return v ? '<div class="tx-card ' + cls + '"><span class="eyebrow">' + t(k) + '</span><div>' + (Array.isArray(v) ? '<ul class="blist">' + v.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' : T(v, scope)) + '</div></div>' : ''; };
-    return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><div class="tx-grid">' + card('tx.first', 'first', c.first) + card('tx.refer', 'refer', c.refer) + card('tx.trap', 'trap', c.pitfall || c.trap) + card('tx.qc', 'qc', c.qc || c.quebec) + '</div>' +
+    // each card is collapsed to its label + a one-line teaser; "when to refer" (short, decisive) stays open
+    var card = function (k, cls, v, open) {
+      if (!v) return '';
+      var items = Array.isArray(v) ? v : [v];
+      var body = Array.isArray(v) ? '<ul class="blist">' + v.map(function (x) { return '<li>' + T(x, scope) + '</li>'; }).join('') + '</ul>' : T(v, scope);
+      var plain = String(T(items[0], scope)).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+      var teaser = plain.length > 78 ? plain.slice(0, 78).replace(/[\s,;:.(\u2014-]+\S*$/, '') + '\u2026' : plain;
+      if (items.length > 1) teaser += ' <span class="tx-n">+' + (items.length - 1) + '</span>';
+      return '<details class="tx-card ' + cls + '"' + (open ? ' open' : '') + '><summary><span class="eyebrow">' + t(k) + '</span><span class="tx-teaser">' + teaser + '</span></summary><div class="tx-body">' + body + '</div></details>';
+    };
+    return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><div class="tx-grid">' + card('tx.refer', 'refer', c.refer, true) + card('tx.first', 'first', c.first) + card('tx.trap', 'trap', c.pitfall || c.trap) + card('tx.qc', 'qc', c.qc || c.quebec) + '</div>' +
       '</div>'; // the full list is offered from level 2, in the Décider level blocks
   }
   return '<div class="stack tx-block"><h2 class="h3">' + t('f.tx') + '</h2><p class="xs muted">' + t('f.tx.d') + '</p>' + txList(f, scope) + '</div>';
