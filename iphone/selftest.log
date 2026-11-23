@@ -1,0 +1,73 @@
+[ 156.4s p1 console] SELFTEST NOTE start (9 steps)
+[ 156.4s p1 console] SELFTEST NOTE ua=Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148
+[ 156.4s p1 console] SELFTEST NOTE navigator.language=fr-FR app lang=fr url=
+[ 156.4s p1 console] SELFTEST NOTE capacitor=true native=true nativeOverlay=true screenshotAcks=true
+[ 157.7s p1 console] SELFTEST SHOT 01-boot
+[ 171.3s p1 console] SELFTEST PASS boot
+[ 171.3s p1 console] SELFTEST PASS locale-autodetect navigator.language=fr-FR -> fr
+[ 173.1s p1 console] SELFTEST SHOT 02-home-fr
+[ 188.6s p1 console] SELFTEST PASS home-fr
+[ 188.6s p1 console] SELFTEST NOTE lang toggle: <button type="button" data-act="lang" data-v="en" lang="en" aria-pressed="false" title="English">
+[ 189.6s p1 console] SELFTEST NOTE resume at step lang-en after reload
+[ 191.4s p1 console] SELFTEST SHOT 03-home-en
+[ 221.2s p1 console] SELFTEST PASS lang-en via ui
+[ 232.4s p1 console] SELFTEST SHOT 04-fiche-top
+[ 248.0s p1 console] SELFTEST SHOT 05-fiche-mid
+[ 259.0s p1 console] SELFTEST PASS fiche c-secheresse "Dry eye disease and meibomian gland dysfunction"
+[ 261.7s p1 console] SELFTEST SHOT 06-investigations
+[ 270.2s p1 console] SELFTEST PASS investigations 7 exams: bscan, ascan, oct, gonio, fondoeil, cv, bscan-sim
+[ 273.4s p1 console] SELFTEST SHOT 07-inv-bscan
+[ 279.9s p1 console] SELFTEST SHOT 07-inv-ascan
+[ 285.4s p1 console] SELFTEST SHOT 07-inv-oct
+[ 298.4s p1 console] SELFTEST SHOT 07-inv-gonio
+[ 309.0s p1 console] SELFTEST SHOT 07-inv-fondoeil
+[ 318.0s p1 console] SELFTEST SHOT 07-inv-cv
+[ 320.8s p1 console] SELFTEST PASS inv-pages 6/6 pages
+[ 324.4s p1 console] SELFTEST SHOT 09-practice-answer
+[ 326.9s p1 console] SELFTEST NOTE practice answering "1 Fluorescein angiography" on #inv-bscan
+[ 330.5s p1 console] SELFTEST SHOT 10-practice-reveal
+[ 334.6s p1 unified] SELFTEST PASS practice #inv-bscan -> Not quite, saved
+[ 336.6s p1 console] SELFTEST SHOT 12-card-front
+[ 340.1s p1 console] SELFTEST SHOT 13-card-back
+[ 344.0s p1 console] SELFTEST SHOT 14-card-next
+[ 345.2s p1 console] SELFTEST PASS flashcards
+[ 345.2s p1 console] SELFTEST PASS offline 0 resources, 0 remote host(s)
+[ 345.2s p1 console] SELFTEST SUMMARY {"pass":9,"fail":0,"results":[["boot","PASS"],["home-fr","PASS"],["lang-en","PASS"],["fiche","PASS"],["investigations","PASS"],["inv-pages","PASS"],["practice","PASS"],["flashcards","PASS"],["offline","PASS"]],"seconds":189}
+[ 345.2s p1 console] SELFTEST PASS done 9/9
+[ 367.8s p2 console] SELFTEST NOTE start (9 steps)
+[ 367.8s p2 console] SELFTEST NOTE ua=Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148
+[ 367.8s p2 console] SELFTEST NOTE navigator.language=fr-FR app lang=en url=
+[ 367.8s p2 console] SELFTEST NOTE capacitor=true native=true nativeOverlay=true screenshotAcks=false
+[ 369.8s p2 console] SELFTEST SHOT 01-boot
+[ 372.7s p2 unified] SELFTEST PASS boot
+[ 372.7s p2 unified] SELFTEST WARN home-fr app started in en although the simulator was launched in French; forcing FR
+[ 373.6s p2 console] SELFTEST NOTE resume at step home-fr after reload
+[ 374.9s p2 unified] SELFTEST SHOT 02-home-fr
+[ 376.2s p2 console] SELFTEST PASS home-fr
+[ 376.2s p2 console] SELFTEST NOTE lang toggle: <button type="button" data-act="lang" data-v="en" lang="en" aria-pressed="false" title="English">
+[ 377.6s p2 console] SELFTEST NOTE resume at step lang-en after reload
+[ 379.4s p2 console] SELFTEST SHOT 03-home-en
+[ 381.0s p2 console] SELFTEST PASS lang-en via ui
+[ 385.4s p2 console] SELFTEST SHOT 04-fiche-top
+[ 389.7s p2 console] SELFTEST SHOT 05-fiche-mid
+[ 391.7s p2 console] SELFTEST PASS fiche c-secheresse "Dry eye disease and meibomian gland dysfunction"
+[ 394.2s p2 console] SELFTEST SHOT 06-investigations
+[ 396.5s p2 console] SELFTEST PASS investigations 7 exams: bscan, ascan, oct, gonio, fondoeil, cv, bscan-sim
+[ 399.3s p2 console] SELFTEST SHOT 07-inv-bscan
+[ 404.7s p2 console] SELFTEST SHOT 07-inv-ascan
+[ 410.5s p2 console] SELFTEST SHOT 07-inv-oct
+[ 415.6s p2 unified] SELFTEST SHOT 07-inv-gonio
+[ 421.2s p2 console] SELFTEST SHOT 07-inv-fondoeil
+[ 426.1s p2 unified] SELFTEST SHOT 07-inv-cv
+[ 428.2s p2 unified] SELFTEST PASS inv-pages 6/6 pages
+[ 431.4s p2 console] SELFTEST SHOT 09-practice-answer
+[ 434.2s p2 console] SELFTEST NOTE practice answering "1 Fluorescein angiography" on #inv-bscan
+[ 437.1s p2 console] SELFTEST SHOT 10-practice-reveal
+[ 439.3s p2 console] SELFTEST PASS practice #inv-bscan -> Not quite, saved
+[ 440.9s p2 console] SELFTEST SHOT 12-card-front
+[ 444.4s p2 console] SELFTEST SHOT 13-card-back
+[ 447.9s p2 console] SELFTEST SHOT 14-card-next
+[ 449.6s p2 console] SELFTEST PASS flashcards
+[ 449.6s p2 unified] SELFTEST PASS offline 0 resources, 0 remote host(s)
+[ 449.6s p2 unified] SELFTEST SUMMARY {"pass":9,"fail":0,"results":[["boot","PASS"],["home-fr","PASS"],["lang-en","PASS"],["fiche","PASS"],["investigations","PASS"],["inv-pages","PASS"],["practice","PASS"],["flashcards","PASS"],["offline","PASS"]],"seconds":82}
+[ 449.6s p2 unified] SELFTEST PASS done 9/9

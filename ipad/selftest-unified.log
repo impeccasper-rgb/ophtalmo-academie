@@ -1,0 +1,40 @@
+getpwuid_r did not find a match for uid 501
+Filtering the log data using "composedMessage CONTAINS "SELFTEST""
+Timestamp               Ty Process[PID:TID]
+2026-11-23 05:01:30.789 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST NOTE start (9 steps)
+2026-11-23 05:01:30.794 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST NOTE ua=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)
+2026-11-23 05:01:30.794 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST NOTE navigator.language=fr-FR app lang=fr url=
+2026-11-23 05:01:30.794 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST NOTE capacitor=true native=true nativeOverlay=true screenshotAcks=true
+2026-11-23 05:01:32.405 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 01-boot
+2026-11-23 05:01:57.843 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST PASS boot
+2026-11-23 05:01:57.844 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST PASS locale-autodetect navigator.language=fr-FR -> fr
+2026-11-23 05:01:59.697 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 02-home-fr
+2026-11-23 05:02:11.146 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST PASS home-fr
+2026-11-23 05:02:11.147 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST NOTE lang toggle: <button type="button" data-act="lang" data-v="en" lang="en" aria-pressed="false" title="English">
+2026-11-23 05:02:12.107 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST NOTE resume at step lang-en after reload
+2026-11-23 05:02:14.077 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 03-home-en
+2026-11-23 05:02:25.025 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST PASS lang-en via ui
+2026-11-23 05:02:28.426 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 04-fiche-top
+2026-11-23 05:02:42.710 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 05-fiche-mid
+2026-11-23 05:02:45.544 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST PASS fiche c-secheresse "Dry eye disease and meibomian gland dysfunction"
+2026-11-23 05:02:50.670 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 06-investigations
+2026-11-23 05:02:55.938 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST PASS investigations 7 exams: bscan, ascan, oct, gonio, fondoeil, cv, bscan-sim
+2026-11-23 05:02:59.146 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 07-inv-bscan
+2026-11-23 05:03:06.793 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 07-inv-ascan
+2026-11-23 05:03:11.746 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 07-inv-oct
+2026-11-23 05:03:21.065 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 07-inv-gonio
+2026-11-23 05:03:30.748 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 07-inv-fondoeil
+2026-11-23 05:03:36.778 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 07-inv-cv
+2026-11-23 05:03:39.621 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST PASS inv-pages 6/6 pages
+2026-11-23 05:03:42.810 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 09-practice-answer
+2026-11-23 05:03:44.023 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST NOTE practice answering "1 Fluorescein angiography" on #inv-bscan
+2026-11-23 05:03:47.645 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 10-practice-reveal
+2026-11-23 05:03:50.888 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST PASS practice #inv-bscan -> Not quite, saved
+2026-11-23 05:03:52.894 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 12-card-front
+2026-11-23 05:03:56.212 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 13-card-back
+2026-11-23 05:03:58.711 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SHOT 14-card-next
+2026-11-23 05:03:59.929 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST PASS flashcards
+2026-11-23 05:03:59.934 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST PASS offline 0 resources, 0 remote host(s)
+2026-11-23 05:03:59.935 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST SUMMARY {"pass":9,"fail":0,"results":[["boot","PASS"],["home-fr","PASS"],["lang-en","PASS"],["fiche","PASS"],["investigations","PASS"],["inv-pages","PASS"],["practice","PASS"],["flashcards","PASS"],["offline","PASS"]],"seconds":149}
+2026-11-23 05:03:59.935 Df App[21611:1128c] [ocelle.selftest:selftest] SELFTEST PASS done 9/9
+Child process terminated with signal 15: Terminated

@@ -1,0 +1,36 @@
+[ 239.0s p1 console] SELFTEST NOTE start (9 steps)
+[ 239.0s p1 console] SELFTEST NOTE ua=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)
+[ 239.0s p1 console] SELFTEST NOTE navigator.language=fr-FR app lang=fr url=
+[ 239.0s p1 console] SELFTEST NOTE capacitor=true native=true nativeOverlay=true screenshotAcks=true
+[ 240.7s p1 console] SELFTEST SHOT 01-boot
+[ 266.2s p1 console] SELFTEST PASS boot
+[ 266.2s p1 console] SELFTEST PASS locale-autodetect navigator.language=fr-FR -> fr
+[ 267.9s p1 console] SELFTEST SHOT 02-home-fr
+[ 279.5s p1 console] SELFTEST PASS home-fr
+[ 279.5s p1 console] SELFTEST NOTE lang toggle: <button type="button" data-act="lang" data-v="en" lang="en" aria-pressed="false" title="English">
+[ 280.6s p1 console] SELFTEST NOTE resume at step lang-en after reload
+[ 282.4s p1 console] SELFTEST SHOT 03-home-en
+[ 293.2s p1 console] SELFTEST PASS lang-en via ui
+[ 296.7s p1 console] SELFTEST SHOT 04-fiche-top
+[ 311.2s p1 console] SELFTEST SHOT 05-fiche-mid
+[ 313.7s p1 console] SELFTEST PASS fiche c-secheresse "Dry eye disease and meibomian gland dysfunction"
+[ 319.2s p1 console] SELFTEST SHOT 06-investigations
+[ 324.1s p1 unified] SELFTEST PASS investigations 7 exams: bscan, ascan, oct, gonio, fondoeil, cv, bscan-sim
+[ 327.7s p1 console] SELFTEST SHOT 07-inv-bscan
+[ 335.3s p1 console] SELFTEST SHOT 07-inv-ascan
+[ 340.1s p1 console] SELFTEST SHOT 07-inv-oct
+[ 349.6s p1 console] SELFTEST SHOT 07-inv-gonio
+[ 358.9s p1 unified] SELFTEST SHOT 07-inv-fondoeil
+[ 365.2s p1 console] SELFTEST SHOT 07-inv-cv
+[ 368.3s p1 console] SELFTEST PASS inv-pages 6/6 pages
+[ 371.0s p1 console] SELFTEST SHOT 09-practice-answer
+[ 372.2s p1 console] SELFTEST NOTE practice answering "1 Fluorescein angiography" on #inv-bscan
+[ 375.9s p1 console] SELFTEST SHOT 10-practice-reveal
+[ 379.4s p1 console] SELFTEST PASS practice #inv-bscan -> Not quite, saved
+[ 381.2s p1 console] SELFTEST SHOT 12-card-front
+[ 384.6s p1 console] SELFTEST SHOT 13-card-back
+[ 387.2s p1 console] SELFTEST SHOT 14-card-next
+[ 388.1s p1 console] SELFTEST PASS flashcards
+[ 388.1s p1 console] SELFTEST PASS offline 0 resources, 0 remote host(s)
+[ 388.1s p1 console] SELFTEST SUMMARY {"pass":9,"fail":0,"results":[["boot","PASS"],["home-fr","PASS"],["lang-en","PASS"],["fiche","PASS"],["investigations","PASS"],["inv-pages","PASS"],["practice","PASS"],["flashcards","PASS"],["offline","PASS"]],"seconds":149}
+[ 388.1s p1 console] SELFTEST PASS done 9/9

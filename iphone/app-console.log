@@ -1,0 +1,55 @@
+2026-11-23 04:52:11.662 App[8041:29910] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/runner/Library/Developer/CoreSimulator/Devices/F90353E4-F95D-488C-9F4E-B43F74E385F2/data/Containers/Data/Application/31319F5B-4805-4426-A24A-ACDFDB3C96AB/Library/Cookies/ca.academie.ophtalmo.binarycookies
+⚡️  Loading app at capacitor://localhost...
+SplashScreen.hideSplash: SplashScreen was automatically hidden after default timeout. You should call `SplashScreen.hide()` as soon as your web app is loaded (or increase the timeout). Read more at https://capacitorjs.com/docs/apis/splash-screen#hiding-the-splash-screen
+⚡️  To Native ->  Haptics selectionStart 109692960
+⚡️  TO JS undefined
+⚡️  WebView loaded
+⚡️  [log] - SELFTEST NOTE start (9 steps)
+⚡️  [log] - SELFTEST NOTE ua=Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148
+⚡️  [log] - SELFTEST NOTE navigator.language=fr-FR app lang=fr url=
+⚡️  [log] - SELFTEST NOTE capacitor=true native=true nativeOverlay=true screenshotAcks=true
+⚡️  [log] - SELFTEST SHOT 01-boot
+⚡️  [log] - SELFTEST PASS boot
+⚡️  [log] - SELFTEST PASS locale-autodetect navigator.language=fr-FR -> fr
+⚡️  [log] - SELFTEST SHOT 02-home-fr
+⚡️  [log] - SELFTEST PASS home-fr
+⚡️  [log] - SELFTEST NOTE lang toggle: <button type="button" data-act="lang" data-v="en" lang="en" aria-pressed="false" title="English">
+⚡️  To Native ->  Haptics selectionChanged 109692961
+⚡️  TO JS undefined
+⚡️  To Native ->  Haptics selectionStart 55190524
+⚡️  TO JS undefined
+⚡️  WebView loaded
+⚡️  [log] - SELFTEST NOTE resume at step lang-en after reload
+⚡️  [log] - SELFTEST SHOT 03-home-en
+⚡️  [log] - SELFTEST PASS lang-en via ui
+⚡️  [info] - [words] c-secheresse/voir: 22 visible words
+⚡️  [log] - SELFTEST SHOT 04-fiche-top
+⚡️  [log] - SELFTEST SHOT 05-fiche-mid
+⚡️  [log] - SELFTEST PASS fiche c-secheresse "Dry eye disease and meibomian gland dysfunction"
+⚡️  [log] - SELFTEST SHOT 06-investigations
+⚡️  [log] - SELFTEST PASS investigations 7 exams: bscan, ascan, oct, gonio, fondoeil, cv, bscan-sim
+⚡️  [log] - SELFTEST SHOT 07-inv-bscan
+⚡️  [log] - SELFTEST SHOT 07-inv-ascan
+⚡️  [log] - SELFTEST SHOT 07-inv-oct
+⚡️  [log] - SELFTEST SHOT 07-inv-gonio
+⚡️  [log] - SELFTEST SHOT 07-inv-fondoeil
+⚡️  [log] - SELFTEST SHOT 07-inv-cv
+⚡️  [log] - SELFTEST PASS inv-pages 6/6 pages
+⚡️  [log] - SELFTEST SHOT 09-practice-answer
+⚡️  [log] - SELFTEST NOTE practice answering "1 Fluorescein angiography" on #inv-bscan
+⚡️  To Native ->  Haptics impact 55190525
+⚡️  TO JS undefined
+⚡️  [log] - SELFTEST SHOT 10-practice-reveal
+⚡️  [log] - SELFTEST PASS practice #inv-bscan -> Not quite, saved
+⚡️  [log] - SELFTEST SHOT 12-card-front
+⚡️  To Native ->  Haptics impact 55190526
+⚡️  TO JS undefined
+⚡️  [log] - SELFTEST SHOT 13-card-back
+⚡️  To Native ->  Haptics impact 55190527
+⚡️  TO JS undefined
+⚡️  [log] - SELFTEST SHOT 14-card-next
+⚡️  [log] - SELFTEST PASS flashcards
+⚡️  [log] - SELFTEST PASS offline 0 resources, 0 remote host(s)
+⚡️  [log] - SELFTEST SUMMARY {"pass":9,"fail":0,"results":[["boot","PASS"],["home-fr","PASS"],["lang-en","PASS"],["fiche","PASS"],["investigations","PASS"],["inv-pages","PASS"],["practice","PASS"],["flashcards","PASS"],["offline","PASS"]],"seconds":189}
+⚡️  [log] - SELFTEST PASS done 9/9
+ca.academie.ophtalmo: 8041

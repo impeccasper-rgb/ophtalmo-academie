@@ -1,0 +1,50 @@
+{
+  "ok": true,
+  "reason": "ok",
+  "family": "iphone",
+  "bundle_id": "ca.academie.ophtalmo",
+  "device": "iPhone 17 Pro Max",
+  "runtime": "iOS 26.5",
+  "passed": [
+    "SELFTEST PASS boot",
+    "SELFTEST PASS locale-autodetect navigator.language=fr-FR -> fr",
+    "SELFTEST PASS home-fr",
+    "SELFTEST PASS lang-en via ui",
+    "SELFTEST PASS fiche c-secheresse \"Dry eye disease and meibomian gland dysfunction\"",
+    "SELFTEST PASS investigations 7 exams: bscan, ascan, oct, gonio, fondoeil, cv, bscan-sim",
+    "SELFTEST PASS inv-pages 6/6 pages",
+    "SELFTEST PASS practice #inv-bscan -> Not quite, saved",
+    "SELFTEST PASS flashcards",
+    "SELFTEST PASS offline 0 resources, 0 remote host(s)",
+    "SELFTEST PASS done 9/9"
+  ],
+  "failed": [],
+  "warnings": [],
+  "js_errors": [],
+  "notes": [
+    "video pass: SELFTEST PASS done 9/9"
+  ],
+  "screenshots": [
+    "01-boot",
+    "02-home-fr",
+    "03-home-en",
+    "04-fiche-top",
+    "05-fiche-mid",
+    "06-investigations",
+    "07-inv-bscan",
+    "07-inv-ascan",
+    "07-inv-oct",
+    "07-inv-gonio",
+    "07-inv-fondoeil",
+    "07-inv-cv",
+    "09-practice-answer",
+    "10-practice-reveal",
+    "12-card-front",
+    "13-card-back",
+    "14-card-next",
+    "zz-final-light",
+    "zz-final-dark"
+  ],
+  "video": "run.mp4",
+  "seconds": 465
+}
